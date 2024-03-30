@@ -53,13 +53,23 @@
          {{$findcategoryoutput}}
 
         @php
-          $findcategput = DB::table('events')->where('expo_id', $findsubcateg->subtag_id)->get();
+          $findcategput = DB::table('dencos')->where('expo_id', $findsubcateg->subtag_id)->get();
         @endphp
 
-        @foreach($findcategput as $findcategpu)
-          {{$findcategpu}}
-        @endforeach
 
+        @foreach($findcategput as $findcategpu)
+
+          @php
+            $findcategput = DB::table('events')->where('id', $findcategpu->event_id)->get();
+          @endphp
+
+          {{$findcategpu->event_id}} 
+          category {{$findcategpu->expo_id}}
+          <hr>
+        @endforeach
+         
+       
+        
       @endforeach
         <div class="container d-lg-none">
           <div class="row">
