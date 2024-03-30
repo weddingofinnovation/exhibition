@@ -6,7 +6,7 @@
       <!--google-->
 
 
-      {{$exhibition}}
+      
         <div class="bg-secondary d-lg-none">
           <div class=" container">
             <div class="row ">
@@ -28,6 +28,39 @@
           </div>
         </div>
         
+        @php
+          $findcategoryid = DB::table('categories')->where('slug', $categry)->value('id');
+          $findsubcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->get(); 
+          $subcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->value('subtag_id'); 
+        @endphp
+
+        {{$findcategoryid}} 
+        
+        
+        {{$subcategory}}
+
+        {{$exhibition}}  {{$eventype}}  {{$categry}}  {{$time}} 
+
+
+        ---------------
+      @foreach($findsubcategory as $findsubcateg)
+        {{$findsubcateg->subtag_id}}
+
+        @php
+          $findcategoryoutput = DB::table('expos')->where('id', $findsubcateg->subtag_id)->value('tag');
+        @endphp
+
+         {{$findcategoryoutput}}
+
+        @php
+          $findcategput = DB::table('events')->where('expo_id', $findsubcateg->subtag_id)->get();
+        @endphp
+
+        @foreach($findcategput as $findcategpu)
+          {{$findcategpu}}
+        @endforeach
+
+      @endforeach
         <div class="container d-lg-none">
           <div class="row">
             <div class="col-md-6 offset-md-3">

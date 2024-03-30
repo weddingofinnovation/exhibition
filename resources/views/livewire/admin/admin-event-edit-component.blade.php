@@ -226,7 +226,7 @@
                         <input type="text" wire:model.lazy = "reference" class="form-control" placeholder="add reference">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
-                 </form>
+                </form>
                
                 <!-- @if($evento->reference == "null")
                  {{$evento->reference}}

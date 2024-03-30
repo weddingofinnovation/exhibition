@@ -182,7 +182,51 @@ class AdminEventEditComponent extends Component
           
         }
         return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
-       }
+    }
+
+    public function samenamediffcity()
+    {
+      
+      $rti = Str::replace('  ',' ', $this->city);
+      $ret = explode(",", $rti);
+    
+      foreach($ret as $ccity)
+        {
+          $doublse = new Event();
+          
+          $doublse->eventname = trim($this->eventkhaname);
+          
+          $doublse->slug = Str::slug ($doublse->eventname,'-');
+
+          $doublse->eventype = $this->eventype;
+          $doublse->city =  trim($ccity);
+          $doublse->country =  trim($this->country);
+          $doublse->venue =  trim($this->venue);
+          $doublse->exhibitors =  $this->exhibitors;
+          $doublse->auidence =  $this->auidence;
+          $doublse->edition =  $this->edition;
+          $doublse->startdate =  $this->startdate;
+          $doublse->enddate =  $this->enddate;
+
+            $doublse->organizer = $this->organizer;
+            $doublse->shtdesc =  $this->shtdesc;
+            $doublse->tagline =  $this->tagline;
+            $doublse->desc =  $this->desc;
+
+            $doublse->email =  $this->email;
+            $doublse->phone =  $this->phone;
+            $doublse->link =  $this->link;
+          
+          $doublse->status = $this->status;
+          $doublse->admstatus = '0';
+          $doublse->user_id = Auth::user()->id;
+          $doublse->reference = $this->reference;
+          $doublse->save();
+          
+        }
+        return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
+    }
+
 
 
     public function editReference()
