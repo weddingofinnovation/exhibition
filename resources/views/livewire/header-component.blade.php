@@ -729,33 +729,38 @@
                   <li  class="nav-item {{'/' == request()->path() ? 'active' : '' }}">
                   <a class="nav-link" href="{{asset('/') }}" >Home</a>
                   </li>
+
                   <li  class="nav-item {{'sell-your-business' == request()->path() ? 'active' : '' }}"">
-                  <a class="nav-link" href="{{route('sell.business')}}">Sell your Business</a>
+                  <a class="nav-link" href="{{route('sell.business')}}">Exhibition Navigator</a>
                   </li>
 
                   <li  class="nav-item {{'expand-your-business' == request()->path() ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('expand.business') }}" >Expand your Business</a>
+                    <a class="nav-link" href="{{route('expand.business') }}" >Great Exhibition To Exhibit</a>
                   </li>
 
                   <li  class="nav-item {{'buy-a-brand-license' == request()->path() ? 'active' : '' }}">
-                    <a class="nav-link" href="{{route('buy.license') }}" >Buy a Brand License</a>
+                    <a class="nav-link" href="{{route('buy.license') }}" >Find Exhibitor</a>
+                  </li>
+
+                  <li  class="nav-item {{'buy-a-brand-license' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('buy.license') }}">Stall Design</a>
                   </li>
 
                   <li  class=" nav-item dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}">
-                    <a class="nav-link dropdown-toggle" href="{{asset('/checkout')}}" data-bs-toggle="dropdown">Business Design & Strategy</a>
+                    <a class="nav-link dropdown-toggle" href="{{asset('/checkout')}}" data-bs-toggle="dropdown">Directory</a>
                      <ul class="dropdown-menu">
                       <li class="dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Business Design</a>
                         <ul class="dropdown-menu">
-                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="{{route('design.strategy')}}">Business Design Sprint</a></li>
+                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="{{route('design.strategy')}}">Directory Design Sprint</a></li>
                           <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="innovation-accelerator">Innovation Accelerator</a></li>
                           <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="product-&-service-go-to-market">Product & Service go to Market</a></li>
-                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="entrepreneur-in-residence">Entrepreneur in Residence</a></li>
+                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="entrepreneur-in-residence">Contract Form</a></li>
                         </ul>
                       </li>
                       <li class="dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Strategy Design</a>
                         <ul class="dropdown-menu">
-                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Insights & growth strategy</a></li>
-                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Innovation & growth audit</a></li>
+                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Insights & Growth</a></li>
+                          <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Review & Rating</a></li>
                           <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Strategy sprint</a></li>
                           <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Innovation transformation</a></li>
                           <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Future exploration</a></li>
