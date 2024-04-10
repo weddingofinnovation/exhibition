@@ -59,7 +59,7 @@ World leading fastest Introducing Great Exhibition To Exhibit Business India Fir
                       <form action="" class="subscription-form validate">
                         <div class="input-group flex-nowrap">
                           <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                          <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" required>
+                          <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
                           <button class="btn btn-primary" type="submit" name=""> Search</button>
                         </div>
 
