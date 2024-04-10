@@ -63,7 +63,7 @@ World leading fastest Introducing Great Exhibition To Exhibit Business India Fir
                           <button class="btn btn-primary" type="submit" name=""> Search</button>
                         </div>
 
-                        <div class=" fs-xs form-text">*Join our movement <br> Make India a Great Place To Business</div>
+                        <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
                         <div class="subscription-status"></div>
                       </form>
                     
