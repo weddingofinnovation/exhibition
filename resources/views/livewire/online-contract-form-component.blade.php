@@ -72,6 +72,77 @@
 			--bs-light-text-emphasis: #3e403f;
 			--bs-dark-text-emphasis: #161719;
 			--bs-primary-bg-subtle: #cef1dc;
+    --bs-primary-bg-subtle: #cef1dc;
+    --bs-secondary-bg-subtle: #e7e7e8;
+    --bs-success-bg-subtle: #cef2e7;
+    --bs-info-bg-subtle: #d1ecf1;
+    --bs-warning-bg-subtle: #fdf3d5;
+    --bs-danger-bg-subtle: #f7d4d8;
+    --bs-light-bg-subtle: #fcfcfc;
+    --bs-dark-bg-subtle: #d2d3d3;
+    --bs-primary-border-subtle: #9de3b9;
+    --bs-secondary-border-subtle: #cecfd0;
+    --bs-success-border-subtle: #9ee4cf;
+    --bs-info-border-subtle: #a2dae3;
+    --bs-warning-border-subtle: #fce7ab;
+    --bs-danger-border-subtle: #efa9b2;
+    --bs-light-border-subtle: #dce0e5;
+    --bs-dark-border-subtle: #a6a6a7;
+    --bs-white-rgb: 255, 255, 255;
+    --bs-black-rgb: 0, 0, 0;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --bs-body-font-family: "Inter", sans-serif;
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+    --bs-body-color: #606261;
+    --bs-body-color-rgb: 96, 98, 97;
+    --bs-body-bg: #fff;
+    --bs-body-bg-rgb: 255, 255, 255;
+    --bs-emphasis-color: #000;
+    --bs-emphasis-color-rgb: 0, 0, 0;
+    --bs-secondary-color: rgba(96, 98, 97, 0.75);
+    --bs-secondary-color-rgb: 96, 98, 97;
+    --bs-secondary-bg: #dce0e5;
+    --bs-secondary-bg-rgb: 220, 224, 229;
+    --bs-tertiary-color: rgba(96, 98, 97, 0.5);
+    --bs-tertiary-color-rgb: 96, 98, 97;
+    --bs-tertiary-bg: #f8f8f8;
+    --bs-tertiary-bg-rgb: 248, 248, 248;
+    --bs-heading-color: var(--bs-gray-900);
+    --bs-link-color: #09B850;
+    --bs-link-color-rgb: 9, 184, 80;
+    --bs-link-decoration: none;
+    --bs-link-hover-color: #079340;
+    --bs-link-hover-color-rgb: 7, 147, 64;
+    --bs-code-color: #d63384;
+    --bs-highlight-color: #212529;
+    --bs-highlight-bg: #fff3cd;
+    --bs-border-width: 1px;
+    --bs-border-style: solid;
+    --bs-border-color: var(--bs-gray-200);
+    --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
+    --bs-border-radius: 0.313rem;
+    --bs-border-radius-sm: 0.2rem;
+    --bs-border-radius-lg: 0.4rem;
+    --bs-border-radius-xl: 0.6rem;
+    --bs-border-radius-xxl: 2rem;
+    --bs-border-radius-2xl: var(--bs-border-radius-xxl);
+    --bs-border-radius-pill: 50rem;
+    --bs-box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.1);
+    --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(29, 58, 83, 0.15);
+    --bs-box-shadow-lg: 0 1rem 3rem rgba(29, 58, 83, 0.15);
+    --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --bs-focus-ring-width: 0.25rem;
+    --bs-focus-ring-opacity: 0.25;
+    --bs-focus-ring-color: rgba(13, 110, 253, 0.25);
+    --bs-form-valid-color: #198754;
+    --bs-form-valid-border-color: rgba(12, 188, 135, 0.8);
+    --bs-form-invalid-color: #dc3545;
+    --bs-form-invalid-border-color: rgba(214, 41, 62, 0.5);
+
 		}
 
 		
@@ -108,7 +179,9 @@
 			font-family: "Instrument Sans", sans-serif;
 			font-weight: 700;
 			line-height: 1.25;
-			color: #202124 !important;   
+			--bs-gray-900: #202124;
+			--bs-heading-color: var(--bs-gray-900);
+			color: var(--bs-heading-color);   
 		}
 
 		@media (min-width: 1200px)
@@ -118,9 +191,15 @@
 
 		.text-white {
 			--bs-text-opacity: 1;
+			--bs-white-rgb: 255, 255, 255;
 			color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 		}
 
+		.bg-dark {
+			--bs-bg-opacity: 1;
+			--bs-dark-rgb:32, 33, 36;
+			background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+		}
 		.inner-container-small {
 			max-width: 700px;
 			margin-right: auto;
@@ -260,7 +339,7 @@
 								</div>
 								
 								<!-- About image -->
-								<img src="{{asset('image/01.jpg')}}" class="rounded" alt="about-img-2">
+								<img src="{{asset('public/image/01.jpg')}}" class="rounded" alt="about-img-2">
 							</div>
 						</div> <!-- Row END -->
 					</div>
@@ -307,7 +386,7 @@
 				<!-- Title -->
 				<div class="inner-container-small text-center">
 					<span class="bg-light heading-color small rounded-3 px-3 py-2">🚀 Innovative solutions, Measurable results</span>
-					<h2 class="mb-0 mt-4">We specialize in the following services</h2>
+					<h2 class="h2 text-white mb-0 mt-4">We specialize in the following services</h2>
 				</div>
 
 				<!-- Service list START -->
