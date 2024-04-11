@@ -279,7 +279,7 @@
 		}
 
 </style>
-<section class="position-relative overflow-hidden pb-0 pt-xl-9">
+<section class="sectionlevel position-relative overflow-hidden pb-0 pt-xl-9">
 	<!-- SVG decoration -->
 	<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
 		<img src="assets/images/elements/decoration-pattern.svg" alt="">
@@ -428,7 +428,7 @@
 	</div>
 </section>
 
-<section class="position-relative overflow-hidden pb-0 pt-xl-9">
+<section class=" sectionlevel position-relative overflow-hidden pb-0 pt-xl-9">
 	<!-- SVG decoration -->
 	<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
 		<img src="assets/images/elements/decoration-pattern.svg" alt="">
