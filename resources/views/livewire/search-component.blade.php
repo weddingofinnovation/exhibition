@@ -1,8 +1,8 @@
 <main>
 
-@section('page_title', 'Find Great Exhibtion To Exhibit')
+@section('page_title', 'Exhibition Navigator')
 @section('page_description', 'Great Exhibtion To Exhibit, plan your upcoming trade show, conference, awards  and get subsidies space to find right people at right time at right place')
-@section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
+@section('page_keyword',  'Exhibition Navigator, The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
                     <div class="container mt-5">
                         <!-- <input type="text" class="form-control" placeholder="search" > -->

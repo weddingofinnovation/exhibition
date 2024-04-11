@@ -158,6 +158,7 @@ use App\Http\Livewire\ExhibitionTimeComponent;
 use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
+use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
 
@@ -266,6 +267,8 @@ Route::get('/sell-your-business', SellyourbusinessComponent::class)->name('sell.
 Route::get('/expand-your-business', ExpandyourbusinessComponent::class)->name('expand.business');
 Route::get('/buy-a-brand-license', BuyabrandlicenseComponent::class)->name('buy.license');
 Route::get('/business-design-strategy', BusinessDesignStrategyComponent::class)->name('design.strategy');
+
+Route::get('/online-contract-form', OnlineContractFormComponent::class)->name('service.contract');
 
 //company details
 Route::get('/career', CareerComponent::class)->name('career');

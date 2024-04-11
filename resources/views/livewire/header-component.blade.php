@@ -673,7 +673,7 @@
                     <a class="nav-link dropdown-toggle ps-lg-0" href="" data-bs-toggle="dropdown">
                       <i class=" bi bi-list align-middle mt-n1 me-2"></i>Industry</a>
                       <ul class="dropdown-menu">
-                      @foreach ($catego as $category)
+                        @foreach ($catego as $category)
                        
                           <li class="dropdown mega-dropdown">
                               <a class="dropdown-item" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $category->slug])}}">
@@ -744,6 +744,10 @@
 
                   <li  class="nav-item {{'buy-a-brand-license' == request()->path() ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('buy.license') }}">Stall Design</a>
+                  </li>
+
+                  <li  class="nav-item {{'buy-a-brand-license' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('buy.license') }}">Online Contract Form</a>
                   </li>
 
                   <li  class=" nav-item dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}">
@@ -904,6 +908,7 @@
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
+
                       @if(Auth::check())
                         <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                           <div class="d-flex w-100 align-items-center justify-content-between">
@@ -1191,7 +1196,7 @@
                   <div class="container py-4">
                       <div class="col-sm-12 ">
                         <div class="small fw-lighter">Product updates</div>
-                        <small class="lh-1">Get the latest on new features, product improvement, and other announcements.</small>
+                        <small class="lh-0">Get the latest on new features, product improvement, and other announcements.</small>
                         <div class="bold text-primary fs-sm"> See what's new</div> 
                       </div>
 
@@ -1210,6 +1215,7 @@
 
 
                     </div>
+
                   <div class="handheld-toolbar border-top-0">
                     <div class="container py-4">
                       <div class="col-sm-12 ">
