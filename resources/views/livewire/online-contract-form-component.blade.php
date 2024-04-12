@@ -1222,7 +1222,7 @@
 					<!-- Testimonials image -->
 					<div class="col-sm-10 col-lg-6 col-xl-5 position-relative ms-xl-auto">
 						<!-- Image -->
-						<img src="{{asset('/image/03.jpg')}}" class="rounded" alt="testimonial-img">
+						<img src="{{asset('public/image/visi3.jpg')}}" class="rounded" alt="testimonial-img">
 
 						<!-- SVG decoration -->
 						<figure class="position-absolute top-50 start-0 translate-middle ms-n5 d-none d-xl-block">
@@ -1236,7 +1236,7 @@
 							<div class="bg-dark rounded d-flex align-items-center px-3 py-2">
 								<!-- Avatar -->
 								<div class="avatar avatar-sm flex-shrink-0 me-2">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+									<img class="avatar-img rounded-circle" src="{{asset('public/image/visi1.jpg')}}" alt="avatar">
 								</div>
 								<p class="text-light small mb-0">The best Bootstrap theme we've ever used 🔥</p>
 							</div>
