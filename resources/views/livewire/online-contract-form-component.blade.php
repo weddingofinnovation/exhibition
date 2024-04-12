@@ -647,6 +647,48 @@
 			object-fit: cover;
 		}
 		
+		.avatar-group {
+			padding: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+
+		.avatar-group > li:not(:last-child) {
+			margin-right: -0.8rem;
+		}
+		.avatar-group > li {
+			position: relative;
+		}
+		.avatar-xs {
+			height: 2.1875rem;
+			width: 2.1875rem;
+		}
+		.avatar {
+			height: 3rem;
+			width: 3rem;
+			position: relative;
+			display: inline-block !important;
+		}
+
+		.rounded-4 {
+			--bs-border-radius-xl: 0.6rem;
+			border-radius: var(--bs-border-radius-xl) !important;
+		}
+
+		.h-20px {
+			height: 20px !important;
+		}
+
+		.dark-mode-item {
+			display: none !important;
+		}
+
+		.shadow {
+			--bs-box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.1);
+			-webkit-box-shadow: var(--bs-box-shadow) !important;
+			box-shadow: var(--bs-box-shadow) !important;
+		}
 
 </style>
 
@@ -1222,7 +1264,7 @@
 					<!-- Testimonials image -->
 					<div class="col-sm-10 col-lg-6 col-xl-5 position-relative ms-xl-auto">
 						<!-- Image -->
-						<img src="{{asset('public/image/visi3.jpg')}}" class="rounded" alt="testimonial-img">
+						<img src="{{asset('public/image/03.jpg')}}" class="rounded" alt="testimonial-img">
 
 						<!-- SVG decoration -->
 						<figure class="position-absolute top-50 start-0 translate-middle ms-n5 d-none d-xl-block">
