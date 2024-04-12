@@ -254,6 +254,7 @@
 		}
 
 		.fill-mode {
+			--bs-gray-900: #202124;
 			fill: var(--bs-gray-900) !important;
 		}
 
@@ -277,6 +278,8 @@
 			border-radius: var(--bs-badge-border-radius);
 		}
 
+		
+
 		.me-n9 {
 			margin-right: -11rem !important;
 		}
@@ -298,15 +301,23 @@
 			color: var(--bs-gray-900);
 		}
 
+		
 		a {
+			--bs-link-color-rgb: 9, 184, 80;
 			color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
 			text-decoration: none;
 		}
 
-		.bg-light {
+		a:hover {
+			--bs-link-color-rgb: 9, 184, 80;
+			color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+			text-decoration: none;
+		}
+
+		/* .bg-light {
 			--bs-bg-opacity: 1;
 			background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
-		}
+		} */
 
 		.bg-primary {
 			--bs-bg-opacity: 1;
@@ -371,11 +382,13 @@
 		}
 
 		.heading-color {
+			--bs-gray-900: #202124;
 			color: var(--bs-gray-900) !important;
 		}
 
 		.bg-light {
 			--bs-bg-opacity: 1;
+			--bs-light-rgb: 248, 248, 248;
 			background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
 		}
 
@@ -458,6 +471,7 @@
 			-webkit-box-align: center;
 			-ms-flex-align: center;
 			align-items: center;
+			--bs-link-color-rgb: 9, 184, 80;
 			text-decoration-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 0.5));
 			text-underline-offset: 0.25em;
 			-webkit-backface-visibility: hidden;
@@ -1014,7 +1028,7 @@
 						<div class="card bg-light h-100">
 							<div class="card-body pb-0">
 								<!-- Icon -->
-								<div class="icon-lg bg-white  rounded-circle mb-4 mt-n5">
+								<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
 									<i class="bi bi-stack fa-fw fs-5"></i>
 								</div>
 								<!-- Content -->
@@ -1033,7 +1047,7 @@
 							<div class="card-body pb-0">
 								<!-- Icon -->
 								<div class="icon-lg bg-white text-primary rounded-circle mb-4 mt-n5">
-									<i class="bi bi-boxes fa-fw fs-5"></i>
+									<i class="bi bi-box fa-fw fs-5"></i>
 								</div>
 								<!-- Content -->
 								<h5 class="mb-3"><a href="#" class="text-coloro">Product Design</a></h5>
