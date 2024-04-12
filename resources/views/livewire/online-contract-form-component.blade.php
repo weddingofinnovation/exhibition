@@ -319,7 +319,7 @@
 			font-size: 2.75rem;
 		}}
 
-		.row {
+		/* .row {
 			--bs-gutter-x: 1.875rem;
 			--bs-gutter-y: 0;
 			display: -webkit-box;
@@ -330,7 +330,7 @@
 			margin-top: calc(-1* var(--bs-gutter-y));
 			margin-right: calc(-0.5* var(--bs-gutter-x));
 			margin-left: calc(-0.5* var(--bs-gutter-x));
-		}
+		} */
 
 		.bg-transparent {
 			--bs-bg-opacity: 1;
@@ -344,6 +344,16 @@
 			padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
 			color: var(--bs-card-color);
 		}
+
+		.text-primary {
+			--bs-text-opacity: 1;
+			color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+		}
+
+		@media (min-width: 1200px)
+		{h5, .h5 {
+			font-size: 1.5rem;
+		}}
 
 		.bg-colo{
 			background-color: #09B850 !important;
@@ -637,7 +647,7 @@
 		<section class="position-relative overflow-hidden pb-0 pt-xl-9">
 			<!-- SVG decoration -->
 			<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
-				<img src="assets/images/elements/decoration-pattern.svg" alt="">
+				<img src="{{asset('public/image/decoration-pattern.svg')}}" alt="">
 			</div>
 
 			<!-- SVG decoration -->
@@ -667,7 +677,7 @@
 							<!-- Title -->
 							<h1 class="mt-3 lh-base">Creative studio focused on
 								<span class="cd-headline clip big-clip is-full-width text-primary mb-0 d-block d-xxl-inline-block">
-									<span class="typed" data-type-text="Web Design&amp;&amp;Web Dev&amp;&amp;UI/UX Design">Web Dev</span><span class="ityped-cursor">|</span>
+									<span class="typed" data-type-text="Web Design Web Dev UI/UX Design">Web Dev</span><span class="ityped-cursor">|</span>
 								</span>
 							</h1>
 							<p class="mb-0 mt-4 mt-md-5">From concept to execution, we deliver web designs that make an impact. Let your brand shine with our innovative and visually stunning websites.</p>
@@ -737,7 +747,7 @@
 						</figure>
 
 						<!-- Hero image -->
-						<img src="assets/images/bg/01.jpg" class="rounded" alt="hero-img">
+						<img src="{{asset('public/image/01.jpg')}}" class="rounded" alt="hero-img">
 
 						<!-- Visitor box START -->
 						<div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3">
@@ -745,19 +755,19 @@
 								<h6 class="text-white mb-0 me-2">5K+</h6>
 								<ul class="avatar-group mb-0 align-items-center">
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/06.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/05.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/02.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/03.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/04.jpg')}}" alt="avatar">
 									</li>
 								</ul>
 							</div>
@@ -767,10 +777,10 @@
 
 						<!-- Trustpilot review START -->
 						<div class="d-inline-block card card-body shadow rounded-4 position-absolute end-0 top-0 p-3 me-lg-n3 me-xxl-n7 mt-n5 d-none d-sm-block">
-							<img src="assets/images/elements/trustpilot.svg" class="light-mode-item h-20px mb-2" alt="Client-img">
-							<img src="assets/images/elements/trustpilot-light.svg" class="dark-mode-item h-20px mb-2" alt="Client-img">
+							<img src="{{asset('public/image/trustpilot.svg')}}" class="light-mode-item h-20px mb-2" alt="Client-img">
+							<img src="{{asset('public/image/trustpilot-light.svg')}}" class="dark-mode-item h-20px mb-2" alt="Client-img">
 							<div class="d-flex align-items-center">
-								<img src="assets/images/elements/trustpilot-star.svg" class="h-30px" alt="rating-img">
+								<img src="{{asset('public/image/trustpilot-star.svg')}}" class="h-30px" alt="rating-img">
 								<h6 class="font-base fw-bold ms-1 mb-0">4.8/5.0</h6>
 							</div>
 							<p class="small mb-0 mt-2">Reviewed by 365 users</p>
@@ -805,22 +815,22 @@
 							<div class="swiper-wrapper align-items-center" id="swiper-wrapper-d501451f1b936b47" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-175px, 0px, 0px); transition-delay: 0ms;">
 								
 								<div class="swiper-slide swiper-slide-prev" role="group" aria-label="4 / 6" data-swiper-slide-index="3" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/04.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/04.svg')}}" class="grayscale" alt="client-img">
 								</div>
 								<div class="swiper-slide swiper-slide-active" role="group" aria-label="5 / 6" data-swiper-slide-index="4" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/05.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/05.svg')}}" class="grayscale" alt="client-img">
 								</div>
 								<div class="swiper-slide swiper-slide-next" role="group" aria-label="6 / 6" data-swiper-slide-index="5" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/01.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/01.svg')}}" class="grayscale" alt="client-img">
 								</div>
 								<div class="swiper-slide" role="group" aria-label="1 / 6" data-swiper-slide-index="0" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/01.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/01.svg')}}" class="grayscale" alt="client-img">
 								</div>
 								<div class="swiper-slide" role="group" aria-label="2 / 6" data-swiper-slide-index="1" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/02.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/02.svg')}}" class="grayscale" alt="client-img">
 								</div>
 								<div class="swiper-slide" role="group" aria-label="3 / 6" data-swiper-slide-index="2" style="width: 125px; margin-right: 50px;">
-									<img src="assets/images/client/03.svg" class="grayscale" alt="client-img">
+									<img src="{{asset('public/image/03.svg')}}" class="grayscale" alt="client-img">
 								</div>
 							</div>
 
@@ -1148,10 +1158,10 @@
 									<!-- List -->
 									<ul class="list-group list-group-borderless mb-3 mb-sm-4">
 										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Up to 05 users monthly</li>
-										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Free 5 host &amp; domain</li>
+										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Free 5 host   domain</li>
 										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Google Docs style editors</li>
 										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Support for 30+ languages</li>
-										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Landing pages &amp; Web widgets</li>
+										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Landing pages   Web widgets</li>
 										<li class="list-group-item heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>24/7 Dedicated Support</li>
 									</ul>
 									<!-- Button -->
@@ -1167,7 +1177,7 @@
 						<div class="card bg-colo rounded h-100 overflow-hidden p-4">
 							<!-- SVG decoration -->
 							<div class="position-absolute top-0 end-0 mt-n3 me-n4">
-								<img src="assets/images/elements/decoration-pattern-2.svg" class="opacity-2 h-200px" alt="">
+								<img src="{{asset('public/image/decoration-pattern-2.svg')}}" class="opacity-2 h-200px" alt="">
 							</div>
 
 							<!-- Card body -->
@@ -1837,7 +1847,7 @@
 							<div class="d-sm-flex align-items-center">
 								<!-- Avatar -->
 								<div class="avatar flex-shrink-0">
-									<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
+									<img class="avatar-img rounded-circle" src="{{asset('public/image/07.jpg')}}" alt="avatar">
 								</div>
 								<!-- Info -->
 								<div class="ms-sm-2 mt-2 mt-sm-0">
