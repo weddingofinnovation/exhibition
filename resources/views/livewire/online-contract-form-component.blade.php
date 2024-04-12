@@ -640,6 +640,12 @@
 			background-color: transparent !important;
 		}
 
+		.avatar-img {
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+		}
 		
 
 </style>
@@ -755,19 +761,19 @@
 								<h6 class="text-white mb-0 me-2">5K+</h6>
 								<ul class="avatar-group mb-0 align-items-center">
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="{{asset('public/image/06.jpg')}}" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/visi1.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="{{asset('public/image/05.jpg')}}" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/visi5.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="{{asset('public/image/02.jpg')}}" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/visi2.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="{{asset('public/image/03.jpg')}}" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/visi3.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="{{asset('public/image/04.jpg')}}" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/visi4.jpg')}}" alt="avatar">
 									</li>
 								</ul>
 							</div>
@@ -841,7 +847,7 @@
 			</div>
 		</section>
 
-        <section class="sectionlevel container-fluid py-5 my-5 py-lg-5  ">
+        <!-- <section class="sectionlevel container-fluid py-5 my-5 py-lg-5  ">
           <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-light bg-danger">
              
@@ -851,7 +857,7 @@
             <small class="col-md-10 col-lg-8 mx-auto lead"></small>            
             <a href="#opening" class="btn btn-lg btn-md-sm btn-outline-primary mb-3">Create</a>
           </div>
-        </section>
+        </section> -->
 
 		<section class="sectionlevel">
 			<div class="container">
