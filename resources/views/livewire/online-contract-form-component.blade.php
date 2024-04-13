@@ -4,7 +4,8 @@
 @section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
 <style>
-	[data-bs-theme=light] {
+	
+:root [data-bs-theme=light] {
 			--bs-blue: #1d3b53;
 			--bs-indigo: #6610f2;
 			--bs-purple: #6f42c1;
@@ -851,8 +852,222 @@
 			
 		}
 		
+		.bi-quote::before {
+    content: "\f6b0";
+}
+.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.nav-pills .nav-link {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: var(--bs-primary);
+    white-space: nowrap;
+}
+.nav-pills .nav-link {
+    border-radius: var(--bs-nav-pills-border-radius);
+}
+.nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: var(--bs-nav-link-color);
+    background: none;
+    border: 0;
+    -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+@media (min-width: 768px)
+{.flex-md-column {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+}}
+
+.gap-1 {
+    gap: 0.25rem !important;
+}
+.nav-pills {
+    --bs-nav-pills-border-radius: 0.313rem;
+    --bs-nav-pills-link-active-color: #fff;
+    --bs-nav-pills-link-active-bg: #09B850;
+}
+
+.nav-pills-primary .nav-link.active, .nav-pills-primary .nav-link:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+.nav-pills-primary .nav-item {
+    padding: 0 !important;
+    margin-right: 2px;
+    margin-left: 2px;
+    border-bottom: 0 !important;
+}
+
+.btn-light {
+    background: var(--bs-light);
+    border-color: var(--bs-light);
+    color: var(--bs-gray-900);
+}
+.btn {
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    outline: 0;
+    margin-bottom: 6px;
+}
+
+.ms-2 {
+    margin-left: 0.5rem !important;
+}
+.fa-solid, .fas {
+    font-weight: 900;
+}
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+    font-family: "Font Awesome 6 Free";
+}
+.fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.nav {
+    --bs-nav-link-padding-x: 0.75rem;
+    --bs-nav-link-padding-y: 1rem;
+    --bs-nav-link-font-size: 0.938rem;
+    --bs-nav-link-font-weight: 500;
+    --bs-nav-link-color: #606261;
+    --bs-nav-link-hover-color: var(--bs-primary);
+    --bs-nav-link-disabled-color: var(--bs-gray-500) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.card-metro-hover {
+    overflow: hidden;
+}
+.card {
+    --bs-card-spacer-y: 1.25rem;
+    --bs-card-spacer-x: 1.25rem;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: var(--bs-gray-900);
+    --bs-card-subtitle-color: ;
+    --bs-card-border-width: 0;
+    --bs-card-border-color: var(--bs-border-color);
+    --bs-card-border-radius: 0.4rem;
+    --bs-card-box-shadow: ;
+    --bs-card-inner-border-radius: 0.4rem;
+    --bs-card-cap-padding-y: 1.25rem;
+    --bs-card-cap-padding-x: 1.25rem;
+    --bs-card-cap-bg: var(--bs-body-bg);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: var(--bs-body-color);
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1.25rem;
+    --bs-card-group-margin: 0.9375rem;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: var(--bs-body-color);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+}
+
+.mt-9{
+	margin-top: 11rem !important;
+}
+
+
+.accordion {
+    --bs-accordion-color: var(--bs-body-color);
+    --bs-accordion-bg: var(--bs-body-bg);
+    --bs-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+    --bs-accordion-border-color: var(--bs-border-color);
+    --bs-accordion-border-width: var(--bs-border-width);
+    --bs-accordion-border-radius: var(--bs-border-radius);
+    --bs-accordion-inner-border-radius: calc(var(--bs-border-radius) -(var(--bs-border-width)));
+    --bs-accordion-btn-padding-x: 1.25rem;
+    --bs-accordion-btn-padding-y: 1rem;
+    --bs-accordion-btn-color: var(--bs-body-color);
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23212529' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e);
+    --bs-accordion-btn-icon-width: 1.25rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
+    --bs-accordion-btn-active-icon: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='var%28--bs-primary%29'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+    --bs-accordion-btn-focus-box-shadow: none;
+    --bs-accordion-body-padding-x: 1.25rem;
+    --bs-accordion-body-padding-y: 1rem;
+    --bs-accordion-active-color: var(--bs-primary);
+    --bs-accordion-active-bg: rgba(var(--bs-primary-rgb), 0.2);
+}
+
+.accordion.accordion-bg-light .accordion-item {
+    border: none;
+    background-color: transparent;
+}
+.accordion .accordion-item {
+    color: var(--bs-body-color);
+}
+.accordion-item:first-of-type {
+    border-top-left-radius: var(--bs-accordion-border-radius);
+    border-top-right-radius: var(--bs-accordion-border-radius);
+}
+.accordion.accordion-bg-light .accordion-item {
+    border: none;
+    background-color: transparent;
+}
+.accordion .accordion-item {
+    color: var(--bs-body-color);
+}
+.accordion-item:first-of-type {
+    border-top-left-radius: var(--bs-accordion-border-radius);
+    border-top-right-radius: var(--bs-accordion-border-radius);
+}
+
+.accordion.accordion-bg-light .accordion-button {
+	background-color: var(--bs-light) !important; 
+    color: var(--bs-gray-900) !important;
+}
 </style>
 
+    
 		<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">
 			<!-- SVG decoration -->
 			<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
@@ -1501,7 +1716,7 @@
 				</div>
 			</div>
 		</section>
-
+   
 		<!-- =======================
 		Main Banner START -->
 		<section class="sectionlevel pt-xl-8 pb-0" data-bs-theme="light">
@@ -1543,7 +1758,7 @@
 
 					<!-- Hero image START -->
 					<div class="col-xl-6 text-center">
-						<img src="assets/images/elements/hero-finance.svg" alt="hero-img">
+						<img src="" alt="hero-img">
 					</div>
 					<!-- Hero image END -->
 				</div>
@@ -2005,12 +2220,12 @@
 
 					<!-- Tab content START -->
 					<div class="col-md-8 col-lg-9">
-						<div class="row g-4 filter-container" data-isotope="{&quot;layoutMode&quot;: &quot;masonry&quot;}" style="position: relative; height: 1833.76px;">
+						<div class="row g-4 filter-container" data-isotope-collection data-isotope="{"layoutMode": "masonry"}" style="position: relative; height: 1833.76px;">
 							<!-- Work item -->
 							<div class="col-sm-6 col-lg-4 grid-item marketing business brand" style="position: absolute; left: 0px; top: 0px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/01.jpg" alt="portfolio-image">  
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  
 
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2027,7 +2242,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item brand ui" style="position: absolute; left: 0px; top: 371px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/04.jpg" alt="portfolio-image">  
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  
 										
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2044,7 +2259,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item business design brand" style="position: absolute; left: 0px; top: 638px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/02.jpg" alt="portfolio-image">  	
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  	
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2061,7 +2276,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item design marketing" style="position: absolute; left: 0px; top: 905px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/05.jpg" alt="portfolio-image">
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2078,7 +2293,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item business design" style="position: absolute; left: 0px; top: 1231px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/06.jpg" alt="portfolio-image"> 
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image"> 
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2095,7 +2310,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item ui" style="position: absolute; left: 0px; top: 1602px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="assets/images/portfolio/masonry/03.jpg" alt="portfolio-image"> 
+									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image"> 
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2121,24 +2336,11 @@
 		<section class="pt-md-0 pb-0" data-bs-theme="light">
 			<div class="container">
 				<div class="bg-primary position-relative rounded p-4 pt-sm-5 px-sm-5 mb-n9">
-					<span class="display-4 heading-color position-absolute top-0 start-0 mt-n4 mt-md-n5 ms-4"><i class="bi bi-quote"></i></span>
-
-					<!-- Slider START -->
-					<div class="swiper overflow-hidden swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
-						autoplay:{
-							delay: 3000, 
-							disableOnInteraction: false
-						},
-						pagination:{
-							el:.swiper-pagination,
-							clickable:true
-						}}">
-
-						<!-- Slider items -->
-						<div class="swiper-wrapper pb-7" id="swiper-wrapper-b9487d6b9e822547" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-450px, 0px, 0px); transition-delay: 0ms;">
-							
-							
-						    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 225px;">
+					<span class="display-4 heading-color position-absolute top-0 start-0 mt-n4 mt-md-n5 ms-4">
+						<i class="bi bi-quote"></i>
+					</span>
+					<!-- <div class="swiper-slide" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 225px;"> -->
+							<div class="swiper-slide" role="group" aria-label="2 / 3" data-swiper-slide-index="1" >
 								<p class="fs-5 text-white mb-0">It consistently delivers accurate and well-crafted responses, saving me a lot of time and effort. Thank you for this invaluable resource!</p>
 
 								<hr class="border-white my-5"> <!-- Divider -->
@@ -2162,15 +2364,9 @@
 									<img src="assets/images/client/04.svg" class="h-40px mt-3 mt-sm-0" alt="Client logo">
 								</div>
 							</div>
-							
-							
-						</div>	
 
-						
-							<!-- Slider Pagination -->
-						<div class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-					<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>				
-					<!-- Slider END -->
+
+					
 				</div>
 			</div>
 		</section>
@@ -2237,7 +2433,7 @@
 						</div>
 
 						<!-- Image -->
-						<img src="{{asset('image/02.jpg')}}" class="rounded" alt="about-img">
+						<img src="{{asset('public/image/04.jpg')}}" class="rounded" alt="about-img">
 					</div>
 
 					<!-- About feature content -->
@@ -2526,7 +2722,7 @@
 
 					<!-- Hero Image -->
 					<div class="col-sm-10 col-lg-5 position-relative px-5 mx-auto">
-						<img src="assets/images/products/hero-img.png" alt="hero-img">
+						<img src="" alt="hero-img">
 
 						<!-- Navigation decoration -->
 						<div class="position-absolute top-0 start-0">
@@ -3016,3 +3212,36 @@
 
 
 </main>
+
+@push('scripts')
+    <script>
+      var slider = tns({
+        "container": '.badgese',   
+        
+        "responsive": {
+          "300": {
+            "items": 3,
+            "controls": false,
+            "fixedWidth": 100,
+            "mouseDrag": true,
+            "autoplay": false,
+            "autoplayButtonOutput": false,
+            "autoplayHoverPause": true,
+          },
+          "500": {
+            "items": 1,
+            "nav": false,
+            "controls": false,
+            "autoplayHoverPause": true,
+            "autoplay": false,
+            "autoplayButtonOutput": false,
+            "fixedWidth": 100,
+          },
+          
+        },
+        "autoplayButtonOutput":false
+      });
+    </script>
+
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+@endpush
