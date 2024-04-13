@@ -1758,7 +1758,7 @@
 					<div class="col-lg-5 mt-7 mt-lg-0">
 						<div class="position-relative d-flex justify-content-center">
 							<!-- Hero image -->
-							<img src="assets/images/about/04.jpg" class="rounded" alt="">
+							<img src="{{asset('public/image/04.jpg')}}" class="rounded" alt="">
 
 							<!-- Trustpilot review START -->
 							<div class="d-inline-block bg-dark shadow  rounded-4 position-absolute end-0 top-0 p-3 mt-n5 me-5" data-bs-theme="dark">
@@ -1771,7 +1771,7 @@
 									</svg>
 								</figure>
 								<!-- Rating -->
-								<img src="assets/images/elements/trustpilot-star.svg" class="h-20px" alt="Rating-img">
+								<img src="{{asset('public/image/trustpilot-star.svg')}}" class="h-20px" alt="Rating-img">
 								<p class="small mb-0 mt-2">Trustpilot score <span class="fw-bold heading-color">4.7 | 27 reviews</span></p>
 							</div>
 							<!-- Trustpilot review END -->
@@ -2125,26 +2125,20 @@
 
 					<!-- Slider START -->
 					<div class="swiper overflow-hidden swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
-						&quot;autoplay&quot;:{
-							&quot;delay&quot;: 3000, 
-							&quot;disableOnInteraction&quot;: false
+						autoplay:{
+							delay: 3000, 
+							disableOnInteraction: false
 						},
-						&quot;pagination&quot;:{
-							&quot;el&quot;:&quot;.swiper-pagination&quot;,
-							&quot;clickable&quot;:&quot;true&quot;
+						pagination:{
+							el:.swiper-pagination,
+							clickable:true
 						}}">
 
 						<!-- Slider items -->
 						<div class="swiper-wrapper pb-7" id="swiper-wrapper-b9487d6b9e822547" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-450px, 0px, 0px); transition-delay: 0ms;">
-							<!-- Slider item -->
-								
-
-							<!-- Slider item -->
 							
 							
-							<!-- Slider item -->
-							
-						<div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 225px;">
+						    <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 3" data-swiper-slide-index="1" style="width: 225px;">
 								<p class="fs-5 text-white mb-0">It consistently delivers accurate and well-crafted responses, saving me a lot of time and effort. Thank you for this invaluable resource!</p>
 
 								<hr class="border-white my-5"> <!-- Divider -->
@@ -2167,55 +2161,13 @@
 									<!-- Logo -->
 									<img src="assets/images/client/04.svg" class="h-40px mt-3 mt-sm-0" alt="Client logo">
 								</div>
-							</div><div class="swiper-slide swiper-slide-prev" role="group" aria-label="3 / 3" data-swiper-slide-index="2" style="width: 225px;">
-								<p class="fs-5 text-white mb-0">The best Bootstrap theme we've ever used - it's easy to customize and comes with all the features we need.</p>
+							</div>
+							
+							
+						</div>	
 
-								<hr class="border-white my-5"> <!-- Divider -->
-
-								<!-- Avatar and logo -->
-								<div class="d-sm-flex justify-content-between">
-									<!-- Avatar info -->
-									<div class="d-sm-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-sm-2 mt-2 mt-sm-0">
-											<h6 class="text-white mb-0">Dennis Barrett</h6>
-											<p class="mb-0 small text-white">Ceo and manager of Blogzine</p>
-										</div>
-									</div>
-
-									<!-- Logo -->
-									<img src="assets/images/client/02.svg" class="h-40px mt-3 mt-sm-0" alt="client logo">
-								</div>
-							</div><div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 3" data-swiper-slide-index="0" style="width: 225px;">
-								<p class="fs-5 text-white mb-0">Your assistance has been incredibly helpful. I appreciate the prompt and insightful responses, which have made my task much easier. Thank you for the great support</p>
-
-								<hr class="border-white my-5"> <!-- Divider -->
-
-								<!-- Avatar and logo -->
-								<div class="d-sm-flex justify-content-between">
-									<!-- Avatar info -->
-									<div class="d-sm-flex align-items-center">
-										<!-- Avatar -->
-										<div class="avatar flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
-										</div>
-										<!-- Info -->
-										<div class="ms-sm-2 mt-2 mt-sm-0">
-											<h6 class="text-white mb-0">Jacqueline Miller</h6>
-											<p class="mb-0 small text-white">Ceo and manager of Blogzine</p>
-										</div>
-									</div>
-
-									<!-- Logo -->
-									<img src="assets/images/client/06.svg" class="h-40px mt-3 mt-sm-0" alt="Client logo">
-								</div>
-							</div></div>	
-
-						<!-- Slider Pagination -->
+						
+							<!-- Slider Pagination -->
 						<div class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3 swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
 					<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>				
 					<!-- Slider END -->
@@ -2253,19 +2205,19 @@
 							<div class="d-flex align-items-center">
 								<ul class="avatar-group mb-0 align-items-center">
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/06.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/05.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/02.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/02.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/03.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/03.jpg')}}" alt="avatar">
 									</li>
 									<li class="avatar avatar-xs">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{{asset('public/image/04.jpg')}}" alt="avatar">
 									</li>
 								</ul>
 								<h6 class="text-white mb-0 ms-2">5K+</h6>
@@ -2285,7 +2237,7 @@
 						</div>
 
 						<!-- Image -->
-						<img src="assets/images/about/05.jpg" class="rounded" alt="about-img">
+						<img src="{{asset('image/02.jpg')}}" class="rounded" alt="about-img">
 					</div>
 
 					<!-- About feature content -->
@@ -2382,21 +2334,21 @@
 			<div class="container">
 				<!-- Title -->
 				<div class="inner-container text-center mb-4 mb-sm-6">
-					<h2 class="mb-0">Our news &amp; articles</h2>
+					<h2 class="mb-0">Our news & articles</h2>
 				</div>
 
 				<!-- Slider START -->
 				<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
-						&quot;spaceBetween&quot;: 30, 
-						&quot;loop&quot;: false,
-						&quot;breakpoints&quot;: {
-							&quot;576&quot;: {&quot;slidesPerView&quot;: 1}, 
-							&quot;768&quot;: {&quot;slidesPerView&quot;: 2}, 
-							&quot;992&quot;: {&quot;slidesPerView&quot;: 3}
+						spaceBetween: 30, 
+						loop: false,
+						breakpoints: {
+							576: {slidesPerView: 1}, 
+							768: {slidesPerView: 2}, 
+							992: {slidesPerView: 3}
 						},
-						&quot;navigation&quot;:{
-							&quot;nextEl&quot;:&quot;.swiper-button-next&quot;,
-							&quot;prevEl&quot;:&quot;.swiper-button-prev&quot;
+						navigation:{
+							nextEl:.swiper-button-next,
+							prevEl:.swiper-button-prev
 						}}">
 
 					<div class="swiper-wrapper" id="swiper-wrapper-2317b9c9a0e3b2103" aria-live="off" style="transition-duration: 300ms; transform: translate3d(-612px, 0px, 0px);">
@@ -2445,35 +2397,7 @@
 							</article>
 						</div>
 
-						<!-- Slider item -->
-						<div class="swiper-slide swiper-slide-next" role="group" aria-label="4 / 5" style="width: 276px; margin-right: 30px;">
-							<article class="card bg-transparent">
-								<!-- Image -->
-								<img src="assets/images/blog/4by3/04.jpg" class="card-img" alt="blog-image">
-								<div class="card-body px-0 pb-0">
-									<h6 class="card-title">Effortless Web Development with Mizzle</h6>
-									<div class="d-flex justify-content-between align-items-center">
-										<p class="mb-0">By Carolyn Ortiz</p>
-										<a class="icon-link icon-link-hover stretched-link me-1" href="blog-single-v2.html">Read more<i class="bi bi-arrow-right"></i> </a>
-									</div>
-								</div>
-							</article>
-						</div>
-
-						<!-- Slider item -->
-						<div class="swiper-slide" role="group" aria-label="5 / 5" style="width: 276px; margin-right: 30px;">
-							<article class="card bg-transparent">
-								<!-- Image -->
-								<img src="assets/images/blog/4by3/05.jpg" class="card-img" alt="blog-image">
-								<div class="card-body px-0 pb-0">
-									<h6 class="card-title">Sleek and Responsive - Designing with Bootstrap and Mizzle</h6>
-									<div class="d-flex justify-content-between align-items-center">
-										<p class="mb-0">By Carolyn Ortiz</p>
-										<a class="icon-link icon-link-hover stretched-link me-1" href="blog-single-v1.html">Read more<i class="bi bi-arrow-right"></i> </a>
-									</div>
-								</div>
-							</article>
-						</div>
+						
 					</div>
 
 					<!-- Add pagination and navigation elements here -->
