@@ -190,16 +190,23 @@
 			color: var(--bs-body-color);
 		}
 
-		.card {
+		[data-bs-theme=dark] .card {
+			--bs-card-cap-bg: var(--bs-mode);
+			--bs-card-bg: var(--bs-mode);
+		}
+
+		/* .card {
 			--bs-card-spacer-y: 1.25rem;
 			--bs-card-spacer-x: 1.25rem;
 			--bs-card-title-spacer-y: 0.5rem;
 			--bs-gray-900: #202124;
+
 			--bs-card-title-color: var(--bs-gray-900);
 			--bs-card-subtitle-color: ;
 			--bs-card-border-width: 0;
 			--bs-gray-200: #dce0e5;
 			--bs-border-color: var(--bs-gray-200);
+
 			--bs-card-border-color: var(--bs-border-color);
 			--bs-card-border-radius: 0.4rem;
 			--bs-card-box-shadow: ;
@@ -231,11 +238,16 @@
 			background-clip: border-box;
 			border: var(--bs-card-border-width) solid var(--bs-card-border-color);
 			border-radius: var(--bs-card-border-radius);
-		}
+		} */
 
 		.card-footer:last-child {
 			border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
 		}
+
+		@media (min-width: 1200px)
+		{.container-xl, .container-lg, .container-md, .container-sm, .container {
+			max-width: 1140px;
+		}}
 
 		@media (min-width: 576px)
 		{.text-sm-start {
@@ -418,8 +430,8 @@
 			font-family: "Instrument Sans", sans-serif;
 			font-weight: 700;
 			line-height: 1.25;
-			--bs-gray-900: #202124;
-			--bs-heading-color: var(--bs-gray-900);
+			/* --bs-gray-900: #202124;
+			--bs-heading-color: var(--bs-gray-900); */
 			color: var(--bs-heading-color);   
 		}
 
@@ -2220,12 +2232,12 @@
 
 					<!-- Tab content START -->
 					<div class="col-md-8 col-lg-9">
-						<div class="row g-4 filter-container" data-isotope-collection data-isotope="{"layoutMode": "masonry"}" style="position: relative; height: 1833.76px;">
+						<div class="row g-4 filter-container" data-isotope-collection data-isotope='{"layoutMode": "masonry"}' style="position: relative; height: 1833.76px;">
 							<!-- Work item -->
 							<div class="col-sm-6 col-lg-4 grid-item marketing business brand" style="position: absolute; left: 0px; top: 0px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  
+									<img src="{{asset('public/image/m01.jpg')}}" alt="portfolio-image">  
 
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2242,7 +2254,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item brand ui" style="position: absolute; left: 0px; top: 371px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  
+									<img src="{{asset('public/image/m02.jpg')}}" alt="portfolio-image">  
 										
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2259,7 +2271,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item business design brand" style="position: absolute; left: 0px; top: 638px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">  	
+									<img src="{{asset('public/image/m03.jpg')}}" alt="portfolio-image">  	
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2276,7 +2288,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item design marketing" style="position: absolute; left: 0px; top: 905px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image">
+									<img src="{{asset('public/image/m04.jpg')}}" alt="portfolio-image">
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2293,7 +2305,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item business design" style="position: absolute; left: 0px; top: 1231px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image"> 
+									<img src="{{asset('public/image/m02.jpg')}}" alt="portfolio-image"> 
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2310,7 +2322,7 @@
 							<div class="col-sm-6 col-lg-4 grid-item ui" style="position: absolute; left: 0px; top: 1602px;">
 								<div class="card card-element-hover card-metro-hover">
 									<!-- Card Image -->              
-									<img src="{{asset('image/01.jpg')}}" alt="portfolio-image"> 
+									<img src="{{asset('public/image/m01.jpg')}}" alt="portfolio-image"> 
 									
 									<!-- Card elements -->
 									<div class="card-img-overlay hover-element d-flex"> 
@@ -2351,7 +2363,7 @@
 									<div class="d-sm-flex align-items-center">
 										<!-- Avatar -->
 										<div class="avatar flex-shrink-0">
-											<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
+											<img class="avatar-img rounded-circle" src="{{asset('public/image/07.jpg')}}" alt="avatar">
 										</div>
 										<!-- Info -->
 										<div class="ms-sm-2 mt-2 mt-sm-0">
@@ -2361,7 +2373,7 @@
 									</div>
 
 									<!-- Logo -->
-									<img src="assets/images/client/04.svg" class="h-40px mt-3 mt-sm-0" alt="Client logo">
+									<img src="{{asset('public/image/04.svg')}}" class="h-40px mt-3 mt-sm-0" alt="Client logo">
 								</div>
 							</div>
 
@@ -2526,7 +2538,7 @@
 
 		<!-- =======================
 		Blog START -->
-		<section class="pb-0" data-bs-theme="light">
+		<section class="pb-0 sectionlevel" data-bs-theme="light">
 			<div class="container">
 				<!-- Title -->
 				<div class="inner-container text-center mb-4 mb-sm-6">
