@@ -244,10 +244,10 @@
 			border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
 		}
 
-		@media (min-width: 1200px)
+		/* @media (min-width: 1200px)
 		{.container-xl, .container-lg, .container-md, .container-sm, .container {
 			max-width: 1140px;
-		}}
+		}} */
 
 		@media (min-width: 576px)
 		{.text-sm-start {
