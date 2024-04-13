@@ -249,6 +249,15 @@
 			max-width: 1140px;
 		}} */
 
+
+		@media (min-width: 1200px)
+		.col-xl-5 {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+			width: 41.66666667%;
+		}
+		
 		@media (min-width: 576px)
 		{.text-sm-start {
 			text-align: left !important;
