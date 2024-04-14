@@ -261,7 +261,7 @@
     </div>
 
     <div class="container">
-    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitColums"}'>
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "masonry"}'>
 
       <div class="grid-item grid-item--width2">1</div>
       <div class="grid-item grid-item--height2">2</div>
@@ -296,7 +296,7 @@
       </div>
 
       <h2>Sort</h2>
-      <div id="sorts" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
+      <div id="sortso" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
         <button class="button" data-sort-by="name">name</button>
         <button class="button" data-sort-by="symbol">symbol</button>
         <button class="button" data-sort-by="number">number</button>
@@ -489,8 +489,10 @@
             }
           }
         });
+      </script>
 
         // filter functions
+        <script type="text/javascript">
         var filterFns = {
           // show if number is greater than 50
           numberGreaterThan50: function() {
@@ -503,7 +505,8 @@
             return name.match( /ium$/ );
           }
         };
-
+        </script>
+         <script type="text/javascript">
         // bind filter button click
         $('#filters').on( 'click', 'button', function() {
           var filterValue = $( this ).attr('data-filter');
@@ -511,13 +514,15 @@
           filterValue = filterFns[ filterValue ] || filterValue;
           $grid.isotope({ filter: filterValue });
         });
-
+        </script>
+         <script type="text/javascript">
         // bind sort button click
-        $('#sorts').on( 'click', 'button', function() {
+        $('#sortso').on( 'click', 'button', function() {
           var sortByValue = $(this).attr('data-sort-by');
           $grid.isotope({ sortBy: sortByValue });
         });
-
+        </script>
+         <script type="text/javascript">
         // change is-checked class on buttons
         $('.button-group').each( function( i, buttonGroup ) {
           var $buttonGroup = $( buttonGroup );
