@@ -36,8 +36,8 @@
     <link rel="stylesheet" media="screen" href="{{asset('css/lightgallery.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/theme.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/swiper-bundle.min.css')}}">
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
     @livewireStyles
   </head>
  
@@ -80,8 +80,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>  
     
     <script src="{{asset('js/isotope.pkgd.min.js')}}"></script> 
-    
-    
+    <script src="{{asset('js/isotope.pkgd.js')}}"></script> 
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
     
     <script type="application/ld+json">

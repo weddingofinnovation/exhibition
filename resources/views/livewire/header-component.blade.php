@@ -1076,6 +1076,39 @@
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
+
+                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Exhibition Navigator</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
+                      </a>
+
+                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Fabrication</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
+                      </a>
+
+                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Find Exhibitor</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                       <div class="col-10 mb-1 small fw-lighter">Download Exhibitory Directory</div>
+                      </a>
+
+                      <a href="{{route('service.product', ['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Great Exhibition To Exhibit</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                       <div class="col-10 mb-1 small fw-lighter">Review & Rating</div>
+                      </a>
+
                       @if(Auth::check())
                         <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                           <div class="d-flex w-100 align-items-center justify-content-between">

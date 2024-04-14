@@ -267,8 +267,7 @@ Route::get('/sell-your-business', SellyourbusinessComponent::class)->name('sell.
 Route::get('/expand-your-business', ExpandyourbusinessComponent::class)->name('expand.business');
 Route::get('/buy-a-brand-license', BuyabrandlicenseComponent::class)->name('buy.license');
 Route::get('/business-design-strategy', BusinessDesignStrategyComponent::class)->name('design.strategy');
-
-Route::get('/online-contract-form', OnlineContractFormComponent::class)->name('service.contract');
+Route::get('/product/{productservice}', OnlineContractFormComponent::class)->name('service.product');
 
 //company details
 Route::get('/career', CareerComponent::class)->name('career');

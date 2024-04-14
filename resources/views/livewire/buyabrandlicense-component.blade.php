@@ -261,7 +261,7 @@
     </div>
 
     <div class="container">
-    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitColums"}'>
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "masonry"}'>
 
       <div class="grid-item grid-item--width2">1</div>
       <div class="grid-item grid-item--height2">2</div>
@@ -423,7 +423,7 @@
     
       <script type="text/javascript" src="{{asset('js/isotope.pkgd.min.js')}}">
         $(document).ready(function(){ 
-          $(".grido").isotope({
+          var grid = $('.grido').isotope({
           itemSelector: '.element-item',
           layoutMode: 'masonry',
           getSortData: {
