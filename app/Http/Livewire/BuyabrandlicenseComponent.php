@@ -22,6 +22,6 @@ class BuyabrandlicenseComponent extends Component
 
     public function render()
     {
-        return view('livewire.buyabrandlicense-component');
+        return view('livewire.buyabrandlicense-component')->layout('layouts.eblog');
     }
 }
