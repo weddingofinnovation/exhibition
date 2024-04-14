@@ -422,7 +422,7 @@
      
     
       <script type="text/javascript">
-        var $grid = $('.grido').isotope({
+        $grido.isotope({
           itemSelector: '.element-item',
           layoutMode: 'masonry',
           getSortData: {
