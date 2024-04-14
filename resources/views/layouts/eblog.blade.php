@@ -79,7 +79,7 @@
     <script src="{{asset('js/theme.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>  
     
-    
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script> 
     
     
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>

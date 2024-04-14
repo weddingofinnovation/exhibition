@@ -421,8 +421,9 @@
   @push('scripts')
      
     
-      <script type="text/javascript">
-        var$grid = $('.grido').isotope({
+      <script type="text/javascript" src="{{asset('js/isotope.pkgd.min.js')}}">
+        $(document).ready(function(){ 
+          $(".grido").isotope({
           itemSelector: '.element-item',
           layoutMode: 'masonry',
           getSortData: {
@@ -436,9 +437,8 @@
             }
           }
         });
-
-        // filter functions
-        var filterFns = {
+         // filter functions
+         var filterFns = {
           // show if number is greater than 50
           numberGreaterThan50: function() {
             var number = $(this).find('.number').text();
@@ -472,6 +472,11 @@
             $buttonGroup.find('.is-checked').removeClass('is-checked');
             $( this ).addClass('is-checked');
           });
+
+      });
+
+       
+       
 });
   
       </script>
