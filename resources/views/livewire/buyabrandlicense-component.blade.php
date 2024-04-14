@@ -261,7 +261,7 @@
     </div>
 
     <div class="container">
-    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "masonry"}'>
+    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "fitColums"}'>
 
       <div class="grid-item grid-item--width2">1</div>
       <div class="grid-item grid-item--height2">2</div>
@@ -296,7 +296,7 @@
       </div>
 
       <h2>Sort</h2>
-      <div id="sortso" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
+      <div id="sorts" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
         <button class="button" data-sort-by="name">name</button>
         <button class="button" data-sort-by="symbol">symbol</button>
         <button class="button" data-sort-by="number">number</button>
@@ -422,59 +422,6 @@
      
     
       <script type="text/javascript">
-        
-        var $grid = $('.grid').isotope({
-          itemSelector: '.grid-item',
-          layoutMode: 'masonry',
-          masonry: {
-            columnWidth: 110
-          },
-          cellsByRow: {
-            columnWidth: 220,
-            rowHeight: 220
-          },
-          masonryHorizontal: {
-            rowHeight: 110
-          },
-          cellsByColumn: {
-            columnWidth: 220,
-            rowHeight: 220
-          }
-        });
-
-        var isHorizontal = false;
-        var $window = $( window );
-
-        $('.layout-mode-button-group').on( 'click', 'button', function() {
-          // adjust container sizing if layout mode is changing from vertical or horizontal
-          var $this = $(this);
-          var isHorizontalMode = !!$this.attr('data-is-horizontal');
-          if ( isHorizontal !== isHorizontalMode ) {
-            // change container size if horiz/vert change
-            var containerStyle = isHorizontalMode ? {
-              height: $window.height() * 0.7
-            } : {
-              width: 'auto'
-            };
-            $grid.css( containerStyle );
-            isHorizontal = isHorizontalMode;
-          }
-          // change layout mode
-          var layoutModeValue = $this.attr('data-layout-mode');
-          $grid.isotope({ layoutMode: layoutModeValue });
-        });  
-
-        // change is-checked class on buttons
-        $('.button-group').each( function( i, buttonGroup ) {
-          var $buttonGroup = $( buttonGroup );
-          $buttonGroup.on( 'click', 'button', function() {
-            $buttonGroup.find('.is-checked').removeClass('is-checked');
-            $( this ).addClass('is-checked');
-          });
-        });
-      </script>
-
-      <script type="text/javascript">
         var $grid = $('.grido').isotope({
           itemSelector: '.element-item',
           layoutMode: 'masonry',
@@ -489,10 +436,8 @@
             }
           }
         });
-      </script>
 
         // filter functions
-        <script type="text/javascript">
         var filterFns = {
           // show if number is greater than 50
           numberGreaterThan50: function() {
@@ -505,8 +450,7 @@
             return name.match( /ium$/ );
           }
         };
-        </script>
-         <script type="text/javascript">
+
         // bind filter button click
         $('#filters').on( 'click', 'button', function() {
           var filterValue = $( this ).attr('data-filter');
@@ -514,15 +458,13 @@
           filterValue = filterFns[ filterValue ] || filterValue;
           $grid.isotope({ filter: filterValue });
         });
-        </script>
-         <script type="text/javascript">
+
         // bind sort button click
-        $('#sortso').on( 'click', 'button', function() {
+        $('#sorts').on( 'click', 'button', function() {
           var sortByValue = $(this).attr('data-sort-by');
           $grid.isotope({ sortBy: sortByValue });
         });
-        </script>
-         <script type="text/javascript">
+
         // change is-checked class on buttons
         $('.button-group').each( function( i, buttonGroup ) {
           var $buttonGroup = $( buttonGroup );
@@ -530,7 +472,7 @@
             $buttonGroup.find('.is-checked').removeClass('is-checked');
             $( this ).addClass('is-checked');
           });
-        });
+});
   
       </script>
   @endpush
