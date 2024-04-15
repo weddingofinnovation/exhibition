@@ -754,20 +754,21 @@
                 </div>
 
                 <div>
-                <div class="d-flex align-items-center">
-                <button class="btn-close text-danger" type="button" aria-label="Remove">
+                      <button class="btn-close text-danger" type="button" aria-label="Remove">
                         <span aria-hidden="true"> &times;</span>
                       </button>
-                  <a href="" class="flex-shrink-0">
-                    <img src="" alt=""width="64">
-                  </a>
-                  <div class="ps-2">
-                    <h6 class="widget-product-title"><a href="">test</a></h6>
-                    <div class="widget-product-meta">
-                      <span class="text-accent me-2"> test<small>cjec</small></span>
+                  <div class="d-flex align-items-center">
+                  
+                    <a href="" class="flex-shrink-0">
+                      <img src="" alt=""width="64">
+                    </a>
+                    <div class="ps-2">
+                      <h6 class="widget-product-title"><a href="">test</a></h6>
+                      <div class="widget-product-meta">
+                        <span class="text-accent me-2"> test<small>cjec</small></span>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
                 
                 <div>
@@ -789,6 +790,7 @@
               <!-- membership -->
               <div class="widget widget-cart">
                 <h3 class="widget-title">Membership</h3>
+                
                 <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
                 
                   <!--item-->
