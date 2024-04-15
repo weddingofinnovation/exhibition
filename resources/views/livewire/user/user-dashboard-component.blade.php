@@ -149,6 +149,145 @@
     </style>
 
     @if($board == 'dashboard')   
+        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+          <div class="container">
+            <p class="text-center">Choose your Event</p>
+            <small class="text-center">Find and Active your Event</small>
+                <div class="container mt-5">
+                            <!-- <input type="text" class="form-control" placeholder="search" > -->
+                            <form action="" wire:submit.prevent="searchbackup">
+                                <div class="input-group flex-nowrap">
+                                <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                                <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
+                                <button class="btn btn-primary" type="submit" name=""> Search</button>
+                                </div>
+                            </form>
+
+                            <div class="row mb-5 pb-2">
+                              @if(is_null($searchTerm))
+
+                                <div class="container  small">
+                                  Expand your Business Reach with us.
+                                </div>  
+
+                              @else
+                                @foreach ($searchCat as $franchise) 
+                                  <div class="container mt-2">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                      <div class="col  pr-0">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                              <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                              <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                            @else
+                                              <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                                          @endif 
+                                          @php 
+                                            $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                            $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                            $name = $franchise->eventname;
+                                            $venue = $franchise->venue;
+                                            $city = $franchise->city;
+                                            $country = $franchise->country;
+                                            $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                            
+                                          @endphp
+                                            
+                                              <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                      </div>
+
+                                      <div class="col-4  p-0">
+                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                        <div class="text-muted fs-sm text-start">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @endif 
+                                        </div>  
+                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                      </div>
+
+                                      <div class="col-3  p-0">
+                                        <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                      </div>
+
+                                      <div class="col-3  p-0">
+                                          <a href="" class="btn btn-sm btn-primary">Choose</a>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                                @endforeach
+                              @endif
+                            </div>
+                        </div>
+          </div>
+        </section>
+
+        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+          <div class="container">
+            <p class="text-center">Share your Contact Details</p>
+            <div class="row gx-4 gy-3">
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-fn">First Name</label>
+                                <input class="form-control" type="text" id="dashboard-fn" value="John">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-ln">Last Name</label>
+                                <input class="form-control" type="text" id="dashboard-ln" value="Doe">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-email">Email address</label>
+                                <input class="form-control" type="text" id="dashboard-email" value="contact@example.com" disabled="">
+                              </div>
+                              
+                             
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-country">Designation</label>
+                                <select class="form-select" id="dashboard-country">
+                                  <option value="">Select country</option>
+                                  <option value="Argentina">FOunder</option>
+                                  <option value="Belgium">Belgium</option>
+                                  <option value="France">France</option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Madagascar" selected="">Madagascar</option>
+                                  <option value="Spain">Spain</option>
+                                  <option value="UK">United Kingdom</option>
+                                  <option value="USA">USA</option>
+                                </select>
+                              </div>
+                              
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-city">Phone</label>
+                                <input class="form-control" type="text" id="dashboard-city" value="Antananarivo">
+                              </div>
+
+                              <div class="col-12">
+                                <hr class="mt-2 mb-4">
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="freelancer" checked="">
+                                    <label class="form-check-label" for="freelancer">I'm available for freelance</label>
+                                  </div>
+                                  <button class="btn btn-primary mt-3 mt-sm-0" type="button">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+          </div>
+        </section>
+
+        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+          <div class="container">
+            <p class="text-center">Your Contract Form Details</p>
+            <div class="small text-center"> Unique code :</div>
+            <div class="small text-center"> Event Code :</div>
+            <div class="small text-center">Contract Form Link :</div>
+          </div>
+        </section>
     
         <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
           <div class="container mb-5 pb-3">
@@ -162,22 +301,32 @@
                       <div class="h-100 border-end mb-2">
                         <div class="d-lg-block collapse" id="account-menu">
                           <div class="bg-secondary p-4">
-                            <h3 class="fs-sm mb-0 text-muted">Account</h3>
+                            <h3 class="fs-sm mb-0 text-muted">Directory Details</h3>
                           </div>
+
                           <ul class="list-unstyled mb-0">
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3 active" href="dashboard-settings.html"><i class="ci-settings opacity-60 me-2"></i>Settings</a></li>
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-purchases.html"><i class="ci-basket opacity-60 me-2"></i>Purchases</a></li>
-                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-favorites.html"><i class="ci-heart opacity-60 me-2"></i>Favorites<span class="fs-sm text-muted ms-auto">4</span></a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3 active" href="dashboard-settings.html">
+                              <i class="ci-settings opacity-60 me-2"></i>Basic Info</a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-purchases.html">
+                              <i class="ci-basket opacity-60 me-2"></i>Contact Details</a></li>
+                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-favorites.html">
+                              <i class="ci-heart opacity-60 me-2"></i>Category<span class="fs-sm text-muted ms-auto">4</span></a></li>
                           </ul>
+
                           <div class="bg-secondary p-4">
-                            <h3 class="fs-sm mb-0 text-muted">Seller Dashboard</h3>
+                            <h3 class="fs-sm mb-0 text-muted">Contrat Form</h3>
                           </div>
                           <ul class="list-unstyled mb-0">
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-sm text-muted ms-auto">$1,375.00</span></a></li>
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-products.html"><i class="ci-package opacity-60 me-2"></i>Products<span class="fs-sm text-muted ms-auto">5</span></a></li>
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-add-new-product.html"><i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a></li>
-                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-payouts.html"><i class="ci-currency-exchange opacity-60 me-2"></i>Payouts</a></li>
-                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="account-signin.html"><i class="ci-sign-out opacity-60 me-2"></i>Sign out</a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-sales.html">
+                              <i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-sm text-muted ms-auto">$1,375.00</span></a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-products.html">
+                              <i class="ci-package opacity-60 me-2"></i>Products<span class="fs-sm text-muted ms-auto">5</span></a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-add-new-product.html">
+                              <i class="ci-cloud-upload opacity-60 me-2"></i>Add New Event</a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-payouts.html">
+                              <i class="ci-currency-exchange opacity-60 me-2"></i>Payouts</a></li>
+                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="account-signin.html">
+                              <i class="ci-sign-out opacity-60 me-2"></i>Sign out</a></li>
                           </ul>
                           <hr>
                         </div>
@@ -709,7 +858,7 @@
             </div>
 
             <!-- Event -->
-            <div class="card border-0 shadow mb-3">
+            <!-- <div class="card border-0 shadow mb-3">
               <div class="card-header">
                 Post your Event
               </div>
@@ -720,10 +869,10 @@
                 <p  class="card-text fs-sm text-muted"> list your magazine potential space, at right time, right place with right people  </p>
                 <a href="" class="btn btn-sm btn-primary">Add</a>
               </div>
-            </div>
+            </div> -->
 
             <!-- magazine -->
-            <div class="card border-0 shadow mb-3">
+            <!-- <div class="card border-0 shadow mb-3">
               <div class="card-header">
                 Create a showcase magazine
               </div>
@@ -734,10 +883,10 @@
                 <p  class="card-text fs-sm text-muted"> Add more details about your event</p>
                 <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-sm btn-primary">Add</a>
               </div>
-            </div>
+            </div> -->
 
             <!-- email Campaign -->
-            <div class="card border-0 shadow mb-3">
+            <!-- <div class="card border-0 shadow mb-3">
               <div class="card-header">
               Post an Email
               </div>
@@ -746,7 +895,32 @@
                 <p  class="card-text fs-sm text-muted">reach more, Our Data, Your Customer</p>
                 <a href="" class="btn btn-sm btn-primary">Add</a>
               </div>
-            </div>
+            </div> -->
+            <div class="container">
+              <div class="grido">
+                
+                <div class="element-item diatomic nonmetal " data-category="diatomic">
+                  <h3 class="name">Event</h3>
+                  <p class="symbol">Add</p>
+                  <p class="number">7</p>
+                  <p class="weight">14.007</p>
+                </div>
+
+                <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+                  <h3 class="name">Magazine</h3>
+                  <p class="symbol">Add</p>
+                  <p class="number">92</p>
+                  <p class="weight">238.029</p>
+                </div>
+
+                <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+                  <h3 class="name">Dealer Distribution</h3>
+                  <p class="symbol">Add</p>
+                  <p class="number">94</p>
+                  <p class="weight">(244)</p>
+                </div>
+              </div>
+          </div>
         </section>
     
     @endif

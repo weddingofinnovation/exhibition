@@ -293,6 +293,22 @@ class UserDashboardComponent extends Component
         $claiming->save();
     }
     
+    
+
+    public function searchbackup()
+    {
+        $saveSearchTerm = new Viewso();
+        $saveSearchTerm->search = $this->searchTerm;
+        if (Auth::check()) 
+        { $saveSearchTerm->user_id = Auth::user()->id; }
+        else
+        { $saveSearchTerm->user_id = NULL ; }
+
+       
+        $saveSearchTerm->save();
+    }
+
+
     public function render()
     {
         $appliedapplication = Order::where('user_id', Auth::user()->id)->count();
@@ -322,7 +338,15 @@ class UserDashboardComponent extends Component
         //updating the sections 06feb2024
         $userCategory = Denco::where('user_id', Auth::user()->id)->get();            
 
-        return view('livewire.user.user-dashboard-component',['userCategory' => $userCategory,'userinfo' => $userinfo,'userDetails' => $userDetails,'userEvent' => $userEvent, 'searchBrandcat'=> $searchBrandcat, 'selectedcategory'=> $selectedcategory,'eventoo'=> $eventoo,'appliedapplication' => $appliedapplication, 'infos' => $infos,'newuser' => $newuser,'abc' => $abc])->layout('layouts.app');
+        $searchTerm = '%'.$this->searchTerm. '%';
+
+        $searchcat = Expo::where('tag','LIKE', $searchTerm)
+        ->where('status','1')->where('type','tag')->orderBy('tag','ASC')->get();
+
+        $allcategory = Category::get();
+        $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+
+        return view('livewire.user.user-dashboard-component',['searchCat' => $searchCat ,'searchcat' => $searchcat , 'allcategory' => $allcategory, 'userCategory' => $userCategory,'userinfo' => $userinfo,'userDetails' => $userDetails,'userEvent' => $userEvent, 'searchBrandcat'=> $searchBrandcat, 'selectedcategory'=> $selectedcategory,'eventoo'=> $eventoo,'appliedapplication' => $appliedapplication, 'infos' => $infos,'newuser' => $newuser,'abc' => $abc])->layout('layouts.app');
         
     }
 }
