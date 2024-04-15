@@ -1060,14 +1060,22 @@
                   <div class="offcanvas-header">
                     <div class="offcanvas-title fs-sm">
                       <a href="{{route('coievent.add', ['board' => 'add-your-event'])}}">
-                          twitter your Show <br>
+                          Add your Event <br>
                           <span class="fs-sm fw-lighter">Got an event? Partner with us</span>
                       </a>
                     </div>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
                   </div>
                 
+                  
                   <div class="list-group list-group-flush scrollarea">
+                      <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Dashboard</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
+                      </a>
 
                       <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
@@ -1076,6 +1084,7 @@
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
+                      
 
                       <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">

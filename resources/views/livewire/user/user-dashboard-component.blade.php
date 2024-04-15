@@ -4,8 +4,752 @@
 @section('content_keyword', 'Sell', 'Business', 'expansion')
 
     <main>
-   
 
+    <style>
+    
+      * { box-sizing: border-box; }
+
+        body {
+          font-family: sans-serif;
+        }
+
+        /* ---- button ---- */
+
+        .button {
+          display: inline-block;
+          padding: 0.5em 1.0em;
+          background: #EEE;
+          border: none;
+          border-radius: 7px;
+          background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+          color: #222;
+          font-family: sans-serif;
+          font-size: 16px;
+          text-shadow: 0 1px white;
+          cursor: pointer;
+        }
+
+        .button:hover {
+          background-color: #8CF;
+          text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+          color: #222;
+        }
+
+        .button:active,
+        .button.is-checked {
+          background-color: #28F;
+        }
+
+        .button.is-checked {
+          color: white;
+          text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+        }
+
+        .button:active {
+          box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+        }
+
+        /* ---- button-group ---- */
+
+        .button-group {
+          margin-bottom: 20px;
+        }
+
+        .button-group:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        .button-group .button {
+          float: left;
+          border-radius: 0;
+          margin-left: 0;
+          margin-right: 1px;
+        }
+
+        .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+        .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+
+        /* ---- isotope ---- */
+
+        .grid {
+          border: 1px solid #333;
+        }
+
+        /* clear fix */
+        .grid:after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+
+        /* ---- .element-item ---- */
+
+        .element-item {
+          position: relative;
+          float: left;
+          width: 100px;
+          height: 100px;
+          margin: 5px;
+          padding: 10px;
+          background: #888;
+          color: #262524;
+        }
+
+        .element-item > * {
+          margin: 0;
+          padding: 0;
+        }
+
+        .element-item .name {
+          position: absolute;
+
+          left: 10px;
+          top: 60px;
+          text-transform: none;
+          letter-spacing: 0;
+          font-size: 12px;
+          font-weight: normal;
+        }
+
+        .element-item .symbol {
+          position: absolute;
+          left: 10px;
+          top: 0px;
+          font-size: 42px;
+          font-weight: bold;
+          color: white;
+        }
+
+        .element-item .number {
+          position: absolute;
+          right: 8px;
+          top: 5px;
+        }
+
+        .element-item .weight {
+          position: absolute;
+          left: 10px;
+          top: 76px;
+          font-size: 12px;
+        }
+
+        .element-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
+        .element-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
+        .element-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
+        .element-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
+        .element-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
+        .element-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
+        .element-item.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
+        .element-item.diatomic        { background: #00F; background: hsl( 252, 100%, 50%); }
+        .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
+        .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
+
+    </style>
+
+    @if($board == 'dashboard')   
+    
+        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+          <div class="container mb-5 pb-3">
+                <div class="bg-light shadow-lg rounded-3 overflow-hidden">
+                  <div class="row">
+                    <!-- Sidebar-->
+                    <aside class="col-lg-4 pe-xl-5">
+                      <!-- Account menu toggler (hidden on screens larger 992px)-->
+                      <div class="d-block d-lg-none p-4"><a class="btn btn-outline-accent d-block" href="#account-menu" data-bs-toggle="collapse"><i class="ci-menu me-2"></i>Account menu</a></div>
+                      <!-- Actual menu-->
+                      <div class="h-100 border-end mb-2">
+                        <div class="d-lg-block collapse" id="account-menu">
+                          <div class="bg-secondary p-4">
+                            <h3 class="fs-sm mb-0 text-muted">Account</h3>
+                          </div>
+                          <ul class="list-unstyled mb-0">
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3 active" href="dashboard-settings.html"><i class="ci-settings opacity-60 me-2"></i>Settings</a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-purchases.html"><i class="ci-basket opacity-60 me-2"></i>Purchases</a></li>
+                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-favorites.html"><i class="ci-heart opacity-60 me-2"></i>Favorites<span class="fs-sm text-muted ms-auto">4</span></a></li>
+                          </ul>
+                          <div class="bg-secondary p-4">
+                            <h3 class="fs-sm mb-0 text-muted">Seller Dashboard</h3>
+                          </div>
+                          <ul class="list-unstyled mb-0">
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-sm text-muted ms-auto">$1,375.00</span></a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-products.html"><i class="ci-package opacity-60 me-2"></i>Products<span class="fs-sm text-muted ms-auto">5</span></a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-add-new-product.html"><i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a></li>
+                            <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-payouts.html"><i class="ci-currency-exchange opacity-60 me-2"></i>Payouts</a></li>
+                            <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="account-signin.html"><i class="ci-sign-out opacity-60 me-2"></i>Sign out</a></li>
+                          </ul>
+                          <hr>
+                        </div>
+                      </div>
+                    </aside>
+                    <!-- Content-->
+                    <section class="col-lg-8 pt-lg-4 pb-4 mb-3">
+                      <div class="pt-2 px-4 ps-lg-0 pe-xl-5">
+                        <h2 class="h3 py-2 text-center text-sm-start">Settings</h2>
+                        <!-- Tabs-->
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                          <li class="nav-item" role="presentation"><a class="nav-link px-0 active" href="#profile" data-bs-toggle="tab" role="tab" aria-selected="true">
+                              <div class="d-none d-lg-block"><i class="ci-user opacity-60 me-2"></i>Profile</div>
+                              <div class="d-lg-none text-center"><i class="ci-user opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Profile</span></div></a></li>
+                          <li class="nav-item" role="presentation"><a class="nav-link px-0" href="#notifications" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">
+                              <div class="d-none d-lg-block"><i class="ci-bell opacity-60 me-2"></i>Notifications</div>
+                              <div class="d-lg-none text-center"><i class="ci-bell opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Notifications</span></div></a></li>
+                          <li class="nav-item" role="presentation"><a class="nav-link px-0" href="#payment" data-bs-toggle="tab" role="tab" aria-selected="false" tabindex="-1">
+                              <div class="d-none d-lg-block"><i class="ci-card opacity-60 me-2"></i>Payment methods</div>
+                              <div class="d-lg-none text-center"><i class="ci-card opacity-60 d-block fs-xl mb-2"></i><span class="fs-ms">Payment</span></div></a></li>
+                        </ul>
+                        <!-- Tab content-->
+                        <div class="tab-content">
+                          <!-- Profile-->
+                          <div class="tab-pane fade show active" id="profile" role="tabpanel">
+                            <div class="bg-secondary rounded-3 p-4 mb-4">
+                              <div class="d-flex align-items-center"><img class="rounded" src="img/marketplace/account/avatar.png" width="90" alt="Createx Studio">
+                                <div class="ps-3">
+                                  <button class="btn btn-light btn-shadow btn-sm mb-2" type="button"><i class="ci-loading me-2"></i>Change <span class="d-none d-sm-inline">avatar</span></button>
+                                  <div class="p mb-0 fs-ms text-muted">Upload JPG, GIF or PNG image. 300 x 300 required.</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row gx-4 gy-3">
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-fn">First Name</label>
+                                <input class="form-control" type="text" id="dashboard-fn" value="John">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-ln">Last Name</label>
+                                <input class="form-control" type="text" id="dashboard-ln" value="Doe">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-email">Email address</label>
+                                <input class="form-control" type="text" id="dashboard-email" value="contact@example.com" disabled="">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-profile-name">Profile Name</label>
+                                <input class="form-control" type="text" id="dashboard-profile-name" value="Createx Studio">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-country">Country</label>
+                                <select class="form-select" id="dashboard-country">
+                                  <option value="">Select country</option>
+                                  <option value="Argentina">Argentina</option>
+                                  <option value="Belgium">Belgium</option>
+                                  <option value="France">France</option>
+                                  <option value="Germany">Germany</option>
+                                  <option value="Madagascar" selected="">Madagascar</option>
+                                  <option value="Spain">Spain</option>
+                                  <option value="UK">United Kingdom</option>
+                                  <option value="USA">USA</option>
+                                </select>
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-city">City</label>
+                                <input class="form-control" type="text" id="dashboard-city" value="Antananarivo">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-address">Address Line</label>
+                                <input class="form-control" type="text" id="dashboard-address" value="Some Cool Street, 22/1">
+                              </div>
+                              <div class="col-sm-6">
+                                <label class="form-label" for="dashboard-zip">ZIP Code</label>
+                                <input class="form-control" type="text" id="dashboard-zip">
+                              </div>
+                              <div class="col-12">
+                                <hr class="mt-2 mb-4">
+                                <div class="d-sm-flex justify-content-between align-items-center">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="freelancer" checked="">
+                                    <label class="form-check-label" for="freelancer">I'm available for freelance</label>
+                                  </div>
+                                  <button class="btn btn-primary mt-3 mt-sm-0" type="button">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Notifications-->
+                          <div class="tab-pane fade" id="notifications" role="tabpanel">
+                            <div class="bg-secondary rounded-3 p-4">
+                              <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="nf-disable-all" data-master-checkbox-for="#notifocation-settings">
+                                <label class="form-check-label fw-medium" for="nf-disable-all">Enable/disable all notifications</label>
+                              </div>
+                            </div>
+                            <div id="notifocation-settings">
+                              <div class="border-bottom p-4">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="nf-product-sold" checked="">
+                                  <label class="form-check-label" for="nf-product-sold">Product sold notifications</label>
+                                </div>
+                                <div class="form-text">Send an email when someone purchased one of my products</div>
+                              </div>
+                              <div class="border-bottom p-4">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="nf-product-updated" checked="">
+                                  <label class="form-check-label" for="nf-product-updated">Product update notifications</label>
+                                </div>
+                                <div class="form-text">Send an email when a product I've purchased is updated</div>
+                              </div>
+                              <div class="border-bottom p-4">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="nf-product-comment" checked="">
+                                  <label class="form-check-label" for="nf-product-comment">Product comment notifications</label>
+                                </div>
+                                <div class="form-text">Send an email when someone comments on one of my products</div>
+                              </div>
+                              <div class="border-bottom p-4">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="nf-product-review" checked="">
+                                  <label class="form-check-label" for="nf-product-review">Product review notification</label>
+                                </div>
+                                <div class="form-text">Send an email when someone leaves a review with their rating</div>
+                              </div>
+                              <div class="border-bottom p-4">
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="nf-daily-summary">
+                                  <label class="form-check-label" for="nf-daily-summary">Daily summary emails</label>
+                                </div>
+                                <div class="form-text">Send me a daily summary of all products sold, commented or reviewed</div>
+                              </div>
+                            </div>
+                            <div class="text-sm-end mt-4">
+                              <button class="btn btn-primary" type="button">Save changes</button>
+                            </div>
+                          </div>
+                          <!-- Payment methods-->
+                          <div class="tab-pane fade" id="payment" role="tabpanel">
+                            <div class="bg-secondary rounded-3 p-4 mb-4">
+                              <p class="fs-sm text-muted mb-0">Primary payment method is used by default</p>
+                            </div>
+                            <div class="table-responsive fs-md mb-4">
+                              <table class="table table-hover mb-0">
+                                <thead>
+                                  <tr>
+                                    <th>Your credit / debit cards</th>
+                                    <th>Name on card</th>
+                                    <th>Expires on</th>
+                                    <th></th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="py-3 align-middle">
+                                      <div class="d-flex align-items-center"><img src="img/card-visa.png" width="39" alt="Visa">
+                                        <div class="ps-2"><span class="fw-medium text-heading me-1">Visa</span>ending in 4999<span class="align-middle badge badge-info ms-2">Primary</span></div>
+                                      </div>
+                                    </td>
+                                    <td class="py-3 align-middle">John doe</td>
+                                    <td class="py-3 align-middle">08 / 2019</td>
+                                    <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" aria-label="Edit" data-bs-original-title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                        <div class="ci-trash"></div></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="py-3 align-middle">
+                                      <div class="d-flex align-items-center"><img src="img/card-master.png" width="39" alt="MesterCard">
+                                        <div class="ps-2"><span class="fw-medium text-heading me-1">MasterCard</span>ending in 0015</div>
+                                      </div>
+                                    </td>
+                                    <td class="py-3 align-middle">John doe</td>
+                                    <td class="py-3 align-middle">11 / 2021</td>
+                                    <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" aria-label="Edit" data-bs-original-title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                        <div class="ci-trash"></div></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="py-3 align-middle">
+                                      <div class="d-flex align-items-center"><img src="img/card-paypal.png" width="39" alt="PayPal">
+                                        <div class="ps-2"><span class="fw-medium text-heading me-1">PayPal</span>j.doe@example.com</div>
+                                      </div>
+                                    </td>
+                                    <td class="py-3 align-middle">—</td>
+                                    <td class="py-3 align-middle">—</td>
+                                    <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" aria-label="Edit" data-bs-original-title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                        <div class="ci-trash"></div></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="py-3 align-middle">
+                                      <div class="d-flex align-items-center"><img src="img/card-visa.png" width="39" alt="Visa">
+                                        <div class="ps-2"><span class="fw-medium text-heading me-1">Visa</span>ending in 6073</div>
+                                      </div>
+                                    </td>
+                                    <td class="py-3 align-middle">John doe</td>
+                                    <td class="py-3 align-middle">09 / 2021</td>
+                                    <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" aria-label="Edit" data-bs-original-title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                        <div class="ci-trash"></div></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="py-3 align-middle">
+                                      <div class="d-flex align-items-center"><img src="img/card-visa.png" width="39" alt="Visa">
+                                        <div class="ps-2"><span class="fw-medium text-heading me-1">Visa</span>ending in 9791</div>
+                                      </div>
+                                    </td>
+                                    <td class="py-3 align-middle">John doe</td>
+                                    <td class="py-3 align-middle">05 / 2021</td>
+                                    <td class="py-3 align-middle"><a class="nav-link-style me-2" href="#" data-bs-toggle="tooltip" aria-label="Edit" data-bs-original-title="Edit"><i class="ci-edit"></i></a><a class="nav-link-style text-danger" href="#" data-bs-toggle="tooltip" aria-label="Remove" data-bs-original-title="Remove">
+                                        <div class="ci-trash"></div></a></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="text-sm-end"><a class="btn btn-primary" href="#add-payment" data-bs-toggle="modal">Add payment method</a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            create
+
+            start an event
+            share content to connect with your followers
+
+            Create an event
+            Host an event to grow your pages community
+
+            Post a free job
+            reach more qualified applicants
+
+            create an Ad
+            Generate leads, drive website traffic, and build brand awareness
+
+            create a showcase page
+            Add more details about your event
+
+
+            </div>
+
+            <hr class="mb-5 fw-bold">
+          </div>
+        </section>
+
+        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+          <div class="container">
+              <div class="grido">
+                <div class="element-item transition metal " data-category="transition">
+                  <h3 class="name">Mercury</h3>
+                  <p class="symbol">Hg</p>
+                  <p class="number">80</p>
+                  <p class="weight">200.59</p>
+                </div>
+                <div class="element-item metalloid " data-category="metalloid">
+                  <h3 class="name">Tellurium</h3>
+                  <p class="symbol">Te</p>
+                  <p class="number">52</p>
+                  <p class="weight">127.6</p>
+                </div>
+                <div class="element-item post-transition metal " data-category="post-transition">
+                  <h3 class="name">Bismuth</h3>
+                  <p class="symbol">Bi</p>
+                  <p class="number">83</p>
+                  <p class="weight">208.980</p>
+                </div>
+                <div class="element-item post-transition metal " data-category="post-transition">
+                  <h3 class="name">Lead</h3>
+                  <p class="symbol">Pb</p>
+                  <p class="number">82</p>
+                  <p class="weight">207.2</p>
+                </div>
+                <div class="element-item transition metal " data-category="transition">
+                  <h3 class="name">Gold</h3>
+                  <p class="symbol">Au</p>
+                  <p class="number">79</p>
+                  <p class="weight">196.967</p>
+                </div>
+                <div class="element-item alkali metal " data-category="alkali">
+                  <h3 class="name">Potassium</h3>
+                  <p class="symbol">K</p>
+                  <p class="number">19</p>
+                  <p class="weight">39.0983</p>
+                </div>
+                <div class="element-item alkali metal " data-category="alkali">
+                  <h3 class="name">Sodium</h3>
+                  <p class="symbol">Na</p>
+                  <p class="number">11</p>
+                  <p class="weight">22.99</p>
+                </div>
+                <div class="element-item transition metal " data-category="transition">
+                  <h3 class="name">Cadmium</h3>
+                  <p class="symbol">Cd</p>
+                  <p class="number">48</p>
+                  <p class="weight">112.411</p>
+                </div>
+                <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
+                  <h3 class="name">Calcium</h3>
+                  <p class="symbol">Ca</p>
+                  <p class="number">20</p>
+                  <p class="weight">40.078</p>
+                </div>
+                <div class="element-item transition metal " data-category="transition">
+                  <h3 class="name">Rhenium</h3>
+                  <p class="symbol">Re</p>
+                  <p class="number">75</p>
+                  <p class="weight">186.207</p>
+                </div>
+                <div class="element-item post-transition metal " data-category="post-transition">
+                  <h3 class="name">Thallium</h3>
+                  <p class="symbol">Tl</p>
+                  <p class="number">81</p>
+                  <p class="weight">204.383</p>
+                </div>
+                <div class="element-item metalloid " data-category="metalloid">
+                  <h3 class="name">Antimony</h3>
+                  <p class="symbol">Sb</p>
+                  <p class="number">51</p>
+                  <p class="weight">121.76</p>
+                </div>
+                <div class="element-item transition metal " data-category="transition">
+                  <h3 class="name">Cobalt</h3>
+                  <p class="symbol">Co</p>
+                  <p class="number">27</p>
+                  <p class="weight">58.933</p>
+                </div>
+                <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
+                  <h3 class="name">Ytterbium</h3>
+                  <p class="symbol">Yb</p>
+                  <p class="number">70</p>
+                  <p class="weight">173.054</p>
+                </div>
+                <div class="element-item noble-gas nonmetal " data-category="noble-gas">
+                  <h3 class="name">Argon</h3>
+                  <p class="symbol">Ar</p>
+                  <p class="number">18</p>
+                  <p class="weight">39.948</p>
+                </div>
+                <div class="element-item diatomic nonmetal " data-category="diatomic">
+                  <h3 class="name">Nitrogen</h3>
+                  <p class="symbol">N</p>
+                  <p class="number">7</p>
+                  <p class="weight">14.007</p>
+                </div>
+                <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+                  <h3 class="name">Uranium</h3>
+                  <p class="symbol">U</p>
+                  <p class="number">92</p>
+                  <p class="weight">238.029</p>
+                </div>
+                <div class="element-item actinoid metal inner-transition " data-category="actinoid">
+                  <h3 class="name">Plutonium</h3>
+                  <p class="symbol">Pu</p>
+                  <p class="number">94</p>
+                  <p class="weight">(244)</p>
+                </div>
+              </div>
+          </div>
+        </section>
+
+        <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" >
+            <div class="container">
+              <!-- search -->
+              <div class="widget">
+                <!-- <h3 class="widget-title">Search</h6> -->
+                <form action="" class="subscription-form validate">
+                  <div class="input-group flex-nowrap">
+                    <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                    <input type="text" class="form-control rounded-start"  name="search" placeholder="Search" required>
+                    <button class="btn btn-primary" type="submit" name=""> Search</button>
+                  </div>
+
+                  <div class="form-text">*Search your potential upcoming Industry Events</div>
+                  <div class="subscription-status"></div>
+                </form>
+              </div>
+
+              <!-- industry -->
+              <div class="widget">
+                  <a href="{{route('user.category',['trends' => 'category'])}}" class="fw-sm"><h3 class="widget-title">Your Industry </h3> add</a>
+                @foreach($userCategory as $categor)
+                <a href="#" wire:click.prevent="insertEventToSess({{$categor->id}})"  class="btn-tag me-2 mb-2">#{{$categor->expo->tag}}</a>
+                @endforeach
+                <a href="" class="btn-tag me-2 mb-2 active">#business</a>
+              </div>
+
+              <!-- Plan your Event -->
+              <div class="widget">
+                <h3 class="widget-title">Plan your Event <small>add</small></h3>
+
+                <a href="{{route('user.category',['trends' => 'event'])}}" class="btn btn-primary btn-sm">ADD</a>
+                <div class="d-flex align-items-center pb-2 border-bottom">
+                  <a href="" class="flex-shrink-0">
+                    <img src="" alt=""width="">
+                  </a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="">test</a></h6>
+                    <div class="widget-product-meta">
+                      <span class="text-accent me-2"> test<small>cjec</small></span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- <small class="lh-1">Select your event, create product QR Link. Get formatted form your visitor.</small> <br> -->
+              <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-primary btn-sm">Generate QR</a>
+
+              <div class="widget">
+                <div class="widget-title">Basic Membership</h3>
+
+                <div>
+                <div class="d-flex align-items-center">
+                  <a href="" class="flex-shrink-0">
+                    <img src="" alt=""width="64">
+                  </a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="">One-time Registration Fee:$50</a></h6>
+                    <div class="widget-product-meta">
+                      <span class="text-accent me-2"> test<small>cjec</small></span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+                <div>
+                <div class="d-flex align-items-center">
+                  <a href="" class="flex-shrink-0">
+                    <img src="" alt=""width="64">
+                  </a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="">test</a></h6>
+                    <div class="widget-product-meta">
+                      <span class="text-accent me-2"> test<small>cjec</small></span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                
+                <div>
+                <div class="d-flex align-items-center">
+                  <a href="" class="flex-shrink-0">
+                    <img src="" alt=""width="64">
+                  </a>
+                  <div class="ps-2">
+                    <h6 class="widget-product-title"><a href="">test</a></h6>
+                    <div class="widget-product-meta">
+                      <span class="text-accent me-2"> test<small>cjec</small></span>
+                    </div>
+                  </div>
+                </div>
+                </div>
+
+              </div>
+
+              <!-- membership -->
+              <div class="widget widget-cart">
+                <h3 class="widget-title">Membership</h3>
+                <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                
+                  <!--item-->
+                    <div class="widget-cart-item pb-2 border-bottom">
+                      <button class="btn-close text-danger" type="button" aria-label="Remove">
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
+                        <div class="d-flex align-items-center">
+                          <a href="" class="flex-shrink-0">
+                            <img src="" alt=""width="64">
+                          </a>
+                          <div class="ps-2">
+                            <h6 class="widget-product-title"><a href="">test</a></h6>
+                            <div class="widget-product-meta">
+                              <span class="text-accent me-2"> test<small>cjec</small></span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  
+                  <!--item-->
+                    <div class="widget-cart-item pb-2 border-bottom">
+                      <button class="btn-close text-danger" type="button" aria-label="Remove">
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
+                        <div class="d-flex align-items-center">
+                          <a href="" class="flex-shrink-0">
+                            <img src="" alt=""width="64">
+                          </a>
+                          <div class="ps-2">
+                            <h6 class="widget-product-title"><a href="">test</a></h6>
+                            <div class="widget-product-meta">
+                              <span class="text-accent me-2"> test<small>cjec</small></span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  
+                  <!--item-->
+                    <div class="widget-cart-item pb-2 border-bottom">
+                      <button class="btn-close text-danger" type="button" aria-label="Remove">
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
+                        <div class="d-flex align-items-center">
+                          <a href="" class="flex-shrink-0">
+                            <img src="" alt=""width="64">
+                          </a>
+                          <div class="ps-2">
+                            <h6 class="widget-product-title"><a href="">test</a></h6>
+                            <div class="widget-product-meta">
+                              <span class="text-accent me-2"> test<small>cjec</small></span>
+                              <span class="text-muted">X 1</span>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- footer -->
+                <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                  <div class="fs-sm me-2 py-2">
+                    <span class="text-muted">Subtotal:</span>
+                    <span class="text-accent fs-base ms-1">$265 <small>00</small></span>
+                  </div>
+                  <a href="" class="btn btn-outline-secondary btn-sm">Expand Cart <i class=" bi bi-chevron-right ms-1 me-n1"></i></a>
+                </div>
+
+                <a href="" class="btn btn-primary btn-sm d-block w-100">
+                  <i class="bi bi-card me-2 fs-base align-middle"></i> Checkout
+                </a>
+              <div>
+              
+            </div>
+
+            <!-- Event -->
+            <div class="card border-0 shadow mb-3">
+              <div class="card-header">
+                Post your Event
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                Your Events
+                </h5>
+                <p  class="card-text fs-sm text-muted"> list your magazine potential space, at right time, right place with right people  </p>
+                <a href="" class="btn btn-sm btn-primary">Add</a>
+              </div>
+            </div>
+
+            <!-- magazine -->
+            <div class="card border-0 shadow mb-3">
+              <div class="card-header">
+                Create a showcase magazine
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                List your Magazine
+                </h5>
+                <p  class="card-text fs-sm text-muted"> Add more details about your event</p>
+                <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-sm btn-primary">Add</a>
+              </div>
+            </div>
+
+            <!-- email Campaign -->
+            <div class="card border-0 shadow mb-3">
+              <div class="card-header">
+              Post an Email
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Email Campaign</h5>
+                <p  class="card-text fs-sm text-muted">reach more, Our Data, Your Customer</p>
+                <a href="" class="btn btn-sm btn-primary">Add</a>
+              </div>
+            </div>
+        </section>
+    
+    @endif
 
   {{--<div class="container">
         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -46,7 +790,7 @@
       </div>--}}
 
 
-  @if($board == 'dashboard')
+  @if($board == 'olddashboard')
 
     @php
       $usDetails = DB::table('brands')->where('user_id', Auth::user()->id)->where('dtype','user')->pluck('dtype');
@@ -550,8 +1294,9 @@
 
   @endif
 
+  @if($board == 'olddashboard')
       <!--header-->
-      <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
+      <!-- <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
         <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center pt-2">
           <div class="d-flex align-items-center pb-3">
             <div class="img-thumbnail rounded-circle position-relative flex-shrink-0" style="max-width: 50%;">
@@ -977,7 +1722,7 @@
            
           </div>
         </div>
-      </div>
+      </div> -->
 
       {{--<div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
         <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
@@ -1096,6 +1841,7 @@
                     </div>
                   </div>--}}
 
+  @endif
 
   @if( $board == 'search')        
     <div class="container my-5 mx-auto">
@@ -1283,10 +2029,10 @@
     </div>
   @endif
 
-<!-- featured with user is a organiser or exhibitor or Visitor. if visitor get sales contact or if organiser get business owner references
-<h1>Find Exhibitor</h1>
-<small>Build a big approach</small>
-<a href="route()" class="btn btn-primary form-control">Approach</a> -->
+  <!-- featured with user is a organiser or exhibitor or Visitor. if visitor get sales contact or if organiser get business owner references
+  <h1>Find Exhibitor</h1>
+  <small>Build a big approach</small>
+  <a href="route()" class="btn btn-primary form-control">Approach</a> -->
 
   @if($board == 'ExchangeContact')
    
@@ -1345,242 +2091,6 @@
      </form>
   @endif   
 
-    <div class="container">
-      <!-- search -->
-      <div class="widget">
-        <!-- <h3 class="widget-title">Search</h6> -->
-        <form action="" class="subscription-form validate">
-          <div class="input-group flex-nowrap">
-            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-            <input type="text" class="form-control rounded-start"  name="search" placeholder="Search" required>
-            <button class="btn btn-primary" type="submit" name=""> Search</button>
-          </div>
-
-          <div class="form-text">*Search your potential upcoming Industry Events</div>
-          <div class="subscription-status"></div>
-        </form>
-      </div>
-
-      <!-- industry -->
-      <div class="widget">
-           <a href="{{route('user.category',['trends' => 'category'])}}" class="fw-sm"><h3 class="widget-title">Your Industry </h3> add</a>
-        @foreach($userCategory as $categor)
-        <a href="#" wire:click.prevent="insertEventToSess({{$categor->id}})"  class="btn-tag me-2 mb-2">#{{$categor->expo->tag}}</a>
-        @endforeach
-        <a href="" class="btn-tag me-2 mb-2 active">#business</a>
-      </div>
-
-      <!-- Plan your Event -->
-      <div class="widget">
-        <h3 class="widget-title">Plan your Event <small>add</small></h3>
-
-        <a href="{{route('user.category',['trends' => 'event'])}}" class="btn btn-primary btn-sm">ADD</a>
-        <div class="d-flex align-items-center pb-2 border-bottom">
-          <a href="" class="flex-shrink-0">
-            <img src="" alt=""width="">
-          </a>
-          <div class="ps-2">
-            <h6 class="widget-product-title"><a href="">test</a></h6>
-            <div class="widget-product-meta">
-              <span class="text-accent me-2"> test<small>cjec</small></span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- <small class="lh-1">Select your event, create product QR Link. Get formatted form your visitor.</small> <br> -->
-      <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-primary btn-sm">Generate QR</a>
-
-      <div class="widget">
-        <div class="widget-title">Basic Membership</h3>
-
-        <div>
-        <div class="d-flex align-items-center">
-          <a href="" class="flex-shrink-0">
-            <img src="" alt=""width="64">
-          </a>
-          <div class="ps-2">
-            <h6 class="widget-product-title"><a href="">One-time Registration Fee:$50</a></h6>
-            <div class="widget-product-meta">
-              <span class="text-accent me-2"> test<small>cjec</small></span>
-            </div>
-          </div>
-        </div>
-        </div>
-
-        <div>
-        <div class="d-flex align-items-center">
-          <a href="" class="flex-shrink-0">
-            <img src="" alt=""width="64">
-          </a>
-          <div class="ps-2">
-            <h6 class="widget-product-title"><a href="">test</a></h6>
-            <div class="widget-product-meta">
-              <span class="text-accent me-2"> test<small>cjec</small></span>
-            </div>
-          </div>
-        </div>
-        </div>
-        
-        <div>
-        <div class="d-flex align-items-center">
-          <a href="" class="flex-shrink-0">
-            <img src="" alt=""width="64">
-          </a>
-          <div class="ps-2">
-            <h6 class="widget-product-title"><a href="">test</a></h6>
-            <div class="widget-product-meta">
-              <span class="text-accent me-2"> test<small>cjec</small></span>
-            </div>
-          </div>
-        </div>
-        </div>
-
-      </div>
-
-      <!-- membership -->
-      <div class="widget widget-cart">
-        <h3 class="widget-title">Membership</h3>
-        <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-        
-          <!--item-->
-            <div class="widget-cart-item pb-2 border-bottom">
-              <button class="btn-close text-danger" type="button" aria-label="Remove">
-                <span aria-hidden="true"> &times;</span>
-              </button>
-                <div class="d-flex align-items-center">
-                  <a href="" class="flex-shrink-0">
-                    <img src="" alt=""width="64">
-                  </a>
-                  <div class="ps-2">
-                    <h6 class="widget-product-title"><a href="">test</a></h6>
-                    <div class="widget-product-meta">
-                      <span class="text-accent me-2"> test<small>cjec</small></span>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          
-          <!--item-->
-            <div class="widget-cart-item pb-2 border-bottom">
-              <button class="btn-close text-danger" type="button" aria-label="Remove">
-                <span aria-hidden="true"> &times;</span>
-              </button>
-                <div class="d-flex align-items-center">
-                  <a href="" class="flex-shrink-0">
-                    <img src="" alt=""width="64">
-                  </a>
-                  <div class="ps-2">
-                    <h6 class="widget-product-title"><a href="">test</a></h6>
-                    <div class="widget-product-meta">
-                      <span class="text-accent me-2"> test<small>cjec</small></span>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          
-          <!--item-->
-            <div class="widget-cart-item pb-2 border-bottom">
-              <button class="btn-close text-danger" type="button" aria-label="Remove">
-                <span aria-hidden="true"> &times;</span>
-              </button>
-                <div class="d-flex align-items-center">
-                  <a href="" class="flex-shrink-0">
-                    <img src="" alt=""width="64">
-                  </a>
-                  <div class="ps-2">
-                    <h6 class="widget-product-title"><a href="">test</a></h6>
-                    <div class="widget-product-meta">
-                      <span class="text-accent me-2"> test<small>cjec</small></span>
-                      <span class="text-muted">X 1</span>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- footer -->
-        <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
-          <div class="fs-sm me-2 py-2">
-            <span class="text-muted">Subtotal:</span>
-            <span class="text-accent fs-base ms-1">$265 <small>00</small></span>
-          </div>
-          <a href="" class="btn btn-outline-secondary btn-sm">Expand Cart <i class=" bi bi-chevron-right ms-1 me-n1"></i></a>
-        </div>
-
-        <a href="" class="btn btn-primary btn-sm d-block w-100">
-          <i class="bi bi-card me-2 fs-base align-middle"></i> Checkout
-        </a>
-      <div>
-       
-    </div>
-
-    <!-- Event -->
-    <div class="card border-0 shadow mb-3">
-      <div class="card-header">
-        Post your Event
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">
-         Your Events
-        </h5>
-        <p  class="card-text fs-sm text-muted"> list your magazine potential space, at right time, right place with right people  </p>
-        <a href="" class="btn btn-sm btn-primary">Add</a>
-      </div>
-    </div>
-
-    <!-- magazine -->
-    <div class="card border-0 shadow mb-3">
-      <div class="card-header">
-         Create a showcase magazine
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">
-         List your Magazine
-        </h5>
-        <p  class="card-text fs-sm text-muted"> Add more details about your event</p>
-        <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-sm btn-primary">Add</a>
-      </div>
-    </div>
-
-
-    <!-- email Campaign -->
-    <div class="card border-0 shadow mb-3">
-      <div class="card-header">
-      Post an Email
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Email Campaign</h5>
-        <p  class="card-text fs-sm text-muted">reach more, Our Data, Your Customer</p>
-        <a href="" class="btn btn-sm btn-primary">Add</a>
-      </div>
-    </div>
-
-    create
-
-    start an event
-    share content to connect with your followers
-    
-    Create an event
-    Host an event to grow your pages community
-
-    Post a free job
-    reach more qualified applicants
-
-    create an Ad
-    Generate leads, drive website traffic, and build brand awareness
-
-    create a showcase page
-    Add more details about your event
-
-
-    </div>
-
-    <hr class="mb-5 fw-bold">
-
-    
-
   @if ($board == 'QR_link')
     
 
@@ -1604,175 +2114,52 @@
     </form>
   @endif
 
-  
-
   <!-- find clients -->
-      @if($board == 'visitcard')
-        <div class=" container small">
-            <input type="checkbox" value="1" wire:model="lookingAddFromIMage" name="" id=""> Search
-        </div>
+  @if($board == 'visitcard')
+    <div class=" container small">
+        <input type="checkbox" value="1" wire:model="lookingAddFromIMage" name="" id=""> Search
+    </div>
 
-        @if($lookingAddFromIMage == 1)
-                  <div class="container">
-                      <div class="fs-md">Update Contact Card</div>
-                      <form wire:submit.prevent="directbrandBcontact">
-                          <input type="text" class="form-control" placeholder="organisation" wire:model.lazy="organisation">
-                          <input type="text" class="form-control" placeholder="brand_name" wire:model.lazy="brand_name">
-                          
-                          <input type="text" class="form-control" placeholder="industry" wire:model.lazy="industry">
-                          
-                          <input type="text" class="form-control" placeholder="name" wire:model.lazy="name">
-                          <input type="text" class="form-control" placeholder="designation" wire:model.lazy="designation">
-                          <input type="number" class="form-control" placeholder="phone" wire:model.lazy="phone">
-                          <input type="email" class="form-control" placeholder="email" wire:model.lazy="email">
-                          
-                          <button class="form-control  btn btn-primary" type="submit">Submit</button>
-                      </form>
+    @if($lookingAddFromIMage == 1)
+              <div class="container">
+                  <div class="fs-md">Update Contact Card</div>
+                  <form wire:submit.prevent="directbrandBcontact">
+                      <input type="text" class="form-control" placeholder="organisation" wire:model.lazy="organisation">
+                      <input type="text" class="form-control" placeholder="brand_name" wire:model.lazy="brand_name">
+                      
+                      <input type="text" class="form-control" placeholder="industry" wire:model.lazy="industry">
+                      
+                      <input type="text" class="form-control" placeholder="name" wire:model.lazy="name">
+                      <input type="text" class="form-control" placeholder="designation" wire:model.lazy="designation">
+                      <input type="number" class="form-control" placeholder="phone" wire:model.lazy="phone">
+                      <input type="email" class="form-control" placeholder="email" wire:model.lazy="email">
+                      
+                      <button class="form-control  btn btn-primary" type="submit">Submit</button>
+                  </form>
+              </div>
+    
+              <div class="container my-5">
+                  <div class="fs-md">
+                  Contact details 
                   </div>
-        
-                  <div class="container my-5">
-                      <div class="fs-md">
-                      Contact details 
-                      </div>
-                          @foreach ($getContact as $franchise) 
-                              <div class="">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                      <div class="col  pr-0">
-                                      
-                                          <div class="h4 fw-light mb-0"> 1 </div> 
-                                          <div class="small text-muted">chk </div>
-                                          
-                                          <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
-                                      </div>
-
-                                      <div class="col-7  p-0">
-                                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                          {{$franchise->name}} {{$franchise->designation}}</a></div>
-                                      <div class="text-muted fs-sm text-start">
-                                          {{$franchise->email}}
-                                      </div>  
-                                      <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
-                                      </div>
-
-                                      <div class="col-3  p-0">
-                                          {{--<a class="card-img-top d-block overflow-hidden" href="#">
-                                              <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
-                                              
-                                          {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                              <i class="bi bi-chevron-double-right"></i></a> 
-                                              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
-
-                                              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
-
-                                          </div>
-                                  </div>
-                              </div>
-                          @endforeach
-                  </div>
-
-        @else
-           <div class="container mt-5">
-              <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchBrandTerm">
-              
-              <div class="row mb-5 pb-2">
-                @if(is_null($searchBrandTerm))
-
-                  <div class="container">
-                    Find Some Events
-                  </div>  
-
-                @else
-
-                  @if($searchBrandcat->count() == 0)
-                   
-                    <div class="container">
-                      <div class="fs-md">Update Contact Card</div>
-                      <form wire:submit.prevent="directbrandBcontact">
-                          <input type="text" class="form-control" placeholder="organisation" wire:model.lazy="organisation">
-                          <input type="text" class="form-control" placeholder="brand_name" wire:model.lazy="brand_name">
-                          
-                          <input type="text" class="form-control" placeholder="industry" wire:model.lazy="industry">
-                          
-                          <input type="text" class="form-control" placeholder="name" wire:model.lazy="name">
-                          <input type="text" class="form-control" placeholder="designation" wire:model.lazy="designation">
-                          <input type="number" class="form-control" placeholder="phone" wire:model.lazy="phone">
-                          <input type="email" class="form-control" placeholder="email" wire:model.lazy="email">
-                          
-                          <button class="form-control  btn btn-primary" type="submit">Submit</button>
-                      </form>
-                    </div>
-          
-                    <div class="container my-5">
-                        <div class="fs-md">
-                        Contact details 
-                        </div>
-                            @foreach ($getContact as $franchise) 
-                                <div class="">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <div class="col  pr-0">
-                                        
-                                            <div class="h4 fw-light mb-0"> 1 </div> 
-                                            <div class="small text-muted">chk </div>
-                                            
-                                            <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
-                                        </div>
-
-                                        <div class="col-7  p-0">
-                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                            {{$franchise->name}} {{$franchise->designation}}</a></div>
-                                        <div class="text-muted fs-sm text-start">
-                                            {{$franchise->email}}
-                                        </div>  
-                                        <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
-                                        </div>
-
-                                        <div class="col-3  p-0">
-                                            {{--<a class="card-img-top d-block overflow-hidden" href="#">
-                                                <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
-                                                
-                                            {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                                <i class="bi bi-chevron-double-right"></i></a> 
-                                                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
-
-                                                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
-
-                                            </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                    </div>
-                  @else
-                  @foreach ($searchBrandcat as $franchiseo) 
-                        <div class="">
-                          <div class="fw-light h5 lh-1">{{$franchiseo -> brand_name}}</div>
-                          <div class="small text-muted fw-bold">{{$franchiseo -> organisation}}</div>
-                            
-
-                        @php
-                          $findBcontact = DB::table('bcontacts')->where('brand_id', $franchiseo -> id)->get();
-                        @endphp
-
-                        @if($findBcontact->count() == 0)
-                         <h1>Add Contact</h1>
-                         <small> NO More Reference</small>
-                        @else
-                          @foreach($findBcontact as $franchise)
+                      @foreach ($getContact as $franchise) 
+                          <div class="">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                   <div class="col  pr-0">
                                   
                                       <div class="h4 fw-light mb-0"> 1 </div> 
-                                      <div class="small text-muted">chk</div>
+                                      <div class="small text-muted">chk </div>
                                       
                                       <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
                                   </div>
 
                                   <div class="col-7  p-0">
-                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                        {{$franchise->name}}  <span class="badge badge-primary">{{$franchise->designation}}</span> </a></div>
-                                    <div class="text-muted fs-sm text-start">
-                                        {{$franchise->email}}
-                                    </div>  
-                                    <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                      {{$franchise->name}} {{$franchise->designation}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                      {{$franchise->email}}
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
                                   </div>
 
                                   <div class="col-3  p-0">
@@ -1785,19 +2172,140 @@
 
                                           <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
 
-                                  </div>
+                                      </div>
                               </div>
-                          @endforeach
-                        @endif
-                        </div>
-                    @endforeach
-                  @endif
-
-                @endif
+                          </div>
+                      @endforeach
               </div>
-            </div>
-        @endif
-      @endif
+
+    @else
+        <div class="container mt-5">
+          <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchBrandTerm">
+          
+          <div class="row mb-5 pb-2">
+            @if(is_null($searchBrandTerm))
+
+              <div class="container">
+                Find Some Events
+              </div>  
+
+            @else
+
+              @if($searchBrandcat->count() == 0)
+                
+                <div class="container">
+                  <div class="fs-md">Update Contact Card</div>
+                  <form wire:submit.prevent="directbrandBcontact">
+                      <input type="text" class="form-control" placeholder="organisation" wire:model.lazy="organisation">
+                      <input type="text" class="form-control" placeholder="brand_name" wire:model.lazy="brand_name">
+                      
+                      <input type="text" class="form-control" placeholder="industry" wire:model.lazy="industry">
+                      
+                      <input type="text" class="form-control" placeholder="name" wire:model.lazy="name">
+                      <input type="text" class="form-control" placeholder="designation" wire:model.lazy="designation">
+                      <input type="number" class="form-control" placeholder="phone" wire:model.lazy="phone">
+                      <input type="email" class="form-control" placeholder="email" wire:model.lazy="email">
+                      
+                      <button class="form-control  btn btn-primary" type="submit">Submit</button>
+                  </form>
+                </div>
+      
+                <div class="container my-5">
+                    <div class="fs-md">
+                    Contact details 
+                    </div>
+                        @foreach ($getContact as $franchise) 
+                            <div class="">
+                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                    <div class="col  pr-0">
+                                    
+                                        <div class="h4 fw-light mb-0"> 1 </div> 
+                                        <div class="small text-muted">chk </div>
+                                        
+                                        <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
+                                    </div>
+
+                                    <div class="col-7  p-0">
+                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                        {{$franchise->name}} {{$franchise->designation}}</a></div>
+                                    <div class="text-muted fs-sm text-start">
+                                        {{$franchise->email}}
+                                    </div>  
+                                    <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+                                    </div>
+
+                                    <div class="col-3  p-0">
+                                        {{--<a class="card-img-top d-block overflow-hidden" href="#">
+                                            <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                            
+                                        {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                            <i class="bi bi-chevron-double-right"></i></a> 
+                                            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
+
+                                            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
+
+                                        </div>
+                                </div>
+                            </div>
+                        @endforeach
+                </div>
+              @else
+              @foreach ($searchBrandcat as $franchiseo) 
+                    <div class="">
+                      <div class="fw-light h5 lh-1">{{$franchiseo -> brand_name}}</div>
+                      <div class="small text-muted fw-bold">{{$franchiseo -> organisation}}</div>
+                        
+
+                    @php
+                      $findBcontact = DB::table('bcontacts')->where('brand_id', $franchiseo -> id)->get();
+                    @endphp
+
+                    @if($findBcontact->count() == 0)
+                      <h1>Add Contact</h1>
+                      <small> NO More Reference</small>
+                    @else
+                      @foreach($findBcontact as $franchise)
+                          <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                              <div class="col  pr-0">
+                              
+                                  <div class="h4 fw-light mb-0"> 1 </div> 
+                                  <div class="small text-muted">chk</div>
+                                  
+                                  <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
+                              </div>
+
+                              <div class="col-7  p-0">
+                                <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                    {{$franchise->name}}  <span class="badge badge-primary">{{$franchise->designation}}</span> </a></div>
+                                <div class="text-muted fs-sm text-start">
+                                    {{$franchise->email}}
+                                </div>  
+                                <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+                              </div>
+
+                              <div class="col-3  p-0">
+                                  {{--<a class="card-img-top d-block overflow-hidden" href="#">
+                                      <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                      
+                                  {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                      <i class="bi bi-chevron-double-right"></i></a> 
+                                      <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
+
+                                      <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
+
+                              </div>
+                          </div>
+                      @endforeach
+                    @endif
+                    </div>
+                @endforeach
+              @endif
+
+            @endif
+          </div>
+        </div>
+    @endif
+  @endif
 
     <div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">

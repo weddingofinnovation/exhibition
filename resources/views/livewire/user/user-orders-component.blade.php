@@ -1,7 +1,7 @@
 <main>
         
 
-    <div class="container">
+    <div class="container my-5">
         <form wire:submit.prevent="contractForm">
             <h1>Exhibitor Details</h1>
             <input type="text" class="form-control" placeholder="owner" wire:model.lazy="owner">
@@ -31,7 +31,7 @@
 
             <button class="btn btn-primary form-control" type="submit">Submit</button>
         </form>
-    </div>
+    
 
 
     <h5>Generate a Contract Form</h5>
@@ -62,5 +62,5 @@
 
         <button class="btn btn-primary form-control" type="submit">Submit</button>
     </form>
-
+    </div>
 </main>

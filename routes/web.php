@@ -317,6 +317,7 @@ Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->
 
   //User
   Route::middleware(['auth:sanctum', 'verified'])->group( function () {
+    
     Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
     Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
 
@@ -325,7 +326,9 @@ Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->
     Route::get('/user/magazine/add-your-business', UserEventClaimComponent::class)->name('user.claim');
     
     Route::get('/user/business/details', UserEventDetailsComponent::class)->name('user.details');
-    Route::get('/user/contract_form', UserOrdersComponent::class)->name('user.Orders');
+
+    Route::get('/online/contract_form', UserOrdersComponent::class)->name('user.Orders');
+
     //Route::get('/user/orders/{order_id}', UserOrderDetailsComponent::class)->name('user.orderDetails');
     Route::get('/user/profile', UserProfileComponent::class)->name('user.profile');
     Route::get('/user/mybrand', MybrandComponent::class)->name('user.mybrand');
@@ -335,9 +338,6 @@ Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->
 
     //latest link
     Route::get('/user/{exhibitor}/{expo}', UserExhibitorVisitorComponent::class)->name('exhibitor.Visitor');
-
-   
-
 
   });
 
