@@ -733,7 +733,7 @@
               <!-- <small class="lh-1">Select your event, create product QR Link. Get formatted form your visitor.</small> <br> -->
               <a href="{{route('partner.magazine',['trackcustomer' => 'add-magazine'])}}" class="btn btn-primary btn-sm">Generate QR</a>
 
-              <div class="widget">
+              <!-- <div class="widget">
                 <div class="widget-title">Basic Membership</h3>
 
                 <div>
@@ -785,12 +785,12 @@
                 </div>
                 </div>
 
-              </div> 
+              </div>  -->
 
               <!-- membership -->
               <div class="widget widget-cart">
                 <h3 class="widget-title">Membership</h3>
-                
+
                 <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
                 
                   <!--item-->
@@ -905,7 +905,7 @@
               </div>
             </div> -->
            
-              <div class="grido">
+              <div class="grido mb-5" >
                 
                 <div class="element-item diatomic nonmetal " data-category="diatomic">
                   <h3 class="name">Event</h3>
