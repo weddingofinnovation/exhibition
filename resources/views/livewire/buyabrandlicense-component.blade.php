@@ -434,9 +434,9 @@
             weight: function( itemElem ) {
               var weight = $( itemElem ).find('.weight').text();
               return parseFloat( weight.replace( /[\(\)]/g, '') );
+              }
             }
-          }
-        });
+          });
          // filter functions
          var filterFns = {
           // show if number is greater than 50
@@ -473,11 +473,8 @@
             $( this ).addClass('is-checked');
           });
 
-      });
-
-       
-       
-});
+      }); 
+    });
   
       </script>
   @endpush
