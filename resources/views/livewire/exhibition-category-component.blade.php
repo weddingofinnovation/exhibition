@@ -141,11 +141,11 @@
 
                           @foreach ($franchiso as $franchise)
                           @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                              <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                  <span aria-hidden="true"> &times;</span>
-                                </button>
-                                  <div class="container">
+                          <div class="container">
+                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <button class="btn-close text-danger" type="button" aria-label="Remove">
+                                      <span aria-hidden="true"> &times;</span>
+                                    </button>
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -191,11 +191,11 @@
                                   </div>
                               </div>
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
-                              <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                  <span aria-hidden="true"> &times;</span>
-                                </button>
-                                  <div class="container">
+                              <div class="container">
+                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <button class="btn-close text-danger" type="button" aria-label="Remove">
+                                      <span aria-hidden="true"> &times;</span>
+                                    </button>
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -241,11 +241,12 @@
                                   </div>
                               </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
-                              <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                  <span aria-hidden="true"> &times;</span>
-                                </button>
-                                  <div class="container">
+                              
+                                <div class="container">
+                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <button class="btn-close text-danger" type="button" aria-label="Remove">
+                                      <span aria-hidden="true"> &times;</span>
+                                    </button>
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -291,11 +292,11 @@
                                   </div>
                               </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
-                              <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                  <span aria-hidden="true"> &times;</span>
-                                </button>
-                                  <div class="container">
+                              <div class="container">
+                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
+                                    <button class="btn-close text-danger" type="button" aria-label="Remove">
+                                      <span aria-hidden="true"> &times;</span>
+                                    </button>
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -338,7 +339,7 @@
                                             <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                       </div>
                                     </div>
-                                  </div> 
+                                  </div>
                               </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
                                   <!-- <div class="container">
