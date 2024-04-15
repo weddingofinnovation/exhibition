@@ -738,6 +738,9 @@
 
                 <div>
                 <div class="d-flex align-items-center">
+                      <button class="btn-close text-danger" type="button" aria-label="Remove">
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
                   <a href="" class="flex-shrink-0">
                     <img src="" alt=""width="64">
                   </a>
@@ -752,6 +755,9 @@
 
                 <div>
                 <div class="d-flex align-items-center">
+                <button class="btn-close text-danger" type="button" aria-label="Remove">
+                        <span aria-hidden="true"> &times;</span>
+                      </button>
                   <a href="" class="flex-shrink-0">
                     <img src="" alt=""width="64">
                   </a>
@@ -778,7 +784,7 @@
                 </div>
                 </div>
 
-              </div>
+              </div> 
 
               <!-- membership -->
               <div class="widget widget-cart">
@@ -896,7 +902,7 @@
                 <a href="" class="btn btn-sm btn-primary">Add</a>
               </div>
             </div> -->
-            <div class="container">
+           
               <div class="grido">
                 
                 <div class="element-item diatomic nonmetal " data-category="diatomic">
@@ -920,7 +926,7 @@
                   <p class="weight">(244)</p>
                 </div>
               </div>
-          </div>
+            
         </section>
     
     @endif
