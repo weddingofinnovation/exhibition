@@ -232,6 +232,7 @@ body {
                             </div>
                         </section>
 
+                      <div class="container">
                         <div class="grido">
                           @foreach($allcategory as $category )
                               <div class="element-item transition metal" data-category="transition">
@@ -240,11 +241,14 @@ body {
                                 <h3 class="name">{{$category -> industry}}</h3>
                                 </a> 
                                 <p class="symbol">Hg</p>
-                                <p class="number">80</p>
-                                <p class="weight">200.59</p>
+                                <!-- <p class="number">80</p>
+                                <p class="weight">200.59</p> -->
                               </div>
                           @endforeach
+                        </div>
+                      </div>
 
+      <div class="grido">
         <div class="element-item metalloid " data-category="metalloid">
           <h3 class="name">Tellurium</h3>
           <p class="symbol">Te</p>
