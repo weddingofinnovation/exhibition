@@ -2394,11 +2394,7 @@
 				</div>
 			</section>
 	@elseif( $this->productservice == 'contract-form')
-	@elseif( $this->productservice == 'find-exhibitor-exhibition-directory')
-	@elseif( $this->productservice == 'magazine')
-	@elseif( $this->productservice == 'corporate-gifting')
-
-		<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">
+	<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">
 			<!-- SVG decoration -->
 			<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
 				<img src="{{asset('public/image/decoration-pattern.svg')}}" alt="">
@@ -3046,6 +3042,11 @@
 				</div>
 			</div>
 		</section>
+	@elseif( $this->productservice == 'find-exhibitor-exhibition-directory')
+	@elseif( $this->productservice == 'magazine')
+	@elseif( $this->productservice == 'corporate-gifting')
+
+		
    
 		<!-- =======================
 		Main Banner START -->

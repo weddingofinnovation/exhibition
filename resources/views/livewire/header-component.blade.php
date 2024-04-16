@@ -7,8 +7,7 @@
     @elseif(Route::currentRouteName() === 'coicart')
     @elseif(Route::currentRouteName() === 'lead.business')
     @elseif(Route::currentRouteName() === 'lead.business.other')
-    @elseif(Route::currentRouteName() === 'coi.exhibition')
-                             
+    @elseif(Route::currentRouteName() === 'coi.exhibition')       
     @elseif(Route::currentRouteName() === 'coi.ratenow')
     @else
       <header class="shadow-sm ">
@@ -818,13 +817,13 @@
                     <a class="nav-link" href="{{route('service.product',['productservice' => 'find-exhibitor'])}}" >Find Exhibitor</a>
                   </li>
 
-                  <li  class="nav-item {{'product/stall-fabrication' == request()->path() ? 'active' : '' }}">
+                  <!-- <li  class="nav-item {{'product/stall-fabrication' == request()->path() ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('service.product',['productservice' => 'stall-fabrication'])}}">Stall Design</a>
                   </li>
 
                   <li  class="nav-item {{'product/online-contract-form' == request()->path() ? 'active' : '' }}">
                     <a class="nav-link" href="{{route('service.product',['productservice' => 'online-contract-form'])}}">Online Contract Form</a>
-                  </li>
+                  </li> -->
 
                   @if('exhibition' == request()->path() ? 'active' : '')
                     <li  class=" nav-item dropdown {{'exhibition' == request()->path() ? 'active' : '' }}">
