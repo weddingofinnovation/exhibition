@@ -993,10 +993,11 @@
                         <div class="col-10 mb-1 small fw-lighter ">Our online Contract form, design instant.</div>
                       </a>
 
-                      <a href="#" class=" list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href = mailto:"team@exhibition.org.in" class=" list-group-item list-group-item-action py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Talk to Sales</normal>
+                          <normal class="mb-1">Talk to Team</normal>
                         </div>
+                        <div class="col-10 mb-1 small fw-lighter">team@exhibition.org.in</div>
                       </a>
 
 
