@@ -194,9 +194,14 @@
                 <span class="handheld-toolbar-label">Menu</span>
               </a>
             @endif
-            @else
+          @else
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
           @endif
-      @elseif(Route::currentRouteName() === 'coi.exhibition' )
+
+      @if(Route::currentRouteName() === 'coi.exhibition' )
           <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
             <span class="handheld-toolbar-label">Home</span>
@@ -266,20 +271,20 @@
           @endif --}}
 
           @if(Route::currentRouteName() === 'coievent.add')
-          <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
-            <span class="handheld-toolbar-label">Home</span>
-          </a>
+              <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+                <span class="handheld-toolbar-label">Home</span>
+              </a>
 
-          <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
-            <span class="handheld-toolbar-label">Advertise</span>
-          </a>
+              <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+                <span class="handheld-toolbar-label">Advertise</span>
+              </a>
 
-          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-            <span class="handheld-toolbar-label">Menu</span>
-          </a>
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
           @endif
           
 
