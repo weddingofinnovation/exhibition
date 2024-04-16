@@ -177,13 +177,8 @@
             <span class="handheld-toolbar-label">Exhibition</span>
           </a>
 
-          
-            @if(Auth::user()->utype == 'NULL')
-              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
-                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-                <span class="handheld-toolbar-label">Menu</span>
-              </a>
-            @elseif(Auth::user()->utype == 'USR')
+          @if (Auth::check())
+            @if(Auth::user()->utype == 'ADM')
             <a class="d-table-cell handheld-toolbar-item" data-bs-target="#offcanvasUSR" href="#offcanvasUSR" role="button" aria-controls="offcanvasUSR">
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
@@ -193,10 +188,19 @@
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
             </a>
-            
+            @else
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
             @endif
-              
+          @else
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
           @endif
+        @endif
 
       @if(Route::currentRouteName() === 'coi.exhibition' )
           <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
