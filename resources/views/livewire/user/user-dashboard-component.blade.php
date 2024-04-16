@@ -216,7 +216,7 @@
                                       </div>
 
                                       <div class="col-3  p-0">
-                                          <a href="" class="btn btn-sm btn-primary">Choose</a>
+                                          <a href="#" wire:click.prevent="declaimer({{$franchise->id}})" class="btn btn-sm btn-primary">Choose</a>
                                       </div>
 
                                     </div>

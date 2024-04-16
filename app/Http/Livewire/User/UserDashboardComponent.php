@@ -308,6 +308,16 @@ class UserDashboardComponent extends Component
         $saveSearchTerm->save();
     }
 
+    public function declaimer($id)
+    {
+        $claiming = New Usage();
+        $claiming->user_id = Auth::user()->id;
+        $claiming->event_id =  $id;
+        $claiming->status = '0';
+        $claiming->admstatus = '0';
+        $claiming->type = 'contract';
+        $claiming->save();
+    }
 
     public function render()
     {

@@ -85,6 +85,8 @@ class AdminDetailComponent extends Component
       session()->flash('message',' Status Successfully Changed');
     } 
 
+    
+
     public function updateCreate($id) 
     {
       $eVent = Event::find($id);
