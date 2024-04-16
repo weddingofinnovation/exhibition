@@ -944,7 +944,7 @@
                   <div class="offcanvas-header">
                     <div class="offcanvas-title fs-sm">
                       <a href="{{route('coievent.add', ['board' => 'add-your-event'])}}">
-                          Product List your Show <br>
+                          List your Show <br>
                           <span class="fs-sm fw-lighter">Got an event? Partner with us</span>
                       </a>
                     </div>
@@ -952,30 +952,11 @@
                   </div>
                 
                   <div class="list-group list-group-flush scrollarea">
-
-                      @if(Auth::check())
-                        <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                          <div class="d-flex w-100 align-items-center justify-content-between">
-                            <normal class="mb-1">Your Orders</normal>
-                            <small>
-                            @if (Auth::check()) 
-                              <i class="bi bi-chevron-right"></i>
-                              @else
-                              <i class="bi bi-lock-fill"></i>
-                              
-                              @endif
-                            </small>
-                          </div>
-                          <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
-                        </a>
-                      @endif
-                      
-
                                                                     
                       <a href="{{route('service.product',['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'product/great-exhibition-to-exhibit' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                           <normal class="mb-1">Great Exhibition To Exhibit</normal>
-                          <small>571</small>
+                          <small>certified</small>
                         </div>
                         <div class="col-10 mb-1 small fw-lighter">Did your event certified yet?</div>
                       </a>
@@ -983,15 +964,15 @@
                       <a href="{{route('service.product',['productservice' => 'exhibition-navigator'])}}" class=" border-0 list-group-item list-group-item-action {{'product/exhibition-navigator' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                           <normal class="mb-1">Exhibition Navigator</normal>
-                          <small>571</small>
+                          <small>571 events</small>
                         </div>
-                        <div class="col-10 mb-1 small fw-lighter">Is your event certified yet?</div>
+                        <div class="col-10 mb-1 small fw-lighter">Premium Discounted Space</div>
                       </a>
 
                       <a href="{{route('service.product',['productservice' => 'find-exhibitor'])}}" class=" border-0 list-group-item list-group-item-action {{'product/find-exhibitor' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                           <normal class="mb-1">Find Exhibitor</normal>
-                          <small>571</small>
+                          <small>1,000</small>
                         </div>
                         <div class="col-10 mb-1 small fw-lighter">Our Data, your Customer</div>
                       </a>
@@ -1032,13 +1013,6 @@
                         </form>
                       @endif
 
-                          <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Help & Support</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                          </a>
                   </div>
                   
                     
