@@ -179,7 +179,7 @@
 
           @if (Auth::check())
             @if(Auth::user()->utype == 'ADM')
-            <a class="d-table-cell handheld-toolbar-item" data-bs-target="#offcanvasUSR" href="#offcanvasUSR" role="button" aria-controls="offcanvasUSR">
+            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasUSR" role="button" aria-controls="offcanvasUSR">
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
             </a>
@@ -188,11 +188,6 @@
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
             </a>
-            @else
-              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
-                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-                <span class="handheld-toolbar-label">Menu</span>
-              </a>
             @endif
           @else
               <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
