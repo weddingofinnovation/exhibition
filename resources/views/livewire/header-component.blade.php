@@ -332,7 +332,7 @@
                               <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
                                   
                                   <div class="offcanvas-header">
-                                    <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
+                                    <div class="offcanvas-title h5" id="offcanvasExampleLabel">adminList your Show <br>
                                     <span class="fs-xs fw-lighter">Got an event? Partner with us</span></div>
                                     
                                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -558,7 +558,7 @@
                         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
                             
                             <div class="offcanvas-header">
-                              <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
+                              <div class="offcanvas-title h5" id="offcanvasExampleLabel">logoutList your Show <br>
                               <span class="fs-xs fw-lighter">Got an event? Partner with us</span></div>
                               
                               <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
