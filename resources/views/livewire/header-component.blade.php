@@ -953,14 +953,6 @@
                 
                   <div class="list-group list-group-flush scrollarea">
 
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Products</normal>
-                          <small><i class="bi bi-chevron-right"></i></small>
-                        </div>
-                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
-                      </a>
-
                       @if(Auth::check())
                         <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                           <div class="d-flex w-100 align-items-center justify-content-between">
@@ -1012,7 +1004,7 @@
                         <div class="col-10 mb-1 small fw-lighter">Find your theme</div>
                       </a>
 
-                      <a href="#" class="border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('service.product',['productservice' => 'contract-form'])}}" class="border-0 list-group-item list-group-item-action {{'contract-form' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                           <normal class="mb-1">Online Contract Form</normal>
                           <small>Try it!</small>
@@ -1055,7 +1047,7 @@
                     <div class="container py-4">
                       <div class="col-sm-12 ">
                         <div class="small fw-lighter">Exhibition Navigator</div>
-                        <small class="lh-1">Find <br>Great Exhibition To Exhibit<br> certified upcoming exhibition, conference, awards, trade show.</small>
+                        <small class="lh-1">Find <span class="fw-bold">Great Exhibition To Exhibit</span> certified upcoming exhibition, conference, awards, trade show.</small>
                         <div class="bold text-primary fs-sm"> See what's new</div> 
                       </div>
 
