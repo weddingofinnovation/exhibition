@@ -550,12 +550,103 @@
                               </div>
                             @endif
                       @else
-                        <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="{{route('login')}}" data-bs-toggle="modal">
+                        <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="{{route('login')}}" data-bs-toggle="">
                           <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-person-circle"></i></div>
                           <div class="navbar-tool-text ms-n3" ><small>Hello, Sign in</small>My Account</div>
                         </a>
 
-                       
+                        <!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
+                            
+                            <div class="offcanvas-header">
+                              <div class="offcanvas-title h5" id="offcanvasExampleLabel">logoutList your Show <br>
+                              <span class="fs-xs fw-lighter">Got an event? Partner with us</span></div>
+                              
+                              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                        
+                            <div class="list-group list-group-flush border-bottom scrollarea">
+
+                                <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Notifications</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
+                                </a>
+
+                                <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Your Orders</normal>
+                                    <small>
+                                    @if (Auth::check()) 
+                                      <i class="bi bi-chevron-right"></i>
+                                      @else
+                                      <i class="bi bi-lock-fill"></i>
+                                      
+                                      @endif
+                                    </small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
+                                </a>
+
+                                <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">COI Recommends</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter">Get COI business picked just for you</div>
+                                </a>
+
+                                <a href="{{route('admin.global')}}" class=" border-0 list-group-item list-group-item-action {{'admin/global' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Global</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">Satisfy your palates</div>
+                                </a>
+
+                                <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Luggage, Travel & Stay</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">Plan your business trip headache's</div>
+                                </a>
+                                                                              
+                                <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Rewards</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
+                                </a>
+
+                                <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Offers</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
+                                </a>
+
+                                <a href="{{route('user.profile')}}" class="list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Accounts & Settings</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
+                                </a>
+                                
+                                <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                                  <div class="d-flex w-100 align-items-center justify-content-between">
+                                    <normal class="mb-1">Help & Support</normal>
+                                    <small><i class="bi bi-chevron-right"></i></small>
+                                  </div>
+                                  <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                                </a>
+                            </div>
+                              
+                        </div>  -->
                     @endif
 
 
@@ -886,6 +977,159 @@
                           <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
                         </a>
                       @endif
+                      
+
+                                                                    
+                      <a href="{{route('service.product',['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'product/great-exhibition-to-exhibit' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Great Exhibition To Exhibit</normal>
+                          <small>571</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">Did your event certified yet?</div>
+                      </a>
+
+                      <a href="{{route('service.product',['productservice' => 'exhibition-navigator'])}}" class=" border-0 list-group-item list-group-item-action {{'product/exhibition-navigator' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Exhibition Navigator</normal>
+                          <small>571</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">Is your event certified yet?</div>
+                      </a>
+
+                      <a href="{{route('service.product',['productservice' => 'find-exhibitor'])}}" class=" border-0 list-group-item list-group-item-action {{'product/find-exhibitor' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Find Exhibitor</normal>
+                          <small>571</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">Our Data, your Customer</div>
+                      </a>
+
+                      <a href="{{route('service.product',['productservice' => 'stall-fabrication'])}}" class=" border-0 list-group-item list-group-item-action {{'product/stall-fabrication' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Stall-fabrication</normal>
+                          <small>571</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">Find your theme</div>
+                      </a>
+
+                      <a href="#" class="border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Online Contract Form</normal>
+                          <small>Try it!</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter ">Our online Contract form, design instant.</div>
+                      </a>
+
+                      <a href="#" class=" list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Talk to Sales</normal>
+                        </div>
+                      </a>
+
+
+                      @if(Auth::check())
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <div class="d-flex w-100 align-items-center justify-content-between">
+                            <normal class="mb-1">Logout</normal>
+                            <small><i class="bi bi-chevron-right"></i></small>
+                          </div>
+                          <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                        </a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST">
+                          @csrf
+                        </form>
+                      @endif
+
+                          <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                              <normal class="mb-1">Help & Support</normal>
+                              <small><i class="bi bi-chevron-right"></i></small>
+                            </div>
+                            <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                          </a>
+                  </div>
+                  
+                    
+
+                  <div class="handheld-toolbar border-top-0">
+                    <div class="container py-4">
+                      <div class="col-sm-12 ">
+                        <div class="small fw-lighter">Exhibition Navigator</div>
+                        <small class="lh-1">Find <br>Great Exhibition To Exhibit<br> certified upcoming exhibition, conference, awards, trade show.</small>
+                        <div class="bold text-primary fs-sm"> See what's new</div> 
+                      </div>
+
+                      @if(Auth::check())
+                      <div class="col-sm-12 py-3">
+                        
+                      </div>
+
+                      <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <div class="d-flex w-100 align-items-center justify-content-between">
+                            <normal class="mb-1">Logout</normal>
+                            <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
+                          </div>
+                          <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                        </a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST">
+                          @csrf
+                        </form>
+                      @else
+                      
+                      <div class="col-sm-12 py-3">
+                        <div class="fw-normal text-accent fs-md lh-1">Find Exhibitor<i class="bi bi-right-chevron"></i> </div>
+                      </div>
+
+
+                      @endif
+
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            <!--stop-->
+
+          <!-- secure <div class="offcanvas offcanvas-start" data-bs-toggle="offcanvas" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 380px;">                  
+                <div class=" ms-1 toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">    
+
+                  <div class="offcanvas-header">
+                    <div class="offcanvas-title fs-sm">
+                      <a href="{{route('coievent.add', ['board' => 'add-your-event'])}}">
+                          Product List your Show <br>
+                          <span class="fs-sm fw-lighter">Got an event? Partner with us</span>
+                      </a>
+                    </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
+                  </div>
+                
+                  <div class="list-group list-group-flush scrollarea">
+
+                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Products</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
+                      </a>
+
+                      @if(Auth::check())
+                        <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <div class="d-flex w-100 align-items-center justify-content-between">
+                            <normal class="mb-1">Your Orders</normal>
+                            <small>
+                            @if (Auth::check()) 
+                              <i class="bi bi-chevron-right"></i>
+                              @else
+                              <i class="bi bi-lock-fill"></i>
+                              
+                              @endif
+                            </small>
+                          </div>
+                          <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
+                        </a>
+                      @endif
                       {{--<a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
                           <normal class="mb-1">COI Recommends</normal>
@@ -910,12 +1154,28 @@
                         {{--<div class="col-10 mb-1 small fw-lighter ">Plan your business trip headache's</div>--}}
                       </a>
                                                                     
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('service.product',['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'product/great-exhibition-to-exhibit' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Pricing</normal>
-                          <small><i class="bi bi-chevron-right"></i></small>
+                          <normal class="mb-1">Great Exhibition To Exhibit</normal>
+                          <small>571</small>
                         </div>
-                      
+                        <div class="col-10 mb-1 small fw-lighter">Did your event certified yet?</div>
+                      </a>
+
+                      <a href="{{route('service.product',['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'product/great-exhibition-to-exhibit' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Great Exhibition To Exhibit</normal>
+                          <small>571</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter">Did your event certified yet?</div>
+                      </a>
+
+                      <a href="#" class="border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Exhibition Directory</normal>
+                          <small>Try it!</small>
+                        </div>
+                        <div class="col-10 mb-1 small fw-lighter ">Our online Contract form, design instant.</div>
                       </a>
 
                       <a href="#" class=" list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
@@ -954,53 +1214,44 @@
                         </form>
                       @endif
 
-                      {{--<a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                             <div class="d-flex w-100 align-items-center justify-content-between">
                               <normal class="mb-1">Help & Support</normal>
                               <small><i class="bi bi-chevron-right"></i></small>
                             </div>
                             <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                          </a>--}}
+                          </a>
                   </div>
                   
-                  <div class="container py-4">
-                      <div class="col-sm-12 ">
-                        <div class="small fw-lighter">Product updates</div>
-                        <small class="lh-1">Get the latest on new features, product improvement, and other announcements.</small>
-                        <div class="bold text-primary fs-sm"> See what's new</div> 
-                      </div>
+                    
 
-                      @if(Auth::check())
-                      <div class="col-sm-12 py-3">
-                        <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
-                      </div>
-                      @else
-                      
-                      <div class="col-sm-12 py-3">
-                        <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
-                      </div>
-
-
-                      @endif
-
-
-                    </div>
                   <div class="handheld-toolbar border-top-0">
                     <div class="container py-4">
                       <div class="col-sm-12 ">
-                        <div class="small fw-lighter">Product updates</div>
-                        <small class="lh-1">Get the latest on new features, product improvement, and other announcements.</small>
+                        <div class="small fw-lighter">Exhibition Navigator</div>
+                        <small class="lh-1">Find <br>Great Exhibition To Exhibit<br> certified upcoming exhibition, conference, awards, trade show.</small>
                         <div class="bold text-primary fs-sm"> See what's new</div> 
                       </div>
 
                       @if(Auth::check())
                       <div class="col-sm-12 py-3">
-                        <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
+                        
                       </div>
+
+                      <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <div class="d-flex w-100 align-items-center justify-content-between">
+                            <normal class="mb-1">Logout</normal>
+                            <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
+                          </div>
+                          <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                        </a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST">
+                          @csrf
+                        </form>
                       @else
                       
                       <div class="col-sm-12 py-3">
-                        <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
+                        <div class="fw-normal text-accent fs-md lh-1">Find Exhibitor<i class="bi bi-right-chevron"></i> </div>
                       </div>
 
 
@@ -1011,8 +1262,7 @@
                   </div>
 
                 </div>
-              </div>
-            <!--stop-->
+              </div> -->
 
             <!--USR stop-->
               <div class="offcanvas offcanvas-start" data-bs-toggle="offcanvas" tabindex="-1" id="offcanvasUSR" aria-labelledby="offcanvasRightLabel" style="width: 380px;">                  
