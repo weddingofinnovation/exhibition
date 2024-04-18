@@ -714,42 +714,75 @@ body {
 
                     <div class="container">
                       <div class="grido">
-                        <div class="element-item metalloid " data-category="metalloid">
-                          <h3 class="name">Fabrication</h3>
-                          <p class="symbol">Te</p>
-                          <p class="number">52</p>
-                          <p class="weight">127.6</p>
-                        </div>
-
-                        <div class="element-item post-transition metal " data-category="post-transition">
-                          <h3 class="name">Exhibitor</h3>
-                          <p class="symbol">Bi</p>
-                          <p class="number">83</p>
-                          <p class="weight">208.980</p>
-                        </div>
-
-                        <div class="element-item post-transition metal " data-category="post-transition">
+                      
+                        <div class="element-item" data-category="post-transition">
                           <h3 class="name">Marketing Material</h3>
                           <p class="symbol">Pb</p>
                           <p class="number">82</p>
                           <p class="weight">207.2</p>
                         </div>
 
-                        <div class="element-item transition metal " data-category="transition">
+                        <div class="element-item" data-category="transition">
                           <h3 class="name">Contract Form</h3>
                           <p class="symbol">Au</p>
                           <p class="number">79</p>
                           <p class="weight">196.967</p>
                         </div>
 
-                        <div class="element-item alkali metal " data-category="alkali">
+                        <div class="element-item" data-category="alkali">
                           <h3 class="name">Call-in</h3>
                           <p class="symbol">K</p>
                           <p class="number">19</p>
                           <p class="weight">39.0983</p>
                         </div>
                         
-                        <div class="element-item alkali metal " data-category="alkali">
+                        <div class="element-item" data-category="alkali">
+                          <h3 class="name">Sodium</h3>
+                          <p class="symbol">Na</p>
+                          <p class="number">11</p>
+                          <p class="weight">22.99</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="container">
+                      <div class="grido">
+                        <div class="element-item" data-category="metalloid">
+                          <h3 class="name">Fabrication</h3>
+                          <p class="symbol">Te</p>
+                          <p class="number">52</p>
+                          <p class="weight">127.6</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Exhibitor</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">208.980</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Marketing Material</h3>
+                          <p class="symbol">Pb</p>
+                          <p class="number">82</p>
+                          <p class="weight">207.2</p>
+                        </div>
+
+                        <div class="element-item" data-category="transition">
+                          <h3 class="name">Contract Form</h3>
+                          <p class="symbol">Au</p>
+                          <p class="number">79</p>
+                          <p class="weight">196.967</p>
+                        </div>
+
+                        <div class="element-item" data-category="alkali">
+                          <h3 class="name">Call-in</h3>
+                          <p class="symbol">K</p>
+                          <p class="number">19</p>
+                          <p class="weight">39.0983</p>
+                        </div>
+                        
+                        <div class="element-item" data-category="alkali">
                           <h3 class="name">Sodium</h3>
                           <p class="symbol">Na</p>
                           <p class="number">11</p>
