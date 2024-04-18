@@ -163,6 +163,7 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
 
 use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\User\UserDirectoryComponent;
 use App\Http\Livewire\User\UserEventCategoryComponent;
 use App\Http\Livewire\User\UserEventClaimComponent;
 use App\Http\Livewire\User\UserEventDetailsComponent;
@@ -314,10 +315,10 @@ Route::post('/like-business/{franchise}', 'App\Http\Livewire\DetailsComponent@li
 //google login setup 
 Route::get('/auth/google', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
 Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
+Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', UserDirectoryComponent::class)->name('directory.dashboard');
 
   //User
   Route::middleware(['auth:sanctum', 'verified'])->group( function () {
-    
     Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
     Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
 
