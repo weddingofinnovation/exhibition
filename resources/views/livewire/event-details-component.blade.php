@@ -274,7 +274,11 @@ body {
     font-weight: 700;
     line-height: 1.25;
     color: var(--bs-heading-color);
-}
+    }
+
+    h1, .h1 {
+        font-size: 3.6rem;
+    }
 
 </style>
 
@@ -442,7 +446,8 @@ body {
                               {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
                             @endif 
                         </h4>
-                        <div class="text-dark fw-normal"> {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </div>
+
+                        <h5 class="text-dark fw-normal mb-5"> {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
 
 
                         <span class="badge badge-primary bg-primary fs-xs mt-5">
