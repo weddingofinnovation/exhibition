@@ -447,20 +447,19 @@ body {
                         <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
                             <img src="{{url('assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
                         </a>
-                       
                   </div>
                   <div class="col-lg-7 col-md-6 col-sm-8">
                     <div class="col-lg-6 col-md-6  px-0 py-3">
                     
-                        <h4 class="text-dark fw-normal fs-sm pt-1 pb-0 lh-0">
+                        <h4 class="text-dark fw-normal fs-md pt-1 pb-0 lh-0">
                             @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
                             @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
                             @endif 
                         </h4>
 
-                        <h5 class="text-dark fw-normal mb-5"> {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
+                      
 
 
                         <span class="badge badge-primary bg-primary fs-xs mt-5">
@@ -476,8 +475,10 @@ body {
                                 ended
                               @endif
                         </span>
+
                         <h1 class="text-dark mb-0">{{$event->eventname}}</h1>
-                        <div class="text-dark fw-normal">{{ucwords(trans($event->venue))}}</div>
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}</h5>
+                        
                         @if(count($sponserbrand) > 0)
                             <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
                             <div class="d-flex bg-transparent border-bottom"> 
