@@ -290,9 +290,9 @@ body {
 			font-size: 1.5rem;
 		}}
 
-    h1, .h1 {
+    /* h1, .h1 {
     font-size: calc(1.375rem + 1.5vw);
-    }
+    } */
 </style>
 
 
@@ -714,26 +714,26 @@ body {
 
                     <div class="container">
                       <div class="grido">
-                      
+                         
                         <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Marketing Material</h3>
-                          <p class="symbol">Pb</p>
+                          <h3 class="name">Exhibitor</h3>
+                          <p class="symbol">54</p>
                           <p class="number">82</p>
-                          <p class="weight">207.2</p>
+                          <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="transition">
-                          <h3 class="name">Contract Form</h3>
-                          <p class="symbol">Au</p>
+                          <h3 class="name">Visitors</h3>
+                          <p class="symbol">3,300</p>
                           <p class="number">79</p>
-                          <p class="weight">196.967</p>
+                          <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="alkali">
-                          <h3 class="name">Call-in</h3>
-                          <p class="symbol">K</p>
+                          <h3 class="name">Business</h3>
+                          <p class="symbol">25k</p>
                           <p class="number">19</p>
-                          <p class="weight">39.0983</p>
+                          <p class="weight">Verified</p>
                         </div>
                         
                         <div class="element-item" data-category="alkali">
