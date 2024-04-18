@@ -410,7 +410,7 @@ body {
                 <div class="d-flex justify-content-between py-2">
                       <div class="z-2 text-dark  pl-3 lh-1"> 
                        <span class= "fw-bold text-light fs-xs ">
-                        Great Place To Visit</span><br><span class="text-light fw-normal fs-xs">Business</span>
+                        Great Exhibition To Business</span><br><span class="text-light fw-normal fs-xs">Certified</span>
                       </div>
 
 
