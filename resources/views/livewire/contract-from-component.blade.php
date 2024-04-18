@@ -29,14 +29,14 @@
 
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
-
+        @elseif($formm == 'payment')
             <h1>Calculation</h1> 
             <form wire:submit.prevent="payment">      
                     <input type="text" class="form-control" placeholder="tax" wire:model="tax">
                     <input type="text" class="form-control" placeholder="total" wire:model="total">
                     <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>  
-
+        @elseif($formm == 'advertise')
             <h1>Advertise</h1>
             <form wire:submit.prevent="advertise">
                 <input type="text" class="form-control" wire:model="person" placeholder="person">

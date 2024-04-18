@@ -34,7 +34,6 @@ class UserDirectoryComponent extends Component
         $this->admstatus = '0';
     }
 
-
     public function contactdetails()
     {
         $basicdetails =  new Directory();
@@ -53,7 +52,7 @@ class UserDirectoryComponent extends Component
         $stalldetails->stall = $this->stall;
         $stalldetails->hall = $this->hall;
         $stalldetails->save();
-        return redirect()->route('directory.dashboard', ['directorydetails' => 'product-details','reference' =>  $this->reference]);
+        return redirect()->route ('directory.dashboard', ['directorydetails' => 'product-details' ,'reference' =>  $this->reference]);
     }
 
     public function productdetails()
@@ -62,7 +61,7 @@ class UserDirectoryComponent extends Component
         $stalldetails->category = $this->category;
         $stalldetails->product = $this->product;
         $stalldetails->save();
-        return redirect()->route('directory.dashboard', ['directorydetails' => 'directory-details','reference' =>  $this->reference]);
+        return redirect()->route ('directory.dashboard', ['directorydetails' => 'directory-details' ,'reference' =>  $this->reference]);
     }
 
     public function directorydetails() 
@@ -78,6 +77,7 @@ class UserDirectoryComponent extends Component
 
        return redirect()->route('directory.dashboard', ['directorydetails' => 'submit&thanks','reference' =>  $this->reference]);
     }
+
 
     public function render()
     {

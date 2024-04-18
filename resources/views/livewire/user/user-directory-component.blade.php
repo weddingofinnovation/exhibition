@@ -1,6 +1,5 @@
 <main>
 
-
 <style>
 	
 	:root [data-bs-theme=light] {
