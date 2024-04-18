@@ -280,6 +280,19 @@ body {
         font-size: 3.6rem;
     }
 
+    @media (min-width: 1200px)
+		{h2, .h2 {
+			font-size: 2.75rem;
+		}}
+
+		@media (min-width: 1200px)
+		{h5, .h5 {
+			font-size: 1.5rem;
+		}}
+
+    h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+    }
 </style>
 
 
@@ -390,7 +403,7 @@ body {
             </section>
 
             
-            <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" >
+            <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
             <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
               <div class="container  mb-lg-0 bg-primary">
 
