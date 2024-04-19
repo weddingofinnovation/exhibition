@@ -158,6 +158,8 @@ class EventDetailsComponent extends Component
          $eventbrand = Brand::where('event_id', $event->id)->limit('25')->get();
          $sponserbrand = Brand::where('event_id', $event->id)->limit('4')->get();
 
+         $exhibitor = Brand::where('event_id', $event->id)->get();
+
          $current = strtotime(Carbon::now());
          $to = strtotime($event->startdate);
          $from= strtotime($event->enddate);
@@ -176,7 +178,7 @@ class EventDetailsComponent extends Component
          //$testi = strtotime($checkCommentop);
 
          //dd($fromdate, $todate, $checkCommentop );
-        return view('livewire.event-details-component',[ 'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
+        return view('livewire.event-details-component',['$exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
                                                         'commentedRates' => $commentedRates,
                                                         'detailProductprice' => $detailProductprice,
                                                         'pavillion'=>$pavillion,'category'=>$category,

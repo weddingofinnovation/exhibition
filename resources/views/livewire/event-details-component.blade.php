@@ -713,6 +713,21 @@ body {
                     </div>
 
                     <div class="container">
+                      download  Contact
+                      <div class="grido">
+
+                         @foreach($exhibitor as $participants)
+                          <div class="element-item" data-category="post-transition">
+                            <h3 class="name text-light">{{$participants->brand_name}}</h3>
+                            <p class="symbol">54</p>
+                            <p class="number">82</p>
+                            <p class="weight">Verified</p>
+                          </div>
+                         @endforeach
+                      </div>
+                    </div>
+
+                    <div class="container">
                       <div class="grido">
                          
                         <div class="element-item" data-category="post-transition">
