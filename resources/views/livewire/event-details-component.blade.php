@@ -719,10 +719,12 @@ body {
                          @foreach($exhibitor as $participants)
                           <div class="element-item" data-category="post-transition">
                             <h3 class="name text-light">{{$participants->brand_name}}</h3>
-                            <!-- <p class="symbol">54</p> -->
+                            <p class="symbol">{{$participants->brand_name}}</p>
                             <p class="number">82</p>
                             <p class="weight">Verified</p>
                           </div>
+
+
                          @endforeach
                       </div>
                     </div>
