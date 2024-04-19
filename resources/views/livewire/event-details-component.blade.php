@@ -114,7 +114,7 @@ body {
   position: absolute;
   left: 10px;
   top: 0px;
-  font-size: 32px;
+  font-size: 12px;
   font-weight: bold;
   color: white;
 }
@@ -525,7 +525,7 @@ body {
                     <li class="nav-item"><a class="nav-link px-1 active" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'details'])}}" data-bs-toggle="tab" role="tab">Understanding</a></li>
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Advertise</a></li>
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'faq'])}}" data-bs-toggle="tab" role="tab">FAQ</a></li>
                     @if(count($eventbrand) > 0) 
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitors</a></li>
                     @endif
@@ -729,38 +729,41 @@ body {
                       </div>
                     </div>
 
-                    <div class="container">
-                      <div class="grido">
-                         
-                        <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Exhibitor</h3>
-                          <p class="symbol">54</p>
-                          <p class="number">82</p>
-                          <p class="weight">Verified</p>
-                        </div>
+                    @if($optional == 'exhibitor')
+                      <!-- Exhibitor -->
+                      <div class="container">
+                        <div class="grido">
+                          
+                          <div class="element-item" data-category="post-transition">
+                            <h3 class="name">Exhibitor</h3>
+                            <p class="symbol">54</p>
+                            <p class="number">82</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                        <div class="element-item" data-category="transition">
-                          <h3 class="name">Visitors</h3>
-                          <p class="symbol">3,300</p>
-                          <p class="number">79</p>
-                          <p class="weight">Verified</p>
-                        </div>
+                          <div class="element-item" data-category="transition">
+                            <h3 class="name">Visitors</h3>
+                            <p class="symbol">3,300</p>
+                            <p class="number">79</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                        <div class="element-item" data-category="alkali">
-                          <h3 class="name">Business</h3>
-                          <p class="symbol">25k</p>
-                          <p class="number">19</p>
-                          <p class="weight">Verified</p>
-                        </div>
-                        
-                        <div class="element-item" data-category="alkali">
-                          <h3 class="name">Sodium</h3>
-                          <p class="symbol">Na</p>
-                          <p class="number">11</p>
-                          <p class="weight">22.99</p>
+                          <div class="element-item" data-category="alkali">
+                            <h3 class="name">Business</h3>
+                            <p class="symbol">25k</p>
+                            <p class="number">19</p>
+                            <p class="weight">Verified</p>
+                          </div>
+                          
+                          <div class="element-item" data-category="alkali">
+                            <h3 class="name">Sodium</h3>
+                            <p class="symbol">Na</p>
+                            <p class="number">11</p>
+                            <p class="weight">22.99</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
+                    @endif
 
                     <div class="container">
                       <div class="grido">
@@ -1326,17 +1329,17 @@ body {
                       </div>
                     </section>
 
-                    <div class="container text-center">
+                    <!-- <div class="container text-center">
                       <small class="text-primary fs-sm fw-normal">Right Place, Right Time, Right People</small>
                       <h1 class="text-center fw-bold display-3 lh-1">Market Leaders Rely on Great Place To Business</h1>
                     </div> 
 
-                    <!-- copy Card group sec_last-->
+                   
                     <section class="container py-5">
-                      <!-- Card group -->
+                      
                       <div class="card-group">
 
-                          <!-- Card -->
+                         
                           <div class="card border-0">
                             <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
                             <div class="card-body">
@@ -1348,7 +1351,7 @@ body {
 
                           
 
-                          <!-- Card -->
+                          
                           <div class="card border-0">
                             <img src="https://source.unsplash.com/1600x900/?brand, studio" class="card-img-top" alt="Card image">
                             <div class="card-body">
@@ -1358,7 +1361,7 @@ body {
                             </div>
                           </div>
 
-                          <!-- Card -->
+                          
                           <div class="card border-0">
                             <img src="https://source.unsplash.com/1600x900/?visit, exhibition" class="card-img-top" alt="Card image">
                             <div class="card-body">
@@ -1369,7 +1372,7 @@ body {
                           </div>
 
 
-                          <!-- Card -->
+                          
                           <div class="card border-0">
                             <img src="https://source.unsplash.com/1600x900/?Membership, benefits" class="card-img-top" alt="Card image">
                             <div class="card-body">
@@ -1379,7 +1382,7 @@ body {
                             </div>
                           </div>
 
-                          <!-- Card -->
+                          
                           <div class="card border-0">
                             <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
                             <div class="card-body">
@@ -1393,7 +1396,7 @@ body {
                         
                       </div>
                     </section>
-            
+             -->
 
                     <!-- copy Card group sec_last-->
                       <!-- <section class="container py-5">
