@@ -178,7 +178,7 @@ class EventDetailsComponent extends Component
          //$testi = strtotime($checkCommentop);
 
          //dd($fromdate, $todate, $checkCommentop );
-        return view('livewire.event-details-component',['$exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
+        return view('livewire.event-details-component',['exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
                                                         'commentedRates' => $commentedRates,
                                                         'detailProductprice' => $detailProductprice,
                                                         'pavillion'=>$pavillion,'category'=>$category,
