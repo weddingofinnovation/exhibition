@@ -114,7 +114,7 @@ body {
   position: absolute;
   left: 10px;
   top: 0px;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
   color: white;
 }
@@ -719,7 +719,7 @@ body {
                          @foreach($exhibitor as $participants)
                           <div class="element-item" data-category="post-transition">
                             <h3 class="name text-light">{{$participants->brand_name}}</h3>
-                            <p class="symbol">54</p>
+                            <!-- <p class="symbol">54</p> -->
                             <p class="number">82</p>
                             <p class="weight">Verified</p>
                           </div>
