@@ -322,8 +322,6 @@ class AdminEventMultiParticipantsComponent extends Component
     }
 
 
-
-
     public function participantToAdd()
     {
         $sectry = json_encode($this->checkvalue);
@@ -333,7 +331,7 @@ class AdminEventMultiParticipantsComponent extends Component
         $pavillo = $this->pavill_id;
         $partne = $this->partner_id;
 
-        foreach($tryi as $trey)
+        foreach ($tryi as $trey)
         {
             $fattribute = new Participant();
 

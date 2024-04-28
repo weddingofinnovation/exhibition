@@ -404,7 +404,7 @@ body {
 
             
             <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
-            <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
+              <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
               <div class="container  mb-lg-0 bg-primary">
 
                 <div class="d-flex justify-content-between py-2">
@@ -1395,8 +1395,7 @@ body {
 
                         
                       </div>
-                    </section>
-             -->
+                    </section>-->
 
                     <!-- copy Card group sec_last-->
                       <!-- <section class="container py-5">
@@ -1439,13 +1438,13 @@ body {
             
 
 
-            <section class="card text-center py-5 border-0">
-              <div class="card-body">
-                <h5 class="card-title h2">Buy your Expo 2023 Tickets Now </h5>
-                <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
-                <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
-              </div>
-            </section>
+                    <section class="card text-center py-5 border-0">
+                      <div class="card-body">
+                        <h5 class="card-title h2">Buy your Expo 2023 Tickets Now </h5>
+                        <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
+                        <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                      </div>
+                    </section>
             
                     <!-- Card group last-->
                       <!-- <section class="container py-5">
@@ -1597,7 +1596,7 @@ body {
            @endif
 
             <section class="container py-5">
-            <div class="text-dark text-center fw-bold fs-md display-3">Our Offerings</div>
+             <div class="text-dark text-center fw-bold fs-md display-3">Our Offerings</div>
               <div class="text-dark text-center fw-bold fs-md h5">More to Explore</div>
               <!-- Card group -->
               <div class="card-group moretoexplore">
@@ -1749,8 +1748,14 @@ body {
               @if($event->businessrevenue == 'visitor')
                 <div class="handheld-toolbar bg-secondary">
                   <div class="d-flex justify-content-between py-2 px-2">
-                    <div class="text-dark  pl-3 lh-1">  <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span><br><span class=" fw-normal fs-xs">Onwards</span></div>
-                      @if( $event->businessrevenue == 'visitor' )  
+
+                    <div class="text-dark  pl-3 lh-1">
+                      <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span>
+                      <br>
+                      <span class=" fw-normal fs-xs">Onwards</span>
+                    </div>
+                    <a href="{{route('event.exhibit', ['board' => 'registration-great-exhibition-to-exhibit'])}}" class="btn btn-primary btn-sm">Registration</a>
+                      <!-- @if( $event->businessrevenue == 'visitor' )  
                         @if( $ticketOrExhibit != 0 )
                             <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
                           @elseif( $ticketOrExhibit == 0 )
@@ -1758,9 +1763,10 @@ body {
                           
                             <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
                         @endif
-                      @else
-                      <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
-                      @endif
+                        @else
+                        <a href="{{route('event.exhibit', ['board' => 'registration-great-exhibition-to-exhibit'])}}" class="btn btn-primary btn-sm">Book your Space</a>
+                      @endif -->
+
                     </div>
                 </div>
               @else

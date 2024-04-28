@@ -263,7 +263,6 @@
                     @endforeach
                     <h1>Suggested Speaker</h1>
                     <div class="row">
-
                         <!-- Bestsellers-->
                         <div class="col-md-4 col-sm-6 mb-2 py-1">
                             <div class="widget">
@@ -283,8 +282,6 @@
                                 @endforeach
                             </div>
                         </div>
-
-                    
                     </div>
                  
                 @endif
@@ -337,40 +334,37 @@
                                     <a href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="Imagedelete({{$participant->id}})"> <i class="bi bi-x me-2"></i> </a>
                                     <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="50px">{{$participant->brand_name}}
                                 </div>
-                                
                             @endforeach
 
                             <div class="small">Participants</div>
-                            @foreach ($participants as $participant) 
-                                  <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                      <div class="col  pr-0">
-                                         
-                                              <div class="h4 fw-light mb-0"></div> 
-                                              <div class="small text-muted"></div>
-                                           
+                                @foreach ($participants as $participant) 
+                                    <div class="container">
+                                        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                        <div class="col  pr-0">
                                             
-                                              <a href="#"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                      </div>
+                                                <div class="h4 fw-light mb-0"></div> 
+                                                <div class="small text-muted"></div>
+                                            
+                                                
+                                                <a href="#"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                        </div>
 
-                                      <div class="col-7  p-0">
-                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                          {{$participant->brand_name}}</a></div>
-                                        <div class="text-muted fs-sm text-start">
-                                        {{$participant->organisation}}
-                                        </div>  
-                                        <div class="text-muted fs-sm text-start"></div>
-                                      </div>
+                                        <div class="col-7  p-0">
+                                            <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                            {{$participant->brand_name}}</a></div>
+                                            <div class="text-muted fs-sm text-start">
+                                            {{$participant->organisation}}
+                                            </div>  
+                                            <div class="text-muted fs-sm text-start"></div>
+                                        </div>
 
-                                      <div class="col-3  p-0">
-                                        <a class="card-img-top d-block overflow-hidden" href="#">
-                                            <img src="{{url('public/assets/image/exhibition/'.$participant->image)}}" alt="{{Str::limit($participant->brand_name, 24)}}"></a>
-                                      </div>
+                                        <div class="col-3  p-0">
+                                            <a class="card-img-top d-block overflow-hidden" href="#">
+                                                <img src="{{url('public/assets/image/exhibition/'.$participant->image)}}" alt="{{Str::limit($participant->brand_name, 24)}}"></a>
+                                        </div>
+                                        </div>
                                     </div>
-                                  </div>
-
-                                  
-                            @endforeach
+                                @endforeach
                             <div>@json($checkvalue)</div>
                             
                         </div>
@@ -383,40 +377,35 @@
                                     <option  value="{{$sponseroo->id}}">{{$sponseroo->plan}}</option>
                                 @endforeach 
                             </select>
-                        @else
-                          <small>Please active Sponser plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addSponsership' ])}}"> Click</a></small>
+                            @else
+                            <small>Please active Sponser plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addSponsership' ])}}"> Click</a></small>
                         @endif
 
                         @if($pavillion->count() > 0)
                             <select class="form-select flex-shrink-0"  wire:model="pavill_id">
-                            <option>Pavillion</option>
-                            <option  value="no">No</option>
-                                    @foreach ($pavillion as $pavill)
-                                    
-                                        <option  value="{{$pavill->id}}">{{$pavill->pavillion_name}}</option>
-                                    @endforeach 
+                                <option>Pavillion</option>
+                                <option  value="no">No</option>
+                                @foreach ($pavillion as $pavill)
+                                    <option  value="{{$pavill->id}}">{{$pavill->pavillion_name}}</option>
+                                @endforeach 
                             </select>
-                        @else
-                        <small>Please active Pavillion plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addPavillion'])}}"> Click</a></small>
+                            @else
+                            <small>Please active Pavillion plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addPavillion'])}}"> Click</a></small>
                         @endif
 
                         @if($partners->count() > 0)
-                        <select class="form-select flex-shrink-0"  wire:model="partner_id">
-                          <option>Pavillion</option>
-                          <option  value="no">No</option>
+                            <select class="form-select flex-shrink-0"  wire:model="partner_id">
+                                <option>Pavillion</option>
+                                <option  value="no">No</option>
                                 @foreach ($partners as $pavill)
-                                    
                                     <option  value="{{$pavill->id}}">{{$pavill->pavillion_name}}</option>
                                 @endforeach 
-                        </select>
+                            </select>
                         @else
-                        <small>Please active Pavillion plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addPavillion'])}}"> Click</a></small>
+                            <small>Please active Pavillion plan <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addPavillion'])}}"> Click</a></small>
                         @endif
                         
                         <input type="text" placeholder="partner" wire:model="partner"> </input>
-
-
-
                         <button class="btn btn-primary mt-2" type="submit">Submit</button>
                     </form>
                     
@@ -429,18 +418,16 @@
                     </form>
                    
                     @foreach($pavillion as $pav)
-                                    @php
-                                      $getReferenceBrands = DB::table('participants')->where('event_id' , $event_id)->where('pavillion_id' , $pav->id)->get();
-                                        $getbrand = $getReferenceBrands->pluck('brand_id');
+                        @php
+                            $getReferenceBrands = DB::table('participants')->where('event_id' , $event_id)->where('pavillion_id' , $pav->id)->get();
+                            $getbrand = $getReferenceBrands->pluck('brand_id');
 
-                                        foreach($getbrand as $findbrand)
-                                        { 
-                                            $findobrand = DB::table('brands')->where('id', $findbrand->id);
-                                        }
-                                        
-                                    @endphp 
-
-                                   
+                            foreach($getbrand as $findbrand)
+                            { 
+                                $findobrand = DB::table('brands')->where('id', $findbrand->id);
+                            }
+                        @endphp 
+        
                         <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                             <div class="col  pr-0">
                                 <div class="h4 fw-light mb-0"></div> 
@@ -492,10 +479,11 @@
                         <input type="text" placeholder="plan" wire:model="plan">
                         <button class="btn btn-primary mt-2" type="submit">Submit</button>
                     </form>
+
                     @foreach($sponser as $pav)
-                                    @php
-                                      $getReferenceBrands = DB::table('participants')->where('event_id' , $event_id)->where('pavillion_id' , $pav->id)->get()
-                                    @endphp    
+                        @php
+                            $getReferenceBrands = DB::table('participants')->where('event_id' , $event_id)->where('pavillion_id' , $pav->id)->get()
+                        @endphp    
                     
                         <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                             <div class="col  pr-0">
@@ -539,8 +527,6 @@
                         </div>
                         
                     @endforeach
-
-
                 @endif
 
                 @if($formm == 'add-hastag')
@@ -563,30 +549,29 @@
                     <div>
                        <span class="badge">#{{$hastag}}</span> 
                     </div>
-
                   
-                        <div class="d-flex badgeseTag pb-2">
-                            @foreach($hastago as $cat)
-                                <span class="badge border border-1 text-right border-dark text-dark mr-1">{{$cat->hastag}}
-                                    <a href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="Hashdelete({{$cat->id}})"> <i class="bi bi-x me-2"></i> </a> 
-                                </span>
-                            @endforeach
-                        </div>
+                    <div class="d-flex badgeseTag pb-2">
+                        @foreach($hastago as $cat)
+                            <span class="badge border border-1 text-right border-dark text-dark mr-1">{{$cat->hastag}}
+                                <a href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="Hashdelete({{$cat->id}})"> <i class="bi bi-x me-2"></i> </a> 
+                            </span>
+                        @endforeach
+                    </div>
                   
                 @endif
 
-                 <!-- @if(count($findListedTag) > 0)
-                                <div class="col-sm-1">
-                                    <label class="form-label" for="seniority">Tag</label>
-                                        <select class="form-control" type="text"   wire:model.lazy="hashag">
-                                        @foreach($findListedTag as $tego)
-                                            <option selected>Choose</option>
-                                            <option value="{{$tego ->expo->tag}}">{{$tego -> expo->tag}}</option>
-                                        @endforeach
-                                        </select>
-                                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                                </div>
-                            @endif -->
+                    <!--@if(count($findListedTag) > 0)
+                            <div class="col-sm-1">
+                                <label class="form-label" for="seniority">Tag</label>
+                                    <select class="form-control" type="text"   wire:model.lazy="hashag">
+                                    @foreach($findListedTag as $tego)
+                                        <option selected>Choose</option>
+                                        <option value="{{$tego ->expo->tag}}">{{$tego -> expo->tag}}</option>
+                                    @endforeach
+                                    </select>
+                                    @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                            </div>
+                        @endif -->
                 
                 @if($formm == 'detailPavillion')
 
@@ -866,45 +851,43 @@
                 @endif
 
                 @if($formm == 'client')
-
-
-                <div class="container mt-5">
-                    <div class="fs-md">Contact details </div>
-                        @foreach ($getContact as $franchise) 
-                            <div class="">
-                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                    <div class="col  pr-0">
-                                    
-                                        <div class="h4 fw-light mb-0"> 1 </div> 
-                                        <div class="small text-muted">{{$franchise->count()}} </div>
+                    <div class="container mt-5">
+                        <div class="fs-md">Contact details </div>
+                            @foreach ($getContact as $franchise) 
+                                <div class="">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                        <div class="col  pr-0">
                                         
-                                        <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
-                                    </div>
-
-                                    <div class="col-7  p-0">
-                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                        {{$franchise->name}} {{$franchise->designation}}</a></div>
-                                    <div class="text-muted fs-sm text-start">
-                                        {{$franchise->email}}
-                                    </div>  
-                                    <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
-                                    </div>
-
-                                    <div class="col-3  p-0">
-                                        {{--<a class="card-img-top d-block overflow-hidden" href="#">
-                                            <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                            <div class="h4 fw-light mb-0"> 1 </div> 
+                                            <div class="small text-muted">{{$franchise->count()}} </div>
                                             
-                                        {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                            <i class="bi bi-chevron-double-right"></i></a> 
-                                            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
-
-                                            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
-
+                                            <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
                                         </div>
+
+                                        <div class="col-7  p-0">
+                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                            {{$franchise->name}} {{$franchise->designation}}</a></div>
+                                        <div class="text-muted fs-sm text-start">
+                                            {{$franchise->email}}
+                                        </div>  
+                                        <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+                                        </div>
+
+                                        <div class="col-3  p-0">
+                                            {{--<a class="card-img-top d-block overflow-hidden" href="#">
+                                                <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                                
+                                            {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                                <i class="bi bi-chevron-double-right"></i></a> 
+                                                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})" >Claim</a> --}}
+
+                                                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="del({{$franchise->id}})">Delete</a>
+
+                                            </div>
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
-                </div>
+                            @endforeach
+                    </div>
 
                     <div class="my-5">
                         <div class="small"> List meet-up brands, update contacts what we get during expo visit.</div>   
@@ -1013,9 +996,6 @@
                             <button class="btn btn-primary mt-2" type="submit">Submit</button>
                         </form>
                     </div>
-
-
-                  
                 @endif
 
                    
