@@ -415,7 +415,7 @@ body {
 
 
                       @if( $event->businessrevenue == 'visitor' )  
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Book a Space</a>
+                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Advertise</a>
                         @else
                       
                         @if( $ticketOrExhibit != 0 )
