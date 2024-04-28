@@ -1749,6 +1749,8 @@ body {
                 <div class="handheld-toolbar bg-secondary">
                   <div class="d-flex justify-content-between py-2 px-2">
                     @php
+                      $currentTime = now()->format( 'H:m:s');
+                      $currentDate = now()->format( 'Y-m-d'); 
                       $productfreeorcost = DB::table('tickets')->where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->count();
                       $productminPrice = DB::table('tickets')->where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->min('price');
                     @endphp
