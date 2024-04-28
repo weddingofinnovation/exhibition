@@ -1749,8 +1749,8 @@ body {
                 <div class="handheld-toolbar bg-secondary">
                   <div class="d-flex justify-content-between py-2 px-2">
                     @php
-                      $productfreeorcost = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->count();
-                      $productminPrice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->min('price');
+                      $productfreeorcost = DB::table('tickets')->where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->count();
+                      $productminPrice = DB::table('tickets')->where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->min('price');
                     @endphp
                     <div class="text-dark  pl-3 lh-1">
                       <span class = "fw-medium fs-sm">
@@ -1763,7 +1763,7 @@ body {
                       <br>
                       <span class=" fw-normal fs-xs">Onwards</span>
                     </div>
-                    <a href="{{route('event.exhibit', ['board' => 'registration-great-exhibition-to-exhibit'])}}" class="btn btn-primary btn-sm">Registration</a>
+                    <a href="{{route('event.exhibit', ['board' => 'registration-great-exhibition-to-visit'])}}" class="btn btn-primary btn-sm">Registration</a>
                       <!-- @if( $event->businessrevenue == 'visitor' )  
                         @if( $ticketOrExhibit != 0 )
                             <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
