@@ -50,23 +50,36 @@
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
-                <h2 class="h3 mb-2">Registration</h2>
+                <h2 class="h3 mb-5">Registration</h2>
                 <form  wire:submit.prevent="add" >
                   <div class="mb-3">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                    <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                    <input class="form-control" type="text"  wire:model.lazy="company" required="" placeholder="Enter your company">
                     <div class="invalid-feedback">Please provide valid email address.</div>
                   </div>
 
                   <div class="mb-3">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                    <input class="form-control" type="name"  wire:model.lazy="designation" required="" placeholder="Enter your designation">
+                    <input class="form-control" type="text"  wire:model.lazy="industry" required="" placeholder="Enter your industry">
+                    <div class="invalid-feedback">Please provide valid email address.</div>
+                  </div>
+
+
+                  <div class="mb-3">
+                    <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                    <input class="form-control" type="text"  wire:model.lazy="name" required="" placeholder="Enter your name">
                     <div class="invalid-feedback">Please provide valid email address.</div>
                   </div>
 
                   <div class="mb-3">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                    <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                    <input class="form-control" type="text"  wire:model.lazy="designation" required="" placeholder="Enter your designation">
+                    <div class="invalid-feedback">Please provide valid email address.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                    <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email">
                     <div class="invalid-feedback">Please provide valid email address.</div>
                   </div>
                   <div class="mb-3">
@@ -77,11 +90,11 @@
 
                   <div class="mb-3">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                    <input class="form-control" type="name"  wire:model.lazy="city" required="" placeholder="Enter your city">
+                    <input class="form-control" type="text"  wire:model.lazy="city" required="" placeholder="Enter your city">
                     <div class="invalid-feedback">Please provide valid email address.</div>
                   </div>
 
-                  <button class="btn btn-primary" type="submit">Submit</button>
+                  <button class="btn btn-primary form-control" type="submit">Submit</button>
                 </form>
               </div>
             </div>

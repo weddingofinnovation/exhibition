@@ -1748,9 +1748,18 @@ body {
               @if($event->businessrevenue == 'visitor')
                 <div class="handheld-toolbar bg-secondary">
                   <div class="d-flex justify-content-between py-2 px-2">
-
+                    @php
+                      $productfreeorcost = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->count();
+                      $productminPrice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->min('price');
+                    @endphp
                     <div class="text-dark  pl-3 lh-1">
-                      <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span>
+                      <span class = "fw-medium fs-sm">
+                        @if($productfreeorcost == '0')
+                          Free
+                        @else
+                          Rs.{{$productminPrice}}
+                        @endif
+                      </span>
                       <br>
                       <span class=" fw-normal fs-xs">Onwards</span>
                     </div>

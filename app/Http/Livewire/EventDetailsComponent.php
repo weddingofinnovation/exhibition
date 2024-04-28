@@ -119,7 +119,7 @@ class EventDetailsComponent extends Component
         
         if($ticketOrExhibit == '0')
         {
-          $productPrice = Ticket::where('admstatus','1')->where('status','0')->where('event_id', NULL)->min('price');
+          $productPrice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->min('price');
         }
         else
         {
