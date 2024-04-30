@@ -170,11 +170,14 @@
                   <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your participation.</li>
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>
+                @php
+                   @findvisitor = DB::table('leads')->where('id', $visitorid)->first();
+                @endphp
 
-                {{$visitorid->name}}
-                {{$visitorid->designation}}
-                {{$visitorid->company}}
-                {{QrCode::size(255)->generate('')}}
+                {{$findvisitor->name}}
+                {{$findvisitor->designation}}
+                {{$findvisitor->company}}
+                {{QrCode::size(255)->generate('it is registered visitor')}}
                  
                 <a href="">Print</a>
                 <a href="">Download</a>

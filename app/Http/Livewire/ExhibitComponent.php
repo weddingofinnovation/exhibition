@@ -116,7 +116,7 @@ class ExhibitComponent extends Component
 
         //return redirect()->route('coicart');thankyou
         //return redirect()->route('event.exhibit', ['type' => 'visitor', 'visitorid' => $newEvent->id]);
-        return redirect()->route('event.exhibit', ['board' => 'visitor', 'visitorid' => $newEvent->id]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id]);
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message','Thanks for sharing your review.');
     }
