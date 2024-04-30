@@ -171,8 +171,13 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>
 
-                
+                {{$visitorid->name}}
+                {{$visitorid->designation}}
+                {{$visitorid->company}}
+                {{QrCode::size(255)->generate('')}}
                  
+                <a href="">Print</a>
+                <a href="">Download</a>
               
               </div>
             
@@ -181,5 +186,31 @@
           </div>
         @endif
 
+        @if($board == 'thankyou')
 
+            <div class="handheld-toolbar">
+              <div class="d-table table-layout-fixed w-100">
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('adminevent.detail', ['slug' => $evento->slug])}}">
+                  <span class="handheld-toolbar-icon">
+                  <i class="ci-filter-alt"></i></span>
+                  <span class="handheld-toolbar-label">Advertise</span>
+                </a>
+              
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventEdit',['event_id' => $evento->id,'board'=>'edit'])}}">
+                  <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
+                <span class="handheld-toolbar-label">Conference</span></a>
+                
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.editcategories',['event_id' => $evento->id])}}">
+                  <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+                  <span class="handheld-toolbar-label">Exhibitor</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
+              </div>
+            </div>
+
+        @endif
       </main>
