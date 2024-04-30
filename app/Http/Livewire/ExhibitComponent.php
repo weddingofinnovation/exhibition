@@ -27,12 +27,14 @@ class ExhibitComponent extends Component
     public $industry;
     public $company;
     public $designation;
+    public $visitorid;
 
-    public function mount()
+    public function mount($visitorid = null)
     {
         $this->admstatus= '0';  
         $this->status = '1'; 
         //$this->type = 'exhibit';
+        $this->visitorid = $visitorid;  
         
         //$findevent = DB::table('events')->where('id', $data)->first();
 

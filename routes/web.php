@@ -281,7 +281,7 @@ Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.ad
 
 
 //catch lead participants || help to login to get contact details
-Route::get('/exhibit/{board}', ExhibitComponent::class)->name('event.exhibit');
+Route::get('/exhibit/{board}/{visitorid}', ExhibitComponent::class)->name('event.exhibit');
 
 //lead-re-check
 Route::get('/coi/expand-your-business/{slug}', LeadComponent::class)->name('lead.business');
