@@ -9,6 +9,7 @@ class ThankyouComponent extends Component
 {
     public $visitorid;
     public $type;
+    public $board;
 
     public function mount($visitorid = null, $type)
     {
