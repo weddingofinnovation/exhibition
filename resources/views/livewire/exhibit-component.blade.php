@@ -193,6 +193,18 @@
           </div>
         @endif
 
+        @if($board == 'connect-business-partner')
+          <div>
+            contact has been saved! 
+            you can contact or share business proposal
+
+            @if(Auth::check())
+              <a href="">Find</a>
+            @endif
+            
+          </div>
+        @endif
+
         @if($board == 'thankyou')
 
             <div class="handheld-toolbar">
@@ -220,4 +232,6 @@
             </div>
 
         @endif
+
+       
       </main>

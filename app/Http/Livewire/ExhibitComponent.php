@@ -127,7 +127,8 @@ class ExhibitComponent extends Component
     {
         //PDF::loadView('thank-you', $data);
         $data = Lead::where('id', $visitorid)->first();
-        $visitorsticker = PDF::loadView('thank-you', $data);
+        $visitorsticker = PDF::loadView('/livewire/thank-you', $data);
+
         return $visitorsticker->download('visitor.pdf');
     }
 
@@ -138,10 +139,20 @@ class ExhibitComponent extends Component
         $savecnt->type = 'contsv';
         $savecnt->event_id = session()->get('eventID');
         $savecnt->contactid = $visitorid;
-        $savecnt->user_id = Auth::user()->id;
+
+          if (Auth::check()) 
+          {
+              $savecnt->user_id = Auth::user()->id;
+          }   
+              else
+          {
+              $savecnt->user_id = $this->user_id;
+          }
+
         $savecnt->status = $this->status;
         $savecnt->admstatus = $this->admstatus;
         $savecnt->save();
+        return redirect()->route('event.exhibit', ['board' => 'connect-business-partner']);
     }
     
     //for visitor
