@@ -5,10 +5,11 @@ namespace App\Http\Livewire;
 use App\Models\Event;
 use App\Models\Lead;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
+
 
 class ExhibitComponent extends Component
 {
@@ -121,6 +122,28 @@ class ExhibitComponent extends Component
         session()->flash('message','Thanks for sharing your review.');
     }
 
+
+    public function genratepdf($visitorid)
+    {
+        //PDF::loadView('thank-you', $data);
+        $data = Lead::where('id', $visitorid)->first();
+        $visitorsticker = PDF::loadView('thank-you', $data);
+        return $visitorsticker->download('visitor.pdf');
+    }
+
+    public function savecont($visitorid)
+    {
+        // $data = Lead::where('id', $visitorid)->first();
+        $savecnt = new Lead();
+        $savecnt->type = 'contsv';
+        $savecnt->event_id = session()->get('eventID');
+        $savecnt->contactid = $visitorid;
+        $savecnt->user_id = Auth::user()->id;
+        $savecnt->status = $this->status;
+        $savecnt->admstatus = $this->admstatus;
+        $savecnt->save();
+    }
+    
     //for visitor
     public function addTicket()
     {
