@@ -164,7 +164,7 @@ class ExhibitComponent extends Component
     {
         //PDF::loadView('thank-you', $data);
         $data = Lead::where('id', $visitorid)->first();
-        $visitorsticker = PDF::loadView('/livewire/thank-you', $data);
+        $visitorsticker = PDF::loadView('livewire.thank-you', $data);
 
         return $visitorsticker->download('visitor.pdf');
     }
