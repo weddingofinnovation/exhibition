@@ -331,43 +331,57 @@
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="company" required="" placeholder="Enter your company">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('company')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="industry" required="" placeholder="Enter your industry">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('industry')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
 
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="name" required="" placeholder="Enter your name">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('name')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="designation" required="" placeholder="Enter your designation">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('designation')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('email')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
                     <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                    <div class="invalid-feedback">Please provide valid phone.</div>
+                    @error('phone')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="city" required="" placeholder="Enter your city">
-                    <div class="invalid-feedback">Please provide valid email address.</div>
+                    @error('city')
+                      <div class="form-text">{{$message}}</div>
+                    @enderror
                   </div>
 
                   <button class="btn btn-primary form-control" type="submit">Submit</button>
