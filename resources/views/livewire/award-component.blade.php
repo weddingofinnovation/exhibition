@@ -1,7 +1,6 @@
-@section('page_title', ('Review '.$findevent->eventname))
-@section('page_description', ('Find Great Exhibition To Exhibit '.$findevent->shtdesc))
-@section('page_keyword',  'The Exhibition Network, review, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in' .$findevent->city)
-
+@section('page_title', ('Review '.$getevent->eventname))
+@section('page_description', ('Find Great Exhibition To Exhibit '.$getevent->shtdesc))
+@section('page_keyword',  'The Exhibition Network, review, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in' .$getevent->city)
 
 <main>
    
