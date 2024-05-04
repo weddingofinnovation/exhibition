@@ -159,12 +159,14 @@ class ExhibitComponent extends Component
         session()->flash('message','Thanks for sharing your review.');
     }
 
+    //{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}
 
     public function genratepdf($visitorid)
     {
         //PDF::loadView('thank-you', $data);
         $data = Lead::where('id', $visitorid)->first();
-        $visitorsticker = PDF::loadView('thankyou', $data);
+
+        $visitorsticker = PDF::loadView('livewire.thankyou-component',['board'=> 'thankyou'], $data);
 
         return $visitorsticker->download('visitor.pdf');
     }

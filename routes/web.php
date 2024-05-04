@@ -261,7 +261,7 @@ Route::get('/cart', CheckoutComponent::class)->name('checkout');
 Route::get('/checkout', CoicartComponent::class)->name('coicart');
 Route::get('/payment', PaymentComponent::class)->name('payment');
 
-Route::get('/thank-you/{type}/{visitorid}', ThankyouComponent::class)->name('thankyou');
+Route::get('/thank-you/{board}/{visitorid?}', ThankyouComponent::class)->name('thankyou');
 
 Route::get('/review', CoiReviewComponent::class)->name('review');
 Route::get('/partner', MembershipComponent::class)->name('business.membership');

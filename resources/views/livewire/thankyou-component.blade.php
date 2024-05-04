@@ -1,9 +1,6 @@
     <main >
      
-      
-
-        @if($board == 'thankyou')C:\xampp\htdocs\BusinessCommercial\resources\views\livewire\thankyou-component.blade.php
-          <div class="container py-4 py-lg-5 my-4">
+    <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
 
 
@@ -30,6 +27,9 @@
 
             </div>
           </div>
+
+        <!-- @if($board == 'thankyou')
+          
         @else
           <div class="container pb-5 mb-sm-4">
             <div class="pt-5">
@@ -45,9 +45,9 @@
               </div>
             </div>
           </div>
-        @endif
+        @endif -->
 
-        @if($board == 'thankyou')
+       
 
             <div class="handheld-toolbar">
               <div class="d-table table-layout-fixed w-100">
@@ -73,6 +73,6 @@
               </div>
             </div>
 
-        @endif
+       
 
     </main>
