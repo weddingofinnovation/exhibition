@@ -1,7 +1,11 @@
+@section('page_title', ('Review '.$findevent->eventname))
+@section('page_description', ('Find Great Exhibition To Exhibit '.$findevent->shtdesc))
+@section('page_keyword',  'The Exhibition Network, review, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in' .$findevent->city)
+
+
 <main>
    
-
-    <div class=" container col-lg-8">
+            <div class=" container col-lg-8 mt-3">
               <div class="d-flex justify-content-between align-items-center mb-2">
                     <h6 class="fs-md mb-0">Top reviews</h6>
                     <a class="nav-link-style fs-xs fw-normal text-primary" href="#"> {{count($eventrate)}}
@@ -80,5 +84,23 @@
                   </div>
                 </div>
               </div>-->
+            </div>
+
+
+            <div class="handheld-toolbar">
+              <div class="d-table table-layout-fixed w-100">
+                <a class="d-table-cell handheld-toolbar-item" href="#">
+                  <span class="handheld-toolbar-icon">
+                  <i class="ci-filter-alt"></i></span>
+                  <span class="handheld-toolbar-label"> Get Certified</span>
+                </a>
+              
+                
+
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
+              </div>
             </div>
 </main>

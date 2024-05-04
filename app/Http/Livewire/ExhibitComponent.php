@@ -34,6 +34,7 @@ class ExhibitComponent extends Component
     {
         $this->admstatus= '0';  
         $this->status = '1'; 
+        $this->user_id = 'NULL'; 
         //$this->type = 'exhibit';
         $this->visitorid = $visitorid;  
         
