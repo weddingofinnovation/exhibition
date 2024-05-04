@@ -2,7 +2,7 @@
      
       
 
-        @if($board == 'thankyou')
+        @if($board == 'thankyou')C:\xampp\htdocs\BusinessCommercial\resources\views\livewire\thankyou-component.blade.php
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
 

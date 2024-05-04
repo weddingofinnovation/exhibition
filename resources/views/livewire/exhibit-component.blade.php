@@ -492,7 +492,7 @@
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
-                <h2 class="h3 mb-2">Right Time, Right Place, Right People</h2>
+                <h2 class="h3 mb-2">Thank you for registering for {{$findevent->eventname}}. Your registration details have been received.</h2>
                 <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
                 <ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
@@ -511,16 +511,11 @@
                 <div class="container d-flex  justify-content-center">
                 {{QrCode::size(205)->generate('it is registered visitor')}}
                 </div>
-                
-                 <div class="d-flex  justify-content-end">
-                      <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
-                      <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
-                 </div>
-                
-              
               </div>
-            
-
+            </div>
+            <div class="d-flex  justify-content-end">
+                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Expo Profile</a>
+                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
             </div>
           </div>
         @endif
