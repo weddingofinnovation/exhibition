@@ -178,7 +178,7 @@ class ExhibitComponent extends Component
     {
         // $data = Lead::where('id', $visitorid)->first();
         $savecnt = new Lead();
-        $savecnt->type = 'contsv';
+        $savecnt->type = 'contact-sv';
         $savecnt->event_id = session()->get('eventID');
         $savecnt->contactid = $visitorid;
 

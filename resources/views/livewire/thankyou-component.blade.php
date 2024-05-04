@@ -33,7 +33,7 @@
             </div>
           </div>
 
-        <!-- @if($board == 'thankyou')
+       {{-- @if($board == 'thankyou')
           
         @else
           <div class="container pb-5 mb-sm-4">
@@ -50,7 +50,7 @@
               </div>
             </div>
           </div>
-        @endif -->
+        @endif--}}
 
        
 
