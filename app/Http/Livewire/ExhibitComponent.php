@@ -47,7 +47,7 @@ class ExhibitComponent extends Component
     {
         $this->validate([
             'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max::12|min:10',
+            'phone'=>'required|max:12|min:10',
             'name'=>'required|alpha:ascii', 
         ]);
 
@@ -82,7 +82,7 @@ class ExhibitComponent extends Component
     {
         $this->validate([
             'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max::12|min:10',
+            'phone'=>'required|max:12|min:10',
             'name'=>'required|alpha:ascii', 
         ]);
 
@@ -117,7 +117,7 @@ class ExhibitComponent extends Component
     {
         $this->validate([
             'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max::12|min:10',
+            'phone'=>'required|max:12|min:10',
             'name'=>'required|alpha:ascii', 
             'city' => 'required|alpha:ascii',
             'industry' => 'required|alpha:ascii',
@@ -197,7 +197,7 @@ class ExhibitComponent extends Component
     {
         $this->validate([
             'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max::12|min:10',
+            'phone'=>'required|max:12|min:10',
             'name'=>'required|alpha:ascii', 
         ]);
 

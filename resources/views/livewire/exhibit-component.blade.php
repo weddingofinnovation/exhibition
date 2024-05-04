@@ -332,7 +332,7 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="company" required="" placeholder="Enter your company">
                     @error('company')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
@@ -340,7 +340,7 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="industry" required="" placeholder="Enter your industry">
                     @error('industry')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
@@ -349,7 +349,7 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="name" required="" placeholder="Enter your name">
                     @error('name')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
@@ -357,7 +357,7 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="designation" required="" placeholder="Enter your designation">
                     @error('designation')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
@@ -365,14 +365,14 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email">
                     @error('email')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
                     <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
                     @error('phone')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
@@ -380,7 +380,7 @@
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                     <input class="form-control" type="text"  wire:model.lazy="city" required="" placeholder="Enter your city">
                     @error('city')
-                      <div class="form-text">{{$message}}</div>
+                      <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                   </div>
 
