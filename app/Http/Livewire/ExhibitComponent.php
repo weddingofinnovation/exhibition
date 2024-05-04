@@ -30,13 +30,14 @@ class ExhibitComponent extends Component
     public $designation;
     public $visitorid;
 
-    public function mount($visitorid = null)
+    public function mount($board , $visitorid = null)
     {
         $this->admstatus= '0';  
         $this->status = '1'; 
         $this->user_id = 'NULL'; 
         //$this->type = 'exhibit';
         $this->visitorid = $visitorid;  
+        $this->board = $board;
         
         //$findevent = DB::table('events')->where('id', $data)->first();
 
@@ -45,9 +46,9 @@ class ExhibitComponent extends Component
     public function add()
     {
         $this->validate([
-            'email'=>'required',
-            'phone'=>'required',
-            'name'=>'required', 
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max::12|min:10',
+            'name'=>'required|alpha:ascii', 
         ]);
 
         $newEvent = new Lead();
@@ -77,16 +78,51 @@ class ExhibitComponent extends Component
         
     }
 
+    public function otheradd()
+    {
+        $this->validate([
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max::12|min:10',
+            'name'=>'required|alpha:ascii', 
+        ]);
+
+        $newEvent = new Lead();
+        $newEvent->name = $this->name;
+        $newEvent->email = $this->email;
+        $newEvent->phone = $this->phone;
+        $newEvent->type = $this->board;
+        $newEvent->event_id = session()->get('eventID');
+
+        //$newEvent->user_id = Auth::user()->id;
+        
+        $newEvent->status = $this->status;
+        $newEvent->admstatus = $this->admstatus;
+        $newEvent->save();
+
+        $logino = new User();
+        $logino->name = $this->name;
+        $logino->email = $this->email;
+        $logino->password = Hash::make($this->email);
+        $logino->phone = $this->phone;
+        $logino->save();
+
+        //return redirect()->route('coicart');thankyou
+        return redirect()->route('event.exhibit', ['board' => 'thankyou']);
+        //{{route('event.exhibit', ['board' => 'business'])}}
+        session()->flash('message','Thanks for sharing your review.');
+        
+    }
+
     public function addregistration()
     {
         $this->validate([
-            'email'=>'required',
-            'phone'=>'required',
-            'name'=>'required', 
-            'city' => 'required',
-            'industry' => 'required',
-            'company' => 'required',
-            'designation' => 'required',
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max::12|min:10',
+            'name'=>'required|alpha:ascii', 
+            'city' => 'required|alpha:ascii',
+            'industry' => 'required|alpha:ascii',
+            'company' => 'required|alpha-num:ascii',
+            'designation' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -160,9 +196,9 @@ class ExhibitComponent extends Component
     public function addTicket()
     {
         $this->validate([
-            'email'=>'required',
-            'phone'=>'required',
-            'name'=>'required', 
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max::12|min:10',
+            'name'=>'required|alpha:ascii', 
         ]);
 
         $newEvent = new Lead();

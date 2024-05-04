@@ -44,6 +44,65 @@
 
             </div>
           </div>
+
+        @else
+        <div class="container py-4 py-lg-5 my-4">
+            <div class="row justify-content-center">
+
+
+              <div class="col-lg-8 col-md-10">
+
+                
+                @if($this->board == 'award')
+                <h2 class="h3 mb-2">Gateway to Recognition and Success.</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @elseif($this->board == 'startup')
+                <h2 class="h3 mb-2">Empowering Startups<br> Connect, Collaborate <br> Grow with Open Membership!</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @elseif($this->board == 'directory')                
+                <h2 class="h3 mb-2">Our data, Your Customer.</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @elseif($this->board == 'partner')                
+                <h2 class="h3 mb-2">Our data, Your Customer.</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @elseif($this->board == 'meet')                
+                <h2 class="h3 mb-2">Right Place, Right People, Right Time</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @elseif($this->board == 'find')                
+                <h2 class="h3 mb-2">Our data, Your Customer.</h2>
+                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                @endif
+                {{--<ol class="list-unstyled fs-md">
+                  <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                  <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                  <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                </ol>--}}
+
+                
+                  <form  wire:submit.prevent="otheradd" >
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                      <div class="invalid-feedback">Please provide valid email address.</div>
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                      <div class="invalid-feedback">Please provide valid email address.</div>
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                      <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                      <div class="invalid-feedback">Please provide valid phone.</div>
+                    </div>
+                    <button class="btn btn-primary form-control" type="submit">Submit</button>
+                  </form>
+              
+              </div>
+
+
+            </div>
+          </div>
         @endif
 
         @if($board == 'registration-great-exhibition-to-visit')
