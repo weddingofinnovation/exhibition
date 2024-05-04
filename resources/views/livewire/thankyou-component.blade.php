@@ -1,5 +1,10 @@
     <main >
      
+
+   {{$name}}
+   {{$designation}}
+   {{$company}}
+
     <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
 
@@ -14,10 +19,10 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>
 
-                {{$visitorid->name}}
+                <!-- {{$visitorid->name}}
                 {{$visitorid->designation}}
                 {{$visitorid->company}}
-                {{QrCode::size(255)->generate('')}}
+                {{QrCode::size(255)->generate('')}} -->
                  
                 <a href="">Print</a>
                 <a href="">Download</a>

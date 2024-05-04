@@ -163,10 +163,13 @@ class ExhibitComponent extends Component
 
     public function genratepdf($visitorid)
     {
-        //PDF::loadView('thank-you', $data);
-        $data = Lead::where('id', $visitorid)->first();
-
-        $visitorsticker = PDF::loadView('livewire.thankyou-component',['board'=> 'thankyou'], $data);
+        $wantdata = Lead::where('id', $visitorid)->first();
+        $data = [
+            'name' => '{{$wantdata->name}}',
+            'designation' => '{{$wantdata->designation}}',
+            'company' => '{{$wantdata->company}}',
+        ];
+        $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
 
         return $visitorsticker->download('visitor.pdf');
     }
