@@ -5,11 +5,11 @@
 </head>
     <body>
        
-        <div class="container text-center">
-                {{QrCode::size(255)->generate('thanks for it!!')}}
-                {{$company}}
-                {{$name}}
-                {{$designation}}
+        <div class="container text-start">
+                {{$title}}
+                {{$date}}
+
+                <div class="row justify-content-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
         </div>
     </body>
 </html>

@@ -521,7 +521,8 @@
                 <a class="btn btn-primary btn-sm" href="{{route('login')}}" >Add your profile</a>
               @endif
 
-              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
+              {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}}
+              <a class="btn btn-lg btn-outline-primary mb-3" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a>
             </div>
           </div>
 
