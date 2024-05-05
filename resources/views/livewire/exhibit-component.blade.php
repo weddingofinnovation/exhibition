@@ -503,18 +503,20 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>-->
                 
-                <div class="text-center">{{QrCode::size(180)->generate('test')}}</div>
+                <div class="text-center">{{QrCode::size(180)->generate({{route('gift.business')}})}}</div>
               </div>
             </div>
           </div>
           <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
 
+
+          {{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}
           <div class="container">
             <div class="d-flex  justify-content-between">
               @if(Auth::check())
-                <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
+                <a class="btn btn-primary btn-sm" href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
               @else
-                <a href="{{route('login')}}" >Add your profile</a>
+                <a class="btn btn-primary btn-sm" href="{{route('login')}}" >Add your profile</a>
               @endif
 
               <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
