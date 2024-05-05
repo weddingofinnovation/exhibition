@@ -503,7 +503,7 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>-->
                 
-                <div class="row justify-content-center text-center">{{QrCode::size(180)->generate('test is good')}}</div>
+                
                 <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
 
               </div>
