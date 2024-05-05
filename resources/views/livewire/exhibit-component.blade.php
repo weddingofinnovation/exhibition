@@ -503,7 +503,7 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>-->
                 
-                <div class="text-center">{{QrCode::size(180)->generate('{{route('user.dashboard', ['board' => 'profile'])}}')}}</div>
+                <div class="text-center">{{QrCode::size(180)->generate('test')}}</div>
               </div>
             </div>
           </div>
