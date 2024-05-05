@@ -169,10 +169,15 @@ class ExhibitComponent extends Component
             'designation' => '{{$wantdata->designation}}',
             'company' => '{{$wantdata->company}}',
         ];
-        $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
+        // $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
+        // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
 
-        //return $visitorsticker->download( $wantdata->name.'the-exhibition-network.pdf');
-        return $visitorsticker->stream($wantdata->name.'the-exhibition-network.pdf')->header('Content-type','application/pdf');
+        $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
+      return $visitorsticker-> download($wantdata->name.'the-exhibition-network.pdf');
+
+
+        //return $visitorsticker->stream($wantdata->name.'the-exhibition-network.pdf')->header('Content-type','application/pdf');
+        //return response()->file();
     }
 
     public function savecont($visitorid)
