@@ -495,7 +495,7 @@
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
-                <div class=" mb-2 text-center">Thank you {{$findvisitor->name}} for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
+                <div class=" mb-4 text-center">Thank you <strong>{{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
                 <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
                 <ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
@@ -503,12 +503,12 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>-->
                 
-
+                {{QrCode::size(255)->generate('thanks for it!!')}}
               </div>
             </div>
           </div>
           @if(Auth::check())
-            <a href="{{route('user.dashboard')}}" >Add your profile</a>
+            <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
           @else
           <a href="{{route('login')}}" >Add your profile</a>
           @endif
