@@ -7,6 +7,13 @@ use Livewire\Component;
 class ExpandComponent extends Component
 {
 
+    public $visitorid;
+
+    public function mount ($visitorid = null)
+    {
+        $this->visitorid = $visitorid; 
+    }
+
     public function render()
     {
        

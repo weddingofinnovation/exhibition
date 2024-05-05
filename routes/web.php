@@ -286,6 +286,8 @@ Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.ad
 //catch lead participants || help to login to get contact details
 Route::get('/exhibit/{board}/{visitorid?}', ExhibitComponent::class)->name('event.exhibit');
 
+Route::get('/registration-pass/{visitorid?}', [BuyabrandlicenseComponent::class, 'genratepdf'])->name('download.badge');
+
 //lead-re-check
 Route::get('/coi/expand-your-business/{slug}', LeadComponent::class)->name('lead.business');
 Route::get('/coi/sell-your-business/{slug}/{type}', LeadOtherComponent::class)->name('lead.business.other');
@@ -500,7 +502,12 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 Route::get('/downloadExpand', [ExpandyourbusinessComponent::class, 'index']);
 Route::get('/downloadSell', [SellyourbusinessComponent::class, 'index']);
 Route::get('/downloadBuy', [BuyabrandlicenseComponent::class, 'index']);
+
+
+
 Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])->name('user.opportunity');
+
+
 
 //Route::get('/', HomeComponent::class)->name('front.home');
 //Route::get('/opportunities', shopComponent::class)->name('franchise.Coi');

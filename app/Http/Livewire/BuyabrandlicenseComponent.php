@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Lead;
 use Livewire\Component;
 use PDF;
 
@@ -18,7 +19,26 @@ class BuyabrandlicenseComponent extends Component
       return $pdf-> download('Buy_a_Brand_License.pdf');
     }
 
-   
+    public function genratepdf($visitorid)
+    {
+        $wantdata = Lead::where('id', $visitorid)->first();
+        $data = [
+            'name' => '{{$wantdata->name}}',
+            'designation' => '{{$wantdata->designation}}',
+            'company' => '{{$wantdata->company}}',
+        ];
+        
+        $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
+      return $visitorsticker -> download('the-exhibition-network.pdf');
+
+
+    }
+
+        // $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
+        // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
+
+        //return $visitorsticker->stream($wantdata->name.'the-exhibition-network.pdf')->header('Content-type','application/pdf');
+        //return response()->file();
 
     public function render()
     {

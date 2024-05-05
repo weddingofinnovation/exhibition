@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Laravel 8 Generate PDF From View</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-    <body>
-       
-        <div class="container text-start">
-                {{$title}}
-                {{$date}}
-
-                <div class="row justify-content-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
+<body>
+        <div class="container text-center">
+                {{QrCode::size(255)->generate('thanks for it!!')}}
+                {{$company}}
+                {{$name}}
+                {{$designation}}
         </div>
-    </body>
+</body>
 </html>
