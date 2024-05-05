@@ -512,7 +512,7 @@
           <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
 
 
-          {{route('gift.business')}}
+         
           <div class="container">
             <div class="d-flex  justify-content-between">
               @if(Auth::check())
