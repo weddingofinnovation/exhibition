@@ -1744,8 +1744,10 @@
     @if( $this->productservice == 'stall-fabrication')
 	
 	@elseif( $this->productservice == 'exhibition-navigator')
+
 			<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">
 				<!-- SVG decoration -->
+
 				<div class="position-absolute top-0 start-0 ms-n7 d-none d-xl-block">
 					<img src="{{asset('public/image/decoration-pattern.svg')}}" alt="">
 				</div>
@@ -1769,6 +1771,7 @@
 				<div class="container pt-4 pt-sm-5">
 					<div class="row g-xl-5">
 
+					 
 						<!-- Hero content START -->
 						<div class="col-xl-7 mb-5 mb-xl-0">
 							<div class="pe-xxl-4">
@@ -1789,6 +1792,7 @@
 										<button type="button" class="btn btn-dark rounded-2 mb-0">Start trial!</button>
 									</div>
 								</form>
+								
 
 								<!-- Features -->
 								<div class="row mt-5">
@@ -3255,8 +3259,9 @@
 				Blog END -->
 
 	
-	@elseif( $this->productservice == 'find-exhibitor-exhibition-directory')
-
+	@elseif( $this->productservice == 'find-exhibitor')
+	
+	
 	@elseif( $this->productservice == 'magazine')
 		<!-- open theme-2 -->
 			<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">

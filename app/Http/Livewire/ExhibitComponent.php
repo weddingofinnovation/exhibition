@@ -5,7 +5,8 @@ namespace App\Http\Livewire;
 use App\Models\Event;
 use App\Models\Lead;
 use App\Models\User;
-use Barryvdh\DomPDF\Facade as PDF;
+//use Barryvdh\DomPDF\Facade as PDF;
+use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -173,7 +174,7 @@ class ExhibitComponent extends Component
         // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
 
         $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
-      return $visitorsticker-> download($wantdata->name.'the-exhibition-network.pdf');
+      return $visitorsticker -> download('the-exhibition-network.pdf');
 
 
         //return $visitorsticker->stream($wantdata->name.'the-exhibition-network.pdf')->header('Content-type','application/pdf');

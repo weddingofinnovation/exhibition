@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use PDF;
 
 class OnlineContractFormComponent extends Component
 {
@@ -14,6 +15,7 @@ class OnlineContractFormComponent extends Component
        $this->productservice = $productservice;
        $this->optional = $optional; 
     }
+
 
     public function render()
     {

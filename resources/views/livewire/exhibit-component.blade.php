@@ -503,24 +503,24 @@
                   <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                 </ol>-->
                 
-                {{QrCode::size(255)->generate('thanks for it!!')}}
+                <div class="text-center">{{QrCode::size(180)->generate('{{route('user.dashboard', ['board' => 'profile'])}}')}}</div>
               </div>
             </div>
           </div>
-          @if(Auth::check())
-            <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
-          @else
-          <a href="{{route('login')}}" >Add your profile</a>
-          @endif
+          <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
 
-          <div class="d-flex  justify-content-sm-end">
-            @if(Auth::check())
-                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
-            @else
-                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
-            @endif
-                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
+          <div class="container">
+            <div class="d-flex  justify-content-between">
+              @if(Auth::check())
+                <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
+              @else
+                <a href="{{route('login')}}" >Add your profile</a>
+              @endif
+
+              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
             </div>
+          </div>
+
         @endif
 
         @if($board == 'connect-business-partner')
