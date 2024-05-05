@@ -505,6 +505,7 @@
                 
                 
                 <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
+                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
 
               </div>
             </div>
@@ -522,8 +523,11 @@
               @endif
 
               {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}}
-              <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a>
-              <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
+              {{-- <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a> --}}
+              <div class="d-flex  justify-content-end">
+                <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
+                <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
+              </div>
             </div>
           </div>
 

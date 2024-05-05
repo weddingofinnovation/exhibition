@@ -30,22 +30,20 @@ class BuyabrandlicenseComponent extends Component
     public function genratepdf($visitorid)
     {
         $wantdata = Lead::where('id', $visitorid)->first();
-        $wantdata->eventname = $wantdata->event_id;
-
         $findevent =  Event::where('id', $wantdata->event_id)->value('eventname');
 
-        $this->name = $wantdata->name;
-        $this->designation = $wantdata->designation;
-        $this->company = $wantdata->company;
+        // $wantdata->name = $this->name;
+        // $wantdata->designation = $this->designation;
+        // $wantdata->company = $this->company;
 
-        $data = [
-            'name' => '{{$this->name}}',
-            'designation' => '{{$this->designation}}',
-            'company' => '{{$this->company}}',
-        ];
+        // $data = [
+        //     'name' => '{{$wantdata->name}}',
+        //     'designation' => '{{$wantdata->designation}}',
+        //     'company' => '{{$wantdata->company}}',
+        // ];
         
-        $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
-      return $visitorsticker -> download($findevent.'-the-exhibition-network.pdf');
+        $visitorsticker = PDF::loadView('livewire.document.expand-component', ['wantdata' => $wantdata]);
+      return $visitorsticker -> download($findevent.'the-exhibition-network.pdf');
 
     }
 
