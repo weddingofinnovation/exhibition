@@ -9,6 +9,12 @@ use PDF;
 
 class BuyabrandlicenseComponent extends Component
 {
+    public $name;
+    public $designation;
+    public $company;
+
+
+
     public function index()
     {
         $data = [
@@ -28,18 +34,18 @@ class BuyabrandlicenseComponent extends Component
 
         $findevent =  Event::where('id', $wantdata->event_id)->value('eventname');
 
-        $wantdata->name = $this->name;
-        $wantdata->designation = $this->designation;
-        $wantdata->company = $this->company;
+        $this->name = $wantdata->name;
+        $this->designation = $wantdata->designation;
+        $this->company = $wantdata->company;
 
         $data = [
-            'name' => '{{$wantdata->name}}',
-            'designation' => '{{$wantdata->designation}}',
-            'company' => '{{$wantdata->company}}',
+            'name' => '{{$this->name}}',
+            'designation' => '{{$this->designation}}',
+            'company' => '{{$this->company}}',
         ];
         
         $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
-      return $visitorsticker -> download($findevent.'the-exhibition-network.pdf');
+      return $visitorsticker -> download($findevent.'-the-exhibition-network.pdf');
 
     }
 
