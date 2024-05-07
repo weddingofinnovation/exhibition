@@ -153,7 +153,9 @@ class AdminEventEditComponent extends Component
           $doublse = new Event();
           
           $doublse->eventname = trim($tre);
-          $doublse->slug = Str::slug ($tre,'-');
+          $doublse->city =  trim($this->city);
+          $double = $doublse->eventname . ' ' . $doublse->city;
+          $doublse->slug = Str::slug ($double,'-');
 
           $doublse->eventype = $this->eventype;
           $doublse->city =  trim($this->city);

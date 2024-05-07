@@ -127,15 +127,15 @@ class ExhibitComponent extends Component
         ]);
 
         $newEvent = new Lead();
-        $newEvent->name = $this->name;
-        $newEvent->email = $this->email;
-        $newEvent->phone = $this->phone;
+        $newEvent->name = trim($this->name);
+        $newEvent->email = trim($this->email);
+        $newEvent->phone = trim($this->phone);
 
-        $newEvent->city = $this->city;
+        $newEvent->city = trim($this->city);
 
-        $newEvent->industry = $this->industry;
-        $newEvent->company = $this->company;
-        $newEvent->designation = $this->designation;
+        $newEvent->industry = trim($this->industry);
+        $newEvent->company = trim($this->company);
+        $newEvent->designation = trim($this->designation);
 
         $newEvent->type = 'register';
         $newEvent->event_id = session()->get('eventID');
@@ -147,10 +147,10 @@ class ExhibitComponent extends Component
         $newEvent->save();
 
         $logino = new User();
-        $logino->name = $this->name;
-        $logino->email = $this->email;
+        $logino->name = trim($this->name);
+        $logino->email = trim($this->email);
         $logino->password = Hash::make($this->email);
-        $logino->phone = $this->phone;
+        $logino->phone = trim($this->phone);
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
