@@ -15,6 +15,11 @@
                     <h1>{{$wantdata->company}}</h1>
                     <h1>{{$wantdata->name}}</h1>
                     <h1>{{$wantdata->designation}}</h1>
+                    <!-- code meld
+                    lynx
+                    pixel script er
+                    cipher
+                    forge -->
                 </div>
             </div>
     </body>

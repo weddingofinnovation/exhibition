@@ -6,6 +6,7 @@ use App\Mail\ContactMail;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Expo;
+use App\Models\Location;
 use App\Models\Sector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -39,11 +40,18 @@ class AdminEventAddComponent extends Component
     public $desc;
     public $shtdesc;
     public $tagline;
+    public $findidvenue;
     
 
     Use WithFileUploads;
     public function mount()
     {
+        
+        $loc = Location:: where('id', $this->findidvenue)->first();
+        $this->venue = $loc->venue;
+        $this->country = $loc->country;
+        $this->city = $loc->city;
+
         $this->level = 4;
         $this->status = 1;
         $this->admstatus = 0;
@@ -63,9 +71,15 @@ class AdminEventAddComponent extends Component
         $event->slug = Str::slug ($double,'-');
         $event->startdate = $this->startdate;
         $event->enddate = $this->enddate;
+
+
+       
+
         $event->venue = trim($this->venue);
         $event->city = trim($this->city);
         $event->country = trim($this->country);
+
+
         $event->organizer = $this->organizer;
         $event->email = $this->email;
         $event->phone = $this->phone;

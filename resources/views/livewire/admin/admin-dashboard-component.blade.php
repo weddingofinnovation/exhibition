@@ -2226,6 +2226,38 @@
         </div>
       @endif
 
+      @if($board == 'venue')
+        <div class="container">
+          <h3>Add Organiser</h3>
+
+          <form wire:submit.prevent="addvenue">
+            <hr class="my-2">
+              <div class="row">
+                  <div class="col-sm-4">
+                      <label class="form-label" for="cf-name">Venue</label>
+                      <input class="form-control" type="text" placeholder="Venue"   wire:model.lazy="venue" >
+                      @error( 'organizer' ){{ $message}}@enderror
+                  </div>
+                  <div class="col-sm-4">
+                      <label class="form-label" for="cf-name">city</label>
+                      <input class="form-control" type="email" placeholder="city"   wire:model.lazy="city" >
+                      @error( 'email' ){{ $message}}@enderror
+                  </div>
+
+                  <div class="col-sm-4">
+                      <label class="form-label" for="cf-name">Country</label>
+                      <input class="form-control" type="number" placeholder="Country"   wire:model.lazy="country" >
+                      @error( 'phone' ){{ $message}}@enderror
+                  </div>
+              </div>
+              <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
+          </form>
+
+          
+        </div>
+      @endif
+
+
       @if($board == 'ticketPlan')
          <div class="container">
            

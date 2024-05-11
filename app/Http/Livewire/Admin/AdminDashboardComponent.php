@@ -39,6 +39,7 @@ use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use App\Models\Bcontact;
 use App\Models\Brandemograhic;
+use App\Models\Location;
 use App\Models\Photo;
 use App\Models\Ticket;
 use App\Models\Viewso;
@@ -592,6 +593,25 @@ public $dtype;
        return redirect()->back();
       
     }
+
+
+    public function venue()
+    {
+      $upted = new Location();
+
+      $upted->venue = trim($this->venue) ;
+      $upted->city = trim($this->city);
+      $upted->country = $this->country;
+
+      $upted->user_id = Auth::user()->id;
+      $upted->status ='1';
+      $upted->admstatus = '1';
+      $upted->save();
+      
+      return redirect()->back();
+    }
+
+
     use WithFileUploads;
     public $brand_lgo = [];
     public function multiImage()

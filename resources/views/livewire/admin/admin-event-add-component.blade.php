@@ -16,17 +16,17 @@
                 <div class="row g-1">
 
                     <div class="col-sm-1">
-                    <label class="form-label" for="seniority">Type</label>
-                    <select class="form-control" type="text"   wire:model.lazy="eventype"  id="seniority"  placeholder="Provide short title of your request">
-                        <option selected>Choose</option>
-                        <option value="award">Award</option>
-                        <option value="conference">Conference, Forum, Seminar</option>
-                        <option value="expo">Exhibition</option>
-                        <option value="festival">Festival</option>
-                        <option value="network">Network</option>
-                        <option value="dealer">Dealer Distribution</option>
-                    </select>
-                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                        <label class="form-label" for="seniority">Type</label>
+                        <select class="form-control" type="text"   wire:model.lazy="eventype"  id="seniority"  placeholder="Provide short title of your request">
+                            <option selected>Choose</option>
+                            <option value="award">Award</option>
+                            <option value="conference">Conference, Forum, Seminar</option>
+                            <option value="expo">Exhibition</option>
+                            <option value="festival">Festival</option>
+                            <option value="network">Network</option>
+                            <option value="dealer">Dealer Distribution</option>
+                        </select>
+                            @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
 
                     <div class="col-sm-4">
@@ -53,7 +53,23 @@
                         @error( 'enddate' ){{ $message}}@enderror
                     </div>
 
-                    
+                    @php 
+                      $venueoption = DB::table('locations')->get();
+                    @endphp
+
+
+                    <div class="col-sm-1">
+                        <label class="form-label" for="seniority">Venue</label>
+                        <select class="form-control" type="text"   wire:model.lazy="$findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                            <option selected>Choose</option>
+                            @foreach($venueoption as $venueo)
+                            <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
+                            @endforeach
+                        </select>
+                            @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                    </div>
+
+
                     <div class="col-sm-3">
                         <label class="form-label" for="cf-name">Venue</label>
                         <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" >
@@ -71,6 +87,8 @@
                         <input class="form-control" type="text" placeholder="Country" wire:model.lazy="country" >
                         @error('country'){{ $message}}@enderror
                     </div>
+
+
                     
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name">Visitor</label>
@@ -141,6 +159,12 @@
           <span class="handheld-toolbar-icon">
           <i class="ci-filter-alt"></i></span>
           <span class="handheld-toolbar-label">Admin</span>
+        </a>
+
+        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard',['board' => 'venue'])}}">
+          <span class="handheld-toolbar-icon">
+          <i class="ci-filter-alt"></i></span>
+          <span class="handheld-toolbar-label">venue</span>
         </a>
        
         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
