@@ -68,8 +68,8 @@ class AdminEventAddComponent extends Component
 
         $loc = Location:: where('id', $this->findidvenue)->first();
         $this->venue = $loc->venue;
-        $this->country = $loc->country;
         $this->city = $loc->city;
+        $this->country = $loc->country;
        
 
         $event->venue = trim($this->venue);

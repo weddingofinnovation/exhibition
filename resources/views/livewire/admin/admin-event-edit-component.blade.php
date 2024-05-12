@@ -56,31 +56,31 @@
                         
                         <div class="col-sm-3">
                             <label class="form-label" for="cf-name">Venue</label>
-                            <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" required="">
+                            <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
                             @error( 'venue' ){{ $message}}@enderror
                         </div>
 
                         <div class="col-sm-2">
                         <label class="form-label" for="cf-name">City</label>
-                        <input class="form-control" type="text" placeholder="Event City" wire:model="city" required="">
+                        <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
                         @error('city'){{ $message}}@enderror
                         </div>
 
                         <div class="col-sm-2">
                         <label class="form-label" for="cf-name">country</label>
-                        <input class="form-control" type="text" placeholder="Event City" wire:model="country" required="">
+                        <input class="form-control" type="text" placeholder="country" wire:model.lazy="country" required="">
                         @error('country'){{ $message}}@enderror
                         </div>
                         
                         <div class="col-sm-2">
                             <label class="form-label" for="cf-name">Visitor</label>
-                            <input class="form-control" type="text" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
+                            <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
                             @error('auidence'){{ $message}}@enderror
                         </div>
 
                         <div class="col-sm-2">
                             <label class="form-label" for="cf-name">Exhibitor</label>
-                            <input class="form-control" type="text" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
+                            <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
                             @error('exhibitors'){{ $message}}@enderror
                         </div>
                     
@@ -88,7 +88,7 @@
                     
                     
 
-                    <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                    <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
                 </form>
             @endif
 
@@ -136,25 +136,25 @@
                         
                         <div class="col-sm-3">
                             <label class="form-label" for="cf-name">Venue</label>
-                            <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" required="">
+                            <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
                             @error( 'venue' ){{ $message}}@enderror
                         </div>
 
                         <div class="col-sm-2">
                         <label class="form-label" for="cf-name">City</label>
-                        <input class="form-control" type="text" placeholder="Event City" wire:model="city" required="">
+                        <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
                         @error('city'){{ $message}}@enderror
                         </div>
                         
                         <div class="col-sm-2">
                             <label class="form-label" for="cf-name">Visitor</label>
-                            <input class="form-control" type="text" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
+                            <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
                             @error('auidence'){{ $message}}@enderror
                         </div>
 
                         <div class="col-sm-2">
                             <label class="form-label" for="cf-name">Exhibitor</label>
-                            <input class="form-control" type="text" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
+                            <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
                             @error('exhibitors'){{ $message}}@enderror
                         </div>
                     
