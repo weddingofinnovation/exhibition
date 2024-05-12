@@ -37,19 +37,19 @@
 
                     <div class="col-sm-1">
                         <label class="form-label" for="cf-name">Edition</label>
-                        <input class="form-control" type="text" placeholder="Your Edition" wire:model.lazy="edition" >
+                        <input class="form-control" type="number" placeholder="Your Edition" wire:model.lazy="edition" >
                         @error( 'edition' ){{ $message}}@enderror
                     </div>
 
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name">From</label>
-                        <input class="form-control" type="date" placeholder="Your Name"   wire:model.lazy="startdate" >
+                        <input class="form-control" type="date" placeholder="Start date"   wire:model.lazy="startdate" >
                         @error('startdate' ){{ $message}}@enderror
                     </div>
 
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name">To</label>
-                        <input class="form-control" type="date" placeholder="Your Name"   wire:model.lazy="enddate" >
+                        <input class="form-control" type="date" placeholder="End Date"   wire:model.lazy="enddate" >
                         @error( 'enddate' ){{ $message}}@enderror
                     </div>
 
