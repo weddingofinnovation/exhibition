@@ -68,16 +68,8 @@
                         </select>
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
-
-                     {{$findidvenue}}
-                     @php 
-                        $venueop = DB::table('locations')->where('id', '$findidvenue')->value('venue');
-                        $venueopcity = DB::table('locations')->where('id', '$findidvenue')->value('city');
-                        $venueopcountry = DB::table('locations')->where('id', '$findidvenue')->value('country');
-                    @endphp
-                    {{$venueop}}-{{$venueopcity}}-{{$venueopcountry}}
-
-                    <div class="col-sm-3">
+                    
+                    <!-- <div class="col-sm-3">
                         <label class="form-label" for="cf-name">Venue</label>
                         <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" >
                         @error( 'venue' ){{ $message}}@enderror
@@ -93,7 +85,7 @@
                         <label class="form-label" for="cf-name">Country</label>
                         <input class="form-control" type="text" placeholder="Country" wire:model.lazy="country" >
                         @error('country'){{ $message}}@enderror
-                    </div>
+                    </div> -->
 
 
                     
@@ -132,9 +124,6 @@
                         <input class="form-control" type="text"  wire:model.lazy="link" ></input>
                         @error('link'){{ $message}}@enderror
                     </div>
-
-                   
-
                 </div>
 
 
@@ -149,7 +138,7 @@
                         <select class="form-control" type="text"   wire:model.lazy="organizer"  id="seniority"  placeholder="Provide short title of your request">
                             <option selected>Choose</option>
                             @foreach($organisre as $venueo)
-                              <option value="{{$venueo->organisation}}">{{$venueo->organisation}}</option>
+                              <option value="{{$venueo->brand_name}}">{{$venueo->brand_name}}</option>
                             @endforeach
                         </select>
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror

@@ -608,11 +608,12 @@ public $dtype;
     {
       $upted = new Location();
 
-      $upted->venue = trim($this->venue) ;
+      $upted->venue = Str::trim($this->venue)->lower() ;
+
       $upted->slug = Str::slug ($this->venue,'-');
 
-      $upted->city = trim($this->city);
-      $upted->country = trim($this->country);
+      $upted->city = Str::trim($this->city)->lower();
+      $upted->country = Str::trim($this->country)->lower();
 
       // $upted->user_id = Auth::user()->id;
       $upted->status ='1';

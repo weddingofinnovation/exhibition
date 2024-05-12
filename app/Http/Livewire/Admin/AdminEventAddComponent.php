@@ -72,12 +72,12 @@ class AdminEventAddComponent extends Component
         $this->country = $loc->country;
        
 
-        $event->venue = trim($this->venue);
-        $event->city = trim($this->city);
-        $event->country = trim($this->country);
+        // $event->venue = trim($this->venue);
+        // $event->city = trim($this->city);
+        // $event->country = trim($this->country);
 
 
-        $event->organizer = $this->organizer;
+        $event->organizer = Str::trim($this->organizer)->lower();
         // $event->email = $this->email;
         // $event->phone = $this->phone;
 
