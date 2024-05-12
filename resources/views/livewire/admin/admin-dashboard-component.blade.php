@@ -2230,7 +2230,7 @@
         <div class="container">
           <h3>Add Organiser</h3>
 
-          <form wire:submit.prevent="addvenue">
+          <form wire:submit.prevent="venue">
             <hr class="my-2">
               <div class="row">
                   <div class="col-sm-4">
@@ -2240,20 +2240,53 @@
                   </div>
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">city</label>
-                      <input class="form-control" type="email" placeholder="city"   wire:model.lazy="city" >
-                      @error( 'email' ){{ $message}}@enderror
+                      <input class="form-control" type="text" placeholder="city"   wire:model.lazy="city" >
+                      @error( 'city' ){{ $message}}@enderror
                   </div>
 
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Country</label>
-                      <input class="form-control" type="number" placeholder="Country"   wire:model.lazy="country" >
-                      @error( 'phone' ){{ $message}}@enderror
+                      <input class="form-control" type="text" placeholder="Country"   wire:model.lazy="country" >
+                      @error( 'country' ){{ $message}}@enderror
                   </div>
               </div>
               <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
           </form>
 
           
+
+          @php 
+            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+          @endphp
+          @foreach($venueoption as $franchise )
+            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                <div class="col  pr-0">
+                    
+                    <div class="h4 fw-light mb-0"> Te</div> 
+                    <div class="small text-muted text-capitalize">DEc</div>
+                    <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
+                </div>
+
+                <div class="col-7  p-0">
+                <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                    {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>
+                <div class="text-muted fs-sm text-start">
+                    
+                </div>  
+                <div class="text-muted fs-sm text-start"></div>
+                </div>
+
+                <div class="col-3  p-0">
+                    
+
+                    <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
+                      <ul class="dropdown-menu" width="auto">
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">Delete</a></li>
+                      </ul>
+                    </span>
+                    </div>
+            </div>
+          @endforeach
         </div>
       @endif
 

@@ -60,7 +60,7 @@
 
                     <div class="col-sm-1">
                         <label class="form-label" for="seniority">Venue</label>
-                        <select class="form-control" type="text"   wire:model.lazy="$findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                        <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
                             <option selected>Choose</option>
                             @foreach($venueoption as $venueo)
                             <option value="{{$venueo->id}}">{{$venueo->venue}}</option>

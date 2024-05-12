@@ -546,6 +546,11 @@ public $dtype;
        $delee->delete();
     }
     
+    public function delvenue($id)
+    {
+       $delee = Location::find($id);
+       $delee->delete();
+    }
 
     public function detecto($id, $featuretype)
     {
