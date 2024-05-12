@@ -513,6 +513,8 @@ Route::get('/downloadBuy', [BuyabrandlicenseComponent::class, 'index']);
 
 Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])->name('user.opportunity');
 
+Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])->name('create.review');
+
 
 
 //Route::get('/', HomeComponent::class)->name('front.home');

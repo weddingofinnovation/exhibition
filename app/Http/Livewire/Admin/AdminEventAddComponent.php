@@ -4,15 +4,20 @@ namespace App\Http\Livewire\Admin;
 
 use App\Mail\ContactMail;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Event;
 use App\Models\Expo;
 use App\Models\Location;
+use App\Models\Rate;
 use App\Models\Sector;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+
 
 class AdminEventAddComponent extends Component
 {
@@ -61,7 +66,7 @@ class AdminEventAddComponent extends Component
         $event = new Event();
         $event->eventname = Str::lower(trim($this->eventname));
         
-        $event->slug = Str::slug ($double,'-');
+        
         $event->startdate = $this->startdate;
         $event->enddate = $this->enddate;
 
@@ -77,6 +82,7 @@ class AdminEventAddComponent extends Component
 
         // $event->city = trim($this->city);
         $double = Str::lower(trim($event->eventname . ' ' . $event->city));
+        $event->slug = Str::slug ($double,'-');
         $event->organizer = Str::lower(trim($this->organizer));
         // $event->email = $this->email;
         // $event->phone = $this->phone;
@@ -101,6 +107,7 @@ class AdminEventAddComponent extends Component
         //$this->sendEmail($event);
        // $this->reset();
         session()->flash('message','Thanks, Your details has been uploaded.'); 
+        $this->withoutHashtag();
         return redirect()->route('admin.dashboard', ['board' => 'event']);
     }
 
@@ -115,6 +122,55 @@ class AdminEventAddComponent extends Component
              ->send(new ContactMail($contact, $details));
         }
 
+
+        public function withoutHashtag()
+        {
+          //$findComment = Comment::where('admstatus','1')->where('status','1')->get();
+            
+          //$usero->opinion =  $findComment->random();
+          
+          for($i = 0; $i < 7; $i++)
+          {
+            $indoyui = Event::where('slug', $this->slug)->first();
+    
+            $usero =  new Rate ();
+            $trynigtocreate = collect([4,5,6,7,8,9]);
+            $usero->rate = $trynigtocreate->random();
+    
+            // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
+            // $findhastagID = $findhastag->random();
+            // $usero->hasttag = $findhastagID->hastag; 
+            
+            $findComment = Comment::where('admstatus','1')->where('status','1')->get();
+            $findCommentID = $findComment->random();
+            $usero->opinion =  $findCommentID->statement;
+           
+            $usero->event_id = $indoyui->id;
+    
+            $uertyui = User::where('utype', 'USR')->get();
+            $useroID = $uertyui->random();
+            $usero->user_id = $useroID->id;
+    
+            $usero->status = '1'; 
+            $usero->admstatus = '1';
+    
+            $currenttime = Carbon::now();
+            $currento =  strtotime($currenttime);
+            $Subtracttime =  Carbon::now()->subHours(24);
+            $Subtracttimeo = strtotime($Subtracttime);
+            $getmid = rand($currento, $Subtracttimeo);
+            $finall = date('Y/m/d h:i:s', $getmid);
+    
+            $usero->created_at = $finall;
+            $usero->updated_at = $finall;
+            $usero->save();
+            
+          }
+    
+          return redirect()->back();
+          $this->reset();
+        }
+        
     public function render()
     {
         $cat = Category::get();
