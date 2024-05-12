@@ -71,9 +71,11 @@
 
                      {{$findidvenue}}
                      @php 
-                        $venueoption = DB::table('locations')->where('id', '$findidvenue')->first();
+                        $venueop = DB::table('locations')->where('id', '$findidvenue')->value('venue');
+                        $venueopcity = DB::table('locations')->where('id', '$findidvenue')->value('city');
+                        $venueopcountry = DB::table('locations')->where('id', '$findidvenue')->value('country');
                     @endphp
-                    {{$venueoption->venue}}-{{$venueoption->city}}-{{$venueoption->country}}
+                    {{$venueop}}-{{$venueopcity}}-{{$venueopcountry}}
 
                     <div class="col-sm-3">
                         <label class="form-label" for="cf-name">Venue</label>
