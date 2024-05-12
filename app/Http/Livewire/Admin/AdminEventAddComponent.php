@@ -81,14 +81,14 @@ class AdminEventAddComponent extends Component
         $event->email = $this->email;
         $event->phone = $this->phone;
 
-        $event->auidence = $this->auidence;
-        $event->exhibitors = $this->exhibitors; 
+        $event->auidence = trim($this->auidence);
+        $event->exhibitors = trim($this->exhibitors); 
 
         $event->tagline = trim($this->tagline);
         $event->shtdesc = trim($this->shtdesc);
         $event->desc = trim($this->desc);
 
-        $event->edition  = $this->edition;
+        $event->edition  = trim($this->edition);
         $event->eventype = $this->eventype;
         $event->user_id = Auth::user()->id;
         $event->level  = $this->level;
@@ -112,7 +112,7 @@ class AdminEventAddComponent extends Component
         Mail::to($contact->email)
              ->cc('laravel8coi@gmail.com')
              ->bcc('laravel8coi@gmail.com')
-             ->send(new ContactMail($contact));
+             ->send(new ContactMail($contact, $details));
         }
 
     public function render()

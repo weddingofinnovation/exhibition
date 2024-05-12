@@ -11,12 +11,14 @@ class EventSearchComponent extends Component
     public $venue;
     public $city;
     public $country;
+    public $time;
 
-    public function mount($venue = null, $city = null, $country = null)
+    public function mount($venue = null, $city = null, $country = null, $time = null)
     {
         $this->venue = $venue;
         $this->city = $city;
         $this->country = $country;
+        $this->time = $time;
     }
 
 

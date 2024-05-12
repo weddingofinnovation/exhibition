@@ -136,7 +136,7 @@ class AdminEventEditComponent extends Component
         $fattribute->edition =  trim($this->edition);
         $fattribute->startdate =  $this->startdate;
         $fattribute->enddate =  $this->enddate;
-        $fattribute->country = 'india';
+        $fattribute->country = $this->country;
         $fattribute->save();
         session()->flash('message','Event has been updated succesfully!!');
         return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);

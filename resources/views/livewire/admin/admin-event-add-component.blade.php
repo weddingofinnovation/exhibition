@@ -69,7 +69,12 @@
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
 
-{{$findidvenue}}
+                     {{$findidvenue}}
+                     @php 
+                        $venueoption = DB::table('locations')->where('id', '$findidvenue')->first();
+                    @endphp
+                    {{$venueoption->venue}}-{{$venueoption->city}}-{{$venueoption->country}}
+
                     <div class="col-sm-3">
                         <label class="form-label" for="cf-name">Venue</label>
                         <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" >
@@ -92,13 +97,13 @@
                     
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name">Visitor</label>
-                        <input class="form-control" type="text" placeholder="Your Visitor" wire:model.lazy="auidence" >
+                        <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" >
                         @error('auidence'){{ $message}}@enderror
                     </div>
 
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name">Exhibitor</label>
-                        <input class="form-control" type="text" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" >
+                        <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" >
                         @error('exhibitors'){{ $message}}@enderror
                     </div>
 
