@@ -12,11 +12,11 @@ class EventSearchComponent extends Component
     public $city;
     public $country;
 
-    public function mount($venue)
+    public function mount($venue = null, $city = null, $country = null)
     {
         $this->venue = $venue;
-        $this->city = 'delhi';
-        $this->country = 'india';
+        $this->city = $city;
+        $this->country = $country;
     }
 
 
@@ -25,7 +25,7 @@ class EventSearchComponent extends Component
     public function render()
     {
         $mytime = Carbon::now();
-        $searchVenue = Event::where('enddate', '<', $mytime)->where('city', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        $searchVenue = Event::where('enddate', '<', $mytime)->where('country', $this->country)->where('city', $this->city)->where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
 
         $mytime = Carbon::now();
         // if($this->sorting =='date'){

@@ -241,17 +241,21 @@ Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazin
 Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibition');
 Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');
 
+
+
 Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
 
 
 //as per upcoming venue 
-Route::get('/greatplace/{venue}', EventSearchComponent::class)->name('search.venue');
+Route::get('Great-Exhibition-to-Exhibit/{time}/{country}/{city}/{venue}', EventSearchComponent::class)->name('search.venue');
 
-//as per upcoming country
-Route::get('/greatplace/{country}', EventSearchComponent::class)->name('search.country');
+// //as per upcoming country
+// Route::get('/greatplace/', EventSearchComponent::class)->name('search.country');
 
-//as per upcoming location
-Route::get('/greatplace/{state}', EventSearchComponent::class)->name('search.state');
+// //as per upcoming location
+// Route::get('/greatplace/{state}', EventSearchComponent::class)->name('search.state');
+
+
 
 Route::get('/pass/{slug}', ProductComponent::class)->name('event.product');
 Route::get('/pass/es/{slug}/ticket', ProductReviewComponent::class)->name('event.productreview');

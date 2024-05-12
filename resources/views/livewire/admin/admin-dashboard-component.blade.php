@@ -2268,12 +2268,10 @@
                 </div>
 
                 <div class="col-7  p-0">
-                <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                    {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>
-                <div class="text-muted fs-sm text-start">
-                    
-                </div>  
-                <div class="text-muted fs-sm text-start"></div>
+                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['venue' => 'pragati maidan'])}}">
+                        {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>
+                    <div class="text-muted fs-sm text-start">{{$franchise->city}}</div>  
+                    <div class="text-muted fs-sm text-start">{{$franchise->country}}</div>
                 </div>
 
                 <div class="col-3  p-0">

@@ -2,7 +2,7 @@
 
 
 <!--google-->
-<div class="bg-secondary d-lg-none">
+        <div class="bg-secondary d-lg-none">
           <div class=" container">
             <div class="row ">
               <div class="col-md-6 offset-md-3 d-flex justify-content-between ">

@@ -69,7 +69,7 @@
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
 
-
+{{$findidvenue}}
                     <div class="col-sm-3">
                         <label class="form-label" for="cf-name">Venue</label>
                         <input class="form-control" type="text" placeholder="Your City" wire:model.lazy="venue" >
