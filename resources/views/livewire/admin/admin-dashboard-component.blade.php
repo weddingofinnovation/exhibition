@@ -1933,14 +1933,14 @@
                       <!-- <div class="p fw-light mb-0">{{$evento->type}}</div> 
                       <div class="small text-muted">{{$evento->id}}</div> -->
                     @if($evento->event_id == 'null' )
-
+                        {{$evento->type}}
                     @else
                         @php
                             $eventdetails = DB::table('events')->where('id', $evento->event_id)->get();
                         @endphp
 
                         @foreach($eventdetails as $evet)
-                        
+                        {{$evento->type}}
                           <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
                               <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}"></a>
 

@@ -91,6 +91,12 @@
                         </a> 
                     </div>
 
+                    <div class="col">
+                        <a href="{{route('admin.dashboard', ['board' => 'venue'])}}">
+                           <div class="p-3 border rounded border-dark bg-light text-center">Venue</div>
+                        </a> 
+                    </div>
+
                     
 
                     <div class="col">

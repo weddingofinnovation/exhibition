@@ -46,12 +46,6 @@ class AdminEventAddComponent extends Component
     Use WithFileUploads;
     public function mount()
     {
-        
-        $loc = Location:: where('id', $this->findidvenue)->first();
-        $this->venue = $loc->venue;
-        $this->country = $loc->country;
-        $this->city = $loc->city;
-
         $this->level = 4;
         $this->status = 1;
         $this->admstatus = 0;
@@ -72,7 +66,10 @@ class AdminEventAddComponent extends Component
         $event->startdate = $this->startdate;
         $event->enddate = $this->enddate;
 
-
+        $loc = Location:: where('id', $this->findidvenue)->first();
+        $this->venue = $loc->venue;
+        $this->country = $loc->country;
+        $this->city = $loc->city;
        
 
         $event->venue = trim($this->venue);
