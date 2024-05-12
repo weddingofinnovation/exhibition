@@ -477,9 +477,7 @@
                 <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
               @else
                 <div class="fs-md fw-normal text-start">
-                  {{$evento->organizer}}<br>
-                  {{$evento->email}}<br>
-                  {{$evento->phone}}
+                  {{$evento->organizer}}
                 </div>
               @endif
             </div>

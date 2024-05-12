@@ -139,7 +139,8 @@
 
 
                     @php 
-                      $organisre = DB::table('brands')->where('dtype', 'organiser')->where('status','1')->get();
+                      $organisre = DB::table('brands')->where('dtype','organiser')->orderBy('brand_name','ASC')->get();
+                      //$findoorganizer = Brand::where('dtype','organiser')->orderBy('brand_name','ASC')->get();
                     @endphp
 
 
@@ -156,7 +157,7 @@
 
                 <hr class="my-2">
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-4">
                             <label class="form-label" for="cf-name">Organizer</label>
                             <input class="form-control" type="text" placeholder="Organizer"   wire:model.lazy="organizer" >
@@ -172,7 +173,7 @@
                             <input class="form-control" type="number" placeholder="Your Phone"   wire:model.lazy="phone" >
                             @error( 'phone' ){{ $message}}@enderror
                         </div>
-                    </div>
+                    </div> -->
 
                     <button class="btn btn-primary mt-2" type="submit">Submit</button>
             </form>
