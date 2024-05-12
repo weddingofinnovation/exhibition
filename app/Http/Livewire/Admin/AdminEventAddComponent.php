@@ -59,9 +59,9 @@ class AdminEventAddComponent extends Component
     
     public function newlist(){   
         $event = new Event();
-        $event->eventname = trim($this->eventname);
+        $event->eventname = Str::lower(trim($this->eventname));
         $event->city = trim($this->city);
-        $double = $event->eventname . ' ' . $event->city;
+        $double = Str::lower(trim($event->eventname . ' ' . $event->city));
         $event->slug = Str::slug ($double,'-');
         $event->startdate = $this->startdate;
         $event->enddate = $this->enddate;
@@ -72,12 +72,12 @@ class AdminEventAddComponent extends Component
         $this->country = $loc->country;
        
 
-        // $event->venue = trim($this->venue);
-        // $event->city = trim($this->city);
-        // $event->country = trim($this->country);
+        $event->venue = trim($this->venue);
+        $event->city = trim($this->city);
+        $event->country = trim($this->country);
 
 
-        $event->organizer = Str::trim($this->organizer)->lower();
+        $event->organizer = Str::lower(trim($this->organizer));
         // $event->email = $this->email;
         // $event->phone = $this->phone;
 
