@@ -136,7 +136,26 @@
                    
 
                 </div>
+
+
+                    @php 
+                      $organisre = DB::table('brands')->where('dtype', 'organiser')->where('status','1')->get();
+                    @endphp
+
+
+                    <div class="col-sm-1">
+                        <label class="form-label" for="seniority">Organiser</label>
+                        <select class="form-control" type="text"   wire:model.lazy="organizer"  id="seniority"  placeholder="Provide short title of your request">
+                            <option selected>Choose</option>
+                            @foreach($organisre as $venueo)
+                              <option value="{{$venueo->organisation}}">{{$venueo->organisation}}</option>
+                            @endforeach
+                        </select>
+                            @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                    </div>
+
                 <hr class="my-2">
+
                     <div class="row">
                         <div class="col-sm-4">
                             <label class="form-label" for="cf-name">Organizer</label>
@@ -148,7 +167,6 @@
                             <input class="form-control" type="email" placeholder="Your email"   wire:model.lazy="email" >
                             @error( 'email' ){{ $message}}@enderror
                         </div>
-
                         <div class="col-sm-4">
                             <label class="form-label" for="cf-name">Phone</label>
                             <input class="form-control" type="number" placeholder="Your Phone"   wire:model.lazy="phone" >

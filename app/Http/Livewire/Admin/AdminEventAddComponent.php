@@ -78,8 +78,8 @@ class AdminEventAddComponent extends Component
 
 
         $event->organizer = $this->organizer;
-        $event->email = $this->email;
-        $event->phone = $this->phone;
+        // $event->email = $this->email;
+        // $event->phone = $this->phone;
 
         $event->auidence = trim($this->auidence);
         $event->exhibitors = trim($this->exhibitors); 
