@@ -595,17 +595,23 @@ public $dtype;
     }
 
 
+    public $venue;
+    public $city;
+    
+    
     public function venue()
     {
       $upted = new Location();
 
       $upted->venue = trim($this->venue) ;
-      $upted->city = trim($this->city);
-      $upted->country = $this->country;
+      $upted->slug = Str::slug ($this->venue,'-');
 
-      $upted->user_id = Auth::user()->id;
+      $upted->city = trim($this->city);
+      $upted->country = trim($this->country);
+
+      // $upted->user_id = Auth::user()->id;
       $upted->status ='1';
-      $upted->admstatus = '1';
+     
       $upted->save();
       
       return redirect()->back();

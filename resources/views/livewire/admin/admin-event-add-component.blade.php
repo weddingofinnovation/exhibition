@@ -54,7 +54,7 @@
                     </div>
 
                     @php 
-                      $venueoption = DB::table('locations')->get();
+                      $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
                     @endphp
 
 
@@ -163,7 +163,7 @@
 
         <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard',['board' => 'venue'])}}">
           <span class="handheld-toolbar-icon">
-          <i class="ci-filter-alt"></i></span>
+          <i class="bi bi-add"></i></span>
           <span class="handheld-toolbar-label">venue</span>
         </a>
        
