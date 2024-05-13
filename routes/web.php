@@ -249,6 +249,8 @@ Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::cla
 //as per upcoming venue 
 Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
+//Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
+
 // //as per upcoming country
 // Route::get('/greatplace/', EventSearchComponent::class)->name('search.country');
 
@@ -513,7 +515,6 @@ Route::get('/downloadBuy', [BuyabrandlicenseComponent::class, 'index']);
 
 Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])->name('user.opportunity');
 
-Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])->name('create.review');
 
 
 

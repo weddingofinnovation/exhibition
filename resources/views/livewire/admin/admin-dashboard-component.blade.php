@@ -2254,22 +2254,20 @@
           </form>
 
           
-
           @php 
-            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('created_at','desc')->get();
           @endphp
           @foreach($venueoption as $franchise )
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col  pr-0">
-                    
                     <div class="h4 fw-light mb-0"> Te</div> 
                     <div class="small text-muted text-capitalize">DEc</div>
                     <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
                 </div>
 
                 <div class="col-7  p-0">
-                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['venue' => 'pragati maidan'])}}">
-                        {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>
+                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'pragati maidan', 'city' => 'delhi-ncr', 'country' => 'india' ])}}">
+                        {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>/{time?}/{venue?}/{city?}/{country?}
                     <div class="text-muted fs-sm text-start">{{$franchise->city}}</div>  
                     <div class="text-muted fs-sm text-start">{{$franchise->country}}</div>
                 </div>
@@ -2382,6 +2380,12 @@
             <span class="handheld-toolbar-icon">
             <i class="ci-filter-alt"></i></span>
             <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Event</span>
+          </a>
+
+          <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'venue'])}}">
+            <span class="handheld-toolbar-icon">
+            <i class="ci-filter-alt"></i></span>
+            <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Venue</span>
           </a>
           
           <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">

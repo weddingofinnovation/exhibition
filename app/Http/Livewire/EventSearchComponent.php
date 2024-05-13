@@ -21,14 +21,12 @@ class EventSearchComponent extends Component
         $this->time = $time;
     }
 
-
-   
-
     public function render()
     {
         $mytime = Carbon::now();
-        $searchVenue = Event::where('enddate', '<', $mytime)->where('country', $this->country)->where('city', $this->city)->where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
 
+        // where('enddate', '<', $mytime)->where('country', $this->country)->where('city', $this->city)->
         $mytime = Carbon::now();
         // if($this->sorting =='date'){
         //     $franchises = Event::orderBy('created_at','DESC')->paginate($this->pagesize); 
