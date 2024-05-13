@@ -247,15 +247,15 @@ Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::cla
 
 
 //as per upcoming venue 
-Route::get('Great-Exhibition-to-Exhibit/{time}/{venue}/{city}/{country}', EventSearchComponent::class)->name('search.venue');
+Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
 //Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
 // //as per upcoming country
-// Route::get('/greatplace/', EventSearchComponent::class)->name('search.country');
+Route::get('/Great-Exhibition-to-Exhibit/{time?}/{country?}', EventSearchComponent::class,'SearchCountry')->name('search.country');
 
 // //as per upcoming location
-// Route::get('/greatplace/{state}', EventSearchComponent::class)->name('search.state');
+Route::get('/Great-Exhibition-to-Exhibit/{time?}/{city?}/{country?}', EventSearchComponent::class,'SearchCity')->name('search.city');
 
 
 
