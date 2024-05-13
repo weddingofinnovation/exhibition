@@ -2227,7 +2227,7 @@
       @endif
 
       @if($board == 'venue')
-        <div class="container">
+        <div class="container mb-5">
           <h3>Add Organiser</h3>
 
           <form wire:submit.prevent="venue">
