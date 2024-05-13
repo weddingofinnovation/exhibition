@@ -29,7 +29,7 @@ class EventSearchComponent extends Component
          {
             //$searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
             $searchTermCountry = '%'.$this->country. '%';
-            $searchVenue = Event::Where('eventname','LIKE', $searchTermCountry)->where('status','1')->orderBy('eventname','ASC')->get();
+            $searchVenue = Event::Where('country','LIKE', $searchTermCountry)->where('status','1')->orderBy('eventname','ASC')->get();
          }
         
         elseif($this->venue != null)
