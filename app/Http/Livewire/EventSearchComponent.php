@@ -25,16 +25,16 @@ class EventSearchComponent extends Component
     {
         $mytime = Carbon::now();
         
-        if($this->country == 'india')
+        if($this->country != null )
          {
             $searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
          }
         
-        elseif(!empty($this->venue))
+        elseif($this->venue != null)
         {
             $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
-        elseif(!empty($this->city))
+        elseif($this->city != null)
         {
             $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
