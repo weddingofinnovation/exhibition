@@ -2269,8 +2269,12 @@
                     <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'pragati maidan', 'city' => 'delhi-ncr', 'country' => 'india' ])}}">
                         {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div>
                 
-                    <div class="text-muted fs-sm text-start" href="{{route('search.venue',['time' => 'upcoming', 'city' => $franchise->city ])}}">{{$franchise->city}}</div>  
-                    <div class="text-muted fs-sm text-start" href="{{route('search.venue',[ 'time' => 'upcoming','country' => $franchise->country ])}}">{{$franchise->country}}</div>
+                    <div class="text-muted fs-sm text-start">
+                        <a href="{{route('search.venue',['time' => 'upcoming', 'city' => $franchise->city ])}}">{{$franchise->city}}</a>   
+                    </div>  
+                    <div class="text-muted fs-sm text-start">
+                      <a href="{{route('search.venue',[ 'time' => 'upcoming','country' => $franchise->country ])}}">{{$franchise->country}}</a>
+                    </div>
                 </div>
 
                 <div class="col-3  p-0">
