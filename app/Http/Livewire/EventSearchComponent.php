@@ -24,7 +24,23 @@ class EventSearchComponent extends Component
     public function render()
     {
         $mytime = Carbon::now();
-        $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        
+        if($this->country == 'india')
+         {
+            $searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+         }
+        
+        elseif(!empty($this->venue))
+        {
+            $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        }
+        elseif(!empty($this->city))
+        {
+            $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        }
+         
+        
+
 
         // where('enddate', '<', $mytime)->where('country', $this->country)->where('city', $this->city)->
         $mytime = Carbon::now();
