@@ -291,7 +291,7 @@
                                             {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
                                           @endif 
                                         </div>  
-                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue : 'not found'))}}, {{ucfirst(trans($franchise->city : 'not found'))}}</div>
+                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'not found'))}}, {{ucfirst(trans($franchise->city ?? 'not found'))}}</div>
                                       </div>
 
                                       <div class="col-3  p-0">
