@@ -654,7 +654,7 @@ public $dtype;
     {
       $eventorganiser = new Brand();
 
-      $eventorganiser->brand_name = trim($this->brand_name);
+      $eventorganiser->brand_name = Str::lower(trim($this->brand_name));
       $eventorganiser->slug =  Str::slug ($this->brand_name,'-');
       $eventorganiser->dtype = 'organiser'; 
       $eventorganiser->save();
@@ -685,18 +685,27 @@ public $dtype;
         // $eventorganiser->brand_name = trim($this->brand_name);
         // $eventorganiser->slug =  Str::slug ($this->brand_name,'-');
 
-        $brand->brand_name = trim($tre);
+        $brand->brand_name = Str::lower(trim($tre));
         $brand->slug = str::slug($tre,'-');
         $brand->dtype = 'organiser'; 
         $brand->save();
       }
     }
       
+    
     public function delphoto($id)
     {
       $delee = Photo::find($id);
       $delee->delete();
     }
+
+
+    public function delTicket($id)
+    {
+      $ticketDel = Ticket::find($id);
+      $ticketDel->delete();
+    }
+
 
     public function render()
     {
@@ -805,6 +814,7 @@ public $dtype;
       $counteventWithCategory = Denco::where('expo_id', '$resultAdded->id')->count();
 
       $ticket = Ticket::get();
+
       $photos = Photo::get();
 
       $findSearch = Viewso::whereNotNull('search')->get();

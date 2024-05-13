@@ -2290,9 +2290,7 @@
 
 
       @if($board == 'ticketPlan')
-         <div class="container">
-           
-            @foreach($ticket as $franchise )
+            @foreach($ticket as $franchise)
                 <div class="container  ">
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
@@ -2327,14 +2325,13 @@
                                 <li><a class="dropdown-item" href="#">Edit</a></li>
                                 <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Active</a></li>    
                                 <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">DeActive</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delTicket({{$franchise->id}})">>Delete</a></li>
                               </ul>
                             </span>
                             </div>
                     </div>
                 </div>
             @endforeach
-
-         </div>
       @endif
 
 

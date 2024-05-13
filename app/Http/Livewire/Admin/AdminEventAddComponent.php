@@ -107,7 +107,7 @@ class AdminEventAddComponent extends Component
         //$this->sendEmail($event);
        // $this->reset();
         session()->flash('message','Thanks, Your details has been uploaded.'); 
-        $this->withoutHashtag();
+        $this->withoutHashtag($event->id);
         return redirect()->route('admin.dashboard', ['board' => 'event']);
     }
 
@@ -123,7 +123,7 @@ class AdminEventAddComponent extends Component
         }
 
 
-        public function withoutHashtag()
+        public function withoutHashtag($evento)
         {
           //$findComment = Comment::where('admstatus','1')->where('status','1')->get();
             
@@ -131,7 +131,7 @@ class AdminEventAddComponent extends Component
           
           for($i = 0; $i < 7; $i++)
           {
-            $indoyui = Event::where('slug', $this->slug)->first();
+            $indoyui = Event::where('id', $evento)->value('id');
     
             $usero =  new Rate ();
             $trynigtocreate = collect([4,5,6,7,8,9]);
@@ -145,7 +145,7 @@ class AdminEventAddComponent extends Component
             $findCommentID = $findComment->random();
             $usero->opinion =  $findCommentID->statement;
            
-            $usero->event_id = $indoyui->id;
+            $usero->event_id = $indoyui;
     
             $uertyui = User::where('utype', 'USR')->get();
             $useroID = $uertyui->random();
