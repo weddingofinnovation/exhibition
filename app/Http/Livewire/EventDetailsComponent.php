@@ -30,13 +30,15 @@ class EventDetailsComponent extends Component
     public $avgrating;
     public $productExpiryDate;
     public $optional;
+  
 
     public $type_event;
     
-    public function mount($slug, $optional = null)
+    public function mount($slug, $optional = null )
     {
        $this->slug = $slug;
        $this->optional = $optional;
+      
       
     }
 
@@ -90,9 +92,13 @@ class EventDetailsComponent extends Component
         $graphic->view_count = '1';
         $graphic->event_id = $event->id;
           if (Auth::check()) 
-          { $graphic->user_id = Auth::user()->id; }
-          //else
-          //{ $graphic->user_id = '0' ; }
+          { 
+            $graphic->user_id = Auth::user()->id; 
+          }
+          else
+          { 
+            $graphic->user_id = NULL ; 
+          }
         $graphic->save();
 
       // $data = session()->all();
