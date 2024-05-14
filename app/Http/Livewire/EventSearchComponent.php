@@ -24,7 +24,7 @@ class EventSearchComponent extends Component
     public function SearchCountry()
     {
         $searchTermCountry = '%'.$this->country. '%';
-        $searchVenue = Event::Where('country','LIKE', $searchTermCountry)->where('status','1')->orderBy('eventname','ASC')->get();
+        $searchVenue = Event::where('country','LIKE', $searchTermCountry)->where('status','1')->orderBy('startdate','desc')->get();
         return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
     }
 
@@ -49,8 +49,8 @@ class EventSearchComponent extends Component
         
         elseif($this->venue != null)
         {
-            $searchTermVenue = '%'.$this->venue. '%';
-            $searchVenue = Event::where('venue', $searchTermVenue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+            //$searchTermVenue = '%'.$this->venue. '%';
+            $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
         elseif($this->city != null)
         {
