@@ -13,7 +13,7 @@ class EventSearchComponent extends Component
     public $country;
     public $time;
 
-    public function mount($venue = null, $city = null, $country = null, $time = null)
+    public function mount($time = null , $venue = null, $city = null, $country = null)
     {
         $this->venue = $venue;
         $this->city = $city;
@@ -41,8 +41,6 @@ class EventSearchComponent extends Component
         $mytime = Carbon::now();
         
         $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
-         
-        $mytime = Carbon::now();
         
         return view('livewire.event-search-component',['searchVenue' => $searchVenue, 'mytime' => $mytime])->layout('layouts.eblog');
     }

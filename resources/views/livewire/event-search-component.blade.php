@@ -59,7 +59,6 @@
                         @foreach ($searchVenue  as $business)
                           @php
                               $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
-                            
                           @endphp
 
                           @foreach ($franchiso as $franchise)
