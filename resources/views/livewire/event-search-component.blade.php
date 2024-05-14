@@ -11,8 +11,9 @@
                     <a href="#"><i class="bi bi-chevron-left"></i></a>  
                     </div>
               
-                    <div class="text-center py-2">
-                          <div>Upcoming {{$this->venue}}($searchVenue->count())</div> 
+                    <div class="text-center  fs-sm py-2">
+                          <div>Upcoming {{$this->venue ?? ' no venue'}}($searchVenue->count())</div> 
+{{$this->country ?? ' no country'}} {{$this->city ?? ' no city'}}
                     </div>
 
                     <div class="align-content-center py-2">
