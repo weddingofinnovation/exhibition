@@ -40,7 +40,20 @@ class EventSearchComponent extends Component
     {
         $mytime = Carbon::now();
         
-        $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        if($this->venue != 'all' || $this->city != 'all' )
+        {
+            $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        }
+        elseif($this->venue == 'all' || $this->city != 'all')
+        {
+            $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        }
+        elseif($this->venue == 'all' || $this->city == 'all')
+        {
+            $searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+        }
+
+        
         
         return view('livewire.event-search-component',['searchVenue' => $searchVenue, 'mytime' => $mytime])->layout('layouts.eblog');
     }

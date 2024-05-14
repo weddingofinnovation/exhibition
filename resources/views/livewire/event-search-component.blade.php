@@ -13,7 +13,7 @@
               
                     <div class="text-center  fs-sm py-2">
                           <div>Upcoming {{$this->venue ?? ' no venue'}}($searchVenue->count())</div> 
-{{$this->country ?? ' no country'}} {{$this->city ?? ' no city'}}
+           {{$this->country ?? ' no country'}} {{$this->city ?? ' no city'}}
                     </div>
 
                     <div class="align-content-center py-2">

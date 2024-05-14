@@ -239,24 +239,13 @@ Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazin
 
 //categorie
 Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibition');
+
 Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');
-
-
 
 Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
 
-
 //as per upcoming venue 
-Route::get('Great-Exhibition-to-Exhibit/test1/{time}/test2/{venue}/test3/{city}/test4/{country}', EventSearchComponent::class)->name('search.venue');
-
-//Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
-
-// //as per upcoming country
-Route::get('/Great-Exhibition-to-Exhibit/{time?}/{country?}', EventSearchComponent::class,'SearchCountry')->name('search.country');
-
-// //as per upcoming location
-Route::get('/Great-Exhibition-to-Exhibit/{time?}/{city?}/{country?}', EventSearchComponent::class,'SearchCity')->name('search.city');
-
+Route::get('Great-Exhibition-to-Exhibit/{time}/{venue}/{city}/{country}', EventSearchComponent::class)->name('search.venue');
 
 
 Route::get('/pass/{slug}', ProductComponent::class)->name('event.product');
