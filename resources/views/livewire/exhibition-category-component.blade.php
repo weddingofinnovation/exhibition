@@ -1870,21 +1870,21 @@
                         
                         <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
                           <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Date</span>
+                          <span class="handheld-toolbar-label"></span>
                         </a>
                         <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
                           <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
+                          <i class="bi bi-location"></i></span>
                           <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Location</span>
                         </a>
                         
                         <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                          <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
                           <span class="handheld-toolbar-label">Venue</span>
                         </a>
                   
                   <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    <span class="handheld-toolbar-icon"><i class=" bi bi-heart"></i></span>
+                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
                     <span class="handheld-toolbar-label">Menu</span>
                   </a>
 

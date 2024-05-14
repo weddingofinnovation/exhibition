@@ -12,11 +12,11 @@
                     </div>
               
                     <div class="text-center py-2">
-                          <div>Upcoming {{$this->venue}}</div> 
+                          <div>Upcoming {{$this->venue}}($searchVenue->count())</div> 
                     </div>
 
                     <div class="align-content-center py-2">
-                    <a href=""><i class="bi bi-search"></i></a>    
+                    <a href=""><i class="bi bi-filter"></i></a>    
                     </div>
               </div>
             </div>
@@ -306,10 +306,12 @@
                 
                     <!-- Reviews tab-->
                     <div class="tab-pane fade" id="reviews" role="tabpanel">
-                      <div class="row text-center">
-                        <i class="bi bi-bookmark"></i>
-                        <p>Saving an event will add it to this tab so that you can find it later</p>
-                        <a href="" class="btn btn-primary text-capitalize">return to search results</a>
+                      <div class="container mt-5">
+                        <div class="row text-center">
+                          <i class="bi bi-bookmark"></i>
+                          <p>Saving an event will add it to this tab so that you can find it later</p>
+                          <a href="" class="btn btn-primary text-capitalize">return to search results</a>
+                        </div>
                       </div>
                     </div>
 
