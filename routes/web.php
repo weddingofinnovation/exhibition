@@ -247,7 +247,7 @@ Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::cla
 
 
 //as per upcoming venue 
-Route::get('Great-Exhibition-to-Exhibit/test1/{time?}/test2/{venue?}/test3/{city?}/test4/{country?}', EventSearchComponent::class)->name('search.venue');
+Route::get('Great-Exhibition-to-Exhibit/test1/{time}/test2/{venue}/test3/{city}/test4/{country}', EventSearchComponent::class)->name('search.venue');
 
 //Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 

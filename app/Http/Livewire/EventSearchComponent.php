@@ -21,20 +21,20 @@ class EventSearchComponent extends Component
         $this->time = $time;
     }
 
-    public function SearchCountry()
-    {
-        $searchTermCountry = '%'.$this->country. '%';
-        $searchVenue = Event::where('country','LIKE', $searchTermCountry)->where('status','1')->orderBy('startdate','desc')->get();
-        return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
-    }
+    // public function SearchCountry()
+    // {
+    //     $searchTermCountry = '%'.$this->country. '%';
+    //     $searchVenue = Event::where('country','LIKE', $searchTermCountry)->where('status','1')->orderBy('startdate','desc')->get();
+    //     return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
+    // }
 
 
-    public function SearchCity()
-    {
-        $searchTermCity = '%'.$this->city. '%';
-        $searchVenue = Event::where('city', $searchTermCity )->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
-        return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
-    }
+    // public function SearchCity()
+    // {
+    //     $searchTermCity = '%'.$this->city. '%';
+    //     $searchVenue = Event::where('city', $searchTermCity )->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+    //     return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
+    // }
 
     public function render()
     {
