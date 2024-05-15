@@ -48,12 +48,12 @@ class EventSearchComponent extends Component
         }
         elseif($this->venue == 'all' && $this->city != 'all')
         {
-            dd('tst2',$this->venue, $this->country, $this->city);
+            //dd('tst2',$this->venue, $this->country, $this->city);
            $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
         elseif($this->venue == 'all' && $this->city == 'all')
         {
-            dd('tst3',$this->venue, $this->country, $this->city);
+            //dd('tst3',$this->venue, $this->country, $this->city);
             $searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
 
