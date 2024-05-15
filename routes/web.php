@@ -287,8 +287,8 @@ Route::get('/exhibit/{board}/{visitorid?}', ExhibitComponent::class)->name('even
 Route::get('/registration-pass/{visitorid?}', [BuyabrandlicenseComponent::class, 'genratepdf'])->name('download.badge');
 
 //lead-re-check
-Route::get('/coi/expand-your-business/{slug}', LeadComponent::class)->name('lead.business');
-Route::get('/coi/sell-your-business/{slug}/{type}', LeadOtherComponent::class)->name('lead.business.other');
+//Route::get('/coi/expand-your-business/{slug}', LeadComponent::class)->name('lead.business');
+//Route::get('/coi/sell-your-business/{slug}/{type}', LeadOtherComponent::class)->name('lead.business.other');
 
 
 //trying//promotion
