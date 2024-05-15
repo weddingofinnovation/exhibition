@@ -221,7 +221,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 
 //Start
 Route::get('/', EventComponent::class)->name('business.exhibition');
-Route::get('/search', SearchComponent::class)->name('search.events');
+
 Route::get('/conference', ConferenceComponent::class)->name('coi.conference');
 Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class)->name('event.details');
 //Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class, 'index')->name('event.details');
@@ -238,6 +238,9 @@ Route::get('/{slug}/reviews', AwardComponent::class)->name('business.award');
 Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazine');
 
 //categorie
+
+Route::get('/search', SearchComponent::class)->name('search.events');
+
 Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibition');
 
 Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');

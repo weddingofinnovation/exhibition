@@ -147,106 +147,106 @@ body {
 .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
 </style>
-                    <div class="container mt-5">
-                        <!-- <input type="text" class="form-control" placeholder="search" > -->
-                        <form action="" wire:submit.prevent="searchbackup">
-                            <div class="input-group flex-nowrap">
-                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                            <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
-                            <button class="btn btn-primary" type="submit" name=""> Search</button>
-                            </div>
-                        </form>
+      <div class="container mt-5">
+          <!-- <input type="text" class="form-control" placeholder="search" > -->
+          <form action="" wire:submit.prevent="searchbackup">
+              <div class="input-group flex-nowrap">
+              <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+              <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
+              <button class="btn btn-primary" type="submit" name=""> Search</button>
+              </div>
+          </form>
 
-                        <div class="row mb-5 pb-2">
-                          @if(is_null($searchTerm))
+          <div class="row mb-5 pb-2">
+            @if(is_null($searchTerm))
 
-                            <div class="container  small">
-                               Expand your Business Reach with us.
-                            </div>  
+              <div class="container  small">
+                  Expand your Business Reach with us.
+              </div>  
 
+            @else
+              @foreach ($searchCat as $franchise) 
+                <div class="container">
+                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                    <div class="col  pr-0">
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
                           @else
-                            @foreach ($searchCat as $franchise) 
-                              <div class="container">
-                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                  <div class="col  pr-0">
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                          <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                        @else
-                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                          <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                            <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
 
-                                      @endif 
-                                      @php 
-                                        $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                        $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                        $name = $franchise->eventname;
-                                        $venue = $franchise->venue;
-                                        $city = $franchise->city;
-                                        $country = $franchise->country;
-                                        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                        
-                                      @endphp
-                                        
-                                          <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                  </div>
-
-                                  <div class="col-7  p-0">
-                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                    <div class="text-muted fs-sm text-start">
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                      @else
-                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                      @endif 
-                                    </div>  
-                                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
-                                  </div>
-
-                                  <div class="col-3  p-0">
-                                    <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                  </div>
-                                </div>
-                              </div>
-                            @endforeach
-                          @endif
-                        </div>
+                        @endif 
+                        @php 
+                          $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                          $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                          $name = $franchise->eventname;
+                          $venue = $franchise->venue;
+                          $city = $franchise->city;
+                          $country = $franchise->country;
+                          $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                          
+                        @endphp
+                          
+                            <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
                     </div>
 
-                        <section class="container py-3 py-lg-5 mt-4 mb-3">
-                            <div class="text-center mb-5">
-                                <p class="col-md-10 col-lg-8 mx-auto fw-bold">Industry</p>
-                                <div class="container">
-                                    <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3">
-                                        @foreach($allcategory as $category )
-                                            <div class="col">
-                                                <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                                                    <div class="p-3 border rounded border-dark bg-light text-center text-dark fs-sm">{{$category -> industry}}</div>
-                                                </a> 
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                    <div class="col-7  p-0">
+                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                        {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                      <div class="text-muted fs-sm text-start">
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                        @else
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                        @endif 
+                      </div>  
+                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                    </div>
 
-                      <div class="container">
-                        <div class="grido">
-                          @foreach($allcategory as $category )
-                              <div class="element-item transition metal" data-category="transition">
+                    <div class="col-3  p-0">
+                      <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+            @endif
+          </div>
+      </div>
 
-                                <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                                <h3 class="name">{{$category -> industry}}</h3>
-                                </a> 
-                                <p class="symbol">Hg</p>
-                                <!-- <p class="number">80</p>
-                                <p class="weight">200.59</p> -->
-                              </div>
-                          @endforeach
-                        </div>
-                      </div>
+      <section class="container py-3 py-lg-5 mt-4 mb-3">
+          <div class="text-center mb-5">
+              <p class="col-md-10 col-lg-8 mx-auto fw-bold">Industry</p>
+              <div class="container">
+                  <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3">
+                      @foreach($allcategory as $category )
+                          <div class="col">
+                              <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                                  <div class="p-3 border rounded border-dark bg-light text-center text-dark fs-sm">{{$category -> industry}}</div>
+                              </a> 
+                          </div>
+                      @endforeach
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <div class="container">
+        <div class="grido">
+          @foreach($allcategory as $category )
+              <div class="element-item transition metal" data-category="transition">
+
+                <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                <h3 class="name">{{$category -> industry}}</h3>
+                </a> 
+                <p class="symbol">Hg</p>
+                <!-- <p class="number">80</p>
+                <p class="weight">200.59</p> -->
+              </div>
+          @endforeach
+        </div>
+      </div>
 
       <div class="grido">
         <div class="element-item metalloid " data-category="metalloid">
@@ -352,9 +352,34 @@ body {
           <p class="weight">(244)</p>
         </div>
       </div>
+
+      <!-- bottom -->
+      <div class="handheld-toolbar">
+        <div class="d-table table-layout-fixed w-100">
+          <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+            <span class="handheld-toolbar-label">Home</span>
+          </a>
+
+          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#shopsidebar" role="button" aria-controls="offcanvasExample">
+            <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
+            <span class="handheld-toolbar-label">Filter</span>
+          </a>
+
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
+              <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+              <span class="handheld-toolbar-label">Add</span>
+          </a>
+
+          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+            <span class="handheld-toolbar-label">Menu</span>
+          </a>
+        </div>
+      </div>
 </main>
 
-@push('scripts')
+  @push('scripts')
      
     
       <script type="text/javascript" src="{{asset('js/isotope.pkgd.min.js')}}">
