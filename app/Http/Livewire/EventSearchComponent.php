@@ -43,22 +43,22 @@ class EventSearchComponent extends Component
         
         if($this->venue != 'all' && $this->city != 'all' )
         {
-            dd('tst1',$this->venue, $this->country, $this->city);
-            //$searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+            //dd('tst1',$this->venue, $this->country, $this->city);
+            $searchVenue = Event::where('venue', $this->venue)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
         elseif($this->venue == 'all' && $this->city != 'all')
         {
             dd('tst2',$this->venue, $this->country, $this->city);
-           // $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+           $searchVenue = Event::where('city', $this->city)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
         elseif($this->venue == 'all' && $this->city == 'all')
         {
             dd('tst3',$this->venue, $this->country, $this->city);
-            //$searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
+            $searchVenue = Event::where('country', $this->country)->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
         }
 
         
         
-        return view('livewire.event-search-component',[ 'mytime' => $mytime])->layout('layouts.eblog');
+        return view('livewire.event-search-component',[ 'searchVenue' => $searchVenue,'mytime' => $mytime])->layout('layouts.eblog');
     }
 }
