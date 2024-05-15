@@ -2017,7 +2017,8 @@
                     <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
 
                       @php  
-                         $locationo = DB::table('locations')->get();
+                         
+                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('venue','desc')->get();
                       @endphp
 
                         @foreach ($locationo as $category)
