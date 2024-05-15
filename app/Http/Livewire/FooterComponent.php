@@ -10,6 +10,7 @@ use Livewire\Component;
 class FooterComponent extends Component
 {
     public $eventype;
+    public $board;
 
     public function mount()
     {
