@@ -14,7 +14,8 @@ class AddLoctionIdToEventsTable extends Migration
     public function up()
     {
         Schema::table('events', function (Blueprint $table) {
-            //
+            $table->bigInteger('location_id')->unsigned()->nullable();
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
         });
     }
 
@@ -26,7 +27,8 @@ class AddLoctionIdToEventsTable extends Migration
     public function down()
     {
         Schema::table('events', function (Blueprint $table) {
-            //
+            $table->bigInteger('location_id')->unsigned()->nullable();
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
         });
     }
 }
