@@ -2030,7 +2030,7 @@
                                       {{$category->venue}}
                                     </a> --}}
 
-                                    <a class="accordion-button" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city, 'country' => $franchise->country ])}}">
+                                    <a class="accordion-button text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => $locationo->venue , 'city' => $locationo->city, 'country' => $locationo->country ])}}">
                                     {{ucwords(trans(Str::limit($category->venue, 24)))}}
                                     </a>
                           </div>

@@ -12,8 +12,8 @@
                     </div>
               
                     <div class="text-center  fs-sm py-2">
-                          <div>Upcoming {{$this->venue ?? ' no venue'}}($searchVenue->count())</div> 
-            {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}
+                          <div>Upcoming {{$this->venue ?? ' no venue'}}</div> 
+            {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
                     </div>
 
                     <div class="align-content-center py-2">
