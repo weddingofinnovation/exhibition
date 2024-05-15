@@ -706,6 +706,7 @@ public $dtype;
       $ticketDel->delete();
     }
 
+    
 
     public function render()
     {

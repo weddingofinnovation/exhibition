@@ -92,13 +92,13 @@ class AdminEventEditComponent extends Component
     public function updateEvent()
     {
         $fattribute = Event::find($this->event_id);
-        $fattribute->eventname =  trim($this->eventname);
+        $fattribute->eventname = Str::lower(trim($this->eventname));
         $fattribute->slug = trim($this->slug);
-        $fattribute->eventype =  $this->eventype;
-        $fattribute->country =  trim($this->country);
-        $fattribute->city =  trim($this->city);
-        $fattribute->venue =  trim($this->venue);
-        $fattribute->organizer = trim($this->organizer);
+        $fattribute->eventype =  Str::lower(trim($this->eventype));
+        $fattribute->country =  Str::lowertrim(trim($this->country));
+        $fattribute->city =  Str::lower(trim($this->city));
+        $fattribute->venue =  Str::lower(trim($this->venue));
+        $fattribute->organizer = Str::lower(trim($this->organizer));
 
         $fattribute->shtdesc =  trim($this->shtdesc);
         $fattribute->tagline =  trim($this->tagline);
@@ -107,7 +107,7 @@ class AdminEventEditComponent extends Component
         $fattribute->exhibitors =  trim($this->exhibitors);
         $fattribute->auidence =  trim($this->auidence);
       
-        $fattribute->email =  trim($this->email);
+        $fattribute->email =  Str::lower(trim($this->email));
         $fattribute->phone =  trim($this->phone);
 
         $fattribute->edition =  $this->edition;
@@ -122,13 +122,13 @@ class AdminEventEditComponent extends Component
     public function updateBasicEvent()
     {
         $fattribute = Event::find($this->event_id);
-        $fattribute->eventname =  trim($this->eventname);
+        $fattribute->eventname =  Str::lower(trim($this->eventname));
         $fattribute->slug = trim($this->slug);
-        $fattribute->eventype =  $this->eventype;
+        $fattribute->eventype =  Str::lower(trim($this->eventype));
       
-        $fattribute->city =  trim($this->city);
-        $fattribute->country =  trim($this->country);
-        $fattribute->venue =  trim($this->venue);
+        $fattribute->city =  Str::lower(trim($this->city));
+        $fattribute->country =  Str::lower(trim($this->country));
+        $fattribute->venue =  Str::lower(trim($this->venue));
        
         $fattribute->exhibitors =  trim($this->exhibitors);
         $fattribute->auidence =  trim($this->auidence);
@@ -136,7 +136,7 @@ class AdminEventEditComponent extends Component
         $fattribute->edition =  trim($this->edition);
         $fattribute->startdate =  $this->startdate;
         $fattribute->enddate =  $this->enddate;
-        $fattribute->country = $this->country;
+        // $fattribute->country = $this->country;
         $fattribute->save();
         session()->flash('message','Event has been updated succesfully!!');
         return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
@@ -152,29 +152,29 @@ class AdminEventEditComponent extends Component
         {
           $doublse = new Event();
           
-          $doublse->eventname = trim($tre);
-          $doublse->city =  trim($this->city);
+          $doublse->eventname = Str::lower(trim($tre));
+          $doublse->city =  Str::lower(trim($this->city));
           $double = $doublse->eventname . ' ' . $doublse->city;
           $doublse->slug = Str::slug ($double,'-');
 
-          $doublse->eventype = $this->eventype;
-          $doublse->city =  trim($this->city);
-          $doublse->country =  trim($this->country);
-          $doublse->venue =  trim($this->venue);
-          $doublse->exhibitors =  $this->exhibitors;
-          $doublse->auidence =  $this->auidence;
-          $doublse->edition =  $this->edition;
+          $doublse->eventype = Str::lower(trim($this->eventype));
+          $doublse->city =  Str::lower(trim($this->city));
+          $doublse->country =  Str::lower(trim($this->country));
+          $doublse->venue =  Str::lower(trim($this->venue));
+          $doublse->exhibitors =  trim($this->exhibitors);
+          $doublse->auidence =  trim($this->auidence);
+          $doublse->edition =  trim($this->edition);
           $doublse->startdate =  $this->startdate;
           $doublse->enddate =  $this->enddate;
 
-            $doublse->organizer = $this->organizer;
-            $doublse->shtdesc =  $this->shtdesc;
-            $doublse->tagline =  $this->tagline;
-            $doublse->desc =  $this->desc;
+            $doublse->organizer = Str::lower(trim($this->organizer));
+            $doublse->shtdesc =  trim($this->shtdesc);
+            $doublse->tagline =  trim($this->tagline);
+            $doublse->desc =  trim($this->desc);
 
-            $doublse->email =  $this->email;
-            $doublse->phone =  $this->phone;
-            $doublse->link =  $this->link;
+            $doublse->email =  trim($this->email);
+            $doublse->phone =  trim($this->phone);
+            $doublse->link =  trim($this->link);
           
           $doublse->status = $this->status;
           $doublse->admstatus = '0';
@@ -196,24 +196,24 @@ class AdminEventEditComponent extends Component
         {
           $doublse = new Event();
           
-          $doublse->eventname = trim($this->eventkhaname);
+          $doublse->eventname = Str::lower(trim($this->eventkhaname));
           
           $doublse->slug = Str::slug ($doublse->eventname,'-');
 
-          $doublse->eventype = $this->eventype;
+          $doublse->eventype = Str::lower(trim($this->eventype));
           $doublse->city =  trim($ccity);
-          $doublse->country =  trim($this->country);
-          $doublse->venue =  trim($this->venue);
+          $doublse->country =  Str::lower(trim($this->country));
+          $doublse->venue =  Str::lower(trim($this->venue));
           $doublse->exhibitors =  $this->exhibitors;
           $doublse->auidence =  $this->auidence;
           $doublse->edition =  $this->edition;
           $doublse->startdate =  $this->startdate;
           $doublse->enddate =  $this->enddate;
 
-            $doublse->organizer = $this->organizer;
-            $doublse->shtdesc =  $this->shtdesc;
-            $doublse->tagline =  $this->tagline;
-            $doublse->desc =  $this->desc;
+            $doublse->organizer = Str::lower(trim($this->organizer));
+            $doublse->shtdesc =  trim($this->shtdesc);
+            $doublse->tagline =  trim($this->tagline);
+            $doublse->desc =  trim($this->desc);
 
             $doublse->email =  $this->email;
             $doublse->phone =  $this->phone;

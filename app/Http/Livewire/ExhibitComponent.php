@@ -8,6 +8,7 @@ use App\Models\User;
 //use Barryvdh\DomPDF\Facade as PDF;
 use PDF;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
@@ -127,15 +128,15 @@ class ExhibitComponent extends Component
         ]);
 
         $newEvent = new Lead();
-        $newEvent->name = trim($this->name);
+        $newEvent->name = Str::lower(trim($this->name));
         $newEvent->email = trim($this->email);
         $newEvent->phone = trim($this->phone);
 
-        $newEvent->city = trim($this->city);
+        $newEvent->city = Str::lower(trim($this->city));
 
-        $newEvent->industry = trim($this->industry);
-        $newEvent->company = trim($this->company);
-        $newEvent->designation = trim($this->designation);
+        $newEvent->industry = Str::lower(trim($this->industry));
+        $newEvent->company = Str::lower(trim($this->company));
+        $newEvent->designation = Str::lower(trim($this->designation));
 
         $newEvent->type = 'register';
         $newEvent->event_id = session()->get('eventID');
@@ -147,7 +148,7 @@ class ExhibitComponent extends Component
         $newEvent->save();
 
         $logino = new User();
-        $logino->name = trim($this->name);
+        $logino->name = Str::lower(trim($this->name));
         $logino->email = trim($this->email);
         $logino->password = Hash::make($this->email);
         $logino->phone = trim($this->phone);
@@ -214,9 +215,9 @@ class ExhibitComponent extends Component
         ]);
 
         $newEvent = new Lead();
-        $newEvent->name = $this->name;
-        $newEvent->email = $this->email;
-        $newEvent->phone = $this->phone;
+        $newEvent->name = Str::lower(trim($this->name));
+        $newEvent->email = trim($this->email);
+        $newEvent->phone = trim($this->phone);
         $newEvent->type = 'ticket';
         $newEvent->event_id = session()->get('eventID');
 
@@ -227,10 +228,10 @@ class ExhibitComponent extends Component
         $newEvent->save();
 
         $logino = new User();
-        $logino->name = $this->name;
-        $logino->email = $this->email;
+        $logino->name = Str::lower(trim($this->name));
+        $logino->email = trim($this->email);
         $logino->password = Hash::make($this->email);
-        $logino->phone = $this->phone;
+        $logino->phone = trim($this->phone);
         $logino->save();
 
         return redirect()->route('coicart');
