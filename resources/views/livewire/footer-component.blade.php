@@ -444,7 +444,7 @@
                 <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               
-                <div class="d-flex badgeose pb-2">
+                {{-- <div class="d-flex badgeose pb-2">
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
@@ -452,7 +452,7 @@
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
-                </div>
+                </div> --}}
 
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                 <!-- Categories-->
