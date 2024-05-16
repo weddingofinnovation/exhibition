@@ -53,8 +53,23 @@
                             @error( 'enddate' ){{ $message}}@enderror
                         </div>
 
+                        @php 
+                            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+                        @endphp
+
+                        <div class="col-sm-1">
+                            <label class="form-label" for="seniority">Venue</label>
+                            <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                                <option selected>Choose</option>
+                                @foreach($venueoption as $venueo)
+                                <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
+                                @endforeach
+                            </select>
+                                @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                        </div>
+
                         
-                        <div class="col-sm-3">
+                        {{-- <div class="col-sm-3">
                             <label class="form-label" for="cf-name">Venue</label>
                             <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
                             @error( 'venue' ){{ $message}}@enderror
@@ -70,7 +85,7 @@
                         <label class="form-label" for="cf-name">country</label>
                         <input class="form-control" type="text" placeholder="country" wire:model.lazy="country" required="">
                         @error('country'){{ $message}}@enderror
-                        </div>
+                        </div> --}}
                         
                         <div class="col-sm-2">
                             <label class="form-label" for="cf-name">Visitor</label>
@@ -132,17 +147,21 @@
                             <input class="form-control" type="date"  wire:model.lazy="enddate" required="">
                             @error( 'enddate' ){{ $message}}@enderror
                         </div>
-                        
+
+                        @php 
+                            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+                        @endphp
+
                         <div class="col-sm-1">
-                        <label class="form-label" for="seniority">Venue</label>
-                        <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
-                            <option selected>Choose</option>
-                            @foreach($venueoption as $venueo)
-                            <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
-                            @endforeach
-                        </select>
-                            @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                    </div>
+                            <label class="form-label" for="seniority">Venue</label>
+                            <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                                <option selected>Choose</option>
+                                @foreach($venueoption as $venueo)
+                                <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
+                                @endforeach
+                            </select>
+                                @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                        </div>
                         
                         {{-- <div class="col-sm-3">
                             <label class="form-label" for="cf-name">Venue</label>

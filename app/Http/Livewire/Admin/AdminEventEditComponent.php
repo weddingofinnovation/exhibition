@@ -52,9 +52,7 @@ class AdminEventEditComponent extends Component
     public $admstatus;
     public $user_id;
     public $reference;
-
     public $findidvenue;
-
     public $eventkhaname;
 
     public function generateSlug()
