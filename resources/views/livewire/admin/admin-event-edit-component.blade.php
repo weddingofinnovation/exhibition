@@ -281,7 +281,9 @@
 
                                     @endif 
                                     <div class="round-circle">{{$evento->edition}}</div>
+
                                     <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
+                                    <div class="round-circle">{{$evento->id}}</div>
                                     {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
                                 </div>
 

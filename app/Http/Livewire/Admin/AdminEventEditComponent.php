@@ -236,7 +236,7 @@ class AdminEventEditComponent extends Component
           $doublse->eventype = Str::lower(trim($this->eventype));
 
 
-          $doublse->city =  Str::lower(trim($this->city));
+          //$doublse->city =  Str::lower(trim($this->city));
           $doublse->country =  Str::lower(trim($this->country));
           $doublse->venue =  Str::lower(trim($this->venue));
 
