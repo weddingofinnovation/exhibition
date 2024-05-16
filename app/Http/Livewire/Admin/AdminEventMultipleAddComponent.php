@@ -198,7 +198,8 @@ class AdminEventMultipleAddComponent extends Component
     {
         $fattribute = Event::find($this->event_id);
         
-        $fattribute->organizer = $this->organizer;
+       // $fattribute->organizer = $this->organizer;
+        $fattribute->organizer = $this->organiser_id;
 
         $fattribute->email =  $this->email;
         $fattribute->phone =  $this->phone;

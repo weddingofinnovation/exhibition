@@ -79,6 +79,7 @@ class AdminEventAddComponent extends Component
         $event->venue = trim($this->venue);
         $event->city = trim($this->city);
         $event->country = trim($this->country);
+        $event->location_id = $this->findidvenue;
 
         // $event->city = trim($this->city);
         $double = Str::lower(trim($event->eventname . ' ' . $event->city));

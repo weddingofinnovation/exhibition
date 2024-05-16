@@ -149,84 +149,86 @@
     </style>
 
     @if($board == 'dashboard')   
-        <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
-          <div class="container">
-            <p class="text-center">Choose your Event</p>
-            <small class="text-center">Find and Active your Event</small>
-                <div class="container mt-5">
-                            <!-- <input type="text" class="form-control" placeholder="search" > -->
-                            <form action="" wire:submit.prevent="searchbackup">
-                                <div class="input-group flex-nowrap">
-                                <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                                <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
-                                <button class="btn btn-primary" type="submit" name=""> Search</button>
-                                </div>
-                            </form>
-
-                            <div class="row mb-5 pb-2">
-                              @if(is_null($searchTerm))
-
-                                <div class="container  small">
-                                  Expand your Business Reach with us.
-                                </div>  
-
-                              @else
-                                @foreach ($searchCat as $franchise) 
-                                  <div class="container mt-2">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                      <div class="col  pr-0">
-                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                              <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                              <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                            @else
-                                              <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-
-                                          @endif 
-                                          @php 
-                                            $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                            $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                            $name = $franchise->eventname;
-                                            $venue = $franchise->venue;
-                                            $city = $franchise->city;
-                                            $country = $franchise->country;
-                                            $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                            
-                                          @endphp
-                                            
-                                              <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                      </div>
-
-                                      <div class="col-4  p-0">
-                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                        <div class="text-muted fs-sm text-start">
-                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                          @else
-                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                          @endif 
-                                        </div>  
-                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
-                                      </div>
-
-                                      <div class="col-3  p-0">
-                                        <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                      </div>
-
-                                      <div class="col-3  p-0">
-                                          <a href="#" wire:click.prevent="declaimer({{$franchise->id}})" class="btn btn-sm btn-primary">Choose</a>
-                                      </div>
-
-                                    </div>
+         <!--  Start Claim event -->
+          <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+            <div class="container">
+              <p class="text-center">Choose your Event</p>
+              <small class="text-center">Find and Active your Event</small>
+                  <div class="container mt-5">
+                              <!-- <input type="text" class="form-control" placeholder="search" > -->
+                              <form action="" wire:submit.prevent="searchbackup">
+                                  <div class="input-group flex-nowrap">
+                                  <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                                  <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
+                                  <button class="btn btn-primary" type="submit" name=""> Search</button>
                                   </div>
-                                @endforeach
-                              @endif
-                            </div>
-                        </div>
-          </div>
-        </section>
+                              </form>
+
+                              <div class="row mb-5 pb-2">
+                                @if(is_null($searchTerm))
+
+                                  <div class="container  small">
+                                    Expand your Business Reach with us.
+                                  </div>  
+
+                                @else
+                                  @foreach ($searchCat as $franchise) 
+                                    <div class="container mt-2">
+                                      <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                        <div class="col  pr-0">
+                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                                <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                              @else
+                                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                                <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                                            @endif 
+                                            @php 
+                                              $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                              $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                              $name = $franchise->eventname;
+                                              $venue = $franchise->venue;
+                                              $city = $franchise->city;
+                                              $country = $franchise->country;
+                                              $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                              
+                                            @endphp
+                                              
+                                                <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                        </div>
+
+                                        <div class="col-4  p-0">
+                                          <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                            {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                          <div class="text-muted fs-sm text-start">
+                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                            @else
+                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                            @endif 
+                                          </div>  
+                                          <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                        </div>
+
+                                        <div class="col-3  p-0">
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                        </div>
+
+                                        <div class="col-3  p-0">
+                                            <a href="#" wire:click.prevent="declaimer({{$franchise->id}})" class="btn btn-sm btn-primary">Choose</a>
+                                        </div>
+
+                                      </div>
+                                    </div>
+                                  @endforeach
+                                @endif
+                              </div>
+                          </div>
+            </div>
+          </section>
+        <!-- Stop claim Event -->
 
         <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
           <div class="container">
@@ -2539,6 +2541,88 @@
         @endif
       </div>
     </div>
+
+   <!-- for organiser -->
+    <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+      <div class="container">
+        <p class="text-center">Choose your Event</p>
+        <small class="text-center">Find and Active your Event</small>
+            <div class="container mt-5">
+                        <!-- <input type="text" class="form-control" placeholder="search" > -->
+                        <form action="" wire:submit.prevent="searchbackup">
+                            <div class="input-group flex-nowrap">
+                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input type="text" class="form-control rounded-start"  name="search" placeholder="Find your Right Place" wire:model.lazy="searchTerm">
+                            <button class="btn btn-primary" type="submit" name=""> Search</button>
+                            </div>
+                        </form>
+
+                        <div class="row mb-5 pb-2">
+                          @if(is_null($searchTerm))
+
+                            <div class="container  small">
+                              Expand your Business Reach with us.
+                            </div>  
+
+                          @else
+                            @foreach ($searchCat as $franchise) 
+                              <div class="container mt-2">
+                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                  <div class="col  pr-0">
+                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                          <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                        @else
+                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                          <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                                      @endif 
+                                      @php 
+                                        $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                        $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                        $name = $franchise->eventname;
+                                        $venue = $franchise->venue;
+                                        $city = $franchise->city;
+                                        $country = $franchise->country;
+                                        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                        
+                                      @endphp
+                                        
+                                          <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                  </div>
+
+                                  <div class="col-4  p-0">
+                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                    <div class="text-muted fs-sm text-start">
+                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                      @else
+                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                      @endif 
+                                    </div>  
+                                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                  </div>
+
+                                  <div class="col-3  p-0">
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  </div>
+
+                                  <div class="col-3  p-0">
+                                      <a href="#" wire:click.prevent="declaimer({{$franchise->id}})" class="btn btn-sm btn-primary">Choose</a>
+                                  </div>
+
+                                </div>
+                              </div>
+                            @endforeach
+                          @endif
+                        </div>
+                    </div>
+      </div>
+    </section>
+
+    
 
 </main>
 

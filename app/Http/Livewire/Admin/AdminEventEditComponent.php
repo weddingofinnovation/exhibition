@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Event;
 use App\Models\Expo;
+use App\Models\Location;
 use App\Models\Pavillion;
 use App\Models\Sector;
 use App\Models\Service;
@@ -52,6 +53,8 @@ class AdminEventEditComponent extends Component
     public $user_id;
     public $reference;
 
+    public $findidvenue;
+
     public $eventkhaname;
 
     public function generateSlug()
@@ -95,10 +98,23 @@ class AdminEventEditComponent extends Component
         $fattribute->eventname = Str::lower(trim($this->eventname));
         $fattribute->slug = trim($this->slug);
         $fattribute->eventype =  Str::lower(trim($this->eventype));
-        $fattribute->country =  Str::lowertrim(trim($this->country));
-        $fattribute->city =  Str::lower(trim($this->city));
-        $fattribute->venue =  Str::lower(trim($this->venue));
-        $fattribute->organizer = Str::lower(trim($this->organizer));
+
+        $loc = Location:: where('id', $this->findidvenue)->first();
+        $this->venue = $loc->venue;
+        $this->city = $loc->city;
+        $this->country = $loc->country;
+       
+
+        $fattribute->venue = trim($this->venue);
+        $fattribute->city = trim($this->city);
+        $fattribute->country = trim($this->country);
+        $fattribute->location_id = $this->findidvenue;
+
+        // $fattribute->country =  Str::lowertrim(trim($this->country));
+        // $fattribute->city =  Str::lower(trim($this->city));
+        // $fattribute->venue =  Str::lower(trim($this->venue));
+
+        $fattribute->organizer = Str::lower(trim($this->organiser_id));
 
         $fattribute->shtdesc =  trim($this->shtdesc);
         $fattribute->tagline =  trim($this->tagline);
@@ -125,10 +141,21 @@ class AdminEventEditComponent extends Component
         $fattribute->eventname =  Str::lower(trim($this->eventname));
         $fattribute->slug = trim($this->slug);
         $fattribute->eventype =  Str::lower(trim($this->eventype));
+
+        $loc = Location:: where('id', $this->findidvenue)->first();
+        $this->venue = $loc->venue;
+        $this->city = $loc->city;
+        $this->country = $loc->country;
+       
+
+        $fattribute->venue = trim($this->venue);
+        $fattribute->city = trim($this->city);
+        $fattribute->country = trim($this->country);
+        $fattribute->location_id = $this->findidvenue;
       
-        $fattribute->city =  Str::lower(trim($this->city));
-        $fattribute->country =  Str::lower(trim($this->country));
-        $fattribute->venue =  Str::lower(trim($this->venue));
+        // $fattribute->city =  Str::lower(trim($this->city));
+        // $fattribute->country =  Str::lower(trim($this->country));
+        // $fattribute->venue =  Str::lower(trim($this->venue));
        
         $fattribute->exhibitors =  trim($this->exhibitors);
         $fattribute->auidence =  trim($this->auidence);
@@ -158,16 +185,20 @@ class AdminEventEditComponent extends Component
           $doublse->slug = Str::slug ($double,'-');
 
           $doublse->eventype = Str::lower(trim($this->eventype));
+
+
           $doublse->city =  Str::lower(trim($this->city));
           $doublse->country =  Str::lower(trim($this->country));
           $doublse->venue =  Str::lower(trim($this->venue));
+
           $doublse->exhibitors =  trim($this->exhibitors);
           $doublse->auidence =  trim($this->auidence);
           $doublse->edition =  trim($this->edition);
           $doublse->startdate =  $this->startdate;
           $doublse->enddate =  $this->enddate;
 
-            $doublse->organizer = Str::lower(trim($this->organizer));
+            $doublse->organizer = Str::lower(trim($this->organiser_id));
+
             $doublse->shtdesc =  trim($this->shtdesc);
             $doublse->tagline =  trim($this->tagline);
             $doublse->desc =  trim($this->desc);

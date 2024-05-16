@@ -4,6 +4,7 @@
     <div class="container my-3">
         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
             <div class="col  pr-0">
+              <a class ="text-dark" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}">
                 @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
                   <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div> 
                   <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
@@ -15,10 +16,11 @@
                 <div class="round-circle">{{$evento->edition}}</div>
                 <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
                 {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
+              </a>
             </div>
 
             <div class="col-7  p-0">
-              <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $evento->slug])}}">
+              <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}">
                   {{ucwords(trans(Str::limit($evento->eventname, 24)))}}</a></div>
               <div class="text-muted fs-sm text-start">
                   @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
