@@ -249,6 +249,13 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
+
+                <form wire:submit.prevent = "locationdoubleing">  
+                    <div class="input-group my-2"> 
+                        <input type="text" wire:model.lazy = "eventkhaname" class="form-control" placeholder="Different location">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
               
                 <form wire:submit.prevent = "editReference">
                     <div class="input-group my-2"> 

@@ -54,6 +54,7 @@ class AdminEventEditComponent extends Component
     public $reference;
     public $findidvenue;
     public $eventkhaname;
+    public $organiser_id;
 
     public function generateSlug()
     {
@@ -87,6 +88,7 @@ class AdminEventEditComponent extends Component
         $this->edition = $fattribute->edition;
         $this->link = $fattribute->link;  
         $this->reference = $fattribute->reference;
+        $this->organiser_id = $fattribute->organiser_id;
         $this->status = '1';     
     }
 
@@ -195,7 +197,56 @@ class AdminEventEditComponent extends Component
           $doublse->startdate =  $this->startdate;
           $doublse->enddate =  $this->enddate;
 
-            $doublse->organizer = Str::lower(trim($this->organiser_id));
+            $doublse->organizer = trim($this->organiser_id);
+
+            $doublse->shtdesc =  trim($this->shtdesc);
+            $doublse->tagline =  trim($this->tagline);
+            $doublse->desc =  trim($this->desc);
+
+            $doublse->email =  trim($this->email);
+            $doublse->phone =  trim($this->phone);
+            $doublse->link =  trim($this->link);
+          
+          $doublse->status = $this->status;
+          $doublse->admstatus = '0';
+          $doublse->user_id = Auth::user()->id;
+          $doublse->reference = $this->reference;
+          $doublse->save();
+          
+        }
+        return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
+    }
+
+    public function locationdoubleing()
+    {
+      
+      $rti = Str::replace('  ',' ', $this->eventkhaname);
+      $ret = explode(",", $rti);
+    
+      foreach($ret as $tre)
+        {
+          $doublse = new Event();
+          
+          $doublse->eventname = Str::lower(trim($this->eventname));
+
+          $doublse->city =  Str::lower(trim($tre));
+          $double = $doublse->eventname . ' ' . $doublse->city;
+          $doublse->slug = Str::slug ($double,'-');
+
+          $doublse->eventype = Str::lower(trim($this->eventype));
+
+
+          $doublse->city =  Str::lower(trim($this->city));
+          $doublse->country =  Str::lower(trim($this->country));
+          $doublse->venue =  Str::lower(trim($this->venue));
+
+          $doublse->exhibitors =  trim($this->exhibitors);
+          $doublse->auidence =  trim($this->auidence);
+          $doublse->edition =  trim($this->edition);
+          $doublse->startdate =  $this->startdate;
+          $doublse->enddate =  $this->enddate;
+
+            $doublse->organizer = trim($this->organiser_id);
 
             $doublse->shtdesc =  trim($this->shtdesc);
             $doublse->tagline =  trim($this->tagline);
