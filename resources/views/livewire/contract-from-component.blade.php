@@ -4,17 +4,27 @@
     <div class="container">
         @if($formm == 'basic')
             <form wire:submit.prevent="contractForm">
-                <h1>Exhibitor Details</h1>
-                <input type="text" class="form-control" placeholder="owner" required wire:model.lazy="owner">
-                <input type="text" class="form-control" placeholder="company" required wire:model.lazy="organisation">
-                <input type="text" class="form-control" placeholder="brand" required wire:model.lazy="brand_name">
-                <input type="text" class="form-control" placeholder="pan" required wire:model.lazy="GST">
-                <input type="text" class="form-control" placeholder="Industry" required wire:model.lazy="industry">
-                <input type="text" class="form-control" placeholder="product" required wire:model.lazy="product">
+
+
+                <h1>start</h1>
                 <input type="text" class="form-control" placeholder="email" required wire:model.lazy="email">
                 <input type="text" class="form-control" placeholder="contact" required wire:model.lazy="phone">
 
+                <h1>Exhibitor Details</h1>
+
+                <input type="text" class="form-control" placeholder="owner" required wire:model.lazy="owner">
+                <input type="text" class="form-control" placeholder="company" required wire:model.lazy="organisation">
+                <input type="text" class="form-control" placeholder="brand" required wire:model.lazy="brand_name">
+                <input type="text" class="form-control" placeholder="gst" required wire:model.lazy="GST">
+
+                
+                <h1>Category</h1>
+                <input type="text" class="form-control" placeholder="Industry" required wire:model.lazy="industry">
+                <input type="text" class="form-control" placeholder="product" required wire:model.lazy="product">
+                
+
                 <h1>Address</h1>
+                <input type="text" class="form-control" placeholder="office_type" required wire:model.lazy="office_type">
                 <input type="text" class="form-control" placeholder="address" required wire:model.lazy="address">
                 <input type="text" class="form-control" placeholder="city" required wire:model.lazy="city">
                 <input type="text" class="form-control" placeholder="state" required wire:model.lazy="state">
@@ -25,10 +35,11 @@
                 <input type="text" class="form-control" placeholder="hall" required wire:model.lazy="hall">
                 <input type="text" class="form-control" placeholder="stall" required wire:model.lazy="stall">
                 <input type="text" class="form-control" placeholder="size" required wire:model.lazy="size">
-
+                <input type="text" class="form-control" placeholder="side_open" required wire:model.lazy="side_open">
 
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
+            
         @elseif($formm == 'payment')
             <h1>Calculation</h1> 
             <form wire:submit.prevent="payment">      

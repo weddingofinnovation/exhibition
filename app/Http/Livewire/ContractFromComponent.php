@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Contractio;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Illuminate\Support\Str;
 
 class ContractFromComponent extends Component
 {
@@ -33,8 +34,6 @@ class ContractFromComponent extends Component
        $finder = Contractio::find($brand_id);
        $this->brand_id = $finder->id;
        $this->owner = $finder->owner; 
-      
-       
         $this->organisation = $finder->organisation;
         $this->brand_name = $finder->brand_name;
         $this->GST = $finder->GST;
@@ -57,21 +56,21 @@ class ContractFromComponent extends Component
     {
         $contractformi = Contractio::find($this->brand_id);
 
-        $contractformi->owner = $this->owner;
-        $contractformi->organisation = $this->organisation;
-        $contractformi->brand_name = $this->brand_name;
-        $contractformi->GST = $this->GST;
-        $contractformi->industry = $this->industry;
-        $contractformi->product = $this->product;
-        $contractformi->email = $this->email;
-        $contractformi->phone = $this->phone;
-        $contractformi->address = $this->address;
-        $contractformi->city = $this->city;
-        $contractformi->state = $this->state;
-        $contractformi->country = $this->country;
-        $contractformi->hall = $this->hall;
-        $contractformi->stall = $this->stall;
-        $contractformi->size = $this->size;
+        $contractformi->owner = Str::lower(trim($this->owner));
+        $contractformi->organisation = Str::lower(trim($this->organisation));
+        $contractformi->brand_name = Str::lower(trim($this->brand_name));
+        $contractformi->GST = Str::lower(trim($this->GST));
+        $contractformi->industry = Str::lower(trim($this->industry));
+        $contractformi->product = Str::lower(trim($this->product));
+        $contractformi->email = Str::lower(trim($this->email));
+        $contractformi->phone = Str::lower(trim($this->phone));
+        $contractformi->address = Str::lower(trim($this->address));
+        $contractformi->city = Str::lower(trim($this->city));
+        $contractformi->state = Str::lower(trim($this->state));
+        $contractformi->country = Str::lower(trim($this->country));
+        $contractformi->hall = Str::lower(trim($this->hall));
+        $contractformi->stall = Str::lower(trim($this->stall));
+        $contractformi->size = Str::lower(trim($this->size));
         
         //$contractformi->brand_id = '1';
         //$contractformi->event_id = '2';
