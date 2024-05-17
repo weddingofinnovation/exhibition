@@ -38,7 +38,7 @@
 
                         <div class="col-sm-1">
                             <label class="form-label" for="cf-name">Edition</label>
-                            <input class="form-control" type="text" placeholder="Your Edition" wire:model.lazy="edition" required="">
+                            <input class="form-control" type="number" placeholder="Your Edition" wire:model.lazy="edition" required="">
                             @error( 'edition' ){{ $message}}@enderror
                         </div>
 
