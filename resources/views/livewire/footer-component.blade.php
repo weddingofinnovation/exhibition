@@ -232,11 +232,14 @@
             <span class="handheld-toolbar-label">Filter</span>
           </a>
 
-
-
           <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
               <span class="handheld-toolbar-label">Saved Event</span>
+          </a>
+
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
+              <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
+              <span class="handheld-toolbar-label">Offer</span>
           </a>
 
           <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -570,11 +573,12 @@
                           <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                           <span class="handheld-toolbar-label">Country</span>
                         </a>
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
+
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                           <span class="handheld-toolbar-icon">
                           <i class="bi bi-location"></i></span>
                           <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                        </a>
+                        </a> 
                         
                         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                           <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
@@ -616,7 +620,6 @@
                     <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
 
                       @php  
-                         
                          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('city','ASC')->get();
                       @endphp
 
@@ -717,11 +720,12 @@
                           <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                           <span class="handheld-toolbar-label">Country</span>
                         </a>
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
+                        
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                           <span class="handheld-toolbar-icon">
                           <i class="bi bi-location"></i></span>
                           <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                        </a>
+                        </a> 
                         
                         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                           <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
