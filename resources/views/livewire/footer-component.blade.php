@@ -237,11 +237,6 @@
               <span class="handheld-toolbar-label">Saved Event</span>
           </a>
 
-          <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
-              <span class="handheld-toolbar-label">Offer</span>
-          </a>
-
           <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
             <span class="handheld-toolbar-label">Menu</span>
@@ -421,11 +416,6 @@
                     <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                     <span class="handheld-toolbar-label">Country</span>
                   </a>
-                  {{-- <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                    <span class="handheld-toolbar-icon">
-                    <i class="bi bi-location"></i></span>
-                    <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                  </a> citysidebar --}}
 
                   <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                     <span class="handheld-toolbar-icon">
@@ -438,10 +428,10 @@
                     <span class="handheld-toolbar-label">Venue</span>
                   </a>
             
-            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-              <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-              <span class="handheld-toolbar-label">Menu</span>
-            </a>
+                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                    <span class="handheld-toolbar-label">Menu</span>
+                  </a>
 
           </div>
         </div>
@@ -493,7 +483,6 @@
                     </div>
                   </div>
               </div>
-
 
               <div class="handheld-toolbar">
                 <div class="d-table table-layout-fixed w-100">
@@ -585,14 +574,13 @@
                           <span class="handheld-toolbar-label">Venue</span>
                         </a>
                   
-                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                    <span class="handheld-toolbar-label">Menu</span>
-                  </a>
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                          <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                          <span class="handheld-toolbar-label">Menu</span>
+                        </a>
 
                 </div>
               </div>
-            
       </div>
 
       <!-- City Filter -->
@@ -720,7 +708,7 @@
                           <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                           <span class="handheld-toolbar-label">Country</span>
                         </a>
-                        
+
                         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                           <span class="handheld-toolbar-icon">
                           <i class="bi bi-location"></i></span>
