@@ -82,7 +82,6 @@
                               $findcategput = DB::table('events')->where('id', $findcategpu->event_id)->get();
                             @endphp
 
-                            
                             @foreach($findcategput as $franchise)
                               @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                                 <div class="container">
@@ -130,7 +129,7 @@
                                   </div>
                                 </div> 
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -175,7 +174,7 @@
                                   </div>
                                 </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate)
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -220,7 +219,7 @@
                                   </div>
                                 </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -265,7 +264,7 @@
                                   </div>
                                 </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -572,8 +571,6 @@
           </div>
         </div>
       <!--end Google-->  
-
-
 
       <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
         <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
@@ -1748,396 +1745,7 @@
       </div>
 
 
-      <!-- Filter -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="shopsidebar" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
-        
-              <div class="offcanvas-header align-items-center shadow-sm">
-                <h2 class="h5 mb-0">{{$this->eventype}}</h2>
-                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              
-                <div class="d-flex badgeose pb-2">
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Week</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
-                </div>
-
-              <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                <!-- Categories-->
-                  <div class="widget widget-categories mb-4 pb-4 border-bottom">
-                    <h3 class="widget-title d-none d-sm-block">{{$this->eventype}}</h3>
-                    <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
-                        @foreach ($catego as $category)
-                          <!-- Shoes-->
-                          <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                @if($this->eventype ==  'exhibition')
-                                    <a class="accordion-button" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'expo', 'categry' => $category->slug])}}">
-                                      {{$category->expoindustry}}
-                                    </a>
-                                    @elseif ($this->eventype ==  'award')
-                                    <a class="accordion-button" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'award', 'categry' => $category->slug])}}">
-                                      {{$category->expoindustry}}
-                                    </a>
-                                    @elseif ($this->eventype ==  'conference')
-                                    <a class="accordion-button" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'conference', 'categry' => $category->slug])}}">
-                                      {{$category->expoindustry}}
-                                    </a>
-                                @endif
-                          </div>
-                        @endforeach
-                    </div>
-                  </div>
-              </div>
-
-
-              <div class="handheld-toolbar">
-                <div class="d-table table-layout-fixed w-100">
-                    @if($board == 'job')
-                      <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'job'])}}">
-                        <span class="handheld-toolbar-icon">
-                        <i class="ci-filter-alt"></i></span>
-                        <span class="handheld-toolbar-label">Job</span>
-                      </a>
-                      
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.jobCreate')}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Add</span>
-                      </a>
-                    @elseif($board == 'magazine')
-                      <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'magazine'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label">Magazine</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard',['board' => 'add-magazine'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    @elseif($board == 'blog')
-
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/blog' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/blog' == request()->path() ? 'active' : '' }}">Blog</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',[ 'board' => 'addBlog' ])}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-
-                    @elseif($board == 'event')
-                        
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Event</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    
-                    @elseif($board == 'visitor')
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Visitor</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    @elseif($board == 'client')
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Visitor</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Brand</span>
-                        </a>
-                    @endif
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Country</span>
-                        </a>
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="bi bi-location"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#venuesidebar" role="button" aria-controls="offcanvasExample">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                          <span class="handheld-toolbar-label">Venue</span>
-                        </a>
-                  
-                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                    <span class="handheld-toolbar-label">Menu</span>
-                  </a>
-
-                </div>
-              </div>
-            
-      </div>
-
-       <!-- for menu -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
-        
-        <div class="offcanvas-header">
-          <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
-          <span class="fs-xs fw-lighter">Got an event? Partner with us</span></div>
-          
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-    
-        <div class="list-group list-group-flush border-bottom scrollarea">
-
-            <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Notifications</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
-            </a>
-
-            <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Your Orders</normal>
-                <small>
-                @if (Auth::check()) 
-                  <i class="bi bi-chevron-right"></i>
-                  @else
-                  <i class="bi bi-lock-fill"></i>
-                  
-                  @endif
-                </small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
-            </a>
-
-            <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">COI Recommends</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter">Get COI business picked just for you</div>
-            </a>
-
-            <a href="{{route('admin.global')}}" class=" border-0 list-group-item list-group-item-action {{'admin/global' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Global</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">Satisfy your palates</div>
-            </a>
-
-            <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Luggage, Travel & Stay</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">Plan your business trip headache's</div>
-            </a>
-                                                          
-            <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Rewards</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
-            </a>
-
-            <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Offers</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
-            </a>
-
-            <a href="{{route('user.profile')}}" class="list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Accounts & Settings</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
-            </a>
-            
-            <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-              <div class="d-flex w-100 align-items-center justify-content-between">
-                <normal class="mb-1">Help & Support</normal>
-                <small><i class="bi bi-chevron-right"></i></small>
-              </div>
-              <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-            </a>
-          
-            
-          
-
-        </div>
-            
-      </div>
-
-      <!-- venue Filter -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="venuesidebar" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
-        
-              <div class="offcanvas-header align-items-center shadow-sm">
-                <h2 class="h5 mb-0">{{$this->eventype}}</h2>
-                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              
-                <div class="d-flex badgeose pb-2">
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Week</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
-                </div>
-
-              <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                <!-- Categories-->
-                  <div class="widget widget-categories mb-4 pb-4 border-bottom">
-                    <h3 class="widget-title d-none d-sm-block">{{$this->eventype}}</h3>
-                    <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
-
-                      @php  
-                         
-                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('venue','desc')->get();
-                      @endphp
-
-                        @foreach ($locationo as $category)
-                          <!-- Shoes-->
-                          <div class="accordion-item">
-                            <h3 class="accordion-header">
-                               
-                                    {{-- <a class="accordion-button" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'expo', 'categry' => $category->slug])}}">
-                                      {{$category->venue}}
-                                    </a> --}}
-
-                                    <a class="accordion-button text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => $category->venue , 'city' => $category->city, 'country' => $category->country ])}}">
-                                    {{ucwords(trans(Str::limit($category->venue, 24)))}}
-                                    </a>
-                          </div>
-                        @endforeach
-                    </div>
-                  </div>
-              </div>
-
-
-              <div class="handheld-toolbar">
-                <div class="d-table table-layout-fixed w-100">
-                    @if($board == 'job')
-                      <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'job'])}}">
-                        <span class="handheld-toolbar-icon">
-                        <i class="ci-filter-alt"></i></span>
-                        <span class="handheld-toolbar-label">Job</span>
-                      </a>
-                      
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.jobCreate')}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Add</span>
-                      </a>
-                    @elseif($board == 'magazine')
-                      <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'magazine'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label">Magazine</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard',['board' => 'add-magazine'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    @elseif($board == 'blog')
-
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/blog' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/blog' == request()->path() ? 'active' : '' }}">Blog</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',[ 'board' => 'addBlog' ])}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-
-                    @elseif($board == 'event')
-                        
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Event</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    
-                    @elseif($board == 'visitor')
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Visitor</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
-                          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                          <span class="handheld-toolbar-label">Add</span>
-                        </a>
-                    @elseif($board == 'client')
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="ci-filter-alt"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Visitor</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Brand</span>
-                        </a>
-                    @endif
-                        
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Country</span>
-                        </a>
-                        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                          <span class="handheld-toolbar-icon">
-                          <i class="bi bi-location"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                          <span class="handheld-toolbar-label">Venue</span>
-                        </a>
-                  
-                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                    <span class="handheld-toolbar-label">Menu</span>
-                  </a>
-
-                </div>
-              </div>
-            
-      </div>
+      
       
     </main>
 
