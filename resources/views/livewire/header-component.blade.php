@@ -9,6 +9,7 @@
     @elseif(Route::currentRouteName() === 'lead.business.other')
     @elseif(Route::currentRouteName() === 'coi.exhibition')       
     @elseif(Route::currentRouteName() === 'coi.ratenow')
+    @elseif(Route::currentRouteName() === 'search.venue')
     @else
       <header class="shadow-sm ">
         <!-- Topbar

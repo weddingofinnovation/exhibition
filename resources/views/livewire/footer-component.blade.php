@@ -223,18 +223,20 @@
       @elseif(Route::currentRouteName() == 'coi.exhibitioncategory' || Route::currentRouteName() == 'search.events' || Route::currentRouteName() == 'search.venue')
 
           <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+            <span class="handheld-toolbar-icon"><i class="bi bi-home"></i></span>
             <span class="handheld-toolbar-label">Home</span>
           </a>
 
           <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#shopsidebar" role="button" aria-controls="offcanvasExample">
-            <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
+            <span class="handheld-toolbar-icon"><i class="bi bi-funnel"></i></span>
             <span class="handheld-toolbar-label">Filter</span>
           </a>
 
+
+
           <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
-              <span class="handheld-toolbar-label">Add</span>
+              <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
+              <span class="handheld-toolbar-label">Saved Event</span>
           </a>
 
           <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
