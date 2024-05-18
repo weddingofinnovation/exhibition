@@ -149,6 +149,8 @@
                             @error( 'enddate' ){{ $message}}@enderror
                         </div>
 
+
+                        {{$this->venue}}
                         @php 
                             $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
                         @endphp

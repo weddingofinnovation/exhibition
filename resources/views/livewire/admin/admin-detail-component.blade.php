@@ -122,10 +122,11 @@
      </div>
     </div>
 
-    <div class="container">
+    <div class="container"> 
+      <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
       <form wire:submit.prevent="withoutHashtag">
         <div class="input-group my-2">
-                  <input type="text" class="form-control" wire:model.lazy="howMany" placeholder="Add Comment Count">
+                  <input type="number" class="form-control" wire:model.lazy="howMany" placeholder="Add Comment Count">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </form>
@@ -550,39 +551,39 @@
           </div>
         </a>
       </div>
-    @elseif($evento->eventype == 'award')
-      {{--ticket--}}
-      <div class="container my-3">
-        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-          <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-              <div class="col  pr-0">
-                  <div class="h4 fw-light mb-0"></div> 
-                
-                  <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}" >Nomination Category</a> 
+      @elseif($evento->eventype == 'award')
+        {{--ticket--}}
+        <div class="container my-3">
+          <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+            <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                <div class="col  pr-0">
+                    <div class="h4 fw-light mb-0"></div> 
                   
-              </div>
-
-              <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                @if(is_null($evento->edition))
-                  <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                @else
-                  <div class="fs-md fw-normal text-start">
+                    <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}" >Nomination Category</a> 
                     
-                  </div>
-                @endif
-              </a>
+                </div>
 
-              <div class="col-3 p-0">
-                @if(is_null($evento->edition))
-                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Add</a>
-                @else
-                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Edit</a>
-                @endif
-              </div>
-          </div>
-        </a>
-      </div>
-    @elseif($evento->edition)
+                <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                  @if(is_null($evento->edition))
+                    <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                  @else
+                    <div class="fs-md fw-normal text-start">
+                      
+                    </div>
+                  @endif
+                </a>
+
+                <div class="col-3 p-0">
+                  @if(is_null($evento->edition))
+                    <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Add</a>
+                  @else
+                    <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Edit</a>
+                  @endif
+                </div>
+            </div>
+          </a>
+        </div>
+      @elseif($evento->edition)
     @endif
 
 

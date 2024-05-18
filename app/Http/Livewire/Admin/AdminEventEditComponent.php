@@ -45,6 +45,7 @@ class AdminEventEditComponent extends Component
     public $city;
     public $country;
     public $venue;
+    public $image;
 
     public $board;
     public $status;
@@ -68,6 +69,8 @@ class AdminEventEditComponent extends Component
         $this->eventname = $fattribute->eventname;
         $this->slug = $fattribute->slug;
         $this->eventype = $fattribute->eventype;
+
+        $this->image = $fattribute->image;
        
         $this->city = $fattribute->city;
         $this->country = $fattribute->country;
@@ -210,11 +213,13 @@ class AdminEventEditComponent extends Component
           $doublse->status = $this->status;
           $doublse->admstatus = '0';
           $doublse->user_id = Auth::user()->id;
+          $doublse->organiser_id = $this->organiser_id;
           $doublse->reference = $this->reference;
           $doublse->save();
           
         }
-        return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
+        return redirect()->back();
+        ///return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
     }
 
     public function locationdoubleing()
@@ -234,8 +239,7 @@ class AdminEventEditComponent extends Component
           $doublse->slug = Str::slug ($double,'-');
 
           $doublse->eventype = Str::lower(trim($this->eventype));
-
-
+          $doublse->image = $this->image;
           //$doublse->city =  Str::lower(trim($this->city));
           $doublse->country =  Str::lower(trim($this->country));
           $doublse->venue =  Str::lower(trim($this->venue));
@@ -259,11 +263,13 @@ class AdminEventEditComponent extends Component
           $doublse->status = $this->status;
           $doublse->admstatus = '0';
           $doublse->user_id = Auth::user()->id;
+          $doublse->organiser_id = $this->organiser_id;
           $doublse->reference = $this->reference;
           $doublse->save();
           
         }
-        return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
+        return redirect()->back();
+        // return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
     }
 
     public function samenamediffcity()
@@ -306,7 +312,8 @@ class AdminEventEditComponent extends Component
           $doublse->save();
           
         }
-        return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
+        return redirect()->back();
+        //return redirect()->route('adminevent.detail', ['slug' => $this->slug]);
     }
 
 
