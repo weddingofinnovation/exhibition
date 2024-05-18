@@ -418,11 +418,17 @@
                     <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                     <span class="handheld-toolbar-label">Country</span>
                   </a>
-                  <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
+                  {{-- <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
                     <span class="handheld-toolbar-icon">
                     <i class="bi bi-location"></i></span>
                     <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                  </a>
+                  </a> citysidebar --}}
+
+                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                    <span class="handheld-toolbar-icon">
+                    <i class="bi bi-location"></i></span>
+                    <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                  </a> 
                   
                   <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#venuesidebar" role="button" aria-controls="offcanvasExample">
                     <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
