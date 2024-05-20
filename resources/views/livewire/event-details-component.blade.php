@@ -1900,7 +1900,7 @@ body {
 
             @else
               @php 
-                 $evento = DB::table('event')-> where('reference', $event->reference)->ge();
+                 $evento = DB::table('event')-> where('reference', $event->reference)->get();
               @endphp
 
                 <div> concurrent expo</div>
