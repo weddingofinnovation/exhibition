@@ -1902,7 +1902,7 @@ body {
             @else
 
               @php 
-                 $evento = DB::table('events')-> where('reference', $event->reference)->except($event->id)->get();
+                 $evento = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
 
               @endphp
 
