@@ -1902,11 +1902,11 @@ body {
             @else
 
               @php 
-                 $evento = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
+                 $eventoo = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
 
               @endphp
 
-              @if($evento->count() < 1)
+              @if($eventoo->count() < 1)
                   <div> concurrent expo</div>
 
                   <div class="row g-0 py-0 mx-n2 my-Slider3"> 
