@@ -6,7 +6,7 @@ use App\Models\Magazine;
 use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Str;
-use PhpOffice\PhpSpreadsheet\Calculation\TextData\Replace;
+
 
 class MagazineComponent extends Component
 {

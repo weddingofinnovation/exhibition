@@ -77,6 +77,8 @@ class EventDetailsComponent extends Component
        //$check = Cart::get();
         $event = Event::where('slug', $this->slug)->first();
 
+        
+
         $poostKey = 'eventID';
         $eid = $event->id;
         Session()->put ($poostKey , $eid);
@@ -169,6 +171,8 @@ class EventDetailsComponent extends Component
          $current = strtotime(Carbon::now());
          $to = strtotime($event->startdate);
          $from= strtotime($event->enddate);
+
+         
 
          //$Createkeywords = $event->eventname ;
         // dd($Createkeywords);

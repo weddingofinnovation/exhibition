@@ -289,8 +289,9 @@
           
     <!-- Back To Top Button-->
     <a class="btn-scroll-top" href="{{asset('/#top')}}" data-scroll="">
-    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="bi bi-funnel-fill"></i></a>
+     <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="bi bi-funnel-fill"></i></a>
 
+     
       <!-- Filter -->
       <div class="offcanvas offcanvas-start" tabindex="-1" id="shopsidebar" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
         
