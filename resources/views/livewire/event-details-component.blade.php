@@ -1907,7 +1907,7 @@ body {
               @endphp
 
                  {{$eventcount}}
-                 {{$eventoui}->id}
+                 {{$eventoui->id}}
                   <div class="container">
                     <div class="fw-bold"> Concurrent Expo</div>
                     <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
