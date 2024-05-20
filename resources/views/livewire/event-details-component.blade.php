@@ -1811,7 +1811,7 @@ body {
                  $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
                  $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
               @endphp
-               {{$eventf}}
+               
 
                 @foreach($eventf as $eventoi)
                   <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
@@ -1902,12 +1902,14 @@ body {
             @else
 
               @php 
+                 $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
+                 $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
+
                  $eventoui = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
                  $eventcount =  DB::table('events')-> where('reference', $event->reference)->count();
               @endphp
 
-                 {{$eventcount}}
-                 {{$eventoui->id}}
+                 @if($eventcount > 1)
                   <div class="container">
                     <div class="fw-bold"> Concurrent Expo</div>
                     <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
@@ -1998,6 +2000,9 @@ body {
                       @endforeach
                     </div>
                   </div>
+                 @elseif($eventcount == 1)
+                   {{$eventc}} {{$eventf}}
+                 @endif
               
             @endif
 
