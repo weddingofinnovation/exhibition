@@ -1994,7 +1994,7 @@ body {
               
             @endif
 
-            <!--Applicable Offers-->
+            <!-- mobile Applicable Offers-->
             <div class="container mb-5 d-lg-none">
                 <div class="text-dark fw-medium fs-sm">Certified</div> 
                 
@@ -2002,7 +2002,7 @@ body {
                     <ul class="list-unstyled fs-sm  p-2">
                       <li class="d-flex justify-content-between p-0 m-0">
                       <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
-                      <span class="text-muted fw-light fs-sm">Save your Ultra Premium Space </span></span>
+                      <span class="text-muted fw-light fs-xs">Save your Ultra Premium Space </span></span>
                       <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
                     </ul>
 
