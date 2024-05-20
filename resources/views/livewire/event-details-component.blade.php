@@ -1906,7 +1906,7 @@ body {
 
               @endphp
 
-              @if($eventoo->count() < 1)
+              
                   <div> concurrent expo</div>
 
                   <div class="row g-0 py-0 mx-n2 my-Slider3"> 
@@ -1996,7 +1996,7 @@ body {
                       </div>
                     @endforeach
                   </div>
-              @endif
+              
             @endif
 
             
