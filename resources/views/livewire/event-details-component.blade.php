@@ -1813,7 +1813,7 @@ body {
               @endphp
                {{$eventf}}
 
-               @foreach($eventf as $eventoi)
+                @foreach($eventf as $eventoi)
                   <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
                     <div class="card product-card">
                       
@@ -1900,7 +1900,7 @@ body {
 
             @else
               @php 
-                 $evento = DB::table('event')-> where('reference', $event->reference)->get();
+                 $evento = DB::table('events')-> where('reference', $event->reference)->get();
               @endphp
 
                 <div> concurrent expo</div>
@@ -2502,6 +2502,34 @@ body {
               
             });
           </script>
+
+    <script>
+      var slider = tns({
+        "container": '.my-Slider3',          
+        "responsive": {
+          "300": {
+            "items": 2,
+            "controls": false,
+            "mouseDrag": true,
+            "autoplay": false,
+            "fixedWidth": 150,
+            "autoplayButtonOutput": false,
+            "autoplayHoverPause": true,
+          },
+          "500": {
+            "items": 4,
+            "nav": false,
+            "controls": false,
+            "autoplayHoverPause": true,
+            "autoplay": false,
+             "fixedWidth": 300,
+            "autoplayButtonOutput": false
+          },
+          
+        },
+        "autoplayButtonOutput":false
+      });
+    </script>
 
           <script>
             var slider = tns({

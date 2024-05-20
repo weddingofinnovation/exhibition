@@ -156,7 +156,7 @@
       });
     </script>
 
-    <script>11
+    <script>
       var slider = tns({
         "container": '.my-Slider3',          
         "responsive": {
