@@ -451,7 +451,7 @@ body {
                   <div class="col-lg-7 col-md-6 col-sm-8">
                     <div class="col-lg-6 col-md-6  px-0 py-3">
                     
-                        <h4 class="text-dark fw-normal fs-md pt-1 pb-0 lh-0">
+                        <h4 class="text-dark fw-bold fs-md pt-3 pb-0 lh-0">
                             @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
                               {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
                             @else
@@ -459,10 +459,7 @@ body {
                             @endif 
                         </h4>
 
-                      
-
-
-                        <span class="badge badge-primary bg-primary fs-xs mt-5">
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">
                               @if ($current < $to && $current < $from)
                                 Upcoming
                               @elseif ($current == $to && $current < $from) 
@@ -476,7 +473,7 @@ body {
                               @endif
                         </span>
 
-                        <h1 class="text-dark mb-0">{{$event->eventname}}</h1>
+                        <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}</h5>
                         
                         @if(count($sponserbrand) > 0)
@@ -1683,30 +1680,29 @@ body {
             </section>
 
              <!--Applicable Offers-->
-             <div class="container mb-5 d-lg-none">
+              <div class="container mb-5 d-lg-none">
                 <div class="text-dark fw-medium fs-sm">Applicable Offers</div> 
                 
-              <div class="my-sliderOffers">
-                  <ul class="list-unstyled fs-sm  p-2">
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
-                  </ul>
+                <div class="my-sliderOffers">
+                    <ul class="list-unstyled fs-sm  p-2">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
+                    </ul>
 
-                  <ul class="list-unstyled fs-sm  p-2">
+                    <ul class="list-unstyled fs-sm  p-2">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                    </ul>
+                  
+                    <ul class="list-unstyled fs-sm  p-2">
                       <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
+                      <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
                       <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                  </ul>
-                
-                  <ul class="list-unstyled fs-sm  p-2">
-                    <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                  </ul>
+                    </ul>
+                </div>
               </div>
-
-            </div>
 
             <!--footer-->
             @if($event->eventype == 'award')
@@ -1804,7 +1800,7 @@ body {
             @endif
 
              
-
+            <!-- for mobile -->
             @if(is_null($event->reference))
               
               @php 
@@ -1903,13 +1899,11 @@ body {
 
               @php 
                  $evento = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
-
               @endphp
 
-              
-                  <div> concurrent expo</div>
-
-                  <div class="row g-0 py-0 mx-n2 my-Slider3"> 
+                <div class="container">
+                  <div class="fw-bold"> Concurrent Expo</div>
+                  <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
                     {{-- px-2 mb-1 --}}
                     @foreach($evento as $eventoi)
                       <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
@@ -1996,9 +1990,42 @@ body {
                       </div>
                     @endforeach
                   </div>
+                </div>
               
             @endif
 
+            <!--Applicable Offers-->
+            <div class="container mb-5 d-lg-none">
+                <div class="text-dark fw-medium fs-sm">Certified</div> 
+                
+                <div class="my-sliderOffers2">
+                    <ul class="list-unstyled fs-sm  p-2">
+                      <li class="d-flex justify-content-between p-0 m-0">
+                      <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
+                      <span class="text-muted fw-light fs-sm">Save your Ultra Premium Space </span></span>
+                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
+                    </ul>
+
+                    <ul class="list-unstyled fs-sm  p-2">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Great Exhibition To Exhibit<br>
+                        <span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Get Certified</a></span></li>
+                    </ul>
+
+                    <ul class="list-unstyled fs-sm  p-2">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Nominate your Event<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                    </ul>
+                  
+                    <ul class="list-unstyled fs-sm  p-2">
+                      <li class="d-flex justify-content-between p-0 m-0">
+                      <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
+                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                    </ul>
+                </div>
+              </div>
             
             
     </main>
@@ -2197,6 +2224,35 @@ body {
           <script>
             var slider = tns({
               "container": '.my-sliderOffers',  
+              "responsive": {
+                "350": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": false,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                  "nav": false,
+                 
+                },
+                "500": {
+                  "items": 3,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": true,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                }
+              },
+              
+              
+              
+            });
+          </script>
+
+          <script>
+            var slider = tns({
+              "container": '.my-sliderOffers2',  
               "responsive": {
                 "350": {
                   "items": 1,
