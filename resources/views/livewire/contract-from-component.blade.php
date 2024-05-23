@@ -29,11 +29,20 @@
 
         @elseif($formm == 'payment')
             <h1>Calculation</h1> 
-            <form wire:submit.prevent="payment">      
-                    <input type="text" class="form-control" placeholder="tax" wire:model="tax">
-                    <input type="text" class="form-control" placeholder="total" wire:model="total">
-                    <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>  
+
+
+            @php 
+               $caltax = DB::table('contractios')->where('user_id', $this ->user_id)->first();
+            @endphp
+
+            <div class="">Calculation :: {{$caltax -> size}} X 4500 INR </div>
+            <div> Base Amount :: {{$caltax -> size * 4500}} </div>
+            <div> Tax :: {{$caltax -> size * 4500 * 0.18}} </div>
+            <div> Total :: {{$caltax -> size * 4500 + $caltax -> size * 4500 * 0.18}} </div>
+            
+            <a href="" class="btn btn-primary btn-sm">Download</a>
+
+
         @elseif($formm == 'advertise')
             <h1>Advertise</h1>
             <form wire:submit.prevent="advertise">
@@ -69,7 +78,7 @@
                     <input type="text" class="form-control mb-1" placeholder="hall" required wire:model.lazy="hall">
                     <input type="text" class="form-control mb-1" placeholder="stall" required wire:model.lazy="stall">
                     <input type="text" class="form-control mb-1" placeholder="size" required wire:model.lazy="size">
-                    <input type="text" class="form-control mb-1" placeholder="side_open" required wire:model.lazy="side_open">
+                    <input type="text" class="form-control mb-1" placeholder="side_open" required wire:model.lazy="sideopen">
                     <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
         
@@ -83,7 +92,7 @@
                 <input type="text" class="form-control mb-1" placeholder="owner" required wire:model.lazy="owner">
 
                 
-                <h1>Category</h1>
+                <!-- <h1>Category</h1>
                 <input type="text" class="form-control mb-1" placeholder="Industry" required wire:model.lazy="industry">
                 <input type="text" class="form-control mb-1" placeholder="product" required wire:model.lazy="product">
                 
@@ -93,7 +102,7 @@
                 <input type="text" class="form-control mb-1" placeholder="address" required wire:model.lazy="address">
                 <input type="text" class="form-control mb-1" placeholder="city" required wire:model.lazy="city">
                 <input type="text" class="form-control mb-1" placeholder="state" required wire:model.lazy="state">
-                <input type="text" class="form-control mb-1" placeholder="country" required wire:model.lazy="country">
+                <input type="text" class="form-control mb-1" placeholder="country" required wire:model.lazy="country"> -->
             
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>

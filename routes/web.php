@@ -275,7 +275,7 @@ Route::get('/Great-Exhibition-To-Exhibit', BusinessDesignStrategyComponent::clas
 
 Route::get('/product/{productservice}', OnlineContractFormComponent::class)->name('service.product');
 
-Route::get('/exhibitor/{formm}', ContractFromComponent::class)->name('space.booking');
+Route::get('/exhibitor/{formm}/{user_id?}/{contractioid?}', ContractFromComponent::class)->name('space.booking');
 
 //company details
 Route::get('/career', CareerComponent::class)->name('career');

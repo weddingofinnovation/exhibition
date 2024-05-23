@@ -1,6 +1,6 @@
 @section('page_title','Cart')
 
-<main>
+  <main>
     <div class="page-title-overlap bg-accent pt-4 ">
       <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
         <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2 d-none">
@@ -196,16 +196,15 @@
         
     </div>
     
-            <div class="handheld-toolbar bg-secondary">
-              <div class="py-2 px-2">
-              @if(Auth::check())
-               <a class="btn btn-primary btn-shadow d-block w-100 " href="#" wire:click.prevent="checkout">
-                  Login to Proceed</a>
-              @else
-                <a class="btn btn-primary btn-shadow d-block w-100 " href="#" wire:click.prevent="checkout">
-                  Proceed</a>
-              @endif
-              </div>
-            </div>
-
-    </main>
+    <div class="handheld-toolbar bg-secondary">
+      <div class="py-2 px-2">
+      @if(Auth::check())
+        <a class="btn btn-primary btn-shadow d-block w-100 " href="#" wire:click.prevent="checkout">
+          Login to Proceed</a>
+      @else
+        <a class="btn btn-primary btn-shadow d-block w-100 " href="#" wire:click.prevent="checkout">
+          Proceed</a>
+      @endif
+      </div>
+    </div>
+  </main>

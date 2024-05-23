@@ -25,33 +25,40 @@ class ContractFromComponent extends Component
     public $hall;
     public $stall;
     public $size;
+    public $sideopen;
 
     public $formm;
     public $brand_id;
+    public $name;
+
 
     public $designation;
+    public $contractioid;
     
+   public $user_id;
 
-
-    public function mount( )
+    public function mount( $user_id = null, $contractioid = null )
     {
-    //    $finder = Contractio::find($brand_id);
-    //    $this->brand_id = $finder->id;
-    //    $this->owner = $finder->owner; 
-    //     $this->organisation = $finder->organisation;
-    //     $this->brand_name = $finder->brand_name;
-    //     $this->GST = $finder->GST;
-    //     $this->industry = $finder->industry;
-    //     $this->product = $finder->product;
-    //     $this->email = $finder->email;
-    //     $this->phone = $finder->phone;
-    //     $this->address = $finder->address;
-    //     $this->city = $finder->city;
-    //     $this->state = $finder->state;
-    //     $this->country = $finder->country;
-    //     $this->hall = $finder->hall;
-    //     $this->stall = $finder->stall;
-    //     $this->size = $finder->size;
+          $this->user_id = $user_id;
+          $this->contractioid = $contractioid;
+
+        // $finder = Contractio::find($contractioid);
+        // $this->brand_id = $finder->id;
+        // $this->owner = $finder->owner; 
+        // $this->organisation = $finder->organisation;
+        // $this->brand_name = $finder->brand_name;
+        // $this->GST = $finder->GST;
+        // $this->industry = $finder->industry;
+        // $this->product = $finder->product;
+        // $this->email = $finder->email;
+        // $this->phone = $finder->phone;
+        // $this->address = $finder->address;
+        // $this->city = $finder->city;
+        // $this->state = $finder->state;
+        // $this->country = $finder->country;
+        // $this->hall = $finder->hall;
+        // $this->stall = $finder->stall;
+        // $this->size = $finder->size;
     }
     
 
@@ -64,42 +71,49 @@ class ContractFromComponent extends Component
         $conractlogin->name = 'exhibitor';
         $conractlogin->password = $this->email;
         $conractlogin->save();
-        return redirect()->route('space.booking', ['formm' => 'connect']);
+        return redirect()->route('space.booking', ['formm' => 'connect', 'user_id' => $conractlogin->id ]);
     }
 
     public function connecdetails()
     {
         $conractlogin =  new Contractio();
         $conractlogin->featureid = '123456';
-        $conractlogin->name = $this->name;
+        
         $conractlogin->organisation = $this->organisation;
         $conractlogin->designation = $this->designation;
+        $conractlogin->user_id = $this->user_id;
         $conractlogin->save();
+
+        $conractlog = User::find($this->user_id);
+        $conractlog->name = $this->name;
+        $conractlog->save();
         //$contractio = $conractlogin->id;
-        return redirect()->route('space.booking', ['formm' => 'space']);
+        return redirect()->route('space.booking', ['formm' => 'space', 'user_id' => $this->user_id,'contractioid' =>$conractlogin->id]);
 
     }
 
     public function spacedetails()
     {
-        $conractlogin =  new Contractio();
+        $conractlogin =  Contractio::find($this->contractioid);
 
         $conractlogin->hall = $this->hall;
         $conractlogin->stall = $this->stall;
         $conractlogin->size = $this->size;
-        $conractlogin->side_open = $this->side_open;
+        $conractlogin->sideopen = $this->sideopen;
 
         $conractlogin->save();
-        return redirect()->route('space.booking', ['formm' => 'exhibitor']);
+        return redirect()->route('space.booking', ['formm' => 'exhibitor','user_id' => $this->user_id,'contractioid' =>$conractlogin->id]);
     }
+
+
 
     public function contractForm()
     {
-        // $contractformi = Contractio::find($this->brand_id);
-        // $contractformi->owner = Str::lower(trim($this->owner));
+        $contractformi = Contractio::find($this->contractioid);
+        $contractformi->owner = Str::lower(trim($this->owner));
         // $contractformi->organisation = Str::lower(trim($this->organisation));
-        // $contractformi->brand_name = Str::lower(trim($this->brand_name));
-        // $contractformi->GST = Str::lower(trim($this->GST));
+         $contractformi->brand_name = Str::lower(trim($this->brand_name));
+        $contractformi->GST = Str::lower(trim($this->GST));
         // $contractformi->industry = Str::lower(trim($this->industry));
         // $contractformi->product = Str::lower(trim($this->product));
         // $contractformi->email = Str::lower(trim($this->email));
@@ -112,9 +126,10 @@ class ContractFromComponent extends Component
         // $contractformi->stall = Str::lower(trim($this->stall));
         // $contractformi->size = Str::lower(trim($this->size));
         
-        // //$contractformi->brand_id = '1';
-        // //$contractformi->event_id = '2';
-        // $contractformi->save();
+        //$contractformi->brand_id = '1';
+        //$contractformi->event_id = '2';
+        $contractformi->save();
+        return redirect()->route('space.booking', ['formm' => 'payment','user_id' => $this->user_id,'contractioid' => $this->contractioid]);
     }
 
     public function render()
