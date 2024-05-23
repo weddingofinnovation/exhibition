@@ -15,7 +15,7 @@
         </div>
 
         @if($formm == 'basic')
-            <div class = "col-lg-8">
+            <div class = "col-lg-8 d-flex justify-content-center">
             
                 <form wire:submit.prevent="contactlogin">
                     <h1>Welcome</h1>
@@ -53,15 +53,18 @@
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
         @elseif($formm == 'connect')
-            <form wire:submit.prevent="contractForm">
+            <form wire:submit.prevent="connecdetails">
                 <h1>Connect</h1>
-                <input type="text" class="form-control mb-1" placeholder="name" required wire:model.lazy="email">
-                <input type="text" class="form-control mb-1" placeholder="designation" required wire:model.lazy="phone">
+
+                <input type="text" class="form-control mb-1" placeholder="name" required wire:model.lazy="name">
+                <input type="text" class="form-control mb-1" placeholder="designation" required wire:model.lazy="designation">
+                <input type="text" class="form-control mb-1" placeholder="company" required wire:model.lazy="organisation">
+
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
                
         @elseif($formm == 'space')
-            <form wire:submit.prevent="contractForm">
+            <form wire:submit.prevent="spacedetails">
                 <h1>Space Details</h1>
                     <input type="text" class="form-control mb-1" placeholder="hall" required wire:model.lazy="hall">
                     <input type="text" class="form-control mb-1" placeholder="stall" required wire:model.lazy="stall">
@@ -74,7 +77,7 @@
             <form wire:submit.prevent="contractForm">
                 <h1>Exhibitor Details</h1>
 
-                <input type="text" class="form-control mb-1" placeholder="company" required wire:model.lazy="organisation">
+                
                 <input type="text" class="form-control mb-1" placeholder="brand" required wire:model.lazy="brand_name">
                 <input type="text" class="form-control mb-1" placeholder="gst" required wire:model.lazy="GST">
                 <input type="text" class="form-control mb-1" placeholder="owner" required wire:model.lazy="owner">

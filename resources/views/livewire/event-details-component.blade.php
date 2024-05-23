@@ -760,7 +760,7 @@ body {
                       </div>
                     @endif
 
-                    <div class="container">
+                    <section class="container">
                       <div class="grido">
                         <div class="element-item" data-category="metalloid">
                           <h3 class="name">Fabrication</h3>
@@ -797,7 +797,7 @@ body {
                           <p class="weight">196.967</p>
                         </div>
                       </div>
-                    </div>
+                    </section>
 
                     <!-- pavillion -->
                     <div class="container mt-4 d-lg-none">

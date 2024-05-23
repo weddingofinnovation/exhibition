@@ -58,8 +58,36 @@ class ContractFromComponent extends Component
         $conractlogin =  new User();
         $conractlogin->email = $this->email;
         $conractlogin->phone = $this->phone;
+        $conractlogin->name = 'exhibitor';
+        $conractlogin->password = $this->email;
         $conractlogin->save();
         return redirect()->route('space.booking', ['formm' => 'connect']);
+    }
+
+    public function connecdetails()
+    {
+        $conractlogin =  new Contractio();
+        $conractlogin->featureid = '123456';
+        $conractlogin->name = $this->name;
+        $conractlogin->organisation = $this->organisation;
+        $conractlogin->designation = $this->designation;
+        $conractlogin->save();
+        //$contractio = $conractlogin->id;
+        return redirect()->route('space.booking', ['formm' => 'space']);
+
+    }
+
+    public function spacedetails()
+    {
+        $conractlogin =  new Contractio();
+
+        $conractlogin->hall = $this->hall;
+        $conractlogin->stall = $this->stall;
+        $conractlogin->size = $this->size;
+        $conractlogin->side_open = $this->side_open;
+
+        $conractlogin->save();
+        return redirect()->route('space.booking', ['formm' => 'exhibitor']);
     }
 
     public function contractForm()
