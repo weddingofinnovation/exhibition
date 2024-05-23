@@ -152,7 +152,9 @@ use App\Http\Livewire\Admin\AdminQuestionComponent;
 use App\Http\Livewire\Admin\MagazineUpgradingComponent;
 use App\Http\Livewire\AwardDetailsComponent;
 use App\Http\Livewire\AwardsComponent;
+
 use App\Http\Livewire\ContractFromComponent;
+
 use App\Http\Livewire\EventSearchComponent;
 use App\Http\Livewire\ExhibitionTimeComponent;
 use App\Http\Livewire\GiftBirthdayComponent;
@@ -273,6 +275,8 @@ Route::get('/Great-Exhibition-To-Exhibit', BusinessDesignStrategyComponent::clas
 
 Route::get('/product/{productservice}', OnlineContractFormComponent::class)->name('service.product');
 
+Route::get('/exhibitor/{formm}', ContractFromComponent::class)->name('space.booking');
+
 //company details
 Route::get('/career', CareerComponent::class)->name('career');
 Route::get('/contact/{board}', ContactComponent::class)->name('contact');
@@ -301,7 +305,7 @@ Route::get('/birthday/{board}/tie/{ido}', GiftDateComponent::class)->name('date.
 Route::get('/COIbusiness', TrackComponent::class)->name('admin.track');
 Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishlist');
 
-Route::get('/exhibition/{brand_id}/expand-your-business/{formm}', ContractFromComponent::class)->name('space.booking');
+
 
 //Blog
 Route::get('/blog', BlogComponent::class)->name('blog.Coi');

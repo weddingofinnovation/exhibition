@@ -2,44 +2,31 @@
 
 
     <div class="container">
+
+        <div class=" d-flex justify-content-between">
+            <div>
+                <a class="  btn btn-sm btn-primary" href="" wire:click="">QR Code</a>
+            </div>
+
+            <div>
+                <a class="  btn btn-sm btn-primary" href="" wire:click="">Print</a>
+                <a href="" class="  btn  btn-sm btn-primary" wire:click="">Share</a>
+            </div>
+        </div>
+
         @if($formm == 'basic')
-            <form wire:submit.prevent="contractForm">
-
-
-                <h1>start</h1>
-                <input type="text" class="form-control" placeholder="email" required wire:model.lazy="email">
-                <input type="text" class="form-control" placeholder="contact" required wire:model.lazy="phone">
-
-                <h1>Exhibitor Details</h1>
-
-                <input type="text" class="form-control" placeholder="owner" required wire:model.lazy="owner">
-                <input type="text" class="form-control" placeholder="company" required wire:model.lazy="organisation">
-                <input type="text" class="form-control" placeholder="brand" required wire:model.lazy="brand_name">
-                <input type="text" class="form-control" placeholder="gst" required wire:model.lazy="GST">
-
-                
-                <h1>Category</h1>
-                <input type="text" class="form-control" placeholder="Industry" required wire:model.lazy="industry">
-                <input type="text" class="form-control" placeholder="product" required wire:model.lazy="product">
-                
-
-                <h1>Address</h1>
-                <input type="text" class="form-control" placeholder="office_type" required wire:model.lazy="office_type">
-                <input type="text" class="form-control" placeholder="address" required wire:model.lazy="address">
-                <input type="text" class="form-control" placeholder="city" required wire:model.lazy="city">
-                <input type="text" class="form-control" placeholder="state" required wire:model.lazy="state">
-                <input type="text" class="form-control" placeholder="country" required wire:model.lazy="country">
-                
-                <h1>Space Details</h1>
-
-                <input type="text" class="form-control" placeholder="hall" required wire:model.lazy="hall">
-                <input type="text" class="form-control" placeholder="stall" required wire:model.lazy="stall">
-                <input type="text" class="form-control" placeholder="size" required wire:model.lazy="size">
-                <input type="text" class="form-control" placeholder="side_open" required wire:model.lazy="side_open">
-
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>
+            <div class = "col-lg-8">
             
+                <form wire:submit.prevent="contactlogin">
+                    <h1>Welcome</h1>
+                    <input type="text" class="form-control mb-1" placeholder="email" required  wire:model.lazy="email">
+                    <input type="text" class="form-control mb-1" placeholder="contact" required  wire:model.lazy="phone">
+                    <button class="btn btn-primary form-control" type="submit" >Submit</button>
+                </form>
+
+                
+            </div>
+
         @elseif($formm == 'payment')
             <h1>Calculation</h1> 
             <form wire:submit.prevent="payment">      
@@ -65,10 +52,53 @@
 
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
+        @elseif($formm == 'connect')
+            <form wire:submit.prevent="contractForm">
+                <h1>Connect</h1>
+                <input type="text" class="form-control mb-1" placeholder="name" required wire:model.lazy="email">
+                <input type="text" class="form-control mb-1" placeholder="designation" required wire:model.lazy="phone">
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
+               
+        @elseif($formm == 'space')
+            <form wire:submit.prevent="contractForm">
+                <h1>Space Details</h1>
+                    <input type="text" class="form-control mb-1" placeholder="hall" required wire:model.lazy="hall">
+                    <input type="text" class="form-control mb-1" placeholder="stall" required wire:model.lazy="stall">
+                    <input type="text" class="form-control mb-1" placeholder="size" required wire:model.lazy="size">
+                    <input type="text" class="form-control mb-1" placeholder="side_open" required wire:model.lazy="side_open">
+                    <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
+        
+        @elseif($formm == 'exhibitor')
+            <form wire:submit.prevent="contractForm">
+                <h1>Exhibitor Details</h1>
+
+                <input type="text" class="form-control mb-1" placeholder="company" required wire:model.lazy="organisation">
+                <input type="text" class="form-control mb-1" placeholder="brand" required wire:model.lazy="brand_name">
+                <input type="text" class="form-control mb-1" placeholder="gst" required wire:model.lazy="GST">
+                <input type="text" class="form-control mb-1" placeholder="owner" required wire:model.lazy="owner">
+
+                
+                <h1>Category</h1>
+                <input type="text" class="form-control mb-1" placeholder="Industry" required wire:model.lazy="industry">
+                <input type="text" class="form-control mb-1" placeholder="product" required wire:model.lazy="product">
+                
+
+                <h1>Address</h1>
+                <input type="text" class="form-control mb-1" placeholder="office_type" required wire:model.lazy="office_type">
+                <input type="text" class="form-control mb-1" placeholder="address" required wire:model.lazy="address">
+                <input type="text" class="form-control mb-1" placeholder="city" required wire:model.lazy="city">
+                <input type="text" class="form-control mb-1" placeholder="state" required wire:model.lazy="state">
+                <input type="text" class="form-control mb-1" placeholder="country" required wire:model.lazy="country">
+            
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
         @endif
+
     </div>
 
-    <h5>Generate a Contract Form</h5>
-    <a href="" class="btn btn-primary" wire:click="">Share</a>
+    <!-- <h5>Generate a Contract Form</h5>
+    <a href="" class="btn btn-primary" wire:click="">Share</a> -->
 
 </main>

@@ -762,7 +762,7 @@ body {
 
                     <div class="container">
                       <div class="grido">
-                        <div class="element-item " data-category="metalloid">
+                        <div class="element-item" data-category="metalloid">
                           <h3 class="name">Fabrication</h3>
                           <p class="symbol">Te</p>
                           <p class="number">52</p>

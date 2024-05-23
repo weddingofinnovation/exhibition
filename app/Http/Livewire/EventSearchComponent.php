@@ -58,6 +58,6 @@ class EventSearchComponent extends Component
         }
 
 
-        return view('livewire.event-search-component',[ 'searchVenue' => $searchVenue,'mytime' => $mytime])->layout('layouts.eblog');
+        return view ('livewire.event-search-component',[ 'searchVenue' => $searchVenue,'mytime' => $mytime])->layout('layouts.eblog');
     }
 }

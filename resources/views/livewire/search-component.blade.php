@@ -232,7 +232,7 @@ body {
           </div>
       </section>
 
-      <div class="container">
+      <section class="container">
         <div class="grido">
           @foreach($allcategory as $category )
               <div class="element-item transition metal" data-category="transition">
@@ -246,7 +246,7 @@ body {
               </div>
           @endforeach
         </div>
-      </div>
+      </section>
 
       <div class="grido">
         <div class="element-item metalloid " data-category="metalloid">
