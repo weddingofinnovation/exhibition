@@ -29,6 +29,9 @@ class ContractFromComponent extends Component
     public $formm;
     public $brand_id;
 
+    public $designation;
+    
+
 
     public function mount( )
     {

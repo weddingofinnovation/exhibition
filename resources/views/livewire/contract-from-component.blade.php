@@ -15,7 +15,7 @@
         </div>
 
         @if($formm == 'basic')
-            <div class = "col-lg-8 d-flex justify-content-center">
+            <div class = "col-lg-8">
             
                 <form wire:submit.prevent="contactlogin">
                     <h1>Welcome</h1>
