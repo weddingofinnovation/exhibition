@@ -134,19 +134,20 @@
                   <li class="widget-list-item me-4"><a class="widget-list-link" href="">Partner</a></li>
                   <li class="widget-list-item me-4"><a class="widget-list-link" href="">Affiliates</a></li>
                   <li class="widget-list-item me-4"><a class="widget-list-link" href="">Support</a></li>
-                  <li class="widget-list-item me-4"><a class="widget-list-link" href="">Privacy</a></li>
-                  <li class="widget-list-item me-4"><a class="widget-list-link" href="">Terms of use</a></li>
+                  <li class="widget-list-item me-4"><a class="widget-list-link" href="{{route('terms.condition')}}">Privacy</a></li>
+                  <li class="widget-list-item me-4"><a class="widget-list-link" href="{{route('terms.condition')}}">Terms of use</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-md-6 text-center text-md-end mb-4">
               <div class="mb-3">
-              <a class="btn-social bs-light bs-twitter ms-2 mb-2" target="_blank" href="{{$infos->twiter}}"><i class="bi bi-twitter"></i></a>
-              <a class="btn-social bs-light bs-facebook ms-2 mb-2" target="_blank" href="{{$infos->facebook}}"><i class="bi bi-facebook"></i></a>
-              <a class="btn-social bs-light bs-instagram ms-2 mb-2" target="_blank" href="{{$infos->instagram}}"><i class="bi bi-instagram"></i></a>
-              <a class="btn-social bs-light bs-youtube ms-2 mb-2" target="_blank" href="{{$infos->youtube}}"><i class=" bi bi-youtube"></i></a>
-              <a class="btn-social bs-light bs-linkedin ms-2 mb-2" target="_blank" href="{{$infos->linkedin}}"><i class=" bi bi-linkedin"></i></a>
-              </div><img class="d-inline-block" src="./franciz_files/cards-alt.png" width="187" alt="Payment methods">
+                <a class="btn-social bs-light bs-twitter ms-2 mb-2" target="_blank" href="{{$infos->twiter}}"><i class="bi bi-twitter"></i></a>
+                <a class="btn-social bs-light bs-facebook ms-2 mb-2" target="_blank" href="{{$infos->facebook}}"><i class="bi bi-facebook"></i></a>
+                <a class="btn-social bs-light bs-instagram ms-2 mb-2" target="_blank" href="{{$infos->instagram}}"><i class="bi bi-instagram"></i></a>
+                <a class="btn-social bs-light bs-youtube ms-2 mb-2" target="_blank" href="{{$infos->youtube}}"><i class=" bi bi-youtube"></i></a>
+                <a class="btn-social bs-light bs-linkedin ms-2 mb-2" target="_blank" href="{{$infos->linkedin}}"><i class=" bi bi-linkedin"></i></a>
+              </div>
+              <img class="d-inline-block" src="./franciz_files/cards-alt.png" width="187" alt="Payment methods">
             </div>
           </div>
           <div class="pb-4 fs-xs text-light opacity-50 text-center text-md-start">© All rights reserved. Made by <a class="text-light" href="{{asset('/')}}" target="_blank" rel="noopener">COI | The Exhibition Network</a></div>

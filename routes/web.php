@@ -163,7 +163,7 @@ use App\Http\Livewire\GoogleComponent;
 use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
-
+use App\Http\Livewire\TermsComponent;
 use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\User\UserDirectoryComponent;
 use App\Http\Livewire\User\UserEventCategoryComponent;
@@ -261,6 +261,7 @@ Route::get('/cart', CheckoutComponent::class)->name('checkout');
 Route::get('/checkout', CoicartComponent::class)->name('coicart');
 Route::get('/payment', PaymentComponent::class)->name('payment');
 
+
 Route::get('/thank-you/{board}/{visitorid?}', ThankyouComponent::class)->name('thankyou');
 
 Route::get('/review', CoiReviewComponent::class)->name('review');
@@ -282,6 +283,8 @@ Route::get('/career', CareerComponent::class)->name('career');
 Route::get('/contact/{board}', ContactComponent::class)->name('contact');
 Route::get('/about-us', AboutComponent::class)->name('about');
 Route::get('/leadership', TeamComponent::class)->name('team');
+Route::get('/terms', TermsComponent::class)->name('terms.condition');
+
 
 //catch exhibition data
 Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.add');
