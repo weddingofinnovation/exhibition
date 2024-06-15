@@ -90,7 +90,7 @@ body {
   height: 100px;
   margin: 5px;
   padding: 10px;
-  background: #888;
+  background: #fff;
   color: #262524;
 }
 
@@ -528,6 +528,7 @@ body {
                     
 
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'faq'])}}" data-bs-toggle="tab" role="tab">FAQ</a></li>
+                    
                     @if(count($eventbrand) > 0) 
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitors</a></li>
                     @endif
@@ -656,7 +657,8 @@ body {
 
                         <li><hr class="mt-md-2 mb-2"></li>
                         <li class="p1 fw-light">
-                          {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
+                          {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
+                          {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
                         </li>
                       </ul>
 
@@ -715,12 +717,16 @@ body {
                           <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
                     </div>
 
+
+
+
+
+
+
+
+
                     <div class="container">
-                      
-                    download  Contact
-
                       <div class="grido">
-
                          @foreach($exhibitor as $participants)
                           <div class="element-item" data-category="post-transition">
                             <h3 class="name text-light">{{$participants->brand_name}}</h3>
@@ -777,7 +783,7 @@ body {
                           <p class="weight">127.6</p>
                         </div>
 
-                        <div class="element-item transition metal " data-category="transition">
+                        <div class="element-item" data-category="transition">
                           <h3 class="name">Gold</h3>
                           <p class="symbol">Au</p>
                           <p class="number">79</p>
@@ -807,6 +813,7 @@ body {
                       </div>
                     </section>
 
+                    <hr class="mt-md-2 mb-2">
                     <!-- pavillion -->
                     <section class="container">
                       <div class="container mt-4 d-lg-none">
@@ -1104,7 +1111,6 @@ body {
                     <section class="container mb-4 mb-lg-5">
                       <div class="tab-content pt-2">
 
-                        {{-- Product details tab
                         <div class="tab-pane fade show active" id="details" role="tabpanel">
                           <div class="row">
                             <div class="col-lg-8">
@@ -1123,10 +1129,7 @@ body {
                               </ul>
                             </div>
                           </div>
-
-                    
-
-                        </div>--}}
+                        </div>
 
                         <!-- Reviews tab-->
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
@@ -2020,88 +2023,88 @@ body {
                         @endphp
 
                         @foreach($eventootot as $eventoi)
-                        <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                          <div class="card product-card">
-                            
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
+                          <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                            <div class="card product-card">
+                              
+                              <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
 
-                            <div class="card-body p-1">
-                              <div class="d-flex justify-content-between">
-                                  <div class="product-price"><small>{{$eventoi -> edition}}  
-                                    <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
-                                        <span class="fs-xs">
-                                          @php
-                                              $to = strtotime($eventoi->startdate);
-                                              $from= strtotime($eventoi->enddate);
-                                          @endphp
-                                          
+                              <div class="card-body p-1">
+                                <div class="d-flex justify-content-between">
+                                    <div class="product-price"><small>{{$eventoi -> edition}}  
+                                      <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
+                                          <span class="fs-xs">
+                                            @php
+                                                $to = strtotime($eventoi->startdate);
+                                                $from= strtotime($eventoi->enddate);
+                                            @endphp
+                                            
 
-                                          @if ($current < $to && $current < $from)
-                                              Upcom
-                                            @elseif ($current == $to && $current < $from) 
-                                              First
-                                            @elseif ($current > $to && $current < $from) 
-                                              Ongoi
-                                            @elseif ($current > $to && $current == $from) 
-                                              Last 
-                                            @elseif ($current > $to && $current > $from)
-                                              Ended
-                                          @endif
-                                        </span>
-                                      <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
-                                    <div class="product-title fs-sm h3 mb-0">
-                                    <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}
-                                      </a></div>
-                                  </div>
-
-                                  <div class="star-rating d-none d-sm-block"> 
-                                    <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
-                                    <div class=" align-center fs-sm py-1"> 
-                                      <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
-                                      <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
+                                            @if ($current < $to && $current < $from)
+                                                Upcom
+                                              @elseif ($current == $to && $current < $from) 
+                                                First
+                                              @elseif ($current > $to && $current < $from) 
+                                                Ongoi
+                                              @elseif ($current > $to && $current == $from) 
+                                                Last 
+                                              @elseif ($current > $to && $current > $from)
+                                                Ended
+                                            @endif
+                                          </span>
+                                        <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
+                                      <div class="product-title fs-sm h3 mb-0">
+                                      <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}
+                                        </a></div>
                                     </div>
-                                  </div>
+
+                                    <div class="star-rating d-none d-sm-block"> 
+                                      <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
+                                      <div class=" align-center fs-sm py-1"> 
+                                        <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
+                                        <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
+                                      </div>
+                                    </div>
+                                </div>
+                                <!--<small>World's best demanding business</small><br>-->
+                                <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
+                                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                                  @else
+                                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                                  @endif 
+
+                                </small>
+                                <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue  ?? 'not found'))}}, <br> {{ucwords(trans($eventoi -> city  ?? 'not found'))}}</small>
+
+                                <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
+                                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                                  @else
+                                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                                  @endif 
+                                </small><br>
+                                <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small> 
+                                <!--ucfirst-->
                               </div>
-                              <!--<small>World's best demanding business</small><br>-->
-                              <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
-                                @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
-                                @else
-                                  {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
-                                @endif 
 
-                              </small>
-                              <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue  ?? 'not found'))}}, <br> {{ucwords(trans($eventoi -> city  ?? 'not found'))}}</small>
-
-                              <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
-                                @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                                @else
-                                  {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                                @endif 
-                              </small><br>
-                              <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small> 
-                              <!--ucfirst-->
+                              
+                              
+                              <div class="card-body card-body-hidden">
+                                <div class="d-flex justify-content-between mb-2">
+                                  <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
+                                  <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-cart fs-sm me-1"></i>Visit</a>
+                                </div>
+                              
+                                <div class="text-center">
+                                  @guest<a class="nav-link-style fs-ms" href="#" data-bs-toggle="modal">
+                                  <i class=" bi bi-eye align-middle me-1"></i>Contact</a>
+                                  @endguest
+                                </div>
+                              </div>
+                            
                             </div>
-
-                            
-                            
-                            <div class="card-body card-body-hidden">
-                              <div class="d-flex justify-content-between mb-2">
-                                <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
-                                <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-cart fs-sm me-1"></i>Visit</a>
-                              </div>
-                            
-                              <div class="text-center">
-                                @guest<a class="nav-link-style fs-ms" href="#" data-bs-toggle="modal">
-                                <i class=" bi bi-eye align-middle me-1"></i>Contact</a>
-                                @endguest
-                              </div>
-                            </div>
-                          
                           </div>
-                        </div>
                         @endforeach
 
                       @endforeach
