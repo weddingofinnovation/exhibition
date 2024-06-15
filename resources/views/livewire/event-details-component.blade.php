@@ -521,7 +521,12 @@ body {
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link px-1 active" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'details'])}}" data-bs-toggle="tab" role="tab">Understanding</a></li>
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Advertise</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a></li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a>
+                    </li>
+                    
+
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'faq'])}}" data-bs-toggle="tab" role="tab">FAQ</a></li>
                     @if(count($eventbrand) > 0) 
                     <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitors</a></li>
@@ -648,6 +653,7 @@ body {
                           
                             
                         </li>
+
                         <li><hr class="mt-md-2 mb-2"></li>
                         <li class="p1 fw-light">
                           {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
@@ -710,7 +716,9 @@ body {
                     </div>
 
                     <div class="container">
-                      download  Contact
+                      
+                    download  Contact
+
                       <div class="grido">
 
                          @foreach($exhibitor as $participants)
@@ -800,75 +808,77 @@ body {
                     </section>
 
                     <!-- pavillion -->
-                    <div class="container mt-4 d-lg-none">
-                      <div class="text-dark fw-bold fs-md">Locations & Hours</div> 
-                      
-                      <div class=" card-group locationhours">
-                        @foreach( $pavillion as $pavo)
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">{{$pavo -> pavillion_name}}</h5>
-                            <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p>
-                                <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
-                                <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p> 
-                            <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
-                            <div class="d-flex badgeseTag">
-                                  @foreach($category as $cat)
-                                    <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                                  @endforeach
-                                </div>
+                    <section class="container">
+                      <div class="container mt-4 d-lg-none">
+                        <div class="text-dark fw-bold fs-md">Locations & Hours</div> 
+                        
+                        <div class=" card-group locationhours">
+                          @foreach( $pavillion as $pavo)
+                          <div class="card border-0">
+                            <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                              <h5 class="card-title">{{$pavo -> pavillion_name}}</h5>
+                              <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p>
+                                  <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
+                                  <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p> 
+                              <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
+                              <div class="d-flex badgeseTag">
+                                    @foreach($category as $cat)
+                                      <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+                                    @endforeach
+                                  </div>
+                            </div>
                           </div>
-                        </div>
-                        @endforeach
+                          @endforeach
 
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">Pavillion</h5>
-                            <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                                closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                                <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
-                                <div class="d-flex badgeseTag">
-                                  @foreach($category as $cat)
-                                    <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                                  @endforeach
-                                </div>
+                          <div class="card border-0">
+                            <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                            <div class="card-body">
+                              <h5 class="card-title">Pavillion</h5>
+                              <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                  Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
+                                  closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
+                                  <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
+                                  <div class="d-flex badgeseTag">
+                                    @foreach($category as $cat)
+                                      <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+                                    @endforeach
+                                  </div>
+                            </div>
                           </div>
-                        </div>
-                          <!-- 
-                            <ul class="list-unstyled fs-sm  p-2">
-                                <li class="d-flex justify-content-between p-0 m-0">
-                                    <span class="text-dark fw-medium fs-sm">  Pavillion <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span>
+                            <!-- 
+                              <ul class="list-unstyled fs-sm  p-2">
+                                  <li class="d-flex justify-content-between p-0 m-0">
+                                      <span class="text-dark fw-medium fs-sm">  Pavillion <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
+                                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span>
 
-                                    Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                                    closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
+                                      Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
+                                      closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
 
-                                    <div class="d-flex badgeseTag">
-                                      @foreach($category as $cat)
-                                        <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                                      @endforeach
-                                    </div>
-                                </li>
-                            </ul>
+                                      <div class="d-flex badgeseTag">
+                                        @foreach($category as $cat)
+                                          <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+                                        @endforeach
+                                      </div>
+                                  </li>
+                              </ul>
 
-                            <ul class="list-unstyled fs-sm  p-2">
+                              <ul class="list-unstyled fs-sm  p-2">
+                                  <li class="d-flex justify-content-between p-0 m-0">
+                                  <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
+                                  <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                              </ul>
+                            
+                              <ul class="list-unstyled fs-sm  p-2">
                                 <li class="d-flex justify-content-between p-0 m-0">
                                 <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
                                 <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                            </ul>
-                          
-                            <ul class="list-unstyled fs-sm  p-2">
-                              <li class="d-flex justify-content-between p-0 m-0">
-                              <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                              <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                            </ul> 
-                          -->
-                      </div>
+                              </ul> 
+                            -->
+                        </div>
 
-                    </div>
+                      </div>
+                    </section>
 
 
                     <hr class="mt-md-2 mb-2">

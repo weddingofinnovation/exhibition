@@ -241,7 +241,7 @@ Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazin
 
 //categorie
 
-Route::get('/search', SearchComponent::class)->name('search.events');
+Route::get('/search', SearchComponent::class)->name('P');
 
 Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibition');
 

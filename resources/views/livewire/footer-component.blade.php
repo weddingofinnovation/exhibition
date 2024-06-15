@@ -110,7 +110,8 @@
                     The<br>Exhibition<br>Network</div>
                     <!--<img class="d-block" src="./franciz_files/footer-logo-light.png" width="117" alt="Council of Innovation">-->
                 </a>
-                <div class="btn-group dropdown disable-autohide">
+
+                {{-- <div class="btn-group dropdown disable-autohide">
                   <button class="btn btn-outline-light border-light btn-sm dropdown-toggle px-2" type="button" data-bs-toggle="dropdown">
                     <img class="me-2" src="" width="20" alt="English">Eng / $</button>
                   <ul class="dropdown-menu my-1">
@@ -126,7 +127,7 @@
                     <li><a class="dropdown-item pb-1" href=""><img class="me-2" src="" width="20" alt="Deutsch">Deutsch</a></li>
                     <li><a class="dropdown-item" href=""><img class="me-2" src="" width="20" alt="Italiano">Italiano</a></li>
                   </ul>
-                </div>
+                </div> --}}
 
               </div>
               <div class="widget widget-links widget-light">

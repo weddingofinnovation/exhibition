@@ -76,7 +76,7 @@
                       </div>
                     </div>
                   </div></a></div>
-              <div class="col-sm-4 mb-3"><a class="card h-100 border-0 shadow-sm" href="{{asset('/shop')}}">
+              <div class="col-sm-4 mb-3"><a class="card h-100 border-0 shadow-sm" href="{{route('search.events')}}">
                   <div class="card-body">
                     <div class="d-flex align-items-center"><i class=" bi bi-search text-success h4 mb-0"></i>
                       <div class="ps-3">
@@ -88,7 +88,7 @@
                   <div class="card-body">
                     <div class="d-flex align-items-center"><i class=" bi bi-info-circle text-info h4 mb-0"></i>
                       <div class="ps-3">
-                        <h5 class="fs-sm mb-0">Help &amp; Support</h5><span class="text-muted fs-ms">Visit our help center</span>
+                        <h5 class="fs-sm mb-0">Help & Support</h5><span class="text-muted fs-ms">Visit our help center</span>
                       </div>
                     </div>
                   </div></a></div>
