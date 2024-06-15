@@ -520,7 +520,7 @@ body {
             <section class="container d-lg-none ">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item"><a class="nav-link px-1 active" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'details'])}}" data-bs-toggle="tab" role="tab">Understanding</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Advertise</a></li>
+                    <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Membership</a></li>
                     
                     <li class="nav-item">
                       <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a>
@@ -1689,19 +1689,19 @@ body {
                 
                 <div class="my-sliderOffers">
                     <ul class="list-unstyled fs-sm  p-2">
-                        <li class="d-flex justify-content-between p-0 m-0">
+                        <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
                         <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
                         <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
                     </ul>
 
                     <ul class="list-unstyled fs-sm  p-2">
-                        <li class="d-flex justify-content-between p-0 m-0">
+                        <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
                         <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
                         <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
                     </ul>
                   
                     <ul class="list-unstyled fs-sm  p-2">
-                      <li class="d-flex justify-content-between p-0 m-0">
+                      <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
                       <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
                       <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
                     </ul>
