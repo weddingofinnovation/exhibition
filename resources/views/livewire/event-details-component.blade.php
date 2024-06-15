@@ -2119,27 +2119,27 @@ body {
                 <div class="text-dark fw-medium fs-sm">Certified</div> 
                 
                 <div class="my-sliderOffers2">
-                    <ul class="list-unstyled fs-sm  p-2">
+                    <ul class="list-unstyled fs-sm p-2 bg-secondary" >
                       <li class="d-flex justify-content-between p-0 m-0">
                       <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
                       <span class="text-muted fw-light fs-xs">Save your Ultra Premium Space </span></span>
                       <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
                     </ul>
 
-                    <ul class="list-unstyled fs-sm  p-2">
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
                         <li class="d-flex justify-content-between p-0 m-0">
                         <span class="text-dark fw-medium fs-sm">Great Exhibition To Exhibit<br>
                         <span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
                         <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Get Certified</a></span></li>
                     </ul>
 
-                    <ul class="list-unstyled fs-sm  p-2">
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
                         <li class="d-flex justify-content-between p-0 m-0">
                         <span class="text-dark fw-medium fs-sm">Nominate your Event<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
                         <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
                     </ul>
                   
-                    <ul class="list-unstyled fs-sm  p-2">
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
                       <li class="d-flex justify-content-between p-0 m-0">
                       <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
                       <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
@@ -2379,7 +2379,7 @@ body {
                   "controls": false,
                   "mouseDrag": true,
                   "autoplay": false,
-                  "autoplayButtonOutput":false,
+                  "autoplayButtonOutput":true,
                   "autoplayHoverPause": true,
                   "nav": false,
                  
