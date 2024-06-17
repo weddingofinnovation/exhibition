@@ -132,6 +132,15 @@ body {
   font-size: 12px;
 }
 
+.element-item .symbol {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+}
+
 .element-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
 .element-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
 .element-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
@@ -419,11 +428,11 @@ body {
                         @else
                       
                         @if( $ticketOrExhibit != 0 )
-                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light bg-secondary btn-sm">Plan Your Visit</a>
+                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light btn-sm">Plan Your Visit</a>
                           @elseif( $ticketOrExhibit == 0 )
                             {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Plan Your Visit</a>{{route('event.product',['slug' => $event->slug])}}--}}
                           
-                            <a href="#" class="btn btn-outline-light bg-secondary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
+                            <a href="#" class="btn btn-outline-light btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
                         @endif
                       @endif
 
@@ -868,7 +877,7 @@ body {
 
                    
                     <!-- membership -->
-                    <section class="container">
+                    <section class="container mt-5">
                       <div class="mt-4 d-lg-none"> 
                         <div class="text-dark fw-bold fs-md">Membership</div> 
                         
@@ -899,8 +908,8 @@ body {
                             <!-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> -->
                             <div class="card-body">
                               <h5 class="card-title">Plan next 3 Exhibition</h5>
-                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount, hassle free documentation</p>
-                              Where You Meet the Right People at the Right Time and Right Place
+                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount, hassle free documentation Where You Meet the Right People at the Right Time and Right Place</p>
+                              
                                    <a href="#" class="btn btn-sm btn-primary">Go Membership</a>
                                   <div class="d-flex badgeseTag">
                                     @foreach($category as $cat)
