@@ -779,36 +779,41 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                          <p class="symbol text-dark">{{$event->visitors}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Exhibitor</h3>
+                          <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                          <p class="number">83</p>
+                          <p class="weight">Verified</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Ranking</h3>
                           <p class="symbol">Bi</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
 
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Business Days</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Verified</p>
+                        </div>
                        
                       </div>
                     </section>
      
-
-
-                     check
                     <hr class="mt-md-2 mb-2">
 
-                    
-                    
-
-
-
-
+                   
                     <!-- membership -->
                     <section class="container">
-                      <div class="mt-4 d-lg-none"> check
+                      <div class="mt-4 d-lg-none"> 
                         <div class="text-dark fw-bold fs-md">Membership</div> 
                         
                         <div class=" card-group locationhours">
@@ -839,11 +844,11 @@ body {
                             <div class="card-body">
                               <h5 class="card-title">Plan next 3 Exhibition</h5>
                               <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle free</p>
-                                  
-                                  <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
+                              Where You Meet the Right People at the Right Time and Right Place
+                                   <a href="#" class="btn btn-sm btn-primary">Go Membership</a>
                                   <div class="d-flex badgeseTag">
                                     @foreach($category as $cat)
-                                      <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1"href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->slug])}}">{{$cat->expo->tag}}</a>
+                                      <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
                                     @endforeach
                                   </div>
                             </div>
@@ -1436,9 +1441,9 @@ body {
 
                     <section class="card text-center py-5 border-0">
                       <div class="card-body">
-                        <h5 class="card-title h2">Buy your Expo 2024 Tickets Now </h5>
-                        <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
-                        <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        <h5 class="card-title h2">Plan your Expo 2024 Now </h5>
+                        <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
+                        <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
                       </div>
                     </section>
             
