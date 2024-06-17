@@ -800,8 +800,8 @@ body {
                      check
                     <hr class="mt-md-2 mb-2">
 
-                    {{-- <h5 class="card-title">{{$pavo -> pavillion_name}}</h5> --}}
-                    {{-- <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p> --}}
+                    
+                    
 
 
 
@@ -817,10 +817,10 @@ body {
                             {{-- <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image"> --}}
                             
                             <div class="card-body">
-                              
+                            {{-- <h5 class="card-title">{{$pavo -> pavillion_name}}</h5> --}}
                               <h5 class="card-title">Plan next 3 Exhibition</h5>
-                              
-                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle</p>
+                              {{-- <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p> --}}
+                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle free</p>
                                   {{-- <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
                                   <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p>  --}}
                               <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
@@ -835,16 +835,15 @@ body {
                           @endforeach
 
                           <div class="card border-0">
-                            <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                            <!-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> -->
                             <div class="card-body">
-                              <h5 class="card-title">Pavillion</h5>
-                              <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                  Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                                  closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
+                              <h5 class="card-title">Plan next 3 Exhibition</h5>
+                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle free</p>
+                                  
                                   <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
                                   <div class="d-flex badgeseTag">
                                     @foreach($category as $cat)
-                                      <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+                                      <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1"href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->slug])}}">{{$cat->expo->tag}}</a>
                                     @endforeach
                                   </div>
                             </div>
