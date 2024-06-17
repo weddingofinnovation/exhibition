@@ -826,7 +826,7 @@ body {
                               <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
                               <div class="d-flex badgeseTag">
                                     @foreach($category as $cat) 
-                                      <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->slug])}}">{{$cat->expo->tag}}</a>
+                                      <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
                                     @endforeach
                                   </div>
                             </div>

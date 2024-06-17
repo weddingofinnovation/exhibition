@@ -6,6 +6,7 @@ use App\Models\Award;
 use App\Models\Brand;
 use App\Models\Denco;
 use App\Models\Event;
+use App\Models\Expo;
 use App\Models\Franchise;
 use App\Models\Pavillion;
 use App\Models\Rate;
@@ -38,8 +39,6 @@ class EventDetailsComponent extends Component
     {
        $this->slug = $slug;
        $this->optional = $optional;
-      
-      
     }
 
     public function index($optional = 'details')
@@ -49,7 +48,7 @@ class EventDetailsComponent extends Component
 
     public function post( Request $request, $slug)
     {
-      $post = Event::where('slug',$slug)->published()->first();
+      $post = Event::where('slug', $slug)->published()->first();
       $postKey = 'post_'.$post->id;
       if($request->session()->has($postKey))
       {
@@ -70,7 +69,7 @@ class EventDetailsComponent extends Component
       return redirect()->route('event.product', ['slug' => $event->slug]);
     } 
 
-
+    
     use WithPagination;
     public function render()
     {   
