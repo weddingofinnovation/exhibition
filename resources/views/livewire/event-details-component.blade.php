@@ -776,20 +776,20 @@ body {
 
                     <section class="container">
                       <div class="grido">
-                        <div class="element-item" data-category="metalloid">
-                          <h3 class="name">Fabrication</h3>
-                          <p class="symbol">Te</p>
-                          <p class="number">52</p>
-                          <p class="weight">127.6</p>
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Edition</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">208.980</p>
                         </div>
 
-                        <div class="element-item" data-category="transition">
-                          <h3 class="name">Gold</h3>
-                          <p class="symbol">Au</p>
-                          <p class="number">79</p>
-                          <p class="weight">196.967</p>
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Visitor</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">208.980</p>
                         </div>
-                        
+
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Exhibitor</h3>
                           <p class="symbol">Bi</p>
@@ -797,26 +797,7 @@ body {
                           <p class="weight">208.980</p>
                         </div>
 
-                        <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Advertise</h3>
-                          <p class="symbol">Pb</p>
-                          <p class="number">82</p>
-                          <p class="weight">207.2</p>
-                        </div>
-
-                        <div class="element-item" data-category="transition">
-                          <h3 class="name">Contract Form</h3>
-                          <p class="symbol">Au</p>
-                          <p class="number">79</p>
-                          <p class="weight">196.967</p>
-                        </div>
-
-                        <div class="element-item" data-category="transition">
-                          <h3 class="name">Contract Form</h3>
-                          <p class="symbol">Au</p>
-                          <p class="number">79</p>
-                          <p class="weight">196.967</p>
-                        </div>
+                       
                       </div>
                     </section>
 
@@ -825,8 +806,8 @@ body {
 
                     <!-- pavillion -->
                     <section class="container">
-                      <div class="container mt-4 d-lg-none">
-                        <div class="text-dark fw-bold fs-md">Locations & Hours</div> 
+                      <div class="mt-4 d-lg-none">
+                        <div class="text-dark fw-bold fs-md">Membership</div> 
                         
                         <div class=" card-group locationhours">
                           @foreach( $pavillion as $pavo)
