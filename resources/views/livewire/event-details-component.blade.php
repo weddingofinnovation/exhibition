@@ -794,14 +794,21 @@ body {
                        
                       </div>
                     </section>
+     
 
+
+                     check
                     <hr class="mt-md-2 mb-2">
 
                     {{-- <h5 class="card-title">{{$pavo -> pavillion_name}}</h5> --}}
                     {{-- <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p> --}}
+
+
+
+
                     <!-- membership -->
                     <section class="container">
-                      <div class="mt-4 d-lg-none">
+                      <div class="mt-4 d-lg-none"> check
                         <div class="text-dark fw-bold fs-md">Membership</div> 
                         
                         <div class=" card-group locationhours">
