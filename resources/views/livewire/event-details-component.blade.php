@@ -804,6 +804,42 @@ body {
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Contract Form</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Space</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Pre-booking</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Verified</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Design</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Stall</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Marketing Material</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Verified</p>
+                        </div>
+
+                        <div class="element-item" data-category="post-transition">
+                          <h3 class="name">Fabrication</h3>
+                          <p class="symbol">Bi</p>
+                          <p class="number">83</p>
+                          <p class="weight">Verified</p>
+                        </div>
+
                        
                       </div>
                     </section>
@@ -843,7 +879,7 @@ body {
                             <!-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> -->
                             <div class="card-body">
                               <h5 class="card-title">Plan next 3 Exhibition</h5>
-                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle free</p>
+                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount, hassle free documentation</p>
                               Where You Meet the Right People at the Right Time and Right Place
                                    <a href="#" class="btn btn-sm btn-primary">Go Membership</a>
                                   <div class="d-flex badgeseTag">
