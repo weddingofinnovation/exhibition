@@ -495,7 +495,7 @@
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
-                <div class=" mb-4 text-center">Thank you <strong>{{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
+                <div class=" mb-4 text-center">Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
                 <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
                 <ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
