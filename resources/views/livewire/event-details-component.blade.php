@@ -779,22 +779,22 @@ body {
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Edition</h3>
                           <p class="symbol">Bi</p>
-                          <p class="number">83</p>
-                          <p class="weight">208.980</p>
+                          <p class="number"> <i class="bi bi-add"></i> </p>
+                          <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol">Bi</p>
+                          <p class="symbol text-dark">Bi</p>
                           <p class="number">83</p>
-                          <p class="weight">208.980</p>
+                          <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Exhibitor</h3>
                           <p class="symbol">Bi</p>
                           <p class="number">83</p>
-                          <p class="weight">208.980</p>
+                          <p class="weight">Verified</p>
                         </div>
 
                        
@@ -804,7 +804,7 @@ body {
                     <hr class="mt-md-2 mb-2">
 
 
-                    <!-- pavillion -->
+                    <!-- membership -->
                     <section class="container">
                       <div class="mt-4 d-lg-none">
                         <div class="text-dark fw-bold fs-md">Membership</div> 
@@ -812,12 +812,15 @@ body {
                         <div class=" card-group locationhours">
                           @foreach( $pavillion as $pavo)
                           <div class="card border-0">
-                            <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image">
+                            {{-- <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image"> --}}
+                            
                             <div class="card-body">
-                              <h5 class="card-title">{{$pavo -> pavillion_name}}</h5>
-                              <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p>
-                                  <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
-                                  <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p> 
+                              {{-- <h5 class="card-title">{{$pavo -> pavillion_name}}</h5> --}}
+                              <h5 class="card-title">Plan next 3 Exhibition</h5>
+                              {{-- <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p> --}}
+                              <p class="card-text fs-sm text-muted">Plan next three exhibition, book your business potential space with subsidies discount without documentation hassle</p>
+                                  {{-- <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
+                                  <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p>  --}}
                               <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
                               <div class="d-flex badgeseTag">
                                     @foreach($category as $cat)
@@ -825,6 +828,7 @@ body {
                                     @endforeach
                                   </div>
                             </div>
+
                           </div>
                           @endforeach
 
