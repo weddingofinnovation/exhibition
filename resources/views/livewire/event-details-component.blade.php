@@ -419,11 +419,11 @@ body {
                         @else
                       
                         @if( $ticketOrExhibit != 0 )
-                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light btn-sm">Plan Your Visit</a>
+                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light bg-secondary btn-sm">Plan Your Visit</a>
                           @elseif( $ticketOrExhibit == 0 )
                             {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Plan Your Visit</a>{{route('event.product',['slug' => $event->slug])}}--}}
                           
-                            <a href="#" class="btn btn-outline-light btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
+                            <a href="#" class="btn btn-outline-light bg-secondary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
                         @endif
                       @endif
 
@@ -840,13 +840,6 @@ body {
                         </div>
 
                         <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Pre-booking</h3>
-                          <p class="symbol">Bi</p>
-                          <p class="number">83</p>
-                          <p class="weight">Verified</p>
-                        </div>
-
-                        <div class="element-item" data-category="post-transition">
                           <h3 class="name">Design</h3>
                           <p class="symbol">Bi</p>
                           <p class="number">83</p>
@@ -854,10 +847,10 @@ body {
                         </div>
 
                         <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Marketing Material</h3>
+                          <h3 class="name">Material</h3>
                           <p class="symbol">Bi</p>
                           <p class="number">83</p>
-                          <p class="weight">Verified</p>
+                          <p class="weight">Marketing</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
