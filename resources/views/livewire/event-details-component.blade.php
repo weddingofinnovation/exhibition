@@ -719,12 +719,6 @@ body {
 
 
 
-
-
-
-
-
-
                     <div class="container">
                       <div class="grido">
                          @foreach($exhibitor as $participants)
@@ -785,7 +779,7 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">Bi</p>
+                          <p class="symbol text-dark">{{$event->exhibitors}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
