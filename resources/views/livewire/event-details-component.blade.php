@@ -1107,7 +1107,7 @@ body {
                     <section class="container mb-4 mb-lg-5">
                       <div class="tab-content pt-2">
 
-                        <div class="tab-pane fade show active" id="details" role="tabpanel">
+                        <!-- <div class="tab-pane fade show active" id="details" role="tabpanel">
                           <div class="row">
                             <div class="col-lg-8">
                             
@@ -1125,7 +1125,7 @@ body {
                               </ul>
                             </div>
                           </div>
-                        </div>
+                        </div> -->
 
                         <!-- Reviews tab-->
                         <div class="tab-pane fade" id="reviews" role="tabpanel">
