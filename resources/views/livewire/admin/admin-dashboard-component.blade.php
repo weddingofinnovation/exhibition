@@ -329,7 +329,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="#2022" role="tabpanel">
+                    <div class="tab-pane fade" id="2022" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year22ev as $franchise) 
                             <div class="container  ">
@@ -373,7 +373,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="#2023" role="tabpanel">
+                    <div class="tab-pane fade" id="2023" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year23ev as $franchise) 
                             <div class="container  ">
@@ -417,7 +417,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="#2024" role="tabpanel">
+                    <div class="tab-pane fade" id="2024" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year24ev as $franchise) 
                             <div class="container  ">
@@ -461,7 +461,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="#2025" role="tabpanel">
+                    <div class="tab-pane fade" id="2025" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year25ev as $franchise) 
                             <div class="container  ">
