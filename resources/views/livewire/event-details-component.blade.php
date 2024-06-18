@@ -841,7 +841,7 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Business Days</h3>
-                          <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))->add(1)}}</p>
+                          <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))->addDays(1)}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
