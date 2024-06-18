@@ -63,10 +63,10 @@
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#details" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviewID" data-bs-toggle="tab" role="tab">ID </a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2022" data-bs-toggle="tab" role="tab">2022</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2023" data-bs-toggle="tab" role="tab">2023</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2024" data-bs-toggle="tab" role="tab">2024</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2025" data-bs-toggle="tab" role="tab">2025</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="year22find" data-bs-toggle="tab" role="tab">2022</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="year23find" data-bs-toggle="tab" role="tab">2023</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="year24find" data-bs-toggle="tab" role="tab">2024</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="year25find" data-bs-toggle="tab" role="tab">2025</a></li>
                 </ul>
 
                 {{--<div class="d-flex badgese pb-2">
@@ -329,7 +329,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="2022" role="tabpanel">
+                    <div class="tab-pane fade" id="year22find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year22ev as $franchise) 
                             <div class="container  ">
@@ -373,7 +373,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="2023" role="tabpanel">
+                    <div class="tab-pane fade" id="year23find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year23ev as $franchise) 
                             <div class="container  ">
@@ -417,7 +417,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="2024" role="tabpanel">
+                    <div class="tab-pane fade" id="year24find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year24ev as $franchise) 
                             <div class="container  ">
@@ -461,7 +461,7 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="2025" role="tabpanel">
+                    <div class="tab-pane fade" id="year25find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year25ev as $franchise) 
                             <div class="container  ">
