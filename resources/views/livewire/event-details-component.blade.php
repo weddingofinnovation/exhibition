@@ -819,7 +819,7 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">{{$event->visitors/1000}}</p>
+                          <p class="symbol text-dark">{{$event->auidence/1000}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
