@@ -742,10 +742,10 @@ public $dtype;
 
       $expoaward = Event::where('status','1')->where('admstatus','0')->orderBy('created_at','ASC')->get();
 
-      $year22ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2022)->orderBy('startdate','ASC')->get();
-      $year23ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2023)->orderBy('startdate','ASC')->get();
-      $year24ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2024)->orderBy('startdate','ASC')->get();
-      $year25ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2025)->orderBy('startdate','ASC')->get();
+      $year22ev = Event::where('status','1')->whereYear('startdate', 2022)->orderBy('startdate','ASC')->get();
+      $year23ev = Event::where('status','1')->whereYear('startdate', 2023)->orderBy('startdate','ASC')->get();
+      $year24ev = Event::where('status','1')->whereYear('startdate', 2024)->orderBy('startdate','ASC')->get();
+      $year25ev = Event::where('status','1')->whereYear('startdate', 2025)->orderBy('startdate','ASC')->get();
 
       $expireplan = Event::whereDate('enddate','<=',  $mytime)->where('status','1')->where('admstatus','1')->orderBy('enddate','DESC')->get();
       

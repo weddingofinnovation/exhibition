@@ -63,10 +63,10 @@
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#details" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviewID" data-bs-toggle="tab" role="tab">ID </a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year22find" data-bs-toggle="tab" role="tab">2022</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year23find" data-bs-toggle="tab" role="tab">2023</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year24find" data-bs-toggle="tab" role="tab">2024</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year25find" data-bs-toggle="tab" role="tab">2025</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year22find" data-bs-toggle="tab" role="tab">2022 {{$year22ev->count}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year23find" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year24find" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year25find" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count}}</a></li>
                 </ul>
 
                 {{--<div class="d-flex badgese pb-2">
@@ -332,7 +332,7 @@
                     <div class="tab-pane fade" id="year22find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year22ev as $franchise) 
-                            <div class="container  ">
+                            <div class="container">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
