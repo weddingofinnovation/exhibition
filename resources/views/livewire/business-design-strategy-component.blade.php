@@ -79,6 +79,7 @@
                     <div class="col  pr-0">
                           <div class="fs-xs fw-light mb-0">
                           @php
+                              $current = strtotime(Carbon::now());
                               $to = strtotime($franchise->startdate);
                               $from= strtotime($franchise->enddate);
                           @endphp

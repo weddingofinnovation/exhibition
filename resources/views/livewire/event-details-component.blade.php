@@ -626,6 +626,7 @@ body {
                                       </li>
                                   @endif
                             </ul>
+
                             <!-- 
                               <div class="d-flex badgeseTag">
                                 @foreach($category as $cat)
@@ -633,23 +634,23 @@ body {
                                 @endforeach
                               </div>
 
-                            <span class="badge bg-secondary fs-sm">
-                            
+                              <span class="badge bg-secondary fs-sm">
+                              
 
-                              @if ($current < $to && $current < $from)
-                                  upcoming
-                              @elseif ($current == $to && $current < $from) 
-                                  first
-                              @elseif ($current > $to && $current < $from) 
-                                  ongoing
-                              @elseif ($current > $to && $current == $from) 
-                                last 
-                              @elseif ($current > $to && $current > $from)
-                                ended
-                              @endif
+                                @if ($current < $to && $current < $from)
+                                    upcoming
+                                @elseif ($current == $to && $current < $from) 
+                                    first
+                                @elseif ($current > $to && $current < $from) 
+                                    ongoing
+                                @elseif ($current > $to && $current == $from) 
+                                  last 
+                                @elseif ($current > $to && $current > $from)
+                                  ended
+                                @endif
 
-                                
-                            </span> -->
+                                  
+                              </span> -->
 
                           
                             <div>
@@ -820,8 +821,8 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">{{$event->auidence/1000}}  <small>K</small></p>
-                          <p class="number">83</p>
+                          <p class="symbol text-dark">{{$event->auidence/1000}}  <span class="fw-normal fs-sm">K</span></p>
+                          <p class="number"></p>
                           <p class="weight">Verified</p>
                         </div>
 
