@@ -415,12 +415,12 @@ body {
             <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
               <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
               <div class="container  mb-lg-0 bg-primary">
-
                 <div class="d-flex justify-content-between py-2">
-                      <div class="z-2 text-dark  pl-3 lh-1"> 
-                       <span class= "fw-bold text-light fs-xs ">
-                        Great Exhibition To Business</span><br><span class="text-light fw-normal fs-xs">Certified</span>
-                      </div>
+                      <a class="z-2 text-dark  pl-3 lh-1" href="{{route('design.strategy')}}"> 
+                       <span class= "fw-bold text-light fs-xs">Great Exhibition To Business</span>
+                        <br>
+                        <span class="text-light fw-normal fs-xs">Certified</span>
+                      </a>
 
 
                       @if( $event->businessrevenue == 'visitor' )  
@@ -436,6 +436,10 @@ body {
                         @endif
                       @endif
 
+                      <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
+                        <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
+                      </a>
+                      
                       <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                         <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
                       </a> -->
