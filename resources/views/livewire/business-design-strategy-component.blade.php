@@ -1,6 +1,12 @@
 <main>
 
         <div>
+            @php
+                $current = strtotime(Carbon::now());
+                $to = strtotime($franchise->startdate);
+                $from= strtotime($franchise->enddate);
+            @endphp
+            
             @foreach( $upcomingViews as $franchise)
                 <div class="container">
                         
@@ -78,11 +84,7 @@
                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                     <div class="col  pr-0">
                           <div class="fs-xs fw-light mb-0">
-                          @php
-                              $current = strtotime(Carbon::now());
-                              $to = strtotime($franchise->startdate);
-                              $from= strtotime($franchise->enddate);
-                          @endphp
+                          
                           
 
                           @if ($current < $to && $current < $from)
