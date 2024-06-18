@@ -654,7 +654,8 @@ body {
                           
                             <div>
                               @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
-                              @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> <span class="fs-xs fw-normal"> Visitors </span>@endif
+                              @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
+                              <span class="fs-xs fw-normal"> Visitors </span>@endif
                               {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
                               <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
 
@@ -819,7 +820,7 @@ body {
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">{{$event->auidence/1000}}</p>
+                          <p class="symbol text-dark">{{$event->auidence/1000}}  <small>K</small></p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
@@ -832,15 +833,15 @@ body {
                         </div>
 
                         <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Ranking</h3>
-                          <p class="symbol">{{round($commentedRates->avg('rate') , 1)}}</p>
+                          <h3 class="name">Rating</h3>
+                          <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Business Days</h3>
-                          <p class="symbol">Bi</p>
+                          <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))->add(1)}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
