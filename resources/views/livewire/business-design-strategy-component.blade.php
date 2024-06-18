@@ -1,12 +1,7 @@
 <main>
 
         <div>
-            @php
-                
-                $to = strtotime($franchise->startdate);
-                $from= strtotime($franchise->enddate);
-            @endphp
-
+            
             @foreach( $upcomingViews as $franchise)
                 <div class="container">
                         
