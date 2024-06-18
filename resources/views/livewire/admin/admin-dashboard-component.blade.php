@@ -331,7 +331,7 @@
 
                     <div class="tab-pane fade" id="#2022" role="tabpanel">
                         <div class="row mb-5 pb-2">
-                          @foreach ($year22ev, as $franchise) 
+                          @foreach ($year22ev as $franchise) 
                             <div class="container  ">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
