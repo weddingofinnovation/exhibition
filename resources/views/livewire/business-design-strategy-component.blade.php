@@ -3,7 +3,7 @@
 @section('page_description', 'Great Exhibtion To Exhibit, plan with rank and rating review your upcoming trade show, conference, awards  and get subsidies space to find right people at right time at right place')
 @section('page_keyword',  'Exhibition Navigator, The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
-    <div class = "container">
+    
       @foreach( $descRankingViews as $franchise)
           <div class="container">
             @if($franchise->updated_at->format("Y-m-d") == $mytime)
@@ -128,5 +128,5 @@
             @endif
           </div>
       @endforeach
-    </div>
+    
 </main>
