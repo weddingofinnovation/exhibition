@@ -108,7 +108,7 @@
                                       {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                     @endif 
                                   </div>  
-                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 </div>
 
                                 <div class="col-3  p-0">
@@ -187,7 +187,7 @@
                                     {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
                                   @endif 
                                 </div>  
-                                <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
                                 <span class="bg-primary">
                                  @php
@@ -315,7 +315,7 @@
                                         {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                       @endif 
                                     </div>  
-                                    <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{$franchise -> city}}</div>
+                                    <div class="text-muted fs-sm text-start">{{$franchise -> venue ?? 'not found'}}, {{$franchise -> city}}</div>
                                   </div>
 
                                   <div class="col-3 p-0">
@@ -355,7 +355,7 @@
                                       {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                     @endif 
                                   </div>  
-                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 </div>
 
                                 <div class="col-3  p-0">
@@ -399,7 +399,7 @@
                                       {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                     @endif 
                                   </div>  
-                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 </div>
 
                                 <div class="col-3  p-0">
@@ -443,7 +443,7 @@
                                       {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                     @endif 
                                   </div>  
-                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 </div>
 
                                 <div class="col-3  p-0">
@@ -487,7 +487,7 @@
                                       {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                                     @endif 
                                   </div>  
-                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                 </div>
 
                                 <div class="col-3  p-0">
@@ -1056,7 +1056,7 @@
                     {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
                   @endif 
                 </div>  
-                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                 <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
                 <span class="bg-primary">
                   @php
@@ -1755,9 +1755,9 @@
                       @if(is_null($franchise -> venue) )
                       
                       @else
-                      {{ucfirst(trans($franchise -> venue))}}
+                      {{ucfirst(trans($franchise -> venue ?? 'not found'))}}
                       @endif
-                    , {{ucfirst(trans($franchise -> city))}}</div>
+                    , {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                   </div>
 
                   <div class="col-3  p-0">
