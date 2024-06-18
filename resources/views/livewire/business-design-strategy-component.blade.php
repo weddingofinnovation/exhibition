@@ -45,24 +45,7 @@
                           {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
                         @endif 
                       </div>  
-                      <div class="text-muted fs-sm text-start">
-                        @if($category->count() == 0)
-                       
-                            <a href="{{route('admin.editcategories',['event_id' => $franchise->id])}}" class="badge bg-primary mt-0">
-                              no category</a>
-                        
-                        @else
-                          @foreach($category as $cat)
-                             
-                              @php
-                                  $categ = DB::table('expos')->where('id', $cat->expo_id)->get();
-                              @endphp
-                              @foreach($categ as $ficateg)
-                              <span class="badge bg-primary mt-0">{{$ficateg->tag}}</span>
-                              @endforeach
-                          @endforeach
-                        @endif
-                      </div>
+                      
                     </div>
 
                     <div class="col-3  p-0">
