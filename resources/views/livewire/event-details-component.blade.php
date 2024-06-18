@@ -439,7 +439,7 @@ body {
                       <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                         <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
                       </a>
-                      
+
                       <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                         <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
                       </a> -->
@@ -812,14 +812,14 @@ body {
                       <div class="grido">
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Edition</h3>
-                          <p class="symbol">Bi</p>
+                          <p class="symbol text-dark">{{$event->edition}}</p>
                           <p class="number"> <i class="bi bi-add"></i> </p>
                           <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Visitor</h3>
-                          <p class="symbol text-dark">{{$event->visitors}}</p>
+                          <p class="symbol text-dark">{{$event->visitors/1000}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
@@ -827,13 +827,13 @@ body {
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Exhibitor</h3>
                           <p class="symbol text-dark">{{$event->exhibitors}}</p>
-                          <p class="number">83</p>
+                          <p class="number"></p>
                           <p class="weight">Verified</p>
                         </div>
 
                         <div class="element-item" data-category="post-transition">
                           <h3 class="name">Ranking</h3>
-                          <p class="symbol">Bi</p>
+                          <p class="symbol">{{round($commentedRates->avg('rate') , 1)}}</p>
                           <p class="number">83</p>
                           <p class="weight">Verified</p>
                         </div>
