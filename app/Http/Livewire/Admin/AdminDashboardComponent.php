@@ -741,6 +741,12 @@ public $dtype;
       $fattributes = ProductAttribute::paginate(10);
 
       $expoaward = Event::where('status','1')->where('admstatus','0')->orderBy('created_at','ASC')->get();
+
+      $year22ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2022)->orderBy('startdate','ASC')->get();
+      $year23ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2023)->orderBy('startdate','ASC')->get();
+      $year24ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2024)->orderBy('startdate','ASC')->get();
+      $year25ev = Event::where('status','1')->where('admstatus','0')->whereYear('startdate', 2025)->orderBy('startdate','ASC')->get();
+
       $expireplan = Event::whereDate('enddate','<=',  $mytime)->where('status','1')->where('admstatus','1')->orderBy('enddate','DESC')->get();
       
       //total event
@@ -794,10 +800,7 @@ public $dtype;
       //dd($mytime , $ongoingViews);
       
       $eventShtdesc = Event::where('status','1')->where('admstatus','1')->where('shtdesc', '=', NULL)->orWhere(DB::raw('CHAR_LENGTH(shtdesc)'), '<', '30')->orderBy('startdate','asc')->get();
-    
-      
       $getContact = Bcontact::where('brand_id', $this->brand_id)->orderBy('created_at','desc')->get();
-
       $checkSelected = Usage::get();
       $businessOrder = Lead::orderBy('updated_at','DESC')->get();
 
@@ -822,7 +825,9 @@ public $dtype;
       $findoorganizer = Brand::where('dtype','organiser')->orderBy('brand_name','ASC')->get();
 
         return view('livewire.admin.admin-dashboard-component',[ 'findoorganizer' => $findoorganizer, 'findSearch' => $findSearch,'photos' => $photos, 'ticket' => $ticket, 'getContact'=> $getContact,'checkSelected'=> $checkSelected, 'counteventWithCategory'=> $counteventWithCategory,'resultAdded'=> $resultAdded, 'searchcat'=> $searchcat, 'searchBrandcat'=> $searchBrandcat,'businessOrder' => $businessOrder,'upcomingViews' => $upcomingViews, 'current'=>$current, 'mytime' => $mytime,'descRankingViews' => $descRankingViews,'eventShtdesc' => $eventShtdesc, 'hastago' => $hastago, 'visitors' => $visitors,'magazine' => $magazine, 'nEwComment' => $nEwComment,'findInspection' => $findInspection,'blogfindo' => $blogfindo,'searchId' => $searchId,'expireplan' => $expireplan,'searchCat' => $searchCat,'mymonth' => $mymonth,'monthwise' => $monthwise,'eventthreemonth' => $eventthreemonth,'eventmonth' => $eventmonth,'eventweek' => $eventweek, 'eventomorrow'=>$eventomorrow, 'evento'=>$evento,'optios'=>$optios,'orders'=>$orders,'coupons'=>$coupons,'events'=>$events,'expoaward'=>$expoaward,'fattributes'=>$fattributes,'jobs'=>$jobs,'franchises'=>$franchises,'resume'=>$resume,'users'=>$users,
-        'categories'=>$categories,'service'=>$service,'category'=>$category,'sectorr'=>$sectorr,'business'=>$business,'sector'=>$sector,'categ'=>$categ,'catcount'=>$catcount,
+        'categories'=>$categories,'service'=>$service,
+        'year22ev' => $year22ev, 'year23ev' => $year23ev, 'year24ev' => $year24ev, 'year25ev' => $year25ev, 
+        'category'=>$category,'sectorr'=>$sectorr,'business'=>$business,'sector'=>$sector,'categ'=>$categ,'catcount'=>$catcount,
         ])->layout('layouts.admin');
         
     }

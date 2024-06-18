@@ -13,7 +13,8 @@ class BusinessDesignStrategyComponent extends Component
         $current = strtotime(Carbon::now());
         $mytime = Carbon::now()->format("Y-m-d");
         $upcomingViews = Event::where('view_count','>','0')->whereDate('startdate','>', $mytime)->whereDate('enddate','>', $mytime)->orderBy('updated_at','desc')->get();
+        $descRankingViews = Event::where('view_count','>','0')->orderBy('view_count','desc')->get();
 
-        return view('livewire.business-design-strategy-component',['current' => $current ,'upcomingViews' => $upcomingViews ,'mytime' => $mytime])->layout('layouts.eblog');
+        return view('livewire.business-design-strategy-component',[ 'descRankingViews' => $descRankingViews,  'current' => $current ,'upcomingViews' => $upcomingViews ,'mytime' => $mytime])->layout('layouts.eblog');
     }
 }

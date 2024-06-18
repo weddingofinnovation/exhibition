@@ -63,6 +63,10 @@
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#details" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviewID" data-bs-toggle="tab" role="tab">ID </a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2022" data-bs-toggle="tab" role="tab">2022</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2023" data-bs-toggle="tab" role="tab">2023</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2024" data-bs-toggle="tab" role="tab">2024</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#2025" data-bs-toggle="tab" role="tab">2025</a></li>
                 </ul>
 
                 {{--<div class="d-flex badgese pb-2">
@@ -80,7 +84,7 @@
                     <div class="tab-pane fade" id="requuest" role="tabpanel">
                       <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
                         <div class="row mb-5 pb-2">
-                         @foreach ($expoaward as $franchise) 
+                          @foreach ($expoaward as $franchise) 
                             <div class="container  ">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
@@ -322,6 +326,182 @@
                               </div>
                             @endforeach
                           @endif
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="#2022" role="tabpanel">
+                        <div class="row mb-5 pb-2">
+                          @foreach ($year22ev, as $franchise) 
+                            <div class="container  ">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @else
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @endif 
+                                    <div class="round-circle">{{$franchise -> id}}</div> 
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @endif 
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                  @if(is_null($franchise->image))
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                                        Add</a>
+                                  @else
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  @endif
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="#2023" role="tabpanel">
+                        <div class="row mb-5 pb-2">
+                          @foreach ($year23ev as $franchise) 
+                            <div class="container  ">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @else
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @endif 
+                                    <div class="round-circle">{{$franchise -> id}}</div> 
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @endif 
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                  @if(is_null($franchise->image))
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                                        Add</a>
+                                  @else
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  @endif
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="#2024" role="tabpanel">
+                        <div class="row mb-5 pb-2">
+                          @foreach ($year24ev as $franchise) 
+                            <div class="container  ">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @else
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @endif 
+                                    <div class="round-circle">{{$franchise -> id}}</div> 
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @endif 
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                  @if(is_null($franchise->image))
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                                        Add</a>
+                                  @else
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  @endif
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="#2025" role="tabpanel">
+                        <div class="row mb-5 pb-2">
+                          @foreach ($year25ev as $franchise) 
+                            <div class="container  ">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @else
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @endif 
+                                    <div class="round-circle">{{$franchise -> id}}</div> 
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                    @endif 
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue))}}, {{ucfirst(trans($franchise -> city))}}</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                  @if(is_null($franchise->image))
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                                        Add</a>
+                                  @else
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  @endif
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
                         </div>
                     </div>
                 </div>
