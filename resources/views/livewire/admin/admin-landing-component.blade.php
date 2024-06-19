@@ -1,4 +1,5 @@
 <main>
+
         <section class="container py-3 py-lg-5 mt-4 mb-3">
           <div class="text-center mb-5">
             <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with COI Marketing Solutions.</p>
@@ -166,4 +167,111 @@
             </div>
           </div>
         </section>
+
+        <section class="container">
+            <div class="grido">
+                
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Event</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Order</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+                    
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Searched</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Job</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Blog</h3>
+                        </a> 
+                        <p class="symbol">HG</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Visitor</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Review</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Magazine</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Hashtag</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+
+                    <div class="element-item transition metal" data-category="transition">
+
+                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <h3 class="name">Category</h3>
+                        </a> 
+                        <p class="symbol">Hg</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </div>
+                
+            </div>
+      </section>
+
 </main>
