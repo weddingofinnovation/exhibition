@@ -334,15 +334,15 @@ body {
                         <p class="weight">200.59</p> -->
                     </div>
                     
-                    <div class="element-item transition metal" data-category="transition">
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
 
-                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
-                        <h3 class="name">Searched</h3>
-                        </a> 
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Searched</h3>
+                        <!-- </a>  -->
                         <p class="symbol">Hg</p>
                         <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </div>
+                    </a>
 
                     <div class="element-item transition metal" data-category="transition">
 
