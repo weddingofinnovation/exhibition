@@ -173,7 +173,7 @@
                 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Event</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -183,7 +183,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Order</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -193,7 +193,7 @@
                     
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Searched</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -203,7 +203,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Job</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -213,7 +213,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Blog</h3>
                         </a> 
                         <p class="symbol">HG</p>
@@ -223,7 +223,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Visitor</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -233,7 +233,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Review</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -243,7 +243,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Magazine</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -253,7 +253,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Hashtag</h3>
                         </a> 
                         <p class="symbol">Hg</p>
@@ -263,7 +263,7 @@
 
                     <div class="element-item transition metal" data-category="transition">
 
-                        <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                         <h3 class="name">Category</h3>
                         </a> 
                         <p class="symbol">Hg</p>
