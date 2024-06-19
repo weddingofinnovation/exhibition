@@ -799,7 +799,7 @@ public $dtype;
       
       //dd($mytime , $ongoingViews);
       
-      $eventShtdesc = Event::where('status','1')->where('admstatus','1')->where('shtdesc', '=', NULL)->orWhere(DB::raw('CHAR_LENGTH(shtdesc)'), '<', '30')->orderBy('startdate','asc')->get();
+      $eventShtdesc = Event::where('status','1')->where('shtdesc', '=', NULL)->orWhere(DB::raw('CHAR_LENGTH(shtdesc)'), '<', '10')->orderBy('startdate','asc')->get();
       $getContact = Bcontact::where('brand_id', $this->brand_id)->orderBy('created_at','desc')->get();
       $checkSelected = Usage::get();
       $businessOrder = Lead::orderBy('updated_at','DESC')->get();
