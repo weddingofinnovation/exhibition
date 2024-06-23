@@ -12,7 +12,7 @@
     @elseif(Route::currentRouteName() === 'search.venue')
     @else
       <header class="shadow-sm ">
-        <!-- Topbar
+        
         <div class="topbar topbar-dark bg-dark">
           <div class="container">
             <div>
@@ -44,8 +44,7 @@
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href=""><i class=" bi bi-heart text-muted me-2"></i>Wishlist ({{Cart::instance('wishlist')->count()}})</a></li>
                 <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Compare (3)</a></li>
-                <li><a class="dropdown-item" href=""><i class="ci-location text-muted me-2"></i>Order tracking</a></li>-->
-             <!-- </ul>
+                <li><a class="dropdown-item" href=""><i class="ci-location text-muted me-2"></i>Order tracking</a></li> </ul>
             </div>
 
             <div class="d-none d-md-block ms-3 text-nowrap">
@@ -56,7 +55,7 @@
             <i class="bi bi-loaction mt-n1"></i>Order tracking</a></div>
 
           </div>
-        </div>-->
+        </div>
 
         <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
         <div class="navbar-sticky bg-light">

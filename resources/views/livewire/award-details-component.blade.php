@@ -609,14 +609,14 @@
                         <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                           <li>Bespoke B2B forums that connect you with the people you really want to meet. </li>
                           <li>Our business partnered space events include participation in live Q&A and polls, plus access to the community where you can network with other attendees.</li>
-                          <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'award' ])}}" class="btn btn-outline-primary btn-sm bg-light">Nominate a Speaker</a></li>
+                          {{-- <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'award' ])}}" class="btn btn-outline-primary btn-sm bg-light">Nominate a Speaker</a></li> --}}
                         </ul>
                       </div>
                         <div>
                           <h5 class="mb-3">Business Directory</h5>
                           <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                             <li>List business directory to educate with your business potential</li>
-                            <li> <a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'directory' ])}}" class="btn btn-sm btn-primary">Expand your business</a> </li>
+                            {{-- <li> <a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'directory' ])}}" class="btn btn-sm btn-primary">Expand your business</a> </li> --}}
                           </ul>
                         </div>
                     </div>
@@ -624,7 +624,7 @@
                     
                     <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                       <li>Attend a Space event near you featuring live speakers and Talk business owners, sparking conversation and connections.</li>
-                      <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'find' ])}}" class="btn btn-outline-primary btn-sm bg-light">Find an event near you</a></li>
+                      {{-- <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'find' ])}}" class="btn btn-outline-primary btn-sm bg-light">Find an event near you</a></li> --}}
                       
                     </ul>
                     <h5 class="mb-3">Share this event</h5>
@@ -802,7 +802,9 @@
                       <ul class="list-unstyled fs-sm bg-secondary p-2">
                           <li class="d-flex justify-content-between p-0 m-0">
                           <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-                          <span><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
+                          <span>
+                            
+                          {{-- <a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li> --}}
                     </ul>
                     </div>
                     <!--<div>
@@ -816,12 +818,15 @@
                   <h5 class="mb-3">Meet-ups</h5>
                   <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                     <li class="m-3 fs-sm fw-light">Conducts exhibitions, one-to-one meetings and discussions, experiences delivering maximum engagement.</li>
-                    <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'meet' ])}}" class="btn btn-outline-primary btn-sm bg-light">BOOK NOW</a></li>
+                    <li></li>
+                      {{-- <a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'meet' ])}}" class="btn btn-outline-primary btn-sm bg-light">BOOK NOW</a></li> --}}
                   </ul>
                   <h5 class="mb-3">Partner with Space</h5>
                   <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                     <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
-                    <li><a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
+                    <li>
+                      
+                    {{-- <a href="{{route('lead.business.other',['slug' => $event->slug, 'type'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li> --}}
                   </ul>
 
                   <h5 class="mb-3">Expo Initiatives</h5>
