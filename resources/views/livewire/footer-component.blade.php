@@ -197,6 +197,9 @@
                 <span class="handheld-toolbar-label">Menu</span>
               </a>
           @endif
+           
+          <a href="">Become Our client</a>
+
         @endif
 
       @if(Route::currentRouteName() == 'coi.exhibition' )

@@ -720,7 +720,7 @@
                                 <h5 class="card-title text-light">{{$pav -> pavillion_name}}</h5>
                                 <p class="card-text fs-sm text-muted text-light">{{ $pav -> desc}}</p>
                               
-                                <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary text-light">Learn more</a>
+                                {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary text-light">Learn more</a> --}}
                               </div>
                             </div>
                           @endforeach
@@ -733,7 +733,7 @@
                             <div class="mask text-light">
                               <h5 class="card-title">Special Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
 
@@ -743,7 +743,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Country Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This card has supporting text below as a natural lead-in to additional content.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
 
@@ -753,7 +753,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Partner Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
                     
@@ -765,7 +765,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Organisations Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
 
@@ -775,7 +775,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Country Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This card has supporting text below as a natural lead-in to additional content.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
 
@@ -785,7 +785,7 @@
                             <div class="card-body">
                               <h5 class="card-title">Partner Pavillions</h5>
                               <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a>
+                              {{-- <a href="{{route('lead.business', ['slug' => $event->slug])}}" class="text-primary">Learn more</a> --}}
                             </div>
                           </div>
                     </div>
