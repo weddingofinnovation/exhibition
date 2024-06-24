@@ -459,7 +459,7 @@
             </div>
             <!--Key-->
             <div class="container">
-            <h4>Key Discussion</h4>    
+                <h4>Key Discussion</h4>    
                 <div class="card border-0 shadow">
                     <div class="card-body">
                         <h5 class="card-title">Card Title</h5>
@@ -475,18 +475,7 @@
             </div>
             <!--Agenda-->
 
-            <div class="card border-0 shadow">
-                <div class="card-body">
-                    <h5 class="card-title">Card Title</h5>
-                    <p class="card-text fs-sm text-muted">Some quick example</p>
-                    <a href="" class="btn btn-primary btn-sm">Go Somewhere</a>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Card Title</h5>
-                    <p class="card-text fs-sm text-muted">Some quick example</p>
-                    <a href="" class="btn btn-primary btn-sm">Go Somewhere</a>
-                </div>
-            </div>
+            
             <!--Who-->
             <!--Questions-->
 
@@ -1637,14 +1626,14 @@
                   <div class="text-dark  pl-3 lh-1">  <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span><br><span class=" fw-normal fs-xs">Onwards</span></div>
                     @if( $event->businessrevenue == 'visitor' )  
                       @if( $ticketOrExhibit != 0 )
-                          <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
+                          <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Nominate</a>
                         @elseif( $ticketOrExhibit == 0 )
-                          {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
+                          {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Nominate</a>{{route('event.product',['slug' => $event->slug])}}--}}
                         
-                          <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
+                          <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Nominate</a>
                       @endif
                     @else
-                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
+                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Nominate</a>
                     @endif
                 </div>
               </div>
@@ -1654,7 +1643,7 @@
                 <div class="text-dark  pl-3 lh-1">  <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span><br><span class=" fw-normal fs-xs">Onwards</span></div>
                   @if( $event->businessrevenue == 'visitor' )  
                     @if( $ticketOrExhibit != 0 )
-                        <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
+                        <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Attend</a>
                       @elseif( $ticketOrExhibit == 0 )
                         {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
                       

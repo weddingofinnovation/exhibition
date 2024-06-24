@@ -163,99 +163,102 @@
     <div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">
 
-      @if('/' == request()->path() ? 'active' : '')
-          <a class="d-table-cell handheld-toolbar-item" href="#conference">
-            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
-            <span class="handheld-toolbar-label">Conference</span>
-          </a>
+        @if('/' == request()->path() ? 'active' : '')
+            <a class="d-table-cell handheld-toolbar-item" href="#exhibit">
+              <!-- <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span> -->
+              <span class="handheld-toolbar-label">We are trusted By</span>
+            </a> 
 
-          <a class="d-table-cell handheld-toolbar-item" href="#awards">
-            <span class="handheld-toolbar-icon"><i class=" bi bi-trophy"></i></span>
-            <span class="handheld-toolbar-label">Awards</span>
-          </a>
+            <a class="d-table-cell handheld-toolbar-item" href="#conference">
+              <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+              <span class="handheld-toolbar-label">Conference</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" href="#awards">
+              <span class="handheld-toolbar-icon"><i class=" bi bi-trophy"></i></span>
+              <span class="handheld-toolbar-label">Awards</span>
+            </a>
+            
+            <a class="d-table-cell handheld-toolbar-item" href="#exhibit">
+              <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
+              <span class="handheld-toolbar-label">Exhibition</span>
+            </a>
+
+            @if (Auth::check())
+              @if(Auth::user()->utype == 'ADM')
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasUSR" role="button" aria-controls="offcanvasUSR">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
+              @elseif(Auth::user()->utype == 'USR')
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
+              @endif
+            @else
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
+            @endif
+
           
-          <a class="d-table-cell handheld-toolbar-item" href="#exhibit">
-            <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
-            <span class="handheld-toolbar-label">Exhibition</span>
+            
+          
+        @endif
+        
+        @if(Route::currentRouteName() == 'coi.exhibition' )
+            <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
+              <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
+              <span class="handheld-toolbar-label">Home</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar" aria-controls="offcanvasRight">
+              <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
+              <span class="handheld-toolbar-label">Filter</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' => 'add-your-event'])}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-heart"></i></span>
+                <span class="handheld-toolbar-label">Add</span>
+            </a>
+
+          
+
+            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+            <span class="handheld-toolbar-label">Menu</span>
           </a>
 
-          @if (Auth::check())
-            @if(Auth::user()->utype == 'ADM')
-            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasUSR" role="button" aria-controls="offcanvasUSR">
+        @elseif(Route::currentRouteName() == 'coi.exhibitioncategory' || Route::currentRouteName() == 'search.events' || Route::currentRouteName() == 'search.venue')
+
+            <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
+              <span class="handheld-toolbar-icon"><i class="bi bi-home"></i></span>
+              <span class="handheld-toolbar-label">Home</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#shopsidebar" role="button" aria-controls="offcanvasExample">
+              <span class="handheld-toolbar-icon"><i class="bi bi-funnel"></i></span>
+              <span class="handheld-toolbar-label">Filter</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
+                <span class="handheld-toolbar-label">Saved Event</span>
+            </a>
+
+            <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
-            </a>
-            @elseif(Auth::user()->utype == 'USR')
+            </a> -->
+
             <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
               <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
               <span class="handheld-toolbar-label">Menu</span>
             </a>
-            @endif
-          @else
-              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button" aria-controls="offcanvasExample">
-                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-                <span class="handheld-toolbar-label">Menu</span>
-              </a>
-          @endif
-           
-          <a href="">Become Our client</a>
-
         @endif
-
-      @if(Route::currentRouteName() == 'coi.exhibition' )
-          <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-border-style"></i></span>
-            <span class="handheld-toolbar-label">Home</span>
-          </a>
-
-          <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar" aria-controls="offcanvasRight">
-            <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
-            <span class="handheld-toolbar-label">Filter</span>
-          </a>
-
-          <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' => 'add-your-event'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-heart"></i></span>
-              <span class="handheld-toolbar-label">Add</span>
-          </a>
-
-        
-
-          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-          <span class="handheld-toolbar-label">Menu</span>
-        </a>
-
-      @elseif(Route::currentRouteName() == 'coi.exhibitioncategory' || Route::currentRouteName() == 'search.events' || Route::currentRouteName() == 'search.venue')
-
-          <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-home"></i></span>
-            <span class="handheld-toolbar-label">Home</span>
-          </a>
-
-          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#shopsidebar" role="button" aria-controls="offcanvasExample">
-            <span class="handheld-toolbar-icon"><i class="bi bi-funnel"></i></span>
-            <span class="handheld-toolbar-label">Filter</span>
-          </a>
-
-          <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
-              <span class="handheld-toolbar-label">Saved Event</span>
-          </a>
-
-          <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-            <span class="handheld-toolbar-label">Menu</span>
-          </a> -->
-
-          <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-            <span class="handheld-toolbar-label">Menu</span>
-          </a>
-      @endif
           
-               
-         
-
           {{--@if(Cart::instance('cart')->count() > 0)
             <a class="d-table-cell handheld-toolbar-item" href="#">
               <span class="handheld-toolbar-icon"><i class="bi bi-cart"></i>
@@ -285,9 +288,11 @@
                 <span class="handheld-toolbar-label">Menu</span>
               </a>
           @endif
-          
+      </div>
 
-        </div>
+      <div class="container">
+        <a href="" class="text-center fs-sm text-dark">become Our Client</a>
+      </div>
     </div>
 
     <span class="navbar-tool-label"> </span> 
