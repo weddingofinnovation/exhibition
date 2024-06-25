@@ -433,8 +433,8 @@
           @endif
       </div>
 
-      <div class="container text-center border-1 ">
-        <a href="" class="fs-xs fw-bold text-dark bg-secondary">Become Our Client</a>
+      <div class="container text-center border-1 bg-secondary">
+        <a href="" class="fs-xs fw-bold text-primary ">Become Our Client</a>
       </div>
     </div>
 
