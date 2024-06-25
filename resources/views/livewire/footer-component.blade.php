@@ -758,7 +758,8 @@
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                 
                       @php  
-                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct('city')->orderBy('city','ASC')->get();
+                        // $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct('city')->orderBy('city','ASC')->get();
+                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
                       @endphp
                      
                         <div class="grido">

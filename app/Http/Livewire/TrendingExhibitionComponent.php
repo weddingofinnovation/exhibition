@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Denco;
 use App\Models\Event;
 use App\Models\Expo;
+use App\Models\Location;
 use App\Models\Viewso;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -88,6 +89,8 @@ class TrendingExhibitionComponent extends Component
 
           //dd( $categoryresult, $getnamecategoryresult);
   
+         
+
         return view('livewire.trending-exhibition-component',['getnamecategoryresult'=>$getnamecategoryresult,'current'=>$current,'evento'=>$evento, 'finder'=>$finder]);
     }
 }

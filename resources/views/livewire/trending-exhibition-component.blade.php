@@ -391,20 +391,18 @@
       </div>
 
       @php  
-          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->pluck('city')->get();
-          $ararar =  $locationo->distinct('city')->orderBy('city','ASC')->get();
+          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
       @endphp
-
       
-      @foreach ($ararar as $category)
-        <div class="element-item" data-category="metalloid">
-          <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
-          <p class="symbol">Te</p>
-          <p class="number">52</p>
-          <!-- <p class="weight">127.6</p> -->
-        </div>
-      @endforeach
-      
+     
+                          @foreach ($locationo as $category)
+                            <div class="element-item metalloid " data-category="metalloid">
+                              <h3 class="name">{{$category->city}}</h3>
+                              <p class="symbol"><i class="bi bi-list"></i></p>
+                              <p class="number">52</p>
+                              <!-- <p class="weight">127.6</p> -->
+                            </div>
+                          @endforeach
       
       
     </section>
