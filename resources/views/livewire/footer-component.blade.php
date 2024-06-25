@@ -741,7 +741,7 @@
       <div class="offcanvas offcanvas-bottom" tabindex="-1" id="citysidebar" aria-labelledby="offcanvasExampleLabel" style="height: 380px;">
         
               <div class="offcanvas-header align-items-center shadow-sm">
-                <h2 class="h5 mb-0">{{$this->eventype}}</h2>
+                <h2 class="h5 mb-0">City</h2>
                 <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               
@@ -756,13 +756,29 @@
                 </div> --}}
 
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                <!-- Categories-->
+                
+                      @php  
+                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct('city')->orderBy('city','ASC')->get();
+                      @endphp
+                     
+                        <div class="grido">
+                          @foreach ($locationo as $category)
+                            <div class="element-item metalloid " data-category="metalloid">
+                              <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
+                              <p class="symbol"><i class="bi bi-list"></i></p>
+                              <p class="number">52</p>
+                              <!-- <p class="weight">127.6</p> -->
+                            </div>
+                          @endforeach
+                        </div>
+
+              <!-- Categories-->
                   <div class="widget widget-categories mb-4 pb-4 border-bottom">
-                    <h3 class="widget-title d-none d-sm-block">{{$this->eventype}}</h3>
+                    <h3 class="widget-title d-none d-sm-block">City</h3>
                     <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
 
                       @php  
-                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct()->orderBy('city','ASC')->get();
+                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct('city')->orderBy('city','ASC')->get();
                       @endphp
 
 
