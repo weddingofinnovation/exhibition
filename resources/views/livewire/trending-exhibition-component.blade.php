@@ -391,18 +391,16 @@
       </div>
 
       @php  
-          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('city','ASC')->get();
-          $cityoies = $locationo->distinct()->get();
-
+          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->unique('city')->orderBy('city','ASC')->get();
       @endphp
 
       
-      @foreach ($cityoies as $category)
+      @foreach ($locationo as $category)
         <div class="element-item" data-category="metalloid">
           <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
           <p class="symbol">Te</p>
           <p class="number">52</p>
-          <p class="weight">127.6</p>
+          <!-- <p class="weight">127.6</p> -->
         </div>
       @endforeach
       
