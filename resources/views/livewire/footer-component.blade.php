@@ -758,15 +758,13 @@
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                 
                   @php  
-                      $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('city','asc')->get();
+                      $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupByRaw('city, country')->orderBy('city','asc')->get();
                       
                   @endphp
                   
                     <div class="grido">
                       @foreach ($locationo as $category)
-                          @php  
-                              $addcountry = $category->select('city')->groupBy('city')->orderBy('city','asc')->get();
-                          @endphp
+                          
                         <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $addcountry->city, 'country' => $category->country ])}}">
                           <h3 class="name">{{ucwords(trans(Str::limit($addcountry->city, 24)))}}</h3>
                           <p class="symbol"><i class="bi bi-list"></i></p>
