@@ -763,7 +763,7 @@
                   @endphp
                   
                     <div class="grido">
-                      @foreach ($addcountry as $category)
+                      @foreach ($locationo as $category)
                           @php  
                               $addcountry = $category->select('city')->groupBy('city')->orderBy('city','asc')->get();
                           @endphp
