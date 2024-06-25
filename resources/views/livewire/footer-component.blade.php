@@ -765,7 +765,7 @@
                     <div class="grido">
                       @foreach ($locationo as $category)
                           
-                        <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $addcountry->city, 'country' => $category->country ])}}">
+                        <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
                           <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
                           <p class="symbol"><i class="bi bi-list"></i></p>
                           <p class="number">52</p>
