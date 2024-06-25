@@ -758,7 +758,7 @@
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                 
                   @php  
-                      $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city', 'country')->groupByRaw('city', 'country')->orderBy('city','asc')->get();
+                      $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city', 'country')->groupBy('city', 'country')->orderBy('city','asc')->get();
                       
                   @endphp
                   
