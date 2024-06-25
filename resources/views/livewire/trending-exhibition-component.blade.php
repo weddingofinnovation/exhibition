@@ -391,11 +391,12 @@
       </div>
 
       @php  
-          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->unique('city')->orderBy('city','ASC')->get();
+          $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->pluck('city')->get();
+          $ararar =  $locationo->distinct('city')->orderBy('city','ASC')->get();
       @endphp
 
       
-      @foreach ($locationo as $category)
+      @foreach ($ararar as $category)
         <div class="element-item" data-category="metalloid">
           <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
           <p class="symbol">Te</p>
