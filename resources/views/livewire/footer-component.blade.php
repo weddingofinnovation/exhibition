@@ -433,7 +433,7 @@
           @endif
       </div>
 
-      <div class="container text-center">
+      <div class="container text-center border-1 ">
         <a href="" class="fs-sm text-dark">Become Our Client</a>
       </div>
     </div>
@@ -442,7 +442,7 @@
           
     <!-- Back To Top Button-->
     <a class="btn-scroll-top" href="{{asset('/#top')}}" data-scroll="">
-     <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="bi bi-funnel-fill"></i></a>
+     <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="bi bi-chevron-up"></i></a>
 
      
       <!-- Filter -->
@@ -757,65 +757,21 @@
 
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                 
-                      @php  
-                        
-                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
-                      @endphp
-                     
-                        <div class="grido">
-                          @foreach ($locationo as $category)
-                            <div class="element-item " data-category="metalloid">
-                              <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
-                              <p class="symbol"><i class="bi bi-list"></i></p>
-                              <p class="number">52</p>
-                              <!-- <p class="weight">127.6</p> -->
-                            </div>
-                          @endforeach
-                        </div>
-
-              <!-- Categories-->
-                  <div class="widget widget-categories mb-4 pb-4 border-bottom">
-                    <h3 class="widget-title d-none d-sm-block">City</h3>
-                    <div class="accordion mt-n1" id="shop-categories" wire:model="categ" >
-
-                      @php  
-                         $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->distinct('city')->orderBy('city','ASC')->get();
-                      @endphp
-
-
-                     
-                        <div class="grido">
-                          @foreach ($locationo as $category)
-                            <div class="element-item metalloid " data-category="metalloid">
-                              <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
-                              <p class="symbol">Te</p>
-                              <p class="number">52</p>
-                              <p class="weight">127.6</p>
-                            </div>
-                          @endforeach
-                        </div>
-                      
-
-
-                        @foreach ($locationo as $category)
-
-                       
-
-                          <!-- Shoes-->
-                          <div class="accordion-item">
-                            <h3 class="accordion-header">
-                               
-                                    {{-- <a class="accordion-button" href="{{route('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'expo', 'categry' => $category->slug])}}">
-                                      {{$category->venue}}
-                                    </a> --}}
-
-                                    <a class="accordion-button text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
-                                    {{ucwords(trans(Str::limit($category->city, 24)))}}
-                                    </a>
-                          </div>
-                        @endforeach
+                  @php  
+                      $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
+                  @endphp
+                  
+                    <div class="grido">
+                      @foreach ($locationo as $category)
+                        <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
+                          <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
+                          <p class="symbol"><i class="bi bi-list"></i></p>
+                          <p class="number">52</p>
+                          <!-- <p class="weight">127.6</p> -->
+                        </a>
+                      @endforeach
                     </div>
-                  </div>
+
               </div>
 
 

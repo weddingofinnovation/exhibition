@@ -1,5 +1,5 @@
 <main>
-<style>
+    <style>
         * { box-sizing: border-box; }
 
           body {
@@ -139,7 +139,7 @@
           .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
           .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
-      </style>
+    </style>
 
     <section class="container pt-2" id="exhibit"> 
       <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
@@ -176,25 +176,6 @@
           @endforeach
       </div>
   
-
-      <!-- explore Exhibition:city-->
-      <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
-        <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-          <span class="fs-sm"> Explore<br><span class="fw-medium h5">Exhibition</span></span>
-         
-
-          <span>
-            
-          <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Add</a>
-            <ul class="dropdown-menu" width="auto">
-              <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
-              <li><a class="dropdown-item" href="#">Exhibit</a></li>
-              <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>        
-            </ul>
-          </span>
-
-        </div>
-      </div>
       <div class="row g-0 py-0 mx-n2 my-Slider3"> 
         {{-- px-2 mb-1 --}}
         @foreach($evento as $eventoi)
@@ -282,7 +263,9 @@
           </div>
         @endforeach
       </div>
+    </section>
 
+    <section  class="container pt-2">
       <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
         <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
           <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
@@ -303,19 +286,19 @@
       @php  
           $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
       @endphp
-      
-     
-          @foreach ($locationo as $category)
-            <div class="element-item " data-category="metalloid">
-              <h3 class="name">{{$category->city}}</h3>
-              <p class="symbol"><i class="bi bi-list"></i></p>
-              <p class="number">52</p>
-              <!-- <p class="weight">127.6</p> -->
-            </div>
-          @endforeach
-      
-      
+    
+      <div class="row g-0 py-0 mx-n2 my-Slider3">
+        @foreach ($locationo as $category)
+          <div class="element-item " data-category="metalloid">
+            <h3 class="name">{{$category->city}}</h3>
+            <p class="symbol"><i class="bi bi-list"></i></p>
+            <p class="number">52</p>
+            <!-- <p class="weight">127.6</p> -->
+          </div>
+        @endforeach
+      </div>
     </section>
+
 </main>
 
   @push('scripts')
