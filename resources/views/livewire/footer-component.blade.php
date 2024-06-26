@@ -762,7 +762,7 @@
                         
                     @endphp
                     
-                      <div class="grido">
+                      
                         @foreach ($locationo as $category)
                             
                           <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
@@ -772,7 +772,7 @@
                             <!-- <p class="weight">127.6</p> -->
                           </a>
                         @endforeach
-                      </div>
+                     
 
                 </div>
 
