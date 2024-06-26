@@ -87,7 +87,7 @@
               margin: 5px;
               padding: 10px;
               background: #fff;
-              color: #262524;
+              color: #fff;
             }
 
             /* //color: #262524; */
@@ -99,7 +99,6 @@
 
             .element-item .name {
               position: absolute;
-
               left: 10px;
               top: 60px;
               text-transform: none;
@@ -297,7 +296,6 @@
               <p class="number">52</p>
               <!-- <p class="weight">127.6</p> -->
             </a>
-            
           @endforeach
         </div>
       </section>
