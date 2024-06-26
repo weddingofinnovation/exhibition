@@ -270,17 +270,7 @@
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
             <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
-          
-            <span>
-              
-            <a href = "" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Add</a>
-              <ul class="dropdown-menu" width="auto">
-                <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
-                <li><a class="dropdown-item" href="#">Exhibit</a></li>
-                <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>        
-              </ul>
-            </span>
-
+            <span><a href="">All</a> </span>
           </div>
         </div>
 
@@ -293,7 +283,7 @@
             <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
               <p class="symbol"><i class="bi bi-list"></i></p>
-              <p class="number">52</p>
+              <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
           @endforeach

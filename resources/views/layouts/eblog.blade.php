@@ -36,7 +36,7 @@
     <link rel="stylesheet" media="screen" href="{{asset('css/lightgallery.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/theme.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" media="screen" href="{{asset('css/small-box.css')}}">
+    
     
     <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
