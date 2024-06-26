@@ -389,15 +389,24 @@ public $dtype;
       return redirect()->route('admin.dashboard', ['board' => 'visitor']);
     } 
 
-    public function updatelocationStatus($id) 
+    public function updatelocationStatus($id, $status) 
     {
-      $visited = User::find($id);
+      $visited = Location::find($id);
       $visited->status = $status;
       $visited->save();
       session()->flash('message','info has been deleted Successfully');
-      return redirect()->route('admin.dashboard', ['board' => 'visitor']);
+      return redirect()->back();
     } 
     
+    public function updatelocationadmStatus($id, $admstatus) 
+    {
+      $visited = Location::find($id);
+      $visited->admstatus = $admstatus;
+      $visited->save();
+      session()->flash('message','info has been deleted Successfully');
+      return redirect()->back();
+    } 
+
     public function updateCallingStatus($id, $response) 
     {
       $visited = New BusinessCalledo();

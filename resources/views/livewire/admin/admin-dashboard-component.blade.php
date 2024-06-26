@@ -2456,8 +2456,6 @@
                 <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $franchise->city , 'country' => $franchise->country])}}">city</a>
                 <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' , 'country' => $franchise->country ])}}">country</a> --}}
 
-                
-
                 <div class="col-7  p-0">
                     {{-- <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city, 'country' => $franchise->country ])}}">
                         {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div> --}}
@@ -2481,9 +2479,17 @@
                         
                         <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">edit</a></li>
 
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}})">status</a></li>
+                        @if($franchise->status == '0')
+                          <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}} , '1')">status</a></li>
+                        @else
+                          <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}} , '0')">destatus</a></li>
+                        @endif
 
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, 'ADM')">Admstatus</a></li>
+                        @if($franchise->admstatus == '0')
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, '0')">Admstatus</a></li>
+                        @else
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, '1')">Live</a></li>
+                        @endif
                       </ul>
                     </span>
                     </div>
