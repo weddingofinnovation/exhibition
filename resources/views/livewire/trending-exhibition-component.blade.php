@@ -275,14 +275,20 @@
         </div>
 
         @php  
-            $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city','country')->groupBy('city','country')->orderBy('city','asc')->get();
+            $locationo = DB::table('locations')->where('status', 1)
+                                               ->where('admstatus', 1)
+                                               ->whereNotNull('venue')
+                                               ->select('city', 'country', 'image')
+                                               ->groupBy('city', 'country', 'image')
+                                               ->orderBy('city','asc')
+                                               ->get();
         @endphp
       
         <div class="row g-0 py-0 mx-n2 my-Slider3">
           @foreach ($locationo as $category)
             <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
-              <p class="symbol"><i class="bi bi-list"></i></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/'.$category->image)}}" alt="{{Str::limit($category->name, 24)}}"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>

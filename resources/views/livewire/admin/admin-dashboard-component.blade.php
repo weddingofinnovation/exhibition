@@ -2435,7 +2435,7 @@
 
           
           @php 
-            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('created_at','desc')->get();
+            $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','desc')->get();
           @endphp
           @foreach($venueoption as $franchise )
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
