@@ -398,7 +398,7 @@ public $dtype;
       return redirect()->back();
     } 
     
-    public function updatelocationadmStatus($id, $admstatus) 
+    public function UpdateLocationAdmStatus($id, $admstatus) 
     {
       $visited = Location::find($id);
       $visited->admstatus = $admstatus;
