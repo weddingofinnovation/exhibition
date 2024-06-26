@@ -286,7 +286,7 @@
         </div>
 
         @php  
-            $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city')->groupBy('city')->orderBy('city','asc')->get();
+            $locationo = DB::table('locations')->where('status', 1)->whereNotNull('venue')->select('city','country')->groupBy('city',,'country')->orderBy('city','asc')->get();
         @endphp
       
         <div class="row g-0 py-0 mx-n2 my-Slider3">
