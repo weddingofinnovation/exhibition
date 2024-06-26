@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Brand;
 use App\Models\Event;
+use App\Models\Location;
 use App\Models\Magazine;
 use App\Models\Photo;
 use Carbon\Carbon;
@@ -60,6 +61,16 @@ class MagazineUpgradingComponent extends Component
         $findphoto = Photo::find($id);
         $updatephoto = Magazine::where('slug', $this->slug)->first();
         $updatephoto->image = $findphoto->brand_lgo;
+        $updatephoto->save();
+        return redirect()->route('admin.dashboard', ['board' => 'magazine']);
+    }
+
+
+    public function addVenuephoto($id)
+    { 
+        $findphoto = Photo::find($id);
+        $updatephoto = Location::where('slug', $this->slug)->first();
+        $updatephoto->image = $findphoto->image;
         $updatephoto->save();
         return redirect()->route('admin.dashboard', ['board' => 'magazine']);
     }
