@@ -288,7 +288,7 @@
           @foreach ($locationo as $category)
             <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/exhibition/'.$category->image)}}" alt="{{Str::limit($category->name, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/'.$category->image)}}" alt="{{Str::limit($category->image, 24)}}"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
