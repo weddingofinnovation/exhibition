@@ -2486,9 +2486,9 @@
                         @endif
 
                         @if($franchise->admstatus == '0')
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, '1')">live</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="UpdateLocationAdmStatus({{$franchise->id}}, '1')">live</a></li>
                           @else
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, '0')">de-active</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="UpdateLocationAdmStatus({{$franchise->id}}, '0')">de-active</a></li>
                         @endif
                       </ul>
                     </span>
