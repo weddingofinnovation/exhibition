@@ -291,12 +291,12 @@
       
         <div class="row g-0 py-0 mx-n2 my-Slider3">
           @foreach ($locationo as $category)
-            <div class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
+            <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
               <p class="symbol"><i class="bi bi-list"></i></p>
               <p class="number">52</p>
               <!-- <p class="weight">127.6</p> -->
-            </div>
+            </a>
             
           @endforeach
         </div>
