@@ -388,6 +388,15 @@ public $dtype;
       session()->flash('message','info has been deleted Successfully');
       return redirect()->route('admin.dashboard', ['board' => 'visitor']);
     } 
+
+    public function updatelocationStatus($id) 
+    {
+      $visited = User::find($id);
+      $visited->status = $status;
+      $visited->save();
+      session()->flash('message','info has been deleted Successfully');
+      return redirect()->route('admin.dashboard', ['board' => 'visitor']);
+    } 
     
     public function updateCallingStatus($id, $response) 
     {

@@ -2440,9 +2440,16 @@
           @foreach($venueoption as $franchise )
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col  pr-0">
-                    <div class="h4 fw-light mb-0"> Te</div> 
+                    <!-- <div class="h4 fw-light mb-0"> Te</div> 
                     <div class="small text-muted text-capitalize">DEc</div>
-                    <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
+                    <div class="round-circle" ><i class="bi bi-bookmark"></i></div>  -->
+
+                    @if(is_null($franchise->image))
+                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $franchise->slug, 'formm' => 'image' ])}}">Add</a>
+                      @else
+                      <a class="card-img-top d-block overflow-hidden" href="">
+                      <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->name, 24)}}"></a>
+                    @endif
                 </div>
 
                 {{-- <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => $franchise->venue , 'city' => $franchise->city, 'country' => $franchise->country ])}}">venue</a>
@@ -2471,6 +2478,12 @@
                     <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                       <ul class="dropdown-menu" width="auto">
                         <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">Delete</a></li>
+                        
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">edit</a></li>
+
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}})">status</a></li>
+
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationadmStatus({{$franchise->id}}, 'ADM')">Admstatus</a></li>
                       </ul>
                     </span>
                     </div>
