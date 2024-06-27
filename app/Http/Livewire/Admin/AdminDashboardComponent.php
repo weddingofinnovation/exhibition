@@ -559,9 +559,9 @@ public $dtype;
       
         { $eventShtdesc2025Year = Event::where('status','1')->whereYear('startdate', '=', $type)->orderBy('startdate','asc')->get(); }
 
-        foreach($eventShtdesc2025Year as $id)
+        foreach($eventShtdesc2025Year as $bulkid)
         {
-          $statementID = Event::where('id', $id)->first();
+          $statementID = Event::where('id', $bulkid->id)->first();
           $statementEventName = trim($statementID->eventname); 
           $statementEventVenue = trim($statementID->venue); 
           $statementEventCity = trim($statementID->city); 
