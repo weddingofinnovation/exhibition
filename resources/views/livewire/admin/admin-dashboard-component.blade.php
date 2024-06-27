@@ -2831,6 +2831,19 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">Organiser</span>
           </a>
+      @elseif($board == 'createShtDesc')
+          <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="BulkCreateAutoDesc('2023')">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">2023</span>
+          </a>
+          <a class="d-table-cell handheld-toolbar-item" href="" wire:click.prevent="BulkCreateAutoDesc('2024')">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">2024</span>
+          </a>
+          <a class="d-table-cell handheld-toolbar-item" href="" wire:click.prevent="BulkCreateAutoDesc('2025')">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">2025</span>
+          </a>
       @endif
 
         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
