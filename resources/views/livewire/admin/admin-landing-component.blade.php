@@ -220,7 +220,7 @@ body {
 
                     <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center">Reviews</div>
+                           <div class="p-3 border rounded border-dark bg-light text-center"> bulk Reviews</div>
                         </a> 
                     </div>
 
@@ -229,87 +229,78 @@ body {
                            <div class="p-3 border rounded border-dark bg-light text-center">Organiser</div>
                         </a> 
                     </div>
-                    <div class="col">
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'organizer'])}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Organiser</h3>
+                        <!-- </a>  -->
+                        <p class="symbol">count</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
+
+                    <!-- <div class="col">
                         <a href="{{route('admin.dashboard', ['board' => 'new-organiser'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Add Organiser</div>
                         </a> 
-                    </div>
-
+                    </div> -->
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'new-organiser'])}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Add Organiser</h3>
+                        <!-- </a>  -->
+                        <p class="symbol">count</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
                     <div class="col">
                         <a href="{{route('admin.dashboard', ['board' => 'venue'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Venue</div>
                         </a> 
                     </div>
 
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'venue'])}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Venue</h3>
+                        <!-- </a>  -->
+                        <p class="symbol">count</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
                     
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <a  href="{{route('admin.questionadd')}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Question</div>
                         </a> 
-                    </div>
-
-                    <div class="col">
+                    </div> -->
+                    
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.questionadd')}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Question</h3>
+                        <!-- </a>  -->
+                        <p class="symbol">count</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
+                    <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Plan</div>
                         </a> 
-                    </div>
+                    </div> -->
 
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Plan</h3>
+                        <!-- </a>  -->
+                        <p class="symbol">count</p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
                     
                 </div>
             </div>
           </div>
         </section>
 
-        <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <div class="text-center mb-5">
-          <p class="col-md-10 col-lg-8 mx-auto fw-normal">Status</p>
-            <div class="container">
-                <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
-                    <div class="col">
-                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center"> <span class="small">total</span>
-                           {{$event->count()}} Event</div>
-                        </a> 
-                    </div>
-                    
-                    
-
-                    <div class="col">
-                         <a href="{{route('admin.dashboard', ['board' => 'job'])}}">
-                            <div class="p-3 border rounded border-dark bg-light text-center"><span class="small">Expire</span>{{$eventd->count()}} Event</div>
-                        </a> 
-                    </div>
-                   
-                    <div class="col">
-                         <a href="{{route('admin.dashboard', ['board' => 'client'])}}">
-                            <div class="p-3 border rounded border-dark bg-light text-center"><span class="small">Active</span>{{$evento->count()}} Event</div>
-                        </a> 
-                    </div>
-
-                    <div class="col">
-                         <a href="{{route('admin.dashboard', ['board' => 'createShtDesc'])}}">
-                            <div class="p-3 border rounded border-dark bg-light text-center">Sht Desc</div>
-                        </a> 
-                    </div>
-
-                    <div class="col">
-                         <a href="{{route('admin.dashboard', ['board' => 'multiple_images'])}}">
-                            <div class="p-3 border rounded border-dark bg-light text-center">Poster</div>
-                        </a> 
-                    </div>
-
-                    <div class="col">
-                         <a href="{{route('admin.dashboard', ['board' => 'upgradeContent'])}}">
-                            <div class="p-3 border rounded border-dark bg-light text-center">Error free</div>
-                        </a> 
-                    </div>
-
-                    
-                </div>
-            </div>
-          </div>
-        </section>
 
         <section class="container">
             <div class="grido">
@@ -415,6 +406,21 @@ body {
                     </div>
                 
             </div>
-      </section>
+        </section>
+
+        <section class="container">
+            <div class="text-center  fs-md fw-bold">Data Center</div>
+            <div class="grido">
+              <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
+
+                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                    <h3 class="name">expo</h3>
+                  <!-- </a>  -->
+                  <p class="symbol">count</p>
+                  <!-- <p class="number">80</p>
+                  <p class="weight">200.59</p> -->
+              </a>
+            </div>
+        </section>
 
 </main>

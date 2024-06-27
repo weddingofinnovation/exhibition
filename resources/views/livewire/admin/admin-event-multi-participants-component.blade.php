@@ -148,8 +148,6 @@
             @endforeach
         @endif
 
-
-        
         <section class="container col-lg-8 pt-lg-4 pb-4 mb-3">
             <div class=" ps-lg-0 pe-xl-5">
            
@@ -663,7 +661,7 @@
                 @endif
 
                 @if($formm == 'detailSponsership')
-                   <form wire:submit.prevent="">
+                   <form  wire:submit.prevent="">
                         <div class="row">
                             <div class="col-sm-4 mb-3">
                                 <label class="form-label" for="unp-standard-price">Audience</label>
