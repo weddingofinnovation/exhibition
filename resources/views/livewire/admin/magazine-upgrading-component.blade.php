@@ -174,15 +174,17 @@
 
 
 
-        <div class="grido">
+        <div class="grid">
             @foreach($photos as $imgo)
-                <!-- <a class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})"> -->
-                <img  class="element-item" src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}"  width="50%" alt="">
-                <h3 class="name">Tellurium</h3>
-                <p class="symbol">te</p>
-                <a class="number" href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i></a>
-                <p class="weight">127.6</p>
-            <!-- </a> -->
+            <div>
+                  <!-- <a class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})"> -->
+                  <img  class="element-item" src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}"  width="50%" alt="">
+                  <h3 class="name">Tellurium</h3>
+                  <p class="symbol">te</p>
+                  <a class="number" href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i></a>
+                  <p class="weight">127.6</p>
+              <!-- </a> -->
+            </div>
             @endforeach
         </div>
 
