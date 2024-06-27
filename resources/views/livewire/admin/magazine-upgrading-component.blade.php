@@ -177,7 +177,7 @@
         <div class="grid">
             @foreach($photos as $imgo)
             
-                <div class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})" style="background-image: url('{{('public/assets/image/exhibition/'.$imgo->brand_lgo')}}')">
+                <div class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})" style="background-image: url('public/assets/image/exhibition/'.$imgo->brand_lgo')">
                   <!-- <img  class="element-item" src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" alt=""> -->
                   <h3 class="name">Tellurium</h3>
                   <p class="symbol">te</p>
