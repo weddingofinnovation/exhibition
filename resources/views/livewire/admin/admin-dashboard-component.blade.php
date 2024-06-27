@@ -1732,13 +1732,13 @@
 
         <div class="tab-content pt-1">
           <!-- Request tab-->
-            <div class="tab-pane fade" id="new" role="tabpanel">
+            <div class="tab-pane active" id="new" role="tabpanel">
               <!-- new 2024 2025 2023-->
               <div class="row mb-5 pb-2">
 
                 @foreach ($eventShtdesc as $franchise) 
 
-                  ({{$franchise->shtdesc}})
+                  <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                     <div class="container  ">
                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
@@ -1795,7 +1795,7 @@
 
                 @foreach ($eventShtdesc2025Year as $franchise) 
 
-                  ({{$franchise->shtdesc}})
+                <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                     <div class="container  ">
                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
@@ -1852,7 +1852,7 @@
 
                 @foreach ($eventShtdesc2024Year as $franchise) 
 
-                  ({{$franchise->shtdesc}})
+                <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                     <div class="container  ">
                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
@@ -1909,7 +1909,7 @@
 
                 @foreach ($eventShtdesc2023Year as $franchise) 
 
-                  ({{$franchise->shtdesc}})
+                <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                     <div class="container  ">
                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
