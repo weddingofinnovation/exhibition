@@ -492,7 +492,67 @@ public $dtype;
     }
 
     public $nowtime;
+    public function CreateAutoDesc($id)
+    {  
+          $statementID = Event::find($id);
+          $statementEventName = trim($statementID->eventname); 
+          $statementEventVenue = trim($statementID->venue); 
+          $statementEventCity = trim($statementID->city); 
+          $statementEventType= trim($statementID->eventype); 
+          $statementEventTagline = trim($statementID->tagline); 
+          $statementEventStartDate = trim(Carbon::parse ($statementID->startdate)->format('D,d M Y')); 
+          $statementEventEndDate = trim(Carbon::parse ($statementID->enddate)->format('D,d M Y'));
+          
+          $findCategory = Denco::where('event_id', $statementID->id)->first();
 
+          if(empty($findCategory))
+            { $getCategory = trim('Great Exhibition To Exhibit');}
+          else
+            { $getCategory = trim($findCategory->expo->tag);}
+
+          $mytime = Carbon::today()->format("Y-m-d");
+          $mymonth = Carbon::now()->addDays(3)->format("Y-m-d");
+
+          //three months prior
+          //$during =  'Join us at upcoming [exhibtion_type] [Exhibition Title], held from [Exhibtion start date] to [Exhibition End Date] at [Exhibtiion Venue]. Get your ticket now and be a part of the [tag] industry event.';
+
+          //post Expo timer with dates
+          //$end =  'Download business directory exhibition and find reference for expand your business. Share your reviews and rate your experience.';
+
+          //post Expo timer with dates $statementEventName.''.$statementEventName 'public/exhibition/'.$eventoi->image
+          $start = 'The '. $statementEventTagline. ' premier Great Exhibition to Exhibit certify ' .$statementEventType.' for ' .$getCategory.' industry professionals, entrepreneurs, and companies. Join us at upcoming ' .$statementEventType.' '.$statementEventName. ' held from ' .$statementEventStartDate. ' to '. $statementEventEndDate. ' at ' .$statementEventVenue.' '. $statementEventCity.' India. Discover new opportunities for collaboration, showcase your products or services and network with key players in your sector. Get your registration now and be a part of the industry event.';
+          
+          //$visited = User::find($id);
+          $statementIoD = $statementID;
+          $statementIoD->shtdesc = trim($start);
+          $statementIoD->save();
+
+          
+
+        //    $myytime = Carbon::today()->format('D,d M Y');
+        //    $findstartdate = Carbon::($statementID->startdate)->format('D,d M Y');
+        //    $mymonth = Carbon::now()->addDays(3)->format("Y-m-d");
+            
+        //    //between($statementEventStartDate, $statementEventEndDate)
+        // if( $myytime  = $statementEventStartDate)
+        //  {
+        //    //$rti = Str::replace('exhibtion_type','$statementEventType', $start);
+        //    $result = 'exhibition is awaiting to close deal'.$statementEventStartDate.'';
+
+        //  }
+        //  elseif ($myytime < $statementEventStartDate )
+        //  {
+        //    //$rti = Str::replace(' ','', $during);
+        //    $result = 'advertise with us, book space upcoming expo';
+        //  }
+        //  elseif ($myytime > $statementEventEndDate )
+        //  {
+        //     $result = 'event has been closed find visitor list '.$statementEventEndDate.'';
+        //  }
+        
+        // dd($myytime) ;
+      
+    }
       
     public function BulkCreateAutoDesc($type)
     {  
@@ -501,7 +561,7 @@ public $dtype;
 
         foreach($eventShtdesc2025Year as $id)
         {
-          $statementID = Event::find($id);
+          $statementID = Event::where('id', $id)->first();
           $statementEventName = trim($statementID->eventname); 
           $statementEventVenue = trim($statementID->venue); 
           $statementEventCity = trim($statementID->city); 
