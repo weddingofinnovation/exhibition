@@ -818,6 +818,11 @@ public $dtype;
       //dd($mytime , $ongoingViews);
       
       $eventShtdesc = Event::where('status','1')->where('shtdesc', '=', NULL)->orWhere(DB::raw('CHAR_LENGTH(shtdesc)'), '<', '10')->orderBy('startdate','asc')->get();
+      
+      $eventShtdesc2025Year = Event::where('status','1')->whereYear('startdate', '=', '2025')->orderBy('startdate','asc')->get();
+      $eventShtdesc2024Year = Event::where('status','1')->whereYear('startdate', '=', '2024')->orderBy('startdate','asc')->get();
+      $eventShtdesc2023Year = Event::where('status','1')->whereYear('startdate', '=', '2023')->orderBy('startdate','asc')->get();
+
       $getContact = Bcontact::where('brand_id', $this->brand_id)->orderBy('created_at','desc')->get();
       $checkSelected = Usage::get();
       $businessOrder = Lead::orderBy('updated_at','DESC')->get();
@@ -846,6 +851,9 @@ public $dtype;
         'categories'=>$categories,'service'=>$service,
         'year22ev' => $year22ev, 'year23ev' => $year23ev, 'year24ev' => $year24ev, 'year25ev' => $year25ev, 
         'category'=>$category,'sectorr'=>$sectorr,'business'=>$business,'sector'=>$sector,'categ'=>$categ,'catcount'=>$catcount,
+        'eventShtdesc2025Year' => $eventShtdesc2025Year,
+        'eventShtdesc2024Year' => $eventShtdesc2024Year,
+        'eventShtdesc2023Year' => $eventShtdesc2023Year,
         ])->layout('layouts.admin');
         
     }
