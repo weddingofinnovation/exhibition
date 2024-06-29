@@ -23,6 +23,7 @@ class ExhibitionCategoryComponent extends Component
     //public  $category_slug;
     public $board;
     public $time;
+    public $lookingAddImage;
     
 
     public function mount($eventype = null, $categry = null , $time = null)
