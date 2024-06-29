@@ -1749,7 +1749,7 @@
           @endphp
 
           @foreach ($franchiso as $franchise)
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: auto;">
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 305px;">
               <div class="handheld-toolbar">
 
                 <div class="d-table table-layout-fixed w-100">
