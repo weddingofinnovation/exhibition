@@ -1758,54 +1758,18 @@
                
               <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
                   
-                    <a class="element-item" data-category="metalloid" href="#">
-                      <h3 class="name">fabrication</h3>
-                      <p class="symbol">
-                        <img src="#" alt="#">
-                      </p>
-                      <!-- <p class="number">52</p> -->
-                      <!-- <p class="weight">127.6</p> -->
-                    </a>
-
-                    <a class="element-item" data-category="metalloid" href="#">
-                      <h3 class="name">pre-book</h3>
-                      <p class="symbol">
-                        <img src="#" alt="#">
-                      </p>
-                      <!-- <p class="number">52</p> -->
-                      <!-- <p class="weight">127.6</p> -->
-                    </a>
-
-                    <a class="element-item" data-category="metalloid" href="#">
-                      <h3 class="name">save</h3>
-                      <p class="symbol">
-                        <img src="#" alt="#">
-                      </p>
-                      <!-- <p class="number">52</p> -->
-                      <!-- <p class="weight">127.6</p> -->
-                    </a>
-                  
+                    <a href="#" target= "_blank"> pre-book </a>
+                    <a href="#" target= "_blank"> fabrication</a>
+                    <a href="#" target= "_blank"> Directory</a>
+                    <a href="#" target= "_blank"> Details</a>
+                    <a href="#" target= "_blank"> Membership</a>
+                    <a href="#" target= "_blank"> save </a>
               </div>
               
               <div class="handheld-toolbar">
 
                 <div class="d-table table-layout-fixed w-100">
                         
-                  <a class="d-table-cell handheld-toolbar-item" href="">
-                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                    <span class="handheld-toolbar-label">Exhibitor</span>
-                  </a>
-
-                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                    <span class="handheld-toolbar-label">save</span>
-                  </a>
-
-                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                    <span class="handheld-toolbar-label">fabrication</span>
-                  </a>
-
                   <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
                     <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                     <span class="handheld-toolbar-label">Membership</span>
