@@ -320,8 +320,8 @@
 
                           @foreach ($franchiso as $franchise)
                           @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                                  <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample" value="{{$franchise->id}}"  wire:model="lookingAddImage">
+                                  <div class="container"> <!-- href="#{{citysidebar}}" -->
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->id}}" role="button" aria-controls="offcanvasExample" >
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -366,7 +366,7 @@
                                   </div>
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->id}}" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -411,7 +411,7 @@
                                   </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->id}}" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -456,7 +456,7 @@
                                   </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->id}}" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -1742,38 +1742,47 @@
         </div>
       </div>
 
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="citysidebar" aria-labelledby="offcanvasExampleLabel" style="height: auto;">
-        <div class="handheld-toolbar">
 
+      @foreach ($exhibition as $business)
+          @php
+              $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
+          @endphp
 
-        {{$lookingAddImage}}
-          <div class="d-table table-layout-fixed w-100">
+          @foreach ($franchiso as $franchise)
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: auto;">
+              <div class="handheld-toolbar">
+
+                <div class="d-table table-layout-fixed w-100">
+                        
+                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                    <span class="handheld-toolbar-label">{{$franchise->eventname}}</span>
+                  </a>
+
+                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                    <span class="handheld-toolbar-icon">
+                    <i class="bi bi-location"></i></span>
+                    <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                  </a> 
                   
-            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-              <span class="handheld-toolbar-label">Country</span>
-            </a>
+                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                    <span class="handheld-toolbar-label">Venue</span>
+                  </a>
+                  
+                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                    <span class="handheld-toolbar-label">Menu</span>
+                  </a>
 
-            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-              <span class="handheld-toolbar-icon">
-              <i class="bi bi-location"></i></span>
-              <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-            </a> 
-            
-            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-              <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-              <span class="handheld-toolbar-label">Venue</span>
-            </a>
-            
-            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-              <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-              <span class="handheld-toolbar-label">Menu</span>
-            </a>
+                </div>
 
-          </div>
+              </div>
+            </div>
+          @endforeach
+          
+      @endforeach
 
-        </div>
-      </div>
     </main>
 
     @push('scripts')
