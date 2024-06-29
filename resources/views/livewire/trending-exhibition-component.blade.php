@@ -146,7 +146,7 @@
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
             <span class="fs-sm"> Upcoming<br><span class="fw-medium h5">Exhibition</span></span>
-              <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">All</a>
+              <a  class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">All</a>
               <!-- <ul class="dropdown-menu" width="auto">
                     <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
                     <li><a class="dropdown-item" href="#">Exhibit</a></li>
@@ -273,7 +273,7 @@
           </div>
         </div>
 
-        @php  
+        {{-- @php  
             $locationo = DB::table('locations')->where('status', 1)
                                                ->where('admstatus', 1)
                                                ->whereNotNull('venue')
@@ -282,8 +282,8 @@
                                                ->orderBy('city','asc')
                                                ->get();
         @endphp
-      
-        <div class="row g-0 py-0 mx-n2 my-Slider3">
+       --}}
+        {{-- <div class="row g-0 py-0 mx-n2 my-Slider3">
           @foreach ($locationo as $category)
             <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
@@ -292,7 +292,7 @@
               <!-- <p class="weight">127.6</p> -->
             </a>
           @endforeach
-        </div>
+        </div> --}}
       </section>
   </main>
 

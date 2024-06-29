@@ -756,7 +756,7 @@
                 </div> --}}
 
                 <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                    @php  
+                    {{-- @php  
                         $locationo = DB::table('locations')->where('status', 1)
                                                            ->where('admstatus', 1)
                                                            ->whereNotNull('venue')
@@ -764,7 +764,7 @@
                                                            ->groupBy('city', 'country', 'image')
                                                            ->orderBy('city','asc')
                                                            ->get();
-                    @endphp
+                    @endphp --}}
                       
                     @foreach ($locationo as $category)
                       <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
