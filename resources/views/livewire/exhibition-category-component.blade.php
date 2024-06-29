@@ -320,7 +320,7 @@
 
                           @foreach ($franchiso as $franchise)
                           @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                                  <div class="container"> <!-- href="#{{citysidebar}}" -->
+                                  <div class="container"> {{-- href="#{{citysidebar}}" --}}
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->id}}" role="button" aria-controls="offcanvasExample" >
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
