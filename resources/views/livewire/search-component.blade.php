@@ -142,7 +142,6 @@
 
       </style>
 
-
       <div class="container mt-5">
           <!-- <input type="text" class="form-control" placeholder="search" > -->
           <form action="" wire:submit.prevent="searchbackup">
@@ -211,27 +210,10 @@
           </div>
       </div>
 
-      <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <div class="text-center mb-5">
-              <p class="col-md-10 col-lg-8 mx-auto fw-bold">Industry</p>
-              <div class="container">
-                  <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3">
-                      @foreach($allcategory as $category )
-                          <div class="col">
-                              <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                                  <div class="p-3 border rounded border-dark bg-light text-center text-dark fs-sm">{{$category -> industry}}</div>
-                              </a> 
-                          </div>
-                      @endforeach
-                  </div>
-              </div>
-          </div>
-      </section>
-
       <section class="container">
         <div class="grido">
           @foreach($allcategory as $category )
-              <div class="element-item transition metal" data-category="transition">
+              <div class="element-item" data-category="transition">
 
                 <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
                 <h3 class="name">{{$category -> industry}}</h3>
@@ -242,6 +224,25 @@
               </div>
           @endforeach
         </div>
+      </section>
+      
+      
+
+      <section class="container py-3 py-lg-5 mt-4 mb-3">
+          <div class="text-center mb-5">
+              <p class="col-md-10 col-lg-8 mx-auto fw-bold">Industry</p>
+              <div class="container">
+                  <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3">
+                      @foreach($allcategory as $category)
+                          <div class="col">
+                              <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                                  <div class="p-3 border rounded border-dark bg-light text-center text-dark fs-sm">{{$category -> industry}}</div>
+                              </a> 
+                          </div>
+                      @endforeach
+                  </div>
+              </div>
+          </div>
       </section>
 
       <div class="grido">
