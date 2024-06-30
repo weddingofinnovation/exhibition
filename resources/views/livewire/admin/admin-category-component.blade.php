@@ -9,7 +9,6 @@
 @section('page_list',' addJob')
 
 <main>
-
      
       @if($board == 'addsubcategory')
         <div class="container">
@@ -56,48 +55,45 @@
         </div>
       @elseif($board == 'addcategory')
 
-      <div class="container">
-        <h4>{{$this->category}}</h4>
-        <form wire:submit.prevent="updatecategory">
-          <input type="text" class="form-input" wire:model.lazy="industry">
-          <button class=" btn btn-primary form-input" type="submit">Submit</button>
-        </form>
+        <div class="container">
+          <h4>{{$this->category}}</h4>
+          <form wire:submit.prevent="updatecategory">
+            <input type="text" class="form-input form-control mb-1" wire:model.lazy="industryo">
+            <button class=" btn btn-primary form-input form-control" type="submit">Submit</button>
+          </form>
 
-        <hr>
-                @php 
-                  $findIndustry = DB::table('categories')->where('slug',$this->category)->value('id');
-                  $findsubcateory = DB::table('indsecs')->where('category_id', $findIndustry )->get();
-                @endphp
+          <hr class="border-1">
+                  @php 
+                    $findIndustry = DB::table('categories')->where('slug',$this->category)->value('id');
+                    $findsubcateory = DB::table('indsecs')->where('category_id', $findIndustry )->get();
+                  @endphp
 
-            @foreach($findsubcateory as $findo)
-              <a class="badge bg-primary m-0 border-1 text-right border-dark text-dark mr-1" href="#" 
-              onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  
-              wire:click.prevent="eventdelete({{$findo->id}})">
+              @foreach($findsubcateory as $findo)
+                <a class="badge bg-primary m-0 border-1 text-right border-dark text-dark mr-1" href="#" 
+                onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  
+                wire:click.prevent="eventdelete({{$findo->id}})">
 
-                @php
-                  $findsubcat =DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->value('tag');
-                @endphp
+                  @php
+                    $findsubcat =DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->value('tag');
+                  @endphp
 
-              {{$findsubcat}}<i class="bi bi-x me-2"></i></a>
-                
-            @endforeach
-      </div>
+                {{$findsubcat}}<i class="bi bi-x me-2"></i></a>
+                  
+              @endforeach
+        </div>
        
       @elseif($board == 'newcategory')
         <div class="container">
           <h3>Add New Category</h3>
           <form wire:submit.prevent="newcategory">
-            <input type="text" class="form-input" wire:model.lazy="industryo">
-            <button class ="btn btn-primary" type="submit">Submit</button>
+            <input type="text" class="form-input form-control" wire:model.lazy="industryo">
+            <button class ="btn btn-primary form-control" type="submit">Submit</button>
           </form>  
         </div>
       @endif
 
-
-
-
       @if($board == 'edit')
-      <div class="page-title-overlap bg-dark pt-4">
+        <div class="page-title-overlap bg-dark pt-4">
           <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
             <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
               <nav aria-label="breadcrumb">
@@ -342,7 +338,4 @@
         </div> 
       @endif
 
-
-    
-     
 </main>

@@ -70,8 +70,8 @@ class AdminCategoryComponent extends Component
     public function updatecategory()
     {
       //$updatecategory = Category::get();
-      $updatecategory = Category::find($this->industry);
-      $updatecategory->industry = $this->industry;
+      $updatecategory = Category::where('id' , $this->industry)->first();
+      $updatecategory->industry = $this->industryo;
       $updatecategory->slug = Str::slug($updatecategory->industry,'-');
       $updatecategory->save();
       return redirect()->route('all.category');
