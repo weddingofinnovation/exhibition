@@ -146,7 +146,7 @@ body {
         <section class="container py-3 py-lg-5 mt-4 mb-3">
           <div class="text-center mb-5">
             <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with COI Marketing Solutions.</p>
-            <div class="container">
+            <div class="">
                 <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
                     <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
@@ -365,7 +365,7 @@ body {
                         <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                           <h3 class="name">Add Organiser</h3>
                         <!-- </a>  -->
-                        <p class="symbol">count</p>
+                        <p class="symbol"></p>
                         <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
                     </a>
@@ -409,7 +409,7 @@ body {
                         <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                           <h3 class="name">Plan</h3>
                         <!-- </a>  -->
-                        <p class="symbol">count</p>
+                        <p class="symbol"></p>
                         <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
                     </a>

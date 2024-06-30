@@ -1,6 +1,9 @@
 
 
           <div class="col-lg-6 px-4 px-xl-5 py-5 border-top" id="contact">
+
+            <h1>Launch your Campaign with us</h1>
+
             <h2 class="h4 mb-1"> Contact us to see how we can help you.</h2>
             <div class="fs-sm text-primary mb-4">We’ll be in touch within 24 hours.</div>
                       
@@ -91,6 +94,38 @@
                 <button class="btn btn-primary mt-2" type="submit">Get in touch</button>
               </div>
             </form>
+          </div>
+
+
+          <div>
+             <h1>Empowering brands with performance and insights</h1>
+            For Brands
+            For creators
+            Other 
+
+
+            <div class="container" id="forbrands">
+              <h1>Launch Your Campaign with us</h1>
+              <h5>interested in promoting your brand, product with amazing exhibition?</h5>
+              <h4>Send us a message and we'll get back to you!</h4>
+
+              <h5>Streams charts is trusted by:</h5>
+              <form action=""></form>
+            </div>
+
+            <div class="container" id="forcreators">
+              <h1>Interested in securing great Sponsorships?</h1>
+              <h5>Please fill the "seeking sponsor" form and join our The Exhibition Network!</h5>
+              
+              <form action=""></form>
+            </div>
+
+            <div class="container" id="forcreators">
+              <h1>Interested in partnering and working together?</h1>
+              <h5>Please send us your message and we'll get back to you asap!</h5>
+              
+              <form action=""></form>
+            </div>
           </div>
 
 

@@ -108,7 +108,7 @@
         </section>
 
         <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <h2 class="display-5 text-center my-2">We are</h2>
+          <h2 class="display-5 text-center my-2">We do</h2>
           {{--<p class="fs-md  text-center">For more information about our company:</p>--}}
           <div class="row row-cols-1 row-cols-md-3 g-4 badgese">
               <div class="col col-md-4">
@@ -130,6 +130,45 @@
                     <small class="fw-bold fw-bold fs-lg" style="color:#ff0440;"> Media & Marketing Services </small>
                     <hr class="my-1">
                     <p class="text-left">We create platforms using digital marketing solutions and rich educational content that drive community, outreach, egagement and connections 365 days a year.</p>
+                  
+                    {{--<h5 class="card-title text-left" style="color:#ff0440;">Where We Are</h5>--}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-md-4">
+                <div class="card h-100 border-0">  
+                  <div class="card-body">
+                  <div class="fw-normal fs-xs">What we do</div>
+                    <small class="fw-bold fw-bold fs-lg" style="color:#ff0440;"> White-Label solutions </small>
+                    <hr class="my-1">
+                    <p class="text-left">Are you a brand looking to enter into exhibition, awards, conference and connect with an engaged audience? <br> we offer end-to-end white label solutions for you to host and manage exhibitions, produce content IPs, leverage influencer marketing through The Exhibition Network and more. </p>
+                  
+                    {{--<h5 class="card-title text-left" style="color:#ff0440;">Where We Are</h5>--}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-md-6">
+                <div class="card h-100 border-0">  
+                  <div class="card-body">
+                  <div class="fw-normal fs-xs">What we do</div>
+                    <small class="fw-bold fw-bold fs-lg" style="color:#ff0440;"> Production solutions </small>
+                    <hr class="my-1">
+                    <p class="text-left">With an experience, The Exhibition Network is known for some of the best exhibition production in the region. From small scale exhibition events to some of the biggest exhibition, our Exhibition house is equipped with state-of-the-art equipped platfrom expertise and know-how to help you produce any exhibitions or events.</p>
+                  
+                    {{--<h5 class="card-title text-left" style="color:#ff0440;">Where We Are</h5>--}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-md-6">
+                <div class="card h-100 border-0">  
+                  <div class="card-body">
+                  <div class="fw-normal fs-xs">What we do</div>
+                    <small class="fw-bold fw-bold fs-lg" style="color:#ff0440;"> Brand Integration </small>
+                    <hr class="my-1">
+                    <p class="text-left">The Exhibition Network offer a unique opportunity for brands to connect with an engaged and business audience. Get in touch if you want to explore brand integration into one of The Exhibition Network loved exhibitions and highlight your product or service to potentially millions of people. </p>
                   
                     {{--<h5 class="card-title text-left" style="color:#ff0440;">Where We Are</h5>--}}
                   </div>
