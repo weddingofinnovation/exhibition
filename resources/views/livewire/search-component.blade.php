@@ -228,7 +228,7 @@
       
       
 
-      <section class="container py-3 py-lg-5 mt-4 mb-3">
+      {{-- <section class="container py-3 py-lg-5 mt-4 mb-3">
           <div class="text-center mb-5">
               <p class="col-md-10 col-lg-8 mx-auto fw-bold">Industry</p>
               <div class="container">
@@ -243,9 +243,9 @@
                   </div>
               </div>
           </div>
-      </section>
+      </section> --}}
 
-      <div class="grido">
+      {{-- <div class="grido">
         <div class="element-item metalloid " data-category="metalloid">
           <h3 class="name">Tellurium</h3>
           <p class="symbol">Te</p>
@@ -348,7 +348,7 @@
           <p class="number">94</p>
           <p class="weight">(244)</p>
         </div>
-      </div>
+      </div> --}}
 
       <!-- bottom -->
       <div class="handheld-toolbar">
