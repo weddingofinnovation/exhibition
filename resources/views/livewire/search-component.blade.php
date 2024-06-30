@@ -210,10 +210,10 @@
           </div>
       </div>
 
-      <section class="container">
+      <section class="container mb-5 pb-5">
         <div class="grido">
           @foreach($allcategory as $category )
-              <div class="element-item" data-category="transition">
+              <div class="element-item bg-light" data-category="transition">
 
                 <a  href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
                 <h3 class="name">{{$category -> industry}}</h3>

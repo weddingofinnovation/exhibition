@@ -163,11 +163,11 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
                     
-                    <div class="col">
+                    <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'order'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Order</div>
                         </a> 
-                    </div>
+                    </div> -->
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'order'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                         <h3 class="name">Order</h3>
@@ -177,11 +177,11 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Searched</div>
                         </a> 
-                    </div>
+                    </div> -->
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                         <h3 class="name">Searched</h3>
@@ -205,11 +205,11 @@ body {
                       <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
                     </a>
-                    <div class="col">
+                    <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'client'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Visitor</div>
                         </a> 
-                    </div>
+                    </div> -->
                     
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
@@ -250,11 +250,11 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Hashtag</div>
                         </a> 
-                    </div>
+                    </div> -->
 
 
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
@@ -266,11 +266,11 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
-                    <div class="col">
+                    <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'magazine'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Magazine</div>
                         </a> 
-                    </div>
+                    </div> -->
 
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'magazine'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
@@ -326,11 +326,11 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
-                    <div class="col">
+                    {{-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center"> bulk Reviews</div>
                         </a> 
-                    </div>
+                    </div> --}}
 
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
