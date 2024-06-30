@@ -321,7 +321,7 @@
                           @foreach ($franchiso as $franchise)
                             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                                   <div class="container"> {{-- href="#{{citysidebar}}" --}}
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}" role="button" aria-controls="offcanvasExample" >
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#openfrnchise" role="button" aria-controls="offcanvasExample" >
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -364,9 +364,10 @@
                                       </div>
                                     </div>
                                   </div>
+
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#openfrnchise" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -411,7 +412,7 @@
                                   </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#openfrnchise" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -456,7 +457,7 @@
                                   </div>
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
                                   <div class="container">
-                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}" role="button" aria-controls="offcanvasExample">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#openfrnchise" role="button" aria-controls="offcanvasExample">
                                       <div class="col  pr-0">
                                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                               <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -546,7 +547,7 @@
                                   </div> -->
                             @endif
 
-                            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
             
                               <div class="offcanvas-header align-items-center shadow-sm">
                                 <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
