@@ -273,7 +273,7 @@
           </div>
         </div>
 
-        {{-- @php  
+         @php  
             $locationo = DB::table('locations')->where('status', 1)
                                                ->where('admstatus', 1)
                                                ->whereNotNull('venue')
@@ -282,8 +282,7 @@
                                                ->orderBy('city','asc')
                                                ->get();
         @endphp
-       --}}
-        {{-- <div class="row g-0 py-0 mx-n2 my-Slider3">
+        <div class="row g-0 py-0 mx-n2 my-Slider3">
           @foreach ($locationo as $category)
             <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
               <h3 class="name">{{$category->city}}</h3>
@@ -292,7 +291,7 @@
               <!-- <p class="weight">127.6</p> -->
             </a>
           @endforeach
-        </div> --}}
+        </div>
       </section>
   </main>
 
