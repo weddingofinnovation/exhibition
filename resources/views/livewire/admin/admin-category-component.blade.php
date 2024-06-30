@@ -58,7 +58,7 @@
         <div class="container">
           <h4>{{$this->category}}</h4>
           <form wire:submit.prevent="updatecategory">
-            <input type="text" class="form-input form-control mb-1" wire:model.lazy="industryo">
+            <input type="text" class="form-input form-control mb-1" wire:model.lazy="industry">
             <button class=" btn btn-primary form-input form-control" type="submit">Submit</button>
           </form>
 

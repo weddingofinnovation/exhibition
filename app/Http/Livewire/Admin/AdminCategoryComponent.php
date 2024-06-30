@@ -67,11 +67,14 @@ class AdminCategoryComponent extends Component
       return redirect()->route('all.category');
     }
 
+
     public function updatecategory()
     {
       //$updatecategory = Category::get();
-      $updatecategory = Category::where('id' , $this->industry)->first();
-      $updatecategory->industry = $this->industryo;
+      $updatecategory = Category::where('slug' , $this->category)->first();
+
+      //dd($updatecategory , $this->category);
+      $updatecategory->industry = $this->industry;
       $updatecategory->slug = Str::slug($updatecategory->industry,'-');
       $updatecategory->save();
       return redirect()->route('all.category');
