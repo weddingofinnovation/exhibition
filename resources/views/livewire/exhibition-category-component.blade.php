@@ -547,64 +547,7 @@
                                   </div> -->
                             @endif
 
-                            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
-            
-                              <div class="offcanvas-header align-items-center shadow-sm">
-                                <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
-                                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                              </div>
-                              
-                              <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                                
-                                    <a href="http://">business</a>
-                                  
-                              </div>
-                              
-                              <div class="handheld-toolbar">
-
-                                <div class="d-table table-layout-fixed w-100">
-                                        
-                                  <a class="d-table-cell handheld-toolbar-item" href="">
-                                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                    <span class="handheld-toolbar-label">Exhibitor</span>
-                                  </a>
-
-                                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                    <span class="handheld-toolbar-label">save</span>
-                                  </a>
-
-                                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                    <span class="handheld-toolbar-label">fabrication</span>
-                                  </a>
-
-                                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                    <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                    <span class="handheld-toolbar-label">Membership</span>
-                                  </a>
-
-                                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-                                    <span class="handheld-toolbar-icon">
-                                    <i class="bi bi-location"></i></span>
-                                    <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                                  </a> 
-                                  
-                                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                                    <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                                    <span class="handheld-toolbar-label">Venue</span>
-                                  </a>
-                                  
-                                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                                    <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                                    <span class="handheld-toolbar-label">Menu</span>
-                                  </a>
-
-                                </div>
-
-                              </div>
-
-                            </div>
+                           
                           @endforeach
                         @endforeach
                       </div>
@@ -1802,6 +1745,64 @@
         </div>
       </div>
 
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+            
+            <div class="offcanvas-header align-items-center shadow-sm">
+              <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
+              <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+              
+                  <a href="http://">business</a>
+                
+            </div>
+            
+            <div class="handheld-toolbar">
+
+              <div class="d-table table-layout-fixed w-100">
+                      
+                <a class="d-table-cell handheld-toolbar-item" href="">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Exhibitor</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">save</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">fabrication</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Membership</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon">
+                  <i class="bi bi-location"></i></span>
+                  <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                </a> 
+                
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                  <span class="handheld-toolbar-label">Venue</span>
+                </a>
+                
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
 
       {{-- @foreach ($exhibition as $business)
           @php
