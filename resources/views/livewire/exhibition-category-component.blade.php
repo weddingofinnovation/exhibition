@@ -1754,47 +1754,14 @@
             
             <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
               
-            <div class="d-table table-layout-fixed w-100">
-                      
-                      <a class="d-table-cell handheld-toolbar-item" href="">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Exhibitor</span>
-                      </a>
-      
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">save</span>
-                      </a>
-      
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">fabrication</span>
-                      </a>
-      
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Membership</span>
-                      </a>
-      
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon">
-                        <i class="bi bi-location"></i></span>
-                        <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                      </a> 
-                      
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                        <span class="handheld-toolbar-label">Venue</span>
-                      </a>
-                      
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                        <span class="handheld-toolbar-label">Menu</span>
-                      </a>
-      
-                    </div>
-                
-            </div>
+             <div class="container">
+              <div class="row">
+               <a class="col-3" href="">Design</a>
+               <a class="col-3" href="">save</a>
+               <a class="col-3" href="">Pre-book</a>
+               <a class="col-3" href="">Directory</a>
+              </div>
+             </div>
             
             <div class="handheld-toolbar">
 
@@ -1805,20 +1772,7 @@
                   <span class="handheld-toolbar-label">Exhibitor</span>
                 </a>
 
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">save</span>
-                </a>
-
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">fabrication</span>
-                </a>
-
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">Membership</span>
-                </a>
+                
 
                 <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                   <span class="handheld-toolbar-icon">
