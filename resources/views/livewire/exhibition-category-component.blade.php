@@ -1748,7 +1748,7 @@
       <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
             
             <div class="offcanvas-header align-items-center shadow-sm">
-              <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
+              <h2 class="h5 mb-0"></h2>
               <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             

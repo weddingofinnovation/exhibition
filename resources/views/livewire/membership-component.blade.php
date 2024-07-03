@@ -35,6 +35,48 @@
                 </div>
             </div>
 
+
+            <div class="container">
+              <div class="card ">
+                <div class="expo_Initiat">
+
+                    <div class="card-body ">
+                      <h5 class="card-title">Event Access Lite</h5>
+                      <p class="card-text fs-sm text-muted">Gain essential access to industry events with our Event Access Lite membership.</p>
+                      <ul>
+                        <li>Regular recommendations for potential exhibitions, awards and conferences.</li>
+                        <li>Basic support to help you get started in the event space. </li>
+                        <li>Contract From</li>
+                      </ul>
+                      <a href="#" class="btn btn-sm btn-primary">Free for a year</a>
+                    </div>
+
+                    <div class="card-body ">
+                      <h5 class="card-title">Event Partner Pro</h5>
+                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <ul>
+                        <li><strong>Research</strong>
+                            Exclusive access to premium recommendations for potential exhibitions, awards and conferences spaces.</li>
+                        <li>Tailored sponsorsship and participation plans.</li>
+                        <li><strong>Rates</strong>
+                            Strategic free and discounted rates.</li>
+                        <li><strong>Tool</strong>
+                             Advanced lead management tools with CAPTCHA device integration.</li>
+                        <li><strong>Marketing</strong>
+                             Professional marketing support, including custom designs and materials.</li>
+                        <li> <strong>Contract From</strong>
+                              <small>Streamlined documentation with  single-click processing.</small></li>
+                        <li>In-depth business reports and insgights.</li>
+                        <li>On-site and digital branding solutions for enchanced visibility.</li>
+                        <li>Post-event brand impact analysis and report.</li>
+                        <li></li>
+                      </ul>
+                      <a href="#" class="btn btn-sm btn-primary">5,000 for month</a>
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
                 business space: subscribe  our service  get free business space for weekend
                  
                 sponsered by luxury business  brand
