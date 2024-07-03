@@ -817,7 +817,7 @@
 
               <div class="element-item" data-category="post-transition">
                 <h3 class="name">Visitor</h3>
-                <p class="symbol text-dark">{{($event->auidence)/1000}}  <span class="fw-normal fs-sm">K</span></p>
+                <p class="symbol text-dark">{{$event->auidence}}  <span class="fw-normal fs-sm">K</span></p>
                 <p class="number"></p>
                 <p class="weight">Verified</p>
               </div>
