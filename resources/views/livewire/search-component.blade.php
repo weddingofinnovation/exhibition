@@ -211,7 +211,7 @@
       </div>
 
       <section class="container mb-5 pb-5">
-        <div class="grido">
+        <div class ="grido">
           @foreach($allcategory as $category )
               <div class="element-item bg-light" data-category="transition">
 

@@ -9,6 +9,36 @@
 @section('page_name',' All Job')
             
 
+   <style>
+          .grid {
+            border: 1px solid #333;
+          }
+
+          /* clear fix */
+          .grid:after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+
+          /* ---- .element-item ---- */
+
+          .element-item {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            padding: 10px;
+            background: #888;
+            color: #262524;
+          }
+
+          .element-item > * {
+            margin: 0;
+            padding: 0;
+          }
+   </style>
             <section class="bg-accent bg-position-center bg-size-cover py-3 py-sm-5" style="background-image: url(img/intro/intro-hero.jpg);">
               <div class="container py-5">
                 <div class="row pt-md-5 pb-lg-5 justify-content-center">
@@ -18,62 +48,73 @@
                   </div>
                 </div>
               </div>
+            </section>
 
-              <div class="container">
-              <div class="card ">
-                <div class="expo_Initiat">
+            <section class="bg-accent bg-position-center bg-size-cover py-3 py-sm-5" style="background-image: url(img/intro/intro-hero.jpg);">
+                <div class="container py-5">
+                  
+                  <div class="card ">
+                    <div class="expo_Initiat">
 
-                    <div class="card-body ">
-                      <h5 class="card-title">Event Access Lite</h5>
-                      <p class="card-text fs-sm text-muted">Gain essential access to industry events with our Event Access Lite membership.</p>
-                      <ul>
-                        <li>Regular recommendations for potential exhibitions, awards and conferences.</li>
-                        <li>Basic support to help you get started in the event space. </li>
-                        <li>Contract From</li>
-                      </ul>
-                      <a href="#" class="btn btn-sm btn-primary">Free for a year</a>
+                        <div class="card-body ">
+                          <h5 class="card-title">Event Access Lite</h5>
+                          <p class="card-text fs-sm text-muted">Gain essential access to industry events with our Event Access Lite membership.</p>
+                          <ul>
+                            <li>Regular recommendations for potential exhibitions, awards and conferences.</li>
+                            <li>Basic support to help you get started in the event space. </li>
+                            <li>Contract From</li>
+                          </ul>
+                          <a href="#" class="btn btn-sm btn-primary">Free for a year</a>
+                        </div>
+
                     </div>
+                  </div>
 
-                    <div class="card-body ">
-                      <h5 class="card-title">Event Partner Pro</h5>
-                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <ul>
-                        <li><strong>Research</strong>
-                            Exclusive access to premium recommendations for potential exhibitions, awards and conferences spaces.</li>
-                        <li>Tailored sponsorsship and participation plans.</li>
-                        <li><strong>Rates</strong>
-                            Strategic free and discounted rates.</li>
-                        <li><strong>Tool</strong>
-                             Advanced lead management tools with CAPTCHA device integration.</li>
-                        <li><strong>Marketing</strong>
-                             Professional marketing support, including custom designs and materials.</li>
-                        <li> <strong>Contract From</strong>
-                              <small>Streamlined documentation with  single-click processing.</small></li>
-                        <li>In-depth business reports and insgights.</li>
-                        <li>On-site and digital branding solutions for enchanced visibility.</li>
-                        <li>Post-event brand impact analysis and report.</li>
-                        <li></li>
-                      </ul>
-                      <a href="#" class="btn btn-sm btn-primary">5,000 for month</a>
+                  <div class="card ">
+                    <div class="expo_Initiat">
+
+                        <div class="card-body ">
+                          <h5 class="card-title">Event Partner Pro</h5>
+                          <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <ul>
+                            <li><strong>Research</strong><br>
+                                Exclusive access to premium recommendations for potential exhibitions, awards and conferences spaces.</li>
+                            <li>Tailored sponsorsship and participation plans.</li>
+                            <li><strong>Rates</strong><br>
+                            <small>Strategic free and discounted rates.</small></li>
+                            <li><strong>Tool</strong><br>
+                            <small>Advanced lead management tools with CAPTCHA device integration.</small></li>
+                            <li><strong>Marketing</strong><br>
+                            <small>Professional marketing support, including custom designs and materials.</small></li>
+                            <li> <strong>Contract From</strong>
+                                  <small>Streamlined documentation with  single-click processing.</small></li>
+                            <li>In-depth business reports and insgights.</li>
+                            <li>On-site and digital branding solutions for enchanced visibility.</li>
+                            <li>Post-event brand impact analysis and report.</li>
+                            <li></li>
+                          </ul>
+                          <a href="#" class="btn btn-sm btn-primary">5,000 for month</a>
+                        </div>
+                        
                     </div>
-                    
+                  </div>
+
                 </div>
-              </div>
-            </div>
             </section>
 
 
             <div class="container">
                 <div class="row pt-2">
-                  @foreach($brand as $user)
-                      <!-- Product-->
-                      <div class="col-sm-1 mb-grid-gutter">
-                          <div class=" rounded-circle flex-shrink-0" style="width: 6.375rem;">
-                                <img class="rounded-circle"src="{{url('public/assets/image/exhibition/'.$user->brand_logo)}}" alt="Createx Studio" href="#">
-
+                  <div class ="grid">
+                    @foreach($brand as $user)
+                        <!-- Product class="element-item-->
+                          <div class="element-item">
+                            <div class=" rounded-circle flex-shrink-0" style="width: 6.375rem;">
+                                  <img class="rounded-circle"src="{{url('public/assets/image/exhibition/'.$user->brand_logo)}}" alt="Createx Studio" href="#">
+                            </div>
                           </div>
-                        </div>
-                  @endforeach
+                    @endforeach
+                  </div>
                 </div>
             </div>
 
