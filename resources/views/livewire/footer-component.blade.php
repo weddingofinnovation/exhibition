@@ -433,9 +433,12 @@
           @endif
       </div>
 
-      <div class="container text-center border-1 bg-secondary">
-        <a href="" class="fs-xs fw-bold text-primary ">Become Our Client</a>
-      </div>
+      @if(Route::currentRouteName() === 'business.exhibition')
+        <div class="container text-center border-1 bg-secondary">
+          <a href="{{route('business.membership')}}" class="fs-xs fw-bold text-primary ">Become Our Client</a>
+        </div>
+      @endif
+
     </div>
 
     <span class="navbar-tool-label"> </span> 

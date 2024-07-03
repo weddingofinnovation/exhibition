@@ -870,8 +870,6 @@
                 <p class="number">83</p>
                 <p class="weight">Verified</p>
               </div>
-
-              
             </div>
           </section>
 

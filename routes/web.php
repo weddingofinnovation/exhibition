@@ -265,6 +265,7 @@ Route::get('/payment', PaymentComponent::class)->name('payment');
 Route::get('/thank-you/{board}/{visitorid?}', ThankyouComponent::class)->name('thankyou');
 
 Route::get('/review', CoiReviewComponent::class)->name('review');
+
 Route::get('/partner', MembershipComponent::class)->name('business.membership');
 
 //product

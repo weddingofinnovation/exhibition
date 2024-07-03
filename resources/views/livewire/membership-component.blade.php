@@ -10,19 +10,19 @@
             
 
             <section class="bg-accent bg-position-center bg-size-cover py-3 py-sm-5" style="background-image: url(img/intro/intro-hero.jpg);">
-        <div class="container py-5">
-          <div class="row pt-md-5 pb-lg-5 justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-10 text-center py-xl-3">
-              <h1 class="text-light pb-sm-3"><span class="fw-light">Multipurpose</span> Bootstrap 5<br>E-Commerce <span class="fw-light">Template</span></h1><span class="d-inline-block h5 text-light fw-light mx-2 opacity-70">Single / Multi-vendor</span><span class="d-inline-block h3 text-light fw-light mx-2">Marketplace</span><span class="d-inline-block h4 text-light fw-light mx-2 opacity-70">Fashion</span><span class="d-inline-block h3 text-light fw-light mx-2 opacity-90">Electronics</span><span class="d-inline-block h6 text-light fw-light mx-2 opacity-60">Cart</span><span class="d-inline-block h3 text-light fw-light mx-2">Grocery store</span><span class="d-inline-block h5 text-light fw-light mx-2 opacity-80">Checkout</span><span class="d-inline-block h4 text-light fw-light mx-2">Food Delivery</span><span class="d-inline-block fs-lg text-light fw-light mx-2 opacity-60">Account / Dasboard</span>
-              <div class="py-4 py-sm-5"><a class="btn btn-primary btn-lg" href="#demos" data-scroll="">View Demos<i class="ci-arrow-down-circle ms-2"></i></a></div>
-            </div>
-          </div>
-        </div>
-      </section>
+              <div class="container py-5">
+                <div class="row pt-md-5 pb-lg-5 justify-content-center">
+                  <div class="col-xl-7 col-lg-8 col-md-10 text-center py-xl-3">
+                    <h1 class="text-light pb-sm-3"><span class="fw-light">Multipurpose</span> Bootstrap 5<br>E-Commerce <span class="fw-light">Template</span></h1><span class="d-inline-block h5 text-light fw-light mx-2 opacity-70">Single / Multi-vendor</span><span class="d-inline-block h3 text-light fw-light mx-2">Marketplace</span><span class="d-inline-block h4 text-light fw-light mx-2 opacity-70">Fashion</span><span class="d-inline-block h3 text-light fw-light mx-2 opacity-90">Electronics</span><span class="d-inline-block h6 text-light fw-light mx-2 opacity-60">Cart</span><span class="d-inline-block h3 text-light fw-light mx-2">Grocery store</span><span class="d-inline-block h5 text-light fw-light mx-2 opacity-80">Checkout</span><span class="d-inline-block h4 text-light fw-light mx-2">Food Delivery</span><span class="d-inline-block fs-lg text-light fw-light mx-2 opacity-60">Account / Dasboard</span>
+                    <div class="py-4 py-sm-5"><a class="btn btn-primary btn-lg" href="#demos" data-scroll="">View Demos<i class="ci-arrow-down-circle ms-2"></i></a></div>
+                  </div>
+                </div>
+              </div>
+            </section>
 
 
             <div class="container">
-            <div class="row pt-2">
+                <div class="row pt-2">
                   @foreach($brand as $user)
                       <!-- Product-->
                       <div class="col-sm-1 mb-grid-gutter">
@@ -33,7 +33,7 @@
                         </div>
                   @endforeach
                 </div>
-                </div>
+            </div>
 
                 business space: subscribe  our service  get free business space for weekend
                  
