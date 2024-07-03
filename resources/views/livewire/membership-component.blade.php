@@ -18,25 +18,8 @@
                   </div>
                 </div>
               </div>
-            </section>
 
-
-            <div class="container">
-                <div class="row pt-2">
-                  @foreach($brand as $user)
-                      <!-- Product-->
-                      <div class="col-sm-1 mb-grid-gutter">
-                          <div class=" rounded-circle flex-shrink-0" style="width: 6.375rem;">
-                                <img class="rounded-circle"src="{{url('public/assets/image/exhibition/'.$user->brand_logo)}}" alt="Createx Studio" href="#">
-
-                          </div>
-                        </div>
-                  @endforeach
-                </div>
-            </div>
-
-
-            <div class="container">
+              <div class="container">
               <div class="card ">
                 <div class="expo_Initiat">
 
@@ -77,6 +60,25 @@
                 </div>
               </div>
             </div>
+            </section>
+
+
+            <div class="container">
+                <div class="row pt-2">
+                  @foreach($brand as $user)
+                      <!-- Product-->
+                      <div class="col-sm-1 mb-grid-gutter">
+                          <div class=" rounded-circle flex-shrink-0" style="width: 6.375rem;">
+                                <img class="rounded-circle"src="{{url('public/assets/image/exhibition/'.$user->brand_logo)}}" alt="Createx Studio" href="#">
+
+                          </div>
+                        </div>
+                  @endforeach
+                </div>
+            </div>
+
+
+            
                 business space: subscribe  our service  get free business space for weekend
                  
                 sponsered by luxury business  brand
