@@ -24,7 +24,7 @@ class ExhibitionCategoryComponent extends Component
     public $board;
     public $time;
     public $lookingAddImage;
-    
+    public $optionserving;
 
     public function mount($eventype = null, $categry = null , $time = null)
     {
@@ -42,6 +42,16 @@ class ExhibitionCategoryComponent extends Component
         $this->emitTo('cart-component','refreshComponent');
         session()->flash('success_message','Item has been added in cart');
         return redirect()->route('checkout');
+    }
+
+    public $idol;
+    public $currentlink;
+    public function optionserving($idol)
+    {
+      $this->idol = $idol;
+      $currentlink = url()->current();
+      return redirect()->route($currentlink);
+
     }
 
     public function addtoWishlist($event_id,$event_brand_name,$event_max_investment)

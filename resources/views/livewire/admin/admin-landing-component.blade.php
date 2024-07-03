@@ -351,7 +351,7 @@ body {
                         <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                           <h3 class="name">Organiser</h3>
                         <!-- </a>  -->
-                        <p class="symbol">count</p>
+                        <p class="symbol"></p>
                         <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
                     </a>
