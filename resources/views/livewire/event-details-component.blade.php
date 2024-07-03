@@ -808,63 +808,63 @@
 
           <section class="container">
             <div class="grido">
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Edition</h3>
                 <p class="symbol text-dark">{{$event->edition}}</p>
                 <p class="number"> <i class="bi bi-add"></i> </p>
                 <p class="weight">Verified</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Visitor</h3>
                 <p class="symbol text-dark">{{$event->auidence}}  <span class="fw-normal fs-sm">K</span></p>
                 <p class="number"></p>
                 <p class="weight">Verified</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Exhibitor</h3>
                 <p class="symbol text-dark">{{$event->exhibitors}}</p>
                 <p class="number"></p>
                 <p class="weight">Verified</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Rating</h3>
                 <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
                 <p class="number">83</p>
                 <p class="weight">Verified</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Business Days</h3>
                 <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}}</p>
                 <p class="number"></p>
                 <p class="weight">Verified</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Contract Form</h3>
                 <p class="symbol">Bi</p>
                 <p class="number">83</p>
                 <p class="weight">Space</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Design</h3>
                 <p class="symbol">Bi</p>
                 <p class="number">83</p>
                 <p class="weight">Stall</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Material</h3>
                 <p class="symbol">Bi</p>
                 <p class="number">83</p>
                 <p class="weight">Marketing</p>
               </div>
 
-              <div class="element-item" data-category="post-transition">
+              <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Fabrication</h3>
                 <p class="symbol">Bi</p>
                 <p class="number">83</p>
