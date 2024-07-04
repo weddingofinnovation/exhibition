@@ -1756,10 +1756,13 @@
               
              <div class="container">
               <div class="row">
-               <a class="col-3" href="">Design</a>
-               <a class="col-3" href="">save</a>
-               <a class="col-3" href="">Pre-book</a>
-               <a class="col-3" href="">Directory</a>
+               <a class="col-3 fs-sm text-dark" href="">
+                <span><i class="bi bi-plus text-dark"></i></span>
+                 Design
+               </a>
+               <a class="col-3 fs-sm text-dark" href="">save</a>
+               <a class="col-3 fs-sm text-dark" href="">Pre-book</a>
+               <a class="col-3 fs-sm text-dark" href="">Directory</a>
               </div>
              </div>
             
