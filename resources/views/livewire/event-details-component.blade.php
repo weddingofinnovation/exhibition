@@ -1979,14 +1979,14 @@
               $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
               $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
 
-              $eventoui = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->get();
-              $eventcount =  DB::table('events')-> where('reference', $event->reference)->count();
+              $eventoui = DB::table('events')-> where('reference', $event->reference)->where('id', '!=' , $event->id)->where('status' ,'1')->get();
+              $eventcount =  DB::table('events')-> where('reference', $event->reference)->where('status' ,'1')->count();
             @endphp
 
                 <div class="container">
                   
                     @if($eventcount < 1)
-                        <div class="fw-bold">Upcoming Expo</div>
+                        <div class="fw-bold">Concurrent Expo</div>
                         <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
                           {{-- px-2 mb-1 --}}
                           @foreach($eventoui as $eventoi)
@@ -2074,8 +2074,8 @@
                             </div>
                           @endforeach
                         </div>
-                    @elseif($eventcount == 1)
-                        <div class="fw-bold"> Concurrent Expo</div>
+                    @elseif($eventcount > 1)
+                        <div class="fw-bold">Upcoming Expo</div>
                         <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
                           {{-- px-2 mb-1 --}}
                           @foreach($eventf as $eventoli)
