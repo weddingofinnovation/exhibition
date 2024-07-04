@@ -1760,7 +1760,12 @@
                 <span><i class="bi bi-plus text-dark"></i></span>
                  Design
                </a>
-               <a class="col-3 fs-sm text-dark" href="">save</a>
+               <a class="col-3 fs-sm text-dark" href="">
+                <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                <span class="handheld-toolbar-label">save</span>
+               </a>
+               <a class="col-3 fs-sm text-dark" href="">Pre-book</a>
+               <a class="col-3 fs-sm text-dark" href="">Directory</a>
                <a class="col-3 fs-sm text-dark" href="">Pre-book</a>
                <a class="col-3 fs-sm text-dark" href="">Directory</a>
               </div>
