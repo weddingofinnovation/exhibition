@@ -75,9 +75,7 @@ class EventDetailsComponent extends Component
     {   
        //$check = Cart::get();
         $event = Event::where('slug', $this->slug)->first();
-
         
-
         $poostKey = 'eventID';
         $eid = $event->id;
         Session()->put ($poostKey , $eid);

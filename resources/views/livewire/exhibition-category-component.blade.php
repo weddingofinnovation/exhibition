@@ -1745,7 +1745,7 @@
         </div>
       </div>
 
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="openfrnchise" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
             
             <div class="offcanvas-header align-items-center shadow-sm">
               <h2 class="h5 mb-0"></h2>
@@ -1763,7 +1763,8 @@
               </div>
              </div>
             
-            <div class="handheld-toolbar">
+            </div>
+             <div class="handheld-toolbar">
 
               <div class="d-table table-layout-fixed w-100">
                       
@@ -1793,7 +1794,6 @@
               </div>
 
             </div>
-
           </div>
 
       {{-- @foreach ($exhibition as $business)
