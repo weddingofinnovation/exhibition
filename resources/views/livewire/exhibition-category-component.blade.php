@@ -391,7 +391,7 @@
 
                         @foreach ($exhibition as $business)
                           @php
-                              $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
+                              $franchiso = DB::table('events')->where('id', $business->EventName)->limit(7)->get(); 
                           @endphp
 
                           @foreach ($franchiso as $franchise)
@@ -442,44 +442,8 @@
                                   </div>
                                 </div>
 
-                                <div class="widget widget-cart">
-                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                  
-                                    <!--item-->
-                                      <div class="widget-cart-item text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                          <span aria-hidden="true"> &times;</span>
-                                        </button>
-                                          <div class="d-flex align-items-center">
-                                            <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="flex-shrink-0">
-                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" width="64" >
-                                            </a>
-                                            <div class="ps-2">
-                                              <h6 class="widget-product-title"><a href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></h6>
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @else
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @endif 
-                                                </span>
-                                              </div>
-
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                {{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</span>
-                                              </div>
-
-                                            </div>
-                                          </div>
-                                      </div>
-                                      
-                                  </div>
-                                <div>
-
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -524,43 +488,8 @@
                                   </div>
                                 </div>
 
-                                <div class="widget widget-cart">
-                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                  
-                                    <!--item-->
-                                      <div class="widget-cart-item text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                          <span aria-hidden="true"> &times;</span>
-                                        </button>
-                                          <div class="d-flex align-items-center">
-                                            <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="flex-shrink-0">
-                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" width="64" >
-                                            </a>
-                                            <div class="ps-2">
-                                              <h6 class="widget-product-title"><a href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></h6>
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @else
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @endif 
-                                                </span>
-                                              </div>
-
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                {{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</span>
-                                              </div>
-
-                                            </div>
-                                          </div>
-                                      </div>
-                                      
-                                  </div>
-                                <div>
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -605,43 +534,9 @@
                                   </div>
                                 </div>
 
-                                <div class="widget widget-cart">
-                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                  
-                                    <!--item-->
-                                      <div class="widget-cart-item text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                          <span aria-hidden="true"> &times;</span>
-                                        </button>
-                                          <div class="d-flex align-items-center">
-                                            <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="flex-shrink-0">
-                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" width="64" >
-                                            </a>
-                                            <div class="ps-2">
-                                              <h6 class="widget-product-title"><a href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></h6>
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @else
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @endif 
-                                                </span>
-                                              </div>
-
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                {{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</span>
-                                              </div>
-
-                                            </div>
-                                          </div>
-                                      </div>
-                                      
-                                  </div>
-                                <div>
+                                
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
-                              <div class="container">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -686,41 +581,6 @@
                                   </div>
                                 </div>
 
-                                <div class="widget widget-cart">
-                                  <div style="max-height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                                  
-                                    <!--item-->
-                                      <div class="widget-cart-item text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <button class="btn-close text-danger" type="button" aria-label="Remove">
-                                          <span aria-hidden="true"> &times;</span>
-                                        </button>
-                                          <div class="d-flex align-items-center">
-                                            <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="flex-shrink-0">
-                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" width="64" >
-                                            </a>
-                                            <div class="ps-2">
-                                              <h6 class="widget-product-title"><a href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></h6>
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @else
-                                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                                  @endif 
-                                                </span>
-                                              </div>
-
-                                              <div class="widget-product-meta">
-                                                <span class="text-accent me-2"> 
-                                                {{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</span>
-                                              </div>
-
-                                            </div>
-                                          </div>
-                                      </div>
-                                      
-                                  </div>
-                                <div>
                               @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
                                   <!-- <div class="container">
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">

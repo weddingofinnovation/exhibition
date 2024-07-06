@@ -31,7 +31,7 @@ class EventDetailsComponent extends Component
     public $avgrating;
     public $productExpiryDate;
     public $optional;
-  
+    public $board;
 
     public $type_event;
     
