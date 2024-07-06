@@ -2429,6 +2429,7 @@
                     </div>
                   @endif
                 @endforeach
+            @endforeach
 
             <!-- Banner-->
             <!--<div class="py-sm-2">
