@@ -536,6 +536,16 @@ body {
                   <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
               </a>
+
+              <a class="element-item transition metal" data-category="transition" href="{{route('email.promo')}}">
+
+                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                    <h3 class="name">Email</h3>
+                  <!-- </a>  -->
+                  <p class="symbol">count</p>
+                  <!-- <p class="number">80</p>
+                  <p class="weight">200.59</p> -->
+              </a>
             </div>
         </section>
 

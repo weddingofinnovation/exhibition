@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EmailController;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Employee\EmployeeDashboardComponent;
@@ -214,12 +215,15 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     return back()->with('message', 'Verification link sent!');
  })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
+
+
 //Route for Mailing
     Route::get('/enco/emal', function() {
     return new PostMail();
     });
 
     Route::get('/contact', [ContactusComponent::class,'sendEmail']);
+    Route::get('/promo-email', [EmailController::class,'sendEmail'])->name('email.promo');
 
 //Start
 Route::get('/', EventComponent::class)->name('business.exhibition');
