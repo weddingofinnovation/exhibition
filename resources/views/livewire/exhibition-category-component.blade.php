@@ -365,7 +365,7 @@
                                     </div>
                                   </div>
 
-                                  @if($lookingAddParticipants == {{$franchise->slug}})
+                                  @if($lookingAddParticipants == ($franchise->slug))
                                     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                     
                                       <div class="offcanvas-header align-items-center shadow-sm">
@@ -472,7 +472,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  @if($lookingAddParticipants == {{$franchise->slug}})
+                                  @if($lookingAddParticipants == ($franchise->slug))
                                   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                                     <div class="offcanvas-header align-items-center shadow-sm">
@@ -579,7 +579,7 @@
                                       </div>
                                     </div>
                                   </div>
-                                  @if($lookingAddParticipants == {{$franchise->slug}})
+                                  @if($lookingAddParticipants == ($franchise->slug))
                                   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                                     <div class="offcanvas-header align-items-center shadow-sm">
@@ -686,7 +686,7 @@
                                       </div>
                                     </div>
                                   </div> 
-                                  @if($lookingAddParticipants == {{$franchise->slug}})
+                                  @if($lookingAddParticipants == ($franchise->slug))
                                   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                                     <div class="offcanvas-header align-items-center shadow-sm">
