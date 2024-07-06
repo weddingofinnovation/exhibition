@@ -2736,6 +2736,10 @@
             @endforeach
       @endif
 
+      @if($board == 'data')
+        
+      @endif
+
 
 
     <div class="handheld-toolbar">
