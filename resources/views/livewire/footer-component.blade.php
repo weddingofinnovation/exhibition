@@ -388,7 +388,7 @@
 
             <a class="d-table-cell handheld-toolbar-item" href="{{route('coievent.add',['board' =>'add-your-event'])}}">
                 <span class="handheld-toolbar-icon"><i class="bi bi-save"></i></span>
-                <span class="handheld-toolbar-label">Saved Event</span>
+                <span class="handheld-toolbar-label">Saved</span>
             </a>
 
             <!-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
@@ -770,7 +770,7 @@
                     @endphp --}}
                       
                     @foreach ($locationo as $category)
-                      <a class="element-item" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
+                      <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
                         <h3 class="name">{{ucwords(trans(Str::limit($category->city, 24)))}}</h3>
                         <p class="symbol">
                           <img src="{{url('public/assets/image/exhibition/'.$category->image)}}" alt="{{Str::limit($category->image, 24)}}">

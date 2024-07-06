@@ -25,6 +25,7 @@ class ExhibitionCategoryComponent extends Component
     public $time;
     public $lookingAddImage;
     public $optionserving;
+    public $lookingAddParticipants;
 
     public function mount($eventype = null, $categry = null , $time = null)
     {
