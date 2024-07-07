@@ -11,7 +11,7 @@ class EmailController extends Controller
     public function sendpromoemail()
     {
         $toEmail = "team@exhibition.org.in";
-        $message = "teste";
+        $message = "top 7 most demanding exhibition with rating";
         $subject = "The Exhibition Network find upcoming exhibition";
 
         $request = Mail::to($toEmail)->send(new promoemail ($message, $subject));
