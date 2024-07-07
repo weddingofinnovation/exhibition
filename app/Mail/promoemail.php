@@ -33,6 +33,6 @@ class promoemail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.promo');
+        return $this->view('views.emails.promo');
     }
 }
