@@ -7,8 +7,8 @@
 </head>
 <body>
     
-{{$this->subject}}
-{{$this->mailmessage}}
+{{$subject}}
+{{$mailmessage}}
 
 </body>
 </html>
