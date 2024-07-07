@@ -14,6 +14,9 @@ class EmailController extends Controller
         $message = "teste";
         $subject = "test";
 
-        Mail::to($toEmail)->send(new promoemail ($message, $subject));
+        $request = Mail::to($toEmail)->send(new promoemail ($message, $subject));
+
+        dd($request);
+
     }
 }
