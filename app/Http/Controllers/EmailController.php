@@ -12,7 +12,7 @@ class EmailController extends Controller
     {
         $toEmail = "team@exhibition.org.in";
         $message = "teste";
-        $subject = "test";
+        $subject = "The Exhibition Network find upcoming exhibition";
 
         $request = Mail::to($toEmail)->send(new promoemail ($message, $subject));
 
