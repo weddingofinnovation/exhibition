@@ -11,7 +11,7 @@
         {{$mailmessage}}
 
         @php
-            $exhibition = DB::table('events')->where('status','1')->get();
+            $exhibition = DB::table('events')->whereYear('2024')->where('status','1')->get();
         @endphp
 
         @foreach ($exhibition as $franchise)
@@ -41,7 +41,7 @@
                         {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
                     @endif 
                     </div>  
-                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'not found'))}}, {{ucfirst(trans($franchise->city ?? 'not found'))}}</div>
                 </div>
 
                 <div class="col-3  p-0">
