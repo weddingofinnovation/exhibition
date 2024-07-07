@@ -11,7 +11,7 @@
         {{$mailmessage}}
 
         @php
-            $exhibition = DB::table('events')->whereYear('2024')->where('status','1')->get();
+            $exhibition = DB::table('events')->where('status','1')->limit(7)->get();
         @endphp
 
         @foreach ($exhibition as $franchise)
