@@ -223,7 +223,7 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     });
 
     Route::get('/contact', [ContactusComponent::class,'sendEmail']);
-    Route::get('/promo-email', [EmailController::class,'sendEmail'])->name('email.promo');
+    Route::get('/promo-email', [EmailController::class,'sendpromoemail'])->name('email.promo');
 
 //Start
 Route::get('/', EventComponent::class)->name('business.exhibition');
