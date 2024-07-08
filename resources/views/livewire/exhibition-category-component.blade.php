@@ -320,7 +320,7 @@
                               $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
                           @endphp
 
-                          @foreach ($franchiso as $key->$franchise)
+                          @foreach ($franchiso as $key=>$franchise)
                             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                                   
                                 <div class="container">
@@ -2339,7 +2339,7 @@
 
           @foreach ($franchiso as $franchise)
             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key == 0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
