@@ -368,7 +368,7 @@
                                     </div>
                                   </div>
                                 </div>
-                            @endif
+                           
 
                           @endforeach
                         @endforeach
