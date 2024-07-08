@@ -2335,8 +2335,8 @@
               $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
           @endphp
           {{--$key == 0 ? 'active':''--}}
-          @foreach ($franchiso as $franchise)
-                <div class="offcanvas offcanvas-bottom " tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+          @foreach ($franchiso as $key=>$franchise)
+                <div class="offcanvas offcanvas-bottom {{$key == 0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
