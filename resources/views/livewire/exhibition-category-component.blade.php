@@ -317,7 +317,7 @@
 
                         @foreach ($exhibition as $business)
                           @php
-                              $franchiso = DB::table('events')->where('id', $business->EventName)->limit(7)->get(); 
+                              $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
                           @endphp
 
                           @foreach ($franchiso as $key->$franchise)
