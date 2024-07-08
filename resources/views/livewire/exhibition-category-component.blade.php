@@ -81,6 +81,8 @@
                             @endphp
 
                             @foreach($findcategput as $franchise)
+
+                              findcategput
                               @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                                 <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -321,10 +323,12 @@
                           @endphp
 
                           @foreach ($franchiso as $key=>$franchise)
+                           key
+                           {{$key}}
                             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                                   
                                 <div class="container">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
+                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                             <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -370,7 +374,7 @@
 
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
                                 <div class="container">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
+                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                             <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -416,7 +420,7 @@
 
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
                                 <div class="container">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
+                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                             <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -463,7 +467,7 @@
                                 
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
                                 <div class="container">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->slug}}"  role="button" aria-controls="offcanvasExample">
+                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                             <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
@@ -553,8 +557,6 @@
                                     </div>
                                   </div> -->
                             @endif
-
-                           
                           @endforeach
                         @endforeach
 
@@ -2339,7 +2341,7 @@
 
           @foreach ($franchiso as $franchise)
             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key == 0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key == 0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
@@ -2400,7 +2402,7 @@
 
                 </div>
               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
@@ -2461,7 +2463,7 @@
 
                 </div>
               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
@@ -2522,7 +2524,7 @@
 
                 </div>
               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
@@ -2583,7 +2585,7 @@
 
                 </div>
               @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
-                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->slug}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
+                <div class="offcanvas offcanvas-bottom {{$key==0 ? 'active':''}}" tabindex="-1" id="categ_{{$franchise->id}}" aria-labelledby="offcanvasExampleLabel" style="height: 325px;">
                   
                   <div class="offcanvas-header align-items-center shadow-sm">
                     <h2 class="h5 mb-0">{{$franchise->eventname}}</h2>
