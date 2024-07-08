@@ -324,7 +324,7 @@
                            key
                            {{$key}}
                             @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                                  
+                                  1
                                 <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
@@ -371,7 +371,8 @@
                                 </div>
 
                               @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate) 
-                                <div class="container">
+                                2  
+                              <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -417,7 +418,8 @@
                                 </div>
 
                               @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate) 
-                                <div class="container">
+                              3  
+                              <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -461,9 +463,9 @@
                                     </div>
                                   </div>
                                 </div>
-
-                                
+ 
                               @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
+                              4
                                 <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1" data-bs-toggle="offcanvas" href="#categ_{{$franchise->id}}"  role="button" aria-controls="offcanvasExample">
                                     <div class="col  pr-0">
@@ -510,6 +512,7 @@
                                 </div>
 
                               @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
+                              5
                                   <!-- <div class="container">
                                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
