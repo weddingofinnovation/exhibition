@@ -75,6 +75,14 @@ class ExhibitionCategoryComponent extends Component
         }
     }
 
+    public $currentTab = 'null';
+    
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+    }
+
+
     public function render()
     {
         
