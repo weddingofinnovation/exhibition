@@ -71,6 +71,15 @@ class EventDetailsComponent extends Component
 
     
     use WithPagination;
+
+    public $currentTab = 'tab1';
+    
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+    }
+
+
     public function render()
     {   
        //$check = Cart::get();

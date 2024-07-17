@@ -559,21 +559,35 @@
           <!-- slider at next header-->  
           <section class="container d-lg-none ">
               <ul class="nav nav-tabs" role="tablist">
-                  <li class="nav-item"><a class="nav-link px-1 active" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'details'])}}" data-bs-toggle="tab" role="tab">Understanding</a></li>
-                  <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Membership</a></li>
-                  
                   <li class="nav-item">
-                    <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a>
+                    <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">  Understanding</a>
+                  </li>
+
+                    <!-- <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'details'])}}" data-bs-toggle="tab" role="tab">Understanding</a></li> -->
+
+                  <li class="nav-item">
+                    <!-- <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'advertise'])}}" data-bs-toggle="tab" role="tab">Membership</a>-->
+                    <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">  Membership</a>
+                  </li> 
+
+                  <li class="nav-item">
+                  <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">  Exhibitor</a>  
+                  <!-- <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitor</a> -->
                   </li>
                   
-
-                  <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'faq'])}}" data-bs-toggle="tab" role="tab">FAQ</a></li>
+                  <li class="nav-item">
+                  <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">  FAQ</a>  
+                  <!-- <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'faq'])}}" data-bs-toggle="tab" role="tab">FAQ</a> -->
+                  </li>
                   
                   @if(count($eventbrand) > 0) 
-                  <li class="nav-item"><a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitors</a></li>
+                  <li class="nav-item">
+                    <!-- <a class="nav-link px-1" href="{{route('event.details', ['slug' => $this->slug , 'optional' => 'exhibitor'])}}" data-bs-toggle="tab" role="tab">Exhibitors</a> -->
+                  </li>
                   @endif
                   <!-- <li class="nav-item"><a class="nav-link px-1" href="#startups" data-bs-toggle="tab" role="tab">Startup</a></li>  comment-->
               </ul>
+
           </section>
       
           <!--details-->
@@ -1176,7 +1190,8 @@
           <section class="container mb-4 mb-lg-5">
             <div class="tab-content pt-2">
 
-              <!-- <div class="tab-pane fade show active" id="details" role="tabpanel">
+            @if($currentTab === 'tab1')
+              <div class="tab-pane fade show active">
                 <div class="row">
                   <div class="col-lg-8">
                   
@@ -1194,10 +1209,10 @@
                     </ul>
                   </div>
                 </div>
-              </div> -->
-
+              </div>
+            @elseif($currentTab === 'tab2')
               <!-- Reviews tab-->
-              <div class="tab-pane fade" id="reviews" role="tabpanel">
+              <div class="tab-pane fade show active">
                 <!-- Reviews-->
                 <div class="row pt-2 pb-3">
                   <div class="col-lg-4 col-md-5">
@@ -1345,9 +1360,9 @@
                   
                 </div>
               </div>
-
+            @elseif($currentTab === 'tab3')
               <!-- Comments tab-->
-                <div class="tab-pane show" id="comments" role="tabpanel">
+                <div class="tab-pane fade show active">
                   <div class="row">
                     <div class="col-lg-8">
                       <div class="d-flex justify-content-between align-items-center mb-2">
@@ -1392,6 +1407,54 @@
                     </div>
                   </div>
                 </div>
+            @elseif($currentTab === 'tab4')
+              <!-- Comments tab-->
+                <div class="tab-pane fade show active">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fs-md mb-0">Top reviews</h6>
+                            <a class="nav-link-style fs-xs fw-normal text-primary" href="#"> 203K
+                            reviews<i class="bi bi-chevron-right me-2"></i></a>
+                      </div>
+      
+                      <div class="fs-xs fw-normal">Summary of 203K reviews.</div> 
+                      <div class="d-flex  badgses">
+                      
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2911</span></div>
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2912</span></div>
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2913</span></div>
+                      
+                      </div>
+
+                    <div class="d-flex abced gx-2">
+                    
+                    @foreach($commentedRates  as $comment)
+                      <div class=" border-1 d-flex align-items-end py-2 mx-2 border-bottom rounded shadow-sm">
+                        <img class="rounded-circle" src="#" width="50" alt="">
+      
+                        <div class="ps-0">
+                          <div class="d-flex justify-content-between align-items-end mb-2">
+                            <p class="fs-md mb-0">{{$comment->hasttag}}</p>
+                            <a class="nav-link-style fs-sm fw-medium" href="#">
+                              <i class="bi bi-star me-2"></i>{{$comment->rate}}/10</a>
+                          </div>
+
+                          <h4 class="fs-md mb-3">{{$comment->opinion}}</h4>
+                          
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-ms text-muted">9 <i class=" bi bi-hand-thumbs-up align-middle me-2"></i>12 <i class=" bi bi-hand-thumbs-down align-middle me-2"></i></span>
+                            <span class="fs-ms text-muted">{{Carbon\Carbon::parse ($comment->updated_at)->format('Y-m-d')}}<i class=" bi bi-share align-middle me-2"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    @endforeach
+                    </div>
+
+                    </div>
+                  </div>
+                </div>
+            @endif
             </div>
           </section>
 
