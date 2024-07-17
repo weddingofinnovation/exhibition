@@ -49,6 +49,196 @@
               </div>
             </div> 
    
+            <div class="col-lg-4 col-md-5">
+              <h3 class="h4 mb-4">74 Reviews</h3>
+              <div class="star-rating me-2"><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star fs-sm text-muted me-1"></i></div><span class="d-inline-block align-middle">4.1 Overall rating</span>
+              <p class="pt-3 fs-sm text-muted">58 out of 74 (77%)<br>Customers recommended this product</p>
+            </div>
+
+                <div class="row pt-2 pb-3">
+                    <div class="col-lg-8 col-md-7">
+                          <div class="d-flex align-items-center mb-2">
+                            <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">5</span><i class="ci-star-filled fs-xs ms-1"></i></div>
+                            <div class="w-100">
+                              <div class="progress" style="height: 4px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div><span class="text-muted ms-3">43</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                            <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">4</span><i class="ci-star-filled fs-xs ms-1"></i></div>
+                            <div class="w-100">
+                              <div class="progress" style="height: 4px;">
+                                <div class="progress-bar" role="progressbar" style="width: 27%; background-color: #a7e453;" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div><span class="text-muted ms-3">16</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                            <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">3</span><i class="ci-star-filled fs-xs ms-1"></i></div>
+                            <div class="w-100">
+                              <div class="progress" style="height: 4px;">
+                                <div class="progress-bar" role="progressbar" style="width: 17%; background-color: #ffda75;" aria-valuenow="17" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div><span class="text-muted ms-3">9</span>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                            <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">2</span><i class="ci-star-filled fs-xs ms-1"></i></div>
+                            <div class="w-100">
+                              <div class="progress" style="height: 4px;">
+                                <div class="progress-bar" role="progressbar" style="width: 9%; background-color: #fea569;" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div><span class="text-muted ms-3">4</span>
+                          </div>
+                          <div class="d-flex align-items-center">
+                            <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">1</span><i class="ci-star-filled fs-xs ms-1"></i></div>
+                            <div class="w-100">
+                              <div class="progress" style="height: 4px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 4%;" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div><span class="text-muted ms-3">2</span>
+                          </div>
+                    </div>
+                </div>
+                <hr class="mt-4 mb-3">
+                <div class="row py-4">
+                  <!-- Reviews list-->
+                  <div class="col-md-7">
+                    <div class="d-flex justify-content-end pb-4">
+                      <div class="d-flex align-items-center flex-nowrap">
+                        <label class="fs-sm text-muted text-nowrap me-2 d-none d-sm-block" for="sort-reviews">Sort by:</label>
+                        <select class="form-select form-select-sm" id="sort-reviews">
+                          <option>Newest</option>
+                          <option>Oldest</option>
+                          <option>Popular</option>
+                          <option>High rating</option>
+                          <option>Low rating</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Review-->
+                    <div class="product-review pb-4 mb-4 border-bottom">
+                      <div class="d-flex mb-3">
+                        <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="#" width="50" alt="Rafael Marquez">
+                          <div class="ps-3">
+                            <h6 class="fs-sm mb-0">Rafael Marquez</h6><span class="fs-ms text-muted">June 28, 2019</span>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star"></i>
+                          </div>
+                          <div class="fs-ms text-muted">83% of users found this review helpful</div>
+                        </div>
+                      </div>
+                      <p class="fs-md mb-2">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est...</p>
+                      <ul class="list-unstyled fs-ms pt-1">
+                        <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>Consequuntur magni, voluptatem sequi, tempora</li>
+                        <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>Architecto beatae, quis autem</li>
+                      </ul>
+                      <div class="text-nowrap">
+                        <button class="btn-like" type="button">15</button>
+                        <button class="btn-dislike" type="button">3</button>
+                      </div>
+                    </div>
+                    <!-- Review-->
+                    <div class="product-review pb-4 mb-4 border-bottom">
+                      <div class="d-flex mb-3">
+                        <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="#" width="50" alt="Barbara Palson">
+                          <div class="ps-3">
+                            <h6 class="fs-sm mb-0">Barbara Palson</h6><span class="fs-ms text-muted">May 17, 2019</span>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i>
+                          </div>
+                          <div class="fs-ms text-muted">99% of users found this review helpful</div>
+                        </div>
+                      </div>
+                      <p class="fs-md mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <ul class="list-unstyled fs-ms pt-1">
+                        <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>Consequuntur magni, voluptatem sequi, tempora</li>
+                        <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>Architecto beatae, quis autem</li>
+                      </ul>
+                      <div class="text-nowrap">
+                        <button class="btn-like" type="button">34</button>
+                        <button class="btn-dislike" type="button">1</button>
+                      </div>
+                    </div>
+                    <!-- Review-->
+                    <div class="product-review pb-4 mb-4 border-bottom">
+                      <div class="d-flex mb-3">
+                        <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="#" width="50" alt="Daniel Adams">
+                          <div class="ps-3">
+                            <h6 class="fs-sm mb-0">Daniel Adams</h6><span class="fs-ms text-muted">May 8, 2019</span>
+                          </div>
+                        </div>
+                        <div>
+                          <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-half active"></i><i class="star-rating-icon ci-star"></i>
+                          </div>
+                          <div class="fs-ms text-muted">75% of users found this review helpful</div>
+                        </div>
+                      </div>
+                      <p class="fs-md mb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem.</p>
+                      <ul class="list-unstyled fs-ms pt-1">
+                        <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>Consequuntur magni, voluptatem sequi</li>
+                        <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>Architecto beatae,  quis autem, voluptatem sequ</li>
+                      </ul>
+                      <div class="text-nowrap">
+                        <button class="btn-like" type="button">26</button>
+                        <button class="btn-dislike" type="button">9</button>
+                      </div>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn btn-outline-accent" type="button"><i class="ci-reload me-2"></i>Load more reviews</button>
+                    </div>
+                  </div>
+                  <!-- Leave review form-->
+                  
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6 class="fs-md mb-0">Top reviews</h6>
+                            <a class="nav-link-style fs-xs fw-normal text-primary" href="#"> 203K
+                            reviews<i class="bi bi-chevron-right me-2"></i></a>
+                      </div>
+      
+                      <div class="fs-xs fw-normal">Summary of 203K reviews.</div> 
+                      <div class="d-flex  badgses">
+                      
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2911</span></div>
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2912</span></div>
+                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2913</span></div>
+                      
+                      </div>
+
+                    <div class="d-flex abced gx-2">
+                    
+                    @foreach($commentedRates  as $comment)
+                      <div class=" border-1 d-flex align-items-end py-2 mx-2 border-bottom rounded shadow-sm">
+                        <img class="rounded-circle" src="#" width="50" alt="">
+      
+                        <div class="ps-0">
+                          <div class="d-flex justify-content-between align-items-end mb-2">
+                            <p class="fs-md mb-0">{{$comment->hasttag}}</p>
+                            <a class="nav-link-style fs-sm fw-medium" href="#">
+                              <i class="bi bi-star me-2"></i>{{$comment->rate}}/10</a>
+                          </div>
+
+                          <h4 class="fs-md mb-3">{{$comment->opinion}}</h4>
+                          
+                          <div class="d-flex justify-content-between align-items-center">
+                            <span class="fs-ms text-muted">9 <i class=" bi bi-hand-thumbs-up align-middle me-2"></i>12 <i class=" bi bi-hand-thumbs-down align-middle me-2"></i></span>
+                            <span class="fs-ms text-muted">{{Carbon\Carbon::parse ($comment->updated_at)->format('Y-m-d')}}<i class=" bi bi-share align-middle me-2"></i></span>
+                          </div>
+                        </div>
+                      </div>
+                    @endforeach
+                    </div>
+
+                    </div>
+                  </div>
+
             <div class=" container col-lg-8 mt-3">
               <div class="d-flex justify-content-between align-items-center mb-2">
                     <h6 class="fs-md mb-0">Top reviews</h6>
