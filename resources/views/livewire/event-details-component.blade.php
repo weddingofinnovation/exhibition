@@ -2100,7 +2100,24 @@
              <div class="container">Download Exhibition Directory</div>
              
           @endif
+
     @push('scripts')
+
+          <script>
+          document.addEventListener('DOMContentLoaded', function(){
+            if(localStorage.getItem('currentTab')) {
+              this.call('switchTab', localStorage.getItem('currentTab'));
+            }
+
+            document.querySelectorAll('.nav-link').forEach(function (element) {
+              element.addEventListener('click', function(){
+                localStorage.setItem('currentTab', this.getAttribute('wire:click.prevent').replace('switchTab(','').replace(')',''));
+              });
+            });
+          });
+
+          </script>
+
           <script type = "application/ld+json">
             {
                   "@context": "https://schema.org",

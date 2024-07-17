@@ -34,13 +34,23 @@ class EventDetailsComponent extends Component
     public $board;
 
     public $type_event;
+    public $currentTab;
+
     
     public function mount($slug, $optional = null )
     {
        $this->slug = $slug;
        $this->optional = $optional;
+       $this->currentTab = session()->get('currentTab','tab1');
     }
 
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+      session()->put('currentTab', $tab);
+    }
+
+    
     public function index($optional = 'details')
     {
       $this->optional = $optional;
@@ -72,12 +82,9 @@ class EventDetailsComponent extends Component
     
     use WithPagination;
 
-    public $currentTab = 'tab1';
     
-    public function switchTab($tab)
-    {
-      $this->currentTab = $tab;
-    }
+
+    
 
 
     public function render()

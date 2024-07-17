@@ -75,11 +75,17 @@ class ExhibitionCategoryComponent extends Component
         }
     }
 
-    public $currentTab = 'null';
-    
-    public function switchTab($tab)
+    public $items;
+    public $selectedItem = null;
+
+    public function selectItem($itemId)
     {
-      $this->currentTab = $tab;
+        $this->selectedItem = Event::find($itemId);
+    }
+
+    public function closeOffcanvas()
+    {
+        $this->selectedItem = null;
     }
 
 
