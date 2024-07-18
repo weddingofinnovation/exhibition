@@ -140,6 +140,15 @@
             .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
             .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
 
+            .tns-outer {
+              padding:0 !important;
+              margin:0 !important;
+            }
+
+            .tns-nav, .tns-controls {
+              display:none !important;
+            }
+
       </style>
 
       <section class="container pt-2" id="exhibit"> 
@@ -157,6 +166,8 @@
           </div>
         </div>
 
+        
+
         <div class="d-flex badgese">
           <a class="badge  border-1 text-right border-dark text-dark mr-1" href=""> <i class="bi bi-plus"></i> Submit event</a>
             @foreach( $getnamecategoryresult as $categ) 
@@ -166,7 +177,32 @@
               
             
               @foreach($findcountevent as $finderlo)
-                  <a class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
+                  <a x-data x-init="() => { 
+                  var slider = tns({
+          container: '.badgese',   
+          
+          responsive: {
+            300: {
+              items: 3,
+              controls: false,
+              fixedWidth: 100,
+              mouseDrag: true,
+              autoplay: false,
+              autoplayButtonOutput: false,
+              autoplayHoverPause: true,
+            },
+            500: {
+              items: 1,
+              nav: false,
+              controls: false,
+              autoplayHoverPause: true,
+              autoplay: false,
+              autoplayButtonOutput: false,
+              fixedWidth: 100,
+            },
+          },
+        });
+                  }" wire:ignore class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
                   {{ucwords(trans($finderlo->tag))}}</a>
               @endforeach
 
@@ -297,31 +333,31 @@
 
   @push('scripts')
       <script>
-        var slider = tns({
-          "container": '.badgese',   
-          
-          "responsive": {
-            "300": {
-              "items": 3,
-              "controls": false,
-              "fixedWidth": 100,
-              "mouseDrag": true,
-              "autoplay": false,
-              "autoplayButtonOutput": false,
-              "autoplayHoverPause": true,
-            },
-            "500": {
-              "items": 1,
-              "nav": false,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplay": false,
-              "autoplayButtonOutput": false,
-              "fixedWidth": 100,
-            },
+        document.addEventListener('livewire:load' , function(){
+          var slider = tns({
+            container: '.badgese',   
             
-          },
-          "autoplayButtonOutput":false
+            responsive: {
+              300: {
+                items: 3,
+                controls: false,
+                fixedWidth: 100,
+                mouseDrag: true,
+                autoplay: false,
+                autoplayButtonOutput: false,
+                autoplayHoverPause: true,
+              },
+              500: {
+                items: 1,
+                nav: false,
+                controls: false,
+                autoplayHoverPause: true,
+                autoplay: false,
+                autoplayButtonOutput: false,
+                fixedWidth: 100,
+              },
+            },
+          });
         });
       </script>
 
