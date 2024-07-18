@@ -4,16 +4,17 @@
 
     <main>
      
-    <style>
-            .tns-outer {
-              padding:0 !important;
-              margin:0 !important;
-            }
+      <style>
+              .tns-outer {
+                padding:0 !important;
+                margin:0 !important;
+              }
 
-            .tns-nav, .tns-controls {
-              display:none !important;
-            }
-    </style>
+              .tns-nav, .tns-controls {
+                display:none !important;
+              }
+      </style>
+
       <!--google-->
         <div class="bg-secondary d-lg-none">
           <div class=" container">
@@ -82,7 +83,7 @@
 
                           @foreach ($franchiso as $franchise)
                           
-                                  <a class="container" href="" wire:click.prevent = "switchTab('{{$franchise->id}}')">
+                                  <a class="container" href="" wire:click.prevent = "selectItem('{{$franchise->id}}')">
                                     
                                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                         <div class="col  pr-0">
@@ -1833,8 +1834,7 @@
         </div>
       </div>
 
-
-      
+        {{$selectedItem}}
     </main>
 
     @push('scripts')
