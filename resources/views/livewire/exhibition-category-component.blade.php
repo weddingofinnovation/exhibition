@@ -4,6 +4,16 @@
 
     <main>
      
+    <style>
+            .tns-outer {
+              padding:0 !important;
+              margin:0 !important;
+            }
+
+            .tns-nav, .tns-controls {
+              display:none !important;
+            }
+    </style>
       <!--google-->
         <div class="bg-secondary d-lg-none">
           <div class=" container">
@@ -1893,9 +1903,9 @@
           
       @endforeach --}}
 
-        @foreach ($exhibition as $business)
+        {{--@foreach ($exhibition as $business)
           @php
-              $franchiso = DB::table('events')->where('id', $currentTab)->get(); 
+              $franchiso = DB::table('events')->where('id', )->get(); 
           @endphp
           {{--$key == 0 ? 'active':''--}}
           @foreach ($franchiso as $franchise)
@@ -1962,7 +1972,7 @@
                 </div>  
           @endforeach
 
-        @endforeach 
+        @endforeach--}} 
     </main>
 
     @push('scripts')
