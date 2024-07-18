@@ -153,7 +153,7 @@
             </div>
           </div>
             @if ($selectedItem)
-                  <div class="offcanvas offcanvas-bottom  show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height: 325px;">
+                  <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed;    height: 325px;">
 
                     <div class="offcanvas-header align-items-center shadow-sm">
                       <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
