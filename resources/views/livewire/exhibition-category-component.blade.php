@@ -6,53 +6,14 @@
      
       <style>
               .tns-outer {
-                padding:0 !important;
-                margin:0 !important;
+                padding: 0 !important;
+                margin: 0 !important;
               }
 
               .tns-nav, .tns-controls {
                 display:none !important;
               }
-
-              .offcanvas {
-                position: fixed;
-                bottom: -325px; /* Start hidden off-screen */
-                left: 0;
-                right: 0;
-                height: 325px;
-                background-color: #fff;
-                box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
-                transition: bottom 0.3s ease;
-                z-index: 1050;
-                overflow-y: auto;
-            }
-
-            .offcanvas.show {
-                bottom: 0; /* Slide into view */
-            }
-
-            .offcanvas-header, .offcanvas-footer {
-                padding: 1rem;
-                background-color: #f1f1f1;
-            }
-
-            .offcanvas-body {
-                padding: 1rem;
-                overflow-y: auto; /* Ensure content is scrollable */
-            }
-
-            .offcanvas .btn-close {
-                position: absolute;
-                top: 0.5rem;
-                right: 0.5rem;
-            }
-
-            @media (min-width: 768px) {
-                .offcanvas {
-                    height: 40%;
-                    max-height: 325px; /* Adjust for larger screens */
-                }
-            }
+ 
       </style>
 
       <!--google-->
@@ -85,110 +46,173 @@
 
         <hr>
       
-        <div class="container d-lg-none">
-          <div class="row">
-            <div class="col-md-6 offset-md-3">
-              
-            <div class="mb-4 mb-lg-5">
-              <!-- Nav tabs-->
-              <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
-                <li class="nav-item border-bottom"><a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Browse</a></li>
-                <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab"> Saved Events</a></li>
-              </ul>
-
-                <div class="tab-content pt-1">                
-                    <!-- Product details tab-->
-                    <div class="tab-pane fade show active" id="details" role="tabpanel">
-                      <div class="d-flex badgese pb-2">
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Week</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
-                      </div>
-
-                      <!-- details test tickets-->
-                      @php
-                            $witems = Cart::instance('wishlist')->content()->pluck('id'); 
-                      @endphp
-
-                      <div class="row mb-5 pb-2">    
-                        @foreach ($exhibition as $business)
-                          @php
-                              $franchiso = DB::table('events')->where('id', $business->EventName)
-                              ->get(); 
-                          @endphp
-
-                          @foreach ($franchiso as $franchise)
-                          
-                                  <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                      <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                        <div class="col  pr-0">
-                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                                <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                              @else
-                                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                                <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-
-                                            @endif 
-                                            @php 
-                                              $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                              $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                              $name = $franchise->eventname;
-                                              $venue = $franchise->venue;
-                                              $city = $franchise->city;
-                                              $country = $franchise->country;
-                                              $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                              
-                                            @endphp
-                                              
-                                                <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                        </div>
-
-                                        <div class="col-7  p-0">
-                                          <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                            {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                          <div class="text-muted fs-sm text-start">
-                                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                            @else
-                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                            @endif 
-                                          </div>  
-                                          <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
-                                        </div>
-
-                                        <div class="col-3  p-0">
-                                          <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                        </div>
-                                      </div>  
-                                  </div>
-
-                          @endforeach
-                        @endforeach
-                      </div>                      
-                    </div>
+        <div class="d-lg-none">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 offset-md-3">
                 
-                    <!-- Reviews tab-->
-                    <div class="tab-pane fade" id="reviews" role="tabpanel">
-                      <div class="container">
-                        <div class="row text-center">
-                          <i class="bi bi-bookmark"></i>
-                          <p>Saving an event will add it to this tab so that you can find it later</p>
-                          <a href="" class="btn btn-primary text-capitalize">return to search results</a>
+              <div class="mb-4 mb-lg-5">
+                <!-- Nav tabs-->
+                <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Browse</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab"> Saved Events</a></li>
+                </ul>
+
+                  <div class="tab-content pt-1">                
+                      <!-- Product details tab-->
+                      <div class="tab-pane fade show active" id="details" role="tabpanel">
+                        <div class="d-flex badgese pb-2">
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Week</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
+                          <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
+                        </div>
+
+                        <!-- details test tickets-->
+                        @php
+                              $witems = Cart::instance('wishlist')->content()->pluck('id'); 
+                        @endphp
+
+                        <div class="row mb-5 pb-2">    
+                          @foreach ($exhibition as $business)
+                            @php
+                                $franchiso = DB::table('events')->where('id', $business->EventName)
+                                ->get(); 
+                            @endphp
+
+                            @foreach ($franchiso as $franchise)
+                            
+                                    <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
+                                        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                          <div class="col  pr-0">
+                                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                                  <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                                @else
+                                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                                  <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                                              @endif 
+                                              @php 
+                                                $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                                $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                                $name = $franchise->eventname;
+                                                $venue = $franchise->venue;
+                                                $city = $franchise->city;
+                                                $country = $franchise->country;
+                                                $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                                
+                                              @endphp
+                                                
+                                                  <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                          </div>
+
+                                          <div class="col-7  p-0">
+                                            <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                            <div class="text-muted fs-sm text-start">
+                                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                              @else
+                                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                              @endif 
+                                            </div>  
+                                            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                          </div>
+
+                                          <div class="col-3  p-0">
+                                            <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
+                                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                          </div>
+                                        </div>  
+                                    </div>
+
+                            @endforeach
+                          @endforeach
+                        </div>                      
+                      </div>
+                  
+                      <!-- Reviews tab-->
+                      <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <div class="container">
+                          <div class="row text-center">
+                            <i class="bi bi-bookmark"></i>
+                            <p>Saving an event will add it to this tab so that you can find it later</p>
+                            <a href="" class="btn btn-primary text-capitalize">return to search results</a>
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                </div>
-            </div>
+                  </div>
+              </div>
 
+              </div>
             </div>
           </div>
+            @if ($selectedItem)
+                  <div class="offcanvas offcanvas-bottom  show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height: 325px;">
+
+                    <div class="offcanvas-header align-items-center shadow-sm">
+                      <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
+                      <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+                      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                        
+                            <a href="http://">business</a>
+                          
+                      </div>
+                    
+                  
+                    <div class="handheld-toolbar">
+      
+                      <div class="d-table table-layout-fixed w-100">
+                              
+                        <a class="d-table-cell handheld-toolbar-item" href="">
+                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                          <span class="handheld-toolbar-label">Exhibitor</span>
+                        </a>
+      
+                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                          <span class="handheld-toolbar-label">save</span>
+                        </a>
+      
+                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                          <span class="handheld-toolbar-label">fabrication</span>
+                        </a>
+      
+                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                          <span class="handheld-toolbar-label">Membership</span>
+                        </a>
+      
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                          <span class="handheld-toolbar-icon">
+                          <i class="bi bi-location"></i></span>
+                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                        </a> 
+                        
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                          <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                          <span class="handheld-toolbar-label">Venue</span>
+                        </a>
+                        
+                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                          <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                          <span class="handheld-toolbar-label">Menu</span>
+                        </a>
+      
+                      </div>
+      
+                    </div>
+      
+                  </div>
+            @endif
         </div>
       <!--end Google-->  
 
@@ -1872,67 +1896,7 @@
         </div>
       </div>
 
-        @if ($selectedItem)
-                <div class="offcanvas offcanvas-bottom d-none d-sm-block show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height: 325px;">
-
-                  <div class="offcanvas-header align-items-center shadow-sm">
-                    <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
-                    <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                  </div>
-                   
-                    <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                       
-                          <a href="http://">business</a>
-                        
-                    </div>
-                  
-                
-                  <div class="handheld-toolbar">
-    
-                    <div class="d-table table-layout-fixed w-100">
-                            
-                      <a class="d-table-cell handheld-toolbar-item" href="">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Exhibitor</span>
-                      </a>
-    
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">save</span>
-                      </a>
-    
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">fabrication</span>
-                      </a>
-    
-                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                        <span class="handheld-toolbar-label">Membership</span>
-                      </a>
-    
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon">
-                        <i class="bi bi-location"></i></span>
-                        <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                      </a> 
-                      
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                        <span class="handheld-toolbar-label">Venue</span>
-                      </a>
-                      
-                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                        <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                        <span class="handheld-toolbar-label">Menu</span>
-                      </a>
-    
-                    </div>
-    
-                  </div>
-    
-                </div>
-        @endif
+        
       
     </main>
 
