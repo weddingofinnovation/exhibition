@@ -82,7 +82,7 @@ class ExhibitionCategoryComponent extends Component
     {
         $this->selectedItem = Event::find($itemId);
 
-        dd($this->selectedItem);
+        //dd($this->selectedItem);
     }
 
     public function closeOffcanvas()
