@@ -1872,59 +1872,71 @@
         </div>
       </div>
 
+        @if ($selectedItem)
+                <div class="offcanvas offcanvas-bottom d-none d-sm-block show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height: 325px;">
 
-
-                <div class="offcanvas" id="offcanvas">
-                    <div class="offcanvas-header">
-                        <h4 id="offcanvas-title">Item Details</h4>
-                        <button id="close-offcanvas" class="btn-close">&times;</button>
+                  <div class="offcanvas-header align-items-center shadow-sm">
+                    <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
+                    <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                   
+                    <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                       
+                          <a href="http://">business</a>
+                        
                     </div>
-                    <div class="offcanvas-body" id="offcanvas-content">
-                        <!-- Options will be populated here -->
+                  
+                
+                  <div class="handheld-toolbar">
+    
+                    <div class="d-table table-layout-fixed w-100">
+                            
+                      <a class="d-table-cell handheld-toolbar-item" href="">
+                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                        <span class="handheld-toolbar-label">Exhibitor</span>
+                      </a>
+    
+                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                        <span class="handheld-toolbar-label">save</span>
+                      </a>
+    
+                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                        <span class="handheld-toolbar-label">fabrication</span>
+                      </a>
+    
+                      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                        <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                        <span class="handheld-toolbar-label">Membership</span>
+                      </a>
+    
+                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                        <span class="handheld-toolbar-icon">
+                        <i class="bi bi-location"></i></span>
+                        <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                      </a> 
+                      
+                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                        <span class="handheld-toolbar-label">Venue</span>
+                      </a>
+                      
+                      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                        <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                        <span class="handheld-toolbar-label">Menu</span>
+                      </a>
+    
                     </div>
-                    <div class="offcanvas-footer">
-                        <button id="close-offcanvas-bottom" class="btn btn-secondary">Close</button>
-                    </div>
+    
+                  </div>
+    
                 </div>
-
-
-
+        @endif
       
     </main>
 
     @push('scripts')
-
-    <script>
-    document.addEventListener('livewire:load', function () {
-        var offcanvas = document.getElementById('offcanvas');
-        var offcanvasTitle = document.getElementById('offcanvas-title');
-        var offcanvasContent = document.getElementById('offcanvas-content');
-        var closeOffcanvasButton = document.getElementById('close-offcanvas');
-        var closeOffcanvasBottomButton = document.getElementById('close-offcanvas-bottom');
-
-        Livewire.on('itemSelected', function (selectedItem, options) {
-            offcanvasTitle.textContent = selectedItem.name;
-            offcanvasContent.innerHTML = '';
-
-            options.forEach(function(option) {
-                var optionElement = document.createElement('p');
-                optionElement.textContent = option.name;
-                offcanvasContent.appendChild(optionElement);
-            });
-
-            offcanvas.classList.add('show');
-        });
-
-        closeOffcanvasButton.addEventListener('click', function () {
-            offcanvas.classList.remove('show');
-        });
-
-        closeOffcanvasBottomButton.addEventListener('click', function () {
-            offcanvas.classList.remove('show');
-        });
-    });
-</script>
-
       <script>
         var slider = tns({
           "container": '.badgese',   
