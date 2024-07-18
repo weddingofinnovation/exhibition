@@ -556,6 +556,8 @@
             </div>
           </section>
 
+
+
           <!-- tab heading-->  
           <section class="container d-lg-none ">
               <ul class="nav nav-tabs" role="tablist">
@@ -584,174 +586,175 @@
             @if($currentTab === 'tab1')
               <div class="tab-pane fade show active">
                  <!--details-->
-          <div class="container d-lg-none">
-                  <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
-                    <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
-                    <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
-                  </div>-->
-                  
-                    @if($commentedRates->count() > 0)
-                      <div class="col-lg-4 col-md-5 pt-2 pb-0">
-                          <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
+                 <!-- mobile -->
+                <div class="d-lg-none">
+                        <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
+                          <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
+                          <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
+                        </div>-->
                         
-                                <i class = "bi bi-star-filled text-accent me-1"></i>
-                                  <span class="fs-md fw-bold">
-                                  <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
-                                  <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                          @if($commentedRates->count() > 0)
+                            <div class="col-lg-4 col-md-5 pt-2 pb-0">
+                                <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
                               
-                                    <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
-                          </a>        
-                      </div>
-                    @endif
-                
-                  <ul class="list-unstyled  bg-secondary py-1">
-                        @if(Auth::check())
-                          @php
-                              $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
-                              $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
-                              $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
-                          @endphp
-
-                          @if(count($checkComment) > '0')
-                            <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                              <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                              <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
-                            </li>
-                          @else
-                            <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                              <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                              <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
-                            </li>
+                                      <i class = "bi bi-star-filled text-accent me-1"></i>
+                                        <span class="fs-md fw-bold">
+                                        <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
+                                        <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                                    
+                                          <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
+                                </a>        
+                            </div>
                           @endif
+                      
+                        <ul class="list-unstyled  bg-secondary py-1">
+                              @if(Auth::check())
+                                @php
+                                    $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
+                                    $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
+                                    $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
+                                @endphp
 
-                        @else
-                            <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                              <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                              <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
-                            </li>
-                        @endif
+                                @if(count($checkComment) > '0')
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
+                                  </li>
+                                @else
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
+                                  </li>
+                                @endif
+
+                              @else
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
+                                  </li>
+                              @endif
+                        </ul>
+
+                        <!-- 
+                          <div class="d-flex badgeseTag">
+                            @foreach($category as $cat)
+                              <span class="badge border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+                            @endforeach
+                          </div>
+
+                          <span class="badge bg-secondary fs-sm">
+                          
+
+                            @if ($current < $to && $current < $from)
+                                upcoming
+                            @elseif ($current == $to && $current < $from) 
+                                first
+                            @elseif ($current > $to && $current < $from) 
+                                ongoing
+                            @elseif ($current > $to && $current == $from) 
+                              last 
+                            @elseif ($current > $to && $current > $from)
+                              ended
+                            @endif
+
+                              
+                          </span> -->
+
+                      
+                        <div>
+                          @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                          @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
+                          <span class="fs-xs fw-normal"> Visitors </span>@endif
+                          {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
+                          <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
+
+                          <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
+                          <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
+                          <!-- 170 -->
+                        </div>
+
+                </div>  
+
+                <div class="container d-none d-sm-block">
+                  <ul class="list-unstyled fs-sm  py-4">     
+                    <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="col bg-light mb-0">
+                          <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
+                            <h3 class="mb-0">{{$event->eventname}}</h3>
+                              
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
+                              @endif 
+                              
+                              <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+                          </span>
+                        <span>
+                            @if( $event->businessrevenue == 'visitor' )       
+                                @if( $ticketOrExhibit != 0 )
+                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Book your Tickets </a>
+                                    @elseif( $ticketOrExhibit == 0 )
+                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
+                                @endif
+                              @else
+                                <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
+                            @endif
+                        </span>
+                      
+                        
+                    </li>
+
+                    <li><hr class="mt-md-2 mb-2"></li>
+                    <li class="p1 fw-light">
+                      {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
+                      {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
+                    </li>
                   </ul>
 
-                  <!-- 
-                    <div class="d-flex badgeseTag">
-                      @foreach($category as $cat)
-                        <span class="badge border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                      @endforeach
+                  <!-- <ul class="list-unstyled fs-sm  py-4">     
+                    <li class="d-flex justify-content-between p-0 m-0">
+                    <div class="col-lg-3 col-md-4 col-sm-4 bg-secondary">
+                      <span class="badge bg-primary mt-0">Participate</span>
+                      <span class="h3"> Professional Beauty Mumbai</span>
+                        <div class="row">
+                          <div>
+                            
+                          </div>
+                            
+                        </div>
+
+                        
+                        
+
+                        
+                        
                     </div>
-
-                    <span class="badge bg-secondary fs-sm">
                     
+                    
+                    
+                        <span> 
+                          
+                        <span class="badge bg-primary"> th</span>
 
-                      @if ($current < $to && $current < $from)
-                          upcoming
-                      @elseif ($current == $to && $current < $from) 
-                          first
-                      @elseif ($current > $to && $current < $from) 
-                          ongoing
-                      @elseif ($current > $to && $current == $from) 
-                        last 
-                      @elseif ($current > $to && $current > $from)
-                        ended
-                      @endif
-
-                        
-                    </span> -->
-
-                
-                  <div>
-                    @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
-                    @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
-                    <span class="fs-xs fw-normal"> Visitors </span>@endif
-                    {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
-                    <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
-
-                    <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
-                    <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
-                    <!-- 170 -->
-                  </div>
-
-          </div>  
-
-          <div class="container d-none d-sm-block">
-            <ul class="list-unstyled fs-sm  py-4">     
-              <li class="d-flex justify-content-between p-0 m-0">
-                  <span class="col bg-light mb-0">
-                    <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
-                      <h3 class="mb-0">{{$event->eventname}}</h3>
-                        
-                        @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                        @else
-                          {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
-                        @endif 
-                        
-                        <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
-                    </span>
-                  <span>
-                      @if( $event->businessrevenue == 'visitor' )       
-                          @if( $ticketOrExhibit != 0 )
-                            <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Book your Tickets </a>
-                              @elseif( $ticketOrExhibit == 0 )
-                            <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
-                          @endif
-                        @else
-                          <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
-                      @endif
-                  </span>
-                
-                  
-              </li>
-
-              <li><hr class="mt-md-2 mb-2"></li>
-              <li class="p1 fw-light">
-                {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
-                {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
-              </li>
-            </ul>
-
-            <!-- <ul class="list-unstyled fs-sm  py-4">     
-              <li class="d-flex justify-content-between p-0 m-0">
-              <div class="col-lg-3 col-md-4 col-sm-4 bg-secondary">
-                <span class="badge bg-primary mt-0">Participate</span>
-                <span class="h3"> Professional Beauty Mumbai</span>
-                  <div class="row">
-                    <div>
+                          <span class="h3"> Professional Beauty Mumbai</span> <br>
+                                                  Mon, 02  - Tue, 03 Oct, 2023
+                          
+                          
+                          <i class="bi bi-geo-alt-fill"></i> Bombay Exhibition Centre, NESCO, Mumbai,  India 
+                        </span>
+                    
+                        <span>
+                                                <a class="btn btn-primary btn-sm" type="button" href="http://127.0.0.1:8000/exhibit/business"> Book your Space </a>
+                                            </span>
                       
-                    </div>
-                      
-                  </div>
-
-                  
-                  
-
-                  
-                  
-              </div>
-              
-              
-              
-                  <span> 
-                    
-                  <span class="badge bg-primary"> th</span>
-
-                    <span class="h3"> Professional Beauty Mumbai</span> <br>
-                                            Mon, 02  - Tue, 03 Oct, 2023
-                    
-                    
-                    <i class="bi bi-geo-alt-fill"></i> Bombay Exhibition Centre, NESCO, Mumbai,  India 
-                  </span>
-              
-                  <span>
-                                          <a class="btn btn-primary btn-sm" type="button" href="http://127.0.0.1:8000/exhibit/business"> Book your Space </a>
-                                      </span>
-                
-                  
-              </li>
-              <li><hr class="mt-md-2 mb-2"></li>
-              <li class="p1 fw-light">
-                |  | 1 days | Rs. 700.00 Onwards                 </li>
-            </ul> -->
-          </div> 
+                        
+                    </li>
+                    <li><hr class="mt-md-2 mb-2"></li>
+                    <li class="p1 fw-light">
+                      |  | 1 days | Rs. 700.00 Onwards                 </li>
+                  </ul> -->
+                </div> 
 
 
           <div class="container">
