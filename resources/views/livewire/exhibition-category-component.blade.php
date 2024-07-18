@@ -1834,7 +1834,7 @@
 
 
       @if($selectedItem)
-        <div class="offcanvas offcanvas-bottom show" style="height: 325px;">
+        <div class="offcanvas offcanvas-bottom show" tabindex="-1" style="height: 325px;">
          
           <div class="offcanvas-header align-items-center shadow-sm">
             <h2 class="h5 mb-0">{{$selectedItem->eventname}}</h2>
