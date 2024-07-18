@@ -83,8 +83,7 @@
 
                           @foreach ($franchiso as $franchise)
                           
-                                  <a class="container" href="" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                    
+                                  <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
                                       <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                         <div class="col  pr-0">
                                             @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -123,12 +122,11 @@
                                         </div>
 
                                         <div class="col-3  p-0">
-                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                          <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
                                               <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                         </div>
-                                      </div>
-                                    
-                                  </a>
+                                      </div>  
+                                  </div>
 
                           @endforeach
                         @endforeach
