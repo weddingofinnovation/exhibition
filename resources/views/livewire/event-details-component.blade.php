@@ -415,7 +415,9 @@
             <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
             <div class="container  mb-lg-0 bg-primary">
               <div class="d-flex justify-content-between py-2">
+
                     <i class="bi bi-list"></i>
+                    
                     <a class="z-2 text-dark  pl-3 lh-1" href="{{route('design.strategy')}}"> 
                       <span class= "fw-bold text-light fs-xs">Great Exhibition To Business</span>
                       <br>
