@@ -81,7 +81,7 @@ class ExhibitionCategoryComponent extends Component
     public function selectItem($itemId)
     {
         $this->selectedItem = Event::find($itemId);
-
+        $this->emit('itemSelected' , $this->selectedItem);
         //dd($this->selectedItem);
     }
 
