@@ -1834,7 +1834,7 @@
         </div>
       </div>
 
-        {{$selectedItem}}
+      
     </main>
 
     @push('scripts')
