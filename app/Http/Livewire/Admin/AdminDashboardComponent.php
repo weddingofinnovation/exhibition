@@ -810,6 +810,7 @@ public $dtype;
     {
       $unvTicket = new Ticket();
       $unvTicket->package = trim($this->package);
+      $unvTicket->code = Str::upper(Str::random(10));
       $unvTicket->slug = str::slug($unvTicket->package,'-');
       $unvTicket->price= trim($this->price);
       $unvTicket->desc = trim($this->desc);
