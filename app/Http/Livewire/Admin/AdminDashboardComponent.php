@@ -819,7 +819,7 @@ public $dtype;
       $unvTicket->price= trim($this->price);
       $unvTicket->desc = trim($this->desc);
       $unvTicket->type = 'visitor';
-      $unvTicket->event_id = 'NULL';
+      $unvTicket->event_id = '';
       $unvTicket->cart_value = '0';
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
