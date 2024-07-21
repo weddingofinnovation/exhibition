@@ -405,7 +405,17 @@ public $dtype;
       $visited->save();
       session()->flash('message','info has been deleted Successfully');
       return redirect()->back();
-    } 
+    }
+    
+    
+    public function ticketstatus($id, $admstatus) 
+    {
+      $visited = Ticket::find($id);
+      $visited->admstatus = $admstatus;
+      $visited->save();
+      session()->flash('message','info has been deleted Successfully');
+      return redirect()->back();
+    }
 
     public function updateCallingStatus($id, $response) 
     {

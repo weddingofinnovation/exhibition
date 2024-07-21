@@ -2725,8 +2725,9 @@
                             <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                               <ul class="dropdown-menu" width="auto">
                                 <li><a class="dropdown-item" href="#">Edit</a></li>
-                                <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Active</a></li>    
-                                <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">DeActive</a></li>
+                                <li><a class="dropdown-item" href="#" wire:click.prevent="ticketstatus({{$franchise->id}}, '1')">Active</a></li>   
+
+                                <li><a class="dropdown-item" href="#" wire:click.prevent="ticketstatus({{$franchise->id}}, '0')">DeActive</a></li>
                                 <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delTicket({{$franchise->id}})">>Delete</a></li>
                               </ul>
                             </span>
