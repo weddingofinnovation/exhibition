@@ -56,7 +56,7 @@
                       <div class="fs-ms">SELECT YOUR CATEGORY </div>
                       <div class="container">
                         @foreach($ticke as $edy)
-
+ticke
                             <div class="row border-1 border-bottom my-1">
                                 <div class="col-9">
                                   <div class="product-title fs-sm mb-2 fw-bold">{{$edy->package}}</div>
@@ -70,7 +70,7 @@
                                 </div>
 
                                 <div class="col-3">
-                                  @if($edy->price == '0')
+                                  @if($edy->price == '0.00')
                                     <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">
                                         Register
                                     </a>
@@ -86,7 +86,7 @@
                         @endforeach
 
                         @foreach($tickeo as $edy)
-
+tickeo
                             <div class="row border-1 border-bottom my-1">
                                 <div class="col-9">
                                   <div class="product-title fs-md mb-2">{{$edy->package}}</div>
