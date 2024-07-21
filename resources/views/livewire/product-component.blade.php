@@ -10,14 +10,14 @@
                 <a href="{{$previous}}"><i class="bi bi-chevron-left"></i></a>  
                 </div>
           
-                <a class="text-center py-2" href="{{route('event.details',['slug' => $event->slug])}}">
+                <a class="text-center text-dark py-2" href="{{route('event.details',['slug' => $event->slug])}}">
                       <div>{{$event->eventname}}</div> 
                       <div class="fs-xs fw-light">
-                      @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                        {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}} | {{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}
-                      @else
-                        {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}} | {{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}
-                      @endif
+                        @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}} | {{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}
+                        @else
+                          {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}} | {{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}
+                        @endif
                       </div> 
                 </a>
 
