@@ -823,6 +823,7 @@ public $dtype;
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
       $unvTicket->terms = '1';
+      $unvTicket->user_id =  Auth::user()->id;
       $unvTicket->save(); 
     }
     
