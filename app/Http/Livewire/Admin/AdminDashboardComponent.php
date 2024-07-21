@@ -808,6 +808,7 @@ public $dtype;
     public $terms;
     public $code;
     
+
     public function universalticket()
     {
       $unvTicket = new Ticket();
@@ -816,6 +817,7 @@ public $dtype;
       $unvTicket->slug = str::slug($unvTicket->package,'-');
       $unvTicket->price= trim($this->price);
       $unvTicket->desc = trim($this->desc);
+      $unvTicket->type = 'visitor';
       $unvTicket->event_id = 'NULL';
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
