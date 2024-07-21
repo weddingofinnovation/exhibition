@@ -802,6 +802,19 @@ public $dtype;
       $ticketDel->delete();
     }
 
+    public function universalticket()
+    {
+      $unvTicket = new Ticket();
+      $unvTicket->package = trim($this->package);
+      $unvTicket->slug = str::slug($unvTicket->package,'-');
+      $unvTicket->price= trim($this->price);
+      $unvTicket->desc = trim($this->desc);
+      $unvTicket->event_id = 'NULL';
+      $unvTicket->admstatus = '1';
+      $unvTicket->status = '1';
+      $unvTicket->terms = '1';
+      $unvTicket->save(); 
+    }
     
 
     public function render()

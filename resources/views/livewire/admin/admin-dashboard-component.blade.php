@@ -2741,6 +2741,61 @@
         
       @endif
 
+      @if($board == 'own-plan-add-ticket')
+
+            <form wire:submit.prevent="universalticket">
+                <!-- Title-->
+                <div class="d-sm-flex flex-wrap justify-content-between align-items-center pb-2">
+                    <h2 class="h3 py-2 me-2 text-center text-sm-start">Add New Ticket</h2>
+                </div>
+
+                <div class="container">
+                
+                  <div class="row">
+                      
+
+                      <div class="col-sm-6 mb-3">
+                          <label class="form-label" for="unp-product-name">Ticket Name</label>
+                          <input class="form-control" type="text" wire:model.lazy="package" >
+                          <div class="form-text">Create unique ticket name</div>
+                          @error('package')
+                              <div class="form-text">{{$message}}</div>
+                          @enderror
+                      </div>
+
+                      <div class="col-sm-3 mb-3">
+                          <label class="form-label" for="unp-product-name">Ticket Price </label>
+                          <input class="form-control" type="number" wire:model.lazy="price">
+                          <div class="form-text">Price of the ticket</div>
+                          @error('price')
+                              <div class="form-text">{{$message}}</div>
+                          @enderror
+                      </div>
+                  </div>
+
+                  <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                      <textarea class="form-control"  rows="6" wire:model.lazy="desc"></textarea>
+                      <div class="form-text">Describle your tickets plan</div>
+                      @error('desc')
+                          <div class="form-text">{{$message}}</div>
+                      @enderror
+                  </div>
+
+
+                  <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="1" checked wire:model.lazy="terms">
+                      <label class="form-check-label fs-sm" for="flexCheckChecked">By clicking "submit" you agree to our Terms of Service.</label>
+                      @error('terms')
+                          <div class="form-text">{{$message}}</div>
+                      @enderror
+                  </div>
+
+                <button class="btn btn-primary d-block w-100" type="submit"><i class="ci-cloud-upload fs-lg me-2"></i>Submit</button>
+              </div>
+            </form>
+      @endif
+      
 
 
     <div class="handheld-toolbar">
