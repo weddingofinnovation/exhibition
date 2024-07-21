@@ -89,7 +89,7 @@
 
                             <div class="row border-1 border-bottom my-1">
                                 <div class="col-9">
-                                  <div class="product-title fs-md mb-2">{{$edy->packagge}}</div>
+                                  <div class="product-title fs-md mb-2">{{$edy->package}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
                                   <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
                                 </div>
