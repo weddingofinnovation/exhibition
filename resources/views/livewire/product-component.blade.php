@@ -86,18 +86,18 @@ ticke
                         @endforeach
 
                         @foreach($tickeo as $edy)
-tickeo
+
                             <div class="row my-1">
-                                <div class="col-9">
+                                <div class="col-8">
                                   <div class="product-title fs-md mb-2 fw-bold">{{$edy->package}}</div>
                                   <div class="fs-xs fw-light lh-1">{{$edy->desc}}</div>
                                   <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-4">
                                 @if($edy->price == '0.00')
-                                  <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">Registration</a>
+                                  <a href="#" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">Registration</a>
                                 @else
-                                <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">{{$edy->price}}</a>
+                                <a href="#" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">{{$edy->price}}</a>
                                 @endif
                                 </div>
                             </div>
