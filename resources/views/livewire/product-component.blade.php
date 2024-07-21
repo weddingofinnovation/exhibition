@@ -57,7 +57,7 @@
 
                             <div class="row">
                                 <div class="col-9">
-                                  <div class="product-title fs-md mb-2">{{$edy->packagge}}</div>
+                                  <div class="product-title fs-md mb-2">{{$edy->package}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
 
                                   @if($edy->price == '0')
