@@ -59,15 +59,24 @@
                                 <div class="col-9">
                                   <div class="product-title fs-md mb-2">{{$edy->packagge}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
-                                  <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
+
+                                  @if($edy->price == '0')
+                                    <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>Free</div>
+                                    @else
+                                    <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
+                                  @endif
                                 </div>
 
                                 <div class="col-3">
-                                 
+                                  @if($edy->price == '0')
+                                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">
+                                        Register
+                                    </a>
+                                  @else
                                     <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">
                                         Add
-                                    </a>
-                                                          
+                                    </a>  
+                                  @endif                       
                                 </div>
 
                             </div>
