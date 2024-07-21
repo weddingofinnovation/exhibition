@@ -802,6 +802,10 @@ public $dtype;
       $ticketDel->delete();
     }
 
+
+    public $package;
+    public $price;
+    public $terms;
     public function universalticket()
     {
       $unvTicket = new Ticket();
