@@ -807,6 +807,7 @@ public $dtype;
     public $price;
     public $terms;
     public $code;
+    public $cart_value;
     
 
     public function universalticket()
@@ -819,6 +820,7 @@ public $dtype;
       $unvTicket->desc = trim($this->desc);
       $unvTicket->type = 'visitor';
       $unvTicket->event_id = 'NULL';
+      $unvTicket->cart_value = '0';
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
       $unvTicket->terms = '1';
