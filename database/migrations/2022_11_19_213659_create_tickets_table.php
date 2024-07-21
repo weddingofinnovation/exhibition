@@ -23,11 +23,13 @@ class CreateTicketsTable extends Migration
             $table->decimal('price');
             $table->decimal('saleprice')->nullable();
             $table->decimal('cart_value');
+
             $table->date('expiry_date')->default(DB::raw('CURRENT_DATE'));
             $table->date('start_date')->default(DB::raw('CURRENT_DATE'));
             $table->time('start_time')->default(DB::raw('CURRENT_DATE'));
             $table->time('expiry_time')->default(DB::raw('CURRENT_DATE'));
             $table->date('validity')->default(DB::raw('CURRENT_DATE'));
+            
             $table->date('number')->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('event_id')->unsigned()->nullable();
