@@ -806,6 +806,8 @@ public $dtype;
     public $package;
     public $price;
     public $terms;
+    public $code;
+    
     public function universalticket()
     {
       $unvTicket = new Ticket();
