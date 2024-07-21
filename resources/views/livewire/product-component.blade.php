@@ -40,6 +40,7 @@
           <ul class="nav nav-tabs nav-fill" role="tablist">
             <li class="nav-item"><a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Ticket</a></li>
             <li class="nav-item"><a class="nav-link px-1 fs-sm" >Date & Time</a></li>
+
             {{--<li class="nav-item"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Date & Time</a></li>
             <li class="nav-item"><a class="nav-link px-1 {{'pass/es/($event->slug)#reviews' == request()->path() ? 'active' : '' }} fs-sm" href="#comments" data-bs-toggle="tab" role="tab">Meet-up</a></li>
             <li class="nav-item"><a class="nav-link px-1 {{'pass/es/($event->slug)#reviews' == request()->path() ? 'active' : '' }} fs-sm" href="#comments" data-bs-toggle="tab" role="tab">Add-on</a></li>--}}
@@ -55,9 +56,9 @@
                       <div class="fs-ms">SELECT YOUR CATEGORY
                         @foreach($ticke as $edy)
 
-                            <div class="row">
+                            <div class="row border-1 border-bottom">
                                 <div class="col-9">
-                                  <div class="product-title fs-md mb-2">{{$edy->package}}</div>
+                                  <div class="product-title fs-sm mb-2 fw-bold">{{$edy->package}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
 
                                   @if($edy->price == '0')
@@ -85,14 +86,14 @@
 
                         @foreach($tickeo as $edy)
 
-                            <div class="row">
+                            <div class="row border-1 border-bottom">
                                 <div class="col-9">
                                   <div class="product-title fs-md mb-2">{{$edy->packagge}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
                                   <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
                                 </div>
                                 <div class="col-3">
-                                  <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">Add</a>
+                                  <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">{{$edy->price}}</a>
                                 </div>
                             </div>
                         

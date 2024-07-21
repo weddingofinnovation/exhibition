@@ -2749,7 +2749,7 @@
                     <h2 class="h3 py-2 me-2 text-center text-sm-start">Add New Ticket</h2>
                 </div>
 
-                <div class="container">
+                <div class="container mb-4">
                 
                   <div class="row">
                       
@@ -2785,7 +2785,7 @@
 
                   <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="1" checked wire:model.lazy="terms">
-                      <label class="form-check-label fs-sm" for="flexCheckChecked">By clicking "submit" you agree to our Terms of Service.</label>
+                      <label class="form-check-label fs-xs" for="flexCheckChecked">By clicking "submit" you agree to our Terms of Service.</label>
                       @error('terms')
                           <div class="form-text">{{$message}}</div>
                       @enderror
