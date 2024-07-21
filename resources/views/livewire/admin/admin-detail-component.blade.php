@@ -551,6 +551,7 @@
           </div>
         </a>
       </div>
+
       @elseif($evento->eventype == 'award')
         {{--ticket--}}
         <div class="container my-3">
@@ -583,7 +584,39 @@
             </div>
           </a>
         </div>
-      @elseif($evento->edition)
+      @else
+
+      <div class="container my-3">
+        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+          <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+              <div class="col  pr-0">
+                  <div class="h4 fw-light mb-0"></div> 
+                
+                  <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}" >Ticket</a> 
+                  
+              </div>
+
+              <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                @if(is_null($evento->edition))
+                  <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                @else
+                  <div class="fs-md fw-normal text-start">
+                    
+                  </div>
+                @endif
+              </a>
+
+              <div class="col-3 p-0">
+                @if(is_null($evento->edition))
+                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Add</a>
+                @else
+                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Edit</a>
+                @endif
+              </div>
+          </div>
+        </a>
+      </div>
+
     @endif
 
 

@@ -412,6 +412,17 @@ body {
                         <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
                     </a>
+
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admincheck.ticket', ['board' => 'add-ticket'])}}">
+                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                          <h3 class="name">Add Ticket</h3>
+                        <!-- </a>  -->
+                        <p class="symbol"></p>
+                        <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+                    </a>
+                    
+                    
                     
                 </div>
             </div>
