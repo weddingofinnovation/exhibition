@@ -45,15 +45,9 @@ class ProductComponent extends Component
         $currentTime = now()->format( 'H:m:s');
         $currentDate = now()->format( 'Y-m-d'); 
 
-        $ticke = Ticket::where('admstatus','1')->where('status','1')->where('type', 'visitor')->get();
-        
-        //$ticke = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $test)->orwhere('event_id', 'null')->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
-
-        //dd($currentTime,$currentDate, $ticke);
-
+        $ticke = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $test)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
         $finduserStd = User::where('utype','ADM')->first('id');
-       
-        $tickeo = Ticket::where('user_id', $finduserStd)->where('admstatus','1')->where('status','0')->where('event_id', NULL)->get();
+        $tickeo = Ticket::where('user_id', $finduserStd)->where('admstatus','1')->where('status','1')->where('event_id', NULL)->get();
 
         //dd( Session()->all());
         return view('livewire.product-component', ['tickeo'=> $tickeo ,'previous'=> $previous , 'event'=>$event,'ticke'=>$ticke])->layout('layouts.eblog');

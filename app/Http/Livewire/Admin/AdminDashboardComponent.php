@@ -821,7 +821,7 @@ public $dtype;
       $unvTicket->type = 'visitor';
       $unvTicket->event_id = null ;
       $unvTicket->admstatus = '1';
-      $unvTicket->status = '1';
+      $unvTicket->status = '0';
       $unvTicket->terms = '1';
       $unvTicket->save(); 
     }

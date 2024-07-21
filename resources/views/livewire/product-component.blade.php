@@ -53,10 +53,11 @@
                 <!-- details test tickets-->
                   <div class="row">
                     
-                      <div class="fs-ms">SELECT YOUR CATEGORY
+                      <div class="fs-ms">SELECT YOUR CATEGORY </div>
+                      <div class="container">
                         @foreach($ticke as $edy)
 
-                            <div class="row border-1 border-bottom">
+                            <div class="row border-1 border-bottom my-1">
                                 <div class="col-9">
                                   <div class="product-title fs-sm mb-2 fw-bold">{{$edy->package}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
@@ -75,7 +76,7 @@
                                     </a>
                                   @else
                                     <a href="" class="btn btn-sm btn-outline-primary" wire:click.prevent="store({{$edy->id}},'{{$edy->code}}',{{$edy->price}})">
-                                        Add
+                                    {{$edy->price}}
                                     </a>  
                                   @endif                       
                                 </div>
@@ -86,7 +87,7 @@
 
                         @foreach($tickeo as $edy)
 
-                            <div class="row border-1 border-bottom">
+                            <div class="row border-1 border-bottom my-1">
                                 <div class="col-9">
                                   <div class="product-title fs-md mb-2">{{$edy->packagge}}</div>
                                   <div class="fs-xs fw-lighter lh-1">{{$edy->desc}}</div>
