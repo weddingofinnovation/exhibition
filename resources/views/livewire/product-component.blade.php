@@ -255,7 +255,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy->('type','visit'))
+                              @foreach($tickeo as $edy->where('type','visit'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -271,7 +271,8 @@
                                         @endif
                                       </div>
                                   </div>
-                                <hr class="border-1 border-bottom">
+                                  <hr class="border-1 border-bottom">
+
                               @endforeach
                             </div>
                             
@@ -340,7 +341,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy->('type','exhibit'))
+                              @foreach($tickeo as $edy->where('type','exhibit'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
