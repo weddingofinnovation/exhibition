@@ -169,8 +169,10 @@
                                   </div>
                               
                               @endforeach
-
-                              @foreach($tickeo as $edy->where('type','membership'))
+                              @php  
+                                 $findmembershipplan = $tickeo->where('type','membership')->get()
+                              @endphp
+                              @foreach($findmembershipplan as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -255,7 +257,11 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy->where('type','visit'))
+                              @php  
+                                 $findvstplan = $tickeo->where('type','visit')->get()
+                              @endphp
+
+                              @foreach($findvstplan as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -340,8 +346,10 @@
                                   </div>
                               
                               @endforeach
-
-                              @foreach($tickeo as $edy->where('type','exhibit'))
+                              @php  
+                                 $findexhibitplan = $tickeo->where('type','exhibit')->get()
+                              @endphp
+                              @foreach($findexhibitplan as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -426,7 +434,11 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy->where('type','advertise'))
+                              @php  
+                                 $findadvertiseplan = $tickeo->where('type','advertise')->get()
+                              @endphp
+
+                              @foreach($findadvertiseplan as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
