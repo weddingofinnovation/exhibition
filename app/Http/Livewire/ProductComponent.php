@@ -20,12 +20,14 @@ class ProductComponent extends Component
     public $slug;
     public $eventname;
     public $item;
+    public $currentTab;
     
     use WithPagination;
     
     public function mount($slug)
     {
        $this->slug = $slug;
+       $this->currentTab = session()->get('currentTab','tab1');
     }
 
     public function store($edy_id,$edy_code,$edy_price)
@@ -33,6 +35,14 @@ class ProductComponent extends Component
         Cart::instance('cart')->add($edy_id, $edy_code, 1, $edy_price)->associate('App\Models\Ticket');
         $this->emitTo('cart-component','refreshComponent');
         session()->flash('success_message','Item has been added in cart');
+    }
+
+    
+
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+      session()->put('currentTab', $tab);
     }
 
     public function render()
