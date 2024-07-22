@@ -2698,9 +2698,9 @@
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
                            
-                              <div class="h4 fw-light mb-0">{{$franchise->packagge}}</div> 
+                              <div class="fs-xs fw-normal mb-0">{{$franchise->packagge}}</div> 
                               <div class="small text-muted text-capitalize">Adm</div>
-                              
+
                             @if($franchise->admstatus == '0')
                               <div class="small text-muted text-capitalize">DeA </div>
                               @else
@@ -2719,18 +2719,16 @@
                         </div>
 
                         <div class="col-3  p-0">
-                          
-
                             <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                               <ul class="dropdown-menu" width="auto">
-                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#" wire:click.prevent="ticketstatusedit({{$franchise->id}})">Edit</a></li>
+                                <li><a class="dropdown-item" href="#" wire:click.prevent="ticketPackagge({{$franchise->id}}, 'universal')">Universal</a></li>
                                 <li><a class="dropdown-item" href="#" wire:click.prevent="ticketstatus({{$franchise->id}}, '1')">Active</a></li>   
-
                                 <li><a class="dropdown-item" href="#" wire:click.prevent="ticketstatus({{$franchise->id}}, '0')">DeActive</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delTicket({{$franchise->id}})">>Delete</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delTicket({{$franchise->id}})">Delete</a></li>
                               </ul>
                             </span>
-                            </div>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -2776,7 +2774,7 @@
                           <label class="form-label" for="unp-product-name">Ticket Price </label>
 
                           <select class="form-select form-select-sm me-2"  wire:model="type">
-                            <option selected disabled>Choose...</option>
+                            <option selected >Choose...</option>
                             <option value="plan">Plan</option>
                             <option value="visit">Visit</option>
                             <option value="exhibit">Exhibit</option>
@@ -2794,10 +2792,10 @@
                           <label class="form-label" for="unp-product-name">Packagge </label>
 
                           <select class="form-select form-select-sm me-2"  wire:model="packagge">
-                            <option selected disabled>Choose...</option>
+                            <option selected >Choose...</option>
                             <option value="universal">Universal</option>
-                            <option value="visitor">Visitor</option>
-                            <option value="exhibitor">Exhibitor</option>
+                            <option value="visit">Visitor</option>
+                            <option value="exhibit">Exhibitor</option>
                             <option value="membership">Membership</option>
                           </select>
 

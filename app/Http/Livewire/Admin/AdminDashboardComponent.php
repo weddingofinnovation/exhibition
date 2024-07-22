@@ -830,6 +830,13 @@ public $dtype;
       return redirect()->route('admin.dashboard',['board' => 'ticketPlan']);
     }
     
+    
+    public function ticketPackagge($id, $status)
+    {
+      $ticketDel = Ticket::find($id);
+      $ticketDel->packagge = trim($status);
+      $ticketDel->save();
+    }
 
     public function render()
     {
