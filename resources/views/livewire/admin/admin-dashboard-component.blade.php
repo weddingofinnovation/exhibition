@@ -2771,6 +2771,25 @@
                               <div class="form-text">{{$message}}</div>
                           @enderror
                       </div>
+
+                      <div class="col-sm-3 mb-3">
+                          <label class="form-label" for="unp-product-name">Ticket Price </label>
+
+                          <select class="form-select form-select-sm me-2"  wire:model="type">
+                            <option selected disabled>Choose...</option>
+                            <option value="universal">Universal</option>
+                            <option value="visitor">Visitor</option>
+                            <option value="exhibitor">Exhibitor</option>
+                            <option value="membership">Membership</option>
+                          </select>
+
+                          <div class="form-text">Price of the ticket</div>
+                          @error('price')
+                              <div class="form-text">{{$message}}</div>
+                          @enderror
+                      </div>
+
+                          
                   </div>
 
                   <div class="mb-3">
@@ -2911,6 +2930,15 @@
           <a class="d-table-cell handheld-toolbar-item" href="" wire:click.prevent="BulkCreateAutoDesc('2025')">
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">2025</span>
+          </a>
+      @elseif($board == 'own-plan-add-ticket' || 'ticketPlan')
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">All</span>
+          </a>
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'own-plan-add-ticket'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">Create</span>
           </a>
       @endif
 

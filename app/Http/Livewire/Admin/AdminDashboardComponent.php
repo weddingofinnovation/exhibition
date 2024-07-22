@@ -818,7 +818,7 @@ public $dtype;
       $unvTicket->slug = str::slug($unvTicket->package,'-');
       $unvTicket->price= trim($this->price);
       $unvTicket->desc = trim($this->desc);
-      $unvTicket->type = 'visitor';
+      $unvTicket->type = trim($this->type);
       $unvTicket->event_id = null ;
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
