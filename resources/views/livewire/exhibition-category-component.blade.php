@@ -133,7 +133,7 @@
                             @endforeach
                           @endforeach
                           @if ($selectedItem)
-                              <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed;    height: 325px;">
+                              <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel">
 
                                 <div class="offcanvas-header align-items-center shadow-sm">
                                   <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
@@ -151,7 +151,7 @@
                   
                                   <div class="d-table table-layout-fixed w-100">
                                           
-                                    <a class="d-table-cell handheld-toolbar-item" href="">
+                                    <!-- <a class="d-table-cell handheld-toolbar-item" href="">
                                       <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                                       <span class="handheld-toolbar-label">Exhibitor</span>
                                     </a>
@@ -159,9 +159,9 @@
                                     <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
                                       <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                                       <span class="handheld-toolbar-label">save</span>
-                                    </a>
+                                    </a> -->
                   
-                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                    <!-- <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
                                       <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                                       <span class="handheld-toolbar-label">fabrication</span>
                                     </a>
@@ -169,7 +169,7 @@
                                     <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
                                       <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
                                       <span class="handheld-toolbar-label">Membership</span>
-                                    </a>
+                                    </a> -->
                   
                                     <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
                                       <span class="handheld-toolbar-icon">

@@ -56,7 +56,7 @@ class ProductComponent extends Component
         $currentDate = now()->format( 'Y-m-d'); 
 
        // $finduserStd = User::where('utype','ADM')->first('id');
-        $tickeo = Ticket::where('admstatus','1')->where('status','1')->where('type','visitor')->get();
+        $tickeo = Ticket::where('admstatus','1')->where('status','1')->where('packkage','universal')->get();
 
         $ticke = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $test)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
 

@@ -2777,6 +2777,24 @@
 
                           <select class="form-select form-select-sm me-2"  wire:model="type">
                             <option selected disabled>Choose...</option>
+                            <option value="plan">Plan</option>
+                            <option value="visit">Visit</option>
+                            <option value="exhibit">Exhibit</option>
+                            <option value="membership">Membership</option>
+                            <option value="advertise">Advertise</option>
+                          </select>
+
+                          <div class="form-text">Price of the ticket</div>
+                          @error('type')
+                              <div class="form-text">{{$message}}</div>
+                          @enderror
+                      </div>
+
+                      <div class="col-sm-3 mb-3">
+                          <label class="form-label" for="unp-product-name">Packkage </label>
+
+                          <select class="form-select form-select-sm me-2"  wire:model="packkage">
+                            <option selected disabled>Choose...</option>
                             <option value="universal">Universal</option>
                             <option value="visitor">Visitor</option>
                             <option value="exhibitor">Exhibitor</option>
@@ -2784,7 +2802,7 @@
                           </select>
 
                           <div class="form-text">Price of the ticket</div>
-                          @error('price')
+                          @error('packkage')
                               <div class="form-text">{{$message}}</div>
                           @enderror
                       </div>
