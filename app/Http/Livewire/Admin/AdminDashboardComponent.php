@@ -819,12 +819,14 @@ public $dtype;
       $unvTicket->price= trim($this->price);
       $unvTicket->desc = trim($this->desc);
       $unvTicket->type = trim($this->type);
+      $unvTicket->packagge = trim($this->packagge);
       $unvTicket->event_id = null ;
       $unvTicket->admstatus = '1';
       $unvTicket->status = '1';
       $unvTicket->terms = '1';
       $unvTicket->user_id =  Auth::user()->id;
-      $unvTicket->save(); 
+      $unvTicket->save();
+      return redirect()->route('admin.dashboard',['board' => 'ticketPlan']);
     }
     
 
@@ -942,7 +944,7 @@ public $dtype;
       //$EventcountWithTag = Denco::
       $counteventWithCategory = Denco::where('expo_id', '$resultAdded->id')->count();
 
-      $ticket = Ticket::get();
+      $ticket = Ticket::orderBy('created_at','desc')->get();
 
       $photos = Photo::get();
 

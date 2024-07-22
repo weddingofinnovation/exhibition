@@ -2693,30 +2693,36 @@
 
       @if($board == 'ticketPlan')
             @foreach($ticket as $franchise)
-                <div class="container  ">
+                <div class="container mb-5">
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
                            
-                              <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->start_date)->format('d')}}</div> 
-                              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->start_date)->format('M')}} </div>
-                          
-                            
-                            <div class="round-circle">
-                              <i class="bi bi-bookmark"></i>
-                            </div> 
+                              <div class="h4 fw-light mb-0">{{$franchise->packagge}}</div> 
+
+                            @if($franchise->admstatus == '0')
+                              <div class="small text-muted text-capitalize">DeA </div>
+                              @else
+                              <div class="small text-muted text-capitalize">Act</div>
+                            @endif
+
+                            @if($franchise->status == '1')
+                              <div class="round-circle">
+                                Act
+                              </div>
+                              @else 
+                              <div class="round-circle">
+                                Dea
+                              </div>
+                            @endif
                         </div>
 
                         <div class="col-7  p-0">
                         <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
                             {{ucwords(trans(Str::limit($franchise->package, 100)))}}</a></div>
                         <div class="text-muted fs-sm text-start">
-                            @if(Carbon\Carbon::parse ($franchise->start_date)->format('M') != Carbon\Carbon::parse ($franchise->expiry_date)->format('M'))
-                            {{Carbon\Carbon::parse ($franchise->start_date)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->expiry_date)->format('D, d M')}}
-                            @else
-                            {{Carbon\Carbon::parse ($franchise->start_date)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->expiry_date)->format('D, d M')}}
-                            @endif 
+
                         </div>  
-                        <div class="text-muted fs-sm text-start">{{$franchise->type}}</div>
+                        <div class="text-muted fs-sm text-start"> {{$franchise->packagge}} | {{$franchise->type}}</div>
                         </div>
 
                         <div class="col-3  p-0">
@@ -2791,9 +2797,9 @@
                       </div>
 
                       <div class="col-sm-3 mb-3">
-                          <label class="form-label" for="unp-product-name">Packkage </label>
+                          <label class="form-label" for="unp-product-name">Packagge </label>
 
-                          <select class="form-select form-select-sm me-2"  wire:model="packkage">
+                          <select class="form-select form-select-sm me-2"  wire:model="packagge">
                             <option selected disabled>Choose...</option>
                             <option value="universal">Universal</option>
                             <option value="visitor">Visitor</option>
@@ -2802,7 +2808,7 @@
                           </select>
 
                           <div class="form-text">Price of the ticket</div>
-                          @error('packkage')
+                          @error('packagge')
                               <div class="form-text">{{$message}}</div>
                           @enderror
                       </div>
