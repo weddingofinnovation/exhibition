@@ -132,18 +132,108 @@
 
                             @endforeach
                           @endforeach
-                        </div>                      
+                          @if ($selectedItem)
+                              <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed;    height: 325px;">
+
+                                <div class="offcanvas-header align-items-center shadow-sm">
+                                  <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
+                                  <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                
+                                  <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                                    
+                                        <a href="http://">business</a>
+                                      
+                                  </div>
+                                
+                              
+                                <div class="handheld-toolbar">
+                  
+                                  <div class="d-table table-layout-fixed w-100">
+                                          
+                                    <a class="d-table-cell handheld-toolbar-item" href="">
+                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                      <span class="handheld-toolbar-label">Exhibitor</span>
+                                    </a>
+                  
+                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                      <span class="handheld-toolbar-label">save</span>
+                                    </a>
+                  
+                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                      <span class="handheld-toolbar-label">fabrication</span>
+                                    </a>
+                  
+                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                      <span class="handheld-toolbar-label">Membership</span>
+                                    </a>
+                  
+                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                                      <span class="handheld-toolbar-icon">
+                                      <i class="bi bi-location"></i></span>
+                                      <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                                    </a> 
+                                    
+                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                      <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                                      <span class="handheld-toolbar-label">Venue</span>
+                                    </a>
+                                    
+                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                      <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                                      <span class="handheld-toolbar-label">Menu</span>
+                                    </a>
+                  
+                                  </div>
+                  
+                                </div>
+                  
+                              </div>
+                        @endif
+                        </div>   
+                                           
                       </div>
                   
                       <!-- Reviews tab-->
                       <div class="tab-pane fade" id="reviews" role="tabpanel">
-                        <div class="container">
+                        <!-- <div class="container">
                           <div class="row text-center">
                             <i class="bi bi-bookmark"></i>
                             <p>Saving an event will add it to this tab so that you can find it later</p>
                             <a href="" class="btn btn-primary text-capitalize">return to search results</a>
                           </div>
+                        </div> -->
+                        <header>
+                          <img src="logo.png" alt="The Exhibition Network Logo">
+                        </header>
+
+                        <div class="banner">
+                          Unlock Premium Exhibition Spaces!
                         </div>
+
+                        <button>Register Now</button>
+
+                        <div class="section">
+                          <div><img src="priority.png" alt="Priority Access">Priority Access: Get first dibs on ultra-premium spaces.</div>
+                          <div><img src="tailored.png" alt="Tailored Events">Tailored Events: Personalized exhibition recommendations.</div>
+                          <div><img src="earlybird.png" alt="Early Bird Deals">Early Bird Deals: Exclusive discounts for registered users.</div>
+                          <div><img src="network.png" alt="Network & Grow">Network & Grow: Connect with top industry professionals.</div>
+                          <div><img src="vip.png" alt="VIP Invites">VIP Invites: Special access to exclusive events.</div>
+                        </div>
+
+                        <div class="divider"></div>
+
+                        <div class="section">
+                          Get Started:
+                          <div>1. Register Now</div>
+                          <div>2. Save Your Interests</div>
+                          <div>3. Enjoy Premium Benefits</div>
+                        </div>
+
+                        <button>Join The Exhibition Network</button>
                       </div>
 
                   </div>
@@ -152,67 +242,7 @@
               </div>
             </div>
           </div>
-            @if ($selectedItem)
-                  <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed;    height: 325px;">
-
-                    <div class="offcanvas-header align-items-center shadow-sm">
-                      <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
-                      <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    
-                      <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                        
-                            <a href="http://">business</a>
-                          
-                      </div>
-                    
-                  
-                    <div class="handheld-toolbar">
-      
-                      <div class="d-table table-layout-fixed w-100">
-                              
-                        <a class="d-table-cell handheld-toolbar-item" href="">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Exhibitor</span>
-                        </a>
-      
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">save</span>
-                        </a>
-      
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">fabrication</span>
-                        </a>
-      
-                        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                          <span class="handheld-toolbar-label">Membership</span>
-                        </a>
-      
-                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-                          <span class="handheld-toolbar-icon">
-                          <i class="bi bi-location"></i></span>
-                          <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                        </a> 
-                        
-                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                          <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                          <span class="handheld-toolbar-label">Venue</span>
-                        </a>
-                        
-                        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                          <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                          <span class="handheld-toolbar-label">Menu</span>
-                        </a>
-      
-                      </div>
-      
-                    </div>
-      
-                  </div>
-            @endif
+           
         </div>
       <!--end Google-->  
 

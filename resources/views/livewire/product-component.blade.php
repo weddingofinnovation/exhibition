@@ -10,7 +10,7 @@
                 <a href="{{$previous}}"><i class="bi bi-chevron-left"></i></a>  
                 </div>
           
-                <a class="text-center  py-2" href="{{route('event.details',['slug' => $event->slug])}}">
+                <a class="text-center text-dark py-2" href="{{route('event.details',['slug' => $event->slug])}}">
                       <div class="fw-bold">{{ucwords(trans($event->eventname))}}</div> 
                       <div class="fs-xs fw-light">
                         @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
