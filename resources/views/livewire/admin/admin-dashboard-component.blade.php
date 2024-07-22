@@ -2692,28 +2692,21 @@
 
 
       @if($board == 'ticketPlan')
+          <div class="mb-5">
             @foreach($ticket as $franchise)
-                <div class="container mb-5">
+                <div class="container">
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                         <div class="col  pr-0">
                            
                               <div class="h4 fw-light mb-0">{{$franchise->packagge}}</div> 
-
+                              <div class="small text-muted text-capitalize">Adm</div>
+                              
                             @if($franchise->admstatus == '0')
                               <div class="small text-muted text-capitalize">DeA </div>
                               @else
                               <div class="small text-muted text-capitalize">Act</div>
                             @endif
 
-                            @if($franchise->status == '1')
-                              <div class="round-circle">
-                                Act
-                              </div>
-                              @else 
-                              <div class="round-circle">
-                                Dea
-                              </div>
-                            @endif
                         </div>
 
                         <div class="col-7  p-0">
@@ -2741,6 +2734,7 @@
                     </div>
                 </div>
             @endforeach
+          </div>
       @endif
 
       @if($board == 'data')

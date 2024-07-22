@@ -138,13 +138,14 @@ class EventDetailsComponent extends Component
         $detailProductprice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
         $ticketOrExhibit = $detailProductprice->count();
         
+
         if($ticketOrExhibit == '0')
         {
-          $productPrice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->min('price');
+          $productPrice = Ticket::where('admstatus','1')->where('status','1')->where('packagge', 'universal')->max('price');
         }
         else
         {
-          $productPrice = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $event -> id)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->min('price');
+          $productPrice = Ticket::where('admstatus','1')->where('status','1')->where('packagge', 'universal')->min('price');
         }
         
 

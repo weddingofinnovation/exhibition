@@ -71,6 +71,7 @@ class AdminDashboardComponent extends Component
  
   
 public $frequency;
+public $packagge;
 public $subscriber;
 public $desc;
 public $type;
