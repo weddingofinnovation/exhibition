@@ -38,11 +38,12 @@
         <div class="mb-4 mb-lg-5 ">
           <!-- Nav tabs-->
           <ul class="nav nav-tabs nav-fill" role="tablist">
-            <li class="nav-item"><a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Ticket</a></li>
-            <li class="nav-item"><a class="nav-link px-1 fs-sm" >Date & Time</a></li>
-
-            {{--<li class="nav-item"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Date & Time</a></li>
-            <li class="nav-item"><a class="nav-link px-1 {{'pass/es/($event->slug)#reviews' == request()->path() ? 'active' : '' }} fs-sm" href="#comments" data-bs-toggle="tab" role="tab">Meet-up</a></li>
+            <li class="nav-item"><a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Plan</a></li>
+            <li class="nav-item"><a class="nav-link px-1 fs-sm">Membership</a></li>
+            <li class="nav-item"><a class="nav-link px-1 fs-sm">Visit</a></li>
+            <li class="nav-item"><a class="nav-link px-1 fs-sm">Exhibit</a></li>
+            <li class="nav-item"><a class="nav-link px-1 fs-sm">Advertise</a></li>
+            {{--<li class="nav-item"><a class="nav-link px-1 {{'pass/es/($event->slug)#reviews' == request()->path() ? 'active' : '' }} fs-sm" href="#comments" data-bs-toggle="tab" role="tab">Meet-up</a></li>
             <li class="nav-item"><a class="nav-link px-1 {{'pass/es/($event->slug)#reviews' == request()->path() ? 'active' : '' }} fs-sm" href="#comments" data-bs-toggle="tab" role="tab">Add-on</a></li>--}}
           </ul>
 
@@ -90,10 +91,9 @@
                                 <div class="col-8">
                                   <div class="product-title fs-md mb-2 fw-bold">{{$edy->package}}</div>
                                   <div class="fs-xs fw-light lh-1">{{$edy->desc}}</div>
-                                  <div class="fs-xs fw-normal"><i class="bi bi-currency-rupee"></i>{{$edy->price}}</div>
                                 </div>
                                 
-                                <div class="col-4">
+                                <div class="col-4 align-right">
                                   @if($edy->price == '0.00')
                                     <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-outline-primary" >Register</a>
                                   @else
@@ -111,7 +111,7 @@
                               <div class="d-flex  justify-content-between py-2 px-2">
                                 <div class="text-dark fw-medium fs-sm pl-3 lh-3">  <i class="bi bi-currency-rupee"></i>
                                 {{Cart::instance('cart')->subtotal()}} <br>
-                                  @if(Cart::instance('cart')->count()>0)
+                                  @if(Cart::instance('cart')->count() > 0)
                                     <span class=" fw-normal fs-xs">{{Cart::instance('cart')->count()}} Ticket</span>
                                     @else
                                     <span class=" fw-light fs-xs">Onwards</span>
