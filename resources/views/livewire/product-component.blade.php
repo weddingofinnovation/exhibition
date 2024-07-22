@@ -83,7 +83,6 @@
                                       </div>
 
                                   </div>
-                              
                               @endforeach
 
                               @foreach($tickeo as $edy)
@@ -141,7 +140,7 @@
                         <div class="row">
                           
                             <div class="fs-ms">SELECT YOUR CATEGORY </div>
-                            <div class="container">
+                            <div class="container mb-3">
                               @foreach($ticke as $edy)
                                   <div class="row border-1 border-bottom my-1">
                                       <div class="col-9">
@@ -171,7 +170,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy)
+                              @foreach($tickeo as $edy->where('type','membership'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -226,7 +225,7 @@
                         <div class="row">
                           
                             <div class="fs-ms">SELECT YOUR CATEGORY </div>
-                            <div class="container">
+                            <div class="container mb-3">
                               @foreach($ticke as $edy)
                                   <div class="row border-1 border-bottom my-1">
                                       <div class="col-9">
@@ -256,7 +255,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy)
+                              @foreach($tickeo as $edy->('type','visit'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -311,7 +310,7 @@
                         <div class="row">
                           
                             <div class="fs-ms">SELECT YOUR CATEGORY </div>
-                            <div class="container">
+                            <div class="container mb-3">
                               @foreach($ticke as $edy)
                                   <div class="row border-1 border-bottom my-1">
                                       <div class="col-9">
@@ -341,7 +340,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy)
+                              @foreach($tickeo as $edy->('type','exhibit'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -391,12 +390,12 @@
                     </div>
                     @elseif($currentTab === 'tab5')
                     <!-- Product details tab-->
-                    <div class="tab-pane fade show active" id="details" role="tabpanel">
+                    <div class="tab-pane fade show active"  role="tabpanel">
                       <!-- details test tickets-->
                         <div class="row">
                           
                             <div class="fs-ms">SELECT YOUR CATEGORY </div>
-                            <div class="container">
+                            <div class="container mb-3">
                               @foreach($ticke as $edy)
                                   <div class="row border-1 border-bottom my-1">
                                       <div class="col-9">
@@ -426,7 +425,7 @@
                               
                               @endforeach
 
-                              @foreach($tickeo as $edy)
+                              @foreach($tickeo as $edy->where('type','advertise'))
 
                                   <div class="row my-1">
                                       <div class="col-8">
