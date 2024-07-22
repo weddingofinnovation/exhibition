@@ -10,8 +10,8 @@
                 <a href="{{$previous}}"><i class="bi bi-chevron-left"></i></a>  
                 </div>
           
-                <a class="text-center text-dark py-2" href="{{route('event.details',['slug' => $event->slug])}}">
-                      <div>{{$event->eventname}}</div> 
+                <a class="text-center  py-2" href="{{route('event.details',['slug' => $event->slug])}}">
+                      <div class="fw-bold">{{ucwords(trans($event->eventname))}}</div> 
                       <div class="fs-xs fw-light">
                         @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
                           {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}} | {{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}
@@ -37,7 +37,7 @@
           
               <div class="mb-4 mb-lg-5 ">
                 <!-- Nav tabs-->
-                <ul class="nav nav-tabs nav-fill" role="tablist">" 
+                <ul class="nav nav-tabs nav-fill" role="tablist">
                   <li class="nav-item"><a class="nav-link px-1 fs-sm  {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Plan</a></li>
                   <li class="nav-item"><a class="nav-link px-1 fs-sm  {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">Membership</a></li>
                   <li class="nav-item"><a class="nav-link px-1 fs-sm  {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">Visit</a></li>
