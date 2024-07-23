@@ -2961,13 +2961,13 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">All</span>
           </a>
-          
+
           <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'own-plan-add-ticket'])}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">Create</span>
           </a>
       @endif
-      @endif
+      
 
         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
           <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
