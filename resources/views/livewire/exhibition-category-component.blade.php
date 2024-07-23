@@ -1866,7 +1866,7 @@
       </div>
 
       @if ($selectedItem)
-          <div class="offcanvas offcanvas-bottom offcanvas-sm show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed; top:0; height:350px">
+          <div class="offcanvas offcanvas-bottom show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed; top:15px; height:350px">
 
             <div class="offcanvas-header align-items-center shadow-sm">
               <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
