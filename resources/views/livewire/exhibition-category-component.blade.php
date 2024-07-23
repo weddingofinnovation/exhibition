@@ -1865,13 +1865,15 @@
         </div>
       </div>
 
-      @if ($selectedItem)
       
-          <div class="offcanvas offcanvas-bottom show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed; top:350px; width:350px; height:350px">
+      
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampleLabel">
 
             <div class="offcanvas-header align-items-center shadow-sm">
-              <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
-              <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            @if ($selectedItem)
+              <h2 class="h5 mb-0" id="offCanvasExampleLabel">{{ $selectedItem['eventname']}}</h2>
+            @endif
+              <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             
             <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
@@ -1924,7 +1926,6 @@
 
           </div>
       
-      @endif
       
     </main>
 
@@ -1957,7 +1958,17 @@
           "autoplayButtonOutput":false
         });
       </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('open-offcanvas' , function() {
+            var offCanvas = new bootstrap.Offcanvas(document.getElementById('offCanvasExample'));
+            offCanvas.show();
+          });
+        });
+      </script>
     @endpush
+
 
 
 
