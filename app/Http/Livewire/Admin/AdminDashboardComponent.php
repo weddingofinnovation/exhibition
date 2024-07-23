@@ -101,6 +101,7 @@ public $dtype;
         $this->month = Carbon::today()->format("m");
         $this->monthly = Carbon::today()->format("m");
         $this->visited = '1';
+        $this->currentTab = session()->get('currentTab','tab1');
     }
     
     public function bulkReview()
