@@ -2947,7 +2947,7 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">2025</span>
           </a>
-      @elseif($board == 'own-plan-add-ticket' && 'ticketPlan')
+      @elseif($board == 'own-plan-add-ticket')
           <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">All</span>
@@ -2956,6 +2956,17 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">Create</span>
           </a>
+      @elseif($board == 'ticketPlan')
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">All</span>
+          </a>
+          
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'own-plan-add-ticket'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">Create</span>
+          </a>
+      @endif
       @endif
 
         <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">

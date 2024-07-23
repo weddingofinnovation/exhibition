@@ -169,25 +169,23 @@
         
 
         <div class="d-flex badgese">
-          <a class="badge  border-1 text-right border-dark text-dark mr-1" href=""> <i class="bi bi-plus"></i> Submit event</a>
-            @foreach( $getnamecategoryresult as $categ) 
+          <a class="badge  border-1 text-right border-dark text-dark mr-1" href="#"> <i class="bi bi-plus"></i> Submit event</a>
+            @foreach ($getnamecategoryresult as $categ) 
               @php
                 $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
               @endphp
               
-            
               @foreach($findcountevent as $finderlo)
                   <a wire:ignore class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
                   {{ucwords(trans($finderlo->tag))}}</a>
               @endforeach
-
             @endforeach
         </div>
     
         <div class="row g-0 py-0 mx-n2 my-Slider3"> 
           {{-- px-2 mb-1 --}}
           @foreach($evento as $eventoi)
-            <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+            <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
               <div class="card product-card">
                 
                 <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">

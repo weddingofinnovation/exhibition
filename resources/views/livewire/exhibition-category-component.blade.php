@@ -3,7 +3,7 @@
 @section('page_keyword',  'Great Exhibition To Exhibit, Great Exhibition To Visit, Great Exhibition to Business, upcoming ,Council, Innovation, sell your business, market, expand your franchise, buy a brand licenese,  business_design, business_strategy, business_design_sprint, innovation_accelerator, product_service, go_to_market, entrepreneur_residence, strategy_sprint, creative')
 
     <main>
-     
+
       <style>
               .tns-outer {
                 padding: 0 !important;
@@ -61,7 +61,7 @@
                   <div class="tab-content pt-1">                
                       <!-- Product details tab-->
                       <div class="tab-pane fade show active" id="details" role="tabpanel">
-                        <div class="d-flex badgese pb-2">
+                        <div wire:ignore class="d-flex badgese pb-2">
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
@@ -76,7 +76,7 @@
                               $witems = Cart::instance('wishlist')->content()->pluck('id'); 
                         @endphp
 
-                        <div class="row mb-5 pb-2">    
+                        <div class="row mb-5 pb-2" style=" position : relative;">    
                           @foreach ($exhibition as $business)
                             @php
                                 $franchiso = DB::table('events')->where('id', $business->EventName)
@@ -130,66 +130,9 @@
                                         </div>  
                                     </div>
 
-                            @endforeach
-                            @if ($selectedItem)
-                              <div class="offcanvas offcanvas-bottom offcanvas-sm show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height:350px">
-
-                                <div class="offcanvas-header align-items-center shadow-sm">
-                                  <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
-                                  <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                                </div>
-                                
-                                <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                                      <a href="http://">business</a>
-                                </div>
-                                
-                                <div class="handheld-toolbar">
-                  
-                                  <div class="d-table table-layout-fixed w-100">
-                                          
-                                    <!-- <a class="d-table-cell handheld-toolbar-item" href="">
-                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                      <span class="handheld-toolbar-label">Exhibitor</span>
-                                    </a>
-                  
-                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                      <span class="handheld-toolbar-label">save</span>
-                                    </a> -->
-                  
-                                    <!-- <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                      <span class="handheld-toolbar-label">fabrication</span>
-                                    </a>
-                  
-                                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                      <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                      <span class="handheld-toolbar-label">Membership</span>
-                                    </a> -->
-                  
-                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
-                                      <span class="handheld-toolbar-icon">
-                                      <i class="bi bi-location"></i></span>
-                                      <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
-                                    </a> 
-                                    
-                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                                      <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-                                      <span class="handheld-toolbar-label">Venue</span>
-                                    </a>
-                                    
-                                    <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                                      <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
-                                      <span class="handheld-toolbar-label">Menu</span>
-                                    </a>
-                  
-                                  </div>
-                  
-                                </div>
-                  
-                              </div>
-                          @endif
+                            @endforeach                            
                           @endforeach
+                         
                         </div>   
                                            
                       </div>
@@ -239,7 +182,6 @@
               </div>
             </div>
           </div>
-           
         </div>
       <!--end Google-->  
 
@@ -1923,7 +1865,64 @@
         </div>
       </div>
 
-        
+      @if ($selectedItem)
+          <div class="offcanvas offcanvas-bottom offcanvas-sm show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed; top:0; height:350px">
+
+            <div class="offcanvas-header align-items-center shadow-sm">
+              <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
+              <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            
+            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                  <a href="http://">business</a>
+            </div>
+            
+            <div class="handheld-toolbar">
+
+              <div class="d-table table-layout-fixed w-100">
+                      
+                <!-- <a class="d-table-cell handheld-toolbar-item" href="">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Exhibitor</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">save</span>
+                </a> -->
+
+                <!-- <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">fabrication</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Membership</span>
+                </a> -->
+
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#citysidebar" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon">
+                  <i class="bi bi-location"></i></span>
+                  <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
+                </a> 
+                
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                  <span class="handheld-toolbar-label">Venue</span>
+                </a>
+                
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+      @endif
       
     </main>
 
@@ -1931,35 +1930,6 @@
       <script>
         var slider = tns({
           "container": '.badgese',   
-          
-          "responsive": {
-            "300": {
-              "items": 3,
-              "controls": false,
-              "fixedWidth": 100,
-              "mouseDrag": true,
-              "autoplay": false,
-              "autoplayButtonOutput": false,
-              "autoplayHoverPause": true,
-            },
-            "500": {
-              "items": 1,
-              "nav": false,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplay": false,
-              "autoplayButtonOutput": false,
-              "fixedWidth": 100,
-            },
-            
-          },
-          "autoplayButtonOutput":false
-        });
-      </script>
-
-      <script>
-        var slider = tns({
-          "container": '.badgeose',   
           
           "responsive": {
             "300": {

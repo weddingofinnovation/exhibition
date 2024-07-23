@@ -173,10 +173,8 @@
                                   </div>
                               
                               @endforeach
-                              @php  
-                                $findmembershipplan = $tickeo->where('type','membership')->get()
-                              @endphp
-                              @foreach($findmembershipplan as $edy)
+
+                              @foreach($tickeomembership as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -261,11 +259,8 @@
                               
                               @endforeach
 
-                              @php  
-                                $findvstplan = $tickeo->where('type','visit')->get()
-                              @endphp
 
-                              @foreach($findvstplan as $edy)
+                              @foreach($tickeovisit as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -350,10 +345,8 @@
                                   </div>
                               
                               @endforeach
-                              @php  
-                                $findexhibitplan = $tickeo->where('type','exhibit')->get()
-                              @endphp
-                              @foreach($findexhibitplan as $edy)
+                              
+                              @foreach($tickeoexhibit as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">
@@ -438,11 +431,8 @@
                               
                               @endforeach
 
-                              @php  
-                                $findadvertiseplan = $tickeo->where('type','advertise')->get()
-                              @endphp
 
-                              @foreach($findadvertiseplan as $edy)
+                              @foreach($tickeoadvertise as $edy)
 
                                   <div class="row my-1">
                                       <div class="col-8">

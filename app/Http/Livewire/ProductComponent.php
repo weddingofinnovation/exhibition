@@ -57,10 +57,22 @@ class ProductComponent extends Component
 
        // $finduserStd = User::where('utype','ADM')->first('id');
         $tickeo = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->get();
+        $tickeomembership = $tickeo->where('type','membership')->get();
+        $tickeovisit = $tickeo->where('type','visit')->get();
+        $tickeoexhibit = $tickeo->where('type','exhibit')->get();
+        $tickeoadvertise = $tickeo->where('type','advertise')->get();
+
 
         $ticke = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $test)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
 
         //dd( Session()->all());
-        return view('livewire.product-component', ['tickeo'=> $tickeo ,'previous'=> $previous , 'event'=>$event,'ticke'=>$ticke])->layout('layouts.eblog');
+        return view('livewire.product-component', [ 'tickeo'=> $tickeo ,
+                                                    'tickeomembership' => $tickeomembership,
+                                                    'tickeovisit' => $tickeovisit,
+                                                    'tickeoexhibit' => $tickeoexhibit,
+                                                    'tickeoadvertise' => $tickeoadvertise,
+                                                   'previous'=> $previous , 
+                                                   'event'=>$event,
+                                                   'ticke'=>$ticke])->layout('layouts.eblog');
     }
 }
