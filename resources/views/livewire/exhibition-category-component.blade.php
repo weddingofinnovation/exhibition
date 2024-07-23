@@ -1867,11 +1867,11 @@
 
       
       
-          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampleLabel" style="height: 380px;">
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExampleo"  aria-labelledby="offCanvasExampleLabelo" style="height: 380px;">
 
             <div class="offcanvas-header align-items-center shadow-sm">
             @if ($selectedItem)
-              <h2 class="h5 mb-0" id="offCanvasExampleLabel">{{ $selectedItem['eventname']}}</h2>
+              <h2 class="h5 mb-0" id="offCanvasExampleLabelo">{{ $selectedItem['eventname']}}</h2>
             @endif
               <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -1962,7 +1962,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           document.addEventListener('open-offcanvas' , function() {
-            var offCanvas = new bootstrap.Offcanvas(document.getElementById('offCanvasExample'));
+            var offCanvas = new bootstrap.Offcanvas(document.getElementById('offCanvasExampleo'));
             offCanvas.show();
           });
         });
