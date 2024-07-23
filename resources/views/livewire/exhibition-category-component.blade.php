@@ -131,22 +131,18 @@
                                     </div>
 
                             @endforeach
-                          @endforeach
-                          @if ($selectedItem)
-                              <div class="offcanvas offcanvas-bottom offcanvas-md show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel">
+                            @if ($selectedItem)
+                              <div class="offcanvas offcanvas-bottom offcanvas-sm show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="height:350px">
 
                                 <div class="offcanvas-header align-items-center shadow-sm">
                                   <h2 class="h5 mb-0" id="offcanvasLabel">{{ $selectedItem['eventname']}}</h2>
                                   <button class="btn-close ms-auto" wire:click="closeOffcanvas" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                 </div>
                                 
-                                  <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                                    
-                                        <a href="http://">business</a>
-                                      
-                                  </div>
+                                <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                                      <a href="http://">business</a>
+                                </div>
                                 
-                              
                                 <div class="handheld-toolbar">
                   
                                   <div class="d-table table-layout-fixed w-100">
@@ -192,7 +188,8 @@
                                 </div>
                   
                               </div>
-                        @endif
+                          @endif
+                          @endforeach
                         </div>   
                                            
                       </div>

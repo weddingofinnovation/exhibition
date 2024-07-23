@@ -2947,7 +2947,7 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">2025</span>
           </a>
-      @elseif($board == 'own-plan-add-ticket' || 'ticketPlan')
+      @elseif($board == 'own-plan-add-ticket' && 'ticketPlan')
           <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">All</span>
