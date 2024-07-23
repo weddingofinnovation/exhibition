@@ -57,10 +57,10 @@ class ProductComponent extends Component
 
        // $finduserStd = User::where('utype','ADM')->first('id');
         $tickeo = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->get();
-        $tickeomembership = $tickeo->where('type','membership')->get();
-        $tickeovisit = $tickeo->where('type','visit')->get();
-        $tickeoexhibit = $tickeo->where('type','exhibit')->get();
-        $tickeoadvertise = $tickeo->where('type','advertise')->get();
+        $tickeomembership = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->where('type','membership')->get();
+        $tickeovisit = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->where('type','visit')->get();
+        $tickeoexhibit = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->where('type','exhibit')->get();
+        $tickeoadvertise = Ticket::where('admstatus','1')->where('status','1')->where('packagge','universal')->where('type','advertise')->get();
 
 
         $ticke = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $test)->where('expiry_date', '>=' , $currentDate)->where('expiry_time', '>=' , $currentTime)->get();
