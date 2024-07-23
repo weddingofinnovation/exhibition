@@ -1866,6 +1866,7 @@
       </div>
 
       @if ($selectedItem)
+      <div class="col-sm-6">
           <div class="offcanvas offcanvas-bottom show" tabindex="-1" id="offcanvas"  aria-labelledby="offcanvasLabel" style="position:fixed; top:15px; height:350px">
 
             <div class="offcanvas-header align-items-center shadow-sm">
@@ -1922,6 +1923,7 @@
             </div>
 
           </div>
+      </div>
       @endif
       
     </main>
