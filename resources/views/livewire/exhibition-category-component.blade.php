@@ -1867,11 +1867,11 @@
 
       
       
-          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExampleo"  aria-labelledby="offCanvasExampleLabelo" style="height: 380px;">
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
 
             <div class="offcanvas-header align-items-center shadow-sm">
             @if ($selectedItem)
-              <h2 class="h5 mb-0" id="offCanvasExampleLabelo">{{ $selectedItem['eventname']}}</h2>
+              <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
             @endif
               <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
@@ -1910,7 +1910,7 @@
                   <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">City</span>
                 </a> 
                 
-                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                {{-- <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                   <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
                   <span class="handheld-toolbar-label">Venue</span>
                 </a>
@@ -1918,7 +1918,7 @@
                 <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                   <span class="handheld-toolbar-icon"><i class=" bi bi-list"></i></span>
                   <span class="handheld-toolbar-label">Menu</span>
-                </a>
+                </a> --}}
 
               </div>
 
@@ -1962,7 +1962,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           document.addEventListener('open-offcanvas' , function() {
-            var offCanvas = new bootstrap.Offcanvas(document.getElementById('offCanvasExampleo'));
+            var offCanvas = new bootstrap.Offcanvas(document.getElementById('ooooffCanvasExampleo'));
             offCanvas.show();
           });
         });
