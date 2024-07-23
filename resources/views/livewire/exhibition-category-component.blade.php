@@ -1867,7 +1867,7 @@
 
       
       
-          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
+          <div class=" offcanvaser offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
 
             <div class="offcanvas-header align-items-center shadow-sm">
             @if ($selectedItem)
@@ -1947,7 +1947,7 @@
 
       <script>
         document.addEventListener('DOMContentLoaded', function() {
-          document.addEventListener('open-offcanvas' , function() {
+          document.addEventListener('open-offcanvaser' , function() {
             var offCanvas = new bootstrap.Offcanvas(document.getElementById('ooooffCanvasExampleo'));
             offCanvas.show();
           });
