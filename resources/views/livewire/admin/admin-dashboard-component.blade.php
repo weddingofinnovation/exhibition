@@ -68,20 +68,21 @@
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year24find" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year25find" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
                 </ul>
-
-                {{--<div class="d-flex badgese pb-2">
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="today"> Today </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="tomorrow"> Tomorrow </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="this-weekend">  This weekend </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-week">  Next Week </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-weekend">  Next weekend </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="this-month">  This Month </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-month">  Next Month </a></span>
-                </div>--}}
-
+                
+                <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')" data-bs-toggle="tab" role="tab">ID </a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')" data-bs-toggle="tab" role="tab">2022 {{$year22ev->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab6')" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab7')" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
+                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab8')" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
+                </ul>
                 <div class="tab-content pt-1">
+                @if($currentTab === 'tab1')
                   <!-- Request tab-->
-                    <div class="tab-pane fade" id="requuest" role="tabpanel">
+                    <div class="tab-pane fade show active" id="requuest" role="tabpanel">
                       <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
                         <div class="row mb-5 pb-2">
                           @foreach ($expoaward as $franchise) 
@@ -125,7 +126,7 @@
                           @endforeach
                         </div>
                     </div>
-
+                    @elseif($currentTab === 'tab2')
                   <!-- Product details tab-->
                     <div class="tab-pane fade show active" id="details" role="tabpanel">
                       <!-- details test tickets-->
@@ -230,9 +231,9 @@
                         @endforeach
                       </div>
                     </div>
-                
+                    @elseif($currentTab === 'tab3')
                   <!-- Reviews tab-->
-                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                    <div class="tab-pane fade show active" id="reviews" role="tabpanel">
                       <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
                         <div class="row mb-5 pb-2">
                           @if(is_null($searchTerm))
@@ -283,9 +284,9 @@
                           @endif
                         </div>
                     </div>
-
+                    @elseif($currentTab === 'tab4')
                   <!--Id-->
-                    <div class="tab-pane fade" id="reviewID" role="tabpanel">
+                    <div class="tab-pane fade show active" id="reviewID" role="tabpanel">
                       
                         <div class="input-group">
                         <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="findIDs" aria-label="search with ID" aria-describedby="button-addon2">
@@ -328,8 +329,8 @@
                           @endif
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="year22find" role="tabpanel">
+                    @elseif($currentTab === 'tab5')
+                    <div class="tab-pane fade show active" id="year22find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year22ev as $franchise) 
                             <div class="container">
@@ -372,8 +373,8 @@
                           @endforeach
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="year23find" role="tabpanel">
+                    @elseif($currentTab === 'tab6')
+                    <div class="tab-pane fade show active" id="year23find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year23ev as $franchise) 
                             <div class="container  ">
@@ -416,8 +417,8 @@
                           @endforeach
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="year24find" role="tabpanel">
+                    @elseif($currentTab === 'tab7')
+                    <div class="tab-pane fade show active" id="year24find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year24ev as $franchise) 
                             <div class="container  ">
@@ -460,8 +461,8 @@
                           @endforeach
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="year25find" role="tabpanel">
+                    @elseif($currentTab === 'tab8')
+                    <div class="tab-pane fade show active" id="year25find" role="tabpanel">
                         <div class="row mb-5 pb-2">
                           @foreach ($year25ev as $franchise) 
                             <div class="container  ">
@@ -504,6 +505,7 @@
                           @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
 
             </div>
@@ -2771,7 +2773,7 @@
                       </div>
 
                       <div class="col-sm-3 mb-3">
-                          <label class="form-label" for="unp-product-name">Ticket Price </label>
+                          <label class="form-label" for="unp-product-name">Category </label>
 
                           <select class="form-select form-select-sm me-2"  wire:model="type">
                             <option selected >Choose...</option>

@@ -809,7 +809,14 @@ public $dtype;
     public $terms;
     public $code;
     public $cart_value;
+    public $currentTab;
     
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+      session()->put('currentTab', $tab);
+    }
+
 
     public function universalticket()
     {
