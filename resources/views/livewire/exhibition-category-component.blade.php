@@ -1865,7 +1865,7 @@
         </div>
       </div>
 
-      <div class="  offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
 
         <div class="offcanvas-header align-items-center shadow-sm">
         @if ($selectedItem)

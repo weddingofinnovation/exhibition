@@ -372,7 +372,7 @@
               <span class="handheld-toolbar-label">Menu</span>
             </a>
 
-        @elseif(Route::currentRouteName() == 'coi.exhibitioncategory' || Route::currentRouteName() == 'search.events' || Route::currentRouteName() == 'search.venue')
+        @elseif(Route::currentRouteName() == 'search.events' || Route::currentRouteName() == 'search.venue')
 
             <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-home"></i></span>
