@@ -230,10 +230,10 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 Route::get('/', EventComponent::class)->name('business.exhibition');
 
 
-//Route::post('/scrape-form',[AdminScraperComponent::class,'scrape']);
-//Route::get('/scrape-form' , function(){ return view('admin-scraper'); });
+Route::post('/scrape-form',[AdminScraperComponent::class,'scrape']);
+Route::get('/scrape-form' , function(){ return view('admin-scraper'); });
 
-Route::get('/scrape-form', AdminScraperComponent::class);
+//Route::get('/scrape-form', AdminScraperComponent::class);
 
 Route::get('/conference', ConferenceComponent::class)->name('coi.conference');
 Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class)->name('event.details');
