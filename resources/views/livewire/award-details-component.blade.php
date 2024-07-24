@@ -218,10 +218,6 @@
     </section>
 
 
-
-    
-
-
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
               <div class="row text-center text-sm-start">
@@ -784,54 +780,10 @@
                       <a href="#" class="text-primary  fs-sm fw-bold">Go somewhere</a>
                     </div>
                   </div>
-
-
-                 
               </div>
             </section>
             
-
-                    <!-- copy Card group sec_last-->
-                      <!-- <section class="container py-5">
-
-                        
-                        <div class="card-group sec_last">
-
-                          
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">World Expos' History</h5>
-                                <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                              </div>
-                            </div>
-
-                          
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">Expo 2023 Story</h5>
-                                <p class="card-text fs-sm text-muted">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                              </div>
-                            </div>
-
-                          
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">After Expo</h5>
-                                <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                              </div>
-                            </div>
-                        </div>
-                      </section> -->
-
             
-
-
             <section class="card text-center py-5 border-0">
               <div class="card-body">
                 <h5 class="card-title h2">Buy your Expo 2023 Tickets Now </h5>
@@ -989,8 +941,6 @@
             </section>
            @endif
 
-
-
            <section class="container mb-4 mb-lg-5">
             <div class="tab-content pt-2">
               @if($currentTab === 'tab2')
@@ -1053,433 +1003,312 @@
                       </section>
                 </div>
               @elseif($currentTab === 'tab1')
-              <section class="card text-center py-5 award rounded-0">
-      <div class="card-body">
-        <h5 class="card-title h2 textcolor">Timeline</h5>
-        <div class="d-flex justify-content-between">
-            <p class="card-text fs-md fw-bold textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
-            <p class="card-text fs-md fw-bold textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
-            <p class="card-text fs-md fw-bold textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
-        </div>
-       
-        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
-      </div>
-    </section>
+                <section class="card text-center py-5 award rounded-0">
+                  <div class="card-body">
+                    <h5 class="card-title h2 textcolor">Timeline</h5>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text fs-md fw-bold textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
+                        <p class="card-text fs-md fw-bold textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
+                        <p class="card-text fs-md fw-bold textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
+                    </div>
+                  
+                    <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
+                  </div>
+                </section>
 
-    <section class="container award mb-5">
-      <h1 class="text-light"> Competition Categories</h1>
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
+                <section class="container award mb-5">
+                  <h1 class="text-light"> Competition Categories</h1>
+                  <div class="card-group">
+                      <!-- Card -->
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <a href="#" class="text-primary fw-bold">Read More</a>
+                        </div>
+                      </div>
+                  </div>
 
-     
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-    </section>
+                
+                      <!-- Card -->
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <a href="#" class="text-primary fw-bold">Read More</a>
+                        </div>
+                      </div>
+                  
+                      <!-- Card -->
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <a href="#" class="text-primary fw-bold">Read More</a>
+                        </div>
+                      </div>
+                  </div>
+                </section>
 
-    <section class="container py-5">
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-    </section>
+                <section class="container py-5">
+                  <div class="card-group">
+                      <!-- Card -->
+                      <div class="card border-0">
+                        <div class="card-body">
+                          <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <a href="#" class="text-primary fw-bold">Read More</a>
+                        </div>
+                      </div>
+                  </div>
+                </section>
 
-    <section class="award text-light my-5 py-5">
-      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
-      <div class="container">
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Main Prize</div>
-              <span class = "text-muted fs-xs">$10,000 cash prize</span>
-          </div>
-        </div>
+                <section class="award text-light my-5 py-5">
+                  <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
+                  <div class="container">
+                    <div class="row mb-3">
+                      <div class="col-3"> <i class="bi bi-money"></i></div>
+                      <div class="col-9"> 
+                          <div class="fw-bold fs-md">Main Prize</div>
+                          <span class = "text-muted fs-xs">$10,000 cash prize</span>
+                      </div>
+                    </div>
 
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Exposure Opportunity</div>
-              <span class = "text-muted fs-xs lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-          </div>
-        </div>
+                    <div class="row mb-3">
+                      <div class="col-3"> <i class="bi bi-money"></i></div>
+                      <div class="col-9"> 
+                          <div class="fw-bold fs-md">Exposure Opportunity</div>
+                          <span class = "text-muted fs-xs lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+                      </div>
+                    </div>
 
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
-              <span class = "text-muted fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Offline Event</div>
-              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
-          </div>
-        </div>
-      </div>
-    </section>            
-    
-    <!--details-->
-    <div class="container d-lg-none">
-            <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
-              <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
-              <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
-            </div>-->
-            
-              @if($commentedRates->count() > 0)
-                <div class="col-lg-4 col-md-5 pt-2 pb-0">
-                    <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
-                    
-                          <i class = "bi bi-star-filled text-accent me-1"></i>
-                            <span class="fs-md fw-bold">
-                            <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
-                            <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                    <div class="row mb-3">
+                      <div class="col-3"> <i class="bi bi-money"></i></div>
+                      <div class="col-9"> 
+                          <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
+                          <span class = "text-muted fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-3"> <i class="bi bi-money"></i></div>
+                      <div class="col-9"> 
+                          <div class="fw-bold fs-md">Offline Event</div>
+                          <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>            
+                
+                <!--details-->
+                <div class="container d-lg-none">
+                        <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
+                          <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
+                          <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
+                        </div>-->
                         
-                              <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
-                    </a>        
-                </div>
-              @endif
-            
-            <ul class="list-unstyled  bg-secondary py-1">
-                  @if(Auth::check())
-                    @php
-                        $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
-                        $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
-                        $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
-                    @endphp
+                          @if($commentedRates->count() > 0)
+                            <div class="col-lg-4 col-md-5 pt-2 pb-0">
+                                <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
+                                
+                                      <i class = "bi bi-star-filled text-accent me-1"></i>
+                                        <span class="fs-md fw-bold">
+                                        <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
+                                        <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                                    
+                                          <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
+                                </a>        
+                            </div>
+                          @endif
+                        
+                        <ul class="list-unstyled  bg-secondary py-1">
+                              @if(Auth::check())
+                                @php
+                                    $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
+                                    $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
+                                    $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
+                                @endphp
 
-                    @if(count($checkComment) > '0')
-                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
-                      </li>
-                    @else
-                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
-                      </li>
-                    @endif
+                                @if(count($checkComment) > '0')
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
+                                  </li>
+                                @else
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
+                                  </li>
+                                @endif
 
-                  @else
-                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
-                      </li>
-                  @endif
-            </ul>
-
-            <div>
-              @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
-                @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> <span class="fs-xs fw-normal"> Visitors </span>@endif
-              {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
-              <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
-
-              <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
-              <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
-              <!-- 170 -->
-            </div>
-
-    </div>  
-
-    <div class="container d-none d-sm-block">
-      <ul class="list-unstyled fs-sm  py-4">     
-        <li class="d-flex justify-content-between p-0 m-0">
-            <span class="col bg-light mb-0">
-              <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
-                <h3 class="mb-0">{{$event->eventname}}</h3>
-                  
-                  @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                    {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                  @else
-                    {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
-                  @endif 
-                  
-                  <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
-              </span>
-            <span>
-                @if( $event->businessrevenue == 'visitor' )       
-                    @if( $ticketOrExhibit != 0 )
-                      <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
-                        @elseif( $ticketOrExhibit == 0 )
-                      <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
-                    @endif
-                  @else
-                    <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
-                @endif
-            </span>
-          
-            
-        </li>
-        <li><hr class="mt-md-2 mb-2"></li>
-        <li class="p1 fw-light">
-          {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
-        </li>
-      </ul>
-    </div>
-
-    <!--share hidden-->
-    <div class="d-none">            
-          <a href="#" id="gmail-btn">gmail</a>
-          <a href="#" id="facebook-btn">facebook</a>
-          <a href="#" id="twitter-btn">twitter</a>
-          <a href="#" id="linkedin-btn">linkedin</a>
-          <a href="#" id="whatsapp-btn">whatsapp</a> 
-          <i class="bi bi-share"></i>
-          <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-    </div>
-              @endif
-            </div>
-          </section>
-
-
-
-            <section class="container py-5">
-            <div class="text-dark text-center fw-bold fs-md display-3">Our Offerings</div>
-              <div class="text-dark text-center fw-bold fs-md h5">More to Explore</div>
-              <!-- Card group -->
-              <div class="card-group moretoexplore">
-                  <!-- Card -->
-                  <div class="card border-0">
-                      <img src="https://source.unsplash.com/1600x900/?Group, business tours" class="card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Group Tours</div>
-                    </div>
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Group Tours</h5>
-                      <p class="card-text fs-sm text-muted">The Network Members enjoy a rich variety of specialized benefits- from free guest passes to Member Preview Days for new exhibitons -all while supporting our mission.</p>
-                      <a href="#" class="text-primary fw-bold">See the benefits</a>
-                    </div> -->
-                  </div>
-
-                  <!-- Card -->
-                  <div class="card border-0">
-                    <img src="https://source.unsplash.com/1600x900/?business, perspectives" class=" bg-dark bg-opacity-50 card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Business Perspectives</div>
-                    </div>
-                    
-                    
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Business Perspectives</h5>
-                      <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-                      <a href="#" class="text-primary fw-bold">Read More</a>
-                    </div> -->
-                  </div>
-
-                  <!-- Card -->
-                  <div class="card border-0">
-                    <img src="https://source.unsplash.com/1600x900/?business, guides" class="card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Business Guides</div>
-                    </div>
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Business Guides</h5>
-                      <p class="card-text fs-sm text-muted">The Exhibition Network families, join us Saturday, to celebrate the opening of our new drop-in discovery and play space for new start business ideas. </p>
-                      <a href="#" class="text-primary fw-bold">Learn more</a>
-                    </div> -->
-                  </div>
-
-                   <!-- Card -->
-                  <div class="card border-0">
-                    <img src="https://source.unsplash.com/1600x900/?learning, resources" class="card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Learning Resources</div>
-                    </div>
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Learning Resources</h5>
-                      <p class="card-text fs-sm text-muted">Through {{Carbon\Carbon::parse ($event->startdate)->format('m D, d ')}}, visit to the {{$event->eventname}} enjoy service on the {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}. </p>
-                      <a href="#" class="text-primary fw-bold">Plan your visit</a>
-                    </div> -->
-                  </div>
-
-                  <!-- Card -->
-                  <div class="card border-0">
-                    <img src="https://source.unsplash.com/1600x900/?magazine, advertise" class="card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Publications</div>
-                    </div>
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Publications</h5>
-                      <p class="card-text fs-sm text-muted">Discover our newest business-inspired business designs, including publishing the brand, Search new opportunities, assess your business and many more..</p>
-                      <a href="#" class="text-primary fw-bold">Go somewhere</a>
-                    </div> -->
-                  </div>
-
-                  <div class="card border-0">
-                    <img src="https://source.unsplash.com/1600x900/?networking, research" class="card-img-top" alt="Card image">
-                    <div class="card-img-overlay">
-                      <div class="card-footer text-secondary h3">Conversation and Scientific Research</div>
-                    </div>
-                    <!-- <div class="card-body">
-                      <h5 class="card-title">Conversation and Scientific Research</h5>
-                      <p class="card-text fs-sm text-muted">Discover our newest business-inspired business designs, including publishing the brand, Search new opportunities, assess your business and many more..</p>
-                      <a href="#" class="text-primary fw-bold">Go somewhere</a>
-                    </div> -->
-                  </div>
-                 
-              </div>
-            </section>
-
-             <!--Applicable Offers-->
-             <div class="container mb-5 d-lg-none">
-                <div class="text-dark fw-medium fs-sm">Applicable Offers</div> 
-                
-              <div class="my-sliderOffers">
-                  <ul class="list-unstyled fs-sm  p-2">
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
-                  </ul>
-
-                  <ul class="list-unstyled fs-sm  p-2">
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                  </ul>
-                
-                  <ul class="list-unstyled fs-sm  p-2">
-                    <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                  </ul>
-              </div>
-
-            </div>
-
-             <!-- Creators-->
-             <main>
-              
-        <section class="container pt-2 pb-5 pb-md-3">
-            <!--<h2 class="h3 mb-4 pb-2">Top Creators</h2>-->
-                <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-1 mb-1">  
-                  <div class="fs-sm" >Business Community
-                  
-                      <h4 class="mb-0 me-2">Speaker</h4>
-                      
-                  </div>
-                    <!--<div class="pt-3">
-                      <a class="btn btn-outline-primary btn-sm" href="#listexpo"> 
-                        Connect <i class="bi bi-caret-down-fill ms-1 me-n1"></i></a>
-                    </div>-->
-
-                      <div class="pt-3">
-                        <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          All
-                        </a>
-
-                        <ul class="dropdown-menu" width="auto">
-                        <li><a class="dropdown-item" href="#">More</a></li>
-                          <li><a class="dropdown-item" href="#">Speaker</a></li>
-                          <li><a class="dropdown-item" href="#">Subscribe</a></li>
+                              @else
+                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
+                                  </li>
+                              @endif
                         </ul>
-                      </div>
+
+                        <div>
+                          @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                            @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> <span class="fs-xs fw-normal"> Visitors </span>@endif
+                          {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
+                          <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
+
+                          <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
+                          <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
+                          <!-- 170 -->
+                        </div>
+
+                </div>  
+
+                <div class="container d-none d-sm-block">
+                  <ul class="list-unstyled fs-sm  py-4">     
+                    <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="col bg-light mb-0">
+                          <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
+                            <h3 class="mb-0">{{$event->eventname}}</h3>
+                              
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
+                              @endif 
+                              
+                              <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+                          </span>
+                        <span>
+                            @if( $event->businessrevenue == 'visitor' )       
+                                @if( $ticketOrExhibit != 0 )
+                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
+                                    @elseif( $ticketOrExhibit == 0 )
+                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                                @endif
+                              @else
+                                <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                            @endif
+                        </span>
+                      
+                        
+                    </li>
+                    <li><hr class="mt-md-2 mb-2"></li>
+                    <li class="p1 fw-light">
+                      {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
+                    </li>
+                  </ul>
                 </div>
 
-              <div class="row my-Slider23">
-
-                <!-- Bestsellers-->
-                <div class="col-md-4 col-sm-6 mb-2 py-1">
-                  <div class="widget">
-                    <!--<h3 class="widget-title fw-bolder">Network</h3>-->
-                  
-                    @foreach ($network as $franchise)
-                      <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                        <div class="d-flex align-items-center position-relative">
+                <!--share hidden-->
+                <div class="d-none">            
+                      <a href="#" id="gmail-btn">gmail</a>
+                      <a href="#" id="facebook-btn">facebook</a>
+                      <a href="#" id="twitter-btn">twitter</a>
+                      <a href="#" id="linkedin-btn">linkedin</a>
+                      <a href="#" id="whatsapp-btn">whatsapp</a> 
+                      <i class="bi bi-share"></i>
+                      <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                </div>
+              @elseif($currentTab === 'tab3')
+                <section class="container pt-2 pb-5 pb-md-3">
+                    <!--<h2 class="h3 mb-4 pb-2">Top Creators</h2>-->
+                    <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-1 mb-1">  
+                      <div class="fs-sm" >Business Community
+                      
+                          <h4 class="mb-0 me-2">Speaker</h4>
                           
-                          <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}"  width="17%"  alt="Avatar">
-                          <div class="ms-2">
-                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="#">{{$franchise->name}}</a></h4>
-                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
-                          <!--<span class="fs-xs text-muted">730 followers</span>-->
+                      </div>
+                        <!--<div class="pt-3">
+                          <a class="btn btn-outline-primary btn-sm" href="#listexpo"> 
+                            Connect <i class="bi bi-caret-down-fill ms-1 me-n1"></i></a>
+                        </div>-->
+
+                          <div class="pt-3">
+                            <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              All
+                            </a>
+
+                            <ul class="dropdown-menu" width="auto">
+                            <li><a class="dropdown-item" href="#">More</a></li>
+                              <li><a class="dropdown-item" href="#">Speaker</a></li>
+                              <li><a class="dropdown-item" href="#">Subscribe</a></li>
+                            </ul>
+                          </div>
+                    </div>
+
+                      <div class="row my-Slider23">
+
+                        <!-- Bestsellers-->
+                        <div class="col-md-4 col-sm-6 mb-2 py-1">
+                          <div class="widget">
+                            <!--<h3 class="widget-title fw-bolder">Network</h3>-->
+                          
+                            @foreach ($network as $franchise)
+                              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                <div class="d-flex align-items-center position-relative">
+                                  
+                                  <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}"  width="17%"  alt="Avatar">
+                                  <div class="ms-2">
+                                    <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="#">{{$franchise->name}}</a></h4>
+                                    <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
+                                  <!--<span class="fs-xs text-muted">730 followers</span>-->
+                                  </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
+                              </div>
+                              
+                            @endforeach
                           </div>
                         </div>
-                        <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
-                      </div>
-                      
-                    @endforeach
-                  </div>
-                </div>
 
-                <!-- New arrivals-->
-                <div class="col-md-4 col-sm-6 mb-2 py-3">
-                  <div class="widget">
-                    <!--<h3 class="widget-title fw-bolder">Speaker</h3>-->
-                    @foreach ($speker as $franchise)
-                      <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                        <div class="d-flex align-items-center position-relative">
-                          
-                          <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%"  alt="Avatar">
-                          <div class="ms-2">
-                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="#">{{$franchise->name}}</a></h4>
-                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
-                            <!--<span class="fs-xs text-muted">730 followers</span>-->
+                        <!-- New arrivals-->
+                        <div class="col-md-4 col-sm-6 mb-2 py-3">
+                          <div class="widget">
+                            <!--<h3 class="widget-title fw-bolder">Speaker</h3>-->
+                            @foreach ($speker as $franchise)
+                              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                <div class="d-flex align-items-center position-relative">
+                                  
+                                  <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%"  alt="Avatar">
+                                  <div class="ms-2">
+                                    <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="#">{{$franchise->name}}</a></h4>
+                                    <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
+                                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                                  </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
+                              </div>
+                              
+                            @endforeach
                           </div>
                         </div>
-                        <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
-                      </div>
-                      
-                    @endforeach
-                  </div>
-                </div>
 
-                <!-- Top rated-->
-                <div class="col-md-4 col-sm-6 mb-2 py-3">
-                  <div class="widget">
-                    <!--<h3 class="widget-title fw-bolder">Social</h3>-->
-                    @foreach ($social as $franchise)
-                      <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                        <div class="d-flex align-items-center position-relative">
-                          
-                          <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%"  alt="Avatar">
-                          <div class="ms-2">
-                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="nft-vendor.html">{{$franchise->name}}</a></h4>
-                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="nft-vendor.html">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
-                            <!--<span class="fs-xs text-muted">730 followers</span>-->
+                        <!-- Top rated-->
+                        <div class="col-md-4 col-sm-6 mb-2 py-3">
+                          <div class="widget">
+                            <!--<h3 class="widget-title fw-bolder">Social</h3>-->
+                            @foreach ($social as $franchise)
+                              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                <div class="d-flex align-items-center position-relative">
+                                  
+                                  <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%"  alt="Avatar">
+                                  <div class="ms-2">
+                                    <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="nft-vendor.html">{{$franchise->name}}</a></h4>
+                                    <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="nft-vendor.html">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
+                                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                                  </div>
+                                </div>
+                                <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
+                              </div>
+                              
+                            @endforeach
                           </div>
                         </div>
-                        <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
+
                       </div>
-                      
-                    @endforeach
-                  </div>
-                </div>
+                </section>
+              @endif
+            </div>
+           </section>
 
-              </div>
-        </section>
-
-
-
-        
 
             <!--footer-->
             @if($event->eventype == 'award')
@@ -1557,9 +1386,6 @@
               @endif
 
             @endif
-
-            
-    </main>
 
     @push('scripts')
           <script type = "application/ld+json">
@@ -2136,34 +1962,32 @@
             });
           </script>
 
-@push('scripts')
-    <script>
-      var slider = tns({
-        "container": '.my-Slider23',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": false,
+          <script>
+            var slider = tns({
+              "container": '.my-Slider23',            
+              "responsive": {
+                "300": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": false,
 
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 3,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":false,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-@endpush
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 3,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay":false,
+                  "autoplayButtonOutput":false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
         
     @endpush
 
