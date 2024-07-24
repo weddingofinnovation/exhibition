@@ -22,31 +22,73 @@
         </ul>
     </section>
 
-    <section class=" container award my-5">
-      <h1 class="text-light">Timeline</h1>
-      <div class="d-flex justify-content-between">
-        <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
-        <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
-        <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
+    <section class="card text-center py-5 border-0 award">
+      <div class="card-body">
+        <h5 class="card-title h2">Timeline</h5>
+        <div class="d-flex justify-content-between">
+            <p class="card-text fs-sm text-muted">Feb 29th, 2024 <span class="fs-sm">Open for Submissions</span></p>
+            <p class="card-text fs-sm text-muted">June 30th, 2024 <span class="fs-sm">Submission Deadline</span></p>
+            <p class="card-text fs-sm text-muted">August, 2024 <span class="fs-sm">Winner Announcement</span></p>
+        </div>
+       
+        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
       </div>
-
-      <a href="" class="btn btn-sm btn-light text-center">Subscribe</a>
     </section>
-
 
 
 
     <section class="container award mb-5">
       <h1 class="text-light"> Competition Categories</h1>
-
-      <div>
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
       </div>
 
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
     </section>
 
+
+    <section class="container py-5">
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+    </section>
 
     <section class="award text-light mb-5">
       <h1>Awards And Prizes</h1>
