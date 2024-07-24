@@ -3,17 +3,17 @@
 @section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
     <main>
+      <style>
 
+      </style>
 
-
-    <section class="bg-dark text-light">
-            <div class="container">
-              <a href="#">Home</a>
-              <a href="#">Guide</a>
-              <a href="#">Showcase</a>
-            </div>
+    <section class="container bg-dark text-light">
+        <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
+        </ul>
     </section>
-
 
     <section class="bg-dark">
       <h1 class="text-light">Timeline</h1>
@@ -73,7 +73,7 @@
 
 
     <section>
-      
+
     </section>
             <!-- <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
               style="background-image: url('{{('/image/test.jpg')}}')"> -->
@@ -304,22 +304,7 @@
 
             
 
-            <!-- slider at next header-->  
-            <section class="container d-lg-none ">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item"><a class="nav-link px-1 active" href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'overview'])}}" data-bs-toggle="tab" role="tab">Overview</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'speaker'])}}" data-bs-toggle="tab" role="tab">Speakers</a></li>
-                    @if(count($eventbrand) > 0)
-                    <li class="nav-item"><a class="nav-link px-1" href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'speaker'])}}" data-bs-toggle="tab" role="tab">Key Discussion</a></li>
-                    @endif
-                    <li class="nav-item"><a class="nav-link px-1" href="#exhibitor" data-bs-toggle="tab" role="tab">Agenda</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="#exhibitor" data-bs-toggle="tab" role="tab">Who Should Attend</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="#exhibitor" data-bs-toggle="tab" role="tab">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="#exhibitor" data-bs-toggle="tab" role="tab">Previous Edition</a></li>
-                    <li class="nav-item"><a class="nav-link px-1" href="#exhibitor" data-bs-toggle="tab" role="tab">Award</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link px-1" href="#startups" data-bs-toggle="tab" role="tab">Startup</a></li>  comment-->
-                </ul>
-            </section>
+            
     
             <!--details-->
             <div class="container d-lg-none">
