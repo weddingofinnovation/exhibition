@@ -10,6 +10,7 @@
     @elseif(Route::currentRouteName() === 'coi.exhibition')       
     @elseif(Route::currentRouteName() === 'coi.ratenow')
     @elseif(Route::currentRouteName() === 'search.venue')
+    @elseif(Route::currentRouteName() === 'award.details')
     @else
       <header class="shadow-sm ">
         

@@ -5,11 +5,15 @@
     <main>
 
       <style>
+         body {
+          background-color: #151515;
+         }
 
         .award {
           font-family: Segoe UI, Tahoma, sans-serif; 
           font-size: 75%;
           background-color: #151515;
+          
         }
 
         .textcolor {
@@ -22,665 +26,201 @@
     <section class=" award container text-light">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
-            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">Guide</a></li>
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
         </ul>
     </section>
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
-              style="#">
-              
-              <div class=" product-available   text-center bg-primary" style="right: 1.75rem; top: 7.25%; position: absolute;padding-top: 0.425rem; padding-left: 0.625rem; padding-right: 1rem;
-                padding-bottom: 0.425rem;
-                transform: translateY(-50%);
-                border-radius: 0.3125rem;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-                font-size: .8125rem;">
-                <div class = "h1 pt-5 text-light pb-0 mb-0" style="font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">COI</div>  
-                <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
-              </div>
-            
-              ``<div class="container pt-4 mb-3 mb-lg-0 ">
-                  <div class="row gy-0 ">
-                  
-                    <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
-                        <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-8  border border-white border-1 px-3 py-5 ">
-                        <div class="position-relative me-n4 mb-3 d-none d-sm-block">
-                          <div class="product-badge product-available  lh-1 fs-sm" style="right: 19.25rem;">
-                            <strong>Great <br>Place <br>To <br>Exhibit</strong>
-                          </div>
-                        </div>
-                        <h5 class="text-light fw-normal pt-2 pb-0">
-                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                            @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                            @endif 
-                        </h5>
-                        <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
-                        <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
-                          @if(count($eventbrand) > 0)
-                              <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
-                              <div class="d-flex bg-transparent border-bottom"> 
-                              
-                                @foreach($eventbrand as $franchise)
-                                    <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                @endforeach
-                              </div>
-                          @endif
-                        <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
-                        <ul class="list-unstyled text-light mb-0 mt-2">
-                              <li class="d-flex">
-                              @if( $event->businessrevenue == 'visitor' )
-                                  @if( $ticketOrExhibit != 0 )
-                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                                    @else ( $ticketOrExhibit == 0 )
-                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                  @endif
-                                @else
-                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                              @endif
-
-                                <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                              </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-8  px-3 py-5 d-none d-sm-block">
-                          <h5 class="text-light fw-normal fs-sm pt-2 pb-0">
-                              Upcoming Expo
-                          </h5>
-                                    
-                        <h2 class="text-primary mb-3 lh-1"> <span class="fw-light"> MAKING</span> <br>BIG GROWTH <br>
-                        <span class="fw-light">IN INDIA</span> <br>BUSINESS <br><span class="fw-light">A REALITY</span></h1>
-                            <ul class="list-unstyled text-light mb-0 mt-0 border-top">
-                                  <li class="d-flex pt-1">
-                                    <a class="fs-xs  text-center border-end px-0" href="{{$link->google()}}"> <span class="fw-bold">100 +</span> <br>Thought Leadership</a>
-                                    <a class="fs-xs  text-center border-end px-2" href="{{$link->google()}}"><span class="fw-bold">> 800</span> <br>Business Matching Meetings</a>
-                                    <a class="fs-xs  text-center  px-0" href="{{$link->google()}}"><span class="fw-bold">300 +</span> <br>Business Ideas Opportunities</a>
-                                  </li>
-                            </ul>
-                    </div>  
-                      
-                    <div class="col-lg-3 d-none d-sm-block">
-                    
-                    </div>
-                  </div>
-
-                  <div class="container d-none">
-                    <div class="row text-light mb-0 mt-0">
-                      <ul class="list-unstyled text-light mb-0 mt-5">
-                            <li class="d-flex">
-                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
-                              <a class="" href="{{$link->google()}}">5500+ <br>Brands on Display</a>
-                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
-                            </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                </div>
-            </section>
-            
-            <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
-              style="background-image: url('{{asset('/image/test.jpg')}}');">
-            
-              <div class="container  mb-lg-0 bg-primary">
-
-                <div class="d-flex justify-content-between py-2">
-                      <div class="z-2 text-dark  pl-3 lh-1"> 
-                       <span class= "fw-bold text-light fs-xs ">
-                        Great Place To Visit</span><br><span class="text-light fw-normal fs-xs">Business</span>
-                      </div>
-
-
-                      @if( $event->businessrevenue == 'visitor' )  
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Book a Space</a>
-                        @else
-                      
-                        @if( $ticketOrExhibit != 0 )
-                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light btn-sm">Plan Your Visit</a>
-                          @elseif( $ticketOrExhibit == 0 )
-                            {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Plan Your Visit</a>{{route('event.product',['slug' => $event->slug])}}--}}
-                          
-                            <a href="#" class="btn btn-outline-light btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
-                        @endif
-                      @endif
-
-                      <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
-                        <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
-                      </a> -->
-                      <!-- <i class="navbar-tool-icon bi bi-list"></i> -->
-                  </div>
-
-
-                  <!-- <div class="container">
-                  Expand your Businesss       
-                  </div> -->
-              </div>
-
-              <div class="container pt-0 mb-3 mb-lg-0">
-                <div class="row gy-0">
-                
-                
-                  <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
-                        <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
-                            <img src="{{url('assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
-                        </a>
-                       
-                  </div>
-                  <div class="col-lg-7 col-md-6 col-sm-8">
-                    <div class="col-lg-6 col-md-6 border border-white border-1 px-3 py-5">
-                    <span class="badge badge-primary bg-primary fs-sm">
-                     
-
-                     @if ($current < $to && $current < $from)
-                       Upcoming
-                     @elseif ($current == $to && $current < $from) 
-                       First Day
-                     @elseif ($current > $to && $current < $from) 
-                       Ongoing
-                     @elseif ($current > $to && $current == $from) 
-                       Last Business Day 
-                     @elseif ($current > $to && $current > $from)
-                       ended
-                     @endif
-
-                      
-                  </span>
-                        <div class="text-light fw-normal fs-md pt-2 pb-0">
-                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                            @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                            @endif 
-                        </div>
-                        
-                        <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
-                        <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
-
-                        @if(count($sponserbrand) > 0)
-                            <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
-                            <div class="d-flex bg-transparent border-bottom"> 
-                              @foreach($sponserbrand as $franchise)
-                                  <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                              @endforeach
-                            </div>
-                        @endif
-                        
-                        <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
-                        
-                        <ul class="list-unstyled text-light mb-0 mt-2">
-                              <li class="d-flex">
-                                  @if( $event->businessrevenue == 'visitor' )
-                                    @if( $ticketOrExhibit != 0 )
-                                          <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                          href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                                        @else( $ticketOrExhibit == 0 )
-                                          <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                          href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                    @endif
-                                  @else
-                                    <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                          href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                  @endif  
-                                <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-                              </li>
-                        </ul>
-
-
-                    </div>    
-                  </div>
-                </div>
-                <div class="container">
-                            
-                </div>
-              </div>
-            </section>
-
-    <section class="card text-center py-5 border-0 award">
-      <div class="card-body">
-        <h5 class="card-title h2">Timeline</h5>
-        <div class="d-flex justify-content-between">
-            <p class="card-text fs-md ">Feb 29th, 2024 <span class="fs-sm">Open for Submissions</span></p>
-            <p class="card-text fs-md ">June 30th, 2024 <span class="fs-sm">Submission Deadline</span></p>
-            <p class="card-text fs-md ">August, 2024 <span class="fs-sm">Winner Announcement</span></p>
-        </div>
-       
-        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
-      </div>
-    </section>
-
-    <section class="container award mb-5">
-      <h1 class="text-light"> Competition Categories</h1>
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-
-     
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
+      style="">
       
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
+      <div class=" product-available   text-center bg-primary" style="right: 1.75rem; top: 7.25%; position: absolute;padding-top: 0.425rem; padding-left: 0.625rem; padding-right: 1rem;
+        padding-bottom: 0.425rem;
+        transform: translateY(-50%);
+        border-radius: 0.3125rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        font-size: .8125rem;">
+        <div class = "h1 pt-5 text-light pb-0 mb-0" style="font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">COI</div>  
+        <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
       </div>
-    </section>
-
-    <section class="container py-5">
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <section class="award text-light my-5 py-5">
-      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
-      <div class="container">
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Main Prize</div>
-              <span class = "text-muted fs-xs">$10,000 cash prize</span>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Exposure Opportunity</div>
-              <span class = "text-muted fs-xs lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
-              <span class = "text-muted fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Offline Event</div>
-              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     
-            
-            
-            
-    
-            <!--details-->
-            <div class="container d-lg-none">
-                    <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
-                      <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
-                      <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
-                    </div>-->
-                    
-                      @if($commentedRates->count() > 0)
-                        <div class="col-lg-4 col-md-5 pt-2 pb-0">
-                            <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
-                           
-                                  <i class = "bi bi-star-filled text-accent me-1"></i>
-                                    <span class="fs-md fw-bold">
-                                    <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
-                                    <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
-                                
-                                      <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
-                            </a>        
-                        </div>
-                      @endif
-                   
-                    <ul class="list-unstyled  bg-secondary py-1">
-                          @if(Auth::check())
-                            @php
-                                $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
-                                $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
-                                $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
-                            @endphp
+      ``<div class="container pt-4 mb-3 mb-lg-0 ">
+          <div class="row gy-0 ">
+          
+            <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
+                <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
+                    <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
+                </a>
+            </div>
 
-                            @if(count($checkComment) > '0')
-                              <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
-                              </li>
-                            @else
-                              <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
-                              </li>
-                            @endif
-
-                          @else
-                              <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
-                              </li>
-                          @endif
-                    </ul>
-                    <!-- 
-                      <div class="d-flex badgeseTag">
-                        @foreach($category as $cat)
-                          <span class="badge border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
+            <div class="col-lg-3 col-md-6 col-sm-8  border border-white border-1 px-3 py-5 ">
+                <div class="position-relative me-n4 mb-3 d-none d-sm-block">
+                  <div class="product-badge product-available  lh-1 fs-sm" style="right: 19.25rem;">
+                    <strong>Great <br>Place <br>To <br>Exhibit</strong>
+                  </div>
+                </div>
+                <h5 class="text-light fw-normal pt-2 pb-0">
+                    @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                    @else
+                      {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                    @endif 
+                </h5>
+                <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
+                <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
+                  @if(count($eventbrand) > 0)
+                      <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
+                      <div class="d-flex bg-transparent border-bottom"> 
+                      
+                        @foreach($eventbrand as $franchise)
+                            <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
                         @endforeach
                       </div>
+                  @endif
+                <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
+                <ul class="list-unstyled text-light mb-0 mt-2">
+                      <li class="d-flex">
+                      @if( $event->businessrevenue == 'visitor' )
+                          @if( $ticketOrExhibit != 0 )
+                              <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                            @else ( $ticketOrExhibit == 0 )
+                              <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                          @endif
+                        @else
+                          <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                      @endif
 
-                    <span class="badge bg-secondary fs-sm">
-                     
-
-                       @if ($current < $to && $current < $from)
-                          upcoming
-                       @elseif ($current == $to && $current < $from) 
-                          first
-                       @elseif ($current > $to && $current < $from) 
-                          ongoing
-                       @elseif ($current > $to && $current == $from) 
-                         last 
-                       @elseif ($current > $to && $current > $from)
-                         ended
-                       @endif
-
-                        
-                    </span> -->
-
-                   
-                    <div>
-                      @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
-                       @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> <span class="fs-xs fw-normal"> Visitors </span>@endif
-                      {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
-                      <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
-
-                      <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
-                      <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
-                      <!-- 170 -->
-                    </div>
-
+                        <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                      </li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-8  px-3 py-5 d-none d-sm-block">
+                  <h5 class="text-light fw-normal fs-sm pt-2 pb-0">
+                      Upcoming Expo
+                  </h5>
+                            
+                <h2 class="text-primary mb-3 lh-1"> <span class="fw-light"> MAKING</span> <br>BIG GROWTH <br>
+                <span class="fw-light">IN INDIA</span> <br>BUSINESS <br><span class="fw-light">A REALITY</span></h1>
+                    <ul class="list-unstyled text-light mb-0 mt-0 border-top">
+                          <li class="d-flex pt-1">
+                            <a class="fs-xs  text-center border-end px-0" href="{{$link->google()}}"> <span class="fw-bold">100 +</span> <br>Thought Leadership</a>
+                            <a class="fs-xs  text-center border-end px-2" href="{{$link->google()}}"><span class="fw-bold">> 800</span> <br>Business Matching Meetings</a>
+                            <a class="fs-xs  text-center  px-0" href="{{$link->google()}}"><span class="fw-bold">300 +</span> <br>Business Ideas Opportunities</a>
+                          </li>
+                    </ul>
             </div>  
+              
+            <div class="col-lg-3 d-none d-sm-block">
+            
+            </div>
+          </div>
 
-            <div class="container d-none d-sm-block">
-              <ul class="list-unstyled fs-sm  py-4">     
-                <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="col bg-light mb-0">
-                      <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
-                        <h3 class="mb-0">{{$event->eventname}}</h3>
-                          
-                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                          @else
-                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
-                          @endif 
-                          
-                          <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
-                      </span>
-                    <span>
-                        @if( $event->businessrevenue == 'visitor' )       
+          <div class="container d-none">
+            <div class="row text-light mb-0 mt-0">
+              <ul class="list-unstyled text-light mb-0 mt-5">
+                    <li class="d-flex">
+                      <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
+                      <a class="" href="{{$link->google()}}">5500+ <br>Brands on Display</a>
+                      <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
+                    </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+    </section>
+    
+    <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
+      style="background-image: url('{{asset('/image/test.jpg')}}');">
+  
+      <div class="container pt-0 mb-3 mb-lg-0">
+        <div class="row gy-0">
+      
+          <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
+                <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
+                    <img src="{{url('assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
+                </a>
+                
+          </div>
+          <div class="col-lg-7 col-md-6 col-sm-8">
+            <div class="col-lg-6 col-md-6 border border-white border-1 px-3 py-5">
+            <span class="badge badge-primary bg-primary fs-sm">
+              
+
+              @if ($current < $to && $current < $from)
+                Upcoming
+              @elseif ($current == $to && $current < $from) 
+                First Day
+              @elseif ($current > $to && $current < $from) 
+                Ongoing
+              @elseif ($current > $to && $current == $from) 
+                Last Business Day 
+              @elseif ($current > $to && $current > $from)
+                ended
+              @endif
+
+              
+          </span>
+                <div class="text-light fw-normal fs-md pt-2 pb-0">
+                    @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                    @else
+                      {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                    @endif 
+                </div>
+                
+                <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
+                <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
+
+                @if(count($sponserbrand) > 0)
+                    <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
+                    <div class="d-flex bg-transparent border-bottom"> 
+                      @foreach($sponserbrand as $franchise)
+                          <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                      @endforeach
+                    </div>
+                @endif
+                
+                <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
+                
+                <ul class="list-unstyled text-light mb-0 mt-2">
+                      <li class="d-flex">
+                          @if( $event->businessrevenue == 'visitor' )
                             @if( $ticketOrExhibit != 0 )
-                              <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
-                                @elseif( $ticketOrExhibit == 0 )
-                              <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                  href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                                @else( $ticketOrExhibit == 0 )
+                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                  href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                             @endif
                           @else
-                            <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
-                        @endif
-                    </span>
-                  
+                            <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                  href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                          @endif  
+                        <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                        <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                      </li>
+                </ul>
+
+
+            </div>    
+          </div>
+        </div>
+        <div class="container">
                     
-                </li>
-                <li><hr class="mt-md-2 mb-2"></li>
-                <li class="p1 fw-light">
-                  {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
-                </li>
-              </ul>
-
-              <!-- <ul class="list-unstyled fs-sm  py-4">     
-                <li class="d-flex justify-content-between p-0 m-0">
-                <div class="col-lg-3 col-md-4 col-sm-4 bg-secondary">
-                  <span class="badge bg-primary mt-0">Participate</span>
-                  <span class="h3"> Professional Beauty Mumbai</span>
-                    <div class="row">
-                      <div>
-                        
-                      </div>
-                        
-                    </div>
-
-                    
-                    
-
-                     
-                    
-                </div>
-                
-                
-                
-                    <span> 
-                      
-                    <span class="badge bg-primary"> th</span>
-
-                      <span class="h3"> Professional Beauty Mumbai</span> <br>
-                                              Mon, 02  - Tue, 03 Oct, 2023
-                       
-                      
-                      <i class="bi bi-geo-alt-fill"></i> Bombay Exhibition Centre, NESCO, Mumbai,  India 
-                    </span>
-                
-                    <span>
-                                            <a class="btn btn-primary btn-sm" type="button" href="http://127.0.0.1:8000/exhibit/business"> Book your Space </a>
-                                        </span>
-                  
-                    
-                </li>
-                <li><hr class="mt-md-2 mb-2"></li>
-                <li class="p1 fw-light">
-                   |  | 1 days | Rs. 700.00 Onwards                 </li>
-              </ul> -->
-            </div> 
+        </div>
+      </div>
+    </section>
 
 
-            
 
-            <!--share hidden-->
-            <div class="d-none">            
-                  <a href="#" id="gmail-btn">gmail</a>
-                  <a href="#" id="facebook-btn">facebook</a>
-                  <a href="#" id="twitter-btn">twitter</a>
-                  <a href="#" id="linkedin-btn">linkedin</a>
-                  <a href="#" id="whatsapp-btn">whatsapp</a> 
-                  <i class="bi bi-share"></i>
-                  <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-            </div>
+    
 
-
-            <!--Overview-->
-            <!--Speakers-->
-            <div class="container">
-                <div class="text-stat">
-                    <img src="path-to-image" class="d-inline-block rounded mb-3" width="96" alt="">
-                    <h6 class="pt-1 mb-1">William Simth</h6>
-                    <p class="fs-sm text-muted">CEO, Co-founder at company ltd </p>
-                    <a href="" class="btn-social bs-facebook bs-sm">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="" class="btn-social bs-facebook bs-sm">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="" class="btn-social bs-facebook bs-sm">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="" class="btn-social bs-facebook bs-sm">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                </div>
-            </div>
-            <!--Key-->
-            <div class="container">
-                <h4>Key Discussion</h4>    
-                <div class="card border-0 shadow">
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text fs-sm text-muted">Some quick example</p>
-                        <a href="" class="btn btn-primary btn-sm">Go Somewhere</a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card Title</h5>
-                        <p class="card-text fs-sm text-muted">Some quick example</p>
-                        <a href="" class="btn btn-primary btn-sm">Go Somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <!--Agenda-->
-
-            
-            <!--Who-->
-            <!--Questions-->
-
-            <div class="container">
-                <h4>FAQ</h4>
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-                                Accordion Item #1
-                            </button>
-                        </h2>
-                        <div class="accordion-collapse  collapse" id="flush-collapseOne" aria-labelledby="flush-headingOne" data-bs-parent="#accordianFlushExample">
-                        <div class="accordion-body">
-                            Answers
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="true" aria-controls="flush-collapsetwo">
-                                Questions #2
-                            </button>
-                        </h2>
-                        <div class="accordion-collapse  collapse" id="flush-collapseTwo" aria-labelledby="flush-headingTwo" data-bs-parent="#accordianFlushExample">
-                        <div class="accordion-body">
-                            Answers
-                        </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!--Contact-->
-            <!--Previous-->
-            <!--Award-->
-
-
-            <!-- pavillion -->
-            <div class="container mt-4 d-lg-none">
-              <div class="text-dark fw-bold fs-md">Locations & Hours</div> 
-              
-              <div class=" card-group locationhours">
-                @foreach( $pavillion as $pavo)
-                <div class="card border-0">
-                  <img src="https://source.unsplash.com/1600x900/?{{$pavo -> pavillion_name}}, office" class="card-img-top" alt="Card image">
-                  <div class="card-body">
-                    <h5 class="card-title">{{$pavo -> pavillion_name}}</h5>
-                    <p class="card-text fs-sm text-muted">{{$pavo -> desc}}</p>
-                        <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
-                        <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p> 
-                    <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
-                    <div class="d-flex badgeseTag">
-                          @foreach($category as $cat)
-                            <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                          @endforeach
-                        </div>
-                  </div>
-                </div>
-                @endforeach
-
-                <div class="card border-0">
-                  <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                  <div class="card-body">
-                    <h5 class="card-title">Pavillion</h5>
-                    <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                        closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                        <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
-                        <div class="d-flex badgeseTag">
-                          @foreach($category as $cat)
-                            <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                          @endforeach
-                        </div>
-                  </div>
-                </div>
-                  <!-- 
-                    <ul class="list-unstyled fs-sm  p-2">
-                        <li class="d-flex justify-content-between p-0 m-0">
-                            <span class="text-dark fw-medium fs-sm">  Pavillion <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                            <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span>
-
-                            Hours: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-                            closed: {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}
-
-                            <div class="d-flex badgeseTag">
-                              @foreach($category as $cat)
-                                <span class="badge badge-accent border border-1 text-right border-dark text-dark mr-1">{{$cat->expo->tag}}</span>
-                              @endforeach
-                            </div>
-                        </li>
-                    </ul>
-
-                    <ul class="list-unstyled fs-sm  p-2">
-                        <li class="d-flex justify-content-between p-0 m-0">
-                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                    </ul>
-                  
-                    <ul class="list-unstyled fs-sm  p-2">
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                    </ul> 
-                  -->
-              </div>
-
-            </div>
-            <hr class="mt-md-2 mb-2">
 
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
@@ -1512,6 +1052,211 @@
                         </div>
                       </section>
                 </div>
+              @elseif($currentTab === 'tab1')
+              <section class="card text-center py-5 award rounded-0">
+      <div class="card-body">
+        <h5 class="card-title h2 textcolor">Timeline</h5>
+        <div class="d-flex justify-content-between">
+            <p class="card-text fs-md fw-bold textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
+            <p class="card-text fs-md fw-bold textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
+            <p class="card-text fs-md fw-bold textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
+        </div>
+       
+        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
+      </div>
+    </section>
+
+    <section class="container award mb-5">
+      <h1 class="text-light"> Competition Categories</h1>
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+
+     
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="award text-light my-5 py-5">
+      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Main Prize</div>
+              <span class = "text-muted fs-xs">$10,000 cash prize</span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Exposure Opportunity</div>
+              <span class = "text-muted fs-xs lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
+              <span class = "text-muted fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Offline Event</div>
+              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
+          </div>
+        </div>
+      </div>
+    </section>            
+    
+    <!--details-->
+    <div class="container d-lg-none">
+            <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
+              <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
+              <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
+            </div>-->
+            
+              @if($commentedRates->count() > 0)
+                <div class="col-lg-4 col-md-5 pt-2 pb-0">
+                    <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
+                    
+                          <i class = "bi bi-star-filled text-accent me-1"></i>
+                            <span class="fs-md fw-bold">
+                            <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
+                            <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                        
+                              <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
+                    </a>        
+                </div>
+              @endif
+            
+            <ul class="list-unstyled  bg-secondary py-1">
+                  @if(Auth::check())
+                    @php
+                        $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
+                        $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
+                        $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
+                    @endphp
+
+                    @if(count($checkComment) > '0')
+                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
+                      </li>
+                    @else
+                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
+                      </li>
+                    @endif
+
+                  @else
+                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
+                      </li>
+                  @endif
+            </ul>
+
+            <div>
+              @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> <span class="fs-xs fw-normal"> Visitors </span>@endif
+              {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
+              <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
+
+              <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
+              <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
+              <!-- 170 -->
+            </div>
+
+    </div>  
+
+    <div class="container d-none d-sm-block">
+      <ul class="list-unstyled fs-sm  py-4">     
+        <li class="d-flex justify-content-between p-0 m-0">
+            <span class="col bg-light mb-0">
+              <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
+                <h3 class="mb-0">{{$event->eventname}}</h3>
+                  
+                  @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                    {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                  @else
+                    {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
+                  @endif 
+                  
+                  <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+              </span>
+            <span>
+                @if( $event->businessrevenue == 'visitor' )       
+                    @if( $ticketOrExhibit != 0 )
+                      <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
+                        @elseif( $ticketOrExhibit == 0 )
+                      <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                    @endif
+                  @else
+                    <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                @endif
+            </span>
+          
+            
+        </li>
+        <li><hr class="mt-md-2 mb-2"></li>
+        <li class="p1 fw-light">
+          {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
+        </li>
+      </ul>
+    </div>
+
+    <!--share hidden-->
+    <div class="d-none">            
+          <a href="#" id="gmail-btn">gmail</a>
+          <a href="#" id="facebook-btn">facebook</a>
+          <a href="#" id="twitter-btn">twitter</a>
+          <a href="#" id="linkedin-btn">linkedin</a>
+          <a href="#" id="whatsapp-btn">whatsapp</a> 
+          <i class="bi bi-share"></i>
+          <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+    </div>
               @endif
             </div>
           </section>
