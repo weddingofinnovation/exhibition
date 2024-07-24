@@ -7,7 +7,7 @@
 
       </style>
 
-    <section class="container bg-dark text-light">
+    <section class="container bg-dark text-light" style="background-color: #151515;">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
             <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
