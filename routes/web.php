@@ -231,7 +231,8 @@ Route::get('/', EventComponent::class)->name('business.exhibition');
 
 
 Route::post('/scrape',[AdminScraperComponent::class,'scrape']);
-Route::get('/scrape-form' , function(){ return view('scrape'); });
+Route::get('/scrape-form' , function(){ return view('admin-scraper'); });
+
 Route::get('/conference', ConferenceComponent::class)->name('coi.conference');
 Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class)->name('event.details');
 //Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class, 'index')->name('event.details');
