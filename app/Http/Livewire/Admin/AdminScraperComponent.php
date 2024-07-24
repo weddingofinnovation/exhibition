@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Livewire\Admin;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Services\EventScraper;
