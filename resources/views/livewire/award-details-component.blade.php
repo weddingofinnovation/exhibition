@@ -7,18 +7,22 @@
       <style>
 
         .award {
-          font-family: OnePlus Sans Display Regular, Helvetica Neue, Helvetica, Arial, sans-serif;
-          font-size: 16px;
+          font-family: Segoe UI, Tahoma, sans-serif; 
+          font-size: 75%;
           background-color: #151515;
+        }
+
+        .textcolor {
+          color: #fff;
         }
         
       </style>
 
-    <section class=" award container text-light" style="">
+    <section class=" award container text-light">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
         </ul>
     </section>
 
@@ -35,8 +39,6 @@
       </div>
     </section>
 
-
-
     <section class="container award mb-5">
       <h1 class="text-light"> Competition Categories</h1>
       <div class="card-group">
@@ -44,38 +46,32 @@
           <div class="card border-0">
             <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
             <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
               <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
               <a href="#" class="text-primary fw-bold">Read More</a>
             </div>
           </div>
       </div>
 
-      <div class="card-group">
+     
           <!-- Card -->
           <div class="card border-0">
             <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
             <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
               <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
               <a href="#" class="text-primary fw-bold">Read More</a>
             </div>
           </div>
-      </div>
-
-      <div class="card-group">
+      
           <!-- Card -->
           <div class="card border-0">
             <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
             <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
               <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
               <a href="#" class="text-primary fw-bold">Read More</a>
             </div>
           </div>
       </div>
     </section>
-
 
     <section class="container py-5">
       <div class="card-group">
@@ -90,36 +86,36 @@
       </div>
     </section>
 
-    <section class="award text-light mb-5">
-      <h1>Awards And Prizes</h1>
+    <section class="award text-light my-5">
+      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
       <div class="container">
         <div class="row mb-3">
-          <div class="col-sm-3"> <i class="bi bi-money"></i></div>
-          <div class="col-sm-9"> 
-              <span>Main Prize</span> <br>
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Main Prize</div>
               <span class = "text-light fs-sm">$10,000 cash prize</span>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-3"> <i class="bi bi-money"></i></div>
           <div class="col-9"> 
-              <span>Exposure Opportunity</span><br>
+              <div class="fw-bold fs-md">Exposure Opportunity</div>
               <span class = "text-light fs-sm lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-3"> <i class="bi bi-money"></i></div>
           <div class="col-9"> 
-              <span>The Exhibition Influcence Partner</span>
+              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
               <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-2"> <i class="bi bi-money"></i></div>
-          <div class="col-sm-10"> 
-              <span>Offline Event</span>
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Offline Event</div>
               <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
           </div>
         </div>
