@@ -9,6 +9,14 @@
 @if($scrabedData)
   <h2>Scraped Data</h2>
   <pre>{{json_encode($scrabedData, JSON_PRETTY_PRINT)}}</pre>
+<ul>
+    <li>{{ $scrabedData['event_Name'] }}</li>
+    <li>{{ $scrabedData['event_Venue'] }}</li>
+    <li>{{ $scrabedData['city'] }}</li>
+    <li>{{ $scrabedData['country'] }}</li>
+    <li>{{ $scrabedData['startDate'] }}</li>
+    <li>{{ $scrabedData['endDate'] }}</li>
+</ul>
 @endif
 
 @push('scripts')
