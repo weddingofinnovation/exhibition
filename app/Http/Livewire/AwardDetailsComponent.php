@@ -31,11 +31,13 @@ class AwardDetailsComponent extends Component
     public $productExpiryDate;
     public $tabi; 
     public $type_event;
+    public $currentTab;
     
     public function mount($slug, $tabi = null)
     {
        $this->slug = $slug;
        $this->tabi = $tabi;
+       $this->currentTab = session()->get('currentTab','tab1');
     }
 
     public function post( Request $request, $slug)
