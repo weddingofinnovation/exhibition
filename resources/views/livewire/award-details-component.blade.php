@@ -18,6 +18,7 @@
         
       </style>
 
+
     <section class=" award container text-light">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
@@ -26,215 +27,112 @@
         </ul>
     </section>
 
-    <section class="card text-center py-5 border-0 award">
-      <div class="card-body">
-        <h5 class="card-title h2">Timeline</h5>
-        <div class="d-flex justify-content-between">
-            <p class="card-text fs-sm text-muted">Feb 29th, 2024 <span class="fs-sm">Open for Submissions</span></p>
-            <p class="card-text fs-sm text-muted">June 30th, 2024 <span class="fs-sm">Submission Deadline</span></p>
-            <p class="card-text fs-sm text-muted">August, 2024 <span class="fs-sm">Winner Announcement</span></p>
-        </div>
-       
-        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
-      </div>
-    </section>
-
-    <section class="container award mb-5">
-      <h1 class="text-light"> Competition Categories</h1>
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-
-     
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      
-          <!-- Card -->
-          <div class="card border-0">
-            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-            <div class="card-body">
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <section class="container py-5">
-      <div class="card-group">
-          <!-- Card -->
-          <div class="card border-0">
-            <div class="card-body">
-              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
-              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-              <a href="#" class="text-primary fw-bold">Read More</a>
-            </div>
-          </div>
-      </div>
-    </section>
-
-    <section class="award text-light my-5">
-      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
-      <div class="container">
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Main Prize</div>
-              <span class = "text-light fs-sm">$10,000 cash prize</span>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Exposure Opportunity</div>
-              <span class = "text-light fs-sm lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-          </div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
-              <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3"> <i class="bi bi-money"></i></div>
-          <div class="col-9"> 
-              <div class="fw-bold fs-md">Offline Event</div>
-              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section>
-
-    </section>
-            <!-- <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
-              style="background-image: url('{{('/image/test.jpg')}}')"> -->
-              <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
-                style="#">
-                
-                <div class=" product-available   text-center bg-primary" style="right: 1.75rem; top: 7.25%; position: absolute;padding-top: 0.425rem; padding-left: 0.625rem; padding-right: 1rem;
-                  padding-bottom: 0.425rem;
-                  transform: translateY(-50%);
-                  border-radius: 0.3125rem;
-                  border-top-right-radius: 0;
-                  border-bottom-right-radius: 0;
-                  font-size: .8125rem;">
-                  <div class = "h1 pt-5 text-light pb-0 mb-0" style="font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">COI</div>  
-                  <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
-                </div>
+    <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
+              style="#">
               
-                ``<div class="container pt-4 mb-3 mb-lg-0 ">
-                    <div class="row gy-0 ">
-                    
-                      <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
-                          <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
-                              <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
-                          </a>
-                      </div>
-
-                      <div class="col-lg-3 col-md-6 col-sm-8  border border-white border-1 px-3 py-5 ">
-                          <div class="position-relative me-n4 mb-3 d-none d-sm-block">
-                            <div class="product-badge product-available  lh-1 fs-sm" style="right: 19.25rem;">
-                              <strong>Great <br>Place <br>To <br>Exhibit</strong>
-                            </div>
-                          </div>
-                          <h5 class="text-light fw-normal pt-2 pb-0">
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                              @endif 
-                          </h5>
-                          <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
-                          <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
-                            @if(count($eventbrand) > 0)
-                                <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
-                                <div class="d-flex bg-transparent border-bottom"> 
-                                
-                                  @foreach($eventbrand as $franchise)
-                                      <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                  @endforeach
-                                </div>
-                            @endif
-                          <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
-                          <ul class="list-unstyled text-light mb-0 mt-2">
-                                <li class="d-flex">
-                                @if( $event->businessrevenue == 'visitor' )
-                                    @if( $ticketOrExhibit != 0 )
-                                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                        href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                                      @else ( $ticketOrExhibit == 0 )
-                                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                        href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                    @endif
-                                  @else
-                                    <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                        href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                @endif
-
-                                  <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                </li>
-                          </ul>
-                      </div>
-                      
-                      <div class="col-lg-3 col-md-6 col-sm-8  px-3 py-5 d-none d-sm-block">
-                            <h5 class="text-light fw-normal fs-sm pt-2 pb-0">
-                                Upcoming Expo
-                            </h5>
-                                      
-                          <h2 class="text-primary mb-3 lh-1"> <span class="fw-light"> MAKING</span> <br>BIG GROWTH <br>
-                          <span class="fw-light">IN INDIA</span> <br>BUSINESS <br><span class="fw-light">A REALITY</span></h1>
-                              <ul class="list-unstyled text-light mb-0 mt-0 border-top">
-                                    <li class="d-flex pt-1">
-                                      <a class="fs-xs  text-center border-end px-0" href="{{$link->google()}}"> <span class="fw-bold">100 +</span> <br>Thought Leadership</a>
-                                      <a class="fs-xs  text-center border-end px-2" href="{{$link->google()}}"><span class="fw-bold">> 800</span> <br>Business Matching Meetings</a>
-                                      <a class="fs-xs  text-center  px-0" href="{{$link->google()}}"><span class="fw-bold">300 +</span> <br>Business Ideas Opportunities</a>
-                                    </li>
-                              </ul>
-                      </div>  
-                        
-                      <div class="col-lg-3 d-none d-sm-block">
-                      
-                      </div>
+              <div class=" product-available   text-center bg-primary" style="right: 1.75rem; top: 7.25%; position: absolute;padding-top: 0.425rem; padding-left: 0.625rem; padding-right: 1rem;
+                padding-bottom: 0.425rem;
+                transform: translateY(-50%);
+                border-radius: 0.3125rem;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                font-size: .8125rem;">
+                <div class = "h1 pt-5 text-light pb-0 mb-0" style="font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">COI</div>  
+                <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
+              </div>
+            
+              ``<div class="container pt-4 mb-3 mb-lg-0 ">
+                  <div class="row gy-0 ">
+                  
+                    <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
+                        <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
+                        </a>
                     </div>
 
-                    <div class="container d-none">
-                      <div class="row text-light mb-0 mt-0">
-                        <ul class="list-unstyled text-light mb-0 mt-5">
+                    <div class="col-lg-3 col-md-6 col-sm-8  border border-white border-1 px-3 py-5 ">
+                        <div class="position-relative me-n4 mb-3 d-none d-sm-block">
+                          <div class="product-badge product-available  lh-1 fs-sm" style="right: 19.25rem;">
+                            <strong>Great <br>Place <br>To <br>Exhibit</strong>
+                          </div>
+                        </div>
+                        <h5 class="text-light fw-normal pt-2 pb-0">
+                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                            @else
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                            @endif 
+                        </h5>
+                        <h1 class="text-primary mb-3">{{$event->eventname}}</h1>
+                        <h5 class="text-light fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
+                          @if(count($eventbrand) > 0)
+                              <span class="text-light fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
+                              <div class="d-flex bg-transparent border-bottom"> 
+                              
+                                @foreach($eventbrand as $franchise)
+                                    <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                @endforeach
+                              </div>
+                          @endif
+                        <h5 class="text-light fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
+                        <ul class="list-unstyled text-light mb-0 mt-2">
                               <li class="d-flex">
-                                <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
-                                <a class="" href="{{$link->google()}}">5500+ <br>Brands on Display</a>
-                                <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
+                              @if( $event->businessrevenue == 'visitor' )
+                                  @if( $ticketOrExhibit != 0 )
+                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                      href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                                    @else ( $ticketOrExhibit == 0 )
+                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                  @endif
+                                @else
+                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                              @endif
+
+                                <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
                               </li>
                         </ul>
-                      </div>
                     </div>
-
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-8  px-3 py-5 d-none d-sm-block">
+                          <h5 class="text-light fw-normal fs-sm pt-2 pb-0">
+                              Upcoming Expo
+                          </h5>
+                                    
+                        <h2 class="text-primary mb-3 lh-1"> <span class="fw-light"> MAKING</span> <br>BIG GROWTH <br>
+                        <span class="fw-light">IN INDIA</span> <br>BUSINESS <br><span class="fw-light">A REALITY</span></h1>
+                            <ul class="list-unstyled text-light mb-0 mt-0 border-top">
+                                  <li class="d-flex pt-1">
+                                    <a class="fs-xs  text-center border-end px-0" href="{{$link->google()}}"> <span class="fw-bold">100 +</span> <br>Thought Leadership</a>
+                                    <a class="fs-xs  text-center border-end px-2" href="{{$link->google()}}"><span class="fw-bold">> 800</span> <br>Business Matching Meetings</a>
+                                    <a class="fs-xs  text-center  px-0" href="{{$link->google()}}"><span class="fw-bold">300 +</span> <br>Business Ideas Opportunities</a>
+                                  </li>
+                            </ul>
+                    </div>  
+                      
+                    <div class="col-lg-3 d-none d-sm-block">
+                    
+                    </div>
                   </div>
-              </section>
 
+                  <div class="container d-none">
+                    <div class="row text-light mb-0 mt-0">
+                      <ul class="list-unstyled text-light mb-0 mt-5">
+                            <li class="d-flex">
+                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
+                              <a class="" href="{{$link->google()}}">5500+ <br>Brands on Display</a>
+                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
+                            </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+            </section>
             
             <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
-            style="background-image: url('{{asset('/image/test.jpg')}}');">
+              style="background-image: url('{{asset('/image/test.jpg')}}');">
             
               <div class="container  mb-lg-0 bg-primary">
 
@@ -349,12 +247,107 @@
                 </div>
               </div>
             </section>
-            {{$this->tabi}}
 
+    <section class="card text-center py-5 border-0 award">
+      <div class="card-body">
+        <h5 class="card-title h2">Timeline</h5>
+        <div class="d-flex justify-content-between">
+            <p class="card-text fs-md ">Feb 29th, 2024 <span class="fs-sm">Open for Submissions</span></p>
+            <p class="card-text fs-md ">June 30th, 2024 <span class="fs-sm">Submission Deadline</span></p>
+            <p class="card-text fs-md ">August, 2024 <span class="fs-sm">Winner Announcement</span></p>
+        </div>
+       
+        <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
+      </div>
+    </section>
+
+    <section class="container award mb-5">
+      <h1 class="text-light"> Competition Categories</h1>
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+
+     
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      
+          <!-- Card -->
+          <div class="card border-0">
+            <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+            <div class="card-body">
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="container py-5">
+      <div class="card-group">
+          <!-- Card -->
+          <div class="card border-0">
+            <div class="card-body">
+              <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
+              <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+              <a href="#" class="text-primary fw-bold">Read More</a>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="award text-light my-5 py-5">
+      <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
+      <div class="container">
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Main Prize</div>
+              <span class = "text-muted fs-xs">$10,000 cash prize</span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Exposure Opportunity</div>
+              <span class = "text-muted fs-xs lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">The Exhibition Influcence Partner</div>
+              <span class = "text-muted fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <div class="fw-bold fs-md">Offline Event</div>
+              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
             
-
             
-
             
     
             <!--details-->
@@ -1458,49 +1451,70 @@
 
 
 
-           <section class="container">
-                <h1>Award Jury</h1>
-           </section>
+           <section class="container mb-4 mb-lg-5">
+            <div class="tab-content pt-2">
+              @if($currentTab === 'tab2')
+                <div class="tab-pane fade show active">
 
-           <section class="container">
-                <h1>Got Good Design?</h1>
-           </section>
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Award Jury</h5>
+                          <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
 
-           <section class="container">
-                <h1>Exhibition</h1>
-                <p class="text-center">
-                  A Design Award Exhibtiion, organized shortly after results announcement at The Exhibition Network, India, and later moved to several countries and cities, marks the grand opening of a new edition of the annual design competition. The design exhibition provides aan opportunity for architects, designers and business to showcase their latest products, projects and services the design trends for the year.
-                </p>
-           </section>
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Got Good Design?</h5>
+                          <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
 
-           <section class="container">
-                <h1>Design Prize</h1>
-                <p class="text-center">
-                  A Design Prize is the highest prize awarded in design industry with a specific aim of promoting, advertising and acknowledging good design worldwide. The A Design Prize includes public relations and publicity services in addition to the award trophy, certificate, yearbook and of course the winner logo which laureates could use to differentiate and add further value their award-winning products, projects and services.  
-                </p>
-           </section>
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Exhibition</h5>
+                          <p class="card-text fs-sm text-muted">A Design Award Exhibtiion, organized shortly after results announcement at The Exhibition Network, India, and later moved to several countries and cities, marks the grand opening of a new edition of the annual design competition. The design exhibition provides aan opportunity for architects, designers and business to showcase their latest products, projects and services the design trends for the year.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
 
-           <section class="container">
-                <h1>Award Categories</h1>
-                <p class="text-center">
-                  A Design Prize is the highest prize awarded in design industry with a specific aim of promoting, advertising and acknowledging good design worldwide. The A Design Prize includes public relations and publicity services in addition to the award trophy, certificate, yearbook and of course the winner logo which laureates could use to differentiate and add further value their award-winning products, projects and services.  
-                </p>
-           </section>
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Design Prize</h5>
+                          <p class="card-text fs-sm text-muted">A Design Prize is the highest prize awarded in design industry with a specific aim of promoting, advertising and acknowledging good design worldwide. The A Design Prize includes public relations and publicity services in addition to the award trophy, certificate, yearbook and of course the winner logo which laureates could use to differentiate and add further value their award-winning products, projects and services.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
+                    
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Award Categories</h5>
+                          <p class="card-text fs-sm text-muted">A Design Prize is the highest prize awarded in design industry with a specific aim of promoting, advertising and acknowledging good design worldwide. The A Design Prize includes public relations and publicity services in addition to the award trophy, certificate, yearbook and of course the winner logo which laureates could use to differentiate and add further value their award-winning products, projects and services.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
 
-           <section class="container">
-                <h1>News</h1>
-                <p class="text-center">
-                  Results will be Announced to public on April 15,2024. Visit our winners' page on April 15, 2024 to see the worlds' leading designs, ideas, trends and concepts in 2024.  
-                </p>
-           </section>
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">News</h5>
+                          <p class="card-text fs-sm text-muted">Results will be Announced to public on April 15,2024. Visit our winners' page on April 15, 2024 to see the worlds' leading designs, ideas, trends and concepts in 2024.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
 
-           <section class="container">
-                <h1>Registrations Open</h1>
-                <p class="text-center">
-                  Registration to A Design Award & Competition 2023-2024 period is now open. Register and upload your design today to know how good your design is get a complimentary preliminary score.  
-                </p>
-           </section>
-
+                      <section class="card text-center award py-5 border-0">
+                        <div class="card-body">
+                          <h5 class="card-title h2 textcolor">Registrations Open</h5>
+                          <p class="card-text fs-sm text-muted">Registration to A Design Award & Competition 2023-2024 period is now open. Register and upload your design today to know how good your design is get a complimentary preliminary score.</p>
+                          <a href="#" class="btn btn-sm btn-primary">Expand your Reach</a>
+                        </div>
+                      </section>
+                </div>
+              @endif
+            </div>
+          </section>
 
 
 
