@@ -135,7 +135,7 @@
         </div>
     </section>
     
-    <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
+    <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
       style="background-image: url('{{asset('/image/test.jpg')}}');">
   
       <div class="container pt-0 mb-3 mb-lg-0">
@@ -215,8 +215,154 @@
                     
         </div>
       </div>
-    </section>
+    </section> -->
 
+    <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10 award" data-bs-theme="light">
+            <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
+            <!-- <div class="container  mb-lg-0 bg-primary">
+              <div class="d-flex justify-content-between py-2">
+
+                    <i class="bi bi-list"></i>
+                    
+                    <a class="z-2 text-dark  pl-3 lh-1" href="{{route('design.strategy')}}"> 
+                      <span class= "fw-bold text-light fs-xs">Great Exhibition To Business</span>
+                      <br>
+                      <span class="text-light fw-normal fs-xs">Certified</span>
+                    </a>
+
+
+                    @if( $event->businessrevenue == 'visitor' )  
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Advertise</a>
+                      @else
+                    
+                      @if( $ticketOrExhibit != 0 )
+                          <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-outline-light btn-sm">Plan Your Visit</a>
+                        @elseif( $ticketOrExhibit == 0 )
+                          {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Plan Your Visit</a>{{route('event.product',['slug' => $event->slug])}}--}}
+                        
+                          <a href="#" class="btn btn-outline-light btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
+                      @endif
+                    @endif
+
+                    <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
+                      <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
+                    </a>
+
+                     <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
+                      <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
+                    </a> 
+                    <i class="navbar-tool-icon bi bi-list"></i>
+                </div>
+
+
+                 <div class="container">
+                Expand your Businesss       
+                </div>
+            </div> -->
+
+            <div class="container pt-0 mb-3 mb-lg-0">
+              <div class="row gy-0">
+              
+              
+                <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
+                      <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
+                          <img src="{{url('assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
+                      </a>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-8">
+                  <div class="col-lg-6 col-md-6  px-0 py-3">
+                  
+                      <h4 class="text-dark fw-bold fs-md pt-3 pb-0 lh-0">
+                            @if ($current < $to && $current < $from)
+                              {{-- Upcoming --}}
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                              @endif
+                            @elseif ($current == $to && $current < $from) 
+                              {{--First Day--}}
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                              @endif
+                            @elseif ($current > $to && $current < $from) 
+                              {{-- Ongoing --}}
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                              @endif
+                            @elseif ($current > $to && $current == $from) 
+                              {{-- Last Business Day  --}}
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                              @endif
+                            @elseif ($current > $to && $current > $from)
+                                {{Carbon\Carbon::parse ($event->enddate)->format('M Y ')}}
+                            @endif
+                          
+                      </h4>
+
+                      <span class="badge badge-primary bg-primary fs-xs mt-4">
+                            @if ($current < $to && $current < $from)
+                              Upcoming
+                            @elseif ($current == $to && $current < $from) 
+                              First Day
+                            @elseif ($current > $to && $current < $from) 
+                              Ongoing
+                            @elseif ($current > $to && $current == $from) 
+                              Last Business Day 
+                            @elseif ($current > $to && $current > $from)
+                              ended
+                            @endif
+                      </span>
+
+                      <h1 class="textcolor mb-0">{{ucwords(trans($event->eventname))}}</h1>
+                      <h5 class="textcolor fw-normal">{{ucwords(trans($event->venue))}} {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}</h5>
+                      
+                      @if(count($sponserbrand) > 0)
+                          <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
+                          <div class="d-flex bg-transparent border-bottom"> 
+                            @foreach($sponserbrand as $franchise)
+                                <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                            @endforeach
+                          </div>
+                      @endif
+                      
+                      <h5 class="text-dark fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
+                      
+                      <ul class="list-unstyled text-light mb-0 mt-2">
+                            <li class="d-flex">
+                                @if( $event->businessrevenue == 'visitor' )
+                                  @if( $ticketOrExhibit != 0 )
+                                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                        href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                                      @else( $ticketOrExhibit == 0 )
+                                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                        href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                  @endif
+                                @else
+                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                        href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                @endif  
+                              <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                              <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                            </li>
+                      </ul>
+
+
+                  </div>    
+                </div>
+              </div>
+              <div class="container">
+                          
+              </div>
+            </div>
+          </section>
 
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
