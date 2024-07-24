@@ -11,9 +11,9 @@ class EventScraper
 {
     protected $client;
 
-    public function __construct(Client $client)
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new client();
     }
 
     public function scrape($url)
@@ -23,14 +23,22 @@ class EventScraper
 
         $crawler = new Crawler($html);
 
-        $events = $crawler->filter('.event-class')->each(function($node){
-        return [
-            'title' => $node->filter('.event-title')->text(),
-            'date' => $node->filter('.event-date')->text(),
-            'location' => $node->filter('.event-location')->text(),
-            ];
-        });
+        $eventName = $crawler->filter('.event-name')->text();
+        $eventVenue = $crawler->filter('.venue')->text();
+        $city = $crawler->filter('.city')->text();
+        $country = $crawler->filter('.country')->text();
+        $startDate = $crawler->filter('.start-date')->text();
+        $endDate = $crawler->filter('.end-date')->text();
 
-        return $events;
+        return [
+
+             'event_Name' => $eventName,
+             'event_Venue' => $eventVenue,
+             'city' => $city,
+             'country' => $country,
+             'startDate' => $startDate,
+             'endDate' => $endDate,
+
+            ];
     }
 }
