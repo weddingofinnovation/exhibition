@@ -161,6 +161,7 @@ use App\Http\Livewire\ExhibitionTimeComponent;
 use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
+use App\Http\Livewire\Livewire\Admin\AdminScraperComponent;
 use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
@@ -228,6 +229,9 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
 //Start
 Route::get('/', EventComponent::class)->name('business.exhibition');
 
+
+Route::post('/scrape',[AdminScraperComponent::class,'scrape']);
+Route::get('/scrape-form' , function(){ return view('scrape'); });
 Route::get('/conference', ConferenceComponent::class)->name('coi.conference');
 Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class)->name('event.details');
 //Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class, 'index')->name('event.details');
@@ -252,6 +256,7 @@ Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibitio
 Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');
 
 Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
+
 
 //as per upcoming venue 
 Route::get('Great-Exhibition-to-Exhibit/{time}/{venue}/{city}/{country}', EventSearchComponent::class)->name('search.venue');

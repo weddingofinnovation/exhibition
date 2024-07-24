@@ -30,9 +30,7 @@
                           <div>Upcoming {{$this->eventype}}</div> 
                     </div>
 
-                    <div class="align-content-center py-2">
-                    <a href=""><i class="bi bi-search"></i></a>    
-                    </div>
+                    <div class="align-content-center py-2"><a href=""><i class="bi bi-search"></i></a> </div>
               </div>
             </div>
           </div>
@@ -1865,7 +1863,7 @@
         </div>
       </div>
 
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="ooooffCanvasExampleo"  aria-labelledby="offCanvasExampLabelo" style="height: 380px;">
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
 
         <div class="offcanvas-header align-items-center shadow-sm">
         @if ($selectedItem)
@@ -1882,7 +1880,7 @@
 
           <div class="d-table table-layout-fixed w-100">
                   
-            <!-- <a class="d-table-cell handheld-toolbar-item" href="">
+            <a class="d-table-cell handheld-toolbar-item" href="">
               <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
               <span class="handheld-toolbar-label">Exhibitor</span>
             </a>
@@ -1890,20 +1888,16 @@
             <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
               <span class="handheld-toolbar-label">save</span>
-            </a> -->
-
-            <!-- <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+            </a> 
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
               <span class="handheld-toolbar-label">fabrication</span>
             </a>
-
             <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
               <span class="handheld-toolbar-label">Membership</span>
-            </a> -->
-
+            </a>
             
-
           </div>
 
         </div>
