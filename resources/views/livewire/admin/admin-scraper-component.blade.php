@@ -1,12 +1,15 @@
 <main>
 
 
-<form id = "scrape-form">
-    <input type="text" class="form-control"  required>
-    <button class="form-control" type="submit"> submit</button>
+<form wire:submit.prevent = "scrape">
+    <input type="text" id="url" class="form-control" wire:model="url" required>
+    <button class="form-control" type="submit">Scrabe</button>
 </form>
 
-<div id="results"></div>
+@if($scrabedData)
+  <h2>Scraped Data</h2>
+  <pre>{{json_encode($scrabedData, JSON_PRETTY_PRINT)}}</pre>
+@endif
 
 @push('scripts')
     <script>

@@ -4,28 +4,24 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Services\EventScraper;
-use Illuminate\Http\Request;
 
 class AdminScraperComponent extends Component
 {
-    protected $EventScraper;
+    public $url;
+    public $scrapedData;
+
+    protected $eventScraper;
 
 
-    public function __construct(EventScraper  $EventScraper)
+    public function __construct($id= null, EventScraper  $eventScraper)
     {
-        $this->EventScraper = $EventScraper;
+        $this->eventScraper = $eventScraper;
+        parent::__construct($id);
     }
 
-    public function scrape (Request $request)
+    public function scrape()
     {
-        $url = $request->input('url');
-        if(!$url)
-        {
-            return response()->json(['error' => 'url is required'], 400);
-        }
-
-        $data = $this->EventScraper->scrape($url);
-        return response()->json($data);
+        $this->scrapedData = $this->EventScraper->scrape($this->url);
     }
 
     public function render()
