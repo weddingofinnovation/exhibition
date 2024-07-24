@@ -58,16 +58,6 @@
             
             <div class="mb-4 mb-lg-5">
                 <!-- Nav tabs-->
-                {{-- <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#requuest" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#details" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#reviewID" data-bs-toggle="tab" role="tab">ID </a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year22find" data-bs-toggle="tab" role="tab">2022 {{$year22ev->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year23find" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year24find" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
-                  <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year25find" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
-                </ul> --}}
                 
                 <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>

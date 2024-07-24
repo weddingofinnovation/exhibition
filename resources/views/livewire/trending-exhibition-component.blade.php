@@ -182,7 +182,7 @@
             @endforeach
         </div>
     
-        <div class="row g-0 py-0 mx-n2 my-Slider3"> 
+        <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
           {{-- px-2 mb-1 --}}
           @foreach($evento as $eventoi)
             <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">

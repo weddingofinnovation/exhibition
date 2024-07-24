@@ -3,6 +3,78 @@
 @section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
     <main>
+
+
+
+    <section class="bg-dark text-light">
+            <div class="container">
+              <a href="#">Home</a>
+              <a href="#">Guide</a>
+              <a href="#">Showcase</a>
+            </div>
+    </section>
+
+
+    <section class="bg-dark">
+      <h1 class="text-light">Timeline</h1>
+      <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
+      <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
+      <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
+
+      <a href="" class="btn btn-sm btn-light">Subscribe</a>
+    </section>
+
+
+
+
+    <section class="container bg-dark">
+      <h1 class="text-light"> Competition Categories</h1>
+
+      <div>
+        <img src="" alt="">
+        <img src="" alt="">
+        <img src="" alt="">
+      </div>
+
+    </section>
+
+
+    <section class="bg-dark text-light">
+      <h1>Awards And Prizes</h1>
+      <div class="col">
+         <div class="col-4"> <i class="bi bi-money"></i></div>
+         <div class="col-8"> 
+            <span>Main Prize</span>
+            <span class = "text-light fs-sm">$10,000 cash prize</span>
+         </div>
+      </div>
+      <div class="col">
+         <div class="col-4"> <i class="bi bi-money"></i></div>
+         <div class="col-8"> 
+            <span>Exposure Opportunity</span>
+            <span class = "text-light fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+         </div>
+      </div>
+      <div class="col">
+         <div class="col-4"> <i class="bi bi-money"></i></div>
+         <div class="col-8"> 
+            <span>The Exhibition Influcence Partner</span>
+            <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
+         </div>
+      </div>
+      <div class="col">
+         <div class="col-4"> <i class="bi bi-money"></i></div>
+         <div class="col-8"> 
+            <span>Offline Event</span>
+            <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
+         </div>
+      </div>
+    </section>
+
+
+    <section>
+      
+    </section>
             <!-- <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
               style="background-image: url('{{('/image/test.jpg')}}')"> -->
               <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
@@ -110,8 +182,6 @@
               </section>
 
             
-            <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
-            style="#">
             <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" 
             style="background-image: url('{{asset('/image/test.jpg')}}');">
             
@@ -230,11 +300,7 @@
             </section>
             {{$this->tabi}}
 
-            <div class="container">
-              <a href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'overview'])}}">overview</a>
-              <a href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'speaker'])}}">speaker</a>
-              <a href="{{route('award.details',[ 'slug' => $event->slug,'tabi' => 'keyo'])}}">keyo</a>
-            </div>
+            
 
             
 
