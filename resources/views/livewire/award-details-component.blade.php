@@ -431,12 +431,12 @@
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between">
-                        <p class="card-text fs-md fw-bold textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
-                        <p class="card-text fs-md fw-bold textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
-                        <p class="card-text fs-md fw-bold textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
+                        <p class="card-text fs-lg fw-light textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
+                        <p class="card-text fs-lg fw-light textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
+                        <p class="card-text fs-lg fw-light textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
                     </div>
                   
-                    <a href="#" class="btn btn-sm btn-primary">Subscribe</a>
+                    <a href="#" class="btn btn-sm btn-primary mt-5 pt-5">Subscribe</a>
                   </div>
                 </section>
 
@@ -444,10 +444,10 @@
                   <h1 class="text-light"> Competition Categories</h1>
                   <div class="card-group">
                       <!-- Card -->
-                      <div class="card border-0">
+                      <div class="card rounded-0 award">
                         <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
                         <div class="card-body">
-                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <p class="card-text fs-sm textcolor">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
                           <a href="#" class="text-primary fw-bold">Read More</a>
                         </div>
                       </div>
@@ -455,19 +455,19 @@
 
                 
                       <!-- Card -->
-                      <div class="card border-0">
+                      <div class="card rounded-0 award">
                         <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
                         <div class="card-body">
-                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <p class="card-text fs-sm textcolor">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
                           <a href="#" class="text-primary fw-bold">Read More</a>
                         </div>
                       </div>
                   
                       <!-- Card -->
-                      <div class="card border-0">
+                      <div class="card rounded-0 award">
                         <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
                         <div class="card-body">
-                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <p class="card-text fs-sm textcolor">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
                           <a href="#" class="text-primary fw-bold">Read More</a>
                         </div>
                       </div>
@@ -477,10 +477,10 @@
                 <section class="container py-5">
                   <div class="card-group">
                       <!-- Card -->
-                      <div class="card border-0">
+                      <div class="card rounded-0 award">
                         <div class="card-body">
                           <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
-                          <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
+                          <p class="card-text fs-sm textcolor">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
                           <a href="#" class="text-primary fw-bold">Read More</a>
                         </div>
                       </div>
@@ -731,7 +731,7 @@
                 </section>
               @endif
             </div>
-           </section>
+          </section>
 
 
 
@@ -1252,7 +1252,7 @@
               <div class="card-group">
 
                   <!-- Card -->
-                  <div class="card border-0">
+                  <div class="card rounded-0 award">
                     <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
                     <div class="card-body">
                       <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
@@ -1264,7 +1264,7 @@
                   
 
                   <!-- Card -->
-                  <div class="card border-0">
+                  <div class="card rounded-0 award">
                     <img src="https://source.unsplash.com/1600x900/?brand, studio" class="card-img-top" alt="Card image">
                     <div class="card-body">
                       <h5 class="card-title">Backdoor brand Studio</h5>
@@ -1274,7 +1274,7 @@
                   </div>
 
                    <!-- Card -->
-                   <div class="card border-0">
+                   <div class="card rounded-0 award">
                     <img src="https://source.unsplash.com/1600x900/?visit, exhibition" class="card-img-top" alt="Card image">
                     <div class="card-body">
                       <h5 class="card-title">Plan to {{$event->eventname}}</h5>
@@ -1285,7 +1285,7 @@
 
 
                    <!-- Card -->
-                   <div class="card border-0">
+                   <div class="card rounded-0 award">
                     <img src="https://source.unsplash.com/1600x900/?Membership, benefits" class="card-img-top" alt="Card image">
                     <div class="card-body">
                       <h5 class="card-title">Membership at The Exhibition Network</h5>
@@ -1295,7 +1295,7 @@
                   </div>
 
                   <!-- Card -->
-                  <div class="card border-0">
+                  <div class="card rounded-0 award">
                     <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
                     <div class="card-body">
                       <h5 class="card-title">New at {{$event->eventname}}</h5>
@@ -1307,7 +1307,7 @@
             </section>
             
             
-            <section class="card text-center py-5 border-0">
+            <section class="card text-center py-5 rounded-0 award">
               <div class="card-body">
                 <h5 class="card-title h2">Buy your Expo 2023 Tickets Now </h5>
                 <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Exhibtion Magazine - Where You Meet the Right People at the Right Time and Right Place.</p>
