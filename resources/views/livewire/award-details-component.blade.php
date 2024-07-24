@@ -22,12 +22,12 @@
         </ul>
     </section>
 
-    <section class="award">
+    <section class="award my-5">
       <h1 class="text-light">Timeline</h1>
-      <div class="row">
-        <div class="col-md-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
-        <div class="col-md-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
-        <div class="col-md-4 text-light">August, 2024 <span>Winner Announcement</span></div>
+      <div class="d-flex justify-content-between">
+        <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
+        <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
+        <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
       </div>
 
       <a href="" class="btn btn-sm btn-light text-center">Subscribe</a>
@@ -36,7 +36,7 @@
 
 
 
-    <section class="container bg-dark">
+    <section class="container award mb-5">
       <h1 class="text-light"> Competition Categories</h1>
 
       <div>
@@ -48,34 +48,35 @@
     </section>
 
 
-    <section class="bg-dark text-light">
+    <section class="award text-light mb-5">
       <h1>Awards And Prizes</h1>
       <div class="container">
-        <div class="row">
-          <div class="col-4"> <i class="bi bi-money"></i></div>
-          <div class="col-8"> 
-              <span>Main Prize</span>
+        <div class="row mb-3">
+          <div class="col-sm-3"> <i class="bi bi-money"></i></div>
+          <div class="col-sm-9"> 
+              <span>Main Prize</span> <br>
               <span class = "text-light fs-sm">$10,000 cash prize</span>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-4"> <i class="bi bi-money"></i></div>
-          <div class="col-8"> 
-              <span>Exposure Opportunity</span>
-              <span class = "text-light fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
+              <span>Exposure Opportunity</span><br>
+              <span class = "text-light fs-sm lh-0">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
           </div>
         </div>
-        <div class="col">
-          <div class="col-4"> <i class="bi bi-money"></i></div>
-          <div class="col-8"> 
+
+        <div class="row">
+          <div class="col-3"> <i class="bi bi-money"></i></div>
+          <div class="col-9"> 
               <span>The Exhibition Influcence Partner</span>
               <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
           </div>
         </div>
-        <div class="col">
-          <div class="col-4"> <i class="bi bi-money"></i></div>
-          <div class="col-8"> 
+        <div class="row">
+          <div class="col-sm-2"> <i class="bi bi-money"></i></div>
+          <div class="col-sm-10"> 
               <span>Offline Event</span>
               <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
           </div>
