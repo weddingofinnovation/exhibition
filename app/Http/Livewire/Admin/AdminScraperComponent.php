@@ -10,18 +10,18 @@ class AdminScraperComponent extends Component
     public $url;
     public $scrapedData;
 
-    protected $eventScraper;
+    //protected $eventScraper;
 
 
-    public function __construct($id = null, EventScraper  $eventScraper)
+    // public function __construct($id = null, EventScraper  $eventScraper)
+    // {
+    //     $this->eventScraper = $eventScraper;
+    //     parent::__construct($id);
+    // }
+
+    public function scrape(EventScraper  $eventScraper)
     {
-        $this->eventScraper = $eventScraper;
-        parent::__construct($id);
-    }
-
-    public function scrape()
-    {
-        $this->scrapedData = $this->EventScraper->scrape($this->url);
+        $this->scrapedData = $eventScraper->scrape($this->url);
     }
 
     public function render()
