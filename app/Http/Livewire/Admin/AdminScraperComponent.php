@@ -26,6 +26,6 @@ class AdminScraperComponent extends Component
 
     public function render()
     {
-        return view('livewire.livewire.admin.admin-scraper-component')->layout('layouts.eblog');
+        return view('livewire.admin.admin-scraper-component')->layout('layouts.eblog');
     }
 }
