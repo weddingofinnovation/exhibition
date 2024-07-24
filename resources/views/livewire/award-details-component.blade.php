@@ -25,10 +25,11 @@
     <section class="award">
       <h1 class="text-light">Timeline</h1>
       <div class="row">
-        <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
-        <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
-        <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
+        <div class="col-md-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
+        <div class="col-md-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
+        <div class="col-md-4 text-light">August, 2024 <span>Winner Announcement</span></div>
       </div>
+
       <a href="" class="btn btn-sm btn-light text-center">Subscribe</a>
     </section>
 
