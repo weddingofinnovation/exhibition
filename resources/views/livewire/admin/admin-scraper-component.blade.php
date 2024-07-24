@@ -6,16 +6,16 @@
     <button class="form-control" type="submit">Scrabe</button>
 </form>
 
-@if($scrabedData)
+@if($scrapedData)
   <h2>Scraped Data</h2>
-  <pre>{{json_encode($scrabedData, JSON_PRETTY_PRINT)}}</pre>
+  <pre>{{json_encode($scrapedData, JSON_PRETTY_PRINT)}}</pre>
 <ul>
-    <li>{{ $scrabedData['event_Name'] }}</li>
-    <li>{{ $scrabedData['event_Venue'] }}</li>
-    <li>{{ $scrabedData['city'] }}</li>
-    <li>{{ $scrabedData['country'] }}</li>
-    <li>{{ $scrabedData['startDate'] }}</li>
-    <li>{{ $scrabedData['endDate'] }}</li>
+    <li>{{ $scrapedData['event_Name'] }}</li>
+    <li>{{ $scrapedData['event_Venue'] }}</li>
+    <li>{{ $scrapedData['city'] }}</li>
+    <li>{{ $scrapedData['country'] }}</li>
+    <li>{{ $scrapedData['startDate'] }}</li>
+    <li>{{ $scrapedData['endDate'] }}</li>
 </ul>
 @endif
 
