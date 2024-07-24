@@ -50,33 +50,36 @@
 
     <section class="bg-dark text-light">
       <h1>Awards And Prizes</h1>
-      <div class="col">
-         <div class="col-4"> <i class="bi bi-money"></i></div>
-         <div class="col-8"> 
-            <span>Main Prize</span>
-            <span class = "text-light fs-sm">$10,000 cash prize</span>
-         </div>
-      </div>
-      <div class="col">
-         <div class="col-4"> <i class="bi bi-money"></i></div>
-         <div class="col-8"> 
-            <span>Exposure Opportunity</span>
-            <span class = "text-light fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-         </div>
-      </div>
-      <div class="col">
-         <div class="col-4"> <i class="bi bi-money"></i></div>
-         <div class="col-8"> 
-            <span>The Exhibition Influcence Partner</span>
-            <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
-         </div>
-      </div>
-      <div class="col">
-         <div class="col-4"> <i class="bi bi-money"></i></div>
-         <div class="col-8"> 
-            <span>Offline Event</span>
-            <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
-         </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-4"> <i class="bi bi-money"></i></div>
+          <div class="col-8"> 
+              <span>Main Prize</span>
+              <span class = "text-light fs-sm">$10,000 cash prize</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-4"> <i class="bi bi-money"></i></div>
+          <div class="col-8"> 
+              <span>Exposure Opportunity</span>
+              <span class = "text-light fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-4"> <i class="bi bi-money"></i></div>
+          <div class="col-8"> 
+              <span>The Exhibition Influcence Partner</span>
+              <span class = "text-light fs-sm">The title The Exhibition Network Expert and The exhibition Network Ambassador </span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col-4"> <i class="bi bi-money"></i></div>
+          <div class="col-8"> 
+              <span>Offline Event</span>
+              <span class = "text-light fs-sm">Chance to attend the prestige Lucie Awards Gala Ceremony</span>
+          </div>
+        </div>
       </div>
     </section>
 
