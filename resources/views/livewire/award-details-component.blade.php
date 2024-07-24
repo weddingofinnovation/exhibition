@@ -22,7 +22,7 @@
         </ul>
     </section>
 
-    <section class="award my-5">
+    <section class=" container award my-5">
       <h1 class="text-light">Timeline</h1>
       <div class="d-flex justify-content-between">
         <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
