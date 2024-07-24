@@ -40,6 +40,13 @@ class AwardDetailsComponent extends Component
        $this->currentTab = session()->get('currentTab','tab1');
     }
 
+    public function switchTab($tab)
+    {
+      $this->currentTab = $tab;
+      session()->put('currentTab', $tab);
+    }
+
+    
     public function post( Request $request, $slug)
     {
       $post = Event::where('slug',$slug)->published()->first();

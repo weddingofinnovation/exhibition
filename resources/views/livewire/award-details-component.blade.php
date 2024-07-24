@@ -3,11 +3,18 @@
 @section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
     <main>
+
       <style>
 
+        .award {
+          font-family: OnePlus Sans Display Regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          background-color: #151515;
+        }
+        
       </style>
 
-    <section class="container bg-dark text-light" style="background-color: #151515;">
+    <section class=" award container text-light" style="">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
             <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">guide</a></li>
@@ -15,13 +22,14 @@
         </ul>
     </section>
 
-    <section class="bg-dark">
+    <section class="award">
       <h1 class="text-light">Timeline</h1>
-      <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
-      <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
-      <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
-
-      <a href="" class="btn btn-sm btn-light">Subscribe</a>
+      <div class="row">
+        <div class="col-sm-4 text-light">Feb 29th, 2024 <span>Open for Submissions</span></div>
+        <div class="col-sm-4 text-light">June 30th, 2024 <span>Submission Deadline</span></div>
+        <div class="col-sm-4 text-light">August, 2024 <span>Winner Announcement</span></div>
+      </div>
+      <a href="" class="btn btn-sm btn-light text-center">Subscribe</a>
     </section>
 
 
