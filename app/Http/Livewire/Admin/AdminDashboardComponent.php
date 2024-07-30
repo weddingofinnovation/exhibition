@@ -853,7 +853,7 @@ public $dtype;
     public function approveApplication($id, $status)
     {
        $application = BadgeApplication::findOrFail($id);
-       $application->status = $this->status;
+       $application->status = $status;
        $application->save();
 
        $code = BadgeCode::create([
