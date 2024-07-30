@@ -28,12 +28,10 @@ class UserBadgeComponent extends Component
         $expiryDate = Carbon::now()->addDays(365);
         $userId = Auth::user()->id;
         $userName = Auth::user()->name;
-        $userEmail = Auth::user()->id;
+        $userEmail = Auth::user()->email;
 
         $application = BadgeApplication::create([
             'user_id' => $userId,
-            'user_name' => $userName,
-            'email' => $userEmail,
             'website_url' => $this->website_url,
             'expiry_date' => $expiryDate,
             'type' => $this->type,

@@ -13,8 +13,6 @@ class BadgeApplication extends Model
 
     protected $fillable = [
         'user_id',
-        'user_name',
-        'email',
         'website_url',
         'expiry_date',
         'type',
