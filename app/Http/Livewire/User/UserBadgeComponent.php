@@ -2,12 +2,44 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\BadgeApplication;
+use App\Models\BadgeCode;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class UserBadgeComponent extends Component
 {
+    public $code, $user_name, $email, $website_url, $expiry_date, $type, $user_id;
+
+    protected $rules = [
+         'website_url' => 'required|url',
+         'type' => 'required',
+    ];
+
+    public function submit()
+    {
+        $this->validate();
+        $expiryDate = Carbon::now()->addDays(365);
+        $userId = Auth::user()->id;
+        $userName = Auth::user()->name;
+        $userEmail = Auth::user()->id;
+
+        $application = BadgeApplication::create([
+            'user_id' => $userId,
+            'user_name' => $userName,
+            'email' => $userEmail,
+            'website_url' => $this->website_url,
+            'expiry_date' => $expiryDate,
+            'type' => $this->type,
+        ]);
+
+        $this->reset();
+    }
+
     public function render()
     {
-        return view('livewire.livewire.user.user-badge-component');
+        $badgeCode = BadgeCode::where('code', $this->code)->first();
+        return view('livewire.livewire.user.user-badge-component',['badgeCode' => $badgeCode]);
     }
 }

@@ -2727,8 +2727,19 @@
           </div>
       @endif
 
-      @if($board == 'data')
-        
+      @if($board == 'badge')
+        @php 
+          $requested_badge_application = DB::table('badge_applications')->get();
+        @endphp
+
+         @foreach($requested_badge_application as $badge)
+           <div class="container">
+            {{$badge -> website_url}}
+            {{$badge -> type}}
+            {{$badge -> user_id}}
+           </div>
+         @endforeach
+         
       @endif
 
       @if($board == 'own-plan-add-ticket')

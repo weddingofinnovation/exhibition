@@ -52,7 +52,7 @@
             <div class="container">
 
               <div class="col-lg-4 col-md-5">
-                <h3 class="h4 mb-4">74 Reviews</h3>
+                <h3 class="h4 mb-4">{{count($eventrate)}}</h3>
                 <div class="star-rating me-2">
                   <i class=" bi bi-star-filled fs-sm text-accent me-1"></i>
                   <i class=" bi bi-star-filled fs-sm text-accent me-1"></i>

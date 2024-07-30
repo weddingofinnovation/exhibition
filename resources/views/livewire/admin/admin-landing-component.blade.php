@@ -176,6 +176,16 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
+                    <a class="element-item transition metal" data-category="transition" href="{{route('user.badge', ['board' => 'order'])}}">
+                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                        <h3 class="name">Badge</h3>
+                      <!-- </a>  -->
+                      <p class="symbol"></p>
+                      <!-- <p class="number">80</p>
+                      <p class="weight">200.59</p> -->
+                    </a>
+                    
+
                     <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Searched</div>

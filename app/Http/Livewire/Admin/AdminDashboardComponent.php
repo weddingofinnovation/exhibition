@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin;
 use App\Mail\EventToClient;
 use App\Mail\MonthlyEvent;
 use App\Models\Appliedjob;
+use App\Models\BadgeApplication;
+use App\Models\BadgeCode;
 use App\Models\Brand;
 use App\Models\BusinessCalledo;
 use App\Models\Category;
@@ -43,6 +45,7 @@ use App\Models\Location;
 use App\Models\Photo;
 use App\Models\Ticket;
 use App\Models\Viewso;
+use App\Notifications\BadgeApproved;
 use Livewire\WithFileUploads;
 
 class AdminDashboardComponent extends Component
@@ -845,6 +848,23 @@ public $dtype;
       $ticketDel->packagge = trim($status);
       $ticketDel->save();
     }
+
+
+    public function approveApplication($id)
+    {
+       $application = BadgeApplication::findOrFail($id);
+       $application->status = 'approved';
+       $application->save();
+
+       $code = BadgeCode::create([
+               'badge_application_id' => $application->id,
+               'code' => Str::upper(Str::random(10)),
+       ]);
+
+       Mail::to($application->email)->send(new BadgeApproved ($code));
+       return redirect()->back()->with('message','Application approved and code generated.');
+    }
+
 
     public function render()
     {

@@ -167,6 +167,7 @@ use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
 use App\Http\Livewire\TermsComponent;
 use App\Http\Livewire\ThankyouComponent;
+use App\Http\Livewire\User\UserBadgeComponent;
 use App\Http\Livewire\User\UserDirectoryComponent;
 use App\Http\Livewire\User\UserEventCategoryComponent;
 use App\Http\Livewire\User\UserEventClaimComponent;
@@ -348,6 +349,9 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   //User
   Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
+
+    Route::get('/user/badge', UserBadgeComponent::class)->name('user.badge');
+
     Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
 
     Route::get('/user/{trackcustomer}', UserLandingComponent::class)->name('partner.magazine');
