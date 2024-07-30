@@ -10,7 +10,7 @@ use Livewire\Component;
 
 class UserBadgeComponent extends Component
 {
-    public $code, $user_name, $email, $website_url, $expiry_date, $type, $user_id;
+    public $board, $code, $user_name, $email, $website_url, $expiry_date, $type, $user_id;
 
     protected $rules = [
          'website_url' => 'required|url',
