@@ -933,6 +933,7 @@
             
         </section>
     
+        <a href="{{route('user.badge',['board' => 'badge-application-form'])}}" class="btn">Badge</a>
     @endif
 
   {{--<div class="container">

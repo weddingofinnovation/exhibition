@@ -12,6 +12,11 @@ class UserBadgeComponent extends Component
 {
     public $board, $code, $user_name, $email, $website_url, $expiry_date, $type, $user_id;
 
+    public function mount($board)
+    {
+        $this->board = $board;
+    }
+
     protected $rules = [
          'website_url' => 'required|url',
          'type' => 'required',
@@ -40,6 +45,6 @@ class UserBadgeComponent extends Component
     public function render()
     {
         $badgeCode = BadgeCode::where('code', $this->code)->first();
-        return view('livewire.user.user-badge-component',['badgeCode' => $badgeCode]);
+        return view('livewire.user.user-badge-component',['badgeCode' => $badgeCode])->layout('layouts.eblog');
     }
 }
