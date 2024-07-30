@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class BadgeCode extends Model
 {
     use HasFactory;
-    
+
     protected $table = "badge_codes";
+    
+    protected $fillable = [
+        'badge_application_id',
+        'code',
+    ];
 }
