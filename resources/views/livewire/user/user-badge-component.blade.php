@@ -3,16 +3,16 @@
         @if($board == 'badge-application-form')
             <div>submit your website get badge</div>
             <form wire:submit.prevent="submit">
-                <input type="text" class="form-control" required wire:model="website_url" placeholder="Your Website URL">
+                <input type="text" class="form-control mb-2" required wire:model="website_url" placeholder="Your Website URL">
 
-                <select class="form-control" type="text"   wire:model.lazy="type"   placeholder="type">
+                <select class="form-control mb-2" type="text"   wire:model.lazy="type"   placeholder="type">
                             <option selected>Choose</option>
                                 <option value="strategic">Strategic Partner</option>
                                 <option value="space">Space Partner</option>
                             
                 </select>
 
-                <button type="submit" class="btn btn-primary form-control">Apply for Badge</button>
+                <button type="submit" class="btn btn-primary form-control mb-2">Apply for Badge</button>
             </form>
 
         @elseif($board == 'badge-code')
@@ -34,6 +34,6 @@
         @endif
     </div>
 
-    
+
 </main>
 

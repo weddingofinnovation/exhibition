@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class BadgeApplication extends Model
 {
     use HasFactory;
+    
+    protected $table="badge_applications";
 }
