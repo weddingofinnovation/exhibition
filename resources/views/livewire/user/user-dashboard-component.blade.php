@@ -149,6 +149,8 @@
     </style>
 
     @if($board == 'dashboard')   
+
+    <a href="{{route('user.badge',['board' => 'badge-application-form'])}}" class="btn">Badge</a>
          <!--  Start Claim event -->
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">
@@ -933,7 +935,7 @@
             
         </section>
     
-        <a href="{{route('user.badge',['board' => 'badge-application-form'])}}" class="btn">Badge</a>
+        
     @endif
 
   {{--<div class="container">
