@@ -38,6 +38,7 @@ class UserBadgeComponent extends Component
         ]);
 
         $this->reset();
+        return redirect()->route ('user.badge',['board' => 'badge-code']);
     }
 
     public function render()

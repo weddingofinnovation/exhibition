@@ -2737,6 +2737,8 @@
             {{$badge -> website_url}}
             {{$badge -> type}}
             {{$badge -> user_id}}
+            <a href="#" wire:click.prevent="approveApplication({{$badge->id}}, 'approved')">Approved</a>
+            <a href="#" wire:click.prevent="approveApplication({{$badge->id}}, 'rejected')">Approved</a>
            </div>
          @endforeach
          

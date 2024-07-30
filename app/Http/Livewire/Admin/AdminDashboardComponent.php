@@ -850,10 +850,10 @@ public $dtype;
     }
 
 
-    public function approveApplication($id)
+    public function approveApplication($id, $status)
     {
        $application = BadgeApplication::findOrFail($id);
-       $application->status = 'approved';
+       $application->status = $this->status;
        $application->save();
 
        $code = BadgeCode::create([
