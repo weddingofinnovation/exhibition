@@ -214,7 +214,7 @@
 
                     <div class="d-flex abced gx-2">
                     
-                    @foreach($commentedRates  as $comment)
+                    {{-- @foreach($commentedRates  as $comment)
                       <div class=" border-1 d-flex align-items-end py-2 mx-2 border-bottom rounded shadow-sm">
                         <img class="rounded-circle" src="#" width="50" alt="">
       
@@ -233,7 +233,7 @@
                           </div>
                         </div>
                       </div>
-                    @endforeach
+                    @endforeach --}}
                     </div>
 
                     </div>
