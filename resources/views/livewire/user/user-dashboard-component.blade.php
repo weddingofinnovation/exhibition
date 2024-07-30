@@ -151,6 +151,23 @@
     @if($board == 'dashboard')   
 
     <a href="{{route('user.badge',['board' => 'badge-application-form'])}}" class="btn">Badge</a>
+
+     <div class="container">
+        @php 
+          $userappliedbadge = DB::table('badge_applications')->where('user_id' , Auth::user()->id)->get();
+        @endphp
+        @foreach($userappliedbadge as $badge)
+          {{$badge->website}} {{$badge->type}} {{$badge->status}}
+
+          @if($badge->status == 'approved')
+            <a href="{{route('user.badge',['board' => 'badge-code', 'badgeID' => $badge->id ])}}">{{$badge->status}}</a>
+          @elseif($badge->status == 'rejected' || $badge->status == 'pending')
+            <a href="">{{$badge->status}}</a>
+          @endif
+
+        <hr >
+        @endforeach
+     </div>
          <!--  Start Claim event -->
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">

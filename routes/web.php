@@ -350,7 +350,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
 
-    Route::get('/user/badge/{board}', UserBadgeComponent::class)->name('user.badge');
+    Route::get('/user/badge/{board}/{badgeID?}', UserBadgeComponent::class)->name('user.badge');
 
     Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
 

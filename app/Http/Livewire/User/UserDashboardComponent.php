@@ -67,15 +67,15 @@ class UserDashboardComponent extends Component
     public $Service=null;
     public $board;
     public $searchTerm;
-
     public $searchBrandTerm;
-
     public $lookingAddFromIMage;
-
     public $expand;
+    public $badgeID;
 
-    public function mount()
-    {   $this->currentStep = 1;
+    public function mount( $badgeID = null)
+    {   
+        $this->currentStep = 1;
+        $this->badgeID = $badgeID;  
         //'user_id'=>'required'
     }
 
