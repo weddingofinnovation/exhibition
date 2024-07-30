@@ -46,6 +46,8 @@ use App\Models\Photo;
 use App\Models\Ticket;
 use App\Models\Viewso;
 use App\Notifications\BadgeApproved;
+//use Illuminate\Contracts\Notifications\Notification;
+use Illuminate\Support\Facades\Notification;
 use Livewire\WithFileUploads;
 
 class AdminDashboardComponent extends Component
