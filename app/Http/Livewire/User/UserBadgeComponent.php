@@ -40,6 +40,6 @@ class UserBadgeComponent extends Component
     public function render()
     {
         $badgeCode = BadgeCode::where('code', $this->code)->first();
-        return view('livewire.livewire.user.user-badge-component',['badgeCode' => $badgeCode]);
+        return view('livewire.user.user-badge-component',['badgeCode' => $badgeCode]);
     }
 }
