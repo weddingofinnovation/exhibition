@@ -61,7 +61,7 @@
                   <i class=" bi bi-star fs-sm text-muted me-1"></i>
                 </div>
                 <span class="d-inline-block align-middle">4.1 Overall rating</span>
-                <p class="pt-3 fs-sm text-muted">58 out of 74 (77%)<br>Exhibitor recommended this Exhibition</p>
+                <p class="pt-3 fs-sm text-muted">58 out of {{count($eventrate)}} (77%)<br>Exhibitor recommended this Exhibition</p>
               </div>
 
               <!-- <div class="row pt-2 pb-3">
@@ -130,35 +130,45 @@
                     </div>
                   </div>
 
-                  <!-- Review-->
-                  <div class="product-review pb-4 mb-4 border-bottom">
-                    <div class="d-flex mb-3">
-                      <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="#" width="50" alt="Rafael Marquez">
-                        <div class="ps-3">
-                          <h6 class="fs-sm mb-0">Rafael Marquez</h6><span class="fs-ms text-muted">June 28, 2019</span>
+                  @foreach($eventrate as $busness)
+
+                    @php
+                        $finduserdetails = DB::table('users')->where('id' , $busness->user_id)->get();
+                    @endphp
+
+                    @foreach($finduserdetails as $detailio)
+                      <!-- Review-->
+                      <div class="product-review pb-4 mb-4 border-bottom">
+                        <div class="d-flex mb-3">
+                          <div class="d-flex align-items-center me-4 pe-2"><img class="rounded-circle" src="#" width="50" alt="Rafael Marquez">
+                            <div class="ps-3">
+                              <h6 class="fs-sm mb-0">{{$detailio->name}}</h6><span class="fs-ms text-muted">{{ Carbon\Carbon::parse($busness->updated_at)->diffForHumans()}}</span>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="star-rating">
+                              <i class="star-rating-icon  bi bi-star-filled active"></i>
+                              <i class="star-rating-icon  bi bi-star-filled active"></i>
+                              <i class="star-rating-icon  bi bi-star-filled active"></i>
+                              <i class="star-rating-icon  bi bi-star-filled active"></i>
+                              <i class="star-rating-icon  bi bi-star"></i>
+                            </div>
+                            <div class="fs-ms text-muted">83% of users found this review helpful</div>
+                          </div>
+                        </div>
+                        <p class="fs-md mb-2">{{$busness->opinion}}</p>
+                        <ul class="list-unstyled fs-ms pt-1">
+                          <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>Consequuntur magni, voluptatem sequi, tempora</li>
+                          <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>Architecto beatae, quis autem</li>
+                        </ul>
+                        <div class="text-nowrap">
+                          <button class="btn-like" type="button">15</button>
+                          <button class="btn-dislike" type="button">3</button>
                         </div>
                       </div>
-                      <div>
-                        <div class="star-rating">
-                          <i class="star-rating-icon  bi bi-star-filled active"></i>
-                          <i class="star-rating-icon  bi bi-star-filled active"></i>
-                          <i class="star-rating-icon  bi bi-star-filled active"></i>
-                          <i class="star-rating-icon  bi bi-star-filled active"></i>
-                          <i class="star-rating-icon  bi bi-star"></i>
-                        </div>
-                        <div class="fs-ms text-muted">83% of users found this review helpful</div>
-                      </div>
-                    </div>
-                    <p class="fs-md mb-2">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est...</p>
-                    <ul class="list-unstyled fs-ms pt-1">
-                      <li class="mb-1"><span class="fw-medium">Pros:&nbsp;</span>Consequuntur magni, voluptatem sequi, tempora</li>
-                      <li class="mb-1"><span class="fw-medium">Cons:&nbsp;</span>Architecto beatae, quis autem</li>
-                    </ul>
-                    <div class="text-nowrap">
-                      <button class="btn-like" type="button">15</button>
-                      <button class="btn-dislike" type="button">3</button>
-                    </div>
-                  </div>
+                    @endforeach
+                  
+                  @endforeach
 
                   <div class="text-center">
                     <button class="btn btn-outline-accent" type="button"><i class=" bi bi-reload me-2"></i>Load more reviews</button>
