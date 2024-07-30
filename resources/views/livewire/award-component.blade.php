@@ -49,13 +49,20 @@
               </div>
             </div> 
    
-            <div class="col-lg-4 col-md-5">
+
+            
+
+                
+
+                  <div class="container">
+
+                  <div class="col-lg-4 col-md-5">
               <h3 class="h4 mb-4">74 Reviews</h3>
               <div class="star-rating me-2"><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star-filled fs-sm text-accent me-1"></i><i class="ci-star fs-sm text-muted me-1"></i></div><span class="d-inline-block align-middle">4.1 Overall rating</span>
               <p class="pt-3 fs-sm text-muted">58 out of 74 (77%)<br>Customers recommended this product</p>
             </div>
-
-                <div class="row pt-2 pb-3">
+            
+                  <div class="row pt-2 pb-3">
                     <div class="col-lg-8 col-md-7">
                           <div class="d-flex align-items-center mb-2">
                             <div class="text-nowrap me-3"><span class="d-inline-block align-middle text-muted">5</span><i class="ci-star-filled fs-xs ms-1"></i></div>
@@ -99,7 +106,9 @@
                           </div>
                     </div>
                 </div>
+                
                 <hr class="mt-4 mb-3">
+
                 <div class="row py-4">
                   <!-- Reviews list-->
                   <div class="col-md-7">
@@ -196,47 +205,48 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-8">
-                      <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h6 class="fs-md mb-0">Top reviews</h6>
-                            <a class="nav-link-style fs-xs fw-normal text-primary" href="#"> 203K
-                            reviews<i class="bi bi-chevron-right me-2"></i></a>
-                      </div>
-      
-                      <div class="fs-xs fw-normal">Summary of 203K reviews.</div> 
-                      <div class="d-flex  badgses">
-                      
-                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2911</span></div>
-                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2912</span></div>
-                              <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2913</span></div>
-                      
-                      </div>
-
-                    <div class="d-flex abced gx-2">
+                  <div class="col-lg-8">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                          <h6 class="fs-md mb-0">Top reviews</h6>
+                          <a class="nav-link-style fs-xs fw-normal text-primary" href="#"> 203K
+                          reviews<i class="bi bi-chevron-right me-2"></i></a>
+                    </div>
+    
+                    <div class="fs-xs fw-normal">Summary of 203K reviews.</div> 
+                    <div class="d-flex  badgses">
                     
-                    {{-- @foreach($commentedRates  as $comment)
-                      <div class=" border-1 d-flex align-items-end py-2 mx-2 border-bottom rounded shadow-sm">
-                        <img class="rounded-circle" src="#" width="50" alt="">
-      
-                        <div class="ps-0">
-                          <div class="d-flex justify-content-between align-items-end mb-2">
-                            <p class="fs-md mb-0">{{$comment->hasttag}}</p>
-                            <a class="nav-link-style fs-sm fw-medium" href="#">
-                              <i class="bi bi-star me-2"></i>{{$comment->rate}}/10</a>
-                          </div>
+                            <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2911</span></div>
+                            <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2912</span></div>
+                            <div class="badge border-1 text-dark mr-1"> #blockbuster  <span class="">2913</span></div>
+                    
+                    </div>
 
-                          <h4 class="fs-md mb-3">{{$comment->opinion}}</h4>
-                          
-                          <div class="d-flex justify-content-between align-items-center">
-                            <span class="fs-ms text-muted">9 <i class=" bi bi-hand-thumbs-up align-middle me-2"></i>12 <i class=" bi bi-hand-thumbs-down align-middle me-2"></i></span>
-                            <span class="fs-ms text-muted">{{Carbon\Carbon::parse ($comment->updated_at)->format('Y-m-d')}}<i class=" bi bi-share align-middle me-2"></i></span>
-                          </div>
+                  <div class="d-flex abced gx-2">
+                  
+                  {{-- @foreach($commentedRates  as $comment)
+                    <div class=" border-1 d-flex align-items-end py-2 mx-2 border-bottom rounded shadow-sm">
+                      <img class="rounded-circle" src="#" width="50" alt="">
+    
+                      <div class="ps-0">
+                        <div class="d-flex justify-content-between align-items-end mb-2">
+                          <p class="fs-md mb-0">{{$comment->hasttag}}</p>
+                          <a class="nav-link-style fs-sm fw-medium" href="#">
+                            <i class="bi bi-star me-2"></i>{{$comment->rate}}/10</a>
+                        </div>
+
+                        <h4 class="fs-md mb-3">{{$comment->opinion}}</h4>
+                        
+                        <div class="d-flex justify-content-between align-items-center">
+                          <span class="fs-ms text-muted">9 <i class=" bi bi-hand-thumbs-up align-middle me-2"></i>12 <i class=" bi bi-hand-thumbs-down align-middle me-2"></i></span>
+                          <span class="fs-ms text-muted">{{Carbon\Carbon::parse ($comment->updated_at)->format('Y-m-d')}}<i class=" bi bi-share align-middle me-2"></i></span>
                         </div>
                       </div>
-                    @endforeach --}}
                     </div>
+                  @endforeach --}}
+                  </div>
 
-                    </div>
+                  </div>
+                </div>
                   </div>
 
             <div class=" container col-lg-8 mt-3">
