@@ -1863,47 +1863,50 @@
         </div>
       </div>
 
-      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
+      @if($selectItem)
+        <div class="col-md-6">
+          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
 
-        <div class="offcanvas-header align-items-center shadow-sm">
-        @if ($selectedItem)
-          <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
-        @endif
-          <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        
-        <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-              <a href="http://">business</a>
-        </div>
-        
-        <div class="handheld-toolbar">
-
-          <div class="d-table table-layout-fixed w-100">
-                  
-            <a class="d-table-cell handheld-toolbar-item" href="">
-              <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-              <span class="handheld-toolbar-label">Exhibitor</span>
-            </a>
-
-            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-              <span class="handheld-toolbar-label">save</span>
-            </a> 
-            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-              <span class="handheld-toolbar-label">fabrication</span>
-            </a>
-            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-              <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-              <span class="handheld-toolbar-label">Membership</span>
-            </a>
+            <div class="offcanvas-header align-items-center shadow-sm">
+            @if ($selectedItem)
+              <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
+            @endif
+              <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
             
+            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                  <a href="http://">business</a>
+            </div>
+            
+            <div class="handheld-toolbar">
+
+              <div class="d-table table-layout-fixed w-100">
+                      
+                <a class="d-table-cell handheld-toolbar-item" href="">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Exhibitor</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">save</span>
+                </a> 
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">fabrication</span>
+                </a>
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                  <span class="handheld-toolbar-label">Membership</span>
+                </a>
+                
+              </div>
+
+            </div>
+
           </div>
-
         </div>
-
-      </div>
-      
+      @endif
       
     </main>
 

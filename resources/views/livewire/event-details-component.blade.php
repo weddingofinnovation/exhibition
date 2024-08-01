@@ -664,7 +664,7 @@
 
                       
                         <div>
-                          @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{$event->exhibitors}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                          @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{formattedValue}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
                           <span class="fs-xs fw-normal"> Visitors </span>@endif
                           {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days

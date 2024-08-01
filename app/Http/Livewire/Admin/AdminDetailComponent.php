@@ -61,7 +61,7 @@ class AdminDetailComponent extends Component
     } 
 
     //for updating postponse, Cancelled
-    public function updateEvent($id, $status) 
+    public function updateEventPostpone($id, $status) 
     {
       $eVent = Event::find($id);
       $eVent->latestupdat = $status;
