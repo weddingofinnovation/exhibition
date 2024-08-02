@@ -558,8 +558,6 @@
             </div>
           </section>
 
-
-
           <!-- tab heading-->  
           <section class="container d-lg-none ">
               <ul class="nav nav-tabs" role="tablist">
@@ -692,44 +690,6 @@
 
                 </div> 
 
-
-          
-
-              @if($optional == 'exhibitor')
-                <!-- Exhibitor -->
-                <div class="container">
-                  <div class="grido">
-                    
-                    <div class="element-item" data-category="post-transition">
-                      <h3 class="name">Exhibitor</h3>
-                      <p class="symbol">54</p>
-                      <p class="number">82</p>
-                      <p class="weight">Verified</p>
-                    </div>
-
-                    <div class="element-item" data-category="transition">
-                      <h3 class="name">Visitors</h3>
-                      <p class="symbol">3,300</p>
-                      <p class="number">79</p>
-                      <p class="weight">Verified</p>
-                    </div>
-
-                    <div class="element-item" data-category="alkali">
-                      <h3 class="name">Business</h3>
-                      <p class="symbol">25k</p>
-                      <p class="number">19</p>
-                      <p class="weight">Verified</p>
-                    </div>
-                    
-                    <div class="element-item" data-category="alkali">
-                      <h3 class="name">Sodium</h3>
-                      <p class="symbol">Na</p>
-                      <p class="number">11</p>
-                      <p class="weight">22.99</p>
-                    </div>
-                  </div>
-                </div>
-              @endif
 
               <section class="">
                 <div class="grido">
@@ -1097,113 +1057,6 @@
                     </div>
                   </section>
 
-              
-
-                  <!-- <div class="container text-center">
-                    <small class="text-primary fs-sm fw-normal">Right Place, Right Time, Right People</small>
-                    <h1 class="text-center fw-bold display-3 lh-1">Market Leaders Rely on Great Place To Business</h1>
-                  </div> 
-
-                  
-                  <section class="container py-5">
-                    
-                    <div class="card-group">
-
-                        
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">Reflections on {{$event->eventname}} Brand Collection and Business cultural Property Brands Opportunities.  </h5>
-                            <p class="card-text fs-sm text-muted">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
-                            <a href="#" class="text-primary fw-bold">Read More</a>
-                          </div>
-                        </div>
-
-                        
-
-                        
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?brand, studio" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">Backdoor brand Studio</h5>
-                            <p class="card-text fs-sm text-muted">The Exhibition Network families, join us Saturday, to celebrate the opening of our new drop-in discovery and play space for new start business ideas. </p>
-                            <a href="#" class="text-primary fw-bold">Learn more</a>
-                          </div>
-                        </div>
-
-                        
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?visit, exhibition" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">Plan to {{$event->eventname}}</h5>
-                            <p class="card-text fs-sm text-muted">Through {{Carbon\Carbon::parse ($event->startdate)->format('M d ')}}, visit to the {{$event->eventname}} enjoy service on the {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}. </p>
-                            <a href="#" class="text-primary fw-bold">Plan your visit</a>
-                          </div>
-                        </div>
-
-
-                        
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?Membership, benefits" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">Membership at The Exhibition Network</h5>
-                            <p class="card-text fs-sm text-muted">The Network Members enjoy a rich variety of specialized benefits- from free guest passes to Member Preview Days for new exhibitons -all while supporting our mission.</p>
-                            <a href="#" class="text-primary fw-bold">See the benefits</a>
-                          </div>
-                        </div>
-
-                        
-                        <div class="card border-0">
-                          <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                          <div class="card-body">
-                            <h5 class="card-title">New at {{$event->eventname}}</h5>
-                            <p class="card-text fs-sm text-muted">Discover our newest business-inspired business designs, including publishing the brand, Search new opportunities, assess your business and many more..</p>
-                            <a href="#" class="text-primary  fs-sm fw-bold">Go somewhere</a>
-                          </div>
-                        </div>
-
-
-                      
-                    </div>
-                  </section>-->
-
-                  <!-- copy Card group sec_last-->
-                    <!-- <section class="container py-5">
-
-                      
-                      <div class="card-group sec_last">
-
-                        
-                          <div class="card border-0">
-                            <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                            <div class="card-body">
-                              <h5 class="card-title">World Expos' History</h5>
-                              <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-
-                        
-                          <div class="card border-0">
-                            <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                            <div class="card-body">
-                              <h5 class="card-title">Expo 2023 Story</h5>
-                              <p class="card-text fs-sm text-muted">This card has supporting text below as a natural lead-in to additional content.</p>
-                              <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-
-                        
-                          <div class="card border-0">
-                            <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                            <div class="card-body">
-                              <h5 class="card-title">After Expo</h5>
-                              <p class="card-text fs-sm text-muted">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                              <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                            </div>
-                          </div>
-                      </div>
-                    </section> -->
 
               <section class="card text-center py-5 border-0">
                 <div class="card-body">
@@ -1449,77 +1302,115 @@
                   </div>
               </section>
 
-              <!--Applicable Offers-->
-                <div class="container mb-5 d-lg-none">
-                  <div class="text-dark fw-medium fs-sm">Applicable Offers</div> 
-                  
-                  <div class="my-sliderOffers">
-                      <ul class="list-unstyled fs-sm  p-2">
-                          <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                          <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                          <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
-                      </ul>
-
-                      <ul class="list-unstyled fs-sm  p-2">
-                          <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                          <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
-                          <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                      </ul>
-                    
-                      <ul class="list-unstyled fs-sm  p-2">
-                        <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                        <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                      </ul>
-                  </div>
-                </div>
-
-
-                <!-- mobile Applicable Offers-->
-              <div class="container mb-5 d-lg-none">
-                <div class="text-dark fw-medium fs-sm">Certified</div> 
-                
-                <div class="my-sliderOffers2">
-                    <ul class="list-unstyled fs-sm p-2 bg-secondary" >
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
-                      <span class="text-muted fw-light fs-xs">Save your Ultra Premium Space </span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
-                    </ul>
-
-                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                        <li class="d-flex justify-content-between p-0 m-0">
-                        <span class="text-dark fw-medium fs-sm">Great Exhibition To Exhibit<br>
-                        <span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Get Certified</a></span></li>
-                    </ul>
-
-                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                        <li class="d-flex justify-content-between p-0 m-0">
-                        <span class="text-dark fw-medium fs-sm">Nominate your Event<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
-                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                    </ul>
-                  
-                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                      <li class="d-flex justify-content-between p-0 m-0">
-                      <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                    </ul>
-                </div>
-              </div>
-      
 
               @if($board == 'exhibitor ')
                 <div class="container">Download Exhibition Directory</div>
               @endif
 
-              <!-- for mobile -->
-              @if(is_null($event->reference))
+              </div>
+            @elseif($currentTab === 'tab2')
+              <!-- membership tab-->
+              <div class="tab-pane fade show active">
+                <div class="row">
+                  <div class="col-lg-8">
+                  
+                    <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>
+
+                    <h3 class="h5 pt-2">Plans</h3>
+                    <ul class="fs-md">
+                      <li>Nemo enim ipsam voluptatem quia voluptas sit</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            @elseif($currentTab === 'tab3')
+              <!-- exhibitor tab-->
+               <div class="container">
+                <div class="row">
+                  <div class="col-sm-10">Download Exhibitor Directory <span class="fs-md fw-light text-primary">Our Data, your Customer</span></div>
+                  <div class="col-sm-2">
+                    <i class="bi bi-download"></i>
+                  </div>
+                </div>
+                @if($optional == 'exhibitor')
+                  <!-- Exhibitor -->
+                  <div class="container">
+                    <div class="grido">
+                      
+                      <div class="element-item" data-category="post-transition">
+                        <h3 class="name">Exhibitor</h3>
+                        <p class="symbol">54</p>
+                        <p class="number">82</p>
+                        <p class="weight">Verified</p>
+                      </div>
+
+                      <div class="element-item" data-category="transition">
+                        <h3 class="name">Visitors</h3>
+                        <p class="symbol">3,300</p>
+                        <p class="number">79</p>
+                        <p class="weight">Verified</p>
+                      </div>
+
+                      <div class="element-item" data-category="alkali">
+                        <h3 class="name">Business</h3>
+                        <p class="symbol">25k</p>
+                        <p class="number">19</p>
+                        <p class="weight">Verified</p>
+                      </div>
+                      
+                      <div class="element-item" data-category="alkali">
+                        <h3 class="name">Sodium</h3>
+                        <p class="symbol">Na</p>
+                        <p class="number">11</p>
+                        <p class="weight">22.99</p>
+                      </div>
+                    </div>
+                  </div>
+                @endif
+               </div>
+
+                <div class="tab-pane fade show active">
+                  <div class="container">
+                      <div class="grido">
+                          @foreach($exhibitor as $participants)
+                          <div class="element-item" data-category="post-transition">
+                            <h3 class="name text-light">{{$participants->brand_name}}</h3>
+                            <p class="symbol">{{$participants->brand_name}}</p>
+                            <p class="number">82</p>
+                            <p class="weight">Verified</p>
+                          </div>
+                          @endforeach
+                      </div>
+                  </div>
+                </div>
+            @elseif($currentTab === 'tab4')
+              <!-- Faq tab-->
+                <div class="tab-pane fade show active">
+                 
+                </div>
+            @endif
+            </div>
+          </section>
+         
+          <!--share hidden-->
+          <div class="d-none">            
+                <a href="#" id="gmail-btn">gmail</a>
+                <a href="#" id="facebook-btn">facebook</a>
+                <a href="#" id="twitter-btn">twitter</a>
+                <a href="#" id="linkedin-btn">linkedin</a>
+                <a href="#" id="whatsapp-btn">whatsapp</a> 
+                <i class="bi bi-share"></i>
+                <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+          </div>
+          
+          <!-- for mobile -->
+          @if(is_null($event->reference))
                 
                 @php 
                   $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
                   $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
                 @endphp
+
                 <div class="row g-0 py-0 mx-n2 my-Slider3 mb-5"> 
                   {{-- px-2 mb-1 --}}
                   @foreach($eventf as $eventoli)
@@ -1594,8 +1485,6 @@
                             <!--ucfirst-->
                           </div>
 
-                          
-                          
                           <div class="card-body card-body-hidden">
                             <div class="d-flex justify-content-between mb-2">
                               <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
@@ -1628,7 +1517,7 @@
 
                     <div class="container">
                       
-                    {{$eventcount}}
+                        {{$eventcount}}
 
                         @if($eventcount < 1)
                             <div class="fw-bold">first evenet</div>
@@ -1639,70 +1528,6 @@
                     </div>
                   
               @endif
-
-              </div>
-            @elseif($currentTab === 'tab2')
-              <!-- membership tab-->
-              <div class="tab-pane fade show active">
-                <div class="row">
-                  <div class="col-lg-8">
-                  
-                    <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>
-
-                    <h3 class="h5 pt-2">Plans</h3>
-                    <ul class="fs-md">
-                      <li>Nemo enim ipsam voluptatem quia voluptas sit</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            @elseif($currentTab === 'tab3')
-              <!-- exhibitor tab-->
-               <div class="container">
-                <div class="row">
-                  <div class="">Download Exhibitor Directory <span class="fs-md fw-light text-primary">Our Data, your Customer</span></div>
-                  <div class="btn btn-sm btn-primary"><i class="bi bi-download"></i></div>
-                </div>
-               </div>
-                <div class="tab-pane fade show active">
-                  <div class="container">
-                      <div class="grido">
-                          @foreach($exhibitor as $participants)
-                          <div class="element-item" data-category="post-transition">
-                            <h3 class="name text-light">{{$participants->brand_name}}</h3>
-                            <p class="symbol">{{$participants->brand_name}}</p>
-                            <p class="number">82</p>
-                            <p class="weight">Verified</p>
-                          </div>
-                          @endforeach
-                      </div>
-                  </div>
-                </div>
-            @elseif($currentTab === 'tab4')
-              <!-- Faq tab-->
-                <div class="tab-pane fade show active">
-                 
-                </div>
-            @endif
-            </div>
-          </section>
-
-
-         
-          <!--share hidden-->
-          <div class="d-none">            
-                <a href="#" id="gmail-btn">gmail</a>
-                <a href="#" id="facebook-btn">facebook</a>
-                <a href="#" id="twitter-btn">twitter</a>
-                <a href="#" id="linkedin-btn">linkedin</a>
-                <a href="#" id="whatsapp-btn">whatsapp</a> 
-                <i class="bi bi-share"></i>
-                <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-          </div>
-
-
-
-         
          
           <!--footer-->
           @if($event->eventype == 'award')
@@ -1799,11 +1624,66 @@
 
           @endif
 
-            @php 
-              $eventcount =  DB::table('events')-> where('reference', $event->reference)->count();
-            @endphp
-        
+            
 
+           <!--Applicable Offers-->
+           <div class="container mb-5 d-lg-none">
+                  <div class="text-dark fw-medium fs-sm">Applicable Offers</div> 
+                  
+                  <div class="my-sliderOffers">
+                      <ul class="list-unstyled fs-sm  p-2">
+                          <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
+                          <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
+                          <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
+                      </ul>
+
+                      <ul class="list-unstyled fs-sm  p-2">
+                          <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
+                          <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
+                          <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                      </ul>
+                    
+                      <ul class="list-unstyled fs-sm  p-2">
+                        <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
+                        <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                      </ul>
+                  </div>
+                </div>
+
+
+                <!-- mobile Applicable Offers-->
+              <div class="container mb-5 d-lg-none">
+                <div class="text-dark fw-medium fs-sm">Certified</div> 
+                
+                <div class="my-sliderOffers2">
+                    <ul class="list-unstyled fs-sm p-2 bg-secondary" >
+                      <li class="d-flex justify-content-between p-0 m-0">
+                      <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
+                      <span class="text-muted fw-light fs-xs">Save your Ultra Premium Space </span></span>
+                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
+                    </ul>
+
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Great Exhibition To Exhibit<br>
+                        <span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Get Certified</a></span></li>
+                    </ul>
+
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
+                        <li class="d-flex justify-content-between p-0 m-0">
+                        <span class="text-dark fw-medium fs-sm">Nominate your Event<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
+                        <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                    </ul>
+                  
+                    <ul class="list-unstyled fs-sm  p-2 bg-secondary">
+                      <li class="d-flex justify-content-between p-0 m-0">
+                      <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
+                      <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
+                    </ul>
+                </div>
+              </div>
           
 
           
