@@ -1415,8 +1415,13 @@
 
           <div class="my-3">
               @foreach($selectedcategory as $catego)
+
+              @php 
+                $findtag = DB::table('expos')->where('id', $catego->id)->get();
+              @endphp
+
                   <span class="badge bg-success m-0" href="#" wire:click.prevent="eventdelete({{$catego->id}})">
-                      {{$catego->expo->tag}} <i class="bi bi-x me-2"></i>
+                      {{$findtag->tag}} <i class="bi bi-x me-2"></i>
                   </span>
               @endforeach
           </div>
