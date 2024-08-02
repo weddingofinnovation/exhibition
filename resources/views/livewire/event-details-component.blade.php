@@ -1410,7 +1410,7 @@
             $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
             $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
 
-            $selectedcategory = DB::table('dencos')->where('event_id', $evento->id)->get();
+            $selectedcategory = DB::table('dencos')->where('event_id', $event->id)->get();
           @endphp
 
           <div class="my-3">
