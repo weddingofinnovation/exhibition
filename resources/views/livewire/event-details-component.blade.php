@@ -779,6 +779,7 @@
                             {{-- <p class="fs-xs"> <span class="fs-xs fw-bold">Hours:</span> 10:00 - 11:00  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}}</p> 
                             <p class="fs-xs"> <span class="fs-xs fw-bold">Closed:</span> 10:00 - 11:00 {{Carbon\Carbon::parse ($event->enddate)->format('D, d M')}}</p>  --}}
                         <!-- <a href="#" class="btn btn-sm btn-primary">Go somewhere</a> -->
+                        <hr class="mt-md-2 mb-2">
                         <div class="d-flex badgeseTag">
                               @foreach($category as $cat) 
                                 <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
@@ -1403,7 +1404,12 @@
                 <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
           </div>
           
-
+          <hr class="mt-md-2 mb-2">
+          <div class="d-flex badgeseTag">
+            @foreach($category as $cat) 
+              <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
+            @endforeach
+          </div>
           
               
           @php 
@@ -1413,7 +1419,7 @@
             $selectedcategory = DB::table('dencos')->where('event_id', $event->id)->get();
           @endphp
 
-          <div class="my-3">
+          <div class=" container my-3">
               @foreach($selectedcategory as $catego)
 
                 @php 
@@ -1433,7 +1439,8 @@
                 @endforeach
               @endforeach
           </div>
-            
+
+          <hr class="mt-md-2 mb-2">
           <section class="container">
             <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                   <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
@@ -1546,7 +1553,7 @@
             @endif
 
           </section>
-          
+          <hr class="mt-md-2 mb-2">
           <section class="container">
             <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                   <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
@@ -1654,65 +1661,6 @@
               @endforeach
             </div>
           </section>
-
-          
-          <!--Applicable Offers-->
-          <div class="container mb-5 d-lg-none">
-            <div class="text-dark fw-medium fs-sm">Applicable Offers</div> 
-            
-            <div class="my-sliderOffers">
-                <ul class="list-unstyled fs-sm  p-2">
-                    <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                    <span class="text-dark fw-medium fs-sm">Advertise your Business<br><span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Offer</a></span></li>
-                </ul>
-
-                <ul class="list-unstyled fs-sm  p-2">
-                    <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                    <span class="text-dark fw-medium fs-sm">Presence your Business<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                </ul>
-              
-                <ul class="list-unstyled fs-sm  p-2">
-                  <li class="d-flex justify-content-between p-0 m-0 bg-secondary">
-                  <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                  <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                </ul>
-            </div>
-          </div>
-
-          <!-- mobile Applicable Offers-->
-          <div class="container mb-5 d-lg-none">
-            <div class="text-dark fw-medium fs-sm">Certified</div> 
-            
-            <div class="my-sliderOffers2">
-                <ul class="list-unstyled fs-sm p-2 bg-secondary" >
-                  <li class="d-flex justify-content-between p-0 m-0">
-                  <span class="text-dark fw-medium fs-sm">Plan your Exhibition<br>
-                  <span class="text-muted fw-light fs-xs">Save your Ultra Premium Space </span></span>
-                  <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Plan</a></span></li>
-                </ul>
-
-                <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                    <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="text-dark fw-medium fs-sm">Great Exhibition To Exhibit<br>
-                    <span class="text-muted fw-light fs-sm">Right Place, Right Time, Right People</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light">Get Certified</a></span></li>
-                </ul>
-
-                <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                    <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="text-dark fw-medium fs-sm">Nominate your Event<br><span class="text-muted fw-light fs-sm">Next Three your Industry Expo</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                </ul>
-              
-                <ul class="list-unstyled fs-sm  p-2 bg-secondary">
-                  <li class="d-flex justify-content-between p-0 m-0">
-                  <span class="text-dark fw-medium fs-sm">Get Membership<br><span class="text-muted fw-light fs-sm">Eye on Business Competition Opportunity.</span></span>
-                  <span><a href="" class="btn btn-outline-primary btn-sm bg-light"> Offer</a></span></li>
-                </ul>
-            </div>
-          </div>
 
 
           <!--footer-->
