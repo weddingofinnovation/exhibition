@@ -1868,10 +1868,10 @@
           <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
 
             <div class="offcanvas-header align-items-center shadow-sm">
-            @if ($selectedItem)
-              <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
-            @endif
-              <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              @if ($selectedItem)
+                <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
+              @endif
+                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             
             <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">

@@ -376,7 +376,7 @@
 
             <a class="d-table-cell handheld-toolbar-item" href="{{asset('/')}}">
               <span class="handheld-toolbar-icon"><i class="bi bi-home"></i></span>
-              <span class="handheld-toolbar-label">Home</span>
+              <span class="handheld-toolbar-label">FHome</span>
             </a>
 
             <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#shopsidebar" role="button" aria-controls="offcanvasExample">

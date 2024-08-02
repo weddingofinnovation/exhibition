@@ -79,13 +79,14 @@ class EventDetailsComponent extends Component
       return redirect()->route('event.product', ['slug' => $event->slug]);
     } 
 
-    public function formatValue()
-    {
-        $event = Event::where('id', $this->id)->first();
+    // public function formatValue()
+    // {
+    //     $event = Event::where('id', $this->id)->first();
         
-        $formattedValue = $event->exhibitors / 1000;
-        return number_format($formattedValue, 1). 'k';
-    }
+    //     $formattedValue = $event->exhibitors / 1000;
+    //     return number_format($formattedValue, 1). 'k';
+    //'formattedValue' => $this->formatValue(),
+    // }
 
     use WithPagination;
 
@@ -218,7 +219,7 @@ class EventDetailsComponent extends Component
                                                         'speaker' => $speaker,
                                                         'awarde' => $awarde,
                                                         'ticketOrExhibit' => $ticketOrExhibit,
-                                                        'formattedValue' => $this->formatValue(),
+                                                        
                                                       ])->layout('layouts.eblog');
     }
 }
