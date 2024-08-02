@@ -729,17 +729,29 @@
 
                       </div>
                 </section>
+
+                @if($speaker->count() > 0 )
+                  <hr class="mt-md-2 mb-2">
+                  <!-- Speaker-->
+                  <section class="container pt-2 pt-md-5">
+                    <h6 class="text-left mb-2"> Speaker</h6>
+                    <div class="my-sliderSpeaker">
+                          @foreach ($speaker as $speaker)
+                            
+                              <div class="card product-card">
+                                <a class=" align-items-center" href="#">
+                                  <img class="" width="90%" src="{{url('speaker/'.$speaker->image)}}"  alt="{{Str::limit($speaker->name, 24)}}">
+                                </a>
+                                <div class="fs-sm text-center lh-1"> <small>{{$speaker->name}} <br><strong>{{$speaker->organisation}}</strong></small></div>
+                              </div>
+                          
+                          @endforeach
+                    </div>
+                  </section>
+                @endif
               @endif
             </div>
           </section>
-
-
-
-
-
-
-
-
 
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">

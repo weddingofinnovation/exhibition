@@ -1082,26 +1082,6 @@
                   </section>
                 @endif
 
-                @if($speaker->count() > 0 )
-                  <hr class="mt-md-2 mb-2">
-                  <!-- Speaker-->
-                  <section class="container pt-2 pt-md-5">
-                    <h6 class="text-left mb-2"> Speaker</h6>
-                    <div class="my-sliderSpeaker">
-                          @foreach ($speaker as $speaker)
-                            
-                              <div class="card product-card">
-                                <a class=" align-items-center" href="#">
-                                  <img class="" width="90%" src="{{url('speaker/'.$speaker->image)}}"  alt="{{Str::limit($speaker->name, 24)}}">
-                                </a>
-                                <div class="fs-sm text-center lh-1"> <small>{{$speaker->name}} <br><strong>{{$speaker->organisation}}</strong></small></div>
-                              </div>
-                          
-                          @endforeach
-                    </div>
-                  </section>
-                @endif
-
               <!-- Partner-->
               @if(count($eventbrand)>0)
                 <hr class="mt-md-2 mb-2">
@@ -1125,14 +1105,6 @@
                         @endforeach
                   </div>
                 </section>
-              @endif
-
-
-              
-
-
-              @if($board == 'exhibitor ')
-                <div class="container">Download Exhibition Directory</div>
               @endif
 
               </div>
@@ -1232,6 +1204,7 @@
           </div>
           
           <hr class="mt-md-2 mb-2">
+
           <div class="container">
             <div class="d-flex badgeseTag">
               @foreach($category as $cat) 
@@ -1240,7 +1213,6 @@
             </div>
           </div>
           
-              
           @php 
             $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
             $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();

@@ -1,5 +1,5 @@
 <main>
-        <section class="container pt-2 " id="exhibit"> 
+        <section class="container my-5"> 
            <div class="list-unstyled pt-2 pb-1 px-0 pl-0">
                 <div class="d-flex justify-content-between px-0 m-0 lh-1">
                     <span class="fs-sm"> Trending Business<br><span class="fw-medium h5">Magazine</span></span>
@@ -40,62 +40,61 @@
         </section>
 </main>
 
-@push('scripts')
-    <script>
-      var slider = tns({
-        "container": '.badgeseMagaz',   
-        
-        "responsive": {
-          "300": {
-            "items": 3,
-            "controls": false,
-            "fixedWidth": 100,
-            "mouseDrag": true,
-            "autoplay": false,
-            "autoplayButtonOutput": false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 1,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay": false,
-            "autoplayButtonOutput": false,
-                "fixedWidth": 100,
-          },
+  @push('scripts')
+      <script>
+        var slider = tns({
+          "container": '.badgeseMagaz',   
           
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-
-
-    <script>
-      var slider = tns({
-        "container": '.my-Slider10',            
-        "responsive": {
-          "300": {
-            "items": 2,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": false,
-            "fixedWidth": 150,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
+          "responsive": {
+            "300": {
+              "items": 3,
+              "controls": false,
+              "fixedWidth": 100,
+              "mouseDrag": true,
+              "autoplay": false,
+              "autoplayButtonOutput": false,
+              "autoplayHoverPause": true,
+            },
+            "500": {
+              "items": 1,
+              "nav": false,
+              "controls": false,
+              "autoplayHoverPause": true,
+              "autoplay": false,
+              "autoplayButtonOutput": false,
+                  "fixedWidth": 100,
+            },
+            
           },
-          "500": {
-            "items": 7,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay": false,
-            "fixedWidth": 300,
-            "autoplayButtonOutput": false
+          "autoplayButtonOutput":false
+        });
+      </script>
+
+      <script>
+        var slider = tns({
+          "container": '.my-Slider10',            
+          "responsive": {
+            "300": {
+              "items": 2,
+              "controls": false,
+              "mouseDrag": true,
+              "autoplay": false,
+              "fixedWidth": 150,
+              "autoplayButtonOutput":false,
+              "autoplayHoverPause": true,
+            },
+            "500": {
+              "items": 7,
+              "nav": false,
+              "controls": false,
+              "autoplayHoverPause": true,
+              "autoplay": false,
+              "fixedWidth": 300,
+              "autoplayButtonOutput": false
+            },
+            
           },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-@endpush
+          "autoplayButtonOutput":false
+        });
+      </script>
+  @endpush
