@@ -690,7 +690,6 @@
 
                 </div> 
 
-
               <section class="">
                 <div class="grido">
                   <div class="element-item bg-light" data-category="post-transition">

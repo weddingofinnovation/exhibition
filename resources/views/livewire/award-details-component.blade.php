@@ -753,6 +753,79 @@
             </div>
           </section>
 
+<style>
+.speaker-profile {
+  text-align : center;
+  margin : 20px;
+}
+
+.speaker-profile img {
+  border-radius: 50%;
+  max-width: 150px;
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0,0, 0, 0.3);
+}
+
+.speaker-profile .designation {
+  font-size: 1rem;
+  color: #ddd;
+  margin-top: 5px;
+}
+
+@media(min-width: 768px){
+  .speaker-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+.speaker-profile img {
+  margin-right: 20px;
+  max-width: 200px;
+}
+
+.speaker-profile .name{
+  font-size: 2rem;
+}
+
+.speaker-profile .designation{
+  font-size: 1.2rem;
+}
+
+.img-fluid {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
+  margin-bottom: 15px;
+}
+</style>
+
+
+          <div class="bg-dark">
+            <div class="container">
+              <div class="speaker-profile">
+                <img src="https://picsum.photos/200/300" alt="">
+              </div>
+              <div class="name">testing</div>
+              <div class="designation">Business head</div>
+            </div>
+          </div>
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <img src="https://picsum.photos/200/300" class="img-fluid" alt="Image 1">
+              </div>
+
+              <div class="col-6">
+                <img src="https://picsum.photos/200/300" class="img-fluid" alt="image 2">
+              </div>
+            </div>
+          </div>
+
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
               <div class="row text-center text-sm-start">

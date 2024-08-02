@@ -31,10 +31,6 @@ class AwardsComponent extends Component
     public $board;
     public $country;
 
-    public function generateSlug()
-    {
-        $this->slug = Str::slug($this->eventname,'-');
-    }
     
     public function mount()
     {
@@ -44,7 +40,7 @@ class AwardsComponent extends Component
     public function newlist(){   
         $event = new Event();
         $event->eventname = $this->eventname;
-        $event->slug = $this->slug;
+        $event->slug = Str::slug($this->eventname,'-');
         $event->startdate = $this->startdate;
         $event->venue = $this->venue;
         $event->city = $this->city;

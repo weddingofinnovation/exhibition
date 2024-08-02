@@ -14,29 +14,19 @@
                 </div>
             </div>
             
-             <div class="d-flex badgeseMagaz">
-                {{-- @foreach( $finder as $categ) 
-                  <a class="badge border-1 text-right border-dark text-dark mr-1" href="{{route('coi.exhibitioncategory',['eventype' => 'magazine', 'categry' => $categ->slug])}}">
-                  {{ucwords(trans($categ->tag))}}</a>
-                @endforeach --}}
-              </div>
-              
             <!-- Grid-->
             <div class="row mx-n2 my-Slider10 g-0 py-0"> 
               <!-- magazine-->
               @foreach($magazine as $eventoi)
-                <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                   <div class="card product-card">
-                    
                     <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => $eventoi->slug])}}">
                       <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" class="img-thumbnail" alt="">
                     </a>
                   </div>
                 </div>
               @endforeach  
-            </div>
-
-            
+            </div> 
         </section>
 </main>
 
