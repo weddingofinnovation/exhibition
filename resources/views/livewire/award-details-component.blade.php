@@ -795,16 +795,16 @@
         <div class="bg-dark">
           <div class="container">
             <div class="row">
-              <div class="col-6">
-                <img src="https://picsum.photos/200/300" class="img-fluid" alt="Image 1">
+              <div class="col-6 img-container">
+                <img src="https://picsum.photos/200/300" alt="Image 1">
                 <div class="text-container">
                   <div class="name"> Jane Smith</div>
                   <div class="designation">Product Manager</div>
                 </div>
               </div>
 
-              <div class="col-6">
-                <img src="https://picsum.photos/200/301" class="img-fluid" alt="image 2">
+              <div class="col-6 img-container">
+                <img src="https://picsum.photos/200/301" alt="image 2">
                 <div class="text-container">
                   <div class="name"> Jane Smith</div>
                   <div class="designation">Product Manager</div>
