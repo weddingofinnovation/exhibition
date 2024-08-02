@@ -714,48 +714,6 @@
                     </li>
                   </ul>
 
-                  <!-- <ul class="list-unstyled fs-sm  py-4">     
-                    <li class="d-flex justify-content-between p-0 m-0">
-                    <div class="col-lg-3 col-md-4 col-sm-4 bg-secondary">
-                      <span class="badge bg-primary mt-0">Participate</span>
-                      <span class="h3"> Professional Beauty Mumbai</span>
-                        <div class="row">
-                          <div>
-                            
-                          </div>
-                            
-                        </div>
-
-                        
-                        
-
-                        
-                        
-                    </div>
-                    
-                    
-                    
-                        <span> 
-                          
-                        <span class="badge bg-primary"> th</span>
-
-                          <span class="h3"> Professional Beauty Mumbai</span> <br>
-                                                  Mon, 02  - Tue, 03 Oct, 2023
-                          
-                          
-                          <i class="bi bi-geo-alt-fill"></i> Bombay Exhibition Centre, NESCO, Mumbai,  India 
-                        </span>
-                    
-                        <span>
-                                                <a class="btn btn-primary btn-sm" type="button" href="http://127.0.0.1:8000/exhibit/business"> Book your Space </a>
-                                            </span>
-                      
-                        
-                    </li>
-                    <li><hr class="mt-md-2 mb-2"></li>
-                    <li class="p1 fw-light">
-                      |  | 1 days | Rs. 700.00 Onwards                 </li>
-                  </ul> -->
                 </div> 
 
 
@@ -808,7 +766,7 @@
 
               <div class="element-item bg-light" data-category="post-transition">
                 <h3 class="name">Visitor</h3>
-                <p class="symbol text-dark">{{$event->auidence}}  <span class="fw-normal fs-sm">K</span></p>
+                <p class="symbol text-dark">{{number_format(($event->exhibitors / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
                 <p class="number"></p>
                 <p class="weight">Verified</p>
               </div>
