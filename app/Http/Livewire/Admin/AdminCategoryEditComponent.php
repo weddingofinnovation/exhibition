@@ -44,7 +44,7 @@ class AdminCategoryEditComponent extends Component
         {
             $fattribute = new Denco();
             $fattribut = Event::find($this->event_id);
-            $fattribute->expo_id = trim($trey);
+            $fattribute->expo_id = Str::lower(trim($trey));
             $fattribute->event_id = $fattribut->id;
             $fattribute->save();
         }
@@ -69,7 +69,7 @@ class AdminCategoryEditComponent extends Component
         foreach($ret as $tre)
         {
             $fattribute = new Expo();
-            $fattribute->tag =    $tre;
+            $fattribute->tag =     Str::lower(trim($tre));
             $fattribute->slug =   Str::slug($tre,'-');
             $fattribute->type =  $this->type;
             $fattribute->status =  $this->status;
