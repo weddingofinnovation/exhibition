@@ -1409,13 +1409,16 @@
           @php 
             $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
             $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
+
+            $selectedcategory = DB::table('dencos')->where('event_id', $evento->id)->get();
           @endphp
 
-
-
-
-          <div>
-            {{$eventc}}
+          <div class="my-3">
+              @foreach($selectedcategory as $catego)
+                  <span class="badge bg-success m-0" href="#" wire:click.prevent="eventdelete({{$catego->id}})">
+                      {{$catego->expo->tag}} <i class="bi bi-x me-2"></i>
+                  </span>
+              @endforeach
           </div>
             
           <section class="container">
