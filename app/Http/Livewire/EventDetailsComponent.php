@@ -82,6 +82,7 @@ class EventDetailsComponent extends Component
     public function formatValue()
     {
         $event = Event::where('id', $this->id)->first();
+        
         $formattedValue = $event->exhibitors / 1000;
         return number_format($formattedValue, 1). 'k';
     }

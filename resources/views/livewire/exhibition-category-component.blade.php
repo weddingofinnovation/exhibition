@@ -1863,7 +1863,7 @@
         </div>
       </div>
 
-      @if($selectItem)
+      @if($selectedItem)
         <div class="col-md-6">
           <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
 
