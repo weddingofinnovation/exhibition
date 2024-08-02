@@ -1638,6 +1638,7 @@
           <section>
 
             @php 
+              $mytime = Carbon::today()->format ("Y-m-d");
               $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
             @endphp
 
