@@ -94,7 +94,7 @@ class EventDetailsComponent extends Component
     {   
        //$check = Cart::get();
         $event = Event::where('slug', $this->slug)->first();
-        
+        $mytime = Carbon::today()->format ("Y-m-d");
         $poostKey = 'eventID';
         $eid = $event->id;
         Session()->put ($poostKey , $eid);
@@ -219,7 +219,7 @@ class EventDetailsComponent extends Component
                                                         'speaker' => $speaker,
                                                         'awarde' => $awarde,
                                                         'ticketOrExhibit' => $ticketOrExhibit,
-                                                        
+                                                        'mytime' => $mytime
                                                       ])->layout('layouts.eblog');
     }
 }
