@@ -1416,13 +1416,21 @@
           <div class="my-3">
               @foreach($selectedcategory as $catego)
 
-              @php 
-                $findtag = DB::table('expos')->where('id', $catego->id)->get();
-              @endphp
+                @php 
+                  $findtag = DB::table('expos')->where('id', $catego->id)->get();
+                @endphp
 
-                  <span class="badge bg-success m-0" href="#" wire:click.prevent="eventdelete({{$catego->id}})">
-                      {{$findtag->tag}} <i class="bi bi-x me-2"></i>
-                  </span>
+                @foreach($findtag as $categoo)
+                  @if($categoo->admstatus == '1')
+                      <span class="badge bg-success m-0" href="#" wire:click.prevent="eventdelete({{$categoo->id}})">
+                          {{$categoo->tag}} <i class="bi bi-x me-2"></i>
+                      </span>
+                    @else
+                      <span class="badge bg-primary m-0" href="#" wire:click.prevent="eventdelete({{$categoo->id}})">
+                          {{$categoo->tag}} <i class="bi bi-x me-2"></i>
+                      </span>
+                  @endif
+                @endforeach
               @endforeach
           </div>
             
