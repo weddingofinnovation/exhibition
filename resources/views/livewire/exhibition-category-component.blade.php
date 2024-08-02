@@ -74,7 +74,7 @@
                               $witems = Cart::instance('wishlist')->content()->pluck('id'); 
                         @endphp
 
-                        <div class="row mb-5 pb-2" style=" position : relative;">    
+                        <div class="row mb-5 pb-2">    
                           @foreach ($exhibition as $business)
                             @php
                                 $franchiso = DB::table('events')->where('id', $business->EventName)
@@ -83,7 +83,7 @@
 
                             @foreach ($franchiso as $franchise)
                             
-                                    <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
+                                    <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
                                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                           <div class="col  pr-0">
                                               @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -130,7 +130,48 @@
 
                             @endforeach                            
                           @endforeach
-                         
+
+                          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"  aria-labelledby="offcanvasBottomLabel" style="height: 380px;">
+
+                            <div class="offcanvas-header align-items-center shadow-sm">
+                              @if ($selectedItem)
+                                <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
+                              @endif
+                                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            </div>
+                            
+                            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+                                  <a href="http://">business</a>
+                            </div>
+                            
+                            <div class="handheld-toolbar">
+
+                              <div class="d-table table-layout-fixed w-100">
+                                      
+                                <a class="d-table-cell handheld-toolbar-item" href="">
+                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                  <span class="handheld-toolbar-label">Exhibitor</span>
+                                </a>
+
+                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                  <span class="handheld-toolbar-label">save</span>
+                                </a> 
+                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                  <span class="handheld-toolbar-label">fabrication</span>
+                                </a>
+                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
+                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
+                                  <span class="handheld-toolbar-label">Membership</span>
+                                </a>
+                                
+                              </div>
+
+                            </div>
+
+                          </div>
+
                         </div>   
                                            
                       </div>
@@ -1863,50 +1904,7 @@
         </div>
       </div>
 
-      @if($selectedItem)
-        <div class="col-md-6">
-          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offCanvasExample"  aria-labelledby="offCanvasExampLabel" style="height: 380px;">
-
-            <div class="offcanvas-header align-items-center shadow-sm">
-              @if ($selectedItem)
-                <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
-              @endif
-                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            
-            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                  <a href="http://">business</a>
-            </div>
-            
-            <div class="handheld-toolbar">
-
-              <div class="d-table table-layout-fixed w-100">
-                      
-                <a class="d-table-cell handheld-toolbar-item" href="">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">Exhibitor</span>
-                </a>
-
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">save</span>
-                </a> 
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">fabrication</span>
-                </a>
-                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                  <span class="handheld-toolbar-label">Membership</span>
-                </a>
-                
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      @endif
+      
       
     </main>
 
