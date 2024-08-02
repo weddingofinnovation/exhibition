@@ -1538,7 +1538,7 @@
             <div>Relative Event</div>
 
             @php 
-               $relativeEvent = DB::table('event')->where('reference' , $event->reference)->get();
+               $relativeEvent = DB::table('events')->where('reference' , $event->reference)->get();
             @endphp
              
             @if($relativeEvent->count() == '0')
@@ -1638,7 +1638,7 @@
           <section>
 
             @php 
-              $evento = DB::table('event')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
+              $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
             @endphp
 
             <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
