@@ -445,7 +445,7 @@
                   <div class="card-group">
                       <!-- Card -->
                       <div class="card rounded-0 award">
-                        <img src="https://source.unsplash.com/1600x900/?discussion, initiatives" class="card-img-top" alt="Card image">
+                        <img src="https://picsum.photos/200/300" class="card-img-top" alt="Card image">
                         <div class="card-body">
                           <p class="card-text fs-sm textcolor">{{$event->eventname}} director reflects on current discussions about business property, provides background on the collection, and previews several important initiatives.</p>
                           <a href="#" class="text-primary fw-bold">Read More</a>
@@ -753,46 +753,45 @@
             </div>
           </section>
 
-<style>
+        <style>
 
-.img-fluid {
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
-  margin-bottom: 15px;
-}
+            .img-fluid {
+              border-radius: 8px;
+              box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
+              margin-bottom: 15px;
+            }
 
-.img-container{
-  text-align: center;
-  margin-bottom: 15px;
-}
+            .img-container{
+              text-align: center;
+              margin-bottom: 15px;
+            }
 
-.img-container img{
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
-  max-width: 100%;
-  height: auto;
-}
+            .img-container img{
+              border-radius: 8px;
+              box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
+              max-width: 100%;
+              height: auto;
+            }
 
-.text-container{
-  text-align: center;
-  margin-top: 10px;
-}
+            .text-container{
+              text-align: center;
+              margin-top: 10px;
+            }
 
-.name .designation {
-  color:#fff;
-}
+            .name .designation {
+              color:#fff;
+            }
 
-@media(min-width:768px){
-  .text-container{
-    text-align: left;
-    margin-top: 10px;
-  }
-}
-</style>
+            @media(min-width:768px){
+              .text-container{
+                text-align: left;
+                margin-top: 10px;
+              }
+            }
+        </style>
 
 
-
-        <div class="bg-dark">
+        <div class="">
           <div class="container">
             <div class="row">
               <div class="col-6 img-container">
