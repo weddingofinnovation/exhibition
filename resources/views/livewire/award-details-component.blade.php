@@ -4,24 +4,23 @@
 
     <main>
 
-      <style>
-         body {
-          background-color: #151515;
-         }
-
-        .award {
-          font-family: Segoe UI, Tahoma, sans-serif; 
-          font-size: 75%;
-          background-color: #151515;
-          
+    <style>
+        body {
+        background-color: #151515;
         }
 
-        .textcolor {
-          color: #fff;
-        }
+      .award {
+        font-family: Segoe UI, Tahoma, sans-serif; 
+        font-size: 75%;
+        background-color: #151515;
         
-      </style>
+      }
 
+      .textcolor {
+        color: #fff;
+      }
+      
+    </style>
 
     <section class=" award container text-light">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
@@ -363,7 +362,6 @@
               </div>
             </div>
           </section>
-
 
           <section class="container mb-4 mb-lg-5">
             <div class="tab-content pt-2">
@@ -789,7 +787,6 @@
               }
             }
         </style>
-
 
         <div class="">
           <div class="container">

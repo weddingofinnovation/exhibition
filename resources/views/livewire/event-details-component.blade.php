@@ -306,6 +306,54 @@
           </style>
 
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-9">
+                  
+                  <div class=""><h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                            @else
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                            @endif 
+                        </h5></div>
+                  <div class="h1">{{$event->eventname}}</div>
+                  <div class=""><h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
+                 
+                  <div class="my-5 py-5"></div>
+                 
+                  <div class="row">
+                   
+                   <div class="col-6">
+                    <div class="row">
+                      <div class="col-3 text-center">{{$commentedRates->count()}} <span>Review</span></div>
+                      <div class="col-3 text-center">{{$event->edition}} <span>Edition</span></div>
+                      <div class="col-3 text-center">3+<span>Visitor</span></div>
+                      <div class="col-3 text-center">{{round($commentedRates->avg('rate') , 1)}}/10<span>Rated for 3+</span></div>
+                    </div>
+                   </div>
+                   <div class="col-6"></div>
+                  </div>
+                  
+                  <div class="row">
+                    <ul class="list-unstyled text-light mb-0 mt-2">
+                              <li class="d-flex">
+                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                  <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Share it</a>
+                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Add To whislist</a>
+                              </li>
+                    </ul>
+                  </div>
+
+                </div>
+                <div class="col-md-3"> <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$event->brand_logo)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
+              </div>
+           </div>
+          </section>
+          
+          {{--<section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <!-- <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
             style="background-image: url('{{('/image/test.jpg')}}')"> -->
               
@@ -408,7 +456,7 @@
                   </div>
 
                 </div>
-          </section>
+          </section>--}}
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
