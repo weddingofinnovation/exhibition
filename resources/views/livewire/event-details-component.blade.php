@@ -372,8 +372,7 @@
                    </div>
                    <div class="col-6"></div>
                   </div>
-                  
-                  {{$event->image}}
+                 
                   <div class="row">
                     <ul class="list-unstyled text-light mb-0 mt-2">
                               <li class="d-flex">
@@ -388,7 +387,7 @@
 
                 </div>
                 <div class="col-md-3">
-                  <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
+                  <img class="p-1" width="70%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
               </div>
            </div>
           </section>
