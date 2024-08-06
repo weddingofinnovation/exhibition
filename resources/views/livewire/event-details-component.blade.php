@@ -373,21 +373,22 @@
                    <div class="col-6"></div>
                   </div>
                   
+                  {{$event->image}}
                   <div class="row">
                     <ul class="list-unstyled text-light mb-0 mt-2">
                               <li class="d-flex">
                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                       href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                   <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="" class="fw-bold ">Share it</a>
-                                <a href="" class="fw-bold ">Add To whislist</a>
+                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Share it</a>
+                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Add To whislist</a>
                               </li>
                     </ul>
                   </div>
 
                 </div>
                 <div class="col-md-3">
-                  <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$event->brand_logo)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
+                  <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
               </div>
            </div>
           </section>
