@@ -490,76 +490,77 @@
 
                           </div>
                         </section>
+<div class="row">
+<div class="col-6">
+                            <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                              <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                              <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                            </li>
+
+                            <h5 class="mb-3">Partner with Space</h5>
+                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                              <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
+                              <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
+                            </ul>
+                        </div>
 
                         <div class="col-6">
-                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                          <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                          <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                        </li>
+                          <h5 class="mb-3">Expo Initiatives</h5>
+                          <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                            <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
+                            <li><!-- No image -->
+                              <div class="card ">
+                                <div class="expo_Initiatives">
+                                      <div class="card-body ">
+                                        <h5 class="card-title">Expo live</h5>
+                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                      </div>
 
-                        <h5 class="mb-3">Partner with Space</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                          <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
-                          <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
-                        </ul>
+                                      <div class="card-body">
+                                        <h5 class="card-title">Global Best Practice Programme</h5>
+                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                      </div>
 
+                                      <div class="card-body">
+                                        <h5 class="card-title">Sustainability at Expo</h5>
+                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                      </div>
+
+                                      <div class="card-body">
+                                        <h5 class="card-title">World Majlis</h5>
+                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                      </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+
+                          <div class="row">
+                            <div>
+                            <h5 class="mb-3">Start-ups</h5>
+                              
+                              <ul class="list-unstyled fs-sm bg-secondary p-2">
+                                  <li class="d-flex justify-content-between p-0 m-0">
+                                  <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
+                                  <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
+                            </ul>
+                            </div>
+                            <!--<div>
+                              <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                                <li>Height: 7.8 in / 19.8 cm</li>
+                                <li>Weight: 7.58 oz / 215 g</li>
+                                <li>Form factor: On ear</li>
+                              </ul>
+                            </div>-->
+                          </div>
+                        </div>
+</div>
                         
 
-                        </div>
-                        <div class="col-6">
-  <h5 class="mb-3">Expo Initiatives</h5>
-  <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-    <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
-    <li><!-- No image -->
-      <div class="card ">
-        <div class="expo_Initiatives">
-              <div class="card-body ">
-                <h5 class="card-title">Expo live</h5>
-                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Global Best Practice Programme</h5>
-                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Sustainability at Expo</h5>
-                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">World Majlis</h5>
-                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-              </div>
-        </div>
-      </div>
-    </li>
-  </ul>
-
-  <div class="row">
-    <div>
-    <h5 class="mb-3">Start-ups</h5>
-      
-      <ul class="list-unstyled fs-sm bg-secondary p-2">
-          <li class="d-flex justify-content-between p-0 m-0">
-          <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-          <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
-    </ul>
-    </div>
-    <!--<div>
-      <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-        <li>Height: 7.8 in / 19.8 cm</li>
-        <li>Weight: 7.58 oz / 215 g</li>
-        <li>Form factor: On ear</li>
-      </ul>
-    </div>-->
-  </div>
-</div>
                       </div>
 
                       
