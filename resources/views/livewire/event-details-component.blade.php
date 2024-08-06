@@ -457,7 +457,7 @@
 
                         <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
                           {{-- px-2 mb-1 --}}
-                          @foreach ($evento as $eventoi)
+                          @foreach ($evento as $franchise)
                                       <div class="container">
                                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                           <div class="col  pr-0">
