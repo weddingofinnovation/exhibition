@@ -323,7 +323,19 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-9">
-                  
+                    <span class="badge badge-primary bg-primary fs-xs mt-4">
+                            @if ($current < $to && $current < $from)
+                              Upcoming
+                            @elseif ($current == $to && $current < $from) 
+                              First Day
+                            @elseif ($current > $to && $current < $from) 
+                              Ongoing
+                            @elseif ($current > $to && $current == $from) 
+                              Last Business Day 
+                            @elseif ($current > $to && $current > $from)
+                              ended
+                            @endif
+                      </span>
                   <div class=""><h5 class="text-dark fw-normal pt-2 pb-0">
                             @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
                               {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
@@ -343,7 +355,10 @@
                       <div class="col-3 text-center">{{$commentedRates->count()}} <span>Review</span></div>
                       <div class="col-3 text-center">{{$event->edition}} <span>Edition</span></div>
                       <div class="col-3 text-center">3+<span>Visitor</span></div>
-                      <div class="col-3 text-center">{{round($commentedRates->avg('rate') , 1)}}/10<span>Rated for 3+</span></div>
+                      <div class="col-3 text-center">
+                         <div class="">{{round($commentedRates->avg('rate') , 1)}}/10</div>
+                         <div class="">Rated for 3+</div>
+                      </div>
                     </div>
                    </div>
                    <div class="col-6"></div>
