@@ -319,6 +319,7 @@
                   .fixed
           </style>
 
+
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">
               <div class="row">
@@ -458,7 +459,7 @@
                         <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
                           {{-- px-2 mb-1 --}}
                           @foreach ($evento as $franchise)
-                                      <div class="container">
+                          <div class="container" >
                                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                           <div class="col  pr-0">
                                               @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -572,110 +573,7 @@
 
 
 
-      {{--<section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
-            <!-- <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
-            style="background-image: url('{{('/image/test.jpg')}}')"> -->
-              
-              <div class=" product-available   text-center bg-primary" style="right: 1.75rem; top: 7.25%; position: absolute;padding-top: 0.425rem; padding-left: 0.625rem; padding-right: 1rem;
-                padding-bottom: 0.425rem;
-                transform: translateY(-50%);
-                border-radius: 0.3125rem;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-                font-size: .8125rem;">
-                <div class = "h1 pt-5 text-light pb-0 mb-0" style="font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;">COI</div>  
-                <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
-              </div>
-            
-              <div class="container pt-4 mb-3 mb-lg-0 ">
-                  <div class="row gy-0 ">
-                  test laptop
-                    <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
-                        <!-- <a class="card-img-top d-block overflow-hidden"  href="{{route('event.product',['slug' => $event->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->eventname, 24)}}">
-                        </a> -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-sm-8  border border-white border-1 px-3 py-5 ">
-                        <div class="position-relative me-n4 mb-3 d-none d-sm-block">
-                          <div class="product-badge product-available  lh-1 fs-sm" style="right: 19.25rem;">
-                            <strong>Great <br>Place <br>To <br>Exhibit</strong>
-                          </div>
-                        </div>
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                            @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                            @endif 
-                        </h5>
-                        <h1 class="text-dark mb-3" style="font-size: 3.6rem !important;">{{$event->eventname}}</h1>
-                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
-                          @if(count($eventbrand) > 0)
-                              <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
-                              <div class="d-flex bg-transparent border-bottom"> 
-                              
-                                @foreach($eventbrand as $franchise)
-                                    <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                @endforeach
-                              </div>
-                          @endif
-                        <h5 class="text-dark fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
-                        <ul class="list-unstyled text-light mb-0 mt-2">
-                              <li class="d-flex">
-                              @if( $event->businessrevenue == 'visitor' )
-                                  @if( $ticketOrExhibit != 0 )
-                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                                    @else ( $ticketOrExhibit == 0 )
-                                      <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                  @endif
-                                @else
-                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                              @endif
-
-                                <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                              </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6 col-sm-8  px-3 py-5 d-none d-sm-block">
-                          <h5 class="text-light fw-normal fs-sm pt-2 pb-0">
-                              Upcoming Expo
-                          </h5>
-                                    
-                        <h2 class="text-primary mb-3 lh-1"> <span class="fw-light"> MAKING</span> <br>BIG GROWTH <br>
-                        <span class="fw-light">IN INDIA</span> <br>BUSINESS <br><span class="fw-light">A REALITY</span></h1>
-                            <ul class="list-unstyled text-light mb-0 mt-0 border-top">
-                                  <li class="d-flex pt-1">
-                                    <a class="fs-xs  text-center border-end px-0" href="{{$link->google()}}"> <span class="fw-bold">100 +</span> <br>Thought Leadership</a>
-                                    <a class="fs-xs  text-center border-end px-2" href="{{$link->google()}}"><span class="fw-bold">> 800</span> <br>Business Matching Meetings</a>
-                                    <a class="fs-xs  text-center  px-0" href="{{$link->google()}}"><span class="fw-bold">300 +</span> <br>Business Ideas Opportunities</a>
-                                  </li>
-                            </ul>
-                    </div>  
-                      
-                    <div class="col-lg-3 d-none d-sm-block">
-                    
-                    </div>
-                  </div>
-
-                  <div class="container d-none">
-                    <div class="row text-light mb-0 mt-0">
-                      <ul class="list-unstyled text-light mb-0 mt-5">
-                            <li class="d-flex">
-                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
-                              <a class="" href="{{$link->google()}}">5500+ <br>Brands on Display</a>
-                              <a class="" href="{{$link->google()}}">4095+ <br>Exhibitors</a>
-                            </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                </div>
-          </section>--}}
+      
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
@@ -716,9 +614,6 @@
                 </div>
 
 
-                <!-- <div class="container">
-                Expand your Businesss       
-                </div> -->
             </div>
 
             <div class="container pt-0 mb-3 mb-lg-0">
@@ -732,43 +627,13 @@
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-8">
                   <div class="col-lg-6 col-md-6  px-0 py-3">
-                  
-                      <h4 class="text-dark fw-bold fs-md pt-3 pb-0 lh-0">
-                            @if ($current < $to && $current < $from)
-                              {{-- Upcoming --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current == $to && $current < $from) 
-                              {{--First Day--}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current < $from) 
-                              {{-- Ongoing --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current == $from) 
-                              {{-- Last Business Day  --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current > $from)
-                                {{Carbon\Carbon::parse ($event->enddate)->format('M Y ')}}
-                            @endif
-                          
-                      </h4>
+                  @php 
+                          $current = strtotime(Carbon\Carbon::now());
+                          $to = strtotime($event->startdate);
+                          $from= strtotime($event->enddate);
+                  @endphp
 
-                      {{-- <span class="badge badge-primary bg-primary fs-xs mt-4">
+                      <span class="badge badge-primary bg-primary fs-xs mt-4">
                             @if ($current < $to && $current < $from)
                               Upcoming
                             @elseif ($current == $to && $current < $from) 
@@ -780,7 +645,7 @@
                             @elseif ($current > $to && $current > $from)
                               ended
                             @endif
-                      </span> --}}
+                      </span>
 
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}} {{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h5>
