@@ -494,91 +494,8 @@
                   <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
                   <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
                 </li>
-                      </div>
 
-                      
-                      <div class="col-lg-4 col-md-4 col-sm-4">
-                         <h1>Universal Registration</h1> 
-                         /* Contactless Ticketing & Fast-track Entry with M-ticket. */
-                        <h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
-                        <small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
-                        <span class="fw-bold text-primary">Skip the Lines</span></h5>
-                        
-                        @php
-                        $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
-                        @endphp
-
-                        <div class="row g-0 py-0 mx-n2 mt-2"> 
-                          {{-- px-2 mb-1 --}}
-                          @foreach ($evento as $franchise)
-                          <div class="container" >
-                                        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                          <div class="col  pr-0">
-                                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                                  <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                                @else
-                                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                                  <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-
-                                              @endif 
-                                              @php 
-                                                $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                                $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                                $name = $franchise->eventname;
-                                                $venue = $franchise->venue;
-                                                $city = $franchise->city;
-                                                $country = $franchise->country;
-                                                $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                                
-                                              @endphp
-                                                
-                                                  <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                          </div>
-
-                                          <div class="col-7  p-0">
-                                            <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                            <div class="text-muted fs-sm text-start">
-                                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                              @else
-                                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                              @endif 
-                                            </div>  
-                                            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
-                                          </div>
-
-                                          <div class="col-3  p-0">
-                                            <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                          </div>
-                                        </div>  
-                                    </div>
-                          @endforeach
-                        </div>
-                        
-                        
-                        <div class="row">
-                          <div>
-                          <h5 class="mb-3">Start-ups</h5>
-                            
-                            <ul class="list-unstyled fs-sm bg-secondary p-2">
-                                <li class="d-flex justify-content-between p-0 m-0">
-                                <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-                                <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
-                          </ul>
-                          </div>
-                          <!--<div>
-                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                              <li>Height: 7.8 in / 19.8 cm</li>
-                              <li>Weight: 7.58 oz / 215 g</li>
-                              <li>Form factor: On ear</li>
-                            </ul>
-                          </div>-->
-                        </div>
-                        
-                        <h5 class="mb-3">Partner with Space</h5>
+                <h5 class="mb-3">Partner with Space</h5>
                         <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                           <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
                           <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
@@ -618,6 +535,95 @@
                           </li>
                           
                         </ul>
+                      </div>
+
+                      
+                      <div class="col-lg-4 col-md-4 col-sm-4">
+                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                          <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                          <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                        </li>
+
+                        <h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
+                        <br><small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
+                        <span class="fw-bold text-primary">Skip the Lines</span></h5>
+                        
+                        @php
+                        $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
+                        @endphp
+
+                        <h5 class="mb-3">Upcoming Expo</h5>
+                        <div class="row g-0 py-0 mx-n2 mt-2"> 
+                          {{-- px-2 mb-1 --}}
+                          @foreach ($evento as $franchise)
+                            <div class="container" >
+                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                  <div class="col  pr-0">
+                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                          <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                        @else
+                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                          <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                                      @endif 
+                                      @php 
+                                        $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                        $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                        $name = $franchise->eventname;
+                                        $venue = $franchise->venue;
+                                        $city = $franchise->city;
+                                        $country = $franchise->country;
+                                        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                        
+                                      @endphp
+                                        
+                                          <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                  </div>
+
+                                  <div class="col-7  p-0">
+                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                    <div class="text-muted fs-sm text-start">
+                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                      @else
+                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                      @endif 
+                                    </div>  
+                                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                  </div>
+
+                                  <div class="col-3  p-0">
+                                    <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  </div>
+                                </div>  
+                            </div>
+                          @endforeach
+                        </div>
+                        
+                        
+                        <div class="row">
+                          <div>
+                          <h5 class="mb-3">Start-ups</h5>
+                            
+                            <ul class="list-unstyled fs-sm bg-secondary p-2">
+                                <li class="d-flex justify-content-between p-0 m-0">
+                                <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
+                                <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
+                          </ul>
+                          </div>
+                          <!--<div>
+                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                              <li>Height: 7.8 in / 19.8 cm</li>
+                              <li>Weight: 7.58 oz / 215 g</li>
+                              <li>Form factor: On ear</li>
+                            </ul>
+                          </div>-->
+                        </div>
+                        
+                        
                       </div>
                     </div>
                   </section>
