@@ -387,7 +387,7 @@
 
                 </div>
                 <div class="col-md-3">
-                  <img class="p-1" width="70%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
+                  <img class="p-1" width="130%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
               </div>
            </div>
           </section>
