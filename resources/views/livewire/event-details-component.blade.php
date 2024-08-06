@@ -323,7 +323,7 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-9">
-                    <span class="badge badge-primary bg-primary fs-xs mt-4">
+                    <span class="badge rounded-pill bg-primary fs-xs mt-4">
                             @if ($current < $to && $current < $from)
                               Upcoming
                             @elseif ($current == $to && $current < $from) 
@@ -352,12 +352,21 @@
                    
                    <div class="col-6">
                     <div class="row">
-                      <div class="col-3 text-center">{{$commentedRates->count()}} <span>Review</span></div>
-                      <div class="col-3 text-center">{{$event->edition}} <span>Edition</span></div>
-                      <div class="col-3 text-center">3+<span>Visitor</span></div>
                       <div class="col-3 text-center">
-                         <div class="">{{round($commentedRates->avg('rate') , 1)}}/10</div>
-                         <div class="">Rated for 3+</div>
+                        <div class="fw-bold text-center">{{$commentedRates->count()}}</div>
+                        <div class="fw-light fs-sm">Review</div>
+                      </div>
+                      <div class="col-3 text-center">
+                        <div class="fw-bold text-center">{{$event->edition}}</div>
+                        <div class="fw-light fs-sm">Edition</div>
+                      </div>
+                      <div class="col-3">
+                        <div class="fw-bold text-center"></div>
+                        <div class="fw-light fs-sm">Visitor</div>
+                      </div>
+                      <div class="col-3 mx-0">
+                         <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}/10</div>
+                         <div class="fw-light fs-sm">Rated for 3+</div>
                       </div>
                     </div>
                    </div>
