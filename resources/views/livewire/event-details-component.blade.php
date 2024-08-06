@@ -354,19 +354,19 @@
                    
                    <div class="col-6 mb-3">
                     <div class="row">
-                      <div class="col-3 text-center pl-0">
+                      <div class="col-2 text-center pl-0">
                         <div class="fw-bold text-center">{{$commentedRates->count()}}</div>
                         <div class="fw-light fs-sm">Review</div>
                       </div>
-                      <div class="col-3 text-center py-0">
+                      <div class="col-2 text-center py-0">
                         <div class="fw-bold text-center">{{$event->edition}}</div>
                         <div class="fw-light fs-sm">Edition</div>
                       </div>
-                      <div class="col-3">
+                      <div class="col-2">
                         <div class="fw-bold text-center px-0">{{number_format(($event->auidence / 1000) , 1). 'k'}}</div>
                         <div class="fw-light fs-sm">Visitor</div>
                       </div>
-                      <div class="col-3 mx-0">
+                      <div class="col-2 mx-0">
                          <div class="fw-bold text-center py-0">{{round($commentedRates->avg('rate') , 1)}}/10</div>
                          <div class="fw-light fs-sm">Rated for 3+</div>
                       </div>
@@ -445,12 +445,64 @@
                                   </div>
                                 @endforeach
                               </div>
-                              
+                              <section class="container py-5">                    
+                    <div class="card-group last" >
+
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <h5 class="card-title">Find Business</h5>
+                          <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
+                        </div>
+                      </div>
+
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <h5 class="card-title">The Exhibition Magazine</h5>
+                          <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
+
+                          Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
+                          </p>
+                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
+                        </div>
+                      </div>
+
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <h5 class="card-title">Build a Network</h5>
+                          <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
+                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
+                        </div>
+                      </div>
+
+                      <div class="card border-0">
+                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                        <div class="card-body">
+                          <h5 class="card-title">Business Brand Managers</h5>
+                          <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
+                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </section>
+
+                <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                  <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                  <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                </li>
                       </div>
 
                       
                       <div class="col-lg-4 col-md-4 col-sm-4">
-                        <h5 class="m-3 fs-sm fw-light">Contactless Ticketing & Fast-track Entry with M-ticket. <span class="fw-bold text-primary">Learn How</span></h5>
+                         <h1>Universal Registration</h1> 
+                         /* Contactless Ticketing & Fast-track Entry with M-ticket. */
+                        <h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
+                        <small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
+                        <span class="fw-bold text-primary">Skip the Lines</span></h5>
                         
                         @php
                         $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
@@ -892,58 +944,7 @@
 
                   <hr class="mt-md-2 mb-0">
 
-                  
-      
-              <!-- Card group last-->
-                <section class="container py-5">                    
-                    <div class="card-group last" >
-
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Find Business</h5>
-                          <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
-                        </div>
-                      </div>
-
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">The Exhibition Magazine</h5>
-                          <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
-
-                          Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
-                          </p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
-                        </div>
-                      </div>
-
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Build a Network</h5>
-                          <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
-                        </div>
-                      </div>
-
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Business Brand Managers</h5>
-                          <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
-                        </div>
-                      </div>
-
-                    </div>
-                </section>
-
-                <!-- <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                  <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                  <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                </li> -->
+                
 
                 @if(count($eventbrand) > 0)
                   <section class="container mb-4 mb-lg-5" >
