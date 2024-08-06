@@ -449,14 +449,14 @@
                       </div>
 
                       
-                      <div class="col-lg-4 col-md-4 col-sm-4  bg-secondary">
+                      <div class="col-lg-4 col-md-4 col-sm-4">
                         <h5 class="m-3 fs-sm fw-light">Contactless Ticketing & Fast-track Entry with M-ticket. <span class="fw-bold text-primary">Learn How</span></h5>
                         
                         @php
                         $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
                         @endphp
 
-                        <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
+                        <div class="row g-0 py-0 mx-n2 mt-2"> 
                           {{-- px-2 mb-1 --}}
                           @foreach ($evento as $franchise)
                           <div class="container" >
