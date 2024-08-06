@@ -445,96 +445,121 @@
                                   </div>
                                 @endforeach
                               </div>
-                              <section class="container py-5">                    
-                    <div class="card-group last" >
 
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Find Business</h5>
-                          <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
-                        </div>
-                      </div>
+                        <section class="container py-5">                    
+                          <div class="card-group last" >
 
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">The Exhibition Magazine</h5>
-                          <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
+                            <div class="card border-0">
+                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                              <div class="card-body">
+                                <h5 class="card-title">Find Business</h5>
+                                <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
+                              </div>
+                            </div>
 
-                          Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
-                          </p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
-                        </div>
-                      </div>
+                            <div class="card border-0">
+                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                              <div class="card-body">
+                                <h5 class="card-title">The Exhibition Magazine</h5>
+                                <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
 
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Build a Network</h5>
-                          <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
-                        </div>
-                      </div>
+                                Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
+                                </p>
+                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
+                              </div>
+                            </div>
 
-                      <div class="card border-0">
-                        <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                        <div class="card-body">
-                          <h5 class="card-title">Business Brand Managers</h5>
-                          <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
-                          <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
-                        </div>
-                      </div>
+                            <div class="card border-0">
+                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                              <div class="card-body">
+                                <h5 class="card-title">Build a Network</h5>
+                                <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
+                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
+                              </div>
+                            </div>
 
-                    </div>
-                  </section>
+                            <div class="card border-0">
+                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                              <div class="card-body">
+                                <h5 class="card-title">Business Brand Managers</h5>
+                                <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
+                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
+                              </div>
+                            </div>
 
-                <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                  <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                  <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                </li>
+                          </div>
+                        </section>
 
-                <h5 class="mb-3">Partner with Space</h5>
+                        <div class="col-6">
+                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                          <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                          <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                        </li>
+
+                        <h5 class="mb-3">Partner with Space</h5>
                         <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                           <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
                           <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
                         </ul>
 
-                        <h5 class="mb-3">Expo Initiatives</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                          <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
-                          <li><!-- No image -->
-                            <div class="card ">
-                              <div class="expo_Initiatives">
-                                    <div class="card-body ">
-                                      <h5 class="card-title">Expo live</h5>
-                                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                    </div>
-
-                                    <div class="card-body">
-                                      <h5 class="card-title">Global Best Practice Programme</h5>
-                                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                    </div>
-
-                                    <div class="card-body">
-                                      <h5 class="card-title">Sustainability at Expo</h5>
-                                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                    </div>
-
-                                    <div class="card-body">
-                                      <h5 class="card-title">World Majlis</h5>
-                                      <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                      <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                    </div>
-                              </div>
-                            </div>
-                          </li>
                         
-                        </ul>
+
+                        </div>
+                        <div class="col-6">
+  <h5 class="mb-3">Expo Initiatives</h5>
+  <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+    <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
+    <li><!-- No image -->
+      <div class="card ">
+        <div class="expo_Initiatives">
+              <div class="card-body ">
+                <h5 class="card-title">Expo live</h5>
+                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Global Best Practice Programme</h5>
+                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">Sustainability at Expo</h5>
+                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">World Majlis</h5>
+                <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+              </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="row">
+    <div>
+    <h5 class="mb-3">Start-ups</h5>
+      
+      <ul class="list-unstyled fs-sm bg-secondary p-2">
+          <li class="d-flex justify-content-between p-0 m-0">
+          <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
+          <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
+    </ul>
+    </div>
+    <!--<div>
+      <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+        <li>Height: 7.8 in / 19.8 cm</li>
+        <li>Weight: 7.58 oz / 215 g</li>
+        <li>Form factor: On ear</li>
+      </ul>
+    </div>-->
+  </div>
+</div>
                       </div>
 
                       
@@ -604,24 +629,7 @@
                         </div>
                         
                         
-                        <div class="row">
-                          <div>
-                          <h5 class="mb-3">Start-ups</h5>
-                            
-                            <ul class="list-unstyled fs-sm bg-secondary p-2">
-                                <li class="d-flex justify-content-between p-0 m-0">
-                                <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-                                <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
-                          </ul>
-                          </div>
-                          <!--<div>
-                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                              <li>Height: 7.8 in / 19.8 cm</li>
-                              <li>Weight: 7.58 oz / 215 g</li>
-                              <li>Form factor: On ear</li>
-                            </ul>
-                          </div>-->
-                        </div>
+                        
                         
                         
                       </div>
