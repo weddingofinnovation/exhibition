@@ -363,7 +363,7 @@
                         <div class="fw-light fs-sm">Edition</div>
                       </div>
                       <div class="col-3">
-                        <div class="fw-bold text-center px-0"></div>
+                        <div class="fw-bold text-center px-0">{{number_format(($event->auidence / 1000) , 1). 'k'}}</div>
                         <div class="fw-light fs-sm">Visitor</div>
                       </div>
                       <div class="col-3 mx-0">
@@ -389,7 +389,7 @@
 
                 </div>
                 <div class="col-md-3">
-                  <img class="p-1" width="130%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
+                  <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
               </div>
            </div>
           </section>
@@ -833,7 +833,7 @@
 
                       <div class="element-item bg-light" data-category="post-transition">
                         <h3 class="name">Visitor</h3>
-                        <p class="symbol text-dark">{{number_format(($event->exhibitors / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
+                        <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
                         <p class="number"></p>
                         <p class="weight">Verified</p>
                       </div>
@@ -854,7 +854,7 @@
 
                       <div class="element-item bg-light" data-category="post-transition">
                         <h3 class="name">Business Days</h3>
-                        <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}}</p>
+                        <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}}</p>
                         <p class="number"></p>
                         <p class="weight">Verified</p>
                       </div>
