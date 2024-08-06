@@ -379,8 +379,8 @@
                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                       href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                   <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Share it</a>
-                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Add To whislist</a>
+                                <a href="" class="fw-bold ">Share it</a>
+                                <a href="" class="fw-bold ">Add To whislist</a>
                               </li>
                     </ul>
                   </div>
