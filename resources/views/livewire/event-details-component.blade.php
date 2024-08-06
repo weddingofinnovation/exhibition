@@ -303,6 +303,20 @@
                   /* h1, .h1 {
                   font-size: calc(1.375rem + 1.5vw);
                   } */
+
+                  .fixed-buttons {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    padding: 10px;
+                    background: 1px solid #ddd;
+                  }
+
+                  .fixed
           </style>
 
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
@@ -348,7 +362,8 @@
                   </div>
 
                 </div>
-                <div class="col-md-3"> <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$event->brand_logo)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
+                <div class="col-md-3"> 
+                  <img class="p-1" width="24%" src="{{url('public/assets/images/exhibition/'.$event->brand_logo)}}"  alt="{{Str::limit($event->brand_name, 24)}}"></div>
               </div>
            </div>
           </section>
@@ -738,156 +753,82 @@
 
                 </div> 
 
-              <section class="">
-                <div class="grido">
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Edition</h3>
-                    <p class="symbol text-dark">{{$event->edition}}</p>
-                    <p class="number"> <i class="bi bi-add"></i> </p>
-                    <p class="weight">Verified</p>
-                  </div>
+                  <section class="d-lg-none">
+                    <div class="grido">
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Edition</h3>
+                        <p class="symbol text-dark">{{$event->edition}}</p>
+                        <p class="number"> <i class="bi bi-add"></i> </p>
+                        <p class="weight">Verified</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Visitor</h3>
-                    <p class="symbol text-dark">{{number_format(($event->exhibitors / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
-                    <p class="number"></p>
-                    <p class="weight">Verified</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Visitor</h3>
+                        <p class="symbol text-dark">{{number_format(($event->exhibitors / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
+                        <p class="number"></p>
+                        <p class="weight">Verified</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Exhibitor</h3>
-                    <p class="symbol text-dark">{{$event->exhibitors}}</p>
-                    <p class="number"></p>
-                    <p class="weight">Verified</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Exhibitor</h3>
+                        <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                        <p class="number"></p>
+                        <p class="weight">Verified</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Rating</h3>
-                    <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
-                    <p class="number">83</p>
-                    <p class="weight">Verified</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Rating</h3>
+                        <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
+                        <p class="number">83</p>
+                        <p class="weight">Verified</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Business Days</h3>
-                    <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}}</p>
-                    <p class="number"></p>
-                    <p class="weight">Verified</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Business Days</h3>
+                        <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}}</p>
+                        <p class="number"></p>
+                        <p class="weight">Verified</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Contract Form</h3>
-                    <p class="symbol">Bi</p>
-                    <p class="number">83</p>
-                    <p class="weight">Space</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Contract Form</h3>
+                        <p class="symbol">Bi</p>
+                        <p class="number">83</p>
+                        <p class="weight">Space</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Design</h3>
-                    <p class="symbol">Bi</p>
-                    <p class="number">83</p>
-                    <p class="weight">Stall</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Design</h3>
+                        <p class="symbol">Bi</p>
+                        <p class="number">83</p>
+                        <p class="weight">Stall</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Material</h3>
-                    <p class="symbol">Bi</p>
-                    <p class="number">83</p>
-                    <p class="weight">Marketing</p>
-                  </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Material</h3>
+                        <p class="symbol">Bi</p>
+                        <p class="number">83</p>
+                        <p class="weight">Marketing</p>
+                      </div>
 
-                  <div class="element-item bg-light" data-category="post-transition">
-                    <h3 class="name">Fabrication</h3>
-                    <p class="symbol">Bi</p>
-                    <p class="number">83</p>
-                    <p class="weight">Verified</p>
-                  </div>
-                </div>
-              </section>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Fabrication</h3>
+                        <p class="symbol">Bi</p>
+                        <p class="number">83</p>
+                        <p class="weight">Verified</p>
+                      </div>
+                    </div>
+                  </section>
 
 
-                  <hr class="mt-md-2 mb-2">
+                  <hr class="mt-md-2 mb-0">
 
                   <!--participants-->  
                   <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
                     <div class="row text-center text-sm-start">
-                      <div class="col-lg-3 col-md-4 col-sm-4 bg-secondary">
-                        <span class="badge bg-primary mt-3">Participate</span>
-                          <h5 class="mb-3">Nominate</h5>
-                          <div class="row">
-                            <div>
-                              <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">{{route('event.exhibit', ['board' => 'business'])}}
-                                <li>Bespoke B2B forums that connect you with the people you really want to meet. </li>
-                                <li>Our business partnered space events include participation in live Q&A and polls, plus access to the community where you can network with other attendees.</li>
-                                <li><a href="{{route('event.exhibit', ['board'=> 'award' ])}}" class="btn btn-outline-primary btn-sm bg-light">Nominate a Speaker</a></li>
-                              </ul>
-                            </div>
-                              <div>
-                                <h5 class="mb-3">Business Directory</h5>
-                                <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                                  <li>List business directory to educate with your business potential</li>
-                                  <li> <a href="{{route('event.exhibit', ['board' => 'directory' ])}}" class="btn btn-sm btn-primary">Expand your business</a> </li>
-                                </ul>
-                              </div>
-                          </div>
-                          <h5 class="mb-3">Attend a Space event</h5>
-                          
-                          <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li>Attend a Space event near you featuring live speakers and Talk business owners, sparking conversation and connections.</li>
-                            <li><a href="{{route('event.exhibit', ['board' => 'find' ])}}" class="btn btn-outline-primary btn-sm bg-light">Find an event near you</a></li>
-                            
-                          </ul>
-                          <h5 class="mb-3">Share this event</h5>
-                          <!-- Wishlist + Sharing-->
-                            <div class="  d-flex flex-wrap justify-content-between align-items-center border-top pt-3">
-                              
-                              <!--<div class="py-0"><i class="ci-share-alt fs-lg align-middle text-muted me-2"></i>
-                                <a class="btn-social bs-outline bs-facebook bs-sm ms-2" href="#"><i class="ci-facebook"></i></a>
-                                <a class="btn-social bs-outline bs-twitter bs-sm ms-2" href="#"><i class="ci-twitter"></i></a>
-                                <a class="btn-social bs-outline bs-pinterest bs-sm ms-2" href="#"><i class="ci-pinterest"></i></a>
-                                <a class="btn-social bs-outline bs-instagram bs-sm ms-2" href="#"><i class="ci-instagram"></i></a>
-                              </div>-->
+                 
 
-                              <div class="mb-1">
-                                  <a class="btn-social bs-dark bs-twitter ms-2 mb-2" target="_blank" href="https://twitter.com/coi_Innovation"><i class="bi bi-twitter"></i></a>
-                                  <a class="btn-social bs-dark bs-facebook ms-2 mb-2" target="_blank" href="www.facebook.com"><i class="bi bi-facebook"></i></a>
-                                  <a class="btn-social bs-dark bs-instagram ms-2 mb-2" target="_blank" href="https://in.pinterest.com/CouncilofInnovation/_saved/"><i class="bi bi-instagram"></i></a>
-                                  <a class="btn-social bs-dark bs-youtube ms-2 mb-2" target="_blank" href="https://www.youtube.com/channel/UCFq3khqbTIecQxeqj1GscFA"><i class=" bi bi-youtube"></i></a>
-                                  <a class="btn-social bs-dark bs-linkedin ms-2 mb-2" target="_blank" href=""><i class=" bi bi-linkedin"></i></a>
-                              </div>
-                            </div>
-
-                            <h5 class="mb-3">Programme for People and Planet</h5>
-                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                                  <li>Inspiring collective and meaningful action to address the world's most critical Challenges and opportunities.</li>
-                                <li>
-                                  <div class="card ">
-                                  <div class="expo_Initiat">
-                                      <div class="card-body ">
-                                        <h5 class="card-title">Sustainability District</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-
-                                      <div class="card-body">
-                                        <h5 class="card-title">Mobility District</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-
-                                      <div class="card-body">
-                                        <h5 class="card-title">Opportunity District</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>                  
-                                  </div>
-                                </div>
-                              </li>
-                            </ul>
-                          
-                      </div>
-
-                      <div class="col-lg-6 col-md-6 col-sm-8">
+                      <div class="col-lg-8 col-md-6 col-sm-8">
                       
                           
                           <ul class="list-unstyled fs-sm bg-secondary p-2">
@@ -952,8 +893,102 @@
 
                       </div>
 
-                      <div class="col-lg-3 col-md-4 col-sm-4  bg-secondary">
+                      <div class="col-lg-4 col-md-4 col-sm-4  bg-secondary">
                         <h5 class="m-3 fs-sm fw-light">Contactless Ticketing & Fast-track Entry with M-ticket. <span class="fw-bold text-primary">Learn How</span></h5>
+                        
+                        @php
+                        $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
+                        @endphp
+
+                        <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
+                          {{-- px-2 mb-1 --}}
+                          @foreach($evento as $eventoi)
+                            <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                              <div class="card product-card">
+                                
+                                <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
+
+                                <div class="card-body p-1">
+                                  <div class="d-flex justify-content-between">
+                                      <div class="product-price"><small>{{$eventoi -> edition}}  
+                                        <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
+                                            <span class="fs-xs">
+                                              @php
+                                                  $to = strtotime($eventoi->startdate);
+                                                  $from= strtotime($eventoi->enddate);
+                                              @endphp
+                                              
+
+                                              @if ($current < $to && $current < $from)
+                                                  Upcom
+                                                @elseif ($current == $to && $current < $from) 
+                                                  First
+                                                @elseif ($current > $to && $current < $from) 
+                                                  Ongoi
+                                                @elseif ($current > $to && $current == $from) 
+                                                  Last 
+                                                @elseif ($current > $to && $current > $from)
+                                                  Ended
+                                              @endif
+                                            </span>
+                                          <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
+                                        <div class="product-title fs-sm h3 mb-0">
+                                        <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}
+                                          </a></div>
+                                      </div>
+
+                                      <div class="star-rating d-none d-sm-block"> 
+                                        <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
+                                        <div class=" align-center fs-sm py-1"> 
+                                          <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
+                                          <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
+                                        </div>
+                                      </div>
+                                  </div>
+                                  <!--<small>World's best demanding business</small><br>-->
+                                  <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
+                                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                                    @endif 
+
+                                  </small>
+                                  <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}</small>
+
+                                  <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
+                                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                                    @endif 
+                                  </small><br>
+                                  <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small> 
+                                  <!--ucfirst-->
+                                </div>
+
+                                
+                                
+                                <div class="card-body card-body-hidden">
+                                  <div class="d-flex justify-content-between mb-2">
+                                    <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
+                                    <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-cart fs-sm me-1"></i>Visit</a>
+                                  </div>
+                                
+                                  <div class="text-center">
+                                    @guest<a class="nav-link-style fs-ms" href="#" data-bs-toggle="modal">
+                                    <i class=" bi bi-eye align-middle me-1"></i>Contact</a>
+                                    @endguest
+                                  </div>
+                                </div>
+                              
+                              </div>
+                            </div>
+                          @endforeach
+                        </div>
+                        
+                        
                         <div class="row">
                           <div>
                           <h5 class="mb-3">Start-ups</h5>
@@ -977,6 +1012,10 @@
                           <li class="m-3 fs-sm fw-light">Conducts exhibitions, one-to-one meetings and discussions, experiences delivering maximum engagement.</li>
                           <li><a href="{{route('event.exhibit',['board'=> 'meet' ])}}" class="btn btn-outline-primary btn-sm bg-light">BOOK NOW</a></li>
                         </ul>
+
+                       
+
+
                         <h5 class="mb-3">Partner with Space</h5>
                         <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
                           <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
@@ -1129,30 +1168,30 @@
                   </section>
                 @endif
 
-              <!-- Partner-->
-              @if(count($eventbrand)>0)
-                <hr class="mt-md-2 mb-2">
-                <section class="container py-2 pt-md-5">
-                  <h6 class="text-left mb-2">Partner</h6>
-                  <div class="my-sliderPartner">
-                        @foreach ($eventbrand as $franchise)
-                        
-                          <div class="card product-card-alt">
-                            <div class="product-thumb p-3">
-                              <div class="product-card-actions p-2">
-                                <div class="fs-sm text-light" href="">Booth 3</div>
-                                <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                <div class="fs-sm text-light" href="">View Website</div>
-                              </div>   
-                              <a class="product-thumb-overlay" href=""> </a>
-                              <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                            
+                <!-- Partner-->
+                @if(count($eventbrand)>0)
+                  <hr class="mt-md-2 mb-2">
+                  <section class="container py-2 pt-md-5">
+                    <h6 class="text-left mb-2">Partner</h6>
+                    <div class="my-sliderPartner">
+                          @foreach ($eventbrand as $franchise)
+                          
+                            <div class="card product-card-alt">
+                              <div class="product-thumb p-3">
+                                <div class="product-card-actions p-2">
+                                  <div class="fs-sm text-light" href="">Booth 3</div>
+                                  <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                                  <div class="fs-sm text-light" href="">View Website</div>
+                                </div>   
+                                <a class="product-thumb-overlay" href=""> </a>
+                                <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                              
+                              </div>
                             </div>
-                          </div>
-                        @endforeach
-                  </div>
-                </section>
-              @endif
+                          @endforeach
+                    </div>
+                  </section>
+                @endif
 
               </div>
             @elseif($currentTab === 'tab2')
@@ -1427,97 +1466,7 @@
                     </span>
                   </div>
             </div>
-            @php 
-              $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
-            @endphp
-
-            <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
-              {{-- px-2 mb-1 --}}
-              @foreach($evento as $eventoi)
-                <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                  <div class="card product-card">
-                    
-                    <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
-
-                    <div class="card-body p-1">
-                      <div class="d-flex justify-content-between">
-                          <div class="product-price"><small>{{$eventoi -> edition}}  
-                            <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
-                                <span class="fs-xs">
-                                  @php
-                                      $to = strtotime($eventoi->startdate);
-                                      $from= strtotime($eventoi->enddate);
-                                  @endphp
-                                  
-
-                                  @if ($current < $to && $current < $from)
-                                      Upcom
-                                    @elseif ($current == $to && $current < $from) 
-                                      First
-                                    @elseif ($current > $to && $current < $from) 
-                                      Ongoi
-                                    @elseif ($current > $to && $current == $from) 
-                                      Last 
-                                    @elseif ($current > $to && $current > $from)
-                                      Ended
-                                  @endif
-                                </span>
-                              <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
-                            <div class="product-title fs-sm h3 mb-0">
-                            <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}
-                              </a></div>
-                          </div>
-
-                          <div class="star-rating d-none d-sm-block"> 
-                            <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
-                            <div class=" align-center fs-sm py-1"> 
-                              <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
-                              <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
-                            </div>
-                          </div>
-                      </div>
-                      <!--<small>World's best demanding business</small><br>-->
-                      <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
-                        @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
-                        @else
-                          {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
-                        @endif 
-
-                      </small>
-                      <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}</small>
-
-                      <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
-                        @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                        @else
-                          {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                        @endif 
-                      </small><br>
-                      <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small> 
-                      <!--ucfirst-->
-                    </div>
-
-                    
-                    
-                    <div class="card-body card-body-hidden">
-                      <div class="d-flex justify-content-between mb-2">
-                        <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
-                        <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-cart fs-sm me-1"></i>Visit</a>
-                      </div>
-                    
-                      <div class="text-center">
-                        @guest<a class="nav-link-style fs-ms" href="#" data-bs-toggle="modal">
-                        <i class=" bi bi-eye align-middle me-1"></i>Contact</a>
-                        @endguest
-                      </div>
-                    </div>
-                  
-                  </div>
-                </div>
-              @endforeach
-            </div>
+            
           </section>
 
 
