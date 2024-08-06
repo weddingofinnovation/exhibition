@@ -734,37 +734,7 @@
                   <div class="col-lg-6 col-md-6  px-0 py-3">
                   
                       <h4 class="text-dark fw-bold fs-md pt-3 pb-0 lh-0">
-                            @if ($current < $to && $current < $from)
-                              {{-- Upcoming --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current == $to && $current < $from) 
-                              {{--First Day--}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current < $from) 
-                              {{-- Ongoing --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current == $from) 
-                              {{-- Last Business Day  --}}
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                              @endif
-                            @elseif ($current > $to && $current > $from)
-                                {{Carbon\Carbon::parse ($event->enddate)->format('M Y ')}}
-                            @endif
+                            
                           
                       </h4>
 
