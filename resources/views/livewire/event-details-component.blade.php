@@ -356,19 +356,19 @@
                    
                    <div class="col-6 mb-3">
                     <div class="row">
-                      <div class="col-2 text-center px-0 border-0 border-left">
+                      <div class="col-2 text-center px-0 border-end">
                         <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-fill-star"></i></div>
                         <div class="fw-light fs-sm text-muted">Review</div>
                       </div>
-                      <div class="col-2 text-center px-0 border-0 border-left">
+                      <div class="col-2 text-center px-0 border-end">
                         <div class="fw-bold text-center">{{$event->edition}}</div>
                         <div class="fw-light fs-sm text-muted">Edition</div>
                       </div>
-                      <div class="col-2 px-0 border-0 border-left">
+                      <div class="col-2 px-0 border-end">
                         <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}} +</div>
                         <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
-                      <div class="col-2 mx-0 px-0 border-0 border-left">
+                      <div class="col-2 mx-0 px-0 border-end">
                          <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
                          <div class="fw-light fs-xs text-muted">Rated for 3+</div>
                       </div>
@@ -380,11 +380,10 @@
                   <div class="row">
                     <ul class="list-unstyled text-light">
                               <li class="d-flex">
-                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
-                                <a class ="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="" class="btn btn-light"> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
-                                <a href="" class="btn btn-light"> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
+                                <a class="btn btn-sm btn-primary" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
+                                <a class ="btn btn-sm btn-primary" href="{{$link->google()}}">Add to Calender</a>
+                                <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
+                                <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                               </li>
                     </ul>
                   </div>
@@ -422,11 +421,11 @@
                     </li>
                     </ul>
               
-                <h5 class="mb-3">Understanding Expo</h5>
+                <h5 class="mb-1">Understanding Expo</h5>
                 <hr class="mt-md-2 mb-2">
 
           <div class="container">
-            <div class="d-flex badgeseTag">
+            <div class="d-flex">
               @foreach($category as $cat) 
                 <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
               @endforeach
@@ -434,7 +433,7 @@
           </div>
           
 
-          @php 
+          {{--@php 
             $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
             $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
 
@@ -462,7 +461,8 @@
                       @endforeach
                     @endforeach
                 </div>
-          </section>
+          </section> --}}
+
                 <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
                 <span class="badge rounded-pill bg-primary">Concurrent</span>
                 <h5 class="mb-3">Event</h5>
