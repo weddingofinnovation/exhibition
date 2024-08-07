@@ -93,7 +93,7 @@
         
         <div class="text-muted fs-xs text-start"> Edition: {{$evento->edition}} </div>
         <div class="text-muted fs-xs text-start"> Views: {{$evento->view_count}} </div>
-        <div class="text-muted fs-xs text-start"> Status: {{$evento->latestupdat}} </div>
+        <div class="text-muted fs-xs text-start"> latestupdat : {{$evento->latestupdat}} </div>
       </div>
 
       <div class="col-4 p-0">
@@ -105,15 +105,18 @@
                <a href="#" wire:click.prevent="updateEventstatus({{$evento->id}},'1')" class="btn btn-primary btn-sm">Active</a>
           @endif
 
-          @if(is_null($evento->latestupdat))
-              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Postpone</a>
+          <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Postpone</a>
+          <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'1')" class="btn btn-primary btn-sm">DePostpone</a>
+
+          {{-- @if(is_null($evento->latestupdat))
+              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'active')" class="btn btn-primary btn-sm">Postpone</a>
             @elseif($evento->latestupdat == 'cancel')
-              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Postpone</a>
+              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'active')" class="btn btn-primary btn-sm">Postpone</a>
             @elseif($evento->latestupdat == 'postpone')
-              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'cancel')" class="btn btn-primary btn-sm">Cancel</a>
+              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Cancel</a>
             @elseif($evento->latestupdat == 'cancel' || 'postpone')
-              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'active')" class="btn btn-primary btn-sm">Active</a>
-          @endif
+              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Active</a>
+          @endif --}}
 
           <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="Upgrade({{$evento->id}})"> upgrade</a>
           
