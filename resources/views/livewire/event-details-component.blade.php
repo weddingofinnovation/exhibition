@@ -356,19 +356,19 @@
                    
                    <div class="col-6 mb-3">
                     <div class="row">
-                      <div class="col-2 text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-fill-star"></i></div>
+                      <div class="col-auto text-center px-0 border-end">
+                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-star-fill"></i></div>
                         <div class="fw-light fs-sm text-muted">Review</div>
                       </div>
-                      <div class="col-2 text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$event->edition}}</div>
+                      <div class="col-auto text-center px-0 border-end">
+                        <div class="fw-bold text-center">{{$event->edition}} <i class="bi bi-patch-check-fill"></i></div>
                         <div class="fw-light fs-sm text-muted">Edition</div>
                       </div>
-                      <div class="col-2 px-0 border-end">
+                      <div class="col-auto px-0 border-end">
                         <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}} +</div>
                         <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
-                      <div class="col-2 mx-0 px-0 border-end">
+                      <div class="col-auto px-0 border-end">
                          <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
                          <div class="fw-light fs-xs text-muted">Rated for 3+</div>
                       </div>
