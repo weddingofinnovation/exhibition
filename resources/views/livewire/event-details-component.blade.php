@@ -696,6 +696,9 @@
                               ended
                             @endif
                       </span>
+                    @if($event->latestupdat == 'postpone')
+                      <div class="h5">Sorry, Event has been postponed</div> 
+                    @else
                       <h5 class="text-dark fw-normal pt-2 pb-0">
                           @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
                             {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
@@ -703,6 +706,8 @@
                             {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
                           @endif 
                       </h5>
+                    @endif
+
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}} {{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h5>
                       
