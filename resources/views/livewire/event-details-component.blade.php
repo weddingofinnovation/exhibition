@@ -380,8 +380,8 @@
                   <div class="row">
                     <ul class="list-unstyled text-light">
                               <li class="d-flex">
-                                <a class="btn btn-sm btn-primary" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
-                                <a class ="btn btn-sm btn-primary" href="{{$link->google()}}">Add to Calender</a>
+                                <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
+                                <a class ="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a>
                                 <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                                 <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                               </li>
@@ -400,12 +400,13 @@
             <div class="row text-center text-sm-start">
               <div class="col-lg-8 col-md-6 col-sm-8">
                   <ul class="list-unstyled fs-sm bg-secondary p-2">
-                    <div class="fw-bold"> Click on interested to stay updated about this event.</div>
+                    {{-- <div class="fw-bold"> Click on interested to stay updated about this event.</div> -->
+
                     <li class="d-flex justify-content-between p-0 m-0">
                       <span class="text-dark fw-medium fs-sm">  
                       Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
                   
-                    {{-- @if( $rate == $event->id)
+                      @if( $rate == $event->id)
                       
                         <button class="btn btn-sm btn-outline-primary" type="button"> {{$rating}} /10</button>
 
@@ -428,9 +429,9 @@
                 <h5 class="mb-1">Understanding Expo</h5>
                 <hr class="mt-md-2 mb-2">
 
-            <div class="d-flex mb-3">
+            <div class="d-flex mb-3"><span>Industry</span> 
               @foreach($category as $cat) 
-               <span>Industry</span> <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
+                <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
               @endforeach
             </div>
           
@@ -473,15 +474,22 @@
                 
                 <div class="row">
                   <div class="col-6">
-                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                        <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                      </li>
-
-                      <h5 class="mb-3">Partner with Space</h5>
+                      <h5 class="mb-3">Pre-request for space booking</h5>
                       <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                        <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
-                        <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
+                        <li class="my-3 fs-sm fw-light">Update with your required space, budget before 3 months of exhibition start date, get special free and discounted deals</li>
+                        <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+                      </ul>
+
+                      <h5 class="mb-3">Our Data, Your Customers.</h5>
+                      <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                        <li class="my-3 fs-sm fw-light">Download the exhibitor, share your email to find exhibitor</li>
+                        <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+                      </ul>
+
+                      <h5 class="mb-3">Advertise</h5>
+                      <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                        <li class="my-3 fs-sm fw-light">Promote your product with your magazine The Exhibition Network distribute at airport, exhibition centre, goverment office and associations offices.</li>
+                        <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Advertise</a></li>
                       </ul>
                   </div>
 
@@ -520,24 +528,6 @@
                       </li>
                     </ul>
 
-                    <div class="row">
-                      <div>
-                      <h5 class="mb-3">Start-ups</h5>
-                        
-                        <ul class="list-unstyled fs-sm bg-secondary p-2">
-                            <li class="d-flex justify-content-between p-0 m-0">
-                            <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-                            <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
-                      </ul>
-                      </div>
-                      <!--<div>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                          <li>Height: 7.8 in / 19.8 cm</li>
-                          <li>Weight: 7.58 oz / 215 g</li>
-                          <li>Form factor: On ear</li>
-                        </ul>
-                      </div>-->
-                    </div>
                   </div>
                 </div>
                 
@@ -546,11 +536,7 @@
 
               
               <div class="col-lg-4 col-md-4 col-sm-4">
-                <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                  <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                  <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                </li>
-
+                
                 {{--<h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
                 <br><small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
                 <span class="fw-bold text-primary">Skip the Lines</span></h5> --}}
