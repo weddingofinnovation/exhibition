@@ -405,7 +405,7 @@
                       <span class="text-dark fw-medium fs-sm">  
                       Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
                   
-                      @if( $rate == $event->id)
+                    {{-- @if( $rate == $event->id)
                       
                         <button class="btn btn-sm btn-outline-primary" type="button"> {{$rating}} /10</button>
 
@@ -414,10 +414,10 @@
                             <button class="btn btn-sm btn-outline-primary" type="button" ><i class="bi bi-star fs-lg me-2"></i> 
                             <a href="{{route('coi.ratenow',['slug' => $event->slug])}}">Rate Now</a> </button>
                           </div>
-                      @endif
+                      @endif --}}
                     
                     </li>
-                    
+
                     <li class="d-flex justify-content-between px-2 m-0 lh-1">
                       <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
                       <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
