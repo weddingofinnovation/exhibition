@@ -819,7 +819,7 @@
                         </ul>
 
                         
-                        <div class="" style="display: none;
+                        <div class="" tabindex="-1" style="display: none;
                             position: fixed;
                             left: 0;
                             bottom: 0;
