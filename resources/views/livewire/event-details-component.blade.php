@@ -316,7 +316,7 @@
                     background: 1px solid #ddd;
                   }
 
-                  .fixed
+                 
           </style>
 
 
@@ -353,22 +353,27 @@
                   <div class="my-5 py-5"></div>
                  
                   <div class="row">
-                   
+                                <style>
+                                    .custom-icon {
+                                        font-size: 4rem; /* Size of the icon */
+                                        color: #3498db; /* Color of the icon */
+                                    }
+                                </style>
                    <div class="col-6 mb-3">
                     <div class="row">
-                      <div class="col-auto text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-star-fill"></i></div>
+                      <div class="col-3 text-center px-0 border-end">
+                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-star-fill custom-icon"></i></div>
                         <div class="fw-light fs-sm text-muted">Review</div>
                       </div>
-                      <div class="col-auto text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$event->edition}} <i class="bi bi-patch-check-fill"></i></div>
+                      <div class="col-3 text-center px-0 border-end">
+                        <div class="fw-bold text-center">{{$event->edition}} <i class="bi bi-patch-check-fill custom-icon"></i></div>
                         <div class="fw-light fs-sm text-muted">Edition</div>
                       </div>
-                      <div class="col-auto px-0 border-end">
+                      <div class="col-3 px-0 border-end">
                         <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}} +</div>
                         <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
-                      <div class="col-auto px-0 border-end">
+                      <div class="col-3 px-0 border-end">
                          <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
                          <div class="fw-light fs-xs text-muted">Rated for 3+</div>
                       </div>
@@ -817,17 +822,20 @@
                                   </li>
                               @endif
                         </ul>
-
+                        <style>
+        .fixed-bottom-div {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa; /* Light background color */
+            border-top: 1px solid #dee2e6; /* Optional border */
+            padding: 10px;
+            z-index: 9999; /* Ensures it stays on top */
+        }
+    </style>
                         
-                        <div class="" tabindex="-1" style="display: none;
-                            position: fixed;
-                            left: 0;
-                            bottom: 0;
-                            width: 100%;
-                            border-top: 1px solid #e3e9ef;
-                            background-color: #fff;
-                            box-shadow: -1.25rem 0 2rem 0 rgba(43, 52, 69, 0.15);
-                            z-index: 1026;">
+                        <div class="fixed-bottom-div">
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
                           
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
@@ -1107,7 +1115,38 @@
             @elseif($currentTab === 'tab4')
               <!-- Faq tab-->
                 <div class="tab-pane fade show active">
-                 
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                </div>
                 </div>
             @endif
             </div>
@@ -1132,7 +1171,7 @@
         
 
           
-              <section class="d-lg-none">
+              <!-- <section class="d-lg-none">
                 <hr class="mt-md-2 mb-2">
                 <div class="card text-center py-5 border-0"> 
                   <div class="card-body">
@@ -1141,7 +1180,7 @@
                     <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
                   </div>
                 </div>
-              </section>
+              </section> -->
 
             @php 
               $relativeEvent = DB::table('events')->where('reference' , $event->reference)->get();
