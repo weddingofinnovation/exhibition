@@ -1469,7 +1469,7 @@
               "controls": false,
               "autoplayHoverPause": true,
               "autoplay": false,
-              "fixedWidth": 300,
+              "fixedWidth": 150,
               "autoplayButtonOutput": false
             },
             
