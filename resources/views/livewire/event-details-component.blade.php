@@ -399,11 +399,7 @@
           <!--participants-->  
           <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
             <div class="row text-center text-sm-start">
-          
-
               <div class="col-lg-8 col-md-6 col-sm-8">
-              
-                  
                   <ul class="list-unstyled fs-sm bg-secondary p-2">
                 <div class="fw-bold"> Click on interested to stay updated about this event.</div>
                     <li class="d-flex justify-content-between p-0 m-0">
@@ -460,35 +456,6 @@
                       </div>
                     </div>
 
-                    <div class="card border-0">
-                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                      <div class="card-body">
-                        <h5 class="card-title">The Exhibition Magazine</h5>
-                        <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
-
-                        Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
-                        </p>
-                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
-                      </div>
-                    </div>
-
-                    <div class="card border-0">
-                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                      <div class="card-body">
-                        <h5 class="card-title">Build a Network</h5>
-                        <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
-                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
-                      </div>
-                    </div>
-
-                    <div class="card border-0">
-                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                      <div class="card-body">
-                        <h5 class="card-title">Business Brand Managers</h5>
-                        <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
-                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
-                      </div>
-                    </div>
 
                   </div>
                 </section>
@@ -1189,8 +1156,8 @@
         
 
           <hr class="mt-md-2 mb-2">
-              <section>
-                <div class="class="card text-center py-5 border-0"> 
+              <section class="d-lg-none">
+                <div class="card text-center py-5 border-0"> 
                   <div class="card-body">
                     <h5 class="card-title h2">Plan your Expo Now </h5>
                     <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
@@ -1313,7 +1280,7 @@
           </section>
 
           <hr class="mt-md-2 mb-2">
-          <section class="container">
+          <section class="container mb-5">
             <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                   <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
                     <span class="fs-sm">Upcoming<br><span class="fw-medium h5">Event</span></span>
