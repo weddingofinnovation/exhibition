@@ -1200,7 +1200,7 @@
                 <div class="row g-0 py-0 mx-n2 my-Slider4 mt-2"> 
                   {{-- px-2 mb-1 --}}
                   @foreach($relativeEvent as $eventoi)
-                    <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                    <div wire:ignore class="col-lg-6 col-md-6 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
                       <div class="card product-card">
                         
                         <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
