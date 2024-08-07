@@ -337,14 +337,15 @@
                               ended
                             @endif
                       </span>
-                  <div class=""><h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                            @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                            @endif 
-                        </h5>
-                  </div>
+                    <div class="">
+                          <h5 class="text-dark fw-normal pt-2 pb-0">
+                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                              @else
+                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              @endif 
+                          </h5>
+                    </div>
                   <div class="h1">{{$event->eventname}}</div>
                   <div class=""><h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
                  
@@ -395,252 +396,248 @@
           </section>
           
           <!--participants-->  
-                  <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
-                    <div class="row text-center text-sm-start">
-                 
+          <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
+            <div class="row text-center text-sm-start">
+          
 
-                      <div class="col-lg-8 col-md-6 col-sm-8">
-                      
-                          
-                          <ul class="list-unstyled fs-sm bg-secondary p-2">
-                        <div class="fw-bold"> Click on interested to stay updated about this event.</div>
-                            <li class="d-flex justify-content-between p-0 m-0">
-                            <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                            
+              <div class="col-lg-8 col-md-6 col-sm-8">
+              
+                  
+                  <ul class="list-unstyled fs-sm bg-secondary p-2">
+                <div class="fw-bold"> Click on interested to stay updated about this event.</div>
+                    <li class="d-flex justify-content-between p-0 m-0">
+                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
+                    
 
-                          
-                            {{--@if( $rate == $event->id)
-                            
-                            <button class="btn btn-sm btn-outline-primary" type="button" > 
-                            {{$rating}} /10</button>
+                  
+                    {{--@if( $rate == $event->id)
+                    
+                    <button class="btn btn-sm btn-outline-primary" type="button" > 
+                    {{$rating}} /10</button>
 
-                            @else
-                                <div class="py-2 me-2"> 
-                                  <button class="btn btn-sm btn-outline-primary" type="button" ><i class="bi bi-star fs-lg me-2"></i> 
-                                  <a href="{{route('coi.ratenow',['slug' => $event->slug])}}">Rate Now</a> </button>
-                                </div>
-                            @endif--}}
-                            
-                            </li>
-                            </ul>
-                      
-                        <h5 class="mb-3">Understanding Expo</h5>
-                        <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
-                        <span class="badge rounded-pill bg-primary">Concurrent</span>
-                        <h5 class="mb-3">Event</h5>
-
-                              <!-- Card group -->
-                              <!-- Card -->
-                              <div class="row">
-                                @foreach($pavillion as $pav)
-                                  <div class="col-4 card border-0 px-2">
-                                    <img src="{{url('assets/image/exhibition/'.$pav->image)}}" class="card-img-top" alt="Card image">
-                                  
-                                    <div class="card-image-overlay" >
-                                      <h5 class="card-title text-light">{{$pav -> pavillion_name}}</h5>
-                                      <p class="card-text fs-sm text-muted text-light">{{ $pav -> desc}}</p>
-                                    
-                                      <a href="#" class="text-primary text-light">Learn more</a>
-                                    </div>
-                                  </div>
-                                @endforeach
-                              </div>
-
-                        <section class="container py-5">                    
-                          <div class="card-group last" >
-
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">Find Business</h5>
-                                <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
-                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
-                              </div>
-                            </div>
-
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">The Exhibition Magazine</h5>
-                                <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
-
-                                Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
-                                </p>
-                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
-                              </div>
-                            </div>
-
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">Build a Network</h5>
-                                <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
-                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
-                              </div>
-                            </div>
-
-                            <div class="card border-0">
-                              <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
-                              <div class="card-body">
-                                <h5 class="card-title">Business Brand Managers</h5>
-                                <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
-                                <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
-                              </div>
-                            </div>
-
-                          </div>
-                        </section>
-<div class="row">
-<div class="col-6">
-                            <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                              <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                              <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                            </li>
-
-                            <h5 class="mb-3">Partner with Space</h5>
-                            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                              <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
-                              <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
-                            </ul>
+                    @else
+                        <div class="py-2 me-2"> 
+                          <button class="btn btn-sm btn-outline-primary" type="button" ><i class="bi bi-star fs-lg me-2"></i> 
+                          <a href="{{route('coi.ratenow',['slug' => $event->slug])}}">Rate Now</a> </button>
                         </div>
+                    @endif--}}
+                    
+                    </li>
+                    </ul>
+              
+                <h5 class="mb-3">Understanding Expo</h5>
+                <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
+                <span class="badge rounded-pill bg-primary">Concurrent</span>
+                <h5 class="mb-3">Event</h5>
 
-                        <div class="col-6">
-                          <h5 class="mb-3">Expo Initiatives</h5>
-                          <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
-                            <li><!-- No image -->
-                              <div class="card ">
-                                <div class="expo_Initiatives">
-                                      <div class="card-body ">
-                                        <h5 class="card-title">Expo live</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-
-                                      <div class="card-body">
-                                        <h5 class="card-title">Global Best Practice Programme</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-
-                                      <div class="card-body">
-                                        <h5 class="card-title">Sustainability at Expo</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-
-                                      <div class="card-body">
-                                        <h5 class="card-title">World Majlis</h5>
-                                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                      </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-
-                          <div class="row">
-                            <div>
-                            <h5 class="mb-3">Start-ups</h5>
-                              
-                              <ul class="list-unstyled fs-sm bg-secondary p-2">
-                                  <li class="d-flex justify-content-between p-0 m-0">
-                                  <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
-                                  <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
-                            </ul>
+                      <!-- Card group -->
+                      <!-- Card -->
+                      <div class="row">
+                        @foreach($pavillion as $pav)
+                          <div class="col-4 card border-0 px-2">
+                            <img src="{{url('assets/image/exhibition/'.$pav->image)}}" class="card-img-top" alt="Card image">
+                          
+                            <div class="card-image-overlay" >
+                              <h5 class="card-title text-light">{{$pav -> pavillion_name}}</h5>
+                              <p class="card-text fs-sm text-muted text-light">{{ $pav -> desc}}</p>
+                            
+                              <a href="#" class="text-primary text-light">Learn more</a>
                             </div>
-                            <!--<div>
-                              <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                                <li>Height: 7.8 in / 19.8 cm</li>
-                                <li>Weight: 7.58 oz / 215 g</li>
-                                <li>Form factor: On ear</li>
-                              </ul>
-                            </div>-->
                           </div>
-                        </div>
-</div>
-                        
-
+                        @endforeach
                       </div>
 
-                      
-                      <div class="col-lg-4 col-md-4 col-sm-4">
-                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                          <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                          <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
-                        </li>
+                <section class="container py-5">                    
+                  <div class="card-group last" >
 
-                        <h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
-                        <br><small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
-                        <span class="fw-bold text-primary">Skip the Lines</span></h5>
-                        
-                        @php
-                        $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
-                        @endphp
-
-                        <h5 class="mb-3">Upcoming Expo</h5>
-                        <div class="row g-0 py-0 mx-n2 mt-2"> 
-                          {{-- px-2 mb-1 --}}
-                          @foreach ($evento as $franchise)
-                            <div class="container" >
-                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                  <div class="col  pr-0">
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                          <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                        @else
-                                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                                          <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-
-                                      @endif 
-                                      @php 
-                                        $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                        $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                        $name = $franchise->eventname;
-                                        $venue = $franchise->venue;
-                                        $city = $franchise->city;
-                                        $country = $franchise->country;
-                                        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                        
-                                      @endphp
-                                        
-                                          <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
-                                  </div>
-
-                                  <div class="col-7  p-0">
-                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                    <div class="text-muted fs-sm text-start">
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                      @else
-                                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                      @endif 
-                                    </div>  
-                                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
-                                  </div>
-
-                                  <div class="col-3  p-0">
-                                    <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                  </div>
-                                </div>  
-                            </div>
-                          @endforeach
-                        </div>
-                        
-                        
-                        
-                        
-                        
+                    <div class="card border-0">
+                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                      <div class="card-body">
+                        <h5 class="card-title">Find Business</h5>
+                        <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
                       </div>
                     </div>
-                  </section>
 
+                    <div class="card border-0">
+                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                      <div class="card-body">
+                        <h5 class="card-title">The Exhibition Magazine</h5>
+                        <p class="card-text fs-sm text-muted">Unlock unparalleled visibility for your business by advertising in the prestigious Exhibition Magazine. Reach a Diverse and engaged audience that shares your passion for innovation and creativity. Showcase your brand on a platform that resonates with forward-thinkers and industry leaders, and seize the opportunity to connect, inspire, and leave an enduring impact.
 
+                        Elevate your brand's visibility and influence by featuring in The Exhibition Magazine. Reach a select audience of industry insiders, enthusiasts, and decision-makers who align with your values. With our Smart Presence Solution, your brand will be positioned in front of the Right People, at the Right Time and in the Right Place.
+                        </p>
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Advertise</a>
+                      </div>
+                    </div>
 
+                    <div class="card border-0">
+                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                      <div class="card-body">
+                        <h5 class="card-title">Build a Network</h5>
+                        <p class="card-text fs-sm text-muted">Join The Exhibition Network and skip the queue at business events. No more business cards - exchange proposals and introductions hassle-free. Streamline your brand approach, enchance ROI. Elevate your business connections for elevated success.</p>
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Join Right Place</a>
+                      </div>
+                    </div>
 
-      
+                    <div class="card border-0">
+                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                      <div class="card-body">
+                        <h5 class="card-title">Business Brand Managers</h5>
+                        <p class="card-text fs-sm text-muted">Let our expert Business Brand Managers guide your brand to success. From identifying the perfect platforms for your capabilities to crafting strategic messages, we ensure your brand's message resonates with thee right audience. Seamlessly align your business goals with targeted placements and engagements to maximize your impact and growth potential.</p>
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Hire Us.</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </section>
+                
+                <div class="row">
+                  <div class="col-6">
+                      <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                        <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                      </li>
+
+                      <h5 class="mb-3">Partner with Space</h5>
+                      <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                        <li class="m-3 fs-sm fw-light">When you support the Space program, you enable our efforts to empower and grow the global Space community of volunteers.</li>
+                        <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-outline-primary btn-sm bg-light">Partner with Space</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-6">
+                    <h5 class="mb-3">Expo Initiatives</h5>
+                    <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                      <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
+                      <li><!-- No image -->
+                        <div class="card ">
+                          <div class="expo_Initiatives">
+                                <div class="card-body ">
+                                  <h5 class="card-title">Expo live</h5>
+                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                </div>
+
+                                <div class="card-body">
+                                  <h5 class="card-title">Global Best Practice Programme</h5>
+                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                </div>
+
+                                <div class="card-body">
+                                  <h5 class="card-title">Sustainability at Expo</h5>
+                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                </div>
+
+                                <div class="card-body">
+                                  <h5 class="card-title">World Majlis</h5>
+                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                                </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+
+                    <div class="row">
+                      <div>
+                      <h5 class="mb-3">Start-ups</h5>
+                        
+                        <ul class="list-unstyled fs-sm bg-secondary p-2">
+                            <li class="d-flex justify-content-between p-0 m-0">
+                            <span class="text-dark fw-medium fs-sm">  Book direct with us. <br><span class="text-muted fw-light fs-xs" style ="line-height: 1;">and avail a special discount<br> of 25% along with special benefits. </span></span>
+                            <span><a href="{{route('event.exhibit',['board' => 'startup' ])}}" class="btn btn-outline-primary btn-sm bg-light"> BOOK NOW</a></span></li>
+                      </ul>
+                      </div>
+                      <!--<div>
+                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                          <li>Height: 7.8 in / 19.8 cm</li>
+                          <li>Weight: 7.58 oz / 215 g</li>
+                          <li>Form factor: On ear</li>
+                        </ul>
+                      </div>-->
+                    </div>
+                  </div>
+                </div>
+                
+
+              </div>
+
+              
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                  <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                  <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                </li>
+
+                <h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
+                <br><small>Register online for your Chosen expo and get instant, queue-less entry with a unique QR code.</small>
+                <span class="fw-bold text-primary">Skip the Lines</span></h5>
+                
+                @php
+                $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
+                @endphp
+
+                <h5 class="mb-3">Upcoming Expo</h5>
+                <div class="row g-0 py-0 mx-n2 mt-2"> 
+                  {{-- px-2 mb-1 --}}
+                  @foreach ($evento as $franchise)
+                    <div class="container" >
+                        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                          <div class="col  pr-0">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                  <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                @else
+                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                  <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+
+                              @endif 
+                              @php 
+                                $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                $name = $franchise->eventname;
+                                $venue = $franchise->venue;
+                                $city = $franchise->city;
+                                $country = $franchise->country;
+                                $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                
+                              @endphp
+                                
+                                  <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                          </div>
+
+                          <div class="col-7  p-0">
+                            <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                            <div class="text-muted fs-sm text-start">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                              @endif 
+                            </div>  
+                            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                          </div>
+
+                          <div class="col-3  p-0">
+                            <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
+                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                          </div>
+                        </div>  
+                    </div>
+                  @endforeach
+                </div>
+                
+                
+                
+                
+                
+              </div>
+            </div>
+          </section>
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
@@ -713,7 +710,13 @@
                               ended
                             @endif
                       </span>
-
+                      <h5 class="text-light fw-normal pt-2 pb-0">
+                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                          @else
+                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                          @endif 
+                      </h5>
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}} {{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h5>
                       
@@ -1179,16 +1182,14 @@
           </div>
 
 
-
-
-          <hr class="mt-md-2 mb-2">
-          <section class="card text-center py-5 border-0">
-            <div class="card-body">
-              <h5 class="card-title h2">Plan your Expo Now </h5>
-              <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
-              <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
-            </div>
-          </section>
+          {{--<hr class="mt-md-2 mb-2">
+              <section class="card text-center py-5 border-0">
+                <div class="card-body">
+                  <h5 class="card-title h2">Plan your Expo Now </h5>
+                  <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
+                  <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
+                </div>
+              </section> --}}
 
           <hr class="mt-md-2 mb-2">
           <section class="container">
