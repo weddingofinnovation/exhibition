@@ -347,7 +347,8 @@
                           </h5>
                     </div>
                   <div class="h1">{{$event->eventname}}</div>
-                  <div class=""><h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
+                  <div class="">
+                      <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
                  
                   <div class="my-5 py-5"></div>
                  
@@ -355,21 +356,21 @@
                    
                    <div class="col-6 mb-3">
                     <div class="row">
-                      <div class="col-2 text-center pl-0">
+                      <div class="col-2 text-center px-0 border-0 border-left">
                         <div class="fw-bold text-center">{{$commentedRates->count()}}</div>
-                        <div class="fw-light fs-sm">Review</div>
+                        <div class="fw-light fs-sm text-muted">Review</div>
                       </div>
-                      <div class="col-2 text-center py-0">
+                      <div class="col-2 text-center px-0 border-0 border-left">
                         <div class="fw-bold text-center">{{$event->edition}}</div>
-                        <div class="fw-light fs-sm">Edition</div>
+                        <div class="fw-light fs-sm text-muted">Edition</div>
                       </div>
-                      <div class="col-2 px-0">
-                        <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}}</div>
-                        <div class="fw-light fs-sm">Visitor</div>
+                      <div class="col-2 px-0 border-0 border-left">
+                        <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}} +</div>
+                        <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
-                      <div class="col-2 mx-0 px-0">
-                         <div class="fw-bold text-center py-0">{{round($commentedRates->avg('rate') , 1)}}/10</div>
-                         <div class="fw-light fs-sm">Rated for 3+</div>
+                      <div class="col-2 mx-0 px-0 border-0 border-left">
+                         <div class="fw-bold text-center py-0">{{round($commentedRates->avg('rate') , 1)}}</div>
+                         <div class="fw-light fs-sm text-muted">Rated for 3+</div>
                       </div>
                     </div>
                    </div>
@@ -379,10 +380,10 @@
                   <div class="row">
                     <ul class="list-unstyled text-light mb-0 mt-2">
                               <li class="d-flex">
-                                  <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                                      href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
                                   <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="" class="btn btn-light"> <i class="bi bi-share"></i> Share it</a>
+                                <a href="" class="btn btn-light"> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                                 <a href="" class="btn btn-light"> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                               </li>
                     </ul>
@@ -1161,7 +1162,7 @@
           @endphp
 
     <section>
-    <div class=" container my-3">
+          <div class=" container my-3">
               @foreach($selectedcategory as $catego)
 
                 @php 
@@ -1188,11 +1189,13 @@
         
 
           <hr class="mt-md-2 mb-2">
-              <section class="card text-center py-5 border-0">
-                <div class="card-body">
-                  <h5 class="card-title h2">Plan your Expo Now </h5>
-                  <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
-                  <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
+              <section>
+                <div class="class="card text-center py-5 border-0"> 
+                  <div class="card-body">
+                    <h5 class="card-title h2">Plan your Expo Now </h5>
+                    <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
+                    <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
+                  </div>
                 </div>
               </section>
 
