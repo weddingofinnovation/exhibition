@@ -363,11 +363,11 @@
                         <div class="fw-bold text-center">{{$event->edition}}</div>
                         <div class="fw-light fs-sm">Edition</div>
                       </div>
-                      <div class="col-2">
-                        <div class="fw-bold text-center px-0">{{number_format(($event->auidence / 1000) , 1). 'k'}}</div>
+                      <div class="col-2 px-0">
+                        <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}}</div>
                         <div class="fw-light fs-sm">Visitor</div>
                       </div>
-                      <div class="col-2 mx-0">
+                      <div class="col-2 mx-0 px-0">
                          <div class="fw-bold text-center py-0">{{round($commentedRates->avg('rate') , 1)}}/10</div>
                          <div class="fw-light fs-sm">Rated for 3+</div>
                       </div>
@@ -382,8 +382,8 @@
                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                       href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                   <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Share it</a>
-                                <a href="" class="fw-bold mx-2 d-none d-sm-block">Add To whislist</a>
+                                <a href="" class="btn btn-light"> <i class="bi bi-share"></i> Share it</a>
+                                <a href="" class="btn btn-light"> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                               </li>
                     </ul>
                   </div>
@@ -710,7 +710,7 @@
                               ended
                             @endif
                       </span>
-                      <h5 class="text-light fw-normal pt-2 pb-0">
+                      <h5 class="text-dark fw-normal pt-2 pb-0">
                           @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
                             {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
                           @else
@@ -1160,7 +1160,8 @@
             $selectedcategory = DB::table('dencos')->where('event_id', $event->id)->get();
           @endphp
 
-          <div class=" container my-3">
+    <section>
+    <div class=" container my-3">
               @foreach($selectedcategory as $catego)
 
                 @php 
@@ -1180,16 +1181,20 @@
                 @endforeach
               @endforeach
           </div>
+    </section>
 
+          
 
-          {{--<hr class="mt-md-2 mb-2">
+        
+
+          <hr class="mt-md-2 mb-2">
               <section class="card text-center py-5 border-0">
                 <div class="card-body">
                   <h5 class="card-title h2">Plan your Expo Now </h5>
                   <p class="card-text fs-sm text-muted">Connect with The Exhibtion Network: Pre-book your ultra Premium Exhibtion Space - with exhibition demographic trends and save monthly calender, get space & sponser option to extend  businesss reach</p>
                   <a href="#" class="btn btn-sm btn-primary">Plan your Expo</a>
                 </div>
-              </section> --}}
+              </section>
 
           <hr class="mt-md-2 mb-2">
           <section class="container">
