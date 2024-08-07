@@ -400,69 +400,40 @@
             <div class="row text-center text-sm-start">
               <div class="col-lg-8 col-md-6 col-sm-8">
                   <ul class="list-unstyled fs-sm bg-secondary p-2">
-                <div class="fw-bold"> Click on interested to stay updated about this event.</div>
+                    <div class="fw-bold"> Click on interested to stay updated about this event.</div>
                     <li class="d-flex justify-content-between p-0 m-0">
-                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
-                    
-
+                      <span class="text-dark fw-medium fs-sm">  
+                      Add your rating & review <br><span class="text-muted fw-light fs-sm">Your ratings matter</span></span>
                   
-                    {{--@if( $rate == $event->id)
-                    
-                    <button class="btn btn-sm btn-outline-primary" type="button" > 
-                    {{$rating}} /10</button>
+                      @if( $rate == $event->id)
+                      
+                        <button class="btn btn-sm btn-outline-primary" type="button"> {{$rating}} /10</button>
 
-                    @else
-                        <div class="py-2 me-2"> 
-                          <button class="btn btn-sm btn-outline-primary" type="button" ><i class="bi bi-star fs-lg me-2"></i> 
-                          <a href="{{route('coi.ratenow',['slug' => $event->slug])}}">Rate Now</a> </button>
-                        </div>
-                    @endif--}}
+                      @else
+                          <div class="py-2 me-2"> 
+                            <button class="btn btn-sm btn-outline-primary" type="button" ><i class="bi bi-star fs-lg me-2"></i> 
+                            <a href="{{route('coi.ratenow',['slug' => $event->slug])}}">Rate Now</a> </button>
+                          </div>
+                      @endif
                     
                     </li>
-                    </ul>
+                    
+                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                      <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
+                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                    </li>
+                  </ul>
               
+                  
                 <h5 class="mb-1">Understanding Expo</h5>
                 <hr class="mt-md-2 mb-2">
 
-          <div class="container">
-            <div class="d-flex">
+            <div class="d-flex mb-3">
               @foreach($category as $cat) 
-                <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
+               <span>Industry</span> <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
               @endforeach
             </div>
-          </div>
           
-
-          {{--@php 
-            $eventc =  DB::table('dencos')-> where('event_id', $event->id)->value('expo_id');
-            $eventf = DB::table('dencos')->where('expo_id', $eventc)->get();
-
-            $selectedcategory = DB::table('dencos')->where('event_id', $event->id)->get();
-          @endphp
-
-          <section>
-                <div class=" container my-3">
-                    @foreach($selectedcategory as $catego)
-
-                      @php 
-                        $findtag = DB::table('expos')->where('id', $catego->id)->get();
-                      @endphp
-
-                      @foreach($findtag as $categoo)
-                        @if($categoo->admstatus == '1')
-                            <span class="badge bg-success m-0" href="#" wire:click.prevent="eventdelete({{$categoo->id}})">
-                                {{$categoo->tag}} <i class="bi bi-x me-2"></i>
-                            </span>
-                          @else
-                            <span class="badge bg-primary m-0" href="#" wire:click.prevent="eventdelete({{$categoo->id}})">
-                                {{$categoo->tag}} <i class="bi bi-x me-2"></i>
-                            </span>
-                        @endif
-                      @endforeach
-                    @endforeach
-                </div>
-          </section> --}}
-
                 <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
                 <span class="badge rounded-pill bg-primary">Concurrent</span>
                 <h5 class="mb-3">Event</h5>
