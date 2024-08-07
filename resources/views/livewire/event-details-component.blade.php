@@ -357,7 +357,7 @@
                    <div class="col-6 mb-3">
                     <div class="row">
                       <div class="col-2 text-center px-0 border-0 border-left">
-                        <div class="fw-bold text-center">{{$commentedRates->count()}}</div>
+                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-fill-star"></i></div>
                         <div class="fw-light fs-sm text-muted">Review</div>
                       </div>
                       <div class="col-2 text-center px-0 border-0 border-left">
@@ -369,8 +369,8 @@
                         <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
                       <div class="col-2 mx-0 px-0 border-0 border-left">
-                         <div class="fw-bold text-center py-0">{{round($commentedRates->avg('rate') , 1)}}</div>
-                         <div class="fw-light fs-sm text-muted">Rated for 3+</div>
+                         <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
+                         <div class="fw-light fs-xs text-muted">Rated for 3+</div>
                       </div>
                     </div>
                    </div>
@@ -378,11 +378,11 @@
                   </div>
                  
                   <div class="row">
-                    <ul class="list-unstyled text-light mb-0 mt-2">
+                    <ul class="list-unstyled text-light">
                               <li class="d-flex">
                                    <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                       href="{{route('event.exhibit', ['board' => 'business'])}}">Plan To Visit</a>
-                                  <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                                <a class ="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
                                 <a href="" class="btn btn-light"> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                                 <a href="" class="btn btn-light"> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                               </li>
@@ -448,10 +448,10 @@
                   <div class="card-group last" >
 
                     <div class="card border-0">
-                      <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image">
+                      {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
                       <div class="card-body">
-                        <h5 class="card-title">Find Business</h5>
-                        <p class="card-text fs-sm text-muted">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                        <div class="card-title text-primary fs-md">Find Business</div>
+                        <p class="card-text fs-sm fw-light">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
                         <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
                       </div>
                     </div>
@@ -806,7 +806,15 @@
                         </ul>
 
                         
-                        <div>
+                        <div class="" style="display: none;
+                            position: fixed;
+                            left: 0;
+                            bottom: 0;
+                            width: 100%;
+                            border-top: 1px solid #e3e9ef;
+                            background-color: #fff;
+                            box-shadow: -1.25rem 0 2rem 0 rgba(43, 52, 69, 0.15);
+                            z-index: 1026;">
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
                           
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
