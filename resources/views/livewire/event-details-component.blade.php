@@ -848,14 +848,17 @@
         .fixed-bottom-div {
             position: fixed;
             bottom: 0;
-            left: 0;
+            //left: 0;
             width: 100%;
+            background-color: #fff; /* Light background color */
+            border-top: 1px solid #dee2e6; /* Optional border */
+            padding: 10px;
             z-index: 9999; /* Ensures it stays on top */
         }
     </style>
                 <!-- fixedthis -->
                 <div class="container d-none d-sm-block fixed-bottom-div">
-                  <ul class="list-unstyled fs-sm  py-4">     
+                  <ul class="list-unstyled fs-sm  py-2">     
                     <li class="d-flex justify-content-between p-0 m-0">
                         <span class="col bg-light mb-0">
                           <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
@@ -880,15 +883,13 @@
                                 <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
                             @endif
                         </span>
-                      
-                        
                     </li>
 
-                    <li><hr class="mt-md-2 mb-2"></li>
+                    <!-- <li><hr class="mt-md-2 mb-2"></li>
                     <li class="p1 fw-light">
                       {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
                       {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
-                    </li>
+                    </li> -->
                   </ul>
                 </div> 
 
