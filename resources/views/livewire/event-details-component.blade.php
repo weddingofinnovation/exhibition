@@ -827,18 +827,7 @@
                                   </li>
                               @endif
                         </ul>
-                        <style>
-        .fixed-bottom-div {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f8f9fa; /* Light background color */
-            border-top: 1px solid #dee2e6; /* Optional border */
-            padding: 10px;
-            z-index: 9999; /* Ensures it stays on top */
-        }
-    </style>
+                       
                         
                         <div> test
                           @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
@@ -855,7 +844,20 @@
 
                 </div>  
 
-                <div class="container d-none d-sm-block">
+                <style>
+        .fixed-bottom-div {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f9fa; /* Light background color */
+            border-top: 1px solid #dee2e6; /* Optional border */
+            padding: 10px;
+            z-index: 9999; /* Ensures it stays on top */
+        }
+    </style>
+                <!-- fixedthis -->
+                <div class="container d-none d-sm-block fixed-bottom-div">
                   <ul class="list-unstyled fs-sm  py-4">     
                     <li class="d-flex justify-content-between p-0 m-0">
                         <span class="col bg-light mb-0">
@@ -891,7 +893,6 @@
                       {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
                     </li>
                   </ul>
-
                 </div> 
 
                   <section class="d-lg-none">
