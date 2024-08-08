@@ -850,9 +850,6 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: #f8f9fa; /* Light background color */
-            border-top: 1px solid #dee2e6; /* Optional border */
-            padding: 10px;
             z-index: 9999; /* Ensures it stays on top */
         }
     </style>
