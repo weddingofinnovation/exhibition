@@ -54,9 +54,38 @@ class GoogleComponent extends Component
              }
     }
 
+
+    public function redirectToLinkedIn()
+    {
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+    public function handleLinkedInCallback()
+    {
+        $user = Socialite::driver('linkedin')->user();
+        // Handle user data, e.g., log them in or register them
+    }
+
+    public function loginWithLinkedIn()
+    {
+        return redirect()->to(Socialite::driver('linkedin')->redirect()->getTargetUrl());
+    }
+
     public function render()
     {
-        
+        $linkedinUser = Socialite::driver('linkedin')->user();
+
+        $user = User::firstOrCreate([
+            'linkedin_id' => $linkedinUser->getId(),
+        ], [
+            'name' => $linkedinUser->getName(),
+            'email' => $linkedinUser->getEmail(),
+            'avatar' => $linkedinUser->getAvatar(),
+        ]);
+
+        Auth::login($user);
+        return redirect()->intended('home');
+
         return view('livewire.google-component');
     }
 }

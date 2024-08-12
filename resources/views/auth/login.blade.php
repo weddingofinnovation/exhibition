@@ -108,7 +108,7 @@ The all new Quick is here</h5><p class="text-white opacity-8">Everything you nee
 <!--<div class="py-3 text-center"><span class="text-xs text-uppercase">or</span></div>-->
 
 <div class="row">
-<div class="col-sm-6"><a href="#" class="btn btn-block btn-neutral btn-icon mb-3 mb-sm-0"><span class="btn-inner--icon">
+<div class="col-sm-6"><a href="{{route('linkedin.login')}}" class="btn btn-block btn-neutral btn-icon mb-3 mb-sm-0"><span class="btn-inner--icon">
 <img src="{{asset ('image/social/facebook-7fcb46c06e.svg') }}" alt="Image placeholder"></span>
 </a></div>
 <div class="col-sm-6"><a href="{{route('google.login')}}" class="btn btn-block btn-neutral btn-icon"><span class="btn-inner--icon">

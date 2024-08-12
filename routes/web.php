@@ -342,8 +342,10 @@ Route::post('/like-business/{franchise}', 'App\Http\Livewire\DetailsComponent@li
 Route::get('/auth/google', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
 Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
 
- 
+Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
+Route::get('login/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback'])->name('linkedin.callback');
 
+ 
 Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', UserDirectoryComponent::class)->name('directory.dashboard');
 
   //User
