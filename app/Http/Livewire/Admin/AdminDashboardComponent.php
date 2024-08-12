@@ -132,8 +132,9 @@ public $dtype;
         $message = "top 7 most demanding exhibition with rating";
         $subject = $this->subject;
         $month = $this->month;
+        $city = $this->city;
 
-        $request = Mail::to($toEmail)->send(new promoemail ($message, $subject, $month));
+        $request = Mail::to($toEmail)->send(new promoemail ($message, $subject, $month, $city));
 
 
     }

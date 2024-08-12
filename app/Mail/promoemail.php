@@ -14,17 +14,19 @@ class promoemail extends Mailable
     public $mailmessage;
     public $subject;
     public $month;
+    public $city;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($message, $subject, $month)
+    public function __construct($message, $subject, $month, $city)
     {
         $this->subject = $subject;
         $this->mailmessage = $message;
         $this->month = $month;
+        $this->city = $city;
     }
 
     /**
