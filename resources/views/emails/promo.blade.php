@@ -33,6 +33,140 @@
             margin-bottom: 20px;
         }
         .event img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .event h2 {
+            margin: 10px 0;
+            color: #555;
+        }
+        .event p {
+            margin: 0;
+            color: #777;
+        }
+        .cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .cta:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #f4f4f4;
+            font-size: 12px;
+            color: #999;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .header h1 {
+                font-size: 20px;
+            }
+            .event h2 {
+                font-size: 18px;
+            }
+            .cta {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+        @media only screen and (min-width: 1200px) {
+            .container {
+                max-width: 800px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Upcoming Events</h1>
+        </div>
+
+        <div class="event">
+            <img src="event-image-1.jpg" alt="Event 1">
+            <h2>Event Title 1</h2>
+            <p>Date: August 20, 2024</p>
+            <p>Location: Pragati Maidan, India</p>
+            <a href="event-link-1" class="cta">Learn More</a>
+        </div>
+
+        <div class="event">
+            <img src="event-image-2.jpg" alt="Event 2">
+            <h2>Event Title 2</h2>
+            <p>Date: September 5, 2024</p>
+            <p>Location: Delhi, India</p>
+            <a href="event-link-2" class="cta">Learn More</a>
+        </div>
+
+        <div class="event">
+            <img src="event-image-3.jpg" alt="Event 3">
+            <h2>Event Title 3</h2>
+            <p>Date: October 15, 2024</p>
+            <p>Location: Jaipur, India</p>
+            <a href="event-link-3" class="cta">Learn More</a>
+        </div>
+
+        <div class="footer">
+            <p>Thank you for your interest in our events. We look forward to seeing you!</p>
+            <p>If you have any questions, please contact us at <a href="mailto:info@example.com">info@example.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f4f4f4;
+        }
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+        .event {
+            margin-bottom: 20px;
+        }
+        .event img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
