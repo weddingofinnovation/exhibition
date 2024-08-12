@@ -30,7 +30,7 @@
 
         @php
             //$exhibition = DB::table('events')->where('status','1')->limit(7)->get();
-            $exhibition = Event::whereYear('startdate','>=','2024' )
+            $exhibition = DB::table('events')->whereYear('startdate','>=','2024' )
                                   ->where('status','1')
                                   ->where('admstatus','1')
                                   ->whereMonth('startdate', $month)
