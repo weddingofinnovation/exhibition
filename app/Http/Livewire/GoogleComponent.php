@@ -84,7 +84,7 @@ class GoogleComponent extends Component
         ]);
 
         Auth::login($user);
-        return redirect()->intended('home');
+        //return redirect()->intended('home');
 
         return view('livewire.google-component');
     }
