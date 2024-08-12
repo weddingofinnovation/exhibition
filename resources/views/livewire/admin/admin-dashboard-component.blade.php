@@ -2747,10 +2747,10 @@
       @if($board == 'email')
         <div class="container">
           <form action="" wire:submit.prevent="sendpromoemail">
-            <input type="text" placeholder="subject" required class="form-control" wire:model.lazy="subject">  
-            <input type="text" placeholder="email" required class="form-control" wire:model.lazy="email">
-            <input type="text" placeholder="month" required class="form-control" wire:model.lazy="month">
-            <input type="text" placeholder="subject" required class="form-control" wire:model.lazy="city">
+            <input type="text" placeholder="subject" required class="form-control mb-1" wire:model.lazy="subject">  
+            <input type="text" placeholder="email" required class="form-control mb-1" wire:model.lazy="email">
+            <input type="text" placeholder="month" required class="form-control mb-1" wire:model.lazy="month">
+            <input type="text" placeholder="city" required class="form-control mb-1" wire:model.lazy="city">
             <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
           </form>
         </div>
