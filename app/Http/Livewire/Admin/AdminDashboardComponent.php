@@ -2,8 +2,10 @@
 
 namespace App\Http\Livewire\Admin;
 
+
 use App\Mail\EventToClient;
 use App\Mail\MonthlyEvent;
+use App\Mail\promoemail;
 use App\Models\Appliedjob;
 use App\Models\BadgeApplication;
 use App\Models\BadgeCode;
@@ -120,11 +122,21 @@ public $dtype;
           $eventreview = $evnto->slug;
           $this->tryingfaker($eventreview);
        }
-
-     
     }
 
- 
+    public $subject;
+
+    public function sendpromoemail()
+    {
+        $toEmail = $this->email;
+        $message = "top 7 most demanding exhibition with rating";
+        $subject = $this->subject;
+        $month = $this->month;
+
+        $request = Mail::to($toEmail)->send(new promoemail ($message, $subject, $month));
+
+
+    }
 
     public function tryingfaker($eventreview)
     {

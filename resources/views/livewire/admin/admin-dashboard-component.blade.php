@@ -2744,6 +2744,15 @@
          
       @endif
 
+      @if($board == 'email')
+        <form action="" wire:submit.prevent="sendpromoemail">
+          <input type="text" placeholder="email" required class="form-control" wire:model.lazy="email">
+          <input type="text" placeholder="month" required class="form-control" wire:model.lazy="month">
+          <input type="text" placeholder="subject" required class="form-control" wire:model.lazy="subject">
+          <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
+        </form>
+      @endif
+
       @if($board == 'own-plan-add-ticket')
 
             <form wire:submit.prevent="universalticket">
