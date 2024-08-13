@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css" class="drift-base-styles">.drift-bounding-box,.drift-zoom-pane{position:absolute;pointer-events:none}@keyframes noop{0%{zoom:1}}@-webkit-keyframes noop{0%{zoom:1}}.drift-zoom-pane.drift-open{display:block}.drift-zoom-pane.drift-closing,.drift-zoom-pane.drift-opening{animation:noop 1ms;-webkit-animation:noop 1ms}.drift-zoom-pane{overflow:hidden;width:100%;height:100%;top:0;left:0}.drift-zoom-pane-loader{display:none}.drift-zoom-pane img{position:absolute;display:block;max-width:none;max-height:none}</style>
+    
+    
+    <!-- SEO Meta Tags <link rel="canonical" href="{{url()->current()}}"/>-->
+    <title> @yield('page_title') | The Exhibition Network</title>
+    <meta name="description" content="@yield('page_description')">
+    <meta name="keyword" content="@yield('page_keyword')">
+    <meta name="author" content = "The Exhibition Network">  
+    
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$subject}}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
+    
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('public/image/favicons/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/image/favicons/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/image/favicons/favicon-16x16.png')}}">
@@ -22,8 +36,12 @@
     <link rel="stylesheet" media="screen" href="{{asset('css/lightgallery.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/theme.min.css')}}">
     <link rel="stylesheet" media="screen" href="{{asset('css/swiper-bundle.min.css')}}">
+    
+    
+    <!-- <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script> -->
     @livewireStyles
-</head>
+  </head>
 <body>
     
         
@@ -103,5 +121,23 @@
 
 
 </body>
+   <!-- Vendor scrits: js libraries and plugins-->
+   <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('js/simplebar.min.js')}}"></script>
+    <script src="{{asset('js/tiny-slider.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="{{asset('js/smooth-scroll.polyfills.min.js')}}"></script>
+    <script src="{{asset('js/Drift.min.js')}}"></script>
+    <script src="{{asset('js/lightgallery.min.js')}}"></script>
+    <script src="{{asset('js/lg-video.min.js')}}"></script>
+    <!-- Main theme script-->
+    <script src="{{asset('js/theme.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>  
     
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script> 
+    <script src="{{asset('js/isotope.pkgd.js')}}"></script> 
+    <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
+    @livewireScripts
+   @stack('scripts')
+
 </html>

@@ -64,15 +64,6 @@ class GoogleComponent extends Component
     {
         $user = Socialite::driver('linkedin')->user();
         // Handle user data, e.g., log them in or register them
-    }
-
-    public function loginWithLinkedIn()
-    {
-        return redirect()->to(Socialite::driver('linkedin')->redirect()->getTargetUrl());
-    }
-
-    public function render()
-    {
         $linkedinUser = Socialite::driver('linkedin')->user();
 
         $user = User::firstOrCreate([
@@ -84,7 +75,17 @@ class GoogleComponent extends Component
         ]);
 
         Auth::login($user);
-        //return redirect()->intended('home');
+        return redirect()->intended('home');
+    }
+
+    public function loginWithLinkedIn()
+    {
+        return redirect()->to(Socialite::driver('linkedin')->redirect()->getTargetUrl());
+    }
+
+    public function render()
+    {
+        
 
         return view('livewire.google-component');
     }

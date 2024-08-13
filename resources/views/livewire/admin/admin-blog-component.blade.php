@@ -80,6 +80,28 @@
 
       </div>
     </div>
+
+    <div>
+      
+    <select wire:model="selectedEvents" multiple>
+        @foreach($events as $event)
+            <option value="{{ $event->id }}">{{ $event->name }}</option>
+        @endforeach
+    </select>
+    <button wire:click="generateArticle">Generate Article</button>
+
+    @if ($article)
+        <div>
+            <h3>Generated Article:</h3>
+            <p>{{ $article }}</p>
+        </div>
+    @endif
+
+    @if (session()->has('message'))
+        <div>{{ session('message') }}</div>
+    @endif
+</div>
+
           
   </main>
 

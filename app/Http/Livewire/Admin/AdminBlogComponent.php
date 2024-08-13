@@ -56,8 +56,6 @@ class AdminBlogComponent extends Component
         return redirect()->route('admin.dashboard',['board' => 'blog']);
     }
 
-    
-
     public function dateImage()
     {
        // $fattribute = Mag::find($this->blog_id);
@@ -71,9 +69,35 @@ class AdminBlogComponent extends Component
        // return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
     }
     
+    public $selectedEvents = [];
+    public $article;
+
+    protected $rules = [
+        'selectedEvents' => 'required|array',
+    ];
+
+    public function generateArticle()
+    {
+        $this->validate();
+
+        $aiService = new OpenAIService();
+        $prompt = $this->createPrompt($this->selectedEvents);
+        $this->article = $aiService->generateArticle($prompt);
+
+        session()->flash('message', 'Article generated successfully!');
+    }
+
+    private function createPrompt($events)
+    {
+        // Create a prompt based on the selected events
+        return "Write a detailed article about the following events: " . implode(', ', $events);
+    }
+
+
     public function render()
     {
         $category = Cag::orderBy('tag','ASC')->get();
-        return view('livewire.admin.admin-blog-component',['category'=> $category])->layout('layouts.admin');
+        $events = Event::get();
+        return view('livewire.admin.admin-blog-component',['category'=> $category, 'events'=> $events])->layout('layouts.admin');
     }
 }
