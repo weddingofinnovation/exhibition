@@ -25,6 +25,8 @@ class OpenAIService
             'temperature' => 0.7, // Adjust as needed
         ]);
 
+        dd($response->json());
+        
         return $response->json()['choices'][0]['text'];
     }
 }
