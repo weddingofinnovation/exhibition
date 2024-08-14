@@ -87,7 +87,7 @@
     @if($board == 'openAI')
     <div class="container">
       
-        <select wire:model="selectedEvents" class="form-control" multiple>
+        <select wire:model="selectedEvents" multiple>
             @foreach($events as $event)
                 <option value="{{ $event->id }}">{{ $event->eventname }}</option>
             @endforeach
