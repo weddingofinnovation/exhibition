@@ -83,8 +83,8 @@ class AdminBlogComponent extends Component
         $this->validate();
 
         $aiService = new OpenAIService();
-        $prompt = $this->createPrompt($this->selectedEvents);
-        $this->article = $aiService->generateArticle($prompt);
+        $eventDetails = $this->createPrompt($this->selectedEvents);
+        $this->article = $aiService->generateArticle($eventDetails);
 
         session()->flash('message', 'Article generated successfully!');
     }

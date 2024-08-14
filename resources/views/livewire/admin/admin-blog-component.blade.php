@@ -81,14 +81,18 @@
       </div>
     </div>
 
+
+
+
+    @if($board == 'openAI')
     <div class="container">
       
-        <select wire:model="selectedEvents" multiple>
+        <select wire:model="selectedEvents" class="form-control" multiple>
             @foreach($events as $event)
                 <option value="{{ $event->id }}">{{ $event->eventname }}</option>
             @endforeach
         </select>
-        <button wire:click="generateArticle">Generate Article</button>
+        <button wire:click="generateArticle" class="form-control btn btn-sm btn-primary">Generate Article</button>
 
         @if ($article)
             <div>
@@ -101,6 +105,7 @@
             <div>{{ session('message') }}</div>
         @endif
     </div>
+    @endif
 
           
   </main>
