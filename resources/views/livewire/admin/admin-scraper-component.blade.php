@@ -1,7 +1,7 @@
 <main>
 
 <div class="container">
-        <form wire:submit.prevent = "scrape">
+        <form wire:submit.prevent = "scrapeo">
             <input type="text" id="url" class="form-control" wire:model="url" required>
             <button class="form-control btn btn-primary btn-sm" type="submit">Scrabe</button>
         </form>
@@ -15,5 +15,20 @@
         </ul>
         @endif
 </div>
+
+
+<!-- resources/views/livewire/scrape-participants.blade.php -->
+<div>
+    <button wire:click="scrape">Scrape Participants</button>
+
+    @if($participantNames)
+        <ul>
+            @foreach($participantNames as $name)
+                <li>{{ $name }}</li>
+            @endforeach
+        </ul>
+    @endif
+</div>
+
 
 </main>
