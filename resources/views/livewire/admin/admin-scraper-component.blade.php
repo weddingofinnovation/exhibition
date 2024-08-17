@@ -19,7 +19,7 @@
 
 <!-- resources/views/livewire/scrape-participants.blade.php -->
 <div>
-    <button wire:click="scrape">Scrape Participants</button>
+    <button wire:click="scrape"  class="form-control btn btn-primary btn-sm">Scrape Participants</button>
 
     @if($participantNames)
         <ul>
