@@ -27,9 +27,9 @@ class AdminScraperComponent extends Component
         
     // }
 
-    public function scrape($url)
+    public function scrape()
     {
-        $response = $this->client->request('GET' , $url );
+        $response = $this->client->request('GET' , $this->url );
         $html = $response->getBody()->getContents();
 
         $crawler = new Crawler($html);
