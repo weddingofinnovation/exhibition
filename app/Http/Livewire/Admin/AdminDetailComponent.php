@@ -19,7 +19,11 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
+use Livewire\Component;
+use GuzzleHttp\Client;
 
+
+    
 
 class AdminDetailComponent extends Component
 {   public $slug;
@@ -37,7 +41,12 @@ class AdminDetailComponent extends Component
     public $opinion;
 
     public $howMany;
-    
+
+    public $eventTitle;
+    public $eventDescription;
+    public $eventDate;
+    public $eventWebsite;
+    public $eventImage;
 
     public function mount($slug)
     {
@@ -68,6 +77,67 @@ class AdminDetailComponent extends Component
       $eVent->save();
       session()->flash('message',' Status Successfully Changed');
     } 
+
+    public $country, $city , $venue, $eventStartDate , $eventEndDate; 
+
+    public function postToLinkedIn($id)
+    {   
+        $eVent = Event::find($id);
+        $this->eventTitle = $eVent->eventname;
+        $this->eventDescription = $eVent->desc;
+        $this->venue = $eVent->venue;
+        $this->city = $eVent->city;
+        $this->eventStartDate = strtotime($eVent->startdate);
+        $this->eventEndDate = strtotime($eVent->enddate);
+        $this->eventWebsite = route('event.details', ['slug' => $eVent->slug]);
+        $this->eventImage =  $eVent->image;
+        $this->country = $eVent->country;
+         
+        $accessToken = session('linkedin_access_token');
+        $pageId = 'YOUR_LINKEDIN_PAGE_ID'; // Replace with your LinkedIn Page ID
+
+        $client = new Client();
+
+        $response = $client->post("https://api.linkedin.com/v2/shares", [
+            'headers' => [
+                'Authorization' => "Bearer $accessToken",
+                'Content-Type' => 'application/json',
+                'x-li-format' => 'json',
+            ],
+            'json' => [
+                "owner" => "urn:li:organization:$pageId",
+                "subject" => $this->eventTitle,
+                "text" => [
+                    "text" => $this->eventDescription . "\nEvent Date: " . $this->eventDate . "\nMore details: " . $this->eventWebsite . "\nMore details: " . $this->country . "\nMore details: " . $this->city . "\nMore details: " . $this->venue,
+                ],
+                "content" => [
+                    "contentEntities" => [
+                        [
+                            "entityLocation" => $this->eventWebsite,
+                            "thumbnails" => [
+                                [
+                                    "resolvedUrl" => $this->eventImage
+                                ]
+                            ]
+                        ]
+                    ],
+                    "title" => $this->eventTitle,
+                ],
+                "distribution" => [
+                    "linkedInDistributionTarget" => [
+                        "visibleToGuest" => true
+                    ]
+                ]
+            ]
+        ]);
+
+        if ($response->getStatusCode() == 201) {
+            session()->flash('status', 'Event posted to LinkedIn successfully!');
+        } else {
+            session()->flash('error', 'Failed to post event to LinkedIn.');
+        }
+    }
+
 
     public function updatebusinessrevenue($id, $businessrevenue) 
     {

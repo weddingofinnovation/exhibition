@@ -27,7 +27,7 @@
                 <li>{{ $name }}</li>
             @endforeach
         </ul>
-    @endif
+    @endif 
 </div>
 
 

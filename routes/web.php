@@ -323,7 +323,6 @@ Route::get('/COIbusiness', TrackComponent::class)->name('admin.track');
 Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishlist');
 
 
-
 //Blog
 Route::get('/blog', BlogComponent::class)->name('blog.Coi');
 Route::get('/blog/{slug}', BlogDetailComponent::class)->name('blog.details');
@@ -347,7 +346,11 @@ Route::get('login/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCa
 
 Route::get('loginlinkedin', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
 
- 
+ // web.php
+Route::get('/linkedin/redirect', [GoogleComponent::class, 'redirectToLinkedIn']);
+Route::get('/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback']);
+
+
 Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', UserDirectoryComponent::class)->name('directory.dashboard');
 
   //User
