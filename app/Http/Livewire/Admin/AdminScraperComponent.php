@@ -39,7 +39,7 @@ class AdminScraperComponent extends Component
 
         $crawler = new Crawler($html);
 
-        $company = $crawler->filter(',content-card')->text();
+        $company = $crawler->filter('.content-card')->text();
         // $eventVenue = $crawler->filter('.venue')->text();
         // $city = $crawler->filter('.city')->text();
         // $country = $crawler->filter('.country')->text();
