@@ -19,7 +19,6 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
-use Livewire\Component;
 use GuzzleHttp\Client;
 
 
