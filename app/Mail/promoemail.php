@@ -36,6 +36,6 @@ class promoemail extends Mailable
      */
     public function build()
     {
-        return $this->html('emails.promo');
+        return $this->view('emails.promo');
     }
 }
