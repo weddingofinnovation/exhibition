@@ -290,6 +290,7 @@
                                                ->orderBy('city','asc')
                                                ->get();
         @endphp
+        
         <div class="row g-0 py-0 mx-n2 my-Slider3">
           @foreach ($locationo as $category)
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $category->city, 'country' => $category->country ])}}">
