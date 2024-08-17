@@ -57,9 +57,9 @@
         @endphp
 
         <div class="container">
-            
-            {{$mailmessage}}
             Hi, Based on your interests in the {{$month}}  we have found events you might be interested in {{$city}}
+        
+            {{$mailmessage}}
         </div>
         <div class="container">
              <div class="fw-bold fs-md">
