@@ -14,7 +14,12 @@ class AdminScraperComponent extends Component
 
     //protected $eventScraper;
 
+    protected $client;
 
+    public function __construct()
+    {
+        $this->client = new client();
+    }
     // public function __construct($id = null, EventScraper  $eventScraper)
     // {
     //     $this->eventScraper = $eventScraper;
