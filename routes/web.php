@@ -341,14 +341,14 @@ Route::post('/like-business/{franchise}', 'App\Http\Livewire\DetailsComponent@li
 Route::get('/auth/google', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
 Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
 
-Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
-Route::get('login/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback'])->name('linkedin.callback');
+//Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
+Route::get('/login/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback'])->name('linkedin.callback');
 
-Route::get('loginlinkedin', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
-
- // web.php
+//Route::get('loginlinkedin', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
+Route::get('/linkedin/callback', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
+ // web.php/linkedin/callback
 Route::get('/linkedin/redirect', [GoogleComponent::class, 'redirectToLinkedIn']);
-Route::get('/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback']);
+//Route::get('/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback']);
 
 
 Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', UserDirectoryComponent::class)->name('directory.dashboard');

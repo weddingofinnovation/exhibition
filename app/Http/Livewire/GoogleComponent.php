@@ -61,6 +61,13 @@ class GoogleComponent extends Component
         return Socialite::driver('linkedin')->redirect();
     }
 
+    public function loginWithLinkedIn()
+    {
+        //return redirect()->to(Socialite::driver('linkedin')->redirect()->getTargetUrl());
+        return Socialite::driver('linkedin')->redirect();
+    }
+
+
     public function handleLinkedInCallback()
     {
         $user = Socialite::driver('linkedin')->user();
@@ -79,10 +86,7 @@ class GoogleComponent extends Component
         return redirect()->intended('home');
     }
 
-    public function loginWithLinkedIn()
-    {
-        return redirect()->to(Socialite::driver('linkedin')->redirect()->getTargetUrl());
-    }
+    
 
     public function redirectToLinkedInforpost()
     {
