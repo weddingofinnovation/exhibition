@@ -25,7 +25,8 @@ use GuzzleHttp\Client;
     
 
 class AdminDetailComponent extends Component
-{   public $slug;
+{  
+   public $slug;
     public $category_id;
     public $webo;
     public $link;
@@ -92,7 +93,7 @@ class AdminDetailComponent extends Component
         $this->eventImage =  $eVent->image;
         $this->country = $eVent->country;
          
-        $accessToken = session('linkedin_access_token');
+        $accessToken = session('AQXdTfGT21UdxBE9zoU1MP7-tsc8ZTP1IH_L_SKI1-RGB9EoO3HeuugK1LzcJjFd0yvFiGv15ysObcZJxypm_wAGwTJ1whFWeSpkX0P2CU2P3G_ipgjAwJo_LBX5GbB2vkdpYvaIM-chZjTxTPmiSYN-W9VOrfU6ou73n6bzftkSl4KM1YcS3VXVmrQxdmr6Nz9ajKL0PDJiHu0xv2wPMiOcPrnf6YBD6h-oZ9UrZk-A6XgPa9sRf0ehsoaOf2vunjoycrJ2Rtqj4Fd4yMvHKY5SLkME95A_QltV9uDMK_JiilgnpTHcdSBM1erSl44fIo9QdlwhOnYLKBdSJxaLjkWEsu1sww');
         $pageId = 'YOUR_LINKEDIN_PAGE_ID'; // Replace with your LinkedIn Page ID
 
         $client = new Client();

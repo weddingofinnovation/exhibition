@@ -132,7 +132,16 @@
      </div>
     </div>
 
-    <a  class = "btn btn-sm btn-primary" href="#" wire:click.prevent="postToLinkedIn({{$evento->id}})">Post to LinkedIn</button>
+   
+    <div class="container"> 
+      <div class="fs-md fw-light mb-0"> <small>Post on Linkedin</small></div> 
+      
+        <div class="input-group my-2">
+                  
+        <a  class = "btn btn-sm btn-primary" href="#" wire:click.prevent="postToLinkedIn({{$evento->id}})">Post to LinkedIn</button>
+        </div>
+      
+    </div>
 
     <div class="container"> 
       <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
