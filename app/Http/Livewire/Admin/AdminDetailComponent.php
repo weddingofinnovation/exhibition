@@ -93,7 +93,7 @@ class AdminDetailComponent extends Component
         $this->eventImage =  $eVent->image;
         $this->country = $eVent->country;
          
-        $accessToken = session('AQXdTfGT21UdxBE9zoU1MP7-tsc8ZTP1IH_L_SKI1-RGB9EoO3HeuugK1LzcJjFd0yvFiGv15ysObcZJxypm_wAGwTJ1whFWeSpkX0P2CU2P3G_ipgjAwJo_LBX5GbB2vkdpYvaIM-chZjTxTPmiSYN-W9VOrfU6ou73n6bzftkSl4KM1YcS3VXVmrQxdmr6Nz9ajKL0PDJiHu0xv2wPMiOcPrnf6YBD6h-oZ9UrZk-A6XgPa9sRf0ehsoaOf2vunjoycrJ2Rtqj4Fd4yMvHKY5SLkME95A_QltV9uDMK_JiilgnpTHcdSBM1erSl44fIo9QdlwhOnYLKBdSJxaLjkWEsu1sww');
+        $accessToken = session('AQUK2cpsfBjwAWBzNTB-5t8IEipMDzuq5Uw9BBuUKLSX7T06yue6u0jg6e76sO-tDJqIwdpnzGXVdPkR1vi1TmXjvnC0JaFU0rXujPKanxXw0ie4FcAIzO49eZ7MeFaaiuDGILpof8fcrkf0qD2CKj--eiFho3m_b0D20PPSL_qL2cbMLXSvmV380LpAF03IeSsWT6h_kXFZkslAd7prXIVCTU_mRDVRiGAaAsXDWq-lXlZV7Kg1stKQi7OG7ijtZoFTALFFJ1ojtb4Fz2O9m9A2hSKYhQ6Llg2N3LWEfN-kitO935krkwb3Tgf6ESX9eDrmWCEEMWl-QATuFbbE1CtlKfHSrg');
         $pageId = 'YOUR_LINKEDIN_PAGE_ID'; // Replace with your LinkedIn Page ID
 
         $client = new Client();
