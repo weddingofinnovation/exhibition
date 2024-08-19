@@ -270,7 +270,7 @@
         </div>
       </section>
 
-      <section  class="container pt-2">
+     {{-- <section  class="container pt-2">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
             <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
@@ -301,7 +301,7 @@
             </a>
           @endforeach
         </div>
-      </section>
+      </section>--}}
   </main>
 
   @push('scripts')

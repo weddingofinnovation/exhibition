@@ -341,9 +341,10 @@ Route::post('/like-business/{franchise}', 'App\Http\Livewire\DetailsComponent@li
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 
 //google login setup 
+// Route::get('/googlelogin', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
+// Route::any('/auth/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
 Route::get('/google/callback', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
-//Route::any('/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
-
+Route::any('/auth/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
 
 
 
