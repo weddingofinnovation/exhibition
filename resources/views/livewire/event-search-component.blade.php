@@ -338,90 +338,30 @@
                           <small>Plan your exhibition</small>
                         </div>
                        
-                          <style>
-                              body {
-                                  font-family: Arial, sans-serif;
-                                  margin: 0;
-                                  padding: 0;
-                                  background-color: #f4f4f4;
-                                  color: #333;
-                              }
+   
 
-                              .container {
-                                  width: 90%;
-                                  margin: auto;
-                                  padding: 10px;
-                              }
+    <div class="container">
+        <h1>Plan Your Exhibition</h1>
 
-                              h1 {
-                                  text-align: center;
-                                  font-size: 1.5em;
-                                  color: #333;
-                                  margin-bottom: 15px;
-                              }
+        <div class="section">
+            <h2>Choose Your Event</h2>
+            <p>Find the right exhibition to showcase your products or explore the latest trends.</p>
+        </div>
 
-                              .section {
-                                  background: #fff;
-                                  padding: 15px;
-                                  margin-bottom: 15px;
-                                  border-radius: 5px;
-                                  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-                              }
+        <div class="section">
+            <h2>Why Exhibit?</h2>
+            <p>Connect with potential clients and elevate your brand.</p>
+        </div>
 
-                              .section h2 {
-                                  font-size: 1.2em;
-                                  color: #1a73e8;
-                                  margin-bottom: 8px;
-                              }
+        <div class="section">
+            <h2>Why Visit?</h2>
+            <p>Discover new products and network with industry experts.</p>
+        </div>
 
-                              .section p {
-                                  font-size: 0.9em;
-                                  margin-bottom: 10px;
-                              }
-
-                              .cta {
-                                  text-align: center;
-                                  margin-top: 15px;
-                              }
-
-                              .cta a {
-                                  display: inline-block;
-                                  background: #1a73e8;
-                                  color: #fff;
-                                  padding: 8px 15px;
-                                  text-decoration: none;
-                                  border-radius: 5px;
-                                  transition: background 0.3s;
-                                  font-size: 0.9em;
-                              }
-
-                              .cta a:hover {
-                                  background: #0f5bb5;
-                              }
-                          </style>
-
-                          <div class="container">
-                              <h1>Plan Your Exhibition</h1>
-
-                              <div class="section">
-                                  <h2>Choose Your Event</h2>
-                                  <p>Find the right exhibition to showcase your products or explore the latest trends.</p>
-                              </div>
-
-                              <div class="section">
-                                  <h2>Why Exhibit?</h2>
-                                  <p>Connect with potential clients and elevate your brand.</p>
-                              </div>
-
-                              <div class="section">
-                                  <h2>Why Visit?</h2>
-                                  <p>Discover new products and network with industry experts.</p>
-                              </div>
-
-                              <div class="cta">
-                                  <a href="#">Explore Events</a>
-                              </div>
-                          </div>
+        <div class="cta">
+            <a href="#">Explore Events</a>
+        </div>
+    </div>
 
                       </div>
                     </div>
