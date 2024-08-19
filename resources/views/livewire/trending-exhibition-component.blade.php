@@ -297,49 +297,49 @@
           
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
               <h3 class="name">Delhi</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Delhi</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}">
               <h3 class="name">Hyderabad</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/hyd.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/hyd.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Hyderabad</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}">
               <h3 class="name">Mumbai</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/mum.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Mumbai</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
               <h3 class="name">Bangalore</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/bang.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/bang.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Bangalore</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
               <h3 class="name">Chennai</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/chen.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/chen.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Chennai</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
               <h3 class="name">Chandigarh</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/chd.png')}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/chd.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Chandigarh</p>
             </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
               <h3 class="name">Kolkata</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/kol.png)}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/kol.png)}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Kolkata</p>
             </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
               <h3 class="name">Ahmdebad</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/exhibition/'.$category->image)}}" alt="{{Str::limit($category->image, 24)}}"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/ahm.png)}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Ahmdebad</p>
             </a>
