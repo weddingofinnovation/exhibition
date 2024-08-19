@@ -64,6 +64,12 @@ class GoogleComponent extends Component
         return Socialite::driver('linkedin')->redirect();
     }
 
+    // https://www.linkedin.com/oauth/v2/authorization?client_id=86kaed0t9vmsui
+    
+    // &redirect_uri=https%3A%2F%2Fexhibition.org.in%2Flinkedinlogin
+    // &scope=r_liteprofile+r_emailaddress
+    // &response_type=code
+    // &state=cheMLDd9f5dclrPApfN0AX6W8swmDbfrHNCrIv8B
 
     public function handleLinkedInCallback()
     {
