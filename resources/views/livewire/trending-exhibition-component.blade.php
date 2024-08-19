@@ -124,7 +124,7 @@
 
             .element-item .weight {
               position: absolute;
-              left: 10px;
+              left: 30px;
               top: 76px;
               font-size: 12px;
             }
@@ -333,13 +333,13 @@
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
               <h3 class="name">Kolkata</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/kol.png')}}" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/kolk.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Kolkata</p>
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
               <h3 class="name">Ahmdebad</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/ahm.png')}}" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/city/ahd.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
                    <p class="weight">Ahmdebad</p>
             </a>
