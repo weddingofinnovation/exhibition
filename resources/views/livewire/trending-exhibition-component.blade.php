@@ -303,37 +303,49 @@
           @endforeach
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Delhi</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Hyderabad</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Mumbai</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Bangalore</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Chennai</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
             <a class="element-item bg-light" data-category="metalloid" href="#">
               <h3 class="name">Chandigarh</h3>
-              <p class="symbol"><img src="#" alt="#"></p>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
+              <!-- <p class="number">52</p> -->
+              <!-- <p class="weight">127.6</p> -->
+            </a>
+            <a class="element-item bg-light" data-category="metalloid" href="#">
+              <h3 class="name">Kolkata</h3>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
+              <!-- <p class="number">52</p> -->
+              <!-- <p class="weight">127.6</p> -->
+            </a>
+            <a class="element-item bg-light" data-category="metalloid" href="#">
+              <h3 class="name">Ahmdebad</h3>
+              <p class="symbol"><img src="{{url('public/assets/image/exhibition/mum.png')}}" alt="#"></p>
               <!-- <p class="number">52</p> -->
               <!-- <p class="weight">127.6</p> -->
             </a>
