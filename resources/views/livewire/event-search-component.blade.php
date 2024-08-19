@@ -282,12 +282,8 @@
               @php $witems = Cart::instance('wishlist')->content()->pluck('id');  @endphp
              
 
-              @foreach ($searchVenue as $business)
-                  @php
-                      $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
-                  @endphp
-
-                    @foreach ($franchiso as $franchise)
+             
+                    @foreach ($searchVenue as $franchise)
                       
                         <div class="col-md-4 col-sm-6 px-2 mb-4">
 
@@ -390,19 +386,16 @@
                         </div>
                         
                   @endforeach
-              @endforeach
+              
             </div>
 
             <div class="row mx-n2">
                 
             </div>
 
-            @foreach ($searchVenue as $business)
-                @php
-                    $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
-                @endphp
+           
 
-                @foreach ($franchiso as $franchise)
+                @foreach ($searchVenue as $franchise)
                   
                     <div class="col-md-4 col-sm-6 px-2 mb-4">
 
@@ -505,7 +498,7 @@
                     </div>
                   
                 @endforeach
-            @endforeach
+            
 
             <!-- Banner-->
             <div class="py-sm-2">
@@ -571,7 +564,7 @@
             </div>
             <hr class="my-3">
 
-           {{--{{$exhibition->links('pagination-links')}}--}}
+           {{--{{$searchVenue->links('pagination-links')}}--}}
 
           </section>         
         </div>
