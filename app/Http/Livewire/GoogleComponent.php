@@ -73,7 +73,7 @@ class GoogleComponent extends Component
 
     public function handleLinkedInCallback()
     {
-       // $user = Socialite::driver('linkedin')->user();
+       $user = Socialite::driver('linkedin')->user();
 
         //dd($user);
         // Handle user data, e.g., log them in or register them

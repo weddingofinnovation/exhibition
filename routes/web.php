@@ -350,9 +350,9 @@ Route::any('/auth/google/callback', [GoogleComponent::class, 'callbackFromGoogle
 
 
 Route::get('/login/linkedin/callback', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
-//Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
 Route::get('/linkedinlogin', [GoogleComponent::class, 'handleLinkedInCallback'])->name('linkedin.callback');
 
+//Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
 //Route::get('loginlinkedin', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
 //Route::get('/linkedin/callback', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
  // web.php/linkedin/callback
