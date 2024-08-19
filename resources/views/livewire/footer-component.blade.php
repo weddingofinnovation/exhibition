@@ -221,7 +221,8 @@
                     <h3 class="widget-title text-light pb-1">Stay informed</h3>
 
                     <form class="subscription-form validate" action="" method="post" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
-                      <div class="input-group flex-nowrap"><i class="bi bi-envelope position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                      <div class="input-group flex-nowrap">
+                        <i class="bi bi-envelope position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
                         <input class="form-control rounded-start" type="email" name="EMAIL" placeholder="Your email" required="">
                         <button class="btn btn-primary" type="submit" name="subscribe">Subscribe*</button>
                       </div>
@@ -278,7 +279,7 @@
                         <li class="widget-list-item me-4"><a class="widget-list-link" href="">Partner</a></li>
                         <li class="widget-list-item me-4"><a class="widget-list-link" href="">Affiliates</a></li>
                         <li class="widget-list-item me-4"><a class="widget-list-link" href="">Support</a></li>
-                        <li class="widget-list-item me-4"><a class="widget-list-link" href="{{route('terms.condition')}}">Privacy</a></li>
+                        <li class="widget-list-item me-4"><a class="widget-list-link" href="{{route('privacy.condition')}}">Privacy</a></li>
                         <li class="widget-list-item me-4"><a class="widget-list-link" href="{{route('terms.condition')}}">Terms of use</a></li>
                       </ul>
                     </div>

@@ -162,6 +162,7 @@ use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
 use App\Http\Livewire\Admin\AdminScraperComponent;
+use App\Http\Livewire\Livewire\PrivacyComponent;
 use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\Seller\SellerSponsershipComponent;
@@ -298,6 +299,8 @@ Route::get('/contact/{board}', ContactComponent::class)->name('contact');
 Route::get('/about-us', AboutComponent::class)->name('about');
 Route::get('/leadership', TeamComponent::class)->name('team');
 Route::get('/terms', TermsComponent::class)->name('terms.condition');
+Route::get('/privacy-policy', PrivacyComponent::class)->name('privacy.condition');
+
 
 
 //catch exhibition data

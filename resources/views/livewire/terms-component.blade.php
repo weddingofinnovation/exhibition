@@ -1,4 +1,6 @@
 <main>
+    
+ @if($board == '')
     <div class="container py-5 mb-2 mt-n2 mt-sm-1 my-md-3 my-lg-4 mb-xl-5">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10 col-xxl-9">
@@ -11,7 +13,7 @@
                 <h2 class="h4 pt-3 pt-lg-4"> I. Acceptance of terms </h2>
                 <p> Thank you for using The Exhibition Network. These Terms of Service (the "Terms") are intended to make you aware of your legal rights and responsibilities with respect to your access to and use of the The Exhibition Network website at The Exhibition Network.com (the "Site") and any related mobile or software applications ("The Exhibition Network Platform") including but not limited to delivery of information via the website whether existing now or in the future that link to the Terms (collectively, the "Services").</p>
                 <p> These Terms are effective for all existing and future The Exhibition Network users, including but without limitation to users having access to ‘oDASH’’ to manage their claimed listings.</p>
-                <p> Please read these Terms carefully. By accessing or using the The Exhibition Network Platform, you are agreeing to these Terms and concluding a legally binding contract with Ten Times Online Private Limited and/or its affiliates. You may not be able to use the Services if you do not accept the Terms or are unable to be bound by the Terms. Your use of the The Exhibition Network Platform is at your own risk, including the risk that you might be exposed to content that is objectionable, or otherwise inappropriate.</p>
+                <p> Please read these Terms carefully. By accessing or using the The Exhibition Network Platform, you are agreeing to these Terms and concluding a legally binding contract with ((The Exhibition Network)) and/or its affiliates. You may not be able to use the Services if you do not accept the Terms or are unable to be bound by the Terms. Your use of the The Exhibition Network Platform is at your own risk, including the risk that you might be exposed to content that is objectionable, or otherwise inappropriate.</p>
                 <p> In order to use the Services, you must first agree to the Terms. You can accept the Terms by:</p>
                     <ul class="gap-3">
                         <li>Clicking to accept or agree to the Terms, where it is made available to you by The Exhibition Network in the user interface for any particular Service; or </li>
@@ -301,4 +303,5 @@
             </div>
         </div>
     </div>
+
 </main>
