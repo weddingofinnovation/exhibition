@@ -1,7 +1,5 @@
 <main>
-
-
-<!--google-->
+    <!--google-->
         <div class="bg-secondary d-lg-none">
           <div class=" container">
             <div class="row ">
@@ -307,11 +305,124 @@
                     <!-- Reviews tab-->
                     <div class="tab-pane fade" id="reviews" role="tabpanel">
                       <div class="container mt-5">
+
                         <div class="row text-center">
                           <i class="bi bi-bookmark"></i>
                           <p>Saving an event will add it to this tab so that you can find it later</p>
                           <a href="" class="btn btn-primary text-capitalize">return to search results</a>
+                          <section class="container">
+                              <div class="text-center  fs-md fw-bold">Our Data, Your Customer ...</div>
+                              <div class="grido">
+                                <a class="element-item transition metal" data-category="transition" href="#">
+
+                                    <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                                      <h3 class="name">Visit Plan</h3>
+                                    <!-- </a>  -->
+                                    <!-- <p class="symbol">count</p> -->
+                                    <!-- <p class="number">80</p>
+                                    <p class="weight">200.59</p> -->
+                                </a>
+
+                                <a class="element-item transition metal" data-category="transition" href="#">
+
+                                    <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                                      <h3 class="name">Exhibit Plan</h3>
+                                    <!-- </a>  -->
+                                    <!-- <p class="symbol">count</p> -->
+                                    <!-- <p class="number">80</p>
+                                    <p class="weight">200.59</p> -->
+                                </a>
+                              </div>
+                          </section>
+
+                          <small>Plan your exhibition</small>
                         </div>
+                       
+                          <style>
+                              body {
+                                  font-family: Arial, sans-serif;
+                                  margin: 0;
+                                  padding: 0;
+                                  background-color: #f4f4f4;
+                                  color: #333;
+                              }
+
+                              .container {
+                                  width: 90%;
+                                  margin: auto;
+                                  padding: 10px;
+                              }
+
+                              h1 {
+                                  text-align: center;
+                                  font-size: 1.5em;
+                                  color: #333;
+                                  margin-bottom: 15px;
+                              }
+
+                              .section {
+                                  background: #fff;
+                                  padding: 15px;
+                                  margin-bottom: 15px;
+                                  border-radius: 5px;
+                                  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                              }
+
+                              .section h2 {
+                                  font-size: 1.2em;
+                                  color: #1a73e8;
+                                  margin-bottom: 8px;
+                              }
+
+                              .section p {
+                                  font-size: 0.9em;
+                                  margin-bottom: 10px;
+                              }
+
+                              .cta {
+                                  text-align: center;
+                                  margin-top: 15px;
+                              }
+
+                              .cta a {
+                                  display: inline-block;
+                                  background: #1a73e8;
+                                  color: #fff;
+                                  padding: 8px 15px;
+                                  text-decoration: none;
+                                  border-radius: 5px;
+                                  transition: background 0.3s;
+                                  font-size: 0.9em;
+                              }
+
+                              .cta a:hover {
+                                  background: #0f5bb5;
+                              }
+                          </style>
+
+                          <div class="container">
+                              <h1>Plan Your Exhibition</h1>
+
+                              <div class="section">
+                                  <h2>Choose Your Event</h2>
+                                  <p>Find the right exhibition to showcase your products or explore the latest trends.</p>
+                              </div>
+
+                              <div class="section">
+                                  <h2>Why Exhibit?</h2>
+                                  <p>Connect with potential clients and elevate your brand.</p>
+                              </div>
+
+                              <div class="section">
+                                  <h2>Why Visit?</h2>
+                                  <p>Discover new products and network with industry experts.</p>
+                              </div>
+
+                              <div class="cta">
+                                  <a href="#">Explore Events</a>
+                              </div>
+                          </div>
+
                       </div>
                     </div>
 
@@ -321,5 +432,9 @@
             </div>
           </div>
         </div>
-    <!--end Google-->  
+    <!--end Google-->
+    
+    
+
+
 </main>
