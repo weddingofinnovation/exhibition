@@ -248,7 +248,7 @@
                     <option value="tomorrow"  >Tomorrow</option>
                     <option value="weekend">This weekend</option>
                   </select>
-                  <span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">of {{$exhibition->count()}} {{$this->eventype}} </span>
+                  <span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">of  </span>
                 </div>
 
                 <div class="d-flex pb-3">
