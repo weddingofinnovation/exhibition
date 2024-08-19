@@ -280,7 +280,9 @@
             <!-- Item -->
             <div class="row mx-n2">
               @php $witems = Cart::instance('wishlist')->content()->pluck('id');  @endphp
-              @foreach ($exhibition as $business)
+             
+
+              @foreach ($searchVenue as $business)
                   @php
                       $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
                   @endphp
@@ -516,7 +518,7 @@
                 @endforeach
             </div>
 
-            @foreach ($exhibition as $business)
+            @foreach ($searchVenue as $business)
                 @php
                     $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
                 @endphp
