@@ -73,22 +73,28 @@ class GoogleComponent extends Component
 
     public function handleLinkedInCallback()
     {
-        $user = Socialite::driver('linkedin')->user();
+       // $user = Socialite::driver('linkedin')->user();
 
         //dd($user);
         // Handle user data, e.g., log them in or register them
-        $linkedinUser = Socialite::driver('linkedin')->user();
+        // $linkedinUser = Socialite::driver('linkedin')->user();
 
-        $user = User::firstOrCreate([
-            'linkedin_id' => $linkedinUser->getId(),
-        ], [
-            'name' => $linkedinUser->getName(),
-            'email' => $linkedinUser->getEmail(),
-            'avatar' => $linkedinUser->getAvatar(),
-        ]);
+        // $user = User::firstOrCreate([
+        //     'linkedin_id' => $linkedinUser->getId(),
+        // ], [
+        //     'name' => $linkedinUser->getName(),
+        //     'email' => $linkedinUser->getEmail(),
+        //     'avatar' => $linkedinUser->getAvatar(),
+        // ]);
 
-        Auth::login($user);
-        return redirect()->intended('home');
+        // Auth::login($user);
+        // return redirect()->intended('home');
+        try {
+            $user = Socialite::driver('linkedin')->user();
+            // Logic to handle authenticated user
+        } catch (\Exception $e) {
+            return redirect('/')->with('error', 'Failed to login with LinkedIn.');
+        }
     }
 
     
