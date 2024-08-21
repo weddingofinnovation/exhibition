@@ -132,13 +132,12 @@
      </div>
     </div>
 
-    <div class="fs-md fw-light mb-0"> <small>Post on Linkedin</small></div>
+
     <div class="container"> 
-       
+        <small>Post on Linkedin</small>
       
-        <div class="input-group my-2">
-                  
-        <a  class = "btn btn-sm btn-primary" href="#" wire:click.prevent="postToLinkedIn({{$evento->id}})">Post to LinkedIn</button>
+        <div class="input-group my-2">          
+          <a  class = "btn btn-sm btn-primary" href="#" wire:click.prevent="postToLinkedIn({{$evento->id}})">Post to LinkedIn</a>
         </div>
       
     </div>
