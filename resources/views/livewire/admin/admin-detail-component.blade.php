@@ -132,9 +132,9 @@
      </div>
     </div>
 
-   
+    <div class="fs-md fw-light mb-0"> <small>Post on Linkedin</small></div>
     <div class="container"> 
-      <div class="fs-md fw-light mb-0"> <small>Post on Linkedin</small></div> 
+       
       
         <div class="input-group my-2">
                   
