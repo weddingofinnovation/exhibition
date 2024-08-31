@@ -623,49 +623,7 @@ public $dtype;
           $statementIoD = $statementID;
           $statementIoD->shtdesc = trim($start);
           $statementIoD->save();
-
-          
-          $randomreview = collect([4,5,6,7,8,9]);
-          $this->howMany = $randomreview->random();
-
-          for($i = 0; $i < $this->howMany; $i++)
-          {
-            //$indoyui = Event::where('slug', $this->slug)->first();
-
-            $usero =  new Rate ();
-            $trynigtocreate = collect([4,5,6,7,8,9]);
-            $usero->rate = $trynigtocreate->random();
-
-            // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
-            // $findhastagID = $findhastag->random();
-            // $usero->hasttag = $findhastagID->hastag; 
-            
-            $findComment = Comment::where('admstatus','1')->where('status','1')->get();
-            $findCommentID = $findComment->random();
-            $usero->opinion =  $findCommentID->statement;
-          
-            $usero->event_id = $statementID;
-
-            $uertyui = User::where('utype', 'USR')->get();
-            $useroID = $uertyui->random();
-            $usero->user_id = $useroID->id;
-
-            $usero->status = '1'; 
-            $usero->admstatus = '1';
-
-            $currenttime = Carbon::now();
-            $currento =  strtotime($currenttime);
-            $Subtracttime =  Carbon::now()->subHours(24);
-            $Subtracttimeo = strtotime($Subtracttime);
-            $getmid = rand($currento, $Subtracttimeo);
-            $finall = date('Y/m/d h:i:s', $getmid);
-
-            $usero->created_at = $finall;
-            $usero->updated_at = $finall;
-            $usero->save();
-            
-          }
-
+          $this->fakerio($statementID);
         //    $myytime = Carbon::today()->format('D,d M Y');
         //    $findstartdate = Carbon::($statementID->startdate)->format('D,d M Y');
         //    $mymonth = Carbon::now()->addDays(3)->format("Y-m-d");
@@ -689,8 +647,51 @@ public $dtype;
         
         // dd($myytime) ;
       }
+
     }
 
+    public function fakerio($event_id)
+    {
+          $randomreview = collect([4,5,6,7,8,9]);
+          $this->howMany = $randomreview->random();
+
+          for($i = 0; $i < $this->howMany; $i++)
+          {
+            //$indoyui = Event::where('slug', $this->slug)->first();
+
+            $usero =  new Rate ();
+            $trynigtocreate = collect([4,5,6,7,8,9]);
+            $usero->rate = $trynigtocreate->random();
+
+            // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
+            // $findhastagID = $findhastag->random();
+            // $usero->hasttag = $findhastagID->hastag; 
+            
+            $findComment = Comment::where('admstatus','1')->where('status','1')->get();
+            $findCommentID = $findComment->random();
+            $usero->opinion =  $findCommentID->statement;
+          
+            $usero->event_id = $event_id;
+
+            $uertyui = User::where('utype', 'USR')->get();
+            $useroID = $uertyui->random();
+            $usero->user_id = $useroID->id;
+
+            $usero->status = '1'; 
+            $usero->admstatus = '1';
+
+            $currenttime = Carbon::now();
+            $currento =  strtotime($currenttime);
+            $Subtracttime =  Carbon::now()->subHours(24);
+            $Subtracttimeo = strtotime($Subtracttime);
+            $getmid = rand($currento, $Subtracttimeo);
+            $finall = date('Y/m/d h:i:s', $getmid);
+
+            $usero->created_at = $finall;
+            $usero->updated_at = $finall;
+            $usero->save();
+          }
+    }
     public function del($id)
     {
        $delee = Bcontact::find($id);
