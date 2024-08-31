@@ -995,7 +995,7 @@ public $dtype;
       $business = Service::paginate(5);
       $fattributes = ProductAttribute::paginate(10);
 
-      $expoaward = Event::where('status','1')->where('admstatus','0')->orderBy('created_at','ASC')->get();
+      $expoaward = Event::where('status','1')->where('admstatus','0')->orderBy('created_at','DESC')->get();
 
       $year22ev = Event::where('status','1')->whereYear('startdate', 2022)->orderBy('startdate','ASC')->get();
       $year23ev = Event::where('status','1')->whereYear('startdate', 2023)->orderBy('startdate','ASC')->get();
