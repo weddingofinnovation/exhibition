@@ -1716,15 +1716,16 @@
 
       @if($board == 'createShtDesc')
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#new" data-bs-toggle="tab" role="tab">new</a></li>
-          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year23find" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
-          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year24find" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
-          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm" href="#year25find" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
+          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab10' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab10')" data-bs-toggle="tab" role="tab">new</a></li>
+          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab20' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab20')" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
+          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab30' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab30')" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
+          <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab40' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab40')" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
         </ul>
 
         <div class="tab-content pt-1">
           <!-- Request tab-->
-            <div class="tab-pane active" id="new" role="tabpanel">
+          @if($currentTab === 'tab10')
+            <div class="tab-pane" role="tabpanel">
               <!-- new 2024 2025 2023-->
               <div class="container">
                 <div class="row mb-5 pb-2">
@@ -1782,13 +1783,13 @@
                 </div>
               </div>
             </div>
-
-            <div class="tab-pane fade" id="year23find" role="tabpanel">
+          @elseif($currentTab === 'tab20')
+            <div class="tab-pane" role="tabpanel">
               <!-- eventShtdesc2025Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
 
-                  @foreach ($eventShtdesc2025Year as $franchise) 
+                  @foreach ($eventShtdesc2023Year as $franchise) 
 
                   <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                       <div class="container  ">
@@ -1841,8 +1842,8 @@
                 </div>
               </div>
             </div>
-
-            <div class="tab-pane fade" id="year24find" role="tabpanel">
+          @elseif($currentTab === 'tab30')
+            <div class="tab-pane" role="tabpanel">
               <!-- eventShtdesc2024Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
@@ -1900,13 +1901,13 @@
                 </div>
               </div>
             </div>
-
-            <div class="tab-pane fade" id="year25find" role="tabpanel">
+          @elseif($currentTab === 'tab40')
+            <div class="tab-pane" role="tabpanel">
               <!-- eventShtdesc2023Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
 
-                  @foreach ($eventShtdesc2023Year as $franchise) 
+                  @foreach ($eventShtdesc2025Year as $franchise) 
 
                   <div class="fs-sm fw-normal">{{$franchise->shtdesc}}</div>
                       <div class="container  ">
@@ -1959,6 +1960,7 @@
                 </div>
               </div>
             </div>
+          @endif
         </div>
       @endif
 
