@@ -57,8 +57,9 @@ class AdminDetailComponent extends Component
     {
         $updateDetials = Event::where('slug', $this->slug)->first();
         $updateDetials = $updateDetials->find($id);
-        $updateDetials->category_id = $category_id;  
+        $updateDetials->category_id = $category_id;
         $updateDetials->save();
+        $this->referencereview(3);
     }
 
     public function updateEventstatus($id, $status) 
@@ -66,6 +67,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->admstatus = $status;
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -75,6 +77,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->latestupdat = $status;
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -144,6 +147,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->businessrevenue = $businessrevenue;
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -152,6 +156,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->reference = Str::uuid()->toString();
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -162,6 +167,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->created_at = Carbon::today();
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -170,6 +176,7 @@ class AdminDetailComponent extends Component
       $eVent = Event::find($id);
       $eVent->link = $webo;
       $eVent->save();
+      $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
 
@@ -227,6 +234,55 @@ class AdminDetailComponent extends Component
       //$usero->opinion =  $findComment->random();
       
       for($i = 0; $i < $this->howMany; $i++)
+      {
+        $indoyui = Event::where('slug', $this->slug)->first();
+
+        $usero =  new Rate ();
+        $trynigtocreate = collect([4,5,6,7,8,9]);
+        $usero->rate = $trynigtocreate->random();
+
+        // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
+        // $findhastagID = $findhastag->random();
+        // $usero->hasttag = $findhastagID->hastag; 
+        
+        $findComment = Comment::where('admstatus','1')->where('status','1')->get();
+        $findCommentID = $findComment->random();
+        $usero->opinion =  $findCommentID->statement;
+       
+        $usero->event_id = $indoyui->id;
+
+        $uertyui = User::where('utype', 'USR')->get();
+        $useroID = $uertyui->random();
+        $usero->user_id = $useroID->id;
+
+        $usero->status = '1'; 
+        $usero->admstatus = '1';
+
+        $currenttime = Carbon::now();
+        $currento =  strtotime($currenttime);
+        $Subtracttime =  Carbon::now()->subHours(24);
+        $Subtracttimeo = strtotime($Subtracttime);
+        $getmid = rand($currento, $Subtracttimeo);
+        $finall = date('Y/m/d h:i:s', $getmid);
+
+        $usero->created_at = $finall;
+        $usero->updated_at = $finall;
+        $usero->save();
+        
+      }
+
+      
+      return redirect()->back();
+      $this->reset();
+    }
+
+    public function referencereview($numberofreview)
+    {
+      //$findComment = Comment::where('admstatus','1')->where('status','1')->get();
+        
+      //$usero->opinion =  $findComment->random();
+      
+      for($i = 0; $i < $numberofreview; $i++)
       {
         $indoyui = Event::where('slug', $this->slug)->first();
 
