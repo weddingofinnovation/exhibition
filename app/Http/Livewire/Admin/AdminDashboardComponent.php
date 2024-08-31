@@ -643,7 +643,7 @@ public $dtype;
               $findCommentID = $findComment->random();
               $usero->opinion =  $findCommentID->statement;
             
-              $usero->event_id = $statementID;
+              $usero->event_id = $statementID->id;
 
               $uertyui = User::where('utype', 'USR')->get();
               $useroID = $uertyui->random();
