@@ -1725,7 +1725,7 @@
         <div class="tab-content pt-1">
           <!-- Request tab-->
           @if($currentTab === 'tab10')
-            <div class="tab-pane" role="tabpanel">
+            <div class="tab-pane show active" role="tabpanel">
               <!-- new 2024 2025 2023-->
               <div class="container">
                 <div class="row mb-5 pb-2">
@@ -1784,7 +1784,7 @@
               </div>
             </div>
           @elseif($currentTab === 'tab20')
-            <div class="tab-pane" role="tabpanel">
+            <div class="tab-pane show active" role="tabpanel">
               <!-- eventShtdesc2025Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
@@ -1843,7 +1843,7 @@
               </div>
             </div>
           @elseif($currentTab === 'tab30')
-            <div class="tab-pane" role="tabpanel">
+            <div class="tab-pane show active" role="tabpanel">
               <!-- eventShtdesc2024Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
@@ -1902,7 +1902,7 @@
               </div>
             </div>
           @elseif($currentTab === 'tab40')
-            <div class="tab-pane" role="tabpanel">
+            <div class="tab-pane show active" role="tabpanel">
               <!-- eventShtdesc2023Year -->
               <div class="container">
                 <div class="row mb-5 pb-2">
