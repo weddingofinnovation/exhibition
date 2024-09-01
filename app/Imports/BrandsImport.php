@@ -13,6 +13,7 @@ class BrandsImport implements ToModel, WithHeadingRow
         return new Brand([
             'brand_name' => $row['1'], 
         ]);
+        
         // return Brand::updateOrCreate(
         //     ['brand_name' => $row['exhibitor']],  // Assuming 'name' is a column in your CSV
         //     [
