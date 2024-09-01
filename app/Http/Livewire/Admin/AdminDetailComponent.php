@@ -356,9 +356,9 @@ class AdminDetailComponent extends Component
 
 
     protected $rules =[
-      'csvfile' => 'required|mimes:csv,txt',
+      'csvFile' => 'required|mimes:csv,txt',
     ];
-    
+
     public function CSVfile()
     {
       $this->validate();

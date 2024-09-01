@@ -146,7 +146,7 @@
       
         <form wire:submit.prevent="CSVfile">
           <div class="input-group my-2">
-                    <input type="file" class="form-control" wire:model.lazy="csv" placeholder="upload CSV">
+                    <input type="file" class="form-control" wire:model.lazy="csvFile" placeholder="upload CSV">
                   <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
