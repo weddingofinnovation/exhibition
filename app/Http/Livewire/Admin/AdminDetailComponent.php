@@ -20,9 +20,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
 use GuzzleHttp\Client;
-
-
-    
+use Livewire\WithFileUploads;
 
 class AdminDetailComponent extends Component
 {  
@@ -354,7 +352,7 @@ class AdminDetailComponent extends Component
 
     }
 
-
+    use WithFileUploads;
     protected $rules =[
       'csvFile' => 'required|mimes:csv,txt',
     ];
