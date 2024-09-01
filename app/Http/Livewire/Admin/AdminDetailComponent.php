@@ -359,7 +359,7 @@ class AdminDetailComponent extends Component
       'csvFile' => 'required|mimes:csv,txt',
     ];
 
-    public function upload()
+    public function CSVfile()
     {
         $this->validate();
 
