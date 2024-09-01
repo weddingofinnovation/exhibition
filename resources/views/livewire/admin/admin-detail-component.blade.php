@@ -144,15 +144,16 @@
     <div class="container"> 
         <small>CSV upload exhibitor</small>
       
-        <form wire:submit.prevent="CSVfile">
+        <form wire:submit.prevent="upload">
           <div class="input-group my-2">
-                    <input type="file" class="form-control" wire:model.lazy="csvFile" placeholder="upload CSV">
+                    <input type="file" class="form-control" wire:model.lazy="csvFile" placeholder="upload CSV" accept=".csv">
                   <button type="submit" class="btn btn-primary">Submit</button>
           </div>
         </form>
       
     </div>
 
+    
     <div class="container"> 
       <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
       <form wire:submit.prevent="withoutHashtag">

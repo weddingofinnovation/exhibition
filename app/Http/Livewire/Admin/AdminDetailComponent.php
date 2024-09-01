@@ -22,6 +22,8 @@ use Illuminate\Support\Str;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
 use Livewire\WithFileUploads;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\BrandsImport;
 
 class AdminDetailComponent extends Component
 {  
@@ -355,50 +357,20 @@ class AdminDetailComponent extends Component
 
     public $csvFile;
     use WithFileUploads;
-    protected $rules =[
-      'csvFile' => 'required|mimes:csv,txt',
-    ];
 
-    public function CSVfile()
-    {
-        $this->validate();
+    protected $rules = [
+      'csvFile' => 'required|mimes:csv,txt|max:2048',
+  ];
 
-        if ($this->csvFile) {
-            // Open and read the CSV file
-            if (($handle = fopen($this->csvFile->getRealPath(), 'r')) !== FALSE) {
-                // Skip the first row (if it contains column headers)
-                fgetcsv($handle);
+  public function upload()
+  {
+      $this->validate();
 
-                // Begin a transaction
-                DB::beginTransaction();
-                try {
-                    while (($data = fgetcsv($handle, 1000, ',')) !== FALSE) {
-                        // Check if the exhibitor already exists
-                        $exhibitor = Brand::firstOrCreate(
-                            ['name' => $data[0]], // assuming the name is in the first column
-                            [
-                                'industry' => $data[1], // assuming industry is in the second column
-                                'location' => $data[2], // assuming location is in the third column
-                                // Add other fields as necessary
-                            ]
-                        );
+      // Use Maatwebsite Excel to import the CSV file
+      Excel::import(new BrandsImport, $this->csvFile->getRealPath());
 
-                        // Additional logic if needed, e.g., associating this exhibitor with an exhibition
-                    }
-
-                    // Commit the transaction
-                    DB::commit();
-                    session()->flash('success', 'CSV file uploaded and data inserted successfully.');
-                } catch (\Exception $e) {
-                    // Rollback the transaction
-                    DB::rollBack();
-                    session()->flash('error', 'Error: ' . $e->getMessage());
-                }
-            } else {
-                session()->flash('error', 'Failed to open the CSV file.');
-            }
-        }
-    }
+      session()->flash('success', 'CSV file uploaded and data imported successfully.');
+  }
 
     use WithPagination;
     public function render()
