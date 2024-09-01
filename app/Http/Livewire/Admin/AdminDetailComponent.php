@@ -325,9 +325,6 @@ class AdminDetailComponent extends Component
       $this->reset();
     }
 
-    
-   
-
     public function Upgrade($id)
     {  
       //  $eventShtdesc = Event::where('status','1')->where('admstatus','1')->orderBy('startdate','asc')->get();
@@ -357,6 +354,18 @@ class AdminDetailComponent extends Component
 
     }
 
+
+    public function CSVfile()
+    {
+      $this->validate();
+      $filepath = $this->csvFile->getRealPath();
+      $data = array_map('str_getcsv', file($filepath));
+      $header = array_shift($data);
+      
+      foreach($data as $row)
+      $rowData = array_combine($header,$row);
+      dd($rowData);
+    }
 
     use WithPagination;
     public function render()
