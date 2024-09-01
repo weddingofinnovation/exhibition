@@ -364,13 +364,14 @@ class AdminDetailComponent extends Component
       $filepath = $this->csvFile->getRealPath();
       $data = array_map('str_getcsv', file($filepath));
       $header = array_shift($data);
+
       
       foreach($data as $row)
       $rowData = array_combine($header,$row);
       Brand::create([
         'brand_name' => $rowData['name'],
       ]);
-      dd($rowData);
+      dd($data, $header, $rowData);
     }
 
     use WithPagination;
