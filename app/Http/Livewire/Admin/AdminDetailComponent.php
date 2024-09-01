@@ -352,6 +352,7 @@ class AdminDetailComponent extends Component
 
     }
 
+    public $csvFile;
     use WithFileUploads;
     protected $rules =[
       'csvFile' => 'required|mimes:csv,txt',
