@@ -367,6 +367,9 @@ class AdminDetailComponent extends Component
       
       foreach($data as $row)
       $rowData = array_combine($header,$row);
+      Brand::create([
+        'brand_name' => $rowData['name'],
+      ]);
       dd($rowData);
     }
 
