@@ -395,7 +395,42 @@
 
                 </div>
                 <div class="col-md-3">
-                  <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}"></div>
+                    <!-- new-top-additive -->
+                    <div class="d-inline-block card card-body shadow rounded-4 position-absolute end-0 top-0 p-3 me-lg-n3 me-xxl-n7 mt-n5 d-none d-sm-block">
+                      <img src="https://www.exhibition.org.in/public/image/trustpilot.svg" class="light-mode-item h-20px mb-2" alt="Client-img">
+                      <img src="https://www.exhibition.org.in/public/image/trustpilot-light.svg" class="dark-mode-item h-20px mb-2" alt="Client-img">
+                      <div class="d-flex align-items-center">
+                        <img src="https://www.exhibition.org.in/public/image/trustpilot-star.svg" class="h-30px" alt="rating-img">
+                        <h6 class="font-base fw-bold ms-1 mb-0">4.8/5.0</h6>
+                      </div>
+                      <p class="small mb-0 mt-2">Reviewed by 365 users</p>
+                    </div>
+                  <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
+                    <!-- additive -->
+                    <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3">
+                      <div class="d-flex align-items-center">
+                        <h6 class="text-white mb-0 me-2">5K+</h6>
+                        <ul class="avatar-group mb-0 align-items-center">
+                          <li class="avatar avatar-xs">
+                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                          </li>
+                          <li class="avatar avatar-xs">
+                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                          </li>
+                          <li class="avatar avatar-xs">
+                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                          </li>
+                          <li class="avatar avatar-xs">
+                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi3.jpg" alt="avatar">
+                          </li>
+                          <li class="avatar avatar-xs">
+                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi4.jpg" alt="avatar">
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="text-white mb-0 mt-2">Total visitors per month</p>
+                    </div>
+                </div>
               </div>
            </div>
           </section>
@@ -843,19 +878,18 @@
                         </div>
 
                 </div>  
-
+                <!-- left: 0; -->
                 <style>
-        .fixed-bottom-div {
-            position: fixed;
-            bottom: 0;
-            //left: 0;
-            width: 100%;
-            background-color: #fff; /* Light background color */
-            border-top: 1px solid #dee2e6; /* Optional border */
-            padding: 10px;
-            z-index: 9999; /* Ensures it stays on top */
-        }
-    </style>
+                    .fixed-bottom-div {
+                        position: fixed;
+                        bottom: 0;
+                        width: 100%;
+                        background-color: #fff; /* Light background color */
+                        border-top: 1px solid #dee2e6; /* Optional border */
+                        padding: 10px;
+                        z-index: 9999; /* Ensures it stays on top */
+                    }
+                </style>
                 <!-- fixedthis -->
                 <div class="container d-none d-sm-block fixed-bottom-div">
                   <ul class="list-unstyled fs-sm  py-2">     
