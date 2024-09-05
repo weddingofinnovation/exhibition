@@ -395,6 +395,67 @@
 
                 </div>
                 <div class="col-md-3">
+                  <style>
+                    .card {
+                            --bs-card-spacer-y: 1.25rem;
+                            --bs-card-spacer-x: 1.25rem;
+                            --bs-card-title-spacer-y: 0.5rem;
+                            --bs-card-title-color: var(--bs-gray-900);
+                            --bs-card-subtitle-color: ;
+                            --bs-card-border-width: 0;
+                            --bs-card-border-color: var(--bs-border-color);
+                            --bs-card-border-radius: 0.4rem;
+                            --bs-card-box-shadow: ;
+                            --bs-card-inner-border-radius: 0.4rem;
+                            --bs-card-cap-padding-y: 1.25rem;
+                            --bs-card-cap-padding-x: 1.25rem;
+                            --bs-card-cap-bg: var(--bs-body-bg);
+                            --bs-card-cap-color: ;
+                            --bs-card-height: ;
+                            --bs-card-color: var(--bs-body-color);
+                            --bs-card-bg: var(--bs-body-bg);
+                            --bs-card-img-overlay-padding: 1.25rem;
+                            --bs-card-group-margin: 0.9375rem;
+                            position: relative;
+                            display: -webkit-box;
+                            display: -ms-flexbox;
+                            display: flex;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                            flex-direction: column;
+                            min-width: 0;
+                            height: var(--bs-card-height);
+                            color: var(--bs-body-color);
+                            word-wrap: break-word;
+                            background-color: var(--bs-card-bg);
+                            background-clip: border-box;
+                            border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+                            border-radius: var(--bs-card-border-radius);
+                        }
+
+                    @media (min-width: 576px) {
+                          .d-sm-block {
+                              display: block !important;
+                          }
+                      }
+                      .shadow {
+                          --bs-box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.1);
+                          -webkit-box-shadow: var(--bs-box-shadow) !important;
+                          box-shadow: var(--bs-box-shadow) !important;
+                      }
+                      .rounded-4 {
+                          --bs-border-radius-xl: 0.6rem;
+                          border-radius: var(--bs-border-radius-xl) !important;
+                      }
+                      .card-body {
+                          -webkit-box-flex: 1;
+                          -ms-flex: 1 1 auto;
+                          flex: 1 1 auto;
+                          padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+                          color: var(--bs-card-color);
+                      }
+                  </style>
                     <!-- new-top-additive -->
                     <div class="d-inline-block card card-body shadow rounded-4 position-absolute end-0 top-0 p-3 me-lg-n3 me-xxl-n7 mt-n5 d-none d-sm-block">
                       <img src="https://www.exhibition.org.in/public/image/trustpilot.svg" class="light-mode-item h-20px mb-2" alt="Client-img">
