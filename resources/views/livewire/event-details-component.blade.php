@@ -449,6 +449,23 @@
                                 --bs-dark-rgb: 32, 33, 36;
                                 background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
                             }
+
+                            .avatar-group > li:not(:last-child) {
+                                  margin-right: -0.8rem;
+                              }
+                              .avatar-group > li {
+                                  position: relative;
+                              }
+                              .avatar {
+                                  height: 3rem;
+                                  width: 3rem;
+                                  position: relative;
+                                  display: inline-block !important;
+                              }
+                              .avatar-xs {
+                                  height: 2.1875rem;
+                                  width: 2.1875rem;
+                              }
                      </style>
                     <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3">
                       <div class="d-flex align-items-center">
