@@ -1564,7 +1564,7 @@
                     </li> -->
                   </ul>
                 </div> 
-                <section class=" sectionlevel position-relative z-index-2 py-0 mb-n7" data-bs-theme="light">
+                <section class=" sectionlevel position-relative z-index-2 py-0 mb-n7 fixed-bottom-div" data-bs-theme="light">
                   <div class="container position-relative">
                     <div class="bg-primary  bg-colo rounded position-relative overflow-hidden p-4 p-sm-5">
 
