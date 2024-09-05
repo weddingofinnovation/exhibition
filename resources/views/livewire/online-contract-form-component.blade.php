@@ -3275,7 +3275,7 @@
 
 
       <!-- Page title -->
-      <h1 class="h3 container mb-sm-4">Shop categories</h1>
+      <h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
 
 
       <!-- Brands -->
