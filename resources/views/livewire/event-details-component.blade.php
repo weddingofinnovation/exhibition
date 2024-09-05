@@ -407,6 +407,49 @@
                     </div>
                   <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
                     <!-- additive -->
+                     <style>
+                      .avatar-img {
+                              width: 100%;
+                              height: 100%;
+                              -o-object-fit: cover;
+                              object-fit: cover;
+                          }
+
+                          .avatar-group {
+                              padding: 0;
+                              display: -webkit-box;
+                              display: -ms-flexbox;
+                              display: flex;
+                          }
+
+                          .text-white {
+                              --bs-text-opacity: 1;
+                              --bs-white-rgb: 255, 255, 255;
+                              color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+                          }
+
+                          h6, .h6 {
+                                font-size: 1.2rem;
+                            }
+                            h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+                                margin-top: 0;
+                                margin-bottom: 0.5rem;
+                                font-family: "Instrument Sans", sans-serif;
+                                font-weight: 700;
+                                line-height: 1.25;
+                                color: var(--bs-heading-color);
+                            }
+
+                            .rounded-4 {
+                                --bs-border-radius-xl: 0.6rem;
+                                border-radius: var(--bs-border-radius-xl) !important;
+                            }
+                            .bg-dark {
+                                --bs-bg-opacity: 1;
+                                --bs-dark-rgb: 32, 33, 36;
+                                background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+                            }
+                     </style>
                     <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3">
                       <div class="d-flex align-items-center">
                         <h6 class="text-white mb-0 me-2">5K+</h6>
