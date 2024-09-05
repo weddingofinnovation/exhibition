@@ -455,6 +455,12 @@
                           padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
                           color: var(--bs-card-color);
                       }
+                      .dark-mode-item {
+                          display: none !important;
+                      }
+                      .h-20px {
+                          height: 20px !important;
+                      }
                   </style>
                     <!-- new-top-additive -->
                     <div class="d-inline-block card card-body shadow rounded-4 position-absolute end-0 top-0 p-3 me-lg-n3 me-xxl-n7 mt-n5 d-none d-sm-block">
