@@ -154,7 +154,8 @@
 
                 <div class="col-md-4 col-sm-6">
                   <div class="widget widget-links widget-light pb-2 mb-4">
-                    <h3 class="widget-title text-light" style="font-weight: 720; font-size: 39px;">One step closer to meaningful innovation</h3>
+                    <!-- <h3 class="widget-title text-light" style="font-weight: 720; font-size: 39px;">One step closer to meaningful innovation</h3> -->
+                    <h3 class="widget-title text-light" style="font-weight: 720; font-size: 39px;">Great Exhbition To Exhibit</h3>
                     
                   <p class="fs-sm text-white opacity-70 pb-1">High quality events created by our global community.</p>
 
@@ -164,6 +165,7 @@
                   <span class="fw-normal text-white">Members</span></h6>
                   <h6 class="d-inline-block col-sm-3 me-3"><span class="text-primary">897 </span>
                   <span class="fw-normal text-white">Vendors</span></h6>
+                  
                 <div class="widget mt-4 text-md-nowrap text-center text-md-start">
                   <a class="btn-social bs-light bs-twitter me-2 mb-2"  target="_blank" href="{{$infos->twitter}}"><i class=" bi bi-twitter"></i></a>
                   <a class="btn-social bs-light bs-facebook me-2 mb-2"  target="_blank" href="{{$infos->facebook}}"><i class=" bi bi-facebook"></i></a>

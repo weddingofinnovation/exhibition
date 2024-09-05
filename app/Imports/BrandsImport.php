@@ -11,7 +11,7 @@ class BrandsImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new Brand([
-            'brand_name' => $row['1'], 
+            'brand_name' => $row['0'], 
         ]);
         
         // return Brand::updateOrCreate(

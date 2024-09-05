@@ -1,6 +1,5 @@
 <main>
     
- @if($board == '')
     <div class="container py-5 mb-2 mt-n2 mt-sm-1 my-md-3 my-lg-4 mb-xl-5">
         <div class="row justify-content-center">
             <div class="col-lg-11 col-xl-10 col-xxl-9">
