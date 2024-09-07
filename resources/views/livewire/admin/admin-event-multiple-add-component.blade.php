@@ -134,6 +134,25 @@
 
 
             @if($formm == 'image')
+            <!-- Additional styling -->
+            <style>
+                .delete-btn {
+                    top: 5px;
+                    right: 5px;
+                    font-size: 1rem;
+                    padding: 2px 6px;
+                }
+
+                @media (max-width: 576px) {
+                    .delete-btn {
+                        font-size: 0.8rem; /* Smaller X icon on mobile */
+                    }
+                    img {
+                        width: 100%; /* Ensure the image takes full width of the container */
+                        height: auto; /* Maintain aspect ratio */
+                    }
+                }
+            </style>
                 <form  wire:submit.prevent="dateImage">
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name"> {{$evento->eventname}} Image</label>
@@ -156,8 +175,6 @@
                         </div>
                     </div>
 
-                
-
                     <div class="container">
                         <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3"> 
                             <div class="col">
@@ -170,12 +187,13 @@
                         </div>
                     </div>
                 @endforeach
+
                 <div class="container mt-4">
                     <div class="row">
                         @foreach($photos as $image)
-                        <div class="col-md-4 position-relative">
+                        <div class="col-4 col-md-4 position-relative mb-3">
                             <!-- Overlay delete button -->
-                            <button class="btn btn-danger position-absolute" style="top: 10px; right: 10px;" wire:click.prevent="delphoto({{ $image['id'] }})">
+                            <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
                                 Delete
                             </button>
                             
