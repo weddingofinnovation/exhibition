@@ -208,7 +208,7 @@
                            
 
                             <!-- Red dot delete button -->
-                            <span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $product->id }})"></span>
+                            <span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
                             <!-- Image with click-to-select -->
                             <img 
                                 src="{{url('public/assets/image/exhibition/'.$image->brand_lgo)}}" 
