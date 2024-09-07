@@ -152,7 +152,53 @@
                         height: auto; /* Maintain aspect ratio */
                     }
                 }
+                /* Notification dot style */
+                .used-notification {
+                    width: 15px;
+                    height: 15px;
+                    background-color: green;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+
+                @media (max-width: 576px) {
+                    .used-notification {
+                        width: 10px;
+                        height: 10px; /* Smaller dot on mobile */
+                    }
+                }
             </style>
+            <div class="container mt-4">
+                    <div class="row">
+                        @foreach($photos as $image)
+                        <div class="col-4 col-md-4 position-relative mb-3">
+                            <!-- Overlay delete button -->
+                            <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
+                                <i class="bi bi-x"></i>
+                            </button>
+                            <!-- Green dot notification if product is used -->
+                            
+                            <span class="position-absolute used-notification"></span>
+                           
+                            <!-- Image with click-to-select -->
+                            <img 
+                                src="{{url('public/assets/image/exhibition/'.$image->brand_lgo)}}" 
+                                class="img-fluid {{ $selectedImage == $image['id'] ? 'border border-primary' : '' }}" 
+                                alt="Image {{ $image['id'] }}" 
+                                wire:click.prevent="adDphoto({{ $image['id'] }})"
+                                style="cursor: pointer;">
+                        </div>
+                        @endforeach
+                    </div>
+
+                    @if($selectedImage)
+                    <div class="alert alert-info mt-3">
+                        Image {{ $selectedImage }} is selected.
+                    </div>
+                    @endif
+                </div>
                 <form  wire:submit.prevent="dateImage">
                     <div class="col-sm-2">
                         <label class="form-label" for="cf-name"> {{$evento->eventname}} Image</label>
@@ -188,32 +234,7 @@
                     </div>
                 @endforeach
 
-                <div class="container mt-4">
-                    <div class="row">
-                        @foreach($photos as $image)
-                        <div class="col-4 col-md-4 position-relative mb-3">
-                            <!-- Overlay delete button -->
-                            <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
-                                Delete
-                            </button>
-                            
-                            <!-- Image with click-to-select -->
-                            <img 
-                                src="{{url('public/assets/image/exhibition/'.$image->brand_lgo)}}" 
-                                class="img-fluid {{ $selectedImage == $image['id'] ? 'border border-primary' : '' }}" 
-                                alt="Image {{ $image['id'] }}" 
-                                wire:click.prevent="adDphoto({{ $image['id'] }})"
-                                style="cursor: pointer;">
-                        </div>
-                        @endforeach
-                    </div>
-
-                    @if($selectedImage)
-                    <div class="alert alert-info mt-3">
-                        Image {{ $selectedImage }} is selected.
-                    </div>
-                    @endif
-                </div>
+                
             @endif
 
             @if($formm == 'tag')
