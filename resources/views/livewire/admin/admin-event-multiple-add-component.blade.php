@@ -146,6 +146,18 @@
                 <hr class="mt-5">
                
                 @foreach($photos as $imgo)
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="#" wire:click.prevent="adDphoto({{$imgo->id}})">
+                                <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" class="img-fluid" alt="Image 2">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                
+
                     <div class="container">
                         <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3"> 
                             <div class="col">
@@ -158,6 +170,32 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="container mt-4">
+                    <div class="row">
+                        @foreach($photos as $image)
+                        <div class="col-md-4 position-relative">
+                            <!-- Overlay delete button -->
+                            <button class="btn btn-danger position-absolute" style="top: 10px; right: 10px;" wire:click.prevent="delphoto({{ $image['id'] }})">
+                                Delete
+                            </button>
+                            
+                            <!-- Image with click-to-select -->
+                            <img 
+                                src="{{url('public/assets/image/exhibition/'.$image->brand_lgo)}}" 
+                                class="img-fluid {{ $selectedImage == $image['id'] ? 'border border-primary' : '' }}" 
+                                alt="Image {{ $image['id'] }}" 
+                                wire:click.prevent="adDphoto({{ $image['id'] }})"
+                                style="cursor: pointer;">
+                        </div>
+                        @endforeach
+                    </div>
+
+                    @if($selectedImage)
+                    <div class="alert alert-info mt-3">
+                        Image {{ $selectedImage }} is selected.
+                    </div>
+                    @endif
+                </div>
             @endif
 
             @if($formm == 'tag')

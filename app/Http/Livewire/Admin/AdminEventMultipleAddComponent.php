@@ -51,6 +51,7 @@ class AdminEventMultipleAddComponent extends Component
     public $image;
     public $status;
     public $admstatus;
+    public $selectedImage;
 
     public function generateSlug()
     {
