@@ -163,25 +163,52 @@
                     right: 10px;
                 }
 
+                 /* Red delete notification dot */
+                .delete-notification {
+                    width: 15px;
+                    height: 15px;
+                    background-color: red;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    cursor: pointer;
+                }
+
                 @media (max-width: 576px) {
-                    .used-notification {
+                    .used-notification, .delete-notification {
                         width: 10px;
                         height: 10px; /* Smaller dot on mobile */
                     }
                 }
             </style>
-            <div class="container mt-4">
+                
+                <form  wire:submit.prevent="dateImage">
+                    <div class="col-sm-2">
+                        <label class="form-label" for="cf-name"> {{$evento->eventname}} Image</label>
+                        <input class="form-control" type="file"   wire:model.lazy="image" required="">
+                        @error('image'){{ $message}}@enderror
+                    </div>
+                    <button class=" form-control btn btn-primary mt-2" type="submit">Submit</button>
+                </form> 
+                
+                <hr class="mt-5">
+                 
+                <div class="container mt-4">
                     <div class="row">
                         @foreach($photos as $image)
                         <div class="col-4 col-md-4 position-relative mb-3">
                             <!-- Overlay delete button -->
-                            <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
+                            {{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
                                 <i class="bi bi-x"></i>
-                            </button>
+                            </button> --}}
                             <!-- Green dot notification if product is used -->
                             
                             <span class="position-absolute used-notification"></span>
                            
+
+                            <!-- Red dot delete button -->
+                            <span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $product->id }})"></span>
                             <!-- Image with click-to-select -->
                             <img 
                                 src="{{url('public/assets/image/exhibition/'.$image->brand_lgo)}}" 
@@ -199,17 +226,7 @@
                     </div>
                     @endif
                 </div>
-                <form  wire:submit.prevent="dateImage">
-                    <div class="col-sm-2">
-                        <label class="form-label" for="cf-name"> {{$evento->eventname}} Image</label>
-                        <input class="form-control" type="file"   wire:model.lazy="image" required="">
-                        @error('image'){{ $message}}@enderror
-                    </div>
-                    <button class=" form-control btn btn-primary mt-2" type="submit">Submit</button>
-                </form> 
 
-                <hr class="mt-5">
-               
                 @foreach($photos as $imgo)
                     <div class="container mt-4">
                         <div class="row">
