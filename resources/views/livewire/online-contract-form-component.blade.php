@@ -3260,51 +3260,6 @@
 
 	
 	@elseif( $this->productservice == 'find-exhibitor')
-	
-		<!-- Page title -->
-		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
-		<small>Send your event proposal to brands by selecting and write your short proposal to get quick response </small>
-		
-		<div class="container mt-4">
-			<div class="row">
-				@foreach($photos as $image)
-					<div class="col-4 col-md-2 position-relative mb-3">
-						<!-- Overlay delete button -->
-						{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
-							<i class="bi bi-x"></i>
-						</button> --}}
-						<!-- Green dot notification if product is used -->
-						
-						<span class="position-absolute used-notification"></span>
-						
-
-						<!-- Red dot delete button -->
-						<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
-						<!-- Image with click-to-select -->
-						<img 
-							src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-							class="img-fluid {{ $selectedImage == $image->id ? 'border border-primary' : '' }}" 
-							alt="Image {{ $image->id }}" 
-							wire:click.prevent="selectImage({{ $image->id }})"
-							style="cursor: pointer;">
-					</div>
-				@endforeach
-			</div>
-
-			 <!-- Pagination Links
-			 <div class="d-flex justify-content-center">-->
-			<div class="">
-				{{ $photos->links() }}
-			</div>
-
-			@if($selectedImage)
-				<div class="alert alert-info mt-3">
-					Image {{ $selectedImage }} is selected.
-				</div>
-			@endif
-		</div>
-
-        -- testing --
 		<style>
 			.image-wrapper {
 				position: relative;
@@ -3324,78 +3279,91 @@
 			color: green; /* Use this to highlight the selection checkmark */
 			}
 		</style>
-				<div class="container">
-					<div class="row">
-						@foreach($images as $image)
-							<div class="col-4 col-md-3 mb-4">
-								<div class="image-wrapper position-relative">
-									<img 
-										src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-										class="img-fluid {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}"
-										style="cursor: pointer;"
-										wire:click="selectImage({{ $image->id }})" 
-									>
-									
-									<!-- Selection Overlay -->
-									@if(in_array($image->id, $selectedImages))
-										<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
-											<span class="text-white">Selected</span>
-										</div> -->
-										<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
-										<!-- Checkmark Icon -->
-										<span class="position-absolute top-0 start-0 m-2 text-success">
-											<i class="fas fa-check-circle fa-2x"></i>
-										</span>
-									@endif
 
-									
+		<!-- Page title -->
+		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
+		<small class="container">Send your event proposal to brands by selecting and write your short proposal to get quick response </small>
+		
+		<div class="container mt-4">
+			<div class="row">
+				@foreach($photos as $image)
+					<div class="col-4 col-md-2 position-relative mb-3">
+						<!-- Overlay delete button -->
+							{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
+								<i class="bi bi-x"></i>
+							</button> --}}
+						<!-- Green dot notification if product is used -->
+						<span class="position-absolute used-notification"></span>
+						
+						<!-- Red dot delete button -->
+						<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
+						<!-- Image with click-to-select -->
+						<img 
+							src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
+							class="img-fluid {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}" 
+							alt="Image {{ $image->id }}" 
+							wire:click.prevent="selectImage({{ $image->id }})"
+							style="cursor: pointer;">
+						
+						<!-- Selection Overlay -->
+						@if(in_array($image->id, $selectedImages))
+							<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+								<span class="text-white">Selected</span>
+							</div> -->
+							<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
+							<!-- Checkmark Icon -->
+							<span class="position-absolute top-0 start-0 m-2 text-success">
+								<i class="fas fa-check-circle fa-2x"></i>
+							</span>
+						@endif
+					</div>
+				@endforeach
+			</div>
+
+			 <!-- Pagination Links
+			 <div class="d-flex justify-content-center">-->
+			<div class="">
+				{{ $photos->links() }}
+			</div>
+
+			@if(count($selectedImages) > 0)
+				<div class="fixed-bottom bg-primary p-3">
+					<h3 class="text-light">Selected Brands</h3>
+					<div class="row">
+						@foreach($selectedImages as $key => $selectedImageId)
+							@if($key < 3)
+								@php
+									$selectedImage = DB::table('brands')->find($selectedImageId)
+								@endphp
+								<div class="col-4 col-md-2 position-relative mb-3">
+									<img 
+										src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
+										class="img-fluid"
+										style="cursor: pointer;"
+									>
 								</div>
-							</div>
+								<!-- Delete Icon -->
+								<span class="position-absolute top-0 end-0 m-2">
+									<i 
+										class="text-danger fas fa-times-circle" 
+										style="cursor: pointer;" 
+										wire:click="deleteImage({{ $image->id }})">
+									</i>
+								</span>
+							@endif
 						@endforeach
 					</div>
 
-					<!-- Selected Images Count -->
-					<div class="mt-4">
-						<h5>Selected Images: {{ count($selectedImages) }}</h5>
+					<div class="d-flex justify-content-between mt-3">
+						<!-- Show count and email button -->
+						<p>{{ count($selectedImages) }} images selected</p>
+						<button wire:click="sendEmail" class="btn btn-outline-primary btn-sm">Send Email</button>
 					</div>
-					@if(count($selectedImages) > 0)
-						<div class="fixed-bottom bg-primary p-3">
-							<h5>Selected Images</h5>
-							<div class="row">
-								@foreach($selectedImages as $key => $selectedImageId)
-									@if($key < 3)
-										@php
-											$selectedImage = DB::table('brands')->find($selectedImageId)
-										@endphp
-										<div class="col-4 col-md-2 position-relative mb-3">
-											<img 
-												src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
-												class="img-fluid"
-												style="cursor: pointer;"
-											>
-										</div>
-										<!-- Delete Icon -->
-										<span class="position-absolute top-0 end-0 m-2">
-											<i 
-												class="text-danger fas fa-times-circle" 
-												style="cursor: pointer;" 
-												wire:click="deleteImage({{ $image->id }})">
-											</i>
-										</span>
-									@endif
-								@endforeach
-							</div>
-
-							<div class="d-flex justify-content-between mt-3">
-								<!-- Show count and email button -->
-								<p>{{ count($selectedImages) }} images selected</p>
-								<button wire:click="sendEmail" class="btn btn-primary">Send Email</button>
-							</div>
-						</div>
-					@endif
 				</div>
+			@endif
+		</div>
 
-
+        
 
 
 		<!-- Brands -->
