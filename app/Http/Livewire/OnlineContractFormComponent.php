@@ -15,6 +15,7 @@ class OnlineContractFormComponent extends Component
     public $images = [];        // To store the fetched images
     public $selectedImages = []; // To store selected image IDs
 
+    use WithPagination;
     public function mount($productservice, $optional = null)
     {
        $this->productservice = $productservice;
@@ -22,7 +23,7 @@ class OnlineContractFormComponent extends Component
        $this->images = Brand::whereNotNull('brand_logo')->paginate(9)->get();
     }
 
-    use WithPagination;
+    
     
 
     public function selectImage($imageId) {
