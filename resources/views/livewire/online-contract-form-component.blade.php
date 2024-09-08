@@ -3260,25 +3260,43 @@
 
 	
 	@elseif( $this->productservice == 'find-exhibitor')
-		<style>
-			.image-wrapper {
-				position: relative;
-				cursor: pointer;
-			}
-			.overlay {
-				display: none;
-			}
-			.image-wrapper:hover .overlay {
-				display: flex;
-			}
-			.badge {
-				font-size: 1rem;
-				padding: 5px;
-			}
-			.text-success {
-			color: green; /* Use this to highlight the selection checkmark */
-			}
-		</style>
+	<style>
+    .delete-notification {
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+        top: 5px;
+        right: 5px;
+    }
+
+    .used-notification {
+        width: 15px;
+        height: 15px;
+        background-color: green;
+        border-radius: 50%;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .delete-notification {
+            width: 10px;
+            height: 10px;
+        }
+
+        .used-notification {
+            width: 10px;
+            height: 10px;
+        }
+
+        img.img-fluid {
+            height: 80px; /* Adjust image height for mobile */
+            object-fit: cover;
+        }
+    }
+</style>
+
 
 		<!-- Page title -->
 		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
@@ -3310,12 +3328,23 @@
 							<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
 								<span class="text-white">Selected</span>
 							</div> -->
-							<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
+							<!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
 							<!-- Checkmark Icon -->
-							<span class="position-absolute top-0 start-0 m-2 text-success">
+							<!-- <span class="position-absolute top-0 start-0 m-2 text-success">
 								<i class="fas fa-check-circle fa-2x"></i>
+							</span> -->
+							
+							<!-- Mobile view: icon notification -->
+							<span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
+								m<i class="fas fa-check-circle fa-2x"></i> <!-- Mobile icon -->
+							</span>
+
+							<!-- Desktop view: "Selected" text -->
+							<span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
+								Selected <!-- Desktop text -->
 							</span>
 						@endif
+
 					</div>
 				@endforeach
 			</div>
@@ -3327,8 +3356,8 @@
 			</div>
 
 			@if(count($selectedImages) > 0)
-				<div class="fixed-bottom bg-primary p-3">
-					<h3 class="text-light">Selected Brands</h3>
+				<div class="fixed-bottom bg-dark p-3">
+					<p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
 					<div class="row">
 						@foreach($selectedImages as $key => $selectedImageId)
 							@if($key < 3)
@@ -3354,10 +3383,10 @@
 						@endforeach
 					</div>
 
-					<div class="d-flex justify-content-between mt-3">
+					<div class="d-flex justify-content-between mt-2">
 						<!-- Show count and email button -->
 						<p>{{ count($selectedImages) }} images selected</p>
-						<button wire:click="sendEmail" class="btn btn-outline-primary btn-sm">Send Email</button>
+						<button wire:click="sendEmail" class="btn btn-light-outline btn-sm">Send Email</button>
 					</div>
 				</div>
 			@endif

@@ -23,8 +23,6 @@ class OnlineContractFormComponent extends Component
        $this->images = Brand::whereNotNull('brand_logo')->get();
     }
 
-    
-    
 
     public function selectImage($imageId) {
         if (in_array($imageId, $this->selectedImages)) {
@@ -34,6 +32,8 @@ class OnlineContractFormComponent extends Component
             // Add image to selected list
             $this->selectedImages[] = $imageId;
         }
+        // Store selected images in session to persist across refresh
+        session()->put('selectedImages', $this->selectedImages); // Or save to DB
     }
 
     public function deleteImage($imageId)
@@ -46,9 +46,7 @@ class OnlineContractFormComponent extends Component
 
     public function render()
     {
-        
-	    $photos = Brand::whereNotNull('brand_logo')->paginate(9);
+	    $photos = Brand::whereNotNull('brand_logo')->paginate(50);
         return view('livewire.online-contract-form-component',['photos'=> $photos]);
-
     }
 }
