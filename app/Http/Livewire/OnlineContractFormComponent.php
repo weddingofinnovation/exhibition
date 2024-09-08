@@ -19,7 +19,7 @@ class OnlineContractFormComponent extends Component
     {
        $this->productservice = $productservice;
        $this->optional = $optional; 
-       $this->images = Brand::whereNotNull('brand_logo')->get();
+       $this->images = Brand::whereNotNull('brand_logo')->paginate(9)->get();
     }
 
     use WithPagination;
@@ -45,6 +45,9 @@ class OnlineContractFormComponent extends Component
 
     public function render()
     {
-        return view('livewire.online-contract-form-component');
+        
+	    $photos = Brand::whereNotNull('brand_logo')->paginate(9)->get();
+        return view('livewire.online-contract-form-component',['photos'=> $photos]);
+
     }
 }
