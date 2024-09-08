@@ -3366,11 +3366,11 @@
 										@php
 											$selectedImage = DB::table('brands')->find($selectedImageId)
 										@endphp
-										<div class="col-4">
+										<div class="col-4 col-md-2 position-relative mb-3">
 											<img 
 												src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
-												class="img-thumbnail"
-												style="width: 100%; height: 100px; object-fit: cover;"
+												class="img-fluid"
+												style="cursor: pointer;"
 											>
 										</div>
 										<!-- Delete Icon -->
