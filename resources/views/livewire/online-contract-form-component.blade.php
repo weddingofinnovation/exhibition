@@ -3270,7 +3270,7 @@
 		<div class="container mt-4">
 			<div class="row">
 				@foreach($photos as $image)
-				<div class="col-4 col-md-3 position-relative mb-3">
+				<div class="col-4 col-md-2 position-relative mb-3">
 					<!-- Overlay delete button -->
 					{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
 						<i class="bi bi-x"></i>
@@ -3315,9 +3315,14 @@
 								
 								<!-- Selection Overlay -->
 								@if(in_array($image->id, $selectedImages))
-									<div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+									<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
 										<span class="text-white">Selected</span>
-									</div>
+									</div> -->
+									<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
+									<!-- Checkmark Icon -->
+									<span class="position-absolute top-0 start-0 m-2 text-success">
+										<i class="fas fa-check-circle fa-2x"></i>
+									</span>
 								@endif
 
 								<!-- Delete Icon -->
