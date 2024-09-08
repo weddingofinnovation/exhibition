@@ -16,6 +16,7 @@ class OnlineContractFormComponent extends Component
     public $selectedImages = []; // To store selected image IDs
 
     use WithPagination;
+    
     public function mount($productservice, $optional = null)
     {
        $this->productservice = $productservice;
@@ -36,12 +37,12 @@ class OnlineContractFormComponent extends Component
         session()->put('selectedImages', $this->selectedImages); // Or save to DB
     }
 
-    public function deleteImage($imageId)
-    {
-        // Remove image logic from the database
-        Brand::destroy($imageId);
-        $this->images = Brand::all(); // Refresh image list
-    }
+    // public function deleteImage($imageId)
+    // {
+    //     // Remove image logic from the database
+    //     Brand::destroy($imageId);
+    //     $this->images = Brand::all(); // Refresh image list
+    // }
 
 
     public function render()

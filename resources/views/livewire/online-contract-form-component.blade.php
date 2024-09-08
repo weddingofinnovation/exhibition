@@ -3311,10 +3311,11 @@
 								<i class="bi bi-x"></i>
 							</button> --}}
 						<!-- Green dot notification if product is used -->
-						<span class="position-absolute used-notification"></span>
+						<!-- <span class="position-absolute used-notification"></span> -->
 						
 						<!-- Red dot delete button -->
-						<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
+						<!-- <span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span> -->
+
 						<!-- Image with click-to-select -->
 						<img 
 							src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
@@ -3335,9 +3336,10 @@
 							</span> -->
 							
 							<!-- Mobile view: icon notification -->
-							<span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
-								m<i class="fas fa-check-circle fa-2x"></i> <!-- Mobile icon -->
-							</span>
+							<!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
+								m<i class="fas fa-check-circle fa-2x"></i> 
+							</span> -->
+							<span class="position-absolute delete-notification"></span>
 
 							<!-- Desktop view: "Selected" text -->
 							<span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
@@ -3360,7 +3362,7 @@
 					<p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
 					<div class="row">
 						@foreach($selectedImages as $key => $selectedImageId)
-							@if($key < 3)
+							@if($key < 5)
 								@php
 									$selectedImage = DB::table('brands')->find($selectedImageId)
 								@endphp
