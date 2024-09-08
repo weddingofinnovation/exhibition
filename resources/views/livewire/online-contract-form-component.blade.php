@@ -3265,38 +3265,43 @@
 		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
 		<small>Send your event proposal to brands by selecting and write your short proposal to get quick response </small>
 		@php
-		  $photos = DB::table('brands')->whereNotNull('brand_logo')->get();
+		  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(9)->get();
 		@endphp
 		<div class="container mt-4">
 			<div class="row">
 				@foreach($photos as $image)
-				<div class="col-4 col-md-2 position-relative mb-3">
-					<!-- Overlay delete button -->
-					{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
-						<i class="bi bi-x"></i>
-					</button> --}}
-					<!-- Green dot notification if product is used -->
-					
-					<span class="position-absolute used-notification"></span>
-					
+					<div class="col-4 col-md-2 position-relative mb-3">
+						<!-- Overlay delete button -->
+						{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
+							<i class="bi bi-x"></i>
+						</button> --}}
+						<!-- Green dot notification if product is used -->
+						
+						<span class="position-absolute used-notification"></span>
+						
 
-					<!-- Red dot delete button -->
-					<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
-					<!-- Image with click-to-select -->
-					<img 
-						src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-						class="img-fluid {{ $selectedImage == $image->id ? 'border border-primary' : '' }}" 
-						alt="Image {{ $image->id }}" 
-						wire:click.prevent="adDphoto({{ $image->id }})"
-						style="cursor: pointer;">
-				</div>
+						<!-- Red dot delete button -->
+						<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
+						<!-- Image with click-to-select -->
+						<img 
+							src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
+							class="img-fluid {{ $selectedImage == $image->id ? 'border border-primary' : '' }}" 
+							alt="Image {{ $image->id }}" 
+							wire:click.prevent="selectImage({{ $image->id }})"
+							style="cursor: pointer;">
+					</div>
 				@endforeach
 			</div>
 
-			@if($selectedImage)
-			<div class="alert alert-info mt-3">
-				Image {{ $selectedImage }} is selected.
+			 <!-- Pagination Links -->
+			 <div class="d-flex justify-content-center">
+				{{ $photos->links() }}
 			</div>
+
+			@if($selectedImage)
+				<div class="alert alert-info mt-3">
+					Image {{ $selectedImage }} is selected.
+				</div>
 			@endif
 		</div>
 
@@ -3344,14 +3349,7 @@
 										</span>
 									@endif
 
-									<!-- Delete Icon -->
-									<span class="position-absolute top-0 end-0 m-2">
-										<i 
-											class="text-danger fas fa-times-circle" 
-											style="cursor: pointer;" 
-											wire:click="deleteImage({{ $image->id }})">
-										</i>
-									</span>
+									
 								</div>
 							</div>
 						@endforeach
@@ -3362,7 +3360,7 @@
 						<h5>Selected Images: {{ count($selectedImages) }}</h5>
 					</div>
 					@if(count($selectedImages) > 0)
-						<div class="fixed-bottom bg-light p-3">
+						<div class="fixed-bottom bg-primary p-3">
 							<h5>Selected Images</h5>
 							<div class="row">
 								@foreach($selectedImages as $key => $selectedImageId)
@@ -3377,6 +3375,14 @@
 												style="width: 100%; height: 100px; object-fit: cover;"
 											>
 										</div>
+										<!-- Delete Icon -->
+										<span class="position-absolute top-0 end-0 m-2">
+											<i 
+												class="text-danger fas fa-times-circle" 
+												style="cursor: pointer;" 
+												wire:click="deleteImage({{ $image->id }})">
+											</i>
+										</span>
 									@endif
 								@endforeach
 							</div>
