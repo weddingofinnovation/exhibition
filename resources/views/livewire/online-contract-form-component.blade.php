@@ -3291,8 +3291,9 @@
 				@endforeach
 			</div>
 
-			 <!-- Pagination Links -->
-			 <div class="d-flex justify-content-center">
+			 <!-- Pagination Links
+			 <div class="d-flex justify-content-center">-->
+			<div class="">
 				{{ $photos->links() }}
 			</div>
 
@@ -3330,8 +3331,8 @@
 								<div class="image-wrapper position-relative">
 									<img 
 										src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-										class="img-fluid rounded border {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}"
-										style="cursor: pointer; width: 100%; height: 200px; object-fit: cover;"
+										class="img-fluid {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}"
+										style="cursor: pointer;"
 										wire:click="selectImage({{ $image->id }})" 
 									>
 									
