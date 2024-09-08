@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Brand;
 use Livewire\Component;
+use Livewire\WithPagination;
 use PDF;
 
 class OnlineContractFormComponent extends Component
@@ -21,6 +22,7 @@ class OnlineContractFormComponent extends Component
        $this->images = Brand::whereNotNull('brand_logo')->get();
     }
 
+    use WithPagination;
     
 
     public function selectImage($imageId) {

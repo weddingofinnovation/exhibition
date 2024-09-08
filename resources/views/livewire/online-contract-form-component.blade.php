@@ -3264,9 +3264,7 @@
 		<!-- Page title -->
 		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
 		<small>Send your event proposal to brands by selecting and write your short proposal to get quick response </small>
-		@php
-		  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(9)->get();
-		@endphp
+		
 		<div class="container mt-4">
 			<div class="row">
 				@foreach($photos as $image)
