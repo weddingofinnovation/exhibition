@@ -3300,7 +3300,7 @@
 			@endif
 		</div>
 
-
+        -- testing --
 				<div class="container">
 				<div class="row">
 					@foreach($images as $image)
@@ -3342,6 +3342,33 @@
     <div class="mt-4">
         <h5>Selected Images: {{ count($selectedImages) }}</h5>
     </div>
+	@if(count($selectedImages) > 0)
+        <div class="fixed-bottom bg-light p-3">
+            <h5>Selected Images</h5>
+            <div class="row">
+                @foreach($selectedImages as $key => $selectedImageId)
+                    @if($key < 3)
+                        @php
+                            $selectedImage = \App\Models\Image::find($selectedImageId);
+                        @endphp
+                        <div class="col-4">
+                            <img 
+                                src="{{ asset($selectedImage->url) }}" 
+                                class="img-thumbnail"
+                                style="width: 100%; height: 100px; object-fit: cover;"
+                            >
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                <!-- Show count and email button -->
+                <p>{{ count($selectedImages) }} images selected</p>
+                <button wire:click="sendEmail" class="btn btn-primary">Send Email</button>
+            </div>
+        </div>
+    @endif
 </div>
 
 <style>
@@ -3355,6 +3382,13 @@
     .image-wrapper:hover .overlay {
         display: flex;
     }
+	.badge {
+		font-size: 1rem;
+		padding: 5px;
+	}
+	.text-success {
+    color: green; /* Use this to highlight the selection checkmark */
+	}
 </style>
 
 
