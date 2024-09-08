@@ -3264,13 +3264,47 @@
 		<!-- Page title -->
 		<h1 class="h3 container mb-sm-4">Find Exhibitor</h1>
 		<small>Send your event proposal to brands by selecting and write your short proposal to get quick response </small>
-		
+		@php
+		  $photos = DB::table('brands')->whereNotNull('brand_logo')->get();
+		@endphp
+		<div class="container mt-4">
+			<div class="row">
+				@foreach($photos as $image)
+				<div class="col-4 col-md-3 position-relative mb-3">
+					<!-- Overlay delete button -->
+					{{-- <button class="btn btn-danger btn-sm position-absolute delete-btn" wire:click.prevent="delphoto({{ $image['id'] }})">
+						<i class="bi bi-x"></i>
+					</button> --}}
+					<!-- Green dot notification if product is used -->
+					
+					<span class="position-absolute used-notification"></span>
+					
+
+					<!-- Red dot delete button -->
+					<span class="position-absolute delete-notification" wire:click.prevent="delphoto({{ $image->id }})"></span>
+					<!-- Image with click-to-select -->
+					<img 
+						src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
+						class="img-fluid {{ $selectedImage == $image->id ? 'border border-primary' : '' }}" 
+						alt="Image {{ $image['id'] }}" 
+						wire:click.prevent="adDphoto({{ $image['id'] }})"
+						style="cursor: pointer;">
+				</div>
+				@endforeach
+			</div>
+
+			@if($selectedImage)
+			<div class="alert alert-info mt-3">
+				Image {{ $selectedImage }} is selected.
+			</div>
+			@endif
+		</div>
 
 
 				<div class="container">
 				<div class="row">
 					@foreach($images as $image)
-						<div class="col-6 col-md-3 mb-4">
+						<div class="col-4 col-md-3 mb-4">
 							<div class="image-wrapper position-relative">
 								<img 
 									src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
