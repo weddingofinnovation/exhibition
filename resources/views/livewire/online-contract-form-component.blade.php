@@ -3349,11 +3349,11 @@
                 @foreach($selectedImages as $key => $selectedImageId)
                     @if($key < 3)
                         @php
-                            $selectedImage = DB::table('brands')->find($selectedImageId);
+                            $selectedImage = DB::table('brands')->find($selectedImageId)->get()
                         @endphp
                         <div class="col-4">
                             <img 
-                                src="{{ asset($selectedImage->url) }}" 
+                                src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
                                 class="img-thumbnail"
                                 style="width: 100%; height: 100px; object-fit: cover;"
                             >
