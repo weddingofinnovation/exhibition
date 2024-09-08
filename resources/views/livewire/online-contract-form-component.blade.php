@@ -3368,7 +3368,7 @@
 								@foreach($selectedImages as $key => $selectedImageId)
 									@if($key < 3)
 										@php
-											$selectedImage = DB::table('brands')->find($selectedImageId)->get()
+											$selectedImage = DB::table('brands')->find($selectedImageId)
 										@endphp
 										<div class="col-4">
 											<img 
