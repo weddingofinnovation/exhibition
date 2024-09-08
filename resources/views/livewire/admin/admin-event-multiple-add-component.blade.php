@@ -227,30 +227,6 @@
                     @endif
                 </div>
 
-                @foreach($photos as $imgo)
-                    <div class="container mt-4">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <a href="#" wire:click.prevent="adDphoto({{$imgo->id}})">
-                                <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" class="img-fluid" alt="Image 2">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="container">
-                        <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3"> 
-                            <div class="col">
-                                <a href="#" wire:click.prevent="adDphoto({{$imgo->id}})">
-                                    <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}"  width="50%" alt=""></a>
-                                <a href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
-
-                                <a href="#" class="btn btn-primary" wire:click.prevent="adDphoto({{$imgo->id}})"> Testing</a>
-                           </div>
-                        </div>
-                    </div>
-                @endforeach
-
                 
             @endif
 
