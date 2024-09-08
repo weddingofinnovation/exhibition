@@ -3285,7 +3285,7 @@
 					<!-- Image with click-to-select -->
 					<img 
 						src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-						class="img-fluid {{ $selectedImage == $image->id ? 'border border-primary' : '' }}" 
+						class="img-fluid border border-primary" 
 						alt="Image {{ $image['id'] }}" 
 						wire:click.prevent="adDphoto({{ $image['id'] }})"
 						style="cursor: pointer;">
