@@ -10,6 +10,7 @@ class OnlineContractFormComponent extends Component
 {
     public $productservice;
     public $optional;
+    public $selectedImage;
     public $images = [];        // To store the fetched images
     public $selectedImages = []; // To store selected image IDs
 
