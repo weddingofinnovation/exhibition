@@ -20,7 +20,7 @@ class OnlineContractFormComponent extends Component
     {
        $this->productservice = $productservice;
        $this->optional = $optional; 
-       $this->images = Brand::whereNotNull('brand_logo')->paginate(5);
+       $this->images = Brand::whereNotNull('brand_logo')->get();
     }
 
     
