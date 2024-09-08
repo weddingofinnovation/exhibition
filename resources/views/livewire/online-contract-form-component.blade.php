@@ -3301,95 +3301,96 @@
 		</div>
 
         -- testing --
+		<style>
+			.image-wrapper {
+				position: relative;
+				cursor: pointer;
+			}
+			.overlay {
+				display: none;
+			}
+			.image-wrapper:hover .overlay {
+				display: flex;
+			}
+			.badge {
+				font-size: 1rem;
+				padding: 5px;
+			}
+			.text-success {
+			color: green; /* Use this to highlight the selection checkmark */
+			}
+		</style>
 				<div class="container">
-				<div class="row">
-					@foreach($images as $image)
-						<div class="col-4 col-md-3 mb-4">
-							<div class="image-wrapper position-relative">
-								<img 
-									src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
-									class="img-fluid rounded border {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}"
-									style="cursor: pointer; width: 100%; height: 200px; object-fit: cover;"
-									wire:click="selectImage({{ $image->id }})" 
-								>
-								
-								<!-- Selection Overlay -->
-								@if(in_array($image->id, $selectedImages))
-									<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
-										<span class="text-white">Selected</span>
-									</div> -->
-									<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
-									<!-- Checkmark Icon -->
-									<span class="position-absolute top-0 start-0 m-2 text-success">
-										<i class="fas fa-check-circle fa-2x"></i>
-									</span>
-								@endif
+					<div class="row">
+						@foreach($images as $image)
+							<div class="col-4 col-md-3 mb-4">
+								<div class="image-wrapper position-relative">
+									<img 
+										src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" 
+										class="img-fluid rounded border {{ in_array($image->id, $selectedImages) ? 'border-primary' : '' }}"
+										style="cursor: pointer; width: 100%; height: 200px; object-fit: cover;"
+										wire:click="selectImage({{ $image->id }})" 
+									>
+									
+									<!-- Selection Overlay -->
+									@if(in_array($image->id, $selectedImages))
+										<!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+											<span class="text-white">Selected</span>
+										</div> -->
+										<span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span>
+										<!-- Checkmark Icon -->
+										<span class="position-absolute top-0 start-0 m-2 text-success">
+											<i class="fas fa-check-circle fa-2x"></i>
+										</span>
+									@endif
 
-								<!-- Delete Icon -->
-								<span class="position-absolute top-0 end-0 m-2">
-									<i 
-										class="text-danger fas fa-times-circle" 
-										style="cursor: pointer;" 
-										wire:click="deleteImage({{ $image->id }})">
-									</i>
-								</span>
+									<!-- Delete Icon -->
+									<span class="position-absolute top-0 end-0 m-2">
+										<i 
+											class="text-danger fas fa-times-circle" 
+											style="cursor: pointer;" 
+											wire:click="deleteImage({{ $image->id }})">
+										</i>
+									</span>
+								</div>
+							</div>
+						@endforeach
+					</div>
+
+					<!-- Selected Images Count -->
+					<div class="mt-4">
+						<h5>Selected Images: {{ count($selectedImages) }}</h5>
+					</div>
+					@if(count($selectedImages) > 0)
+						<div class="fixed-bottom bg-light p-3">
+							<h5>Selected Images</h5>
+							<div class="row">
+								@foreach($selectedImages as $key => $selectedImageId)
+									@if($key < 3)
+										@php
+											$selectedImage = DB::table('brands')->find($selectedImageId)->get()
+										@endphp
+										<div class="col-4">
+											<img 
+												src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
+												class="img-thumbnail"
+												style="width: 100%; height: 100px; object-fit: cover;"
+											>
+										</div>
+									@endif
+								@endforeach
+							</div>
+
+							<div class="d-flex justify-content-between mt-3">
+								<!-- Show count and email button -->
+								<p>{{ count($selectedImages) }} images selected</p>
+								<button wire:click="sendEmail" class="btn btn-primary">Send Email</button>
 							</div>
 						</div>
-					@endforeach
+					@endif
 				</div>
 
-    <!-- Selected Images Count -->
-    <div class="mt-4">
-        <h5>Selected Images: {{ count($selectedImages) }}</h5>
-    </div>
-	@if(count($selectedImages) > 0)
-        <div class="fixed-bottom bg-light p-3">
-            <h5>Selected Images</h5>
-            <div class="row">
-                @foreach($selectedImages as $key => $selectedImageId)
-                    @if($key < 3)
-                        @php
-                            $selectedImage = DB::table('brands')->find($selectedImageId)->get()
-                        @endphp
-                        <div class="col-4">
-                            <img 
-                                src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
-                                class="img-thumbnail"
-                                style="width: 100%; height: 100px; object-fit: cover;"
-                            >
-                        </div>
-                    @endif
-                @endforeach
-            </div>
 
-            <div class="d-flex justify-content-between mt-3">
-                <!-- Show count and email button -->
-                <p>{{ count($selectedImages) }} images selected</p>
-                <button wire:click="sendEmail" class="btn btn-primary">Send Email</button>
-            </div>
-        </div>
-    @endif
-</div>
-
-<style>
-    .image-wrapper {
-        position: relative;
-        cursor: pointer;
-    }
-    .overlay {
-        display: none;
-    }
-    .image-wrapper:hover .overlay {
-        display: flex;
-    }
-	.badge {
-		font-size: 1rem;
-		padding: 5px;
-	}
-	.text-success {
-    color: green; /* Use this to highlight the selection checkmark */
-	}
-</style>
 
 
 		<!-- Brands -->
