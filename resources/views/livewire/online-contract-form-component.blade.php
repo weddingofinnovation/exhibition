@@ -3261,41 +3261,41 @@
 	
 	@elseif( $this->productservice == 'find-exhibitor')
 	<style>
-    .delete-notification {
-        width: 15px;
-        height: 15px;
-        background-color: red;
-        border-radius: 50%;
-        top: 5px;
-        right: 5px;
-    }
+		.delete-notification {
+			width: 15px;
+			height: 15px;
+			background-color: red;
+			border-radius: 50%;
+			top: 5px;
+			right: 5px;
+		}
 
-    .used-notification {
-        width: 15px;
-        height: 15px;
-        background-color: green;
-        border-radius: 50%;
-        top: 5px;
-        left: 5px;
-    }
+		.used-notification {
+			width: 15px;
+			height: 15px;
+			background-color: green;
+			border-radius: 50%;
+			top: 5px;
+			left: 5px;
+		}
 
-    @media (max-width: 768px) {
-        .delete-notification {
-            width: 10px;
-            height: 10px;
-        }
+		@media (max-width: 768px) {
+			.delete-notification {
+				width: 10px;
+				height: 10px;
+			}
 
-        .used-notification {
-            width: 10px;
-            height: 10px;
-        }
+			.used-notification {
+				width: 10px;
+				height: 10px;
+			}
 
-        img.img-fluid {
-            height: 80px; /* Adjust image height for mobile */
-            object-fit: cover;
-        }
-    }
-</style>
+			img.img-fluid {
+				height: 80px; /* Adjust image height for mobile */
+				object-fit: cover;
+			}
+		}
+	</style>
 
 
 		<!-- Page title -->

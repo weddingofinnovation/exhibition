@@ -14,7 +14,41 @@
                 display:none !important;
               }
  
-      </style>
+		.delete-notification {
+			width: 15px;
+			height: 15px;
+			background-color: red;
+			border-radius: 50%;
+			top: 5px;
+			right: 5px;
+		}
+
+		.used-notification {
+			width: 15px;
+			height: 15px;
+			background-color: green;
+			border-radius: 50%;
+			top: 5px;
+			left: 5px;
+		}
+
+		@media (max-width: 768px) {
+			.delete-notification {
+				width: 10px;
+				height: 10px;
+			}
+
+			.used-notification {
+				width: 10px;
+				height: 10px;
+			}
+
+			img.img-fluid {
+				height: 80px; /* Adjust image height for mobile */
+				object-fit: cover;
+			}
+		}
+	</style>
 
       <!--google-->
         <div class="bg-secondary d-lg-none">
@@ -152,41 +186,7 @@
                             @endforeach                            
                           @endforeach
 
-                          @if(count($selectedImages) > 0)
-                            <div class="fixed-bottom bg-dark p-3">
-                              <p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
-                              <div class="row">
-                                @foreach($selectedImages as $key => $selectedImageId)
-                                  @if($key < 5)
-                                    @php
-                                      $selectedImage = DB::table('events')->find($selectedImageId)
-                                    @endphp
-                                    <div class="col-4 col-md-2 position-relative mb-3">
-                                      <img 
-                                        src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
-                                        class="img-fluid"
-                                        style="cursor: pointer;"
-                                      >
-                                    </div>
-                                    <!-- Delete Icon -->
-                                    {{-- <span class="position-absolute top-0 end-0 m-2">
-                                      <i 
-                                        class="text-danger fas fa-times-circle" 
-                                        style="cursor: pointer;" 
-                                        wire:click="deleteImage({{ $image->id }})">
-                                      </i>
-                                    </span> --}}
-                                  @endif
-                                @endforeach
-                              </div>
-
-                              <div class="d-flex justify-content-between mt-2">
-                                <!-- Show count and email button -->
-                                <p>{{ count($selectedImages) }} images selected</p>
-                                <button wire:click="sendEmail" class="btn btn-light-outline btn-sm">Send Email</button>
-                              </div>
-                            </div>
-                          @endif
+                          
 
                         </div>   
                                            
@@ -1919,7 +1919,42 @@
           </section>         
         </div>
       </div>
+      
+      @if(count($selectedImages) > 0)
+        <div class="fixed-bottom bg-dark p-3">
+          <p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
+          <div class="row">
+            @foreach($selectedImages as $key => $selectedImageId)
+              @if($key < 5)
+                @php
+                  $selectedImage = DB::table('events')->find($selectedImageId)
+                @endphp
+                <div class="col-4 col-md-2 position-relative mb-3">
+                  <img 
+                    src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
+                    class="img-fluid"
+                    style="cursor: pointer;"
+                  >
+                </div>
+                <!-- Delete Icon -->
+                {{-- <span class="position-absolute top-0 end-0 m-2">
+                  <i 
+                    class="text-danger fas fa-times-circle" 
+                    style="cursor: pointer;" 
+                    wire:click="deleteImage({{ $image->id }})">
+                  </i>
+                </span> --}}
+              @endif
+            @endforeach
+          </div>
 
+          <div class="d-flex justify-content-between mt-2">
+            <!-- Show count and email button -->
+            <p>{{ count($selectedImages) }} images selected</p>
+            <button wire:click="sendEmail" class="btn btn-light-outline btn-sm">Send Email</button>
+          </div>
+        </div>
+      @endif
       
       
     </main>
