@@ -163,7 +163,7 @@
                                     @endphp
                                     <div class="col-4 col-md-2 position-relative mb-3">
                                       <img 
-                                        src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
+                                        src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
                                         class="img-fluid"
                                         style="cursor: pointer;"
                                       >
