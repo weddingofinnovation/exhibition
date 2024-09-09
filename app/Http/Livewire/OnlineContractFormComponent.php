@@ -24,7 +24,7 @@ class OnlineContractFormComponent extends Component
        $this->images = Brand::whereNotNull('brand_logo')->get();
     }
 
-    public $selectedImages = [];
+
     public function selectImage($imageId) {
         if (in_array($imageId, $this->selectedImages)) {
             // Unselect if already selected
