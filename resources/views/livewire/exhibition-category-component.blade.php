@@ -77,13 +77,12 @@
                         <div class="row mb-5 pb-2">    
                           @foreach ($exhibition as $business)
                             @php
-                                $franchiso = DB::table('events')->where('id', $business->EventName)
-                                ->get(); 
+                                $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
                             @endphp
 
                             @foreach ($franchiso as $franchise)
                             
-                                    <div class="container" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                                    <div class="container">
                                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                           <div class="col  pr-0">
                                               @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -122,8 +121,30 @@
                                           </div>
 
                                           <div class="col-3  p-0">
-                                            <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectItem('{{$franchise->id}}')">
-                                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                              <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
+                                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                                              </a>
+                                              @if(in_array($franchise->id, $selectedImages))
+                                                <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+                                                  <span class="text-white">Selected</span>
+                                                </div> -->
+                                                <!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
+                                                <!-- Checkmark Icon -->
+                                                <!-- <span class="position-absolute top-0 start-0 m-2 text-success">
+                                                  <i class="fas fa-check-circle fa-2x"></i>
+                                                </span> -->
+                                                
+                                                <!-- Mobile view: icon notification -->
+                                                <!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
+                                                  m<i class="fas fa-check-circle fa-2x"></i> 
+                                                </span> -->
+                                                <span class="position-absolute delete-notification"></span>
+
+                                                <!-- Desktop view: "Selected" text -->
+                                                <span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
+                                                  Selected <!-- Desktop text -->
+                                                </span>
+                                              @endif
                                           </div>
                                         </div>  
                                     </div>
@@ -131,46 +152,41 @@
                             @endforeach                            
                           @endforeach
 
-                          <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"  aria-labelledby="offcanvasBottomLabel" style="height: 380px;">
-
-                            <div class="offcanvas-header align-items-center shadow-sm">
-                              @if ($selectedItem)
-                                <h2 class="h5 mb-0" >{{ $selectedItem['eventname']}}</h2>
-                              @endif
-                                <button class="btn-close ms-auto" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            
-                            <div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
-                                  <a href="http://">business</a>
-                            </div>
-                            
-                            <div class="handheld-toolbar">
-
-                              <div class="d-table table-layout-fixed w-100">
-                                      
-                                <a class="d-table-cell handheld-toolbar-item" href="">
-                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                  <span class="handheld-toolbar-label">Exhibitor</span>
-                                </a>
-
-                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                  <span class="handheld-toolbar-label">save</span>
-                                </a> 
-                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                  <span class="handheld-toolbar-label">fabrication</span>
-                                </a>
-                                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'visitcard'])}}">
-                                  <span class="handheld-toolbar-icon"><i class="bi bi-add"></i></span>
-                                  <span class="handheld-toolbar-label">Membership</span>
-                                </a>
-                                
+                          @if(count($selectedImages) > 0)
+                            <div class="fixed-bottom bg-dark p-3">
+                              <p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
+                              <div class="row">
+                                @foreach($selectedImages as $key => $selectedImageId)
+                                  @if($key < 5)
+                                    @php
+                                      $selectedImage = DB::table('events')->find($selectedImageId)
+                                    @endphp
+                                    <div class="col-4 col-md-2 position-relative mb-3">
+                                      <img 
+                                        src="{{url('public/assets/image/exhibition/'.$selectedImage->brand_logo)}}" 
+                                        class="img-fluid"
+                                        style="cursor: pointer;"
+                                      >
+                                    </div>
+                                    <!-- Delete Icon -->
+                                    <span class="position-absolute top-0 end-0 m-2">
+                                      <i 
+                                        class="text-danger fas fa-times-circle" 
+                                        style="cursor: pointer;" 
+                                        wire:click="deleteImage({{ $image->id }})">
+                                      </i>
+                                    </span>
+                                  @endif
+                                @endforeach
                               </div>
 
+                              <div class="d-flex justify-content-between mt-2">
+                                <!-- Show count and email button -->
+                                <p>{{ count($selectedImages) }} images selected</p>
+                                <button wire:click="sendEmail" class="btn btn-light-outline btn-sm">Send Email</button>
+                              </div>
                             </div>
-
-                          </div>
+                          @endif
 
                         </div>   
                                            

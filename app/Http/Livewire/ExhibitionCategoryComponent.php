@@ -77,6 +77,19 @@ class ExhibitionCategoryComponent extends Component
 
     public $items;
     public $selectedItem = null;
+    
+    public $selectedImages = [];
+    public function selectImage($imageId) {
+        if (in_array($imageId, $this->selectedImages)) {
+            // Unselect if already selected
+            $this->selectedImages = array_diff($this->selectedImages, [$imageId]);
+        } else {
+            // Add image to selected list
+            $this->selectedImages[] = $imageId;
+        }
+        // Store selected images in session to persist across refresh
+        session()->put('selectedImages', $this->selectedImages); // Or save to DB
+    }
 
     public function selectItem($itemId)
     {
