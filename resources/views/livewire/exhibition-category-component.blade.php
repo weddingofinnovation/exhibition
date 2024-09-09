@@ -169,13 +169,13 @@
                                       >
                                     </div>
                                     <!-- Delete Icon -->
-                                    <!-- <span class="position-absolute top-0 end-0 m-2">
+                                    {{-- <span class="position-absolute top-0 end-0 m-2">
                                       <i 
                                         class="text-danger fas fa-times-circle" 
                                         style="cursor: pointer;" 
                                         wire:click="deleteImage({{ $image->id }})">
                                       </i>
-                                    </span> -->
+                                    </span> --}}
                                   @endif
                                 @endforeach
                               </div>
