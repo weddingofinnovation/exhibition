@@ -93,7 +93,7 @@
                   <div class="tab-content pt-1">                
                       <!-- Product details tab-->
                       <div class="tab-pane fade show active" id="details" role="tabpanel">
-                        <div wire:ignore class="d-flex badgese pb-2">
+                        {{-- <div wire:ignore class="d-flex badgese pb-2">
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Today</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>
@@ -101,7 +101,7 @@
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Next weekend</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">This Month</span>
                           <span class="badge border border-1 text-right border-dark text-dark mr-1">Next Month</span>
-                        </div>
+                        </div> --}}
 
                         <!-- details test tickets-->
                         @php
@@ -1919,7 +1919,7 @@
           </section>         
         </div>
       </div>
-      
+
       @if(count($selectedImages) > 0)
         <div class="fixed-bottom bg-dark p-3">
           <p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
