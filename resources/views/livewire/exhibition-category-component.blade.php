@@ -1912,8 +1912,9 @@
       </div>
 
       @if(count($selectedImages) > 0)
-        <div class="fixed-bottom bg-light p-3">
+        <div class="fixed-bottom bg-light p-3 border-top">
           <p class="text-dark"> {{ count($selectedImages) }} Selected Exhibition</p>
+
           <hr class="">
           <div class="row">
             @foreach($selectedImages as $key => $selectedImageId)
