@@ -1912,8 +1912,8 @@
       </div>
 
       @if(count($selectedImages) > 0)
-        <div class="fixed-bottom bg-dark p-3">
-          <p class="text-light"> {{ count($selectedImages) }} Selected Brands</p>
+        <div class="fixed-bottom bg-light p-3">
+          <p class="text-light"> {{ count($selectedImages) }} Selected Exhibition</p>
           <div class="row">
             @foreach($selectedImages as $key => $selectedImageId)
               @if($key < 5)
@@ -1942,7 +1942,7 @@
           <div class="d-flex justify-content-between mt-2">
             <!-- Show count and email button -->
             <p>{{ count($selectedImages) }} images selected</p>
-            <button wire:click="sendEmail" class="btn btn-light-outline btn-sm">Send Email</button>
+            <button wire:click="sendEmail" class="btn btn-dark-outline btn-sm">Send Email</button>
           </div>
         </div>
       @endif

@@ -18,7 +18,7 @@
                         </a>
 
                         <ul class="dropdown-menu" width="auto">
-                        <li><a class="dropdown-item" href="#">More</a></li>
+                          <li><a class="dropdown-item" href="#">More</a></li>
                           <li><a class="dropdown-item" href="#">Speaker</a></li>
                           <li><a class="dropdown-item" href="#">Subscribe</a></li>
                         </ul>
