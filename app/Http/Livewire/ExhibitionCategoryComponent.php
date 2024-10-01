@@ -104,6 +104,11 @@ class ExhibitionCategoryComponent extends Component
         $this->selectedItem = null;
     }
 
+    public function sendEmail()
+    {
+        dd($this->selectedImages);
+    }
+
     public function render()
     {
         $findcategryIDfromExpos = Expo::where('slug', $this->categry)->value('id');

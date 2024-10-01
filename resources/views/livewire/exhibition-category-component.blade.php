@@ -1913,14 +1913,14 @@
 
       @if(count($selectedImages) > 0)
         <div class="fixed-bottom bg-light p-3">
-          <p class="text-light"> {{ count($selectedImages) }} Selected Exhibition</p>
+          <p class="text-dark"> {{ count($selectedImages) }} Selected Exhibition</p>
           <div class="row">
             @foreach($selectedImages as $key => $selectedImageId)
               @if($key < 5)
                 @php
                   $selectedImage = DB::table('events')->find($selectedImageId)
                 @endphp
-                <div class="col-4 col-md-2 position-relative mb-3">
+                <div class="card-img-top d-block overflow-hidden">
                   <img 
                     src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
                     class="img-fluid"
@@ -1928,20 +1928,20 @@
                   >
                 </div>
                 <!-- Delete Icon -->
-                {{-- <span class="position-absolute top-0 end-0 m-2">
+                <span class="position-absolute top-0 end-0 m-2">
                   <i 
                     class="text-danger fas fa-times-circle" 
                     style="cursor: pointer;" 
                     wire:click="deleteImage({{ $image->id }})">
                   </i>
-                </span> --}}
+                </span>
               @endif
             @endforeach
           </div>
 
           <div class="d-flex justify-content-between mt-2">
             <!-- Show count and email button -->
-            <p>{{ count($selectedImages) }} images selected</p>
+            <p>{{ count($selectedImages) }}selected</p>
             <button wire:click="sendEmail" class="btn btn-dark-outline btn-sm">Send Email</button>
           </div>
         </div>
