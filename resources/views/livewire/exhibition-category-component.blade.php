@@ -1914,13 +1914,14 @@
       @if(count($selectedImages) > 0)
         <div class="fixed-bottom bg-light p-3">
           <p class="text-dark"> {{ count($selectedImages) }} Selected Exhibition</p>
+          <hr class="">
           <div class="row">
             @foreach($selectedImages as $key => $selectedImageId)
               @if($key < 5)
                 @php
                   $selectedImage = DB::table('events')->find($selectedImageId)
                 @endphp
-                <div class="card-img-top d-block overflow-hidden">
+                <div class="col-4 col-md-2 position-relative mb-3 mx-1">
                   <img 
                     src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
                     class="img-fluid"
