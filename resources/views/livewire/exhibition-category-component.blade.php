@@ -1932,7 +1932,7 @@
                   <i 
                     class="text-danger fas fa-times-circle" 
                     style="cursor: pointer;" 
-                    wire:click="deleteImage({{ $image->id }})">
+                    wire:click="deleteImage({{ $selectedImageId }})">
                   </i>
                 </span>
               @endif
