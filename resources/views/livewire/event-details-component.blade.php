@@ -999,147 +999,71 @@
 
                   </div>  
                   
-
-                  <div class="grido">
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Edition</h3>
-                        <p class="symbol text-dark">{{$event->edition}}</p>
-                        <p class="number"> <i class="bi bi-add"></i> </p>
-                        <p class="weight">Verified</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Visitor</h3>
-                        <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
-                        <p class="number"></p>
-                        <p class="weight">Verified</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Exhibitor</h3>
-                        <p class="symbol text-dark">{{$event->exhibitors}}</p>
-                        <p class="number"></p>
-                        <p class="weight">Verified</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Rating</h3>
-                        <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
-                        <p class="number">83</p>
-                        <p class="weight">Verified</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Business Days</h3>
-                        <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}}</p>
-                        <p class="number"></p>
-                        <p class="weight">Verified</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Contract Form</h3>
-                        <p class="symbol">Bi</p>
-                        <p class="number">83</p>
-                        <p class="weight">Space</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Design</h3>
-                        <p class="symbol">Bi</p>
-                        <p class="number">83</p>
-                        <p class="weight">Stall</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Material</h3>
-                        <p class="symbol">Bi</p>
-                        <p class="number">83</p>
-                        <p class="weight">Marketing</p>
-                      </div>
-
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Fabrication</h3>
-                        <p class="symbol">Bi</p>
-                        <p class="number">83</p>
-                        <p class="weight">Verified</p>
-                      </div>
+                  <div class="grido mb-5">
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Edition</h3>
+                      <p class="symbol text-dark">{{$event->edition}}</p>
+                      <p class="number"> <i class="bi bi-add"></i> </p>
+                      <p class="weight">Verified</p>
                     </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Visitor</h3>
+                      <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
+                      <p class="number"></p>
+                      <p class="weight">Verified</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Exhibitor</h3>
+                      <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                      <p class="number"></p>
+                      <p class="weight">Verified</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Rating</h3>
+                      <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
+                      <p class="number">83</p>
+                      <p class="weight">Verified</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Business Days</h3>
+                      <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}}</p>
+                      <p class="number"></p>
+                      <p class="weight">Verified</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Contract Form</h3>
+                      <p class="symbol">Bi</p>
+                      <p class="number">83</p>
+                      <p class="weight">Space</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Design</h3>
+                      <p class="symbol">Bi</p>
+                      <p class="number">83</p>
+                      <p class="weight">Stall</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Material</h3>
+                      <p class="symbol">Bi</p>
+                      <p class="number">83</p>
+                      <p class="weight">Marketing</p>
+                    </div>
+
+                    <div class="element-item bg-light" data-category="post-transition">
+                      <h3 class="name">Fabrication</h3>
+                      <p class="symbol">Bi</p>
+                      <p class="number">83</p>
+                      <p class="weight">Verified</p>
+                    </div>
+                  </div>
                   
-                  @if(count($eventbrand) > 0)
-                    <section class="container mb-4 mb-lg-5" >
-                      <div class="row mb-5 pb-2">
-                          @foreach ($eventbrand as $participant) 
-                              {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
-                              <div class=" col col-auto my-1 px-2"> 
-                                  <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="60px">
-                              </div>
-                          @endforeach  
-                      </div>
-                    </section>
-                  @endif
-                  
-                  <!--exhibitor-->
-                  @if(count($eventbrand) > 0)
-                    <hr class="mt-md-2 mb-2">
-                    <section class="container pt-2 pt-md-5">
-                      <h6 class="text-left mb-2"> Participants</h6>
-                      <div class="my-sliderexpo d-none d-sm-block">
-                            @foreach ($eventbrand as $franchise)
-                                <div class="col-sm-3 mb-grid-gutter">
-                                  <div class="card product-card-alt">
-                                          
-                                        <div class="product-thumb p-3">
-                                          
-                                          
-                                            <div class="product-card-actions p-2">
-                                            
-                                              <div class="fs-sm text-light" href="">Booth 3</div>
-                                              <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                              <div class="fs-sm text-light" href="">View Website</div>
-                                            </div>
-
-                                            <a class="product-thumb-overlay" href=""></a>
-
-                                            <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                        </div>  
-                                  </div>
-                                </div>
-                            @endforeach
-                      </div>
-
-                      <div class="my-sliderexpo d-lg-none">
-                          <a class="d-flex align-items-center" href="#">
-                            <img class="rounded-circle" width="90%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                          </a>
-                      </div>
-                    </section>
-                  @endif
-
-                  <!-- Partner-->
-                  @if(count($eventbrand)>0)
-                    <hr class="mt-md-2 mb-2">
-                    <section class="container py-2 pt-md-5">
-                      <h6 class="text-left mb-2">Partner</h6>
-                      <div class="my-sliderPartner">
-                            @foreach ($eventbrand as $franchise)
-                            
-                              <div class="card product-card-alt">
-                                <div class="product-thumb p-3">
-                                  <div class="product-card-actions p-2">
-                                    <div class="fs-sm text-light" href="">Booth 3</div>
-                                    <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                    <div class="fs-sm text-light" href="">View Website</div>
-                                  </div>   
-                                  <a class="product-thumb-overlay" href=""> </a>
-                                  <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                
-                                </div>
-                              </div>
-                            @endforeach
-                      </div>
-                    </section>
-                  @endif
-
                 </div>
               @elseif($currentTab === 'tab2')
                 <!-- membership tab-->
@@ -1286,7 +1210,7 @@
             @endphp
 
             @if($relativeEvent->count() >= 2 )
-              <section class="container">
+              
                 <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                       <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
                         <span class="fs-sm"> 2Concurrent<br><span class="fw-medium h5">Event</span></span>
@@ -1302,9 +1226,6 @@
                       </div>
                 </div>
 
-                
-                
-                
                     <div class="row g-0 py-0 mx-n2 my-Slider4 mt-2"> 
                       {{-- px-2 mb-1 --}}
                       @foreach($relativeEvent as $eventoi)
@@ -1391,10 +1312,83 @@
                         </div>
                       @endforeach
                     </div>
-              
-              </section>
-            @endif
+              @endif
           
+                  @if(count($eventbrand) = 0)
+                    <section class="container mb-4 mb-lg-5" >
+                      <div class="row mb-5 pb-2">
+                          @foreach ($eventbrand as $participant) 
+                              {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
+                              <div class=" col col-auto my-1 px-2"> 
+                                  <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="60px">
+                              </div>
+                          @endforeach  
+                      </div>
+                    </section>
+                  @endif
+                  
+                  <!--exhibitor-->
+                  @if(count($eventbrand) = 0)
+                    <hr class="mt-md-2 mb-2">
+                    <section class="container pt-2 pt-md-5">
+                      <h6 class="text-left mb-2"> Participants</h6>
+                      <div class="my-sliderexpo d-none d-sm-block">
+                            @foreach ($eventbrand as $franchise)
+                                <div class="col-sm-3 mb-grid-gutter">
+                                  <div class="card product-card-alt">
+                                          
+                                        <div class="product-thumb p-3">
+                                          
+                                          
+                                            <div class="product-card-actions p-2">
+                                            
+                                              <div class="fs-sm text-light" href="">Booth 3</div>
+                                              <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                                              <div class="fs-sm text-light" href="">View Website</div>
+                                            </div>
+
+                                            <a class="product-thumb-overlay" href=""></a>
+
+                                            <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                        </div>  
+                                  </div>
+                                </div>
+                            @endforeach
+                      </div>
+
+                      <div class="my-sliderexpo d-lg-none">
+                          <a class="d-flex align-items-center" href="#">
+                            <img class="rounded-circle" width="90%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                          </a>
+                      </div>
+                    </section>
+                  @endif
+
+                  <!-- Partner-->
+                  @if(count($eventbrand) = 0)
+                    <hr class="mt-md-2 mb-2">
+                    <section class="container py-2 pt-md-5">
+                      <h6 class="text-left mb-2">Partner</h6>
+                      <div class="my-sliderPartner">
+                            @foreach ($eventbrand as $franchise)
+                            
+                              <div class="card product-card-alt">
+                                <div class="product-thumb p-3">
+                                  <div class="product-card-actions p-2">
+                                    <div class="fs-sm text-light" href="">Booth 3</div>
+                                    <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                                    <div class="fs-sm text-light" href="">View Website</div>
+                                  </div>   
+                                  <a class="product-thumb-overlay" href=""> </a>
+                                  <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                
+                                </div>
+                              </div>
+                            @endforeach
+                      </div>
+                    </section>
+                  @endif
+
 
 
           <!--footer-->
