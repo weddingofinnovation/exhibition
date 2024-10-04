@@ -240,6 +240,7 @@
 
     @if($trackcustomer == 'hostess')
         <div class="container">
+            
             <form wire:submit.prevent="listhostess">
                 <input type="number" class="form-control" wire:model.lazy = "contact" placeholder="contact">
                 <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
