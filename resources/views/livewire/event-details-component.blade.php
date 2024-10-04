@@ -1320,7 +1320,7 @@
                           @foreach ($eventbrand as $participant) 
                               {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
                               <div class=" col col-auto my-1 px-2"> 
-                                  <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="60px">
+                                 
                               </div>
                           @endforeach  
                       </div>
@@ -1347,7 +1347,7 @@
 
                                             <a class="product-thumb-overlay" href=""></a>
 
-                                            <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                            
                                         </div>  
                                   </div>
                                 </div>
@@ -1356,7 +1356,7 @@
 
                       <div class="my-sliderexpo d-lg-none">
                           <a class="d-flex align-items-center" href="#">
-                            <img class="rounded-circle" width="90%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                            
                           </a>
                       </div>
                     </section>
@@ -1376,8 +1376,7 @@
                                     <div class="fs-sm text-light" href="">View Website</div>
                                   </div>   
                                   <a class="product-thumb-overlay" href=""> </a>
-                                  <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                
+                                  
                                 </div>
                               </div>
                             @endforeach
