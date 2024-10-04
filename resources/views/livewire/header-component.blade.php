@@ -1322,29 +1322,7 @@
 
                   </div>
                   
-                  <div class="container py-4">
-                      <div class="col-sm-12 ">
-                        <div class="small fw-lighter">Product updates</div>
-                        <small class="lh-0">Get the latest on new features, product improvement, and other announcements.</small>
-                        <div class="bold text-primary fs-sm"> See what's new</div> 
-                      </div>
-
-                      @if(Auth::check())
-                      <div class="col-sm-12 py-3">
-                        <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
-                      </div>
-                      @else
-                      
-                      <div class="col-sm-12 py-3">
-                        <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
-                      </div>
-
-
-                      @endif
-
-
-                    </div>
-
+                 
                   <div class="handheld-toolbar border-top-0">
                     <div class="container py-4">
                       <div class="col-sm-12 ">
@@ -1354,16 +1332,13 @@
                       </div>
 
                       @if(Auth::check())
-                      <div class="col-sm-12 py-3">
-                        <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
-                      </div>
+                        <div class="col-sm-12 py-3">
+                          <a class="fw-normal text-accent fs-md lh-1" href="{{route('user.dashboard',['board'=> 'dashboard'])}}">Dashboard<i class="bi bi-right-chevron"></i> </a>
+                        </div>
                       @else
-                      
-                      <div class="col-sm-12 py-3">
-                        <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
-                      </div>
-
-
+                        <div class="col-sm-12 py-3">
+                          <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
+                        </div>
                       @endif
 
 
