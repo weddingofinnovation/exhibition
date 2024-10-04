@@ -39,6 +39,24 @@ class UserLandingComponent extends Component
     public $phone;
     public $email;
 
+    
+    public $aliasname;
+    public $gender;
+    public $dob;
+    public $qualification;
+    public $height;
+    public $uniqueCode;
+   
+    public $skill;
+    public $read;
+    public $write;
+    public $speak;
+    public $eventname;
+    public $event_start_date;
+    public $event_end_date;
+    public $booth_number;
+    public $brand_name;
+
 
     public function mount($trackcustomer)
     {
@@ -97,6 +115,7 @@ class UserLandingComponent extends Component
        $magazineDetails->save();
     }
 
+    
 
     public function registerHostess()
     {
