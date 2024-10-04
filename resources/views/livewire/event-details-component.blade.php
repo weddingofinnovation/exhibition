@@ -319,7 +319,6 @@
                  
           </style>
 
-
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">
               <div class="row">
@@ -1204,28 +1203,28 @@
                 </div>
               </section> -->
 
-                  <!-- Partner-->
-                    <hr class="mt-md-2 mb-2">
-                    <section class="container py-2 pt-md-5">
-                      <h6 class="text-left mb-2">Partner</h6>
-                      <div class="my-sliderPartner">
-                            @foreach ($eventbrand as $franchise)
-                            
-                              <div class="card product-card-alt">
-                                <div class="product-thumb p-3">
-                                  <div class="product-card-actions p-2">
-                                    <div class="fs-sm text-light" href="">Booth 3</div>
-                                    <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                    <div class="fs-sm text-light" href="">View Website</div>
-                                  </div>   
-                                  <a class="product-thumb-overlay" href=""> </a>
-                                  <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                
-                                </div>
-                              </div>
-                            @endforeach
-                      </div>
-                    </section>
+              <!-- Partner-->
+              <hr class="mt-md-2 mb-2">
+              <section class="container py-2 pt-md-5">
+                <h6 class="text-left mb-2">Partner</h6>
+                <div class="my-sliderPartner">
+                      @foreach ($eventbrand as $franchise)
+                      
+                        <div class="card product-card-alt">
+                          <div class="product-thumb p-3">
+                            <div class="product-card-actions p-2">
+                              <div class="fs-sm text-light" href="">Booth 3</div>
+                              <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                              <div class="fs-sm text-light" href="">View Website</div>
+                            </div>   
+                            <a class="product-thumb-overlay" href=""> </a>
+                            <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                          
+                          </div>
+                        </div>
+                      @endforeach
+                </div>
+              </section>
 
               @php 
                $relativeEvent = DB::table('events')->where('reference' , $event->reference)->get();
@@ -1235,8 +1234,8 @@
                 <div class="container mb-5">
                   <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                         <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-                          <span class="fs-sm"> 2Concurrent<br><span class="fw-medium h5">Event</span></span>
-                          <a class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
+                          <span class="fs-sm"> Concurrent<br><span class="fw-medium h5">Event</span></span>
+                          <a class="btn btn-outline-dark btn-sm" href="#">Plan your Visit</a>
                             <!-- <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a>
                             <ul class="dropdown-menu" width="auto">
                                   <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
