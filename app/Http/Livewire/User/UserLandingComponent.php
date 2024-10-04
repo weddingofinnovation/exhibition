@@ -5,6 +5,7 @@ namespace App\Http\Livewire\User;
 use App\Models\bcontact;
 use App\Models\Expo;
 use App\Models\Magazine;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -80,8 +81,6 @@ class UserLandingComponent extends Component
        $magazineDetails->save();
     }
 
-
-
     public function updatecontact()
     {
        $magazineDetails = new bcontact();
@@ -96,6 +95,97 @@ class UserLandingComponent extends Component
     }
 
 
+    public function registerHostess()
+    {
+      $hostessDetails = new Hostess();
+      $hostessDetails->name = $this->name;
+      $hostessDetails->aliasname = $this->aliasname;
+      $hostessDetails->slug = Str::slug($this->aliasname,'-');
+      $hostessDetails->gender = $this->gender;
+      $hostessDetails->dob = $this->dob;
+      $hostessDetails->qualification = $this->qualification;
+      $hostessDetails->height = $this->height;
+      $hostessDetails->uniqueCode =  Str::upper(Str::random(6));
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+      $hostessDetails->save();
+    }
+
+    //cutting, serving, stall management, inquring, attending, sales, cooking, hospitality
+    public function ExpertiseHostess()
+    {
+      $hostessDetails = new Skillio();
+
+      if($this->skill == 'language')
+      {
+        $hostessDetails->skill = $this->language;
+
+        $hostessDetails->read = $this->read;
+        $hostessDetails->write = $this->write;
+        $hostessDetails->speak = $this->speak;
+      }
+      else
+      {
+        $hostessDetails->skill = $this->language;
+        $hostessDetails->level = $this->level;
+      }
+
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+      $hostessDetails->save();
+    }
+
+    public function codeDress()
+    {
+      $hostessDetails = new Wearable();
+
+      $hostessDetails->code = $this->code;
+
+      $hostessDetails->read = $this->read;
+      $hostessDetails->write = $this->write;
+      $hostessDetails->speak = $this->speak;
+
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+      $hostessDetails->save();
+    }
+
+    public function ExperienceHostess()
+    {
+      $hostessDetails = new Experience();
+
+      $hostessDetails->eventname = $this->eventname;
+      $hostessDetails->event_start_date = $this->event_start_date;
+      $hostessDetails->event_end_date = $this->event_end_date;
+      $hostessDetails->booth_number = $this->booth_number;
+      $hostessDetails->brand_name = $this->brand_name;
+
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+
+      $hostessDetails->save();
+
+    }
+
+    public function socialHostess()
+    {
+      $hostessDetails = new social();
+
+      $hostessDetails->social_account = $this->socialaccount;
+      $hostessDetails->social_link = $this->social_link;
+
+      $hostessDetails->tablename = 'hostess';
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+
+      $hostessDetails->save();
+
+    }
 
 
     public function render()

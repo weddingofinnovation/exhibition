@@ -84,17 +84,17 @@
                 
 
                 <div class="col-sm-4 mb-2 pb-2">
-                        <label class="form-label" >Category</label>
-                          <div class="input-group">
-                            <select class="form-control" placeholder = "category"  wire:model.lazy="category">
-                            <option selected >Choose...</option>  
-                                @foreach ($tryin as $cat)
-                                    <option value="{{$cat->id}}" >{{$cat->tag}}</option>
-                                @endforeach
-                            </select>
-                          </div>
-                          <span class="text-danger">@error( 'category' ){{ $message}}@enderror</span>
-                      </div>
+                    <label class="form-label" >Category</label>
+                    <div class="input-group">
+                    <select class="form-control" placeholder = "category"  wire:model.lazy="category">
+                    <option selected >Choose...</option>  
+                        @foreach ($tryin as $cat)
+                            <option value="{{$cat->id}}" >{{$cat->tag}}</option>
+                        @endforeach
+                    </select>
+                    </div>
+                    <span class="text-danger">@error( 'category' ){{ $message}}@enderror</span>
+                </div>
 
                 
                 <button class="btn btn-primary mt-2" type="submit">Submit</button>
@@ -128,127 +128,187 @@
             </form>
     @endif
 
-        <!-- <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <div class="text-center mb-5">
-          <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with Marketing Solutions.</p>
-            <div class="container">
-                <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
+    <!-- <section class="container py-3 py-lg-5 mt-4 mb-3">
+    <div class="text-center mb-5">
+    <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with Marketing Solutions.</p>
+        <div class="container">
+            <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
 
-                    <div class="col">
-                        <a  href="{{route('admin.dashboard', ['board' => 'event'])}}" value="magazine"  wire:model="trackcustomer">
-                           <div class="p-3 border rounded border-dark bg-light text-center">Magazine</div>
-                        </a> 
-                    </div>
-                   
-                   
-                    <div class="col">
-                        <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center">Event</div>
-                        </a> 
-                    </div>
-
-
-                     <div class="col">
-                        <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center">Expand your Business</div>
-                        </a> 
-                    </div>
-
-                    <div class="col">
-                        <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center">Hire us Media Buying</div>
-                        </a> 
-                    </div>
-                    
-                    <div class="h4">Expand your Business</div>
-                    <div class="smalll">Reach your business goals with Marketing Solutions.</div>
-                    <a href="" class="btn btn-primary" value="contact" wire:model="trackcustomer">Hire us Media Buying</a>
-
+                <div class="col">
+                    <a  href="{{route('admin.dashboard', ['board' => 'event'])}}" value="magazine"  wire:model="trackcustomer">
+                    <div class="p-3 border rounded border-dark bg-light text-center">Magazine</div>
+                    </a> 
                 </div>
-            </div>
-          </div>
-        </section> -->
+            
+            
+                <div class="col">
+                    <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
+                    <div class="p-3 border rounded border-dark bg-light text-center">Event</div>
+                    </a> 
+                </div>
 
 
+                <div class="col">
+                    <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
+                    <div class="p-3 border rounded border-dark bg-light text-center">Expand your Business</div>
+                    </a> 
+                </div>
 
-            <!-- <form wire:submit.prevent="addMagazine">
-                <input type="text" class="form-control" wire:model.lazy = "magazineName" placeholder="Magazine Name">
-                <input type="text" class="form-control" wire:model.lazy = "brandName" placeholder="Brand">
-                <input type="text" class="form-control" wire:model.lazy = "RNI" placeholder="RNI">
-
-                <input type="text" class="form-control" wire:model.lazy = "industry" placeholder="industry">
-                <input type="text" class="form-control" wire:model.lazy = "edition" placeholder="Current Edition">
-                <input type="text" class="form-control" wire:model.lazy = "issue" placeholder="Current Issue"> 
+                <div class="col">
+                    <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
+                    <div class="p-3 border rounded border-dark bg-light text-center">Hire us Media Buying</div>
+                    </a> 
+                </div>
                 
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>
+                <div class="h4">Expand your Business</div>
+                <div class="smalll">Reach your business goals with Marketing Solutions.</div>
+                <a href="" class="btn btn-primary" value="contact" wire:model="trackcustomer">Hire us Media Buying</a>
+
+            </div>
+        </div>
+    </div>
+    </section> -->
+
+    <!-- <form wire:submit.prevent="addMagazine">
+        <input type="text" class="form-control" wire:model.lazy = "magazineName" placeholder="Magazine Name">
+        <input type="text" class="form-control" wire:model.lazy = "brandName" placeholder="Brand">
+        <input type="text" class="form-control" wire:model.lazy = "RNI" placeholder="RNI">
+
+        <input type="text" class="form-control" wire:model.lazy = "industry" placeholder="industry">
+        <input type="text" class="form-control" wire:model.lazy = "edition" placeholder="Current Edition">
+        <input type="text" class="form-control" wire:model.lazy = "issue" placeholder="Current Issue"> 
+        
+        <button class="btn btn-primary form-control" type="submit">Submit</button>
+    </form>
+
+    <div class="small">When going to print?</div>
+    <form wire:submit.prevent="date">
+        <input type="text" class="form-control" wire:model.lazy = "date" placeholder="Print Date">
+    </form> -->
+
+    @if($trackcustomer == 'magazine')
+
+        //choose industry
+        <form action="">
+            <input type="text" class="form-control" wire:model.lazy = "industry">
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
+        </form>
+
+        <form wire:submit.prevent="addMagazine">
+            <input type="text" class="form-control" wire:model.lazy = "magazineName" placeholder="Magazine Name">
+            <input type="text" class="form-control" wire:model.lazy = "brandName" placeholder="Brand">
+            <input type="text" class="form-control" wire:model.lazy = "RNI" placeholder="RNI">
+
+            <input type="text" class="form-control" wire:model.lazy = "industry" placeholder="industry">
+            <input type="text" class="form-control" wire:model.lazy = "edition" placeholder="Current Edition">
+            <input type="text" class="form-control" wire:model.lazy = "issue" placeholder="Current Issue"> 
+            
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
+        </form>
+
+        <form wire:submit.prevent="addContact">
+            <input type="text" class="form-control" wire:model.lazy = "name" placeholder="Owner Name">
+            <input type="text" class="form-control" wire:model.lazy = "phone" placeholder="phone">
+            <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
+        </form>
 
 
-    
+        <div class="small">Upload Magazine Images</div>
+
+        <form wire:submit.prevent="multiImage">
+
+        </form>
+
+        //choose or select 
+        <!-- <div class="small">Distribution Audience</div>
+            <form wire:submit.prevent="businessAudience">
+                    <input type="text" wire:model.lazy = "email" placeholder="email">
+            </form> -->
+
+        //choose or select
+        <div class="small">Upcoming Exhibition, where you are going to participate? May be/ May be Not?</div>
+        <form wire:submit.prevent="chooseEvent">
+
+        </form>
 
             <div class="small">When going to print?</div>
             <form wire:submit.prevent="date">
                 <input type="text" class="form-control" wire:model.lazy = "date" placeholder="Print Date">
-            </form> -->
-
-
-
-
-        @if($trackcustomer == 'magazine')
-
-            //choose industry
-            <form action="">
-                <input type="text" class="form-control" wire:model.lazy = "industry">
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
             </form>
+    @endif
 
-            <form wire:submit.prevent="addMagazine">
-                <input type="text" class="form-control" wire:model.lazy = "magazineName" placeholder="Magazine Name">
-                <input type="text" class="form-control" wire:model.lazy = "brandName" placeholder="Brand">
-                <input type="text" class="form-control" wire:model.lazy = "RNI" placeholder="RNI">
+    @if($trackcustomer == 'hostess')
+      <form wire:submit.prevent="listhostess">
+        <input type="number" class="form-control" wire:model.lazy = "contact" placeholder="contact">
+        <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
 
-                <input type="text" class="form-control" wire:model.lazy = "industry" placeholder="industry">
-                <input type="text" class="form-control" wire:model.lazy = "edition" placeholder="Current Edition">
-                <input type="text" class="form-control" wire:model.lazy = "issue" placeholder="Current Issue"> 
-                
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>
+        <input type="text" class="form-control" wire:model.lazy = "name" placeholder="Hostess Name">
+        <input type="text" class="form-control" wire:model.lazy = "aliasname" placeholder="alias Name">
+        <input type="text" class="form-control" wire:model.lazy = "height" placeholder="height">
+        <input type="text" class="form-control" wire:model.lazy = "gender" placeholder="Gender">
+        <input type="date" class="form-control" wire:model.lazy = "dob" placeholder="Date of Birth">
+        <input type="text" class="form-control" wire:model.lazy = "qualification" placeholder="qualification">
+        <button class="btn btn-primary form-control" type="submit">Submit</button>
+        </form>
 
-            <form wire:submit.prevent="addContact">
-                <input type="text" class="form-control" wire:model.lazy = "name" placeholder="Owner Name">
-                <input type="text" class="form-control" wire:model.lazy = "phone" placeholder="phone">
-                <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>
+        <form wire:submit.prevent="languageHostess">
+            <input type="text" class="form-control" wire:model.lazy = "language" placeholder="language">
+
+                <div class="col-sm-4 mb-2 pb-2">
+                    <label class="form-label">Skills</label>
+                    <div class="input-group">
+                    <select class="form-control" placeholder = "Skill"  wire:model.lazy="skill">
+                        <option selected >Choose...</option>  
+                        
+                        <option value="language">Language</option>
+                        <option value="cooking">Cooking</option>
+                        <option value="hospitality">Hospitality</option>
+                        <option value="cutting">Cutting</option>
+                        <option value="sales">Sales</option>
+                        <option value="management">Management</option>
+                        <option value="inquiry">Inquiry</option>
+                        <option value="anchor">anchoring</option>
+                        <option value="social_media">Social Media</option>
+                        <option value="photography">Photography</option>
+                    </select>
+                    </div>
+                    <span class="text-danger">@error( 'skill' ){{ $message}}@enderror</span>
+                </div>
+
+            <input type="number" class="form-control" wire:model.lazy = "speak" placeholder="Rate your Speak">
+            <input type="number" class="form-control" wire:model.lazy = "write" placeholder="Rate your Write">
+            <input type="number" class="form-control" wire:model.lazy = "read" placeholder="Rate your Read">
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
+        </form>
+
+      <form wire:submit.prevent="experience">
+        <input type="text" class="form-control" wire:model.lazy = "eventname" placeholder="event name">
+        <input type="date" class="form-control" wire:model.lazy = "event_start_date" placeholder="event start date">
+        <input type="date" class="form-control" wire:model.lazy = "event_end_date" placeholder="event end date">
+        <input type="text" class="form-control" wire:model.lazy = "booth_number" placeholder="booth number">
+
+        <input type="text" class="form-control" wire:model.lazy = "brand_name" placeholder="brand_name">
+
+        <button class="btn btn-primary form-control" type="submit">Submit</button>
+      </form>
 
 
-            <div class="small">Upload Magazine Images</div>
+      <form wire:submit.prevent="charges">
+        <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
+        <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
 
-            <form wire:submit.prevent="multiImage">
+        <button class="btn btn-primary form-control" type="submit">Submit</button>
+      </form>
 
-            </form>
+      <form wire:submit.prevent="avaliablity">
+        <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
+        <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
 
-            //choose or select 
-            <!-- <div class="small">Distribution Audience</div>
-                <form wire:submit.prevent="businessAudience">
-                        <input type="text" wire:model.lazy = "email" placeholder="email">
-                </form> -->
+        <button class="btn btn-primary form-control" type="submit">Submit</button>
+      </form>
 
-            //choose or select
-            <div class="small">Upcoming Exhibition, where you are going to participate? May be/ May be Not?</div>
-            <form wire:submit.prevent="chooseEvent">
-
-            </form>
-
-                <div class="small">When going to print?</div>
-                <form wire:submit.prevent="date">
-                    <input type="text" class="form-control" wire:model.lazy = "date" placeholder="Print Date">
-                </form>
-        @endif
-
-
-       
-        
+    @endif 
 
         
 
