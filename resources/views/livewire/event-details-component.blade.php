@@ -1314,7 +1314,7 @@
                     </div>
               @endif
           
-                  @if(count($eventbrand) = 0)
+                  
                     <section class="container mb-4 mb-lg-5" >
                       <div class="row mb-5 pb-2">
                           @foreach ($eventbrand as $participant) 
@@ -1325,10 +1325,8 @@
                           @endforeach  
                       </div>
                     </section>
-                  @endif
                   
                   <!--exhibitor-->
-                  @if(count($eventbrand) = 0)
                     <hr class="mt-md-2 mb-2">
                     <section class="container pt-2 pt-md-5">
                       <h6 class="text-left mb-2"> Participants</h6>
@@ -1362,10 +1360,8 @@
                           </a>
                       </div>
                     </section>
-                  @endif
-
+                  
                   <!-- Partner-->
-                  @if(count($eventbrand) = 0)
                     <hr class="mt-md-2 mb-2">
                     <section class="container py-2 pt-md-5">
                       <h6 class="text-left mb-2">Partner</h6>
@@ -1387,8 +1383,7 @@
                             @endforeach
                       </div>
                     </section>
-                  @endif
-
+                  
 
 
           <!--footer-->
