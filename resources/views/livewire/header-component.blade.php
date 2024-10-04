@@ -1248,170 +1248,78 @@
                 
                   
                   <div class="list-group list-group-flush scrollarea">
-                      <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Dashboard</normal>
+                          <normal class="mb-1">Orders</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Products</normal>
-                          <small><i class="bi bi-chevron-right"></i></small>
-                        </div>
-                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
-                      </a>
-                      
-
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Exhibition Navigator</normal>
+                          <normal class="mb-1">Wishlist</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Fabrication</normal>
+                          <normal class="mb-1">Payment methods</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
                         <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Find Exhibitor</normal>
+                          <normal class="mb-1">My Reviews</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
-                       <div class="col-10 mb-1 small fw-lighter">Download Exhibitory Directory</div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      <a href="{{route('service.product', ['productservice' => 'great-exhibition-to-exhibit'])}}" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Great Exhibition To Exhibit</normal>
+                          <normal class="mb-1">Personal info</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
-                       <div class="col-10 mb-1 small fw-lighter">Review & Rating</div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      @if(Auth::check())
-                        <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                          <div class="d-flex w-100 align-items-center justify-content-between">
-                            <normal class="mb-1">Your Orders</normal>
-                            <small>
-                            @if (Auth::check()) 
-                              <i class="bi bi-chevron-right"></i>
-                              @else
-                              <i class="bi bi-lock-fill"></i>
-                              
-                              @endif
-                            </small>
-                          </div>
-                          <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
-                        </a>
-                      @endif
-                      {{--<a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">COI Recommends</normal>
+                          <normal class="mb-1">Addresses</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
-                        <div class="col-10 mb-1 small fw-lighter">Get COI business picked just for you</div>
-                      </a>--}}
-                      {{--
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Resources</normal>
-                          <small><i class="bi bi-chevron-right"></i></small>
-                        </div>
-                        <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Inspiration</normal>
+                          <normal class="mb-1">Notifications</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
-                        <div class="col-10 mb-1 small fw-lighter ">Plan your business trip headache's</div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
-                                                                    
-                      <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
                         <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Pricing</normal>
+                          <normal class="mb-1">Help center</normal>
                           <small><i class="bi bi-chevron-right"></i></small>
                         </div>
-                      
-                      </a>--}}
-
-                      <a href="#" class=" list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                        <div class="d-flex w-100 align-items-center justify-content-between">
-                          <normal class="mb-1">Talk to Sales</normal>
-                        </div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
                       </a>
 
+                      <a href="{{route('user.dashboard', ['board' => 'dashboard'])}}" class=" border-0 list-group-item list-group-item-action {{'user/dashboard/dashboard' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                          <normal class="mb-1">Terms and conditions</normal>
+                          <small><i class="bi bi-chevron-right"></i></small>
+                        </div>
+                        <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
+                      </a>
 
-                      {{--<a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Offers</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">View your rewards & unlock new ones</div>
-                          </a>--}}
-
-                          <a href="{{route('user.profile')}}" class=" border-0 list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Share your Business</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">Share business with a single tap</div>
-                          </a>
-
-                          <a href="{{route('user.profile')}}" class=" border-0 list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Memberships</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
-                          </a>
-
-                          <a href="{{route('user.profile')}}" class=" border-0 list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Hire a Media Buying</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">Share business with a single tap</div>
-                          </a>
-
-                          <a href="{{route('user.profile')}}" class=" border-0 list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Accounts & Settings</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
-                          </a>
-                      
-                      @if(Auth::check())
-                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                          <div class="d-flex w-100 align-items-center justify-content-between">
-                            <normal class="mb-1">Logout</normal>
-                            <small><i class="bi bi-chevron-right"></i></small>
-                          </div>
-                          <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                        </a>
-                        <form id="logout-form" action="{{route('logout')}}" method="POST">
-                          @csrf
-                        </form>
-                      @endif
-
-                      {{--<a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                            <div class="d-flex w-100 align-items-center justify-content-between">
-                              <normal class="mb-1">Help & Support</normal>
-                              <small><i class="bi bi-chevron-right"></i></small>
-                            </div>
-                            <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                          </a>--}}
                   </div>
                   
                   <div class="container py-4">
