@@ -3,8 +3,11 @@
 namespace App\Http\Livewire\User;
 
 use App\Models\bcontact;
+use App\Models\Experience;
 use App\Models\Expo;
+use App\Models\Hostess;
 use App\Models\Magazine;
+use App\Models\Skillio;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
