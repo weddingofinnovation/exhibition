@@ -310,9 +310,9 @@
       <div class="d-table table-layout-fixed w-100">
 
         @if('/' == request()->path() ? 'active' : '')
-            <a class="d-table-cell handheld-toolbar-item" href="#exhibit">
-              <!-- <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span> -->
-              <span class="handheld-toolbar-label">We are trusted By</span>
+            <a class="d-table-cell handheld-toolbar-item" href="#hostess">
+              <span class="handheld-toolbar-icon"><i class="bi bi-calendar4-week"></i></span>
+              <span class="handheld-toolbar-label">Hostess</span>
             </a> 
 
             <a class="d-table-cell handheld-toolbar-item" href="#conference">
