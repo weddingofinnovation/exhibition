@@ -239,81 +239,78 @@
     @endif
 
     @if($trackcustomer == 'hostess')
-      <form wire:submit.prevent="listhostess">
-        <input type="number" class="form-control" wire:model.lazy = "contact" placeholder="contact">
-        <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
+        <div class="container">
+            <form wire:submit.prevent="listhostess">
+                <input type="number" class="form-control" wire:model.lazy = "contact" placeholder="contact">
+                <input type="text" class="form-control" wire:model.lazy = "email" placeholder="email">
 
-        <input type="text" class="form-control" wire:model.lazy = "name" placeholder="Hostess Name">
-        <input type="text" class="form-control" wire:model.lazy = "aliasname" placeholder="alias Name">
-        <input type="text" class="form-control" wire:model.lazy = "height" placeholder="height">
-        <input type="text" class="form-control" wire:model.lazy = "gender" placeholder="Gender">
-        <input type="date" class="form-control" wire:model.lazy = "dob" placeholder="Date of Birth">
-        <input type="text" class="form-control" wire:model.lazy = "qualification" placeholder="qualification">
-        <button class="btn btn-primary form-control" type="submit">Submit</button>
-        </form>
+                <input type="text" class="form-control" wire:model.lazy = "name" placeholder="Hostess Name">
+                <input type="text" class="form-control" wire:model.lazy = "aliasname" placeholder="alias Name">
+                <input type="text" class="form-control" wire:model.lazy = "height" placeholder="height">
+                <input type="text" class="form-control" wire:model.lazy = "gender" placeholder="Gender">
+                <input type="date" class="form-control" wire:model.lazy = "dob" placeholder="Date of Birth">
+                <input type="text" class="form-control" wire:model.lazy = "qualification" placeholder="qualification">
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
 
-        <form wire:submit.prevent="languageHostess">
-            <input type="text" class="form-control" wire:model.lazy = "language" placeholder="language">
+            <form wire:submit.prevent="languageHostess">
+                <input type="text" class="form-control" wire:model.lazy = "language" placeholder="language">
 
-                <div class="col-sm-4 mb-2 pb-2">
-                    <label class="form-label">Skills</label>
-                    <div class="input-group">
-                    <select class="form-control" placeholder = "Skill"  wire:model.lazy="skill">
-                        <option selected >Choose...</option>  
-                        
-                        <option value="language">Language</option>
-                        <option value="cooking">Cooking</option>
-                        <option value="hospitality">Hospitality</option>
-                        <option value="cutting">Cutting</option>
-                        <option value="sales">Sales</option>
-                        <option value="management">Management</option>
-                        <option value="inquiry">Inquiry</option>
-                        <option value="anchor">anchoring</option>
-                        <option value="social_media">Social Media</option>
-                        <option value="photography">Photography</option>
-                    </select>
+                    <div class="col-sm-4 mb-2 pb-2">
+                        <label class="form-label">Skills</label>
+                        <div class="input-group">
+                        <select class="form-control" placeholder = "Skill"  wire:model.lazy="skill">
+                            <option selected >Choose...</option>  
+                            
+                            <option value="language">Language</option>
+                            <option value="cooking">Cooking</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="cutting">Cutting</option>
+                            <option value="sales">Sales</option>
+                            <option value="management">Management</option>
+                            <option value="inquiry">Inquiry</option>
+                            <option value="anchor">anchoring</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="photography">Photography</option>
+                        </select>
+                        </div>
+                        <span class="text-danger">@error( 'skill' ){{ $message}}@enderror</span>
                     </div>
-                    <span class="text-danger">@error( 'skill' ){{ $message}}@enderror</span>
-                </div>
 
-            <input type="number" class="form-control" wire:model.lazy = "speak" placeholder="Rate your Speak">
-            <input type="number" class="form-control" wire:model.lazy = "write" placeholder="Rate your Write">
-            <input type="number" class="form-control" wire:model.lazy = "read" placeholder="Rate your Read">
-            <button class="btn btn-primary form-control" type="submit">Submit</button>
-        </form>
+                <input type="number" class="form-control" wire:model.lazy = "speak" placeholder="Rate your Speak">
+                <input type="number" class="form-control" wire:model.lazy = "write" placeholder="Rate your Write">
+                <input type="number" class="form-control" wire:model.lazy = "read" placeholder="Rate your Read">
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
 
-      <form wire:submit.prevent="experience">
-        <input type="text" class="form-control" wire:model.lazy = "eventname" placeholder="event name">
-        <input type="date" class="form-control" wire:model.lazy = "event_start_date" placeholder="event start date">
-        <input type="date" class="form-control" wire:model.lazy = "event_end_date" placeholder="event end date">
-        <input type="text" class="form-control" wire:model.lazy = "booth_number" placeholder="booth number">
+            <form wire:submit.prevent="experience">
+                <input type="text" class="form-control" wire:model.lazy = "eventname" placeholder="event name">
+                <input type="date" class="form-control" wire:model.lazy = "event_start_date" placeholder="event start date">
+                <input type="date" class="form-control" wire:model.lazy = "event_end_date" placeholder="event end date">
+                <input type="text" class="form-control" wire:model.lazy = "booth_number" placeholder="booth number">
 
-        <input type="text" class="form-control" wire:model.lazy = "brand_name" placeholder="brand_name">
+                <input type="text" class="form-control" wire:model.lazy = "brand_name" placeholder="brand_name">
 
-        <button class="btn btn-primary form-control" type="submit">Submit</button>
-      </form>
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
 
+            <form wire:submit.prevent="charges">
+                <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
+                <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
 
-      <form wire:submit.prevent="charges">
-        <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
-        <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
 
-        <button class="btn btn-primary form-control" type="submit">Submit</button>
-      </form>
+            <form wire:submit.prevent="avaliablity">
+                <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
+                <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
 
-      <form wire:submit.prevent="avaliablity">
-        <input type="number" class="form-control" wire:model.lazy = "charge" placeholder="Charge">
-        <input type="number" class="form-control" wire:model.lazy = "expected_charges" placeholder="expected charges">
-
-        <button class="btn btn-primary form-control" type="submit">Submit</button>
-      </form>
-
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
+        </div>
     @endif 
 
         
-
-
-
     <div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">
       
