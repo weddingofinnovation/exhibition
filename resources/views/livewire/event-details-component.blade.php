@@ -777,12 +777,6 @@
                   </div>
                 </section>
                 
-                
-                
-                
-                
-                
-                
               </div>
             </div>
           </section>
@@ -937,80 +931,76 @@
           <!--Tab Step up-->
           <section class="container mb-4 mb-lg-5">
             <div class="tab-content pt-2">
-
-            @if($currentTab === 'tab1')
-              <div class="tab-pane fade show active">
-                 <!--details-->
-                 <!-- mobile -->
-                <div class="d-lg-none">
-                        <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
-                          <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
-                          <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
-                        </div>-->
-                        
-                          @if($commentedRates->count() > 0)
-                            <div class="col-lg-4 col-md-5 pt-2 pb-0">
-                                <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
-                              
-                                      <i class = "bi bi-star-filled text-accent me-1"></i>
-                                        <span class="fs-md fw-bold">
-                                        <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
-                                        <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
-                                    
-                                          <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
-                                </a>        
-                            </div>
-                          @endif
-                      
-                        <ul class="list-unstyled  bg-secondary py-1">
-                              @if(Auth::check())
-                                @php
-                                    $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
-                                    $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
-                                    $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
-                                @endphp
-
-                                @if(count($checkComment) > '0')
-                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
-                                  </li>
-                                @else
-                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
-                                  </li>
-                                @endif
-
-                              @else
-                                  <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                    <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                    <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
-                                  </li>
-                              @endif
-                        </ul>
-                       
-                        
-                        <div>
-                          @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+              @if($currentTab === 'tab1')
+                <div class="tab-pane fade show active">
+                  <!--details-->
+                  <!-- mobile -->
+                  <div class="d-lg-none">
+                          <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
+                            <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
+                            <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
+                          </div>-->
                           
-                          @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
-                          <span class="fs-xs fw-normal"> Visitors </span>@endif
-                          {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
-                          <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
+                            @if($commentedRates->count() > 0)
+                              <div class="col-lg-4 col-md-5 pt-2 pb-0">
+                                  <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
+                                
+                                        <i class = "bi bi-star-filled text-accent me-1"></i>
+                                          <span class="fs-md fw-bold">
+                                          <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
+                                          <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                                      
+                                            <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
+                                  </a>        
+                              </div>
+                            @endif
+                        
+                          <ul class="list-unstyled  bg-secondary py-1">
+                                @if(Auth::check())
+                                  @php
+                                      $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
+                                      $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
+                                      $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
+                                  @endphp
 
-                          <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
-                          <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
-                          <!-- 170 -->
-                        </div>
+                                  @if(count($checkComment) > '0')
+                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
+                                    </li>
+                                  @else
+                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
+                                    </li>
+                                  @endif
 
-                </div>  
-                
+                                @else
+                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
+                                    </li>
+                                @endif
+                          </ul>
+                        
+                          
+                          <div>
+                            @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                            
+                            @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
+                            <span class="fs-xs fw-normal"> Visitors </span>@endif
+                            {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
+                            <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
 
+                            <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
+                            <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
+                            <!-- 170 -->
+                          </div>
 
+                  </div>  
+                  
 
-                  <section class="d-lg-none">
-                    <div class="grido">
+                  <div class="grido">
                       <div class="element-item bg-light" data-category="post-transition">
                         <h3 class="name">Edition</h3>
                         <p class="symbol text-dark">{{$event->edition}}</p>
@@ -1074,89 +1064,83 @@
                         <p class="weight">Verified</p>
                       </div>
                     </div>
-                  </section>
-
-
-                  <hr class="mt-md-2 mb-0">
-
-                
-
-                @if(count($eventbrand) > 0)
-                  <section class="container mb-4 mb-lg-5" >
-                    <div class="row mb-5 pb-2">
-                        @foreach ($eventbrand as $participant) 
-                            {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
-                            <div class=" col col-auto my-1 px-2"> 
-                                <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="60px">
-                            </div>
-                        @endforeach  
-                    </div>
-                  </section>
-                @endif
-                
-                <!--exhibitor-->
-                @if(count($eventbrand) > 0)
-                  <hr class="mt-md-2 mb-2">
-                  <section class="container pt-2 pt-md-5">
-                    <h6 class="text-left mb-2"> Participants</h6>
-                    <div class="my-sliderexpo d-none d-sm-block">
-                          @foreach ($eventbrand as $franchise)
-                              <div class="col-sm-3 mb-grid-gutter">
-                                <div class="card product-card-alt">
-                                        
-                                      <div class="product-thumb p-3">
-                                        
-                                        
-                                          <div class="product-card-actions p-2">
+                  
+                  @if(count($eventbrand) > 0)
+                    <section class="container mb-4 mb-lg-5" >
+                      <div class="row mb-5 pb-2">
+                          @foreach ($eventbrand as $participant) 
+                              {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
+                              <div class=" col col-auto my-1 px-2"> 
+                                  <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="60px">
+                              </div>
+                          @endforeach  
+                      </div>
+                    </section>
+                  @endif
+                  
+                  <!--exhibitor-->
+                  @if(count($eventbrand) > 0)
+                    <hr class="mt-md-2 mb-2">
+                    <section class="container pt-2 pt-md-5">
+                      <h6 class="text-left mb-2"> Participants</h6>
+                      <div class="my-sliderexpo d-none d-sm-block">
+                            @foreach ($eventbrand as $franchise)
+                                <div class="col-sm-3 mb-grid-gutter">
+                                  <div class="card product-card-alt">
                                           
-                                            <div class="fs-sm text-light" href="">Booth 3</div>
-                                            <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                            <div class="fs-sm text-light" href="">View Website</div>
-                                          </div>
+                                        <div class="product-thumb p-3">
+                                          
+                                          
+                                            <div class="product-card-actions p-2">
+                                            
+                                              <div class="fs-sm text-light" href="">Booth 3</div>
+                                              <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                                              <div class="fs-sm text-light" href="">View Website</div>
+                                            </div>
 
-                                          <a class="product-thumb-overlay" href=""></a>
+                                            <a class="product-thumb-overlay" href=""></a>
 
-                                          <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                                      </div>  
+                                            <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                        </div>  
+                                  </div>
+                                </div>
+                            @endforeach
+                      </div>
+
+                      <div class="my-sliderexpo d-lg-none">
+                          <a class="d-flex align-items-center" href="#">
+                            <img class="rounded-circle" width="90%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                          </a>
+                      </div>
+                    </section>
+                  @endif
+
+                  <!-- Partner-->
+                  @if(count($eventbrand)>0)
+                    <hr class="mt-md-2 mb-2">
+                    <section class="container py-2 pt-md-5">
+                      <h6 class="text-left mb-2">Partner</h6>
+                      <div class="my-sliderPartner">
+                            @foreach ($eventbrand as $franchise)
+                            
+                              <div class="card product-card-alt">
+                                <div class="product-thumb p-3">
+                                  <div class="product-card-actions p-2">
+                                    <div class="fs-sm text-light" href="">Booth 3</div>
+                                    <div class="fs-sm text-light" href="">Elite Sponsor</div>
+                                    <div class="fs-sm text-light" href="">View Website</div>
+                                  </div>   
+                                  <a class="product-thumb-overlay" href=""> </a>
+                                  <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                
                                 </div>
                               </div>
-                          @endforeach
-                    </div>
+                            @endforeach
+                      </div>
+                    </section>
+                  @endif
 
-                    <div class="my-sliderexpo d-lg-none">
-                        <a class="d-flex align-items-center" href="#">
-                          <img class="rounded-circle" width="90%" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                        </a>
-                    </div>
-                  </section>
-                @endif
-
-                <!-- Partner-->
-                @if(count($eventbrand)>0)
-                  <hr class="mt-md-2 mb-2">
-                  <section class="container py-2 pt-md-5">
-                    <h6 class="text-left mb-2">Partner</h6>
-                    <div class="my-sliderPartner">
-                          @foreach ($eventbrand as $franchise)
-                          
-                            <div class="card product-card-alt">
-                              <div class="product-thumb p-3">
-                                <div class="product-card-actions p-2">
-                                  <div class="fs-sm text-light" href="">Booth 3</div>
-                                  <div class="fs-sm text-light" href="">Elite Sponsor</div>
-                                  <div class="fs-sm text-light" href="">View Website</div>
-                                </div>   
-                                <a class="product-thumb-overlay" href=""> </a>
-                                <img class="p-3" width="auto" src="{{url('public/assets/images/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
-                              
-                              </div>
-                            </div>
-                          @endforeach
-                    </div>
-                  </section>
-                @endif
-
-              </div>
+                </div>
               @elseif($currentTab === 'tab2')
                 <!-- membership tab-->
                 <div class="tab-pane fade show active">
@@ -1268,7 +1252,7 @@
                   </div>
                 </div>
                 </div>
-            @endif
+              @endif
             </div>
           </section>
          
@@ -1286,13 +1270,7 @@
           </div>
           
           
-
-          
-
-        
-
-          
-              <!-- <section class="d-lg-none">
+          <!--<section class="d-lg-none">
                 <hr class="mt-md-2 mb-2">
                 <div class="card text-center py-5 border-0"> 
                   <div class="card-body">
@@ -1308,11 +1286,10 @@
             @endphp
 
             @if($relativeEvent->count() >= 2 )
-              <hr class="mt-md-2 mb-2">
               <section class="container">
                 <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                       <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-                        <span class="fs-sm"> Concurrent<br><span class="fw-medium h5">Event</span></span>
+                        <span class="fs-sm"> 2Concurrent<br><span class="fw-medium h5">Event</span></span>
                         <a class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
                           <!-- <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a>
                           <ul class="dropdown-menu" width="auto">
@@ -1516,8 +1493,8 @@
           @endif
 
             
-<!-- left: 0; -->
-<style>
+              <!-- left: 0; -->
+              <style>
                     .fixed-bottom-div {
                         position: fixed;
                         bottom: 0;
@@ -1528,6 +1505,7 @@
                         z-index: 9999; /* Ensures it stays on top */
                     }
                 </style>
+
                 <!-- fixedthis -->
                 <div class="d-none d-sm-block fixed-bottom-div">
                   <ul class=" container list-unstyled fs-sm  py-2">     
