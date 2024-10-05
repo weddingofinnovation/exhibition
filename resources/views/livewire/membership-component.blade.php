@@ -9,1900 +9,1900 @@
 @section('page_name',' All Job')
 
 <style>
-    @keyframes _slideToRight_1rxdz_1 {
-    0% {
-        transform: translate(0)
-    }
-
-    to {
-        transform: translate(calc(-100% - var(--gap)))
-    }
-}
-
-@keyframes _slideToLeft_1rxdz_1 {
-    0% {
-        transform: translate(calc(-100% - var(--gap)))
-    }
-
-    to {
-        transform: translate(0)
-    }
-}
-
-._Header_1rxdz_92 {
-    overflow: hidden;
-    position: relative;
-    font-family: Plus Jakarta Sans;
-    height: 100vh;
-    height: 100dvh
-}
-
-._Header_1rxdz_92 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._Header_1rxdz_92 ._VideoWrapper_1rxdz_104 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden
-}
-
-._Header_1rxdz_92 ._VideoWrapper_1rxdz_104 video {
-    object-fit: cover;
-    height: 100%;
-    width: 100%
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    height: 100%;
-    align-items: flex-end;
-    background: linear-gradient(0deg,#000 24.34%,rgba(0,0,0,0) 91.66%)
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 {
-    padding: 0 20px 90px;
-    margin-inline:auto}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 {
-    display: flex;
-    flex-direction: column;
-    align-items: center
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134 {
-    visibility: hidden;
-    cursor: pointer;
-    display: flex;
-    width: 98px;
-    height: 98px;
-    padding: 10px 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 150px;
-    background: #ff5000;
-    box-shadow: 0 4px 6px #00000040;
-    color: #fff;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    align-self: flex-end;
-    margin-right: 0;
-    margin-bottom: 3px
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134:hover {
-    background: #e84a01
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._pt_1rxdz_162 {
-    width: 115px;
-    height: 115px;
-    font-size: 12px
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167 {
-    color: #fff;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 30px;
-    text-transform: uppercase;
-    text-align: center
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176 {
-    color: #fff;
-    font-size: 75px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 70px;
-    text-transform: uppercase;
-    margin-top: 6px;
-    text-align: center
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._pt_1rxdz_162 {
-    font-size: 54px
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 {
-    display: flex;
-    flex-direction: column
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196 {
-    color: #fff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
-    letter-spacing: .32px;
-    max-width: 350px;
-    margin-top: 12px;
-    text-align: center
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207 {
-    color: #fff;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    text-transform: uppercase;
-    margin-top: 2px;
-    text-align: center
-}
-
-._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._GetYourPassButton_1rxdz_217 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 26px;
-    font-family: Plus Jakarta Sans;
-    color: #fff;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    width: 350px;
-    height: 41px;
-    background-color: transparent;
-    border-radius: 5px;
-    border: 1px solid #fff
-}
-
-._Header_1rxdz_92 ._Marquee_1rxdz_235 {
-    --gap: 20px;
-    height: 50px;
-    width: 100%;
-    border-top: 1px solid #404040;
-    background: #ff5000;
-    position: absolute;
-    display: flex;
-    overflow: hidden;
-    -webkit-user-select: none;
-    user-select: none;
-    gap: var(--gap);
-    bottom: 0;
-    z-index: 100
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: space-around;
-    gap: var(--gap);
-    min-width: 100%
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._forward_1rxdz_256 {
-    animation: 43s _slideToRight_1rxdz_1 infinite linear
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._backward_1rxdz_259 {
-    animation: 43s _slideToLeft_1rxdz_1 infinite linear
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268 {
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: .36px
-}
-
-._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextDate_1rxdz_276 {
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 32px
-}
-
-@media (min-width: 1024px) {
-    ._Header_1rxdz_92 {
-        display:flex;
-        height: 100vh
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 {
-        align-self: flex-end;
-        padding: 0px 4.861vw;
-        background: rgba(0,0,0,.6)
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 {
-        padding: 0;
-        margin-inline:unset}
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 {
-        align-items: start
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167 {
-        font-size: 2.8vw;
-        margin-bottom: .833vw;
-        font-weight: 500
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167._es_1rxdz_162 {
-        margin-bottom: 3.633vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167._pt_1rxdz_162 {
-        margin-bottom: .5vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176 {
-        font-size: 7.987vw;
-        margin-top: 0;
-        line-height: 7.7vw;
-        font-weight: 600;
-        text-wrap: nowrap;
-        white-space: nowrap
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._es_1rxdz_162 {
-        font-size: 10.347vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._pt_1rxdz_162 {
-        font-size: 5.625vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134 {
-        order: -1;
-        margin-right: 5.5vw;
-        margin-bottom: -.9vw;
-        width: 9.028vw;
-        height: 9.028vw;
-        font-size: 1.25vw;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._pt_1rxdz_162 {
-        width: 10vw;
-        height: 10vw;
-        font-size: 1vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 {
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: start;
-        max-width: 90.5vw;
-        margin-bottom: 7.7vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196 {
-        margin-top: 0;
-        font-size: 1.68vw;
-        max-width: 53%;
-        padding-top: 10px;
-        text-align: start
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196._es_1rxdz_162 {
-        padding-top: max(10px,1.667vw);
-        max-width: 60%
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196._pt_1rxdz_162 {
-        padding-top: 0
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207 {
-        margin-top: 0;
-        font-size: 2.8vw;
-        line-height: 3.8vw;
-        font-weight: 500;
-        margin-right: .208vw
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207._es_1rxdz_162 {
-        padding-top: max(10px,1.667vw)
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207._pt_1rxdz_162 {
-        line-height: 2.222vw;
-        padding-top: 0
-    }
-
-    ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._GetYourPassButton_1rxdz_217 {
-        display: none
-    }
-
-    ._Header_1rxdz_92 ._Marquee_1rxdz_235 {
-        --gap: 2.083vw;
-        gap: var(--gap);
-        height: 3.472vw
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 {
-        gap: var(--gap)
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._forward_1rxdz_256 {
-        animation: 70s _slideToRight_1rxdz_1 infinite linear
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._backward_1rxdz_259 {
-        animation: 70s _slideToLeft_1rxdz_1 infinite linear
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 {
-        gap: var(--gap)
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268 {
-        font-size: 1.528vw;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: .031vw
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268:hover {
-        border-bottom: max(1px,.069vw) solid #fff;
-        cursor: pointer
-    }
-
-    ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextDate_1rxdz_276 {
-        font-size: 1.528vw;
-        font-style: normal;
-        font-weight: 600
-    }
-}
-
-._NumericInfoCard_zazef_76 {
-    font-family: Plus Jakarta Sans;
-    display: flex
-}
-
-._NumericInfoCard_zazef_76 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
-    min-height: 126px;
-    padding-left: 20px
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._pt_zazef_96 {
-    gap: 6px
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._TopText_zazef_99 {
-    color: #fff;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 32px;
-    text-transform: uppercase
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 {
-    color: #fff;
-    font-size: 35px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: .7px;
-    text-transform: uppercase
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 ._NumberTextSuffix_zazef_116._pt_zazef_96 {
-    font-size: 20px
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119 {
-    color: #fff;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 32px;
-    text-transform: uppercase
-}
-
-._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._pt_zazef_96 {
-    line-height: 20px
-}
-
-@media (min-width: 1024px) {
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 {
-        padding-left:0;
-        padding-top: .833vw;
-        min-height: 10.694vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._pt_zazef_96 {
-        padding-top: 2vw;
-        padding-bottom: 2.5vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._TopText_zazef_99 {
-        line-height: 2.3vw;
-        font-size: 1.528vw;
-        margin-bottom: 1vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 {
-        font-size: 4.86vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 ._NumberTextSuffix_zazef_116._pt_zazef_96 {
-        font-size: 2.778vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119 {
-        margin-top: 1vw;
-        line-height: 2.3vw;
-        font-size: 1.528vw
-    }
-
-    ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._pt_zazef_96 {
-        margin-top: 1.2vw
-    }
-}
-
-._Section_1f398_76 {
-    background: rgba(0,0,0,.8)
-}
-
-._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 {
-    display: flex;
-    width: 100%;
-    background: #0b0908
-}
-
-._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 {
-    width: 100%!important
-}
-
-._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 ._SwiperSlide_1f398_87 {
-    width: 50%!important;
-    max-width: 140px!important
-}
-
-@media (min-width: 1024px) {
-    ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 {
-        padding-inline:2.778vw
-    }
-
-    ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 ._SwiperSlide_1f398_87 {
-        width: unset!important;
-        max-width: unset!important
-    }
-}
-
-._PhotoSection_1p2ep_76 {
-    background: #eaeaea;
-    padding: 50px 20px;
-    display: flex;
-    flex-direction: column
-}
-
-._PhotoSection_1p2ep_76 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 {
-    display: flex;
-    flex-direction: column
-}
-
-._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91 {
-    color: #000;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: .18px
-}
-
-._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._pt_1p2ep_99 {
-    font-size: 32px
-}
-
-._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
-    color: #000;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 25px;
-    letter-spacing: .08px;
-    margin-top: 20px
-}
-
-._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
-    padding: 9px 0 16px;
-    display: flex;
-    width: 274px;
-    height: 39px;
-    border-radius: 10px;
-    align-items: center;
-    border: none;
-    margin-top: 20px;
-    color: #000;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    letter-spacing: .56px;
-    text-transform: uppercase;
-    background-color: transparent
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 {
-    display: flex;
-    flex-direction: column
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129 {
-    height: 210px;
-    border-radius: 10px
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 {
-    margin-top: 20px
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 img {
-    height: 210px;
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 {
-    margin-top: 11px
-}
-
-._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 img {
-    height: 210px;
-    width: 100%;
-    border-radius: 10px;
-    object-fit: cover
-}
-
-@media (min-width: 1024px) {
-    ._PhotoSection_1p2ep_76 {
-        padding:70px 0 60px;
-        flex-direction: row-reverse
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 {
-        padding: 18px 70px 0 64px
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91 {
-        color: #000;
-        font-size: 3.34vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: .24px
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._es_1p2ep_172 {
-        font-size: 4.167vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._pt_1p2ep_99 {
-        font-size: 2.708vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
-        font-size: 1.1115vw;
-        line-height: 1.944vw;
-        margin-top: 1.944vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
-        padding: .625vw 0px 1.111vw;
-        width: 19.028vw;
-        height: 2.708vw;
-        border-radius: .694vw;
-        margin-top: 1.389vw;
-        font-size: .972vw;
-        letter-spacing: .039vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111:hover {
-        text-decoration: underline
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 {
-        flex-direction: row-reverse;
-        justify-content: start;
-        margin-right: auto;
-        gap: 30px
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129 {
-        border-radius: .694vw;
-        margin: 0
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 {
-        margin: 0;
-        height: 32.3vw;
-        width: 33.7vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 {
-        margin: 0;
-        height: 32.3vw;
-        width: 18.8vw
-    }
-
-    ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover
-    }
-}
-
-@media (min-width: 1440px) {
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
-        max-width:95%
-    }
-
-    ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
-        margin-top: 2.083vw
-    }
-}
-
-._LimitlessPossibilitiesSection_179b5_76 {
-    padding: 50px 0 50px 20px;
-    border-top: .5px solid rgba(0,0,0,.5);
-    background: #eaeaea
-}
-
-._LimitlessPossibilitiesSection_179b5_76 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
-    color: #000;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 40px;
-    letter-spacing: 1.3px;
-    text-transform: uppercase
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._es_179b5_95 {
-    font-size: 24px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._pt_179b5_98 {
-    font-size: 20px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 {
-    overflow: hidden
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
-    padding: 32px 20px 0 26px;
-    margin-top: 30px;
-    border-radius: 10px;
-    background: linear-gradient(180deg,#000 15.03%,#38938f 98.37%);
-    min-height: 587px;
-    width: 297px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._pt_179b5_98 {
-    min-height: 600px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Title_179b5_118 {
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: .9px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126 {
-    color: #51c2bd;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 1.5px;
-    margin-top: 2px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._es_179b5_95 {
-    font-size: 24px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._pt_179b5_98 {
-    font-size: 19px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 {
-    color: #fff;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: .7px;
-    margin-top: 16px;
-    margin-bottom: 30px;
-    max-width: 249px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._pt_179b5_98 {
-    min-height: 100px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 ._MessageBold_179b5_158 {
-    font-weight: 600
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 {
-    margin-top: 30px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._BodyTitle_179b5_164 {
-    color: #fff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: .8px;
-    margin-bottom: 18px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: baseline;
-    row-gap: 5px;
-    column-gap: 28px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 ._CardGridItem_179b5_180 img {
-    max-height: 60px
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 {
-    list-style-image: url(/assets/circle-arrow-8e636245.svg)
-}
-
-._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 ._CardListItem_179b5_186 {
-    color: #fff;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: .7px;
-    padding-top: 10px;
-    margin-left: 20px
-}
-
-@media (min-width: 768px) {
-    ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
-        color:#000;
-        font-size: 3.125vw;
-        font-style: normal;
-        font-weight: 600;
-        line-height: normal;
-        letter-spacing: .156vw;
-        text-transform: uppercase
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
-        min-width: max(325px,24.306vw)
-    }
-}
-
-@media (min-width: 1024px) {
-    ._LimitlessPossibilitiesSection_179b5_76 {
-        padding:50px 10px
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
-        text-align: center;
-        font-size: max(32px,3.125vw);
-        line-height: normal;
-        letter-spacing: .156vw;
-        margin-bottom: 1.389vw;
-        margin-inline:auto}
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._pt_179b5_98 {
-        font-size: max(32px,3.125vw);
-        max-width: 62.5vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 {
-        display: flex;
-        justify-content: center
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
-        padding: 3.611vw 1.389vw 0px 1.806vw;
-        min-height: max(540px,40.764vw)
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._pt_179b5_98 {
-        min-height: max(580px,43vw)
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Title_179b5_118 {
-        font-size: max(16px,1.25vw);
-        letter-spacing: .063vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126 {
-        font-size: max(28px,2.083vw);
-        letter-spacing: .104vw;
-        margin-top: .139vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._pt_179b5_98 {
-        font-size: max(23px,1.7vw)
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 {
-        min-height: 6.25vw;
-        font-size: max(13px,.972vw);
-        letter-spacing: .049vw;
-        margin-top: 1.111vw;
-        margin-bottom: 2.361vw;
-        max-width: unset
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._pt_179b5_98 {
-        min-height: 8vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 ._MessageBold_179b5_158 {
-        font-weight: 600
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 {
-        margin-top: 2.083vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._BodyTitle_179b5_164 {
-        font-size: max(14px,1.111vw);
-        letter-spacing: .056vw;
-        margin-bottom: 1.25vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 {
-        row-gap: 0px;
-        column-gap: 2.639vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 ._CardGridItem_179b5_180 img {
-        max-height: max(56px,3.889vw)
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 ._CardListItem_179b5_186 {
-        font-size: max(12px,.972vw);
-        letter-spacing: .049vw;
-        padding-top: .694vw;
-        margin-left: 1.389vw
-    }
-}
-
-@media (min-width: 1440px) {
-    ._LimitlessPossibilitiesSection_179b5_76 {
-        padding:5.556vw 4.861vw 7.083vw
-    }
-
-    ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 {
-        gap: 1.736vw
-    }
-}
-
-._YourShowChoiceSection_16vhd_76 {
-    margin: 0;
-    padding: 50px 8px;
-    background: #111617
-}
-
-._YourShowChoiceSection_16vhd_76 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._YourShowChoiceSection_16vhd_76 ._Heading_16vhd_86 {
-    color: #fff;
-    padding-inline:12px;font-size: 36px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 2.25px;
-    text-transform: uppercase;
-    margin-bottom: 41px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._Title_16vhd_97 {
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: 1.6px;
-    border-radius: 10px 10px 0 0;
-    padding: 32px 0 31px 26px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 {
-    border-radius: 10px;
-    border: 1px solid #51c2bd;
-    margin-bottom: 35px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._Title_16vhd_97 {
-    background: #00fff4;
-    color: #000
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
-    border-radius: 10px;
-    background: linear-gradient(270deg,#0aeae0 -22.92%,#074a46 80.32%);
-    box-shadow: 1px 2px 4px #00000080
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115:hover span {
-    border-bottom: 1px solid #fff;
-    line-height: 20px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 {
-    border-radius: 10px;
-    border: 1px solid #ff5000
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._Title_16vhd_97 {
-    background: #ff5000;
-    color: #fff
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
-    border-radius: 10px;
-    background: linear-gradient(90deg,#ff5000 11.19%,#eb7b47 89.17%);
-    box-shadow: 1px 2px 4px #00000080
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115:hover span {
-    border-bottom: 1px solid #fff;
-    line-height: 20px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 {
-    padding: 37px 18px 32px 26px;
-    list-style-type: none
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 {
-    display: flex;
-    color: #fffc;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    padding-bottom: 9px;
-    align-items: baseline
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 {
-    position: relative;
-    top: 2px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 ._CheckMark_16vhd_159 {
-    min-width: 20px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._ItemText_16vhd_162 {
-    padding-left: 10px;
-    line-height: normal
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._InactiveListItem_16vhd_166 {
-    color: #ffffff4d;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 19px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
-    border: none;
-    width: 277px;
-    height: 66px;
-    color: #fff;
-    font-family: Plus Jakarta Sans;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-    letter-spacing: .72px;
-    text-transform: uppercase;
-    display: flex;
-    padding: 24px 40px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px
-}
-
-._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._ButtonMessage_16vhd_199 {
-    margin-top: 10px;
-    width: 277px;
-    color: #fff9;
-    font-family: Plus Jakarta Sans;
-    font-size: 11px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-left: 2px
-}
-
-@media (min-width: 1024px) {
-    ._YourShowChoiceSection_16vhd_76 {
-        padding:5.556vw 4.861vw 6.66vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._Heading_16vhd_86 {
-        text-align: center;
-        font-size: 3.125vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: .156vw;
-        text-transform: uppercase;
-        margin-bottom: 3.472vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 6.944vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 {
-        width: max(320px,25.903vw)
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._es_16vhd_234,._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._pt_16vhd_234 {
-        width: max(360px,28.7vw)
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._Title_16vhd_97 {
-        padding: 2.569vw 0px 3.611vw 1.806vw;
-        font-size: 2.778vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 100%;
-        letter-spacing: .111vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 {
-        margin-bottom: 0
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 {
-        padding: 2.778vw .694vw 2.361vw 1.875vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 {
-        font-size: 1.25vw;
-        padding-bottom: .972vw;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 150%
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 ._CheckMark_16vhd_159 {
-        min-width: 1.389vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._ItemText_16vhd_162 {
-        padding-left: 1.25vw;
-        line-height: 1.597vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
-        width: 19.236vw;
-        font-size: 1.25vw
-    }
-
-    ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._ButtonMessage_16vhd_199 {
-        width: 19.236vw;
-        margin-top: 1.111vw;
-        font-size: 12px
-    }
-}
-
-._WhoYouWillMeetSection_stgga_76 {
-    margin: 0;
-    padding: 50px 0;
-    border-top: .5px solid #4e4e4e;
-    background: #111617
-}
-
-._WhoYouWillMeetSection_stgga_76 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
-}
-
-._WhoYouWillMeetSection_stgga_76 ._Heading_stgga_87 {
-    color: #fff;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: .72px;
-    text-transform: uppercase;
-    padding: 0 20px 25px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 {
-    overflow: hidden
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
-    width: 780px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 {
-    border-right: 1px solid #000;
-    height: 283.235px;
-    width: 260px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: .5px;
-    text-transform: uppercase;
-    max-width: 165px;
-    min-height: 64px;
-    margin-top: 53px;
-    margin-bottom: 36px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129 {
-    color: #51c2bd;
-    text-align: center;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: .32px;
-    text-transform: uppercase;
-    max-width: 165px;
-    min-height: 72px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._es_stgga_141,._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._pt_stgga_141 {
-    max-width: 185px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
-    padding-bottom: 50px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
-    padding-left: 20px;
-    max-width: 350px;
-    color: #fff;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-    letter-spacing: .9px;
-    margin-top: 50px;
-    margin-bottom: 30px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
-    row-gap: 15px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 {
-    width: 91px;
-    height: 46px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 img {
-    width: 100%;
-    height: 100%
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 {
-    padding: 56px 20px 0;
-    border-top: .5px solid #4e4e4e
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 {
-    border-radius: 10px;
-    border: 1px solid #ff5000;
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 30px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 {
-    background: #ff5000;
-    color: #fff;
-    border-radius: 10px 10px 0 0;
-    padding: 9px 33px 9px 20px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2px;
-    text-transform: uppercase
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._es_stgga_141 {
-    font-size: 34px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._pt_stgga_141 {
-    font-size: 29px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 ._UnderLine_stgga_209 {
-    border-bottom: 1px solid #fff
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212 {
-    display: none
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 {
-    padding: 40px 10px 30px 20px;
-    list-style-type: none
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 {
-    display: flex;
-    color: #ffffffe6;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: .8px;
-    padding-bottom: 17px;
-    align-items: baseline
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 {
-    position: relative;
-    top: 5px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 img {
-    min-width: 20px
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._ItemText_stgga_237 {
-    padding-left: 10px;
-    line-height: normal
-}
-
-._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardButton_stgga_241 {
-    color: #fff;
-    background-color: #111617;
-    font-family: Plus Jakarta Sans;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: uppercase;
-    border: none;
-    display: flex;
-    width: 310px;
-    height: 50px;
-    padding: 10px 24px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    align-self: center
-}
-
-@media (min-width: 768px) {
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
-        width:1040px
-    }
-}
-
-@media (min-width: 1024px) {
-    ._WhoYouWillMeetSection_stgga_76 {
-        padding:4.167vw 0px 3.681vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._Heading_stgga_87 {
-        text-align: center;
-        font-size: 3.125vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        letter-spacing: .063vw;
-        text-transform: uppercase;
-        padding: 0px 0px 2.361vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 {
-        display: flex;
-        justify-content: center
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
-        width: 90.278vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 {
-        border-right: 1px solid #000;
-        height: 19.669vw;
-        width: 18.056vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        align-items: center
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        text-align: center;
-        font-size: 1.736vw;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: .035vw;
-        text-transform: uppercase;
-        max-width: 11.458vw;
-        min-height: 4.444vw;
-        margin-top: 3.681vw;
-        margin-bottom: 2.5vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129 {
-        color: #51c2bd;
-        text-align: center;
-        font-size: 1.111vw;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 150%;
-        letter-spacing: .022vw;
-        text-transform: uppercase;
-        max-width: 11.458vw;
-        min-height: 5vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._es_stgga_141 {
-        max-width: 12.458vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._pt_stgga_141 {
-        max-width: 13.458vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
-        padding-inline:6.944vw}
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
-        max-width: unset;
-        font-size: 1.528vw;
-        font-style: normal;
-        font-weight: 300;
-        line-height: normal;
-        letter-spacing: .076vw;
-        margin-top: 5.556vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 {
-        grid-template-columns: repeat(5,1fr);
-        column-gap: 1.944vw;
-        row-gap: 1.736vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 {
-        width: 11.25vw;
-        height: 5.694vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 img {
-        width: 100%;
-        height: 100%
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 {
-        padding: 3.681vw 4.861vw 0px
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 {
-        padding: 0;
-        max-width: 75.7vw;
-        margin-inline:auto}
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.875vw 1.875vw 1.181vw 1.389vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184._es_stgga_141 {
-        padding: 2.1vw 1.875vw 1.8vw 1.389vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184._pt_stgga_141 {
-        padding: 2.1vw 1.875vw 2vw 1.389vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
-        text-align: start;
-        font-size: 4.17vw;
-        letter-spacing: .208vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._es_stgga_141 {
-        font-size: 3.403vw;
-        letter-spacing: .17vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._pt_stgga_141 {
-        font-size: 3.125vw;
-        letter-spacing: .156vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212 {
-        background: #ff5000;
-        display: flex;
-        width: 13.9vw;
-        height: 3.48vw;
-        padding: .694vw 1.667vw;
-        justify-content: center;
-        align-items: center;
-        color: #fff;
-        font-size: 1.25vw;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1.25vw;
-        text-transform: uppercase
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212._pt_stgga_141 {
-        padding: 0;
-        width: 13.889vw;
-        height: 4.167vw;
-        white-space: normal;
-        word-wrap: break-word;
-        line-height: 1.6vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212._pt_stgga_141:hover span {
-        border-bottom: none;
-        line-height: 1.6vw;
-        text-decoration: underline
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212:hover span {
-        border-bottom: 1px solid #fff;
-        line-height: 1.25vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 {
-        display: flex;
-        justify-content: space-between;
-        padding: 2.6vw 1.15vw 1.1vw;
-        gap: 0px
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 {
-        padding-bottom: 1.6vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 img {
-        min-width: unset;
-        width: 1.4vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._ItemText_stgga_237 {
-        font-size: 1.11vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardButton_stgga_241 {
-        display: none
-    }
-}
-
-@media (min-width: 1440px) {
-    ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
-        margin-top:5.347vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
-        padding-inline:10.417vw;padding-bottom: 6.042vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
-        margin-top: 8.125vw;
-        margin-bottom: 1.597vw
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        letter-spacing: .208vw;
-        text-align: start
-    }
-
-    ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 ._UnderLine_stgga_209 {
-        border-bottom: .139vw solid #fff
-    }
-}
-
-*,*:before,*:after {
-    box-sizing: border-box
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    font: inherit
-}
-
-ul[role=list],ol[role=list] {
-    list-style: none
-}
-
-html:focus-within {
-    scroll-behavior: smooth
-}
-
-html,body {
-    height: 100%
-}
-
-a:not([class]) {
-    text-decoration-skip-ink: auto
-}
-
-video,svg,img,picture {
-    max-width: 100%;
-    display: block
-}
-
-button {
-    cursor: pointer
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-        scroll-behavior: auto
-    }
-
-    *,*:before,*:after {
-        animation-duration: .01ms!important;
-        animation-iteration-count: 1!important;
-        transition-duration: .01ms!important;
-        scroll-behavior: auto!important
-    }
-}
-
-body {
-    font-family: Plus Jakarta Sans;
-    font-size: 16px
-}
-
-._TestimonialsSection_139ev_76 {
-    padding: 50px 0 50px 20px;
-    border-top: .5px solid #4e4e4e;
-    border-bottom: .5px solid #4e4e4e;
-    background: #eaeaea;
-    margin: 0
-}
-
-._TestimonialsSection_139ev_76 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 {
-    width: 100%;
-    height: 373px;
-    overflow: hidden
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-    margin: 0;
-    padding: 0;
-    background: #111617
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 {
-    display: table-cell;
-    vertical-align: bottom;
-    position: relative;
-    width: 16.666%;
-    height: 373px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    transition: all .5s ease
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 {
-    width: 45%
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 {
-    padding: 50px 20px 0
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 * {
-    transition: all .2s ease;
-    opacity: 1;
-    transform: translate(0)
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 111px;
-    height: 101px;
-    border: 1px solid rgba(255,255,255,.2);
-    left: 77px;
-    opacity: 1
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
-    height: 87px;
-    width: 97px;
-    object-fit: contain
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    height: 373px;
-    width: 100%;
-    z-index: 3;
-    padding-top: 50px;
-    transition: all .2s ease;
-    flex: 1;
-    position: relative
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 * {
-    opacity: 0;
-    margin: 0;
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: contain;
-    opacity: .5;
-    display: flex;
-    width: 60px;
-    height: 54px;
-    border: 1px solid rgba(255,255,255,.2);
-    align-self: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    transition: left .5s ease
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
-    opacity: 1;
-    width: 59px;
-    height: 53px;
-    object-fit: contain
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 {
-    margin-top: auto;
-    margin-bottom: 44px
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._QuotationMarkWrapper_139ev_184 {
-    margin-top: 44px;
-    margin-bottom: 8px;
-    width: 26px;
-    height: 19px
-}
-
-._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._Message_139ev_180 {
-    color: #ffffffa3;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 150px
-}
-
-@media (min-width: 1024px) {
-    ._TestimonialsSection_139ev_76 {
-        padding:5.556vw 4.861vw 5.625vw
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88,._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 {
-        height: max(373px,25.903vw)
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 {
-        width: 83%
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 {
-        height: max(373px,25.903vw);
-        padding: 3.403vw 1.389vw 0px 3.611vw
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
-        width: 10.486vw;
-        height: 9.514vw;
-        left: 8.819vw;
-        opacity: 1
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
-        width: 9.167vw;
-        height: 8.333vw;
-        object-fit: contain
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 {
-        margin-bottom: 3.681vw
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 {
-        height: max(373px,25.903vw)
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
-        width: 4.792vw;
-        height: 4.375vw
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
-        width: 4.792vw;
-        height: 4.375vw;
-        object-fit: contain
-    }
-
-    ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._Message_139ev_180 {
-        font-size: max(14px,1.25vw);
-        width: 43.194vw;
-        margin-top: 1.944vw
-    }
-}
+            @keyframes _slideToRight_1rxdz_1 {
+            0% {
+                transform: translate(0)
+            }
+
+            to {
+                transform: translate(calc(-100% - var(--gap)))
+            }
+        }
+
+        @keyframes _slideToLeft_1rxdz_1 {
+            0% {
+                transform: translate(calc(-100% - var(--gap)))
+            }
+
+            to {
+                transform: translate(0)
+            }
+        }
+
+        ._Header_1rxdz_92 {
+            overflow: hidden;
+            position: relative;
+            font-family: Plus Jakarta Sans;
+            height: 100vh;
+            height: 100dvh
+        }
+
+        ._Header_1rxdz_92 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._Header_1rxdz_92 ._VideoWrapper_1rxdz_104 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden
+        }
+
+        ._Header_1rxdz_92 ._VideoWrapper_1rxdz_104 video {
+            object-fit: cover;
+            height: 100%;
+            width: 100%
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            height: 100%;
+            align-items: flex-end;
+            background: linear-gradient(0deg,#000 24.34%,rgba(0,0,0,0) 91.66%)
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 {
+            padding: 0 20px 90px;
+            margin-inline:auto}
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 {
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134 {
+            visibility: hidden;
+            cursor: pointer;
+            display: flex;
+            width: 98px;
+            height: 98px;
+            padding: 10px 24px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 150px;
+            background: #ff5000;
+            box-shadow: 0 4px 6px #00000040;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            align-self: flex-end;
+            margin-right: 0;
+            margin-bottom: 3px
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134:hover {
+            background: #e84a01
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._pt_1rxdz_162 {
+            width: 115px;
+            height: 115px;
+            font-size: 12px
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167 {
+            color: #fff;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 30px;
+            text-transform: uppercase;
+            text-align: center
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176 {
+            color: #fff;
+            font-size: 75px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 70px;
+            text-transform: uppercase;
+            margin-top: 6px;
+            text-align: center
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._pt_1rxdz_162 {
+            font-size: 54px
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 {
+            display: flex;
+            flex-direction: column
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196 {
+            color: #fff;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 200;
+            line-height: normal;
+            letter-spacing: .32px;
+            max-width: 350px;
+            margin-top: 12px;
+            text-align: center
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207 {
+            color: #fff;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-top: 2px;
+            text-align: center
+        }
+
+        ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._GetYourPassButton_1rxdz_217 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 26px;
+            font-family: Plus Jakarta Sans;
+            color: #fff;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            width: 350px;
+            height: 41px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid #fff
+        }
+
+        ._Header_1rxdz_92 ._Marquee_1rxdz_235 {
+            --gap: 20px;
+            height: 50px;
+            width: 100%;
+            border-top: 1px solid #404040;
+            background: #ff5000;
+            position: absolute;
+            display: flex;
+            overflow: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+            gap: var(--gap);
+            bottom: 0;
+            z-index: 100
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            gap: var(--gap);
+            min-width: 100%
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._forward_1rxdz_256 {
+            animation: 43s _slideToRight_1rxdz_1 infinite linear
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._backward_1rxdz_259 {
+            animation: 43s _slideToLeft_1rxdz_1 infinite linear
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268 {
+            color: #fff;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: .36px
+        }
+
+        ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextDate_1rxdz_276 {
+            color: #fff;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 32px
+        }
+
+        @media (min-width: 1024px) {
+            ._Header_1rxdz_92 {
+                display:flex;
+                height: 100vh
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 {
+                align-self: flex-end;
+                padding: 0px 4.861vw;
+                background: rgba(0,0,0,.6)
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 {
+                padding: 0;
+                margin-inline:unset}
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 {
+                align-items: start
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167 {
+                font-size: 2.8vw;
+                margin-bottom: .833vw;
+                font-weight: 500
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167._es_1rxdz_162 {
+                margin-bottom: 3.633vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._AboveHeadingText_1rxdz_167._pt_1rxdz_162 {
+                margin-bottom: .5vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176 {
+                font-size: 7.987vw;
+                margin-top: 0;
+                line-height: 7.7vw;
+                font-weight: 600;
+                text-wrap: nowrap;
+                white-space: nowrap
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._es_1rxdz_162 {
+                font-size: 10.347vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._Heading_1rxdz_176._pt_1rxdz_162 {
+                font-size: 5.625vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134 {
+                order: -1;
+                margin-right: 5.5vw;
+                margin-bottom: -.9vw;
+                width: 9.028vw;
+                height: 9.028vw;
+                font-size: 1.25vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._es_1rxdz_162,._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._OrangeCircle_1rxdz_134._pt_1rxdz_162 {
+                width: 10vw;
+                height: 10vw;
+                font-size: 1vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: start;
+                max-width: 90.5vw;
+                margin-bottom: 7.7vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196 {
+                margin-top: 0;
+                font-size: 1.68vw;
+                max-width: 53%;
+                padding-top: 10px;
+                text-align: start
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196._es_1rxdz_162 {
+                padding-top: max(10px,1.667vw);
+                max-width: 60%
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._Message_1rxdz_196._pt_1rxdz_162 {
+                padding-top: 0
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207 {
+                margin-top: 0;
+                font-size: 2.8vw;
+                line-height: 3.8vw;
+                font-weight: 500;
+                margin-right: .208vw
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207._es_1rxdz_162 {
+                padding-top: max(10px,1.667vw)
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._BelowHeadingContent_1rxdz_192 ._BelowHeadingText_1rxdz_207._pt_1rxdz_162 {
+                line-height: 2.222vw;
+                padding-top: 0
+            }
+
+            ._Header_1rxdz_92 ._Container_1rxdz_117 ._ContentWrapper_1rxdz_125 ._Content_1rxdz_125 ._GetYourPassButton_1rxdz_217 {
+                display: none
+            }
+
+            ._Header_1rxdz_92 ._Marquee_1rxdz_235 {
+                --gap: 2.083vw;
+                gap: var(--gap);
+                height: 3.472vw
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 {
+                gap: var(--gap)
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._forward_1rxdz_256 {
+                animation: 70s _slideToRight_1rxdz_1 infinite linear
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249._backward_1rxdz_259 {
+                animation: 70s _slideToLeft_1rxdz_1 infinite linear
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 {
+                gap: var(--gap)
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268 {
+                font-size: 1.528vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: .031vw
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextLocation_1rxdz_268:hover {
+                border-bottom: max(1px,.069vw) solid #fff;
+                cursor: pointer
+            }
+
+            ._Header_1rxdz_92 ._MarqueeContentWrapper_1rxdz_249 ._MarqueeContent_1rxdz_249 ._TextDate_1rxdz_276 {
+                font-size: 1.528vw;
+                font-style: normal;
+                font-weight: 600
+            }
+        }
+
+        ._NumericInfoCard_zazef_76 {
+            font-family: Plus Jakarta Sans;
+            display: flex
+        }
+
+        ._NumericInfoCard_zazef_76 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            min-height: 126px;
+            padding-left: 20px
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._pt_zazef_96 {
+            gap: 6px
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._TopText_zazef_99 {
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 32px;
+            text-transform: uppercase
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 {
+            color: #fff;
+            font-size: 35px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: .7px;
+            text-transform: uppercase
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 ._NumberTextSuffix_zazef_116._pt_zazef_96 {
+            font-size: 20px
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119 {
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 32px;
+            text-transform: uppercase
+        }
+
+        ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._pt_zazef_96 {
+            line-height: 20px
+        }
+
+        @media (min-width: 1024px) {
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 {
+                padding-left:0;
+                padding-top: .833vw;
+                min-height: 10.694vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85._pt_zazef_96 {
+                padding-top: 2vw;
+                padding-bottom: 2.5vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._TopText_zazef_99 {
+                line-height: 2.3vw;
+                font-size: 1.528vw;
+                margin-bottom: 1vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 {
+                font-size: 4.86vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._NumberText_zazef_107 ._NumberTextSuffix_zazef_116._pt_zazef_96 {
+                font-size: 2.778vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119 {
+                margin-top: 1vw;
+                line-height: 2.3vw;
+                font-size: 1.528vw
+            }
+
+            ._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._es_zazef_93,._NumericInfoCard_zazef_76 ._ContentWrapper_zazef_85 ._BottomText_zazef_119._pt_zazef_96 {
+                margin-top: 1.2vw
+            }
+        }
+
+        ._Section_1f398_76 {
+            background: rgba(0,0,0,.8)
+        }
+
+        ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 {
+            display: flex;
+            width: 100%;
+            background: #0b0908
+        }
+
+        ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 {
+            width: 100%!important
+        }
+
+        ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 ._SwiperSlide_1f398_87 {
+            width: 50%!important;
+            max-width: 140px!important
+        }
+
+        @media (min-width: 1024px) {
+            ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 {
+                padding-inline:2.778vw
+            }
+
+            ._Section_1f398_76 ._Content_1f398_79 ._SwiperWrapper_1f398_79 ._Swiper_1f398_79 ._SwiperSlide_1f398_87 {
+                width: unset!important;
+                max-width: unset!important
+            }
+        }
+
+        ._PhotoSection_1p2ep_76 {
+            background: #eaeaea;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column
+        }
+
+        ._PhotoSection_1p2ep_76 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 {
+            display: flex;
+            flex-direction: column
+        }
+
+        ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91 {
+            color: #000;
+            font-size: 36px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: .18px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._pt_1p2ep_99 {
+            font-size: 32px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
+            color: #000;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 25px;
+            letter-spacing: .08px;
+            margin-top: 20px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
+            padding: 9px 0 16px;
+            display: flex;
+            width: 274px;
+            height: 39px;
+            border-radius: 10px;
+            align-items: center;
+            border: none;
+            margin-top: 20px;
+            color: #000;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            letter-spacing: .56px;
+            text-transform: uppercase;
+            background-color: transparent
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 {
+            display: flex;
+            flex-direction: column
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129 {
+            height: 210px;
+            border-radius: 10px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 {
+            margin-top: 20px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 img {
+            height: 210px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 {
+            margin-top: 11px
+        }
+
+        ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 img {
+            height: 210px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover
+        }
+
+        @media (min-width: 1024px) {
+            ._PhotoSection_1p2ep_76 {
+                padding:70px 0 60px;
+                flex-direction: row-reverse
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 {
+                padding: 18px 70px 0 64px
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91 {
+                color: #000;
+                font-size: 3.34vw;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: .24px
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._es_1p2ep_172 {
+                font-size: 4.167vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Heading_1p2ep_91._pt_1p2ep_99 {
+                font-size: 2.708vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
+                font-size: 1.1115vw;
+                line-height: 1.944vw;
+                margin-top: 1.944vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
+                padding: .625vw 0px 1.111vw;
+                width: 19.028vw;
+                height: 2.708vw;
+                border-radius: .694vw;
+                margin-top: 1.389vw;
+                font-size: .972vw;
+                letter-spacing: .039vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111:hover {
+                text-decoration: underline
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 {
+                flex-direction: row-reverse;
+                justify-content: start;
+                margin-right: auto;
+                gap: 30px
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129 {
+                border-radius: .694vw;
+                margin: 0
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 {
+                margin: 0;
+                height: 32.3vw;
+                width: 33.7vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image1_1p2ep_137 img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 {
+                margin: 0;
+                height: 32.3vw;
+                width: 18.8vw
+            }
+
+            ._PhotoSection_1p2ep_76 ._ImagesWrapper_1p2ep_129 ._Image_1p2ep_129._Image2_1p2ep_146 img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover
+            }
+        }
+
+        @media (min-width: 1440px) {
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Message_1p2ep_102 {
+                max-width:95%
+            }
+
+            ._PhotoSection_1p2ep_76 ._ContentWrapper_1p2ep_87 ._Button_1p2ep_111 {
+                margin-top: 2.083vw
+            }
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 {
+            padding: 50px 0 50px 20px;
+            border-top: .5px solid rgba(0,0,0,.5);
+            background: #eaeaea
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
+            color: #000;
+            font-size: 26px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 40px;
+            letter-spacing: 1.3px;
+            text-transform: uppercase
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._es_179b5_95 {
+            font-size: 24px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._pt_179b5_98 {
+            font-size: 20px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 {
+            overflow: hidden
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
+            padding: 32px 20px 0 26px;
+            margin-top: 30px;
+            border-radius: 10px;
+            background: linear-gradient(180deg,#000 15.03%,#38938f 98.37%);
+            min-height: 587px;
+            width: 297px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._pt_179b5_98 {
+            min-height: 600px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Title_179b5_118 {
+            color: #fff;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: .9px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126 {
+            color: #51c2bd;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            margin-top: 2px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._es_179b5_95 {
+            font-size: 24px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._pt_179b5_98 {
+            font-size: 19px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 {
+            color: #fff;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: .7px;
+            margin-top: 16px;
+            margin-bottom: 30px;
+            max-width: 249px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._pt_179b5_98 {
+            min-height: 100px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 ._MessageBold_179b5_158 {
+            font-weight: 600
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 {
+            margin-top: 30px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._BodyTitle_179b5_164 {
+            color: #fff;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: .8px;
+            margin-bottom: 18px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: baseline;
+            row-gap: 5px;
+            column-gap: 28px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 ._CardGridItem_179b5_180 img {
+            max-height: 60px
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 {
+            list-style-image: url(/assets/circle-arrow-8e636245.svg)
+        }
+
+        ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 ._CardListItem_179b5_186 {
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: .7px;
+            padding-top: 10px;
+            margin-left: 20px
+        }
+
+        @media (min-width: 768px) {
+            ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
+                color:#000;
+                font-size: 3.125vw;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: .156vw;
+                text-transform: uppercase
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
+                min-width: max(325px,24.306vw)
+            }
+        }
+
+        @media (min-width: 1024px) {
+            ._LimitlessPossibilitiesSection_179b5_76 {
+                padding:50px 10px
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86 {
+                text-align: center;
+                font-size: max(32px,3.125vw);
+                line-height: normal;
+                letter-spacing: .156vw;
+                margin-bottom: 1.389vw;
+                margin-inline:auto}
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._Heading_179b5_86._pt_179b5_98 {
+                font-size: max(32px,3.125vw);
+                max-width: 62.5vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 {
+                display: flex;
+                justify-content: center
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 {
+                padding: 3.611vw 1.389vw 0px 1.806vw;
+                min-height: max(540px,40.764vw)
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104._pt_179b5_98 {
+                min-height: max(580px,43vw)
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Title_179b5_118 {
+                font-size: max(16px,1.25vw);
+                letter-spacing: .063vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126 {
+                font-size: max(28px,2.083vw);
+                letter-spacing: .104vw;
+                margin-top: .139vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._CardHeading_179b5_126._pt_179b5_98 {
+                font-size: max(23px,1.7vw)
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 {
+                min-height: 6.25vw;
+                font-size: max(13px,.972vw);
+                letter-spacing: .049vw;
+                margin-top: 1.111vw;
+                margin-bottom: 2.361vw;
+                max-width: unset
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._es_179b5_95,._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141._pt_179b5_98 {
+                min-height: 8vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardHeader_179b5_118 ._Message_179b5_141 ._MessageBold_179b5_158 {
+                font-weight: 600
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 {
+                margin-top: 2.083vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._BodyTitle_179b5_164 {
+                font-size: max(14px,1.111vw);
+                letter-spacing: .056vw;
+                margin-bottom: 1.25vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 {
+                row-gap: 0px;
+                column-gap: 2.639vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardGrid_179b5_173 ._CardGridItem_179b5_180 img {
+                max-height: max(56px,3.889vw)
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 ._CardListItem_179b5_186 {
+                font-size: max(12px,.972vw);
+                letter-spacing: .049vw;
+                padding-top: .694vw;
+                margin-left: 1.389vw
+            }
+        }
+
+        @media (min-width: 1440px) {
+            ._LimitlessPossibilitiesSection_179b5_76 {
+                padding:5.556vw 4.861vw 7.083vw
+            }
+
+            ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 {
+                gap: 1.736vw
+            }
+        }
+
+        ._YourShowChoiceSection_16vhd_76 {
+            margin: 0;
+            padding: 50px 8px;
+            background: #111617
+        }
+
+        ._YourShowChoiceSection_16vhd_76 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._Heading_16vhd_86 {
+            color: #fff;
+            padding-inline:12px;font-size: 36px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 2.25px;
+            text-transform: uppercase;
+            margin-bottom: 41px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._Title_16vhd_97 {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: 1.6px;
+            border-radius: 10px 10px 0 0;
+            padding: 32px 0 31px 26px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 {
+            border-radius: 10px;
+            border: 1px solid #51c2bd;
+            margin-bottom: 35px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._Title_16vhd_97 {
+            background: #00fff4;
+            color: #000
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
+            border-radius: 10px;
+            background: linear-gradient(270deg,#0aeae0 -22.92%,#074a46 80.32%);
+            box-shadow: 1px 2px 4px #00000080
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115:hover span {
+            border-bottom: 1px solid #fff;
+            line-height: 20px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 {
+            border-radius: 10px;
+            border: 1px solid #ff5000
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._Title_16vhd_97 {
+            background: #ff5000;
+            color: #fff
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
+            border-radius: 10px;
+            background: linear-gradient(90deg,#ff5000 11.19%,#eb7b47 89.17%);
+            box-shadow: 1px 2px 4px #00000080
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._ExhibitCard_16vhd_124 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115:hover span {
+            border-bottom: 1px solid #fff;
+            line-height: 20px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 {
+            padding: 37px 18px 32px 26px;
+            list-style-type: none
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 {
+            display: flex;
+            color: #fffc;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            padding-bottom: 9px;
+            align-items: baseline
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 {
+            position: relative;
+            top: 2px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 ._CheckMark_16vhd_159 {
+            min-width: 20px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._ItemText_16vhd_162 {
+            padding-left: 10px;
+            line-height: normal
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._InactiveListItem_16vhd_166 {
+            color: #ffffff4d;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 19px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
+            border: none;
+            width: 277px;
+            height: 66px;
+            color: #fff;
+            font-family: Plus Jakarta Sans;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            letter-spacing: .72px;
+            text-transform: uppercase;
+            display: flex;
+            padding: 24px 40px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px
+        }
+
+        ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._ButtonMessage_16vhd_199 {
+            margin-top: 10px;
+            width: 277px;
+            color: #fff9;
+            font-family: Plus Jakarta Sans;
+            font-size: 11px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-left: 2px
+        }
+
+        @media (min-width: 1024px) {
+            ._YourShowChoiceSection_16vhd_76 {
+                padding:5.556vw 4.861vw 6.66vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._Heading_16vhd_86 {
+                text-align: center;
+                font-size: 3.125vw;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: .156vw;
+                text-transform: uppercase;
+                margin-bottom: 3.472vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 6.944vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 {
+                width: max(320px,25.903vw)
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._es_16vhd_234,._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._pt_16vhd_234 {
+                width: max(360px,28.7vw)
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._Title_16vhd_97 {
+                padding: 2.569vw 0px 3.611vw 1.806vw;
+                font-size: 2.778vw;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 100%;
+                letter-spacing: .111vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97._SponsorCard_16vhd_106 {
+                margin-bottom: 0
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 {
+                padding: 2.778vw .694vw 2.361vw 1.875vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 {
+                font-size: 1.25vw;
+                padding-bottom: .972vw;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._IconWrapper_16vhd_155 ._CheckMark_16vhd_159 {
+                min-width: 1.389vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardList_16vhd_141 ._ListItem_16vhd_145 ._ItemText_16vhd_162 {
+                padding-left: 1.25vw;
+                line-height: 1.597vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._CardButton_16vhd_115 {
+                width: 19.236vw;
+                font-size: 1.25vw
+            }
+
+            ._YourShowChoiceSection_16vhd_76 ._CardsWrapper_16vhd_97 ._Card_16vhd_97 ._CardButtonWrapper_16vhd_115 ._ButtonMessage_16vhd_199 {
+                width: 19.236vw;
+                margin-top: 1.111vw;
+                font-size: 12px
+            }
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 {
+            margin: 0;
+            padding: 50px 0;
+            border-top: .5px solid #4e4e4e;
+            background: #111617
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._Heading_stgga_87 {
+            color: #fff;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: .72px;
+            text-transform: uppercase;
+            padding: 0 20px 25px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 {
+            overflow: hidden
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
+            width: 780px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 {
+            border-right: 1px solid #000;
+            height: 283.235px;
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            font-size: 25px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            max-width: 165px;
+            min-height: 64px;
+            margin-top: 53px;
+            margin-bottom: 36px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129 {
+            color: #51c2bd;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 150%;
+            letter-spacing: .32px;
+            text-transform: uppercase;
+            max-width: 165px;
+            min-height: 72px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._es_stgga_141,._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._pt_stgga_141 {
+            max-width: 185px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
+            padding-bottom: 50px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
+            padding-left: 20px;
+            max-width: 350px;
+            color: #fff;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            letter-spacing: .9px;
+            margin-top: 50px;
+            margin-bottom: 30px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-items: center;
+            row-gap: 15px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 {
+            width: 91px;
+            height: 46px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 img {
+            width: 100%;
+            height: 100%
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 {
+            padding: 56px 20px 0;
+            border-top: .5px solid #4e4e4e
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 {
+            border-radius: 10px;
+            border: 1px solid #ff5000;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 30px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 {
+            background: #ff5000;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+            padding: 9px 33px 9px 20px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2px;
+            text-transform: uppercase
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._es_stgga_141 {
+            font-size: 34px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._pt_stgga_141 {
+            font-size: 29px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 ._UnderLine_stgga_209 {
+            border-bottom: 1px solid #fff
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212 {
+            display: none
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 {
+            padding: 40px 10px 30px 20px;
+            list-style-type: none
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 {
+            display: flex;
+            color: #ffffffe6;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: .8px;
+            padding-bottom: 17px;
+            align-items: baseline
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 {
+            position: relative;
+            top: 5px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 img {
+            min-width: 20px
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._ItemText_stgga_237 {
+            padding-left: 10px;
+            line-height: normal
+        }
+
+        ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardButton_stgga_241 {
+            color: #fff;
+            background-color: #111617;
+            font-family: Plus Jakarta Sans;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            border: none;
+            display: flex;
+            width: 310px;
+            height: 50px;
+            padding: 10px 24px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            align-self: center
+        }
+
+        @media (min-width: 768px) {
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
+                width:1040px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            ._WhoYouWillMeetSection_stgga_76 {
+                padding:4.167vw 0px 3.681vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._Heading_stgga_87 {
+                text-align: center;
+                font-size: 3.125vw;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: .063vw;
+                text-transform: uppercase;
+                padding: 0px 0px 2.361vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 {
+                display: flex;
+                justify-content: center
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 {
+                width: 90.278vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 {
+                border-right: 1px solid #000;
+                height: 19.669vw;
+                width: 18.056vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                text-align: center;
+                font-size: 1.736vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: .035vw;
+                text-transform: uppercase;
+                max-width: 11.458vw;
+                min-height: 4.444vw;
+                margin-top: 3.681vw;
+                margin-bottom: 2.5vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129 {
+                color: #51c2bd;
+                text-align: center;
+                font-size: 1.111vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 150%;
+                letter-spacing: .022vw;
+                text-transform: uppercase;
+                max-width: 11.458vw;
+                min-height: 5vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._es_stgga_141 {
+                max-width: 12.458vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Text_stgga_129._pt_stgga_141 {
+                max-width: 13.458vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
+                padding-inline:6.944vw}
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
+                max-width: unset;
+                font-size: 1.528vw;
+                font-style: normal;
+                font-weight: 300;
+                line-height: normal;
+                letter-spacing: .076vw;
+                margin-top: 5.556vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 {
+                grid-template-columns: repeat(5,1fr);
+                column-gap: 1.944vw;
+                row-gap: 1.736vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 {
+                width: 11.25vw;
+                height: 5.694vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosGrid_stgga_159 ._LogoWrapper_stgga_165 img {
+                width: 100%;
+                height: 100%
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 {
+                padding: 3.681vw 4.861vw 0px
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 {
+                padding: 0;
+                max-width: 75.7vw;
+                margin-inline:auto}
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.875vw 1.875vw 1.181vw 1.389vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184._es_stgga_141 {
+                padding: 2.1vw 1.875vw 1.8vw 1.389vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184._pt_stgga_141 {
+                padding: 2.1vw 1.875vw 2vw 1.389vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
+                text-align: start;
+                font-size: 4.17vw;
+                letter-spacing: .208vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._es_stgga_141 {
+                font-size: 3.403vw;
+                letter-spacing: .17vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112._pt_stgga_141 {
+                font-size: 3.125vw;
+                letter-spacing: .156vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212 {
+                background: #ff5000;
+                display: flex;
+                width: 13.9vw;
+                height: 3.48vw;
+                padding: .694vw 1.667vw;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                font-size: 1.25vw;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 1.25vw;
+                text-transform: uppercase
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212._pt_stgga_141 {
+                padding: 0;
+                width: 13.889vw;
+                height: 4.167vw;
+                white-space: normal;
+                word-wrap: break-word;
+                line-height: 1.6vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212._pt_stgga_141:hover span {
+                border-bottom: none;
+                line-height: 1.6vw;
+                text-decoration: underline
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._TitleButton_stgga_212:hover span {
+                border-bottom: 1px solid #fff;
+                line-height: 1.25vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 {
+                display: flex;
+                justify-content: space-between;
+                padding: 2.6vw 1.15vw 1.1vw;
+                gap: 0px
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 0
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 {
+                padding-bottom: 1.6vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._IconWrapper_stgga_230 img {
+                min-width: unset;
+                width: 1.4vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardListWrapper_stgga_215 ._CardList_stgga_215 ._ListItem_stgga_219 ._ItemText_stgga_237 {
+                font-size: 1.11vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._CardButton_stgga_241 {
+                display: none
+            }
+        }
+
+        @media (min-width: 1440px) {
+            ._WhoYouWillMeetSection_stgga_76 ._SwiperWrapper_stgga_97 ._Swiper_stgga_97 ._SwiperSlide_stgga_103 ._Card_stgga_103 ._Title_stgga_112 {
+                margin-top:5.347vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 {
+                padding-inline:10.417vw;padding-bottom: 6.042vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._LogosWrapper_stgga_144 ._LogosTitle_stgga_147 {
+                margin-top: 8.125vw;
+                margin-bottom: 1.597vw
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 {
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                letter-spacing: .208vw;
+                text-align: start
+            }
+
+            ._WhoYouWillMeetSection_stgga_76 ._FreePassCardWrapper_stgga_173 ._Card_stgga_103 ._TitleWrapper_stgga_184 ._Title_stgga_112 ._UnderLine_stgga_209 {
+                border-bottom: .139vw solid #fff
+            }
+        }
+
+        *,*:before,*:after {
+            box-sizing: border-box
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font: inherit
+        }
+
+        ul[role=list],ol[role=list] {
+            list-style: none
+        }
+
+        html:focus-within {
+            scroll-behavior: smooth
+        }
+
+        html,body {
+            height: 100%
+        }
+
+        a:not([class]) {
+            text-decoration-skip-ink: auto
+        }
+
+        video,svg,img,picture {
+            max-width: 100%;
+            display: block
+        }
+
+        button {
+            cursor: pointer
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto
+            }
+
+            *,*:before,*:after {
+                animation-duration: .01ms!important;
+                animation-iteration-count: 1!important;
+                transition-duration: .01ms!important;
+                scroll-behavior: auto!important
+            }
+        }
+
+        body {
+            font-family: Plus Jakarta Sans;
+            font-size: 16px
+        }
+
+        ._TestimonialsSection_139ev_76 {
+            padding: 50px 0 50px 20px;
+            border-top: .5px solid #4e4e4e;
+            border-bottom: .5px solid #4e4e4e;
+            background: #eaeaea;
+            margin: 0
+        }
+
+        ._TestimonialsSection_139ev_76 * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 {
+            width: 100%;
+            height: 373px;
+            overflow: hidden
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            margin: 0;
+            padding: 0;
+            background: #111617
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 {
+            display: table-cell;
+            vertical-align: bottom;
+            position: relative;
+            width: 16.666%;
+            height: 373px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: all .5s ease
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 {
+            width: 45%
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 {
+            padding: 50px 20px 0
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 * {
+            transition: all .2s ease;
+            opacity: 1;
+            transform: translate(0)
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 111px;
+            height: 101px;
+            border: 1px solid rgba(255,255,255,.2);
+            left: 77px;
+            opacity: 1
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
+            height: 87px;
+            width: 97px;
+            object-fit: contain
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 373px;
+            width: 100%;
+            z-index: 3;
+            padding-top: 50px;
+            transition: all .2s ease;
+            flex: 1;
+            position: relative
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 * {
+            opacity: 0;
+            margin: 0;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: contain;
+            opacity: .5;
+            display: flex;
+            width: 60px;
+            height: 54px;
+            border: 1px solid rgba(255,255,255,.2);
+            align-self: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            transition: left .5s ease
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
+            opacity: 1;
+            width: 59px;
+            height: 53px;
+            object-fit: contain
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 {
+            margin-top: auto;
+            margin-bottom: 44px
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._QuotationMarkWrapper_139ev_184 {
+            margin-top: 44px;
+            margin-bottom: 8px;
+            width: 26px;
+            height: 19px
+        }
+
+        ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._Message_139ev_180 {
+            color: #ffffffa3;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            width: 150px
+        }
+
+        @media (min-width: 1024px) {
+            ._TestimonialsSection_139ev_76 {
+                padding:5.556vw 4.861vw 5.625vw
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88,._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 {
+                height: max(373px,25.903vw)
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 {
+                width: 83%
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 {
+                height: max(373px,25.903vw);
+                padding: 3.403vw 1.389vw 0px 3.611vw
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
+                width: 10.486vw;
+                height: 9.514vw;
+                left: 8.819vw;
+                opacity: 1
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
+                width: 9.167vw;
+                height: 8.333vw;
+                object-fit: contain
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101._Active_139ev_111 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 {
+                margin-bottom: 3.681vw
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 {
+                height: max(373px,25.903vw)
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 {
+                width: 4.792vw;
+                height: 4.375vw
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._LogoWrapper_139ev_122 img {
+                width: 4.792vw;
+                height: 4.375vw;
+                object-fit: contain
+            }
+
+            ._TestimonialsSection_139ev_76 ._TestimonialsWrapper_139ev_88 ._TestimonialsList_139ev_93 ._ListItem_139ev_101 ._ItemContent_139ev_114 ._MessageWrapper_139ev_180 ._Message_139ev_180 {
+                font-size: max(14px,1.25vw);
+                width: 43.194vw;
+                margin-top: 1.944vw
+            }
+        }
 
 </style>
 
