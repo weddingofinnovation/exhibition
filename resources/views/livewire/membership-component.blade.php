@@ -3769,48 +3769,48 @@
                     
                         <li class="_ListItem_16vhd_145 ">
                             <div class="_IconWrapper_16vhd_155">
-                                <img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                                <img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Up to 12 event passes*</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Physical branding at the venue</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo printed in the event guide</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo on the iFX EXPO website</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo on the iFX EXPO email footer</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Online promotion*</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">SM mentions on official channels</p>
                         </li>
                         
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Branding exposure on the iFX EXPO App</p>
                         </li>
 
                         <li class="_ListItem_16vhd_145 ">
                             <div class="_IconWrapper_16vhd_155">
-                                <img src="{{asset('assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159">
+                                <img src="{{asset('public/assets/banner/gray-circle-green-check-mark-c8962a07.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159">
                             </div>
                             <p class="_ItemText_16vhd_162">Branded giveaway in attendee bags</p>
                         </li>
@@ -3831,7 +3831,7 @@
                             <p class="_ItemText_16vhd_162">Event passes*</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
-                            <div class="_IconWrapper_16vhd_155"><img src="/assets/gray-circle-dark-orange-check-mark-7bc54815.svg" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-dark-orange-check-mark-7bc54815.svg')}}" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Physical branding at the venue</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
@@ -3843,15 +3843,15 @@
                             <p class="_ItemText_16vhd_162">Logo on the iFX EXPO website</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
-                            <div class="_IconWrapper_16vhd_155"><img src="/assets/gray-circle-dark-orange-check-mark-7bc54815.svg" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-dark-orange-check-mark-7bc54815.svg')}}" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo on the iFX EXPO email footer</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
-                            <div class="_IconWrapper_16vhd_155"><img src="/assets/gray-circle-dark-orange-check-mark-7bc54815.svg" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-dark-orange-check-mark-7bc54815.svg')}}" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Online promotion</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
-                            <div class="_IconWrapper_16vhd_155"><img src="/assets/gray-circle-dark-orange-check-mark-7bc54815.svg" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-dark-orange-check-mark-7bc54815.svg')}}" alt="Inactive Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">SM mentions on official channels</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
@@ -4055,15 +4055,15 @@
 
     <!-- Membership Plan Header -->
     
-    <div class="membership-header">
+    <!-- <div class="membership-header">
         <h1>Free Membership Plan</h1>
         <p>Join today to gain access to exclusive exhibitions and networking opportunities.</p>
-    </div>
+    </div> -->
 
 
     <!-- Membership Plan Card -->
     
-    <div class="container">
+    <!-- <div class="container">
         
     <div class="membership-card">
             <h3>Membership Plan Details</h3>
@@ -4120,13 +4120,13 @@
             <button>Join Free Now</button>
         </div>
 
-    </div>
+    </div> -->
 
 
   
 
     <!-- Membership Plan Card -->
-    
+<!--     
     <div class="container">
         
     <div class="membership-card">
@@ -4184,7 +4184,7 @@
             <button>Join Free Now</button>
         </div>
 
-    </div>
+    </div> -->
 
 
 
