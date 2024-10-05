@@ -3827,7 +3827,7 @@
                     <h3 class="_Title_16vhd_97">EXHIBIT</h3>
                     <ul class="_CardList_16vhd_141">
                         <li class="_ListItem_16vhd_145 ">
-                                <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                                <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Event passes*</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
@@ -3835,11 +3835,11 @@
                             <p class="_ItemText_16vhd_162">Physical branding at the venue</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo printed in the event guide</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Logo on the iFX EXPO website</p>
                         </li>
                         <li class="_ListItem_16vhd_145 _InactiveListItem_16vhd_166">
@@ -3855,11 +3855,11 @@
                             <p class="_ItemText_16vhd_162">SM mentions on official channels</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Branding exposure on the iFX EXPO App</p>
                         </li>
                         <li class="_ListItem_16vhd_145 ">
-                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
+                            <div class="_IconWrapper_16vhd_155"><img src="{{asset('public/assets/banner/gray-circle-orange-check-mark-d6ed30f9.svg')}}" alt="Active Check Mark" class="_CheckMark_16vhd_159"></div>
                             <p class="_ItemText_16vhd_162">Branded giveaway in attendee bags</p>
                         </li>
                     </ul>
@@ -3944,12 +3944,12 @@
                     <div class="_CardListWrapper_stgga_215">
                         <div class="_CardList_stgga_215">
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                 <p class="_ItemText_stgga_237" style="width: 23.4vw;">2-Day access to 80+ exhibitors</p>
                             </div>
                         
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                 <p class="_ItemText_stgga_237" style="width: 23.4vw;">Exclusive access to the Welcome Party</p>
                             </div>
                         </div>
@@ -3961,14 +3961,14 @@
                             </div>
                         
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                 <p class="_ItemText_stgga_237" style="width: 20vw;">Access to sponsored F&amp;B areas</p>
                             </div>
                         </div>
                         
                         <div class="_CardList_stgga_215">
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                     <p class="_ItemText_stgga_237" style="width: 22vw;">27+ Speaker sessions and Q&amp;As on two stages, Speaker Hall and Traders Arena</p>
                             </div>
                         
