@@ -1340,7 +1340,18 @@
                           <div class="fw-normal text-accent fs-md lh-1">Start Free Trial  <i class="bi bi-right-chevron"></i> </div>
                         </div>
                       @endif
-
+                      @if(Auth::check())
+                        <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                          <div class="d-flex w-100 align-items-center justify-content-between">
+                            <normal class="mb-1">Logout</normal>
+                            <small><i class="bi bi-chevron-right"></i></small>
+                          </div>
+                          <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+                        </a>
+                        <form id="logout-form" action="{{route('logout')}}" method="POST">
+                          @csrf
+                        </form>
+                      @endif
 
                     </div>
                   </div>
