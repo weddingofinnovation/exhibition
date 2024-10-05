@@ -319,6 +319,91 @@
                  
           </style>
 
+          <div class="_NavBar_1vqbc_76">
+              <div class="_LogoDatePlaceWrapper_1vqbc_93">
+                  <img src="/assets/ifx-expo-6dde5c2a.svg" alt="iFX logo">
+                  <div class="_DatePlaceWrapper_1vqbc_103">
+                  <p class="_Date_1vqbc_103">9-11 APR 2024</p><p class="_Place_1vqbc_119">MEXICO CITY, MEXICO</p></div>
+              </div>
+              <ul class="ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-light _HorizontalMenu_1vqbc_124 css-jjxuhz" role="menu" tabindex="0" data-menu-list="true" style="font-family: &quot;Plus Jakarta Sans&quot;;">
+                  <li class="ant-menu-overflow-item ant-menu-submenu ant-menu-submenu-horizontal _MenuItem_1vqbc_135" role="none" style="opacity: 1; order: 0;">
+                      <div role="menuitem" class="ant-menu-submenu-title" tabindex="-1" aria-expanded="false" aria-haspopup="true" data-menu-id="rc-menu-uuid-60918-1-meet" aria-controls="rc-menu-uuid-60918-1-meet-popup"><span class="ant-menu-title-content">
+                                  <div>
+                                      <span>MEET</span>
+                                      <span role="img" aria-label="down" class="anticon anticon-down _DropDownArrowIcon_1vqbc_316"><svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></span>
+                                  </div>
+                          </span>
+                          <i class="ant-menu-submenu-arrow"></i>
+                  </div>
+                  </li>
+
+                  <li class="ant-menu-overflow-item ant-menu-item ant-menu-item-only-child _MenuItem_1vqbc_135" role="menuitem" tabindex="-1" data-menu-id="rc-menu-uuid-60918-1-agenda" style="opacity: 1; order: 1;"><span class="ant-menu-title-content"><a href="/en/agenda">AGENDA</a></span>
+                  </li>
+
+                  <li class="ant-menu-overflow-item ant-menu-submenu ant-menu-submenu-horizontal _MenuItem_1vqbc_135" role="none" style="opacity: 1; order: 2;">
+                      <div role="menuitem" class="ant-menu-submenu-title" tabindex="-1" data-menu-id="rc-menu-uuid-60918-1-get-involved" aria-expanded="false" aria-haspopup="true" aria-controls="rc-menu-uuid-60918-1-get-involved-popup">
+                      <span class="ant-menu-title-content">
+                  
+                          
+                      <div>
+                          <span>GET INVOLVED</span>
+
+                          <span role="img" aria-label="down" class="anticon anticon-down _DropDownArrowIcon_1vqbc_316">
+                              <svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+                                  <path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></span>
+                      </div>
+                      </span>
+                      <i class="ant-menu-submenu-arrow"></i></div>
+                  </li>
+                  <li class="ant-menu-overflow-item ant-menu-item ant-menu-item-only-child _MenuItem_1vqbc_135" role="menuitem" tabindex="-1" data-menu-id="rc-menu-uuid-60918-1-traders-zone" style="opacity: 1; order: 3;"><span class="ant-menu-title-content"><a href="/en/traders-zone">TRADERS ZONE</a></span>
+                  </li>
+                  <li class="ant-menu-overflow-item ant-menu-item ant-menu-item-only-child _MenuItem_1vqbc_135" role="menuitem" tabindex="-1" data-menu-id="rc-menu-uuid-60918-1-about" style="opacity: 1; order: 4;"><span class="ant-menu-title-content"><a href="/en/about">ABOUT</a></span>
+                  </li>
+                  <li class="ant-menu-overflow-item ant-menu-submenu ant-menu-submenu-horizontal _MenuItem_1vqbc_135" role="none" style="opacity: 1; order: 5;">
+                          <div role="menuitem" class="ant-menu-submenu-title" tabindex="-1" data-menu-id="rc-menu-uuid-60918-1-more" aria-expanded="false" aria-haspopup="true" aria-controls="rc-menu-uuid-60918-1-more-popup"><span class="ant-menu-title-content">
+                          <div>
+                              <span>MORE</span>
+                              <span role="img" aria-label="down" class="anticon anticon-down _DropDownArrowIcon_1vqbc_316"><svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></span>
+                          </div>
+                      </span>
+                      <i class="ant-menu-submenu-arrow"></i></div>
+                  </li>
+                  <li class="ant-menu-overflow-item ant-menu-overflow-item-rest ant-menu-submenu ant-menu-submenu-horizontal ant-menu-submenu-disabled" aria-hidden="true" role="none" style="opacity: 0; height: 0px; overflow-y: hidden; order: 2147483647; pointer-events: none; position: absolute;">
+                      <div role="menuitem" class="ant-menu-submenu-title" aria-expanded="false" aria-haspopup="true" data-menu-id="rc-menu-uuid-60918-1-rc-menu-more" aria-controls="rc-menu-uuid-60918-1-rc-menu-more-popup" aria-disabled="true"><span role="img" aria-label="ellipsis" class="anticon anticon-ellipsis"><svg viewBox="64 64 896 896" focusable="false" data-icon="ellipsis" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M176 511a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0zm280 0a56 56 0 10112 0 56 56 0 10-112 0z"></path></svg></span>
+                      <i class="ant-menu-submenu-arrow"></i></div>
+                  </li>
+              </ul>
+              <div aria-hidden="true" style="display: none;"></div>
+          
+              <div class="_MenuButtonWrapper_1vqbc_140"></div>
+          
+              <div class="_LanguageSelectorWrapper_1vqbc_144">
+                <ul class="ant-menu ant-menu-root ant-menu-horizontal ant-menu-light _HorizontalMenu_1mbag_76 css-sj7gp7" role="menu" tabindex="0" data-menu-list="true" style="font-family: &quot;Plus Jakarta Sans&quot;;">
+                          <li class="ant-menu-submenu ant-menu-submenu-horizontal _MenuItem_1mbag_85 ant-menu-submenu-selected" role="none" style="width: 53px;">
+                              <div role="menuitem" class="ant-menu-submenu-title" tabindex="-1" aria-expanded="false" aria-haspopup="true" data-menu-id="rc-menu-uuid-60918-2-en" aria-controls="rc-menu-uuid-60918-2-en-popup"><span class="ant-menu-title-content">
+                              <div role="img" aria-label="Flag for en" style="display: flex; align-items: baseline; justify-content: center; margin-left: 8px;">
+                              <div style="width: 9px; height: 9px; margin-right: 2px;"><img src="data:image/png;base64,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" alt="Common.LanguagesShort.English" style="width: 9px; height: 9px;"></div>
+                      <span style="font-size: 12px;">EN</span>
+                      <span role="img" aria-label="down" class="anticon anticon-down _DropDownArrowIcon_1mbag_96"><svg viewBox="64 64 896 896" focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"></path></svg></span>
+                  </div>
+                      </span>
+                      <i class="ant-menu-submenu-arrow"></i></div>
+                      </li>
+
+                          </ul>
+                          <div aria-hidden="true" style="display: none;"></div>
+              </div>
+              
+              <div class="_MobileMenuToggle_1vqbc_90">
+                  <button type="button" class="ant-btn css-6n4eet ant-btn-default ant-btn-icon-only" style="background-color: transparent; color: rgba(255, 255, 255, 0.88); border-color: transparent; border-width: 2px; width: 40px; height: 40px;">
+                      <span class="ant-btn-icon">
+                      <span role="img" aria-label="menu" class="anticon anticon-menu" style="font-size: 20px;"><svg viewBox="64 64 896 896" focusable="false" data-icon="menu" width="1em" height="1em" fill="currentColor" aria-hidden="true"><path d="M904 160H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0 624H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8zm0-312H120c-4.4 0-8 3.6-8 8v64c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-64c0-4.4-3.6-8-8-8z"></path></svg>
+                      </span>
+                      </span>
+                  </button>
+              </div>
+          </div>
+
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">
               <div class="row">

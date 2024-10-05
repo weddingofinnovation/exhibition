@@ -3453,7 +3453,7 @@ button.swiper-pagination-bullet {
 </style>
 
 <div id="root">
-    <!-- <div class="_NavBar_1vqbc_76">
+    <!--<div class="_NavBar_1vqbc_76">
         <div class="_LogoDatePlaceWrapper_1vqbc_93">
             <img src="/assets/ifx-expo-6dde5c2a.svg" alt="iFX logo">
             <div class="_DatePlaceWrapper_1vqbc_103">
