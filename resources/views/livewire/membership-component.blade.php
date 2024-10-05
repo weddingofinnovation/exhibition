@@ -3956,7 +3956,7 @@
                     
                         <div class="_CardList_stgga_215">
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                 <p class="_ItemText_stgga_237" style="width: 20vw;">13+ hours of content covering 25+ topics around industry’s hottest trends</p>
                             </div>
                         
@@ -3973,7 +3973,7 @@
                             </div>
                         
                             <div class="_ListItem_stgga_219">
-                                <div class="_IconWrapper_stgga_230"><img src="{{asset('assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
+                                <div class="_IconWrapper_stgga_230"><img src="{{asset('public/assets/banner/orange-circle-white-check-mark-4b213cee.svg')}}" alt="Check Mark"></div>
                                     <p class="_ItemText_stgga_237" style="width: 22vw;">Access to iFX EXPO Networking App</p>
                             </div>
                         </div>
