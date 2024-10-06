@@ -71,7 +71,7 @@
                 <div class="col-lg-8  col-sm-4">
                   <label class="form-label" >Desc</label>
                   <input id="desc" type="hidden" name="content" wire:model.defer="desc">
-                  <trix-editor input="desc" wire:model.lazy="desc"></trix-editor>
+                  <trix-editor input="desc"></trix-editor>
                   <div class="form-text">
                   @error('desc'){{ $message}}@enderror
                   </div>
@@ -152,7 +152,8 @@
   {{-- @push('scripts')
     <script>
       document.addEventListener('trix-change', function(event) {
-        Livewire.emit('longDescriptionUpdated', event.target.innerHTML);
+        let content = event.target.value;
+        Livewire.emit('longDescriptionUpdated', content);
       });
 
       

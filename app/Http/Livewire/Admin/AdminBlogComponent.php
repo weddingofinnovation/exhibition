@@ -41,7 +41,14 @@ class AdminBlogComponent extends Component
     //   session([$field => $this->$field]);
     // }
 
-    
+    protected $listeners = ['longDescriptionUpdated'];
+
+    public function longDescriptionUpdated($value)
+    {
+        $this->desc = $value;
+       
+    }
+
 
     Use WithFileUploads;
     public function add() {
@@ -75,14 +82,7 @@ class AdminBlogComponent extends Component
     }
 
 
-    // protected $listeners = ['longDescriptionUpdated'];
-
-    // public function longDescriptionUpdated($value)
-    // {
-    //     $this->desc = $value;
-    //     session(['desc' => $value]);
-    // }
-
+    
     public function dateImage()
     {
        // $fattribute = Mag::find($this->blog_id);
