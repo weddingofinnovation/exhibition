@@ -31,20 +31,17 @@ class AdminBlogComponent extends Component
         $this->board = $board;
         $this->type = "e";  
         $this->status = "1"; 
-        $this->tittle = session('tittle','');
-        $this->s_desc = session('s_desc','');
-        $this->desc = session('desc','');
+        // $this->tittle = session('tittle','');
+        // $this->s_desc = session('s_desc','');
+        // $this->desc = session('desc','');
     }
 
-    public function updated($field)
-    {
-      session([$field => $this->$field]);
-    }
+    // public function updated($field)
+    // {
+    //   session([$field => $this->$field]);
+    // }
 
-    public function generateSlug()
-    {
-        $this->slug = Str::slug($this->tittle,'-');
-    }
+    
 
     Use WithFileUploads;
     public function add() {
@@ -57,21 +54,21 @@ class AdminBlogComponent extends Component
 
         $blog = new Mag();
         $blog->tittle = $this->tittle;
-        $blog->slug = $this->slug;
-        $blogdesc = explode("  ",$this->desc);
-        $blog->desc = json_encode($blogdesc);
-
+        $blog->slug = Str::slug($this->tittle,'-');
         $blog->s_desc = $this->s_desc;
+        $blog->desc = $this->desc;
+        // $blogdesc = explode("  ",$this->desc);
+        // $blog->desc = json_encode($blogdesc);
         $blog->user_id = Auth::user()->id;
         $blog->type = $this->type;
         $blog->status = $this->status;
         $blog->save();
 
-        session()->forget(['tittle','s_desc','desc']);
+        // session()->forget(['tittle','s_desc','desc']);
 
-        $this->tittle = '';
-        $this->s_desc = '';
-        $this->desc = '';
+        // $this->tittle = '';
+        // $this->s_desc = '';
+        // $this->desc = '';
 
         session()->flash('message',' Congrats, Blog has been posted Successfully. we are reviewing, it will flash on the platform very soon.'); 
         return redirect()->route('admin.dashboard',['board' => 'blog']);
