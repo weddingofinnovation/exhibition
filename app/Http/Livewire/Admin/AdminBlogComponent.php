@@ -77,6 +77,15 @@ class AdminBlogComponent extends Component
         return redirect()->route('admin.dashboard',['board' => 'blog']);
     }
 
+
+    protected $listeners = ['longDescriptionUpdated'];
+
+    public function longDescriptionUpdated($value)
+    {
+        $this->desc = $value;
+        session(['desc' => $value]);
+    }
+    
     public function dateImage()
     {
        // $fattribute = Mag::find($this->blog_id);

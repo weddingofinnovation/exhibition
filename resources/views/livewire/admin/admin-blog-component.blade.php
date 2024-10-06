@@ -82,9 +82,6 @@
       </div>
     </div>
 
-
-
-
     @if($board == 'openAI')
     <div class="container">
       
@@ -113,9 +110,10 @@
 
   @push('scripts')
     <script>
-      document.addEventListener('trix-change', function(e)
-      {
-        @this.set('desc', e.target.value);
+      document.addEventListener('trix-change', function(event) {
+        Livewire.emit('longDescriptionUpdated', event.target.innerHTML);
       });
+
+      
     </script>
   @endpush
