@@ -3541,7 +3541,7 @@
             <header class="_Header_1rxdz_92">
                 <div class="_VideoWrapper_1rxdz_104">
                     <video autoplay="" loop="" playsinline="">
-                    <source src="/assets/home-page-header-video-5de2c0e0.mp4" type="video/mp4"></video>
+                    <source src="{{asset('public/assets/banner/home-page-header-video-5de2c0e0.mp4')}}" type="video/mp4"></video>
                 </div>
             
                 <div class="_Container_1rxdz_117">
@@ -3658,8 +3658,8 @@
                 </div>
             
                 <div class="_ImagesWrapper_1p2ep_129">
-                    <div class="_Image_1p2ep_129 _Image1_1p2ep_137"><img src="/assets/event-b192b9a9.webp" alt="Event Img" loading="lazy"></div>
-                    <div class="_Image_1p2ep_129 _Image2_1p2ep_146"><img src="/assets/crowd-3cbc540d.webp" alt="Crowd Img" loading="lazy"></div>
+                    <div class="_Image_1p2ep_129 _Image1_1p2ep_137"><img src="{{asset('public/assets/banner/event-b192b9a9.webp')}}" alt="Event Img" loading="lazy"></div>
+                    <div class="_Image_1p2ep_129 _Image2_1p2ep_146"><img src="{{asset('public/assets/banner/assets/crowd-3cbc540d.webp')}}" alt="Crowd Img" loading="lazy"></div>
                 </div>
             </section>
             
@@ -4219,7 +4219,7 @@
                     "autoplayHoverPause": true,
                 },
                 "500": {
-                    "items": 3,
+                    "items": 4,
                     "nav": false,
                     "controls": false,
                     "autoplayHoverPause": true,
