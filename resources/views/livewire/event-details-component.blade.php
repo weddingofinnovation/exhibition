@@ -3762,7 +3762,24 @@
                 }
 
           </style>
-    
+    <style>
+            #main-header{
+              position :fixed;
+              top: -100px;
+              width:100%;
+              background-color:#333;
+              color:white;
+              transition: top 0.3s ease;
+              z-index:10;
+            }
+            .show-header {
+              top:0;
+            }
+            .content{
+              margin-top:100px;
+            }
+          </style>
+          
           <div class="_NavBar_1vqbc_76" id="main-header">
               <div class="_LogoDatePlaceWrapper_1vqbc_93">
                   <img src="/assets/ifx-expo-6dde5c2a.svg" alt="iFX logo">
@@ -3848,6 +3865,7 @@
               </div>
           </div>
 
+          
           <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
             <div class="container">
               <div class="row">
