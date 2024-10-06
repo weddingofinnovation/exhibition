@@ -478,11 +478,14 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     //Qrcode
     Route::get('/admin/QrCode', GeneratorComponent::class)->name('admin.qrcode');
   
-    //blog
-    //post all new  post
+
+    
+    //blog-post all new  post
     Route::get('/admin/blog/{blog_id}/update/{board}', BlogDashboardComponent::class)->name('admin.blogdashboard');
     //using for Add
     Route::get('/admin/blog/add/business/{board}', AdminBlogComponent::class)->name('admin.blogpost');
+
+
 
    // Route::get('/admin/blog/category/add', BlogCategoryEditCompopnent::class)->name('admin.blogadd');
    //event--add--status--list--edit

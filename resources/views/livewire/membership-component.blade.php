@@ -3648,10 +3648,10 @@
             
             <section class="_PhotoSection_1p2ep_76">
                 <div class="_ContentWrapper_1p2ep_87">
-                    <h2 class="_Heading_1p2ep_91 undefined">iFX EXPO
-                    <span> is coming to MEXICO!</span>
+                    <h2 class="_Heading_1p2ep_91 undefined">The Exhibition Network
+                     <span> is coming to MEXICO!</span>
                     </h2>
-                    <p class="_Message_1p2ep_102">Be a part of a truly historic event in Mexico, exploring one of the most dynamic and untapped marketplaces globally. Join the industry’s leading brokers, affiliates, hedge funds and fintechs along with thousands of traders - all under one roof. The question is, can you afford to miss it?</p>
+                    <p class="_Message_1p2ep_102">Be a part of a truly historic events in India, exploring one of the most dynamic and untapped marketplaces globally. Join the industry’s leading brokers, affiliates, hedge funds and fintechs along with thousands of traders - all under one roof. The question is, can you afford to miss it?</p>
                     <button type="button" class="ant-btn css-1qwnxpn ant-btn-link _Button_1p2ep_111">
                         <span>CHECK SCHEDULE BREAKDOWN</span>
                     </button>

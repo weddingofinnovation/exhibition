@@ -978,105 +978,7 @@
         @endforeach
       @endif
 
-
-<!-- Start Cleint-->
-      @if($board == 'client')
-        <!-- <div class="container">
-          <form wire:submit.prevent="emailSend">
-             
-              <div class="col-lg-4 col-md-4 ">
-                      <label class="form-label fw-normal text-nowrap mb-0 me-2">Sort by:</label>
-                      <select class="form-select form-select-sm me-2"  wire:model.lazy="month">
-                        <option>Choose...</option>
-                        <option value="01">Jan-01</option>
-                        <option value="02">Feb-02</option>
-                        <option value="03">Mar-03</option>
-                        <option value="04">Apr-04</option>
-                        <option value="05">May-05</option>
-                        <option value="06">Jun-06</option>
-                        <option value="07">Jul-07</option>
-                        <option value="08">Aug-08</option>
-                        <option value="09">Sep-09</option>
-                        <option value="10">Oct-10</option>
-                        <option value="11">Nov-11</option>
-                        <option value="12">Dec-12</option>
-                      </select>
-                    </div> 
-              <input type="text" class="form-control" placeholder="share your email..." wire:model.lazy="emailClient">
-             
-             <button type="submit"></button>
-            </div>
-          </form>
-        </div> --><div class="container">
-        @foreach($findInspection as $franchise)
-          
-            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-              <div class="col  pr-0">
-                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                    <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-                  @else
-                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                    <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-                  @endif 
-                    <div class="round-circle">{{$franchise -> id}}</div> 
-                    <div class="badge bg-secondary fs-xs">
-                      @if (Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
-                          upco
-                      @elseif (Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
-                          first
-                      @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
-                          ongoi
-                      @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
-                        last
-                      @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
-                        end
-                      @endif
-                    </div>
-
-
-                    {{--<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">try</button>--}}
-              </div>
-
-              <div class="col-7  p-0"> 
-                <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                  {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                <div class="text-muted fs-sm text-start">
-                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M You')}}
-                  @else
-                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                  @endif 
-                </div>  
-                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
-                <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
-                <span class="bg-primary">
-                  @php
-                    $getvalue = $franchise->id;
-                    $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
-                  @endphp
-                  <i class="bi bi-pencil"></i> {{$countReview}}
-                </span>
-              </div>
-              </div>
-
-              <div class="col-3  p-0">
-                @if(is_null($franchise->image))
-                  <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">Add</a>
-                  <a class="card-img-top d-block overflow-hidden" href="{{route('admin.multipartners',['event_id' => $franchise->id, 'formm' => 'client' ])}}">Meetups</a>
-                @else
-
-                  <a class="card-img-top d-block overflow-hidden" href="{{route('admin.multipartners',['event_id' => $franchise->id, 'formm' => 'client' ])}}">
-                  <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                @endif
-              </div>
-            </div>
-          
-        @endforeach
-        </div>
-        
-      @endif
-<!--Stop Client-->
+      
 
       @if($board == 'visitcard')
           
@@ -1285,7 +1187,7 @@
 
       @endif
 
-<!--Start job -->
+    <!--Start job -->
       @if($board == 'job')
         <div class="container d-lg-none">
           <div class="row">
@@ -1386,13 +1288,13 @@
             </table>
           </div>
         </div>
-        
       @endif
-<!--Stop job -->
+      <!--Stop job -->
 
-<!--Stop blog -->
+
+
+      <!--Stop blog -->
       @if($board == 'blog')
-
         <div class="container d-lg-none">
           <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -1405,15 +1307,6 @@
                   <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#blog" data-bs-toggle="tab" role="tab">blog</a></li>
                 </ul>
 
-                  {{--<div class="d-flex badgese pb-2">
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="today"> Today </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="tomorrow"> Tomorrow </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="this-weekend">  This weekend </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-week">  Next Week </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-weekend">  Next weekend </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="this-month">  This Month </a></span>
-                    <span class="badge border border-1 text-right border-dark text-dark mr-1"  value="next-month">  Next Month </a></span>
-                  </div>--}}
 
                   <div class="tab-content pt-1">
                     <!-- Request tab-->
@@ -1466,51 +1359,84 @@
             </div>
           </div>
         </div>
-        
-          {{--<div class="table-responsive fs-md mb-4">
-            <table class="table table-hover mb-0">
-                    <thead>
-                      <tr> <th>#</th>
-                      <th>title:slug:type</th>
-                      <th>skills:level</th>
-                      <th>desc:req</th>
-                      <th>qual:exp.</th>
-                      <th>Status</th>
-                      <th>Action</th></tr>
-                    </thead>
-                    <tbody>
-                      <!--<tr>
-                        <td class="py-3"><a class="nav-link-style fw-medium" href="account-single-ticket.html">My new ticket</a></td>
-                        <td class="py-3">09/27/2019 | 09/30/2019</td>
-                        <td class="py-3">Website problem</td>
-                        <td class="py-3"><span class="badge bg-warning m-0">High</span></td>
-                        <td class="py-3"><span class="badge bg-success m-0">Open</span></td>
-                      </tr>--> 
-                    
-                        @foreach ($jobs as $info)
-                          <tr><td class="py-3 align-middle">{{$info->id}}</td>
-                            <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
-                            <td class="py-3 align-middle fw-sm">{{Str::limit($info->skills, 25)}}<br>{{$info->level}}</td>
-                            <td class="py-3 align-middle fw-sm">{{Str::limit($info->description, 25)}}<br>{{Str::limit($info->requirement, 25)}}</td>
-                            <td class="py-3 align-middle fw-sm"><span class="align-middle badge  bg-info ms-2">{{$info->qualification}}<br></span></td>
-                            <td class="py-3 align-middle">
-                              @if($info->status == 'active')
-                                <span class="badge bg-success m-0">Active</span>
-                                @else
-                                <span class="badge bg-danger m-0">Deactive</span>
-                              @endif </td>
-                            <td class="py-3 align-middle"><a class=" nav-link-style me-2"  data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
-                                <div class=" bi bi-x"></div></a> </td></tr>
-                        @endforeach          
-                    
-                    </tbody>
-            </table>
-          </div>
-          <div class="text-end">
-            <button class="btn btn-primary" >Submit new ticket</button>
-          </div>--}}
       @endif
-<!--Stop blog-->
+      <!--Stop blog-->
+
+      <!-- Start Cleint-->
+      @if($board == 'client')
+          <div class="container">
+            @foreach($findInspection as $franchise)
+              
+                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                  <div class="col  pr-0">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                        <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                      @else
+                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                        <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                      @endif 
+                        <div class="round-circle">{{$franchise -> id}}</div> 
+                        <div class="badge bg-secondary fs-xs">
+                          @if (Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
+                              upco
+                          @elseif (Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                              first
+                          @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                              ongoi
+                          @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                            last
+                          @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
+                            end
+                          @endif
+                        </div>
+
+
+                        {{--<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">try</button>--}}
+                  </div>
+
+                  <div class="col-7  p-0"> 
+                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                    <div class="text-muted fs-sm text-start">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M You')}}
+                      @else
+                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                      @endif 
+                    </div>  
+                    <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
+                    <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
+                    <span class="bg-primary">
+                      @php
+                        $getvalue = $franchise->id;
+                        $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
+                      @endphp
+                      <i class="bi bi-pencil"></i> {{$countReview}}
+                    </span>
+                  </div>
+                  </div>
+
+                  <div class="col-3  p-0">
+                    @if(is_null($franchise->image))
+                      <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">Add</a>
+                      <a class="card-img-top d-block overflow-hidden" href="{{route('admin.multipartners',['event_id' => $franchise->id, 'formm' => 'client' ])}}">Meetups</a>
+                    @else
+
+                      <a class="card-img-top d-block overflow-hidden" href="{{route('admin.multipartners',['event_id' => $franchise->id, 'formm' => 'client' ])}}">
+                      <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                    @endif
+                  </div>
+                </div>
+              
+            @endforeach
+        </div>
+      @endif
+      <!--Stop Client-->
+
+
+
+
 
       @if($board == 'magazine')
         <div class="container">
@@ -2850,6 +2776,7 @@
             </form>
       @endif
       
+
 
 
     <div class="handheld-toolbar">

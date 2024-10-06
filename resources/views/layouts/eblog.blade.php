@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 
     
+    <link rel="stylesheet" type="text/css" href=""https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.css">
+
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('public/image/favicons/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/image/favicons/favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('public/image/favicons/favicon-16x16.png')}}">
@@ -84,7 +86,7 @@
     <script src="{{asset('js/isotope.pkgd.min.js')}}"></script> 
     <script src="{{asset('js/isotope.pkgd.js')}}"></script> 
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
-    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

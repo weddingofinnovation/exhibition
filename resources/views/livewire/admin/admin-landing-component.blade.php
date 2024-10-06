@@ -236,13 +236,17 @@ body {
                     </div> -->
 
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'blog'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Blog</h3>
-                      <!-- </a>  -->
+                        <h3 class="name">N Article</h3>
                       <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
-                      <p class="weight">200.59</p> -->
                     </a>
+
+
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
+                        <h3 class="name">N Business</h3>
+                      <p class="symbol"></p>
+                    </a>
+
+                    
                     
                     <!-- <div class="col">
                         <a  href="{{route('all.category')}}">
