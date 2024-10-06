@@ -4207,6 +4207,32 @@
                 },
             });
         </script>
+       
+       <script>
+            var slider = tns({
+                "container": '._Swiper_1f398_79',            
+                "responsive": {
+                "300": {
+                    "items": 1,
+                    "controls": false,
+                    "mouseDrag": true,
+                    "autoplay": false,
+                    "autoplayButtonOutput":false,
+                    "autoplayHoverPause": true,
+                },
+                "500": {
+                    "items": 1,
+                    "nav": false,
+                    "controls": false,
+                    "autoplayHoverPause": true,
+                    "autoplay":false,
+                    "autoplayButtonOutput":false
+                },
+                
+                },
+                
+            });
+       </script>
     @endpush
 
 
