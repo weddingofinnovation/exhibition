@@ -3762,7 +3762,8 @@
                 }
 
           </style>
-    <style>
+
+          <style>
             #main-header{
               position :fixed;
               top: -100px;
@@ -3779,7 +3780,7 @@
               margin-top:100px;
             }
           </style>
-          
+
           <div class="_NavBar_1vqbc_76" id="main-header">
               <div class="_LogoDatePlaceWrapper_1vqbc_93">
                   <img src="/assets/ifx-expo-6dde5c2a.svg" alt="iFX logo">
@@ -5740,9 +5741,9 @@
             window.addEventListener('scroll', function() {
              var header = document.getElementById('main-header');
              if(window.screenY > 50 ) {
-              header.classList.add('scrolled');
+              header.classList.add('show-header');
              }else{
-              header.classList.remove('scrolled');
+              header.classList.remove('show-header');
              }
 
             });
