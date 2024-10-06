@@ -21,7 +21,7 @@
               <div class="row">
                 <div class="col-sm-4 ">
                   <label class="form-label" >Blog tittle</label>
-                  <textarea class="form-control" type="text" row="2" wire:model="tittle"  wire:keyup="generateSlug"> </textarea>
+                  <textarea class="form-control" type="text" row="2" wire:model.lazy="tittle"> </textarea>
                 </div>
 
                 <div class="col-sm-4">
