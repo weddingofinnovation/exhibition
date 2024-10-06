@@ -108,7 +108,7 @@
           
   </main>
 
-  @push('scripts')
+  {{-- @push('scripts')
     <script>
       document.addEventListener('trix-change', function(event) {
         Livewire.emit('longDescriptionUpdated', event.target.innerHTML);
@@ -116,4 +116,4 @@
 
       
     </script>
-  @endpush
+  @endpush --}}
