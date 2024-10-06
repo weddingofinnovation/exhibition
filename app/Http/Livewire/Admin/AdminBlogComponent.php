@@ -31,6 +31,14 @@ class AdminBlogComponent extends Component
         $this->board = $board;
         $this->type = "e";  
         $this->status = "1"; 
+        $this->tittle = session('tittle','');
+        $this->s_desc = session('s_desc','');
+        $this->desc = session('desc','');
+    }
+
+    public function updated($field)
+    {
+      session([$field => $this->$field]);
     }
 
     public function generateSlug()
@@ -41,10 +49,15 @@ class AdminBlogComponent extends Component
     Use WithFileUploads;
     public function add() {
     
+        $this->validate([
+            'tittle' => 'required',
+            's_desc' => 'required',
+            'desc' => 'required',
+        ]);
+
         $blog = new Mag();
         $blog->tittle = $this->tittle;
         $blog->slug = $this->slug;
-
         $blogdesc = explode("  ",$this->desc);
         $blog->desc = json_encode($blogdesc);
 
@@ -52,8 +65,14 @@ class AdminBlogComponent extends Component
         $blog->user_id = Auth::user()->id;
         $blog->type = $this->type;
         $blog->status = $this->status;
-        //dd($blog);
         $blog->save();
+
+        session()->forget(['tittle','s_desc','desc']);
+
+        $this->tittle = '';
+        $this->s_desc = '';
+        $this->desc = '';
+
         session()->flash('message',' Congrats, Blog has been posted Successfully. we are reviewing, it will flash on the platform very soon.'); 
         return redirect()->route('admin.dashboard',['board' => 'blog']);
     }

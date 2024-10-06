@@ -17,11 +17,14 @@
                   
                   <div class="col-sm-4">
                     <label class="form-label" >Desc</label>
-                    <textarea class="form-control" type="text"  rows="10" wire:model="desc"></textarea>
+                    
+                    <input id="body" type="hidden" name="content" wire:model.defer="desc">
+                    <trix-editor input="desc"></trix-editor>
                     <div class="form-text"></div>
                   </div>
+
                   <div class="col-sm-4">
-                  <button class="btn btn-primary d-block w-70" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>
+                  <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>
                   Post</button>
                   </div>
               

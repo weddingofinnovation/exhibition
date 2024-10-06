@@ -32,10 +32,11 @@
             
                 <div class="col-sm-4">
                   <label class="form-label" >Desc</label>
-                  <input id="body" type="hidden" name="content" wire:model.defer="desc">
+                  <input id="desc" type="hidden" name="content" wire:model.defer="desc">
                   <trix-editor input="desc"></trix-editor>
                   <div class="form-text"></div>
                 </div>
+                
                 <div class="col-sm-4">
                 <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
                 </div>
@@ -110,3 +111,11 @@
           
   </main>
 
+  @push('scripts')
+    <script>
+      document.addEventListener('trix-change', function(e)
+      {
+        @this.set('desc', e.target.value);
+      });
+    </script>
+  @endpush
