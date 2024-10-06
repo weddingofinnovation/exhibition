@@ -4218,6 +4218,40 @@
                     "autoplayButtonOutput":false,
                     "autoplayHoverPause": true,
                 },
+                "500": {
+                    "items": 3,
+                    "nav": false,
+                    "controls": false,
+                    "autoplayHoverPause": true,
+                    "autoplay":false,
+                    "autoplayButtonOutput":false
+                },
+                
+                },
+                
+            });
+       </script>
+
+        <script>
+            var slider = tns({
+                "container": '.swiper-wrapper',            
+                "responsive": {
+                "300": {
+                    "items": 1,
+                    "controls": false,
+                    "mouseDrag": true,
+                    "autoplay": false,
+                    "autoplayButtonOutput":false,
+                    "autoplayHoverPause": true,
+                },
+                "500": {
+                    "items": 5,
+                    "nav": false,
+                    "controls": false,
+                    "autoplayHoverPause": true,
+                    "autoplay":false,
+                    "autoplayButtonOutput":false
+                },
                 
                 },
                 
