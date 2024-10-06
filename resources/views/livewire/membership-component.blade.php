@@ -3659,7 +3659,7 @@
             
                 <div class="_ImagesWrapper_1p2ep_129">
                     <div class="_Image_1p2ep_129 _Image1_1p2ep_137"><img src="{{asset('public/assets/banner/event-b192b9a9.webp')}}" alt="Event Img" loading="lazy"></div>
-                    <div class="_Image_1p2ep_129 _Image2_1p2ep_146"><img src="{{asset('public/assets/banner/assets/crowd-3cbc540d.webp')}}" alt="Crowd Img" loading="lazy"></div>
+                    <div class="_Image_1p2ep_129 _Image2_1p2ep_146"><img src="{{asset('public/assets/banner/crowd-3cbc540d.webp')}}" alt="Crowd Img" loading="lazy"></div>
                 </div>
             </section>
             
