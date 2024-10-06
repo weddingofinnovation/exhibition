@@ -3985,7 +3985,7 @@
                 </div>
             </section>
             
-            <section class="_TestimonialsSection_139ev_76">
+            <!-- <section class="_TestimonialsSection_139ev_76">
                 <div class="_TestimonialsWrapper_139ev_88">
                     <ul class="_TestimonialsList_139ev_93">
                         <li class="_ListItem_139ev_101 _Active_139ev_111" style="background: rgba(255, 255, 255, 0.1);">
@@ -4026,7 +4026,7 @@
                         </li>
                     </ul>
                 </div>
-            </section>
+            </section> -->
 
         </div>
 
@@ -4180,16 +4180,7 @@
             <button>Join Free Now</button>
         </div>
 
-    </div> -->
-
-
-    @push('scripts')
-        <script>
-            const swiper = new Swiper('._SwiperWrapper_179b5_101', {
-                direction : 'horizontal', // or 'vertical'
-                loop: true,  // Enable continuous loop mode 
-
-                //if want pagination
+    </div> //if want pagination
                 pagination:{
                     el: '.swiper-pagination',
                     clickable: true,
@@ -4204,13 +4195,20 @@
                 //enable autoplay
                 autoplay:{
                     delay:3000,
-                },
+                },-->
+
+
+    @push('scripts')
+        <script>
+            const swiper = new Swiper('._SwiperWrapper_179b5_101', {
+                direction : 'horizontal', // or 'vertical'
+                loop: true,  // Enable continuous loop mode 
             });
         </script>
        
        <script>
             var slider = tns({
-                "container": '._Swiper_1f398_79',            
+                "container": '._Swiper_179b5_101',            
                 "responsive": {
                 "300": {
                     "items": 1,
@@ -4219,14 +4217,6 @@
                     "autoplay": false,
                     "autoplayButtonOutput":false,
                     "autoplayHoverPause": true,
-                },
-                "500": {
-                    "items": 1,
-                    "nav": false,
-                    "controls": false,
-                    "autoplayHoverPause": true,
-                    "autoplay":false,
-                    "autoplayButtonOutput":false
                 },
                 
                 },
