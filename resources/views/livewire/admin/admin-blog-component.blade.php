@@ -4,40 +4,80 @@
 
 
   <main> 
-    <div class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
-      <div class="text-sm-end">
-      <a class="btn btn-primary" href="{{route ('admin.info')}}" data-bs-toggle="modal">  All Brand </a></div>
-        @if (Session::has('message'))
-        <h6 class="fs-base text-light mb-0">
-        {{Session::get('message')}}
-        </h6>
-        @endif
-        <a class="btn btn-primary btn-sm" href="#"><i class="ci-sign-out me-2"></i>Sign out</a>
+    <div class="container">
+      <div class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
+        <div class="text-sm-end">
+          <a class="btn btn-primary" href="{{route ('admin.info')}}" data-bs-toggle="modal">  All Brand </a></div>
+          @if (Session::has('message'))
+          <h6 class="fs-base text-light mb-0">
+          {{Session::get('message')}}
+          </h6>
+          @endif
+          <a class="btn btn-primary btn-sm" href="#"><i class="ci-sign-out me-2"></i>Sign out</a>
+      </div>
+
+      <form wire:submit.prevent = "add">    
+        <div class="row">
+                  <div class="col-lg-8  col-sm-4 ">
+                    <label class="form-label" >Blog tittle</label>
+                    <textarea class="form-control" type="text" row="2" wire:model.lazy="tittle"> </textarea>
+                    <div class="form-text">@error('tittle'){{ $message}}@enderror</div>
+                  </div>
+
+                  <div class="col-lg-8  col-sm-4">
+                    <label class="form-label" >Short Desc</label>
+                      <textarea class="form-control" type="text"  row="3" wire:model.lazy="s_desc"></textarea>
+                      <div class="form-text">
+                      @error('s_desc'){{ $message}}@enderror
+                      </div>
+                  </div>
+              
+                  <div class="col-lg-8  col-sm-4">
+                    <label class="form-label" >Desc</label>
+                    <input id="desc" type="hidden" name="content" wire:model.defer="desc">
+                    <trix-editor input="desc"></trix-editor>
+                    <div class="form-text">
+                    @error('desc'){{ $message}}@enderror
+                    </div>
+                  </div>
+                  
+                  <div class="col-lg-8  col-sm-4">
+                    <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
+                  </div>
+        </div>
+      </form>
     </div>
 
     <div class="container py-4">
+    
       @if($board == 'addBlog')
         <form wire:submit.prevent="add" >
+          
               <div class="row">
-                <div class="col-sm-4 ">
+                <div class="col-lg-8  col-sm-4 ">
                   <label class="form-label" >Blog tittle</label>
                   <textarea class="form-control" type="text" row="2" wire:model.lazy="tittle"> </textarea>
+                  <div class="form-text">@error('tittle'){{ $message}}@enderror</div>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-lg-8  col-sm-4">
                   <label class="form-label" >Short Desc</label>
                     <textarea class="form-control" type="text"  row="3" wire:model.lazy="s_desc"></textarea>
-                    <div class="form-text"></div>
+                    <div class="form-text">
+                    @error('s_desc'){{ $message}}@enderror
+                    </div>
                 </div>
             
-                <div class="col-sm-4">
+                <div class="col-lg-8  col-sm-4">
                   <label class="form-label" >Desc</label>
                   <input id="desc" type="hidden" name="content" wire:model.defer="desc">
-                  <trix-editor input="desc"></trix-editor>
-                  <div class="form-text"></div>
+                  <trix-editor input="desc" wire:model.lazy="desc"></trix-editor>
+                  <div class="form-text">
+                  @error('desc'){{ $message}}@enderror
+                  </div>
                 </div>
                 
-                <div class="col-sm-4">
+                <div class="col-lg-8  col-sm-4">
                 <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
                 </div>
             
@@ -59,28 +99,7 @@
       
     </div>
 
-    <div class="handheld-toolbar">
-      <div class="d-table table-layout-fixed w-100">
-      
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
-            <span class="handheld-toolbar-icon">
-            <i class="ci-filter-alt"></i></span>
-            <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Blog</span>
-          </a>
-          
-          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',['board' => 'addBlog'])}}">
-            <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-            <span class="handheld-toolbar-label">Add</span>
-          </a>
     
-
-        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-          <span class="handheld-toolbar-label">Menu</span>
-        </a>
-
-      </div>
-    </div>
 
     @if($board == 'openAI')
     <div class="container">
@@ -105,6 +124,28 @@
     </div>
     @endif
 
+    <div class="handheld-toolbar">
+      <div class="d-table table-layout-fixed w-100">
+      
+        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
+            <span class="handheld-toolbar-icon">
+            <i class="ci-filter-alt"></i></span>
+            <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Blog</span>
+          </a>
+          
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',['board' => 'addBlog'])}}">
+            <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+            <span class="handheld-toolbar-label">Add</span>
+          </a>
+    
+
+        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+          <span class="handheld-toolbar-label">Menu</span>
+        </a>
+
+      </div>
+    </div>
           
   </main>
 
