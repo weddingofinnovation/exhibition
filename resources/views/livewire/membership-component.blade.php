@@ -4185,7 +4185,7 @@
 
     @push('scripts')
         <script>
-            const swiper = new Swiper('._SwiperWrapper_1f398_79', {
+            const swiper = new Swiper('._SwiperWrapper_179b5_101', {
                 direction : 'horizontal', // or 'vertical'
                 loop: true,  // Enable continuous loop mode 
 
