@@ -830,7 +830,7 @@
         }
 
         ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 {
-            list-style-image: url(/assets/circle-arrow-8e636245.svg)
+            list-style-image: url(public/assets/banner/circle-arrow-8e636245.svg)
         }
 
         ._LimitlessPossibilitiesSection_179b5_76 ._SwiperWrapper_179b5_101 ._Swiper_179b5_101 ._SwiperSlide_179b5_104 ._Card_179b5_104 ._CardBody_179b5_161 ._BodyContent_179b5_161 ._CardList_179b5_183 ._CardListItem_179b5_186 {
