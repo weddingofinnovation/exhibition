@@ -32,8 +32,6 @@
             
                 <div class="col-sm-4">
                   <label class="form-label" >Desc</label>
-
-                  <textarea class="form-control" type="text"  row="5" wire:model="desc"></textarea>
                   <input id="body" type="hidden" name="content" wire:model.defer="desc">
                   <trix-editor input="desc"></trix-editor>
                   <div class="form-text"></div>
