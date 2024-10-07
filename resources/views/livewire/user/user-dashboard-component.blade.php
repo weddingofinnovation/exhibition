@@ -2642,8 +2642,6 @@
       </div>
     </section>
 
-    
-
 </main>
 
     @push('scripts')

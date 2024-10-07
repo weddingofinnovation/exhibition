@@ -316,6 +316,51 @@
 
             </div>
           </div>
+        @elseif($this->board == 'hostess')
+        <div class="container py-4 py-lg-5 my-4">
+            <div class="row justify-content-center">
+
+
+              <div class="col-lg-8 col-md-10">
+                <h2 class="h3 mb-2">Exhibit with us.</h2>
+                <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                {{--<ol class="list-unstyled fs-md">
+                  <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                  <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                  <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                </ol>--}}
+
+                
+                  <form  wire:submit.prevent="hostessadd" >
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                      @error('name')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                      @error('email')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                      <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                      @error('phone')
+                        <div class="form-text text-primary">{{$message}}</div>
+                      @enderror
+                    </div>
+                    <button class="btn btn-primary form-control" type="submit">Submit</button>
+                  </form>
+              
+              </div>
+
+
+            </div>
+          </div>
         @endif
 
         @if($board == 'registration-great-exhibition-to-visit')
@@ -489,30 +534,28 @@
         @endif
 
         @if($board == 'thankyou')
-                @php 
-                   $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
-                @endphp
-          <div class="container py-4 py-lg-5 my-4">
-            <div class="row justify-content-center">
-              <div class="col-lg-8 col-md-10">
-                <div class=" mb-4 text-center">Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
-                <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
-                <ol class="list-unstyled fs-md">
-                  <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
-                  <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your participation.</li>
-                  <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
-                </ol>-->
-                
-                
-                <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
-                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
+          @php 
+              $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
+          @endphp
+            <div class="container py-4 py-lg-5 my-4">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                  <div class=" mb-4 text-center">Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.</div>
+                  <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
+                  <ol class="list-unstyled fs-md">
+                    <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
+                    <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your participation.</li>
+                    <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
+                  </ol>-->
+                  
+                  
+                  <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
+                  {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
 
+                </div>
               </div>
             </div>
-          </div>
-          <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
-
-
+            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
          
           <div class="container">
             <div class="d-flex  justify-content-between">
@@ -530,6 +573,23 @@
               </div>
             </div>
           </div>
+          @else($board == 'thankyou-for-request')
+            <div class="container py-4 py-lg-5 my-4">
+              <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                  
+                  <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
+                  <ol class="list-unstyled fs-md">
+                    <li><span class="text-primary me-2"></span>Thank you for your interest.</li>
+                    <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your request.</li>
+                    <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
+                  </ol>
+                  
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
+         
 
         @endif
 

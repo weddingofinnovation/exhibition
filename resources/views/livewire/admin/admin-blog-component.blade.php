@@ -18,20 +18,7 @@
 
       <form wire:submit.prevent = "add">    
         <div class="row">
-                  <div class="col-lg-8  col-sm-4 ">
-                    <label class="form-label" >Blog tittle</label>
-                    <textarea class="form-control" type="text" row="2" wire:model.lazy="tittle"> </textarea>
-                    <div class="form-text">@error('tittle'){{ $message}}@enderror</div>
-                  </div>
-
-                  <div class="col-lg-8  col-sm-4">
-                    <label class="form-label" >Short Desc</label>
-                      <textarea class="form-control" type="text"  row="3" wire:model.lazy="s_desc"></textarea>
-                      <div class="form-text">
-                      @error('s_desc'){{ $message}}@enderror
-                      </div>
-                  </div>
-              
+                  
                   <div class="col-lg-8  col-sm-4">
                     <label class="form-label" >Desc</label>
                     <input id="desc" type="hidden" name="content" wire:model.defer="desc">
@@ -70,8 +57,8 @@
             
                 <div class="col-lg-8  col-sm-4">
                   <label class="form-label" >Desc</label>
-                  <input id="desc" type="hidden" name="content" wire:model.defer="desc">
-                  <trix-editor input="desc"></trix-editor>
+                  <input id="desc" type="text" name="content" wire:model.lazy="desc">
+                  <!-- <trix-editor input="desc"></trix-editor> -->
                   <div class="form-text">
                   @error('desc'){{ $message}}@enderror
                   </div>
@@ -149,7 +136,7 @@
           
   </main>
 
-  {{-- @push('scripts')
+  @push('scripts')
     <script>
       document.addEventListener('trix-change', function(event) {
         let content = event.target.value;
@@ -158,4 +145,4 @@
 
       
     </script>
-  @endpush --}}
+  @endpush

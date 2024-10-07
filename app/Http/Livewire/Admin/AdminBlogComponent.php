@@ -53,11 +53,11 @@ class AdminBlogComponent extends Component
     Use WithFileUploads;
     public function add() {
     
-        $this->validate([
-            'tittle' => 'required',
-            's_desc' => 'required',
-            'desc' => 'required',
-        ]);
+        // $this->validate([
+        //     'tittle' => 'required',
+        //     's_desc' => 'required',
+        //     'desc' => 'required',
+        // ]);
 
         $blog = new Mag();
         $blog->tittle = $this->tittle;

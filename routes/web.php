@@ -330,6 +330,7 @@ Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishli
 Route::get('/blog', BlogComponent::class)->name('blog.Coi');
 Route::get('/blog/{slug}', BlogDetailComponent::class)->name('blog.details');
 Route::get('/blog-category/{category_slug}', BlogCategoryComponent::class)->name('blog.category');
+
 Route::get('/author/{slug}', BlogAuthorComponent::class)->name('blog.author');
 
 //likesor dislikes

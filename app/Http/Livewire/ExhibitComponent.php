@@ -80,6 +80,34 @@ class ExhibitComponent extends Component
         
     }
 
+    public function hostessadd()
+    {
+        $this->validate([
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max:12|min:10',
+            'name'=>'required|alpha:ascii', 
+        ]);
+
+        $newEvent = new Lead();
+        $newEvent->name = $this->name;
+        $newEvent->email = $this->email;
+        $newEvent->phone = $this->phone;
+        $newEvent->type = 'hostess';
+        $newEvent->event_id = session()->get('hostessID');
+
+        //$newEvent->user_id = Auth::user()->id;
+        
+        $newEvent->status = $this->status;
+        $newEvent->admstatus = $this->admstatus;
+        $newEvent->save();
+
+        //return redirect()->route('coicart');thankyou
+        return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
+        //{{route('event.exhibit', ['board' => 'business'])}}
+        session()->flash('message','Thanks for sharing your review.');
+    }
+
+
     public function otheradd()
     {
         $this->validate([
