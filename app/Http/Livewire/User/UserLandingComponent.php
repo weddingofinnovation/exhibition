@@ -123,7 +123,9 @@ class UserLandingComponent extends Component
     {
       $hostessDetails = new Hostess();
       $hostessDetails->name = $this->name;
-      $hostessDetails->contact = $this->contact;
+
+      //$hostessDetails->contact = $this->contact;
+      
       $hostessDetails->aliasname = $this->aliasname;
       $hostessDetails->slug = Str::slug($this->aliasname,'-');
       $hostessDetails->gender = $this->gender;
@@ -135,6 +137,10 @@ class UserLandingComponent extends Component
       $hostessDetails->admstatus = '0';
       $hostessDetails->user_id = Auth::user()->id;
       $hostessDetails->save();
+
+      $hostessContactDetails =  User::find(Auth::user()->id);
+      $hostessContactDetails->contact = $this->contact;
+      $hostessContactDetails->save();
     }
 
     //cutting, serving, stall management, inquring, attending, sales, cooking, hospitality
