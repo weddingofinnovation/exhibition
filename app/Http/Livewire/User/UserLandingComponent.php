@@ -56,6 +56,8 @@ class UserLandingComponent extends Component
     public $event_end_date;
     public $booth_number;
     public $brand_name;
+    public $contact;
+
 
 
     public function mount($trackcustomer)
