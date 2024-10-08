@@ -139,7 +139,7 @@ class UserLandingComponent extends Component
       $hostessDetails->save();
 
       $hostessContactDetails =  User::find(Auth::user()->id);
-      $hostessContactDetails->contact = $this->contact;
+      $hostessContactDetails->phone = $this->contact;
       $hostessContactDetails->save();
     }
 
