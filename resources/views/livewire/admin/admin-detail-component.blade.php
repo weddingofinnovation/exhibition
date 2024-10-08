@@ -307,9 +307,6 @@
        
     </div>
 
-
-
-    
     {{--participants--}}
     <div class="container my-3">
         <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">

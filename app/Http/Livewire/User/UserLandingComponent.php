@@ -58,7 +58,8 @@ class UserLandingComponent extends Component
     public $brand_name;
     public $contact;
 
-
+    public $hostess_id;
+    public $checkvalue = [];
 
     public function mount($trackcustomer)
     {
@@ -145,29 +146,25 @@ class UserLandingComponent extends Component
       return redirect()->route('partner.magazine', ['trackcustomer' => 'expertise']);
     }
 
+    
     //cutting, serving, stall management, inquring, attending, sales, cooking, hospitality
     public function ExpertiseHostess()
     {
-      $hostessDetails = new Skillio();
+        $sectry = json_encode($this->checkvalue);
+        $tryi = json_decode($sectry);
+        //$expoo = explode("," , $sectry );
+        foreach($tryi as $trey)
+        {
+            $fattribute = new Skillio();
+            $fattribute->hostess_id = Hostess::where('user_id', Auth::user()->id)->pluck('id');
+            $fattribute->skill = Str::lower(trim($trey));
+            $fattribute->status = "1";
+            $fattribute->admstatus = "1";
+            $fattribute->user_id = Auth::user()->id;
+            $fattribute->save();
+        }
 
-      if($this->skill == 'language')
-      {
-        $hostessDetails->skill = $this->language;
-
-        $hostessDetails->read = $this->read;
-        $hostessDetails->write = $this->write;
-        $hostessDetails->speak = $this->speak;
-      }
-      else
-      {
-        $hostessDetails->skill = $this->language;
-        $hostessDetails->level = $this->level;
-      }
-
-      $hostessDetails->status = '1';
-      $hostessDetails->admstatus = '0';
-      $hostessDetails->user_id = Auth::user()->id;
-      $hostessDetails->save();
+        return redirect()->route('partner.magazine', ['trackcustomer' => 'experience']);
     }
 
     public function codeDress()
