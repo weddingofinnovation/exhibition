@@ -203,8 +203,9 @@
     @if($trackcustomer == 'expertise')
         <div class="container">
             
-            <form wire:submit.prevent="languageHostess">
-            <form wire:submit.prevent="updateEvent">      
+            <form wire:submit.prevent="ExpertiseHostess">
+          
+              <h1>Add your Expertise</h1>
                            
                   <span class="badge bg-success m-0" value="Language"  wire:model="checkvalue">Language</span>
                   <span class="badge bg-success m-0" value="Cooking"  wire:model="checkvalue">Cooking</span>
@@ -217,29 +218,8 @@
                   <span class="badge bg-success m-0" value="Social"  wire:model="checkvalue">Social</span>
                   <span class="badge bg-success m-0" value="Photography"  wire:model="checkvalue">Photography</span>
 
-
-                <div class="col-sm-4 mb-2 pb-2">
-                    <label class="form-label">Skills</label>
-                    <div class="input-group">
-                    <select class="form-control mb-1" placeholder = "Skill"  wire:model.lazy="skill">
-                        <option selected >Choose...</option>  
-                        
-                        <option value="language">Language</option>
-                        <option value="cooking">Cooking</option>
-                        <option value="hospitality">Hospitality</option>
-                        <option value="cutting">Cutting</option>
-                        <option value="sales">Sales</option>
-                        <option value="management">Management</option>
-                        <option value="inquiry">Inquiry</option>
-                        <option value="anchor">anchoring</option>
-                        <option value="social_media">Social Media</option>
-                        <option value="photography">Photography</option>
-                    </select>
-                    </div>
-                    <span class="text-danger">@error( 'skill' ){{ $message}}@enderror</span>
-                </div>
-
                 <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
+                
             </form>
             <!-- <input type="number" class="form-control mb-1" wire:model.lazy = "speak" placeholder="Rate your Speak">
                 <input type="number" class="form-control mb-1" wire:model.lazy = "write" placeholder="Rate your Write">
