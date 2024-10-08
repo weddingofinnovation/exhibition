@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\User;
 
 use App\Models\bcontact;
+use App\Models\Event;
 use App\Models\Experience;
 use App\Models\Expo;
 use App\Models\Hostess;
@@ -187,13 +188,22 @@ class UserLandingComponent extends Component
       $hostessDetails->save();
     }
 
-    public function ExperienceHostess()
+    public function ExperienceHostess($id)
     {
       $hostessDetails = new Experience();
+      $geteventdetails = Event::find($id)->first();
 
-      $hostessDetails->eventname = $this->eventname;
-      $hostessDetails->event_start_date = $this->event_start_date;
-      $hostessDetails->event_end_date = $this->event_end_date;
+      if($geteventdetails){
+        $hostessDetails->eventname = $geteventdetails->eventname;
+        $hostessDetails->event_start_date = $geteventdetails->event_start_date;
+        $hostessDetails->event_end_date = $geteventdetails->event_end_date;
+      } 
+      else {
+        $hostessDetails->eventname = $this->eventname;
+        $hostessDetails->event_start_date = $this->event_start_date;
+        $hostessDetails->event_end_date = $this->event_end_date;
+       }
+
       $hostessDetails->booth_number = $this->booth_number;
       $hostessDetails->brand_name = $this->brand_name;
 
@@ -202,7 +212,7 @@ class UserLandingComponent extends Component
       $hostessDetails->user_id = Auth::user()->id;
 
       $hostessDetails->save();
-
+      return redirect()->route('partner.magazine', ['trackcustomer' => 'charges']);
     }
 
     public function socialHostess()

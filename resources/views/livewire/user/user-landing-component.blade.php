@@ -242,13 +242,15 @@
           //$searchCat = DB::table('events')->Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
         
           @endphp
-            <form wire:submit.prevent="experience">
+            <form wire:submit.prevent="ExperienceHostess">
 
-              <h1>Your events</h1>
+              <h1 class="my-0">Your events</h1>
               <small>Find your business event</small>
               <hr class="mb-2">
+
               <!-- start_search_event -->
                 <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
+
                 <div class="row mb-5 pb-2">
                   @if($searchTerm && count($searchCat) > 0)
                     @foreach ($searchCat as $franchise) 
@@ -280,10 +282,9 @@
                           </div>
 
                           <div class="col-3  p-0">
-                            <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="eventdelete({{$franchise->id}})"> 
-                            <i class="bi bi-x me-2"></i></a>
-                            
-                            <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateInspectionStatus({{$franchise->id}}, '1')">select</a>
+                            <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "ExperienceHostess('{{$franchise->id}}')">
+                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                            </a>
                           </div>
 
                         </div>
@@ -291,12 +292,11 @@
                     @endforeach
 
                   @elseif($searchTerm)
-                  <div class="container">
-                      Find Some Events
+                  
                       <input type="text" class="form-control mb-1" wire:model.lazy = "eventname" placeholder="event name">
                       <input type="date" class="form-control mb-1" wire:model.lazy = "event_start_date" placeholder="event_start_date">
                       <input type="date" class="form-control mb-1" wire:model.lazy = "event_end_date" placeholder="event_end_date">
-                    </div> 
+                    
                   @endif
                 </div>
               <!-- end_search_event -->
