@@ -25,7 +25,7 @@ class TrendingCreatorComponent extends Component
         $network = Speaker::where('admstatus','1')->where('status','1')->where('entity','network')->get();
         $social = Speaker::where('admstatus','1')->where('status','1')->where('entity','social')->get();
 
-        $hostess = Hostess::where('admstatus','1')->where('status','1')->get();
+        $hostess = Hostess::get();
         return view('livewire.trending-creator-component',['speaker'=> $speaker,'network'=> $network,'social'=> $social, 'hostess' => $hostess]);
     }
 }
