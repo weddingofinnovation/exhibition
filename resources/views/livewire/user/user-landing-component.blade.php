@@ -217,7 +217,7 @@
                   <span class="badge bg-success m-0" value="anchoring"  wire:model="checkvalue">anchoring</span>
                   <span class="badge bg-success m-0" value="Social"  wire:model="checkvalue">Social</span>
                   <span class="badge bg-success m-0" value="Photography"  wire:model="checkvalue">Photography</span>
-
+                  <div>@json($checkvalue)</div>
                 <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
                 
             </form>
