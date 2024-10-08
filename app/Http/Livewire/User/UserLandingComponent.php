@@ -141,6 +141,8 @@ class UserLandingComponent extends Component
       $hostessContactDetails =  User::find(Auth::user()->id);
       $hostessContactDetails->phone = $this->contact;
       $hostessContactDetails->save();
+
+      return redirect()->route('partner.magazine', ['trackcustomer' => 'expertise']);
     }
 
     //cutting, serving, stall management, inquring, attending, sales, cooking, hospitality
