@@ -234,9 +234,14 @@
         <div class="container">
 
         @php
-          $searchTerm = '%'.$this->searchTerm. '%';
-          $searchCat = DB::table('event')->Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
-        @endphp
+          $searchCat = [];
+          if($this->searchTerm != ''){
+            $searchCat = DB::table('events')->Where('eventname','LIKE', '%'.$this->searchTerm. '%')->where('status','1')->orderBy('eventname','ASC')->get();
+          }
+          //$searchTerm = '%'.$this->searchTerm. '%';
+          //$searchCat = DB::table('events')->Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+        
+          @endphp
             <form wire:submit.prevent="experience">
 
               <h1>Your events</h1>
@@ -245,16 +250,7 @@
               <!-- start_search_event -->
                 <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
                 <div class="row mb-5 pb-2">
-                  @if(is_null($searchTerm))
-
-                    <div class="container">
-                      Find Some Events
-                      <input type="text" class="form-control mb-1" wire:model.lazy = "eventname" placeholder="event name">
-                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_start_date" placeholder="event_start_date">
-                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_end_date" placeholder="event_end_date">
-                    </div>  
-
-                  @else
+                  @if($searchTerm && count($searchCat) > 0)
                     @foreach ($searchCat as $franchise) 
                       <div class="container">
                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -287,12 +283,20 @@
                             <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="eventdelete({{$franchise->id}})"> 
                             <i class="bi bi-x me-2"></i></a>
                             
-                            <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateInspectionStatus({{$franchise->id}}, '1')">Visit</a>
+                            <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateInspectionStatus({{$franchise->id}}, '1')">select</a>
                           </div>
 
                         </div>
                       </div>
                     @endforeach
+
+                  @elseif($searchTerm)
+                  <div class="container">
+                      Find Some Events
+                      <input type="text" class="form-control mb-1" wire:model.lazy = "eventname" placeholder="event name">
+                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_start_date" placeholder="event_start_date">
+                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_end_date" placeholder="event_end_date">
+                    </div> 
                   @endif
                 </div>
               <!-- end_search_event -->
