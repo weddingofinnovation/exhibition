@@ -121,6 +121,7 @@ class UserLandingComponent extends Component
     {
       $hostessDetails = new Hostess();
       $hostessDetails->name = $this->name;
+      $hostessDetails->contact = $this->contact;
       $hostessDetails->aliasname = $this->aliasname;
       $hostessDetails->slug = Str::slug($this->aliasname,'-');
       $hostessDetails->gender = $this->gender;

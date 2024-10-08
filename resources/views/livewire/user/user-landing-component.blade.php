@@ -184,15 +184,16 @@
     <!-- hostess -->
     @if($trackcustomer == 'hostess')
       <div class="container">
-        <form wire:submit.prevent="listhostess">
+         <h1>Fill Basic Details</h1>
+        <form wire:submit.prevent="registerHostess">
           <input type="number" class="form-control mb-1" wire:model.lazy = "contact" placeholder="contact">
           <input type="text" class="form-control mb-1" wire:model.lazy = "email" placeholder="email">
 
           <input type="text" class="form-control mb-1" wire:model.lazy = "name" placeholder="Hostess Name">
           <input type="text" class="form-control mb-1" wire:model.lazy = "aliasname" placeholder="alias Name">
-          <input type="text" class="form-control mb-1" wire:model.lazy = "height" placeholder="height">
+          <input type="number" class="form-control mb-1" wire:model.lazy = "height" placeholder="height">
           <input type="text" class="form-control mb-1" wire:model.lazy = "gender" placeholder="Gender">
-          <input type="date" class="form-control mb-1" wire:model.lazy = "dob" placeholder="Date of Birth">
+          <input type="date" class="form-control mb-1" wire:model.lazy = "dob" placeholder="DateofBirth">
           <input type="text" class="form-control mb-1" wire:model.lazy = "qualification" placeholder="qualification">
           <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
         </form>
