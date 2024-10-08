@@ -152,7 +152,6 @@ class UserLandingComponent extends Component
     {
         $sectry = json_encode($this->checkvalue);
         $tryi = json_decode($sectry);
-        //$expoo = explode("," , $sectry );
         foreach($tryi as $trey)
         {
             $fattribute = new Skillio();

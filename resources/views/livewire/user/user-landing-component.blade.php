@@ -217,10 +217,13 @@
                   <input class="form-check-input" type="checkbox" value="anchoring"  wire:model="checkvalue">anchoring
                   <input class="form-check-input" type="checkbox" value="Social"  wire:model="checkvalue">Social
                   <input class="form-check-input" type="checkbox" value="Photography"  wire:model="checkvalue">Photography
+
                   <div>@json($checkvalue)</div>
+
                 <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
                 
             </form>
+
             <!-- <input type="number" class="form-control mb-1" wire:model.lazy = "speak" placeholder="Rate your Speak">
                 <input type="number" class="form-control mb-1" wire:model.lazy = "write" placeholder="Rate your Write">
                 <input type="number" class="form-control mb-1" wire:model.lazy = "read" placeholder="Rate your Read"> -->
@@ -230,13 +233,72 @@
     @if($trackcustomer == 'experience')
         <div class="container">
 
+        @php
+          $searchTerm = '%'.$this->searchTerm. '%';
+          $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+        @endphp
             <form wire:submit.prevent="experience">
-                <input type="text" class="form-control mb-1" wire:model.lazy = "eventname" placeholder="event name">
-                <input type="date" class="form-control mb-1" wire:model.lazy = "event_start_date" placeholder="event start date">
-                <input type="date" class="form-control mb-1" wire:model.lazy = "event_end_date" placeholder="event end date">
-                <input type="text" class="form-control mb-1" wire:model.lazy = "booth_number" placeholder="booth number">
 
+              <h1>Your events</h1>
+              <small>Find your business event</small>
+              <hr class="mb-2">
+              <!-- start_search_event -->
+                <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
+                <div class="row mb-5 pb-2">
+                  @if(is_null($searchTerm))
+
+                    <div class="container">
+                      Find Some Events
+                      <input type="text" class="form-control mb-1" wire:model.lazy = "eventname" placeholder="event name">
+                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_start_date" placeholder="event_start_date">
+                      <input type="date" class="form-control mb-1" wire:model.lazy = "event_end_date" placeholder="event_end_date">
+                    </div>  
+
+                  @else
+                    @foreach ($searchCat as $franchise) 
+                      <div class="container">
+                        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                          <div class="col  pr-0">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                              @else
+                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+
+                              @endif 
+                              <div class="round-circle">{{$franchise -> id}}</div>
+                          </div>
+
+                          <div class="col-7  p-0">
+                            <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                            <div class="text-muted fs-sm text-start">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                              @endif 
+                            </div>  
+                            <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{$franchise -> city}}</div>
+                          </div>
+
+                          <div class="col-3  p-0">
+                            <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="eventdelete({{$franchise->id}})"> 
+                            <i class="bi bi-x me-2"></i></a>
+                            
+                            <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateInspectionStatus({{$franchise->id}}, '1')">Visit</a>
+                          </div>
+
+                        </div>
+                      </div>
+                    @endforeach
+                  @endif
+                </div>
+              <!-- end_search_event -->
+                
                 <input type="text" class="form-control mb-1" wire:model.lazy = "brand_name" placeholder="brand_name">
+                <input type="text" class="form-control mb-1" wire:model.lazy = "booth_number" placeholder="booth_number">
 
                 <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
             </form>
