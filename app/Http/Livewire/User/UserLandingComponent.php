@@ -133,8 +133,8 @@ class UserLandingComponent extends Component
       $hostessDetails->qualification = $this->qualification;
       $hostessDetails->height = $this->height;
       $hostessDetails->uniqueCode =  Str::upper(Str::random(6));
-      $hostessDetails->status = '1';
-      $hostessDetails->admstatus = '0';
+      //$hostessDetails->status = '1';
+      //$hostessDetails->admstatus = '0';
       $hostessDetails->user_id = Auth::user()->id;
       $hostessDetails->save();
 
