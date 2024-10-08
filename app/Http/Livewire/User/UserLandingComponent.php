@@ -60,6 +60,7 @@ class UserLandingComponent extends Component
 
     public $hostess_id;
     public $checkvalue = [];
+    public $searchTerm;
 
     public function mount($trackcustomer)
     {
