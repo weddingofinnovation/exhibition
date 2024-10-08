@@ -38,8 +38,10 @@
                           
                           <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}"  width="17%"  alt="Avatar">
                           <div class="ms-2">
-                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="{{route('blog.author', [$slug => $franchise->slug] )}}">{{$franchise->name}}</a></h4>
-                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
+                            <h4 class="mb-1 fs-base text-body">
+                              <a class="nav-link-style stretched-link" href="{{route('blog.author', ['slug' => $franchise->slug] )}}">{{$franchise->name}}</a></h4>
+                            <h5 class="mb-1 fs-xs">
+                              <a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
                           <!--<span class="fs-xs text-muted">730 followers</span>-->
                           </div>
                         </div>
@@ -105,8 +107,8 @@
                         <div class="d-flex align-items-center position-relative">
                           <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}"  width="17%"  alt="Avatar">
                           <div class="ms-2">
-                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="{{route('blog.author', [$slug => $franchise->slug] )}}">{{$franchise->name}}</a></h4>
-                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="{{route('blog.author', [$slug => $franchise->slug] )}}">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
+                            <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="{{route('blog.author', ['slug' => $franchise->slug] )}}">{{$franchise->name}}</a></h4>
+                            <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="{{route('blog.author', ['slug' => $franchise->slug] )}}">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
                           <!--<span class="fs-xs text-muted">730 followers</span>-->
                           </div>
                         </div>
