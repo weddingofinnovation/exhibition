@@ -156,7 +156,8 @@ class UserLandingComponent extends Component
         foreach($tryi as $trey)
         {
             $fattribute = new Skillio();
-            $fattribute->hostess_id = Hostess::where('user_id', Auth::user()->id)->pluck('id');
+            $fattr_id = Auth::user()->id;
+            $fattribute->hostess_id = Hostess::where('user_id', $fattr_id )->pluck('id')->first();
             $fattribute->skill = Str::lower(trim($trey));
             $fattribute->status = "1";
             $fattribute->admstatus = "1";
