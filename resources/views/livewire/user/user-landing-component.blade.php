@@ -235,7 +235,7 @@
 
         @php
           $searchTerm = '%'.$this->searchTerm. '%';
-          $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+          $searchCat = DB::table('event')->Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
         @endphp
             <form wire:submit.prevent="experience">
 
