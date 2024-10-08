@@ -331,6 +331,23 @@
         </div>
     @endif
 
+    @if($trackcustomer == 'dress_code')
+      <h1>Suggest your Dress Code</h1>
+      <form action="">
+        <input type="text" wire:model.lazy="dresscode1">1
+        <input type="text" wire:model.lazy="dresscode2">2
+        <input type="text" wire:model.lazy="dresscode3">3
+        <input type="text" wire:model.lazy="dresscode4">4
+        <input type="text" wire:model.lazy="dresscode5">5
+        <input type="text" wire:model.lazy="dresscode6">6
+        <input type="text" wire:model.lazy="dresscode7">7
+        <input type="text" wire:model.lazy="dresscode8">8
+        <input type="checkbox" name="" id="">Terms & Conditions
+        <button>Submit</button>
+        
+      </form>
+    @endif
+
     @if($trackcustomer == 'lead')
       <div class="container py-5 mt-n2 mt-sm-0">
         <div class="row pt-md-2 pt-lg-3 pb-sm-2 pb-md-3 pb-lg-4 pb-xl-5">

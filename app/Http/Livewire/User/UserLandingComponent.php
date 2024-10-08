@@ -148,7 +148,6 @@ class UserLandingComponent extends Component
       return redirect()->route('partner.magazine', ['trackcustomer' => 'expertise']);
     }
 
-    
     //cutting, serving, stall management, inquring, attending, sales, cooking, hospitality
     public function ExpertiseHostess()
     {
@@ -170,22 +169,6 @@ class UserLandingComponent extends Component
         }
 
         return redirect()->route('partner.magazine', ['trackcustomer' => 'experience']);
-    }
-
-    public function codeDress()
-    {
-      $hostessDetails = new Wearable();
-
-      $hostessDetails->code = $this->code;
-
-      $hostessDetails->read = $this->read;
-      $hostessDetails->write = $this->write;
-      $hostessDetails->speak = $this->speak;
-
-      $hostessDetails->status = '1';
-      $hostessDetails->admstatus = '0';
-      $hostessDetails->user_id = Auth::user()->id;
-      $hostessDetails->save();
     }
 
     public function ExperienceHostess($id)
@@ -215,9 +198,20 @@ class UserLandingComponent extends Component
       return redirect()->route('partner.magazine', ['trackcustomer' => 'charges']);
     }
 
+    public function HostessCharges()
+    {
+
+    }
+
+    // max--3
+    public function images()
+    {
+
+    } 
+
     public function socialHostess()
     {
-      $hostessDetails = new social();
+      $hostessDetails = new Social();
 
       $hostessDetails->social_account = $this->socialaccount;
       $hostessDetails->social_link = $this->social_link;
@@ -230,6 +224,19 @@ class UserLandingComponent extends Component
       $hostessDetails->save();
 
     }
+
+    public function codeDress()
+    {
+      $hostessDetails = new Wearable();
+
+      $hostessDetails->dresscode = $this->dresscode1;
+
+      $hostessDetails->status = '1';
+      $hostessDetails->admstatus = '0';
+      $hostessDetails->user_id = Auth::user()->id;
+      $hostessDetails->save();
+    }
+
 
 
     public function render()
