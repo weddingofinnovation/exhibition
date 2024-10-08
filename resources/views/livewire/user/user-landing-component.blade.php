@@ -207,16 +207,16 @@
           
               <h1>Add your Expertise</h1>
                            
-                  <span class="badge bg-success m-0" value="Language"  wire:model="checkvalue">Language</span>
-                  <span class="badge bg-success m-0" value="Cooking"  wire:model="checkvalue">Cooking</span>
-                  <span class="badge bg-success m-0" value="Hospitality"  wire:model="checkvalue">Hospitality</span>
-                  <span class="badge bg-success m-0" value="Cutting"  wire:model="checkvalue">Cutting</span>
-                  <span class="badge bg-success m-0" value="Sales"  wire:model="checkvalue">Sales</span>
-                  <span class="badge bg-success m-0" value="Management"  wire:model="checkvalue">Management</span>
-                  <span class="badge bg-success m-0" value="Inquiry"  wire:model="checkvalue">Inquiry</span>
-                  <span class="badge bg-success m-0" value="anchoring"  wire:model="checkvalue">anchoring</span>
-                  <span class="badge bg-success m-0" value="Social"  wire:model="checkvalue">Social</span>
-                  <span class="badge bg-success m-0" value="Photography"  wire:model="checkvalue">Photography</span>
+                  <input class="form-check-input" type="checkbox" value="Language"  wire:model="checkvalue">Language
+                  <input class="form-check-input" type="checkbox" value="Cooking"  wire:model="checkvalue">Cooking
+                  <input class="form-check-input" type="checkbox" value="Hospitality"  wire:model="checkvalue">Hospitality
+                  <input class="form-check-input" type="checkbox" value="Cutting"  wire:model="checkvalue">Cutting
+                  <input class="form-check-input" type="checkbox" value="Sales"  wire:model="checkvalue">Sales
+                  <input class="form-check-input" type="checkbox" value="Management"  wire:model="checkvalue">Management
+                  <input class="form-check-input" type="checkbox" value="Inquiry"  wire:model="checkvalue">Inquiry
+                  <input class="form-check-input" type="checkbox" value="anchoring"  wire:model="checkvalue">anchoring
+                  <input class="form-check-input" type="checkbox" value="Social"  wire:model="checkvalue">Social
+                  <input class="form-check-input" type="checkbox" value="Photography"  wire:model="checkvalue">Photography
                   <div>@json($checkvalue)</div>
                 <button class="btn btn-primary form-control mb-1" type="submit">Submit</button>
                 

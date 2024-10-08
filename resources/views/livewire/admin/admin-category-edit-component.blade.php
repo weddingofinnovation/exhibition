@@ -34,14 +34,14 @@
                             @endforeach
 
                                 @foreach ($searchcat as $franchise) 
-                                {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
-                                <div class=" col col-auto my-1 px-2"> 
-                                @if($franchise->admstatus == '1')   
-                                    <input class="form-check-input" type="checkbox"   value="{{$franchise->id}}"  wire:model="checkvalue"> <span class=" badge bg-success">{{$franchise->tag}}</span>  
-                                @else
-                                    <input class="form-check-input" type="checkbox"   value="{{$franchise->id}}"  wire:model="checkvalue">{{$franchise->tag}}
-                                @endif
-                                </div>
+                                    {{--<div class="col-auto text-center border border-1 my-1 mx-1">--}}
+                                    <div class=" col col-auto my-1 px-2"> 
+                                    @if($franchise->admstatus == '1')   
+                                        <input class="form-check-input" type="checkbox"   value="{{$franchise->id}}"  wire:model="checkvalue"> <span class=" badge bg-success">{{$franchise->tag}}</span>  
+                                    @else
+                                        <input class="form-check-input" type="checkbox"   value="{{$franchise->id}}"  wire:model="checkvalue">{{$franchise->tag}}
+                                    @endif
+                                    </div>
                                 @endforeach
                                 <div>@json($checkvalue)</div>
                                 
