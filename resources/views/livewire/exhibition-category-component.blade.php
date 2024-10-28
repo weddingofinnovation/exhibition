@@ -4,51 +4,51 @@
 
     <main>
 
-      <style>
-              .tns-outer {
-                padding: 0 !important;
-                margin: 0 !important;
-              }
+<style>
+            .tns-outer {
+              padding: 0 !important;
+              margin: 0 !important;
+            }
 
-              .tns-nav, .tns-controls {
-                display:none !important;
-              }
- 
-		.delete-notification {
-			width: 15px;
-			height: 15px;
-			background-color: red;
-			border-radius: 50%;
-			top: 5px;
-			right: 5px;
-		}
+            .tns-nav, .tns-controls {
+              display:none !important;
+            }
 
-		.used-notification {
-			width: 15px;
-			height: 15px;
-			background-color: green;
-			border-radius: 50%;
-			top: 5px;
-			left: 5px;
-		}
+  .delete-notification {
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+  }
 
-		@media (max-width: 768px) {
-			.delete-notification {
-				width: 10px;
-				height: 10px;
-			}
+  .used-notification {
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+  }
 
-			.used-notification {
-				width: 10px;
-				height: 10px;
-			}
+  @media (max-width: 768px) {
+    .delete-notification {
+      width: 10px;
+      height: 10px;
+    }
 
-			img.img-fluid {
-				height: 80px; /* Adjust image height for mobile */
-				object-fit: cover;
-			}
-		}
-	</style>
+    .used-notification {
+      width: 10px;
+      height: 10px;
+    }
+
+    img.img-fluid {
+      height: 80px; /* Adjust image height for mobile */
+      object-fit: cover;
+    }
+  }
+</style>
 
       <!--google-->
         <div class="bg-secondary d-lg-none">
@@ -75,6 +75,9 @@
           $findsubcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->get(); 
           $subcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->value('subtag_id'); 
         @endphp
+
+
+        {{$this->categry}}
 
         <hr>
       

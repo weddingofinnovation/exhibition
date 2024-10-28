@@ -1,5 +1,8 @@
 <main>
-  <style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>        <style>
+  <style type="text/css">
+  
+            .recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
+          
                 input[type="submit"].dokan-btn-theme, a.dokan-btn-theme, .dokan-btn-theme {
                     color: #ffffff !important;
                     background-color: #f05025 !important;
@@ -12145,9 +12148,7 @@
     </div>
   </section>
 
-  <section>
-    
-  </section> 
+
 </main>
   
   

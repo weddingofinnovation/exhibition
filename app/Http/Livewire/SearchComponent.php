@@ -22,7 +22,6 @@ class SearchComponent extends Component
         else
         { $saveSearchTerm->user_id = NULL ; }
 
-       
         $saveSearchTerm->save();
     }
     
