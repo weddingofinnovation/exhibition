@@ -256,11 +256,11 @@ Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazin
 
 Route::get('/search', SearchComponent::class)->name('search.events');
 
-Route::get('/space/{eventype}', ExhibitionComponent::class)->name('coi.exhibition');
+Route::get('/space/{time?}/{eventype?}/{state?}/{venue?}/{category?}', ExhibitionComponent::class)->name('coi.exhibition');
 
-Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');
+//Route::get('/schedule/{eventype}/{time}', ExhibitionTimeComponent::class)->name('coi.exhibitiontime');
 
-Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
+//Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
 
 
 //as per upcoming venue 

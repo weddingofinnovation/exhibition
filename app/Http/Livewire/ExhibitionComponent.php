@@ -21,11 +21,20 @@ class ExhibitionComponent extends Component
     public $time;
     public $eventype;
     public $categ;
+
+    public $category;
+    public $state;
+    public $venue;
     
     
-    public function mount($eventype)
+    public function mount($eventype = null, $time = null, $category = null, $state = null, $venue = null)
     {
        $this->eventype = $eventype;
+       $this->time = $time;
+       $this->category = $category;
+       $this->state = $state;
+       $this->venue = $venue;
+
        //$this->time = $time;
        //$this->motiontime = "all";
        $this->sorting = "default";
@@ -74,21 +83,43 @@ class ExhibitionComponent extends Component
 
         $mytime = Carbon::now();
 
-        if($this->sorting == 'date'){
-            $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('created_at','DESC')->paginate($this->pagesize); 
-        }
-        elseif ($this->sorting =='investment'){
-            $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('startdate','DESC')->paginate($this->pagesize); 
-        }
-        elseif ($this->sorting =='area'){
-            $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('startdate','ASC')->paginate($this->pagesize); 
-        }
-        else{
-            $exhibition = Event ::where('eventype', $this->eventype)->where('eventname','BLECH INDIA 2023')->where('admstatus','1')->where('status','1')->orderBy('startdate','ASC')->paginate($this->pagesize); 
-        }
+        // if($this->sorting == 'date'){
+        //     $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('created_at','DESC')->paginate($this->pagesize); 
+        // }
+        // elseif ($this->sorting =='investment'){
+        //     $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('startdate','DESC')->paginate($this->pagesize); 
+        // }
+        // elseif ($this->sorting =='area'){
+        //     $exhibition = Event ::where('eventype', $this->eventype)->whereDate('enddate', '>=',$mytime)->where('admstatus','1')->where('status','1')->orderBy('startdate','ASC')->paginate($this->pagesize); 
+        // }
+        // else{
+        //     $exhibition = Event ::where('eventype', $this->eventype)->where('eventname','BLECH INDIA 2023')->where('admstatus','1')->where('status','1')->orderBy('startdate','ASC')->paginate($this->pagesize); 
+        // }
         
         
+        $query = Event::query();
+
+        if($this->city){
+            $query->where('city', $this->city);
+        }
        
+        if($this->time){
+            $query->where('enddate', '>=',$mytime);
+        }
+
+        if($this->category){
+            $query->where('category', $this->category);
+        }
+
+        if($this->state){
+            $query->where('state', $this->state);
+        }
+
+        if($this->venue){
+            $query->where('venue', $this->venue);
+        }
+
+        $exhibition = $query->get();
 
         if(Auth::check())
         {

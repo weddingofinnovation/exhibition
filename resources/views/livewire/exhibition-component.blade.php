@@ -47,13 +47,21 @@
               </ul>
 
                 <div class="d-flex badgese pb-2">
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'today'])}}" > Today </a></span>
+                  <!-- <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'today'])}}" > Today </a></span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'tomorrow'])}}" > Tomorrow </a></span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'this-weekend'])}}" >  This weekend </a></span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'next-week'])}}" >  Next Week </a></span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'next-weekend'])}}" >  Next weekend </a></span>
                   <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'this-month'])}}" >  This Month </a></span>
-                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'next-month'])}}" >  Next Month </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibitiontime',['eventype' => $this->eventype, 'time'=> 'next-month'])}}" >  Next Month </a></span> -->
+                  
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'today'])}}" > Today </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'tomorrow'])}}" > Tomorrow </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'this-weekend'])}}" >  This weekend </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'next-week'])}}" >  Next Week </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'next-weekend'])}}" >  Next weekend </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'this-month'])}}" >  This Month </a></span>
+                  <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a class="text-dark"  href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'next-month'])}}" >  Next Month </a></span>
                 </div>
                 
                 <div class="tab-content pt-1">
@@ -545,6 +553,7 @@
           <i class="ci-filter-alt"></i></span>
           <span class="handheld-toolbar-label">Filters</span>
         </a>
+
         <a class="d-table-cell handheld-toolbar-item" href="">
           <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
           <span class="handheld-toolbar-label">Wishlist</span>
