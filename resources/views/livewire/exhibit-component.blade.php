@@ -399,13 +399,24 @@
                     @enderror
                     </div>
 
-                    <div class="mb-1">
+                    <!-- <div class="mb-1">
                       <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
                       <option selected disabled>Choose option...</option>
                       <option value="embassy">Embassy</option>
                       <option value="company">Company</option>
                       <option value="visitor">visitor</option>
-                    </div>
+                    </div> -->
+
+                    <div class="col-sm-6">
+                  <label class="form-label" for="cf-subject">Type</label>
+                  <select class="form-control" type="text"  wire:model="industry"   id="industry" name="industry" placeholder="Provide short title of your request">
+                    <option selected>Please select</option>
+                    <option value="embassy">Embassy</option>
+                    <option value="company">Company</option>
+                    <option value="visitor">visitor</option>
+                    </select>
+                    @error('industry') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                </div>
 
 
                     @if($type == "company")
