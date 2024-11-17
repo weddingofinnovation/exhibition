@@ -12,7 +12,7 @@
 
               <div class="col-lg-8 col-md-10">
                 <h2 class="h3 mb-2">Exhibit with us.</h2>
-                <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-md">business Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
                   <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
@@ -46,8 +46,6 @@
                   </form>
               
               </div>
-
-
             </div>
           </div>
 
@@ -56,7 +54,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
                 <h2 class="h3 mb-2">Gateway to Recognition and Success.</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">awardJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
@@ -100,7 +98,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">
                 <h2 class="h3 mb-2">Empowering Startups<br> Connect, Collaborate <br> Grow with Open Membership!</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">startupJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
@@ -144,7 +142,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">               
                 <h2 class="h3 mb-2">Our data, Your Customer.</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">directoryJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
@@ -188,7 +186,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">                
                 <h2 class="h3 mb-2">Our data, Your Customer.</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">partnerJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
@@ -232,7 +230,7 @@
             <div class="row justify-content-center">
               <div class="col-lg-8 col-md-10">        
                 <h2 class="h3 mb-2">Right Place, Right People, Right Time</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">meetJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
@@ -278,7 +276,7 @@
 
               <div class="col-lg-8 col-md-10">         
                 <h2 class="h3 mb-2">Our data, Your Customer.</h2>
-                <p class="fs-xs">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-xs">findJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
                   <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
@@ -323,7 +321,7 @@
 
               <div class="col-lg-8 col-md-10">
                 <h2 class="h3 mb-2">Exhibit with us.</h2>
-                <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <p class="fs-md">hostessJoin the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                 {{--<ol class="list-unstyled fs-md">
                   <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
                   <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
@@ -578,7 +576,7 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                   
-                  <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
+                  <p class="fs-md">thankuforrequestJoin the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
                   <ol class="list-unstyled fs-md">
                     <li><span class="text-primary me-2"></span>Thank you for your interest.</li>
                     <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your request.</li>

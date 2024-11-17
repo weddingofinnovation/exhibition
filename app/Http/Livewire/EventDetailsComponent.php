@@ -36,6 +36,7 @@ class EventDetailsComponent extends Component
     public $type_event;
     public $currentTab;
 
+
     
     public function mount($slug, $optional = null )
     {
@@ -68,6 +69,15 @@ class EventDetailsComponent extends Component
     
       return view ('post', compact('post'));
     }
+
+    name
+    designation
+    embassy name 
+    
+    phone 
+
+    email
+    photo
 
 
     public function insertEventToSess($id)

@@ -10,6 +10,7 @@
         {{$category->expo->expoindustry}} ({{$category->qty}})
       @endforeach
     </div>--}}
+    
     <!--google-->
         <div class="bg-secondary d-lg-none">
           <div class=" container">

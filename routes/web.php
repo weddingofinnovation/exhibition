@@ -239,6 +239,7 @@ Route::get('/scrape', AdminScraperComponent::class);
 
 Route::get('/conference', ConferenceComponent::class)->name('coi.conference');
 Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class)->name('event.details');
+
 //Route::get('/ex/{slug}/{optional?}', EventDetailsComponent::class, 'index')->name('event.details');
 
 Route::get('/award/{slug}', AwardDetailsComponent::class)->name('award.details');
