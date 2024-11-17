@@ -386,7 +386,7 @@
                     <div class="mb-1">
                       <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
                       <input class="form-control" type="name"  wire:model.lazy="designation" required="" placeholder="Your Designation">
-                      @error('name')
+                      @error('designation')
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                     </div>
@@ -400,33 +400,44 @@
                     </div>
 
                     <div class="mb-1">
-                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                      <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
-                      @error('email')
-                      <div class="form-text text-primary">{{$message}}</div>
-                    @enderror
-                    </div>
- 
-                    <div class="mb-1">
-                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                      <input class="form-control" type="text"  wire:model.lazy="embassyname" required="" placeholder="Enter your embassy Name">
-                      @error('email')
-                      <div class="form-text text-primary">{{$message}}</div>
-                    @enderror
+                      <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
+                      <option selected disabled>Choose option...</option>
+                      <option value="embassy">Embassy</option>
+                      <option value="company">Company</option>
+                      <option value="visitor">visitor</option>
                     </div>
 
-                    <div class="mb-1">
-                      <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-                      <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                      @error('phone')
+
+                    @if($type == "company")
+                      <div class="mb-1">
+                        <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                        <input class="form-control" type="text"  wire:model.lazy="company" required="" placeholder="Enter your company">
+                        @error('company')
                         <div class="form-text text-primary">{{$message}}</div>
-                      @enderror
-                    </div>
+                        @enderror
+                      </div>
+
+                        <div class="mb-1">
+                        <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                        <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                        @error('phone')
+                          <div class="form-text text-primary">{{$message}}</div>
+                        @enderror
+                      </div>
+                    @elseif($type == "embassy")
+                      <div class="mb-1">
+                        <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                        <input class="form-control" type="text"  wire:model.lazy="embassyname" required="" placeholder="Enter your embassy Name">
+                        @error('embassyname')
+                        <div class="form-text text-primary">{{$message}}</div>
+                        @enderror
+                      </div>
+                    @endif
 
                     <div class="mb-1">
-                      <label class="form-label" for="recover-email">upload your business Image</label> -->
+                      <label class="form-label" for="recover-email">Upload your Business Image</label>
                       <input class="form-control" type="file"  wire:model.lazy="image" required="" placeholder="upload your ">
-                      @error('phone')
+                      @error('image')
                         <div class="form-text text-primary">{{$message}}</div>
                       @enderror
                     </div>
