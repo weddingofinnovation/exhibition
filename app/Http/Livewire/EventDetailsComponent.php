@@ -70,14 +70,7 @@ class EventDetailsComponent extends Component
       return view ('post', compact('post'));
     }
 
-    name
-    designation
-    embassy name 
-    
-    phone 
-
-    email
-    photo
+  
 
 
     public function insertEventToSess($id)
