@@ -151,7 +151,6 @@ class ExhibitComponent extends Component
         return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message','Thanks for sharing your review.');
-
     }
 
     public function otheradd()
