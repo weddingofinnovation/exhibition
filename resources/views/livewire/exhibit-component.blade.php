@@ -438,7 +438,7 @@
                     @elseif($type == "embassy")
                       <div class="mb-1">
                         <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                        <input class="form-control" type="text"  wire:model.lazy="embassyname" required="" placeholder="Enter your embassy Name">
+                        <input class="form-control" type="text"  wire:model.lazy="company" required="" placeholder="Enter your embassy Name">
                         @error('embassyname')
                         <div class="form-text text-primary">{{$message}}</div>
                         @enderror

@@ -12,11 +12,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
-
+use Livewire\WithFileUploads;
 
 class ExhibitComponent extends Component
 {
-
     public $admstatus;
     public $status;
     public $event_id;
@@ -108,6 +107,8 @@ class ExhibitComponent extends Component
         session()->flash('message','Thanks for sharing your review.');
     }
 
+    use WithFileUploads;
+    
     public function vipentryadd()
     {
         $this->validate([
