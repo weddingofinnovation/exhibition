@@ -31,6 +31,7 @@ class ExhibitComponent extends Component
     public $company;
     public $designation;
     public $visitorid;
+    public $image;
 
     public function mount($board , $visitorid = null)
     {
@@ -40,9 +41,7 @@ class ExhibitComponent extends Component
         //$this->type = 'exhibit';
         $this->visitorid = $visitorid;  
         $this->board = $board;
-        
         //$findevent = DB::table('events')->where('id', $data)->first();
-
     }
 
     public function add()
@@ -108,7 +107,7 @@ class ExhibitComponent extends Component
     }
 
     use WithFileUploads;
-    
+
     public function vipentryadd()
     {
         $this->validate([
