@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Event;
 use App\Models\Lead;
 use App\Models\User;
+use Carbon\Carbon;
 //use Barryvdh\DomPDF\Facade as PDF;
 use PDF;
 use Illuminate\Support\Facades\Auth;
@@ -107,6 +108,51 @@ class ExhibitComponent extends Component
         session()->flash('message','Thanks for sharing your review.');
     }
 
+    public function vipentryadd()
+    {
+        $this->validate([
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max:12|min:10',
+            'name'=>'required|alpha:ascii', 
+        ]);
+
+        $newEvent = new Lead();
+        $newEvent->name = Str::lower(trim($this->name));
+        $newEvent->email = $this->email;
+        
+
+        $newEvent->type = Str::lower(trim($this->type));
+        //$newEvent->event_id = session()->get('hostessID');
+
+        //$newEvent->user_id = Auth::user()->id;
+        if($this->type == 'company')
+        { 
+            $newEvent->phone = $this->phone; 
+            $newEvent->company = Str::lower(trim($this->company));
+        }
+
+        elseif($this->type == 'embassy')
+        {
+            
+            $newEvent->company = Str::lower(trim($this->company));
+        }
+        
+        $newEvent->designation = Str::lower(trim($this->designation));
+
+        $newimage = Carbon::now()->timestamp.'.'.$this->image->extension();
+        $this->image->storeAs('exhibition', $newimage);
+        $newEvent->image = $newimage;
+
+        $newEvent->status = $this->status;
+        $newEvent->admstatus = $this->admstatus;
+        $newEvent->save();
+
+        //return redirect()->route('coicart');thankyou
+        return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
+        //{{route('event.exhibit', ['board' => 'business'])}}
+        session()->flash('message','Thanks for sharing your review.');
+
+    }
 
     public function otheradd()
     {

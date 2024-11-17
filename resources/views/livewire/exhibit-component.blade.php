@@ -407,9 +407,9 @@
                       <option value="visitor">visitor</option>
                     </div> -->
 
-                    <div class="col-sm-6">
-                  <label class="form-label" for="cf-subject">Type</label>
-                  <select class="form-control" type="text"  wire:model="industry"   id="industry" name="industry" placeholder="Provide short title of your request">
+                    <div class="mb-1">
+                  <!-- <label class="form-label" for="cf-subject">Type</label> -->
+                  <select class="form-control" type="text" wire:model="type" id="type" name="type" placeholder="Provide short title of your request">
                     <option selected>Please select</option>
                     <option value="embassy">Embassy</option>
                     <option value="company">Company</option>
