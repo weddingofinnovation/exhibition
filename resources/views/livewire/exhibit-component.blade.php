@@ -571,7 +571,7 @@
               </div>
             </div>
           </div>
-          @else($board == 'thankyou-for-request')
+          @elseif($board == 'thankyou-for-request')
             <div class="container py-4 py-lg-5 my-4">
               <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
