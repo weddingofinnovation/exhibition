@@ -31,8 +31,8 @@
             <div class="col-3  p-0">
                 <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="delete({{$evento->id}})"> <i class="bi bi-x"></i> </a>
 
-                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="updateEventstatus({{$evento->id}},'1')"> <i class="bi bi-plus"></i> </a>
-                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="updateEventDestatus({{$evento->id}},'0')"> <i class="bi bi-active"></i> </a>
+                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'1')"> <i class="bi bi-plus"></i>Act </a>
+                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'0')"> <i class="bi bi-active"></i>DeA </a>
 
                 <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="updated({{$evento->id}},'0')"> <i class="bi bi-pencil"></i> </a>
             </div>

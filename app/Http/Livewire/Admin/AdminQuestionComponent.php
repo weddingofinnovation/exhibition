@@ -52,11 +52,26 @@ class AdminQuestionComponent extends Component
 
     }
 
-    public function questionDelete($id)
+    public function delete($id)
     {   $couPon = Question::find($id);
         $couPon->delete();
         session()->flash('message','Coupon has been deleted Successfully');
     }
+
+    // public function status($id, $status)
+    // {   $couPon = Question::find($id);
+    //     $couPon->status = $status;
+    //     $couPon->save();
+    //     session()->flash('message','Coupon has been deleted Successfully');
+    // }
+
+    public function admstatus($id, $status)
+    {   $couPon = Question::find($id);
+        $couPon->admstatus = $status;
+        $couPon->save();
+        session()->flash('message','Coupon has been deleted Successfully');
+    }
+
 
     public function render()
     {
