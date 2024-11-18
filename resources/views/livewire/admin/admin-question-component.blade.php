@@ -19,8 +19,11 @@
             </div>
 
             <div class="col-7  p-0">
-              <div class="fs-sm fw-normal text-start"><a class="text-dark" href="#">
-                  {{$evento->question}}</a></div>
+              <div class="fs-sm fw-normal text-start">
+                    <a class="text-dark" href="#">
+                    {{$evento->question}}</a>
+                
+              </div>
 
               <div class="text-muted fs-sm text-start">
                   {{$evento->event_id}}
@@ -31,8 +34,8 @@
             <div class="col-3  p-0">
                 <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="delete({{$evento->id}})"> <i class="bi bi-x"></i> </a>
 
-                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'1')"> <i class="bi bi-plus"></i>Act </a>
-                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'0')"> <i class="bi bi-active"></i>DeA </a>
+                <!-- <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'1')"> <i class="bi bi-plus"></i>Act </a>
+                <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="admstatus({{$evento->id}},'0')"> <i class="bi bi-active"></i>DeA </a> -->
 
                 <a href="#" class="btn btn-sm btn-dark-outline" wire:click.prevent="updated({{$evento->id}},'0')"> <i class="bi bi-pencil"></i> </a>
             </div>

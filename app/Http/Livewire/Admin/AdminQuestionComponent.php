@@ -15,19 +15,16 @@ class AdminQuestionComponent extends Component
     public $admstatus;
     public $question;
     public $quest;
+    public $eventid;
 
-    // public function questadd()
-    // {
-
-    //     $multiquestion = $this->quest; 
-
-    //     $finfe = new Question();
-    //     $finfe->question = ;
-    //     $finfe->user_id = Auth::user()->id;
-    //     $finfe->status = '1';
-    //     $finfe->admstatus = '1';
-    //     $finfe->save();
-    // }
+    public function mount($eventid = null)
+    {
+        $this->eventid = $eventid;
+        // $this->month = Carbon::today()->format("m");
+        // $this->monthly = Carbon::today()->format("m");
+        // $this->visited = '1';
+        // $this->currentTab = session()->get('currentTab','tab1');
+    }
 
     public function questadd()
     {
@@ -43,7 +40,7 @@ class AdminQuestionComponent extends Component
             // $brand->slug = str::slug($tre,'-');
             
             
-            $questionbrand->question = Str::lower(trim($tre));
+            $questionbrand->question = Str::lower(trim($tre)) . '?';
             $questionbrand->user_id = Auth::user()->id;
             $questionbrand->status = $this->status;
             $questionbrand->admstatus = $this->admstatus;

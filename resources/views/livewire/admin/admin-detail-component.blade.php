@@ -141,6 +141,7 @@
         </div>
       
     </div>
+
     <div class="container"> 
         <small>CSV upload exhibitor</small>
       
@@ -153,7 +154,6 @@
       
     </div>
 
-    
     <div class="container"> 
       <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
       <form wire:submit.prevent="withoutHashtag">
@@ -164,7 +164,6 @@
       </form>
     </div>
     
-
     {{--tag--}}
     <div class="container my-3">
         <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
@@ -648,7 +647,26 @@
 
     @endif
 
+    <div class="container">
+      <div class="input-group my-2">
+        <input type="text" class="form-control" placeholder="create a FAQ">
+        <!-- <a href="#" class="btn btn-primary" wire:click.prevent="updateIDstatus({{$evento->id}})">Create FAQ</a> -->
+         <a href="{{route('admin.questionadd',['eventid' => $evento->id])}}"  class="btn btn-primary btn-sm">Create a FAQ</a>
+      </div>
+    </div>
 
+    Timmings
+    free or paid entry
+    public or professionals
+    industries and products
+    theme or focus
+    who can attend 
+    exhibition Timmings
+    can i register on site 
+    is parking availabe
+    are there food and beverage options avaibale on site
+    is there venue wheelchair accessible
+    are there cloakroom or storage facili 
 
     <div class="container">
       <!-- create a unique ID
