@@ -25,6 +25,7 @@
                             <option value="festival">Festival</option>
                             <option value="network">Network</option>
                             <option value="dealer">Dealer Distribution</option>
+                            <option value="embassy">Embassy</option>
                         </select>
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>

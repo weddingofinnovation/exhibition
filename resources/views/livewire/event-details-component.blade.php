@@ -4694,7 +4694,7 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
+                        When Th
                       </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -4978,7 +4978,15 @@
                   </div>
               </div>
             @endif
-
+          @elseif($event->eventype == 'embassy')
+            <div class="handheld-toolbar bg-secondary">
+              <div class="d-flex justify-content-between py-2 px-2">
+              <div class="text-dark  pl-3 lh-1">  <span class = "fw-medium fs-sm">Rs.{{$productPrice}}</span><br><span class=" fw-normal fs-xs">Onwards</span></div>
+                
+                <a href="{{route('event.exhibit', ['board' => 'embassy'])}}" class="btn btn-primary btn-sm">Plan your Visit</a>
+                
+              </div>
+            </div>
           @endif
 
             

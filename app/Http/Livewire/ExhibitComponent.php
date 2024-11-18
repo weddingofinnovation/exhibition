@@ -145,9 +145,9 @@ class ExhibitComponent extends Component
 
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
-        dd($newEvent);
         $newEvent->save();
-
+ 
+        
         //return redirect()->route('coicart');thankyou
         return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
         //{{route('event.exhibit', ['board' => 'business'])}}

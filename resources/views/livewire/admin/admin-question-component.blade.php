@@ -1,7 +1,7 @@
 <main>
     <div class="container">
         <form wire:submit.prevent="questadd">
-            <input type="text" class="form-control" wire:model.lazy="quest" placeholder="list your question">
+            <input type="text" class="form-control mb-1 mt-2" wire:model.lazy="quest" placeholder="list your question">
             <button type="submit" class="form-control btn-primary btn" >Submit</button>
         </form>
     </div>
@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-7  p-0">
-              <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+              <div class="fs-sm fw-normal text-start"><a class="text-dark" href="#">
                   {{ucwords(trans($evento->question))}}</a></div>
 
               <div class="text-muted fs-sm text-start">
