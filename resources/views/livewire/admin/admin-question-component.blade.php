@@ -20,7 +20,7 @@
 
             <div class="col-7  p-0">
               <div class="fs-sm fw-normal text-start"><a class="text-dark" href="#">
-                  {{ucwords(trans($evento->question))}}</a></div>
+                  {{$evento->question}}</a></div>
 
               <div class="text-muted fs-sm text-start">
                   {{$evento->event_id}}
