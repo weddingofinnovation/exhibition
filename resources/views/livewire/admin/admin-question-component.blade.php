@@ -15,7 +15,7 @@
                         <div class="h4 fw-light mb-0"></div> 
                         <div class="small text-muted text-capitalize"></div>
 
-                        @if(in_array($question->id, $selectionQuestions))
+                        @if(in_array($evento->id, $selectionQuestions))
                             <div class="round-circle">{{$evento->id}}</div> Add
                         @endif
 
