@@ -15,8 +15,8 @@
                         <div class="h4 fw-light mb-0"></div> 
                         <div class="small text-muted text-capitalize"></div>
 
-                        @if(in_array($evento->id, $selectionQuestions))
-                            <div class="round-circle">{{$evento->id}}</div> Add
+                        @if(in_array($evento->id, $selectedQuestions))
+                            <div class="round-circle">{{$evento->question}}</div> Add
                         @endif
 
                         {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
