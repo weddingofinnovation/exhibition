@@ -52,7 +52,7 @@ class AdminQuestionComponent extends Component
         {
             Question::create([
                 'event_id' => $this->eventid,
-                'question_id' => $questionId,
+                'question' => $questionId,
             ]);
             $this->selectedQuestions[] = $questionId;
         }
