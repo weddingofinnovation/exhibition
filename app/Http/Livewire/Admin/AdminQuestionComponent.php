@@ -27,7 +27,7 @@ class AdminQuestionComponent extends Component
 
         if($this->eventid)
         {
-          $this->selectedQuestions  = Question::where('event_id', $this->eventid)->pluck('question_id')->toArray();
+          $this->selectedQuestions  = Question::where('event_id', $this->eventid)->pluck('id')->toArray();
 
         }
         // $this->month = Carbon::today()->format("m");
