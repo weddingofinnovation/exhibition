@@ -12,5 +12,9 @@ class Question extends Model
     protected $fillable = [
 
         'question',
+        'event_id',
+        'user_id',
+        'status',
+        'admstatus',
     ];
 }
