@@ -29,7 +29,7 @@ class AdminQuestionComponent extends Component
     public function mount($eventid = null)
     {
         $this->eventid = $eventid;
-        $eventdetails = Event::where('event_id', $this->eventid)->get();
+        $eventdetails = Event::where('event', $this->eventid)->get();
 
         $this->eventname =  $eventdetails->eventname;
         $this->eventdatestartdate =  $eventdetails->startdate;
