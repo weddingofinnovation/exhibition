@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Event;
 use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -17,12 +18,23 @@ class AdminQuestionComponent extends Component
     public $quest;
     public $eventid;
 
+    public $eventname;
+    public $eventdatestartdate;
+    public $eventdateenddate;
+    //public $venue;
+
     public $questions = [];
     public $selectedQuestions = [];
 
     public function mount($eventid = null)
     {
         $this->eventid = $eventid;
+        $eventdetails = Event::where('event_id', $this->eventid)->get();
+
+        $this->eventname =  $eventdetails->eventname;
+        $this->eventdatestartdate =  $eventdetails->startdate;
+        $this->eventdateenddate =  $eventdetails->enddate;
+
         $this->questions = Question::all();
 
         if($this->eventid)
@@ -43,6 +55,16 @@ class AdminQuestionComponent extends Component
             return;
         }
 
+
+        
+        $questionTemplate = Question::find($questionId)->question;
+        $modifiedQuestion = str_replace(
+            ['{{event_name}}', '{{event_date}}'],
+            [$this->eventname, $this->eventdate],
+            $questionTemplate
+        );
+
+
         if(in_array($questionId, $this->selectedQuestions))
 
         {
@@ -55,7 +77,7 @@ class AdminQuestionComponent extends Component
         {
             Question::create([
                 'event_id' => $this->eventid,
-                'question' => $questionId,
+                'question' => $modifiedQuestion,
                 'user_id' => Auth::user()->id,
                 'status' => '1',
                 'admstatus' => '1',
