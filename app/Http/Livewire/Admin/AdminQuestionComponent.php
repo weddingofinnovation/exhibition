@@ -44,16 +44,23 @@ class AdminQuestionComponent extends Component
         }
 
         if(in_array($questionId, $this->selectedQuestions))
+
         {
             Question::where('event_id', $this->eventid)->where('question_id' ,$questionId)->delete();
             $this->selectedQuestions = array_diff($this->selectedQuestions, [$questionId]);
         }
+
         else
+
         {
             Question::create([
                 'event_id' => $this->eventid,
                 'question' => $questionId,
+                'user_id' => Auth::user()->id,
+                'status' => '1',
+                'admstatus' => '1',
             ]);
+
             $this->selectedQuestions[] = $questionId;
         }
     }
