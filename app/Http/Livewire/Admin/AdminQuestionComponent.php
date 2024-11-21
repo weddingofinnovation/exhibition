@@ -17,6 +17,7 @@ class AdminQuestionComponent extends Component
     public $question;
     public $quest;
     public $eventid;
+    public $board = null;
 
     public $eventname;
     public $eventdatestartdate;
@@ -29,7 +30,7 @@ class AdminQuestionComponent extends Component
     public function mount($eventid = null)
     {
         $this->eventid = $eventid;
-        $eventdetails = Event::find($this->eventid)->first();
+        $eventdetails = Event::find($this->eventid);
 
         $this->eventname =  $eventdetails->eventname;
         $this->eventdatestartdate =  $eventdetails->startdate;
