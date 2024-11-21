@@ -34,8 +34,10 @@ class AdminQuestionComponent extends Component
         $eventdetails = Event::find($this->eventid);
 
         $this->eventname =  $eventdetails->eventname;
-        $this->eventdatestartdate =  Carbon::createFromFormat('d-m-Y', $eventdetails->startdate)->format('d F');
-        $this->eventdateenddate =  Carbon::createFromFormat('d-m-Y', $eventdetails->enddate)->format('d F');
+        $start = Carbon::createFromFormat('d-m-Y', $eventdetails->startdate);
+        $this->eventdatestartdate =  $start->format('d F');
+        $end = Carbon::createFromFormat('d-m-Y', $eventdetails->enddate);
+        $this->eventdateenddate =  $end->format('d F');
         $this->eventvenue = $eventdetails->venue;
 
         $this->questions = Question::all();
