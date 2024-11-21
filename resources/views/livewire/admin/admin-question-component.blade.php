@@ -84,7 +84,7 @@
         @if($board == 'selected')
 
             @php
-                $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
+                $updateQuestion = DB::table('questions')->where('event_id' , $this->eventid)->get();
             @endphp
             
                 @foreach($updateQuestion as $evento)
