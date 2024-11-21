@@ -132,7 +132,7 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-book"></i></span>
             <span class="handheld-toolbar-label">Event</span>
         </a>
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'new-organiser'])}}">
+        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('updateQuestion',['board' => 'selected'])}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
             <span class="handheld-toolbar-label">selected</span>
         </a>
