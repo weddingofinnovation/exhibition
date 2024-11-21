@@ -403,6 +403,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     Route::get('/admin/dashboard/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
     Route::get('/admin/event/add', AdminEventAddComponent::class)->name('admin.eventadd');
+    
     Route::get('/admin/question/add/{eventid?}/{board?}', AdminQuestionComponent::class)->name('admin.questionadd');
 
     Route::get('/admin/event/{event_id}/edit/{board}', AdminEventEditComponent::class)->name('admin.eventEdit');
