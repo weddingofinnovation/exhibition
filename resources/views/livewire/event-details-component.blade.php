@@ -4692,19 +4692,25 @@
                 <div class="tab-pane fade show active">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                   
+                @php
+                   $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
+                @endphp
+                
+                @foreach($updateQuestion as $questions)
                   <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
                       data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        When Th
+                        {{$questions->question}}
                       </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
                     </div>
                   </div>
+                @endforeach
 
-                  <div class="accordion-item">
+                  <!-- <div class="accordion-item">
                     <h2 class="accordion-header">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                         Accordion Item #2
@@ -4723,7 +4729,7 @@
                     <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 </div>
               @endif

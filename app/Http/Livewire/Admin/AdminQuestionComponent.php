@@ -130,7 +130,7 @@ class AdminQuestionComponent extends Component
 
     public function render()
     {
-        $result = Question::get();
+        $result = Question::latest('updated_at')->get();
         return view('livewire.admin.admin-question-component',['result' => $result, 'selectionEnabled' => $this->eventid ? true : false,]);
     }
 }
