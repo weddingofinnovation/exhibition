@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Event;
 use App\Models\Question;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -22,7 +23,7 @@ class AdminQuestionComponent extends Component
     public $eventname;
     public $eventdatestartdate;
     public $eventdateenddate;
-    //public $venue;
+    public $eventvenue;
 
     public $questions = [];
     public $selectedQuestions = [];
@@ -33,8 +34,9 @@ class AdminQuestionComponent extends Component
         $eventdetails = Event::find($this->eventid);
 
         $this->eventname =  $eventdetails->eventname;
-        $this->eventdatestartdate =  $eventdetails->startdate;
-        $this->eventdateenddate =  $eventdetails->enddate;
+        $this->eventdatestartdate =  Carbon::createFromFormat('d-m-Y', $eventdetails->startdate)->format('d F');
+        $this->eventdateenddate =  Carbon::createFromFormat('d-m-Y', $eventdetails->enddate)->format('d F');
+        $this->eventvenue = $eventdetails->venue;
 
         $this->questions = Question::all();
 
@@ -58,8 +60,8 @@ class AdminQuestionComponent extends Component
 
         $questionTemplate = Question::find($questionId)->question;
         $modifiedQuestion = str_replace(
-            ['{{exhibition}}', '{{start}}', '{{end}}'],
-            [$this->eventname, $this->eventdatestartdate, $this->eventdateenddate],
+            ['{{exhibition}}', '{{start}}', '{{end}}', '{{venue}}'],
+            [$this->eventname, $this->eventdatestartdate, $this->eventdateenddate, $this->eventvenue],
             $questionTemplate
         );
 
