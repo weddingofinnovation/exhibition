@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 @endforeach
-        @else($board == 'event')
+        @else($board == 'question')
             @if($selectionEnabled)
                 @foreach($result as $evento)
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -128,7 +128,7 @@
       <div class="d-table table-layout-fixed w-100">
       
       
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['eventid' => $this->eventid ,'board' => 'event'])}}">
+        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.questionadd',['eventid' => $this->eventid ,'board' => 'question'])}}">
             <span class="handheld-toolbar-icon"><i class="bi bi-book"></i></span>
             <span class="handheld-toolbar-label">Event</span>
         </a>
