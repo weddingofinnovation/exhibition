@@ -36,7 +36,7 @@ class AdminQuestionComponent extends Component
         $this->eventname =  $eventdetails->eventname;
         $this->eventdatestartdate = Carbon::parse ($eventdetails->startdate)->format('d F Y');
         //  Carbon::createFromFormat('Yy-mm-dd', trim($eventdetails->startdate))->format('d F Y');
-        //$this->eventdateenddate =  Carbon::createFromFormat('d-m-Y', trim($eventdetails->enddate))->format('d F');
+        $this->eventdateenddate =  Carbon::parse(trim($eventdetails->enddate))->format('d F Y');
         $this->eventvenue = trim($eventdetails->venue);
 
         $this->questions = Question::all();
