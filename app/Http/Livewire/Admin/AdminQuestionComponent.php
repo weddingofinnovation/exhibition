@@ -29,7 +29,7 @@ class AdminQuestionComponent extends Component
     public function mount($eventid = null)
     {
         $this->eventid = $eventid;
-        $eventdetails = Event::where('event', $this->eventid)->get();
+        $eventdetails = Event::find($this->eventid)->first();
 
         $this->eventname =  $eventdetails->eventname;
         $this->eventdatestartdate =  $eventdetails->startdate;
@@ -55,20 +55,17 @@ class AdminQuestionComponent extends Component
             return;
         }
 
-
-        
         $questionTemplate = Question::find($questionId)->question;
         $modifiedQuestion = str_replace(
-            ['{{event_name}}', '{{event_date}}'],
-            [$this->eventname, $this->eventdate],
+            ['{{exhibition}}', '{{start}}', '{{end}}'],
+            [$this->eventname, $this->eventdatestartdate, $this->eventdateenddate],
             $questionTemplate
         );
 
 
         if(in_array($questionId, $this->selectedQuestions))
-
         {
-            Question::where('event_id', $this->eventid)->where('question_id' ,$questionId)->delete();
+            Question::where('event_id', $this->eventid)->where('question_id' , $questionId)->delete();
             $this->selectedQuestions = array_diff($this->selectedQuestions, [$questionId]);
         }
 
