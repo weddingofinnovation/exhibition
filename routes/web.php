@@ -313,7 +313,7 @@ Route::get('/exhibit/{board}/{visitorid?}', ExhibitComponent::class)->name('even
 
 Route::get('/registration-pass/{visitorid?}', [BuyabrandlicenseComponent::class, 'genratepdf'])->name('download.badge');
 
-
+ 
 
 //trying//promotion
 Route::get('/birthday', GiftBirthdayComponent::class)->name('gift.business');

@@ -2232,11 +2232,10 @@
                         @endphp
 
                         @foreach($eventdetails as $evet)
-                        {{$evento->type}}
                           <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
-                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}"></a>
-
-                              
+                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
+                            {{$evento->type}}
+                          </a>
                         @endforeach
                     @endif
                     
@@ -2244,12 +2243,17 @@
 
                 <div class="col-7  p-0">
                   <div class="fs-sm fw-normal text-start">
-                    <a class="text-dark" href="">
+                    <a class="text-dark" href="" >
                       {{$evento->name}}</a></div>
 
                       <div class="fs-sm fw-normal text-start">
-                    <a class="text-dark" href="">
-                      {{$evento->phone}}</a></div>
+                    <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">
+                      {{$evento->phone}}</a>
+                      <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')">
+                      <i class="bi bi-plus"></i></a>
+                    
+
+                    </div>
                   <div class="text-muted fs-xs text-start">
                       {{$evento->email}} <br>
                     
@@ -2261,12 +2265,12 @@
 
                 <div class="col-3  p-0">
                         {{--@if(is_null($evento->image))
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $evento->slug, 'formm' => 'image' ])}}">Add</a>
-                          @else
+                          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $evento->slug, 'formm' => 'image' ])}}">Add</a>
+                            @else
                           <a class="card-img-top d-block overflow-hidden" href="">
                           <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->name, 24)}}"></a>
                         @endif--}}
-                    <span>
+                  
                       @php
                         $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
                         $resulto = $businesslead->pluck('response')->first();
@@ -2289,11 +2293,12 @@
                         <li><a class="dropdown-item" href="#" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
                       </ul>
 
-                    </span>
                 </div>
             </div>
           </div>
         @endforeach
+      @elseif($board == 'all')
+      @elseif($board == 'eventwise')
       @endif
 
       @if($board == 'bulkReview')
@@ -2912,6 +2917,15 @@
             <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
             <span class="handheld-toolbar-label">Create</span>
           </a>
+      @elseif($board == 'order')
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'eventwise'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">Event</span>
+          </a>
+          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.dashboard', ['board' => 'all'])}}">
+            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+            <span class="handheld-toolbar-label">Event</span>
+          </a>
       @endif
       
 
@@ -2953,5 +2967,21 @@
           },
           "autoplayButtonOutput":false
         });
+      </script>
+
+      <script>
+        // function makeCall(phone)
+        // {
+        //   window.location.href = 'tel:${}';
+        // }
+
+        function copyToclipboard()
+        {
+          navigator.clipboard.writeText(text).then(() => {
+            alert("phone copied");
+          }).catch((err) => {
+            alert("failed to copy" + err);
+          });
+        }
       </script>
     @endpush
