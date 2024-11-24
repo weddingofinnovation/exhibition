@@ -4592,26 +4592,7 @@
                       <p class="weight">Space</p>
                     </div>
 
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Design</h3>
-                      <p class="symbol">Bi</p>
-                      <p class="number">83</p>
-                      <p class="weight">Stall</p>
-                    </div>
-
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Material</h3>
-                      <p class="symbol">Bi</p>
-                      <p class="number">83</p>
-                      <p class="weight">Marketing</p>
-                    </div>
-
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Fabrication</h3>
-                      <p class="symbol">Bi</p>
-                      <p class="number">83</p>
-                      <p class="weight">Verified</p>
-                    </div>
+                   
                   </div>
                   
                 </div>
@@ -4627,7 +4608,27 @@
                         
                           <div class="row g-0 py-0 mx-n2">
           
-          
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Design</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Stall</p>
+                          </div>
+
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Material</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Marketing</p>
+                          </div>
+
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Fabrication</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Verified</p>
+                          </div>
+
                               <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
                                 <h3 class="name">Delhi</h3>
                                 <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
@@ -4688,7 +4689,7 @@
                       <div class="col border-1"> <span class="fs-sm">Plan your Exhibition</span></div> -->
 
                         <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
-                        <ul>
+                        <ul class="mt-5">
                         <p class="fs-xs"> For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
                           find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
                         
