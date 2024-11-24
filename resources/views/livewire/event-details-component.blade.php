@@ -4464,14 +4464,16 @@
                   <li class="nav-item">
                    <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">  Exhibitor</a>  
                   </li>
+
+                  <li class="nav-item">
+                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">  Service</a>
+                  </li> 
                   
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">  FAQ</a>  
                   </li>
 
-                  <li class="nav-item">
-                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">  Service</a>
-                  </li> 
+                  
                   
               </ul>
           </section>
@@ -4621,8 +4623,7 @@
                     <div class="row gy-2">
 
                         <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
-                        <p class="fs-sm"> For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
-                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
+                        <p class="fs-xs">Find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
                         
                           <div class="row g-0 py-0 mx-n2">
           
@@ -4688,14 +4689,17 @@
 
                         <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
                         <ul>
+                        <p class="fs-xs"> For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
+                        
                           <li><span class="fs-sm fw-bold">Even low Quantities @ Best Prices</span>
-                            <p class="fs-sm">we offer low/single product quantities at affordable prices.</p>
+                            <p class="fs-xs">we offer low/single product quantities at affordable prices.</p>
                           </li>
                           <li><span class="fs-sm fw-bold">High quality products and Easy design</span>
                             <p class="fs-xs">Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
                           </li>
                           <li><span class="fs-sm fw-bold">Free Replacement or Full Refund</span>
-                            <p>We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
+                            <p class="fs-xs">We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
                           </li>
                         </ul>
                     
