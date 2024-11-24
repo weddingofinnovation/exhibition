@@ -4736,53 +4736,11 @@
                           </div>
                         @endforeach
                       </div> 
-
-                  <div class="row">
-                    <div class="col-sm-10">Download Exhibitor Directory <span class="fs-md fw-light text-primary">Our Data, your Customer</span></div>
-                    <div class="col-sm-2">
-                      <i class="bi bi-download"></i>
-                    </div>
-                  </div>
-                  @if($optional == 'exhibitor')
-                    <!-- Exhibitor -->
-                    <div class="container">
-                      <div class="grido">
-                        
-                        <div class="element-item" data-category="post-transition">
-                          <h3 class="name">Exhibitor</h3>
-                          <p class="symbol">54</p>
-                          <p class="number">82</p>
-                          <p class="weight">Verified</p>
-                        </div>
-
-                        <div class="element-item" data-category="transition">
-                          <h3 class="name">Visitors</h3>
-                          <p class="symbol">3,300</p>
-                          <p class="number">79</p>
-                          <p class="weight">Verified</p>
-                        </div>
-
-                        <div class="element-item" data-category="alkali">
-                          <h3 class="name">Business</h3>
-                          <p class="symbol">25k</p>
-                          <p class="number">19</p>
-                          <p class="weight">Verified</p>
-                        </div>
-                        
-                        <div class="element-item" data-category="alkali">
-                          <h3 class="name">Sodium</h3>
-                          <p class="symbol">Na</p>
-                          <p class="number">11</p>
-                          <p class="weight">22.99</p>
-                        </div>
-                      </div>
-                    </div>
-                  @endif
                 </div>
 
                   
-                    <div class="container">
-                        <div class="grido">
+                    
+                        <!-- <div class="grido">
                             @foreach($exhibitor as $participants)
                             <div class="element-item" data-category="post-transition">
                               <h3 class="name text-light">{{$participants->brand_name}}</h3>
@@ -4791,8 +4749,8 @@
                               <p class="weight">Verified</p>
                             </div>
                             @endforeach
-                        </div>
-                    </div>
+                        </div> -->
+                    
                   
               @elseif($currentTab === 'tab4')
               <!-- Faq tab-->
