@@ -4619,7 +4619,7 @@
                             <h3 class="name">Material</h3>
                             <p class="symbol">Bi</p>
                             <p class="number">83</p>
-                            <p class="weight">Marketing</p>
+                            <p class="weight">Giveaways</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
@@ -4629,54 +4629,43 @@
                             <p class="weight">Verified</p>
                           </div>
 
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                    <p class="weight" style="left: 30px;">Fabrication</p>
-                              </a>
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Printing</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                <p class="weight" style="left: 30px;">Design</p>
-                              </a>
-                      
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                    <p class="weight" style="left: 30px;">Giveaways</p>
-                              </a>
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Stay</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                    <p class="weight" style="left: 30px;">Printing</p>
-                              </a>
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Invite</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                <p class="weight" style="left: 30px;">Stay</p>
-                              </a>
-                      
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                    <p class="weight" style="left: 30px;">Invite</p>
-                              </a>
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Photography</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">Verified</p>
+                          </div>
 
-                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-                                <h3 class="name">Delhi</h3>
-                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-                                <p class="number">52</p>
-                                    <p class="weight" style="left: 30px;">Plan your Exhibition</p>
-                              </a>
+                          <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Plan</h3>
+                            <p class="symbol">Bi</p>
+                            <p class="number">83</p>
+                            <p class="weight">your Exhibition</p>
+                          </div>
+
+                              
+
                           </div>
                       <!-- <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
                       <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
@@ -4690,11 +4679,11 @@
 
                         <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
                         <ul class="mt-5">
-                        <p class="fs-xs"> For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                        <p class="fs-xs"> For more than 20 years of trust,<span class="text-primary">O'laro, The Exhibition Network product</span>  has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
                           find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
                         
                           <li><span class="fs-sm fw-bold">Even low Quantities @ Best Prices</span>
-                            <p class="fs-xs">we offer low/single product quantities at affordable prices.</p>
+                            <p class="fs-xs">We offer low/single product quantities at affordable prices.</p>
                           </li>
                           <li><span class="fs-sm fw-bold">High quality products and Easy design</span>
                             <p class="fs-xs">Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
@@ -4712,6 +4701,41 @@
               @elseif($currentTab === 'tab3')
                 <!-- exhibitor tab-->
                 <div class="container">
+                    <div class="d-flex badgese pb-2">
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'today'])}}" > 2022 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'tomorrow'])}}" > 2023 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'this-weekend'])}}" >  2024 </a></span>
+                    </div>
+                
+                    <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
+                    <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
+                    <div class="row mb-5 pb-2">
+                        @foreach ($exhibition as $franchise) 
+                          <div class="container  ">
+                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                              <div class="col  pr-0">
+                                <a class="card-img-top d-block overflow-hidden" href="#">
+                                <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->brand_name, 24)}}"></a>
+                              </div>
+
+                              <div class="col-7  p-0">
+                                <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                  {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
+                                <div class="text-muted fs-sm text-start">
+                                  Stall No 731 
+                                </div>  
+                                <div class="text-muted fs-sm text-start">category</div>
+                              </div>
+
+                              <div class="col-3  p-0">
+                                <a class="card-img-top d-block overflow-hidden" href="#">
+                                <i class="bi bi-download"></i></a>
+                              </div>
+                            </div>
+                          </div>
+                        @endforeach
+                      </div> 
+
                   <div class="row">
                     <div class="col-sm-10">Download Exhibitor Directory <span class="fs-md fw-light text-primary">Our Data, your Customer</span></div>
                     <div class="col-sm-2">
@@ -4755,7 +4779,7 @@
                   @endif
                 </div>
 
-                  <div class="tab-pane fade show active">
+                  
                     <div class="container">
                         <div class="grido">
                             @foreach($exhibitor as $participants)
@@ -4768,7 +4792,7 @@
                             @endforeach
                         </div>
                     </div>
-                  </div>
+                  
               @elseif($currentTab === 'tab4')
               <!-- Faq tab-->
                 <div class="tab-pane fade show active">
