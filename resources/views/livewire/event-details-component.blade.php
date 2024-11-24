@@ -4621,8 +4621,8 @@
                     <div class="row gy-2">
 
                         <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
-                        <p class="fs-sm"> {{Str::limit(For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
-                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.,150)}}</p>
+                        <p class="fs-sm"> For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
                         
                           <div class="row g-0 py-0 mx-n2">
           
