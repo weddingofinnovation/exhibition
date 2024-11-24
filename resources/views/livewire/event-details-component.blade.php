@@ -4410,7 +4410,7 @@
                           @endif 
                       </h5>
                     @endif
-
+ 
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}} {{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h5>
                       
@@ -4618,7 +4618,7 @@
                 <div class="tab-pane fade show active">
                   <div class="row">
 
-                    <div class="col-lg-8">
+                    
                     
                      <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
                      <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
@@ -4635,7 +4635,7 @@
                         <li>Nemo enim ipsam voluptatem quia voluptas sit</li>
                       </ul> -->
 
-                    </div>
+                   
 
                   </div>
                 </div>
