@@ -4616,39 +4616,65 @@
               @elseif($currentTab === 'tab2')
                 <!-- membership tab-->
                 <div class="tab-pane fade show active">
-                  <div class="row gy-2">
 
-                      <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
-                      <p class="fs-md"> For more than 20 years of trust, O'lero, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
-                      <ul class="fs-md">
-                        <li>Even low Quantities @ Best Prices
-                          <p>we offer low/single product quantities at affordable prices.</p>
-                        </li>
-                        <li>High quality products and Easy design
-                          <p>Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
-                        </li>
-                        <li>Free Replacement or Full Refund
-                          <p>We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
-                        </li>
-                      </ul>
+                  <div class="container">
+                    <div class="row gy-2">
+
+                        <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
+                        <p class="fs-sm"> {{Str::limit(For more than 20 years of trust, O'laro, The Exhibition Network product has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.,150)}}</p>
+                        
+                          <div class="row g-0 py-0 mx-n2">
+          
+          
+                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
+                                <h3 class="name">Delhi</h3>
+                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
+                                <p class="number">52</p>
+                                    <p class="weight" style="left: 30px;">Fabrication</p>
+                              </a>
+
+                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
+                                <h3 class="name">Delhi</h3>
+                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
+                                <p class="number">52</p>
+                                <p class="weight" style="left: 30px;">Design</p>
+                              </a>
+                      
+                              <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
+                                <h3 class="name">Delhi</h3>
+                                <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
+                                <p class="number">52</p>
+                                    <p class="weight" style="left: 30px;">Giveaways</p>
+                              </a>
+                          </div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Giveaways</span></div>
+
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Printing</span></div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Stay</span></div>
+                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Invite</span></div>
+                      <div class="col border-1"> <span class="fs-sm">Great Exhibition To Exhibit</span></div>
+
+                        <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
+                        <ul class="fs-md">
+                          <li><span class="fs-sm fw-md">Even low Quantities @ Best Prices</span>
+                            <p class="fs-sm">we offer low/single product quantities at affordable prices.</p>
+                          </li>
+                          <li><span class="fs-sm fw-bold">High quality products and Easy design</span>
+                            <p>Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
+                          </li>
+                          <li><span class="fs-sm fw-bold">Free Replacement or Full Refund</span>
+                            <p>We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
+                          </li>
+                        </ul>
                     
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Giveaways</span></div>
 
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Printing</span></div>
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Stay</span></div>
-                     <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Invite</span></div>
-                     <div class="col border-1"> <span class="fs-sm">Great Exhibition To Exhibit</span></div>
-
-                      <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>
-
-                       -->
-
-                   
-
+                    </div>
                   </div>
+
                 </div>
               @elseif($currentTab === 'tab3')
                 <!-- exhibitor tab-->
