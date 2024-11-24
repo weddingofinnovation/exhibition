@@ -4700,7 +4700,7 @@
                 </div>
               @elseif($currentTab === 'tab3')
                 <!-- exhibitor tab-->
-                <div class="container">
+                <div class="">
                     <div class="d-flex badgese pb-2">
                       <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2022 </a></span>
                       <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2023 </a></span>
@@ -4709,9 +4709,10 @@
                 
                     <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
                     <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
+                   
                     <div class="row mb-5 pb-2">
                         @foreach ($exhibitor as $franchise) 
-                          <div class="container  ">
+                          <div class=" ">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                               <div class="col  pr-0">
                                 <a class="card-img-top d-block overflow-hidden" href="#">
