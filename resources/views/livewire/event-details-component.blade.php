@@ -4702,9 +4702,9 @@
                 <!-- exhibitor tab-->
                 <div class="container">
                     <div class="d-flex badgese pb-2">
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'today'])}}" > 2022 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'tomorrow'])}}" > 2023 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="{{route('coi.exhibition',['eventype' => $this->eventype, 'time'=> 'this-weekend'])}}" >  2024 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2022 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2023 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="">  2024 </a></span>
                     </div>
                 
                     <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
