@@ -4462,16 +4462,17 @@
                   </li>
 
                   <li class="nav-item">
-                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">  Membership</a>
-                  </li> 
-
-                  <li class="nav-item">
                    <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">  Exhibitor</a>  
                   </li>
                   
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">  FAQ</a>  
-                  </li>                  
+                  </li>
+
+                  <li class="nav-item">
+                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">  Service</a>
+                  </li> 
+                  
               </ul>
           </section>
       
@@ -4616,15 +4617,26 @@
                 <!-- membership tab-->
                 <div class="tab-pane fade show active">
                   <div class="row">
+
                     <div class="col-lg-8">
                     
-                      <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Giveaways</span></div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Printing</span></div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Stay</span></div>
+                     <div class="col"> <i class="bi bi-plus"></i><span class="fs-sm">Data</span></div>
+
+                      <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>
 
                       <h3 class="h5 pt-2">Plans</h3>
                       <ul class="fs-md">
                         <li>Nemo enim ipsam voluptatem quia voluptas sit</li>
-                      </ul>
+                      </ul> -->
+
                     </div>
+
                   </div>
                 </div>
               @elseif($currentTab === 'tab3')
@@ -5050,7 +5062,11 @@
                 </div> 
 
               
-
+    @php
+        $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
+    @endphp
+    
+    
     @push('scripts')
 
           <script>
@@ -5180,6 +5196,27 @@
                     "bestRating": "10"
                   }
                   
+            }
+          </script>
+
+          <script type = "application/ld+json">
+            {
+              "@context" : "https:schema.org"
+              "@type": "FAQPage",
+              "mainEntity": [
+                
+                
+                @foreach($updateQuestion as $questions)  
+                  {
+                    "@type" : "Question",
+                    "name" : "",
+                    "acceptedAnswer":{
+                    "@type" : "Answer",
+                    "text": "<p></p>"
+                    }
+                  },
+                @endforeach
+              ]
             }
           </script>
 
