@@ -4710,7 +4710,7 @@
                     <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
                     <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
                     <div class="row mb-5 pb-2">
-                        @foreach ($exhibition as $franchise) 
+                        @foreach ($exhibitor as $franchise) 
                           <div class="container  ">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                               <div class="col  pr-0">
