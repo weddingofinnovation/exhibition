@@ -4608,56 +4608,56 @@
                         
                           <div class="row g-0 py-0 mx-n2">
           
-                          <a class="element-item bg-light" data-category="post-transition" href="">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'design'])}}">
                             <h3 class="name">Design</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Stall</p>
                           </a>
 
-                          <a class="element-item bg-light" data-category="post-transition" href="">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'giveaway'])}}">
                             <h3 class="name">Material</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Giveaways</p>
                           </a>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'fabrication'])}}">
                             <h3 class="name">Fabrication</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'printing'])}}">
                             <h3 class="name">Printing</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'stay'])}}">
                             <h3 class="name">Stay</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'invite'])}}">
                             <h3 class="name">Invite</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'photography'])}}">
                             <h3 class="name">Photography</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
                             <h3 class="name">Plan</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->

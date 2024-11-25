@@ -79,6 +79,41 @@ class ExhibitComponent extends Component
         
     }
 
+    public function multiadd()
+    {
+        $this->validate([
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max:12|min:10',
+            'name'=>'required|alpha:ascii', 
+        ]);
+
+        $newEvent = new Lead();
+        $newEvent->name = Str::lower(trim($this->name));
+        $newEvent->email = Str::lower(trim($this->email));
+        $newEvent->phone = Str::trim($this->phone);
+        $newEvent->type = Str::lower(trim($this->board));
+        $newEvent->event_id = session()->get('eventID');
+
+        //$newEvent->user_id = Auth::user()->id;
+        
+        $newEvent->status = $this->status;
+        $newEvent->admstatus = $this->admstatus;
+        $newEvent->save();
+
+        $logino = new User();
+        $logino->name = $this->name;
+        $logino->email = $this->email;
+        $logino->password = Hash::make($this->email);
+        $logino->phone = $this->phone;
+        $logino->save();
+
+        //return redirect()->route('coicart');thankyou
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        //{{route('event.exhibit', ['board' => 'business'])}}
+        session()->flash('message','Thanks for sharing your review.');
+        
+    }
+    
     public function hostessadd()
     {
         $this->validate([
