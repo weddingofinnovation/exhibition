@@ -4608,59 +4608,59 @@
                         
                           <div class="row g-0 py-0 mx-n2">
           
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <a class="element-item bg-light" data-category="post-transition" href="">
                             <h3 class="name">Design</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Stall</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition">
+                          <a class="element-item bg-light" data-category="post-transition" href="">
                             <h3 class="name">Material</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Giveaways</p>
-                          </div>
+                          </a>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Fabrication</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Printing</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Stay</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Invite</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Photography</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
                           </div>
 
                           <div class="element-item bg-light" data-category="post-transition">
                             <h3 class="name">Plan</h3>
                             <p class="symbol">Bi</p>
-                            <p class="number">83</p>
+                            <!-- <p class="number">83</p> -->
                             <p class="weight">your Exhibition</p>
                           </div>
 
@@ -4700,11 +4700,11 @@
                 </div>
               @elseif($currentTab === 'tab3')
                 <!-- exhibitor tab-->
-                <div class="">
+                
                     <div class="d-flex badgese pb-2">
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2022 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href=""> 2023 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="">  2024 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2022 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2023 </a></span>
+                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark">  2024 </a></span>
                     </div>
                 
                     <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
@@ -4735,8 +4735,8 @@
                             </div>
                           </div>
                         @endforeach
-                      </div> 
-                </div>
+                    </div> 
+                
 
                   
                     
