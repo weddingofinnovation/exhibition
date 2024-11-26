@@ -1,4 +1,4 @@
-@section('page_title', 'Add your Event')
+@section('page_title', 'List your Event')
 @section('page_description', ' Add your Event, Join the Swiss-based Exhibition Network and connect with the world of exhibitions and conferences. Stay up to date with the latest updates and news, and be a part of the dynamic exhibition industry')
 @section('page_keyword', ', Add your Event, World largest business event platform, find all upcoming events, business conferences, exhibition2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 

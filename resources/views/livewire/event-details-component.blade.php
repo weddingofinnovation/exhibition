@@ -4399,6 +4399,7 @@
                               ended
                             @endif
                       </span>
+                      
                     @if($event->latestupdat == 'postpone')
                       <div class="h5">Sorry, Event has been postponed</div> 
                     @else
