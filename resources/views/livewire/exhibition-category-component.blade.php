@@ -78,7 +78,9 @@
 
 
         {{$this->categry}}
-
+        {{$findcategoryid}}
+        {{$findsubcategory}}
+        {{$subcategory}}
         <hr>
       
         <div class="d-lg-none">
