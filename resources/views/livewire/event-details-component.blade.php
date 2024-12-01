@@ -4368,10 +4368,10 @@
                               <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
                                 {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
                               <div class="text-muted fs-sm text-start">
-                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                @if(Carbon::parse ($franchise->startdate)->format('M') != Carbon::parse ($franchise->enddate)->format('M'))
+                                  {{Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
                                 @else
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                  {{Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
                                 @endif 
                               </div>  
                               <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
@@ -4467,10 +4467,10 @@
                       <div class="h5">Sorry, Event has been postponed</div> 
                     @else
                       <h5 class="text-dark fw-normal pt-2 pb-0">
-                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                           @else
-                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                           @endif 
                       </h5>
                     @endif
