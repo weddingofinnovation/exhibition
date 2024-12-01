@@ -3904,7 +3904,7 @@
                             </h5>
                       </div>
                 @else
-                      <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+                      <span class="badge rounded-pill bg-primary fs-xs mt-4">1Ended</span>
                 @endif
 
                             @if ($current < $to && $current < $from)
@@ -3952,7 +3952,7 @@
                                       </h5>
                                 </div>
                               @elseif ($current > $to && $current > $from)
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">2Ended</span>
                             @endif
                       
                     
@@ -4459,7 +4459,7 @@
                             @elseif ($current > $to && $current == $from) 
                               Last Business Day 
                             @elseif ($current > $to && $current > $from)
-                              ended
+                              3ended
                             @endif
                       </span>
                       
@@ -4961,7 +4961,7 @@
                                           @elseif ($current > $to && $current == $from) 
                                             Last 
                                           @elseif ($current > $to && $current > $from)
-                                            Ended
+                                            8Ended
                                         @endif
                                       </span>
                                     <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
