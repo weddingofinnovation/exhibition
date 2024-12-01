@@ -3871,28 +3871,83 @@
             <div class="container">
               <div class="row">
                 <div class="col-md-9">
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">
+                    
+
+                @if ($current ->lt($to))
+                  <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
+                  <div class="">
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                            @else
+                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                            @endif 
+                        </h5>
+                  </div>
+                @elseif($current->between($to, $from))
+                      <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span> 
+                      <div class="">
+                            <h5 class="text-dark fw-normal pt-2 pb-0">
+                                @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                @else
+                                  {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                @endif 
+                            </h5>
+                      </div>
+                @else
+                      <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+                @endif
+
                             @if ($current < $to && $current < $from)
-                              Upcoming
-                            @elseif ($current == $to && $current < $from) 
-                              First Day
-                            @elseif ($current > $to && $current < $from) 
-                              Ongoing
-                            @elseif ($current > $to && $current == $from) 
-                              Last Business Day 
-                            @elseif ($current > $to && $current > $from)
-                              ended
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
+                                <div class="">
+                                      <h5 class="text-dark fw-normal pt-2 pb-0">
+                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                          @endif 
+                                      </h5>
+                                </div>
+                              @elseif ($current == $to && $current < $from) 
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">First Day</span> 
+                                <div class="">
+                                      <h5 class="text-dark fw-normal pt-2 pb-0">
+                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                          @endif 
+                                      </h5>
+                                </div>
+                              @elseif ($current > $to && $current < $from) 
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
+                                <div class="">
+                                      <h5 class="text-dark fw-normal pt-2 pb-0">
+                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                          @endif 
+                                      </h5>
+                                </div>
+                              @elseif ($current > $to && $current == $from) 
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Last Business Day</span>
+                                <div class="">
+                                      <h5 class="text-dark fw-normal pt-2 pb-0">
+                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                          @endif 
+                                      </h5>
+                                </div>
+                              @elseif ($current > $to && $current > $from)
+                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
                             @endif
-                      </span>
-                    <div class="">
-                          <h5 class="text-dark fw-normal pt-2 pb-0">
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
-                              @endif 
-                          </h5>
-                    </div>
+                      
+                    
                   <div class="h1">{{$event->eventname}}</div>
                   <div class="">
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
