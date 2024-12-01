@@ -3874,7 +3874,7 @@
                     
 
                 @php
-                  use Carbon\Carbon;
+                  use Carbon;
                   $startto = Carbon::parse ($event->startdate);
                   $endfrom = Carbon::parse ($event->enddate);
 
@@ -3885,10 +3885,10 @@
                   <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
                   <div class="">
                         <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                             @else
-                              {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                             @endif 
                         </h5>
                   </div>
@@ -3896,10 +3896,10 @@
                       <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span> 
                       <div class="">
                             <h5 class="text-dark fw-normal pt-2 pb-0">
-                                @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                  {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                 @else
-                                  {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                  {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                                 @endif 
                             </h5>
                       </div>
@@ -3911,10 +3911,10 @@
                                 <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
                                 <div class="">
                                       <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                           @else
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                                           @endif 
                                       </h5>
                                 </div>
@@ -3922,10 +3922,10 @@
                                 <span class="badge rounded-pill bg-primary fs-xs mt-4">First Day</span> 
                                 <div class="">
                                       <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                           @else
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                                           @endif 
                                       </h5>
                                 </div>
@@ -3933,10 +3933,10 @@
                                 <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
                                 <div class="">
                                       <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                           @else
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                                           @endif 
                                       </h5>
                                 </div>
@@ -3944,10 +3944,10 @@
                                 <span class="badge rounded-pill bg-primary fs-xs mt-4">Last Business Day</span>
                                 <div class="">
                                       <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                           @else
-                                            {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                                           @endif 
                                       </h5>
                                 </div>
@@ -4444,7 +4444,7 @@
                 <div class="col-lg-7 col-md-6 col-sm-8">
                   <div class="col-lg-6 col-md-6  px-0 py-3">
                   @php 
-                          $current = strtotime(Carbon\Carbon::now());
+                          $current = strtotime(Carbon::now());
                           $to = strtotime($event->startdate);
                           $from= strtotime($event->enddate);
                   @endphp
@@ -4603,7 +4603,7 @@
                             
                             @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
                             <span class="fs-xs fw-normal"> Visitors </span>@endif
-                            {{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate))}} days
+                            {{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate))}} days
                             <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
 
                             <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
@@ -4644,7 +4644,7 @@
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Business Days</h3>
-                      <p class="symbol text-dark">{{Carbon\Carbon::parse($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}}</p>
+                      <p class="symbol text-dark">{{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate)) + 1}}</p>
                       <p class="number"></p>
                       <p class="weight">Verified</p>
                     </div>
@@ -4980,20 +4980,20 @@
                             </div>
                             <!--<small>World's best demanding business</small><br>-->
                             <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
-                              @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                              @if(Carbon::parse ($eventoi->startdate)->format('M') != Carbon::parse ($eventoi->enddate)->format('M'))
+                                {{Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
                               @else
-                                {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                                {{Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
                               @endif 
 
                             </small>
                             <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue ?? ''))}}, <br> {{ucwords(trans($eventoi -> city ?? ''))}}</small>
 
                             <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
-                              @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                              @if(Carbon::parse ($eventoi->startdate)->format('M') != Carbon::parse ($eventoi->enddate)->format('M'))
+                                {{Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon::parse ($eventoi->enddate)->format('d M, y')}}
                               @else
-                                {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                                {{Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon::parse ($eventoi->enddate)->format('d M, y')}}
                               @endif 
                             </small><br>
                             <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city ?? ''))}}</small> 
@@ -5149,10 +5149,10 @@
                           <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
                             <h3 class="mb-0">{{$event->eventname}}</h3>
                               
-                              @if(Carbon\Carbon::parse ($event->startdate)->format('M') != Carbon\Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
                               @else
-                                {{Carbon\Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($event->enddate)->format('D, d M, Y')}}
+                                {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M, Y')}}
                               @endif 
                               
                               <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
@@ -5173,7 +5173,7 @@
                     <!-- <li><hr class="mt-md-2 mb-2"></li>
                     <li class="p1 fw-light">
                       {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
-                      {{Carbon\Carbon::parse ($event->startdate)->diffInDays(Carbon\Carbon::parse ($event->enddate)) + 1}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
+                      {{Carbon::parse ($event->startdate)->diffInDays(Carbon::parse ($event->enddate)) + 1}} days @if($productPrice != null)| Rs. {{$productPrice}} Onwards @endif
                     </li> -->
                   </ul>
                 </div> 
@@ -5261,8 +5261,8 @@
                   "@context": "https://schema.org",
                   "@type": "Event",
                   "name": "{{$event->eventname}}",
-                  "startDate": "{{Carbon\Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-                  "endDate": "{{Carbon\Carbon::parse ($event->enddate)->format('Y-m-d')}}",
+                  "startDate": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+                  "endDate": "{{Carbon::parse ($event->enddate)->format('Y-m-d')}}",
                   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
                   "eventStatus": "https://schema.org/EventScheduled",
 
@@ -5290,8 +5290,8 @@
                     "url": "{{route('event.product',['slug' => $event->slug])}}",
                     "price": "{{$productPrice}}",
                     "priceCurrency": "INR",
-                    "availability": "{{Carbon\Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-                    "validFrom": "{{Carbon\Carbon::parse ($event->startdate)->format('Y-m-d')}}"
+                    "availability": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+                    "validFrom": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}"
                   },
 
 
