@@ -26,6 +26,7 @@
                             <option value="expo">Exhibition</option>
                             <option value="festival">Festival</option>
                             <option value="network">Network</option>
+                            <option value="embassy">Embassy</option>
                             </select>
                             @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                         </div>
@@ -134,6 +135,7 @@
                         <div class="col-sm-1">
                             <label class="form-label" for="cf-name">Edition</label>
                             <input class="form-control" type="text" placeholder="Your Edition" wire:model.lazy="edition" required="">
+                            <a href="" clas="btn btn-primary btn-sm">Verify</a>
                             @error( 'edition' ){{ $message}}@enderror
                         </div>
 
