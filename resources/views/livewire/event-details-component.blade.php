@@ -3873,7 +3873,15 @@
                 <div class="col-md-9">
                     
 
-                @if ($current ->lt($to))
+                @php
+                  use Carbon/Carbon;
+                  $startto = Carbon\Carbon::parse ($event->startdate);
+                  $endfrom = Carbon\Carbon::parse ($event->enddate);
+
+                  $now= carbon::now();
+                @endphp
+
+                @if ($now ->lt($startto))
                   <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
                   <div class="">
                         <h5 class="text-dark fw-normal pt-2 pb-0">
@@ -3884,7 +3892,7 @@
                             @endif 
                         </h5>
                   </div>
-                @elseif($current->between($to, $from))
+                @elseif($now->between($startto, $endfrom))
                       <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span> 
                       <div class="">
                             <h5 class="text-dark fw-normal pt-2 pb-0">
