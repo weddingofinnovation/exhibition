@@ -4488,7 +4488,7 @@
                                   @endif 
                               </h5>
                             @elseif ($current > $to && $current > $from)
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">ended</span>
+                            <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
                             @endif
                       
                       
