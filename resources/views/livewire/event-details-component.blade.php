@@ -3875,8 +3875,8 @@
 
                 @php
                   use Carbon\Carbon;
-                  $startto = Carbon\Carbon::parse ($event->startdate);
-                  $endfrom = Carbon\Carbon::parse ($event->enddate);
+                  $startto = Carbon::parse ($event->startdate);
+                  $endfrom = Carbon::parse ($event->enddate);
 
                   $now= carbon::now();
                 @endphp
