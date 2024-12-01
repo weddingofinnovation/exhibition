@@ -3874,7 +3874,7 @@
                     
 
                 @php
-                  use Carbon/Carbon;
+                  use Carbon\Carbon;
                   $startto = Carbon\Carbon::parse ($event->startdate);
                   $endfrom = Carbon\Carbon::parse ($event->enddate);
 
