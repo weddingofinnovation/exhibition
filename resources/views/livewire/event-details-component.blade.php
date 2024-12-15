@@ -3904,56 +3904,10 @@
                             </h5>
                       </div>
                 @else
-                      Ended<span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+                      <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
                 @endif
 
-                            @if ($current < $to && $current < $from)
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
-                                <div class="">
-                                      <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                          @else
-                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                          @endif 
-                                      </h5>
-                                </div>
-                              @elseif ($current == $to && $current < $from) 
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">First Day</span> 
-                                <div class="">
-                                      <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                          @else
-                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                          @endif 
-                                      </h5>
-                                </div>
-                              @elseif ($current > $to && $current < $from) 
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
-                                <div class="">
-                                      <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                          @else
-                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                          @endif 
-                                      </h5>
-                                </div>
-                              @elseif ($current > $to && $current == $from) 
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">Last Business Day</span>
-                                <div class="">
-                                      <h5 class="text-dark fw-normal pt-2 pb-0">
-                                          @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                          @else
-                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                          @endif 
-                                      </h5>
-                                </div>
-                              @elseif ($current > $to && $current > $from)
-                                <span class="badge rounded-pill bg-primary fs-xs mt-4">2Ended</span>
-                            @endif
+                           
                       
                     
                   <div class="h1">{{$event->eventname}}</div>
