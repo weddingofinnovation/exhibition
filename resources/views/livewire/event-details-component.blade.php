@@ -4755,10 +4755,7 @@
                         @foreach ($exhibitor as $franchise) 
                           <div class=" ">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                              <div class="col  pr-0">
-                                <a class="card-img-top d-block overflow-hidden" href="#">
-                                <!-- <img src="{{url('exhibition/'.$franchise->image)}}"></a> -->
-                              </div>
+                              
                               <div class="col  pr-0">
                                   
                                       <div class="h4 fw-light mb-0">B21</div> 
