@@ -4757,7 +4757,7 @@
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                               <div class="col  pr-0">
                                 <a class="card-img-top d-block overflow-hidden" href="#">
-                                <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->brand_name, 24)}}"></a>
+                                <img src="{{url('exhibition/'.$franchise->image)}}"></a>
                               </div>
 
                               <div class="col-7  p-0">
