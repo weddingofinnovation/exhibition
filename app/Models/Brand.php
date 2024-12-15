@@ -10,7 +10,7 @@ class Brand extends Model
     use HasFactory;
 
     protected $table="brands";
-    protected $fillable = ['brand_logo'];
+    protected $fillable = ['brand_logo','brand_name'];
 
     public function user()
     {
