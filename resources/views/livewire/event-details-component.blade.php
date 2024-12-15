@@ -3895,7 +3895,7 @@
                 @elseif($now->between($startto, $endfrom))
                       <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span> 
                       <div class="">
-                            stend<h5 class="text-dark fw-normal pt-2 pb-0">
+                            <h5 class="text-dark fw-normal pt-2 pb-0">
                                 @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
                                   {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                 @else
@@ -4459,7 +4459,7 @@
                           <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
                           <div class="d-flex bg-transparent border-bottom"> 
                             @foreach($sponserbrand as $franchise)
-                                <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}"  alt="{{Str::limit($franchise->brand_name, 24)}}">
+                                <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}" >
                             @endforeach
                           </div>
                       @endif
