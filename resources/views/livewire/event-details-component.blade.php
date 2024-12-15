@@ -3884,7 +3884,7 @@
                 @if ($now ->lt($startto))
                   <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
                   <div class="">
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                        st<h5 class="text-dark fw-normal pt-2 pb-0">
                             @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
                               {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                             @else
@@ -3895,7 +3895,7 @@
                 @elseif($now->between($startto, $endfrom))
                       <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span> 
                       <div class="">
-                            <h5 class="text-dark fw-normal pt-2 pb-0">
+                            stend<h5 class="text-dark fw-normal pt-2 pb-0">
                                 @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
                                   {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                                 @else
@@ -3904,7 +3904,7 @@
                             </h5>
                       </div>
                 @else
-                      <span class="badge rounded-pill bg-primary fs-xs mt-4">1Ended</span>
+                      Ended<span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
                 @endif
 
                             @if ($current < $to && $current < $from)
