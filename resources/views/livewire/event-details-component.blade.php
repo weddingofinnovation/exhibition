@@ -3884,7 +3884,7 @@
                 @if ($now ->lt($startto))
                   <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
                   <div class="">
-                        st<h5 class="text-dark fw-normal pt-2 pb-0">
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
                             @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
                               {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
                             @else
