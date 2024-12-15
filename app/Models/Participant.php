@@ -9,6 +9,7 @@ class Participant extends Model
 {
     use HasFactory;
     protected $table = "participants";
+    protected $fillable = ['brand_logo','brand_name','slug', 'brand_id','event_id'];
     
     // public function Sponser()
     // {

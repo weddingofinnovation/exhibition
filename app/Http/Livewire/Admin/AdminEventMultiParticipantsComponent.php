@@ -148,13 +148,13 @@ class AdminEventMultiParticipantsComponent extends Component
             $bran = Event::find($this->event_id);
             $brandname = trim($tre);
             $slug = Str::slug($brandname,'-');
-            $brand = Brand::firstOrCreate(['brand_name' => $brandname], ['slug' => $slug, 'status' => $this->status]);
+            $brand = Brand::firstOrCreate(['brand_name' => $brandname], ['slug' => $slug, 'status' => $this->status, 'admstatus' => $this->admstatus]);
 
             //$brand->slug = str::slug($tre,'-');
 
             $brand = new Participant();
-            $brand->event_id = $bran->id;
             $brand->brand_id = $brand->id;
+            $brand->event_id = $bran->id;
             $brand->status = $this->status;
             $brand->admstatus = $this->admstatus;
             $brand->user_id = Auth::user()->id;
