@@ -334,6 +334,8 @@
                                 </div>
                             @endforeach
 
+
+                            
                             <div class="small">Participants</div>
                                 @foreach ($participants as $participant) 
                                     <div class="container">

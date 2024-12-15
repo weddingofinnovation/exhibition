@@ -145,12 +145,18 @@ class AdminEventMultiParticipantsComponent extends Component
 
         foreach($ret as $tre)
         {
-            $brand = new Brand();
             $bran = Event::find($this->event_id);
+            $brandname = trim($tre);
+            
+            $brand = Brand::firstOrCreate(['name' => $brandname]);
+
+            //$brand->slug = str::slug($tre,'-');
+
+            $brand = new Participant();
             $brand->event_id = $bran->id;
-            $brand->brand_name = trim($tre);
-            $brand->slug = str::slug($tre,'-');
+            $brand->brand_id = $brand->id;
             $brand->status = $this->status;
+            $brand->admstatus = $this->admstatus;
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
