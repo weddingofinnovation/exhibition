@@ -54,6 +54,8 @@ class AdminDetailComponent extends Component
        $this->slug = $slug;
     }
 
+    protected $listeners = ['createcomment' => 'referencereview'];
+
     public function catUpdate($id, $category_id)
     {
         $updateDetials = Event::where('slug', $this->slug)->first();

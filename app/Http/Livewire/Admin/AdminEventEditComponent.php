@@ -368,7 +368,7 @@ class AdminEventEditComponent extends Component
         $statementIoD->shtdesc = trim($start);
         $statementIoD->save();
 
-         
+         $this->emit('createcomment' ,('3'));
 
       //    $myytime = Carbon::today()->format('D,d M Y');
       //    $findstartdate = Carbon::($statementID->startdate)->format('D,d M Y');

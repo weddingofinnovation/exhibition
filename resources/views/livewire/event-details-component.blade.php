@@ -4595,42 +4595,52 @@
                       <h3 class="name">Edition</h3>
                       <p class="symbol text-dark">{{$event->edition}}</p>
                       <p class="number"> <i class="bi bi-add"></i> </p>
-                      <p class="weight">Verified</p>
+                      @if($event->latestupdat == 'verfied')
+                        <p class="weight">Verified</p>
+                      @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Visitor</h3>
-                      <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1). 'k'}}  <span class="fw-normal fs-sm">K</span></p>
+                      <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1)}}  <span class="fw-normal fs-sm">K</span></p>
                       <p class="number"></p>
-                      <p class="weight">Verified</p>
+                      @if($event->latestupdat == 'verfied')
+                        <p class="weight">Verified</p>
+                      @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Exhibitor</h3>
                       <p class="symbol text-dark">{{$event->exhibitors}}</p>
                       <p class="number"></p>
-                      <p class="weight">Verified</p>
+                      @if($event->latestupdat == 'verfied')
+                        <p class="weight">Verified</p>
+                      @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Rating</h3>
                       <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
-                      <p class="number">83</p>
-                      <p class="weight">Verified</p>
+                      <p class="number"><i class="bi bi-info-circle"></i></p>
+                      @if($event->latestupdat == 'verfied')
+                        <p class="weight">Verified</p>
+                      @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Business Days</h3>
                       <p class="symbol text-dark">{{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate)) + 1}}</p>
                       <p class="number"></p>
-                      <p class="weight">Verified</p>
+                      @if($event->latestupdat == 'verfied')
+                        <p class="weight">Verified</p>
+                      @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Contract Form</h3>
+                      <h3 class="name">Support</h3>
                       <p class="symbol">Bi</p>
-                      <p class="number">83</p>
-                      <p class="weight">Space</p>
+                      <p class="number"><i class="bi bi-info"></i></p>
+                      <p class="weight">Insights</p>
                     </div>
 
                    
@@ -4922,9 +4932,13 @@
 
                           <div class="card-body p-1">
                             <div class="d-flex justify-content-between">
-                                <div class="product-price"><small>{{$eventoi -> edition}}  
+                                <div class="product-price"><small>{{$eventoi -> edition}}
+
+                                @if($event->latestupdat == 'verfied')
                                   <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
-                                      <span class="fs-xs">
+                                @endif
+
+                                  <span class="fs-xs">
                                         @php
                                             $to = strtotime($eventoi->startdate);
                                             $from= strtotime($eventoi->enddate);
@@ -4940,7 +4954,7 @@
                                           @elseif ($current > $to && $current == $from) 
                                             Last 
                                           @elseif ($current > $to && $current > $from)
-                                            8Ended
+                                            Ended
                                         @endif
                                       </span>
                                     <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>

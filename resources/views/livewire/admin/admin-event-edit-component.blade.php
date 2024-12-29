@@ -64,7 +64,7 @@
                             <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
                                 <option selected>Choose</option>
                                 @foreach($venueoption as $venueo)
-                                 <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}} {{$venueo->venue}}</span></option>
+                                 <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}} {{$venueo}}</span></option>
                                 @endforeach
                             </select>
                                 @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
@@ -249,21 +249,21 @@
                <small class="fw-bold">{{$evento->eventname}} </small>
               
                 <form wire:submit.prevent = "doubleing">  
-                    <div class="input-group my-2"> 
+                    <div class="input-group my-1"> 
                         <input type="text" wire:model.lazy = "eventkhaname" class="form-control" placeholder="Add Relative Event">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
 
                 <form wire:submit.prevent = "locationdoubleing">  
-                    <div class="input-group my-2"> 
+                    <div class="input-group my-1"> 
                         <input type="text" wire:model.lazy = "eventkhaname" class="form-control" placeholder="Different location">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
               
                 <form wire:submit.prevent = "editReference">
-                    <div class="input-group my-2"> 
+                    <div class="input-group my-1"> 
                         <input type="text" wire:model.lazy = "reference" class="form-control" placeholder="add reference">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -275,18 +275,13 @@
                 {{$evento->reference}}{{!empty($evento -> reference) ? ($evento -> reference) : 'NO venue'}} -->
                     @foreach($relativeevent as $evento)
                         <div class=" my-3"> 
-                            <!-- ahmedabad | united world of design |17
-                            , kolkata, nasscom Warehouse 22
-                            guwahati, STPI guwahati 24
-                            chennai, IITM research park 280may
-                            kochi KSUM kerala tech Innovation Zone -->30 may
-
+                        
                             
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                
                                 <div class="col  pr-0">
                                     @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div> 
+                                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
                                     <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
                                     @else
                                     <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div> 
@@ -322,9 +317,10 @@
                                     @if(is_null($evento->image))
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">Add</a>
                                     @else
-                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">
-                                    <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}"></a>
+                                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">
+                                        <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}"></a>
                                     @endif
+                                    <a href="" class="" >Del</a>
                                 </div>
                             </div>
                         </div>
