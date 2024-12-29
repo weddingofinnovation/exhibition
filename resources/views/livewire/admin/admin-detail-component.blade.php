@@ -123,7 +123,8 @@
         
         <div class="text-muted fs-xs text-start"> Edition: {{$evento->edition}} </div>
         <div class="text-muted fs-xs text-start"> Views: {{$evento->view_count}} </div>
-        <div class="text-muted fs-xs text-start"> latestupdat : {{$evento->latestupdat}} </div>
+
+        <div class="text-muted fs-xs text-start">latestupdat : {{$evento->latestupdat}}</div>
       </div>
 
       <div class="col-4 p-0">
@@ -137,7 +138,7 @@
 
           <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Postpone</a>
           <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'1')" class="btn btn-primary btn-sm">DePostpone</a>
-
+          <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>
           {{-- @if(is_null($evento->latestupdat))
               <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'active')" class="btn btn-primary btn-sm">Postpone</a>
             @elseif($evento->latestupdat == 'cancel')
