@@ -141,7 +141,7 @@
 
           @if($evento->latestupdat == 'unverfied')
              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>
-          @else($evento->latestupdat == 'verfied')
+          @elseif($evento->latestupdat == 'verfied')
              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'unverfied')" class="btn btn-primary btn-sm">un-Verified</a>
           @else
              <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>

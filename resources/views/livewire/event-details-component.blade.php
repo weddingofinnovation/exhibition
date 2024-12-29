@@ -4600,15 +4600,20 @@
                       @endif
                     </div>
 
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Visitor</h3>
-                      <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1)}}  <span class="fw-normal fs-sm">K</span></p>
-                      <p class="number"></p>
-                      @if($event->latestupdat == 'verfied')
-                        <p class="weight">Verified</p>
-                      @endif
-                    </div>
+                    @if($event->auidence == 0)
+                    @else
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Visitor</h3>
+                        <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1)}}  <span class="fw-normal fs-sm">K</span></p>
+                        <p class="number"></p>
+                        @if($event->latestupdat == 'verfied')
+                          <p class="weight">Verified</p>
+                        @endif
+                      </div>
+                    @endif
 
+                    @if($event->exhibitors == 0)
+                    @else
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Exhibitor</h3>
                       <p class="symbol text-dark">{{$event->exhibitors}}</p>
