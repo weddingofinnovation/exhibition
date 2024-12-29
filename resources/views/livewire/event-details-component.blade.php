@@ -4621,10 +4621,11 @@
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Rating</h3>
                       <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
-                      <p class="number"><i class="bi bi-info-circle"></i></p>
-                      @if($event->latestupdat == 'verfied')
-                        <p class="weight">Verified</p>
-                      @endif
+                      <p class="number"><a href="{{route('business.membership')}}"><i class="bi bi-info-circle"></i></a></p>
+
+                        @if($event->latestupdat == 'verfied')
+                          <p class="weight">Verified</p>
+                        @endif
                     </div>
 
                     <div class="element-item bg-light" data-category="post-transition">
@@ -4639,7 +4640,7 @@
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Support</h3>
                       <p class="symbol">Bi</p>
-                      <p class="number"><i class="bi bi-info"></i></p>
+                      <p class="number"><i class="bi bi-info-circle"></i></p>
                       <p class="weight">Insights</p>
                     </div>
 

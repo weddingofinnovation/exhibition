@@ -138,7 +138,14 @@
 
           <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-primary btn-sm">Postpone</a>
           <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'1')" class="btn btn-primary btn-sm">DePostpone</a>
-          <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>
+
+          @if($evento->latestupdat == 'unverfied')
+             <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>
+          @else($evento->latestupdat == 'verfied')
+             <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'unverfied')" class="btn btn-primary btn-sm">un-Verified</a>
+          @else
+             <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm">Verfied</a>
+          @endif
           {{-- @if(is_null($evento->latestupdat))
               <a href="#" wire:click.prevent="updateEventPostpone({{$evento->id}},'active')" class="btn btn-primary btn-sm">Postpone</a>
             @elseif($evento->latestupdat == 'cancel')
