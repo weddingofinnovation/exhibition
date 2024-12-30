@@ -2488,7 +2488,7 @@
           </form>
 
           @php
-            $findoorganizer = DB::table('brands')->where('dtype','organiser')->orderBy('created_at', 'desc')->get();
+            $findoorganizer = DB::table('brands')->orderBy('created_at', 'desc')->get();
           @endphp
       
           @foreach($findoorganizer as $franchise )

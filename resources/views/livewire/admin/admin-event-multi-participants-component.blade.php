@@ -481,8 +481,28 @@
                        $getReference = DB::table('brands')->where('dtype','!=', 'organiser')->get();
                     @endphp
 
+                    <style>
+                        .brand-box {
+                            background-color: #4CAF50;
+                            border-radius: 15px;
+                            padding: 20px 40px;
+                            box-shadow: 0 4px 6px rgba(0,0,0,0,0.1);
+                            text-align: center;
+                            color: #fff;
+                            transition: transform 0.3s, box-shadow 0.3s;
+                        }
+
+                        .brand-box:hover{
+                            transform: scale(1.05);
+                            box-shadow: 0 6px 12px rgba(0,0,0,0,0.2);
+                        }
+                    </style>
+
                     @foreach($getReference as $organiser)
-                       <a href=""> {{$organiser -> brand_name }}</a>
+                    <div class="brand-box">
+                       <p class="fs-4 fw-bold">{{$organiser -> brand_name }}</p>
+                    </div>   
+                    <a href=""> {{$organiser -> brand_name }}</a>
                     @endforeach
 
                 @endif
