@@ -885,7 +885,7 @@ public $dtype;
 
         $brand->brand_name = Str::lower(trim($tre));
         $brand->slug = str::slug($tre,'-');
-        $brand->dtype = 'organiser'; 
+        $brand->dtype = $this->dtype; 
         $brand->save();
       }
     }
