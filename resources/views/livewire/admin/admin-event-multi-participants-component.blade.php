@@ -483,7 +483,7 @@
 
                     <style>
                         .brand-box {
-                            background-color: #4CAF50;
+                            background-color: #fff;
                             border-radius: 15px;
                             padding: 20px 40px;
                             box-shadow: 0 4px 6px rgba(0,0,0,0,0.1);
@@ -498,12 +498,18 @@
                         }
                     </style>
 
-                    @foreach($getReference as $organiser)
-                    <div class="brand-box">
-                       <p class="fs-4 fw-bold">{{$organiser -> brand_name }}</p>
-                    </div>   
-                    <a href=""> {{$organiser -> brand_name }}</a>
-                    @endforeach
+                    
+                    <div class="container">
+                        <div class="row justify-content-center">
+                        @foreach($getReference as $organiser)
+                            <div class="col-md-3 m-2">
+                                <div class="brand-box">
+                                <p class="fs-4 fw-bold">{{$organiser -> brand_name }}</p>
+                                </div>  
+                            </div>
+                        @endforeach
+                        </div>
+                    </div>
 
                 @endif
 
