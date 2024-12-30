@@ -4614,14 +4614,15 @@
 
                     @if($event->exhibitors == 0)
                     @else
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Exhibitor</h3>
-                      <p class="symbol text-dark">{{$event->exhibitors}}</p>
-                      <p class="number"></p>
-                      @if($event->latestupdat == 'verfied')
-                        <p class="weight">Verified</p>
-                      @endif
-                    </div>
+                      <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Exhibitor</h3>
+                        <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                        <p class="number"></p>
+                        @if($event->latestupdat == 'verfied')
+                          <p class="weight">Verified</p>
+                        @endif
+                      </div>
+                    @endif
 
                     <div class="element-item bg-light" data-category="post-transition">
                       <h3 class="name">Rating</h3>

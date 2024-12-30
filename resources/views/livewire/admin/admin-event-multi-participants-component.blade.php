@@ -411,12 +411,14 @@
                     
                 @endif
 
+
                 @if($formm == 'addPavillion')
                     <form wire:submit.prevent="updatePavillion">
                         <input type="text"  class="form-control" placeholder="pavillion" wire:model.lazy="pavillion_name">
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </form>
                    
+                    <h3>Listed association, govt. association....</h3>
                     @foreach($pavillion as $pav)
                         @php
                             $getReferenceBrands = DB::table('participants')->where('event_id' , $event_id)->where('pavillion_id' , $pav->id)->get();
@@ -472,6 +474,17 @@
                             </div> --}}
                         </div>
                     @endforeach
+
+                    <h3>selected association, govt. association....</h3>
+
+                    @php
+                       $getReference = DB::table('brands')->where('dtype','!=', 'organiser')->get();
+                    @endphp
+
+                    @foreach($getReference as $organiser)
+                       <a href=""> {{$organiser -> brand_name }}</a>
+                    @endforeach
+
                 @endif
 
                 @if($formm == 'addSponsership')

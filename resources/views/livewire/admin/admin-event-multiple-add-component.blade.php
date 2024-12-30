@@ -276,7 +276,7 @@
             @endif
 
             @if($formm == 'organiser' )
-                <form wire:submit.prevent="updateEvent">
+                <form wire:submit.prevent = "updateEvent">
                     
                         <div class="row">
                             <div class="col-sm-4">

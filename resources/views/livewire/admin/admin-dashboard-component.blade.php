@@ -2464,6 +2464,7 @@
           <!-- Multi-organiser -->
           <form wire:submit.prevent="mUltiorganiser">
             <hr class="my-2">
+              Add organiser, Govt bodies
               <div class="row">
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Organizer</label>
@@ -2471,14 +2472,14 @@
                       @error( 'organisation' ){{ $message}}@enderror
                   </div>
 
-                  
-
                   <div class="col-sm-3">
                             <label class="form-label" for="seniority">Type</label>
                             <select class="form-control" type="text"   wire:model.lazy="dtype"  placeholder="Provide short title of your request">
-                                <option >Choose</option>
+                                <option> Choose</option>
                                 <option value="organiser">organiser</option>
                                 <option value="magazine">Magazine</option>
+                                <option value="association">Association</option>
+                                <option value="govtbodies">Govt. Bodies</option>
                             </select>
                             @error('dtype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                   </div>
