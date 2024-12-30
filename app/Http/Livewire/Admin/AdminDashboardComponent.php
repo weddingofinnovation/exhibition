@@ -887,6 +887,7 @@ public $dtype;
         $brand->slug = str::slug($tre,'-');
         $brand->dtype = $this->dtype; 
         $brand->save();
+        $this->reset();
       }
     }
       

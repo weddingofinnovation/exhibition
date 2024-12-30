@@ -2504,7 +2504,7 @@
                 <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
                     {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
                 <div class="text-muted fs-sm text-start">
-                    
+                    {{$franchise->dtype}}
                 </div>  
                 <div class="text-muted fs-sm text-start"></div>
                 </div>
