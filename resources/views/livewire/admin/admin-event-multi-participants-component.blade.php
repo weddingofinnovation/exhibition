@@ -499,18 +499,17 @@
                     </style>
 
                     
-                    <div class="container">
+                    <div class = "container">
                         <div class="row justify-content-center">
-                        @foreach($getReference as $organiser)
-                            <div class="col-md-3 m-2">
-                                <div class="brand-box">
-                                <p class="fs-4 fw-bold">{{$organiser -> brand_name }}</p>
-                                </div>  
-                            </div>
-                        @endforeach
+                            @foreach($getReference as $organiser)
+                                <div class="col-md-3 m-2">
+                                    <div class="brand-box">
+                                    <p class="fs-4 fw-bold">{{$organiser -> brand_name }}</p>
+                                    </div>  
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-
                 @endif
 
                 @if($formm == 'addSponsership')
@@ -632,22 +631,21 @@
                                 <div class="form-text">{{$message}}</div>
                                 @enderror
                             </div>
-                        
                         </div>
-                    
-                
 
                         <div class="row">
                             <div class="col-sm-4 mb-3">
                                 <label class="form-label" for="unp-standard-price">Start Date</label>
                                 <div class="input-group">
-                                <input class="form-control" type="date" wire:model.lazy="startdate" placeholder="DD-MM-YYYY">
+                                  <input class="form-control" type="date" wire:model.lazy="startdate" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div class="form-text">Average marketplace price for this category is $15.</div>
-                                @error('startdate')
-                                <div class="form-text">{{$message}}</div>
-                                @enderror
+
+                                    @error('startdate')
+                                    <div class="form-text">{{$message}}</div>
+                                    @enderror
                             </div>
+
                             <div class="col-sm-4 mb-3">
                                 <label class="form-label" for="unp-extended-price">Last Date</label>
                                 <div class="input-group">
@@ -658,8 +656,8 @@
                                 <div class="form-text">{{$message}}</div>
                                 @enderror
                             </div>
+
                             <div class="col-sm-4 mb-3">
-        
                                 <label class="form-label" for="unp-standard-price">Number of stall</label>
                                 <div class="input-group"><span class="input-group-text"><i class="ci-dollar"></i></span>
                                 <input class="form-control" type="number" wire:model.lazy="nostall">

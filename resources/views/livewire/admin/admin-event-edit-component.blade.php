@@ -64,7 +64,7 @@
                             <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
                                 <option selected>Choose</option>
                                 @foreach($venueoption as $venueo)
-                                 <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}} {{$venueo}}</span></option>
+                                 <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}}</span></option>
                                 @endforeach
                             </select>
                                 @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
