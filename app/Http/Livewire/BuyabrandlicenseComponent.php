@@ -43,7 +43,7 @@ class BuyabrandlicenseComponent extends Component
         // ];
         
         $visitorsticker = PDF::loadView('livewire.document.expand-component', ['wantdata' => $wantdata]);
-      return $visitorsticker -> download($findevent.'the-exhibition-network.pdf');
+      return $visitorsticker -> download($findevent.' the-exhibition-network.pdf');
 
     }
 

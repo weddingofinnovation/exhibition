@@ -11,6 +11,7 @@
     <body>
             <div class="container">
                 <div class="d-flex  justify-content-center">
+                    testo
                     {{QrCode::size(255)->generate('thanks for it!!')}}
                     <h1>{{$wantdata->company}}</h1>
                     <h1>{{$wantdata->name}}</h1>
