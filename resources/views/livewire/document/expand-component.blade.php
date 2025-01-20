@@ -24,5 +24,21 @@
                     {{$wantdata}}
                 </div>
             </div>
+
+            <div class="container">
+                <div class="d-flex  justify-content-center">
+                    {{QrCode::size(255)->generate('thanks for it!!')}}
+                    
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex  justify-content-center">
+                    
+                    <h1>{{$wantdata->company}}</h1>
+                    <h1>{{$wantdata->name}}</h1>
+                    <h1>{{$wantdata->designation}}</h1>
+                   
+                </div>
+            </div>
     </body>
 </html>
