@@ -29,7 +29,7 @@ class BuyabrandlicenseComponent extends Component
     
     public function genratepdf($visitorid)
     {
-        $wantdata = Lead::where('id', $visitorid)->get();
+        $wantdata = Lead::where('id', $visitorid)->first();
         $findevent =  Event::where('id', $wantdata->event_id)->value('eventname');
 
         // $wantdata->name = $this->name;
