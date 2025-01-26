@@ -104,7 +104,7 @@
 
                                 <div class="col-3  p-0">
                                   @if(is_null($franchise->image))
-                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'addess' ])}}">
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
                                         Add</a>
                                   @else
                                     <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
@@ -2600,7 +2600,8 @@
                       <ul class="dropdown-menu" width="auto">
                         <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delvenue({{$franchise->id}})">Delete</a></li>
                         
-                        <li><a class="dropdown-item" href="{{route('admin.editcategories',['event_id' => $franchise->id])}}">edit</a></li>
+                        <li><a class="dropdown-item" 
+                        href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'address' , 'location_id' => $franchise->id,])}}">edit</a></li>
 
                         @if($franchise->status == '0')
                           <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}} , '1')">status</a></li>
