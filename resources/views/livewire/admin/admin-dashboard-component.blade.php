@@ -104,7 +104,7 @@
 
                                 <div class="col-3  p-0">
                                   @if(is_null($franchise->image))
-                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'addess' ])}}">
                                         Add</a>
                                   @else
                                     <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
@@ -1904,7 +1904,7 @@
                    $findcountevent = DB::table('dencos')->where('expo_id', $resultAdd->id)->count()
                  @endphp
                  
-                <a class="badge bg-success m-0 border-1 text-right border-dark text-dark mr-1" href="#" wire:click.prevent="eventodelete({{$resultAdd->id}})">
+                <a class="badge bg-success m-0 border-1 text-right border-dark text-dark mr-1" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="eventodelete({{$resultAdd->id}})">
                 {{$resultAdd -> tag}} {{$findcountevent}}<i class="bi bi-x me-2"></i></a>
               @endforeach
         </div>
@@ -2290,7 +2290,7 @@
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">callback</a></li>
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'Not')">Not</a></li>
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
                       </ul>
 
                 </div>
@@ -2422,7 +2422,7 @@
 
                                   <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                                     <ul class="dropdown-menu" width="auto">
-                                      <li><a class="dropdown-item" href="#" wire:click.prevent="delorganiser({{$franchise->id}})">Delete</a></li>
+                                      <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delorganiser({{$franchise->id}})">Delete</a></li>
                                       <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">contact</a></li>
                                     </ul>
                                   </span>
@@ -2514,7 +2514,7 @@
 
                     <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                       <ul class="dropdown-menu" width="auto">
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="delorganiser({{$franchise->id}})">Delete</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delorganiser({{$franchise->id}})">Delete</a></li>
                         <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">contact</a></li>
                       </ul>
                     </span>
@@ -2532,19 +2532,24 @@
             <hr class="my-2">
               <div class="row">
                   <div class="col-sm-4">
+                      <label class="form-label" for="cf-name">Address</label>
+                      <input class="form-control" type="text" placeholder="address" wire:model.lazy="address">
+                      @error( 'organizer' ){{ $message}}@enderror
+                  </div>
+                  <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Venue</label>
-                      <input class="form-control" type="text" placeholder="Venue"   wire:model.lazy="venue" >
+                      <input class="form-control" type="text" placeholder="Venue" wire:model.lazy="venue" >
                       @error( 'organizer' ){{ $message}}@enderror
                   </div>
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">city</label>
-                      <input class="form-control" type="text" placeholder="city"   wire:model.lazy="city" >
+                      <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" >
                       @error( 'city' ){{ $message}}@enderror
                   </div>
 
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Country</label>
-                      <input class="form-control" type="text" placeholder="Country"   wire:model.lazy="country" >
+                      <input class="form-control" type="text" placeholder="Country" wire:model.lazy="country" >
                       @error( 'country' ){{ $message}}@enderror
                   </div>
               </div>
@@ -2593,9 +2598,9 @@
 
                     <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
                       <ul class="dropdown-menu" width="auto">
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">Delete</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delvenue({{$franchise->id}})">Delete</a></li>
                         
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="delvenue({{$franchise->id}})">edit</a></li>
+                        <li><a class="dropdown-item" href="{{route('admin.editcategories',['event_id' => $franchise->id])}}">edit</a></li>
 
                         @if($franchise->status == '0')
                           <li><a class="dropdown-item" href="#" wire:click.prevent="updatelocationStatus({{$franchise->id}} , '1')">status</a></li>

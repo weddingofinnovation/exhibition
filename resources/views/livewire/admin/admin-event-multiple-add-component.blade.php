@@ -3,9 +3,7 @@
 @section('page_list',' addevent')
 @section('page_name',' Add event')
 
-    <main> 
-
-    
+    <main>
         <div class="container mb-5 pb-5">
             <div class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
                 <div class="text-sm-end">
@@ -134,54 +132,54 @@
 
 
             @if($formm == 'image')
-            <!-- Additional styling -->
-            <style>
-                .delete-btn {
-                    top: 5px;
-                    right: 5px;
-                    font-size: 1rem;
-                    padding: 2px 6px;
-                }
-
-                @media (max-width: 576px) {
+                <!-- Additional styling -->
+                <style>
                     .delete-btn {
-                        font-size: 0.8rem; /* Smaller X icon on mobile */
+                        top: 5px;
+                        right: 5px;
+                        font-size: 1rem;
+                        padding: 2px 6px;
                     }
-                    img {
-                        width: 100%; /* Ensure the image takes full width of the container */
-                        height: auto; /* Maintain aspect ratio */
-                    }
-                }
-                /* Notification dot style */
-                .used-notification {
-                    width: 15px;
-                    height: 15px;
-                    background-color: green;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 10px;
-                    right: 10px;
-                }
 
-                 /* Red delete notification dot */
-                .delete-notification {
-                    width: 15px;
-                    height: 15px;
-                    background-color: red;
-                    border-radius: 50%;
-                    position: absolute;
-                    top: 10px;
-                    left: 10px;
-                    cursor: pointer;
-                }
-
-                @media (max-width: 576px) {
-                    .used-notification, .delete-notification {
-                        width: 10px;
-                        height: 10px; /* Smaller dot on mobile */
+                    @media (max-width: 576px) {
+                        .delete-btn {
+                            font-size: 0.8rem; /* Smaller X icon on mobile */
+                        }
+                        img {
+                            width: 100%; /* Ensure the image takes full width of the container */
+                            height: auto; /* Maintain aspect ratio */
+                        }
                     }
-                }
-            </style>
+                    /* Notification dot style */
+                    .used-notification {
+                        width: 15px;
+                        height: 15px;
+                        background-color: green;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+
+                    /* Red delete notification dot */
+                    .delete-notification {
+                        width: 15px;
+                        height: 15px;
+                        background-color: red;
+                        border-radius: 50%;
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        cursor: pointer;
+                    }
+
+                    @media (max-width: 576px) {
+                        .used-notification, .delete-notification {
+                            width: 10px;
+                            height: 10px; /* Smaller dot on mobile */
+                        }
+                    }
+                </style>
                 
                 <form  wire:submit.prevent="dateImage">
                     <div class="col-sm-2">
@@ -226,8 +224,6 @@
                     </div>
                     @endif
                 </div>
-
-                
             @endif
 
             @if($formm == 'tag')
@@ -275,7 +271,7 @@
                 </form>
             @endif
 
-            @if($formm == 'organiser' )
+            @if($formm == 'organiser')
                 <form wire:submit.prevent = "updateEvent">
                     
                         <div class="row">
@@ -360,30 +356,43 @@
                 </form>
             @endif
 
+            @if($formm == 'address')
+            <form wire:submit.prevent="updateLocation">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Address</label>
+                        <input class="form-control" type="text" placeholder="address" wire:model.lazy="address" required="">
+                        @error( 'address' ){{ $message}}@enderror
+                    </div>
+                </div>
+
+                <button class="btn btn-primary mt-2" type="submit">Submit</button>
+            </form>
+            @endif
         </div>
 
-    <div class="handheld-toolbar">
-      <div class="d-table table-layout-fixed w-100">
-        <a class="d-table-cell handheld-toolbar-item" href="{{route('adminevent.detail',['slug' => $evento->slug])}}">
-          <span class="handheld-toolbar-icon">
-          <i class="ci-filter-alt"></i></span>
-          <span class="handheld-toolbar-label">Admin</span>
-        </a>
-       
-
-        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' =>'edit'])}}">
-          <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
-        <span class="handheld-toolbar-label">Edit</span></a>
+        <div class="handheld-toolbar">
+        <div class="d-table table-layout-fixed w-100">
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('adminevent.detail',['slug' => $evento->slug])}}">
+            <span class="handheld-toolbar-icon">
+            <i class="ci-filter-alt"></i></span>
+            <span class="handheld-toolbar-label">Admin</span>
+            </a>
         
-        <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.editcategories',['event_id' => $evento->id])}}">
-          <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-          <span class="handheld-toolbar-label">category</span>
-        </a>
 
-        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-          <span class="handheld-toolbar-label">Menu</span>
-        </a>
-      </div>
-    </div>
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' =>'edit'])}}">
+            <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
+            <span class="handheld-toolbar-label">Edit</span></a>
+            
+            <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.editcategories',['event_id' => $evento->id])}}">
+            <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+            <span class="handheld-toolbar-label">category</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+            <span class="handheld-toolbar-label">Menu</span>
+            </a>
+        </div>
+        </div>
     </main>

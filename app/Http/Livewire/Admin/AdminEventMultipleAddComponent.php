@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\Expo;
 use App\Models\Hashtag;
+use App\Models\Location;
 use App\Models\Photo;
 use App\Models\Sector;
 use Carbon\Carbon;
@@ -52,6 +53,8 @@ class AdminEventMultipleAddComponent extends Component
     public $status;
     public $admstatus;
     public $selectedImage;
+    public $location_id;
+    public $location;
 
     public function generateSlug()
     {
@@ -60,8 +63,10 @@ class AdminEventMultipleAddComponent extends Component
 
     Use WithFileUploads;
 
-    public function mount($event_id, $formm )
+    public function mount($event_id, $formm, $location_id = null )
     {
+        $this->location = $location_id;
+
         $fattribute = Event::find($event_id);
         $this->event_id = $fattribute->id;
         $this->eventname = $fattribute->eventname;
@@ -91,9 +96,15 @@ class AdminEventMultipleAddComponent extends Component
         $this->formm = $formm;
         $this->status = '1';
         $this->admstatus = '0';
-        
     }
 
+    public function updateLocation()
+    {
+        $fattribute = Location::find($this->location);
+        $fattribute->address = Str::lower(trim($this->address));
+        $fattribute->save();
+        session()->flash('message','Event has been updated succesfully!!');
+    }
 
     public function updateEvent()
     {
@@ -113,8 +124,6 @@ class AdminEventMultipleAddComponent extends Component
         $fattribute->exhibitors =  $this->exhibitors;
         $fattribute->auidence =  $this->auidence;
       
-        
-
         $fattribute->email =  $this->email;
         $fattribute->phone =  $this->phone;
 

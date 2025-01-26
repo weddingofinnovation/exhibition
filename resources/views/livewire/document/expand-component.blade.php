@@ -12,16 +12,7 @@
             <div class="container">
                 <div class="d-flex  justify-content-center">
                     {{QrCode::size(255)->generate('thanks for it!!')}}
-                    <h1>{{$wantdata->company}}</h1>
-                    <h1>{{$wantdata->name}}</h1>
-                    <h1>{{$wantdata->designation}}</h1>
-                    <!-- code meld
-                    lynx
-                    pixel script er
-                    cipher
-                    forge -->
-
-                    {{$wantdata}}
+                    
                 </div>
             </div>
 
@@ -31,6 +22,7 @@
                     
                 </div>
             </div>
+
             <div class="container">
                 <div class="d-flex  justify-content-center">
                     
@@ -42,3 +34,19 @@
             </div>
     </body>
 </html>
+
+
+(ISME) IME - International Mining, Equipment & Minerals Exhibition  30 oct - 02 nov
+bare: 10,000 10500 
+11000
+
+Delhi Machine Tool expo 08-11 may 2025 Pragati maidan 
+
+automation expo chennai trade center  6-8 mar 13-15 mar 2025 mx business network pvt ltd
+steel construction expo
+automotive testing expo  apr 8-10 april 2025
+
+fastner fair india, 8-9-10 may bombay exhibition centre  (rx global)
+india fastener show 11-12-13 july 2025 chenni trade center (future market events)
+
+kolkata fashion week

@@ -805,7 +805,7 @@ public $dtype;
     public function venue()
     {
       $upted = new Location();
-
+      $upted->address = Str::lower(trim($this->address)) ;
       $upted->venue = Str::lower(trim($this->venue)) ;
 
       $upted->slug = Str::slug ($this->venue,'-');

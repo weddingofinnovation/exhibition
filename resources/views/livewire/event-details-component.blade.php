@@ -4398,63 +4398,59 @@
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-8">
                   <div class="col-lg-6 col-md-6  px-0 py-3">
-                  @php 
-                          $current = strtotime(Carbon::now());
-                          $to = strtotime($event->startdate);
-                          $from= strtotime($event->enddate);
-                  @endphp
-
-                      
-                            @if ($current < $to && $current < $from)
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">Upcoming</span>
-                            <h5 class="text-dark fw-normal pt-2 pb-0">
-                                  @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </h5>
-                            @elseif ($current == $to && $current < $from) 
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">First Day</span>
-                            <h5 class="text-dark fw-normal pt-2 pb-0">
-                                  @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </h5>
-                            @elseif ($current > $to && $current < $from) 
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">Ongoing</span>
-                            <h5 class="text-dark fw-normal pt-2 pb-0">
-                                  @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </h5>
-                            @elseif ($current > $to && $current == $from) 
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">Last Business Day</span>
-                              <h5 class="text-dark fw-normal pt-2 pb-0">
-                                  @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </h5>
-                            @elseif ($current > $to && $current > $from)
-                            <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
-                            @endif
-                      
+                    @php 
+                      $current = strtotime(Carbon::now());
+                      $to = strtotime($event->startdate);
+                      $from= strtotime($event->enddate);
+                    @endphp
                       
                     @if($event->latestupdat == 'postpone')
                       <div class="h5">Sorry, Event has been postponed</div> 
                     @else
-                      
+                      @if ($current < $to && $current < $from)
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">Upcoming</span>
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                            @else
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                            @endif 
+                        </h5>
+                      @elseif ($current == $to && $current < $from) 
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">First Day</span>
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                            @else
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                            @endif 
+                        </h5>
+                      @elseif ($current > $to && $current < $from) 
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">Ongoing</span>
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                            @else
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                            @endif 
+                        </h5>
+                      @elseif ($current > $to && $current == $from) 
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">Last Business Day</span>
+                        <h5 class="text-dark fw-normal pt-2 pb-0">
+                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                            @else
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                            @endif 
+                        </h5>
+                      @elseif ($current > $to && $current > $from)
+                        <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
+                      @endif
                     @endif
  
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
-                      <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}} {{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h5>
-                      
+                      <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
+                      <h3>{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
                       @if(count($sponserbrand) > 0)
                           <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
                           <div class="d-flex bg-transparent border-bottom"> 
@@ -4520,7 +4516,7 @@
           </section>
       
           <!--Tab Step up-->
-          <section class="container mb-4 mb-lg-5">
+          <section class="container mb-5 mb-lg-5">
             <div class="tab-content pt-2">
               @if($currentTab === 'tab1')
                 <div class="tab-pane fade show active">
@@ -4671,7 +4667,7 @@
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Stall</p>
-                          </a>
+                          </a> 
 
                           <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'giveaway'])}}">
                             <h3 class="name">Material</h3>
@@ -4722,6 +4718,13 @@
                             <p class="weight">your Exhibition</p>
                           </div>
 
+                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
+                            <h3 class="name">Delegates</h3>
+                            <p class="symbol">Bi</p>
+                            <!-- <p class="number">83</p> -->
+                            <p class="weight">Right People</p>
+                          </div>
+
                               
 
                           </div>
@@ -4737,7 +4740,7 @@
 
                         <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
                         <ul class="mt-5">
-                        <p class="fs-xs"> For more than 20 years of trust,<span class="text-primary">O'laro, The Exhibition Network product</span>  has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                        <p class="fs-xs"> For more than 20 years of trust, <span class="text-primary">O'laro, The Exhibition Network product</span>  has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
                           find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
                         
                           <li><span class="fs-sm fw-bold">Even low Quantities @ Best Prices</span>
