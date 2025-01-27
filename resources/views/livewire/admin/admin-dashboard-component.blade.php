@@ -2583,6 +2583,17 @@
                     {{-- <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city, 'country' => $franchise->country ])}}">
                         {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div> --}}
                 
+                    <div class="text-muted fs-sm text-start">
+                      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' , 'country' => $franchise->country ])}}">
+                      
+                      @if($franchise->address)
+                        {{$franchise->address ?? 'null'}}
+                      @else
+                        <a href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'address' , 'location_id' => $franchise->id,])}}">edit/add</a>
+                      @endif
+                      </a>
+                    </div>
+
                     <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city, 'country' => $franchise->country ])}}">
                         {{$franchise->venue}}</a></div>
                     <div class="text-muted fs-sm text-start">
@@ -2591,6 +2602,7 @@
                     <div class="text-muted fs-sm text-start">
                       <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' , 'country' => $franchise->country ])}}">{{$franchise->country}}</a>
                     </div>
+
                 </div>
 
                 <div class="col-3  p-0">

@@ -55,6 +55,7 @@ class AdminEventMultipleAddComponent extends Component
     public $selectedImage;
     public $location_id;
     public $location;
+    public $address;
 
     public function generateSlug()
     {
@@ -63,39 +64,54 @@ class AdminEventMultipleAddComponent extends Component
 
     Use WithFileUploads;
 
-    public function mount($event_id, $formm, $location_id = null )
+    public function mount($event_id = null , $formm, $location_id = null )
     {
         $this->location = $location_id;
 
-        $fattribute = Event::find($event_id);
-        $this->event_id = $fattribute->id;
-        $this->eventname = $fattribute->eventname;
-        $this->slug = $fattribute->slug;
-        $this->eventype = $fattribute->eventype;
-       
-        $this->city = $fattribute->city;
-        $this->venue = $fattribute->venue;
-
-        $this->startdate = $fattribute->startdate;
-        $this->enddate = $fattribute->enddate;        
-
-        $this->shtdesc = $fattribute->shtdesc;
-        $this->tagline = $fattribute->tagline;
-        $this->organizer = $fattribute->organizer;
-
-        $this->exhibitors = $fattribute->exhibitors;
-        $this->desc = $fattribute->desc;
-        $this->email = $fattribute->email;
-        $this->phone = $fattribute->phone;
-        $this->auidence = $fattribute->auidence;
-        $this->edition = $fattribute->edition;
-        $this->link = $fattribute->link;
-
-        $this->image = $fattribute->image;
-
-        $this->formm = $formm;
-        $this->status = '1';
-        $this->admstatus = '0';
+        if($event_id === null)
+        {
+            $this->event_id = null;
+        }
+        else
+        {
+            $fattribute = Event::find($event_id);
+              if($fattribute)
+              {
+                $this->event_id = $fattribute->id;
+                $this->eventname = $fattribute->eventname;
+                $this->slug = $fattribute->slug;
+                $this->eventype = $fattribute->eventype;
+            
+                $this->city = $fattribute->city;
+                $this->venue = $fattribute->venue;
+        
+                $this->startdate = $fattribute->startdate;
+                $this->enddate = $fattribute->enddate;        
+        
+                $this->shtdesc = $fattribute->shtdesc;
+                $this->tagline = $fattribute->tagline;
+                $this->organizer = $fattribute->organizer;
+        
+                $this->exhibitors = $fattribute->exhibitors;
+                $this->desc = $fattribute->desc;
+                $this->email = $fattribute->email;
+                $this->phone = $fattribute->phone;
+                $this->auidence = $fattribute->auidence;
+                $this->edition = $fattribute->edition;
+                $this->link = $fattribute->link;
+        
+                $this->image = $fattribute->image;
+        
+                $this->formm = $formm;
+                $this->status = '1';
+                $this->admstatus = '0';
+            }
+            else
+            {
+                $this->event_id = null;
+            }
+        }
+        
     }
 
     public function updateLocation()

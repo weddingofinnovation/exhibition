@@ -800,8 +800,8 @@ public $dtype;
 
     public $venue;
     public $city;
-    
-    
+    public $address;
+
     public function venue()
     {
       $upted = new Location();
