@@ -118,6 +118,7 @@ class AdminEventMultipleAddComponent extends Component
     {
         $fattribute = Location::find($this->location);
         $fattribute->address = Str::lower(trim($this->address));
+        dd($fattribute);
         $fattribute->save();
         session()->flash('message','Event has been updated succesfully!!');
     }
