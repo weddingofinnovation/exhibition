@@ -4287,7 +4287,7 @@
                           </span>
                         </div>
                   </div>
-                    @php
+                  @php
                     $evento = DB::table('events')->where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(10)->get();
                   @endphp
                   <div class="row g-0 py-0 mx-n2 mt-2"> 
@@ -4402,6 +4402,8 @@
                       $current = strtotime(Carbon::now());
                       $to = strtotime($event->startdate);
                       $from= strtotime($event->enddate);
+
+                      $getLocationaddress = DB::table('locations')->where('id','location_id')->get();
                     @endphp
                       
                     @if($event->latestupdat == 'postpone')
@@ -4449,8 +4451,14 @@
                     @endif
  
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
-                      <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
-                      <h3>{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
+                      @if($getLocationaddress->address === null)
+                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
+                      @else
+                         <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
+                      @endif
+                      
+
+                      <h3 class="text-dark fw-normal">{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
                       @if(count($sponserbrand) > 0)
                           <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
                           <div class="d-flex bg-transparent border-bottom"> 

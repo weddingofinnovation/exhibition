@@ -76,11 +76,11 @@
           $subcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->value('subtag_id'); 
         @endphp
 
-
+{{-- 
         {{$this->categry}}
         {{$findcategoryid}}
         {{$findsubcategory}}
-        {{$subcategory}}
+        {{$subcategory}} --}}
         <hr>
       
         <div class="d-lg-none">
@@ -116,10 +116,12 @@
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                            <!-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> -->
+                                            <div class="small text-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
                                             <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
                                           @else
-                                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                            <!-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>  -->
+                                            <div class="small text-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
                                             <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
 
                                         @endif 
@@ -131,7 +133,6 @@
                                           $city = $franchise->city;
                                           $country = $franchise->country;
                                           $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                          
                                         @endphp
                                           
                                             <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
