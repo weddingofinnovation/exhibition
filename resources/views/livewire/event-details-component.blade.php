@@ -4449,13 +4449,16 @@
                     @endif
  
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
-                      
-                      @if($event->location_id === null)
+                      @php
+                        $getLocationaddress = DB::table('locations')->find($event->location_id);
+                      @endphp 
+
+                      @if(!$event->location_id || $event->location_id == 0 )
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
+                      @else(!$getLocationaddress->address || $getLocationaddress->address == 0)
+                         
                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
                       @else
-                        @php
-                          $getLocationaddress = DB::table('locations')->where('id', $event->location_id)->get();
-                        @endphp  
                         <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
                       @endif
 
