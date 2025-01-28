@@ -1568,8 +1568,11 @@
                 </div>
 
                 <div class="col-7  p-0">
-                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="">
-                      {{ucwords(trans(Str::limit($evento->name, 24)))}}</a></div>
+                  <div class="fs-md fw-normal text-start">
+                    <a class="text-dark" href="">
+                      {{ucwords(trans(Str::limit($evento->name ?? 'null')))}}
+                    </a>
+                  </div>
                   <div class="text-muted fs-sm text-start">
                       {{$evento->email}} <br>
                       @if(is_null($evento->email_verified_at)) 

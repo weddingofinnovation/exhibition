@@ -4402,13 +4402,6 @@
                       $current = strtotime(Carbon::now());
                       $to = strtotime($event->startdate);
                       $from= strtotime($event->enddate);
-
-                      if($event->location_id === null)
-                      {}
-                      else
-                        { $getLocationaddress = DB::table('locations')->find($event->location_id)->get(); }
-                      endif
-
                     @endphp
                       
                     @if($event->latestupdat == 'postpone')
@@ -4457,8 +4450,17 @@
  
                       <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                       
-                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
-                         <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
+                      @if($event->location_id === null)
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
+                      @else
+                        @php
+                          $getLocationaddress = DB::table('locations')->where('id', $event->location_id)->get();
+                        @endphp  
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
+                      @endif
+
+                         
+                         
                       
 
                       <h3 class="text-dark fw-normal">{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
