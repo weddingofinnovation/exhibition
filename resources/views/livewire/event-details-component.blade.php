@@ -4403,7 +4403,7 @@
                       $to = strtotime($event->startdate);
                       $from= strtotime($event->enddate);
 
-                      $getLocationaddress = DB::table('locations')->where('id','location_id')->first();
+                      $getLocationaddress = DB::table('locations')->where('id', $event->location_id)->first();
                     @endphp
                       
                     @if($event->latestupdat == 'postpone')
