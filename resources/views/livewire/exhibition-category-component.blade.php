@@ -116,15 +116,15 @@
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                            <!-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> -->
-                                            <div class="small text-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
+                                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>
+                                            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
                                             <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
                                           @else
-                                            <!-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>  -->
-                                            <div class="small text-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>
+                                            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
                                             <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-
-                                        @endif 
+                                        @endif
+                                        
                                         @php 
                                           $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
                                           $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
