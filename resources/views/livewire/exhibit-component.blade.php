@@ -482,13 +482,14 @@
                   </ol>-->
                   
                   https://exhibition.org.in/exhibit/thankyou/712
+                  
                   Thank you for registering to attend <Strong>{{$findevent->eventname}}</Strong>, taking place from {{$findevent->startdate}} at {{$findevent->city}}
 
                   We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
 
                   Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.
 
-                  <div>
+                  <!-- <div class = "mt-3">
                       <strong>VISA Requirements for International attendees</strong> 
 
                         All foreign nationals traveling to India must carry a valid passport and visa.
@@ -496,16 +497,17 @@
                         To attend <Strong>{{$findevent->eventname}}</Strong>, international participants must apply for a Conference Visa.
                         
                         click here to request your Visa Invitation Letter.
-                  </div>
+                  </div> -->
+                  
 
                   <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div>
                   {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
 
 
-                  <div>
+                  <div class = "mt-3">
                     <strong>Travel Made easy to {{$findevent->eventname}}</strong>
 
-                    <h5>Our Official Travel Partner, to arrange all your travel and accommodation needs.</h5>
+                    <p>Our Official Travel Partner, to arrange all your travel and accommodation needs.</p>
                     
                     <p>Enjoy exclusive benefits like <strong>preferential hotal rates and seamless travel arrangements</strong> as you plan your visit to 
                     <Strong>{{$findevent->eventname}}</Strong> in {{$findevent->city}}</p>
@@ -513,10 +515,11 @@
                     <a href="" class="btn btn-md btn-primary">Add to Calender</a>
                   </div>
 
-                  <div class="fs-sm">
+                  <div class="fs-xs">
                     Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
                     <a href="">team@exhibition.org.in</a> for any registration related queries.
                   </div>
+                  
                 </div>
               </div>
             </div>
