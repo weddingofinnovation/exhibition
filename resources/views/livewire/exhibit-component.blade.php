@@ -502,9 +502,9 @@
             {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
 
 
-                  <div class = "mt-3">
+                  <div class = "mt-1">
                     <strong>Travel Made Easy</strong>
-                    <p class="fs-sm">Our Official Travel Partner, to arrange all your travel and accommodation needs.
+                    <p class="fs-xs">Our Official Travel Partner, to arrange all your travel and accommodation needs.
                     Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to 
                     <Strong>{{$findevent->eventname}}</Strong> in <strong>{{$findevent->city}}</strong></p>
                   </div>
@@ -514,8 +514,7 @@
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
-         
+            
           <div class="container">
             <div class="d-flex  justify-content-between">
               @if(Auth::check())
@@ -744,7 +743,7 @@
 
             <div class="handheld-toolbar">
               <div class="d-table table-layout-fixed w-100">
-                <a class="d-table-cell handheld-toolbar-item" href="#">
+                <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
                   <span class="handheld-toolbar-icon">
                   <i class="bi bi-person-walking"></i></span>
                   <span class="handheld-toolbar-label">Meet-ups</span>
