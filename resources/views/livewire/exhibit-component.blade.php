@@ -481,8 +481,8 @@
                     <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                   </ol>-->
                   
-                  https://exhibition.org.in/exhibit/thankyou/712
-                  
+                  <a href="" class="btn btn-md btn-primary">Add to Calender</a>
+
                   <p class="fs-sm">We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
                   Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.</p>
 
@@ -503,10 +503,9 @@
 
                   <div class = "mt-3">
                     <strong>Travel Made Easy</strong>
-                    <p>Our Official Travel Partner, to arrange all your travel and accommodation needs.</p>
-                    <p class="fs-sm">Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to 
+                    <p class="fs-sm">Our Official Travel Partner, to arrange all your travel and accommodation needs.
+                    Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to 
                     <Strong>{{$findevent->eventname}}</Strong> in <strong>{{$findevent->city}}</strong></p>
-                    <a href="" class="btn btn-md btn-primary">Add to Calender</a>
                   </div>
 
                   <div class="fs-xs">
@@ -744,12 +743,11 @@
                 <a class="d-table-cell handheld-toolbar-item" href="#">
                   <span class="handheld-toolbar-icon">
                   <i class="ci-filter-alt"></i></span>
-                  <span class="handheld-toolbar-label">Advertise</span>
+                  <span class="handheld-toolbar-label">Meet-ups</span>
                 </a>
-              
                 <a class="d-table-cell handheld-toolbar-item" href="#">
                   <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
-                <span class="handheld-toolbar-label">Conference</span></a>
+                <span class="handheld-toolbar-label">Guide</span></a>
                 
                 <a class="d-table-cell handheld-toolbar-item" href="#">
                   <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
@@ -757,7 +755,7 @@
                 </a>
 
                 <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                  <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+                  <span class="handheld-toolbar-icon"><i class="bi bi-menu"></i></span>
                   <span class="handheld-toolbar-label">Menu</span>
                 </a>
               </div>
