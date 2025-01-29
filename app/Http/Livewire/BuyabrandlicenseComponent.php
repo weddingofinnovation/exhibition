@@ -22,7 +22,9 @@ class BuyabrandlicenseComponent extends Component
             'date' => date('m/d/Y')
         ];
            
-      $pdf = PDF::loadView('livewire.document.expand-component', $data);
+      $pdf = PDF::loadView('livewire.document.expand-component', compact('data'));
+      $pdf->setPaper('A4','portrait');
+      $pdf->setOptions(['defaultFont' => 'san-serif' ]);
       return $pdf-> download('Buy_a_Brand_License.pdf');
     }
 

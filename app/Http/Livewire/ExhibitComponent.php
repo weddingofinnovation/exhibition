@@ -284,7 +284,7 @@ class ExhibitComponent extends Component
         // $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
         // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
 
-        $visitorsticker = PDF::loadView('livewire.document.expand-component', $data);
+        $visitorsticker = PDF::loadView('livewire.document.expand-component', compact('data'));
       return $visitorsticker -> download('the-exhibition-network.pdf');
 
 
