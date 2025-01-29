@@ -218,7 +218,8 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
-        return redirect()->route('event.exhibit', ['board' => 'thankyou']);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message','Thanks for sharing your review.');
         

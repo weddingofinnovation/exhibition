@@ -500,7 +500,8 @@
 
                   Our Official Travel Partner, to arrange all your travel and accommodation needs.
               
-                  Enjoy exclusive benefits like preferential hotal rates and seamless travel arrangements as you plan your visit to <Strong>{{$findevent->eventname}}</Strong> in {{location}}
+                  Enjoy exclusive benefits like preferential hotal rates and seamless travel arrangements as you plan your visit to 
+                  <Strong>{{$findevent->eventname}}</Strong> in {{$findevent->city}}
                   
                   <a href="" class="btn btn-lg btn-primary">Add to Calender</a>
 
