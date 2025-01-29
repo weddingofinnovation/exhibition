@@ -18,6 +18,6 @@ class ExpandComponent extends Component
     
     public function render()
     {
-        return view('livewire.document.expand-component');
+        return view ('livewire.document.expand-component');
     }
 }

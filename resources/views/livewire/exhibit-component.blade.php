@@ -523,21 +523,22 @@
               
               
               <div class="d-flex  justify-content-end">
+                
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
                 <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
                 <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a>
-                
+
                 <ul class="list-unstyled text-light mb-0 mt-2">
                   <li class="d-flex">
                       
-                              <!-- <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              {{-- <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                               href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
                             
                         <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                               href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                         
-                    <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a> -->
+                    <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a> --}}
 
                     <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
                   </li>

@@ -26,10 +26,8 @@
             <div class="container">
                 <div class="d-flex  justify-content-center">
                     
-                    <h1>{{$wantdata->company}}</h1>
-                    <h1>{{$wantdata->name}}</h1>
-                    <h1>{{$wantdata->designation}}</h1>
-                   
+                    <h1>{{$data->title}}</h1>
+                    <h1>{{$data->date}}</h1>
                 </div>
             </div>
     </body>
