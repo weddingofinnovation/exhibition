@@ -498,8 +498,8 @@
                   </div> -->
                   
 
-            {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div> --}}
-            {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
+                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div> --}}
+                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
 
 
                   <div class = "mt-1">
@@ -508,9 +508,6 @@
                     Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to 
                     <Strong>{{$findevent->eventname}}</Strong> in <strong>{{$findevent->city}}</strong></p>
                   </div>
-
-                  
-
                 </div>
               </div>
             </div>
@@ -520,15 +517,33 @@
               @if(Auth::check())
                 <a class="btn btn-primary btn-sm" href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
               @else
-                <a class="btn btn-primary btn-sm" href="{{route('login')}}" >Add your profile</a>
+                <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
               @endif
 
-              {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}}
-              {{-- <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a> --}}
+              
+              
               <div class="d-flex  justify-content-end">
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
+                <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a>
+                <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a>
+                
+                <ul class="list-unstyled text-light mb-0 mt-2">
+                  <li class="d-flex">
+                      
+                              <!-- <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                            
+                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
+                              href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                        
+                    <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a> -->
+
+                    <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                  </li>
+                </ul>
               </div>
+              
             </div>
           </div>
 
@@ -552,7 +567,6 @@
                 </div>
               </div>
             </div>
-            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="savecont({{$visitorid}})">Add Your Contact</a>
         @endif
 
         @if($board == 'registration-great-exhibition-to-visit')
@@ -726,7 +740,7 @@
         @endif
 
        
-
+       
         @if($board == 'connect-business-partner')
           <div>
             contact has been saved! 
