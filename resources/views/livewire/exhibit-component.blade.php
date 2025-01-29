@@ -482,9 +482,9 @@
                   </ol>-->
                   
 
-                  <!-- Thank you for registering to attend <Strong>{{$findevent->eventname}}</Strong>, taking place from {{date}} at {{location}}
+                  Thank you for registering to attend <Strong>{{$findevent->eventname}}</Strong>, taking place from {{$findevent->startdate}} at {{$findevent->city}}
 
-                  We are excited to welcome you to {{country}}'s flagship {{category of event}}, where innovation and collaboration shape the future of the global {{}} ecosystem.
+                  We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
 
                   Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.
 
@@ -505,7 +505,7 @@
                   <a href="" class="btn btn-lg btn-primary">Add to Calender</a>
 
                   Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
-                  <a href="">team@exhibition.org.in</a> for any registration related queries. -->
+                  <a href="">team@exhibition.org.in</a> for any registration related queries.
 
 
 

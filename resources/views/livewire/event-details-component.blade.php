@@ -4455,8 +4455,7 @@
 
                       @if(!$event->location_id || $event->location_id == 0 )
                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
-                      @else(!$getLocationaddress->address || $getLocationaddress->address == 0)
-                         
+                      @elseif(!$getLocationaddress->address || $getLocationaddress->address == 0)
                         <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
                       @else
                         <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
