@@ -15,9 +15,10 @@
                 <div class="d-flex justify-content-center">
                     {{-- <h1>{{$data['title']}}</h1>
                     <h1>{{$data['date']}}</h1> --}}
-                    <h1>{{$data['name']}}</h1> 
-                    <h1>{{$data['designation']}}</h1> 
-                    <h1>{{$data['company']}}</h1> 
+                   
+                   @foreach($data as $datao)
+                    {{$datao}}
+                   @endforeach
                 </div>
             </div>
     </body>

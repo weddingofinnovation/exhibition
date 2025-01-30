@@ -275,12 +275,12 @@ class ExhibitComponent extends Component
 
     public function genratepdf($visitorid)
     {
-        $wantdata = Lead::where('id', $visitorid)->first();
-        $data = [
-            'name' => '{{$wantdata->name}}',
-            'designation' => '{{$wantdata->designation}}',
-            'company' => '{{$wantdata->company}}',
-        ];
+        $data = Lead::find($visitorid);
+        // $data = [
+        //     'name' => '{{$wantdata->name}}',
+        //     'designation' => '{{$wantdata->designation}}',
+        //     'company' => '{{$wantdata->company}}',
+        // ];
         // $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
         // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
 
