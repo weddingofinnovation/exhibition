@@ -6,8 +6,8 @@ use App\Models\Event;
 use App\Models\Lead;
 use App\Models\User;
 use Carbon\Carbon;
-//use Barryvdh\DomPDF\Facade as PDF;
-use PDF;
+use Barryvdh\DomPDF\Facade as PDF;
+//use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
@@ -275,25 +275,16 @@ class ExhibitComponent extends Component
 
     public function genratepdf($visitorid)
     {
-        $data = Lead::find($visitorid);
+        $wantdata = Lead::find($visitorid);
 
-        //if ();
         $data = [
-            'name' => 'test',
-            'designation' => 'owner',
-            'company' => 'testo',
+            'name' => '$wantdata->name',
+            'designation' => '$wantdata->designation',
+            'company' => '$wantdata->company',
         ];
-        // $visitorsticker = PDF::loadView('livewire.thankyou-component', $data);
-        // return $visitorsticker->download($wantdata->name.'the-exhibition-network.pdf');
-    
+       
         $visitorsticker = PDF::loadView('livewire.document.expand-component', compact('data'));
-      return $visitorsticker -> download('the-exhibition-network.pdf');
-
-loco:
-herowired
-
-        //return $visitorsticker->stream($wantdata->name.'the-exhibition-network.pdf')->header('Content-type','application/pdf');
-        //return response()->file();
+        return $visitorsticker -> download('the-exhibition-network.pdf');
     }
 
     public function savecont($visitorid)

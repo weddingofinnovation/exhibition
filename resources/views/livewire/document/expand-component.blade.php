@@ -4,12 +4,7 @@
     <title>Document</title>
 </head>
     <body>
-            <div class="container">
-                <div class="d-flex  justify-content-center">
-                    {{QrCode::size(255)->generate('thanks for it!!')}}
-                    
-                </div>
-            </div>
+           
 
             <div class="container">
                 <div class="d-flex justify-content-center">
