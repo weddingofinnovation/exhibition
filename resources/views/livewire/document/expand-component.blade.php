@@ -21,9 +21,15 @@
                    @endforeach
                 </div>
             </div>
-    </body>
+            </body>
+    <!-- 981819111 -- archii...hotramai...
 </html>
 
+300000
+
+networking-event
+sharad.mishra@cowrks.com | she is general manager |  
+    25000/month + 18% gst -->
 
 <!-- (ISME) IME - International Mining, Equipment & Minerals Exhibition  30 oct - 02 nov
 bare: 10,000 10500 
