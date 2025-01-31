@@ -363,6 +363,6 @@ class ExhibitComponent extends Component
        
        $franchise = $findevent; 
        
-        return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise]);
+        return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise,'link' => $link]);
     }
 }

@@ -474,25 +474,18 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
 
-                <ul class="list-unstyled text-light mb-0 mt-2">
-                  <li class="d-flex">
-                      
-                              {{-- <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                              href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                            
-                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                              href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                        
-                    <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a> --}}
-
-                    <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-                  </li>
-                </ul>
-
-
+                <div class="row justify-content-end">
                   <div class=" mb-4 text-center">
                     Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.
                   </div>
+
+                  <div class="">
+                     <a href="#" id="shareBtn" class="mx-2"><i class="bi bi-share"></i></a>
+                  </div>
+                </div>
+                  
+                
+
                   <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
                   <ol class="list-unstyled fs-md">
                     <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
@@ -500,11 +493,9 @@
                     <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
                   </ol>-->
                   
-                  
-
                   <p class="fs-sm">We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
                   Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.</p>
-                  
+
                   <div class=" mb-4 text-center">
                     <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
                     <a class="btn btn-sm btn-outline-primary" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
@@ -544,22 +535,7 @@
 
                 <!-- <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
-                {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}} -->
-                
-                <ul class="list-unstyled text-light mb-0 mt-2">
-                  <li class="d-flex">
-                      
-                              {{-- <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                              href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                            
-                        <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
-                              href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                        
-                    <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a> --}}
-
-                    <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-                  </li>
-                </ul>              
+                {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}} -->         
             </div>
 
             <div class="fs-xs">
