@@ -3,16 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Models\Category;
+use App\Models\Lead;
 use Livewire\Component;
 use PDF;
 
 class ExpandyourbusinessComponent extends Component
 {
-    public function index()
+    public function index($visitorid)
     {
+        $visitor = Lead::find($visitorid);
         $data = [
             'title' => 'Welcome to Tutsmake.com',
-            'date' => date('m/d/Y')
+            'date' => date('m/d/Y'),
+            'visitorid' => '$visitorid',
         ];
            
       $pdf = PDF::loadView('livewire.document.visitor-component', compact('data'));
