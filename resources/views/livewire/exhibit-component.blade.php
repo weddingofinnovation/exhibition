@@ -489,7 +489,7 @@
 
                   <div class=" mb-4 text-center">
                     <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
-                    <a class="btn btn-sm btn-outline-primary" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
+                    <a class="btn btn-sm btn-outline-primary text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                   </div>
                   
                   <div class = "mt-1">
