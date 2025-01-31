@@ -7,6 +7,8 @@ use App\Models\Lead;
 use App\Models\User;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
+use DateTime;
+use Spatie\CalendarLinks\Link;
 //use PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -346,6 +348,19 @@ class ExhibitComponent extends Component
 
        $findID = session()->get('eventID');
        $findevent = Event::where('id', $findID)->first();
+       
+        $event = Event::where('id', $findID)->first();
+        //$findEvent = $event->id;
+        $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
+        $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
+
+        $name = $event->eventname;
+        $venue = $event->venue;
+        $city = $event->city;
+        $country = $event->country;
+        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+       
+       
        $franchise = $findevent; 
        
         return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise]);

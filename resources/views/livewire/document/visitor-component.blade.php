@@ -47,7 +47,7 @@
         </div>
 
         <div class="qr-code">
-               <img src="data:image/png;base64,{{qrCode}}" alt="QR code"> 
+               <img src="data:image/png;base64,{{$qrCode}}" alt="QR code"> 
         </div>
 
         <div class="visitor-info">
