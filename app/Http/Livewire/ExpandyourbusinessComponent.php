@@ -12,7 +12,7 @@ class ExpandyourbusinessComponent extends Component
 {
     public function index($visitorid)
     {
-        $visitor = Lead::find($visitorid);
+        $visitor = Lead::find($visitorid); 
         $data = [
             'title' => 'The Exhibition Network, India',
             'date' => date('m/d/Y'),
@@ -20,7 +20,7 @@ class ExpandyourbusinessComponent extends Component
 
         $qrCode = QrCode::size(150)->generate(route('printpdf.badge',['visitorid' => $visitor->id]));
            
-      $pdf = PDF::loadView('livewire.document.visitor-component', compact('data', 'visitor', 'qrcode'));
+      $pdf = PDF::loadView('livewire.document.visitor-component', compact('data', 'visitor', 'qrCode'));
       $pdf->setPaper([0,0,250,400]);
       //$pdf->setPaper('A4','portrait');
       $pdf->setOptions(['defaultFont' => 'san-serif' ]);

@@ -8,9 +8,9 @@
             body{
                 font-family: Arial, sans-serif;
                 text-align: center;
-                width: 250px;
+                width: 150px;
                 height: 400px;
-                border: 2px solid black;
+                border: 1px solid black;
                 padding: 20px;
                 margin: auto;
                 position: relative;
@@ -53,7 +53,9 @@
         <div class="visitor-info">
             <p><strong>{{$data['title']}}</strong></p>
             <p><strong>{{$data['date']}}</strong></p>
-            <p><strong>{{$data['visitorid']}}</strong></p>
+
+            <p><strong>{{$visitor->name}}</strong></p>
+            <p><strong>{{$visitor->designation}}</strong></p>
         </div>
 
         <div class="footer">
