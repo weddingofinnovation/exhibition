@@ -521,14 +521,13 @@
               @endif
 
               
-              
+        
               <div class="d-flex  justify-content-end">
                 
-                <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
+                <!-- <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
-                {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}}
+                {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}} -->
                 
-                <a class="btn btn-sm btn-outline-primary" href="{{url('/downloadExpand')}}" ><i class="bi bi-arrow-up"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                 
 
@@ -549,12 +548,13 @@
               </div>
               
             </div>
+            <div class="fs-xs">
+              Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
+              <a href="">team@exhibition.org.in</a> for any registration related queries.
+            </div>
           </div>
 
-          <div class="fs-xs">
-            Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
-            <a href="">team@exhibition.org.in</a> for any registration related queries.
-          </div>
+          
 
           @elseif($board == 'thankyou-for-request')
             <div class="container py-4 py-lg-5 my-4">

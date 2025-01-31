@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Lead;
 use Livewire\Component;
 use PDF;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class ExpandyourbusinessComponent extends Component
 {
@@ -13,18 +14,18 @@ class ExpandyourbusinessComponent extends Component
     {
         $visitor = Lead::find($visitorid);
         $data = [
-            'title' => 'Welcome to Tutsmake.com',
+            'title' => 'The Exhibition Network, India',
             'date' => date('m/d/Y'),
-            'visitorid' => '$visitorid',
         ];
-           
-      $pdf = PDF::loadView('livewire.document.visitor-component', compact('data'));
-      $pdf->setPaper('A4','portrait');
-      $pdf->setOptions(['defaultFont' => 'san-serif' ]);
-      return $pdf-> download('Expand_your_Business.pdf');
-    }
 
-   
+        $qrCode = QrCode::size(150)->generate(route('printpdf.badge',['visitorid' => $visitor->id]));
+           
+      $pdf = PDF::loadView('livewire.document.visitor-component', compact('data', 'visitor', 'qrcode'));
+      $pdf->setPaper([0,0,250,400]);
+      //$pdf->setPaper('A4','portrait');
+      $pdf->setOptions(['defaultFont' => 'san-serif' ]);
+      return $pdf-> download($visitor->name . 'Expand_your_Business.pdf');
+    }
 
     public function render()
     {
