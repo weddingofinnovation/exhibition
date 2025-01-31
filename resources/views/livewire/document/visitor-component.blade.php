@@ -8,7 +8,7 @@
             body{
                 font-family: Arial, sans-serif;
                 text-align: center;
-                width: 150px;
+                width: 200px;
                 height: 400px;
                 border: 1px solid black;
                 padding: 20px;
@@ -47,7 +47,7 @@
         </div>
 
         <div class="qr-code">
-            {!! $qrCode!!}
+               <img src="data:image/png;base64,{{qrCode}}" alt="QR code"> 
         </div>
 
         <div class="visitor-info">

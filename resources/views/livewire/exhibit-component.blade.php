@@ -520,17 +520,12 @@
                 <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
               @endif
 
-              
-        
-              <div class="d-flex  justify-content-end">
-                
                 <!-- <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
                 <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
                 {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}} -->
                 
                 <a class="btn btn-sm btn-outline-primary" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                 
-
                 <ul class="list-unstyled text-light mb-0 mt-2">
                   <li class="d-flex">
                       
@@ -544,10 +539,9 @@
 
                     <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
                   </li>
-                </ul>
-              </div>
-              
+                </ul>              
             </div>
+
             <div class="fs-xs">
               Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
               <a href="">team@exhibition.org.in</a> for any registration related queries.

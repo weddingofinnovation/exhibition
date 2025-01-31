@@ -18,7 +18,9 @@ class ExpandyourbusinessComponent extends Component
             'date' => date('m/d/Y'),
         ];
 
-        $qrCode = QrCode::size(150)->generate(route('printpdf.badge',['visitorid' => $visitor->id]));
+
+
+        $qrCode = base64_encode(QrCode::format('png')->size(150)->generate(route('printpdf.badge',['visitorid' => $visitor->id])));
            
       $pdf = PDF::loadView('livewire.document.visitor-component', compact('data', 'visitor', 'qrCode'));
       $pdf->setPaper([0,0,250,400]);
