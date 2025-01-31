@@ -15,7 +15,7 @@ class ExpandyourbusinessComponent extends Component
             'date' => date('m/d/Y')
         ];
            
-      $pdf = PDF::loadView('livewire.document.expand-component', compact('data'));
+      $pdf = PDF::loadView('livewire.document.visitor-component', compact('data'));
       $pdf->setPaper('A4','portrait');
       $pdf->setOptions(['defaultFont' => 'san-serif' ]);
       return $pdf-> download('Expand_your_Business.pdf');

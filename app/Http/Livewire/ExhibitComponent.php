@@ -273,13 +273,13 @@ class ExhibitComponent extends Component
 
     //{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}
 
-    public function genratepdf($visitorid)
-    {
-        $data = Lead::find('id' , $visitorid)->first();
+    // public function genratepdf($visitorid)
+    // {
+    //     $data = Lead::find('id' , $visitorid)->first();
 
-        $visitorsticker = PDF::loadView('livewire.document.visitor-component', compact('data'));
-        return $visitorsticker -> download('the-exhibition-network.pdf');
-    }
+    //     //$visitorsticker = PDF::loadView('livewire.document.visitor-component', compact('data'));
+    //     return $visitorsticker -> download('the-exhibition-network.pdf');
+    // }
 
     public function savecont($visitorid)
     {

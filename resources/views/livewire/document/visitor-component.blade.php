@@ -6,9 +6,7 @@
         <body>
                 <div class="container">
                     <div class="d-flex justify-content-center">
-                        <h1>{{$data->name}}</h1>
-                        <h1>{{$data->designation}}</h1> 
-                        <h1>{{$data->company}}</h1>
+                        <h1>{{$data['title']}}</h1>
                     </div>
                 </div>
         </body>

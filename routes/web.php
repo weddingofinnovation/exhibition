@@ -549,7 +549,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 
 
 //pages Routes check and delete
-Route::get('/downloadExpand', [ExpandyourbusinessComponent::class, 'index']);
+Route::get('/downloadExpand', [ExpandyourbusinessComponent::class, 'index'])->name('printpdf.badge');
 Route::get('/downloadSell', [SellyourbusinessComponent::class, 'index']);
 Route::get('/downloadBuy', [BuyabrandlicenseComponent::class, 'index']);
 
