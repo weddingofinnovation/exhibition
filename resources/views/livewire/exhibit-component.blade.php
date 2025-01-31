@@ -474,24 +474,15 @@
               <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
 
-                <div class="row justify-content-end">
-                  <div class=" mb-4 text-center">
-                    Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.
-                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="text-center flex-grow-1">
+                      Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.
+                    </div>
 
-                  <div class="">
-                     <a href="#" id="shareBtn" class="mx-2"><i class="bi bi-share"></i></a>
+                    <div class="">
+                      <a href="#" id="shareBtn" class="mx-2 text-dark"><i class="bi bi-share fs-4"></i></a>
+                    </div>
                   </div>
-                </div>
-                  
-                
-
-                  <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Thanks for sharing and let's make it happen </p>
-                  <ol class="list-unstyled fs-md">
-                    <li><span class="text-primary me-2"></span>Thank you for your interest in the Exhibition</li>
-                    <li><span class="text-primary me-2"></span>Our representative will be contacting you shortly to discuss your participation.</li>
-                    <li><span class="text-primary me-2"></span>If you prefer, you can also proactively reach us at 9991856776</li>
-                  </ol>-->
                   
                   <p class="fs-sm">We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
                   Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.</p>
@@ -500,51 +491,28 @@
                     <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
                     <a class="btn btn-sm btn-outline-primary" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                   </div>
-                  <!-- <div class = "mt-3">
-                      <strong>VISA Requirements for International attendees</strong> 
-
-                        All foreign nationals traveling to India must carry a valid passport and visa.
-
-                        To attend <Strong>{{$findevent->eventname}}</Strong>, international participants must apply for a Conference Visa.
-                        
-                        click here to request your Visa Invitation Letter.
-                  </div> -->
                   
-
-                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'))}}</div> --}}
-                {{-- <div class="row justify-content-center text-center">{{QrCode::size(180)->generate(url('/birthday'.detail->wabill))}}</div> --}}
-
-
                   <div class = "mt-1">
                     <strong>Travel Made Easy</strong>
                     <p class="fs-xs">Our Official Travel Partner, to arrange all your travel and accommodation needs.
                     Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to 
                     <Strong>{{$findevent->eventname}}</Strong> in <strong>{{$findevent->city}}</strong></p>
                   </div>
+
+                  @if(Auth::check())
+                    <a class="btn btn-primary btn-sm" href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
+                  @else
+                    <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
+                  @endif
+
+                  <div class="fs-xs">
+                    Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
+                    <a href="">team@exhibition.org.in</a> for any registration related queries.
+                  </div>
+
                 </div>
               </div>
-            </div>
-            
-          <div class="container">
-            <div class="d-flex  justify-content-between">
-              @if(Auth::check())
-                <a class="btn btn-primary btn-sm" href="{{route('user.dashboard',['board' => 'dashboard'])}}" >Add your profile</a>
-              @else
-                <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
-              @endif
-
-                <!-- <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-download"></i></a>
-                <a class="btn btn-sm btn-outline-primary" href="{{route('download.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-printer"></i></a>
-                {{-- <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="genratepdf({{$visitorid}})">Download</a> --}} -->         
-            </div>
-
-            <div class="fs-xs">
-              Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
-              <a href="">team@exhibition.org.in</a> for any registration related queries.
-            </div>
-          </div>
-
-          
+            </div> 
 
           @elseif($board == 'thankyou-for-request')
             <div class="container py-4 py-lg-5 my-4">
