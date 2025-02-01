@@ -475,7 +475,7 @@
                 <div class="col-lg-8 col-md-10">
 
                   <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div class="text-center flex-grow-1">
+                    <div class="text-center flex-grow-1 fs-md">
                       Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.
                     </div>
 
@@ -489,7 +489,7 @@
 
                   <div class=" mb-4 text-center">
                     <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
-                    <a class="btn btn-sm btn-outline-primary text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
+                    <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                   </div>
                   
                   <div class = "mt-1">
@@ -505,7 +505,7 @@
                     <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
                   @endif
 
-                  <div class="fs-xs">
+                  <div class="fs-xs mt-2">
                     Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at 
                     <a href="">team@exhibition.org.in</a> for any registration related queries.
                   </div>
@@ -721,11 +721,11 @@
               <div class="d-table table-layout-fixed w-100">
                 <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
                   <span class="handheld-toolbar-icon">
-                  <i class="bi bi-person-walking"></i></span>
+                  <i class="bi bi-chat"></i></span>
                   <span class="handheld-toolbar-label">Meet-ups</span>
                 </a>
                 <a class="d-table-cell handheld-toolbar-item" href="#">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-person-arms-up"></i></span>
+                  <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
                 <span class="handheld-toolbar-label">Guide</span></a>
                 
                 <a class="d-table-cell handheld-toolbar-item" href="#">

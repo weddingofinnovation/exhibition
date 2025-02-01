@@ -428,13 +428,18 @@
                 <section class="card text-center py-5 award rounded-0">
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
-                    <div class="d-flex justify-content-between">
-                        <p class="card-text fs-lg fw-light textcolor">Feb 29th, 2024 <span class="fs-sm text-muted">Open for Submissions</span></p>
-                        <p class="card-text fs-lg fw-light textcolor">June 30th, 2024 <span class="fs-sm text-muted">Submission Deadline</span></p>
-                        <p class="card-text fs-lg fw-light textcolor">August, 2024 <span class="fs-sm text-muted">Winner Announcement</span></p>
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <p class="card-text fs-lg fw-light textcolor">Feb 29th, 2024</p>
+                        <p class="fs-9 text-muted">Open for Submissions</p>
+
+                        <p class="card-text fs-lg fw-light textcolor">June 30th, 2024 </p>
+                          <p class="fs-9 text-muted">Submission Deadline</p>
+
+                        <p class="card-text fs-lg fw-light textcolor">August, 2024 </p>
+                          <p class="fs-9 text-muted">Winner Announcement</p>
                     </div>
                   
-                    <a href="#" class="btn btn-sm btn-primary mt-5 pt-5">Subscribe</a>
+                    <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
                   </div>
                 </section>
 
@@ -810,6 +815,54 @@
           </div>
         </div>
 
+        <style>
+          body{
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+          }
+
+          .card-custom {
+            background: linear-gradient(to right, #0c1e0e, #153b1e);
+            color: black;
+            padding: 200px;
+            border-radius: 10px;
+            max-width: 400px;
+            text-align: left;
+          }
+
+          .btn-custom {
+            background-color: #00ff4c;
+            color: black;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            text-decoration: none;
+          }
+
+          .btn-custom span{
+            background: black;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            margin-left: 10px;
+          }
+        </style>
+
+        <div class="card-custom">
+          <p>Get access to channels and langauges' advanced veiwership statistics in <strong style="color: #00ff4c">Esports Charts Events Dashboard</strong>
+          </p>
+          <a href="" class="btn-custom">
+            Dive into stats  <span>from $100</span>
+          </a>
+        </div>
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
               <div class="row text-center text-sm-start">
