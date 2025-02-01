@@ -426,16 +426,16 @@
                 </div>
               @elseif($currentTab === 'tab1')
                 <section class="card text-center py-5 award rounded-0">
-                  <div class="card-body">
+                  <div class="card-body"> 
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between align-items-center mt-4">
-                        <p class="card-text fs-lg fw-light textcolor">Feb 29th, 2024</p>
+                        <p class="card-text fs-lg fw-light textcolor">Feb 29th</p>
                         <p class="fs-9 text-muted">Open for Submissions</p>
 
-                        <p class="card-text fs-lg fw-light textcolor">June 30th, 2024 </p>
+                        <p class="card-text fs-lg fw-light textcolor">June 30th </p>
                           <p class="fs-9 text-muted">Submission Deadline</p>
 
-                        <p class="card-text fs-lg fw-light textcolor">August, 2024 </p>
+                        <p class="card-text fs-lg fw-light textcolor">August </p>
                           <p class="fs-9 text-muted">Winner Announcement</p>
                     </div>
                   
