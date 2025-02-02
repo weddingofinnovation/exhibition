@@ -416,7 +416,7 @@ font-size: 14px;
       <!-- timeline -->
       <section class="card text-center py-5 award rounded-0">
       
-        <div class="mt-5">
+        <div class="container mt-5">
           <div class="card-custom">
           <p>Get access to channels and languages' advanced viewership statistics in 
             <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>

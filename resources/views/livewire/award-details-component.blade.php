@@ -44,7 +44,7 @@
         <div class = "fw-bold text-dark pb-2 lh-1">Exhibition</div> 
       </div>
     
-      ``<div class="container pt-4 mb-3 mb-lg-0 ">
+      <div class="container pt-4 mb-3 mb-lg-0 ">
           <div class="row gy-0 ">
           
             <div class="col-lg-3 col-md-6 col-sm-8 px-1 d-none d-sm-block">
@@ -93,7 +93,7 @@
                               href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                       @endif
 
-                        <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                        <a class="btn btn-gradient-border mt-4" href="{{$link->google()}}">Add to Calender</a>
                       </li>
                 </ul>
             </div>
@@ -348,8 +348,8 @@
                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                         href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                 @endif  
-                              <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                              <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                              <a class="btn btn-gradient-border mt-4" href="{{$link->google()}}">Add to Calender</a>
+                              <a href="#" id="shareBtn" class="btn btn-gradient-border mt-4 mx-2"><i class="bi bi-share"></i></a>
                             </li>
                       </ul>
 
@@ -656,7 +656,6 @@
                   
                 </section>
 
-
                 <section class="award mb-5">
                   <div class="mt-4">
                     
@@ -729,10 +728,6 @@
                     </div>
                   </div>
                 </section>
-
-
-
-                
 
                 <section class="container award mb-5">
                   <h1 class="text-light"> Competition Categories</h1>
@@ -897,15 +892,14 @@
                         <span>
                             @if( $event->businessrevenue == 'visitor' )       
                                 @if( $ticketOrExhibit != 0 )
-                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
+                                  <a class="btn btn-gradient-border mt-4" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Attend </a>
                                     @elseif( $ticketOrExhibit == 0 )
-                                  <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                                  <a class="btn btn-gradient-border mt-4" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
                                 @endif
                               @else
-                                <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
+                                <a class="btn btn-gradient-border mt-4" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Nominate </a>
                             @endif
-                        </span>
-                      
+                        </span>                      
                         
                     </li>
                     <li><hr class="mt-md-2 mb-2"></li>
@@ -1107,6 +1101,106 @@
         </div>
 
         
+
+        <!-- HSBC-CreditCard -->
+
+        <style>
+          .modal-header {
+            background-color: #fff;
+            border-bottom: none;
+            display: flex;
+            align-items: center;
+          }
+
+          .modal-header img{
+            width: 40px;
+            margin-right: 10px;
+          }
+
+          .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          .benefit-card {
+            border: 1 px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+
+          .benefit-card i {
+            font-size: 25px;
+            color: red;
+            display: block;
+            margin-bottom: 10px;
+          }
+
+          .apply-btn {
+            background-color: #d71920;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+          }
+        </style>
+
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hsbcModal"> 
+          Open HSBC Live+ Offer
+        </button>
+
+
+        <div class="modal fade" id="hsbcModal" tabindex="-1" aria-labelledby="hsbcModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <img src="" alt="">
+                <h5 class="modal-title">Save More with HSBC Live+ Credit Card!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <h6 class="text-dark fw-bold">Benefits of HSBC Live+</h6>
+
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="benefit-card">
+                      <i class="bi bi-basket-fill"></i>
+                      <p>10% cashback on food & 15% off at 200+ restaurants in Asia*</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-card">
+                      <i class="bi bi-basket-fill"></i>
+                      <p>Buy One, Get One movie tickets on BookMyShow*</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-card">
+                      <i class="bi bi-basket-fill"></i>
+                      <p>Earn 1.5% cashback on most spends*</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="benefit-card">
+                      <i class="bi bi-basket-fill"></i>
+                      <p>Enjoy complimentarydomestic airport lounge access*</p>
+                    </div>
+                  </div>
+                </div>
+                <h6 class="fw-bold mt-3">Eligibility CRiteria</h6>
+                <button class="apply-btn">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end-HSBC-CreditCard -->
+
+
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
               <div class="row text-center text-sm-start">
