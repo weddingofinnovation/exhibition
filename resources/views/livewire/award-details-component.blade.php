@@ -1105,12 +1105,16 @@
         <!-- HSBC-CreditCard -->
 
         <style>
+          .modal-content {
+            border-radius: 10px;
+          }
+          
           .modal-header {
             background-color: #fff;
             border-bottom: none;
             display: flex;
             align-items: center;
-          }
+          } 
 
           .modal-header img{
             width: 40px;
@@ -1122,21 +1126,40 @@
             font-weight: bold;
           }
 
-          .benefit-card {
-            border: 1 px solid #ccc;
+          /* .benefit-card {
+            border: 2px solid #d4d4d4;
             padding: 15px;
             border-radius: 10px;
             text-align: center;
             margin-bottom: 15px;
-          }
+          } */
 
-          .benefit-card i {
+          /* .benefit-card i {
             font-size: 25px;
             color: red;
             display: block;
             margin-bottom: 10px;
+          } */
+
+          .benefit-box {
+            border: 2px solid #d4d4d4;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
           }
 
+          .benefit-box i {
+            font-size: 24px;
+            color: red;
+          }
+
+          .benefit-text {
+            font-size: 14px;
+            font-weight: 500;
+          }
           .apply-btn {
             background-color: #d71920;
             color: white;
@@ -1173,10 +1196,11 @@
                       <p>10% cashback on food & 15% off at 200+ restaurants in Asia*</p>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="benefit-card">
+
+                  <div class="col-6">
+                    <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
-                      <p>Buy One, Get One movie tickets on BookMyShow*</p>
+                      <p class="benefit-text">Buy One, Get One movie tickets on BookMyShow*</p>
                     </div>
                   </div>
                   <div class="col-md-6">
