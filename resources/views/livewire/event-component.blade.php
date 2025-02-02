@@ -304,6 +304,120 @@ World leading fastest Introducing Great Exhibition To Exhibit Business India Fir
             </div>
           </div>
 
+      <section class="container">
+        <style>
+          .venues-list{
+                  display: flex;
+                  overflow-x: auto;
+                  padding: 10px;
+                  gap: 15px;
+                  }
+
+          .venues-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .venues-list::-webkit-scrollbar {
+            display: none;
+          }
+
+          .venue-card {
+            position: relative;
+            width: 150px;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.4);
+          }
+
+          .venue-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          .venue-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: left;
+          }
+
+          .green-gradient{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at bottom right, rgba(0, 255, 76, 0.6), transparent);
+            border-radius: 50%;
+          }
+        </style>
+      
+        <div class="venues-list">
+          
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+          
+        </div>
+      </section>
+
 </main>
 
 @push('scripts')
