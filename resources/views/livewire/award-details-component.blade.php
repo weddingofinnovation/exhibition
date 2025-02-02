@@ -475,7 +475,12 @@
                     margin-left: 10px;
                    }
 
-                   .category-container {
+                   .category-container{
+                      max-width: 800px;
+                      text-align: center;
+                   }
+
+                   .category-box {
                     background: linear-gradient(to right, #0c1e0e, #153b1e);
                     color: white;
                     padding: 20px;
@@ -614,6 +619,7 @@
                    </div>
                   
                    <div class="venues-list">
+                    
                     <div class="venue-card">
                       <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
                       <p>The Piano Man</p>
