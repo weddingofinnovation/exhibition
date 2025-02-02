@@ -442,7 +442,7 @@
                     <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
                   </div>
 
-                  <style>
+                  <!-- <style>
                     .banner{
                       background: linear-gradient(145deg, #2b8a3e, #1a7a29);
                       color: white;
@@ -460,8 +460,8 @@
                       color: #39D353;
                     }
 
-                  </style>
-                  
+                  </style> -->
+
                   <div class="container mt-5">
                     <div class="banner">
                     <h4>Get access to channels and languages' advanced viewership statistics in 
@@ -469,6 +469,50 @@
                     <a href="" class="btn btn-custom">Dive into stats from $100</a>
                     </div>
                   </div>
+
+                  <style>
+
+                    .card-custom{
+                      background: linear-gradient(to right, #0c1e0e, #153b1e);
+                      color: white;
+                      padding: 20px;
+                      border-radius: 10px;
+                      max-width: 400px;
+                      text-align: left;  
+                    }
+
+                   .btn-custom{
+                    background-color: #00ff4c;
+                    color: black;
+                    font-weight: bold;
+                    padding: 12px 20px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    text-decoration: none;
+                   }
+
+                   .btn-custom span {
+                    background: black;
+                    color: white;
+                    padding: 4px 10px;
+                    border-radius: 5px;
+                    font-size: 14px;
+                    margin-left: 10px;
+                   }
+                  </style>
+
+                  <div class="container mt-5">
+                    <div class="card-custom">
+                    <p>Get access to channels and languages' advanced viewership statistics in 
+                      <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>
+
+                    <a href="" class="btn-custom">Dive into stats <span>from $100</span></a>
+                    </div>
+                  </div>   
+                  
                 </section>
 
                 <section class="container award mb-5">
