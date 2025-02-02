@@ -490,7 +490,79 @@
                    .category-box:hover{
                     transform:scale(1.05);
                    }
-                   
+
+                   /* Artist & venue */
+
+                   .section-title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px 15px;
+                   }
+
+                   .section-title h5 {
+                    font-weight: bold;
+                    margin: 0;
+                   }
+
+                   .view-all-btn{
+                    border: 1px solid #ccc;
+                    border-radius: 20px;
+                    padding: 5px 15px;
+                    font-size: 14px;
+                    background: white;
+                   }
+
+                   .artist-list{
+                    display: flex;
+                    overflow-x: auto;
+                    padding: 10px;
+                    gap: 15px;
+                   }
+
+                   .artist-card{
+                      text-align: center;
+                      flex: 0 0 auto;
+                      width: 90px;
+                   }
+
+                   .artist-card img {
+                    width: 70px;
+                    height: 70px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    border: 3px solid white;
+                   }
+
+                   .venue-list{
+                    display: flex;
+                    overflow-x: auto;
+                    padding: 10px;
+                    gap: 15px;
+                   }
+
+                   .venue-card{
+                    flex: 0 0 auto;
+                    width: 120px;
+                    border-radius: 10px;
+                    background: linear-gradient(to right, #0c1e0e,#153b1e);
+                    color: white;
+                    padding: 10px;
+                    text-align: center;
+                    box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+                   }
+
+                   .venue-card img{
+                    width: 100%;
+                    height: 80px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                   }
+
+                   .venue-card p {
+                    margin: 5px 0;
+                    font-size: 14px;
+                   }
                   </style>
 
                   <div class="container mt-5">
@@ -506,6 +578,67 @@
 
 
                 <section class="award mb-5">
+
+                <div class="container mt-4">
+                  <div class="section-title">
+                    <h5>ARTISTS</h5>
+                    <button class="view-all-btn">View all</button>
+                  </div>
+
+                  <div class="artist-list">
+                    <div class="artist-card">
+                      <img src="https://via.placeholder.com/70" alt="Artist 1">
+                      <p>Anumita</p>
+                    </div>
+
+                    <div class="artist-card">
+                      <img src="https://via.placeholder.com/70" alt="Artist 1">
+                      <p>Anumita</p>
+                    </div>
+
+                    <div class="artist-card">
+                      <img src="https://via.placeholder.com/70" alt="Artist 1">
+                      <p>Anumita</p>
+                    </div>
+
+                    <div class="artist-card">
+                      <img src="https://via.placeholder.com/70" alt="Artist 1">
+                      <p>Anumita</p>
+                    </div>
+
+                  </div>
+
+                  <!-- Venues Section -->
+                   <div class="section-title mt-4">
+                    <h5>Venues</h5>
+                   </div>
+                  
+                   <div class="venues-list">
+                    <div class="venue-card">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <p>The Piano Man</p>
+                      <small>2 Events</small>
+                    </div>
+
+                    <div class="venue-card">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <p>The Piano Man</p>
+                      <small>2 Events</small>
+                    </div>
+
+                    <div class="venue-card">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <p>The Piano Man</p>
+                      <small>2 Events</small>
+                    </div>
+                    
+                   </div>
+                </div>
+
+
+
+
+
                   <div class="container category-container">
                   <h2 class="text-white mb-4"> Competition Categories</h2>
                   <div class="row g-3">
