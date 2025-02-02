@@ -425,25 +425,78 @@
                       </section>
                 </div>
               @elseif($currentTab === 'tab1')
+
+              <style>
+                .btn-gradient-border {
+                  position: relative;
+                  background-color: transparent;
+                  color: white;
+                  border: 2px solid transparent;
+                  border-radius: 5px;
+                  padding: 10px 20px;
+                  font-weight: bold;
+                  text-transform: all 0.4s ease-in-out;
+                }
+
+                .btn-gradient-border::before{
+                  content: "";
+                  position: absolute;
+                  inset: 0;
+                  padding: 2px;
+                  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+                  border-radius: 5px;
+                  -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+                  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+                  -webkit-mask-composite: destination-out;
+                  mask-composite: exclude;
+                }
+
+                .btn-gradient-border:hover{
+                  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+                  color: white;
+                }
+
+
+                .subscribe-btn{
+                  padding: 10px 20px;
+                  border-radius: 30px;
+                  border: 2px solid transparent;
+                  background-image: linear-gradient(white white), linear-gradient(to right, #6a11cb #2575fc);
+                  background-origin: border-box;
+                  background-clip: content-box, border-box;
+                  color: #2575fc;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  font-size: 14px;
+                  transition: all 0.3s ease-in-out;               
+                }
+
+                .subscribe-btn:hover {
+                  background-image: linear-gradient(to right, #6a11cb, #2575fc);
+                  color: white;
+                  border: 2px solid transparent;
+                }
+
+              </style>
                 <section class="card text-center py-5 award rounded-0">
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between align-items-center mt-4">
                       <div class="text-center">
-                        <p class="card-text fs-lg fw-light textcolor">Feb 29th</p>
+                        <p class="card-text fs-lg fw-light textcolor">Feb 29 <sup>th</sup></p>
                         <p class="fs-9 text-muted">Open for Submissions</p>
                       </div>
                       <div class="text-center">
-                        <p class="card-text fs-lg fw-light textcolor">June 30th</p>
+                        <p class="card-text fs-lg fw-light textcolor">June 30<sup>th</sup></p>
                           <p class="fs-9 text-muted">Submission Deadline</p>
                       </div>
                       <div class="text-center">
-                        <p class="card-text fs-lg fw-light textcolor">August</p>
+                        <p class="card-text fs-lg fw-light textcolor">August 30<sup>th</sup></p>
                         <p class="fs-9 text-muted">Winner Announcement</p>
                       </div>
                     </div>
-                  
-                    <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
+                  <!-- <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a> -->
+                  <a href="#" class="btn btn-gradient-border mt-4">Subscribe</a>
                   </div>
 
                   <style>
