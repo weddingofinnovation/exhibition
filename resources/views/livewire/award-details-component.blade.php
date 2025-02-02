@@ -681,13 +681,13 @@
                    <div class="venues-list">
                     
                     <div class="venue-card">
-                      <img src="https://picsum.photos/120/80" alt="Venue 1">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
                       <p>The Piano Man</p>
                       <small>2 Events</small>
                     </div>
 
                     <div class="venue-card">
-                      <img src="https://picsum.photos/120/80" alt="Venue 1">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
                       <p>The Piano Man</p>
                       <small>2 Events</small>
                     </div>
@@ -713,9 +713,71 @@
                    </div>
                 </div>
 
+
+
+
+
+                  <div class="container category-container">
+                  <h2 class="text-white mb-4"> Competition Categories</h2>
+                  <div class="row g-3">
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        writing
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        Gaming
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        dance
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
                 </section>
 
-                
 
                 <section class="container award mb-5">
                   <h1 class="text-light"> Competition Categories</h1>
@@ -763,99 +825,6 @@
                       </div>
                   </div>
                 </section>
-
-
-
-
-
-
-
-
-
-                <!-- award and prizes -->
-                <style>
-                  /* award and prizes */
-                  .award {
-                    background:linear-gradient(135deg, #0b2e0a, #0f4c2f);
-                    border-radius: 15px;
-                    box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.3);
-                    padding: 40px;
-                  }
-
-                  .award h1 {
-                    font-weight: bold;
-                    text-shadow: 2px 2px 8px rgba(0,255, 76, 0.5);
-                  }
-
-                  .award .row {
-                    align-items: center;
-                  }
-
-                  .award .icon-box {
-                    font-size: 2rem;
-                    color: #1fd655;
-                  }
-
-
-                  .award .fs-md {
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                  }
-
-                  .award .fs-sm {
-                    font-size: 0.9rem;
-                    color: rgba(255, 255, 255, 0.8);
-                  }
-
-                </style>
-
-                <div class="award text-light my-5 py-5">
-                  <h1 class="text-center">Awards & Prize</h1>
-                  <div class="container">
-
-                    <div class="row mb-4">
-                     <div class="col-3 text-center">
-                      <i class="bi bi-cash-coin icon-box"></i>
-                     </div>
-                     <div class="col-9">
-                      <div class="fs-md">Main Prize</div>
-                      <span class="fs-sm">$10,000 cash prize</span>
-                     </div>
-                    </div>
-
-                    <div class="row mb-4">
-                     <div class="col-3 text-center">
-                      <i class="bi bi-globe icon-box"></i>
-                     </div>
-                     <div class="col-9">
-                      <div class="fs-md">Exposure Opportunity</div>
-                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-                     </div>
-                    </div>
-
-                    <div class="row mb-4">
-                     <div class="col-3 text-center">
-                      <i class="bi bi-award icon-box"></i>
-                     </div>
-                     <div class="col-9">
-                      <div class="fs-md">Exposure Opportunity</div>
-                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-                     </div>
-                    </div>
-
-                    <div class="row mb-4">
-                     <div class="col-3 text-center">
-                      <i class="bi bi-calender-event icon-box"></i>
-                     </div>
-                     <div class="col-9">
-                      <div class="fs-md">Exposure Opportunity</div>
-                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
-                     </div>
-                    </div>
-
-                  </div>
-                </div>
-
 
                 <section class="award text-light my-5 py-5">
                   <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
