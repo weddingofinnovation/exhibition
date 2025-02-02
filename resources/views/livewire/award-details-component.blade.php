@@ -426,20 +426,48 @@
                 </div>
               @elseif($currentTab === 'tab1')
                 <section class="card text-center py-5 award rounded-0">
-                  <div class="card-body"> 
+                  <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         <p class="card-text fs-lg fw-light textcolor">Feb 29th</p>
                         <p class="fs-9 text-muted">Open for Submissions</p>
 
-                        <p class="card-text fs-lg fw-light textcolor">June 30th </p>
+                        <p class="card-text fs-lg fw-light textcolor">June 30th</p>
                           <p class="fs-9 text-muted">Submission Deadline</p>
 
-                        <p class="card-text fs-lg fw-light textcolor">August </p>
+                        <p class="card-text fs-lg fw-light textcolor">August</p>
                           <p class="fs-9 text-muted">Winner Announcement</p>
                     </div>
                   
                     <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
+                  </div>
+
+                  <style>
+                    .banner{
+                      background: linear-gradient(145deg, #2b8a3e, #1a7a29);
+                      color: white;
+                      padding: 40px 20px;
+                      border-radius: 10px;
+                      text-align: center;
+                    }
+
+                    .btn-custom {
+                      background-color: #32b14e;
+                      text-decoration: none;
+                    }
+
+                    .text-highlight{
+                      color: #39D353;
+                    }
+
+                  </style>
+                  
+                  <div class="container mt-5">
+                    <div class="banner">
+                    <h4>Get access to channels and languages' advanced viewership statistics in 
+                      <span class="text-highlight">Esports Charts Event Dashboard</span></h4>
+                    <a href="" class="btn btn-custom">Dive into stats from $100</a>
+                    </div>
                   </div>
                 </section>
 
@@ -815,54 +843,7 @@
           </div>
         </div>
 
-        <style>
-          body{
-            background-color: #111;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-          }
-
-          .card-custom {
-            background: linear-gradient(to right, #0c1e0e, #153b1e);
-            color: black;
-            padding: 200px;
-            border-radius: 10px;
-            max-width: 400px;
-            text-align: left;
-          }
-
-          .btn-custom {
-            background-color: #00ff4c;
-            color: black;
-            font-weight: bold;
-            padding: 12px 20px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            text-decoration: none;
-          }
-
-          .btn-custom span{
-            background: black;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 5px;
-            font-size: 14px;
-            margin-left: 10px;
-          }
-        </style>
-
-        <div class="card-custom">
-          <p>Get access to channels and langauges' advanced veiwership statistics in <strong style="color: #00ff4c">Esports Charts Events Dashboard</strong>
-          </p>
-          <a href="" class="btn-custom">
-            Dive into stats  <span>from $100</span>
-          </a>
-        </div>
+        
             <!--participants-->  
             <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
               <div class="row text-center text-sm-start">
@@ -1366,6 +1347,7 @@
             <div class="container text-center">
               <small class="text-primary fs-sm fw-normal">Right Place, Right Time, Right People</small>
               <h1 class="text-center fw-bold display-3 lh-1">Market Leaders Rely on Great Place To Business</h1>
+
             </div> 
 
             <!-- copy Card group sec_last-->
