@@ -442,34 +442,6 @@
                     <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
                   </div>
 
-                  <!-- <style>
-                    .banner{
-                      background: linear-gradient(145deg, #2b8a3e, #1a7a29);
-                      color: white;
-                      padding: 40px 20px;
-                      border-radius: 10px;
-                      text-align: center;
-                    }
-
-                    .btn-custom {
-                      background-color: #32b14e;
-                      text-decoration: none;
-                    }
-
-                    .text-highlight{
-                      color: #39D353;
-                    }
-
-                  </style> -->
-
-                  <div class="container mt-5">
-                    <div class="banner">
-                    <h4>Get access to channels and languages' advanced viewership statistics in 
-                      <span class="text-highlight">Esports Charts Event Dashboard</span></h4>
-                    <a href="" class="btn btn-custom">Dive into stats from $100</a>
-                    </div>
-                  </div>
-
                   <style>
 
                     .card-custom{
@@ -502,6 +474,23 @@
                     font-size: 14px;
                     margin-left: 10px;
                    }
+
+                   .category-container {
+                    background: linear-gradient(to right, #0c1e0e, #153b1e);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 16px;
+                    box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
+                    transition: transform 0.3s ease-in-out;
+                   }
+
+                   .category-box:hover{
+                    transform:scale(1.05);
+                   }
+                   
                   </style>
 
                   <div class="container mt-5">
@@ -514,6 +503,70 @@
                   </div>   
                   
                 </section>
+
+
+                <section class="award mb-5">
+                  <div class="container category-container">
+                  <h2 class="text-white mb-4"> Competition Categories</h2>
+                  <div class="row g-3">
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        photography
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        writing
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        Gaming
+                      </div>
+                    </div>
+
+                    <div class="col-md-4 col-6">
+                      <div class="category-box">
+                        dance
+                      </div>
+                    </div>
+
+                  </div>
+                  </div>
+                </section>
+
 
                 <section class="container award mb-5">
                   <h1 class="text-light"> Competition Categories</h1>

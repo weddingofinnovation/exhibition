@@ -634,9 +634,9 @@
                                       {{$category->venue}}
                                     </a> --}}
 
-                                    <a class="accordion-button text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => $category->venue , 'city' => $category->city, 'country' => $category->country ])}}">
+                                    {{--<a class="accordion-button text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' => $category->venue , 'city' => $category->city, 'country' => $category->country ])}}">
                                     {{ucwords(trans(Str::limit($category->venue, 24)))}}
-                                    </a>
+                                    </a>--}}
                           </div>
                         @endforeach
                     </div>
