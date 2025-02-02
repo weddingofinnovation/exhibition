@@ -480,6 +480,134 @@
 
               </style>
 
+              <style>
+
+                .card-custom{
+                  background: linear-gradient(to right, #0c1e0e, #153b1e);
+                  color: white;
+                  padding: 20px;
+                  border-radius: 10px;
+                  max-width: 400px;
+                  text-align: left;  
+                }
+
+                .btn-custom{
+                background-color: #00ff4c;
+                color: black;
+                font-weight: bold;
+                padding: 12px 20px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                text-decoration: none;
+                }
+
+                .btn-custom span {
+                background: black;
+                color: white;
+                padding: 4px 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                margin-left: 10px;
+                }
+
+                .category-container{
+                  max-width: 800px;
+                  text-align: center;
+                }
+
+                .category-box {
+                  background: linear-gradient(to right, #0c1e0e, #153b1e);
+                  color: white;
+                  padding: 20px;
+                  border-radius: 10px;
+                  text-align: center;
+                  font-weight: bold;
+                  font-size: 16px;
+                  box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
+                  transition: transform 0.3s ease-in-out;
+                }
+
+                .category-box:hover{
+                transform:scale(1.05);
+                }
+
+                /* Artist & venue */
+
+                .section-title {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 15px;
+                }
+
+                .section-title h5 {
+                font-weight: bold;
+                margin: 0;
+                }
+
+                .view-all-btn{
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                padding: 5px 15px;
+                font-size: 14px;
+                background: white;
+                }
+
+                .artist-list{
+                display: flex;
+                overflow-x: auto;
+                padding: 10px;
+                gap: 15px;
+                }
+
+                .artist-card{
+                  text-align: center;
+                  flex: 0 0 auto;
+                  width: 90px;
+                }
+
+                .artist-card img {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                border-radius: 50%;
+                border: 3px solid white;
+                }
+
+                .venues-list{
+                display: flex;
+                overflow-x: auto;
+                padding: 10px;
+                gap: 15px;
+                }
+
+                .venue-card{
+                flex: 0 0 auto;
+                width: 120px;
+                border-radius: 10px;
+                background: linear-gradient(to right, #0c1e0e,#153b1e);
+                color: white;
+                padding: 10px;
+                text-align: center;
+                box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+                }
+
+                .venue-card img{
+                width: 100%;
+                height: 80px;
+                object-fit: cover;
+                border-radius: 8px;
+                }
+
+                .venue-card p {
+                margin: 5px 0;
+                font-size: 14px;
+                }
+              </style>
+
                 <section class="card text-center py-5 award rounded-0">
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
@@ -499,138 +627,10 @@
                     </div>
                   <!-- <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a> -->
                   <a href="#" class="btn btn-gradient-border mt-4">Subscribe</a>
-                  <a href="#" class="btn btn-sm btn-primary mt-4 subscribe-btn">Subscribe</a>
+                 
                   </div>
 
-                  <style>
-
-                    .card-custom{
-                      background: linear-gradient(to right, #0c1e0e, #153b1e);
-                      color: white;
-                      padding: 20px;
-                      border-radius: 10px;
-                      max-width: 400px;
-                      text-align: left;  
-                    }
-
-                   .btn-custom{
-                    background-color: #00ff4c;
-                    color: black;
-                    font-weight: bold;
-                    padding: 12px 20px;
-                    border-radius: 5px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 100%;
-                    text-decoration: none;
-                   }
-
-                   .btn-custom span {
-                    background: black;
-                    color: white;
-                    padding: 4px 10px;
-                    border-radius: 5px;
-                    font-size: 14px;
-                    margin-left: 10px;
-                   }
-
-                   .category-container{
-                      max-width: 800px;
-                      text-align: center;
-                   }
-
-                   .category-box {
-                    background: linear-gradient(to right, #0c1e0e, #153b1e);
-                    color: white;
-                    padding: 20px;
-                    border-radius: 10px;
-                    text-align: center;
-                    font-weight: bold;
-                    font-size: 16px;
-                    box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
-                    transition: transform 0.3s ease-in-out;
-                   }
-
-                   .category-box:hover{
-                    transform:scale(1.05);
-                   }
-
-                   /* Artist & venue */
-
-                   .section-title {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    padding: 10px 15px;
-                   }
-
-                   .section-title h5 {
-                    font-weight: bold;
-                    margin: 0;
-                   }
-
-                   .view-all-btn{
-                    border: 1px solid #ccc;
-                    border-radius: 20px;
-                    padding: 5px 15px;
-                    font-size: 14px;
-                    background: white;
-                   }
-
-                   .artist-list{
-                    display: flex;
-                    overflow-x: auto;
-                    padding: 10px;
-                    gap: 15px;
-                   }
-
-                   .artist-card{
-                      text-align: center;
-                      flex: 0 0 auto;
-                      width: 90px;
-                   }
-
-                   .artist-card img {
-                    width: 70px;
-                    height: 70px;
-                    object-fit: cover;
-                    border-radius: 50%;
-                    border: 3px solid white;
-                   }
-
-                   .venue-list{
-                    display: flex;
-                    overflow-x: auto;
-                    padding: 10px;
-                    gap: 15px;
-                   }
-
-                   .venue-card{
-                    flex: 0 0 auto;
-                    width: 120px;
-                    border-radius: 10px;
-                    background: linear-gradient(to right, #0c1e0e,#153b1e);
-                    color: white;
-                    padding: 10px;
-                    text-align: center;
-                    box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
-                   }
-
-                   .venue-card img{
-                    width: 100%;
-                    height: 80px;
-                    object-fit: cover;
-                    border-radius: 8px;
-                   }
-
-                   .venue-card p {
-                    margin: 5px 0;
-                    font-size: 14px;
-                   }
-                  </style>
-
-                  <div class="container mt-5">
+                  <div class="mt-5">
                     <div class="card-custom">
                     <p>Get access to channels and languages' advanced viewership statistics in 
                       <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>
@@ -644,7 +644,7 @@
 
                 <section class="award mb-5">
 
-                <div class="container mt-4">
+                <div class="mt-4">
                   <div class="section-title">
                     <h5>ARTISTS</h5>
                     <button class="view-all-btn">View all</button>
@@ -681,13 +681,13 @@
                    <div class="venues-list">
                     
                     <div class="venue-card">
-                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <img src="https://picsum.photos/120/80" alt="Venue 1">
                       <p>The Piano Man</p>
                       <small>2 Events</small>
                     </div>
 
                     <div class="venue-card">
-                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <img src="https://picsum.photos/120/80" alt="Venue 1">
                       <p>The Piano Man</p>
                       <small>2 Events</small>
                     </div>
@@ -713,71 +713,9 @@
                    </div>
                 </div>
 
-
-
-
-
-                  <div class="container category-container">
-                  <h2 class="text-white mb-4"> Competition Categories</h2>
-                  <div class="row g-3">
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        photography
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        writing
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        Gaming
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-6">
-                      <div class="category-box">
-                        dance
-                      </div>
-                    </div>
-
-                  </div>
-                  </div>
                 </section>
 
+                
 
                 <section class="container award mb-5">
                   <h1 class="text-light"> Competition Categories</h1>
@@ -825,6 +763,99 @@
                       </div>
                   </div>
                 </section>
+
+
+
+
+
+
+
+
+
+                <!-- award and prizes -->
+                <style>
+                  /* award and prizes */
+                  .award {
+                    background:linear-gradient(135deg, #0b2e0a, #0f4c2f);
+                    border-radius: 15px;
+                    box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.3);
+                    padding: 40px;
+                  }
+
+                  .award h1 {
+                    font-weight: bold;
+                    text-shadow: 2px 2px 8px rgba(0,255, 76, 0.5);
+                  }
+
+                  .award .row {
+                    align-items: center;
+                  }
+
+                  .award .icon-box {
+                    font-size: 2rem;
+                    color: #1fd655;
+                  }
+
+
+                  .award .fs-md {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                  }
+
+                  .award .fs-sm {
+                    font-size: 0.9rem;
+                    color: rgba(255, 255, 255, 0.8);
+                  }
+
+                </style>
+
+                <div class="award text-light my-5 py-5">
+                  <h1 class="text-center">Awards & Prize</h1>
+                  <div class="container">
+
+                    <div class="row mb-4">
+                     <div class="col-3 text-center">
+                      <i class="bi bi-cash-coin icon-box"></i>
+                     </div>
+                     <div class="col-9">
+                      <div class="fs-md">Main Prize</div>
+                      <span class="fs-sm">$10,000 cash prize</span>
+                     </div>
+                    </div>
+
+                    <div class="row mb-4">
+                     <div class="col-3 text-center">
+                      <i class="bi bi-globe icon-box"></i>
+                     </div>
+                     <div class="col-9">
+                      <div class="fs-md">Exposure Opportunity</div>
+                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+                     </div>
+                    </div>
+
+                    <div class="row mb-4">
+                     <div class="col-3 text-center">
+                      <i class="bi bi-award icon-box"></i>
+                     </div>
+                     <div class="col-9">
+                      <div class="fs-md">Exposure Opportunity</div>
+                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+                     </div>
+                    </div>
+
+                    <div class="row mb-4">
+                     <div class="col-3 text-center">
+                      <i class="bi bi-calender-event icon-box"></i>
+                     </div>
+                     <div class="col-9">
+                      <div class="fs-md">Exposure Opportunity</div>
+                      <span class="fs-sm">Winning works will be showcased on official The Exhibition Network channels & IPA Channels</span>
+                     </div>
+                    </div>
+
+                  </div>
+                </div>
+
 
                 <section class="award text-light my-5 py-5">
                   <h1 class="mt-5 textcolor text-center">Awards And Prizes</h1>
