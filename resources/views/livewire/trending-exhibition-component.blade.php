@@ -413,114 +413,70 @@ font-size: 14px;
 
 </style>
 
-<!-- timeline -->
-<section class="card text-center py-5 award rounded-0">
-  <div class="card-body">
-    <h5 class="card-title h2 textcolor">Timeline</h5>
-    <div class="d-flex justify-content-between align-items-center mt-4">
-      <div class="text-center">
-        <p class="card-text fs-lg fw-light textcolor">Feb 29 <sup>th</sup></p>
-        <p class="fs-9 text-muted">Open for Submissions</p>
-      </div>
-      <div class="text-center">
-        <p class="card-text fs-lg fw-light textcolor">June 30<sup>th</sup></p>
-          <p class="fs-9 text-muted">Submission Deadline</p>
-      </div>
-      <div class="text-center">
-        <p class="card-text fs-lg fw-light textcolor">August 30<sup>th</sup></p>
-        <p class="fs-9 text-muted">Winner Announcement</p>
-      </div>
-    </div>
-  <!-- <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a> -->
-  <a href="#" class="btn btn-gradient-border mt-4">Subscribe</a>
- 
-  </div>
+      <!-- timeline -->
+      <section class="card text-center py-5 award rounded-0">
+      
+        <div class="mt-5">
+          <div class="card-custom">
+          <p>Get access to channels and languages' advanced viewership statistics in 
+            <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>
 
-  <div class="mt-5">
-    <div class="card-custom">
-    <p>Get access to channels and languages' advanced viewership statistics in 
-      <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>
-
-    <a href="" class="btn-custom">Dive into stats <span>from $100</span></a>
-    </div>
-  </div>   
-  
-</section>
+          <a href="" class="btn-custom">Dive into stats <span>from $100</span></a>
+          </div>
+        </div>   
+        
+      </section>
 
 
-<!-- city -->
-<section class="award mb-5">
-                  <div class="mt-4">
-                    
-                  <!-- artist Section -->
-                    <div class="section-title">
-                      <h5>ARTISTS</h5>
-                      <button class="view-all-btn">View all</button>
-                    </div>
+      <!-- city -->
+      <section class="award mb-5">
+        <div class="mt-4">
+          
+        <!-- artist Section -->
+          <div class="section-title">
+            <h5>ARTISTS</h5>
+            <button class="view-all-btn">View all</button>
+          </div>
 
-                    <div class="artist-list">
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
+          <!-- Venues Section -->
+          
+          <div class="venues-list">
+            
+            <div class="venue-card">
+              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+              <p>The Piano Man</p>
+              <small>2 Events</small>
+            </div>
 
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
+            <div class="venue-card">
+              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+              <p>The Piano Man</p>
+              <small>2 Events</small>
+            </div>
 
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
+            <div class="venue-card">
+              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+              <p>The Piano Man</p>
+              <small>2 Events</small>
+            </div>
 
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
+            <div class="venue-card">
+              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+              <p>The Piano Man</p>
+              <small>2 Events</small>
+            </div>
 
-                    </div>
+            <div class="venue-card">
+              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+              <p>The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            
+          </div>
+        </div>
+      </section>
 
-                    <!-- Venues Section -->
-                    <div class="section-title mt-4">
-                      <h5>Venues</h5>
-                    </div>
-                    
-                    <div class="venues-list">
-                      
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
 
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
-
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
-
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
-
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </section>
 <!-- end-city -->
       <section  class="container pt-2">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
