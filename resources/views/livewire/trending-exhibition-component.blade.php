@@ -271,6 +271,257 @@
         </div>
       </section>
 
+      <style>
+
+.card-custom{
+  background: linear-gradient(to right, #0c1e0e, #153b1e);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: left;  
+}
+
+.btn-custom{
+background-color: #00ff4c;
+color: black;
+font-weight: bold;
+padding: 12px 20px;
+border-radius: 5px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+text-decoration: none;
+}
+
+.btn-custom span {
+background: black;
+color: white;
+padding: 4px 10px;
+border-radius: 5px;
+font-size: 14px;
+margin-left: 10px;
+}
+
+.category-container{
+  max-width: 800px;
+  text-align: center;
+}
+
+.category-box {
+  background: linear-gradient(to right, #0c1e0e, #153b1e);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-box:hover{
+transform:scale(1.05);
+}
+
+/* Artist & venue */
+
+.section-title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 15px;
+}
+
+.section-title h5 {
+font-weight: bold;
+margin: 0;
+}
+
+.view-all-btn{
+border: 1px solid #ccc;
+border-radius: 20px;
+padding: 5px 15px;
+font-size: 14px;
+background: white;
+}
+
+.artist-list{
+display: flex;
+overflow-x: auto;
+padding: 10px;
+gap: 15px;
+}
+
+.artist-card{
+  text-align: center;
+  flex: 0 0 auto;
+  width: 90px;
+}
+
+.artist-card img {
+width: 70px;
+height: 70px;
+object-fit: cover;
+border-radius: 50%;
+border: 3px solid white;
+}
+
+.venues-list{
+display: flex;
+overflow-x: auto;
+padding: 10px;
+gap: 15px;
+}
+
+.venue-card{
+flex: 0 0 auto;
+width: 120px;
+border-radius: 10px;
+background: linear-gradient(to right, #0c1e0e,#153b1e);
+color: white;
+padding: 10px;
+text-align: center;
+box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+}
+
+.venue-card img{
+width: 100%;
+height: 80px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.venue-card p {
+margin: 5px 0;
+font-size: 14px;
+}
+
+.artist-list, .venues-list {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 15px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.artist-list::-webkit-scrollbar, .venues-list::-webkit-scrollbar {
+  display: none;
+}
+
+</style>
+
+<!-- timeline -->
+<section class="card text-center py-5 award rounded-0">
+  <div class="card-body">
+    <h5 class="card-title h2 textcolor">Timeline</h5>
+    <div class="d-flex justify-content-between align-items-center mt-4">
+      <div class="text-center">
+        <p class="card-text fs-lg fw-light textcolor">Feb 29 <sup>th</sup></p>
+        <p class="fs-9 text-muted">Open for Submissions</p>
+      </div>
+      <div class="text-center">
+        <p class="card-text fs-lg fw-light textcolor">June 30<sup>th</sup></p>
+          <p class="fs-9 text-muted">Submission Deadline</p>
+      </div>
+      <div class="text-center">
+        <p class="card-text fs-lg fw-light textcolor">August 30<sup>th</sup></p>
+        <p class="fs-9 text-muted">Winner Announcement</p>
+      </div>
+    </div>
+  <!-- <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a> -->
+  <a href="#" class="btn btn-gradient-border mt-4">Subscribe</a>
+ 
+  </div>
+
+  <div class="mt-5">
+    <div class="card-custom">
+    <p>Get access to channels and languages' advanced viewership statistics in 
+      <strong style="color: #00ff4c;">Esports Charts Event Dashboard</strong></p>
+
+    <a href="" class="btn-custom">Dive into stats <span>from $100</span></a>
+    </div>
+  </div>   
+  
+</section>
+
+
+<!-- city -->
+<section class="award mb-5">
+                  <div class="mt-4">
+                    
+                  <!-- artist Section -->
+                    <div class="section-title">
+                      <h5>ARTISTS</h5>
+                      <button class="view-all-btn">View all</button>
+                    </div>
+
+                    <div class="artist-list">
+                      <div class="artist-card">
+                        <img src="https://via.placeholder.com/70" alt="Artist 1">
+                        <p>Anumita</p>
+                      </div>
+
+                      <div class="artist-card">
+                        <img src="https://via.placeholder.com/70" alt="Artist 1">
+                        <p>Anumita</p>
+                      </div>
+
+                      <div class="artist-card">
+                        <img src="https://via.placeholder.com/70" alt="Artist 1">
+                        <p>Anumita</p>
+                      </div>
+
+                      <div class="artist-card">
+                        <img src="https://via.placeholder.com/70" alt="Artist 1">
+                        <p>Anumita</p>
+                      </div>
+
+                    </div>
+
+                    <!-- Venues Section -->
+                    <div class="section-title mt-4">
+                      <h5>Venues</h5>
+                    </div>
+                    
+                    <div class="venues-list">
+                      
+                      <div class="venue-card">
+                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                        <p>The Piano Man</p>
+                        <small>2 Events</small>
+                      </div>
+
+                      <div class="venue-card">
+                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                        <p>The Piano Man</p>
+                        <small>2 Events</small>
+                      </div>
+
+                      <div class="venue-card">
+                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                        <p>The Piano Man</p>
+                        <small>2 Events</small>
+                      </div>
+
+                      <div class="venue-card">
+                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                        <p>The Piano Man</p>
+                        <small>2 Events</small>
+                      </div>
+
+                      <div class="venue-card">
+                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                        <p>The Piano Man</p>
+                        <small>2 Events</small>
+                      </div>
+                      
+                    </div>
+                  </div>
+                </section>
+<!-- end-city -->
       <section  class="container pt-2">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
@@ -292,6 +543,125 @@
                                                ->get();
         @endphp
         
+        <style>
+          .venues-list{
+                  display: flex;
+                  overflow-x: auto;
+                  padding: 10px;
+                  gap: 15px;
+                  }
+
+          .venues-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .venues-list::-webkit-scrollbar {
+            display: none;
+          }
+
+          .venue-card {
+            position: relative;
+            width: 150px;
+            height: 180px;
+            border-radius: 10px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.4);
+          }
+
+          .venue-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          .venue-info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: left;
+          }
+
+          .green-gradient{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at bottom right, rgba(0, 255, 76, 0.6), transparent);
+            border-radius: 50%;
+          }
+        </style>
+
+      <section class="container">
+        <div class="venues-list">
+          
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+
+          <div class="venue-card">
+            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
+            <div class="venue-info">
+              <p class="fw-bold">The Piano Man</p>
+              <small>2 Events</small>
+            </div>
+            <div class="green-gradient"></div>
+          </div>
+          
+        </div>
+      </section>
+
+
+
+
+
+
         <div class="row g-0 py-0 mx-n2 my-Slider3">
           
           
