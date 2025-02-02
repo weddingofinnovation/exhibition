@@ -443,7 +443,8 @@
                   position: absolute;
                   inset: 0;
                   padding: 2px;
-                  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+                  /* background: linear-gradient(90deg, #ff7e5f, #feb47b); */
+                  background: linear-gradient(90deg, #0c1e0e, #153b1e);
                   border-radius: 5px;
                   -webkit-mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
                   mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
@@ -452,11 +453,11 @@
                 }
 
                 .btn-gradient-border:hover{
-                  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+                  /* background: linear-gradient(90deg, #ff7e5f, #feb47b); */
+                  background: linear-gradient(90deg, #0c1e0e, #153b1e);
                   color: white;
                 }
-
-
+               
                 .subscribe-btn{
                   padding: 10px 20px;
                   border-radius: 30px;
@@ -478,6 +479,7 @@
                 }
 
               </style>
+
                 <section class="card text-center py-5 award rounded-0">
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
@@ -497,6 +499,7 @@
                     </div>
                   <!-- <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a> -->
                   <a href="#" class="btn btn-gradient-border mt-4">Subscribe</a>
+                  <a href="#" class="btn btn-sm btn-primary mt-4 subscribe-btn">Subscribe</a>
                   </div>
 
                   <style>
@@ -677,6 +680,18 @@
                   
                    <div class="venues-list">
                     
+                    <div class="venue-card">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <p>The Piano Man</p>
+                      <small>2 Events</small>
+                    </div>
+
+                    <div class="venue-card">
+                      <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
+                      <p>The Piano Man</p>
+                      <small>2 Events</small>
+                    </div>
+
                     <div class="venue-card">
                       <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
                       <p>The Piano Man</p>
