@@ -628,7 +628,7 @@
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between align-items-center mt-4">
                       <div class="text-center">
-                        <p class="card-text fs-lg fw-light textcolor">Feb 29 <sup>th</sup></p>
+                        <p class="card-text fs-lg fw-light textcolor">Feb 29<sup>th</sup></p>
                         <p class="fs-9 text-muted">Open for Submissions</p>
                       </div>
                       <div class="text-center">
@@ -666,11 +666,13 @@
                     </div>
 
                     <div class="artist-list">
+                    @foreach ($network as $franchise)
                       <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
+                        <img src="{{url('public/speaker/'.$franchise->image)}}" alt="Artist 1">
+                        <p>{{$franchise->name}}</p>
                       </div>
-
+                    @endforeach
+                    
                       <div class="artist-card">
                         <img src="https://via.placeholder.com/70" alt="Artist 1">
                         <p>Anumita</p>
@@ -966,7 +968,6 @@
                                 </div>
                                 <button class="btn btn-sm btn-outline-secondary ms-2">Vote</button>
                               </div>
-                              
                             @endforeach
                           </div>
                         </div>
@@ -1190,10 +1191,10 @@
 
 
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="benefit-card">
+                  <div class="col-6">
+                    <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
-                      <p>10% cashback on food & 15% off at 200+ restaurants in Asia*</p>
+                      <p class="benefit-text">10% cashback on food & 15% off at 200+ restaurants in Asia*</p>
                     </div>
                   </div>
 
@@ -1203,16 +1204,16 @@
                       <p class="benefit-text">Buy One, Get One movie tickets on BookMyShow*</p>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="benefit-card">
+                  <div class="col-6">
+                    <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
-                      <p>Earn 1.5% cashback on most spends*</p>
+                      <p class="benefit-text">Earn 1.5% cashback on most spends*</p>
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="benefit-card">
+                  <div class="col-6">
+                    <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
-                      <p>Enjoy complimentarydomestic airport lounge access*</p>
+                      <p class="benefit-text">Enjoy complimentarydomestic airport lounge access*</p>
                     </div>
                   </div>
                 </div>
