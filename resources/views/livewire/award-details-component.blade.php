@@ -429,14 +429,18 @@
                   <div class="card-body">
                     <h5 class="card-title h2 textcolor">Timeline</h5>
                     <div class="d-flex justify-content-between align-items-center mt-4">
+                      <div class="text-center">
                         <p class="card-text fs-lg fw-light textcolor">Feb 29th</p>
                         <p class="fs-9 text-muted">Open for Submissions</p>
-
+                      </div>
+                      <div class="text-center">
                         <p class="card-text fs-lg fw-light textcolor">June 30th</p>
                           <p class="fs-9 text-muted">Submission Deadline</p>
-
+                      </div>
+                      <div class="text-center">
                         <p class="card-text fs-lg fw-light textcolor">August</p>
-                          <p class="fs-9 text-muted">Winner Announcement</p>
+                        <p class="fs-9 text-muted">Winner Announcement</p>
+                      </div>
                     </div>
                   
                     <a href="#" class="btn btn-sm btn-primary mt-4">Subscribe</a>
