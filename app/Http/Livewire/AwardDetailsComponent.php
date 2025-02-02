@@ -170,7 +170,7 @@ class AwardDetailsComponent extends Component
          $findvalue = $this->tabio;
 
         $speker = Speaker::where('admstatus','1')->where('status','1')->where('entity','speaker')->get();
-        $network = Speaker::where('admstatus','1')->where('status','1')->where('entity','network')->get();
+        $network = Speaker::where('admstatus','1')->where('status','1')->get();
         $social = Speaker::where('admstatus','1')->where('status','1')->where('entity','social')->get();
 
         return view('livewire.award-details-component',[ 'speker' =>$speker,  'network' => $network,'social' => $social,   'findvalue'=> $findvalue,'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,

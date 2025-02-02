@@ -672,21 +672,6 @@
                         <p>{{$franchise->name}}</p>
                       </div>
                     @endforeach
-                    
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
-
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
-
-                      <div class="artist-card">
-                        <img src="https://via.placeholder.com/70" alt="Artist 1">
-                        <p>Anumita</p>
-                      </div>
 
                     </div>
 
@@ -696,13 +681,13 @@
                     </div>
                     
                     <div class="venues-list">
-                      
-                      <div class="venue-card">
-                        <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-                        <p>The Piano Man</p>
-                        <small>2 Events</small>
-                      </div>
-
+                      @foreach ($network as $franchise)
+                        <div class="venue-card">
+                          <img src="{{url('public/speaker/'.$franchise->image)}}" alt="Venue 1">
+                          <p>{{$franchise->name}}</p>
+                          <small>2 Events</small>
+                        </div>
+                      @endforeach
                       <div class="venue-card">
                         <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
                         <p>The Piano Man</p>
