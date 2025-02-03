@@ -232,8 +232,7 @@
           }
          </style>
 
-         <div class="container mt-3">
-          <h5 class="fw-bold">categories</h5>
+        
           <div class="categories-list">
             @foreach ($getnamecategoryresult as $categ) 
               @php
@@ -245,7 +244,7 @@
               @endforeach
             @endforeach
           </div>
-         </div>
+        
         <!-- end-categories -->
 
         <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
