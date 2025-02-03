@@ -1146,6 +1146,7 @@
             font-size: 14px;
             font-weight: 500;
           }
+          
           .apply-btn {
             background-color: #d71920;
             color: white;
@@ -1189,6 +1190,7 @@
                       <p class="benefit-text">Buy One, Get One movie tickets on BookMyShow*</p>
                     </div>
                   </div>
+
                   <div class="col-6">
                     <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
@@ -1198,11 +1200,11 @@
                   <div class="col-6">
                     <div class="benefit-box">
                       <i class="bi bi-basket-fill"></i>
-                      <p class="benefit-text">Enjoy complimentarydomestic airport lounge access*</p>
+                      <p class="benefit-text">Enjoy complimentary domestic airport lounge access*</p>
                     </div>
                   </div>
                 </div>
-                <h6 class="fw-bold mt-3">Eligibility CRiteria</h6>
+                <h6 class="fw-bold mt-3">Eligibility Criteria</h6>
                 <button class="apply-btn">Apply Now</button>
               </div>
             </div>

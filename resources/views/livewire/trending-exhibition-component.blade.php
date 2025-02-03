@@ -167,21 +167,56 @@
           </div>
         </div>
 
-        
+       
 
-        <div class="d-flex badgese mt-1">
-            @foreach ($getnamecategoryresult as $categ) 
-              @php
-                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-              @endphp
-              
-              @foreach($findcountevent as $finderlo)
-                  <a wire:ignore class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
-                  {{ucwords(trans($finderlo->tag))}}</a>
+        <!-- start-categories -->
+         <style>
+          .categories-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 10px;
+            white-space: nowrap;
+            scrollbar-width: none;
+          }
+
+          .categories-list::-webkit-scrollbar{
+            display: none;
+          }
+
+          .category-btn {
+            flex: 0 0 auto;
+            padding: 10px 15px;
+            border-radius: 25px;
+            border: 1px solid #ff6b81;
+            background-color: #ffe4e9;
+            color: #ff6b81;
+            font-weight: 500;
+            cursor: pointer;
+          }
+
+          .category-btn:hover {
+            background-color: #ff6b81;
+            color: white;
+          }
+         </style>
+
+         <div class="container mt-3">
+          <h5 class="fw-bold">categories</h5>
+            <div class="categories-list">
+              @foreach ($getnamecategoryresult as $categ) 
+                @php
+                  $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+                @endphp
+                
+                @foreach($findcountevent as $finderlo)
+                    <button class="category-btn" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</button>
+                @endforeach
               @endforeach
-            @endforeach
-        </div>
-    
+            </div>
+         </div>
+        <!-- end-categories -->
+
         <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
           {{-- px-2 mb-1 --}}
           @foreach($evento as $eventoi)
