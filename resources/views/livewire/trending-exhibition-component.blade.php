@@ -175,8 +175,8 @@
           .categories-list {
             display: flex;
             overflow-x: auto;
-            padding: 10px;
-            gap: 10px;
+            padding: 5px;
+            gap: 5px;
             white-space: nowrap;
             scrollbar-width: none;
           }
@@ -185,41 +185,29 @@
             display: none;
           }
 
-          .category-btn {
-            flex: 0 0 auto;
-            padding: 10px 15px;
-            border-radius: 25px;
-            border: 1px solid #ff6b81;
-            background-color: #ffe4e9;
-            color: #ff6b81;
-            font-weight: 500;
-            cursor: pointer;
-          }
-
-          .category-btn:hover {
-            background-color: #ff6b81;
-            color: white;
-          }
-
+          
           .category-badge {
             flex: 0 0 auto;
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px linear-gradient(90deg, #0c1e0e, #153b1e;
+            padding: 4px 7px;
+            border-radius: 5px;
+            border: 1px solid #ccc ;
             background-color: #fff;
-            color: #dc3545;
-            font-weight: 500;
+            
+            font-weight: 400;
             text-align: center;
             display: inline-block;
+            font-size: 14px;
           }
-          /* background: linear-gradient(90deg, #0c1e0e, #153b1e); */
+
+          
           .category-badge:hover {
-            background-color: #ff6b81;
+            background-color: black;
             color: white;
+            
           }
+
          </style>
 
-        
           <div class="categories-list">
             @foreach ($getnamecategoryresult as $categ) 
               @php
@@ -227,7 +215,7 @@
               @endphp
               
               @foreach($findcountevent as $finderlo)
-                  <button class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</button>
+                  <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
               @endforeach
             @endforeach
           </div>
@@ -530,6 +518,8 @@ font-size: 14px;
 
 
 <!-- end-city -->
+
+
       <section  class="container pt-2">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
@@ -551,125 +541,81 @@ font-size: 14px;
                                                ->get();
         @endphp
         
-        <style>
-          .venues-list{
-                  display: flex;
-                  overflow-x: auto;
-                  padding: 10px;
-                  gap: 15px;
-                  }
-
-          .venues-list {
+        <!-- start city -->
+         <style>
+          .cities-list {
             display: flex;
             overflow-x: auto;
             padding: 10px;
-            gap: 15px;
+            gap: 12px;
+            white-space: nowrap;
             scrollbar-width: none;
-            -ms-overflow-style: none;
           }
 
-          .venues-list::-webkit-scrollbar {
+          .cities-list::-webkit-scrollbar{
             display: none;
           }
 
-          .venue-card {
-            position: relative;
-            width: 150px;
-            height: 180px;
-            border-radius: 10px;
-            overflow: hidden;
-            color: white;
+          /* category button styling */
+          .city-badge {
+            flex: 0 0 auto;
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            background-color: #f8f9fa;
+            color: black;
+            font-weight: 500;
             text-align: center;
-            box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
           }
 
-          .venue-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+          .city-badge:hover {
+            background-color: black;
+            color: white;
           }
-
-          .venue-info {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 8px;
-            border-radius: 5px;
-            font-size: 14px;
-            text-align: left;
-          }
-
-          .green-gradient{
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle at bottom right, rgba(0, 255, 76, 0.6), transparent);
-            border-radius: 50%;
-          }
-        </style>
-
-      <section class="container">
-        <div class="venues-list">
           
-          <div class="venue-card">
-            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
-            <div class="venue-info">
-              <p class="fw-bold">The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            <div class="green-gradient"></div>
-          </div>
+          .city-icon {
+           width: 20px;  /* Adjust icon size */
+           height: 20px;
+           filter: invert(0);
+          }
+         </style>
 
-          <div class="venue-card">
-            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
-            <div class="venue-info">
-              <p class="fw-bold">The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            <div class="green-gradient"></div>
-          </div>
 
-          <div class="venue-card">
-            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
-            <div class="venue-info">
-              <p class="fw-bold">The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            <div class="green-gradient"></div>
-          </div>
+         <div class="cities-list">
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-badge">
+            <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
+          </a>
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-badge">
+            <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
+          </a>
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-badge">
+            <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
+          </a>
 
-          <div class="venue-card">
-            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
-            <div class="venue-info">
-              <p class="fw-bold">The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            <div class="green-gradient"></div>
-          </div>
+          <a class="city-badge" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+           <img src="{{url('public/assets/image/city/bang.png')}}" alt="">Bangalore</a>
 
-          <div class="venue-card">
-            <img src="htps:via.placeholder.com/150X180" alt="Venue 1">
-            <div class="venue-info">
-              <p class="fw-bold">The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            <div class="green-gradient"></div>
-          </div>
+          <a class="city-badge" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+           <img src="{{url('public/assets/image/city/chen.png')}}" alt="">Chennai</a>
+
+          <a class="city-badge" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+           <img src="{{url('public/assets/image/city/chd.png')}}" alt="">Chandigarh</a>
+
+          <a class="city-badge" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+           <img src="{{url('public/assets/image/city/kolk.png')}}" alt="">Kolkata</a>
+
+          <a class="city-badge" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+           <img src="{{url('public/assets/image/city/ahd.png')}}" alt="">ahmedebad</a>
+
+
+         </div>
+        <!-- start city -->
           
-        </div>
-      </section>
-
-
-
-
-
-
         <div class="row g-0 py-0 mx-n2 my-Slider3">
           
           
