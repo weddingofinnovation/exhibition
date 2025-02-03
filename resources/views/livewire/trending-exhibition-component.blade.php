@@ -167,7 +167,21 @@
           </div>
         </div>
 
-       
+        
+
+        <div class="d-flex badgese mt-1">
+            @foreach ($getnamecategoryresult as $categ) 
+              @php
+                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+              @endphp
+              
+              @foreach($findcountevent as $finderlo)
+                  <a wire:ignore class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
+                  {{ucwords(trans($finderlo->tag))}}</a>
+              @endforeach
+            @endforeach
+        </div>
+    
 
         <!-- start-categories -->
          <style>
@@ -199,21 +213,38 @@
             background-color: #ff6b81;
             color: white;
           }
+
+          .category-badge {
+            flex: 0 0 auto;
+            padding: 8px 15px;
+            border-radius: 50px;
+            border: 1px solid #dc3545;
+            background-color: #f8d7da;
+            color: #dc3545;
+            font-weight: 500;
+            text-align: center;
+            display: inline-block;
+          }
+
+          .category-badge:hover {
+            background-color: #ff6b81;
+            color: white;
+          }
          </style>
 
          <div class="container mt-3">
           <h5 class="fw-bold">categories</h5>
-            <div class="categories-list">
-              @foreach ($getnamecategoryresult as $categ) 
-                @php
-                  $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-                @endphp
-                
-                @foreach($findcountevent as $finderlo)
-                    <button class="category-btn" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</button>
-                @endforeach
+          <div class="categories-list">
+            @foreach ($getnamecategoryresult as $categ) 
+              @php
+                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+              @endphp
+              
+              @foreach($findcountevent as $finderlo)
+                  <button class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</button>
               @endforeach
-            </div>
+            @endforeach
+          </div>
          </div>
         <!-- end-categories -->
 
