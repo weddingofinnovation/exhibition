@@ -168,19 +168,6 @@
         </div>
 
         
-
-        <div class="d-flex badgese mt-1">
-            @foreach ($getnamecategoryresult as $categ) 
-              @php
-                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-              @endphp
-              
-              @foreach($findcountevent as $finderlo)
-                  <a wire:ignore class="badge border-1 text-left border-dark text-dark mr-1" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">
-                  {{ucwords(trans($finderlo->tag))}}</a>
-              @endforeach
-            @endforeach
-        </div>
     
 
         <!-- start-categories -->
@@ -217,15 +204,15 @@
           .category-badge {
             flex: 0 0 auto;
             padding: 8px 15px;
-            border-radius: 50px;
-            border: 1px solid #dc3545;
-            background-color: #f8d7da;
+            border-radius: 20px;
+            border: 1px linear-gradient(90deg, #0c1e0e, #153b1e;
+            background-color: #fff;
             color: #dc3545;
             font-weight: 500;
             text-align: center;
             display: inline-block;
           }
-
+          /* background: linear-gradient(90deg, #0c1e0e, #153b1e); */
           .category-badge:hover {
             background-color: #ff6b81;
             color: white;
