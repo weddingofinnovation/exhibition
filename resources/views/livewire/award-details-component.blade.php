@@ -216,6 +216,77 @@
       </div>
     </section> -->
 
+
+    <style>
+
+      .hero-section {
+        background: linear-gradient(to right, #002f4b, #9b008b);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-section::after {
+       content: "";
+       display: block;
+       width: 100%;
+       height: 100%;
+       position: absolute;
+       bottom: -1px;
+       left: 0;
+       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0 , 160L80 , 165.3C160 , 171 , 320 , 181 , 480 , 197.3C640 , 213 , 800 , 235 , 960 , 218.7C1120 , 203 , 1280 , 149 , 1360 , 122.7L1440 , 96L1440 , 320L0 , 320Z"></path></svg>');
+       background-size: cover;
+      }
+
+      .floating-box {
+        background: white;
+        padding: 20px;
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 30px rgba(0,0, 0, 0.1);
+        position: relative;
+        margin: auto;
+      }
+
+
+      .floating-line {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 5px;
+        background: 50px;
+        box-shadow: 0px 5px 15px rgba(255,153, 0, 0.5);
+      }
+
+      .floating-box h2 {
+        color: #333;
+      }
+      
+      .floating-box p{
+        font-size: 20px;
+        font-weight: bold;
+        color: #ff9900;
+      }
+
+    </style>
+
+
+    <section class="hero-section">
+      <div class="floating-box">
+        <div class="floating-line">
+          <h2>msme</h2>
+          <p>12M</p>
+        </div>
+      </div>
+    </section>
+    
+
+
+
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10 award" data-bs-theme="light">
             <!-- <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" style="background-image: url('{{asset('/image/test.jpg')}}');"> -->
             <!-- <div class="container  mb-lg-0 bg-primary">
