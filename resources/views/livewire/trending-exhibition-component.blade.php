@@ -463,6 +463,7 @@
 
       </style>
 
+       <!-- city -->
       <section  class="container pt-2">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
@@ -560,7 +561,7 @@
         
       </section>
 
-      <!-- city -->
+      <!-- Trending Events -->
       <section class="award mb-5">
         <div class="mt-4">
           
@@ -571,39 +572,15 @@
           </div>
 
           <!-- Venues Section -->
-          
           <div class="venues-list">
-            
-            <div class="venue-card">
-              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-              <p>The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-
-            <div class="venue-card">
-              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-              <p>The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-
-            <div class="venue-card">
-              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-              <p>The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-
-            <div class="venue-card">
-              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-              <p>The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-
-            <div class="venue-card">
-              <img src="htps:via.placeholder.com/120X80" alt="Venue 1">
-              <p>The Piano Man</p>
-              <small>2 Events</small>
-            </div>
-            
+            @foreach($evento as $eventoi)
+              <div class="venue-card">
+                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+                <!-- <img src="htps:via.placeholder.com/120X80" alt="Venue 1"> -->
+                <p>The Piano Man</p>
+                <small>2 Events</small>
+              </div>
+            @endforeach
           </div>
         </div>
       </section>
