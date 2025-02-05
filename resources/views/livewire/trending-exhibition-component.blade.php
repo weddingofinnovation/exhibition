@@ -167,46 +167,43 @@
           </div>
         </div>
 
-        
-    
-
         <!-- start-categories -->
-         <style>
-          .categories-list {
-            display: flex;
-            overflow-x: auto;
-            padding: 5px;
-            gap: 5px;
-            white-space: nowrap;
-            scrollbar-width: none;
-          }
+          <style>
+            .categories-list {
+              display: flex;
+              overflow-x: auto;
+              padding: 5px;
+              gap: 5px;
+              white-space: nowrap;
+              scrollbar-width: none;
+            }
 
-          .categories-list::-webkit-scrollbar{
-            display: none;
-          }
+            .categories-list::-webkit-scrollbar{
+              display: none;
+            }
 
-          
-          .category-badge {
-            flex: 0 0 auto;
-            padding: 4px 7px;
-            border-radius: 5px;
-            border: 1px solid #ccc ;
-            background-color: #fff;
             
-            font-weight: 400;
-            text-align: center;
-            display: inline-block;
-            font-size: 14px;
-          }
+            .category-badge {
+              flex: 0 0 auto;
+              padding: 4px 7px;
+              border-radius: 5px;
+              border: 1px solid #ccc ;
+              background-color: #fff;
+              
+              font-weight: 400;
+              text-align: center;
+              display: inline-block;
+              font-size: 14px;
+            }
 
-          
-          .category-badge:hover {
-            background-color: black;
-            color: white;
             
-          }
+            .category-badge:hover {
+              background-color: black;
+              color: white;
+              
+            }
 
-         </style>
+          </style>
 
           <div class="categories-list">
             @foreach ($getnamecategoryresult as $categ) 
@@ -219,7 +216,6 @@
               @endforeach
             @endforeach
           </div>
-        
         <!-- end-categories -->
 
         <div class="row g-0 py-0 mx-n2 my-Slider3 mt-2"> 
@@ -313,145 +309,228 @@
 
       <style>
 
-.card-custom{
-  background: linear-gradient(to right, #0c1e0e, #153b1e);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 400px;
-  text-align: left;  
-}
+        .card-custom{
+          background: linear-gradient(to right, #0c1e0e, #153b1e);
+          color: white;
+          padding: 20px;
+          border-radius: 10px;
+          max-width: 400px;
+          text-align: left;  
+        }
 
-.btn-custom{
-background-color: #00ff4c;
-color: black;
-font-weight: bold;
-padding: 12px 20px;
-border-radius: 5px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 100%;
-text-decoration: none;
-}
+        .btn-custom{
+        background-color: #00ff4c;
+        color: black;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        text-decoration: none;
+        }
 
-.btn-custom span {
-background: black;
-color: white;
-padding: 4px 10px;
-border-radius: 5px;
-font-size: 14px;
-margin-left: 10px;
-}
+        .btn-custom span {
+        background: black;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-left: 10px;
+        }
 
-.category-container{
-  max-width: 800px;
-  text-align: center;
-}
+        .category-container{
+          max-width: 800px;
+          text-align: center;
+        }
 
-.category-box {
-  background: linear-gradient(to right, #0c1e0e, #153b1e);
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
-  transition: transform 0.3s ease-in-out;
-}
+        .category-box {
+          background: linear-gradient(to right, #0c1e0e, #153b1e);
+          color: white;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 16px;
+          box-shadow: 0px 4px 10px rgba(0,255, 76, 0.2);
+          transition: transform 0.3s ease-in-out;
+        }
 
-.category-box:hover{
-transform:scale(1.05);
-}
+        .category-box:hover{
+        transform:scale(1.05);
+        }
 
-/* Artist & venue */
+        /* Artist & venue */
 
-.section-title {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 10px 15px;
-}
+        .section-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        }
 
-.section-title h5 {
-font-weight: bold;
-margin: 0;
-}
+        .section-title h5 {
+        font-weight: bold;
+        margin: 0;
+        }
 
-.view-all-btn{
-border: 1px solid #ccc;
-border-radius: 20px;
-padding: 5px 15px;
-font-size: 14px;
-background: white;
-}
+        .view-all-btn{
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-size: 14px;
+        background: white;
+        }
 
-.artist-list{
-display: flex;
-overflow-x: auto;
-padding: 10px;
-gap: 15px;
-}
+        .artist-list{
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 15px;
+        }
 
-.artist-card{
-  text-align: center;
-  flex: 0 0 auto;
-  width: 90px;
-}
+        .artist-card{
+          text-align: center;
+          flex: 0 0 auto;
+          width: 90px;
+        }
 
-.artist-card img {
-width: 70px;
-height: 70px;
-object-fit: cover;
-border-radius: 50%;
-border: 3px solid white;
-}
+        .artist-card img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid white;
+        }
 
-.venues-list{
-display: flex;
-overflow-x: auto;
-padding: 10px;
-gap: 15px;
-}
+        .venues-list{
+        display: flex;
+        overflow-x: auto;
+        padding: 10px;
+        gap: 15px;
+        }
 
-.venue-card{
-flex: 0 0 auto;
-width: 120px;
-border-radius: 10px;
-background: linear-gradient(to right, #0c1e0e,#153b1e);
-color: white;
-padding: 10px;
-text-align: center;
-box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
-}
+        .venue-card{
+        flex: 0 0 auto;
+        width: 120px;
+        border-radius: 10px;
+        background: linear-gradient(to right, #0c1e0e,#153b1e);
+        color: white;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+        }
 
-.venue-card img{
-width: 100%;
-height: 80px;
-object-fit: cover;
-border-radius: 8px;
-}
+        .venue-card img{
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        }
 
-.venue-card p {
-margin: 5px 0;
-font-size: 14px;
-}
+        .venue-card p {
+        margin: 5px 0;
+        font-size: 14px;
+        }
 
-.artist-list, .venues-list {
-  display: flex;
-  overflow-x: auto;
-  padding: 10px;
-  gap: 15px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+        .artist-list, .venues-list {
+          display: flex;
+          overflow-x: auto;
+          padding: 10px;
+          gap: 15px;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
 
-.artist-list::-webkit-scrollbar, .venues-list::-webkit-scrollbar {
-  display: none;
-}
+        .artist-list::-webkit-scrollbar, .venues-list::-webkit-scrollbar {
+          display: none;
+        }
 
-</style>
+      </style>
+
+      <section  class="container pt-2">
+        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
+          <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
+            <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
+            <span>
+              
+            <a href="" class="btn btn-outline-primary btn-sm" href="#" role="button">All</a>
+            
+          </div>
+        </div>
+
+         @php  
+            $locationo = DB::table('locations')->where('status', 1)
+                                               ->where('admstatus', 1)
+                                               ->whereNotNull('venue')
+                                               ->select('city', 'country', 'image')
+                                               ->groupBy('city', 'country', 'image')
+                                               ->orderBy('city','asc')
+                                               ->get();
+        @endphp
+        
+        
+        <!-- new start city -->
+          <style>
+            .scroll-container {
+                        display: flex;
+                        overflow-x: auto;
+                        white-space: nowrap;
+                        gap: 15px;
+                        padding: 10px;                      
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                      }
+            
+            .scroll-container::-webkit-scrollbar{
+              display: none;
+            }
+            .city-item {
+              text-decoration: none;
+              color: black;
+              font-weight: 500;
+              text-align: center;
+              flex: 0 0 auto;
+              width: 90px;
+            }
+            .city-icon {
+              width: 60px;
+              height: 60px;
+            }
+            .selected{
+              color: red !important;
+            }
+          </style>
+            
+          <div class="scroll-container">
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
+            <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
+          </a>
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
+            <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
+          </a>
+          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
+            <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
+          </a>
+
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
+
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
+
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
+
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
+
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
+          </div>
+        <!-- new start city -->
+      </section>
 
       <!-- timeline -->
       <section class="card text-center py-5 award rounded-0">
@@ -466,7 +545,6 @@ font-size: 14px;
         </div>   
         
       </section>
-
 
       <!-- city -->
       <section class="award mb-5">
@@ -515,91 +593,6 @@ font-size: 14px;
           </div>
         </div>
       </section>
-
-
-<!-- end-city -->
-
-
-      <section  class="container pt-2">
-        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
-          <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-            <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
-            <span>
-              
-            <a href="" class="btn btn-outline-primary btn-sm" href="#" role="button">All</a>
-            
-          </div>
-        </div>
-
-        @php  
-            $locationo = DB::table('locations')->where('status', 1)
-                                               ->where('admstatus', 1)
-                                               ->whereNotNull('venue')
-                                               ->select('city', 'country', 'image')
-                                               ->groupBy('city', 'country', 'image')
-                                               ->orderBy('city','asc')
-                                               ->get();
-        @endphp
-        
-        <!-- new start city -->
-          <style>
-            .scroll-container {
-                        display: flex;
-                        overflow-x: auto;
-                        white-space: nowrap;
-                        gap: 15px;
-                        padding: 10px;                      
-                        scrollbar-width: none;
-                        -ms-overflow-style: none;
-                      }
-            
-            .scroll-container::-webkit-scrollbar{
-              display: none;
-            }
-            .city-item {
-              text-decoration: none;
-              color: black;
-              font-weight: 500;
-              text-align: center;
-              flex: 0 0 auto;
-              width: 90px;
-            }
-            .city-icon {
-              width: 60px;
-              height: 60px;
-            }
-            .selected{
-              color: red !important;
-            }
-          </style>
-            
-          <div class="scroll-container">
-          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
-            <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
-          </a>
-          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
-            <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
-          </a>
-          <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
-            <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
-          </a>
-          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
-            <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
-
-          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
-            <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
-
-          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
-            <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
-
-          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
-            <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
-
-          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
-            <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
-          </div>
-        <!-- new end city -->
-      </section>
   </main>
 
   @push('scripts')
@@ -632,5 +625,31 @@ font-size: 14px;
         });
       </script>
 
-     
+      <script>
+        var slider = tns({
+          "container": '.my-Slider3',          
+          "responsive": {
+            "300": {
+              "items": 2,
+              "controls": false,
+              "mouseDrag": true,
+              "autoplay": false,
+              "fixedWidth": 150,
+              "autoplayButtonOutput": false,
+              "autoplayHoverPause": true,
+            },
+            "500": {
+              "items": 4,
+              "nav": false,
+              "controls": false,
+              "autoplayHoverPause": true,
+              "autoplay": false,
+              "fixedWidth": 300,
+              "autoplayButtonOutput": false
+            },
+            
+          },
+          "autoplayButtonOutput":false
+        });
+      </script>
   @endpush
