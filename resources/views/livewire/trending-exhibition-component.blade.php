@@ -531,7 +531,7 @@ font-size: 14px;
           </div>
         </div>
 
-         @php  
+        @php  
             $locationo = DB::table('locations')->where('status', 1)
                                                ->where('admstatus', 1)
                                                ->whereNotNull('venue')
@@ -541,45 +541,39 @@ font-size: 14px;
                                                ->get();
         @endphp
         
-        
-          <!-- new start city -->
+        <!-- new start city -->
           <style>
-          .scroll-container {
-                      display: flex;
-                      overflow-x: auto;
-                      white-space: nowrap;
-                      gap: 15px;
-                      padding: 10px;                      
-                      scrollbar-width: none;
-                      -ms-overflow-style: none;
-                    }
-          
-          .scroll-container::-webkit-scrollbar{
-            display: none;
-          }
-
-          .city-item {
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-            text-align: center;
-            flex: 0 0 auto;
-            width: 90px;
-          }
-
-          .city-icon {
-            width: 60px;
-            height: 60px;
-          }
-
-          .selected{
-            color: red !important;
-          }
-
+            .scroll-container {
+                        display: flex;
+                        overflow-x: auto;
+                        white-space: nowrap;
+                        gap: 15px;
+                        padding: 10px;                      
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                      }
+            
+            .scroll-container::-webkit-scrollbar{
+              display: none;
+            }
+            .city-item {
+              text-decoration: none;
+              color: black;
+              font-weight: 500;
+              text-align: center;
+              flex: 0 0 auto;
+              width: 90px;
+            }
+            .city-icon {
+              width: 60px;
+              height: 60px;
+            }
+            .selected{
+              color: red !important;
+            }
           </style>
-          <!-- new start city -->
-
-         <div class="scroll-container">
+            
+          <div class="scroll-container">
           <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
             <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
           </a>
@@ -589,80 +583,22 @@ font-size: 14px;
           <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
             <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
           </a>
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
 
-          <a class="city-item" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
-           <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
 
-          <a class="city-item" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
-           <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
 
-          <a class="city-item" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
-           <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
 
-          <a class="city-item" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
-           <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
-
-          <a class="city-item" href="'search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
-           <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmedebad</a>
-
-          
-         </div>
-        <!-- start city -->
-
-
-          
-        <div class="row g-0 py-0 mx-n2 my-Slider3">
-          
-          
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}">
-              <h3 class="name">Delhi</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/ncr.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 30px;">Delhi</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}">
-              <h3 class="name">Hyderabad</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/hyd.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 20px;">Hyderabad</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}">
-              <h3 class="name">Mumbai</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/mum.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 30px;">Mumbai</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
-              <h3 class="name">Bangalore</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/bang.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 20px;">Bangalore</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
-              <h3 class="name">Chennai</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/chen.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 30px;">Chennai</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
-              <h3 class="name">Chandigarh</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/chd.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 20px;">Chandigarh</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
-              <h3 class="name">Kolkata</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/kolk.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 20px;">Kolkata</p>
-            </a>
-            <a class="element-item bg-light" data-category="metalloid" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
-              <h3 class="name">Ahmdebad</h3>
-              <p class="symbol"><img src="{{url('public/assets/image/city/ahd.png')}}" alt="#"></p>
-              <!-- <p class="number">52</p> -->
-                   <p class="weight" style="left: 20px;">Ahmdebad</p>
-            </a>
-        </div>
+          <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+            <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
+          </div>
+        <!-- new end city -->
       </section>
   </main>
 
@@ -696,31 +632,5 @@ font-size: 14px;
         });
       </script>
 
-      <script>
-        var slider = tns({
-          "container": '.my-Slider3',          
-          "responsive": {
-            "300": {
-              "items": 2,
-              "controls": false,
-              "mouseDrag": true,
-              "autoplay": false,
-              "fixedWidth": 150,
-              "autoplayButtonOutput": false,
-              "autoplayHoverPause": true,
-            },
-            "500": {
-              "items": 4,
-              "nav": false,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplay": false,
-              "fixedWidth": 300,
-              "autoplayButtonOutput": false
-            },
-            
-          },
-          "autoplayButtonOutput":false
-        });
-      </script>
+     
   @endpush
