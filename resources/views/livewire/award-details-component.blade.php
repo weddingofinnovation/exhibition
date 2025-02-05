@@ -228,6 +228,11 @@
         overflow: hidden;
       }
 
+      .hero-content{
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
       .hero-section::after {
        content: "";
        display: block;
@@ -238,6 +243,20 @@
        left: 0;
        background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0 , 160L80 , 165.3C160 , 171 , 320 , 181 , 480 , 197.3C640 , 213 , 800 , 235 , 960 , 218.7C1120 , 203 , 1280 , 149 , 1360 , 122.7L1440 , 96L1440 , 320L0 , 320Z"></path></svg>');
        background-size: cover;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-section {
+          padding: 80px 15px;          
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
       }
 
       .floating-box {
@@ -276,14 +295,23 @@
 
 
     <section class="hero-section">
-      <div class="floating-box">
-        <div class="floating-line">
-          <h2>msme</h2>
-          <p>12M</p>
+      <div class="container">
+        <div class=" row justify-content-center">
+          <div class="col-md-8 text-center hero-content">
+            <h1>Welcome to our Event</h1>
+            <p class="lead">Join us for an amazing experience at the Amazon Global Selling Event.</p>
+            <a href="" class="btn btn-warning btn-lg">Get started</a>
+          </div>
         </div>
       </div>
     </section>
     
+    <div class="floating-box">
+      <div class="floating-line">
+        <h2>msme</h2>
+        <p>12M</p>
+      </div>
+    </div>
 
 
 
