@@ -3,6 +3,81 @@
 @section('page_keyword',  'The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
     <main>
+    <style>
+
+      .hero-sectionli {
+        background: linear-gradient(to right, #002f4b, #9b008b);
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content{
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-sectionli::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0 , 160L80 , 165.3C160 , 171 , 320 , 181 , 480 , 197.3C640 , 213 , 800 , 235 , 960 , 218.7C1120 , 203 , 1280 , 149 , 1360 , 122.7L1440 , 96L1440 , 320L0 , 320Z"></path></svg>');
+      background-size: cover;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-sectionli {
+          padding: 80px 15px;          
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+      }
+
+      .floating-box {
+        background: white;
+        padding: 20px;
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0px 10px 30px rgba(0,0, 0, 0.1);
+        position: relative;
+        margin: auto;
+      }
+
+
+      .floating-line {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 5px;
+        background: 50px;
+        box-shadow: 0px 5px 15px rgba(255,153, 0, 0.5);
+      }
+
+      .floating-box h2 {
+        color: #333;
+      }
+
+      .floating-box p{
+        font-size: 20px;
+        font-weight: bold;
+        color: #ff9900;
+      }
+
+    </style>
 
     <style>
         body {
@@ -22,12 +97,21 @@
       
     </style>
 
-    <section class=" award container text-light">
+    <section class="hero-sectionli">
         <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">Guide</a></li>
             <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
         </ul>
+      <div class="container">
+        <div class=" row justify-content-center">
+          <div class="col-md-8 text-center hero-content">
+            <h1>Welcome to our Event</h1>
+            <p class="lead">Join us for an amazing experience at the Amazon Global Selling Event.</p>
+            <a href="" class="btn btn-warning btn-lg">Get started</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
@@ -215,96 +299,6 @@
         </div>
       </div>
     </section> -->
-
-
-    <style>
-
-      .hero-section {
-        background: linear-gradient(to right, #002f4b, #9b008b);
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-content{
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .hero-section::after {
-       content: "";
-       display: block;
-       width: 100%;
-       height: 100%;
-       position: absolute;
-       bottom: -1px;
-       left: 0;
-       background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="1" d="M0 , 160L80 , 165.3C160 , 171 , 320 , 181 , 480 , 197.3C640 , 213 , 800 , 235 , 960 , 218.7C1120 , 203 , 1280 , 149 , 1360 , 122.7L1440 , 96L1440 , 320L0 , 320Z"></path></svg>');
-       background-size: cover;
-      }
-
-      @media screen and (max-width: 768px) {
-        .hero-section {
-          padding: 80px 15px;          
-        }
-
-        .hero-content h1 {
-          font-size: 2rem;
-        }
-
-        .hero-content p {
-          font-size: 1rem;
-        }
-      }
-
-      .floating-box {
-        background: white;
-        padding: 20px;
-        width: 300px;
-        border-radius: 15px;
-        box-shadow: 0px 10px 30px rgba(0,0, 0, 0.1);
-        position: relative;
-        margin: auto;
-      }
-
-
-      .floating-line {
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 5px;
-        background: 50px;
-        box-shadow: 0px 5px 15px rgba(255,153, 0, 0.5);
-      }
-
-      .floating-box h2 {
-        color: #333;
-      }
-      
-      .floating-box p{
-        font-size: 20px;
-        font-weight: bold;
-        color: #ff9900;
-      }
-
-    </style>
-
-
-    <section class="hero-section">
-      <div class="container">
-        <div class=" row justify-content-center">
-          <div class="col-md-8 text-center hero-content">
-            <h1>Welcome to our Event</h1>
-            <p class="lead">Join us for an amazing experience at the Amazon Global Selling Event.</p>
-            <a href="" class="btn btn-warning btn-lg">Get started</a>
-          </div>
-        </div>
-      </div>
-    </section>
     
     <div class="floating-box">
       <div class="floating-line">
@@ -1361,6 +1355,7 @@
 
      <div class="speakero-section">
       <div class="container">
+
         <h2 class="text-center fw-bold">
           keynote Speakers
         </h2>
@@ -1380,6 +1375,7 @@
             </div>
           </div>
         </div>
+
       </div>
      </div>
 
