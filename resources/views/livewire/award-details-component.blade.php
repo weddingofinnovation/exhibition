@@ -114,6 +114,16 @@
       </div>
     </section>
 
+    <section class=" award container text-light">
+        <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Home</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">Guide</a></li>
+            <li class="nav-item border-bottom textcolor"><a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Showcase</a></li>
+        </ul>
+
+      
+    </section>
+
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9" 
       style="">
       
