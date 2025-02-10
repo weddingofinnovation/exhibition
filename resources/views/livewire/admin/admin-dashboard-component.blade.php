@@ -2537,7 +2537,7 @@
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Address</label>
                       <input class="form-control" type="text" placeholder="address" wire:model.lazy="address">
-                      @error( 'organizer' ){{ $message}}@enderror
+                      @error( 'address' ){{ $message}}@enderror
                   </div>
                   <div class="col-sm-4">
                       <label class="form-label" for="cf-name">Venue</label>
@@ -2545,7 +2545,7 @@
                       @error( 'organizer' ){{ $message}}@enderror
                   </div>
                   <div class="col-sm-4">
-                      <label class="form-label" for="cf-name">city</label>
+                      <label class="form-label" for="cf-name">City</label>
                       <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" >
                       @error( 'city' ){{ $message}}@enderror
                   </div>
@@ -2578,16 +2578,16 @@
                     @endif
                 </div>
 
-                {{-- <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => $franchise->venue , 'city' => $franchise->city ])}}">venue</a>
-                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $franchise->city ])}}">city</a>
-                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all'  ])}}">country</a> --}}
+                {{-- <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => $franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null' ])}}">venue</a>
+                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null' ])}}">city</a>
+                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' , 'country' => $franchise->country ?? 'null'  ])}}">country</a> --}}
 
                 <div class="col-7  p-0">
-                    {{-- <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city ])}}">
+                    {{-- <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null' ])}}">
                         {{ucwords(trans(Str::limit($franchise->venue, 24)))}}</a></div> --}}
                 
                     <div class="text-muted fs-sm text-start">
-                      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' ])}}">
+                      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all', 'country' => $franchise->country ?? 'null' ])}}">
                       
                       @if($franchise->address)
                         {{$franchise->address ?? 'null'}}
@@ -2597,13 +2597,14 @@
                       </a>
                     </div>
 
-                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city ])}}">
+                    <div class="fs-md fw-normal text-start">
+                      <a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
                         {{$franchise->venue}}</a></div>
                     <div class="text-muted fs-sm text-start">
-                        <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $franchise->city ])}}">{{$franchise->city}}</a>   
+                        <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => $franchise->city, 'country' => $franchise->country ?? 'null' ])}}">{{$franchise->city}}</a>   
                     </div>  
                     <div class="text-muted fs-sm text-start">
-                      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all' ])}}">{{$franchise->country}}</a>
+                      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'all', 'country' => $franchise->country ?? 'null' ])}}">{{$franchise->country}}</a>
                     </div>
 
                 </div>
