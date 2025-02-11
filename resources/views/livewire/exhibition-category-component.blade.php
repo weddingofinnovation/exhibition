@@ -104,7 +104,31 @@
                               $witems = Cart::instance('wishlist')->content()->pluck('id'); 
                         @endphp
 
+
+                          
                         <div class="row mb-5 pb-2">    
+                        {{$this->eventype}} {{$this->categry}} {{$this->time}}
+
+
+                        @php 
+                          $industryhead = Category::get();
+                        @endphp
+
+                        @foreach($industryhead as $headcategories)
+                          @php 
+                            $findsubcateory = DB::table('indsecs')->where('category_id', $headcategories->id )->get();
+                          @endphp
+
+                            @foreach($findsubcateory as $findo)
+                              @php
+                                $findsubcat = DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->value('tag');
+                              @endphp
+
+                              {{$findsubcat}} {{$findcountevent}}
+                            @endforeach
+                        @endforeach
+
+
                           @foreach ($exhibition as $business)
                             @php
                                 $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 

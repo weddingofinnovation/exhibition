@@ -265,7 +265,7 @@ Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::cla
 
 
 //as per upcoming venue 
-Route::get('Great-Exhibition-to-Exhibit/{time}/{venue}/{city}/{country}', EventSearchComponent::class)->name('search.venue');
+Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
 
 Route::get('/pass/{slug}', ProductComponent::class)->name('event.product');
