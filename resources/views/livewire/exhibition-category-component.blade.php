@@ -129,7 +129,13 @@
                                   $eventcat = DB::table('dencos')->where('expo_id', $eventooo -> id )->get();
                                 @endphp
 
-                                {{$eventcat}}
+                                @foreach($eventcat as $eventooo)
+                                  @php
+                                    $eventcatdetails = DB::table('events')->where('expo_id', $eventooo -> event_id )->get();
+                                  @endphp
+                                  {{$eventcatdetails}}
+                                @endforeach  
+
                               @endforeach
                               {{$findsubcat}} 
 
