@@ -253,69 +253,129 @@
                           @endforeach 
 
                           @foreach($exhibition as $business)
-                          @php 
-                            $franchiso = DB::table('events')->where('id', $business->EventName)->get();
-                          @endphp
-                          @foreach($franchiso as $franchise)
-                              <div class="container">
-                                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                    <div class="col  pr-0">
-                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                            {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> --}}
-                                            <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
-                                            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                          @else
-                                            {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>--}}
-                                            <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
-                                            <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                                        @endif
+                            @php 
+                              $franchiso = DB::table('events')->where('id', $business->EventName)->get();
+                            @endphp
+                            @foreach($franchiso as $franchise)
+                                <div class="container">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                      <div class="col  pr-0">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                              {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> --}}
+                                              <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
+                                              <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                            @else
+                                              {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>--}}
+                                              <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
+                                              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                          @endif
 
-                                        
-                                    </div>
-
-                                    <div class="col-7  p-0">
-                                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                        {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                      <div class="text-muted fs-sm text-start">
-                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                        @else
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                        @endif 
-                                      </div>  
-                                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
-                                    </div>
-
-                                    <div class="col-3  p-0">
-                                        <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
-                                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
-                                        </a>
-                                        @if(in_array($franchise->id, $selectedImages))
-                                          <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
-                                            <span class="text-white">Selected</span>
-                                          </div> -->
-                                          <!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
-                                          <!-- Checkmark Icon -->
-                                          <!-- <span class="position-absolute top-0 start-0 m-2 text-success">
-                                            <i class="fas fa-check-circle fa-2x"></i>
-                                          </span> -->
                                           
-                                          <!-- Mobile view: icon notification -->
-                                          <!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
-                                            m<i class="fas fa-check-circle fa-2x"></i> 
-                                          </span> -->
-                                          <span class="position-absolute delete-notification"></span>
+                                      </div>
 
-                                          <!-- Desktop view: "Selected" text -->
-                                          <span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
-                                            Selected <!-- Desktop text -->
-                                          </span>
-                                        @endif
-                                    </div>
-                                  </div>  
-                              </div>
-                          @endforeach
+                                      <div class="col-7  p-0">
+                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                        <div class="text-muted fs-sm text-start">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @endif 
+                                        </div>  
+                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
+                                      </div>
+
+                                      <div class="col-3  p-0">
+                                          <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
+                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                                          </a>
+                                          @if(in_array($franchise->id, $selectedImages))
+                                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+                                              <span class="text-white">Selected</span>
+                                            </div> -->
+                                            <!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
+                                            <!-- Checkmark Icon -->
+                                            <!-- <span class="position-absolute top-0 start-0 m-2 text-success">
+                                              <i class="fas fa-check-circle fa-2x"></i>
+                                            </span> -->
+                                            
+                                            <!-- Mobile view: icon notification -->
+                                            <!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
+                                              m<i class="fas fa-check-circle fa-2x"></i> 
+                                            </span> -->
+                                            <span class="position-absolute delete-notification"></span>
+
+                                            <!-- Desktop view: "Selected" text -->
+                                            <span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
+                                              Selected <!-- Desktop text -->
+                                            </span>
+                                          @endif
+                                      </div>
+                                    </div>  
+                                </div>
+                            @endforeach
                           @endforeach 
+
+                          @foreach($eventscato as $date => $franchise)
+                                <div class="container">
+                                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                      <div class="col  pr-0">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                              {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> --}}
+                                              <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
+                                              <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                            @else
+                                              {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>--}}
+                                              <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
+                                              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                                          @endif
+
+                                          
+                                      </div>
+
+                                      <div class="col-7  p-0">
+                                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                        <div class="text-muted fs-sm text-start">
+                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @else
+                                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                          @endif 
+                                        </div>  
+                                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
+                                      </div>
+
+                                      <div class="col-3  p-0">
+                                          <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
+                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                                          </a>
+                                          @if(in_array($franchise->id, $selectedImages))
+                                            <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
+                                              <span class="text-white">Selected</span>
+                                            </div> -->
+                                            <!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
+                                            <!-- Checkmark Icon -->
+                                            <!-- <span class="position-absolute top-0 start-0 m-2 text-success">
+                                              <i class="fas fa-check-circle fa-2x"></i>
+                                            </span> -->
+                                            
+                                            <!-- Mobile view: icon notification -->
+                                            <!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
+                                              m<i class="fas fa-check-circle fa-2x"></i> 
+                                            </span> -->
+                                            <span class="position-absolute delete-notification"></span>
+
+                                            <!-- Desktop view: "Selected" text -->
+                                            <span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
+                                              Selected <!-- Desktop text -->
+                                            </span>
+                                          @endif
+                                      </div>
+                                    </div>  
+                                </div>
+                          @endforeach
                         </div> 
                       </div>
                   

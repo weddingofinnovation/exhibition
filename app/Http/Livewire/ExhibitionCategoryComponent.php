@@ -182,6 +182,21 @@ class ExhibitionCategoryComponent extends Component
         }
 
         $previous = url()->previous();
-        return view('livewire.exhibition-category-component' ,['mytime'=>$mytime,'previous'=>$previous ,'exhibition'=>$exhibition ,'catego'=>$catego]);
+
+        $eventsc = DB::table('events')
+                  ->join('dencos', 'events.expo_id', '=', 'dencos.event_id')
+                  ->join('expos', 'dencos.expo_id', '=' , 'expos.id')
+                  ->join('indsecs', 'expos.id' , '=', 'indsecs.subtag_id')
+                  ->join('categories', 'indsecs.category_id','=','categories.id')
+                  ->where('expos.type', 'tag')
+                  ->where('categories.slug', $this->categry)
+                  ->select('events.*')
+                  ->orderBy('events.startdate','asc')
+                  ->get();
+
+        $eventscato = $eventsc->groupBy(function ($event){
+            return Carbon::parse($event->startdate)->format('Y-m-d');
+        });
+        return view('livewire.exhibition-category-component' , ['eventscato' => $eventscato, 'mytime' => $mytime, 'previous' => $previous , 'exhibition' => $exhibition ,'catego' => $catego]);
     }
 }
