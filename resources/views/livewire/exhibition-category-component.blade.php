@@ -111,7 +111,7 @@
 
 
                         @php 
-                          $industryhead = Category::get();
+                          $industryhead = DB::table('categories')->where('slug', $this->categry)->get();
                         @endphp
 
                         @foreach($industryhead as $headcategories)
@@ -121,10 +121,19 @@
 
                             @foreach($findsubcateory as $findo)
                               @php
-                                $findsubcat = DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->value('tag');
+                                $findsubcat = DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->get();
                               @endphp
 
-                              {{$findsubcat}} {{$findcountevent}}
+                              @foreach($findsubcat as $eventooo)
+                                @php
+                                  $eventcat = DB::table('dencos')->where('expo_id', $eventooo -> id )->get();
+                                @endphp
+
+                                {{$eventcat}}
+                              @endforeach
+                              {{$findsubcat}} 
+
+
                             @endforeach
                         @endforeach
 
