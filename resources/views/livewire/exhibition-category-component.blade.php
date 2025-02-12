@@ -124,13 +124,61 @@
                                 $findsubcat = DB::table('expos')->where('id', $findo -> subtag_id )->where('type','tag')->get();
                               @endphp
 
+
+                              <!-- start-categories -->
+                                <style>
+                                  .categories-list {
+                                    display: flex;
+                                    overflow-x: auto;
+                                    padding: 5px;
+                                    gap: 5px;
+                                    white-space: nowrap;
+                                    scrollbar-width: none;
+                                  }
+
+                                  .categories-list::-webkit-scrollbar{
+                                    display: none;
+                                  }
+
+                                  
+                                  .category-badge {
+                                    flex: 0 0 auto;
+                                    padding: 4px 7px;
+                                    border-radius: 5px;
+                                    border: 1px solid #ccc ;
+                                    background-color: #fff;
+                                    
+                                    font-weight: 400;
+                                    text-align: center;
+                                    display: inline-block;
+                                    font-size: 14px;
+                                  }
+
+                                  
+                                  .category-badge:hover {
+                                    background-color: black;
+                                    color: white;
+                                    
+                                  }
+
+                                </style>
+
+                                <div class="categories-list">
+                                  
+                                    
+                                    @foreach($findsubcat as $finderlo)
+                                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+                                    @endforeach
+                                 
+                                </div>
+                              <!-- end-categories -->
+
+
                               @foreach($findsubcat as $eventooo)
                                 @php
                                   $eventcat = DB::table('dencos')->where('expo_id', $eventooo -> id )->get();
                                 @endphp
 
-                                
-                                
                                 
                                 @foreach ($eventcat as $eventooo)
                                   @php
@@ -151,17 +199,7 @@
                                                   <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
                                               @endif
 
-                                              @php 
-                                                $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                                $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
-                                                $name = $franchise->eventname;
-                                                $venue = $franchise->venue;
-                                                $city = $franchise->city;
-                                                $country = $franchise->country;
-                                                $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                                              @endphp
-                                                
-                                                  <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                              
                                           </div>
 
                                           <div class="col-7  p-0">
@@ -174,7 +212,7 @@
                                                 {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
                                               @endif 
                                             </div>  
-                                            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
+                                            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
                                           </div>
 
                                           <div class="col-3  p-0">
@@ -209,9 +247,7 @@
                                 @endforeach
 
                               @endforeach
-                              {{$findsubcat}} 
-
-
+                            
                             @endforeach
                         @endforeach
 
