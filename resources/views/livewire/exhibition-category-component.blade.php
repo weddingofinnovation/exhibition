@@ -76,11 +76,6 @@
           $subcategory = DB::table('indsecs')->where('category_id', $findcategoryid)->value('subtag_id'); 
         @endphp
 
-{{-- 
-        {{$this->categry}}
-        {{$findcategoryid}}
-        {{$findsubcategory}}
-        {{$subcategory}} --}}
         <hr>
       
         <div class="d-lg-none">
@@ -108,7 +103,45 @@
                           $industryhead = DB::table('categories')->where('slug', $this->categry)->get();
                         @endphp
 
-                        <div class="container">
+                        
+                          <style>
+                            .categories-list {
+                              display: flex;
+                              overflow-x: auto;
+                              padding: 5px;
+                              gap: 5px;
+                              white-space: nowrap;
+                              scrollbar-width: none;
+                            }
+
+                            .categories-list::-webkit-scrollbar{
+                              display: none;
+                            }
+
+                            
+                            .category-badge {
+                              flex: 0 0 auto;
+                              padding: 4px 7px;
+                              border-radius: 5px;
+                              border: 1px solid #ccc ;
+                              background-color: #fff;
+                              
+                              font-weight: 400;
+                              text-align: center;
+                              display: inline-block;
+                              font-size: 14px;
+                            }
+
+                            
+                            .category-badge:hover {
+                              background-color: black;
+                              color: white;
+                              
+                            }
+
+                          </style>
+                          
+                        <div class="categories-list">
                           @foreach($industryhead as $headcategories)
                             @php 
                               $findsubcateory = DB::table('indsecs')->where('category_id', $headcategories->id )->get();
@@ -121,44 +154,8 @@
 
 
                                 <!-- start-categories -->
-                                  <style>
-                                    .categories-list {
-                                      display: flex;
-                                      overflow-x: auto;
-                                      padding: 5px;
-                                      gap: 5px;
-                                      white-space: nowrap;
-                                      scrollbar-width: none;
-                                    }
-
-                                    .categories-list::-webkit-scrollbar{
-                                      display: none;
-                                    }
-
-                                    
-                                    .category-badge {
-                                      flex: 0 0 auto;
-                                      padding: 4px 7px;
-                                      border-radius: 5px;
-                                      border: 1px solid #ccc ;
-                                      background-color: #fff;
-                                      
-                                      font-weight: 400;
-                                      text-align: center;
-                                      display: inline-block;
-                                      font-size: 14px;
-                                    }
-
-                                    
-                                    .category-badge:hover {
-                                      background-color: black;
-                                      color: white;
-                                      
-                                    }
-
-                                  </style>
-
-                                  <div class="categories-list">
+                                  
+                                  <div class="categories-li">
                                       @foreach($findsubcat as $finderlo)
                                           <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
                                       @endforeach
