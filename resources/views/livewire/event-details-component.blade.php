@@ -3934,14 +3934,14 @@
                         <div class="fw-light fs-sm text-muted">Edition</div>
                       </div>
 
-                    @if($event->auidence == 0)
+                    @if(is_numeric($event->auidence) && $event->auidence > 0)
                     @else
                       <div class="col-3 px-0 border-end">
-                        <div class="fw-bold text-center ">{{number_format(($event->auidence / 1000) , 1). 'k'}} +</div>
+                        <div class="fw-bold text-center ">{{number_format(((float)$event->auidence / 1000) , 1). 'k'}} +</div>
                         <div class="fw-light fs-sm text-muted">Visitor</div>
                       </div>
                     @endif
-                    
+
                       <div class="col-3 px-0 border-end">
                          <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
                          <div class="fw-light fs-xs text-muted">Rated for 3+</div>
