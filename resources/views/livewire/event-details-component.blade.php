@@ -4732,16 +4732,34 @@
                             <p class="weight">your Exhibition</p>
                           </a>
 
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'directory'])}}">
+                            <h3 class="name">Business</h3>
+                            <p class="symbol">Bi</p>
+                            <!-- <p class="number">83</p> -->
+                            <p class="weight">Directory</p>
+                          </a>
+
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'hostess'])}}">
+                            <h3 class="name">Business</h3>
+                            <p class="symbol">Bi</p>
+                            <!-- <p class="number">83</p> -->
+                            <p class="weight">Hostess</p>
+                          </a>
+
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'meet'])}}">
+                            <h3 class="name">Business</h3>
+                            <p class="symbol">Bi</p>
+                            <!-- <p class="number">83</p> -->
+                            <p class="weight">Meet up</p>
+                          </a>
+
                           <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
                             <h3 class="name">Delegates</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Right People</p>
                           </a>
-
-                              
-
-                          </div>
+                        </div>
                       <!-- <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
                       <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
                       <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
