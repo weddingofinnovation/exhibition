@@ -28,7 +28,11 @@
             @endforeach  
           </div>
 
-          <style>
+          
+
+    </section>
+
+    <style>
             .scroll-container {
                           display: flex;
                           overflow-x: auto;
@@ -56,8 +60,6 @@
           </div>
         @endforeach
       </div>
-
-    </section>
   </main>
 
   @push('scripts')
