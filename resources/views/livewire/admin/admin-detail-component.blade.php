@@ -30,7 +30,8 @@
             </div>
         </div>
     </div>
-
+    
+    
     <div class="container my-1">
         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
             <div class="col  pr-0">
@@ -348,24 +349,22 @@
     <div class="container my-3">
         <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
             <div class="col  pr-0">
-                <div class="h4 fw-light mb-0">{{$participants->count()}}</div> 
-               
-                <div class="round-circle" >Ptr</div> 
-                
+                <div class = "h4 fw-light mb-0">{{$participants->count()}}</div>
+                <div class = "round-circle">Ptr</div> 
             </div>
 
-            <a class="col-7  p-0" href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}"></a>
+            <a class="col-7 p-0" href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}"></a>
 
             <div class="col-3 p-0">
                @if(is_null($evento->organiser))
-                <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}" class="btn btn-primary btn-sm">Add</a>
-               @else
+                <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants'])}}" class="btn btn-primary btn-sm">Add</a>
+                @else
                 <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'participantsdashboard'])}}" class="btn btn-primary btn-sm">Edit</a>
                @endif
             </div>
         </div>
-        
     </div>
+
 
     {{--speaker--}}
     <div class="container my-3">
