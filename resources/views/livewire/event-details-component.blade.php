@@ -4619,7 +4619,7 @@
                     @else
                       <div class="element-item bg-light" data-category="post-transition">
                         <h3 class="name">Visitor</h3>
-                        <p class="symbol text-dark">{{number_format(($event->auidence / 1000) , 1)}}  <span class="fw-normal fs-sm">K</span></p>
+                        <p class="symbol text-dark">{{number_format(((float)$event->auidence / 1000) , 1)}}  <sub class="fw-normal fs-sm">K</sub></p>
                         <p class="number"></p>
                         @if($event->latestupdat == 'verfied')
                           <p class="weight">Verified</p>
@@ -4640,7 +4640,7 @@
                     @endif
 
                     <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Rating</h3>
+                      <h3 class="name">Great Exhibition To Exhibitd</h3>
                       <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
                       <p class="number"><a href="{{route('business.membership')}}"><i class="bi bi-info-circle"></i></a></p>
 

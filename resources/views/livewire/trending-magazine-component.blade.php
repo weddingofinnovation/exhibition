@@ -1,34 +1,64 @@
-<main>
-        <section class="container my-5"> 
-           <div class="list-unstyled pt-2 pb-1 px-0 pl-0">
-                <div class="d-flex justify-content-between px-0 m-0 lh-1">
-                    <span class="fs-sm"> Trending Business<br><span class="fw-medium h5">Magazine</span></span>
-                    <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
-                     <ul class="dropdown-menu" width="auto">
-                      <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'magazine'])}}">More</a></li>
-                      <li><a class="dropdown-item" href="#">Advertise</a></li>
-                      <li><a class="dropdown-item" href="#">Subscribe</a></li>
-                      <li><a class="dropdown-item" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Add</a></li>
-                    </ul>
-                    </span>
+  <main>
+    <section class="container my-5"> 
+          <div class="list-unstyled pt-2 pb-1 px-0 pl-0">
+              <div class="d-flex justify-content-between px-0 m-0 lh-1">
+                  <span class="fs-sm"> Great Exhibition To<br><span class="fw-medium h5">Exhibit</span></span>
+                  <span><a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">All</a>
+                    <ul class="dropdown-menu" width="auto">
+                    <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'magazine'])}}">More</a></li>
+                    <li><a class="dropdown-item" href="#">Advertise</a></li>
+                    <li><a class="dropdown-item" href="#">Subscribe</a></li>
+                    <li><a class="dropdown-item" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Add</a></li>
+                  </ul>
+                  </span>
+              </div>
+          </div>
+          
+          <!-- Grid-->
+          <div class="row mx-n2 my-Slider10 g-0 py-0"> 
+            <!-- magazine-->
+            @foreach($magazine as $eventoi)
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card product-card">
+                  <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => $eventoi->slug])}}">
+                    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" class="img-thumbnail" alt="">
+                  </a>
                 </div>
-            </div>
+              </div>
+            @endforeach  
+          </div>
+
+          <style>
+            .scroll-container {
+                          display: flex;
+                          overflow-x: auto;
+                          white-space: nowrap;
+                          gap: 15px;
+                          padding: 10px;                      
+                          scrollbar-width: none;
+                          -ms-overflow-style: none;
+                        }
+              
+            .scroll-container::-webkit-scrollbar{
+              display: none;
+            }
+          </style>
+      
+      <div class="scroll-container">
+        @foreach($magazine as $eventoi)
+          <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+            <div class="card product-card">
+              
+              <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
             
-            <!-- Grid-->
-            <div class="row mx-n2 my-Slider10 g-0 py-0"> 
-              <!-- magazine-->
-              @foreach($magazine as $eventoi)
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                  <div class="card product-card">
-                    <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => $eventoi->slug])}}">
-                      <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" class="img-thumbnail" alt="">
-                    </a>
-                  </div>
-                </div>
-              @endforeach  
-            </div> 
-        </section>
-</main>
+            </div>
+          </div>
+        @endforeach
+      </div>
+
+    </section>
+  </main>
 
   @push('scripts')
       <script>

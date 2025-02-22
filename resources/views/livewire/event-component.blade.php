@@ -3,8 +3,7 @@
 @section('page_keyword', 'Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
 <main>    
-  <!--bg-faded-info
-World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
+  <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
           <section class="container  py-5 mt-0">
             <div class=" rounded-3 py-5" >
               <div class="row align-items-center ">
@@ -150,33 +149,35 @@ World leading fastest Introducing Great Exhibition To Exhibit Business India Fir
               </div>
             </div>
           </section>
+
           <script>
-        var slider = tns({
-          "container": '.my-Slider3',          
-          "responsive": {
-            "300": {
-              "items": 2,
-              "controls": false,
-              "mouseDrag": true,
-              "autoplay": false,
-              "fixedWidth": 150,
-              "autoplayButtonOutput": false,
-              "autoplayHoverPause": true,
-            },
-            "500": {
-              "items": 4,
-              "nav": false,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplay": false,
-              "fixedWidth": 300,
-              "autoplayButtonOutput": false
-            },
-            
-          },
-          "autoplayButtonOutput":false
-        });
-      </script>
+            var slider = tns({
+              "container": '.my-Slider3',          
+              "responsive": {
+                "300": {
+                  "items": 2,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": false,
+                  "fixedWidth": 150,
+                  "autoplayButtonOutput": false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 4,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay": false,
+                  "fixedWidth": 300,
+                  "autoplayButtonOutput": false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
+          
         <!--list-->
           {{--<section class="d-sm-none">
                 <div class="d-flex  align-items-center my-Slider9">
