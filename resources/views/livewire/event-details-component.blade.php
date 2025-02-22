@@ -4690,54 +4690,54 @@
                             <p class="weight">Giveaways</p>
                           </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'fabrication'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'fabrication'])}}">
                             <h3 class="name">Fabrication</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'printing'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'printing'])}}">
                             <h3 class="name">Printing</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'stay'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'stay'])}}">
                             <h3 class="name">Stay</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'invite'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'invite'])}}">
                             <h3 class="name">Invite</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'photography'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'photography'])}}">
                             <h3 class="name">Photography</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Verified</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
                             <h3 class="name">Plan</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">your Exhibition</p>
-                          </div>
+                          </a>
 
-                          <div class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
+                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
                             <h3 class="name">Delegates</h3>
                             <p class="symbol">Bi</p>
                             <!-- <p class="number">83</p> -->
                             <p class="weight">Right People</p>
-                          </div>
+                          </a>
 
                               
 
