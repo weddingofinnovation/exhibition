@@ -4591,7 +4591,7 @@
                         
                           
                           <div>
-                            @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(($event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                            @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(((float)$event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
                             
                             @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
                             <span class="fs-xs fw-normal"> Visitors </span>@endif
