@@ -1472,7 +1472,7 @@
                 </div>
 
                 <div class="col-7  p-0">
-                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="">
+                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.magazine',['magazine_id' => $evento->id])}}">
                       {{ucwords(trans(Str::limit($evento->name, 24)))}}</a></div>
                   <div class="text-muted fs-sm text-start">
                       

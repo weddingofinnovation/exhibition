@@ -162,6 +162,7 @@ use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
 use App\Http\Livewire\Admin\AdminScraperComponent;
+use App\Http\Livewire\Livewire\AdminMagazineComponent;
 use App\Http\Livewire\PrivacyComponent;
 use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
@@ -406,6 +407,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 
     Route::get('/admin/multi/{event_id?}/detail/{formm}/{location_id?}', AdminEventMultipleAddComponent::class)->name('admin.eventMultiEdit');
 
+    Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazine');
+    
     //Brand
     Route::get('/admin/contact/{brand_id}', AdminBrandComponent::class)->name('admin.brand');
 

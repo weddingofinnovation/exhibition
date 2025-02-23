@@ -1033,7 +1033,7 @@ public $dtype;
       $nEwComment = Comment::orderBy('created_at', 'desc')->get();
 
       //magazine
-      $magazine = Magazine::get();
+      $magazine = Magazine::orderBy('created_at', 'desc')->get();
       $visitors = User::orderBy('created_at', 'desc')->get();
 
       $hastago = Hashtag::get();

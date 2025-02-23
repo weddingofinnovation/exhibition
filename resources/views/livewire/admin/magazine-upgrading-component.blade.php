@@ -1,5 +1,5 @@
 <main>
-<style>
+      <style>
         * { box-sizing: border-box; }
 
           body {

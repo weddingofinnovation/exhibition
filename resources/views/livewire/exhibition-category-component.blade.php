@@ -251,10 +251,10 @@
                               
                               @endforeach
                           @endforeach 
-                            @php
-                            
-                            @endphp
-                          @foreach($exhibition->wheredate('startdate', '>=' , Carbon\Carbon::parse(today())->format ("Y-m-d"))->orderBy('startdate','ASC') as $business)
+
+
+
+                          @foreach($exhibition as $business)
                             @php 
                               $franchiso = DB::table('events')->where('id', $business->EventName)->get();
                             @endphp
@@ -378,6 +378,7 @@
                                     </div>  
                                 </div>
                           @endforeach
+                          
                         </div> 
                       </div>
                   
