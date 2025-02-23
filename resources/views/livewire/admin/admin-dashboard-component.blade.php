@@ -1463,17 +1463,17 @@
           <div class="container my-3">
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col  pr-0">
-                  
-                      <div class="h4 fw-light mb-0">18</div> 
-                      <div class="small text-muted">Jul</div>
-                    
+                    <div class="h4 fw-light mb-0">18</div> 
+                    <div class="small text-muted">Jul</div>
                     <div class="round-circle">1</div> 
-                    
                 </div>
 
                 <div class="col-7  p-0">
-                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.magazine',['magazine_id' => $evento->id])}}">
-                      {{ucwords(trans(Str::limit($evento->name, 24)))}}</a></div>
+                  <div class="fs-md fw-normal text-start">
+                    <a class="text-dark" href="{{route('admin.magazinedetails',['magazine_id' => $evento->id])}}">
+                      {{ucwords(trans(Str::limit($evento->name, 24)))}}
+                    </a>
+                  </div>
                   <div class="text-muted fs-sm text-start">
                       
                   </div>  

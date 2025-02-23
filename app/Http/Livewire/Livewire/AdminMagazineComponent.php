@@ -47,7 +47,6 @@ class AdminMagazineComponent extends Component
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function render()

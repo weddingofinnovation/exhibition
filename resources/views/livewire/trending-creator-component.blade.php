@@ -2,9 +2,9 @@
         <section class="container pt-2 pb-5 pb-md-3" id="hostess">
             <!--<h2 class="h3 mb-4 pb-2">Top Creators</h2>-->
                 <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-1 mb-1">  
-                  <div class="fs-sm" >Business Community
+                  <div class="fs-sm" >100 + Business Community
                   
-                      <h4 class="mb-0 me-2">Speaker</h4>
+                      <h4 class="mb-0 me-2">Right People</h4>
                       
                   </div>
                     <!--<div class="pt-3">
