@@ -30,7 +30,7 @@
                           ended
                       @endif
                       </div> 
-                      <div class="small text-muted">{{$franchise->id}}</div>
+                      {{-- <div class="small text-muted">{{$franchise->id}}</div> --}}
                       <div class="text-primary fs-xs">{{$franchise->view_count}}</div> 
                 </div>
 
