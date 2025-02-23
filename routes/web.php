@@ -407,7 +407,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 
     Route::get('/admin/multi/{event_id?}/detail/{formm}/{location_id?}', AdminEventMultipleAddComponent::class)->name('admin.eventMultiEdit');
 
-    Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazine');
+    Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazinedetails');
     
     //Brand
     Route::get('/admin/contact/{brand_id}', AdminBrandComponent::class)->name('admin.brand');

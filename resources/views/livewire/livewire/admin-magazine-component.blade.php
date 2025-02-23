@@ -8,9 +8,13 @@
           </form>  
 
           <hr> find Images
+
+          @php
+             $photos = DB::table('photos')->whereNotNull('magazine_id')->where('magazine_id', $this->magazine_id)->get()
+          @endphp
             @foreach($photos as $imgo)
               <div class="container">
-                  <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" width="50%" alt="">
+                  <img src="{{url('public/assets/image/exhibition/'.$imgo->image)}}" width="50%" alt="">
                   <a href="" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
               </div>
             @endforeach  

@@ -13,10 +13,10 @@ class AdminMagazineComponent extends Component
 {
 
     public $magazine_id;
-    public $brand_lgo = [];
+    public $image = [];
     public $status;
     public $admstatus;
-    public $image;
+    // public $image;
     public $user_id;
 
     public function mount($magazine_id = null)
@@ -30,7 +30,7 @@ class AdminMagazineComponent extends Component
     
     public function multiImage()
     {
-        $multiimage = $this->brand_lgo;
+        $multiimage = $this->image;
 
         foreach($multiimage as $key => $imageso)
         {
