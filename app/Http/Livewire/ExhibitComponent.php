@@ -227,6 +227,42 @@ class ExhibitComponent extends Component
         
     }
 
+    public function fabrication()
+    {
+        $this->validate([
+            'email'=>'required|email:rfc,dns',
+            'phone'=>'required|max:12|min:10',
+            'name'=>'required|alpha:ascii', 
+        ]);
+
+        $newEvent = new Lead();
+        $newEvent->name = $this->name;
+        $newEvent->email = $this->email;
+        $newEvent->phone = $this->phone;
+        $newEvent->type = 'fabrication';
+        $newEvent->event_id = session()->get('eventID');
+
+        //$newEvent->user_id = Auth::user()->id;
+        
+        $newEvent->status = $this->status;
+        $newEvent->admstatus = $this->admstatus;
+        $newEvent->save();
+
+        $logino = new User();
+        $logino->name = $this->name;
+        $logino->email = $this->email;
+        $logino->password = Hash::make($this->email);
+        $logino->phone = $this->phone;
+        $logino->save();
+
+        //return redirect()->route('coicart');thankyou
+        return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id ]);
+        //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
+        //{{route('event.exhibit', ['board' => 'business'])}}
+        session()->flash('message','Thanks for sharing your review.');
+        
+    }
+
     public function addregistration()
     {
         $this->validate([
