@@ -489,17 +489,9 @@
               </form>
         @elseif($this->board == 'fabrication-details')
             <div class="container">
-                <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
-                  <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design <span class="fs-xs">do you want Desgin?</span></a>
-                  </li>
-                  <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span class="fs-xs">If do you want Desgin?</span></a>
-                  </li>
-                </ul>
-            
+                
               <form action="boothdetails">
-                <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
+                <label class="form-label text-center" for="recover-email">What are the dimensions of the stall space you have booked?</label>
                    
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Size</label>
@@ -552,6 +544,16 @@
                 </div> 
               </form>
         @elseif($this->board == 'wantBrief')
+
+                <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
+                  <li class="nav-item border-bottom">
+                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design <span class="fs-xs">do you want Desgin?</span></a>
+                  </li>
+                  <li class="nav-item border-bottom">
+                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span class="fs-xs">If do you want Desgin?</span></a>
+                  </li>
+                </ul>
+                
               <form action="wantBrief">             
                 
                 <div class="mb-1">
