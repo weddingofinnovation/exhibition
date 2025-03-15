@@ -492,7 +492,7 @@
               What are the dimensions of the stall space you have booked?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">3m x 4m</option>
               <option value="embassy">3m x 5m</option>
               <option value="embassy">3m x 6m</option>
@@ -502,7 +502,7 @@
             What type of booth design do you prefer?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Open (No walls, accessible from all sides)</option>
               <option value="embassy">Semi-open (Walls on 2-3 sides)</option>
               <option value="embassy">Closed (Enclosed with entrance)</option>
@@ -511,7 +511,7 @@
             What is your your estimated budget for the stall fabrication?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">Under 1,50,000</option>
                 <option value="embassy">1,50,000 - 2,00,000</option>
                 <option value="embassy">2,00,000 - 3,00,000</option>
@@ -521,7 +521,7 @@
             What are your branding and design prefernces?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">use existing brand colors and logos</option>
                 <option value="embassy">Need a fresh concept and design</option>
                 <option value="embassy">Incorporate digitall screens and interactive elements</option>
@@ -529,7 +529,7 @@
             </div> 
             What kind of display setup do you need?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
                 <option selected>Choose option...</option>
                 <option value="embassy">Product display shelves</option>
                 <option value="embassy">LED Screens for Video Content</option>
@@ -540,7 +540,7 @@
             What type of furniture should be included?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Reception counter</option>
               <option value="embassy">Lounge seating (sofa, chairs)</option>
               <option value="embassy">High tables & bar stools</option>
@@ -550,7 +550,7 @@
             How much storage space do you require?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">Small (Hidden storage for bags and personal items)</option>
                 <option value="embassy">Medium (Storage cabinets for marketing materials)</option>
                 <option value="embassy">Large (Dedicated storage for product stock)</option>
@@ -559,7 +559,7 @@
             what lighting preferences do you have?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Warm ambient lighting</option>
               <option value="embassy">Spotlights for product highlights</option>
               <option value="embassy">LED Strips for branding effects</option>
@@ -568,7 +568,7 @@
             Do you need a private meeting area?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Yes, enclosed with soundproofing</option>
               <option value="embassy">Yes, semi-private with open seating</option>
               <option value="embassy">NO, open discussion space in fine</option>
@@ -577,16 +577,16 @@
             What power and connectivity requirement do you have?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
-              <option value="embassy">Standard power sockets (for laptops, phone charging)</option>
-              <option value="embassy">High-power connections (for heavy equipment)</option>
-              <option value="embassy">Wi-fi access for digital interactions</option>
+                <option selected>Choose option...</option>
+                <option value="embassy">Standard power sockets (for laptops, phone charging)</option>
+                <option value="embassy">High-power connections (for heavy equipment)</option>
+                <option value="embassy">Wi-fi access for digital interactions</option>
               </select>
             </div> 
             Would you like interactive or digital engagement tools?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Qr code-based lead capture</option>
               <option value="embassy">Augmented Reality (AR)/ Virtual Reality (VR) experience</option>
               <option value="embassy">Social media live streaming setup</option>
@@ -597,7 +597,7 @@
             What is your setup and dismantling preference?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">Standard (1-2 days before the event)</option>
                 <option value="embassy">Express (Same-day setup, additional cost)</option>
                 <option value="embassy">No Preference</option>
@@ -606,7 +606,7 @@
             Are they any event organizer restrictions we should consider?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">Height limits for the booth</option>
                 <option value="embassy">Material restrictions (fireproofing,eco-friendly)</option>
                 <option value="embassy">Noise Level Limitations</option>
@@ -615,7 +615,7 @@
             Do you require additional staffing for the booth?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-                <option selected disabled>Choose option...</option>
+                <option selected>Choose option...</option>
                 <option value="embassy">Yes, product demonstrators</option>
                 <option value="embassy">Yes, event hosts/presenters</option>
                 <option value="embassy">No, our team will mange it</option>
