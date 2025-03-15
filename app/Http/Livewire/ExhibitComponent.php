@@ -259,12 +259,15 @@ class ExhibitComponent extends Component
         return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id ]);
         //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
-        
+        session()->flash('message','Thanks for sharing your review.');        
     }
 
     use WithFileUploads;
     public $floorPlan;
+    public $stallsize;
+    public $boothnumber;
+    public $dimensions;
+    public $openSide;
 
     public function boothdetails()
     {   
@@ -273,9 +276,10 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer->boothnumber = $this->boothnumber;
         $boothDetailsCustomer->dimensions = $this->dimensions;
         $boothDetailsCustomer->floorPlan = $this->floorPlan;
-        $boothDetailsCustomer->save();
+        $boothDetailsCustomer->openSide = $this->openSide;
+        // $boothDetailsCustomer->save();
 
-        return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $newEvent->id ]); 
+        return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $this->visitorid ]); 
     }
     
     public $serviceType;
@@ -284,12 +288,12 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer = new User();
         $boothDetailsCustomer->serviceType = $this->serviceType;
         $boothDetailsCustomer->save();
-        return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $this->visitorid ]);
     }
 
     public function wantBrief()
     {
-        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $this->visitorid ]);
     }
 
     public function addregistration()
@@ -408,8 +412,8 @@ class ExhibitComponent extends Component
 
     public function render()
     {
-    //     $data = session()->all();
-    //    dd($data);
+    //  $data = session()->all();
+    //  dd($data);
 
        $findID = session()->get('eventID');
        $findevent = Event::where('id', $findID)->first();
@@ -424,8 +428,7 @@ class ExhibitComponent extends Component
         $city = $event->city;
         $country = $event->country;
         $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-       
-       
+              
        $franchise = $findevent; 
        
         return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise,'link' => $link]);

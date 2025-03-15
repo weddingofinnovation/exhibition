@@ -495,7 +495,7 @@
                    
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Size</label>
-                   <input type="text" class="form-control" wire:model="stallsize" placeholder="E.g., 3x3m, 6xm" required="">
+                   <input type="text" class="form-control" wire:model="stallsize" placeholder="E.g., 3x3m, 6x6m" required="">
                    @error('stallsize')
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror
@@ -516,6 +516,21 @@
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror
                  </div>
+
+                 
+                 <div class="mb-1">
+                  <label class="form-label" for="recover-email">How many sides of the booth are open?</label>
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model.lazy="openside" required="">
+                    <option selected>Choose option...</option>
+                    <option value="1-side open">1-Side Open</option>
+                    <option value="2-side">2-Side Open (Corner)</option>
+                    <option value="3-side">3-Side Open</option>
+                    <option value="4-side">4-Side Open (Island)</option>
+                  </select>
+                  @error('openside')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                </div>
                 
                   <div class="mb-1">
                     <label class="form-label" for="recover-email">Upload Floor Plan (if available):</label>
@@ -553,7 +568,7 @@
                     <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span class="fs-xs">If do you want Desgin?</span></a>
                   </li>
                 </ul>
-                
+
               <form action="wantBrief">             
                 
                 <div class="mb-1">
