@@ -500,9 +500,11 @@
               
               
 
-              <form action="">
+              <form action="boothdetails">
+                <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
+                   
                  <div class="">
-                   <label for="">Booth Size</label>
+                  <label for="">Booth Size</label>
                    <input type="text" wire:model="stallsize" placeholder="E.g., 3x3m, 6xm">
                  </div>
 
@@ -525,7 +527,11 @@
                  </div>
               </form>
 
-              <form action="">
+              
+            </div>
+        @elseif($this->board == 'membership')
+        @elseif($this->board == 'askAboutWhatTheyWantDo')
+              <form action="askAboutWhatTheyWantDo">
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What services do you need?</label>
                   <input type="checkbox" wire:model="serviceType" value="design"> Only Booth Desgin <br>
@@ -534,8 +540,8 @@
                   @error('serviceType') <span class="error">{{$message}}</span>@enderror
                 </div> 
               </form>
-
-              <form action="">             
+        @elseif($this->board == 'wantBrief')
+              <form action="wantBrief">             
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
@@ -695,8 +701,6 @@
                 
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
-            </div>
-        @elseif($this->board == 'membership')
         @else
         @endif
 

@@ -263,6 +263,35 @@ class ExhibitComponent extends Component
         
     }
 
+    use WithFileUploads;
+    public $floorPlan;
+
+    public function boothdetails()
+    {   
+        $boothDetailsCustomer = new User();
+        $boothDetailsCustomer->stallsize = $this->stallsize;
+        $boothDetailsCustomer->boothnumber = $this->boothnumber;
+        $boothDetailsCustomer->dimensions = $this->dimensions;
+        $boothDetailsCustomer->floorPlan = $this->floorPlan;
+        $boothDetailsCustomer->save();
+
+        return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $newEvent->id ]); 
+    }
+    
+    public $serviceType;
+    public function askAboutWhatTheyWantDo()
+    {
+        $boothDetailsCustomer = new User();
+        $boothDetailsCustomer->serviceType = $this->serviceType;
+        $boothDetailsCustomer->save();
+        return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $newEvent->id ]);
+    }
+
+    public function wantBrief()
+    {
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+    }
+
     public function addregistration()
     {
         $this->validate([
