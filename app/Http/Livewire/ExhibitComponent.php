@@ -277,7 +277,7 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer->dimensions = $this->dimensions;
         $boothDetailsCustomer->floorPlan = $this->floorPlan;
         $boothDetailsCustomer->openside = $this->openside;
-        // $boothDetailsCustomer->save();
+        $boothDetailsCustomer->save();
 
         return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $this->visitorid ]); 
     }

@@ -490,8 +490,8 @@
         @elseif($this->board == 'fabrication-details')
             <div class="container">
                 
-              <form action="boothdetails">
-                <label class="form-label text-center mt-4 fs-4" for="recover-email">What are the dimensions of the booth space you have booked?</label>
+              <form wire:submit.prevent="boothdetails">
+                <label class="form-label text-center mt-4 fs-4 fw-bold" for="recover-email">What are the dimensions of the booth space you have booked?</label>
                    
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Size</label>
@@ -549,7 +549,7 @@
             </div>
         @elseif($this->board == 'membership')
         @elseif($this->board == 'askAboutWhatTheyWantDo')
-              <form action="askAboutWhatTheyWantDo">
+              <form wire:submit.prevent="askAboutWhatTheyWantDo">
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What services do you need?</label>
                   <input type="checkbox" wire:model="serviceType" value="design"> Only Booth Desgin <br>
@@ -569,7 +569,7 @@
                   </li>
                 </ul>
 
-              <form action="wantBrief">             
+              <form wire:submit.prevent ="wantBrief">             
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
@@ -584,7 +584,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What type of booth design do you prefer?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="openside">
                   <option selected>Choose option...</option>
                   <option value="embassy">Open (No walls, accessible from all sides)</option>
                   <option value="embassy">Semi-open (Walls on 2-3 sides)</option>
@@ -594,7 +594,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What is your your estimated budget for the stall fabrication?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="estimatebudget">
                     <option selected>Choose option...</option>
                     <option value="embassy">Under 1,50,000</option>
                     <option value="embassy">1,50,000 - 2,00,000</option>
@@ -605,7 +605,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What are your branding and design prefernces?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="brandingdesigntheme">
                     <option selected>Choose option...</option>
                     <option value="embassy">use existing brand colors and logos</option>
                     <option value="embassy">need a fresh concept and design</option>
@@ -615,7 +615,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What kind of display setup do you need?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="displaysetup">
                     <option selected>Choose option...</option>
                     <option value="embassy">Product display shelves</option>
                     <option value="embassy">LED Screens for Video Content</option>
@@ -626,7 +626,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What type of furniture should be included?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model.lazy="furniture">
                   <option selected>Choose option...</option>
                   <option value="embassy">Reception counter</option>
                   <option value="embassy">Lounge seating (sofa, chairs)</option>
@@ -637,7 +637,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">How much storage space do you require?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model.lazy="storagespace">
                     <option selected>Choose option...</option>
                     <option value="embassy">Small (Hidden storage for bags and personal items)</option>
                     <option value="embassy">Medium (Storage cabinets for marketing materials)</option>
@@ -647,7 +647,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">what lighting preferences do you have?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model.lazy="lightingpreferences">
                   <option selected>Choose option...</option>
                   <option value="embassy">Warm ambient lighting</option>
                   <option value="embassy">Spotlights for product highlights</option>
@@ -657,7 +657,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">Do you need a private meeting area?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="meetingarea">
                   <option selected>Choose option...</option>
                   <option value="embassy">Yes, enclosed with soundproofing</option>
                   <option value="embassy">Yes, semi-private with open seating</option>
@@ -667,7 +667,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What power and connectivity requirement do you have?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="powerconnectivity">
                     <option selected>Choose option...</option>
                     <option value="embassy">Standard power sockets (for laptops, phone charging)</option>
                     <option value="embassy">High-power connections (for heavy equipment)</option>
@@ -677,7 +677,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">Would you like interactive or digital engagement tools?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="digitalengagement">
                   <option selected>Choose option...</option>
                   <option value="embassy">Qr code-based lead capture</option>
                   <option value="embassy">Augmented Reality (AR)/ Virtual Reality (VR) experience</option>
@@ -709,7 +709,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">Do you require additional staffing for the booth?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="additionalstaffing">
                     <option selected>Choose option...</option>
                     <option value="embassy">Yes, product demonstrators</option>
                     <option value="embassy">Yes, event hosts/presenters</option>
@@ -719,7 +719,7 @@
                 
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">Any other special requirements?</label>
-                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                  <select class="form-select" name="" id="select-input" aria-label="default" wire:model="requirements">
                   <option selected>Choose option...</option>
                   <option value="embassy">Thematic decor or custom installations</option>
                   <option value="embassy">On-site food & beverage setup</option>
