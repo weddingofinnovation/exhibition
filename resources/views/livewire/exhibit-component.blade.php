@@ -501,31 +501,40 @@
               <form action="boothdetails">
                 <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
                    
-                 <div class="">
-                  <label for="">Booth Size</label>
+                 <div class="mb-1">
+                   <label class="form-label" for="">Booth Size</label>
                    <input type="text" class="form-control" wire:model="stallsize" placeholder="E.g., 3x3m, 6xm" required="">
+                   @error('stallsize')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
                  </div>
 
-                 <div class="">
-                   <label for="">Booth Number</label>
+                 <div class="mb-1">
+                   <label class="form-label" for="">Booth Number</label>
                    <input type="text" class="form-control" wire:model="boothnumber" placeholder="E.g., A12, B-5" required="">
+                    @error('boothnumber')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
                  </div>
                  
-                 <div class="">
-                   <label for="">Booth dimensions (in meters):</label>
+                 <div class="mb-1">
+                   <label class="form-label" for="">Booth Dimensions (in meters):</label>
                    <input type="text" class="form-control" wire:model="dimensions" placeholder="Width x Depth" required="">
+                    @error('dimensions')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
                  </div>
                 
-                    <div class="mb-1">
-                      <label class="form-label" for="recover-email">Upload Floor Plan (if available):</label>
-                      <input class="form-control" type="file"  wire:model.lazy="floorPlan" required="" placeholder="upload your ">
-                      @if($floorPlan) <p>Uploaded: {{$floorPlan->getClientOriginalName()}}</p> @endif
+                  <div class="mb-1">
+                    <label class="form-label" for="recover-email">Upload Floor Plan (if available):</label>
+                    <input class="form-control" type="file"  wire:model.lazy="floorPlan" required="">
 
-                      @error('floorPlan')
-                        <div class="form-text text-primary">{{$message}}</div>
-                      @enderror
-                    </div>
+                    @if($floorPlan) <p>Uploaded: {{$floorPlan->getClientOriginalName()}}</p> @endif
 
+                    @error('floorPlan')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                  </div>
 
                  <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
