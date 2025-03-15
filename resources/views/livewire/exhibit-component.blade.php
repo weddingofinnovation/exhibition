@@ -491,11 +491,11 @@
             <div class="container">
                 
               <form action="boothdetails">
-                <label class="form-label text-center" for="recover-email">What are the dimensions of the stall space you have booked?</label>
+                <label class="form-label text-center mt-4 fs-4" for="recover-email">What are the dimensions of the booth space you have booked?</label>
                    
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Size</label>
-                   <input type="text" class="form-control" wire:model="stallsize" placeholder="E.g., 3x3m, 6x6m" required="">
+                   <input type="text" class="form-control" wire:model.lazy="stallsize" placeholder="E.g., 3x3m, 6x6m" required="">
                    @error('stallsize')
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror
@@ -503,7 +503,7 @@
 
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Number</label>
-                   <input type="text" class="form-control" wire:model="boothnumber" placeholder="E.g., A12, B-5" required="">
+                   <input type="text" class="form-control" wire:model.lazy="boothnumber" placeholder="E.g., A12, B-5" required="">
                     @error('boothnumber')
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror
@@ -511,7 +511,7 @@
                  
                  <div class="mb-1">
                    <label class="form-label" for="">Booth Dimensions (in meters):</label>
-                   <input type="text" class="form-control" wire:model="dimensions" placeholder="Width x Depth" required="">
+                   <input type="text" class="form-control" wire:model.lazy="dimensions" placeholder="Width x Depth" required="">
                     @error('dimensions')
                       <div class="form-text text-primary">{{$message}}</div>
                     @enderror

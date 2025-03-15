@@ -267,7 +267,7 @@ class ExhibitComponent extends Component
     public $stallsize;
     public $boothnumber;
     public $dimensions;
-    public $openSide;
+    public $openside;
 
     public function boothdetails()
     {   
@@ -276,7 +276,7 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer->boothnumber = $this->boothnumber;
         $boothDetailsCustomer->dimensions = $this->dimensions;
         $boothDetailsCustomer->floorPlan = $this->floorPlan;
-        $boothDetailsCustomer->openSide = $this->openSide;
+        $boothDetailsCustomer->openside = $this->openside;
         // $boothDetailsCustomer->save();
 
         return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $this->visitorid ]); 
