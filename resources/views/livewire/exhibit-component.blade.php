@@ -489,8 +489,12 @@
                   </form>
         @elseif($this->board == 'fabrication-details')
             <div class="container">
-              What are the dimensions of the stall space you have booked?
+
+            <form action="">             
+              
+            
             <div class="mb-1">
+              <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
               <option selected>Choose option...</option>
               <option value="embassy">3m x 4m</option>
@@ -508,8 +512,9 @@
               <option value="embassy">Closed (Enclosed with entrance)</option>
               </select>
             </div>
-            What is your your estimated budget for the stall fabrication?
+            
             <div class="mb-1">
+              <label class="form-label" for="recover-email">What is your your estimated budget for the stall fabrication?</label>
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
                 <option selected>Choose option...</option>
                 <option value="embassy">Under 1,50,000</option>
@@ -631,6 +636,10 @@
               <option value="embassy">Any other specific requests (Please specify)</option>
               </select>
             </div> 
+            
+            <button class="btn btn-primary form-control" type="submit">Submit</button>
+          </form>
+
           </div>
         @elseif($this->board == 'membership')
         @else
