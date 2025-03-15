@@ -491,43 +491,45 @@
             <div class="container">
                 <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design <span>do you want Desgin?</span></a>
+                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design <span class="fs-xs">do you want Desgin?</span></a>
                   </li>
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span>If do you want Desgin?</span></a>
+                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span class="fs-xs">If do you want Desgin?</span></a>
                   </li>
                 </ul>
-              
-              
-
+            
               <form action="boothdetails">
                 <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
                    
                  <div class="">
                   <label for="">Booth Size</label>
-                   <input type="text" wire:model="stallsize" placeholder="E.g., 3x3m, 6xm">
+                   <input type="text" class="form-control" wire:model="stallsize" placeholder="E.g., 3x3m, 6xm" required="">
                  </div>
 
                  <div class="">
                    <label for="">Booth Number</label>
-                   <input type="text" wire:model="boothnumber" placeholder="E.g., A12, B-5">
+                   <input type="text" class="form-control" wire:model="boothnumber" placeholder="E.g., A12, B-5" required="">
                  </div>
                  
                  <div class="">
                    <label for="">Booth dimensions (in meters):</label>
-                   <input type="text" wire:model="dimensions" placeholder="Width x Depth">
+                   <input type="text" class="form-control" wire:model="dimensions" placeholder="Width x Depth" required="">
                  </div>
                 
-                 <div class="">
-                  <label for="">Upload Floor Plan (if available):</label>
-                  <input type="file" wire:model="floorPlan">
-                    @if($floorPlan)
-                    <p>Uploaded: {{$floorPlan->getClientOriginalName()}}</p>
-                    @endif
-                 </div>
+                    <div class="mb-1">
+                      <label class="form-label" for="recover-email">Upload Floor Plan (if available):</label>
+                      <input class="form-control" type="file"  wire:model.lazy="floorPlan" required="" placeholder="upload your ">
+                      @if($floorPlan) <p>Uploaded: {{$floorPlan->getClientOriginalName()}}</p> @endif
+
+                      @error('floorPlan')
+                        <div class="form-text text-primary">{{$message}}</div>
+                      @enderror
+                    </div>
+
+
+                 <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
 
-              
             </div>
         @elseif($this->board == 'membership')
         @elseif($this->board == 'askAboutWhatTheyWantDo')
