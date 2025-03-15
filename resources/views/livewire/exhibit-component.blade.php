@@ -489,57 +489,63 @@
                   </form>
         @elseif($this->board == 'fabrication-details')
             <div class="container">
-            What are the dimensions of the stall space you have booked?
+              What are the dimensions of the stall space you have booked?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
               <option selected disabled>Choose option...</option>
               <option value="embassy">3m x 4m</option>
               <option value="embassy">3m x 5m</option>
               <option value="embassy">3m x 6m</option>
               <option value="embassy">3m x 4m</option>
+              </select>
             </div>
             What type of booth design do you prefer?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
               <option selected disabled>Choose option...</option>
               <option value="embassy">Open (No walls, accessible from all sides)</option>
               <option value="embassy">Semi-open (Walls on 2-3 sides)</option>
               <option value="embassy">Closed (Enclosed with entrance)</option>
+              </select>
             </div>
             What is your your estimated budget for the stall fabrication?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
-              <option selected disabled>Choose option...</option>
-              <option value="embassy">Under 1,50,000</option>
-              <option value="embassy">1,50,000 - 2,00,000</option>
-              <option value="embassy">2,00,000 - 3,00,000</option>
-              <option value="embassy">5,50,000 - 6,00,000</option>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                <option selected disabled>Choose option...</option>
+                <option value="embassy">Under 1,50,000</option>
+                <option value="embassy">1,50,000 - 2,00,000</option>
+                <option value="embassy">2,00,000 - 3,00,000</option>
+                <option value="embassy">5,50,000 - 6,00,000</option>
+              </select>
             </div>
             What are your branding and design prefernces?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
-              <option selected disabled>Choose option...</option>
-              <option value="embassy">use existing brand colors and logos</option>
-              <option value="embassy">Need a fresh concept and design</option>
-              <option value="embassy">Incorporate digitall screens and interactive elements</option>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
+                <option selected disabled>Choose option...</option>
+                <option value="embassy">use existing brand colors and logos</option>
+                <option value="embassy">Need a fresh concept and design</option>
+                <option value="embassy">Incorporate digitall screens and interactive elements</option>
+              </select>
             </div> 
             What kind of display setup do you need?
             <div class="mb-1">
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
-              <option selected disabled>Choose option...</option>
-              <option value="embassy">Product display shelves</option>
-              <option value="embassy">LED Screens for Video Content</option>
-              <option value="embassy">Touchscreen kiosks for interaction</option>
-              <option value="embassy">Demo counters for product testing</option>
+                <option selected>Choose option...</option>
+                <option value="embassy">Product display shelves</option>
+                <option value="embassy">LED Screens for Video Content</option>
+                <option value="embassy">Touchscreen kiosks for interaction</option>
+                <option value="embassy">Demo counters for product testing</option>
+              </select>
             </div>
             What type of furniture should be included?
             <div class="mb-1">
-              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type"></select>
+              <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
               <option selected disabled>Choose option...</option>
               <option value="embassy">Reception counter</option>
               <option value="embassy">Lounge seating (sofa, chairs)</option>
               <option value="embassy">High tables & bar stools</option>
               <option value="embassy">Storage cabinets</option>
+              </select>
             </div>
             How much storage space do you require?
             <div class="mb-1">
@@ -617,13 +623,13 @@
             </div> 
             
             <div class="mb-1">
+            Any other special requirements?  
               <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
-              Any other special requirements?
-              </select>
-              <option selected disabled>Choose option...</option>
+              <option selected>Choose option...</option>
               <option value="embassy">Thematic decor or custom installations</option>
               <option value="embassy">On-site food & beverage setup</option>
               <option value="embassy">Any other specific requests (Please specify)</option>
+              </select>
             </div> 
           </div>
         @elseif($this->board == 'membership')
