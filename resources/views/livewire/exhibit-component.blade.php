@@ -752,6 +752,7 @@
 
           <style>
             .hero {
+              font-family: Arial, sans-serif;
               background: url('event-banner.jpg') center/cover no-repeat;
               text-align: center;
               padding: 60px;
@@ -763,8 +764,26 @@
           </style>
 
           <section class="hero">
-          <h1>Connect. collaborate. Grow.</h1>
-          <p>Invite business representatives or schedule meetings with top brands at the event.</p>
+            <h1>Connect. Collaborate. Grow.</h1>
+            <p>Invite business representatives or schedule meetings with top brands at the event.</p>
+          </section>
+
+          <section class="container">
+            <h2 class="text-center">Live Event Stats</h2>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <h3>1,250+</h3>
+                <p>Invites Sent</p>
+              </div>
+              <div class="stat-box">
+                <h3>800+</h3>
+                <p>Meeting Scheduled</p>
+              </div>
+              <div class="stat-box">
+                <h3>Top 5</h3>
+                <p>Most Requested Brands</p>
+              </div>
+            </div>
           </section>
 
           <div class="container">
@@ -1068,9 +1087,7 @@
 
             </div>
           </div>
-        @endif
-
-       
+        @endif       
        
         @if($board == 'connect-business-partner')
           <div>
@@ -1110,11 +1127,11 @@
         @elseif($this->board == 'invite')
           <div class="handheld-toolbar">
             <div class="d-table table-layout-fixed w-100">
-              <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
+              <!-- <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
                 <span class="handheld-toolbar-icon">
                 <i class="bi bi-chat"></i></span>
                 <span class="handheld-toolbar-label">Meet-ups</span>
-              </a>
+              </a> -->
 
               <a class="d-table-cell handheld-toolbar-item" href="#">
                 <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
