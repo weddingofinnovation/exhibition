@@ -749,74 +749,89 @@
               </form>
             </div>
         @elseif($this->board == 'invite')
-        <div class="container">
-          
-          <h4>Exclusive Business Networking - Invite & Meet Brands</h4>
-          <small>Connect with the Right Business Representatives</small>
-           
-          <p>The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
 
-          <h1>For Brands: Invite Business Representatives</h1>
-          <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
+          <style>
+            .hero {
+              background: url('event-banner.jpg') center/cover no-repeat;
+              text-align: center;
+              padding: 60px;
+              color: white;
+            }
+            .hero h1 {
+              font-size: 2.5rem;
+            }
+          </style>
 
-          
+          <section class="hero">
+          <h1>Connect. collaborate. Grow.</h1>
+          <p>Invite business representatives or schedule meetings with top brands at the event.</p>
+          </section>
 
-          <ul>
-            <strong>How It Works:</strong>
-            <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
-            <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
-            <li>3. Manage & Track - View response and schedule meetings before the event.</li>
-          </ul>
-    
-          <h1>For visitors: Request a Meeting with Brands</h1>
-          <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
-          
-          <ul>
-            <strong>How It Works:</strong>
-            <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
-            <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
-            <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
-          </ul>
+          <div class="container">
+            
+            
+            <h4>Exclusive Business Networking - Invite & Meet Brands</h4>
+            <small>Connect with the Right Business Representatives</small>
+            
+            <p>The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+
+            <h1>For Brands: Invite Business Representatives</h1>
+            <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
+
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
+              <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
+              <li>3. Manage & Track - View response and schedule meetings before the event.</li>
+            </ul>
+      
+            <h1>For visitors: Request a Meeting with Brands</h1>
+            <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
+            
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
+              <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
+              <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
+            </ul>
+
+            <ul>
+              <strong>Why Use This Feature?</strong>
+              <li><strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.</li>
+              <li><strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.</li>
+              <li><strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.</li>
+            </ul>
+            
+            <p>Don't miss the opportunity to create valueable business relationships!</p>
+            <p>For any queries, contact us at</p>
 
 
-          <ul>
-            <strong>Why Use This Feature?</strong>
-            <li><strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.</li>
-            <li><strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.</li>
-            <li><strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.</li>
-          </ul>
-          
-
-          <p>Don't miss the opportunity to create valueable business relationships!</p>
-
-          <p>For any queries, contact us at</p>
-
-
-            <form  wire:submit.prevent="fabrication" >
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
-                @error('name')
-                  <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
-                @error('email')
-                  <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-                <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                @error('phone')
-                  <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-              <button class="btn btn-primary form-control" type="submit">Submit</button>
-            </form>
+              <form  wire:submit.prevent="fabrication" >
+                <div class="mb-1">
+                  <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                  <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                  @error('name')
+                    <div class="form-text text-primary">{{$message}}</div>
+                  @enderror
+                </div>
+                <div class="mb-1">
+                  <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                  <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                  @error('email')
+                    <div class="form-text text-primary">{{$message}}</div>
+                  @enderror
+                </div>
+                <div class="mb-1">
+                  <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                  <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                  @error('phone')
+                    <div class="form-text text-primary">{{$message}}</div>
+                  @enderror
+                </div>
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
+              </form>
           </div>
+
         @else
         @endif
 
@@ -1070,30 +1085,52 @@
         @endif
 
         @if($board == 'thankyou')
+          <div class="handheld-toolbar">
+            <div class="d-table table-layout-fixed w-100">
+              <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
+                <span class="handheld-toolbar-icon">
+                <i class="bi bi-chat"></i></span>
+                <span class="handheld-toolbar-label">Meet-ups</span>
+              </a>
+              <a class="d-table-cell handheld-toolbar-item" href="#">
+                <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
+              <span class="handheld-toolbar-label">Guide</span></a>
+              
+              <a class="d-table-cell handheld-toolbar-item" href="#">
+                <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
+                <span class="handheld-toolbar-label">Exhibitor</span>
+              </a>
 
-            <div class="handheld-toolbar">
-              <div class="d-table table-layout-fixed w-100">
-                <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
-                  <span class="handheld-toolbar-icon">
-                  <i class="bi bi-chat"></i></span>
-                  <span class="handheld-toolbar-label">Meet-ups</span>
-                </a>
-                <a class="d-table-cell handheld-toolbar-item" href="#">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
-                <span class="handheld-toolbar-label">Guide</span></a>
-                
-                <a class="d-table-cell handheld-toolbar-item" href="#">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
-                  <span class="handheld-toolbar-label">Exhibitor</span>
-                </a>
-
-                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                  <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-                  <span class="handheld-toolbar-label">Menu</span>
-                </a>
-              </div>
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
             </div>
+          </div>
+        @elseif($this->board == 'invite')
+          <div class="handheld-toolbar">
+            <div class="d-table table-layout-fixed w-100">
+              <a class="d-table-cell handheld-toolbar-item" href="#" wire:click.prevent="savecont({{$visitorid}})">
+                <span class="handheld-toolbar-icon">
+                <i class="bi bi-chat"></i></span>
+                <span class="handheld-toolbar-label">Meet-ups</span>
+              </a>
 
+              <a class="d-table-cell handheld-toolbar-item" href="#">
+                <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
+              <span class="handheld-toolbar-label">List Your Brand in invitee list</span></a>
+              
+              <a class="d-table-cell handheld-toolbar-item" href="#">
+                <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
+                <span class="handheld-toolbar-label">Request a Meeting</span>
+              </a>
+
+              <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+              </a>
+            </div>
+          </div>
         @endif
 
        
