@@ -534,7 +534,7 @@
                 
                   <div class="mb-1">
                     <label class="form-label" for="recover-email">Upload Floor Plan (if available):</label>
-                    <input class="form-control" type="file"  wire:model.lazy="floorPlan" required="">
+                    <input class="form-control" type="file"  wire:model.lazy="floorPlan" >
 
                     @if($floorPlan) <p>Uploaded: {{$floorPlan->getClientOriginalName()}}</p> @endif
 
@@ -549,28 +549,31 @@
             </div>
         @elseif($this->board == 'membership')
         @elseif($this->board == 'askAboutWhatTheyWantDo')
-              <form wire:submit.prevent="askAboutWhatTheyWantDo">
-                <div class="mb-1">
-                  <label class="form-label" for="recover-email">What services do you need?</label>
-                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="design"> Only Booth Desgin <br>
-                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="fabrication"> Only Fabrication <br>
-                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="both"> Both Design & Fabrication <br>
-                  @error('serviceType') <span class="error">{{$message}}</span>@enderror
-                </div> 
-                
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-              </form>
+              <div class="container">
+                    <form wire:submit.prevent="askAboutWhatTheyWantDo">
+                      <div class="mb-1">
+                        <label class="form-label" for="recover-email">What services do you need?</label>
+                        <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="design"> Only Booth Desgin <br>
+                        <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="fabrication"> Only Fabrication <br>
+                        <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="both"> Both Design & Fabrication <br>
+                        @error('serviceType') <span class="error">{{$message}}</span>@enderror
+                      </div> 
+                      
+                      <button class="btn btn-primary form-control" type="submit">Submit</button>
+                    </form>
+              </div>
         @elseif($this->board == 'wantBrief')
 
                 <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design <span class="fs-xs">do you want Desgin?</span></a>
+                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Design </a>
                   </li>
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication <span class="fs-xs">If do you want Desgin?</span></a>
+                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Fabrication</a>
                   </li>
                 </ul>
 
+            <div class="container">
               <form wire:submit.prevent ="wantBrief">             
                 
                 <!-- <div class="mb-1">
@@ -742,6 +745,7 @@
                 
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
+            </div>
         @else
         @endif
 

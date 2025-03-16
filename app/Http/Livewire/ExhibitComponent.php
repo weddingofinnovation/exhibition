@@ -284,6 +284,18 @@ class ExhibitComponent extends Component
     }
     
     public $serviceType;
+    public $estimatebudget;
+    public $brandingdesigntheme;
+    public $displaysetup;
+    public $furniture;
+    public $storagespace;
+    public $lightingpreferences;
+    public $meetingarea;
+    public $powerconnectivity;
+    public $digitalengagement;
+    public $additionalstaffing;
+    public $requirements;
+
     public function askAboutWhatTheyWantDo()
     {
         $boothDetailsCustomer = new Boothdetail();
