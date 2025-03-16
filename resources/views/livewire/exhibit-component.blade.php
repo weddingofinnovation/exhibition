@@ -786,15 +786,34 @@
             </div>
           </section>
 
+          <section class="container">
+            <p class="fw-bold">invitee Help You Achieve Your Goals</p>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <h3>1,250+</h3>
+                <p>Market Your Business to New Users</p>
+                <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
+              </div>
+              <div class="stat-box">
+                <h3>800+</h3>
+                <p>Grow Your Revenue</p>
+                <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
+              </div>
+              <div class="stat-box">
+                <h3>Top 5</h3>
+                <p>Get More Walk-in Customers</p>
+                <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
+              </div>
+            </div>
+          </section>
+
+          
+
           <div class="container">
-            
             
             <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
             <small>Connect with the Right Business Representatives</small>
             <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
-
-
-
 
             <h4>For Brands: Invite Business Representatives</h4>
             <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
@@ -814,15 +833,6 @@
               <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
               <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
               <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
-            </ul>
-
-
-            
-            <ul>
-              <strong>Why Use This Feature?</strong>
-              <li><strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.</li>
-              <li><strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.</li>
-              <li><strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.</li>
             </ul>
             
             <p>Don't miss the opportunity to create valueable business relationships!</p>
@@ -1139,7 +1149,7 @@
 
               <a class="d-table-cell handheld-toolbar-item" href="#">
                 <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
-              <span class="handheld-toolbar-label">List Your Brand in invitee list</span></a>
+              <span class="handheld-toolbar-label">List Your iNvitee</span></a>
               
               <a class="d-table-cell handheld-toolbar-item" href="#">
                 <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
