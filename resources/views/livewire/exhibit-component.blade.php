@@ -751,19 +751,25 @@
         @elseif($this->board == 'invite')
         <div class="container">
           
-        <h1>Exclusive Business Networking - Invite & Meet Brands</h1>
-          <p>Connect with the Right Business Representatives</p>
+          <h4>Exclusive Business Networking - Invite & Meet Brands</h4>
+          <small>Connect with the Right Business Representatives</small>
            
-          <p>The Exhibtion Network introduces a seamless <br> Invite & Meet </br> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+          <p>The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
 
           <h1>For Brands: Invite Business Representatives</h1>
           <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
 
-          <br>How It Works:</br>
+          
 
-          1. Submit your Invitation - Fill in the form with your ,br>brand name, stall number, and event details.</br>
-          2. Send personalized Invites - Reach out to business representatives who match your target audience.
-          3. Manage & Track - View response and schedule meetings before the event.
+          <ul>
+            <strong>How It Works:</strong>
+            <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
+            <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
+            <li>3. Manage & Track - View response and schedule meetings before the event.</li>
+          </ul>
+          
+          
+          
 
 
           <h1>For visitors: Request a Meeting with Brands</h1>
@@ -775,9 +781,9 @@
           3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.
 
           Why Use This Feature?
-          <br>Effortless Scheduling</br> - Plan your meetings in advance for a seamless event experience.
-          <br>Meaningful Interactions</br> - Connect with the right people who matter to your business.
-          <br>Time-Saving</br> - Avoid last-minute scheduling and maximize your event productivity.
+          <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
+          <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
+          <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
 
           <p>Don't miss the opportunity to create valueable business relationships!</p>
 
