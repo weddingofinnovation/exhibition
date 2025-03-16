@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Boothdetail;
 use App\Models\Event;
 use App\Models\Lead;
 use App\Models\User;
@@ -271,7 +272,7 @@ class ExhibitComponent extends Component
 
     public function boothdetails()
     {   
-        $boothDetailsCustomer = new User();
+        $boothDetailsCustomer = new Boothdetail();
         $boothDetailsCustomer->stallsize = $this->stallsize;
         $boothDetailsCustomer->boothnumber = $this->boothnumber;
         $boothDetailsCustomer->dimensions = $this->dimensions;
@@ -285,7 +286,7 @@ class ExhibitComponent extends Component
     public $serviceType;
     public function askAboutWhatTheyWantDo()
     {
-        $boothDetailsCustomer = new User();
+        $boothDetailsCustomer = new Boothdetail();
         $boothDetailsCustomer->serviceType = $this->serviceType;
         $boothDetailsCustomer->save();
         return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $this->visitorid ]);
@@ -293,6 +294,19 @@ class ExhibitComponent extends Component
 
     public function wantBrief()
     {
+        $boothDetailsCustomer = new Boothdetail();
+        $boothDetailsCustomer->estimatebudget = $this->estimatebudget;
+        $boothDetailsCustomer->brandingdesigntheme = $this->brandingdesigntheme;
+        $boothDetailsCustomer->displaysetup = $this->displaysetup;
+        $boothDetailsCustomer->furniture = $this->furniture;
+        $boothDetailsCustomer->storagespace = $this->storagespace;
+        $boothDetailsCustomer->lightingpreferences = $this->lightingpreferences;
+        $boothDetailsCustomer->meetingarea = $this->meetingarea;
+        $boothDetailsCustomer->powerconnectivity = $this->powerconnectivity;
+        $boothDetailsCustomer->digitalengagement = $this->digitalengagement;
+        $boothDetailsCustomer->additionalstaffing = $this->additionalstaffing;
+        $boothDetailsCustomer->requirements = $this->requirements;
+        $boothDetailsCustomer->save();
         return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $this->visitorid ]);
     }
 

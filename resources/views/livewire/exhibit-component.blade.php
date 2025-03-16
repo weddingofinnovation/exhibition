@@ -552,11 +552,13 @@
               <form wire:submit.prevent="askAboutWhatTheyWantDo">
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What services do you need?</label>
-                  <input type="checkbox" wire:model="serviceType" value="design"> Only Booth Desgin <br>
-                  <input type="checkbox" wire:model="serviceType" value="fabrication"> Only Fabrication <br>
-                  <input type="checkbox" wire:model="serviceType" value="both"> Both Design & Fabrication <br>
+                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="design"> Only Booth Desgin <br>
+                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="fabrication"> Only Fabrication <br>
+                  <input type="checkbox" wire:model.lazy="serviceType" class="form-control" value="both"> Both Design & Fabrication <br>
                   @error('serviceType') <span class="error">{{$message}}</span>@enderror
                 </div> 
+                
+                <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
         @elseif($this->board == 'wantBrief')
 
@@ -571,7 +573,7 @@
 
               <form wire:submit.prevent ="wantBrief">             
                 
-                <div class="mb-1">
+                <!-- <div class="mb-1">
                   <label class="form-label" for="recover-email">What are the dimensions of the stall space you have booked?</label>
                   <select class="form-select" name="" id="select-input" aria-label="default" wire:model="type">
                   <option selected>Choose option...</option>
@@ -580,9 +582,9 @@
                   <option value="embassy">3m x 6m</option>
                   <option value="embassy">3m x 4m</option>
                   </select>
-                </div>
+                </div> -->
                 
-                <div class="mb-1">
+                <!-- <div class="mb-1">
                   <label class="form-label" for="recover-email">What type of booth design do you prefer?</label>
                   <select class="form-select" name="" id="select-input" aria-label="default" wire:model="openside">
                   <option selected>Choose option...</option>
@@ -590,8 +592,19 @@
                   <option value="embassy">Semi-open (Walls on 2-3 sides)</option>
                   <option value="embassy">Closed (Enclosed with entrance)</option>
                   </select>
-                </div>
-                
+                </div> -->
+                <!-- estimatebudget
+                brandingdesigntheme
+                displaysetup
+                furniture
+                storagespace
+                lightingpreferences
+                meetingarea
+                powerconnectivity
+                digitalengagement
+                additionalstaffing
+                requirements -->
+
                 <div class="mb-1">
                   <label class="form-label" for="recover-email">What is your your estimated budget for the stall fabrication?</label>
                   <select class="form-select" name="" id="select-input" aria-label="default" wire:model="estimatebudget">
