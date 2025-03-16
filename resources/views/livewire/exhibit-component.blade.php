@@ -463,30 +463,32 @@
             </div>
           </div>
         @elseif($this->board == 'fabrication')
-              <form  wire:submit.prevent="fabrication" >
-                <div class="mb-1">
-                  <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                  <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
-                  @error('name')
-                    <div class="form-text text-primary">{{$message}}</div>
-                  @enderror
-                </div>
-                <div class="mb-1">
-                  <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                  <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
-                  @error('email')
-                    <div class="form-text text-primary">{{$message}}</div>
-                  @enderror
-                </div>
-                <div class="mb-1">
-                  <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-                  <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                  @error('phone')
-                    <div class="form-text text-primary">{{$message}}</div>
-                  @enderror
-                </div>
-                <button class="btn btn-primary form-control" type="submit">Submit</button>
-              </form>
+          <div class="container">
+            <form  wire:submit.prevent="fabrication" >
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                @error('name')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                @error('email')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                @error('phone')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
+          </div>
         @elseif($this->board == 'fabrication-details')
             <div class="container">
                 
@@ -746,6 +748,67 @@
                 <button class="btn btn-primary form-control" type="submit">Submit</button>
               </form>
             </div>
+        @elseif($this->board == 'invite')
+        <div class="container">
+          
+        <h1>Exclusive Business Networking - Invite & Meet Brands</h1>
+          <p>Connect with the Right Business Representatives</p>
+           
+          <p>The Exhibtion Network introduces a seamless <br> Invite & Meet </br> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+
+          <h1>For Brands: Invite Business Representatives</h1>
+          <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
+
+          <br>How It Works:</br>
+
+          1. Submit your Invitation - Fill in the form with your ,br>brand name, stall number, and event details.</br>
+          2. Send personalized Invites - Reach out to business representatives who match your target audience.
+          3. Manage & Track - View response and schedule meetings before the event.
+
+
+          <h1>For visitors: Request a Meeting with Brands</h1>
+          <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
+          How it Works:
+
+          1. choose a Brand - Select from the list of participating exhibitors.
+          2. Submit Your Meeting Request - Provide your details and preferred time.
+          3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.
+
+          Why Use This Feature?
+          <br>Effortless Scheduling</br> - Plan your meetings in advance for a seamless event experience.
+          <br>Meaningful Interactions</br> - Connect with the right people who matter to your business.
+          <br>Time-Saving</br> - Avoid last-minute scheduling and maximize your event productivity.
+
+          <p>Don't miss the opportunity to create valueable business relationships!</p>
+
+          <p>For any queries, contact us at</p>
+
+
+            <form  wire:submit.prevent="fabrication" >
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                @error('name')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                @error('email')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                @error('phone')
+                  <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+              <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
+          </div>
         @else
         @endif
 
