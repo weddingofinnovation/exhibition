@@ -789,12 +789,14 @@
           <div class="container">
             
             
-            <h4>Exclusive Business Networking - Invite & Meet Brands</h4>
+            <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
             <small>Connect with the Right Business Representatives</small>
-            
-            <p>The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+            <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
 
-            <h1>For Brands: Invite Business Representatives</h1>
+
+
+
+            <h4>For Brands: Invite Business Representatives</h4>
             <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
 
             <ul>
@@ -814,6 +816,8 @@
               <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
             </ul>
 
+
+            
             <ul>
               <strong>Why Use This Feature?</strong>
               <li><strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.</li>
