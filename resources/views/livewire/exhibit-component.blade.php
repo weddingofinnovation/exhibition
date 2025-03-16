@@ -767,23 +767,25 @@
             <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
             <li>3. Manage & Track - View response and schedule meetings before the event.</li>
           </ul>
-          
-          
-          
-
-
+    
           <h1>For visitors: Request a Meeting with Brands</h1>
           <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
-          How it Works:
+          
+          <ul>
+            <strong>How It Works:</strong>
+            <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
+            <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
+            <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
+          </ul>
 
-          1. choose a Brand - Select from the list of participating exhibitors.
-          2. Submit Your Meeting Request - Provide your details and preferred time.
-          3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.
 
-          Why Use This Feature?
-          <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
-          <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
-          <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
+          <ul>
+            <strong>Why Use This Feature?</strong>
+            <li><strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.</li>
+            <li><strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.</li>
+            <li><strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.</li>
+          </ul>
+          
 
           <p>Don't miss the opportunity to create valueable business relationships!</p>
 
