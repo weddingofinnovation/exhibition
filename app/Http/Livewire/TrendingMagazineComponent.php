@@ -17,7 +17,7 @@ class TrendingMagazineComponent extends Component
     {
         //$mytime = Carbon::today()->format("Y-m-d");
         $finder = Expo::where('admstatus','1')->where('status','1')->get();
-        $magazine = Magazine::get();
+        $magazine = Magazine::where('id', '11')->where('admstatus','1')->where('status','1')->get();
         return view('livewire.trending-magazine-component',['finder'=>$finder,'magazine'=>$magazine]);
     }
 }

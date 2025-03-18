@@ -19,6 +19,9 @@ class MagazineUpgradingComponent extends Component
     public $slug;
     public $formm;
     public $image;
+    public $admstatus;
+    public $user_id;
+    public $magazine_id;
 
      use WithFileUploads; 
 
@@ -78,6 +81,8 @@ class MagazineUpgradingComponent extends Component
 
     use WithFileUploads;
     public $brand_lgo = [];
+    public $status;
+
     public function multiImage()
     {
         $multiimage = $this->brand_lgo;
@@ -92,15 +97,16 @@ class MagazineUpgradingComponent extends Component
             $multiimage[$key]->storeAs('exhibition', $newimage);
             $brand->brand_lgo = $newimage;
 
-            $brand->usage = $this->usage;
+            //$brand->usage = $this->usage;
 
             $fattribute = Magazine::where('slug', $this->slug)->first();
             $brand->magazine_id = $fattribute->id;
 
-            $brand->status = $this->status;
-            $brand->admstatus = $this->admstatus;
+            $brand->status = '1';
+            $brand->admstatus = '1';
             $brand->user_id = Auth::user()->id;
             $brand->save();
+            $this->reset();
         }
 
     }
