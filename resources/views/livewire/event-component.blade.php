@@ -9,7 +9,7 @@
               <div class="row align-items-center ">
 
                 <div class="col-md-4">
-                  <div class="row my-Slider4">
+                  <div class="row">
                       <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
                         
                       <!-- <span class="badge bg-danger">Free</span> -->

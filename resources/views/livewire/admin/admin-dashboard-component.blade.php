@@ -968,7 +968,8 @@
             </table>
           </div>--}}
     @endif
-<!--event stop--> 
+    
+    <!--event stop--> 
 
 
       @if($board == 'findSearch')
@@ -978,8 +979,8 @@
         @endforeach
       @endif
 
-      
-
+    
+      //database_meetup
       @if($board == 'visitcard')
           
         <div class=" container small">
@@ -1012,10 +1013,8 @@
                               <div class="">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                       <div class="col  pr-0">
-                                      
                                           <div class="h4 fw-light mb-0"> 1 </div> 
-                                          <div class="small text-muted">chk </div>
-                                          
+                                          <div class="small text-muted">chk</div>
                                           <div class="round-circle" ><i class="bi bi-bookmark"></i></div> 
                                       </div>
 
@@ -1184,7 +1183,6 @@
               </div>
             </div>
         @endif
-
       @endif
 
     <!--Start job -->
@@ -2239,7 +2237,7 @@
         @foreach ($businessOrder as $evento)
           <div class="container my-3">
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                <div class="col-3  p-0">
+                <div class="col-2  p-0">
                   
                       <!-- <div class="p fw-light mb-0">{{$evento->type}}</div> 
                       <div class="small text-muted">{{$evento->id}}</div> -->
@@ -2253,7 +2251,6 @@
                         @foreach($eventdetails as $evet)
                           <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
                               <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
-                            {{$evento->type}}
                           </a>
                         @endforeach
                     @endif
@@ -2261,25 +2258,12 @@
                 </div>
 
                 <div class="col-7  p-0">
+                  <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ $evento->created_at->format('D d M  H:m')}}</span></div>
                   <div class="fs-sm fw-normal text-start">
-                    <a class="text-dark" href="" >
-                      {{$evento->name}}</a></div>
-
-                      <div class="fs-sm fw-normal text-start">
-                    <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">
-                      {{$evento->phone}}</a>
-                      <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')">
-                      <i class="bi bi-plus"></i></a>
-                    
-
-                    </div>
-                  <div class="text-muted fs-xs text-start">
-                      {{$evento->email}} <br>
-                    
-                      <span class="fs-xs bg-success">{{ $evento->created_at->format('D d M  H:m')}}</span>
-                     
-                  </div>  
-                  <div class="text-muted fs-sm text-start"></div>
+                    <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">{{$evento->phone}}</a> <span class="fs-xs bg-danger text-light">{{$evento->type}}</span>
+                    <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')"><i class="bi bi-plus"></i></a>
+                  </div>
+                  <div class="text-muted fs-xs text-start">{{$evento->email}}</div>
                 </div>
 
                 <div class="col-3  p-0">
