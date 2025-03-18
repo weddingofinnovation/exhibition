@@ -24,8 +24,6 @@
                   <div class="tab-content pt-1">                
                       <!-- Product details tab-->
                       <div class="tab-pane fade" id="details" role="tabpanel">
-                        
-
                         @foreach ($businessOrder as $evento)
                           <div class="my-3">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -104,11 +102,11 @@
                                 </div>
 
                                 <div class="col-7  p-0">
-                                  @if(is_null($evento->organizer))
+                                  @if(is_null($evento->organiser))
                                     <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
                                   @else
                                     <div class="fs-md fw-normal text-start">
-                                      {{$evento->organizer}}
+                                      {{$evento->organiser}}
                                     </div>
                                   @endif
                                 </div>
