@@ -9,11 +9,15 @@
                 
               <div class="mb-4 mb-lg-5">
                 <!-- Nav tabs-->
+                  @php
+                      $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+                  @endphp
+                  
                 <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 active fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business</a></li>
+                    <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business</a></li>
                   <li class="nav-item border-bottom">
-                    <a class="nav-link px-1 fs-sm" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
+                    <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
                   </li>
                 </ul>
 
@@ -21,6 +25,69 @@
                       <!-- Product details tab-->
                       <div class="tab-pane fade" id="details" role="tabpanel">
                         
+
+                        @foreach ($businessOrder as $evento)
+                          <div class="my-3">
+                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col-2  p-0">
+                                    @if($evento->event_id == 'null' )
+                                        {{$evento->type}}
+                                    @else
+                                        @php
+                                            $eventdetails = DB::table('events')->where('id', $evento->event_id)->get();
+                                        @endphp
+
+                                        @foreach($eventdetails as $evet)
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
+                                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
+                                          </a>
+                                        @endforeach
+                                    @endif
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ $evento->created_at->format('D d M  H:m')}}</span></div>
+                                  <div class="fs-sm fw-normal text-start">
+                                    <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">{{$evento->phone}}</a> <span class="fs-xs bg-danger text-light">{{$evento->type}}</span>
+                                    <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')"><i class="bi bi-plus"></i></a>
+                                  </div>
+                                  <div class="text-muted fs-xs text-start">{{$evento->email}}</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                        {{--@if(is_null($evento->image))
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $evento->slug, 'formm' => 'image' ])}}">Add</a>
+                                            @else
+                                          <a class="card-img-top d-block overflow-hidden" href="">
+                                          <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->name, 24)}}"></a>
+                                        @endif--}}
+                                  
+                                      @php
+                                        $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
+                                        $resulto = $businesslead->pluck('response')->first();
+                                      @endphp
+
+                                      
+                                    @if(($businesslead->count()) < '1')
+                                      <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">New</a>
+                                    @else
+                                      <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{$resulto}}</a>
+                                    @endif
+                                    
+                                      <ul class="dropdown-menu" width="auto">
+                                      <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Email</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Interest</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'check')">Check</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">callback</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'Not')">Not</a></li>
+                                        <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
+                                      </ul>
+
+                                </div>
+                            </div>
+                          </div>
+                        @endforeach
                       </div>
                   
                       <!-- Reviews tab-->
