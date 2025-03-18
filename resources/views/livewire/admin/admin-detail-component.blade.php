@@ -12,7 +12,7 @@
                   @php
                       $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
                   @endphp
-                  
+
                 <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                   <li class="nav-item border-bottom">
                     <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business</a></li>
@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="col-7  p-0">
-                                  <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ $evento->created_at->format('D d M  H:m')}}</span></div>
+                                  <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ Carbon\Carbon::parse($evento->created_at)->format('D d M  H:m')}}</span></div>
                                   <div class="fs-sm fw-normal text-start">
                                     <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">{{$evento->phone}}</a> <span class="fs-xs bg-danger text-light">{{$evento->type}}</span>
                                     <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')"><i class="bi bi-plus"></i></a>
