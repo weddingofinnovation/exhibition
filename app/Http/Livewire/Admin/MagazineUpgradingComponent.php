@@ -8,6 +8,7 @@ use App\Models\Location;
 use App\Models\Magazine;
 use App\Models\Photo;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
@@ -73,6 +74,35 @@ class MagazineUpgradingComponent extends Component
         $updatephoto->image = $findphoto->image;
         $updatephoto->save();
         return redirect()->route('admin.dashboard', ['board' => 'magazine']);
+    }
+
+    use WithFileUploads;
+    public $brand_lgo = [];
+    public function multiImage()
+    {
+        $multiimage = $this->brand_lgo;
+
+        foreach($multiimage as $key => $imageso)
+        {
+            $brand = new Photo();
+            //$bran = Event::find($this ->event_id);
+            //$brand->event_id = $bran->id;
+
+            $newimage = Carbon::now()->timestamp. $key. '.'. $multiimage[$key]->extension();
+            $multiimage[$key]->storeAs('exhibition', $newimage);
+            $brand->brand_lgo = $newimage;
+
+            $brand->usage = $this->usage;
+
+            $fattribute = Magazine::where('slug', $this->slug)->first();
+            $brand->magazine_id = $fattribute->id;
+
+            $brand->status = $this->status;
+            $brand->admstatus = $this->admstatus;
+            $brand->user_id = Auth::user()->id;
+            $brand->save();
+        }
+
     }
 
 

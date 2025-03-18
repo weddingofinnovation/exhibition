@@ -155,38 +155,39 @@
             </div>
 
             <hr class="mt-5">
-               
+            
+            @foreach($photos as $imgo)
+              <div class="container">
+                  <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3"> 
+                      <div class="col">
+                          <a href="#" wire:click.prevent="adDphoto({{$imgo->id}})">
+                              <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}"  width="50%" alt=""></a>
+
+                          <a href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
+
+                          <a href="#" class="btn btn-primary" wire:click.prevent="adDphoto({{$imgo->id}})"> Testing</a>
+                      </div>
+                  </div>
+              </div>
+            @endforeach
+
+            <div class="grid">
                 @foreach($photos as $imgo)
-                    <div class="container">
-                        <div class="row row-cols-3 row-cols-lg-6 gy-2 gx-1 g-lg-3"> 
-                            <div class="col">
-                                <a href="#" wire:click.prevent="adDphoto({{$imgo->id}})">
-                                    <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}"  width="50%" alt=""></a>
-
-                                <a href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
-
-                                <a href="#" class="btn btn-primary" wire:click.prevent="adDphoto({{$imgo->id}})"> Testing</a>
-                           </div>
-                        </div>
+                    <div class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})" style="background-image: url('public/assets/image/exhibition/'.$imgo->brand_lgo')">
+                      <!-- <img  class="element-item" src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" alt=""> -->
+                      <h3 class="name">Tellurium</h3>
+                      <p class="symbol">te</p>
+                      <a class="number" href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i></a>
+                      <p class="weight">127.6</p>
                     </div>
                 @endforeach
-
-
-
-
-        <div class="grid">
-            @foreach($photos as $imgo)
-            
-                <div class="element-item" data-category="metalloid" href="#" wire:click.prevent="adDphoto({{$imgo->id}})" style="background-image: url('public/assets/image/exhibition/'.$imgo->brand_lgo')">
-                  <!-- <img  class="element-item" src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" alt=""> -->
-                  <h3 class="name">Tellurium</h3>
-                  <p class="symbol">te</p>
-                  <a class="number" href="#" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i></a>
-                  <p class="weight">127.6</p>
-                </div>
-            @endforeach
-        </div>
-
+            </div>
+        @elseif($formm == 'multiimage')
+          <form wire:submit.prevent="multiImage">
+            <label class="form-label">Upload Multi Image<span class="text-danger">*</span></label> 
+              <input type="file" class="form-control" placeholder="multiple Image" wire:model="brand_lgo"  multiple="multiple">
+              <button class="btn btn-primary btn-shadow d-block w-100 mt-2"  type="submit">Submit</button>
+          </form>
         @endif
 
 

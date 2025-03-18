@@ -963,15 +963,13 @@
                           </div>        
                         </td>
                     </tr>
-                  @endforeach          
+                  @endforeach  
                 </tbody>
             </table>
           </div>--}}
     @endif
     
     <!--event stop--> 
-
-
       @if($board == 'findSearch')
         @foreach($findSearch as $searcho)
          {{$searcho->search}}
@@ -979,8 +977,6 @@
         @endforeach
       @endif
 
-    
-      //database_meetup
       @if($board == 'visitcard')
           
         <div class=" container small">
@@ -1185,7 +1181,7 @@
         @endif
       @endif
 
-    <!--Start job -->
+      <!--Start job -->
       @if($board == 'job')
         <div class="container d-lg-none">
           <div class="row">
@@ -1288,8 +1284,6 @@
         </div>
       @endif
       <!--Stop job -->
-
-
 
       <!--Stop blog -->
       @if($board == 'blog')
@@ -1483,7 +1477,7 @@
                         <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine', ['slug' => $evento->slug, 'formm' => 'image'])}}">Add</a>
                         <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="Magazinedelete({{$evento->id}})">  <i class="bi bi-x"></i> </a>
                         @else
-                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine', ['slug' => $evento->slug, 'formm' => 'image'])}}">
+                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine', ['slug' => $evento->slug, 'formm' => 'multiimage'])}}">
                           <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->name, 24)}}">
                         </a>
                         <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()"  wire:click.prevent="Magazinedelete({{$evento->id}})">  <i class="bi bi-x"></i> </a>
@@ -2235,7 +2229,7 @@
 
       @if($board == 'order')
         @foreach ($businessOrder as $evento)
-          <div class="container my-3">
+          <div class="container my-1">
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col-2  p-0">
                   
@@ -2505,7 +2499,7 @@
 
                 <div class="col-7  p-0">
                 <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                    {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
+                    {{ucwords(trans(Str::limit($franchise->brand_name ?? 'null ', 24)))}}</a></div>
                 <div class="text-muted fs-sm text-start">
                     {{$franchise->dtype}}
                 </div>  
