@@ -20,8 +20,8 @@
         @foreach($magazine as $eventoi)
           <div class="col-lg-4 col-md-6 col-sm-6">
             <div class="card product-card">
-              <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => $eventoi->slug])}}">
-                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" class="img-thumbnail" alt="">
+              <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => 'test'])}}">
+                <img src="{{url('public/assets/image/exhibition/'.$eventoi->brand_lgo)}}" class="img-thumbnail" alt="">
               </a>
             </div>
           </div>
@@ -29,34 +29,6 @@
       </div>
     </section>
 
-    <style>
-      .scroll-container {
-                    display: flex;
-                    overflow-x: auto;
-                    white-space: nowrap;
-                    gap: 15px;
-                    padding: 10px;                      
-                    scrollbar-width: none;
-                    -ms-overflow-style: none;
-                  }
-        
-      .scroll-container::-webkit-scrollbar{
-        display: none;
-      }
-    </style>
-      
-    <div class="scroll-container">
-      @foreach($magazine as $eventoi)
-        <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-          <div class="card product-card">
-            
-            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-            <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
-          
-          </div>
-        </div>
-      @endforeach
-    </div>
   </main>
 
   @push('scripts')
