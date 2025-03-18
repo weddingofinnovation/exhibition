@@ -1,6 +1,9 @@
 @section('page_title',  ($this->slug))
 
 <main>
+        @php
+            $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+        @endphp
 
         <div class="d-lg-none">
           <div class="container">
@@ -11,7 +14,7 @@
                   <!-- Nav tabs-->
                   <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                     <li class="nav-item border-bottom">
-                      <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business</a></li>
+                      <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business {{$businessOrder->count()}}</a></li>
                     <li class="nav-item border-bottom">
                       <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
                     </li>
@@ -754,12 +757,10 @@
 
                       <!-- Product details tab-->
                       <div class="tab-pane fade" id="details" role="tabpanel">
-                        @php
-                            $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
-                        @endphp
+                        
 
                           @foreach ($businessOrder as $eventol)
-                            <div class="my-3">
+                            <div class="my-1">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                   <div class="col-2  p-0">
                                       @if($eventol->event_id == 'null' )
