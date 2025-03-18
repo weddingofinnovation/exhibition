@@ -2,17 +2,14 @@
 
 <main>
 
-<div class="d-lg-none">
+        <div class="d-lg-none">
           <div class="container">
             <div class="row">
               <div class="col-md-6 offset-md-3">
                 
               <div class="mb-4 mb-lg-5">
                 <!-- Nav tabs-->
-                  @php
-                      $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
-                  @endphp
-
+                 
                 <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                   <li class="nav-item border-bottom">
                     <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business</a></li>
@@ -24,6 +21,10 @@
                   <div class="tab-content pt-1">                
                       <!-- Product details tab-->
                       <div class="tab-pane fade" id="details" role="tabpanel">
+                      @php
+                          $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+                      @endphp
+
                         @foreach ($businessOrder as $evento)
                           <div class="my-3">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -102,17 +103,17 @@
                                 </div>
 
                                 <div class="col-7  p-0">
-                                  @if(is_null($evento->organiser))
+                                  @if(is_null($evento->organizer))
                                     <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
                                   @else
                                     <div class="fs-md fw-normal text-start">
-                                      {{$evento->organiser}}
+                                      {{$evento->organizer}}
                                     </div>
                                   @endif
                                 </div>
 
                                 <div class="col-3 p-0">
-                                  @if(is_null($evento->organiser))
+                                  @if(is_null($evento->organizer))
                                     <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser' ])}}" class="btn btn-primary btn-sm">  <i class="bi bi-plus"></i></a>
                                   @else
                                     <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser'])}}" class="btn btn-primary btn-sm">Edit</a>
@@ -829,9 +830,6 @@
           </div>
         </div>
 
-
-     
-    
     {{--<div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">
         <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar">
