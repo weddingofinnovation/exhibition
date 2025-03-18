@@ -758,15 +758,15 @@
                             $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
                         @endphp
 
-                          @foreach ($businessOrder as $evento)
+                          @foreach ($businessOrder as $eventol)
                             <div class="my-3">
                               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                   <div class="col-2  p-0">
-                                      @if($evento->event_id == 'null' )
-                                          {{$evento->type}}
+                                      @if($eventol->event_id == 'null' )
+                                          {{$eventol->type}}
                                       @else
                                           @php
-                                              $eventdetails = DB::table('events')->where('id', $evento->event_id)->get();
+                                              $eventdetails = DB::table('events')->where('id', $eventol->event_id)->get();
                                           @endphp
 
                                           @foreach($eventdetails as $evet)
@@ -778,24 +778,24 @@
                                   </div>
 
                                   <div class="col-7  p-0">
-                                    <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ Carbon\Carbon::parse($evento->created_at)->format('D d M  H:m')}}</span></div>
+                                    <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$eventol->name}}</a><span class="fs-xs bg-success">{{ Carbon\Carbon::parse($eventol->created_at)->format('D d M  H:m')}}</span></div>
                                     <div class="fs-sm fw-normal text-start">
-                                      <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">{{$evento->phone}}</a> <span class="fs-xs bg-danger text-light">{{$evento->type}}</span>
-                                      <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')"><i class="bi bi-plus"></i></a>
+                                      <a class="text-dark" href="" onclick="makeCall('{{$eventol->phone}}')">{{$eventol->phone}}</a> <span class="fs-xs bg-danger text-light">{{$eventol->type}}</span>
+                                      <a class="text-dark" href="" onclick="copyToclipboard('{{$eventol->phone}}')"><i class="bi bi-plus"></i></a>
                                     </div>
-                                    <div class="text-muted fs-xs text-start">{{$evento->email}}</div>
+                                    <div class="text-muted fs-xs text-start">{{$eventol->email}}</div>
                                   </div>
 
                                   <div class="col-3  p-0">
-                                          {{--@if(is_null($evento->image))
-                                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $evento->slug, 'formm' => 'image' ])}}">Add</a>
+                                          {{--@if(is_null($eventol->image))
+                                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $eventol->slug, 'formm' => 'image' ])}}">Add</a>
                                               @else
                                             <a class="card-img-top d-block overflow-hidden" href="">
-                                            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->name, 24)}}"></a>
+                                            <img src="{{url('public/assets/image/exhibition/'.$eventol->image)}}" alt="{{Str::limit($eventol->name, 24)}}"></a>
                                           @endif--}}
                                     
                                         @php
-                                          $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
+                                          $businesslead = DB::table('business_calledos')->where('lead_id', $eventol->id)->latest()->get();
                                           $resulto = $businesslead->pluck('response')->first();
                                         @endphp
 
@@ -807,13 +807,13 @@
                                       @endif
                                       
                                         <ul class="dropdown-menu" width="auto">
-                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Email</a></li>
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Interest</a></li>
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'check')">Check</a></li>
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">callback</a></li>
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'Not')">Not</a></li>
-                                          <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
+                                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Email</a></li>
+                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Interest</a></li>
+                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'check')">Check</a></li>
+                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'callback')">callback</a></li>
+                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'ringing')">Ringing</a></li>
+                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'Not')">Not</a></li>
+                                          <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$eventol->id}})">Delete</a></li>
                                         </ul>
 
                                   </div>
