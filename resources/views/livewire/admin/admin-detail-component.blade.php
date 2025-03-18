@@ -19,15 +19,15 @@
 
                   <div class="tab-content pt-1">                
                       <!-- Product details tab-->
-                      <div class="tab-pane fade show active" id="details" role="tabpanel">
+                      <div class="tab-pane fade" id="details" role="tabpanel">
                         
                       </div>
                   
                       <!-- Reviews tab-->
-                      <div class="tab-pane fade" id="reviews" role="tabpanel">
+                      <div class="tab-pane fade show active" id="reviews" role="tabpanel">
                          
                         {{--organiser--}}
-                        <div class="container my-1">
+                        <div class=" my-1">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Org</div> 
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                             
-                        <div class="container my-1">
+                        <div class=" my-1">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                   <a class ="text-dark" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}">
@@ -99,7 +99,7 @@
                         </div>
 
                         <!--category-->
-                        <div class="container my-1">
+                        <div class=" my-1">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                   
@@ -128,7 +128,7 @@
                             </div>
                         </div>
 
-                        <div class="container">
+                        <div class="">
                           <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                           <div class="col-8 p-0">
                             <div class="fs-md fw-normal text-start">
@@ -195,7 +195,7 @@
                         </div>
                         </div>
 
-                        <div class="container"> 
+                        <div class=""> 
                             <small>Post on Linkedin</small>
                           
                             <div class="input-group my-2">          
@@ -204,7 +204,7 @@
                           
                         </div>
 
-                        <div class="container"> 
+                        <div class=""> 
                             <small>CSV upload exhibitor</small>
                           
                             <form wire:submit.prevent="upload">
@@ -216,7 +216,7 @@
                           
                         </div>
 
-                        <div class="container"> 
+                        <div class=""> 
                           <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
                           <form wire:submit.prevent="withoutHashtag">
                             <div class="input-group my-2">
@@ -227,7 +227,7 @@
                         </div>
                         
                         {{--tag--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Tag</div> 
@@ -255,7 +255,7 @@
                         </div>
 
                         {{--facts--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Facts</div> 
@@ -283,7 +283,7 @@
                         </div>
 
                         {{--Short--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Sht</div> 
@@ -310,7 +310,7 @@
                         </div>
 
                         {{--Long--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Lng</div> 
@@ -339,7 +339,7 @@
                         </div>
                         
                         {{--webo--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">Web</div> 
@@ -369,7 +369,7 @@
                         </div>
 
                         {{--participants--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class = "h4 fw-light mb-0">{{$participants->count()}}</div>
@@ -389,7 +389,7 @@
                         </div>
 
                         {{--speaker--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$speaker->count()}}</div> 
@@ -413,7 +413,7 @@
                         </div>
 
                         {{--pavillion--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$pavillion->count()}}</div> 
@@ -437,7 +437,7 @@
                         </div>
 
                         {{--sponsership--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$sponsership->count()}}</div> 
@@ -460,7 +460,7 @@
                         </div>
 
                         {{--sponsership--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$sponsership->count()}}</div> 
@@ -483,7 +483,7 @@
                         </div>
 
                         {{--magazine--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$sponsership->count()}}</div> 
@@ -506,7 +506,7 @@
                         </div>
 
                         {{--membership plans--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">{{$sponsership->count()}}</div> 
@@ -529,7 +529,7 @@
                         </div>
 
                         {{--hastags--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                           <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                               <div class="col  pr-0">
                                   <div class="h4 fw-light mb-0">{{$hastag->count()}}</div> 
@@ -553,7 +553,7 @@
                         </div>
 
                         {{--basic--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0">BSC</div> 
@@ -578,7 +578,7 @@
 
                         @if(is_null($evento->edition))
                             {{--ticket--}}
-                            <div class="container my-3">
+                            <div class=" my-3">
                               <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
                                 <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
@@ -610,7 +610,7 @@
                             </div>
                           @elseif($evento->eventype == 'award')
                             {{--ticket--}}
-                            <div class="container my-3">
+                            <div class=" my-3">
                               <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
                                 <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
@@ -641,7 +641,7 @@
                               </a>
                             </div>
                           @else
-                            <div class="container my-3">
+                            <div class=" my-3">
                               <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
                                 <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
@@ -673,7 +673,7 @@
                             </div>
                         @endif
 
-                        <div class="container">
+                        <div class="">
                           <div class="input-group my-2">
                             <input type="text" class="form-control" placeholder="create a FAQ">
                             <!-- <a href="#" class="btn btn-primary" wire:click.prevent="updateIDstatus({{$evento->id}})">Create FAQ</a> -->
@@ -694,7 +694,7 @@
                         is there venue wheelchair accessible
                         are there cloakroom or storage facili  -->
 
-                        <div class="container">
+                        <div class="">
                           <!-- create a unique ID
                           <a href="#" class="btn btn-primary" wire:click.prevent="updateIDstatus({{$evento->id}})">ID</a> -->
 
@@ -706,7 +706,7 @@
                         </div>
                       
                         {{--doubling--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="h4 fw-light mb-0"></div> 
@@ -735,12 +735,12 @@
                             </div>
                         </div>
 
-                        <div class="container mb-5">
+                        <div class=" mb-5">
                           {{$evento->reference}}
                         </div>
                         
                         {{-- Creating review--}}
-                        <div class="container my-3">
+                        <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
                                     <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}}  <small> Reviews</small></div> 
@@ -753,7 +753,6 @@
                                 </form>
                             </div>
                         </div>
-
 
                       </div>
 
