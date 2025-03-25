@@ -34,7 +34,7 @@
         @endforeach
       </div> --}}
             
-      <div class="row g-0 py-0 mx-n2 dealerslider"> 
+      <div class="row g-0 py-0 mx-n2"> 
         {{-- px-2 mb-1 --}}
         @foreach($evento as $eventoi)
           <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
@@ -125,34 +125,3 @@
     </section>
   @endif
 </main>
-
-@push('scripts')
-    
-    <script>
-      var slider = tns({
-        "container": '.dealerslider',          
-        "responsive": {
-          "300": {
-            "items": 2,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": false,
-            "fixedWidth": 150,
-            "autoplayButtonOutput": false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay": false,
-             "fixedWidth": 300,
-            "autoplayButtonOutput": false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-@endpush
