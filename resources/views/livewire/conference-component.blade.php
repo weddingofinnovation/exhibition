@@ -14,14 +14,6 @@
               </span></div>
           </div>
           
-      <div class="d-flex badgeseconf">
-            {{-- @foreach( $finder as $categ) 
-            <a class="badge border-1 text-right border-dark text-dark mr-1" href="{{route('coi.exhibitioncategory',['eventype' => 'conference', 'categry' => $categ->slug])}}">
-              {{ucwords(trans($categ->tag))}}</a>
-            @endforeach --}}
-      </div>
-
-      
               
       <div class="row pt-2 mx-n2 my-Slider6"> 
         @foreach($conference as $eventoi)
@@ -94,35 +86,7 @@
   </main>
 
   @push('scripts')
-    <script>
-      var slider = tns({
-        "container": '.badgeseconf',   
-        
-        "responsive": {
-          "300": {
-            "items": 3,
-            "controls": false,
-            "fixedWidth": 100,
-            "mouseDrag": true,
-            "autoplay": false,
-            "autoplayButtonOutput": false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 1,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay": false,
-            "autoplayButtonOutput": false,
-                     "fixedWidth": 100,
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-
+    
     <script>
       var slider = tns({
         "container": '.my-Slider6',            

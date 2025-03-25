@@ -344,7 +344,7 @@
         </div>
        
        <!-- Grid-->
-        <div class="row pt-2 mx-n2 my-Slider9">
+        <div class="row pt-2 mx-n2">
               
               @foreach ($franchises as $franchise)
           <!-- Product-->
@@ -879,34 +879,6 @@
               "controls": false,
               "swipeAngle": false,
               "autoplayButtonOutput":false,
-            });
-          </script>
-
-          <script>
-            var slider = tns({
-              "container": '.my-Slider9',            
-              "responsive": {
-                "350": {
-                  "items": 1,
-                  "mouseDrag": true,
-                  "edgePadding": 30,
-                  "autoplay": true,
-                  
-                },
-                "500": {
-                  "items": 4,
-                  "autoplay":true
-                }
-              },
-              "swipeAngle": false,
-              "speed": 400,
-              "nav": false,
-              "mouseDrag":true,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplayButtonOutput":false,
-              "swipeAngle": false,
-              "gutter" : 10,
             });
           </script>
 

@@ -140,12 +140,7 @@
                       </div>
                     @endforeach
                   </div>
-                  
-                 
                 </div>
-                
-                
-
               </div>
             </div>
           </section>
@@ -153,7 +148,7 @@
           
         <!--list-->
           {{--<section class="d-sm-none">
-                <div class="d-flex  align-items-center my-Slider9">
+                <div class="d-flex  align-items-center">
                   <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
                     <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
                       <div class="py-4 pr-4">
@@ -412,30 +407,4 @@
       });
     </script>
 
-    <script>
-      var slider = tns({
-        "container": '.my-Slider9',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-    
 @endpush
