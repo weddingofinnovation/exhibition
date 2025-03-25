@@ -4969,7 +4969,7 @@
                         </div>
                   </div>
 
-                  <div class="row g-0 py-0 mx-n2 my-Slider4 mt-2"> 
+                  <div class="row g-0 py-0 mx-n2 mt-2"> 
                     {{-- px-2 mb-1 --}}
                     @foreach($relativeEvent as $eventoi)
                       <div wire:ignore class="col-lg-2 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
@@ -5268,34 +5268,7 @@
         });
       </script>
 
-      <script>
-        var slider = tns({
-          "container": '.my-Slider4',          
-          "responsive": {
-            "300": {
-              "items": 2,
-              "controls": false,
-              "mouseDrag": true,
-              "autoplay": false,
-              "fixedWidth": 150,
-              "autoplayButtonOutput": false,
-              "autoplayHoverPause": true,
-            },
-            "500": {
-              "items": 4,
-              "nav": false,
-              "controls": false,
-              "autoplayHoverPause": true,
-              "autoplay": false,
-              "fixedWidth": 150,
-              "autoplayButtonOutput": false
-            },
-            
-          },
-          "autoplayButtonOutput":false
-        });
-      </script>
-
+      
           <script type = "application/ld+json">
             {
                   "@context": "https://schema.org",

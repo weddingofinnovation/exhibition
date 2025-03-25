@@ -586,34 +586,3 @@
         </div>
       </section>
   </main>
-
-  @push('scripts')
-      <script>
-        document.addEventListener('livewire:load' , function(){
-          var slider = tns({
-            container: '.badgese',   
-            
-            responsive: {
-              300: {
-                items: 3,
-                controls: false,
-                fixedWidth: 100,
-                mouseDrag: true,
-                autoplay: false,
-                autoplayButtonOutput: false,
-                autoplayHoverPause: true,
-              },
-              500: {
-                items: 1,
-                nav: false,
-                controls: false,
-                autoplayHoverPause: true,
-                autoplay: false,
-                autoplayButtonOutput: false,
-                fixedWidth: 100,
-              },
-            },
-          });
-        });
-      </script>
-  @endpush

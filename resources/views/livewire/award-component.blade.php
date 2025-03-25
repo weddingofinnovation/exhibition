@@ -232,7 +232,7 @@
 
                 <div class="fs-xs fw-normal">Summary of {{count($eventrate)}} reviews.</div> 
                 
-                    <!-- <div class="d-flex badgese pb-2">
+                    <!-- <div class="d-flex  pb-2">
                         <span class="badge border border-1 text-right border-dark text-dark mr-1">Today  <span class="bg-"> 2935</span> </span>
                         <span class="badge border border-1 text-right border-dark text-dark mr-1">Tomorrow</span>
                         <span class="badge border border-1 text-right border-dark text-dark mr-1">This weekend</span>

@@ -307,32 +307,7 @@
 </main>
 
 @push('scripts')
-    <script>
-      var slider = tns({
-        "container": '.my-Slider4',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": false,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 1,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":false,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        
-      });
-    </script>
-
+    
     <script>
       var slider = tns({
         "container": '.my-Slider1',            
@@ -463,30 +438,4 @@
       });
     </script>
     
-    <script>
-      var slider = tns({
-        "container": '.tagse',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 1,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
-
 @endpush

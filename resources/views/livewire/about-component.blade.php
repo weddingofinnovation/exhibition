@@ -110,7 +110,7 @@
         <section class="container py-3 py-lg-5 mt-4 mb-3">
           <h2 class="display-5 text-center my-2">We do</h2>
           {{--<p class="fs-md  text-center">For more information about our company:</p>--}}
-          <div class="row row-cols-1 row-cols-md-3 g-4 badgese">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col col-md-4">
                 <div class="card h-100  border-0">
                   <div class="card-body">
@@ -331,23 +331,5 @@
       });
     </script>
 
-    <script>
-      var slider = tns({
-        "container": '.badgese',   
-        
-        "responsive": {
-          "300": {
-            "items": 3,
-            "controls": false,
-            "fixedWidth": 300,
-            "mouseDrag": true,
-            "autoplay": false,
-            "autoplayButtonOutput": false,
-            "autoplayHoverPause": true,
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
+    
   @endpush

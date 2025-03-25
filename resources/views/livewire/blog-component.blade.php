@@ -185,7 +185,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="my-Slider4 arrow-blur arrow-round rounded-3 overflow-hidden">
+					<div class="arrow-blur arrow-round rounded-3 overflow-hidden">
 						@foreach($try as $post)
 							<div class="card card-overlay-bottom card-img-scale">
 								<!-- Card Image -->
@@ -966,34 +966,7 @@
 			});
 		</script>
 
-		<script>
-			var slider = tns({
-				"container": '.my-Slider4',
-				"responsive": {
-					"300": {
-				"items": 2,
-				"controls": false,
-				"mouseDrag": true,
-				"autoplay": false,
-				"autoplayButtonOutput": false,
-				"autoplayHoverPause": false,
-				"fixedWidth": 100,
-					},
-			"500": {
-				"items": 4,
-				"nav": false,
-				"controls": false,
-				"autoplayHoverPause": true,
-				"autoplay":true,
-				"autoplayButtonOutput":false,
-				"fixedWidth": auto,
-			},
-			
-			},
-			"autoplayButtonOutput":false
-			});
-		</script>
-
+		
 		<script>
 			
 			var slider = tns({
