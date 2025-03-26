@@ -212,6 +212,98 @@ test
               </div>
           </section>
 
+        <style>
+          .job-section {
+              background-color: #f8f9fa;
+              padding: 60px 0;
+          }
+          .job-title {
+              font-size: 28px;
+              font-weight: bold;
+              text-align: center;
+              margin-bottom: 40px;
+          }
+          .job-card {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              transition: transform 0.3s;
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Centers horizontally */
+              justify-content: center; /* Centers vertically */
+              height: 100%; /* Ensures uniform height */
+          }
+          .job-card:hover {
+              transform: translateY(-5px);
+          }
+          .job-icon {
+              width: 60px;
+              height: 60px;
+              margin-bottom: 15px;
+          }
+          .job-heading {
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+          .job-desc {
+              color: #6c757d;
+              font-size: 14px;
+          }
+          @media (max-width: 767px) {
+              .job-card {
+                  margin-bottom: 20px;
+              }
+          }
+        </style>
+
+        <section class="job-section">
+            <div class="container">
+                <h2 class="job-title">Find the perfect job for <span class="text-primary">YOU</span></h2>
+                <div class="row justify-content-center">
+
+                    <!-- Highlight -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/854/854894.png" class="job-icon" alt="Highlight">
+                            <h5 class="job-heading">Highlight</h5>
+                            <p class="job-desc">Stand out to employers</p>
+                        </div>
+                    </div>
+
+                    <!-- Prep -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/942/942928.png" class="job-icon" alt="Prep">
+                            <h5 class="job-heading">Prep</h5>
+                            <p class="job-desc">Up your interview success rate</p>
+                        </div>
+                    </div>
+
+                    <!-- Learn -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/869/869636.png" class="job-icon" alt="Learn">
+                            <h5 class="job-heading">Learn</h5>
+                            <p class="job-desc">Upskill to get ahead</p>
+                        </div>
+                    </div>
+
+                    <!-- Network -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2972/2972385.png" class="job-icon" alt="Network">
+                            <h5 class="job-heading">Network</h5>
+                            <p class="job-desc">Grow with peers & mentors</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
           <section class="container py-5">
             <div class=" rounded-3" >
