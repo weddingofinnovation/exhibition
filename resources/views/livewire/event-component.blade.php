@@ -19,27 +19,10 @@
                         <p class=" fw-light lh-1 mt-5"></p> 
                         <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
                       </div>
-
-                 
-                      {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
-                        <h5 class="mt-4 mb-1 text-body fw-light">Best Place to Exhbit</h5>
-                        <h2 class="mb-1"> Brands More <br> Prospects & Leads</h2>
-                        <p class=" fw-light">Share your unique business, vistors, experience <br> with your competitors</p>
-                        <a class="btn btn-accent" href="">Join The exhibition Network <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
-                      </div>
-
-                      <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get access</span>
-                        <h5 class="mt-4 mb-1 text-body fw-light">Helping Businesses</h5>
-                        <h2 class="mb-1"> Identify More <br> Prospects & Leads</h2>
-                        <p class=" fw-light">Discover leads that have engaged<br> with your competitors</p>
-                        <a class="btn btn-accent" href="">Get Free COI Page <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
-                      </div>--}}
                   </div>
 
                   <a href="{{route('search.events')}}">
                     <div class="widget">
-                      <!-- <h3 class="widget-title">Generate QR</h3> -->
-                      
                         <form action="" class="subscription-form validate">
                           <div class="input-group flex-nowrap">
                             <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
