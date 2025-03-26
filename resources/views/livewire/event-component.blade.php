@@ -50,35 +50,31 @@
     </style>
 
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-    <section class="search-section">
-        <div class="container">
-            <h2 class="search-title text-center">Over 8,00,000 openings delivered perfectly</h2>
+          <section class="search-section d-none d-md-block">
+              <div class="container">
+                  <h2 class="search-title text-center">Over 500 events delivered perfectly<span class=" fs-xs text-primary">Right Place, Right Time, Right People</span></h2>
 
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="search-box d-flex">
-                        <input type="text" class="form-control" placeholder="Search by Skills, Company or Job Title">
-                        <input type="text" class="form-control" placeholder="Location">
-                        <select class="form-select">
-                            <option>Experience</option>
-                            <option>Fresher</option>
-                            <option>1-3 Years</option>
-                            <option>3-5 Years</option>
-                        </select>
-                        <button type="submit" class="btn">Plan your Event</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                  <div class="row justify-content-center">
+                      <div class="col-md-8">
+                          <div class="search-box d-flex">
+                              <input type="text" class="form-control" placeholder="Search by Skills, Company or Job Title">
+                              <input type="text" class="form-control" placeholder="Location">
+                              <select class="form-select">
+                                  <option>Experience</option>
+                                  <option>Fresher</option>
+                                  <option>1-3 Years</option>
+                                  <option>3-5 Years</option>
+                              </select>
+                              <button type="submit" class="btn">Plan your Event</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
         
-  
-  <section class="container">
+          <section class="container">
             <div class=" rounded-3" >
-
-                
               <div class="row align-items-center ">
-
                 <div class="col-md-4">
                   <div class="row">
                       <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
@@ -214,7 +210,6 @@
                 </div>
 
               </div>
-
             </div>
           </section>
 
