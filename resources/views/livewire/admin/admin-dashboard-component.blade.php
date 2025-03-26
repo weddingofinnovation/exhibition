@@ -50,7 +50,7 @@
         </div>
       </div>--}}
        
-<!--Mobile event start View-->      
+    <!--Mobile event start View-->      
     @if($board == 'event')          
       <div class="container d-lg-none">
         <div class="row">
