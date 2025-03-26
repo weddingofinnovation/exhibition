@@ -4,20 +4,16 @@
 
 <main>    
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-          <section class="container  py-5 mt-0">
-            <div class=" rounded-3 py-5" >
+          <section class="container">
+            <div class=" rounded-3" >
 
             <div class="container text-center">
                   <div class="">
                       <div class="px-4 pe-sm-0 ps-sm-5 ">
                         <span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
-                        
-                      <!-- <span class="badge bg-danger">Free</span> -->
                       
-                      {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                      <div class="mb-1 display-5"> Great starts here.</div>
+                      <div class="mb-1 h1"> Great starts here.</div>
                         <p class=" fw-light lh-1 mt-5"></p> 
-                        <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
                       </div>
                   </div>
 
