@@ -871,7 +871,7 @@
                                   
                                 </div> 
 
-                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($info -> venue ?? null))}}, {{ucfirst(trans($info -> city ?? ''))}}</div>
+                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($info -> venue ?? 'null'))}}, {{ucfirst(trans($info -> city ?? 'null'))}}</div>
                               </div>
 
                               <div class="col-3  p-0">
