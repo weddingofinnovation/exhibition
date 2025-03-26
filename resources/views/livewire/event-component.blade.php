@@ -4,8 +4,7 @@
 
 <main> 
   
-<style>
-  <style>
+    <style>
         /* Custom Styling */
         .search-section {
             background: linear-gradient(to right, #f8f3ff, #f0e6ff);
@@ -14,9 +13,9 @@
         }
 
         .search-title {
-            font-size: 32px;
+            /* font-size: 32px; */
             font-weight: bold;
-            color: #7d00ff;
+            color: #03593e;
             margin-bottom: 20px;
         }
 
@@ -49,11 +48,11 @@
             background: #6600cc;
         }
     </style>
-</style>
+
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
     <section class="search-section">
         <div class="container">
-            <h2 class="search-title">Over 8,00,000 openings delivered perfectly</h2>
+            <h2 class="search-title text-center">Over 8,00,000 openings delivered perfectly</h2>
 
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -66,7 +65,7 @@
                             <option>1-3 Years</option>
                             <option>3-5 Years</option>
                         </select>
-                        <button type="submit" class="btn">Search</button>
+                        <button type="submit" class="btn">Plan your Event</button>
                     </div>
                 </div>
             </div>
