@@ -14,7 +14,7 @@
                       <!-- <span class="badge bg-danger">Free</span> -->
                       
                       {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                        <div class="mb-1 display-1"> Great starts here.</div>
+                      <div class="mb-1 display-1"> Great starts here.</div>
                         <p class=" fw-light lh-1 mt-5"></p> 
                         <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
                       </div>
