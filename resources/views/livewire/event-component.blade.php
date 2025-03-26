@@ -2,248 +2,82 @@
 @section('page_description', 'Discover India premier event publishing platform, showcasing the best upcoming exhibitions, conferences, trade shows, global seminars, networking meets and providing a platform for organizers to  exhibit their remarkable events.')
 @section('page_keyword', 'Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
-<main>    
+<main> 
+  
+<style>
+  <style>
+        /* Custom Styling */
+        .search-section {
+            background: linear-gradient(to right, #f8f3ff, #f0e6ff);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .search-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #7d00ff;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .search-box input, .search-box select {
+            border: none;
+            outline: none;
+            padding: 12px;
+            flex: 1;
+        }
+
+        .search-box button {
+            background: #7d00ff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        .search-box button:hover {
+            background: #6600cc;
+        }
+    </style>
+</style>
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-          <section class="container">
+    <section class="search-section">
+        <div class="container">
+            <h2 class="search-title">Over 8,00,000 openings delivered perfectly</h2>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="search-box d-flex">
+                        <input type="text" class="form-control" placeholder="Search by Skills, Company or Job Title">
+                        <input type="text" class="form-control" placeholder="Location">
+                        <select class="form-select">
+                            <option>Experience</option>
+                            <option>Fresher</option>
+                            <option>1-3 Years</option>
+                            <option>3-5 Years</option>
+                        </select>
+                        <button type="submit" class="btn">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+  
+  <section class="container">
             <div class=" rounded-3" >
 
-                <div class="container">
-                  <div class="px-4 pe-sm-0 ps-sm-5 ">
-                    <span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
-                    <div class="mb-1 h1"> Great starts here.</div>
-                  </div>
-                  
-
-                  <!-- Search-->
-                  <div class="input-group d-none d-lg-flex flex-nowrap mx-0">
-                    <select class="form-select flex-shrink-0" style="width: 1 rem;" wire:model="searchoo">
-                            <option> Search Opportunity</option>
-                            <option  value="opportunity">Opportunity</option>
-                            <option  value="city">City</option>
-                            <option  value="business">Business</option>
-                            <option  value="investment">Investment</option>
-                            <option  value="exhibition" href="#exhibit">Exhibition</option>
-                            <option  value="award" href="#awards">Award</option>
-                            <option  value="magazine" href="">Magazine</option>
-                            <option  value="coispace" href="#awards">COI Space</option>
-                      </select>
-                    
-                    @if($searchoo == 'opportunity')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Categories</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'city')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>State</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'investment')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Maximum Investment</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Minimum Investment</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'exhibition')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Industry</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Minimum Investment</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'award')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>Award Show</option>
-                                @foreach ($award as $category)
-                                  <option  value="{{$category->id}}">{{$category->type}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'magazine')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>State</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-
-                    @if($searchoo == 'coispace')
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                              <option>State</option>
-                                @foreach ($abc as $category)
-                                  <option  value="{{$category->id}}">{{$category->industry}}</option>
-                                  @endforeach 
-                            </select>
-                            @if(!is_null($def))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                              <option>Sector</option>
-                              @foreach ($def as $sector)
-                                <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-
-                            @if(!is_null($ghi))
-                            <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                              <option>Sector</option>
-                              @foreach ($ghi as $sector)
-                                <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                              @endforeach
-                            </select>
-                            @endif
-                    @endif
-                    
-                    <!--<input type="search" aria-label="Search">-->
-                      <button class="btn btn-outline-dark" type="submit">
-                        <i class=" bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i></button>
-                  </div>
-
-                  <!-- <a href="{{route('search.events')}}">
-                    <div class="widget">
-                        <form action="" class="subscription-form validate">
-                          <div class="input-group flex-nowrap">
-                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                            <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
-                            <button class="btn btn-primary" type="submit" name=""> Search</button>
-                          </div>
-
-                          <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
-                          <div class="subscription-status"></div>
-                        </form>
-                      
-                    </div>
-                  </a> -->
-                </div>
-
+                
               <div class="row align-items-center ">
 
                 <div class="col-md-4">
@@ -381,6 +215,7 @@
                 </div>
 
               </div>
+
             </div>
           </section>
 
