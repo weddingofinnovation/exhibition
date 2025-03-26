@@ -868,8 +868,10 @@
                                   @else
                                     {{Carbon\Carbon::parse ($info->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($info->enddate)->format('D, d M')}}
                                   @endif 
-                                </div>  
-                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($info -> venue))}}, {{ucfirst(trans($info -> city))}}</div>
+                                  
+                                </div> 
+
+                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($info -> venue ?? null))}}, {{ucfirst(trans($info -> city ?? ''))}}</div>
                               </div>
 
                               <div class="col-3  p-0">
