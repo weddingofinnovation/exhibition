@@ -52,7 +52,8 @@
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
           <section class="search-section d-none d-md-block">
               <div class="container">
-                  <h2 class="search-title text-center">Over 500 events delivered perfectly<span class=" fs-xs text-primary">Right Place, Right Time, Right People</span></h2>
+              <span class=" fs-xs text-primary text-center">Right Place, Right Time, Right People</span>
+                  <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
 
                   <div class="row justify-content-center">
                       <div class="col-md-8">
@@ -72,7 +73,7 @@
               </div>
           </section>
         
-          <section class="container">
+          <section class="container py-5">
             <div class=" rounded-3" >
               <div class="row align-items-center ">
                 <div class="col-md-4">
