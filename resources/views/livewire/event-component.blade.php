@@ -4,19 +4,15 @@
 
 <main>    
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-          <section class="container">
+          <section class="container bg-grey">
             <div class=" rounded-3" >
 
-            <div class="container text-center">
-                  <div class="">
-                      <div class="px-4 pe-sm-0 ps-sm-5 ">
-                        <span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
-                      
-                      <div class="mb-1 h1"> Great starts here.</div>
-                        <p class=" fw-light lh-1 mt-5"></p> 
-                      </div>
+            <div class="container">
+                  <div class="px-4 pe-sm-0 ps-sm-5 ">
+                    <span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
+                    <div class="mb-1 h1"> Great starts here.</div>
                   </div>
-
+                  
                   <a href="{{route('search.events')}}">
                     <div class="widget">
                         <form action="" class="subscription-form validate">
