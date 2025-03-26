@@ -60,10 +60,10 @@
                           <div class="search-box d-flex">
                               <input type="text" class="form-control" placeholder="Search by event, month or today">
                               <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian">
-                              <select class="form-select">
+                              <!-- <select class="form-select">
                                   <option>Experience</option>
                   
-                              </select>
+                              </select> -->
                               <button type="submit" class="btn">Plan your Event</button>
                           </div>
                       </div>
@@ -71,6 +71,59 @@
               </div>
           </section>
         
+          <section class="perfect-job py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-4">Find the perfect job for <span class="text-primary">YOU</span></h2>
+        <div class="row justify-content-center">
+            
+            <!-- Highlight -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="card border-0 shadow-sm p-3 rounded">
+                    <div class="text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/128/854/854894.png" width="50" alt="Highlight">
+                    </div>
+                    <h5 class="mt-3">Highlight</h5>
+                    <p class="text-muted">Stand out to employers</p>
+                </div>
+            </div>
+
+            <!-- Prep -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="card border-0 shadow-sm p-3 rounded">
+                    <div class="text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/128/942/942928.png" width="50" alt="Prep">
+                    </div>
+                    <h5 class="mt-3">Prep</h5>
+                    <p class="text-muted">Up your interview success rate</p>
+                </div>
+            </div>
+
+            <!-- Learn -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="card border-0 shadow-sm p-3 rounded">
+                    <div class="text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/128/869/869636.png" width="50" alt="Learn">
+                    </div>
+                    <h5 class="mt-3">Learn</h5>
+                    <p class="text-muted">Upskill to get ahead</p>
+                </div>
+            </div>
+
+            <!-- Network -->
+            <div class="col-md-3 col-6 mb-3">
+                <div class="card border-0 shadow-sm p-3 rounded">
+                    <div class="text-center">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2972/2972385.png" width="50" alt="Network">
+                    </div>
+                    <h5 class="mt-3">Network</h5>
+                    <p class="text-muted">Grow with peers & mentors</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
           <section class="container py-5">
             <div class=" rounded-3" >
               <div class="row align-items-center ">
