@@ -18,6 +18,7 @@ use Livewire\Component;
 class EventComponent extends Component
 {
     public $board;
+    public $searchoo;
     
     public function store($event_id,$event_eventname,$event_eventype)
     {
