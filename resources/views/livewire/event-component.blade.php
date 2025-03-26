@@ -6,6 +6,69 @@
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
           <section class="container  py-5 mt-0">
             <div class=" rounded-3 py-5" >
+
+            <div class="container">
+                  <div class="row">
+                      <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
+                        
+                      <!-- <span class="badge bg-danger">Free</span> -->
+                      
+                      {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                        <div class="mb-1 display-1"> Great starts here.</div>
+                        <p class=" fw-light lh-1 mt-5"></p> 
+                        <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
+                      </div>
+
+                      <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+                        {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                         <h1 class="mb-1 display-1"> Great starts here.</h1>
+                        <p class=" fw-light lh-1">Introducing Great Place To Business India's First Ever Event Publishing Platform</p>
+                        <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Expand your Business <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
+
+                      </div> -->
+                      <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+                        {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                        <h1 class="mb-1"> Add to calender <br> button</h1>
+                        <p class=" fw-light lh-1">Share your events with the #1 add to calender button on the internet.</p>
+                        <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Get your button <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
+
+                      </div> -->
+
+                      {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
+                        <h5 class="mt-4 mb-1 text-body fw-light">Best Place to Exhbit</h5>
+                        <h2 class="mb-1"> Brands More <br> Prospects & Leads</h2>
+                        <p class=" fw-light">Share your unique business, vistors, experience <br> with your competitors</p>
+                        <a class="btn btn-accent" href="">Join The exhibition Network <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
+                      </div>
+
+                      <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get access</span>
+                        <h5 class="mt-4 mb-1 text-body fw-light">Helping Businesses</h5>
+                        <h2 class="mb-1"> Identify More <br> Prospects & Leads</h2>
+                        <p class=" fw-light">Discover leads that have engaged<br> with your competitors</p>
+                        <a class="btn btn-accent" href="">Get Free COI Page <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
+                      </div>--}}
+                  </div>
+
+                  <a href="{{route('search.events')}}">
+                    <div class="widget">
+                      <!-- <h3 class="widget-title">Generate QR</h3> -->
+                      
+                        <form action="" class="subscription-form validate">
+                          <div class="input-group flex-nowrap">
+                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
+                            <button class="btn btn-primary" type="submit" name=""> Search</button>
+                          </div>
+
+                          <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
+                          <div class="subscription-status"></div>
+                        </form>
+                      
+                    </div>
+                  </a>
+
+                </div>
+
               <div class="row align-items-center ">
 
                 <div class="col-md-4">
@@ -52,21 +115,21 @@
                   </div>
 
                   <a href="{{route('search.events')}}">
-                  <div class="widget">
-                    <!-- <h3 class="widget-title">Generate QR</h3> -->
-                    
-                      <form action="" class="subscription-form validate">
-                        <div class="input-group flex-nowrap">
-                          <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                          <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
-                          <button class="btn btn-primary" type="submit" name=""> Search</button>
-                        </div>
+                    <div class="widget">
+                      <!-- <h3 class="widget-title">Generate QR</h3> -->
+                      
+                        <form action="" class="subscription-form validate">
+                          <div class="input-group flex-nowrap">
+                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                            <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
+                            <button class="btn btn-primary" type="submit" name=""> Search</button>
+                          </div>
 
-                        <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
-                        <div class="subscription-status"></div>
-                      </form>
-                    
-                  </div>
+                          <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
+                          <div class="subscription-status"></div>
+                        </form>
+                      
+                    </div>
                   </a>
 
                 </div>
@@ -141,6 +204,7 @@
                     @endforeach
                   </div>
                 </div>
+
               </div>
             </div>
           </section>

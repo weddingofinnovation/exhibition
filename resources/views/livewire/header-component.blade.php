@@ -15,7 +15,7 @@
     @else
       <header class="shadow-sm ">
         
-  <!--<div class="topbar topbar-dark bg-dark">
+    <!--<div class="topbar topbar-dark bg-dark">
           <div class="container">
             <div>
               <div class="topbar-text dropdown disable-autohide">
@@ -57,7 +57,7 @@
             <i class="bi bi-loaction mt-n1"></i>Order tracking</a></div>
 
           </div>
-        </div> -->
+        </div>-->
 
         <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
         <div class="navbar-sticky bg-light">
@@ -70,6 +70,8 @@
                 <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}"> 
                     <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
                 </a>
+              
+              
               <!-- Search-->
               <div class="input-group d-none d-lg-flex flex-nowrap mx-0">
                 <select class="form-select flex-shrink-0" style="width: 1 rem;" wire:model="searchoo">
@@ -550,7 +552,7 @@
                                 </div>
                               </div>
                             @endif
-                      @else
+                    @else
                         <a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="{{route('login')}}" data-bs-toggle="">
                           <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-person-circle"></i></div>
                           <div class="navbar-tool-text ms-n3" ><small>Hello, Sign in</small>My Account</div>
@@ -650,11 +652,9 @@
                         </div>  -->
                     @endif
 
-
                   @endif       
                   @livewire('wishlist-component')
                   @livewire('cart-component')
-
               </div>
 
             </div>
@@ -1350,6 +1350,7 @@
             <!--stop-->
 
         </div>
+
       </header>
     @endif  
   </main>
