@@ -72,7 +72,58 @@
                 </a>
               
               
-              
+              <!-- Search-->
+              <ul class="navbar-nav">
+                  <li  class="nav-item {{'/' == request()->path() ? 'active' : '' }}">
+                  <a class="nav-link" href="{{asset('/') }}" >Home</a>
+                  </li>
+
+                  <li  class="nav-item {{'product/great-exhibition-to-exhibit' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('service.product',['productservice' => 'great-exhibition-to-exhibit'])}}" >Great Exhibition To Exhibit</a>
+                  </li>
+
+                  <li  class="nav-item {{'product/exhibition-navigator' == request()->path() ? 'active' : '' }}"">
+                    <a class="nav-link" href="{{route('service.product',['productservice' => 'exhibition-navigator'])}}">Exhibition Navigator</a>
+                  </li>
+
+                  <li  class="nav-item {{'product/find-exhibitor' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('service.product',['productservice' => 'find-exhibitor'])}}" >Find Exhibitor</a>
+                  </li>
+
+                  <!-- <li  class="nav-item {{'product/stall-fabrication' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('service.product',['productservice' => 'stall-fabrication'])}}">Stall Design</a>
+                  </li>
+
+                  <li  class="nav-item {{'product/online-contract-form' == request()->path() ? 'active' : '' }}">
+                    <a class="nav-link" href="{{route('service.product',['productservice' => 'online-contract-form'])}}">Online Contract Form</a>
+                  </li> -->
+
+                  @if('exhibition' == request()->path() ? 'active' : '')
+                    <li  class=" nav-item dropdown {{'exhibition' == request()->path() ? 'active' : '' }}">
+                      <a class="nav-link dropdown-toggle" href="{{asset('/')}}" data-bs-toggle="dropdown">Exhibition</a>
+                      <ul class="dropdown-menu">
+                        <li class="dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Business Design</a>
+                          <ul class="dropdown-menu">
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="{{route('design.strategy')}}">Business Design Sprint</a></li>
+                            
+                          </ul>
+                        </li>
+                        <li class="dropdown {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Strategy</a>
+                          <ul class="dropdown-menu">
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Insights & growth strategy</a></li>
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Innovation & growth audit</a></li>
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Strategy sprint</a></li>
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Innovation transformation</a></li>
+                            <li class="nav-item {{'business-design-strategy' == request()->path() ? 'active' : '' }}"><a class="dropdown-item" href="">Future exploration</a></li>
+                          </ul>
+                        </li>
+                        <li><a class="dropdown-item" href="">Franchise report</a></li>
+                      </ul>
+                    </li>
+                  @endif
+                       
+                  
+                </ul>
 
               <!-- Toolbar-->
               <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
@@ -583,7 +634,6 @@
                       </ul>
                     </li>
                   @endif
-                       
                   
                 </ul> -->
               
