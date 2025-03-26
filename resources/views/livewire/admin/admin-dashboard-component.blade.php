@@ -505,7 +505,7 @@
     @endif
 
     @if($board == 'event')
-      {{--<div class="container">
+      <div class="container">
           <div class="d-none d-sm-block">
             <div class="row g-1 ">
 

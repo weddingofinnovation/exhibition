@@ -757,7 +757,7 @@
 
                       <!-- Product details tab-->
                       <div class="tab-pane fade" id="details" role="tabpanel">
-                        
+                   
 
                           @foreach ($businessOrder as $eventol)
                             <div class="my-1">
