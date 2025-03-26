@@ -58,13 +58,11 @@
                   <div class="row justify-content-center">
                       <div class="col-md-8">
                           <div class="search-box d-flex">
-                              <input type="text" class="form-control" placeholder="Search by Skills, Company or Job Title">
-                              <input type="text" class="form-control" placeholder="Location">
+                              <input type="text" class="form-control" placeholder="Search by event, month or today">
+                              <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian">
                               <select class="form-select">
                                   <option>Experience</option>
-                                  <option>Fresher</option>
-                                  <option>1-3 Years</option>
-                                  <option>3-5 Years</option>
+                  
                               </select>
                               <button type="submit" class="btn">Plan your Event</button>
                           </div>
