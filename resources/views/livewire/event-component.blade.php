@@ -388,6 +388,84 @@
       </section>
 
         <style>
+            .featured-companies {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                overflow-x: auto;
+                padding: 20px;
+                white-space: nowrap;
+                scrollbar-width: none;
+            }
+            .featured-companies img {
+                height: 40px;
+                object-fit: contain;
+            }
+            .popular-categories {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                padding: 20px;
+            }
+            .category-item {
+                display: flex;
+                align-items: center;
+                padding: 10px 15px;
+                border-radius: 8px;
+                background-color: #FCEAE4;
+                font-size: 14px;
+                font-weight: 500;
+                white-space: nowrap;
+                cursor: pointer;
+                transition: background 0.3s ease-in-out;
+            }
+            .category-item:hover {
+                background-color: #FAD4C0;
+            }
+            .category-item i {
+                margin-right: 8px;
+                color: #c47151;
+            }
+        </style>
+
+        <div class="container mt-4">
+            <!-- Featured Companies -->
+            <div class="d-flex align-items-center mb-3">
+                <h5 class="me-3">Featured Companies</h5>
+                <div class="featured-companies">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/HTC_logo.svg/2560px-HTC_logo.svg.png" alt="HTC" />
+                    <img src="https://1000logos.net/wp-content/uploads/2022/08/HDFC-Bank-Logo-500x281.png" alt="HDFC Bank" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/JP_Morgan_Chase_logo.svg" alt="JPMorgan Chase & Co." />
+                    <img src="https://www.valuelabs.com/wp-content/themes/valuelabs/assets/images/logo.svg" alt="ValueLabs" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Meta_Platforms_Inc._logo.svg" alt="" />
+                </div>
+            </div>
+
+            <!-- Popular Categories -->
+            <h5 class="mb-3">Popular Categories</h5>
+            <div class="popular-categories">
+                <div class="category-item"><i class="bi bi-bank"></i> Banking</div>
+                <div class="category-item"><i class="bi bi-house"></i> Work From Home</div>
+                <div class="category-item"><i class="bi bi-person"></i> HR</div>
+                <div class="category-item"><i class="bi bi-briefcase"></i> Sales</div>
+                <div class="category-item"><i class="bi bi-calculator"></i> Accounting</div>
+                <div class="category-item"><i class="bi bi-headset"></i> Customer Support</div>
+                <div class="category-item"><i class="bi bi-calendar-event"></i> Event Management</div>
+                <div class="category-item"><i class="bi bi-laptop"></i> IT</div>
+                <div class="category-item"><i class="bi bi-code-slash"></i> SQL</div>
+                <div class="category-item"><i class="bi bi-terminal"></i> Oracle</div>
+                <div class="category-item"><i class="bi bi-palette"></i> Graphic Design</div>
+                <div class="category-item"><i class="bi bi-megaphone"></i> Digital Marketing</div>
+            </div>
+        </div>
+
+        <style>
           .companies-section {
               background-color: #f8f9fa;
               padding: 60px 0;
@@ -498,80 +576,6 @@
                 </div>
             </div>
         </section>
-
-
-    <style>
-        .featured-companies {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            overflow-x: auto;
-            padding: 20px;
-            white-space: nowrap;
-            scrollbar-width: none;
-        }
-        .featured-companies img {
-            height: 40px;
-            object-fit: contain;
-        }
-        .popular-categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 20px;
-        }
-        .category-item {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            border-radius: 8px;
-            background-color: #FCEAE4;
-            font-size: 14px;
-            font-weight: 500;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: background 0.3s ease-in-out;
-        }
-        .category-item:hover {
-            background-color: #FAD4C0;
-        }
-        .category-item i {
-            margin-right: 8px;
-            color: #c47151;
-        }
-    </style>
-
-
-<div class="container mt-4">
-    <!-- Featured Companies -->
-    <div class="d-flex align-items-center mb-3">
-        <h5 class="me-3">Featured Companies</h5>
-        <div class="featured-companies">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/HTC_logo.svg/2560px-HTC_logo.svg.png" alt="HTC" />
-            <img src="https://1000logos.net/wp-content/uploads/2022/08/HDFC-Bank-Logo-500x281.png" alt="HDFC Bank" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/JP_Morgan_Chase_logo.svg" alt="JPMorgan Chase & Co." />
-            <img src="https://www.valuelabs.com/wp-content/themes/valuelabs/assets/images/logo.svg" alt="ValueLabs" />
-        </div>
-    </div>
-
-    <!-- Popular Categories -->
-    <h5 class="mb-3">Popular Categories</h5>
-    <div class="popular-categories">
-        <div class="category-item"><i class="bi bi-bank"></i> Banking</div>
-        <div class="category-item"><i class="bi bi-house"></i> Work From Home</div>
-        <div class="category-item"><i class="bi bi-person"></i> HR</div>
-        <div class="category-item"><i class="bi bi-briefcase"></i> Sales</div>
-        <div class="category-item"><i class="bi bi-calculator"></i> Accounting</div>
-        <div class="category-item"><i class="bi bi-headset"></i> Customer Support</div>
-        <div class="category-item"><i class="bi bi-calendar-event"></i> Event Management</div>
-        <div class="category-item"><i class="bi bi-laptop"></i> IT</div>
-        <div class="category-item"><i class="bi bi-code-slash"></i> SQL</div>
-        <div class="category-item"><i class="bi bi-terminal"></i> Oracle</div>
-        <div class="category-item"><i class="bi bi-palette"></i> Graphic Design</div>
-        <div class="category-item"><i class="bi bi-megaphone"></i> Digital Marketing</div>
-    </div>
-</div>
 
 
         <section class="container py-5">
