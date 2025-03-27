@@ -540,58 +540,49 @@
             <div class="popular-categories">
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-bank"></i> Banking
-                  </div>
+                    <i class="bi bi-bank"></i></div> Banking
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-house"></i> Work From Home
-                  </div>
+                    <i class="bi bi-house"></i></div> Work From Home
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-person"></i> HR
-                  </div>
+                    <i class="bi bi-person"></i></div> HR
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-briefcase"></i> Sales
-                  </div>
+                    <i class="bi bi-briefcase"></i></div> Sales
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-calculator"></i> Accounting
-                  </div>
+                    <i class="bi bi-calculator"></i></div> Accounting
+                </div>
+
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-headset"></i></div> Customer Support
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-headset"></i> Customer Support
-                  </div>
+                    <i class="bi bi-calendar-event"></i></div> Event Management
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-calendar-event"></i> Event Management
-                  </div>
+                    <i class="bi bi-laptop"></i></div> IT
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-laptop"></i> IT
-                  </div>
+                    <i class="bi bi-code-slash"></i></div> SQL
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-code-slash"></i> SQL
-                  </div>
+                    <i class="bi bi-terminal"></i></div>
+                    Oracle
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-terminal"></i> Oracle
-                  </div>
-                </div>
-                <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-palette"></i> Graphic Design
-                  </div>
+                    <i class="bi bi-palette"></i></div> Graphic Design
                 </div>
                 <div class="category-item">
                   <div class="category-icon"><i class="bi bi-megaphone"></i></div>
