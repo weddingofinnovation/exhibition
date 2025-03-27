@@ -563,20 +563,17 @@
                     <i class="bi bi-laptop"></i> IT
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
+                  
                     <i class="bi bi-code-slash"></i> SQL
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
                     <i class="bi bi-terminal"></i>
                     Oracle
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
                     <i class="bi bi-palette"></i> Graphic Design
                 </div>
-                <div class="category-item">
-                  <div class="category-icon"> 
+                <div class="category-item"> 
                     <i class="bi bi-megaphone"></i>
                   Digital Marketing
                 </div>
