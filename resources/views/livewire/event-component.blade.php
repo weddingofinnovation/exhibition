@@ -387,117 +387,117 @@
         
       </section>
 
-      <style>
-        .categories-section {
-            background-color: #f8f9fa;
-            padding: 60px 0;
-        }
-        .category-title {
-            font-size: 28px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .category-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centers content horizontally */
-            justify-content: center; /* Centers content vertically */
-            height: 100%; /* Ensures uniform height */
-        }
-        .category-card:hover {
-            transform: translateY(-5px);
-        }
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
-        }
-        .category-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        .category-count {
-            color: #6c757d;
-            font-size: 14px;
-        }
-        @media (max-width: 767px) {
-            .category-card {
-                margin-bottom: 20px;
-            }
-        }
-      </style>
+        <style>
+          .companies-section {
+              background-color: #f8f9fa;
+              padding: 60px 0;
+          }
+          .companies-title {
+              font-size: 28px;
+              font-weight: bold;
+              text-align: center;
+              margin-bottom: 40px;
+          }
+          .company-card {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              transition: transform 0.3s;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              height: 100%;
+          }
+          .company-card:hover {
+              transform: translateY(-5px);
+          }
+          .company-logo {
+              width: 80px;
+              height: 80px;
+              object-fit: contain;
+              margin-bottom: 15px;
+          }
+          .company-name {
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+          .company-jobs {
+              color: #6c757d;
+              font-size: 14px;
+          }
+          @media (max-width: 767px) {
+              .company-card {
+                  margin-bottom: 20px;
+              }
+          }
+        </style>
 
-      <section class="categories-section">
-        <div class="container">
-            <h2 class="category-title">Popular <span class="text-primary">Categories</span></h2>
-            <div class="row justify-content-center">
+        <section class="companies-section">
+            <div class="container">
+                <h2 class="companies-title">Featured <span class="text-primary">Companies</span></h2>
+                <div class="row justify-content-center">
 
-                <!-- IT & Software -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/1011/1011323.png" class="category-icon" alt="IT & Software">
-                        <h5 class="category-name">IT & Software</h5>
-                        <p class="category-count">12,000+ Jobs</p>
+                    <!-- Google -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="company-logo" alt="Google">
+                            <h5 class="company-name">Google</h5>
+                            <p class="company-jobs">500+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Marketing -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/2594/2594579.png" class="category-icon" alt="Marketing">
-                        <h5 class="category-name">Marketing</h5>
-                        <p class="category-count">8,500+ Jobs</p>
+                    <!-- Microsoft -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="company-logo" alt="Microsoft">
+                            <h5 class="company-name">Microsoft</h5>
+                            <p class="company-jobs">320+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Finance -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/2814/2814697.png" class="category-icon" alt="Finance">
-                        <h5 class="category-name">Finance</h5>
-                        <p class="category-count">9,200+ Jobs</p>
+                    <!-- Amazon -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="company-logo" alt="Amazon">
+                            <h5 class="company-name">Amazon</h5>
+                            <p class="company-jobs">700+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Healthcare -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3443/3443339.png" class="category-icon" alt="Healthcare">
-                        <h5 class="category-name">Healthcare</h5>
-                        <p class="category-count">6,700+ Jobs</p>
+                    <!-- Tesla -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" class="company-logo" alt="Tesla">
+                            <h5 class="company-name">Tesla</h5>
+                            <p class="company-jobs">150+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Engineering -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" class="category-icon" alt="Engineering">
-                        <h5 class="category-name">Engineering</h5>
-                        <p class="category-count">5,300+ Jobs</p>
+                    <!-- IBM -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="company-logo" alt="IBM">
+                            <h5 class="company-name">IBM</h5>
+                            <p class="company-jobs">280+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Sales -->
-                <div class="col-md-3 col-6 d-flex">
-                    <div class="category-card w-100">
-                        <img src="https://cdn-icons-png.flaticon.com/128/876/876784.png" class="category-icon" alt="Sales">
-                        <h5 class="category-name">Sales</h5>
-                        <p class="category-count">10,400+ Jobs</p>
+                    <!-- Facebook (Meta) -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="company-card w-100">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Meta_Platforms_Inc._logo.svg" class="company-logo" alt="Meta">
+                            <h5 class="company-name">Meta</h5>
+                            <p class="company-jobs">430+ Openings</p>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
-      </section>
-
+        </section>
 
         <section class="container py-5">
           <div class=" rounded-3" >
