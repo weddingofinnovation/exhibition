@@ -491,7 +491,7 @@
                 padding: 10px 15px;
                 border: 1px solid #ddd;
                 border-radius: 8px;
-                background-color: #FCEAE4;
+                /* background-color: #FCEAE4; */
                 font-size: 14px;
                 font-weight: 500;
                 white-space: nowrap;
@@ -499,11 +499,22 @@
                 transition: background 0.3s ease-in-out;
             }
             .category-item:hover {
-                background-color: #FAD4C0;
+                /* background-color: #FAD4C0; */
             }
             .category-item i {
                 margin-right: 8px;
                 color: #c47151;
+            }
+
+            /* Icon Background */
+            .category-icon {
+                width: 35px;
+                height: 35px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #f8e2d1; /* Light background */
+                border-radius: 6px;
             }
         </style>
 
@@ -538,7 +549,10 @@
                 <div class="category-item"><i class="bi bi-code-slash"></i> SQL</div>
                 <div class="category-item"><i class="bi bi-terminal"></i> Oracle</div>
                 <div class="category-item"><i class="bi bi-palette"></i> Graphic Design</div>
-                <div class="category-item"><i class="bi bi-megaphone"></i> Digital Marketing</div>
+                <div class="category-item">
+                  <div class="category-icon"><i class="bi bi-megaphone"></i></div>
+                  Digital Marketing
+                </div>
             </div>
         </div>
 
