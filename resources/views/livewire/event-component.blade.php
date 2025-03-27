@@ -316,11 +316,12 @@
 
       </style>
 
-      <section class="container pt-2" id="exhibit"> 
-        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
+      <section class="container pt-5" id="exhibit"> 
+        <div class="list-unstyled py-5 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-            <span class="fs-sm"> Upcoming<br><span class="fw-medium h5">Exhibition</span></span>
-            <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
+            <span class="fs-sm"> Popular <br><span class="fw-medium h5">Industries</span></span>
+
+            <a  class="btn btn-outline-primary btn-sm" href="#">More</a>
               <!-- <a  class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a> -->
               <!-- <ul class="dropdown-menu" width="auto">
                     <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
@@ -386,111 +387,193 @@
         
       </section>
 
-          <section class="container py-5">
-            <div class=" rounded-3" >
-              <div class="row align-items-center ">
-                <div class="col-md-4">
-                  <div class="row">
-                      <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
-                        
-                      <!-- <span class="badge bg-danger">Free</span> -->
-                      
-                      {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                        <div class="mb-1 display-1"> Great starts here.</div>
-                        <p class=" fw-light lh-1 mt-5"></p> 
-                        <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
+      <style>
+        .categories-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+        .category-title {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .category-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers content horizontally */
+            justify-content: center; /* Centers content vertically */
+            height: 100%; /* Ensures uniform height */
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        .category-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .category-count {
+            color: #6c757d;
+            font-size: 14px;
+        }
+        @media (max-width: 767px) {
+            .category-card {
+                margin-bottom: 20px;
+            }
+        }
+      </style>
 
-                      </div>
+      <section class="categories-section">
+        <div class="container">
+            <h2 class="category-title">Popular <span class="text-primary">Categories</span></h2>
+            <div class="row justify-content-center">
 
-                      <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
-                        {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                         <h1 class="mb-1 display-1"> Great starts here.</h1>
-                        <p class=" fw-light lh-1">Introducing Great Place To Business India's First Ever Event Publishing Platform</p>
-                        <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Expand your Business <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
-
-                      </div> -->
-                      <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
-                        {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                        <h1 class="mb-1"> Add to calender <br> button</h1>
-                        <p class=" fw-light lh-1">Share your events with the #1 add to calender button on the internet.</p>
-                        <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Get your button <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
-
-                      </div> -->
-
-                      {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
-                        <h5 class="mt-4 mb-1 text-body fw-light">Best Place to Exhbit</h5>
-                        <h2 class="mb-1"> Brands More <br> Prospects & Leads</h2>
-                        <p class=" fw-light">Share your unique business, vistors, experience <br> with your competitors</p>
-                        <a class="btn btn-accent" href="">Join The exhibition Network <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
-                      </div>
-
-                      <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get access</span>
-                        <h5 class="mt-4 mb-1 text-body fw-light">Helping Businesses</h5>
-                        <h2 class="mb-1"> Identify More <br> Prospects & Leads</h2>
-                        <p class=" fw-light">Discover leads that have engaged<br> with your competitors</p>
-                        <a class="btn btn-accent" href="">Get Free COI Page <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
-                      </div>--}}
-                  </div>
-
-                  <a href="{{route('search.events')}}">
-                    <div class="widget">
-                      <!-- <h3 class="widget-title">Generate QR</h3> -->
-                      
-                        <form action="" class="subscription-form validate">
-                          <div class="input-group flex-nowrap">
-                            <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                            <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
-                            <button class="btn btn-primary" type="submit" name=""> Search</button>
-                          </div>
-
-                          <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
-                          <div class="subscription-status"></div>
-                        </form>
-                      
+                <!-- IT & Software -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1011/1011323.png" class="category-icon" alt="IT & Software">
+                        <h5 class="category-name">IT & Software</h5>
+                        <p class="category-count">12,000+ Jobs</p>
                     </div>
-                  </a>
-
                 </div>
-                
-                <div class=" col-md-8 d-none d-sm-block pr-5">
-                  
-                  
-                  <div class="d-flex my-Slider1">
-                        <!-- Product-->
-                      @foreach ($evento as $franchise)
-                        <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1">
-                          <div class="card product-card">
-                            <div class="card-body py-1">
-                              <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                <span class="text-bolder">
-                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                    @else
-                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                    @endif 
-                                </span>
-                              </a>
-                              <div class="d-flex justify-content-between">
-                                <div class="product-price">
-                                  <div class="product-title h3 fs-sm mb-0">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">
-                                      {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a> </div>
-                                  </div>
-                              </div>
-                            </div>
 
-                          </div>
-                          <!--<hr class="d-sm-none">-->
+                <!-- Marketing -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2594/2594579.png" class="category-icon" alt="Marketing">
+                        <h5 class="category-name">Marketing</h5>
+                        <p class="category-count">8,500+ Jobs</p>
+                    </div>
+                </div>
+
+                <!-- Finance -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/2814/2814697.png" class="category-icon" alt="Finance">
+                        <h5 class="category-name">Finance</h5>
+                        <p class="category-count">9,200+ Jobs</p>
+                    </div>
+                </div>
+
+                <!-- Healthcare -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3443/3443339.png" class="category-icon" alt="Healthcare">
+                        <h5 class="category-name">Healthcare</h5>
+                        <p class="category-count">6,700+ Jobs</p>
+                    </div>
+                </div>
+
+                <!-- Engineering -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" class="category-icon" alt="Engineering">
+                        <h5 class="category-name">Engineering</h5>
+                        <p class="category-count">5,300+ Jobs</p>
+                    </div>
+                </div>
+
+                <!-- Sales -->
+                <div class="col-md-3 col-6 d-flex">
+                    <div class="category-card w-100">
+                        <img src="https://cdn-icons-png.flaticon.com/128/876/876784.png" class="category-icon" alt="Sales">
+                        <h5 class="category-name">Sales</h5>
+                        <p class="category-count">10,400+ Jobs</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+      </section>
+
+
+        <section class="container py-5">
+          <div class=" rounded-3" >
+            <div class="row align-items-center ">
+              <div class="col-md-4">
+                <div class="row">
+                    <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
+                      
+                    <!-- <span class="badge bg-danger">Free</span> -->
+                    
+                    {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                      <div class="mb-1 display-1"> Great starts here.</div>
+                      <p class=" fw-light lh-1 mt-5"></p> 
+                      <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
+
+                    </div>
+
+                    <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+                      {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                        <h1 class="mb-1 display-1"> Great starts here.</h1>
+                      <p class=" fw-light lh-1">Introducing Great Place To Business India's First Ever Event Publishing Platform</p>
+                      <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Expand your Business <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
+
+                    </div> -->
+                    <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+                      {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+                      <h1 class="mb-1"> Add to calender <br> button</h1>
+                      <p class=" fw-light lh-1">Share your events with the #1 add to calender button on the internet.</p>
+                      <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Get your button <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
+
+                    </div> -->
+
+                    {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
+                      <h5 class="mt-4 mb-1 text-body fw-light">Best Place to Exhbit</h5>
+                      <h2 class="mb-1"> Brands More <br> Prospects & Leads</h2>
+                      <p class=" fw-light">Share your unique business, vistors, experience <br> with your competitors</p>
+                      <a class="btn btn-accent" href="">Join The exhibition Network <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
+                    </div>
+
+                    <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get access</span>
+                      <h5 class="mt-4 mb-1 text-body fw-light">Helping Businesses</h5>
+                      <h2 class="mb-1"> Identify More <br> Prospects & Leads</h2>
+                      <p class=" fw-light">Discover leads that have engaged<br> with your competitors</p>
+                      <a class="btn btn-accent" href="">Get Free COI Page <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
+                    </div>--}}
+                </div>
+
+                <a href="{{route('search.events')}}">
+                  <div class="widget">
+                    <!-- <h3 class="widget-title">Generate QR</h3> -->
+                    
+                      <form action="" class="subscription-form validate">
+                        <div class="input-group flex-nowrap">
+                          <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                          <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
+                          <button class="btn btn-primary" type="submit" name=""> Search</button>
                         </div>
-                      @endforeach
-                  </div>
 
-                  <div class="d-flex my-Slider2">
-                    <!-- Product-->
-                    @foreach ($eventD as $franchise)
-                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+                        <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
+                        <div class="subscription-status"></div>
+                      </form>
+                    
+                  </div>
+                </a>
+
+              </div>
+              
+              <div class=" col-md-8 d-none d-sm-block pr-5">
+                
+                
+                <div class="d-flex my-Slider1">
+                      <!-- Product-->
+                    @foreach ($evento as $franchise)
+                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1">
                         <div class="card product-card">
-                          <div class="card-body py-2">
+                          <div class="card-body py-1">
                             <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
                               <span class="text-bolder">
                                   @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -503,57 +586,86 @@
                             <div class="d-flex justify-content-between">
                               <div class="product-price">
                                 <div class="product-title h3 fs-sm mb-0">
-                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                </div>
-                                
-                                <!-- <div class=" fs-sm fw-light"><span class=" fs-sm fw-light">{{ucfirst(trans($franchise -> venue))}}</span>
-                                {{ucfirst(trans($franchise -> city))}}</div> -->
+                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a> </div>
                                 </div>
                             </div>
                           </div>
-                          <div class="card-body card-body-hidden">
-                            <div class="mb-2">
-                              <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
-                            </div>
-                          </div>
+
                         </div>
                         <!--<hr class="d-sm-none">-->
                       </div>
                     @endforeach
-                  </div>
                 </div>
 
+                <div class="d-flex my-Slider2">
+                  <!-- Product-->
+                  @foreach ($eventD as $franchise)
+                    <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+                      <div class="card product-card">
+                        <div class="card-body py-2">
+                          <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <span class="text-bolder">
+                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                                @else
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                @endif 
+                            </span>
+                          </a>
+                          <div class="d-flex justify-content-between">
+                            <div class="product-price">
+                              <div class="product-title h3 fs-sm mb-0">
+                                <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                              </div>
+                              
+                              <!-- <div class=" fs-sm fw-light"><span class=" fs-sm fw-light">{{ucfirst(trans($franchise -> venue))}}</span>
+                              {{ucfirst(trans($franchise -> city))}}</div> -->
+                              </div>
+                          </div>
+                        </div>
+                        <div class="card-body card-body-hidden">
+                          <div class="mb-2">
+                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <!--<hr class="d-sm-none">-->
+                    </div>
+                  @endforeach
+                </div>
               </div>
-            </div>
-          </section>
 
-          
-        <!--list-->
-          <section class="d-sm-none">
-            <div class="d-flex  align-items-center">
-              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                  <div class="py-4 pr-4">
-                    <h5 class="mb-2"><span class="fw-light">Gift World</span><br>Expo <span class="fw-light"></span><br>2023</h5>
-                      <div class="text-info fs-sm">Register Now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                  </div>
-              </a>
-              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                  <div class="py-4 pr-4">
-                    <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
-                      <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                  </div>
-              </a>
-              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                  <div class="py-4 pr-4">
-                    <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
-                      <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                  </div>
-              </a>
             </div>
-          </section>
+          </div>
+        </section>
+
+        <!--list-->
+        <section class="d-sm-none">
+          <div class="d-flex  align-items-center">
+            <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+              <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                <div class="py-4 pr-4">
+                  <h5 class="mb-2"><span class="fw-light">Gift World</span><br>Expo <span class="fw-light"></span><br>2023</h5>
+                    <div class="text-info fs-sm">Register Now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                </div>
+            </a>
+            <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+              <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                <div class="py-4 pr-4">
+                  <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
+                    <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                </div>
+            </a>
+            <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+              <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                <div class="py-4 pr-4">
+                  <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
+                    <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                </div>
+            </a>
+          </div>
+        </section>
 
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
