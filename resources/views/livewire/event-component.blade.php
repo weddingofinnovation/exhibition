@@ -508,7 +508,7 @@
         </style>
 
         <div class="container mt-4">
-            <!-- Featured Companies -->
+            <!-- Popular Companies -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular Industries</h5>
                 <div class="featured-companies">
@@ -541,6 +541,82 @@
                 <div class="category-item"><i class="bi bi-megaphone"></i> Digital Marketing</div>
             </div>
         </div>
+
+    <style>
+        /* Category Styling */
+        .category-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        /* Icon Background */
+        .category-icon {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8e2d1; /* Light background */
+            border-radius: 6px;
+        }
+
+        /* Hover Effect */
+        .category-box:hover {
+            background: #f5f5f5;
+        }
+    </style>
+
+<div class="container mt-4">
+    <h5 class="mb-3">Popular Categories</h5>
+    <div class="row g-3">
+        
+        <div class="col-md-3 col-sm-6">
+            <div class="category-box">
+                <div class="category-icon">
+                    <i class="bi bi-bank"></i>
+                </div>
+                Banking
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="category-box">
+                <div class="category-icon">
+                    <i class="bi bi-house-door"></i>
+                </div>
+                Work From Home
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="category-box">
+                <div class="category-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+                HR
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="category-box">
+                <div class="category-icon">
+                    <i class="bi bi-bag-check"></i>
+                </div>
+                Sales
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
         <style>
           .companies-section {
