@@ -491,7 +491,7 @@
                 padding: 10px 15px;
                 border: 1px solid #ddd;
                 border-radius: 8px;
-                /* background-color: #FCEAE4; */
+                background-color: #FCEAE4;
                 font-size: 14px;
                 font-weight: 500;
                 white-space: nowrap;
@@ -499,23 +499,14 @@
                 transition: background 0.3s ease-in-out;
             }
             .category-item:hover {
-                /* background-color: #FAD4C0; */
+                background-color: #FAD4C0;
             }
             .category-item i {
-                margin: 8px;
+                margin-right: 8px;
                 color: #c47151;
             }
 
-            /* Icon Background */
-            .category-icon {
-                width: 35px;
-                height: 35px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #f8e2d1; /* Light background */
-                border-radius: 6px;
-            }
+            
         </style>
 
         <div class="container mt-4">
@@ -539,53 +530,53 @@
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-bank"></i></div> Banking
+                  
+                    <i class="bi bi-bank"></i> Banking
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-house"></i></div> Work From Home
+                  
+                    <i class="bi bi-house"></i> Work From Home
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-person"></i></div> HR
+                  
+                    <i class="bi bi-person"></i> HR
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-briefcase"></i></div> Sales
+                  
+                    <i class="bi bi-briefcase"></i> Sales
                 </div>
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-calculator"></i></div> Accounting
+                  
+                    <i class="bi bi-calculator"></i> Accounting
                 </div>
 
                 <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-headset"></i></div> Customer Support
+                  
+                    <i class="bi bi-headset"></i> Customer Support
+                </div>
+                <div class="category-item">
+                  
+                    <i class="bi bi-calendar-event"></i> Event Management
+                </div>
+                <div class="category-item">
+                  
+                    <i class="bi bi-laptop"></i> IT
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-calendar-event"></i></div> Event Management
+                    <i class="bi bi-code-slash"></i> SQL
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-laptop"></i></div> IT
-                </div>
-                <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-code-slash"></i></div> SQL
-                </div>
-                <div class="category-item">
-                  <div class="category-icon">
-                    <i class="bi bi-terminal"></i></div>
+                    <i class="bi bi-terminal"></i>
                     Oracle
                 </div>
                 <div class="category-item">
                   <div class="category-icon">
-                    <i class="bi bi-palette"></i></div> Graphic Design
+                    <i class="bi bi-palette"></i> Graphic Design
                 </div>
                 <div class="category-item">
-                  <div class="category-icon"><i class="bi bi-megaphone"></i></div>
+                  <div class="category-icon"><i class="bi bi-megaphone"></i>
                   Digital Marketing
                 </div>
             </div>
