@@ -50,28 +50,27 @@
     </style>
 
   <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-          <section class="search-section d-none d-md-block">
-              <div class="container">
-              <span class=" fs-xs text-primary text-center">Right Place, Right Time, Right People</span>
-                  <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
+        <section class="search-section d-none d-md-block">
+            <div class="container">
+            <span class=" fs-xs text-primary text-center">Right Place, Right Time, Right People</span>
+                <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
 
-                  <div class="row justify-content-center">
-                      <div class="col-md-8">
-                          <div class="search-box d-flex">
-                              <input type="text" class="form-control" placeholder="Search by event, month or today">
-                              <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
-                              <select class="form-select">
-                                  <option>Venue</option>
-                  
-                              </select>
-                              <button type="submit" class="btn">Plan your Event</button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </section>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="search-box d-flex">
+                            <input type="text" class="form-control" placeholder="Search by event, month or today">
+                            <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
+                            <select class="form-select">
+                                <option>Venue</option>
+                
+                            </select>
+                            <button type="submit" class="btn">Plan your Event</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
              
-
         <style>
           .job-section {
               background-color: #f8f9fa;
@@ -130,7 +129,7 @@
                         <div class="job-card w-100">
                             <img src="https://cdn-icons-png.flaticon.com/128/854/854894.png" class="job-icon" alt="Highlight">
                             <h5 class="job-heading">Highlight</h5>
-                            <p class="job-desc">Stand out to employers</p>
+                            <p class="job-desc">Stand out to events</p>
                         </div>
                     </div>
 
@@ -138,7 +137,7 @@
                     <div class="col-md-3 col-6 d-flex">
                         <div class="job-card w-100">
                             <img src="https://cdn-icons-png.flaticon.com/128/942/942928.png" class="job-icon" alt="Prep">
-                            <h5 class="job-heading">Prep</h5>
+                            <h5 class="job-heading">Regional</h5>
                             <p class="job-desc">Up your interview success rate</p>
                         </div>
                     </div>
@@ -147,8 +146,8 @@
                     <div class="col-md-3 col-6 d-flex">
                         <div class="job-card w-100">
                             <img src="https://cdn-icons-png.flaticon.com/128/869/869636.png" class="job-icon" alt="Learn">
-                            <h5 class="job-heading">Learn</h5>
-                            <p class="job-desc">Upskill to get ahead</p>
+                            <h5 class="job-heading">Execute</h5>
+                            <p class="job-desc">Expertise to get ahead</p>
                         </div>
                     </div>
 
@@ -165,7 +164,328 @@
             </div>
         </section>
 
+        <style>
+          * { box-sizing: border-box; }
 
+            body {
+              font-family: sans-serif;
+            }
+
+            /* ---- button ---- */
+
+            .button {
+              display: inline-block;
+              padding: 0.5em 1.0em;
+              background: #EEE;
+              border: none;
+              border-radius: 7px;
+              background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
+              color: #222;
+              font-family: sans-serif;
+              font-size: 16px;
+              text-shadow: 0 1px white;
+              cursor: pointer;
+            }
+
+            .button:hover {
+              background-color: #8CF;
+              text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+              color: #222;
+            }
+
+            .button:active,
+            .button.is-checked {
+              background-color: #28F;
+            }
+
+            .button.is-checked {
+              color: white;
+              text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+            }
+
+            .button:active {
+              box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+            }
+
+            /* ---- button-group ---- */
+
+            .button-group {
+              margin-bottom: 20px;
+            }
+
+            .button-group:after {
+              content: '';
+              display: block;
+              clear: both;
+            }
+
+            .button-group .button {
+              float: left;
+              border-radius: 0;
+              margin-left: 0;
+              margin-right: 1px;
+            }
+
+            .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+            .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+
+            /* ---- isotope ---- */
+
+            .grid {
+              border: 1px solid #333;
+            }
+
+            /* clear fix */
+            .grid:after {
+              content: '';
+              display: block;
+              clear: both;
+            }
+
+            /* ---- .element-item ---- */
+
+            .element-item {
+              position: relative;
+              float: left;
+              width: 100px;
+              height: 100px;
+              margin: 5px;
+              padding: 10px;
+              background: #fff;
+              color: #fff;
+            }
+
+            /* //color: #262524; */
+
+            .element-item > * {
+              margin: 0;
+              padding: 0;
+            }
+
+            .element-item .name {
+              position: absolute;
+              left: 10px;
+              top: 60px;
+              text-transform: none;
+              letter-spacing: 0;
+              font-size: 12px;
+              font-weight: normal;
+            }
+
+            .element-item .symbol {
+              position: absolute;
+              left: 10px;
+              top: 0px;
+              font-size: 42px;
+              font-weight: bold;
+              color: white;
+            }
+
+            .element-item .number {
+              position: absolute;
+              right: 8px;
+              top: 5px;
+            }
+
+            .element-item .weight {
+              position: absolute;
+              left: 30px;
+              top: 76px;
+              font-size: 12px;
+            }
+
+            .element-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
+            .element-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
+            .element-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
+            .element-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
+            .element-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
+            .element-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
+            .element-item.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
+            .element-item.diatomic        { background: #00F; background: hsl( 252, 100%, 50%); }
+            .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
+            .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
+
+            .tns-outer {
+              padding:0 !important;
+              margin:0 !important;
+            }
+
+            .tns-nav, .tns-controls {
+              display:none !important;
+            }
+
+      </style>
+
+      <section class="container pt-2" id="exhibit"> 
+        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
+          <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
+            <span class="fs-sm"> Upcoming<br><span class="fw-medium h5">Exhibition</span></span>
+            <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
+              <!-- <a  class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a> -->
+              <!-- <ul class="dropdown-menu" width="auto">
+                    <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
+                    <li><a class="dropdown-item" href="#">Exhibit</a></li>
+                    <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>
+                    <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>        
+                  </ul> -->
+            </span>
+          </div>
+        </div>
+
+        <!-- start-categories -->
+          <style>
+            .categories-list {
+              display: flex;
+              overflow-x: auto;
+              padding: 5px;
+              gap: 5px;
+              white-space: nowrap;
+              scrollbar-width: none;
+            }
+
+            .categories-list::-webkit-scrollbar{
+              display: none;
+            }
+
+            
+            .category-badge {
+              flex: 0 0 auto;
+              padding: 4px 7px;
+              border-radius: 5px;
+              border: 1px solid #ccc ;
+              background-color: #fff;
+              
+              font-weight: 400;
+              text-align: center;
+              display: inline-block;
+              font-size: 14px;
+            }
+
+            
+            .category-badge:hover {
+              background-color: black;
+              color: white;
+              
+            }
+
+          </style>
+
+          <div class="categories-list">
+            @foreach ($getnamecategoryresult as $categ) 
+              @php
+                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+              @endphp
+              
+              @foreach($findcountevent as $finderlo)
+                  <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+              @endforeach
+            @endforeach
+          </div>
+        <!-- end-categories -->
+
+        <style>
+          .scroll-container {
+                        display: flex;
+                        overflow-x: auto;
+                        white-space: nowrap;
+                        gap: 15px;
+                        padding: 10px;                      
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                      }
+            
+          .scroll-container::-webkit-scrollbar{
+            display: none;
+          }
+        </style>
+        
+        <div class="scroll-container">
+          @foreach($evento as $eventoi)
+            <div wire:ignore class="col-lg-3 col-md-4 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+              <div class="card product-card">
+                
+                <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt=""> </a>
+
+                <div class="card-body p-1">
+                  <div class="d-flex justify-content-between">
+                      <div class="product-price"><small>{{$eventoi -> edition}}  
+                        <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
+                            <span class="fs-xs">
+                              @php
+                                  $to = strtotime($eventoi->startdate);
+                                  $from= strtotime($eventoi->enddate);
+                              @endphp
+                              
+
+                              @if ($current < $to && $current < $from)
+                                  Upcom
+                                @elseif ($current == $to && $current < $from) 
+                                  First
+                                @elseif ($current > $to && $current < $from) 
+                                  Ongoi
+                                @elseif ($current > $to && $current == $from) 
+                                  Last 
+                                @elseif ($current > $to && $current > $from)
+                                  Ended
+                              @endif
+                            </span>
+                          <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i></i></small>
+                        <div class="product-title fs-sm h3 mb-0">
+                        <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}
+                          </a></div>
+                      </div>
+
+                      <div class="star-rating d-none d-sm-block"> 
+                        <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
+                        <div class=" align-center fs-sm py-1"> 
+                          <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
+                          <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
+                        </div>
+                      </div>
+                  </div>
+                  <!--<small>World's best demanding business</small><br>-->
+                  <small class="text-bolder d-none d-sm-block"> <i class="bi bi-calendar3"></i>
+                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                    @else
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                    @endif 
+
+                  </small>
+                  <small  class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}</small>
+
+                  <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
+                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                    @else
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                    @endif 
+                  </small><br>
+                  <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small> 
+                  <!--ucfirst-->
+                </div>
+
+                
+                
+                <div class="card-body card-body-hidden">
+                  <div class="d-flex justify-content-between mb-2">
+                    <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-brush fs-sm me-1"></i>Exhibit</a>
+                    <a class="btn btn-primary btn-sm d-block w-50 mx-1" type="button" href="#"><i class=" bi bi-cart fs-sm me-1"></i>Visit</a>
+                  </div>
+                
+                  <div class="text-center">
+                    @guest<a class="nav-link-style fs-ms" href="#" data-bs-toggle="modal">
+                    <i class=" bi bi-eye align-middle me-1"></i>Contact</a>
+                    @endguest
+                  </div>
+                </div>
+              
+              </div>
+            </div>
+          @endforeach
+        </div>
+      </section>
 
 
           <section class="container py-5">
@@ -311,31 +631,31 @@
 
           
         <!--list-->
-          {{--<section class="d-sm-none">
-                <div class="d-flex  align-items-center">
-                  <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                    <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                      <div class="py-4 pr-4">
-                        <h5 class="mb-2"><span class="fw-light">Gift World</span><br>Expo <span class="fw-light"></span><br>2023</h5>
-                          <div class="text-info fs-sm">Register Now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                      </div>
-                  </a>
-                  <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                    <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                      <div class="py-4 pr-4">
-                        <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
-                          <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                      </div>
-                  </a>
-                  <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
-                    <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
-                      <div class="py-4 pr-4">
-                        <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
-                          <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
-                      </div>
-                  </a>
-                </div>
-              </section>--}}
+          <section class="d-sm-none">
+            <div class="d-flex  align-items-center">
+              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                  <div class="py-4 pr-4">
+                    <h5 class="mb-2"><span class="fw-light">Gift World</span><br>Expo <span class="fw-light"></span><br>2023</h5>
+                      <div class="text-info fs-sm">Register Now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                  </div>
+              </a>
+              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                  <div class="py-4 pr-4">
+                    <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
+                      <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                  </div>
+              </a>
+              <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
+                <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
+                  <div class="py-4 pr-4">
+                    <h5 class="mb-2"><span class="fw-light">Next Gen</span><br>Video <span class="fw-light">with</span><br>360 Cam</h5>
+                      <div class="text-info fs-sm">Shop now<i class=" bi bi-arrow-right fs-xs ms-1"></i></div>
+                  </div>
+              </a>
+            </div>
+          </section>
 
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
