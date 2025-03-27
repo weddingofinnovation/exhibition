@@ -487,7 +487,6 @@
         </div>
       </section>
 
-
           <section class="container py-5">
             <div class=" rounded-3" >
               <div class="row align-items-center ">

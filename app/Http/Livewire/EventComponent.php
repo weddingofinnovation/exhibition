@@ -48,8 +48,14 @@ class EventComponent extends Component
         //dd($categoryo);
        
         $finder = Expo::where('admstatus','1')->where('status','1')->get();
-
+        $getnamecategoryresult = DB::table('events')
+        ->join('dencos','dencos.event_id','=','events.id')
+        ->join('expos','expos.id' ,'=','dencos.expo_id')
+        ->select('expos.id as Category', DB::raw('count(events.id) as total'), DB::raw('GROUP_CONCAT(events.eventname) as Eventlo'),DB::raw('GROUP_CONCAT(events.startdate) as Evento'))
+        ->orderBy('total','desc')
+        ->groupBy('expos.id')
+        ->get();
         
-        return view('livewire.event-component', ['eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
+        return view('livewire.event-component', ['getnamecategoryresult' => $getnamecategoryresult ,'eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
     }
 }
