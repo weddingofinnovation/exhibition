@@ -502,7 +502,7 @@
                 /* background-color: #FAD4C0; */
             }
             .category-item i {
-                margin-right: 8px;
+                margin: 8px;
                 color: #c47151;
             }
 
@@ -538,17 +538,61 @@
             <!-- Popular Categories -->
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
-                <div class="category-item"><i class="bi bi-bank"></i> Banking</div>
-                <div class="category-item"><i class="bi bi-house"></i> Work From Home</div>
-                <div class="category-item"><i class="bi bi-person"></i> HR</div>
-                <div class="category-item"><i class="bi bi-briefcase"></i> Sales</div>
-                <div class="category-item"><i class="bi bi-calculator"></i> Accounting</div>
-                <div class="category-item"><i class="bi bi-headset"></i> Customer Support</div>
-                <div class="category-item"><i class="bi bi-calendar-event"></i> Event Management</div>
-                <div class="category-item"><i class="bi bi-laptop"></i> IT</div>
-                <div class="category-item"><i class="bi bi-code-slash"></i> SQL</div>
-                <div class="category-item"><i class="bi bi-terminal"></i> Oracle</div>
-                <div class="category-item"><i class="bi bi-palette"></i> Graphic Design</div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-bank"></i> Banking
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-house"></i> Work From Home
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-person"></i> HR
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-briefcase"></i> Sales
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-calculator"></i> Accounting
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-headset"></i> Customer Support
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-calendar-event"></i> Event Management
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-laptop"></i> IT
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-code-slash"></i> SQL
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-terminal"></i> Oracle
+                  </div>
+                </div>
+                <div class="category-item">
+                  <div class="category-icon">
+                    <i class="bi bi-palette"></i> Graphic Design
+                  </div>
+                </div>
                 <div class="category-item">
                   <div class="category-icon"><i class="bi bi-megaphone"></i></div>
                   Digital Marketing
