@@ -42,7 +42,7 @@
             </div>
             <div class="topbar-text dropdown d-md-none ms-auto">
             <a class="topbar-link dropdown-toggle" href="" data-bs-toggle="dropdown">
-               / Compare / Track</a>
+               Our Data, Your Customer</a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href=""><i class=" bi bi-heart text-muted me-2"></i>Plan your Event ({{Cart::instance('wishlist')->count()}})</a></li>
                 <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Be a Right People</a></li>
