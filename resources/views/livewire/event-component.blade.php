@@ -306,15 +306,30 @@
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular City</h5>
                 <div class="featured-companies">
-                  @foreach ($getnamecategoryresult as $categ) 
-                    @php
-                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-                    @endphp
-                    
-                    @foreach($findcountevent as $finderlo)
-                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-                    @endforeach
-                  @endforeach
+                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
+                    <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
+                  </a>
+                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
+                    <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
+                  </a>
+                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
+                    <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
+                  </a>
+
+                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+                    <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
+
+                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+                    <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
+
+                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+                    <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
+
+                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+                    <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
+
+                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+                    <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
                 </div>
             </div>
 
@@ -351,6 +366,7 @@
                   color: red !important;
                 }
               </style>
+
               <div class="featured-companies">
                 <div class="scroll-container">
                   <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
@@ -379,115 +395,6 @@
                     <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
                 </div>
               </div>
-            </div>
-
-            <style>
-  /* Container for all cities */
-  .scroll-container {
-    display: flex;
-    flex-wrap: wrap;  /* Ensures grid-like layout on large screens */
-    justify-content: center;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  /* City items */
-  .city-item {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    text-align: center;
-    flex: 0 0 auto;
-    width: 100px;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .city-item:hover {
-    transform: scale(1.1);
-  }
-
-  /* City icons */
-  .city-icon {
-    width: 180px; /* Default for larger screens */
-    height: 180px;
-    border-radius: 50%;
-  }
-
-  /* Scroll behavior for mobile */
-  @media (max-width: 768px) {
-    .scroll-container {
-      display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      scrollbar-width: none; /* Hide scrollbar for Firefox */
-      -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
-      flex-wrap: nowrap; /* Prevent wrapping on mobile */
-    }
-
-    .scroll-container::-webkit-scrollbar {
-      display: none; /* Hide scrollbar for Chrome/Safari */
-    }
-
-    .city-item {
-      width: 80px;
-    }
-
-    .city-icon {
-      width: 60px; /* Smaller size for mobile */
-      height: 60px;
-    }
-  }
-</style>
-
-            <div class="d-flex align-items-center mb-3">
-  <h5 class="me-3">Popular Venue</h5>
-  <div class="featured-companies">
-    <div class="scroll-container">
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata
-      </a>
-      <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}" class="city-item">
-        <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">Ahmedabad
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-
-            <!-- Popular Venue -->
-            <div class="d-flex align-items-center mb-3">
-                <h5 class="me-3">Popular Venue</h5>
-                <div class="featured-companies">
-                  @foreach ($getnamecategoryresult as $categ) 
-                    @php
-                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-                    @endphp
-                    
-                    @foreach($findcountevent as $finderlo)
-                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-                    @endforeach
-                  @endforeach
-                </div>
             </div>
 
             <!-- Popular Categories -->
