@@ -72,31 +72,26 @@
                 </a>
               
               
-              <!-- Search-->
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="justify-content-end">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
+                            <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
+                            <a class="nav-link" href="{{asset('/awards')}}">Find Exhibitor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
+                            <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
+                            <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
+                            <a class="nav-link" href="{{asset('/investment')}}">Design & Fabrication</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
-                        </li>
+                        
                     </ul>
                 </div>
-
-
 
 
               <!-- Toolbar-->
@@ -1165,51 +1160,6 @@
             <!--stop-->
 
         </div>
-
-        <div class="navbar navbar-expand-lg navbar-light py-0">
-            <div class="container p-0">
-                <!-- Logo for desktop -->
-                <a class="navbar-brand d-none d-sm-block flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
-                <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" href="{{asset('/')}}">
-                    <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
-                </a> 
-                <!-- Logo for mobile -->
-                <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}"> 
-                    <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
-                </a>
-
-                <!-- Navigation Links -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-
-        
 
       </header>
     @endif  
