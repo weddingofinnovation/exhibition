@@ -127,6 +127,11 @@
               </div>
             </div>
         </div>
+
+
+        <!--Trending Exhibition-->
+        @livewire('trending-exhibition-component')
+
         
         <style>
           .job-section {
@@ -697,9 +702,7 @@
           </div>
         </section> -->
 
-        <!--Trending Exhibition-->
-        @livewire('trending-exhibition-component')
-
+        
         <!--COI Awards-->
           @livewire('trending-award-component')
 
