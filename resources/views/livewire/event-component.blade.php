@@ -72,6 +72,63 @@
         </section>
              
         <style>
+            /* Featured Companies - Auto Scrolling */
+            .scroll-container {
+                display: flex;
+                overflow: hidden;
+                white-space: nowrap;
+                gap: 15px;
+                padding: 10px;
+                position: relative;
+                width: 100%;
+            }
+            
+            .scroll-content {
+                display: flex;
+                animation: scrollLeft 50s linear infinite;
+                gap: 15px;
+            }
+
+            .scroll-content img {
+                max-height: 50px;
+                object-fit: contain;
+                /* border: 1px solid #ddd;
+                border-radius: 5px; */
+                padding: 10px;
+                background: #fff;
+            }
+
+            /* Keyframes for Auto Scroll */
+            @keyframes scrollLeft {
+                0% { transform: translateX(0%); }
+                100% { transform: translateX(-100%); }
+            }
+
+            /* Duplicate content to create infinite scrolling */
+            .scroll-content:hover {
+                animation-play-state: paused;
+            }
+        </style>
+
+        <div class="container mt-4 d-none d-md-block">
+            <!-- <h5 class="mb-3">Featured Companies</h5>-->
+            <div class="d-flex align-items-center mb-3">
+              <h5 class="me-3">Featured Companies</h5>
+
+              <div class="scroll-container">
+                @php 
+                  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+                @endphp
+                  <div class="scroll-content">
+                    @foreach($photos as $image)
+                      <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="HTC">
+                    @endforeach
+                  </div>
+              </div>
+            </div>
+        </div>
+        
+        <style>
           .job-section {
               background-color: #f8f9fa;
               padding: 60px 0;
@@ -164,62 +221,7 @@
             </div>
         </section>
 
-        <style>
-            /* Featured Companies - Auto Scrolling */
-            .scroll-container {
-                display: flex;
-                overflow: hidden;
-                white-space: nowrap;
-                gap: 15px;
-                padding: 10px;
-                position: relative;
-                width: 100%;
-            }
-            
-            .scroll-content {
-                display: flex;
-                animation: scrollLeft 30s linear infinite;
-                gap: 15px;
-            }
-
-            .scroll-content img {
-                max-height: 50px;
-                object-fit: contain;
-                /* border: 1px solid #ddd;
-                border-radius: 5px; */
-                padding: 10px;
-                background: #fff;
-            }
-
-            /* Keyframes for Auto Scroll */
-            @keyframes scrollLeft {
-                0% { transform: translateX(0%); }
-                100% { transform: translateX(-100%); }
-            }
-
-            /* Duplicate content to create infinite scrolling */
-            .scroll-content:hover {
-                animation-play-state: paused;
-            }
-        </style>
-
-        <div class="container mt-4 d-none d-md-block">
-            <!-- <h5 class="mb-3">Featured Companies</h5>-->
-            <div class="d-flex align-items-center mb-3">
-              <h5 class="me-3">Featured Companies</h5>
-
-              <div class="scroll-container">
-                @php 
-                  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-                @endphp
-                  <div class="scroll-content">
-                    @foreach($photos as $image)
-                      <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="HTC">
-                    @endforeach
-                  </div>
-              </div>
-            </div>
-        </div>
+        
         
      
         <style>
