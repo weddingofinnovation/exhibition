@@ -302,6 +302,36 @@
                 </div>
             </div>
 
+            <div class="d-flex align-items-center mb-3">
+                <h5 class="me-3">Popular City</h5>
+                <div class="featured-companies">
+                  @foreach ($getnamecategoryresult as $categ) 
+                    @php
+                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+                    @endphp
+                    
+                    @foreach($findcountevent as $finderlo)
+                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+                    @endforeach
+                  @endforeach
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center mb-3">
+                <h5 class="me-3">Popular Venue</h5>
+                <div class="featured-companies">
+                  @foreach ($getnamecategoryresult as $categ) 
+                    @php
+                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+                    @endphp
+                    
+                    @foreach($findcountevent as $finderlo)
+                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+                    @endforeach
+                  @endforeach
+                </div>
+            </div>
+
             <!-- Popular Categories -->
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
@@ -356,8 +386,6 @@
             </div>
         </div>
 
-   
-
         <style>
           .companies-section {
               background-color: #f8f9fa;
@@ -407,12 +435,12 @@
           }
         </style>
 
-        <section class="companies-section d-none d-md-block">
+   <!-- <section class="companies-section d-none d-md-block">
             <div class="container">
                 <h2 class="companies-title">Featured <span class="text-primary">Companies</span></h2>
                 <div class="row justify-content-center">
 
-                    <!-- Google -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="company-logo" alt="Google">
@@ -421,7 +449,7 @@
                         </div>
                     </div>
 
-                    <!-- Microsoft -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" class="company-logo" alt="Microsoft">
@@ -430,7 +458,7 @@
                         </div>
                     </div>
 
-                    <!-- Amazon -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="company-logo" alt="Amazon">
@@ -439,7 +467,7 @@
                         </div>
                     </div>
 
-                    <!-- Tesla -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" class="company-logo" alt="Tesla">
@@ -448,7 +476,7 @@
                         </div>
                     </div>
 
-                    <!-- IBM -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="company-logo" alt="IBM">
@@ -457,7 +485,7 @@
                         </div>
                     </div>
 
-                    <!-- Facebook (Meta) -->
+                    
                     <div class="col-md-3 col-6 d-flex">
                         <div class="company-card w-100">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Meta_Platforms_Inc._logo.svg" class="company-logo" alt="Meta">
@@ -468,11 +496,7 @@
 
                 </div>
             </div>
-        </section>
-
-       
-        
-
+        </section> -->
 
         <section class="container py-5">
           <div class=" rounded-3" >
@@ -616,7 +640,7 @@
         </section>
 
         <!--list-->
-        <section class="d-sm-none">
+        <!-- <section class="d-sm-none">
           <div class="d-flex  align-items-center">
             <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
               <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
@@ -640,7 +664,7 @@
                 </div>
             </a>
           </div>
-        </section>
+        </section> -->
 
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
