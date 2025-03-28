@@ -45,16 +45,16 @@
                / Compare / Track</a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href=""><i class=" bi bi-heart text-muted me-2"></i>Plan your Event ({{Cart::instance('wishlist')->count()}})</a></li>
-                <!-- <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Compare (3)</a></li> -->
+                <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Be a Right People</a></li>
                 <li><a class="dropdown-item" href=""><i class="ci-location text-muted me-2"></i>Book your Space</a></li> </ul>
             </div>
 
             <div class="d-none d-md-block ms-3 text-nowrap">
-            <a class="topbar-link d-none d-md-inline-block" href=""><i class=" bi bi-heart mt-n1"></i>Wishlist {{Cart::instance('wishlist')->count()}}</a>
+            <a class="topbar-link d-none d-md-inline-block" href=""><i class=" bi bi-heart mt-n1"></i>Plan your Event {{Cart::instance('wishlist')->count()}}</a>
             <a class="topbar-link ms-3 ps-3 border-start border-light d-none d-md-inline-block" href="">
-            <i class="bi bi-shuffle mt-n1"></i>Compare (3)</a>
+            <i class="bi bi-shuffle mt-n1"></i>Be a Right People</a>
             <a class="topbar-link ms-3 border-start border-light ps-3 d-none d-md-inline-block" href="">
-            <i class="bi bi-loaction mt-n1"></i>Order tracking</a></div>
+            <i class="bi bi-loaction mt-n1"></i>Book your Space</a></div>
 
           </div>
         </div>
