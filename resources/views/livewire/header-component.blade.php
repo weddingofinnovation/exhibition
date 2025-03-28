@@ -72,7 +72,7 @@
                 </a>
               
               
-                <div class="justify-content-end">
+                <div class="justify-content-end d-none d-md-block">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a>
