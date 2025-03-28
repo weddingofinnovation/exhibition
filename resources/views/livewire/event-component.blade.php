@@ -119,7 +119,7 @@
           }
         </style>
 
-        <section class="job-section">
+        <section class="job-section d-none d-md-block">
             <div class="container">
                 <h2 class="job-title">Find the perfect Event for <span class="text-primary">Business</span></h2>
                 <div class="row justify-content-center">
@@ -204,7 +204,7 @@
             }
         </style>
 
-        <div class="container mt-4">
+        <div class="container mt-4 d-none d-md-block">
             <!-- <h5 class="mb-3">Featured Companies</h5>-->
             <div class="d-flex align-items-center mb-3">
               <h5 class="me-3">Featured Companies</h5>
@@ -285,7 +285,7 @@
             
         </style>
 
-        <div class="container mt-4">
+        <div class="container mt-4 d-none d-md-block">
             <!-- Popular Companies -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular Industries</h5>
@@ -407,7 +407,7 @@
           }
         </style>
 
-        <section class="companies-section">
+        <section class="companies-section d-none d-md-block">
             <div class="container">
                 <h2 class="companies-title">Featured <span class="text-primary">Companies</span></h2>
                 <div class="row justify-content-center">
