@@ -20,33 +20,33 @@
             <div>
               <div class="topbar-text dropdown disable-autohide">
               <a class="topbar-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="me-2" src="" width="20"  >Eng / $</a>
+              <img class="me-2" src="" width="20"  >India</a>
                 <ul class="dropdown-menu my-1" style="">
-                  <li class="dropdown-item">
+                  <!-- <li class="dropdown-item">
                     <select class="form-select form-select-sm">
                       <option value="usd">$ USD</option>
                       <option value="eur">€ EUR</option>
                       <option value="ukp">£ UKP</option>
                       <option value="jpy">¥ JPY</option>
                     </select>
-                  </li>
+                  </li> -->
                   <li><a class="dropdown-item pb-1" href=""><img class="me-2" src="{{asset('image/5.png')}}" width="20" alt="Français">Switerland</a></li>
                   <li><a class="dropdown-item pb-1" href=""><img class="me-2" src="{{asset('image/6.png')}}" width="20" alt="Deutsch">Canada</a></li>
                   <li><a class="dropdown-item" href=""><img class="me-2" src="{{asset('image/7.png')}}" width="20" alt="Italiano">India</a></li>
                 </ul>
               </div>
               <div class="topbar-text text-nowrap d-none d-md-inline-block border-start border-light ps-3 ms-3">
-              <span class="text-muted me-1">Available 24/7 at</span>
-              <a class="topbar-link" href="tel:00331697720">(00) 33 169 7720</a>
+              <span class="text-muted me-1">Publish your Event at</span>
+              <a class="topbar-link" href="tel:00331697720">(+91)999-185-6776</a>
               </div>
             </div>
             <div class="topbar-text dropdown d-md-none ms-auto">
             <a class="topbar-link dropdown-toggle" href="" data-bs-toggle="dropdown">
                / Compare / Track</a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href=""><i class=" bi bi-heart text-muted me-2"></i>Wishlist ({{Cart::instance('wishlist')->count()}})</a></li>
-                <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Compare (3)</a></li>
-                <li><a class="dropdown-item" href=""><i class="ci-location text-muted me-2"></i>Order tracking</a></li> </ul>
+                <li><a class="dropdown-item" href=""><i class=" bi bi-heart text-muted me-2"></i>Plan your Event ({{Cart::instance('wishlist')->count()}})</a></li>
+                <!-- <li><a class="dropdown-item" href=""><i class="bi bi-shuffle text-muted me-2"></i>Compare (3)</a></li> -->
+                <li><a class="dropdown-item" href=""><i class="ci-location text-muted me-2"></i>Book your Space</a></li> </ul>
             </div>
 
             <div class="d-none d-md-block ms-3 text-nowrap">
