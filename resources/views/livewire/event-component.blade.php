@@ -368,32 +368,15 @@
               </style>
 
               <div class="featured-companies">
-                <div class="scroll-container">
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
-                  </a>
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
-                  </a>
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
-                  </a>
-
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
-
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
-
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
-
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
-
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
-                </div>
+                  @foreach ($getnamecategoryresult as $categ) 
+                    @php
+                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+                    @endphp
+                    
+                    @foreach($findcountevent as $finderlo)
+                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+                    @endforeach
+                  @endforeach
               </div>
             </div>
 
