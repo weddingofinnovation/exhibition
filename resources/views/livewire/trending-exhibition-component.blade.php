@@ -236,7 +236,7 @@
         
         <div class="scroll-container">
           @foreach($evento as $eventoi)
-            <div class="col-lg-3 col-md-5 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+            <div class="col-lg-3 col-md-3 col-sm-6 px-2 mb-1" href="{{route('event.details',['slug' => $eventoi->slug])}}">
               <div class="card product-card">
                 
                 <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $eventoi->slug])}}">
