@@ -49,7 +49,7 @@
         }
     </style>
 
-  <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
+        <!--bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
         <section class="search-section d-none d-md-block">
             <div class="container">
             <span class=" fs-xs text-primary text-center">Right Place, Right Time, Right People</span>
@@ -163,7 +163,6 @@
                 </div>
             </div>
         </section>
-
 
         <style>
             /* Featured Companies - Auto Scrolling */

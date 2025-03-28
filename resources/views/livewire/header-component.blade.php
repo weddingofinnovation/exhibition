@@ -86,203 +86,13 @@
                         <option  value="coispace" href="#awards">COI Space</option>
                   </select>
                 
-                @if($searchoo == 'opportunity')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Categories</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'city')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>State</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'investment')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Maximum Investment</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Minimum Investment</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'exhibition')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Industry</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Minimum Investment</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'award')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>Award Show</option>
-                            @foreach ($award as $category)
-                              <option  value="{{$category->id}}">{{$category->type}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'magazine')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>State</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-
-                @if($searchoo == 'coispace')
-                    <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Industry">
-                          <option>State</option>
-                            @foreach ($abc as $category)
-                              <option  value="{{$category->id}}">{{$category->industry}}</option>
-                              @endforeach 
-                        </select>
-                        @if(!is_null($def))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="Sector">
-                          <option>Sector</option>
-                          @foreach ($def as $sector)
-                            <option  value="{{$sector->id}}">{{$sector->sector}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-
-                        @if(!is_null($ghi))
-                        <select class="form-select flex-shrink-0" style="width: 10.5rem;" wire:model="service">
-                          <option>Sector</option>
-                          @foreach ($ghi as $sector)
-                            <option  value="{{$sector->id}}" href="{{route('franchise.sector',['sector_slug'=> $sector->slug])}}" >{{$sector->business}}</option>
-                          @endforeach
-                        </select>
-                        @endif
-                @endif
-                <!--<input type="search" aria-label="Search">-->
                   <button class="btn btn-outline-dark" type="submit">
                     <i class=" bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i></button>
               </div>
+
+
+
+
 
               <!-- Toolbar-->
               <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
@@ -1350,6 +1160,48 @@
             <!--stop-->
 
         </div>
+
+        <div class="navbar navbar-expand-lg navbar-light py-0">
+    <div class="container p-0">
+        <!-- Logo for desktop -->
+        <a class="navbar-brand d-none d-sm-block flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
+        <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" href="{{asset('/')}}">
+            <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
+        </a> 
+        <!-- Logo for mobile -->
+        <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}"> 
+            <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
+        </a>
+
+        <!-- Navigation Links -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
       </header>
     @endif  
