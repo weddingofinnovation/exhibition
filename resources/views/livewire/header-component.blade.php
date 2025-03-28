@@ -37,7 +37,7 @@
               </div>
               <div class="topbar-text text-nowrap d-none d-md-inline-block border-start border-light ps-3 ms-3">
               <span class="text-muted me-1">Publish your Event at</span>
-              <a class="topbar-link" href="tel:00331697720">(+91)999-185-6776</a>
+              <a class="topbar-link" href="tel:00331697720">(+91) 999-185-6776</a>
               </div>
             </div>
             <div class="topbar-text dropdown d-md-none ms-auto">
