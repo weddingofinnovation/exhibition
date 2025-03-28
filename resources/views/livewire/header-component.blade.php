@@ -73,23 +73,28 @@
               
               
               <!-- Search-->
-              <div class="input-group d-none d-lg-flex flex-nowrap mx-0">
-                <select class="form-select flex-shrink-0" style="width: 1 rem;" wire:model="searchoo">
-                        <option> Search Opportunity</option>
-                        <option  value="opportunity">Opportunity</option>
-                        <option  value="city">City</option>
-                        <option  value="business">Business</option>
-                        <option  value="investment">Investment</option>
-                        <option  value="exhibition" href="#exhibit">Exhibition</option>
-                        <option  value="award" href="#awards">Award</option>
-                        <option  value="magazine" href="">Magazine</option>
-                        <option  value="coispace" href="#awards">COI Space</option>
-                  </select>
-                
-                  <button class="btn btn-outline-dark" type="submit">
-                    <i class=" bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3"></i></button>
-              </div>
-
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
 
 
 
@@ -1204,58 +1209,7 @@
         </div>
 
 
-        <div class="navbar navbar-expand-lg navbar-light py-0">
-    <div class="container p-0">
-        <!-- Logo for desktop -->
-        <a class="navbar-brand d-none d-sm-block flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
-        <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" href="{{asset('/')}}">
-            <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
-        </a> 
-        <!-- Logo for mobile -->
-        <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}"> 
-            <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
-        </a>
-
-        <!-- Toolbar -->
-        <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-tool navbar-stuck-toggler" href="">
-                <span class="navbar-tool-tooltip">Toggle menu</span>
-                <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
-            </a>
-
-            @livewire('wishlist-component')
-            @livewire('cart-component')
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
+        
 
       </header>
     @endif  
