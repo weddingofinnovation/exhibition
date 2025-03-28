@@ -1218,7 +1218,43 @@
 
         <!-- Toolbar -->
         <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-tool navbar-stuck-toggler" href="">
+                <span class="navbar-tool-tooltip">Toggle menu</span>
+                <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
+            </a>
+
+            @livewire('wishlist-component')
+            @livewire('cart-component')
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/exhibitions')}}">Exhibitions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/awards')}}">Awards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/magazine')}}">Magazine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/investment')}}">Investment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/opportunities')}}">Opportunities</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{asset('/contact')}}">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
       </header>
