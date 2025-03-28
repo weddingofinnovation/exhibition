@@ -179,7 +179,7 @@
             
             .scroll-content {
                 display: flex;
-                animation: scrollLeft 15s linear infinite;
+                animation: scrollLeft 30s linear infinite;
                 gap: 15px;
             }
 
@@ -302,6 +302,7 @@
                 </div>
             </div>
 
+            <!-- Popular City -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular City</h5>
                 <div class="featured-companies">
@@ -317,6 +318,69 @@
                 </div>
             </div>
 
+            <div class="d-flex align-items-center mb-3">
+            <h5 class="me-3">Popular Venue</h5>
+          <style>
+            .scroll-container {
+                        display: flex;
+                        overflow-x: auto;
+                        white-space: nowrap;
+                        gap: 15px;
+                        padding: 10px;                      
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                      }
+            
+            .scroll-container::-webkit-scrollbar{
+              display: none;
+            }
+            .city-item {
+              text-decoration: none;
+              color: black;
+              font-weight: 500;
+              text-align: center;
+              flex: 0 0 auto;
+              width: 90px;
+            }
+            .city-icon {
+              width: 60px;
+              height: 60px;
+            }
+            .selected{
+              color: red !important;
+            }
+          </style>
+            <div class="featured-companies">
+          <div class="scroll-container">
+            <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
+              <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
+            </a>
+            <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
+              <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
+            </a>
+            <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
+              <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
+            </a>
+
+            <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+              <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
+
+            <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+              <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
+
+            <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+              <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
+
+            <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+              <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
+
+            <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+              <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
+          </div>
+          </div>
+          </div>
+
+            <!-- Popular Venue -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular Venue</h5>
                 <div class="featured-companies">
