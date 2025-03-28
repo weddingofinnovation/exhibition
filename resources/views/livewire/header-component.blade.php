@@ -15,7 +15,7 @@
     @else
       <header class="shadow-sm ">
         
-    <!--<div class="topbar topbar-dark bg-dark">
+        <div class="topbar topbar-dark bg-dark">
           <div class="container">
             <div>
               <div class="topbar-text dropdown disable-autohide">
@@ -57,7 +57,7 @@
             <i class="bi bi-loaction mt-n1"></i>Order tracking</a></div>
 
           </div>
-        </div>-->
+        </div>
 
         <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
         <div class="navbar-sticky bg-light">
