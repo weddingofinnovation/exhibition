@@ -210,31 +210,13 @@
               <h5 class="me-3">Featured Companies</h5>
 
               <div class="scroll-container">
+                @php 
+                  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+                @endphp
                   <div class="scroll-content">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/HTC_logo.svg/2560px-HTC_logo.svg.png" alt="HTC">
-                      <img src="https://1000logos.net/wp-content/uploads/2022/08/HDFC-Bank-Logo-500x281.png" alt="HDFC Bank">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/JP_Morgan_Chase_logo.svg" alt="JPMorgan Chase & Co.">
-                      <img src="https://www.valuelabs.com/wp-content/themes/valuelabs/assets/images/logo.svg" alt="ValueLabs">
-                      
-                      <!-- Duplicate for smooth infinite scrolling -->
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/HTC_logo.svg/2560px-HTC_logo.svg.png" alt="HTC">
-                      <img src="https://1000logos.net/wp-content/uploads/2022/08/HDFC-Bank-Logo-500x281.png" alt="HDFC Bank">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/JP_Morgan_Chase_logo.svg" alt="JPMorgan Chase & Co.">
-                      <img src="https://www.valuelabs.com/wp-content/themes/valuelabs/assets/images/logo.svg" alt="ValueLabs">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/HTC_logo.svg/2560px-HTC_logo.svg.png" alt="HTC" />
-
-                      <img src="https://1000logos.net/wp-content/uploads/2022/08/HDFC-Bank-Logo-500x281.png" alt="HDFC Bank" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/JP_Morgan_Chase_logo.svg" alt="JPMorgan Chase & Co." />
-                      <img src="https://www.valuelabs.com/wp-content/themes/valuelabs/assets/images/logo.svg" alt="ValueLabs" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg" alt="" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="" />
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Meta_Platforms_Inc._logo.svg" alt="" />
+                    @foreach($photos as $image)
+                      <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="HTC">
+                    @endforeach
                   </div>
               </div>
             </div>
