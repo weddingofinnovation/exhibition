@@ -252,7 +252,7 @@
                 scrollbar-width: none;
             }
             .featured-companies img {
-                height: 40px;
+                height: 90px;
                 object-fit: contain;
             }
             .popular-categories {
@@ -344,7 +344,7 @@
                   width: 90px;
                 }
                 .city-icon {
-                  width: 60px;
+                  width: 160px;
                   height: 60px;
                 }
                 .selected{
@@ -408,8 +408,8 @@
 
   /* City icons */
   .city-icon {
-    width: 80px; /* Default for larger screens */
-    height: 80px;
+    width: 180px; /* Default for larger screens */
+    height: 180px;
     border-radius: 50%;
   }
 
@@ -438,6 +438,7 @@
     }
   }
 </style>
+
             <div class="d-flex align-items-center mb-3">
   <h5 class="me-3">Popular Venue</h5>
   <div class="featured-companies">
