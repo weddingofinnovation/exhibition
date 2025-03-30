@@ -304,7 +304,102 @@
       </section>
 
 
-      
+      <style>
+  .venue-card {
+    position: relative; /* Allows absolute positioning inside */
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    background: white;
+    color: black;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 0; /* Removes rounded corners */
+  }
+
+  .venue-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Event status badge */
+  .event-status {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.7); /* Dark background for visibility */
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+
+  /* Gradient overlay for the event name */
+  .event-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  }
+
+  /* Event name styling */
+  .event-name {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+  }
+</style>
+
+<!-- Venues Section -->
+<div class="venues-list">
+  @foreach($evento as $eventoi)
+  <div class="venue-card">
+    <!-- Event Status at the top-left -->
+    <div class="event-status">
+      @php
+        $to = strtotime($eventoi->startdate);
+        $from = strtotime($eventoi->enddate);
+      @endphp
+      @if ($current < $to && $current < $from)
+        Upcoming
+      @elseif ($current == $to && $current < $from) 
+        First Day
+      @elseif ($current > $to && $current < $from) 
+        Ongoing
+      @elseif ($current > $to && $current == $from) 
+        Last Day
+      @elseif ($current > $to && $current > $from)
+        Ended
+      @endif
+    </div>
+
+    <!-- Event Image -->
+    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+
+    <!-- Gradient overlay -->
+    <div class="event-overlay"></div>
+
+    <!-- Event Name at Bottom (Mid of Image) -->
+    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+      {{ ucwords(trans($eventoi->eventname)) }}
+    </a>
+  </div>
+  @endforeach
+</div>
+
+
+
 
 
       <style>
