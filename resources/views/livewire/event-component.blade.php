@@ -80,21 +80,9 @@
   <div class="venue-card">
     <!-- Event Status at the Top-Left -->
     <div class="event-status">
-      @php
-        $to = strtotime($eventoi->startdate);
-        $from = strtotime($eventoi->enddate);
-      @endphp
-      @if ($current < $to && $current < $from)
+      
         Upcoming
-      @elseif ($current == $to && $current < $from) 
-        First Day
-      @elseif ($current > $to && $current < $from) 
-        Ongoing
-      @elseif ($current > $to && $current == $from) 
-        Last Day
-      @elseif ($current > $to && $current > $from)
-        Ended
-      @endif
+      
     </div>
 
     <!-- Event Image -->
