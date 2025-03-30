@@ -261,27 +261,6 @@
   @endforeach
 </div>
 
-
-          <!-- Venues Section -->
-          <div class="venuees-list">
-            @foreach($evento as $eventoi)
-            <div class="venuee-card">
-              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-            </div>
-            @endforeach
-          </div>
-
-          <!-- Venues Section -->
-          <div class="venues-list">
-            @foreach($evento as $eventoi)
-              <div class="venue-card">
-                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-                <!-- <img src="htps:via.placeholder.com/120X80" alt="Venue 1"> -->
-                <p>The Piano Man</p>
-                <small>2 Events</small>
-              </div>
-            @endforeach
-          </div>
         </div>
       </section>
 
