@@ -250,7 +250,7 @@
       @endif
     </div>
 
-    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+    <a class="event-name bg-danger" href="{{route('event.details',['slug' => $eventoi->slug])}}">
       {{ ucwords(trans($eventoi->eventname)) }}
     </a>
 
