@@ -200,6 +200,17 @@
   .event-name a:hover {
     text-decoration: underline;
   }
+
+  /* Gradient overlay for the event name */
+  .event-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  }
+
 </style>
 
 <!-- Venues Section -->
@@ -226,9 +237,13 @@
       @endif
     </div>
 
+    <!-- Gradient overlay -->
+    <div class="event-overlay"></div>
+    
     <a class="event-name bg-danger" href="{{route('event.details',['slug' => $eventoi->slug])}}">
       {{ ucwords(trans($eventoi->eventname)) }}
     </a>
+
 
     <!-- Details Section -->
     <div class="venue-details">
