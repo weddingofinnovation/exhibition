@@ -1,62 +1,6 @@
   <main>
 
   <style>
-  /* Expo Banner Styling */
-  .expo-banner {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Adjust height as needed */
-    overflow: hidden;
-  }
-
-  /* Full-Width Image */
-  .expo-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Dark Overlay Effect */
-  .overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 30%; /* Adjust darkness area */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  }
-
-  /* Text Styling */
-  .expo-details {
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: white;
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-
-  /* Artist & Venue Section */
-  .section-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-  }
-
-  .section-title h5 {
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .view-all-btn {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
-    background: white;
-  }
-
-  .artist-list,
   .venues-list {
     display: flex;
     overflow-x: auto;
@@ -66,27 +10,21 @@
     -ms-overflow-style: none;
   }
 
-  .artist-list::-webkit-scrollbar,
-  .venues-list::-webkit-scrollbar {
-    display: none;
-  }
-
   .venue-card {
     flex: 0 0 auto;
-    width: 120px;
-    border-radius: 10px;
-    background: linear-gradient(to right, #0c1e0e, #153b1e);
-    color: white;
-    padding: 10px;
+    width: 120px; /* Adjust width as needed */
+    height: 120px; /* Adjust height as needed */
+    background: white; /* Removed green gradient */
+    color: black; /* Ensured text remains visible */
+    padding: 0; /* Removed padding */
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+    box-shadow: none; /* Removed box-shadow */
   }
 
   .venue-card img {
     width: 100%;
-    height: 80px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
   }
 
   .venue-card p {
@@ -95,37 +33,14 @@
   }
 </style>
 
-<!-- Expo Banner -->
-<div class="expo-banner">
-  <img src="your-image.jpg" alt="Expo Image" class="expo-image">
-  <div class="overlay"></div>
-  <div class="expo-details">
-    <h2>Experience Expo 2024</h2>
-    <p>Join us in Delhi this October for an immersive experience!</p>
+<!-- Venues Section -->
+<div class="venues-list">
+  @foreach($evento as $eventoi)
+  <div class="venue-card">
+    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
   </div>
+  @endforeach
 </div>
-
-<!-- Trending Events Section -->
-<section class="container award mb-5">
-  <div class="mt-4">
-    <!-- Trending Exhibition Title -->
-    <div class="section-title">
-      <h5>Trending Exhibition</h5>
-      <button class="view-all-btn">View all</button>
-    </div>
-
-    <!-- Venues Section -->
-    <div class="venues-list">
-      @foreach($evento as $eventoi)
-      <div class="venue-card">
-        <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-        <p>The Piano Man</p>
-        <small>2 Events</small>
-      </div>
-      @endforeach
-    </div>
-  </div>
-</section>
 
 
       <style>
