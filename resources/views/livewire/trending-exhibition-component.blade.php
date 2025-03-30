@@ -563,7 +563,7 @@
       </section>
 
       <!-- Trending Events -->
-      <section class="award mb-5">
+      <section class=" container award mb-5">
         <div class="mt-4">
           
         <!-- artist Section -->
