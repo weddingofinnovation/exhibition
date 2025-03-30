@@ -132,8 +132,7 @@
             <button class="view-all-btn">View all</button>
           </div>
 
-          <style>
-  .venues-list {
+          <style>.venues-list {
     display: flex;
     overflow-x: auto;
     padding: 10px;
@@ -142,50 +141,12 @@
     -ms-overflow-style: none;
   }
 
-  .venue-card {
-    flex: 0 0 auto;
-    width: 120px; /* Adjust width as needed */
-    height: 120px; /* Adjust height as needed */
-    background: white; /* No gradient */
-    color: black;
-    padding: 0;
-    text-align: center;
-    box-shadow: none; /* Removed box-shadow */
-  }
-
-  .venue-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .venue-details {
-    padding: 5px 10px;
-    background: rgba(0, 0, 0, 0.7); /* Slight dark background for readability */
-    color: white;
-    font-size: 12px;
-    text-align: left;
-  }
-
-  .d-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .product-title a {
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-  }
-
-  .product-title a:hover {
-    text-decoration: underline;
+  .venues-list::-webkit-scrollbar {
+    display: none;
   }
 
   .venue-card {
-    position: relative; /* Allows absolute positioning inside */
+    position: relative;
     flex: 0 0 auto;
     width: 120px;
     height: 120px;
@@ -203,26 +164,41 @@
     object-fit: cover;
   }
 
-  /* Event status badge */
+  /* Event Status Badge at Top-Left */
   .event-status {
     position: absolute;
     top: 5px;
     left: 5px;
-    background: rgba(0, 0, 0, 0.7); /* Slight dark background */
-    color: white;
-    font-size: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
     padding: 2px 8px;
     border-radius: 3px;
     font-weight: bold;
+    z-index: 2;
   }
 
-  /* Event name styling */
+  /* Event Name at Bottom */
   .event-name {
-    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 5px;
     text-align: center;
-    margin-top: 5px;
-    font-size: 14px;
+    z-index: 2;
+  }
+
+  .event-name a {
+    color: #fff;
+    text-decoration: none;
     font-weight: bold;
+  }
+
+  .event-name a:hover {
+    text-decoration: underline;
   }
 </style>
 
