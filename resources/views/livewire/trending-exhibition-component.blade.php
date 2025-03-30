@@ -33,14 +33,7 @@
   }
 </style>
 
-<!-- Venues Section -->
-<div class="venuees-list">
-  @foreach($evento as $eventoi)
-  <div class="venuee-card">
-    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-  </div>
-  @endforeach
-</div>
+
 
 
       <style>
@@ -140,6 +133,15 @@
           <div class="section-title">
             <h5>Trending Exhibition</h5>
             <button class="view-all-btn">View all</button>
+          </div>
+
+          <!-- Venues Section -->
+          <div class="venuees-list">
+            @foreach($evento as $eventoi)
+            <div class="venuee-card">
+              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+            </div>
+            @endforeach
           </div>
 
           <!-- Venues Section -->
