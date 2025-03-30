@@ -183,6 +183,38 @@
   .product-title a:hover {
     text-decoration: underline;
   }
+
+  .venue-card {
+    position: relative; /* Allows absolute positioning inside */
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    background: white;
+    color: black;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .venue-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Event status badge */
+  .event-status {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.7); /* Slight dark background */
+    color: white;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
 </style>
 
 <!-- Venues Section -->
@@ -190,6 +222,24 @@
   @foreach($evento as $eventoi)
   <div class="venue-card">
     <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+    
+    <div class="event-status">
+      @php
+        $to = strtotime($eventoi->startdate);
+        $from = strtotime($eventoi->enddate);
+      @endphp
+      @if ($current < $to && $current < $from)
+        Upcoming
+      @elseif ($current == $to && $current < $from) 
+        First Day
+      @elseif ($current > $to && $current < $from) 
+        Ongoing
+      @elseif ($current > $to && $current == $from) 
+        Last Day
+      @elseif ($current > $to && $current > $from)
+        Ended
+      @endif
+    </div>
 
     <!-- Details Section -->
     <div class="venue-details">
