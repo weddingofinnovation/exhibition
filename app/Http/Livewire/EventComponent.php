@@ -74,7 +74,10 @@ class EventComponent extends Component
         ->orderBy('total','desc')
         ->groupBy('expos.id')
         ->get();
-        
-        return view('livewire.event-component', ['getnamecategoryresult' => $getnamecategoryresult ,'eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
+
+        $evento = Event::where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(15)->get();
+       
+
+        return view('livewire.event-component', ['evento' => $evento ,'getnamecategoryresult' => $getnamecategoryresult ,'eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
     }
 }

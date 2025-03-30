@@ -3,6 +3,114 @@
 @section('page_keyword', 'Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
 <main> 
+<style>
+  .venues-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .venues-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .venue-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    background: white;
+    color: black;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .venue-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Event Status Badge at Top-Left */
+  .event-status {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+  /* Event Name at Bottom */
+  .event-name {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 5px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .event-name a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .event-name a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<!-- Venues Section -->
+<div class="venues-list">
+  @foreach($evento as $eventoi)
+  <div class="venue-card">
+    <!-- Event Status at the Top-Left -->
+    <div class="event-status">
+      @php
+        $to = strtotime($eventoi->startdate);
+        $from = strtotime($eventoi->enddate);
+      @endphp
+      @if ($current < $to && $current < $from)
+        Upcoming
+      @elseif ($current == $to && $current < $from) 
+        First Day
+      @elseif ($current > $to && $current < $from) 
+        Ongoing
+      @elseif ($current > $to && $current == $from) 
+        Last Day
+      @elseif ($current > $to && $current > $from)
+        Ended
+      @endif
+    </div>
+
+    <!-- Event Image -->
+    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+
+    <!-- Event Name at the Bottom -->
+    <div class="event-name">
+      <a href="{{route('event.details',['slug' => $eventoi->slug])}}">
+        {{ ucwords(trans($eventoi->eventname)) }}
+      </a>
+    </div>
+  </div>
+  @endforeach
+</div>
+
+
   
     <style>
         /* Custom Styling */

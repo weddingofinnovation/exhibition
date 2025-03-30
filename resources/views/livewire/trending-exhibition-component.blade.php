@@ -171,7 +171,7 @@
     left: 5px;
     background: rgba(0, 0, 0, 0.7);
     color: #fff;
-    font-size: 12px;
+    font-size: 10px;
     padding: 2px 8px;
     border-radius: 3px;
     font-weight: bold;
@@ -303,6 +303,8 @@
         </div>
       </section>
 
+
+      
 
 
       <style>
