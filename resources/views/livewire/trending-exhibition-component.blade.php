@@ -132,290 +132,192 @@
             <button class="view-all-btn">View all</button>
           </div>
 
-          <style>.venues-list {
-    display: flex;
-    overflow-x: auto;
-    padding: 10px;
-    gap: 15px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
+          <style>
+            .venues-list {
+              display: flex;
+              overflow-x: auto;
+              padding: 10px;
+              gap: 15px;
+              scrollbar-width: none;
+              -ms-overflow-style: none;
+            }
 
-  .venues-list::-webkit-scrollbar {
-    display: none;
-  }
+            .venues-list::-webkit-scrollbar {
+              display: none;
+            }
 
-  .venue-card {
-    position: relative;
-    flex: 0 0 auto;
-    width: 120px;
-    height: 120px;
-    background: white;
-    color: black;
-    padding: 0;
-    text-align: center;
-    box-shadow: none;
-    overflow: hidden;
-  }
+            .venue-card {
+              position: relative;
+              flex: 0 0 auto;
+              width: 120px;
+              height: 120px;
+              background: white;
+              color: black;
+              padding: 0;
+              text-align: center;
+              box-shadow: none;
+              overflow: hidden;
+            }
 
-  .venue-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+            .venue-card img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
 
-  /* Event Status Badge at Top-Left */
-  .event-status {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 10px;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-weight: bold;
-    z-index: 2;
-  }
+            /* Event Status Badge at Top-Left */
+            .event-status {
+              position: absolute;
+              top: 5px;
+              left: 5px;
+              background: rgba(0, 0, 0, 0.7);
+              color: #fff;
+              font-size: 10px;
+              padding: 2px 8px;
+              border-radius: 3px;
+              font-weight: bold;
+              z-index: 2;
+            }
 
-  /* Event Name at Bottom */
-  .event-name {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 5px;
-    text-align: center;
-    z-index: 2;
-  }
+            /* Event Name at Bottom */
+            .event-name {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              background: rgba(0, 0, 0, 0.7);
+              color: #fff;
+              font-size: 12px;
+              padding: 4px 5px;
+              text-align: center;
+              z-index: 2;
+            }
 
-  .event-name a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-  }
+            .event-name a {
+              color: #fff;
+              text-decoration: none;
+              font-weight: bold;
+            }
 
-  .event-name a:hover {
-    text-decoration: underline;
-  }
+            .event-name a:hover {
+              text-decoration: underline;
+            }
 
-  /* Gradient overlay for the event name */
-  .event-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  }
+            /* Gradient overlay for the event name */
+            .event-overlay {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 50%;
+              background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+            }
 
-</style>
+          </style>
 
-<!-- Venues Section -->
-<div class="venues-list">
-  @foreach($evento as $eventoi)
-  <div class="venue-card">
-    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+          <!-- Venues Section -->
+          <div class="venues-list">
+            @foreach($evento as $eventoi)
+            <div class="venue-card">
+              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-    <div class="event-status">
-      @php
-        $to = strtotime($eventoi->startdate);
-        $from = strtotime($eventoi->enddate);
-      @endphp
-      @if ($current < $to && $current < $from)
-        Upcoming
-      @elseif ($current == $to && $current < $from) 
-        First Day
-      @elseif ($current > $to && $current < $from) 
-        Ongoing
-      @elseif ($current > $to && $current == $from) 
-        Last Day
-      @elseif ($current > $to && $current > $from)
-        Ended
-      @endif
-    </div>
-
-    <!-- Gradient overlay -->
-    <div class="event-overlay"></div>
-    
-    <a class="event-name bg-danger" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-      {{ ucwords(trans($eventoi->eventname)) }}
-    </a>
-
-
-    <!-- Details Section -->
-    <div class="venue-details">
-      <div class="d-flex justify-content-between">
-        <div class="product-price">
-          <small>{{$eventoi -> edition}}  
-            <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
-              <span class="fs-xs">
+              <div class="event-status">
                 @php
                   $to = strtotime($eventoi->startdate);
-                  $from= strtotime($eventoi->enddate);
+                  $from = strtotime($eventoi->enddate);
                 @endphp
                 @if ($current < $to && $current < $from)
-                  Upcom
+                  Upcoming
                 @elseif ($current == $to && $current < $from) 
-                  First
+                  First Day
                 @elseif ($current > $to && $current < $from) 
-                  Ongoi
+                  Ongoing
                 @elseif ($current > $to && $current == $from) 
-                  Last 
+                  Last Day
                 @elseif ($current > $to && $current > $from)
                   Ended
                 @endif
-              </span>
-              <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i>
-            </i>
-          </small>
-          <div class="product-title fs-sm h3 mb-0">
-            <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}</a>
+              </div>
+
+              <!-- Gradient overlay -->
+              <div class="event-overlay"></div>
+
+              <a class="event-name bg-danger" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+                {{ ucwords(trans($eventoi->eventname)) }}
+              </a>
+
+
+              <!-- Details Section -->
+              <div class="venue-details">
+                <div class="d-flex justify-content-between">
+                  <div class="product-price">
+                    <small>{{$eventoi -> edition}}  
+                      <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
+                        <span class="fs-xs">
+                          @php
+                            $to = strtotime($eventoi->startdate);
+                            $from= strtotime($eventoi->enddate);
+                          @endphp
+                          @if ($current < $to && $current < $from)
+                            Upcom
+                          @elseif ($current == $to && $current < $from) 
+                            First
+                          @elseif ($current > $to && $current < $from) 
+                            Ongoi
+                          @elseif ($current > $to && $current == $from) 
+                            Last 
+                          @elseif ($current > $to && $current > $from)
+                            Ended
+                          @endif
+                        </span>
+                        <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i>
+                      </i>
+                    </small>
+                    <div class="product-title fs-sm h3 mb-0">
+                      <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}</a>
+                    </div>
+                  </div>
+
+                  <div class="star-rating d-none d-sm-block"> 
+                    <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
+                    <div class="align-center fs-sm py-1"> 
+                      <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
+                      <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
+                    </div>
+                  </div>
+                </div>
+
+                <small class="text-bolder d-none d-sm-block"> 
+                  <i class="bi bi-calendar3"></i>
+                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                  @else
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                  @endif 
+                </small>
+
+                <small class="d-none d-sm-block">
+                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}
+                </small>
+
+                <small class="text-bolder d-lg-none">
+                  <i class="bi bi-calendar3"></i>
+                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                  @else
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                  @endif 
+                </small><br>
+                
+                <small class="d-lg-none">
+                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
+                </small>
+              </div>
+            </div>
+            @endforeach
           </div>
-        </div>
-
-        <div class="star-rating d-none d-sm-block"> 
-          <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
-          <div class="align-center fs-sm py-1"> 
-            <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
-            <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
-          </div>
-        </div>
-      </div>
-
-      <small class="text-bolder d-none d-sm-block"> 
-        <i class="bi bi-calendar3"></i>
-        @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-          {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
-        @else
-          {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
-        @endif 
-      </small>
-
-      <small class="d-none d-sm-block">
-        <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}
-      </small>
-
-      <small class="text-bolder d-lg-none">
-        <i class="bi bi-calendar3"></i>
-        @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-          {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-        @else
-          {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-        @endif 
-      </small><br>
-      
-      <small class="d-lg-none">
-        <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
-      </small>
-    </div>
-  </div>
-  @endforeach
-</div>
 
         </div>
       </section>
-
-
-      <style>
-  .venue-card {
-    position: relative; /* Allows absolute positioning inside */
-    flex: 0 0 auto;
-    width: 150px;
-    height: 150px;
-    background: white;
-    color: black;
-    padding: 0;
-    text-align: center;
-    box-shadow: none;
-    overflow: hidden;
-    border-radius: 0; /* Removes rounded corners */
-  }
-
-  .venue-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Event status badge */
-  .event-status {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background: rgba(0, 0, 0, 0.7); /* Dark background for visibility */
-    color: white;
-    font-size: 12px;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-weight: bold;
-  }
-
-  /* Gradient overlay for the event name */
-  .event-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  }
-
-  /* Event name styling */
-  .event-name {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    z-index: 2;
-  }
-</style>
-
-<!-- Venues Section -->
-<div class="venues-list">
-  @foreach($evento as $eventoi)
-  <div class="venue-card">
-    <!-- Event Status at the top-left -->
-    <div class="event-status">
-      @php
-        $to = strtotime($eventoi->startdate);
-        $from = strtotime($eventoi->enddate);
-      @endphp
-      @if ($current < $to && $current < $from)
-        Upcoming
-      @elseif ($current == $to && $current < $from) 
-        First Day
-      @elseif ($current > $to && $current < $from) 
-        Ongoing
-      @elseif ($current > $to && $current == $from) 
-        Last Day
-      @elseif ($current > $to && $current > $from)
-        Ended
-      @endif
-    </div>
-
-    <!-- Event Image -->
-    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-
-    <!-- Gradient overlay -->
-    <div class="event-overlay"></div>
-
-    <!-- Event Name at Bottom (Mid of Image) -->
-    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-      {{ ucwords(trans($eventoi->eventname)) }}
-    </a>
-  </div>
-  @endforeach
-</div>
-
-
-
-
 
       <style>
           * { box-sizing: border-box; }
