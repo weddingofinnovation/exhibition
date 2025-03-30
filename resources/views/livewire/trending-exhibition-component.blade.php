@@ -1,7 +1,7 @@
   <main>
 
   <style>
-  .venues-list {
+  .venuees-list {
     display: flex;
     overflow-x: auto;
     padding: 10px;
@@ -10,7 +10,7 @@
     -ms-overflow-style: none;
   }
 
-  .venue-card {
+  .venuee-card {
     flex: 0 0 auto;
     width: 120px; /* Adjust width as needed */
     height: 120px; /* Adjust height as needed */
@@ -21,22 +21,22 @@
     box-shadow: none; /* Removed box-shadow */
   }
 
-  .venue-card img {
+  .venuee-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .venue-card p {
+  .venuee-card p {
     margin: 5px 0;
     font-size: 14px;
   }
 </style>
 
 <!-- Venues Section -->
-<div class="venues-list">
+<div class="venuees-list">
   @foreach($evento as $eventoi)
-  <div class="venue-card">
+  <div class="venuee-card">
     <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
   </div>
   @endforeach
