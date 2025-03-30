@@ -210,9 +210,18 @@
     left: 5px;
     background: rgba(0, 0, 0, 0.7); /* Slight dark background */
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     padding: 2px 8px;
     border-radius: 3px;
+    font-weight: bold;
+  }
+
+  /* Event name styling */
+  .event-name {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
     font-weight: bold;
   }
 </style>
@@ -222,7 +231,7 @@
   @foreach($evento as $eventoi)
   <div class="venue-card">
     <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-    
+
     <div class="event-status">
       @php
         $to = strtotime($eventoi->startdate);
@@ -240,6 +249,10 @@
         Ended
       @endif
     </div>
+
+    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">
+      {{ ucwords(trans($eventoi->eventname)) }}
+    </a>
 
     <!-- Details Section -->
     <div class="venue-details">
