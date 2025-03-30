@@ -1,4 +1,120 @@
   <main>
+
+      <style>
+        /* Artist & venue */
+
+          .section-title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 15px;
+          }
+
+          .section-title h5 {
+          font-weight: bold;
+          margin: 0;
+          }
+
+          .view-all-btn{
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          padding: 5px 15px;
+          font-size: 14px;
+          background: white;
+          }
+
+          .artist-list{
+          display: flex;
+          overflow-x: auto;
+          padding: 10px;
+          gap: 15px;
+          }
+
+          .artist-card{
+            text-align: center;
+            flex: 0 0 auto;
+            width: 90px;
+          }
+
+          .artist-card img {
+          width: 70px;
+          height: 70px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 3px solid white;
+          }
+
+          .venues-list{
+          display: flex;
+          overflow-x: auto;
+          padding: 10px;
+          gap: 15px;
+          }
+
+          .venue-card{
+          flex: 0 0 auto;
+          width: 120px;
+          border-radius: 10px;
+          background: linear-gradient(to right, #0c1e0e,#153b1e);
+          color: white;
+          padding: 10px;
+          text-align: center;
+          box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
+          }
+
+          .venue-card img{
+          width: 100%;
+          height: 80px;
+          object-fit: cover;
+          border-radius: 8px;
+          }
+
+          .venue-card p {
+          margin: 5px 0;
+          font-size: 14px;
+          }
+
+          .artist-list, .venues-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .artist-list::-webkit-scrollbar, .venues-list::-webkit-scrollbar {
+            display: none;
+          }
+
+      </style>
+
+      <!-- Trending Events -->
+      <section class=" container award mb-5">
+        <div class="mt-4">
+          
+        <!-- artist Section -->
+          <div class="section-title">
+            <h5>Trending Exhibition</h5>
+            <button class="view-all-btn">View all</button>
+          </div>
+
+          <!-- Venues Section -->
+          <div class="venues-list">
+            @foreach($evento as $eventoi)
+              <div class="venue-card">
+                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+                <!-- <img src="htps:via.placeholder.com/120X80" alt="Venue 1"> -->
+                <p>The Piano Man</p>
+                <small>2 Events</small>
+              </div>
+            @endforeach
+          </div>
+        </div>
+      </section>
+
+
+
       <style>
           * { box-sizing: border-box; }
 
@@ -376,92 +492,7 @@
         transform:scale(1.05);
         }
 
-        /* Artist & venue */
-
-        .section-title {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 15px;
-        }
-
-        .section-title h5 {
-        font-weight: bold;
-        margin: 0;
-        }
-
-        .view-all-btn{
-        border: 1px solid #ccc;
-        border-radius: 20px;
-        padding: 5px 15px;
-        font-size: 14px;
-        background: white;
-        }
-
-        .artist-list{
-        display: flex;
-        overflow-x: auto;
-        padding: 10px;
-        gap: 15px;
-        }
-
-        .artist-card{
-          text-align: center;
-          flex: 0 0 auto;
-          width: 90px;
-        }
-
-        .artist-card img {
-        width: 70px;
-        height: 70px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid white;
-        }
-
-        .venues-list{
-        display: flex;
-        overflow-x: auto;
-        padding: 10px;
-        gap: 15px;
-        }
-
-        .venue-card{
-        flex: 0 0 auto;
-        width: 120px;
-        border-radius: 10px;
-        background: linear-gradient(to right, #0c1e0e,#153b1e);
-        color: white;
-        padding: 10px;
-        text-align: center;
-        box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
-        }
-
-        .venue-card img{
-        width: 100%;
-        height: 80px;
-        object-fit: cover;
-        border-radius: 8px;
-        }
-
-        .venue-card p {
-        margin: 5px 0;
-        font-size: 14px;
-        }
-
-        .artist-list, .venues-list {
-          display: flex;
-          overflow-x: auto;
-          padding: 10px;
-          gap: 15px;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-
-        .artist-list::-webkit-scrollbar, .venues-list::-webkit-scrollbar {
-          display: none;
-        }
-
+        
       </style>
 
        <!-- city -->
@@ -562,27 +593,5 @@
         
       </section>
 
-      <!-- Trending Events -->
-      <section class=" container award mb-5">
-        <div class="mt-4">
-          
-        <!-- artist Section -->
-          <div class="section-title">
-            <h5>ARTISTS</h5>
-            <button class="view-all-btn">View all</button>
-          </div>
-
-          <!-- Venues Section -->
-          <div class="venues-list">
-            @foreach($evento as $eventoi)
-              <div class="venue-card">
-                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
-                <!-- <img src="htps:via.placeholder.com/120X80" alt="Venue 1"> -->
-                <p>The Piano Man</p>
-                <small>2 Events</small>
-              </div>
-            @endforeach
-          </div>
-        </div>
-      </section>
+      
   </main>
