@@ -10,8 +10,10 @@ use App\Models\Expo;
 use App\Models\Franchise;
 use App\Models\Mag;
 use App\Models\Speaker;
+use App\Models\Viewso;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
@@ -27,6 +29,23 @@ class EventComponent extends Component
         session()->flash('success_message','Item has been added in cart');
         return redirect()->route('checkout');
     }
+
+    public function insertEventToSess($id)
+    {
+      $event = Expo::where('id', $id)->first();
+      $evento = new Viewso();
+      if (Auth::check()) 
+        { $evento->user_id = Auth::user()->id; }
+      else
+      { $evento->user_id = NULL ; }
+
+      $evento->view_count = '1';
+      $evento->requestedPage = url()->route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $event->slug]);
+      $evento->redirecTlink = url()->current();
+      $evento->save();
+      return redirect()->route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $event->slug]);
+    } 
+
 
     public function render()
     {   
