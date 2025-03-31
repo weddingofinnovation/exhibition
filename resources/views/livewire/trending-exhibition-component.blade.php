@@ -1,5 +1,5 @@
   <main>
-    
+
       <style>
         /* Artist & venue */
 
@@ -279,6 +279,7 @@
               </div>
 
             </div>
+            {{ ucwords(trans($eventoi->eventname)) }}
             @endforeach
           </div>
 
