@@ -90,7 +90,7 @@
       </style>
 
       <!-- Trending Events -->
-      <section class=" container award mb-5">
+      <section class=" container award mb-5 d-none d-sm-block">
         <div class="mt-4">
           
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
