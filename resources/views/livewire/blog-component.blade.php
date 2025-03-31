@@ -150,7 +150,7 @@
 													<div class="avatar avatar-xs">
 														<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
 													</div>
-													<!--<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>-->
+													{{--<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>--}}
 												</div>
 											</div>
 										</li>
