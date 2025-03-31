@@ -1,37 +1,37 @@
   <main>
 
-  <style>
-    .venuees-list {
-      display: flex;
-      overflow-x: auto;
-      padding: 10px;
-      gap: 15px;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
+      <style>
+        .venuees-list {
+          display: flex;
+          overflow-x: auto;
+          padding: 10px;
+          gap: 15px;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
 
-    .venuee-card {
-      flex: 0 0 auto;
-      width: 120px; /* Adjust width as needed */
-      height: 120px; /* Adjust height as needed */
-      background: white; /* Removed green gradient */
-      color: black; /* Ensured text remains visible */
-      padding: 0; /* Removed padding */
-      text-align: center;
-      box-shadow: none; /* Removed box-shadow */
-    }
+        .venuee-card {
+          flex: 0 0 auto;
+          width: 120px; /* Adjust width as needed */
+          height: 120px; /* Adjust height as needed */
+          background: white; /* Removed green gradient */
+          color: black; /* Ensured text remains visible */
+          padding: 0; /* Removed padding */
+          text-align: center;
+          box-shadow: none; /* Removed box-shadow */
+        }
 
-    .venuee-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+        .venuee-card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
 
-    .venuee-card p {
-      margin: 5px 0;
-      font-size: 14px;
-    }
-  </style>
+        .venuee-card p {
+          margin: 5px 0;
+          font-size: 14px;
+        }
+      </style>
 
       <style>
         /* Artist & venue */
@@ -700,7 +700,7 @@
       </style>
 
        <!-- city -->
-      <section  class="container pt-2">
+      <section  class="container pt-2 d-sm-none">
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
             <span class="fs-sm"> Explore<br><span class="fw-medium h5">City</span></span>
@@ -784,7 +784,7 @@
       </section>
 
       <!-- timeline -->
-      <section class="card text-center py-5 award rounded-0">
+      <!-- <section class="card text-center py-5 award rounded-0">
       
         <div class="container mt-5">
           <div class="card-custom">
@@ -795,7 +795,7 @@
           </div>
         </div>   
         
-      </section>
+      </section> -->
 
       
   </main>
