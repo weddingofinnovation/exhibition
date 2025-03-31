@@ -94,7 +94,7 @@
 																<div class="nav-link">
 																<div class="d-flex align-items-center text-white position-relative">
 																	<div class="avatar avatar-sm">
-																	  <img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+																	  {{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 																	</div>
 																<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" 
 																	class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
@@ -148,7 +148,7 @@
 											<div class="nav-link">
 												<div class="d-flex align-items-center position-relative">
 													<div class="avatar avatar-xs">
-														<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+														{{-- <img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar"> --}}
 													</div>
 													{{--<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>--}}
 												</div>
@@ -252,7 +252,7 @@
 													<div class="nav-link">
 														<div class="d-flex align-items-center position-relative">
 															<div class="avatar avatar-xs"> 
-																<img class="avatar-img rounded-circle" src="{{url('public/assets/image/exhibition/'.$post->user->profile_photo_url ?? '')}}" alt="{{Str::limit($post->tittle, 24)}}">
+																{{--<img class="avatar-img rounded-circle" src="{{url('public/assets/image/exhibition/'.$post->user->profile_photo_url ?? '')}}" alt="{{Str::limit($post->tittle, 24)}}">--}}
 															</div>
 															<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
 														</div>
@@ -301,7 +301,7 @@
 													<div class="nav-link">
 														<div class="d-flex align-items-center position-relative">
 															<div class="avatar avatar-xs">
-																<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+																{{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 															</div>
 															<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
 														</div>
@@ -351,9 +351,9 @@
 													<div class="nav-link">
 														<div class="d-flex align-items-center position-relative">
 															<div class="avatar avatar-xs">
-																<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+																{{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 															</div>
-															<!--<span class="ms-2">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>-->
+															{{--<span class="ms-2">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>--}}
 														</div>
 													</div>
 												</li>
@@ -395,9 +395,9 @@
 													<div class="nav-link">
 														<div class="d-flex align-items-center position-relative">
 															<div class="avatar avatar-xs">
-																<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+																{{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 															</div>
-															<!--<span class="ms-2">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>-->
+															{{--<span class="ms-2">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>--}}
 														</div>
 													</div>
 												</li>
@@ -517,7 +517,7 @@
 											<div class="nav-link">
 												<div class="d-flex align-items-center position-relative">
 													<div class="avatar avatar-xs">
-														<img class="avatar-img rounded-circle" src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+														{{--<img class="avatar-img rounded-circle" src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 													</div>
 													<span class="ms-3">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
 												</div>
@@ -561,7 +561,7 @@
 											<div class="nav-link">
 												<div class="d-flex align-items-center position-relative">
 													<div class="avatar avatar-xs">
-														<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+														{{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 													</div>
 													<span class="ms-3">by <a href="#" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
 												</div>
@@ -713,7 +713,7 @@
 											<div class="nav-link">
 												<div class="d-flex align-items-center position-relative">
 													<div class="avatar avatar-xs">
-														<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">
+														{{--<img class="avatar-img rounded-circle"  src="{{$post->user->profile_photo_url ?? ''}}" alt="avatar">--}}
 													</div>
 													<span class="ms-3">by <a href="" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
 												</div>
