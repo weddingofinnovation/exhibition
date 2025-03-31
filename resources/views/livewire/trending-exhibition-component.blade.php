@@ -291,9 +291,9 @@
                       <!-- Event Location -->
                       <div class="text-muted">
                         <i class="bi bi-geo-alt-fill"></i>
-                        {{ ucwords(trans($eventoi->venue)) }}, 
-                        {{ ucwords(trans($eventoi->city)) }},
-                        {{ ucwords(trans($eventoi->state)) }}
+                        {{ ucwords(trans($eventoi->venue ?? '')) }}, 
+                        {{ ucwords(trans($eventoi->city ?? '')) }},
+                        {{ ucwords(trans($eventoi->state ?? '')) }}
                       </div>
                     </div>
                   </div>
