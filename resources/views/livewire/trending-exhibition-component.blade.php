@@ -179,6 +179,21 @@
               background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             }
 
+            .event-title {
+              text-align: center;
+              font-size: 14px;
+              font-weight: bold;
+              margin-top: 5px; /* Space between image and text */
+            }
+
+            .event-title a {
+              color: black;
+              text-decoration: none;
+            }
+
+            .event-title a:hover {
+              text-decoration: underline;
+            }
           </style>
 
           <!-- Venues Section -->
@@ -278,14 +293,20 @@
                 </small>
               </div>
 
+              <!-- Event Name (Separate from Image) -->
+              <div class="event-title">
+                <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+              </div>
+
             </div>
+            
             {{ ucwords(trans($eventoi->eventname)) }}
             @endforeach
           </div>
 
         </div>
       </section>
-
+         
       <style>
           * { box-sizing: border-box; }
 

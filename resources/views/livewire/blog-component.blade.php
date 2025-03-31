@@ -25,7 +25,7 @@
 			<div class="row ">
 				<div class="col">
 					<div class="my-Slider2">
-						@foreach($try as $post)
+							@foreach($try as $post)
 								<div class="card" >
 									<div class="row mx-1">
 										<div class="col-4 px-1">
@@ -254,7 +254,7 @@
 															<div class="avatar avatar-xs"> 
 																{{--<img class="avatar-img rounded-circle" src="{{url('public/assets/image/exhibition/'.$post->user->profile_photo_url ?? '')}}" alt="{{Str::limit($post->tittle, 24)}}">--}}
 															</div>
-															<span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span>
+															{{-- <span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span> --}}
 														</div>
 													</div>
 												</li>
