@@ -206,66 +206,65 @@
 
           <!-- Venues Section -->
           <div class="venues-list">
-
             @foreach($evento as $eventoi)
-            <div class="venue-container">
-              <div class="venue-card">
-                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+              <div class="venue-container">
+                <div class="venue-card">
+                  <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-                <div class="event-status">
-                  @php
-                    $to = strtotime($eventoi->startdate);
-                    $from = strtotime($eventoi->enddate);
-                  @endphp
-                  @if ($current < $to && $current < $from)
-                    Upcoming
-                  @elseif ($current == $to && $current < $from) 
-                    First Day
-                  @elseif ($current > $to && $current < $from) 
-                    Ongoing
-                  @elseif ($current > $to && $current == $from) 
-                    Last Day
-                  @elseif ($current > $to && $current > $from)
-                    Ended
-                  @endif
+                  <div class="event-status">
+                    @php
+                      $to = strtotime($eventoi->startdate);
+                      $from = strtotime($eventoi->enddate);
+                    @endphp
+                    @if ($current < $to && $current < $from)
+                      Upcoming
+                    @elseif ($current == $to && $current < $from) 
+                      First Day
+                    @elseif ($current > $to && $current < $from) 
+                      Ongoing
+                    @elseif ($current > $to && $current == $from) 
+                      Last Day
+                    @elseif ($current > $to && $current > $from)
+                      Ended
+                    @endif
+                  </div>
+
+                  <!-- Gradient overlay -->
+                  <div class="event-overlay"></div>
+
+                  <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+
                 </div>
 
-                <!-- Gradient overlay -->
-                <div class="event-overlay"></div>
+                <!-- Event Name (Separate from Image) -->
+                <div class="event-title">
+                    <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
+                    
+                    <small class="text-left text-bolder d-none d-sm-block">
+                      <i class="bi bi-calendar3"></i>
+                      @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @else
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @endif
+                    </small>
 
-                <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+                    <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i>
+                      {{ucwords(trans($eventoi -> city))}}
+                    </small>
+                    <br>
+                    <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
+                      @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @else
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @endif 
+                    </small><br>
+
+                    <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small>
+                </div>
 
               </div>
-
-              <!-- Event Name (Separate from Image) -->
-              <div class="event-title">
-                  <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
-                  
-                  <small class="text-left text-bolder d-none d-sm-block">
-                    <i class="bi bi-calendar3"></i>
-                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                    @else
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                    @endif
-                  </small>
-
-                  <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i>
-                    {{ucwords(trans($eventoi -> city))}}
-                  </small>
-
-                  <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
-                    @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                    @else
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                    @endif 
-                  </small><br>
-
-                  <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small>
-              </div>
-
-            </div>
              @endforeach
           </div>
 

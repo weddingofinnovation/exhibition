@@ -274,98 +274,7 @@
         @livewire('trending-exhibition-component')
 
         
-        <style>
-          .job-section {
-              background-color: #f8f9fa;
-              padding: 60px 0;
-          }
-          .job-title {
-              font-size: 28px;
-              font-weight: bold;
-              text-align: center;
-              margin-bottom: 40px;
-          }
-          .job-card {
-              background: white;
-              padding: 20px;
-              border-radius: 10px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-              text-align: center;
-              transition: transform 0.3s;
-              display: flex;
-              flex-direction: column;
-              align-items: center; /* Centers horizontally */
-              justify-content: center; /* Centers vertically */
-              height: 100%; /* Ensures uniform height */
-          }
-          .job-card:hover {
-              transform: translateY(-5px);
-          }
-          .job-icon {
-              width: 60px;
-              height: 60px;
-              margin-bottom: 15px;
-          }
-          .job-heading {
-              font-size: 18px;
-              font-weight: bold;
-              margin-bottom: 5px;
-          }
-          .job-desc {
-              color: #6c757d;
-              font-size: 14px;
-          }
-          @media (max-width: 767px) {
-              .job-card {
-                  margin-bottom: 20px;
-              }
-          }
-        </style>
-
-        <section class="job-section d-none d-md-block">
-            <div class="container">
-                <h2 class="job-title">Find the perfect Event for <span class="text-primary">Business</span></h2>
-                <div class="row justify-content-center">
-
-                    <!-- Highlight -->
-                    <div class="col-md-3 col-6 d-flex">
-                        <div class="job-card w-100">
-                            <img src="https://cdn-icons-png.flaticon.com/128/854/854894.png" class="job-icon" alt="Highlight">
-                            <h5 class="job-heading">Highlight</h5>
-                            <p class="job-desc">Stand out to events</p>
-                        </div>
-                    </div>
-
-                    <!-- Prep -->
-                    <div class="col-md-3 col-6 d-flex">
-                        <div class="job-card w-100">
-                            <img src="https://cdn-icons-png.flaticon.com/128/942/942928.png" class="job-icon" alt="Prep">
-                            <h5 class="job-heading">Regional</h5>
-                            <p class="job-desc">Up your interview success rate</p>
-                        </div>
-                    </div>
-
-                    <!-- Learn -->
-                    <div class="col-md-3 col-6 d-flex">
-                        <div class="job-card w-100">
-                            <img src="https://cdn-icons-png.flaticon.com/128/869/869636.png" class="job-icon" alt="Learn">
-                            <h5 class="job-heading">Execute</h5>
-                            <p class="job-desc">Expertise to get ahead</p>
-                        </div>
-                    </div>
-
-                    <!-- Network -->
-                    <div class="col-md-3 col-6 d-flex">
-                        <div class="job-card w-100">
-                            <img src="https://cdn-icons-png.flaticon.com/128/2972/2972385.png" class="job-icon" alt="Network">
-                            <h5 class="job-heading">Network</h5>
-                            <p class="job-desc">Grow with peers & mentors</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+        
 
         
         
@@ -706,66 +615,36 @@
 
         
         <!--COI Awards-->
-          @livewire('trending-award-component')
+        @livewire('trending-award-component')
 
         <!-- Promo banner-->
-          <section class="container mt-4 mb-grid-gutter">
-            <div class="bg-faded-info rounded-3 py-2">
-              <div class="row align-items-center">
-                <div class="col-md-4">
-                  <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Limited Offer</span>
-                    <h3 class="mt-3 mb-1 text-body fw-light">All new</h3>
-                    <h2 class="mb-1">Turn your Ideas,<br> into a <span class="text-primary">Startup.</span> </h2>
-                    <p class="h5 text-body fw-light">at discounted price. Hurry up!</p>
-                    <div class="countdown py-2 h4" data-countdown="07/01/2021 07:00:00 PM">
-                      <div class="countdown-days"><span class="countdown-value">43</span><span class="countdown-label text-muted">d</span></div>
-                      <div class="countdown-hours"><span class="countdown-value">00</span><span class="countdown-label text-muted">h</span></div>
-                      <div class="countdown-minutes"><span class="countdown-value">19</span><span class="countdown-label text-muted">m</span></div>
-                      <div class="countdown-seconds"><span class="countdown-value">33</span><span class="countdown-label text-muted">s</span></div>
-                    </div><a class="btn btn-accent mr-3" href="{{route('login')}}">Get Started </a> Learn More <i class=" bi bi-chevron-right fs-ms ms-1"></i>
-                  </div>
+        <section class="container mt-4 mb-grid-gutter">
+          <div class="bg-faded-info rounded-3 py-2">
+            <div class="row align-items-center">
+              <div class="col-md-4">
+                <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Limited Offer</span>
+                  <h3 class="mt-3 mb-1 text-body fw-light">All new</h3>
+                  <h2 class="mb-1">Turn your Ideas,<br> into a <span class="text-primary">Startup.</span> </h2>
+                  <p class="h5 text-body fw-light">at discounted price. Hurry up!</p>
+                  <div class="countdown py-2 h4" data-countdown="07/01/2021 07:00:00 PM">
+                    <div class="countdown-days"><span class="countdown-value">43</span><span class="countdown-label text-muted">d</span></div>
+                    <div class="countdown-hours"><span class="countdown-value">00</span><span class="countdown-label text-muted">h</span></div>
+                    <div class="countdown-minutes"><span class="countdown-value">19</span><span class="countdown-label text-muted">m</span></div>
+                    <div class="countdown-seconds"><span class="countdown-value">33</span><span class="countdown-label text-muted">s</span></div>
+                  </div><a class="btn btn-accent mr-3" href="{{route('login')}}">Get Started </a> Learn More <i class=" bi bi-chevron-right fs-ms ms-1"></i>
                 </div>
-                
-                <!--<div class="col-md-7 d-none d-sm-block">
-                  <img src="{{asset ('images/7.jpg')}}" alt="iPad Pro Offer"></div>-->
-                <div class="col-md-8 d-none d-sm-block">
-                  <div class="d-flex my-Slider7">
-                      <!-- Product-->
-                      @foreach ($evento as $franchise)
-                        <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                          <div class="card product-card">
-                            <div class="card-body py-2">
-                              <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                <span class="text-bolder">
-                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                    @else
-                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                    @endif 
-                                </span>
-                              </a>
-                              <div class="d-flex justify-content-between">
-                                <div class="product-price">
-                                  <div class="product-title h3 fs-sm mb-0">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                    <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
-                                  </div>
-                              </div>
-                            </div>
-
-                          </div>
-                         
-                        </div>
-                      @endforeach
-                  </div>
-
-                  <div class="d-flex my-Slider8">
+              </div>
+              
+              <!--<div class="col-md-7 d-none d-sm-block">
+                <img src="{{asset ('images/7.jpg')}}" alt="iPad Pro Offer"></div>-->
+              <div class="col-md-8 d-none d-sm-block">
+                <div class="d-flex my-Slider7">
                     <!-- Product-->
                     @foreach ($evento as $franchise)
-                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
                         <div class="card product-card">
                           <div class="card-body py-2">
-                            <a class="product-meta d-block fs-xs pb-1" href="#">
+                            <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
                               <span class="text-bolder">
                                   @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                                     {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
@@ -777,56 +656,179 @@
                             <div class="d-flex justify-content-between">
                               <div class="product-price">
                                 <div class="product-title h3 fs-sm mb-0">
-                                  <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                
+                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
                                 </div>
                             </div>
                           </div>
-                          <div class="card-body card-body-hidden">
-                            <div class="mb-2">
-                              <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
-                            </div>
-                          </div>
+
                         </div>
-                      
+                        
                       </div>
                     @endforeach
-                  </div>
                 </div>
-              
+
+                <div class="d-flex my-Slider8">
+                  <!-- Product-->
+                  @foreach ($evento as $franchise)
+                    <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+                      <div class="card product-card">
+                        <div class="card-body py-2">
+                          <a class="product-meta d-block fs-xs pb-1" href="#">
+                            <span class="text-bolder">
+                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                                @else
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                @endif 
+                            </span>
+                          </a>
+                          <div class="d-flex justify-content-between">
+                            <div class="product-price">
+                              <div class="product-title h3 fs-sm mb-0">
+                                <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                              
+                              </div>
+                          </div>
+                        </div>
+                        <div class="card-body card-body-hidden">
+                          <div class="mb-2">
+                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                  @endforeach
+                </div>
               </div>
+            
             </div>
-          </section>
+          </div>
+        </section>
 
         <!--Trending conference-->
-          @livewire('conference-component')
+        @livewire('conference-component')
 
-          @livewire('trending-dealer-distribution-component')
+        @livewire('trending-dealer-distribution-component')
           
         <!--Trending Magazine-->
-          @livewire('trending-magazine-component')
+        @livewire('trending-magazine-component')
        
         <!-- Creators-->
          @livewire('trending-creator-component')
         
         <!--contact-->        
-          <div class="container-fluid px-0 d-none" id="listexpo">
-            <div class="row g-0">
-              <div class="col-lg-6 iframe-full-height-wrap">
-                <div class="mx-auto py-lg-5 my-5 text-dark text-center" style="max-width: 35rem;">
-                    <p>BE SEEN</p>
-                    <h2 class="display-5 text-dark mb-2 ">
-                  Business profile
-                    </h2>
-                    <p class="fw-light  mx-auto lead text-dark pb-2">Create a business profile with helpful information for your business auidence like your Business Model, business description, email address, and website.
-                    </p>
-                    <a href="#opening" class="btn btn-lg  btn-outline-primary fw-bolder my-2">Learn more about</a>
-                </div>
+        <div class="container-fluid px-0 d-none" id="listexpo">
+          <div class="row g-0">
+            <div class="col-lg-6 iframe-full-height-wrap">
+              <div class="mx-auto py-lg-5 my-5 text-dark text-center" style="max-width: 35rem;">
+                  <p>BE SEEN</p>
+                  <h2 class="display-5 text-dark mb-2 ">
+                Business profile
+                  </h2>
+                  <p class="fw-light  mx-auto lead text-dark pb-2">Create a business profile with helpful information for your business auidence like your Business Model, business description, email address, and website.
+                  </p>
+                  <a href="#opening" class="btn btn-lg  btn-outline-primary fw-bolder my-2">Learn more about</a>
               </div>
-            
-              @livewire('event-form-component')
             </div>
+          
+            @livewire('event-form-component')
           </div>
+        </div>
+
+        <style>
+          .job-section {
+              background-color: #f8f9fa;
+              padding: 60px 0;
+          }
+          .job-title {
+              font-size: 28px;
+              font-weight: bold;
+              text-align: center;
+              margin-bottom: 40px;
+          }
+          .job-card {
+              background: white;
+              padding: 20px;
+              border-radius: 10px;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              transition: transform 0.3s;
+              display: flex;
+              flex-direction: column;
+              align-items: center; /* Centers horizontally */
+              justify-content: center; /* Centers vertically */
+              height: 100%; /* Ensures uniform height */
+          }
+          .job-card:hover {
+              transform: translateY(-5px);
+          }
+          .job-icon {
+              width: 60px;
+              height: 60px;
+              margin-bottom: 15px;
+          }
+          .job-heading {
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+          .job-desc {
+              color: #6c757d;
+              font-size: 14px;
+          }
+          @media (max-width: 767px) {
+              .job-card {
+                  margin-bottom: 20px;
+              }
+          }
+        </style>
+
+        <section class="job-section d-none d-md-block">
+            <div class="container">
+                <h2 class="job-title">Find the perfect Event for <span class="text-primary">Business</span></h2>
+                <div class="row justify-content-center">
+
+                    <!-- Highlight -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/854/854894.png" class="job-icon" alt="Highlight">
+                            <h5 class="job-heading">Highlight</h5>
+                            <p class="job-desc">Stand out to events</p>
+                        </div>
+                    </div>
+
+                    <!-- Prep -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/942/942928.png" class="job-icon" alt="Prep">
+                            <h5 class="job-heading">Regional</h5>
+                            <p class="job-desc">Up your interview success rate</p>
+                        </div>
+                    </div>
+
+                    <!-- Learn -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/869/869636.png" class="job-icon" alt="Learn">
+                            <h5 class="job-heading">Execute</h5>
+                            <p class="job-desc">Expertise to get ahead</p>
+                        </div>
+                    </div>
+
+                    <!-- Network -->
+                    <div class="col-md-3 col-6 d-flex">
+                        <div class="job-card w-100">
+                            <img src="https://cdn-icons-png.flaticon.com/128/2972/2972385.png" class="job-icon" alt="Network">
+                            <h5 class="job-heading">Network</h5>
+                            <p class="job-desc">Grow with peers & mentors</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
 </main>
 
