@@ -239,19 +239,19 @@
 
               <!-- Event Name (Separate from Image) -->
               <div class="event-title">
-                  <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
+                  <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
                   
                   <small class="text-left text-bolder d-none d-sm-block">
                     <i class="bi bi-calendar3"></i> 1
                     @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
                     @else
-                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
-                    @endif 
+                      {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                    @endif
                   </small>
 
-                  <small class="d-none d-sm-block"><i class="bi bi-geo-alt-fill fs-sm"></i> 1
-                    {{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}
+                  <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i> 1
+                    {{ucwords(trans($eventoi -> city))}}
                   </small>
 
                   <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i> 2
