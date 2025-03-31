@@ -242,7 +242,7 @@
                   <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
                   
                   <small class="text-left text-bolder d-none d-sm-block">
-                    <i class="bi bi-calendar3"></i> 1
+                    <i class="bi bi-calendar3"></i>
                     @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
                       {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
                     @else
@@ -250,11 +250,11 @@
                     @endif
                   </small>
 
-                  <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i> 1
+                  <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i>
                     {{ucwords(trans($eventoi -> city))}}
                   </small>
 
-                  <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i> 2
+                  <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
                     @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
                       {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
                     @else
@@ -262,7 +262,7 @@
                     @endif 
                   </small><br>
 
-                  <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i> 2{{ucwords(trans($eventoi -> city))}}</small>
+                  <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small>
               </div>
 
             </div>
