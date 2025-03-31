@@ -179,12 +179,19 @@
               background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             }
 
+            .venue-container {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 120px; /* Adjust based on your design */
+            }
+
             .event-title {
             text-align: center;
             font-size: 14px;
             font-weight: bold;
             margin-top: 5px; /* Space between image and text */
-            z-index: 2;
+            /* z-index: 2; */
           }
 
           .event-title a {
@@ -199,42 +206,43 @@
 
           <!-- Venues Section -->
           <div class="venues-list">
+
             @foreach($evento as $eventoi)
-            <div class="venue-card">
-              <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+            <div class="venue-container">
+              <div class="venue-card">
+                <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-              <div class="event-status">
-                @php
-                  $to = strtotime($eventoi->startdate);
-                  $from = strtotime($eventoi->enddate);
-                @endphp
-                @if ($current < $to && $current < $from)
-                  Upcoming
-                @elseif ($current == $to && $current < $from) 
-                  First Day
-                @elseif ($current > $to && $current < $from) 
-                  Ongoing
-                @elseif ($current > $to && $current == $from) 
-                  Last Day
-                @elseif ($current > $to && $current > $from)
-                  Ended
-                @endif
+                <div class="event-status">
+                  @php
+                    $to = strtotime($eventoi->startdate);
+                    $from = strtotime($eventoi->enddate);
+                  @endphp
+                  @if ($current < $to && $current < $from)
+                    Upcoming
+                  @elseif ($current == $to && $current < $from) 
+                    First Day
+                  @elseif ($current > $to && $current < $from) 
+                    Ongoing
+                  @elseif ($current > $to && $current == $from) 
+                    Last Day
+                  @elseif ($current > $to && $current > $from)
+                    Ended
+                  @endif
+                </div>
+
+                <!-- Gradient overlay -->
+                <div class="event-overlay"></div>
+
+                <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+
               </div>
-
-              <!-- Gradient overlay -->
-              <div class="event-overlay"></div>
-
-              <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
 
               <!-- Event Name (Separate from Image) -->
-              <div class="event-title"> Test
-                <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
-              </div>
-
+              <div class="event-title">
+                  <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+                </div>
             </div>
-            
-            {{ ucwords(trans($eventoi->eventname)) }}
-            @endforeach
+             @endforeach
           </div>
 
         </div>
