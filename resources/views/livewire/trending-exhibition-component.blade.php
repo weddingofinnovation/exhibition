@@ -155,7 +155,7 @@
               color: #fff;
               font-size: 12px;
               padding: 4px 5px;
-              text-align: center;
+              text-align: right;
               z-index: 2;
             }
 
@@ -184,6 +184,7 @@
             font-size: 14px;
             font-weight: bold;
             margin-top: 5px; /* Space between image and text */
+            z-index: 2;
           }
 
           .event-title a {
@@ -225,6 +226,10 @@
 
               <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
 
+              <!-- Event Name (Separate from Image) -->
+              <div class="event-title ">
+                <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
+              </div>
 
               <!-- Details Section -->
               <div class="venue-details">
@@ -293,10 +298,7 @@
                 </small>
               </div>
 
-              <!-- Event Name (Separate from Image) -->
-              <div class="event-title">
-                <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
-              </div>
+              
 
             </div>
             
