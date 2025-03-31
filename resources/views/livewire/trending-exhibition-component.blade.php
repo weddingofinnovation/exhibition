@@ -223,6 +223,47 @@
               <!-- Gradient overlay -->
               <div class="event-overlay"></div>
 
+             
+
+              <!-- Details Section -->
+              <div class="venue-details">
+                <div class="d-flex justify-content-between">
+                  <div class="product-price">
+                    
+                    <div class="product-title fs-sm h3 mb-0">
+                      <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}</a>
+                    </div>
+                  </div>
+
+                  
+                </div>
+
+                <small class="text-bolder d-none d-sm-block"> 
+                  <i class="bi bi-calendar3"></i>
+                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
+                  @else
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
+                  @endif 
+                </small>
+
+                <small class="d-none d-sm-block">
+                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}
+                </small>
+
+                <small class="text-bolder d-lg-none">
+                  <i class="bi bi-calendar3"></i>
+                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                  @else
+                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                  @endif 
+                </small><br>
+                
+                <small class="d-lg-none">
+                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
+                </small>
+              </div>
 
               <!-- Event Name (Separate from Image) -->
               <div class="event-title">
@@ -230,8 +271,6 @@
               </div>
 
             </div>
-            
-           
             @endforeach
           </div>
 
