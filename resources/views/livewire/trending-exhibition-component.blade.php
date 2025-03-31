@@ -1,38 +1,5 @@
   <main>
-
-      <style>
-        .venuees-list {
-          display: flex;
-          overflow-x: auto;
-          padding: 10px;
-          gap: 15px;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-        }
-
-        .venuee-card {
-          flex: 0 0 auto;
-          width: 120px; /* Adjust width as needed */
-          height: 120px; /* Adjust height as needed */
-          background: white; /* Removed green gradient */
-          color: black; /* Ensured text remains visible */
-          padding: 0; /* Removed padding */
-          text-align: center;
-          box-shadow: none; /* Removed box-shadow */
-        }
-
-        .venuee-card img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .venuee-card p {
-          margin: 5px 0;
-          font-size: 14px;
-        }
-      </style>
-
+    
       <style>
         /* Artist & venue */
 
@@ -241,9 +208,7 @@
               <!-- Gradient overlay -->
               <div class="event-overlay"></div>
 
-              <a class="event-name bg-danger" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                {{ ucwords(trans($eventoi->eventname)) }}
-              </a>
+              <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
 
 
               <!-- Details Section -->
@@ -312,6 +277,7 @@
                   <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
                 </small>
               </div>
+
             </div>
             @endforeach
           </div>
