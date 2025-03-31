@@ -263,7 +263,43 @@
                   </small><br>
                     <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
                   </div>
+              </div>
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="event-title py-2">
+                      <!-- Event Name -->
+                      <h5 class="fw-normal mb-1">
+                        <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-dark text-decoration-none">
+                          {{ ucwords(trans($eventoi->eventname)) }}
+                        </a>
+                      </h5>
+
+                      <!-- Event Date -->
+                      <div class="text-muted">
+                        <i class="bi bi-calendar3"></i>
+                        @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                          {{ Carbon\Carbon::parse($eventoi->startdate)->format('D, d M') }} - 
+                          {{ Carbon\Carbon::parse($eventoi->enddate)->format('D, d M Y') }}
+                        @else
+                          {{ Carbon\Carbon::parse($eventoi->startdate)->format('D, d') }} - 
+                          {{ Carbon\Carbon::parse($eventoi->enddate)->format('D, d M Y') }}
+                        @endif 
+                      </div>
+
+                      <!-- Event Location -->
+                      <div class="text-muted">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        {{ ucwords(trans($eventoi->venue)) }}, 
+                        {{ ucwords(trans($eventoi->city)) }},
+                        {{ ucwords(trans($eventoi->state)) }}
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
             </div>
              @endforeach
           </div>
