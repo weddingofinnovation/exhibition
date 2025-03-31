@@ -223,75 +223,6 @@
               <!-- Gradient overlay -->
               <div class="event-overlay"></div>
 
-              <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ ucwords(trans($eventoi->eventname)) }}</a>
-
-
-              <!-- Details Section -->
-              <div class="venue-details">
-                <div class="d-flex justify-content-between">
-                  <div class="product-price">
-                    <small>{{$eventoi -> edition}}  
-                      <i class="bi bi-shield-check" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="certified" aria-label="certified">
-                        <span class="fs-xs">
-                          @php
-                            $to = strtotime($eventoi->startdate);
-                            $from= strtotime($eventoi->enddate);
-                          @endphp
-                          @if ($current < $to && $current < $from)
-                            Upcom
-                          @elseif ($current == $to && $current < $from) 
-                            First
-                          @elseif ($current > $to && $current < $from) 
-                            Ongoi
-                          @elseif ($current > $to && $current == $from) 
-                            Last 
-                          @elseif ($current > $to && $current > $from)
-                            Ended
-                          @endif
-                        </span>
-                        <i class="bi bi-lightning-fill" data-bs-toggle="tooltip" data-bs-placement="right" title="" data-bs-original-title="upcoming" aria-label="upcoming"></i>
-                      </i>
-                    </small>
-                    <div class="product-title fs-sm h3 mb-0">
-                      <a href="{{route('event.details',['slug' => $eventoi->slug])}}">{{ucwords(trans($eventoi -> eventname))}}</a>
-                    </div>
-                  </div>
-
-                  <div class="star-rating d-none d-sm-block"> 
-                    <small> <span class="badge bg-primary opacity-75" style="position: unset;"> Visitor</span> | <span class="badge bg-primary opacity-75" style="position: unset;"> Exhibit</span></small>       
-                    <div class="align-center fs-sm py-1"> 
-                      <small class="mx-0" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Visitor" aria-label="Visitor"> + {{$eventoi -> auidence}} <i class="bi bi-people-fill"></i></small> 
-                      <small class="mx-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Exhibitor" aria-label="Exhibior">+ {{$eventoi -> exhibitors}}K <i class="bi bi-person-workspace"></i></small>
-                    </div>
-                  </div>
-                </div>
-
-                <small class="text-bolder d-none d-sm-block"> 
-                  <i class="bi bi-calendar3"></i>
-                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y ')}}
-                  @else
-                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('D, d M Y')}}
-                  @endif 
-                </small>
-
-                <small class="d-none d-sm-block">
-                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> venue))}}, <br> {{ucwords(trans($eventoi -> city))}}
-                </small>
-
-                <small class="text-bolder d-lg-none">
-                  <i class="bi bi-calendar3"></i>
-                  @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
-                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                  @else
-                    {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
-                  @endif 
-                </small><br>
-                
-                <small class="d-lg-none">
-                  <i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}
-                </small>
-              </div>
 
               <!-- Event Name (Separate from Image) -->
               <div class="event-title">
@@ -300,7 +231,7 @@
 
             </div>
             
-            {{ ucwords(trans($eventoi->eventname)) }}
+           
             @endforeach
           </div>
 
