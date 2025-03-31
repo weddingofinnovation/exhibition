@@ -187,9 +187,9 @@
             }
 
             .event-title {
-            text-align: center;
+            /* text-align: center;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: bold; */
             margin-top: 5px; /* Space between image and text */
             /* z-index: 2; */
             }
