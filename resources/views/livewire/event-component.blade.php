@@ -406,7 +406,7 @@
               </style>
 
             @php 
-              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','desc')->limit(7)->get();
+              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(7)->get();
             @endphp
 
               @foreach($venueoption as $franchise)
