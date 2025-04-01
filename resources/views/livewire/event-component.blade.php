@@ -405,15 +405,14 @@
                 }
               </style>
 
-            @php 
-              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(7)->get();
-            @endphp
+              @php 
+                $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(7)->get();
+              @endphp
 
               @foreach($venueoption as $franchise)
-                <div class="featured-companies">
-                
-                {{$franchise->venue}}
-                </div>
+                <a class="featured-companies border-1 border-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                  {{$franchise->venue}}
+                </a>
               @endforeach
             </div>
 
