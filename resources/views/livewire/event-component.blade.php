@@ -405,17 +405,16 @@
                 }
               </style>
 
-              <div class="featured-companies">
-                  @foreach ($getnamecategoryresult as $categ) 
-                    @php
-                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-                    @endphp
-                    
-                    @foreach($findcountevent as $finderlo)
-                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-                    @endforeach
-                  @endforeach
-              </div>
+            @php 
+              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','desc')->get();
+            @endphp
+
+              @foreach($venueoption as $franchise)
+                <div class="featured-companies">
+                <a class="text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                {{$franchise->venue}}</a>
+                </div>
+              @endforeach
             </div>
 
             <!-- Popular Categories -->

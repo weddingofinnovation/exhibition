@@ -2559,7 +2559,7 @@
           @php 
             $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','desc')->get();
           @endphp
-          @foreach($venueoption as $franchise )
+          @foreach($venueoption as $franchise)
             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col  pr-0">
                     <!-- <div class="h4 fw-light mb-0"> Te</div> 
