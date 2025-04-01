@@ -421,10 +421,16 @@
             <!-- Popular Categories -->
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
-                <div class="category-item">
-                  
-                    <i class="bi bi-bank"></i> Banking
-                </div>
+              @php
+                $allcategory = DB::table('categories')->get();
+              @endphp
+
+            @foreach($allcategory as $category)
+                <a class="category-item" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                    <i class="bi bi-bank"></i> {{$category -> industry}}
+              </a>
+            @endforeach
+
                 <div class="category-item">
                   
                     <i class="bi bi-house"></i> Work From Home
