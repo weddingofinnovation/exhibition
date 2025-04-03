@@ -316,11 +316,17 @@
             .category-item:hover {
                 background-color:rgb(8, 8, 8);
             }
+
+            .category-item a {
+                color:rgb(15, 15, 15);
+            }
+            
             .category-item i {
                 margin-right: 8px;
                 color: #c47151;
             }
 
+            
             
         </style>
 
@@ -407,7 +413,7 @@
               </style>
 
               @php 
-                $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(7)->get();
+                $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
               @endphp
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
