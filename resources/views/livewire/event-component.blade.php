@@ -317,10 +317,7 @@
                 background-color:rgb(8, 8, 8);
             }
 
-            .category-item a {
-                color:rgb(15, 15, 15);
-            }
-            
+           
             .category-item i {
                 margin-right: 8px;
                 color: #c47151;
@@ -417,7 +414,7 @@
               @endphp
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
-                    <a class="category-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                    <a class="category-item text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
                       {{$franchise->venue}}
                     </a>
                   @endforeach
@@ -432,7 +429,7 @@
               @endphp
 
               @foreach($allcategory as $category)
-                  <a class="category-item" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                  <a class="category-item text-dark" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
                       <i class="bi bi-bank"></i> {{$category -> industry}}
                   </a>
               @endforeach
