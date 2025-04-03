@@ -411,7 +411,7 @@
               @endphp
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
-                    <a class="border-1 border-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                    <a class="category-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
                       {{$franchise->venue}}
                     </a>
                   @endforeach
