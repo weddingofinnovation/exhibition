@@ -299,13 +299,14 @@
                 gap: 15px;
                 padding: 20px;
             }
+
             .category-item {
                 display: flex;
                 align-items: center;
                 padding: 10px 15px;
                 border: 1px solid #ddd;
                 border-radius: 8px;
-                background-color: #FCEAE4;
+                /* background-color: #FCEAE4; */
                 font-size: 14px;
                 font-weight: 500;
                 white-space: nowrap;
@@ -313,7 +314,7 @@
                 transition: background 0.3s ease-in-out;
             }
             .category-item:hover {
-                background-color: #FAD4C0;
+                background-color:rgb(8, 8, 8);
             }
             .category-item i {
                 margin-right: 8px;
@@ -327,7 +328,7 @@
             <!-- Popular Companies -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular Industries</h5>
-                <div class="featured-companies">
+                <div class="featured-companies ">
                   @foreach ($getnamecategoryresult as $categ) 
                     @php
                       $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
@@ -343,8 +344,8 @@
             <!-- Popular City -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular City</h5>
-                <div class="featured-companies">
-                <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
+                <div class="featured-companies border-1 border-dark">
+                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
                     <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
                   </a>
                   <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
@@ -423,11 +424,11 @@
                 $allcategory = DB::table('categories')->get();
               @endphp
 
-            @foreach($allcategory as $category)
-                <a class="category-item" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                    <i class="bi bi-bank"></i> {{$category -> industry}}
-              </a>
-            @endforeach
+              @foreach($allcategory as $category)
+                  <a class="category-item" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                      <i class="bi bi-bank"></i> {{$category -> industry}}
+                  </a>
+              @endforeach
 
                 <div class="category-item">
                   
