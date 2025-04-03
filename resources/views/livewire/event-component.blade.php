@@ -269,15 +269,8 @@
             </div>
         </div>
 
-
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
-
-        
-        
-
-        
-        
      
         <style>
             .featured-companies {
@@ -430,54 +423,14 @@
 
               @foreach($allcategory as $category)
                   <span class="category-badge" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                      <i class="bi bi-bank"></i> {{$category -> industry}}
-              </span>
+                       {{$category -> industry}}
+                  </span>
               @endforeach
 
-                <div class="category-item">
-                  
+                <!-- <div class="category-item">  
                     <i class="bi bi-house"></i> Work From Home
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-person"></i> HR
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-briefcase"></i> Sales
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-calculator"></i> Accounting
-                </div>
-
-                <div class="category-item">
-                  
-                    <i class="bi bi-headset"></i> Customer Support
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-calendar-event"></i> Event Management
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-laptop"></i> IT
-                </div>
-                <div class="category-item">
-                  
-                    <i class="bi bi-code-slash"></i> SQL
-                </div>
-                <div class="category-item">
-                    <i class="bi bi-terminal"></i>
-                    Oracle
-                </div>
-                <div class="category-item">
-                    <i class="bi bi-palette"></i> Graphic Design
-                </div>
-                <div class="category-item"> 
-                    <i class="bi bi-megaphone"></i>
-                  Digital Marketing
-                </div>
+                </div> -->
+                
             </div>
         </div>
 
