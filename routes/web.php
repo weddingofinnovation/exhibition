@@ -252,7 +252,7 @@ Route::get('/{slug}/reviews', AwardComponent::class)->name('business.award');
 
 
 //magazine Detail
-Route::get('/magazine/{slug}', MagazineComponent::class)->name('business.magazine');
+Route::get('/magazine/{slug}', https://exhibition.org.in/::class)->name('business.magazine');
 
 //categorie
 
