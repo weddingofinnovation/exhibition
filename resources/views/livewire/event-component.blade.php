@@ -414,9 +414,9 @@
               @endphp
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
-                    <a class="category-item text-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                    <span class="category-badge" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
                       {{$franchise->venue}}
-                    </a>
+              </span>
                   @endforeach
               </div>
             </div>
@@ -429,9 +429,9 @@
               @endphp
 
               @foreach($allcategory as $category)
-                  <a class="category-item text-dark" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                  <span class="category-badge" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
                       <i class="bi bi-bank"></i> {{$category -> industry}}
-                  </a>
+              </span>
               @endforeach
 
                 <div class="category-item">
