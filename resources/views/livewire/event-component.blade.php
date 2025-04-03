@@ -344,7 +344,7 @@
             <!-- Popular City -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular City</h5>
-                <div class="featured-companies border-1 border-dark">
+                <div class="featured-companies">
                   <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
                     <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
                   </a>
@@ -409,12 +409,13 @@
               @php 
                 $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(7)->get();
               @endphp
-
-              @foreach($venueoption as $franchise)
-                <a class="featured-companies border-1 border-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
-                  {{$franchise->venue}}
-                </a>
-              @endforeach
+              <div class="featured-companies">
+                  @foreach($venueoption as $franchise)
+                    <a class="border-1 border-dark" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+                      {{$franchise->venue}}
+                    </a>
+                  @endforeach
+              </div>
             </div>
 
             <!-- Popular Categories -->
