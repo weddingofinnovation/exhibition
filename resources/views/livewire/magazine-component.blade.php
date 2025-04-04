@@ -15,26 +15,34 @@
             padding: 100px 0;
             text-align: center;
         }
+
         .btn-primary {
             background-color: #e60012;
             border: none;
         }
+
+        .hero-text-primary {
+          color: #e60012;
+        }
+
         .speakers img {
             width: 100px;
             border-radius: 50%;
         }
+
         .navbar-brand {
             font-weight: 700;
             font-size: 24px;
             text-transform: uppercase;
         }
+        
         .navbar-nav .nav-link {
             font-size: 16px;
             font-weight: 500;
         }
     </style>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light font-poppins">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light font-poppins">
         <div class="container">
             <a class="navbar-brand" href="#">For All Summit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -50,7 +58,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
                     <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
                     
-                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary py-3" href="#register">Register</a></li>
                 </ul>
             </div>
         </div>
@@ -61,7 +69,7 @@
           <div class="row">
             <div class="text-left">
               <h1 class="text-primary">Great Exhibition To Exhibit</h1>
-              <p class="text-dark fw-bold fs-md display-1">For all Summit</p>
+              <div class="text-dark fw-bold fs-md h1">For all Summit</div>
               <p class="text-dark fw-bold fs-md">Mumbai</p>
               <p class="text-dark fw- bold">India's largest and most sought-after workplace culture Summit</p>
               <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
