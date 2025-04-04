@@ -85,10 +85,9 @@
     </section>
 
     <style>
-          .custom-grid {
+      .custom-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          border: 2px solid black;
           margin-top: 30px;
       }
 
@@ -98,12 +97,14 @@
           border-bottom: 2px solid black;
       }
 
+      /* Remove right border for the last column items */
       .grid-item:nth-child(3n) {
-          border-right: none; /* No right border on every 3rd item */
+          border-right: none;
       }
 
+      /* Remove bottom border for the last row items */
       .grid-item:nth-last-child(-n+3) {
-          border-bottom: none; /* No bottom border for the last row */
+          border-bottom: none;
       }
 
     </style>
