@@ -108,12 +108,12 @@
       }
 
       #sponsorship-benefits h2 {
-          font-weight: 700;
+          font-weight: 900;
           color: #333;
       }
 
       #sponsorship-benefits h4 {
-          font-weight: 500;
+          font-weight: 700;
           color: #333;
       }
     </style>
