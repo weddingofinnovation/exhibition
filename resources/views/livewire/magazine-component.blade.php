@@ -86,9 +86,15 @@
 
     <style>
           #sponsorship-benefits h2 {
-        font-weight: 700;
-        color: #333;
-        }
+            font-weight: 700;
+            color: #333;
+            }
+
+            #sponsorship-benefits h4 {
+            font-weight: 400;
+            color: #333;
+            }
+
         #sponsorship-benefits .border {
             background-color: #fff;
             transition: transform 0.3s ease-in-out;
@@ -103,7 +109,7 @@
     <section id="sponsorship-benefits" class="py-5 font-poppins">
     <div class="container text-center">
         <h2 class="mb-4">Sponsorship Benefits</h2>
-        <div class="row gx-0s">
+        <div class="row gx-0 gy-0">
             <div class="col-12 col-md-4 mb-0">
                 <div class="p-4">
                     <h4>Showcase Your Thought Leadership</h4>
@@ -111,7 +117,7 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border-top-0   border-dark">
+                <div class="p-4   border border-top-0 border-dark">
                     <h4>Exhibit & Drive Engagement</h4>
                     <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
                 </div>
@@ -125,37 +131,37 @@
 
 
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border-start-0">
+                <div class="p-4 border border-start-0 border-dark">
                     <h4>Grow Your Business</h4>
                     <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4">
+                <div class="p-4 ">
                     <h4>Elevate Your Brand</h4>
                     <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4  border-end border-dark">
+                <div class="p-4  border border-end-0 border-dark">
                     <h4>Build Long-Term Relationships</h4>
                     <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border-top border-dark">
+                <div class="p-4">
                     <h4>Grow Your Business</h4>
                     <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border-top border-dark">
+                <div class="p-4   border border-bottom-0 border-dark">
                     <h4>Elevate Your Brand</h4>
                     <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border-top border-dark">
+                <div class="p-4">
                     <h4>Build Long-Term Relationships</h4>
                     <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
                 </div>
