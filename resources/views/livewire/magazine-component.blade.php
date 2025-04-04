@@ -60,9 +60,9 @@
         <div class="container">
           <div class="row">
             <div class="text-left">
-              <h1>Great Exhibition To Exhibit</h1>
-              <p class="text-dark fw-lg fs-md">For all Summit</p>
-              <p class="text-dark fw-bold">Mumbai</p>
+              <h1 class="text-primary">Great Exhibition To Exhibit</h1>
+              <p class="text-dark fw-bold fs-md display-1">For all Summit</p>
+              <p class="text-dark fw-bold fs-md">Mumbai</p>
               <p class="text-dark fw- bold">India's largest and most sought-after workplace culture Summit</p>
               <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
               <a href="#register" class="btn btn-primary btn-lg">Register for 2026 Summit</a>
