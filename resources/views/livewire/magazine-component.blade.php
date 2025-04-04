@@ -93,8 +93,8 @@
 
       .grid-item {
           padding: 20px;
-          border-right: 2px solid black;
-          border-bottom: 2px solid black;
+          border-right: 1px solid black;
+          border-bottom: 1px solid black;
       }
 
       /* Remove right border for the last column items */
@@ -108,12 +108,12 @@
       }
 
       #sponsorship-benefits h2 {
-          font-weight: 900;
+          font-weight: 1200;
           color: #333;
       }
 
       #sponsorship-benefits h4 {
-          font-weight: 700;
+          font-weight: 900;
           color: #333;
       }
     </style>
@@ -125,31 +125,31 @@
             <div class="custom-grid">
                 <div class="grid-item">
                     <h4>Showcase Thought Leadership</h4>
-                    <p>Position your brand among top CXOs and HR leaders.</p>
+                    <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Exhibit & Drive Engagement</h4>
-                    <p>Showcase your solutions and create engaging experiences.</p>
+                    <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Connect with Decision-Makers</h4>
-                    <p>Engage with 1,400+ attendees, including 53% CXOs.</p>
+                    <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Grow Your Business</h4>
-                    <p>Accelerate growth by connecting with the right audience.</p>
+                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Elevate Your Brand</h4>
-                    <p>Boost your brand’s visibility across multiple platforms.</p>
+                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Build Long-Term Relationships</h4>
-                    <p>Network and build industry connections for future growth.</p>
+                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Leverage Market Insights</h4>
-                    <p>Gain real-time data and insights from industry experts.</p>
+                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
                 </div>
                 <div class="grid-item">
                     <h4>Exclusive Networking</h4>
@@ -157,7 +157,7 @@
                 </div>
                 <div class="grid-item">
                     <h4>Boost Your ROI</h4>
-                    <p>Maximize your marketing investment with a strategic presence.</p>
+                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
                 </div>
             </div>
         </div>
