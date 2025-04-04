@@ -107,68 +107,67 @@
    
 
     <section id="sponsorship-benefits" class="py-5 font-poppins">
-    <div class="container text-center">
-        <h2 class="mb-4">Sponsorship Benefits</h2>
-        <div class="row gx-0 gy-0">
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4">
-                    <h4>Showcase Your Thought Leadership</h4>
-                    <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
+        <div class="container text-center">
+            <h2 class="mb-4">Sponsorship Benefits</h2>
+            <div class="row gx-0 gy-0 border border-dark">
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-bottom border-dark">
+                        <h4>Showcase Your Thought Leadership</h4>
+                        <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border border-top-0 border-dark">
-                    <h4>Exhibit & Drive Engagement</h4>
-                    <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-bottom border-dark">
+                        <h4>Exhibit & Drive Engagement</h4>
+                        <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   ">
-                    <h4>Connect with Decision-Makers</h4>
-                    <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-bottom border-dark">
+                        <h4>Connect with Decision-Makers</h4>
+                        <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4 border border-start-0 border-dark">
-                    <h4>Grow Your Business</h4>
-                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-bottom border-dark">
+                        <h4>Grow Your Business</h4>
+                        <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4 ">
-                    <h4>Elevate Your Brand</h4>
-                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-bottom border-dark">
+                        <h4>Elevate Your Brand</h4>
+                        <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4  border border-end-0 border-dark">
-                    <h4>Build Long-Term Relationships</h4>
-                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-bottom border-dark">
+                        <h4>Build Long-Term Relationships</h4>
+                        <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4">
-                    <h4>Grow Your Business</h4>
-                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-dark">
+                        <h4>Leverage Market Insights</h4>
+                        <p>Gain access to real-time data and insights from industry experts and decision-makers.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4   border border-bottom-0 border-dark">
-                    <h4>Elevate Your Brand</h4>
-                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4 border-end border-dark">
+                        <h4>Exclusive Networking</h4>
+                        <p>Participate in VIP networking sessions and one-on-one business meetings.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-4 mb-0">
-                <div class="p-4">
-                    <h4>Build Long-Term Relationships</h4>
-                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                <div class="col-12 col-md-4">
+                    <div class="p-4">
+                        <h4>Boost Your ROI</h4>
+                        <p>Maximize returns on your marketing investment with a strategic presence at the summit.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
 
 
     <section id="speakers" class="py-5 font-poppins">
