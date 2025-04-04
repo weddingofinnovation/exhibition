@@ -105,37 +105,56 @@
         <h2 class="mb-4">Sponsorship Benefits</h2>
         <div class="row">
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-bottom border-dark">
                     <h4>Showcase Your Thought Leadership</h4>
                     <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-bottom border-dark">
                     <h4>Exhibit & Drive Engagement</h4>
                     <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-bottom border-dark">
                     <h4>Connect with Decision-Makers</h4>
                     <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
                 </div>
             </div>
+
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-end border-dark">
                     <h4>Grow Your Business</h4>
                     <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-bottom border-dark">
                     <h4>Elevate Your Brand</h4>
                     <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
                 </div>
             </div>
             <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
+                <div class="p-4 border  border-end border-dark">
+                    <h4>Build Long-Term Relationships</h4>
+                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border  border-top border-dark">
+                    <h4>Grow Your Business</h4>
+                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border  border-top border-dark">
+                    <h4>Elevate Your Brand</h4>
+                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border  border-top border-dark">
                     <h4>Build Long-Term Relationships</h4>
                     <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
                 </div>
