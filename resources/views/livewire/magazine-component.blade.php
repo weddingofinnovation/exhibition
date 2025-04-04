@@ -49,7 +49,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto text-uppercase">
                     <li class="nav-item"><a class="nav-link" href="#about">2025 theme</a></li>
                     <li class="nav-item"><a class="nav-link" href="#speakers">2025 Speakers</a></li>
                     <li class="nav-item"><a class="nav-link" href="#register">Client Feedback</a></li>
@@ -58,7 +58,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
                     <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
                     
-                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary py-3" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary my-2" href="#register">Register</a></li>
                 </ul>
             </div>
         </div>
@@ -68,12 +68,12 @@
         <div class="container">
           <div class="row">
             <div class="text-left">
-              <h2 class="text-primary hero-text-primary">Great Exhibition To Exhibit</h2>
+              <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
               <div class="text-dark fw-bold display-1">For all Summit</div>
-              <div class="text-dark fw-bold h3">Mumbai</div>
-              <p class="text-dark fw- bold">India's largest and most sought-after workplace culture Summit</p>
+              <div class="text-dark fw-bold h3">India</div>
+              <p class="text-dark fw- bold lead">India's largest and most sought-after workplace culture Summit</p>
               <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
-              <a href="#register" class="btn btn-primary btn-lg">Register for 2026 Summit</a>
+              <a href="#register" class="btn btn-primary btn-lg text-uppercase">Register for 2026 Summit</a>
             </div>
             <div class="clas">
 
