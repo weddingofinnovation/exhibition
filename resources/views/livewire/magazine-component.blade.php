@@ -50,7 +50,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
                     <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
                     
-                    <li class="nav-item"><a class="btn btn-sm" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-primary" href="#register">Register</a></li>
                 </ul>
             </div>
         </div>
@@ -58,9 +58,13 @@
 
     <section class="hero font-poppins">
         <div class="container">
-            <h1>Welcome to the For All Summit</h1>
-            <p>Join us for an inspiring event filled with thought leaders and innovators.</p>
-            <a href="#register" class="btn btn-primary">Register Now</a>
+            <h1>Great Exhibition To Exhibit</h1>
+            <p>For all Summit</p>
+            <p>Mumbai</p>
+
+            <p>India's largest and most sought-after workplace culture Summit</p>
+            <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
+            <a href="#register" class="btn btn-primary btn-lg">Register for 2026 Summit</a>
         </div>
     </section>
 
