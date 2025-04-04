@@ -44,7 +44,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light font-poppins">
         <div class="container">
-            <a class="navbar-brand text-uppercase" href="#">For <br>All<br> Summit</a>
+            <a class="navbar-brand text-uppercase fs-5 lh-1" href="#">For <br>All<br> Summit</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -71,17 +71,79 @@
               <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
               <div class="text-dark fw-bold display-1">For all Summit</div>
               <div class="text-dark fw-bold h3 text-uppercase">India</div>
-              <p class="text-dark fw- bold lead">India's largest and most sought-after workplace culture Summit</p>
+
+              <p class="text-dark fw- bold pt-5">India's largest and most sought-after workplace culture Summit</p>
               <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
               <a href="#register" class="btn btn-primary btn-lg text-uppercase">Register for 2026 Summit</a>
             </div>
-            <div class="clas">
+            <div class="">
 
             </div>
           </div>
             
         </div>
     </section>
+
+    <style>
+          #sponsorship-benefits h2 {
+        font-weight: 700;
+        color: #333;
+        }
+        #sponsorship-benefits .border {
+            background-color: #fff;
+            transition: transform 0.3s ease-in-out;
+        }
+        #sponsorship-benefits .border:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+   
+
+    <section id="sponsorship-benefits" class="py-5 font-poppins">
+    <div class="container text-center">
+        <h2 class="mb-4">Sponsorship Benefits</h2>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Showcase Your Thought Leadership</h4>
+                    <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Exhibit & Drive Engagement</h4>
+                    <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Connect with Decision-Makers</h4>
+                    <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Grow Your Business</h4>
+                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Elevate Your Brand</h4>
+                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="p-4 border rounded shadow-sm">
+                    <h4>Build Long-Term Relationships</h4>
+                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <section id="speakers" class="py-5 font-poppins">
         <div class="container text-center">
