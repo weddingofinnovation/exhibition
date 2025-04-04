@@ -85,88 +85,74 @@
     </section>
 
     <style>
-          #sponsorship-benefits h2 {
-            font-weight: 700;
-            color: #333;
-            }
+          .custom-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          border: 2px solid black;
+          margin-top: 30px;
+      }
 
-            #sponsorship-benefits h4 {
-            font-weight: 400;
-            color: #333;
-            }
+      .grid-item {
+          padding: 20px;
+          border-right: 2px solid black;
+          border-bottom: 2px solid black;
+      }
 
-        #sponsorship-benefits .border {
-            background-color: #fff;
-            transition: transform 0.3s ease-in-out;
-        }
-        #sponsorship-benefits .border:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+      .grid-item:nth-child(3n) {
+          border-right: none; /* No right border on every 3rd item */
+      }
+
+      .grid-item:nth-last-child(-n+3) {
+          border-bottom: none; /* No bottom border for the last row */
+      }
+
     </style>
    
 
     <section id="sponsorship-benefits" class="py-5 font-poppins">
         <div class="container text-center">
             <h2 class="mb-4">Sponsorship Benefits</h2>
-            <div class="row gx-0 gy-0 border border-dark">
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-bottom border-dark">
-                        <h4>Showcase Your Thought Leadership</h4>
-                        <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
-                    </div>
+            <div class="custom-grid">
+                <div class="grid-item">
+                    <h4>Showcase Thought Leadership</h4>
+                    <p>Position your brand among top CXOs and HR leaders.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-bottom border-dark">
-                        <h4>Exhibit & Drive Engagement</h4>
-                        <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Exhibit & Drive Engagement</h4>
+                    <p>Showcase your solutions and create engaging experiences.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-bottom border-dark">
-                        <h4>Connect with Decision-Makers</h4>
-                        <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Connect with Decision-Makers</h4>
+                    <p>Engage with 1,400+ attendees, including 53% CXOs.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-bottom border-dark">
-                        <h4>Grow Your Business</h4>
-                        <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Grow Your Business</h4>
+                    <p>Accelerate growth by connecting with the right audience.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-bottom border-dark">
-                        <h4>Elevate Your Brand</h4>
-                        <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Elevate Your Brand</h4>
+                    <p>Boost your brand’s visibility across multiple platforms.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-bottom border-dark">
-                        <h4>Build Long-Term Relationships</h4>
-                        <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Build Long-Term Relationships</h4>
+                    <p>Network and build industry connections for future growth.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-dark">
-                        <h4>Leverage Market Insights</h4>
-                        <p>Gain access to real-time data and insights from industry experts and decision-makers.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Leverage Market Insights</h4>
+                    <p>Gain real-time data and insights from industry experts.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4 border-end border-dark">
-                        <h4>Exclusive Networking</h4>
-                        <p>Participate in VIP networking sessions and one-on-one business meetings.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Exclusive Networking</h4>
+                    <p>Participate in VIP networking and one-on-one meetings.</p>
                 </div>
-                <div class="col-12 col-md-4">
-                    <div class="p-4">
-                        <h4>Boost Your ROI</h4>
-                        <p>Maximize returns on your marketing investment with a strategic presence at the summit.</p>
-                    </div>
+                <div class="grid-item">
+                    <h4>Boost Your ROI</h4>
+                    <p>Maximize your marketing investment with a strategic presence.</p>
                 </div>
             </div>
         </div>
     </section>
+
 
 
 
