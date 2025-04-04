@@ -121,8 +121,8 @@
 
     <section id="sponsorship-benefits" class="py-5 font-poppins">
         <div class="container text-center">
-            <h2 class="mb-4">Sponsorship Benefits</h2>
-            <div class="custom-grid">
+            <h2 class="mb-5">Sponsorship Benefits</h2>
+            <div class="custom-grid mt-5">
                 <div class="grid-item">
                     <h4>Showcase Thought Leadership</h4>
                     <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
