@@ -156,8 +156,7 @@
                     <p>Participate in VIP networking and one-on-one meetings.</p>
                 </div>
                 <div class="grid-item">
-                    <h4>Boost Your ROI</h4>
-                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
+                    
                 </div>
             </div>
         </div>
