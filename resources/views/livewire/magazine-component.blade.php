@@ -3,8 +3,92 @@
 @section('page_keyword', 'the exhibition network, Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
   <main>
-    
-    
+
+    <style>
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?conference') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #e60012;
+            border: none;
+        }
+        .speakers img {
+            width: 100px;
+            border-radius: 50%;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .navbar-nav .nav-link {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    </style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light font-poppins">
+        <div class="container">
+            <a class="navbar-brand" href="#">For All Summit</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero font-poppins">
+        <div class="container">
+            <h1>Welcome to the For All Summit</h1>
+            <p>Join us for an inspiring event filled with thought leaders and innovators.</p>
+            <a href="#register" class="btn btn-primary">Register Now</a>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-5 font-poppins">
+        <div class="container text-center">
+            <h2>Our Speakers</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>John Doe</h5>
+                    <p>CEO, TechCorp</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>Jane Smith</h5>
+                    <p>Founder, InnovateX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="bg-light py-5 font-poppins">
+        <div class="container text-center">
+            <h2>Register Now</h2>
+            <form class="mt-3">
+                <input type="text" class="form-control mb-2" placeholder="Your Name">
+                <input type="email" class="form-control mb-2" placeholder="Your Email">
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
+
+
+
     <section class="section">
       <div class="container">
         <div class="row">                              
