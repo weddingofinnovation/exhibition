@@ -85,64 +85,58 @@
     </section>
 
     <style>
-          #sponsorship-benefits h2 {
-        font-weight: 700;
-        color: #333;
-        }
-        #sponsorship-benefits .border {
-            background-color: #fff;
-            transition: transform 0.3s ease-in-out;
-        }
-        #sponsorship-benefits .border:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
+       #sponsorship-benefits h2 {
+          font-weight: 700;
+          color: #333;
+      }
+      #sponsorship-benefits .border-top {
+          border-top: 2px solid #ccc; /* Light grey line between sections */
+      }
+      #sponsorship-benefits .border-bottom {
+          border-bottom: 2px solid #ccc; /* Light grey line at the bottom */
+      }
+      #sponsorship-benefits h4 {
+          font-weight: 600;
+          margin-bottom: 10px;
+      }
+      #sponsorship-benefits p {
+          font-size: 16px;
+          color: #666;
+      }
+
     </style>
    
 
-    <section id="sponsorship-benefits" class="py-5 font-poppins">
-    <div class="container text-center">
-        <h2 class="mb-4">Sponsorship Benefits</h2>
-        <div class="row">
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Showcase Your Thought Leadership</h4>
-                    <p>Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Exhibit & Drive Engagement</h4>
-                    <p>Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Connect with Decision-Makers</h4>
-                    <p>Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Grow Your Business</h4>
-                    <p>Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Elevate Your Brand</h4>
-                    <p>Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
-                </div>
-            </div>
-            <div class="col-12 col-md-4 mb-4">
-                <div class="p-4 border rounded shadow-sm">
-                    <h4>Build Long-Term Relationships</h4>
-                    <p>Network and build long-lasting industry connections for future collaborations and growth.</p>
-                </div>
-            </div>
+   <section id="sponsorship-benefits" class="py-5 font-poppins">
+    <div class="container">
+        <h2 class="text-center mb-4">Sponsorship Benefits</h2>
+        <div class="border-top pt-4">
+            <h4 class="text-center">Showcase Your Thought Leadership</h4>
+            <p class="text-center">Position your brand as a thought leader in workplace culture among top CXOs and HR leaders.</p>
+        </div>
+        <div class="border-top pt-4">
+            <h4 class="text-center">Exhibit & Drive Engagement</h4>
+            <p class="text-center">Showcase your solutions and create customized experiences with stalls, polls, and activations that foster meaningful connections.</p>
+        </div>
+        <div class="border-top pt-4">
+            <h4 class="text-center">Connect with Decision-Makers</h4>
+            <p class="text-center">Engage directly with 1,400+ attendees, including 53% CXOs and 47% Senior HR Professionals.</p>
+        </div>
+        <div class="border-top pt-4">
+            <h4 class="text-center">Grow Your Business</h4>
+            <p class="text-center">Accelerate growth by connecting with the right audience, leveraging market-leading opportunities.</p>
+        </div>
+        <div class="border-top pt-4">
+            <h4 class="text-center">Elevate Your Brand</h4>
+            <p class="text-center">Boost your brand’s visibility with prominent exposure across diverse platforms and networking opportunities.</p>
+        </div>
+        <div class="border-top border-bottom pt-4 pb-4">
+            <h4 class="text-center">Build Long-Term Relationships</h4>
+            <p class="text-center">Network and build long-lasting industry connections for future collaborations and growth.</p>
         </div>
     </div>
 </section>
+
 
 
     <section id="speakers" class="py-5 font-poppins">
