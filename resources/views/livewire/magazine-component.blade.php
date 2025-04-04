@@ -107,6 +107,15 @@
           border-bottom: none;
       }
 
+      #sponsorship-benefits h2 {
+          font-weight: 700;
+          color: #333;
+      }
+
+      #sponsorship-benefits h4 {
+          font-weight: 500;
+          color: #333;
+      }
     </style>
    
 
