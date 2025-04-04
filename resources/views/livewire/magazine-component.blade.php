@@ -103,7 +103,7 @@
     <section id="sponsorship-benefits" class="py-5 font-poppins">
     <div class="container text-center">
         <h2 class="mb-4">Sponsorship Benefits</h2>
-        <div class="row">
+        <div class="row gx-0s">
             <div class="col-12 col-md-4 mb-0">
                 <div class="p-4">
                     <h4>Showcase Your Thought Leadership</h4>
