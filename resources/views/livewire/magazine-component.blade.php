@@ -50,7 +50,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
                     <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
                     
-                    <li class="nav-item"><a class="btn btn-sm btn-primary" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary" href="#register">Register</a></li>
                 </ul>
             </div>
         </div>
@@ -58,12 +58,20 @@
 
     <section class="hero font-poppins">
         <div class="container">
-            <h1>Great Exhibition To Exhibit</h1>
-            <p class="text-dark fw-lg fs-md">For all Summit</p>
-            <p class="text-dark fw-bold">Mumbai</p>
-            <p class="text-dark fw- bold">India's largest and most sought-after workplace culture Summit</p>
-            <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
-            <a href="#register" class="btn btn-primary btn-lg">Register for 2026 Summit</a>
+          <div class="row">
+            <div class="text-left">
+              <h1>Great Exhibition To Exhibit</h1>
+              <p class="text-dark fw-lg fs-md">For all Summit</p>
+              <p class="text-dark fw-bold">Mumbai</p>
+              <p class="text-dark fw- bold">India's largest and most sought-after workplace culture Summit</p>
+              <!-- <p>Join us for an inspiring event filled with thought leaders and innovators.</p> -->
+              <a href="#register" class="btn btn-primary btn-lg">Register for 2026 Summit</a>
+            </div>
+            <div class="clas">
+
+            </div>
+          </div>
+            
         </div>
     </section>
 
