@@ -42,9 +42,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">2025 theme</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">2025 Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">Client Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Why Attend</a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
+                    
+                    <li class="nav-item"><a class="btn btn-sm" href="#register">Register</a></li>
                 </ul>
             </div>
         </div>
