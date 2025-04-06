@@ -121,7 +121,8 @@
 
     <section id="sponsorship-benefits" class="py-5 font-poppins">
         <div class="container text-center">
-            <h2 class="mb-5">Sponsorship Benefits</h2>
+        <h2 class="agenda-title mb-3 mb-md-0">Sponsorship Benefits</h2>
+            <!-- <h2 class="mb-5">Sponsorship Benefits</h2> -->
             <div class="custom-grid mt-5">
                 <div class="grid-item">
                     <h4>Showcase Thought Leadership</h4>
@@ -317,8 +318,27 @@
 
     <section id="speakers" class="py-5 font-poppins">
         <div class="container text-center">
-        <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
-            <h2>Our Speakers</h2>
+        <h2 class="agenda-title mb-3 mb-md-0">Our Partners</h2>
+            <h2></h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>John Doe</h5>
+                    <p>CEO, TechCorp</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>Jane Smith</h5>
+                    <p>Founder, InnovateX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-5 font-poppins">
+        <div class="container text-center">
+        <h2 class="agenda-title mb-3 mb-md-0">Our Speakers</h2>
+            <h2></h2>
             <div class="row mt-4">
                 <div class="col-md-4">
                     <img src="https://via.placeholder.com/100" alt="Speaker">
@@ -375,8 +395,146 @@
         </div>
     </section>
 
-    
+    <style>
+        .why-attend-section {
+        background-color: #fff;
+        font-family: 'GilroySemiBold', sans-serif;
+        }
 
+        .section-label {
+        color: #FF1628;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        }
+
+        .main-title {
+        font-size: 48px;
+        font-weight: 600;
+        color: #11131C;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        }
+
+        .description {
+        font-size: 16px;
+        color: #11131C;
+        line-height: 1.6;
+        }
+
+        .feature-block {
+        margin-bottom: 24px;
+        }
+
+        .feature-title {
+        color: #FF1628;
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        }
+
+        .feature-text {
+        font-size: 16px;
+        color: #11131C;
+        line-height: 1.6;
+        }
+
+    </style>
+
+    <section class="why-attend-section py-5">
+        <div class="container">
+            <div class="row">
+            <!-- Left Content -->
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h6 class="section-label">WHY ATTEND</h6>
+                <h2 class="main-title">
+                From promise to <br />
+                progress Change <br />
+                happens here.
+                </h2>
+                <p class="description">
+                The Great Place To Work® For All™ Summit 2025 is the definitive company culture and leadership event of 1000+ leaders from across 20+ industries on their journey to create Great workplaces for all.
+                </p>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="feature-block mb-4">
+                <h6 class="feature-title">CONNECT</h6>
+                <p class="feature-text">Join an energizing community of visionary leaders of award-winning great workplaces, Great Place To Work culture experts, and thought leaders in HR and across industries.</p>
+                </div>
+                <div class="feature-block mb-4">
+                <h6 class="feature-title">INNOVATE</h6>
+                <p class="feature-text">Learn how the most innovative organizations are creating new solutions and strategies to meet the changing needs of their people and business in the most challenging times.</p>
+                </div>
+                <div class="feature-block">
+                <h6 class="feature-title">LEAD</h6>
+                <p class="feature-text">Transform yourself into a better and more inspired leader. You’ll return with a strengthened...</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="speakers" class="py-5 font-poppins">
+        <div class="container text-center">
+        <h2 class="agenda-title mb-3 mb-md-0">2025 Participating organizations</h2>
+            <h2></h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>John Doe</h5>
+                    <p>CEO, TechCorp</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>Jane Smith</h5>
+                    <p>Founder, InnovateX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-5 font-poppins">
+        <div class="container text-center">
+        <h2 class="agenda-title mb-3 mb-md-0">Some of Our Past Partners</h2>
+            <h2></h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>John Doe</h5>
+                    <p>CEO, TechCorp</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>Jane Smith</h5>
+                    <p>Founder, InnovateX</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-5 font-poppins">
+        <div class="container text-center">
+        <h2 class="agenda-title mb-3 mb-md-0">Highlights</h2>
+            <h2></h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>John Doe</h5>
+                    <p>CEO, TechCorp</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://via.placeholder.com/100" alt="Speaker">
+                    <h5>Jane Smith</h5>
+                    <p>Founder, InnovateX</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="register" class="bg-light py-5 font-poppins">
         <div class="container text-center">
