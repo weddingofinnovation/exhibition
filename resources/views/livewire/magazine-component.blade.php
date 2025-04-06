@@ -89,107 +89,75 @@
         </div>
     </section>
 
-    <h2 class="text-uppercase fw-bold" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
-        For <span style="color: #FF1628;">All</span> Summit
-    </h2>
-
-
-    <div class="d-flex align-items-center gap-3">
-        <div style="width: 20px; height: 20px; background-color: #FF1628;"></div>
-        <h2 class="text-uppercase fw-bold mb-0" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
-            For All Summit
-        </h2>
-    </div>
-
-    <div class="d-flex flex-wrap gap-1" style="width: 40px;">
-        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
-        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
-        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
-        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
-    </div>
-
-    <div class="d-flex align-items-center gap-3">
-        <div>
-            <div class="d-flex flex-wrap" style="width: 36px;">
-                <div style="width: 16px; height: 16px; background-color: #FF1628;"></div>
-                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-left: 4px;"></div>
-                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-top: 4px;"></div>
-                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-left: 4px; margin-top: 4px;"></div>
-            </div>
-        </div>
-        <h2 class="text-uppercase fw-bold mb-0" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
-            For All Summit
-        </h2>
-    </div>
-
+    
 
 
 
 
      <style>
         /* Gilroy SemiBold */
-@font-face {
-  font-family: 'GilroySemiBold';
-  src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
+            @font-face {
+            font-family: 'GilroySemiBold';
+            src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+            }
 
-/* Section Styling */
-.for-all-summit-section {
-  background: linear-gradient(to right, #11131C, #1c1c1c); /* subtle gradient black */
-  color: white;
-}
+            /* Section Styling */
+            .for-all-summit-section {
+            background: linear-gradient(to right, #11131C, #1c1c1c); /* subtle gradient black */
+            color: white;
+            }
 
-/* Grid Icon Styling */
-.red-grid-icon {
-  width: 40px;
-  height: 40px;
-  gap: 4px;
-}
+            /* Grid Icon Styling */
+            .red-grid-icon {
+            width: 40px;
+            height: 40px;
+            gap: 4px;
+            }
 
-.red-grid-icon .box {
-  width: 18px;
-  height: 18px;
-  background-color: #FF1628;
-  margin: 2px;
-  animation: pulse 2s infinite ease-in-out;
-}
+            .red-grid-icon .box {
+            width: 18px;
+            height: 18px;
+            background-color: #FF1628;
+            margin: 2px;
+            animation: pulse 2s infinite ease-in-out;
+            }
 
-/* Optional Pulse Animation */
-@keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.1); opacity: 0.8; }
-}
+            /* Optional Pulse Animation */
+            @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            }
 
-/* Heading Styling */
-.for-all-heading {
-  font-family: 'GilroySemiBold', sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  color: #fff;
-}
+            /* Heading Styling */
+            .for-all-heading {
+            font-family: 'GilroySemiBold', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #fff;
+            }
 
-.for-all-heading .text-highlight {
-  color: #FF1628;
-}
+            .for-all-heading .text-highlight {
+            color: #FF1628;
+            }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .for-all-heading {
-    font-size: 32px;
-    text-align: center;
-  }
+            /* Responsive */
+            @media (max-width: 768px) {
+            .for-all-heading {
+                font-size: 32px;
+                text-align: center;
+            }
 
-  .red-grid-icon {
-    margin: 0 auto;
-  }
+            .red-grid-icon {
+                margin: 0 auto;
+            }
 
-  .d-flex.flex-md-row {
-    flex-direction: column !important;
-    text-align: center;
-  }
-}
+            .d-flex.flex-md-row {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            }
 
      </style>
     <section class="for-all-summit-section py-5">
