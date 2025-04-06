@@ -31,7 +31,7 @@
         </div>
     </section>
 
-
+    
     <style>
         .hero-section {
         background: linear-gradient(to right, #11131C, #1a1c28);
@@ -85,97 +85,6 @@
                 </div>
             </div>
 
-            </div>
-        </div>
-    </section>
-
-    
-
-
-
-
-     <style>
-        /* Gilroy SemiBold */
-            @font-face {
-            font-family: 'GilroySemiBold';
-            src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
-            font-weight: 600;
-            font-style: normal;
-            }
-
-            /* Section Styling */
-            .for-all-summit-section {
-            background: linear-gradient(to right, #11131C, #1c1c1c); /* subtle gradient black */
-            color: white;
-            }
-
-            /* Grid Icon Styling */
-            .red-grid-icon {
-            width: 40px;
-            height: 40px;
-            gap: 4px;
-            }
-
-            .red-grid-icon .box {
-            width: 18px;
-            height: 18px;
-            background-color: #FF1628;
-            margin: 2px;
-            animation: pulse 2s infinite ease-in-out;
-            }
-
-            /* Optional Pulse Animation */
-            @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            }
-
-            /* Heading Styling */
-            .for-all-heading {
-            font-family: 'GilroySemiBold', sans-serif;
-            font-size: 48px;
-            font-weight: 600;
-            color: #fff;
-            }
-
-            .for-all-heading .text-highlight {
-            color: #FF1628;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-            .for-all-heading {
-                font-size: 32px;
-                text-align: center;
-            }
-
-            .red-grid-icon {
-                margin: 0 auto;
-            }
-
-            .d-flex.flex-md-row {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            }
-
-     </style>
-    <section class="for-all-summit-section py-5">
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row align-items-center gap-4">
-            
-            <!-- Red Square Icon Grid -->
-            <div class="red-grid-icon d-flex flex-wrap">
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-                <div class="box"></div>
-            </div>
-
-            <!-- Heading -->
-            <h2 class="for-all-heading mb-0 text-uppercase">
-                For <span class="text-highlight">All</span> Summit
-            </h2>
             </div>
         </div>
     </section>
