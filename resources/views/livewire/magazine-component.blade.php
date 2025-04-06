@@ -163,7 +163,136 @@
     </section>
 
 
+    <style>
+       
+        .custom-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 30px;
+        border-collapse: collapse;
+        }
 
+        .grid-item {
+            padding: 20px;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+        /* Remove right border from last column (desktop 3-column layout) */
+        .grid-item:nth-child(3n) {
+            border-right: none;
+        }
+
+        /* Remove bottom border from last row (desktop) */
+        .grid-item:nth-last-child(-n+3) {
+            border-bottom: none;
+        }
+
+        /* Responsive for tablets: 2 columns */
+        @media (max-width: 992px) {
+            .custom-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-item {
+                border-right: 2px solid black;
+                border-bottom: 2px solid black;
+            }
+
+            .grid-item:nth-child(2n) {
+                border-right: none;
+            }
+
+            .grid-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+        }
+
+        /* Responsive for mobile: 1 column */
+        @media (max-width: 576px) {
+            .custom-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-item {
+                border-right: none;
+                border-bottom: 2px solid black;
+            }
+
+            .grid-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+
+
+    <section class="py-5 font-poppins">
+        <div class="container text-center">
+            <h2 class="mb-4">Sponsorship Benefits</h2>
+            <div class="custom-grid">
+                <div class="grid-item">
+                    <h4>Showcase Your Thought Leadership</h4>
+                    <p>Position your brand as a thought leader in workplace culture.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Exhibit & Drive Engagement</h4>
+                    <p>Create customized experiences that foster meaningful connections.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Connect with Decision-Makers</h4>
+                    <p>Engage directly with CXOs and Senior HR Professionals.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Grow Your Business</h4>
+                    <p>Accelerate growth by connecting with the right audience.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Elevate Your Brand</h4>
+                    <p>Boost your brand’s visibility across diverse platforms.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Build Long-Term Relationships</h4>
+                    <p>Network and build lasting industry connections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .agenda-strip {
+        background-color: #ff1c25; /* Red background */
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        .agenda-title {
+            font-size: 2.25rem; /* Approx. 36px */
+            font-weight: 600;
+        }
+
+        .agenda-btn {
+            background-color: #0a0a0e; /* Black button */
+            color: #fff;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .agenda-btn:hover {
+            background-color: #1f1f25; /* Slight hover effect */
+        }
+    </style>
+
+    <section class="agenda-strip d-flex justify-content-between align-items-center px-4 py-4">
+        <h2 class="agenda-title mb-0">See 2025 Agenda</h2>
+        <a href="#" class="btn agenda-btn">VIEW</a>
+    </section>
+
+
+    
 
     <section id="speakers" class="py-5 font-poppins">
         <div class="container text-center">
