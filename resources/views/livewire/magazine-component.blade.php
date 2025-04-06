@@ -473,7 +473,7 @@
             </div>
 
             <!-- Right Column -->
-            <div class="col-md-6">
+            <div class="col-md-6 my-5">
                 <div class="feature-block mb-4">
                 <h6 class="feature-title">CONNECT</h6>
                 <p class="feature-text my-5">Join an energizing community of visionary leaders of award-winning great workplaces, Great Place To Work culture experts, and thought leaders in HR and across industries.</p>
