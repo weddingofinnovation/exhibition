@@ -266,29 +266,34 @@
         }
 
         .agenda-title {
-            font-size: 2.25rem; /* Approx. 36px */
-            font-weight: 600;
+        font-size: 2.5rem; /* Large, bold text */
+        font-weight: 600;
+        margin: 0;
         }
 
         .agenda-btn {
-            background-color: #0a0a0e; /* Black button */
-            color: #fff;
-            padding: 12px 30px;
-            font-weight: 600;
-            text-decoration: none;
-            border: none;
-            font-size: 1rem;
-            transition: background-color 0.3s ease;
+        background-color: #0a0a0e; /* Black button */
+        color: #fff;
+        padding: 12px 32px;
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        font-size: 1rem;
+        border-radius: 2px;
+        transition: background-color 0.3s ease;
         }
 
         .agenda-btn:hover {
-            background-color: #1f1f25; /* Slight hover effect */
+        background-color: #1a1a1f;
         }
+
     </style>
 
-    <section class="agenda-strip d-flex justify-content-between align-items-center px-4 py-4 font-poppins">
-        <h2 class="agenda-title mb-0">See 2025 Agenda</h2>
+    <section class="agenda-strip">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-4">
+        <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
         <a href="#" class="btn agenda-btn">VIEW</a>
+    </div>
     </section>
 
 
