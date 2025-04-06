@@ -4,65 +4,7 @@
 
   <main>
 
-    <style>
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero {
-            background: url('https://source.unsplash.com/1600x900/?conference') center/cover no-repeat;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: #e60012;
-            border: none;
-        }
-
-        .hero-text-primary {
-          color: #e60012;
-        }
-
-        .speakers img {
-            width: 100px;
-            border-radius: 50%;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 24px;
-            text-transform: uppercase;
-        }
-        
-        .navbar-nav .nav-link {
-            font-size: 16px;
-            font-weight: 500;
-        }
-    </style>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light font-poppins">
-        <div class="container">
-            <a class="navbar-brand text-uppercase fs-5 lh-1" href="#">For <br>All<br> Summit</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">2025 theme</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#speakers">2025 Speakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#register">Client Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Why Attend</a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="#speakers">Highlights</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#register">Become Sponsor</a></li>
-                    
-                    <li class="nav-item"><a class="btn btn-sm btn-outline-primary my-2 text-uppercase" href="#register">Register</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    
 
     <section class="hero font-poppins">
         <div class="container">
@@ -539,17 +481,6 @@
                     <p>Founder, InnovateX</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="register" class="bg-light py-5 font-poppins">
-        <div class="container text-center">
-            <h2>Register Now</h2>
-            <form class="mt-3">
-                <input type="text" class="form-control mb-2" placeholder="Your Name">
-                <input type="email" class="form-control mb-2" placeholder="Your Email">
-                <button class="btn btn-primary">Submit</button>
-            </form>
         </div>
     </section>
 
