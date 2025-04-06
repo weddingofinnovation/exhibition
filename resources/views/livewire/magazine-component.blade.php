@@ -4,31 +4,212 @@
 
   <main>
     <section class="hero font-poppins py-5">
-    <div class="container">
-        <div class="row align-items-center">
-        
-        <!-- LEFT SIDE: Text -->
-        <div class="col-md-6 order-md-1 order-2">
-            <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
-            <div class="text-dark fw-bold display-1">For all Summit</div>
-            <div class="text-dark fw-bold h3 text-uppercase">India</div>
-            <p class="text-dark fw-bold pt-5">
-            India's largest and most sought-after workplace culture Summit
-            </p>
-            <a href="#register" class="btn btn-primary btn-lg text-uppercase mt-3">Register for 2026 Summit</a>
-        </div>
+        <div class="container">
+            <div class="row align-items-center">
+            
+            <!-- LEFT SIDE: Text -->
+            <div class="col-md-6 order-md-1 order-2 text-left">
+                <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
+                <div class="text-dark fw-bold display-1">For all Summit</div>
+                <div class="text-dark fw-bold h3 text-uppercase">India</div>
+                <p class="text-dark fw-bold pt-5">
+                India's largest and most sought-after workplace culture Summit
+                </p>
+                <a href="#register" class="btn btn-primary btn-lg text-uppercase mt-3">Register for 2026 Summit</a>
+            </div>
 
-        <!-- RIGHT SIDE: Image -->
-        <div class="col-md-6 order-md-2 order-1 text-center">
-            <a class="card-img-top d-block overflow-hidden" href="{{ route('business.magazine', ['slug' => $magazine->slug]) }}">
-            <img src="{{ url('public/assets/image/exhibition/' . $magazine->image) }}" 
-                class="img-fluid img-thumbnail" 
-                alt="{{ $magazine->name }}">
-            </a>
-        </div>
+            <!-- RIGHT SIDE: Image -->
+            <div class="col-md-6 order-md-2 order-1 text-center">
+                <a class="card-img-top d-block overflow-hidden" href="{{ route('business.magazine', ['slug' => $magazine->slug]) }}">
+                <img src="{{ url('public/assets/image/exhibition/' . $magazine->image) }}" 
+                    class="img-fluid img-thumbnail" 
+                    alt="{{ $magazine->name }}">
+                </a>
+            </div>
 
+            </div>
         </div>
+    </section>
+
+
+    <style>
+        .hero-section {
+        background: linear-gradient(to right, #11131C, #1a1c28);
+        padding: 60px 0;
+        overflow: hidden;
+        }
+
+        .image-blur-container {
+        position: relative;
+        }
+
+        .image-blur {
+        border-radius: 30px;
+        filter: brightness(1.05) contrast(1.1);
+        mix-blend-mode: screen;
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s ease-in-out;
+        }
+
+        .image-blur:hover {
+        transform: scale(1.03);
+        }
+    </style>
+
+    <section class="hero-section text-white">
+        <div class="container">
+            <div class="row align-items-center py-5">
+
+            <!-- LEFT: TEXT -->
+            <div class="col-md-6">
+                <h2 class="text-uppercase" style="color: #FF1628; font-family: 'GilroySemiBold', sans-serif; font-weight: 600; font-size: 48px;">
+                Great Exhibition To Exhibit
+                </h2>
+                <div style="font-family: 'GilroySemiBold', sans-serif; font-weight: 600; font-size: 48px; color: #ffffff;">
+                For all Summit
+                </div>
+                <div class="text-uppercase fw-bold mb-4" style="color: #ffffff;">India</div>
+
+                <p class="fw-bold" style="color: #cccccc;">
+                India's largest and most sought-after workplace culture Summit
+                </p>
+                <a href="#register" class="btn btn-danger btn-lg text-uppercase mt-3">Register for 2026 Summit</a>
+            </div>
+
+            <!-- RIGHT: IMAGE with blending -->
+            <div class="col-md-6 text-center">
+                <div class="image-blur-container">
+                <img src="{{ url('public/assets/image/exhibition/' . $magazine->image) }}"
+                    alt="{{ $magazine->name }}"
+                    class="img-fluid image-blur" />
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <h2 class="text-uppercase fw-bold" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
+        For <span style="color: #FF1628;">All</span> Summit
+    </h2>
+
+
+    <div class="d-flex align-items-center gap-3">
+        <div style="width: 20px; height: 20px; background-color: #FF1628;"></div>
+        <h2 class="text-uppercase fw-bold mb-0" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
+            For All Summit
+        </h2>
     </div>
+
+    <div class="d-flex flex-wrap gap-1" style="width: 40px;">
+        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
+        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
+        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
+        <div style="width: 18px; height: 18px; background-color: #FF1628;"></div>
+    </div>
+
+    <div class="d-flex align-items-center gap-3">
+        <div>
+            <div class="d-flex flex-wrap" style="width: 36px;">
+                <div style="width: 16px; height: 16px; background-color: #FF1628;"></div>
+                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-left: 4px;"></div>
+                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-top: 4px;"></div>
+                <div style="width: 16px; height: 16px; background-color: #FF1628; margin-left: 4px; margin-top: 4px;"></div>
+            </div>
+        </div>
+        <h2 class="text-uppercase fw-bold mb-0" style="font-size: 48px; font-family: 'GilroySemiBold', sans-serif;">
+            For All Summit
+        </h2>
+    </div>
+
+
+
+
+
+     <style>
+        /* Gilroy SemiBold */
+@font-face {
+  font-family: 'GilroySemiBold';
+  src: url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Section Styling */
+.for-all-summit-section {
+  background: linear-gradient(to right, #11131C, #1c1c1c); /* subtle gradient black */
+  color: white;
+}
+
+/* Grid Icon Styling */
+.red-grid-icon {
+  width: 40px;
+  height: 40px;
+  gap: 4px;
+}
+
+.red-grid-icon .box {
+  width: 18px;
+  height: 18px;
+  background-color: #FF1628;
+  margin: 2px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Optional Pulse Animation */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Heading Styling */
+.for-all-heading {
+  font-family: 'GilroySemiBold', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.for-all-heading .text-highlight {
+  color: #FF1628;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .for-all-heading {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .red-grid-icon {
+    margin: 0 auto;
+  }
+
+  .d-flex.flex-md-row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+}
+
+     </style>
+    <section class="for-all-summit-section py-5">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-center gap-4">
+            
+            <!-- Red Square Icon Grid -->
+            <div class="red-grid-icon d-flex flex-wrap">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+
+            <!-- Heading -->
+            <h2 class="for-all-heading mb-0 text-uppercase">
+                For <span class="text-highlight">All</span> Summit
+            </h2>
+            </div>
+        </div>
     </section>
 
 
@@ -45,9 +226,7 @@
               <a href="#register" class="btn btn-primary btn-lg text-uppercase">Register for 2026 Summit</a>
             </div>
             <div class="">
-            <a class="card-img-top d-block overflow-hidden" href="{{route('business.magazine', ['slug' => $magazine->slug])}}">
-                <img src="{{url('public/assets/image/exhibition/'.$magazine->image)}}" class="img-thumbnail" alt="$magazine->name">
-            </a>
+            
             </div>
           </div>
             
