@@ -286,7 +286,7 @@
         }
     </style>
 
-    <section class="agenda-strip d-flex justify-content-between align-items-center px-4 py-4">
+    <section class="agenda-strip d-flex justify-content-between align-items-center px-4 py-4 font-poppins">
         <h2 class="agenda-title mb-0">See 2025 Agenda</h2>
         <a href="#" class="btn agenda-btn">VIEW</a>
     </section>
