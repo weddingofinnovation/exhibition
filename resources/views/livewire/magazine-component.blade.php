@@ -3,8 +3,34 @@
 @section('page_keyword', 'the exhibition network, Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
   <main>
+    <section class="hero font-poppins py-5">
+    <div class="container">
+        <div class="row align-items-center">
+        
+        <!-- LEFT SIDE: Text -->
+        <div class="col-md-6 order-md-1 order-2">
+            <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
+            <div class="text-dark fw-bold display-1">For all Summit</div>
+            <div class="text-dark fw-bold h3 text-uppercase">India</div>
+            <p class="text-dark fw-bold pt-5">
+            India's largest and most sought-after workplace culture Summit
+            </p>
+            <a href="#register" class="btn btn-primary btn-lg text-uppercase mt-3">Register for 2026 Summit</a>
+        </div>
 
-    
+        <!-- RIGHT SIDE: Image -->
+        <div class="col-md-6 order-md-2 order-1 text-center">
+            <a class="card-img-top d-block overflow-hidden" href="{{ route('business.magazine', ['slug' => $magazine->slug]) }}">
+            <img src="{{ url('public/assets/image/exhibition/' . $magazine->image) }}" 
+                class="img-fluid img-thumbnail" 
+                alt="{{ $magazine->name }}">
+            </a>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
 
     <section class="hero font-poppins">
         <div class="container">
