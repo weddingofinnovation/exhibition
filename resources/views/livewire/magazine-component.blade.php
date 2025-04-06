@@ -78,17 +78,17 @@
 
             <!-- LEFT SIDE: Text -->
             <div class="col-md-6 order-md-1 order-2 text-left">
-                <h2 class="text-primary fw-bolder hero-text-primary">Great Exhibition To Exhibit</h2>
+                <h2 class="text-primary fw-bolder hero-text-primary" style="color: #FF1628; ">Great Exhibition To Exhibit</h2>
                 <div class="text-dark fw-bold display-1 text-white">For all Summit</div>
-                <div class="text-dark fw-bold h3 text-uppercase">India</div>
-                <p class="text-dark fw-bold pt-5">
+                <div class="text-dark fw-bold h3 text-uppercase text-white">India</div>
+                <p class="text-dark fw-bold pt-5 text-white">
                 India's largest and most sought-after workplace culture Summit
                 </p>
                 <a href="#register" class="btn btn-primary btn-lg text-uppercase mt-3" style="color: #FF1628; "> Register for 2026 Summit</a>
             </div>
 
             <!-- RIGHT: IMAGE with blending -->
-            <div class="col-md-6 text-center">
+            <div class="col-md-6 order-md-2 order-1 text-left">
                 <div class="image-blur-container">
                 <img src="{{ url('public/assets/image/exhibition/' . $magazine->image) }}"
                     alt="{{ $magazine->name }}"
