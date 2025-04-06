@@ -403,18 +403,28 @@
 
         .section-label {
         color: #FF1628;
-        font-weight: 600;
+        /* font-weight: 600;
         font-size: 16px;
         letter-spacing: 1px;
-        margin-bottom: 15px;
+        margin-bottom: 15px; */
+        font-family: "GilroySemibold";
+        font-size: 28px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 33px;
+        letter-spacing: -0.56px;
         }
 
+        
+    
+
         .main-title {
-        font-size: 48px;
+        font-size: 56px;
         font-weight: 600;
         color: #11131C;
-        line-height: 1.2;
+        line-height: 64px;
         margin-bottom: 20px;
+        letter-spacing: -1.4px
         }
 
         .description {
@@ -430,15 +440,16 @@
         .feature-title {
         color: #FF1628;
         font-weight: 600;
-        font-size: 14px;
+        font-size: 15px;
         text-transform: uppercase;
         margin-bottom: 10px;
         }
 
         .feature-text {
-        font-size: 16px;
+        font-size: 18px;
         color: #11131C;
-        line-height: 1.6;
+        font-weight: 400;
+        line-height: 28px;
         }
 
     </style>
@@ -450,9 +461,9 @@
             <div class="col-md-6 mb-4 mb-md-0">
                 <h6 class="section-label">WHY ATTEND</h6>
                 <h2 class="main-title">
-                From promise to <br />
-                progress Change <br />
-                happens here.
+                    From promise to <br />
+                    progress Change <br />
+                    happens here.
                 </h2>
                 <p class="description">
                 The Great Place To Work® For All™ Summit 2025 is the definitive company culture and leadership event of 1000+ leaders from across 20+ industries on their journey to create Great workplaces for all.
