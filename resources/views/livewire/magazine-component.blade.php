@@ -289,11 +289,11 @@
 
     </style>
 
-    <section class="agenda-strip">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-4">
-        <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
-        <a href="#" class="btn agenda-btn">VIEW</a>
-    </div>
+    <section class="agenda-strip py-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-4">
+            <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
+            <a href="#" class="btn agenda-btn">VIEW</a>
+        </div>
     </section>
 
 
