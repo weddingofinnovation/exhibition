@@ -428,9 +428,11 @@
         }
 
         .description {
-        font-size: 16px;
+        font-size: 18px;
+        font-weight: 400;
         color: #11131C;
-        line-height: 1.6;
+        line-height: 28px;
+        letter-spacing: 0px;
         }
 
         .feature-block {
@@ -454,12 +456,12 @@
 
     </style>
 
-    <section class="why-attend-section py-5">
-        <div class="container">
+    <section class="why-attend-section py-5 px-5">
+        <div class="container px-5">
             <div class="row">
             <!-- Left Content -->
             <div class="col-md-6 mb-4 mb-md-0">
-                <h6 class="section-label">WHY ATTEND</h6>
+                <h6 class="section-label my-5">WHY ATTEND</h6>
                 <h2 class="main-title">
                     From promise to <br />
                     progress Change <br />
