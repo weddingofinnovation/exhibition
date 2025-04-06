@@ -195,7 +195,7 @@
 
     </style>
 
-    <section class="agenda-strip py-5">
+    <section class="agenda-strip py-5 font-poppins">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-4">
             <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
             <a href="#" class="btn agenda-btn">VIEW</a>
@@ -291,7 +291,7 @@
         }
     </style>
 
-    <section class="agenda-strip py-5">
+    <section class="agenda-strip py-5 font-poppins">
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-5 px-3">
             <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
             <a href="#agenda" class="agenda-btn">VIEW</a>
@@ -346,7 +346,7 @@
         }
     </style>
 
-    <section class="client-feedback py-5">
+    <section class="client-feedback py-5 font-poppins">
         <div class="container">
             <div class="row align-items-center mb-4">
             <div class="col-md-6 text-white text-md-start text-center">
@@ -449,7 +449,7 @@
 
     </style>
 
-    <section class="why-attend-section py-5 px-5">
+    <section class="why-attend-section py-5 px-5 font-poppins">
         <div class="container px-5">
             <div class="row">
             <!-- Left Content -->
