@@ -395,6 +395,94 @@
         </div>
     </section>
 
+
+    <style>
+        .client-feedback {
+        background-color: #11131C;
+        color: white;
+        font-family: 'Poppins', sans-serif; /* Replace with Gilroy if available */
+        }
+
+        .feedback-title h2 {
+        font-size: 48px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: #fff;
+        }
+
+        .red-boxes {
+        display: flex;
+        gap: 8px;
+        }
+
+        .square {
+        width: 30px;
+        height: 30px;
+        background-color: #FF1628;
+        }
+
+        .video-thumb {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        }
+
+        .video-thumb img {
+        width: 100%;
+        border-radius: 8px;
+        }
+
+        .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        color: white;
+        opacity: 0.9;
+        pointer-events: none;
+        }
+    </style>
+    
+    <section class="client-feedback py-5">
+        <div class="container">
+            <div class="row align-items-center mb-4">
+            <div class="col-md-6 text-white text-md-start text-center">
+                <div class="feedback-title">
+                <div class="red-boxes mb-2">
+                    <div class="square"></div>
+                    <div class="square ml-2"></div>
+                </div>
+                <h2 class="mb-0">CLIENT<br>FEEDBACK</h2>
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block"></div>
+            </div>
+
+            <div class="row g-4">
+            <div class="col-md-4 col-sm-6">
+                <div class="video-thumb">
+                <img src="video1-thumbnail.jpg" class="img-fluid" alt="Client 1">
+                <span class="play-icon">&#9658;</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="video-thumb">
+                <img src="video2-thumbnail.jpg" class="img-fluid" alt="Client 2">
+                <span class="play-icon">&#9658;</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="video-thumb">
+                <img src="video3-thumbnail.jpg" class="img-fluid" alt="Client 3">
+                <span class="play-icon">&#9658;</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
     <style>
         .why-attend-section {
         background-color: #fff;
