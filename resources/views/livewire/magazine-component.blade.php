@@ -476,15 +476,15 @@
             <div class="col-md-6">
                 <div class="feature-block mb-4">
                 <h6 class="feature-title">CONNECT</h6>
-                <p class="feature-text">Join an energizing community of visionary leaders of award-winning great workplaces, Great Place To Work culture experts, and thought leaders in HR and across industries.</p>
+                <p class="feature-text my-5">Join an energizing community of visionary leaders of award-winning great workplaces, Great Place To Work culture experts, and thought leaders in HR and across industries.</p>
                 </div>
                 <div class="feature-block mb-4">
                 <h6 class="feature-title">INNOVATE</h6>
-                <p class="feature-text">Learn how the most innovative organizations are creating new solutions and strategies to meet the changing needs of their people and business in the most challenging times.</p>
+                <p class="feature-text my-5">Learn how the most innovative organizations are creating new solutions and strategies to meet the changing needs of their people and business in the most challenging times.</p>
                 </div>
                 <div class="feature-block">
                 <h6 class="feature-title">LEAD</h6>
-                <p class="feature-text">Transform yourself into a better and more inspired leader. You’ll return with a strengthened...</p>
+                <p class="feature-text my-5">Transform yourself into a better and more inspired leader. You’ll return to work ready to lead and equipped with a strengthened community, fresh ideas, and best practices that you can implement immediately</p>
                 </div>
             </div>
             </div>
