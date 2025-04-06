@@ -317,6 +317,55 @@
         </div>
     </section>
 
+    <!-- Agenda Strip Section -->
+    <section class="agenda-strip py-2">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-5 px-3">
+        <h2 class="agenda-title mb-3 mb-md-0">See 2025 Agenda</h2>
+        <a href="#agenda" class="agenda-btn">VIEW</a>
+    </div>
+    </section>
+
+    <style>
+        @font-face {
+        font-family: 'GilroySemiBold';
+        src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2'),
+            url('/fonts/Gilroy-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+        }
+
+        .agenda-strip {
+        background-color: #FF1628;
+        color: #11131C;
+        font-family: 'GilroySemiBold', sans-serif;
+        }
+
+        .agenda-title {
+        font-size: 48px;
+        font-weight: 600;
+        color: #11131C;
+        font-family: 'GilroySemiBold', sans-serif;
+        }
+
+        .agenda-btn {
+        background-color: #11131C;
+        color: #fff;
+        padding: 12px 32px;
+        border: none;
+        border-radius: 2px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: 'GilroySemiBold', sans-serif;
+        transition: background-color 0.3s ease;
+        }
+
+        .agenda-btn:hover {
+        background-color: #000;
+        }
+    </style>
+
+
     <section id="register" class="bg-light py-5 font-poppins">
         <div class="container text-center">
             <h2>Register Now</h2>
