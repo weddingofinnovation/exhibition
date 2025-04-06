@@ -78,7 +78,7 @@
 
             <!-- LEFT SIDE: Text -->
             <div class="col-md-6 order-md-1 order-2 text-left">
-                <h2 class="text-primary fw-bolder hero-text-primary" style="color: #FF1628; ">Great Exhibition To Exhibit</h2>
+                <h2 class="fw-bolder hero-text-primary" style="color: #FF1628; ">Great Exhibition To Exhibit</h2>
                 <div class="text-dark fw-bold display-1 text-white">For all Summit</div>
                 <div class="text-dark fw-bold h3 text-uppercase text-white">India</div>
                 <p class="text-dark fw-bold pt-5 text-white">
