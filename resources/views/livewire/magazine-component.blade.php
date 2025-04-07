@@ -101,8 +101,7 @@
     </section>
 
 
-
-    <!-- <section class="hero font-poppins">
+<!-- <section class="hero font-poppins">
         <div class="container">
           <div class="row">
             <div class="text-left">
@@ -331,6 +330,14 @@
         <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-5 px-3">
             <h2 class="agenda-title mb-3 mb-md-0 text-white">See 2025 Agenda</h2>
             <a href="#agenda" class="agenda-btn">VIEW</a>
+        </div>
+    </section>
+
+    <section class="agenda-strip py-5 font-poppins">
+        <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between py-5 px-3">
+            <h2 class="agenda-title mb-3 mb-md-0 text-white">Get Certified Today</h2>
+            <p class="mb-3 mb-md-0 text-white">Start your application process for Great Place To Work Certification and join us.</p>
+            <a href="#agenda" class="agenda-btn">Get certified</a>
         </div>
     </section>
 

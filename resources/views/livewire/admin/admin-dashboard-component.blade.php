@@ -1924,8 +1924,6 @@
 
 
         <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="Upgrade"> upgrade</a>
-
-
       @endif
 
       @if($board == 'multiple_images')
@@ -1945,6 +1943,27 @@
             @endforeach  
         </div>
       @endif
+
+      @if($board == 'fabrication_multiple_images')
+        <div class=" container my-3">
+          <form wire:submit.prevent="fabricationmultiImage">
+            <label class="form-label">Upload Multi Image<span class="text-danger">*</span></label> 
+              <input type="file" class="form-control" placeholder="multiple Image" wire:model="brand_lgo"  multiple="multiple">
+              <button class="btn btn-primary btn-shadow d-block w-100 mt-2"  type="submit">Submit</button>
+          </form>  
+        </div>
+        @php 
+          $photos = DB::table('photos')->where('usago', 'fabric')->get();
+        @endphp
+        <hr> find Images
+            @foreach($photos as $imgo)
+              <div class="container">
+                  <img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" width="50%" alt="">
+                  <a href="" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
+              </div>
+            @endforeach  
+      @endif
+
 
       @if($board == 'viewso')
 
