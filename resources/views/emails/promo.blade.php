@@ -58,6 +58,42 @@
         </td>
       </tr>
 
+      @foreach ($exhibition as $franchise)
+        <tr>
+            <td style="padding: 20px;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="vertical-align: top;">
+                <tr>
+                @if($loop->iteration % 2 != 0)
+                    <!-- Image Left -->
+                    <td style="width: 40%; padding-right: 15px;">
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Event Image" style="width: 100%; border-radius: 6px;" />
+                    </td>
+                    <td style="width: 60%;">
+                    <h3 style="margin:0 0 5px 0;">{{ ucwords(trans(Str::limit($franchise->eventname, 30))) }}</h3>
+                    <p style="margin:0;">{{ ucfirst(trans($franchise->venue ?? 'Not Available')) }}</p>
+                    <p style="margin:10px 0;">Asia’s premier mobile and digital technology event.</p>
+                    <a href="{{ route('event.details', ['slug' => $franchise->slug]) }}" style="display:inline-block; background-color: #007BFF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Details</a>
+                    </td>
+                @else
+                    <!-- Image Right -->
+                    <td style="width: 60%;">
+                    <h3 style="margin:0 0 5px 0;">{{ ucwords(trans(Str::limit($franchise->eventname, 30))) }}</h3>
+                    <p style="margin:0;">{{ ucfirst(trans($franchise->venue ?? 'Not Available')) }}</p>
+                    <p style="margin:10px 0;">Asia’s premier mobile and digital technology event.</p>
+                    <a href="{{ route('event.details', ['slug' => $franchise->slug]) }}" style="display:inline-block; background-color: #007BFF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Details</a>
+                    </td>
+                    <td style="width: 40%; padding-left: 15px;">
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Event Image" style="width: 100%; border-radius: 6px;" />
+                    </td>
+                @endif
+                </tr>
+            </table>
+            </td>
+        </tr>
+        <tr><td><hr style="border:none; border-top:1px solid #ddd;" /></td></tr>
+      @endforeach
+
+
       <!-- Footer -->
       <tr>
         <td style="padding: 20px; font-size: 14px;">
