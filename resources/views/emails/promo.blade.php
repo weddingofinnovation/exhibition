@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <title>Upcoming Events</title>
   </head>
+  
   <body style="margin:0; padding:0; font-family: Arial, sans-serif; background-color: #f5f5f5;">
+    
     <table align="center" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; background:#ffffff; margin-top:20px;">
       <tr>
         <td align="center" bgcolor="#007BFF" style="padding: 20px 0; color: #fff; font-size: 24px; font-weight: bold; border-radius: 8px 8px 0 0;">
@@ -136,5 +138,168 @@
         </td>
       </tr>
     </table>
+    
+    <div style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f4f4f4;">
+        <table align="center" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff;">
+            
+            <!-- Profile Card Section -->
+            <tr>
+            <td style="padding: 20px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <!-- Card 1 -->
+                    <td style="width: 50%; padding: 10px;">
+                    <table style="border: 1px solid #ddd; border-radius: 12px; padding: 15px; width: 100%; text-align: center;">
+                        <tr>
+                        <td>
+                            <img src="https://via.placeholder.com/80" alt="Profile" style="border-radius: 50%; margin-bottom: 10px;" />
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="font-weight: bold;">Sonal Gupta</td>
+                        </tr>
+                        <tr>
+                        <td style="font-size: 14px; color: #555;">Soft Skills Coach & Corporate Trainer</td>
+                        </tr>
+                        <tr>
+                        <td style="padding-top: 10px; font-size: 12px; color: #888;">
+                            👥 20 mutual connections
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="padding-top: 10px;">
+                            <a href="#" style="display: inline-block; padding: 8px 16px; background-color: #0a66c2; color: #ffffff; text-decoration: none; border-radius: 20px; font-size: 14px;">Connect</a>
+                        </td>
+                        </tr>
+                    </table>
+                    </td>
+
+                    <!-- Card 2 -->
+                    <td style="width: 50%; padding: 10px;">
+                    <table style="border: 1px solid #ddd; border-radius: 12px; padding: 15px; width: 100%; text-align: center;">
+                        <tr>
+                        <td>
+                            <img src="https://via.placeholder.com/80" alt="Profile" style="border-radius: 50%; margin-bottom: 10px;" />
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="font-weight: bold;">Shubham Kumar Singh</td>
+                        </tr>
+                        <tr>
+                        <td style="font-size: 14px; color: #555;">Pursuing PGDM Dual Specialisation</td>
+                        </tr>
+                        <tr>
+                        <td style="padding-top: 10px; font-size: 12px; color: #888;">
+                            👥 1 mutual connection
+                        </td>
+                        </tr>
+                        <tr>
+                        <td style="padding-top: 10px;">
+                            <a href="#" style="display: inline-block; padding: 8px 16px; background-color: #0a66c2; color: #ffffff; text-decoration: none; border-radius: 20px; font-size: 14px;">Connect</a>
+                        </td>
+                        </tr>
+                    </table>
+                    </td>
+                </tr>
+                </table>
+            </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+            <td style="padding: 20px; font-size: 12px; color: #777; text-align: center;">
+                This email was intended for K Roy (Corporate Communication Manager)<br />
+                <a href="#" style="color: #0073b1; text-decoration: none;">Learn why we included this</a><br /><br />
+                You are receiving this email because members like you have also taken these actions.<br />
+                <a href="#" style="color: #0073b1; text-decoration: none;">Unsubscribe</a> • <a href="#" style="color: #0073b1; text-decoration: none;">Help</a><br /><br />
+                <strong>LinkedIn</strong><br />
+                © 2025 LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085.<br />
+            </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f4f4f4;">
+      <table align="center" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff;">
+        
+        <!-- Profile Card Section -->
+        <tr>
+          <td style="padding: 20px;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <!-- Card 1 -->
+                <td style="width: 50%; padding: 10px;">
+                  <table style="border: 1px solid #ddd; border-radius: 12px; padding: 15px; width: 100%; text-align: center;">
+                    <tr>
+                      <td>
+                        <img src="https://via.placeholder.com/80" alt="Profile" style="border-radius: 50%; margin-bottom: 10px;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: bold;">Sonal Gupta</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #555;">Soft Skills Coach & Corporate Trainer</td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 10px; font-size: 12px; color: #888;">
+                        👥 20 mutual connections
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 10px;">
+                        <a href="#" style="display: inline-block; padding: 8px 16px; background-color: #0a66c2; color: #ffffff; text-decoration: none; border-radius: 20px; font-size: 14px;">Connect</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+
+                <!-- Card 2 -->
+                <td style="width: 50%; padding: 10px;">
+                  <table style="border: 1px solid #ddd; border-radius: 12px; padding: 15px; width: 100%; text-align: center;">
+                    <tr>
+                      <td>
+                        <img src="https://via.placeholder.com/80" alt="Profile" style="border-radius: 50%; margin-bottom: 10px;" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="font-weight: bold;">Shubham Kumar Singh</td>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #555;">Pursuing PGDM Dual Specialisation</td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 10px; font-size: 12px; color: #888;">
+                        👥 1 mutual connection
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 10px;">
+                        <a href="#" style="display: inline-block; padding: 8px 16px; background-color: #0a66c2; color: #ffffff; text-decoration: none; border-radius: 20px; font-size: 14px;">Connect</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding: 20px; font-size: 12px; color: #777; text-align: center;">
+            This email was intended for K Roy (Corporate Communication Manager)<br />
+            <a href="#" style="color: #0073b1; text-decoration: none;">Learn why we included this</a><br /><br />
+            You are receiving this email because members like you have also taken these actions.<br />
+            <a href="#" style="color: #0073b1; text-decoration: none;">Unsubscribe</a> • <a href="#" style="color: #0073b1; text-decoration: none;">Help</a><br /><br />
+            <strong>LinkedIn</strong><br />
+            © 2025 LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085.<br />
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
   </body>
 </html>
