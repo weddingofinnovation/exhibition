@@ -19,35 +19,45 @@
                         ->where('admstatus','1')
                         ->whereMonth('startdate', $month)
                         ->orderBy('startdate','ASC')
-                        ->limit(7)
+                        ->limit(3)
                         ->get();
-        @endphp
+      @endphp
 
-        @foreach ($exhibition as $franchise)
-
-            <!-- Event 1 -->
-            <tr>
-                <td style="padding: 20px;">
-                <table width="100%" cellpadding="0" cellspacing="0">
-                    <tr>
-                    <td style="width: 40%; padding-right: 15px;">
-                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Vodafone" style="width: 100%; border-radius: 6px;" />
-                    </td>
-                    <td style="width: 60%;">
-                        <h3 style="margin:0 0 5px 0;">{{ ucwords(trans(Str::limit($franchise->eventname, 30))) }}</h3>
-                        <p style="margin:0;">{{ ucfirst(trans($franchise->venue ?? 'Not Available')) }}</p>
-                        <!-- <p style="margin:0;">October 15–17, 2024</p> -->
-                        <p style="margin:10px 0;">Asia’s premier mobile and digital technology event.</p>
-                        <a href="{{ route('event.details', ['slug' => $franchise->slug]) }}" style="background-color: #007BFF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Details</a>
-                    </td>
-                    </tr>
-                </table>
+      @foreach ($exhibition as $franchise)
+        <tr>
+          <td style="padding: 20px;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width: 40%; padding-right: 15px;">
+                  <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Event Image" style="width: 100%; border-radius: 6px;" />
                 </td>
-            </tr>
-            <tr><td><hr style="border:none; border-top:1px solid #ddd;" /></td></tr>
+                <td style="width: 60%;">
+                  <h3 style="margin:0 0 5px 0;">{{ ucwords(trans(Str::limit($franchise->eventname, 30))) }}</h3>
+                  <p style="margin:0;">{{ ucfirst(trans($franchise->venue ?? 'Not Available')) }}</p>
+                  <p style="margin:10px 0;">Asia’s premier mobile and digital technology event.</p>
+                  <a href="{{ route('event.details', ['slug' => $franchise->slug]) }}" style="background-color: #007BFF; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Details</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr><td><hr style="border:none; border-top:1px solid #ddd;" /></td></tr>
+      @endforeach
 
-        @endforeach
-      
+      <!-- Update location and category message -->
+      <tr>
+        <td style="padding: 20px; background-color: #f0f8ff; text-align: center;">
+          <p style="margin: 10px 0; font-size: 14px;">
+            Want to see events for a different location? 
+            <a href="{{ url('/update-location') }}" style="color: #007BFF; text-decoration: none;">Update location</a>.
+          </p>
+          <p style="margin: 10px 0; font-size: 14px;">
+            Not seeing relevant events? 
+            <a href="{{ url('/update-categories') }}" style="color: #007BFF; text-decoration: none;">Change what categories you like</a>.
+          </p>
+        </td>
+      </tr>
+
       <!-- Footer -->
       <tr>
         <td style="padding: 20px; font-size: 14px;">
@@ -74,4 +84,3 @@
     </table>
   </body>
 </html>
-
