@@ -58,6 +58,16 @@
         </td>
       </tr>
 
+      @php
+        $exhibition = DB::table('events')
+                        ->whereYear('startdate','>=','2024')
+                        ->where('status','1')
+                        ->where('admstatus','1')
+                        ->whereMonth('startdate', $month)
+                        ->orderBy('startdate','ASC')
+                        ->limit(5)
+                        ->get();
+      @endphp
       @foreach ($exhibition as $franchise)
         <tr>
             <td style="padding: 20px;">
