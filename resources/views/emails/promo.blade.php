@@ -58,6 +58,15 @@
       @endforeach
 
 
+      <tr>
+        <td style="padding: 20px; background-color: #f0f8ff; text-align: center;">
+          <p style="margin: 10px 0; font-size: 14px;">
+            Want to see events for a different location? 
+            <a href="{{ url('/update-location') }}" style="color: #007BFF; text-decoration: none;">Update location</a>.
+          </p>
+        </td>
+      </tr>
+
       @php
         $exhibition = DB::table('events')
                         ->whereYear('startdate','>=','2024')
@@ -93,10 +102,6 @@
       <!-- Update location and category message -->
       <tr>
         <td style="padding: 20px; background-color: #f0f8ff; text-align: center;">
-          <p style="margin: 10px 0; font-size: 14px;">
-            Want to see events for a different location? 
-            <a href="{{ url('/update-location') }}" style="color: #007BFF; text-decoration: none;">Update location</a>.
-          </p>
           <p style="margin: 10px 0; font-size: 14px;">
             Not seeing relevant events? 
             <a href="{{ url('/update-categories') }}" style="color: #007BFF; text-decoration: none;">Change what categories you like</a>.
