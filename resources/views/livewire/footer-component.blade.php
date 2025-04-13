@@ -254,7 +254,7 @@
                       <a class="d-inline-block align-middle mt-n1 me-3" style="line-height:17px;" href="{{asset('/')}}">
                         <div class="fs-4 text-light lh-1" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
                           The<br>Exhibition<br>Network</div>
-                          <!--<img class="d-block" src="./franciz_files/footer-logo-light.png" width="117" alt="Council of Innovation">-->
+                        {{--<img class="d-block" src="./franciz_files/footer-logo-light.png" width="117" alt="Council of Innovation">--}}
                       </a>
 
                       {{-- <div class="btn-group dropdown disable-autohide">
