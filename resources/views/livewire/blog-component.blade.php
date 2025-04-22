@@ -881,33 +881,32 @@
 	<!--Section END -->
 
     @push('scripts')
-	    
 		<script>
-		var slider = tns({
-			"container": '.my-Slider1',            
-			"responsive": {
-			"300": {
-				"items": 2,
-				"controls": false,
-				"mouseDrag": true,
-				"autoplay": false,
-				"autoplayButtonOutput": false,
-				"autoplayHoverPause": false,
-				"fixedWidth": 100,
-			},
-			"500": {
-				"items": 4,
-				"nav": false,
-				"controls": false,
-				"autoplayHoverPause": true,
-				"autoplay":true,
-				"autoplayButtonOutput":false,
-				"fixedWidth": auto,
-			},
-			
-			},
-			"autoplayButtonOutput":false
-		});
+			var slider = tns({
+				"container": '.my-Slider1',            
+				"responsive": {
+				"300": {
+					"items": 2,
+					"controls": false,
+					"mouseDrag": true,
+					"autoplay": false,
+					"autoplayButtonOutput": false,
+					"autoplayHoverPause": false,
+					"fixedWidth": 100,
+				},
+				"500": {
+					"items": 4,
+					"nav": false,
+					"controls": false,
+					"autoplayHoverPause": true,
+					"autoplay":true,
+					"autoplayButtonOutput":false,
+					"fixedWidth": auto,
+				},
+				
+				},
+				"autoplayButtonOutput":false
+			});
 		</script>
 
 		<script>
@@ -966,7 +965,6 @@
 			});
 		</script>
 
-		
 		<script>
 			
 			var slider = tns({
@@ -996,7 +994,6 @@
 			});
 		</script>
 			
-
 		<script>
 			
 			var slider = tns({
@@ -1026,7 +1023,6 @@
 			});
 		</script>
 			
-
 		<script>
 			var slider = tns({
 				"container": '.my-SliderRe',
@@ -1055,7 +1051,6 @@
 			});
 		</script>
 			
-		
 		<script>
 			var slider = tns({
 				"container": '.my-SliderL',

@@ -4131,6 +4131,128 @@
            </div>
           </section>
           
+  <style>
+    .sectiono {
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .game-card {
+      border-radius: 15px;
+      border: 1px solid #f3dede;
+      padding: 20px;
+      background-color: #fff0f3;
+    }
+    .nav-tags a {
+      background-color: white;
+      border-radius: 50px;
+      padding: 5px 12px;
+      font-size: 14px;
+      margin-right: 8px;
+      border: 1px solid #ddd;
+      color: #000;
+      text-decoration: none;
+    }
+    .nav-tags a:hover {
+      background-color: #f3f3f3;
+    }
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+    .info-box {
+      background-color: #fbe6e8;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+    .rating-box {
+      background-color: #fce9ec;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .rating-box span {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  </style>
+
+
+  <div class="sectiono container mt-4">
+    <div class="game-card">
+      <h4 class="fw-bold">NBA 2K25</h4>
+      <p class="text-muted">Video game</p>
+
+      <!-- Navigation Tags -->
+      <div class="nav-tags mb-3 d-flex flex-wrap">
+        <a href="#">Overview</a>
+        <a href="#">Downloadable content</a>
+        <a href="#">Reviews</a>
+        <a href="#">Gameplay</a>
+        <a href="#">Guides</a>
+        <a href="#">System requirements</a>
+        <a href="#">Songs</a>
+      </div>
+
+      <div class="row">
+        <!-- Left Gallery -->
+        <div class="col-md-8 image-gallery">
+          <div class="row g-2">
+            <div class="col-6"><img src="https://i.imgur.com/xndv1sA.jpeg" alt="Main cover"></div>
+            <div class="col-6"><img src="https://i.imgur.com/mShq79M.jpeg" alt="Gameplay"></div>
+            <div class="col-6"><img src="https://i.imgur.com/xndv1sA.jpeg" alt="Review"></div>
+            <div class="col-6"><img src="https://i.imgur.com/mShq79M.jpeg" alt="Trailer"></div>
+          </div>
+        </div>
+
+        <!-- Right Info Panel -->
+        <div class="col-md-4">
+          <div class="info-box">
+            <div><strong>Initial release date</strong></div>
+            <div>3 September 2024</div>
+          </div>
+          <div class="info-box">
+            <div><strong>Developer</strong></div>
+            <div>Visual Concepts</div>
+          </div>
+
+          <div class="rating-box">
+            <div>Steam <span>6/10</span></div>
+          </div>
+          <div class="rating-box">
+            <div>Google Play <span>4.5/5</span></div>
+          </div>
+          <div class="rating-box">
+            <div>Amazon.in <span>4.5/5</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="mt-4">
+        <h6>About</h6>
+        <p><strong>64%</strong> liked this video game</p>
+        <p class="text-muted">
+          NBA 2K25 is a 2024 basketball video game developed by Visual Concepts and published by 2K. It is the 26th installment in the NBA 2K series and the successor to NBA 2K24.
+        </p>
+      </div>
+
+      <!-- Official Link -->
+      <div class="mt-3">
+        <a href="https://nba.2k.com" class="btn btn-primary btn-sm">Visit Official Site</a>
+      </div>
+    </div>
+  </div>
+
+
           <!--participants-->  
           <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
             <div class="row text-center text-sm-start">
@@ -5062,6 +5184,7 @@
                 </div>
               @endif
                   
+
 
 
           <!--footer-->
