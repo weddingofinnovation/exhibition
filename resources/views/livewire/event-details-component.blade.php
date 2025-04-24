@@ -4132,73 +4132,48 @@
           </section>
 
           <style>
-            boody {
-              font-family: 'Segoe UI', sans-serif;
-              background: #fff;
+              .custom-pills .nav-link {
+              background-color: #ffeeee;
+              color: #540000;
+              margin-right: 8px;
+              margin-bottom: 8px;
+              border-radius: 999px;
+              padding: 6px 16px;
+              font-weight: 500;
+              border: 1px solid transparent;
+              transition: all 0.2s ease-in-out;
             }
-            .top-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              flex-wrap: wrap;
-            }
-            .nav-pills .nav-link {
-              background: #f3f3f3;
-              border-radius: 20px;
-              color: #000;
-              margin: 5px 5px 0 0;
-              padding: 6px 14px;
-              font-size: 14px;
-            }
-            .main-img {
-              width: 100%;
-              border-radius: 10px;
-              margin-bottom: 15px;
-              height: auto;
-            }
-            .info-card, .rating-card {
-              background-color: #fde8ec;
-              border-radius: 10px;
-              padding: 12px;
-              margin-bottom: 12px;
-            }
-            .rating-card {
-              display: flex;
-              justify-content: space-between;
-              background-color: #fff2f5;
-            }
-            .img-grid-sm img {
-              width: 100%;
-              border-radius: 10px;
-              margin-bottom: 10px;
-            }
-            .subtitle {
-              font-size: 14px;
-              color: gray;
+
+            .custom-pills .nav-link.active {
+              background-color: transparent;
+              border: 1px solid #540000;
+              color: #540000;
             }
           </style>
 
           <div class="boody container my-4">
-            <!-- Title and Menu -->
-            <div class="top-header mb-2">
+            <!-- Top Header -->
+            <div class="d-flex align-items-center justify-content-between mb-2">
               <div>
                 <h4 class="mb-0 d-inline">NBA 2K25</h4>
-                <span class="ms-2 subtitle">Video game</span>
+                <span class="ms-2 text-muted" style="font-size: 14px;">Video game</span>
               </div>
               <i class="bi bi-three-dots-vertical fs-5"></i>
             </div>
 
-            <!-- Pills Menu -->
-            <ul class="nav nav-pills flex-wrap mb-4">
+            <!-- Custom Rounded Pills Menu -->
+            <ul class="nav custom-pills flex-wrap mb-4">
               <li class="nav-item"><a class="nav-link active" href="#">Overview</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Downloadable content</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Downloadable content</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Gameplay</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Guides</a></li>
               <li class="nav-item"><a class="nav-link" href="#">System requirements</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Guides</a></li>
               <li class="nav-item"><a class="nav-link" href="#">Songs</a></li>
               <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-chevron-down"></i></a></li>
             </ul>
+
+
 
             <!-- Grid Layout -->
             <div class="row">
