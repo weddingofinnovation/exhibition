@@ -4131,59 +4131,118 @@
            </div>
           </section>
           
-          <style>
-            .sectiono {
-              background-color: #fff;
-              font-family: 'Segoe UI', sans-serif;
-            }
-            .game-card {
-              border-radius: 15px;
-              border: 1px solid #f3dede;
-              padding: 20px;
-              background-color: #fff0f3;
-            }
-            .nav-tags a {
-              background-color: white;
-              border-radius: 50px;
-              padding: 5px 12px;
-              font-size: 14px;
-              margin-right: 8px;
-              border: 1px solid #ddd;
-              color: #000;
-              text-decoration: none;
-            }
-            .nav-tags a:hover {
-              background-color: #f3f3f3;
-            }
-            .image-gallery img {
-              width: 100%;
-              height: auto;
-              border-radius: 12px;
-              margin-bottom: 10px;
-            }
-            .info-box {
-              background-color: #fbe6e8;
-              padding: 12px;
-              border-radius: 10px;
-              text-align: center;
-              font-size: 14px;
-              font-weight: 500;
-              margin-bottom: 10px;
-            }
-            .rating-box {
-              background-color: #fce9ec;
-              border-radius: 10px;
-              padding: 12px;
-              font-size: 14px;
-              margin-bottom: 10px;
-              text-align: center;
-            }
-            .rating-box span {
-              display: block;
-              font-weight: 600;
-              font-size: 16px;
-            }
-          </style>
+  <style>
+    body {
+      background: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-pills .nav-link {
+      border-radius: 20px;
+      background-color: #f5f5f5;
+      color: #000;
+      margin-right: 0.5rem;
+      margin-top: 0.3rem;
+      font-size: 14px;
+      padding: 4px 12px;
+    }
+    .info-card {
+      background-color: #ffeef0;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .rating-card {
+      background-color: #fff6f7;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+  </style>
+  <div class="container my-4">
+  <!-- Title and Menu Row -->
+  <div class="top-bar mb-2">
+    <div class="d-flex align-items-center flex-wrap">
+      <h4 class="mb-0 me-2">NBA 2K25</h4>
+      <span class="text-muted">Video game</span>
+    </div>
+    <i class="bi bi-three-dots fs-4"></i>
+  </div>
+
+  <!-- Navigation Pills -->
+  <div class="mb-4">
+    <ul class="nav nav-pills flex-wrap">
+      <li class="nav-item"><a class="nav-link active" href="#">Overview</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Downloadable content</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Reviews</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Gameplay</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Guides</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">System requirements</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Songs</a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-chevron-down"></i></a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="row">
+    <!-- Left side: Gallery -->
+    <div class="col-lg-8">
+      <div class="row gallery">
+        <div class="col-md-6"><img src="https://i.imgur.com/1.jpg" alt="Image 1"></div>
+        <div class="col-md-6"><img src="https://i.imgur.com/2.jpg" alt="Image 2"></div>
+        <div class="col-md-6"><img src="https://i.imgur.com/3.jpg" alt="Image 3"></div>
+        <div class="col-md-6"><img src="https://i.imgur.com/4.jpg" alt="Image 4"></div>
+      </div>
+    </div>
+
+    <!-- Right side: Info and Ratings -->
+    <div class="col-lg-4">
+      <div class="info-card">
+        <strong>Initial release date</strong>
+        <div>3 September 2024</div>
+      </div>
+      <div class="info-card">
+        <strong>Developer</strong>
+        <div>Visual Concepts</div>
+      </div>
+      <div class="rating-card">
+        Steam <span>6/10</span>
+      </div>
+      <div class="rating-card">
+        Google Play <span>4.5/5</span>
+      </div>
+      <div class="rating-card">
+        Amazon.in <span>4.5/5</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <hr>
+  <h5>About</h5>
+  <p><strong>64%</strong> liked this video game</p>
+  <p class="text-muted">
+    NBA 2K25 is a 2024 basketball video game developed by Visual Concepts and published by 2K.
+    Based on the NBA, it is the 26th installment in the NBA 2K series and the successor to NBA 2K24.
+  </p>
+
+</div>
 
           <div class="sectiono container mt-4">
             <div class="game-card">
