@@ -3917,48 +3917,82 @@
                   <div class="my-5 py-5"></div>
                  
                   <div class="row">
-                                <style>
-                                    .custom-icon {
-                                        font-size: 4rem; /* Size of the icon */
-                                        color: #3498db; /* Color of the icon */
-                                    }
-                                </style>
-                   <div class="col-6 mb-3">
-                    <div class="row">
-                      <div class="col-3 text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$commentedRates->count()}}  <i class="bi bi-star-fill"></i></div>
-                        <div class="fw-light fs-sm text-muted">Review</div>
-                      </div>
-                      <div class="col-3 text-center px-0 border-end">
-                        <div class="fw-bold text-center">{{$event->edition}} <i class="bi bi-patch-check-fill"></i></div>
-                        <div class="fw-light fs-sm text-muted">Edition</div>
-                      </div>
+                    <style>
+                      .custom-icon {
+                        font-size: 1.1rem;
+                        vertical-align: middle;
+                        color: #3498db;
+                      }
+                      .stat-title {
+                        font-size: 0.85rem;
+                        color: #888;
+                      }
+                      .stat-value {
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                      }
+                      .border-end:last-child {
+                        border-right: none !important;
+                      }
+                    </style>
 
-                    @if(is_numeric($event->auidence) && $event->auidence > 0)
-                    @else
-                      <div class="col-3 px-0 border-end">
-                        <div class="fw-bold text-center ">{{number_format(((float)$event->auidence / 1000) , 1). 'k'}} +</div>
-                        <div class="fw-light fs-sm text-muted">Visitor</div>
-                      </div>
-                    @endif
+                    <!-- Stats Block -->
+                    <div class="col-12 col-md-6 mb-3">
+                      <div class="row g-0 text-center border rounded py-2">
+                        <!-- Reviews -->
+                        <div class="col-3 border-end">
+                          <div class="stat-value">
+                            {{ $commentedRates->count() }} <i class="bi bi-star-fill custom-icon"></i>
+                          </div>
+                          <div class="stat-title">Reviews</div>
+                        </div>
 
-                      <div class="col-3 px-0 border-end">
-                         <div class="fw-bold text-center">{{round($commentedRates->avg('rate') , 1)}}</div>
-                         <div class="fw-light fs-xs text-muted">Rated for 3+</div>
+                        <!-- Edition -->
+                        <div class="col-3 border-end">
+                          <div class="stat-value">
+                            {{ $event->edition }} <i class="bi bi-patch-check-fill custom-icon"></i>
+                          </div>
+                          <div class="stat-title">Edition</div>
+                        </div>
+
+                        <!-- Visitors -->
+                        @if(is_numeric($event->auidence) && $event->auidence > 0)
+                          <div class="col-3 border-end">
+                            <div class="stat-value">
+                              {{ number_format(((float)$event->auidence / 1000), 1) . 'k' }}+
+                            </div>
+                            <div class="stat-title">Visitors</div>
+                          </div>
+                        @endif
+
+                        <!-- Average Rating -->
+                        <div class="col-3">
+                          <div class="stat-value">
+                            {{ round($commentedRates->avg('rate'), 1) }}
+                          </div>
+                          <div class="stat-title">Rated 3+</div>
+                        </div>
                       </div>
                     </div>
-                   </div>
-                   <div class="col-6"></div>
+
+                    <!-- Right Side (Optional Block) -->
+                    <div class="col-12 col-md-6">
+                      <!-- Your second half goes here -->
+                    </div>
                   </div>
+
+
+
+
                  
                   <div class="row">
                     <ul class="list-unstyled text-light">
-                              <li class="d-flex">
-                                <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a>
-                                <a class ="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a>
-                                <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
-                                <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
-                              </li>
+                      <li class="d-flex">
+                        <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a>
+                        <a class ="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a>
+                        <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
+                        <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
+                      </li>
                     </ul>
                   </div>
 
@@ -4151,7 +4185,7 @@
             }
           </style>
 
-          <div class="boody container my-4">
+          <div class = "container my-4">
             <!-- Top Header -->
             <div class="d-flex align-items-center justify-content-between mb-2">
               <div>
