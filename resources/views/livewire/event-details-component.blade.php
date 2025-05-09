@@ -4997,8 +4997,8 @@
               </section> -->
 
               <!-- Partner-->
-              <hr class="mt-md-2 mb-2">
-              <section class="container py-2 pt-md-5">
+              <hr class="mt-md-2 mb-2 d-lg-none">
+              <section class="container py-2 pt-md-5 d-lg-none">
                 <h6 class="text-left mb-2">Partner</h6>
                 <div class="">
                       @foreach ($eventbrand as $franchise)
