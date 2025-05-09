@@ -4266,21 +4266,7 @@
                         @endforeach
                       </div>
 
-                <section class="container py-5">                    
-                  <div class="card-group last" >
-
-                    <div class="card border-0">
-                      {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
-                      <div class="card-body">
-                        <div class="card-title text-primary fs-md">Find Business</div>
-                        <p class="card-text fs-sm fw-light">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
-                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
-                      </div>
-                    </div>
-
-
-                  </div>
-                </section>
+                
                 
                 <div class="row">
                   <div class="col-6">
@@ -4423,6 +4409,21 @@
               </div>
             </div>
           </section>
+
+          <section class="container py-5">                    
+            <div class="card-group last" >
+
+                <div class="card border-0">
+                    {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
+                    <div class="card-body">
+                    <div class="card-title text-primary fs-md">Find Business</div>
+                    <p class="card-text fs-sm fw-light">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
