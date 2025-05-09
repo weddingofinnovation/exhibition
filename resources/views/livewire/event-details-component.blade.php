@@ -3956,14 +3956,7 @@
                         </div>
 
                         <!-- Visitors -->
-                        @if(is_numeric($event->auidence) && $event->auidence > 0)
-                          <div class="col-3 border-end">
-                            <div class="stat-value">
-                              {{ number_format(((float)$event->auidence / 1000), 1) . 'k' }}+
-                            </div>
-                            <div class="stat-title">Visitors</div>
-                          </div>
-                        @endif
+                       
 
                         <!-- additive -->
                         <style>
