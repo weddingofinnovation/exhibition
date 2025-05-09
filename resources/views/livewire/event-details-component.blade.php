@@ -4026,7 +4026,8 @@
                                       width: 2.1875rem;
                                   }
                         </style>
-                        <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3">
+                        <!-- <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3"> -->
+                        <div class="col-3 border-end">
                           <div class="d-flex align-items-center">
                             <h6 class="text-white mb-0 me-2">5K+</h6>
                             <ul class="avatar-group mb-0 align-items-center">
@@ -4049,7 +4050,8 @@
                           </div>
                           <p class="text-white mb-0 mt-2">Total visitors per month</p>
                         </div>
-                        
+                        <!-- </div> -->
+
 
                         <!-- Average Rating -->
                         <div class="col-3">
