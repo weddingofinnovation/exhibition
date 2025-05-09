@@ -4040,15 +4040,9 @@
                               <li class="avatar avatar-xs">
                                 <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
                               </li>
-                              <li class="avatar avatar-xs">
-                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi3.jpg" alt="avatar">
-                              </li>
-                              <li class="avatar avatar-xs">
-                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi4.jpg" alt="avatar">
-                              </li>
                             </ul>
                           </div>
-                          <p class="text-white mb-0 mt-2">Total visitors per month</p>
+                          <p class="text-dark mb-0 mt-2">Total visitors per month</p>
                         </div>
                         <!-- </div> -->
 
