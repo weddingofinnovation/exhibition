@@ -4199,11 +4199,49 @@
                 <h5 class="mb-1">Understanding Expo</h5>
                 <hr class="mt-md-2 mb-2">
 
-            <div class="d-flex mb-3"><span>Industry</span> 
-              @foreach($category as $cat) 
-                <a class="badge badge-accent border border-1 text-right border-dark text-dark mr-1" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
-              @endforeach
-            </div>
+                <style>
+                    .categories-list {
+                      display: flex;
+                      overflow-x: auto;
+                      padding: 5px;
+                      gap: 5px;
+                      white-space: nowrap;
+                      scrollbar-width: none;
+                    }
+
+                    .categories-list::-webkit-scrollbar{
+                      display: none;
+                    }
+                    
+                    .category-badge {
+                      flex: 0 0 auto;
+                      padding: 4px 7px;
+                      border-radius: 5px;
+                      border: 1px solid #ccc ;
+                      background-color: #fff;
+                      
+                      font-weight: 400;
+                      text-align: center;
+                      display: inline-block;
+                      font-size: 14px;
+                    }
+
+                    .category-badge:hover {
+                      background-color: black;
+                      color: white;
+                      
+                    }
+
+                </style>
+
+              <div class="d-flex mb-3">
+                <div class="categories-list">
+                  <span>Industry</span> 
+                  @foreach($category as $cat) 
+                    <a class="category-badge" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
+                  @endforeach
+                </div>
+              </div>
           
                 <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
                 <span class="badge rounded-pill bg-primary">Concurrent</span>
