@@ -3914,7 +3914,7 @@
                   <div class="">
                       <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5></div>
                  
-                  <div class="my-5 py-5"></div>
+                  <div class="my-2 py-2"></div>
                  
                   <div class="row">
                     <style>
