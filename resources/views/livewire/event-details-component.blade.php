@@ -4608,8 +4608,8 @@
               </ul>
           </section>
       
-          <!--Tab Step up-->
-          <section class="container mb-5 mb-lg-5">
+          <!--Tab Step up for mobile-->
+          <section class="container mb-5 mb-lg-5 d-lg-none">
             <div class="tab-content pt-2">
               @if($currentTab === 'tab1')
                 <div class="tab-pane fade show active">
@@ -4702,7 +4702,7 @@
                     @endif
 
                     @if($event->exhibitors == 0)
-                    @else
+                     @else
                       <div class="element-item bg-light" data-category="post-transition">
                         <h3 class="name">Exhibitor</h3>
                         <p class="symbol text-dark">{{$event->exhibitors}}</p>
@@ -4738,8 +4738,6 @@
                       <p class="number"><i class="bi bi-info-circle"></i></p>
                       <p class="weight">Insights</p>
                     </div>
-
-                   
                   </div>
                   
                 </div>
