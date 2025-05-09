@@ -3956,10 +3956,31 @@
                         </div>
 
                         <!-- Visitors -->
-                       
+                        @if(is_numeric($event->auidence) && $event->auidence > 0)
+                          <div class="col-3 border-end">
+                            <div class="stat-value">
+                              {{ number_format(((float)$event->auidence / 1000), 1) . 'k' }}+
+                            </div>
+                            <div class="stat-title">Visitors</div>
+                          </div>
+                        @endif
 
-                        <!-- additive -->
-                        <style>
+
+                        <!-- Average Rating -->
+                        <div class="col-3">
+                          <div class="stat-value">
+                            {{ round($commentedRates->avg('rate'), 1) }}
+                          </div>
+                          <div class="stat-title">Rated 3+</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Right Side (Optional Block) -->
+                    <div class="col-12 col-md-6">
+                      <!-- Your second half goes here -->
+                       <!-- additive -->
+                       <style>
                           .avatar-img {
                                   width: 100%;
                                   height: 100%;
@@ -4038,21 +4059,6 @@
                           <p class="text-dark stat-title">Total visitors per month</p>
                         </div>
                         <!-- </div> -->
-
-
-                        <!-- Average Rating -->
-                        <div class="col-3">
-                          <div class="stat-value">
-                            {{ round($commentedRates->avg('rate'), 1) }}
-                          </div>
-                          <div class="stat-title">Rated 3+</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <!-- Right Side (Optional Block) -->
-                    <div class="col-12 col-md-6">
-                      <!-- Your second half goes here -->
                     </div>
                   </div>
 
