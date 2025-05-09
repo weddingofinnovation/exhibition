@@ -4157,6 +4157,8 @@
 
                   <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
                         
+                  <p class="mb-1 text-right">Understanding Expo</p>
+                  <hr class="mt-md-2 mb-2">
                 </div>
               </div>
            </div>
