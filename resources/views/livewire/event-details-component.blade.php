@@ -5024,7 +5024,7 @@
               @endphp
 
               @if($relativeEvent->count() >= 2 )
-                <div class="container mb-5">
+                <div class = "container mb-5 d-lg-none">
                   <div class="row g-0 py-0 mx-n2 mt-2"> 
                     {{-- px-2 mb-1 --}}
                     @foreach($relativeEvent as $eventoi)
