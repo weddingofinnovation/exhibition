@@ -4591,7 +4591,7 @@
           <section class="container d-lg-none ">
               <ul class="nav nav-tabs" role="tablist">
                   
-              @if($eventype = 'conference')
+              @if($event->eventype = 'conference')
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">Overview</a>
                   </li>
@@ -4638,7 +4638,7 @@
           <section class="container mb-5 mb-lg-5 d-lg-none">
             <div class="tab-content pt-2">
          
-            @if($eventype = 'conference')
+            @if($event->eventype = 'conference')
 
               @if($currentTab === 'tab1')
                     <div class ="tab-pane">
@@ -4698,7 +4698,7 @@
                         </div>
 
 
-                        
+
                     </div>
                 @elseif($currentTab === 'tab3')
                     <!-- exhibitor tab-->
