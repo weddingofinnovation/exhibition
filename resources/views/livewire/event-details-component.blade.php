@@ -4776,18 +4776,82 @@
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
+                                <h5 class="mb-0">Lunch Break</h5>
+                                <span class="fw-semibold">12:15 PM – 1:15 PM</span>
+                            </div>
+
+                        </div>
+
+                        <div class = "card mb-3 shadow-sm border-0">
+                            <!-- Header section with time and title -->
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Workshop: "Compliance and Regulatory Updates in Insurance & Finance"</h5>
+                                <span class="fw-semibold">1:15 PM – 1:45 PM</span>
                             </div>
 
                             <!-- Body section with description and speaker -->
                             <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
+                                <p class="card-text mb-1">An interactive session covering recent regulatory changes and compliance requirements affecting the insurance and finance sectors.</p>
                                 
                                 <div class="d-flex align-items-center mb-2">
                                     <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
                                     <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
+                                        <small class="text-muted">Facilitator: Mr. Arvind Patel, Legal Advisor, FADA</small>
+                                        <strong>Jane Doe</strong><br>
+                                        <small>CTO, TechCorp</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "card mb-3 shadow-sm border-0">
+                            <!-- Header section with time and title -->
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Customer-Centric Approaches in Insurance Sales</h5>
+                                <span class="fw-semibold">1:45 PM – 2:15 PM</span>
+                            </div>
+
+                            <!-- Body section with description and speaker -->
+                            <div class="card-body">
+                                <p class="card-text mb-1">Delving into strategies for enhancing customer engagement and satisfaction in insurance sales.</p>
+                                
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
+                                    <div>
+                                        <small class="text-muted">Speaker: Ms. Leena Thomas, VP Sales, Trust Insurance</small>
+                                        <strong>Jane Doe</strong><br>
+                                        <small>CTO, TechCorp</small>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Speaker: Mr. Suresh Babu, Customer Experience Head, AutoCare Ltd.</small>
+                                        <strong>Jane Doe</strong><br>
+                                        <small>CTO, TechCorp</small>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted">Speaker: Ms. Anjali Mehta, CRM Consultant, EngagePlus</small>
+                                        <strong>Jane Doe</strong><br>
+                                        <small>CTO, TechCorp</small>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "card mb-3 shadow-sm border-0">
+                            <!-- Header section with time and title -->
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Innovative Insurance Products for the Modern Consumer</h5>
+                                <span class="fw-semibold">2:15 PM – 2:45 PM</span>
+                            </div>
+
+                            <!-- Body section with description and speaker -->
+                            <div class="card-body">
+                                <p class="card-text mb-1">Introducing cutting-edge insurance products designed to meet the evolving needs of today's consumers.</p>
+                                
+                                <div class="d-flex align-items-center mb-2">
+                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
+                                    <div>
+                                        <small class="text-muted">Speaker: Mr. Deepak Verma, Product Manager, NewAge Insure</small>
                                         <strong>Jane Doe</strong><br>
                                         <small>CTO, TechCorp</small>
                                     </div>
@@ -4798,18 +4862,31 @@
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
+                                <h5 class="mb-0">Coffee Break & Networking</h5>
+                                <span class="fw-semibold">2:45 PM – 3:15 PM</span>
                             </div>
 
                             <!-- Body section with description and speaker -->
                             <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
+                                <p class="card-text mb-1">A short break to enjoy refreshments and continue networking with peers and industry experts.</p>
+                            </div>
+                        </div>
+
+                        <div class = "card mb-3 shadow-sm border-0">
+                            <!-- Header section with time and title -->
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Leveraging Data Analytics for Strategic Decision Making</h5>
+                                <span class="fw-semibold">3:15 PM – 3:45 PM</span>
+                            </div>
+
+                            <!-- Body section with description and speaker -->
+                            <div class="card-body">
+                                <p class="card-text mb-1">An exploration of how data analytics can inform strategic decisions in insurance and finance operations.</p>
                                 
                                 <div class="d-flex align-items-center mb-2">
                                     <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
                                     <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
+                                        <small class="text-muted">Speaker: Ms. Ritu Malhotra, Data Analyst, FinInsights</small>
                                         <strong>Jane Doe</strong><br>
                                         <small>CTO, TechCorp</small>
                                     </div>
@@ -4820,18 +4897,18 @@
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
+                                <h5 class="mb-0">The Road Ahead for Dealers in the Insurance & Finance Ecosystem</h5>
+                                <span class="fw-semibold">3:45 PM – 4:15 PM</span>
                             </div>
 
                             <!-- Body section with description and speaker -->
                             <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
+                                <p class="card-text mb-1">Final thoughts on the evolving role of dealers and how they can adapt to and thrive in the changing landscape.</p>
                                 
                                 <div class="d-flex align-items-center mb-2">
                                     <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
                                     <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
+                                        <small class="text-muted">Speaker: Mr. Ajay Khanna, Chairman, FADA Advisory Board</small>
                                         <strong>Jane Doe</strong><br>
                                         <small>CTO, TechCorp</small>
                                     </div>
@@ -4842,110 +4919,13 @@
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
+                                <h5 class="mb-0">Networking Cocktail Hour</h5>
+                                <span class="fw-semibold">4:15 PM – 5:00 PM</span>
                             </div>
 
                             <!-- Body section with description and speaker -->
                             <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "card mb-3 shadow-sm border-0">
-                            <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
-                            </div>
-
-                            <!-- Body section with description and speaker -->
-                            <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "card mb-3 shadow-sm border-0">
-                            <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
-                            </div>
-
-                            <!-- Body section with description and speaker -->
-                            <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "card mb-3 shadow-sm border-0">
-                            <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
-                            </div>
-
-                            <!-- Body section with description and speaker -->
-                            <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class = "card mb-3 shadow-sm border-0">
-                            <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Registration & Welcome Breakfast</h5>
-                                <span class="fw-semibold">9:00 AM – 9:15 AM</span>
-                            </div>
-
-                            <!-- Body section with description and speaker -->
-                            <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
+                                <p class="card-text mb-1">Conclude the day with a relaxed networking session, offering beverages and light snacks.</p>
                             </div>
                         </div>
                         
