@@ -4607,8 +4607,8 @@
           </style>
 
           <!-- tab heading-->  
-          <section class="container d-lg-none nav-tabs-wrapper ">
-              <ul class="nav-tabs-scroll" role="tablist">
+          <section class=" d-lg-none nav-tabs-wrapper ">
+              <ul class="nav-tabs-scroll p-0 m-0" role="tablist">
                   
               @if($event->eventype == 'conference')
                   <li class="nav-tab">
