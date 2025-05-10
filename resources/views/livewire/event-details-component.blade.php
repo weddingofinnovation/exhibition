@@ -4612,8 +4612,8 @@
                     <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')">Previous Edition</a>  
                   </li>
 
-                @else
-                
+                @else()
+
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">  Understanding</a>
                   </li>
@@ -4637,365 +4637,535 @@
           <!--Tab Step up for mobile-->
           <section class="container mb-5 mb-lg-5 d-lg-none">
             <div class="tab-content pt-2">
+         
+            @if($eventype = 'conference')
+
               @if($currentTab === 'tab1')
-                <div class="tab-pane fade show active">
-                  <!--details-->
-                  <!-- mobile -->
-                  <div class="d-lg-none">
-                          <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
-                            <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
-                            <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
-                          </div>-->
-                          
-                            @if($commentedRates->count() > 0)
-                              <div class="col-lg-4 col-md-5 pt-2 pb-0">
-                                  <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
-                                
-                                        <i class = "bi bi-star-filled text-accent me-1"></i>
-                                          <span class="fs-md fw-bold">
-                                          <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
-                                          <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
-                                      
-                                            <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
-                                  </a>        
-                              </div>
-                            @endif
-                        
-                          <ul class="list-unstyled  bg-secondary py-1">
-                                @if(Auth::check())
-                                  @php
-                                      $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
-                                      $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
-                                      $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
-                                  @endphp
+                    <div class ="tab-pane">
+                        <div class="container py-5 d-none d-sm-block">                    
+                            <div class="card-group" >
 
-                                  @if(count($checkComment) > '0')
-                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
-                                    </li>
-                                  @else
-                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
-                                    </li>
-                                  @endif
+                                <div class="card border-0">
+                                    {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
+                                    <div class="card-body">
+                                    <div class="card-title text-primary fs-md">Find Business</div>
+                                    <p class="card-text fs-sm fw-light">Looking to partner with the right exhibitors for your event or business? Our Service connects you with a comprehensive exhibtor profiles. Find the perfect match for your needs whether you're organizing an event or seeking collaboration opportunities.</p>
+                                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Directory</a>
+                                    </div>
+                                </div>
 
-                                @else
-                                    <li class="d-flex justify-content-between px-2 m-0 lh-1">
-                                      <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
-                                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
-                                    </li>
-                                @endif
-                          </ul>
-                        
-                          
-                          <div>
-                            @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(((float)$event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
-                            
-                            @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
-                            <span class="fs-xs fw-normal"> Visitors </span>@endif
-                            {{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate))}} days
-                            <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
-
-                            <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
-                            <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
-                            <!-- 170 -->
-                          </div>
-
-                  </div>  
-                  
-                  <div class="grido mb-5">
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Edition</h3>
-                      <p class="symbol text-dark">{{$event->edition}}</p>
-                      <p class="number"> <i class="bi bi-add"></i> </p>
-                      @if($event->latestupdat == 'verfied')
-                        <p class="weight">Verified</p>
-                      @endif
-                    </div>
-
-                    @if($event->auidence == 0)
-                    @else
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Visitor</h3>
-                        <p class="symbol text-dark">{{number_format(((float)$event->auidence / 1000) , 1)}}  <sub class="fw-normal fs-sm">K</sub></p>
-                        <p class="number"></p>
-                        @if($event->latestupdat == 'verfied')
-                          <p class="weight">Verified</p>
-                        @endif
-                      </div>
-                    @endif
-
-                    @if($event->exhibitors == 0)
-                     @else
-                      <div class="element-item bg-light" data-category="post-transition">
-                        <h3 class="name">Exhibitor</h3>
-                        <p class="symbol text-dark">{{$event->exhibitors}}</p>
-                        <p class="number"></p>
-                        @if($event->latestupdat == 'verfied')
-                          <p class="weight">Verified</p>
-                        @endif
-                      </div>
-                    @endif
-
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Great Exhibition To Exhibitd</h3>
-                      <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
-                      <p class="number"><a href="{{route('business.membership')}}"><i class="bi bi-info-circle"></i></a></p>
-
-                        @if($event->latestupdat == 'verfied')
-                          <p class="weight">Verified</p>
-                        @endif
-                    </div>
-
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Business Days</h3>
-                      <p class="symbol text-dark">{{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate)) + 1}}</p>
-                      <p class="number"></p>
-                      @if($event->latestupdat == 'verfied')
-                        <p class="weight">Verified</p>
-                      @endif
-                    </div>
-
-                    <div class="element-item bg-light" data-category="post-transition">
-                      <h3 class="name">Support</h3>
-                      <p class="symbol">Bi</p>
-                      <p class="number"><i class="bi bi-info-circle"></i></p>
-                      <p class="weight">Insights</p>
-                    </div>
-                  </div>
-                  
-                </div>
-              @elseif($currentTab === 'tab2')
-                <!-- membership tab-->
-                <div class="tab-pane fade show active">
-
-                  <div class="container">
-                    <div class="row gy-2">
-
-                        <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
-                        <p class="fs-xs">Find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
-                        
-                          <div class="row g-0 py-0 mx-n2">
-          
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'design'])}}">
-                            <h3 class="name">Design</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Stall</p>
-                          </a> 
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'giveaway'])}}">
-                            <h3 class="name">Material</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Giveaways</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'fabrication'])}}">
-                            <h3 class="name">Fabrication</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Verified</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'printing'])}}">
-                            <h3 class="name">Printing</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Verified</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'stay'])}}">
-                            <h3 class="name">Stay</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Verified</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'invite'])}}">
-                            <h3 class="name">Invite</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Verified</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'photography'])}}">
-                            <h3 class="name">Photography</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Verified</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
-                            <h3 class="name">Plan</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">your Exhibition</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'directory'])}}">
-                            <h3 class="name">Business</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Directory</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'hostess'])}}">
-                            <h3 class="name">Business</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Hostess</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'meet'])}}">
-                            <h3 class="name">Business</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Meet up</p>
-                          </a>
-
-                          <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
-                            <h3 class="name">Delegates</h3>
-                            <p class="symbol">Bi</p>
-                            <!-- <p class="number">83</p> -->
-                            <p class="weight">Right People</p>
-                          </a>
-                        </div>
-                      <!-- <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Giveaways</span></div>
-
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Printing</span></div>
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Stay</span></div>
-                      <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Invite</span></div>
-                      <div class="col border-1"> <span class="fs-sm">Plan your Exhibition</span></div> -->
-
-                        <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
-                        <ul class="mt-5">
-                        <p class="fs-xs"> For more than 20 years of trust, <span class="text-primary">O'laro, The Exhibition Network product</span>  has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
-                          find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
-                        
-                          <li><span class="fs-sm fw-bold">Even low Quantities @ Best Prices</span>
-                            <p class="fs-xs">We offer low/single product quantities at affordable prices.</p>
-                          </li>
-                          <li><span class="fs-sm fw-bold">High quality products and Easy design</span>
-                            <p class="fs-xs">Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
-                          </li>
-                          <li><span class="fs-sm fw-bold">Free Replacement or Full Refund</span>
-                            <p class="fs-xs">We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
-                          </li>
-                        </ul>
-                    
-
-                    </div>
-                  </div>
-
-                </div>
-              @elseif($currentTab === 'tab3')
-                <!-- exhibitor tab-->
-                
-                    <div class="d-flex badgese pb-2">
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2022 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2023 </a></span>
-                      <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark">  2024 </a></span>
-                    </div>
-                
-                    <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
-                    <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
-                   
-                    <div class="row mb-5 pb-2">
-                        @foreach ($exhibitor as $franchise) 
-                          <div class=" ">
-                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                              
-                              <div class="col  pr-0">
-                                  
-                                      <div class="h4 fw-light mb-0">B21</div> 
-                                      <div class="small text-muted">Stall</div>
-                                      <!-- <a href=""><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a> -->
-                              </div>
-
-
-                              <div class="col-7  p-0">
-                                <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                  {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
-                               
-                                <div class="text-muted fs-sm text-start">category</div>
-                              </div>
-
-                              <div class="col-3  p-0">
-                                <a class="card-img-top d-block overflow-hidden" href="#">
-                                <i class="bi bi-download"></i></a>
-                              </div>
                             </div>
-                          </div>
-                        @endforeach
-                    </div> 
-                
+                        </div>
+                    </div>
+                @elseif($currentTab === 'tab2')
+                    <!-- membership tab-->
+                    <div class="tab-pane">
+                        <ul class="nav nav-tabs justify-content-center mb-4" id="agendaTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="day1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab">Day 1</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="day2-tab" data-bs-toggle="tab" data-bs-target="#day2" type="button" role="tab">Day 2</button>
+                            </li>
+                        </ul>
 
-                  
+                        <div class="row mb-4">
+                            <div class="col-md-2 text-end text-muted">09:00 AM</div>
+                            <div class="col-md-10">
+                                <div class="card shadow-sm mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Welcome Note</h5>
+                                    <p class="card-text">Introduction and overview of the day.</p>
+                                    <small class="text-muted">Speaker: John Doe, CEO</small>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="btn btn-link" data-bs-toggle="collapse" href="#session1" role="button">View More</a>
+                        <div class="collapse" id="session1">
+                            <div class="card card-body">
+                                Detailed description, speakers, presentation link, etc.
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
+                            <div>
+                                <strong>Jane Doe</strong><br>
+                                <small>CTO, TechCorp</small>
+                            </div>
+                        </div>
+
+
+                        
+                    </div>
+                @elseif($currentTab === 'tab3')
+                    <!-- exhibitor tab-->
                     
-                        <!-- <div class="grido">
-                            @foreach($exhibitor as $participants)
-                            <div class="element-item" data-category="post-transition">
-                              <h3 class="name text-light">{{$participants->brand_name}}</h3>
-                              <p class="symbol">{{$participants->brand_name}}</p>
-                              <p class="number">82</p>
-                              <p class="weight">Verified</p>
+                        <div class="d-flex badgese pb-2">
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2022 </a></span>
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2023 </a></span>
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark">  2024 </a></span>
+                        </div>
+                    
+                        <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
+                        <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
+                    
+                        <div class="row mb-5 pb-2">
+                            @foreach ($exhibitor as $franchise) 
+                            <div class=" ">
+                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                
+                                <div class="col  pr-0">
+                                    
+                                        <div class="h4 fw-light mb-0">B21</div> 
+                                        <div class="small text-muted">Stall</div>
+                                        <!-- <a href=""><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a> -->
+                                </div>
+
+
+                                <div class="col-7  p-0">
+                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                    {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
+                                
+                                    <div class="text-muted fs-sm text-start">category</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                    <a class="card-img-top d-block overflow-hidden" href="#">
+                                    <i class="bi bi-download"></i></a>
+                                </div>
+                                </div>
                             </div>
                             @endforeach
-                        </div> -->
+                        </div> 
                     
-                  
-              @elseif($currentTab === 'tab4')
-              <!-- Faq tab-->
-                <div class="tab-pane fade show active">
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                  
-                @php
-                   $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
-                @endphp
-                
-                @foreach($updateQuestion as $questions)
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                      data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        {{$questions->question}}
-                      </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                    </div>
-                  </div>
-                @endforeach
 
-                  <!-- <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        Accordion Item #2
-                      </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Accordion Item #3
-                      </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
-                    </div>
-                  </div> -->
-                </div>
-                </div>
+                    
+                        
+                            <!-- <div class="grido">
+                                @foreach($exhibitor as $participants)
+                                <div class="element-item" data-category="post-transition">
+                                <h3 class="name text-light">{{$participants->brand_name}}</h3>
+                                <p class="symbol">{{$participants->brand_name}}</p>
+                                <p class="number">82</p>
+                                <p class="weight">Verified</p>
+                                </div>
+                                @endforeach
+                            </div> -->
+                        
+                    
+                @elseif($currentTab === 'tab4')
+                        <!-- Faq tab-->
+                        <div class="tab-pane fade show active">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        
+                        @php
+                        $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
+                        @endphp
+                        
+                        @foreach($updateQuestion as $questions)
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                {{$questions->question}}
+                            </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                        <!-- <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Accordion Item #2
+                            </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Accordion Item #3
+                            </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                            </div>
+                        </div> -->
+                        </div>
+                        </div>
               @endif
+
+            @else()
+
+              @if($currentTab === 'tab1')
+                    <div class="tab-pane fade show active">
+                    <!--details-->
+                    <!-- mobile -->
+                    <div class="d-lg-none">
+                            <!--<div class="col-lg-4 col-md-5 pt-2 pb-0">
+                                <div class="star-rating me-2"><i class="bi bi-star-filled text-accent me-1"></i>
+                                <span class="fs-md fw-bold">77% </span><span class="d-inline-block align-middle fs-sm"> 58K rating</span></div>        
+                            </div>-->
+                            
+                                @if($commentedRates->count() > 0)
+                                <div class="col-lg-4 col-md-5 pt-2 pb-0">
+                                    <a class="star-rating me-2 pb-2" href="{{route('business.award', ['slug'=> $event->slug])}}"> 
+                                    
+                                            <i class = "bi bi-star-filled text-accent me-1"></i>
+                                            <span class="fs-md fw-bold">
+                                            <i class="bi bi-star-fill text-primary me-1"></i> {{round($commentedRates->avg('rate') , 1)}}/10 </span>
+                                            <span class="d-inline-block align-middle fs-xs"> {{$commentedRates->count()}} Reviews</span>
+                                        
+                                                <i class="bi bi-chevron-right fs-xs text-primary me-1"></i>
+                                    </a>        
+                                </div>
+                                @endif
+                            
+                            <ul class="list-unstyled  bg-secondary py-1">
+                                    @if(Auth::check())
+                                    @php
+                                        $find = DB::table('rates')->where('user_id', Auth::user()->id)->get();
+                                        $checkComment = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->get();
+                                        $checkCommentop = DB::table('rates')->where('user_id', Auth::user()->id)->where('event_id', $findEvent)->value('rate');
+                                    @endphp
+
+                                    @if(count($checkComment) > '0')
+                                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">{{$checkCommentop}}/10</a></span>
+                                        </li>
+                                    @else
+                                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm"> Rate Now</a></span>
+                                        </li>
+                                    @endif
+
+                                    @else
+                                        <li class="d-flex justify-content-between px-2 m-0 lh-1">
+                                        <span class="text-dark fw-medium fs-sm">  Add your rating & review <br><span class="text-muted fw-light fs-xs">Your ratings matter</span></span>
+                                        <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Rate Now</a></span>
+                                        </li>
+                                    @endif
+                            </ul>
+                            
+                            
+                            <div>
+                                @if($event->exhibitors != null) <span class="fs-xs fw-bold"> + {{number_format(((float)$event->exhibitors / 1000) , 1). 'k'}}</span> <span class="fs-xs fw-normal">Exhibitors</span>  @endif |
+                                
+                                @if($event->exhibitors != null) <span class="fs-xs fw-bold">+ {{$event->auidence}}</span> 
+                                <span class="fs-xs fw-normal"> Visitors </span>@endif
+                                {{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate))}} days
+                                <div class="fs-lg fw-bolder"> {{Str::limit($event->eventname,289)}}</div>
+
+                                <p class="fs-md fw-bold mt-0"> {{Str::limit($event->tagline,289)}}</p>
+                                <div class="fs-xs fw-normal pb-2 pt-0">{{Str::limit($event->shtdesc,289)}}</div> 
+                                <!-- 170 -->
+                            </div>
+
+                    </div>  
+                    
+                    <div class="grido mb-5">
+                        <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Edition</h3>
+                        <p class="symbol text-dark">{{$event->edition}}</p>
+                        <p class="number"> <i class="bi bi-add"></i> </p>
+                        @if($event->latestupdat == 'verfied')
+                            <p class="weight">Verified</p>
+                        @endif
+                        </div>
+
+                        @if($event->auidence == 0)
+                        @else
+                        <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Visitor</h3>
+                            <p class="symbol text-dark">{{number_format(((float)$event->auidence / 1000) , 1)}}  <sub class="fw-normal fs-sm">K</sub></p>
+                            <p class="number"></p>
+                            @if($event->latestupdat == 'verfied')
+                            <p class="weight">Verified</p>
+                            @endif
+                        </div>
+                        @endif
+
+                        @if($event->exhibitors == 0)
+                        @else
+                        <div class="element-item bg-light" data-category="post-transition">
+                            <h3 class="name">Exhibitor</h3>
+                            <p class="symbol text-dark">{{$event->exhibitors}}</p>
+                            <p class="number"></p>
+                            @if($event->latestupdat == 'verfied')
+                            <p class="weight">Verified</p>
+                            @endif
+                        </div>
+                        @endif
+
+                        <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Great Exhibition To Exhibitd</h3>
+                        <p class="symbol text-dark">{{round($commentedRates->avg('rate') , 1)}}</p>
+                        <p class="number"><a href="{{route('business.membership')}}"><i class="bi bi-info-circle"></i></a></p>
+
+                            @if($event->latestupdat == 'verfied')
+                            <p class="weight">Verified</p>
+                            @endif
+                        </div>
+
+                        <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Business Days</h3>
+                        <p class="symbol text-dark">{{Carbon::parse($event->startdate)->diffInDays(Carbon::parse ($event->enddate)) + 1}}</p>
+                        <p class="number"></p>
+                        @if($event->latestupdat == 'verfied')
+                            <p class="weight">Verified</p>
+                        @endif
+                        </div>
+
+                        <div class="element-item bg-light" data-category="post-transition">
+                        <h3 class="name">Support</h3>
+                        <p class="symbol">Bi</p>
+                        <p class="number"><i class="bi bi-info-circle"></i></p>
+                        <p class="weight">Insights</p>
+                        </div>
+                    </div>
+                    
+                    </div>
+                @elseif($currentTab === 'tab2')
+                    <!-- membership tab-->
+                    <div class="tab-pane fade show active">
+
+                    <div class="container">
+                        <div class="row gy-2">
+
+                            <h3 class="h5 pt-2">The Exhibition Network: The leader in customisation </h3>
+                            <p class="fs-xs">Find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
+                            
+                            <div class="row g-0 py-0 mx-n2">
+            
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'design'])}}">
+                                <h3 class="name">Design</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Stall</p>
+                            </a> 
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'giveaway'])}}">
+                                <h3 class="name">Material</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Giveaways</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'fabrication'])}}">
+                                <h3 class="name">Fabrication</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Verified</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'printing'])}}">
+                                <h3 class="name">Printing</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Verified</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'stay'])}}">
+                                <h3 class="name">Stay</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Verified</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'invite'])}}">
+                                <h3 class="name">Invite</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Verified</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'photography'])}}">
+                                <h3 class="name">Photography</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Verified</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
+                                <h3 class="name">Plan</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">your Exhibition</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'directory'])}}">
+                                <h3 class="name">Business</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Directory</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'hostess'])}}">
+                                <h3 class="name">Business</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Hostess</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'meet'])}}">
+                                <h3 class="name">Business</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Meet up</p>
+                            </a>
+
+                            <a class="element-item bg-light" data-category="post-transition" href="{{route('event.exhibit', ['board' => 'plan_your_exhibition'])}}">
+                                <h3 class="name">Delegates</h3>
+                                <p class="symbol">Bi</p>
+                                <!-- <p class="number">83</p> -->
+                                <p class="weight">Right People</p>
+                            </a>
+                            </div>
+                        <!-- <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Design</span> </div>
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Fabrication</span></div>
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Hostess</span></div>
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Giveaways</span></div>
+
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Printing</span></div>
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Stay</span></div>
+                        <div class="col border-1"> <i class="bi bi-plus"></i><span class="fs-sm">Invite</span></div>
+                        <div class="col border-1"> <span class="fs-sm">Plan your Exhibition</span></div> -->
+
+                            <!-- <p class="fs-md"> {{Str::limit($event->desc,289)}}...</p>-->
+                            <ul class="mt-5">
+                            <p class="fs-xs"> For more than 20 years of trust, <span class="text-primary">O'laro, The Exhibition Network product</span>  has helped business owners, entrepreneurs and individuals create their identities with custom designs and professional marketing. Our online printing services are intended to you 
+                            find high quality customised products you need - Visiting cards, personalized clothing, gifting products, and much more.</p>
+                            
+                            <li><span class="fs-sm fw-bold">Even low Quantities @ Best Prices</span>
+                                <p class="fs-xs">We offer low/single product quantities at affordable prices.</p>
+                            </li>
+                            <li><span class="fs-sm fw-bold">High quality products and Easy design</span>
+                                <p class="fs-xs">Our wide selection of high-quality products and online design tools make it easy for you to customize and order your favourite products.</p>
+                            </li>
+                            <li><span class="fs-sm fw-bold">Free Replacement or Full Refund</span>
+                                <p class="fs-xs">We stand by everything we sell. So if you're not satisfied, we'll make it right.</p>
+                            </li>
+                            </ul>
+                        
+
+                        </div>
+                    </div>
+
+                    </div>
+                @elseif($currentTab === 'tab3')
+                    <!-- exhibitor tab-->
+                    
+                        <div class="d-flex badgese pb-2">
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2022 </a></span>
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2023 </a></span>
+                        <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark">  2024 </a></span>
+                        </div>
+                    
+                        <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
+                        <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
+                    
+                        <div class="row mb-5 pb-2">
+                            @foreach ($exhibitor as $franchise) 
+                            <div class=" ">
+                                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                
+                                <div class="col  pr-0">
+                                    
+                                        <div class="h4 fw-light mb-0">B21</div> 
+                                        <div class="small text-muted">Stall</div>
+                                        <!-- <a href=""><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a> -->
+                                </div>
+
+
+                                <div class="col-7  p-0">
+                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                    {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
+                                
+                                    <div class="text-muted fs-sm text-start">category</div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                    <a class="card-img-top d-block overflow-hidden" href="#">
+                                    <i class="bi bi-download"></i></a>
+                                </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div> 
+                    
+
+                    
+                        
+                            <!-- <div class="grido">
+                                @foreach($exhibitor as $participants)
+                                <div class="element-item" data-category="post-transition">
+                                <h3 class="name text-light">{{$participants->brand_name}}</h3>
+                                <p class="symbol">{{$participants->brand_name}}</p>
+                                <p class="number">82</p>
+                                <p class="weight">Verified</p>
+                                </div>
+                                @endforeach
+                            </div> -->
+                        
+                    
+                @elseif($currentTab === 'tab4')
+                        <!-- Faq tab-->
+                        <div class="tab-pane fade show active">
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        
+                        @php
+                        $updateQuestion = DB::table('questions')->where('event_id' , $event->id)->get();
+                        @endphp
+                        
+                        @foreach($updateQuestion as $questions)
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                {{$questions->question}}
+                            </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                            </div>
+                        </div>
+                        @endforeach
+
+                        <!-- <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Accordion Item #2
+                            </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Accordion Item #3
+                            </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                            </div>
+                        </div> -->
+                        </div>
+                        </div>
+              @endif
+
+            @endif
             </div>
           </section>
          
