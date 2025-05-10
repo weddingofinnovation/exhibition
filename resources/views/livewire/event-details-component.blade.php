@@ -4691,29 +4691,15 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Registration & Welcome Breakfast</h5>
                                 <span class="fw-semibold">9:00 AM – 9:15 AM</span>
-                            </div>
-
-                            <!-- Body section with description and speaker -->
-                            <div class="card-body">
-                                <p class="card-text mb-1">Kickstart the day with a networking breakfast, allowing attendees to connect and prepare for the sessions ahead.</p>
-                                
-                                <div class="d-flex align-items-center mb-2">
-                                    <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                                    <div>
-                                        <small class="text-muted">Speaker: John Doe, CEO</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Opening Remarks</h5>
                                 <span class="fw-semibold">9:30 AM – 9:45 AM</span>
                             </div>
@@ -4735,7 +4721,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Navigating the Future of Auto Insurance in India</h5>
                                 <span class="fw-semibold">9:45 AM – 10:15 AM</span>
                             </div>
@@ -4757,7 +4743,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Panel Discussion: "Digital Transformation in Automotive Financing"</h5>
                                 <span class="fw-semibold">10:15 AM – 10:45 AM</span>
                             </div>
@@ -4789,7 +4775,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Registration & Welcome Breakfast</h5>
                                 <span class="fw-semibold">9:00 AM – 9:15 AM</span>
                             </div>
