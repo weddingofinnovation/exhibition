@@ -4608,27 +4608,27 @@
 
           <!-- tab heading-->  
           <section class="container d-lg-none nav-tabs-wrapper ">
-              <ul class="nav nav-tabs nav-tabs-scroll" role="tablist">
+              <ul class="nav-tabs-scroll" role="tablist">
                   
               @if($event->eventype == 'conference')
-                  <li class="nav-item nav-tab">
+                  <li class="nav-tab">
                     <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">Overview</a>
                   </li>
 
-                  <li class="nav-item nav-tab">
+                  <li class="nav-tab">
                    <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">Key discussion points</a>  
                   </li>
 
-                  <li class="nav-item nav-tab">
+                  <li class="nav-tab">
                    <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">Speakers</a>
                   </li> 
                   
-                  <li class="nav-item nav-tab">
+                  <li class="nav-tab">
                     <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">Who should Attend</a>  
                   </li>
 
-                  <li class="nav-item nav-tab">
-                    <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')">Previous Edition</a>  
+                  <li class="nav-tab">
+                    <a class="nav-link px-1 {{$currentTab === 'tab5' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')">Previous Edition</a>  
                   </li>
 
                 @else()
@@ -4660,7 +4660,7 @@
             @if($event->eventype == 'conference')
 
               @if($currentTab === 'tab1')
-                    <div class ="tab-pane">
+                    <div class ="tab-pane fade show active">
                         <div class="container py-5 d-none d-sm-block">                    
                             <div class="card-group" >
 
@@ -4678,7 +4678,7 @@
                     </div>
                 @elseif($currentTab === 'tab2')
                     <!-- membership tab-->
-                    <div class="tab-pane">
+                    <div class="tab-pane fade show active">
                         <ul class="nav nav-tabs justify-content-center mb-4" id="agendaTabs" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="day1-tab" data-bs-toggle="tab" data-bs-target="#day1" type="button" role="tab">Day 1</button>
