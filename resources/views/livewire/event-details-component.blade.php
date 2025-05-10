@@ -4594,7 +4594,7 @@
 
             .nav-tabs-scroll {
             display: flex;
-            gap: 16px; /* Adjust spacing between tabs */
+            gap: 8px; /* Adjust spacing between tabs */
             }
 
             .nav-tab {
@@ -4605,29 +4605,6 @@
             }
 
           </style>
-
-<section class="container d-lg-none nav-tabs-wrapper overflow-auto">
-    <ul class="nav nav-tabs nav-tabs-scroll flex-nowrap d-flex gap-3" role="tablist" style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;">
-        @if($event->eventype == 'conference')
-            <li class="nav-tab flex-shrink-0">
-                <a class="nav-link px-3 {{$currentTab === 'tabA' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabA')">Overview</a>
-            </li>
-            <li class="nav-tab flex-shrink-0">
-                <a class="nav-link px-3 {{$currentTab === 'tabB' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabB')">Key discussion points</a>
-            </li>
-            <li class="nav-tab flex-shrink-0">
-                <a class="nav-link px-3 {{$currentTab === 'tabC' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabC')">Speakers</a>
-            </li>
-            <li class="nav-tab flex-shrink-0">
-                <a class="nav-link px-3 {{$currentTab === 'tabD' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabD')">Who should Attend</a>
-            </li>
-            <li class="nav-tab flex-shrink-0">
-                <a class="nav-link px-3 {{$currentTab === 'tabE' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabE')">Previous Edition</a>
-            </li>
-        @endif
-    </ul>
-</section>
-
 
           <!-- tab heading-->  
           <section class="container d-lg-none nav-tabs-wrapper ">
