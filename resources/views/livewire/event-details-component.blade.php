@@ -4410,8 +4410,8 @@
             </div>
           </section>
 
-          <section class="container py-5">                    
-            <div class="card-group last" >
+          <section class="container py-5 d-none d-sm-block">                    
+            <div class="card-group" >
 
                 <div class="card border-0">
                     {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
@@ -4423,7 +4423,7 @@
                 </div>
 
             </div>
-        </section>
+          </section>
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
