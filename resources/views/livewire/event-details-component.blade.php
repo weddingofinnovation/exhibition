@@ -4773,6 +4773,56 @@
                             </div>
                         </div>
 
+                        <div class="card mb-3 shadow-sm border-0">
+                            <!-- Header section with session type, title, and time -->
+                            <div class="card-header bg-light d-flex justify-content-between align-items-center flex-wrap">
+                                <div>
+                                <span class="badge bg-primary me-2">Keynote</span> <!-- Change to "Panel", "Workshop", etc. -->
+                                <h6 class="mb-0 d-inline-block">Welcome Note</h6>
+                                </div>
+                                <small class="text-muted fw-semibold">09:00 AM</small>
+                            </div>
+
+                            <!-- Body section with description and speaker -->
+                            <div class="card-body">
+                                <p class="card-text mb-3 text-dark" style="font-size: 0.95rem;">
+                                    Exploring how digital tools and platforms are revolutionizing automotive financing, enhancing customer experience, and streamlining operations.
+                                </p>
+
+                                <!-- Panelist Speakers List -->
+                                <div class="row">
+                                    <!-- Speaker 1 -->
+                                    <div class="col-12 col-md-4 d-flex align-items-start mb-3">
+                                    <img src="speaker1.jpg" class="rounded-circle me-3" width="50" height="50" alt="Ms. Sunita Rao">
+                                    <div>
+                                        <strong>Ms. Sunita Rao</strong><br>
+                                        <small class="text-muted">CTO, FinTech Innovations</small>
+                                    </div>
+                                    </div>
+
+                                    <!-- Speaker 2 -->
+                                    <div class="col-12 col-md-4 d-flex align-items-start mb-3">
+                                    <img src="speaker2.jpg" class="rounded-circle me-3" width="50" height="50" alt="Mr. Anil Kapoor">
+                                    <div>
+                                        <strong>Mr. Anil Kapoor</strong><br>
+                                        <small class="text-muted">Head of Auto Loans, XYZ Bank</small>
+                                    </div>
+                                    </div>
+
+                                    <!-- Speaker 3 -->
+                                    <div class="col-12 col-md-4 d-flex align-items-start mb-3">
+                                    <img src="speaker3.jpg" class="rounded-circle me-3" width="50" height="50" alt="Mr. Vikram Desai">
+                                    <div>
+                                        <strong>Mr. Vikram Desai</strong><br>
+                                        <small class="text-muted">Director, AutoFinance Co.</small>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
