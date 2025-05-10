@@ -4606,30 +4606,55 @@
 
           </style>
 
+<section class="container d-lg-none nav-tabs-wrapper overflow-auto">
+    <ul class="nav nav-tabs nav-tabs-scroll flex-nowrap d-flex gap-3" role="tablist" style="overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch;">
+        @if($event->eventype == 'conference')
+            <li class="nav-tab flex-shrink-0">
+                <a class="nav-link px-3 {{$currentTab === 'tabA' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabA')">Overview</a>
+            </li>
+            <li class="nav-tab flex-shrink-0">
+                <a class="nav-link px-3 {{$currentTab === 'tabB' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabB')">Key discussion points</a>
+            </li>
+            <li class="nav-tab flex-shrink-0">
+                <a class="nav-link px-3 {{$currentTab === 'tabC' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabC')">Speakers</a>
+            </li>
+            <li class="nav-tab flex-shrink-0">
+                <a class="nav-link px-3 {{$currentTab === 'tabD' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabD')">Who should Attend</a>
+            </li>
+            <li class="nav-tab flex-shrink-0">
+                <a class="nav-link px-3 {{$currentTab === 'tabE' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabE')">Previous Edition</a>
+            </li>
+        @endif
+    </ul>
+</section>
+
+
           <!-- tab heading-->  
           <section class="container d-lg-none nav-tabs-wrapper ">
               <ul class="nav-tabs-scroll" role="tablist">
                   
               @if($event->eventype == 'conference')
                   <li class="nav-tab">
-                    <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">Overview</a>
+                    <a class="nav-link px-1 {{$currentTab === 'tabA' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tabA')">Overview</a>
                   </li>
 
                   <li class="nav-tab">
-                   <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">Key discussion points</a>  
+                   <a class="nav-link px-1 {{$currentTab === 'tabB' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tabB')">Key discussion points</a>  
                   </li>
 
                   <li class="nav-tab">
-                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">Speakers</a>
+                   <a class="nav-link px-1 {{$currentTab === 'tabC' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tabC')">Speakers</a>
                   </li> 
                   
                   <li class="nav-tab">
-                    <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">Who should Attend</a>  
+                    <a class="nav-link px-1 {{$currentTab === 'tabD' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tabD')">Who should Attend</a>  
                   </li>
 
                   <li class="nav-tab">
-                    <a class="nav-link px-1 {{$currentTab === 'tab5' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')">Previous Edition</a>  
+                    <a class="nav-link px-1 {{$currentTab === 'tabE' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tabE')">Previous Edition</a>  
                   </li>
+
+                  
 
                 @else()
 
@@ -4657,9 +4682,8 @@
           <section class="container mb-5 mb-lg-5 d-lg-none">
             <div class="tab-content pt-2">
          
-            @if($event->eventype == 'conference')
-
-              @if($currentTab === 'tab1')
+            
+              @if($currentTab === 'tabA')
                     <div class ="tab-pane fade show active">
                         <div class="container py-5 d-none d-sm-block">                    
                             <div class="card-group" >
@@ -4676,7 +4700,7 @@
                             </div>
                         </div>
                     </div>
-                @elseif($currentTab === 'tab2')
+                @elseif($currentTab === 'tabB')
                     <!-- membership tab-->
                     <div class="tab-pane fade show active">
                         <ul class="nav nav-tabs justify-content-center mb-4" id="agendaTabs" role="tablist">
@@ -4719,7 +4743,7 @@
 
 
                     </div>
-                @elseif($currentTab === 'tab3')
+                @elseif($currentTab === 'tabC')
                     <!-- exhibitor tab-->
                     
                         <div class="d-flex badgese pb-2">
@@ -4775,7 +4799,7 @@
                             </div> -->
                         
                     
-                @elseif($currentTab === 'tab4')
+                @elseif($currentTab === 'tabD')
                         <!-- Faq tab-->
                         <div class="tab-pane fade show active">
                         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -4822,7 +4846,7 @@
                         </div>
               @endif
 
-            @else()
+           
 
               @if($currentTab === 'tab1')
                     <div class="tab-pane fade show active">
@@ -5184,7 +5208,6 @@
                         </div>
               @endif
 
-            @endif
             </div>
           </section>
          
