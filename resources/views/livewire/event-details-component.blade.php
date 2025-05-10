@@ -4585,9 +4585,35 @@
             </div>
           </section>
 
+          
+
           <!-- tab heading-->  
           <section class="container d-lg-none ">
               <ul class="nav nav-tabs" role="tablist">
+                  
+              @if($eventype = 'conference')
+                  <li class="nav-item">
+                    <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">Overview</a>
+                  </li>
+
+                  <li class="nav-item">
+                   <a class="nav-link px-1 {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')">Key discussion points</a>  
+                  </li>
+
+                  <li class="nav-item">
+                   <a class="nav-link px-1 {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')">Speakers</a>
+                  </li> 
+                  
+                  <li class="nav-item">
+                    <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">Who should Attend</a>  
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab5')">Previous Edition</a>  
+                  </li>
+
+                @else
+                
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')">  Understanding</a>
                   </li>
@@ -4603,9 +4629,8 @@
                   <li class="nav-item">
                     <a class="nav-link px-1 {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab4')">  FAQ</a>  
                   </li>
+                @endif
 
-                  
-                  
               </ul>
           </section>
       
