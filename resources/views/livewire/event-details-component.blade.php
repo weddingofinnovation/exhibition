@@ -4689,6 +4689,21 @@
                             </li>
                         </ul>
 
+                        <div class="card mb-3 shadow-sm border-0">
+                            <!-- Header section with time and title -->
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h5 class="mb-0">Welcome Note</h5>
+                                <span class="fw-semibold">09:00 AM</span>
+                            </div>
+
+                            <!-- Body section with description and speaker -->
+                            <div class="card-body">
+                                <p class="card-text mb-1">Introduction and overview of the day.</p>
+                                <small class="text-muted d-block">Speaker: John Doe, CEO</small>
+                            </div>
+                        </div>
+
+
                         <div class="row mb-4">
                             <div class="col-md-2 text-end text-muted">09:00 AM</div>
                             <div class="col-md-10">
@@ -4696,26 +4711,29 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Welcome Note</h5>
                                     <p class="card-text">Introduction and overview of the day.</p>
-                                    <small class="text-muted">Speaker: John Doe, CEO</small>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
+                                        <div>
+                                            <small class="text-muted">Speaker: John Doe, CEO</small>
+                                            <strong>Jane Doe</strong><br>
+                                            <small>CTO, TechCorp</small>
+                                        </div>
+                                    </div>
                                 </div>
+                                
+                                  <a class="btn btn-link" data-bs-toggle="collapse" href="#session1" role="button">View More</a>
                                 </div>
                             </div>
                         </div>
 
-                        <a class="btn btn-link" data-bs-toggle="collapse" href="#session1" role="button">View More</a>
+                        
                         <div class="collapse" id="session1">
                             <div class="card card-body">
                                 Detailed description, speakers, presentation link, etc.
                             </div>
                         </div>
 
-                        <div class="d-flex align-items-center mb-2">
-                            <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
-                            <div>
-                                <strong>Jane Doe</strong><br>
-                                <small>CTO, TechCorp</small>
-                            </div>
-                        </div>
+                        
 
 
 
