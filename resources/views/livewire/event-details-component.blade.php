@@ -4744,9 +4744,14 @@
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
                             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0">Panel Discussion: "Digital Transformation in Automotive Financing"</h5>
-                                <span class="fw-semibold">10:15 AM – 10:45 AM</span>
+
+                                <div>
+                                    <span class="badge bg-primary me-2">Panel Discussion:</span> <!-- Change to "Panel", "Workshop", etc. -->
+                                    <h6 class="mb-0 d-inline-block">Digital Transformation in Automotive Financing</h6>
+                                </div>
+                                <small class="fw-semibold">10:15 AM – 10:45 AM</small>
                             </div>
+
 
                             <!-- Body section with description and speaker -->
                             <div class="card-body">
@@ -4777,8 +4782,8 @@
                             <!-- Header section with session type, title, and time -->
                             <div class="card-header bg-light d-flex justify-content-between align-items-center flex-wrap">
                                 <div>
-                                <span class="badge bg-primary me-2">Keynote</span> <!-- Change to "Panel", "Workshop", etc. -->
-                                <h6 class="mb-0 d-inline-block">Welcome Note</h6>
+                                    <span class="badge bg-primary me-2">Keynote</span> <!-- Change to "Panel", "Workshop", etc. -->
+                                    <h6 class="mb-0 d-inline-block">Welcome Note</h6>
                                 </div>
                                 <small class="text-muted fw-semibold">09:00 AM</small>
                             </div>
@@ -4889,7 +4894,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Innovative Insurance Products for the Modern Consumer</h5>
                                 <span class="fw-semibold">2:15 PM – 2:45 PM</span>
                             </div>
@@ -4911,7 +4916,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Coffee Break & Networking</h5>
                                 <span class="fw-semibold">2:45 PM – 3:15 PM</span>
                             </div>
@@ -4936,9 +4941,9 @@
                                 <div class="d-flex align-items-center mb-2">
                                     <img src="speaker.jpg" class="rounded-circle me-3" width="50" height="50" alt="Speaker Photo">
                                     <div>
-                                        <small class="text-muted">Speaker: Ms. Ritu Malhotra, Data Analyst, FinInsights</small>
-                                        <strong>Jane Doe</strong><br>
-                                        <small>CTO, TechCorp</small>
+                                        <!-- <small class="text-muted">Speaker: , Data Analyst, FinInsights</small> -->
+                                        <strong>Ms. Ritu</strong><br>
+                                        <small>Data Analyst, FinInsights</small>
                                     </div>
                                 </div>
                             </div>
@@ -4946,7 +4951,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">The Road Ahead for Dealers in the Insurance & Finance Ecosystem</h5>
                                 <span class="fw-semibold">3:45 PM – 4:15 PM</span>
                             </div>
@@ -4968,7 +4973,7 @@
 
                         <div class = "card mb-3 shadow-sm border-0">
                             <!-- Header section with time and title -->
-                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Networking Cocktail Hour</h5>
                                 <span class="fw-semibold">4:15 PM – 5:00 PM</span>
                             </div>
