@@ -4598,10 +4598,10 @@
             }
 
             .nav-tab {
-            flex: 0 0 auto;
-            padding: 8px 12px;
-            cursor: pointer;
-            white-space: nowrap;
+                flex: 0 0 auto;
+                padding: 4px 6px;
+                cursor: pointer;
+                white-space: nowrap;
             }
 
           </style>
