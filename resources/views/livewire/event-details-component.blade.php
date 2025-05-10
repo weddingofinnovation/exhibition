@@ -4585,7 +4585,26 @@
             </div>
           </section>
 
-          
+          <style>
+            .nav-tabs-wrapper {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-tabs-scroll {
+            display: flex;
+            gap: 16px; /* Adjust spacing between tabs */
+            }
+
+            .nav-tab {
+            flex: 0 0 auto;
+            padding: 8px 12px;
+            cursor: pointer;
+            white-space: nowrap;
+            }
+
+          </style>
 
           <!-- tab heading-->  
           <section class="container d-lg-none ">
