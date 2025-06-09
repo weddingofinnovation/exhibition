@@ -311,40 +311,42 @@
                 </li>
               </ul>
 
-              <!-- Primary menu-->
+             
+              @if($board == 'order')
+                <!-- Primary menu-->
                 <div class="navbar-tool ">
                     @if($event->count()>0)
-                        <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
-                          <span class="navbar-tool-label"> {{$event->count()}} </span>
-                          Event
-                        </a>
+                      <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
+                        <span class="navbar-tool-label"> {{$event->count()}} </span>Event
+                      </a>
                     @endif
                     @if($rating->count()>0)
-                        <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                              <span class="navbar-tool-label"> {{$rating->count()}} </span>
-                              Review
-                        </a>
+                      <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                            <span class="navbar-tool-label"> {{$rating->count()}} </span>Review
+                      </a>
                     @endif
+
                     @if($lead->count()>0)
-                        <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                              <span class="navbar-tool-label"> {{$lead->count()}} </span>
-                              Lead
-                        </a>
+                      <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                            <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
+                      </a>
                     @endif
 
                     <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                           <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
                           <i class="navbar-tool-icon  bi bi-cart"></i>
-                        </a>
+                    </a>
                     <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                           <span class="navbar-tool-label">@if($user->likedMags->count()>0){{$user->likedMags->count()}} @endif</span>
                           <i class="navbar-tool-icon  bi bi-cart"></i>
-                        </a>
+                    </a>
                     <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                           <span class="navbar-tool-label">@if($franchise->count()>0){{$franchise->count()}} @endif</span>
                           <i class="navbar-tool-icon  bi bi-cart"></i>
-                        </a>   
-             </div>
+                    </a>   
+                </div>
+              @endif
+
             </div>
           </div>
         </div>
