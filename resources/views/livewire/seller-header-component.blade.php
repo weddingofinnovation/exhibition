@@ -339,13 +339,13 @@
           <!-- Primary menu-->
           <div class="navbar-tool ">
               
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$upcoming </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$expire</a> 
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$postponed event</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$cancealed event</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$running </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$first_day</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>$last_day</a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $expire </span>expire</a> 
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $postponed </span>postponed</a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $cancealed </span>cancealed</a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $running </span>running </a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $first_day </span>first_day</a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $last_day </span>last_day</a>
 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>Exhibitor</a>
 
