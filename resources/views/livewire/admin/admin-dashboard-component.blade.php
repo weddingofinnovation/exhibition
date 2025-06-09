@@ -2265,7 +2265,11 @@
 
                         @foreach($eventdetails as $evet)
                           <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
-                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
+                              <!-- <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}"> -->
+                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" 
+                                  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                  class="img-fluid rounded" 
+                                  style="height: 80px; width: auto; object-fit: contain;">
                           </a>
                         @endforeach
                     @endif
