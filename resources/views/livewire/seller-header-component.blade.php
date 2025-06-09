@@ -324,7 +324,7 @@
           @php
             $today = Carbon::today();
 
-            $upcoming => DB::table('events')->where('start_date', '>', $today)->count();
+            $upcoming => DB::table('events')->where('start_date', '=>', $today)->count();
             $running => DB::table('events')
                   ->where('start_date', '<=', $today)
                   ->where('end_date', '>=', $today)
