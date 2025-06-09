@@ -331,15 +331,25 @@
                     </a>
                     
                 </div>
-              @else
+              @elseif (url()->current() === url('admin/dashboard/event'))
+                @php
+                  $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
+                @endphp  
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
                     
-                    @if($rating->count()>0)
-                      <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                            <span class="navbar-tool-label"> {{$rating->count()}} </span>Review
-                      </a>
-                    @endif
+
+                    
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Upcoming </a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Expire</a> 
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>postponed event</a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Cancealed event</a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Running </a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>First Day</a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Last day</a>
+<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Exhibitor</a>
+
+
 
                     @if($lead->count()>0)
                       <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
