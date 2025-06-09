@@ -324,20 +324,20 @@
           @php
             $today = Carbon::today();
 
-            
+            $upcoming => DB::table('events')->where('start_date', '>=', $today)->count();
             $running => DB::table('events')
                   ->where('start_date', '<=', $today)
                   ->where('end_date', '>=', $today)
                   ->count(),
-            $expired => DB::table('events')->where('end_date', '<', $today)->count(),
+            $expired => DB::table('events')->where('end_date', '<', $today)->count();
             $first_day => DB::table('events')
                             ->whereDate('start_date', '=', $today)
-                            ->count(),
+                            ->count();
             $last_day => DB::table('events')
                             ->whereDate('end_date', '=', $today)
-                            ->count(),
-            $postponed => DB::table('events')->where('status', 'postponed')->count(),
-            $canceled => DB::table('events')->where('status', 'canceled')->count(),
+                            ->count();
+            $postponed => DB::table('events')->where('status', 'postponed')->count();
+            $canceled => DB::table('events')->where('status', 'canceled')->count();
           @endphp  
           <!-- Primary menu-->
           <div class="navbar-tool ">
