@@ -313,11 +313,30 @@
 
              
              @if (url()->current() === url('admin/dashboard/order'))
+                @php
+                  $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
+                @endphp  
+                
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
                     @if($event->count()>0)
                       <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
-                        <span class="navbar-tool-label"> {{$event->count()}} </span>Event
+                        <span class="navbar-tool-label"> {{$businessOrder->count()}} </span>Event
+                      </a>
+                    @endif
+                    
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                          <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
+                          <i class="navbar-tool-icon  bi bi-cart"></i>
+                    </a>
+                    
+                </div>
+              @else
+                <!-- Primary menu-->
+                <div class="navbar-tool ">
+                    @if($event->count()>0)
+                      <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
+                        <span class="navbar-tool-label"> {{$businessOrder->count()}} </span>Event
                       </a>
                     @endif
                     @if($rating->count()>0)
@@ -336,14 +355,7 @@
                           <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
                           <i class="navbar-tool-icon  bi bi-cart"></i>
                     </a>
-                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                          <span class="navbar-tool-label">@if($user->likedMags->count()>0){{$user->likedMags->count()}} @endif</span>
-                          <i class="navbar-tool-icon  bi bi-cart"></i>
-                    </a>
-                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                          <span class="navbar-tool-label">@if($franchise->count()>0){{$franchise->count()}} @endif</span>
-                          <i class="navbar-tool-icon  bi bi-cart"></i>
-                    </a>   
+                    
                 </div>
               @endif
 
