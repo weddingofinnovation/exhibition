@@ -7,15 +7,16 @@
                   <img src="{{asset('image/logo-icon.png')}}" width="74" alt="COI"></a>-->
                   <a class="navbar-brand d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}">
               <i class="bi bi-globe2"></i></a>
-          <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" style="line-height:17px;"   href="{{asset('/')}}">
+
+          <!-- <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" style="line-height:17px;"   href="{{asset('/')}}">
             <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
-              Council <small class="text-primary fw-normal">of</small><br>Innovation</div>
+              Council <small class="text-primary fw-normal">of</small><br>Innovation</div> -->
               <!--<img src="{{asset('image/def.png')}}" width="142" alt="COI">--></a> 
           
             <a class="navbar-brand d-sm-none me-2" href="{{asset('/')}}"> <i class="bi bi-globe2"></i>
               <!--<img src="{{asset('image/abc.png')}}" width="74" alt="COI">--></a>
             {{--<a class="navbar-brand d-sm-none me-2" href="{{asset('/')}}"> 
-            <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> COI </div>
+            <!-- <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> COI </div> -->
             <!--<img src="{{asset('image/abc.png')}}" width="74" alt="COI">--></a>--}}
 
             <!-- Toolbar-->
