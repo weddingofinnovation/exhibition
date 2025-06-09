@@ -322,21 +322,18 @@
         @elseif (url()->current() == url('admin/dashboard/event'))
 
           @php
-              use Carbon\Carbon;
-              use Illuminate\Support\Facades\DB;
+              $today = \Carbon\Carbon::today();
 
-              $today = Carbon::today();
-
-              $upcoming = DB::table('events')->where('start_date', '>', $today)->count();
-              $running = DB::table('events')
+              $upcoming = \DB::table('events')->where('start_date', '>', $today)->count();
+              $running = \DB::table('events')
                   ->where('start_date', '<=', $today)
                   ->where('end_date', '>=', $today)
                   ->count();
-              $expired = DB::table('events')->where('end_date', '<', $today)->count();
-              $first_day = DB::table('events')->whereDate('start_date', $today)->count();
-              $last_day = DB::table('events')->whereDate('end_date', $today)->count();
-              $postponed = DB::table('events')->where('status', 'postponed')->count();
-              $canceled = DB::table('events')->where('status', 'canceled')->count();
+              $expired = \DB::table('events')->where('end_date', '<', $today)->count();
+              $first_day = \DB::table('events')->whereDate('start_date', $today)->count();
+              $last_day = \DB::table('events')->whereDate('end_date', $today)->count();
+              $postponed = \DB::table('events')->where('status', 'postponed')->count();
+              $canceled = \DB::table('events')->where('status', 'canceled')->count();
           @endphp
 
           <!-- Primary menu-->
