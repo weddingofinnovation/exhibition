@@ -334,11 +334,7 @@
               @else
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
-                    @if($event->count()>0)
-                      <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
-                        <span class="navbar-tool-label"> {{$businessOrder->count()}} </span>Event
-                      </a>
-                    @endif
+                    
                     @if($rating->count()>0)
                       <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                             <span class="navbar-tool-label"> {{$rating->count()}} </span>Review
