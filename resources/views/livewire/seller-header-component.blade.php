@@ -312,7 +312,7 @@
               </ul>
 
              
-              @if($board === 'order')
+             @if (url()->current() === url('admin/dashboard/order'))
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
                     @if($event->count()>0)
