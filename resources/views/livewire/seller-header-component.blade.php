@@ -300,7 +300,7 @@
         </ul>
 
         
-        @if (url()->current() === url('admin/dashboard/order'))
+        @if (url()->current() == url('admin/dashboard/order'))
           @php
             $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
           @endphp  
@@ -319,53 +319,9 @@
               </a>
               
           </div>
-        @elseif (url()->current() === url('admin/dashboard/event'))
+        @elseif (url()->current() == url('admin/dashboard/event'))
 
-          @php
-            $today = Carbon::today();
-
-            $upcoming => DB::table('events')->where('start_date', '>=', $today)->count();
-            $running => DB::table('events')
-                  ->where('start_date', '<=', $today)
-                  ->where('end_date', '>=', $today)
-                  ->count();
-            $expired => DB::table('events')->where('end_date', '<', $today)->count();
-            $first_day => DB::table('events')
-                            ->whereDate('start_date', '=', $today)
-                            ->count();
-            $last_day => DB::table('events')
-                            ->whereDate('end_date', '=', $today)
-                            ->count();
-            $postponed => DB::table('events')->where('status', 'postponed')->count();
-            $canceled => DB::table('events')->where('status', 'canceled')->count();
-          @endphp  
-          <!-- Primary menu-->
-          <div class="navbar-tool ">
-              
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$upcoming </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$expire</a> 
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$postponed event</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$cancealed event</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$running </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$first Day</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$last day</a>
-
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Exhibitor</a>
-
-
-
-              @if($lead->count()>0)
-                <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                      <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
-                </a>
-              @endif
-
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                    <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
-                    <i class="navbar-tool-icon  bi bi-cart"></i>
-              </a>
-              
-          </div>
+          
         @endif
 
       </div>

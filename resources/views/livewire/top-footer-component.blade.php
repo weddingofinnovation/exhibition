@@ -12,10 +12,10 @@
           <div class="col-md-6">
           <div class="card border-0 rounded-0 text-decoration-none py-md-4 bg-faded-accent" >
               <div class="card-body text-center">
-              <a href="{{$infoo->facebook}}"><i class=" bi bi-facebook h3 mt-2 mb-4 text-accent"></i></a>
-              <a href="{{$infoo->twiter}}"><i class=" bi bi-twitter h3 mt-2 mb-4 text-accent"></i></a>
-              <a href="{{$infoo->instagram}}"><i class=" bi bi-instagram h3 mt-2 mb-4 text-accent"></i></a>
-              <a href="{{$infoo->youtube}}"><i class=" bi bi-youtube h3 mt-2 mb-4 text-accent"></i></a>
+              <a href="#"><i class=" bi bi-facebook h3 mt-2 mb-4 text-accent"></i></a>
+              <a href="#"><i class=" bi bi-twitter h3 mt-2 mb-4 text-accent"></i></a>
+              <a href="#"><i class=" bi bi-instagram h3 mt-2 mb-4 text-accent"></i></a>
+              <a href="#"><i class=" bi bi-youtube h3 mt-2 mb-4 text-accent"></i></a>
                 <h3 class="h5 mb-1">Follow on social platform</h3>
                 <p class="text-muted fs-sm">#Innovation_COi</p>
               </div></div></div>
