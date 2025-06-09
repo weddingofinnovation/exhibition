@@ -324,14 +324,14 @@
           @php
               $today = Carbon\Carbon::today();
 
-              $upcoming = DB::table('events')->where('start_date', '>', $today)->count();
+              $upcoming = DB::table('events')->where('startdate', '>', $today)->count();
               $running = DB::table('events')
-                  ->where('start_date', '<=', $today)
-                  ->where('end_date', '>=', $today)
+                  ->where('startdate', '<=', $today)
+                  ->where('enddate', '>=', $today)
                   ->count();
-              $expired = \DB::table('events')->where('end_date', '<', $today)->count();
-              $first_day = DB::table('events')->whereDate('start_date', $today)->count();
-              $last_day = DB::table('events')->whereDate('end_date', $today)->count();
+              $expired = \DB::table('events')->where('enddate', '<', $today)->count();
+              $first_day = DB::table('events')->whereDate('startdate', $today)->count();
+              $last_day = DB::table('events')->whereDate('enddate', $today)->count();
               $postponed = DB::table('events')->where('status', 'postponed')->count();
               $canceled = DB::table('events')->where('status', 'canceled')->count();
           @endphp
