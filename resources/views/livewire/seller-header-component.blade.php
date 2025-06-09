@@ -9,7 +9,8 @@
               <i class="bi bi-globe2"></i></a>
           <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" style="line-height:17px;"   href="{{asset('/')}}">
             <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
-              Council <small class="text-primary fw-normal">of</small><br>Innovation</div><!--<img src="{{asset('image/def.png')}}" width="142" alt="COI">--></a> 
+              Council <small class="text-primary fw-normal">of</small><br>Innovation</div>
+              <!--<img src="{{asset('image/def.png')}}" width="142" alt="COI">--></a> 
           
             <a class="navbar-brand d-sm-none me-2" href="{{asset('/')}}"> <i class="bi bi-globe2"></i>
               <!--<img src="{{asset('image/abc.png')}}" width="74" alt="COI">--></a>
@@ -332,22 +333,37 @@
                     
                 </div>
               @elseif (url()->current() === url('admin/dashboard/event'))
+
                 @php
-                  $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
+                  $today = Carbon::today();
+
+                  $upcoming => DB::table('events')->where('start_date', '>', $today)->count();
+                  $running => DB::table('events')
+                        ->where('start_date', '<=', $today)
+                        ->where('end_date', '>=', $today)
+                        ->count(),
+                  $expired => DB::table('events')->where('end_date', '<', $today)->count(),
+                  $first_day => DB::table('events')
+                                  ->whereDate('start_date', '=', $today)
+                                  ->count(),
+                  $last_day => DB::table('events')
+                                  ->whereDate('end_date', '=', $today)
+                                  ->count(),
+                  $postponed => DB::table('events')->where('status', 'postponed')->count(),
+                  $canceled => DB::table('events')->where('status', 'canceled')->count(),
                 @endphp  
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
                     
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$upcoming </a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$expire</a> 
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$postponed event</a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$cancealed event</a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$running </a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$first Day</a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>$last day</a>
 
-                    
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Upcoming </a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Expire</a> 
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>postponed event</a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Cancealed event</a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Running </a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>First Day</a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Last day</a>
-<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Exhibitor</a>
+                    <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> {{$rating->count()}} </span>Exhibitor</a>
 
 
 
