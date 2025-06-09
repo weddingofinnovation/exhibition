@@ -312,7 +312,7 @@
               </ul>
 
              
-              @if($board == 'order')
+              @if($board === 'order')
                 <!-- Primary menu-->
                 <div class="navbar-tool ">
                     @if($event->count()>0)
