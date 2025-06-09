@@ -1,74 +1,59 @@
 <header class="bg-light shadow-sm navbar-sticky">
         <div class="navbar navbar-expand-lg navbar-light">
           <div class="container">
-            <!--<a class="navbar-brand d-none d-sm-block flex-shrink-0 me-4 order-lg-1" href="{{asset('/')}}">
-              <img src="{{asset('image/logo-dark.png')}}" width="142" alt="COI"></a>
-              <a class="navbar-brand d-sm-none me-2 order-lg-1" href="{{asset('/')}}">
-                  <img src="{{asset('image/logo-icon.png')}}" width="74" alt="COI"></a>-->
-                  <a class="navbar-brand d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}">
-              <i class="bi bi-globe2"></i></a>
-
-          <!-- <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" style="line-height:17px;"   href="{{asset('/')}}">
-            <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> 
-              Council <small class="text-primary fw-normal">of</small><br>Innovation</div> -->
-              <!--<img src="{{asset('image/def.png')}}" width="142" alt="COI">--></a> 
-          
-            <a class="navbar-brand d-sm-none me-2" href="{{asset('/')}}"> <i class="bi bi-globe2"></i>
-              <!--<img src="{{asset('image/abc.png')}}" width="74" alt="COI">--></a>
-            {{--<a class="navbar-brand d-sm-none me-2" href="{{asset('/')}}"> 
-            <!-- <div class="fs-4" style=" font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> COI </div> -->
-            <!--<img src="{{asset('image/abc.png')}}" width="74" alt="COI">--></a>--}}
+            
 
             <!-- Toolbar-->
             <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span></button>
                 
                 <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Search</span>
                 <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-search"></i></div></a><a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html"><span class="navbar-tool-tooltip">Favorites</span>
                 <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-heart"></i></div></a>
 
-              <div class="navbar-tool dropdown ms-2"><a class="" href="#">
-                 <!-- <img src="{{url('Storage/') }}/{{Auth::user()->profile_photo_path}}" width="32" alt="{{Auth::user()->name}}">
-                  <div class=" rounded-circle" style="width: 50%;">-->
-                  <img  class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}"  alt="" style="max-width: 50%;">
-                </a>
-                  <a class="navbar-tool-text ms-n1" href="#"><small>{{Auth::user()->name}}</small>$1,375.00</a>
-                  
-                <div class="dropdown-menu dropdown-menu-end">
-                  <div style="min-width: 14rem;">
-                    <h6 class="dropdown-header">Business Account</h6>
-                    <a class="dropdown-item d-flex align-items-center" href="{{route('seller.account')}}">
-                      <i class="ci-settings opacity-60 me-2"></i> Account<span class="fs-xs text-muted ms-auto">Set up</span></a>
+                <div class="navbar-tool dropdown ms-2"><a class="" href="#">
+                  <!-- <img src="{{url('Storage/') }}/{{Auth::user()->profile_photo_path}}" width="32" alt="{{Auth::user()->name}}">
+                    <div class=" rounded-circle" style="width: 50%;">-->
+                    <img  class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}"  alt="" style="max-width: 50%;">
+                  </a>
+                    <a class="navbar-tool-text ms-n1" href="#"><small>{{Auth::user()->name}}</small>$1,375.00</a>
+                    
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <div style="min-width: 14rem;">
+                      <h6 class="dropdown-header">Business Account</h6>
+                      <a class="dropdown-item d-flex align-items-center" href="{{route('seller.account')}}">
+                        <i class="ci-settings opacity-60 me-2"></i> Account<span class="fs-xs text-muted ms-auto">Set up</span></a>
 
-                      <a class="dropdown-item d-flex align-items-center" href="{{route('seller.profile')}}">
-                        <i class="ci-basket opacity-60 me-2"></i>Business Portfolio<span class="fs-xs text-muted ms-auto">Set up</span></a>
-
-                        <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
-                          <i class="ci-heart opacity-60 me-2"></i>Business Brand<span class="fs-xs text-muted ms-auto"> List</span></a>
+                        <a class="dropdown-item d-flex align-items-center" href="{{route('seller.profile')}}">
+                          <i class="ci-basket opacity-60 me-2"></i>Business Portfolio<span class="fs-xs text-muted ms-auto">Set up</span></a>
 
                           <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
-                          <i class="ci-heart opacity-60 me-2"></i>Opportunity<span class="fs-xs text-muted ms-auto">Publish </span></a>
-                    <div class="dropdown-divider"></div>
-                    <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-xs text-muted ms-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html">
-                      <i class="ci-package opacity-60 me-2"></i>Products<span class="fs-xs text-muted ms-auto">5</span></a>
-                      <a class="dropdown-item d-flex align-items-center" href="dashboard-add-new-product.html">
-                        <i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a>
-                      
-                        <a class="dropdown-item d-flex align-items-center" href="dashboard-payouts.html">
-                          <i class="ci-currency-exchange opacity-60 me-2">
-                        </i>Payouts</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  <i class="bi bi-box-arrow-right opacity-60 me-2"></i>Sign Out</a>
-                  <form id="logout-form" action="{{route('logout')}}" method="POST">
-                    @csrf
-				          </form>
-                  
+                            <i class="ci-heart opacity-60 me-2"></i>Business Brand<span class="fs-xs text-muted ms-auto"> List</span></a>
+
+                            <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
+                            <i class="ci-heart opacity-60 me-2"></i>Opportunity<span class="fs-xs text-muted ms-auto">Publish </span></a>
+                      <div class="dropdown-divider"></div>
+                      <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-xs text-muted ms-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html">
+                        <i class="ci-package opacity-60 me-2"></i>Products<span class="fs-xs text-muted ms-auto">5</span></a>
+                        <a class="dropdown-item d-flex align-items-center" href="dashboard-add-new-product.html">
+                          <i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a>
+                        
+                          <a class="dropdown-item d-flex align-items-center" href="dashboard-payouts.html">
+                            <i class="ci-currency-exchange opacity-60 me-2">
+                          </i>Payouts</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i class="bi bi-box-arrow-right opacity-60 me-2"></i>Sign Out</a>
+                    <form id="logout-form" action="{{route('logout')}}" method="POST">
+                      @csrf
+                    </form>
+                    
+                    </div>
                   </div>
+
                 </div>
 
-              </div>
               <div class="navbar-tool ms-4">
                   <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                       <span class="navbar-tool-label">3</span><i class="navbar-tool-icon  bi bi-cart"></i></a>
@@ -314,7 +299,7 @@
               </ul>
 
              
-             @if (url()->current() === url('admin/dashboard/order'))
+              @if (url()->current() === url('admin/dashboard/order'))
                 @php
                   $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
                 @endphp  
