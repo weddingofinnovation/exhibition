@@ -328,7 +328,7 @@
             $running => DB::table('events')
                   ->where('start_date', '<=', $today)
                   ->where('end_date', '>=', $today)
-                  ->count(),
+                  ->count();
             $expired => DB::table('events')->where('end_date', '<', $today)->count();
             $first_day => DB::table('events')
                             ->whereDate('start_date', '=', $today)
