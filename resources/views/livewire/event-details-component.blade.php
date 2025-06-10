@@ -4164,26 +4164,29 @@
                   @endphp
 
                     @if($countEvent > '0')
-                        <span class="badge rounded-pill bg-primary text-right">Concurrent</span>
-                        <p class="mb-1 text-right">Understanding Expo</p>
-                        <hr class="mt-md-2 mb-2">
-                            <div class="col align-right">
-                                <div class="stat-value">
-                                    <h6 class="text-dark mb-0 me-2">5K+</h6>
-                                    <ul class="avatar-group mb-0 align-items-center">
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
-                                    </li>
+                        <div class="text-end">
+                            <span class="badge rounded-pill bg-primary">Concurrent</span>
+                            <p class="mb-1">Understanding Expo</p>
+                            <hr class="mt-md-2 mb-2">
+
+                            <div class="col text-end">
+                                <div class="stat-value d-flex flex-column align-items-end">
+                                    <h6 class="text-dark mb-0">5K+</h6>
+                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                        <li class="avatar avatar-xs ms-1">
+                                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                        </li>
+                                        <li class="avatar avatar-xs ms-1">
+                                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                        </li>
+                                        <li class="avatar avatar-xs ms-1">
+                                            <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                        </li>
                                     </ul>
                                 </div>
-                                <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
                             </div>
+                        </div>
+
                         @else()
                         <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
                         <p class="mb-1 text-right">See Who's Exhibit</p>
