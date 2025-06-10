@@ -4167,7 +4167,7 @@
                         <span class="badge rounded-pill bg-primary text-right">Concurrent</span>
                         <p class="mb-1 text-right">Understanding Expo</p>
                         <hr class="mt-md-2 mb-2">
-                            <div class="col">
+                            <div class="col text-right">
                                 <div class="stat-value">
                                     <h6 class="text-dark mb-0 me-2">5K+</h6>
                                     <ul class="avatar-group mb-0 align-items-center">
