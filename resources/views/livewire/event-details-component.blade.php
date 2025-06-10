@@ -4163,49 +4163,53 @@
                     $countEvent = $relativeevent->count();
                   @endphp
 
-                  @if($countEvent > '0')
-                     <p class="mb-1 text-right">Understanding Expo</p>
-                     <hr class="mt-md-2 mb-2">
-                         <div class="col">
-                            <div class="stat-value">
-                                <h6 class="text-dark mb-0 me-2">5K+</h6>
-                                <ul class="avatar-group mb-0 align-items-center">
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
-                                </li>
-                                </ul>
+                    @if($countEvent > '0')
+                        <span class="badge rounded-pill bg-primary">Concurrent</span>
+                        <p class="mb-1 text-right">Understanding Expo</p>
+                        <hr class="mt-md-2 mb-2">
+                            <div class="col">
+                                <div class="stat-value">
+                                    <h6 class="text-dark mb-0 me-2">5K+</h6>
+                                    <ul class="avatar-group mb-0 align-items-center">
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                    </li>
+                                    </ul>
+                                </div>
+                                <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
                             </div>
-                            <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
-                         </div>
-                    @else
-                     <p class="mb-1 text-right">See Who's Exhibit</p>
-                     <hr class="mt-md-2 mb-2">
-                        <div class="col">
-                            <div class="stat-value">
-                                <h6 class="text-dark mb-0 me-2">5K+</h6>
-                                <ul class="avatar-group mb-0 align-items-center">
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
-                                </li>
-                                <li class="avatar avatar-xs">
-                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
-                                </li>
-                                </ul>
+                        @else
+                        <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
+                        <p class="mb-1 text-right">See Who's Exhibit</p>
+                        <hr class="mt-md-2 mb-2">
+                            <div class="col">
+                                <div class="stat-value">
+                                    <h6 class="text-dark mb-0 me-2">5K+</h6>
+                                    <ul class="avatar-group mb-0 align-items-center">
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                    </li>
+                                    <li class="avatar avatar-xs">
+                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                    </li>
+                                    </ul>
+                                </div>
+                                <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
                             </div>
-                            <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
-                         </div>
-                  @endif
-
-                  
+                        @elseif
+                         <span class="badge rounded-pill bg-primary">Membership</span>
+                         <p class="mb-1 text-right">See Who's Exhibit</p>
+                        
+                    @endif
                 </div>
               </div>
            </div>
@@ -4286,15 +4290,15 @@
               <div class="d-flex mb-3">
                 <div class="categories-list">
                   <span>Industry</span> 
-                  @foreach($category as $cat) 
-                    <a class="category-badge" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
-                  @endforeach
+                    @foreach($category as $cat) 
+                        <a class="category-badge" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
+                    @endforeach
                 </div>
               </div>
           
                 <p class="fs-sm mb-3 mb-lg-4 pb-2">{{$event->shtdesc}}</p>
-                <span class="badge rounded-pill bg-primary">Concurrent</span>
-                <h5 class="mb-3">Event</h5>
+                
+                <h5 class="mb-3">The Exhibition's Network</h5>
 
                       <!-- Card group -->
                       <!-- Card -->
@@ -4356,8 +4360,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                  <h5 class="card-title">Sustainability at Expo</h5>
-                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <h5 class="card-title">Start-up Program</h5>
+                                  <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
                                   <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
                                 </div>
 
@@ -4471,6 +4475,30 @@
 
             </div>
           </section>
+
+          <section class="container py-5 d-none d-sm-block">                    
+            <div class="card-group" >
+
+                <div class="card border-0">
+                    {{-- <img src="https://source.unsplash.com/1600x900/?Switzerland, office" class="card-img-top" alt="Card image"> --}}
+                    <div class="card-body">
+                    <div class="card-title text-primary fs-md">why Network with us?</div>
+                    <p class="card-text fs-sm fw-light">Introduce your business to 40,000 attendees and 30+ media outlets at North America’s largest energy event. Find new customers, get media attention, and build your network of clean energy thought leaders from leading companies.
+                        <br>
+                        The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.
+                    </p>
+                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-sm btn-primary">Get Membership</a>
+                    </div>
+                </div>
+
+            </div>
+          </section>
+
+          WHY EXHIBIT AS A START-UP AT RE+?
+
+
+
+
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">
