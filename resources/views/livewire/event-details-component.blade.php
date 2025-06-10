@@ -4186,6 +4186,7 @@
                         </div>
 
                         @else()
+
                         <div class="text-end">
                             <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
                             <p class="mb-1">See Who's Exhibit</p>
@@ -4207,8 +4208,25 @@
                             </div>
                         </div>
 
-                       
-                         <span class="badge rounded-pill bg-primary">Membership</span>
+
+                         <div class="text-end">
+                            <span class="badge rounded-pill bg-primary">Membership</span>
+                            <p class="mb-1">See Who's Exhibit</p>
+                            <hr class="mt-md-2 mb-2">
+
+                            <div class="col text-end">
+                                <div class="stat-value d-flex flex-column align-items-end">
+                                    <h6 class="text-dark mb-0">5K+</h6>
+                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                        <p>Access Right place to approach right people at right time</p>
+                                     <a href="" class="btn btn-primary">Activate</a>
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                         <span class="badge rounded-pill bg-primary"></span>
                          <p class="mb-1 text-right">See Who's Exhibit</p>
                         
                     @endif
