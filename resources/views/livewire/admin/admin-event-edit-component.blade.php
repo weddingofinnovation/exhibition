@@ -281,18 +281,16 @@
                                
                                 <div class="col  pr-0">
                                     @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
-                                    <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+                                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
+                                        <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
                                     @else
-                                    <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div> 
-                                    <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
-
+                                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div> 
+                                        <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
                                     @endif 
-                                    <div class="round-circle">{{$evento->edition}}</div>
-
-                                    <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
-                                    <div class="round-circle">{{$evento->id}}</div>
-                                    {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
+                                        <div class="round-circle">{{$evento->edition}}</div>
+                                        <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div> 
+                                        <div class="round-circle">{{$evento->id}}</div>
+                                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
                                 </div>
 
                                 <div class="col-7  p-0">
@@ -304,9 +302,9 @@
                                         </div>
                                         <div class="text-muted fs-sm text-start">
                                             @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                                            {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                                                {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
                                             @else
-                                            {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                                                {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
                                             @endif 
                                         </div>  
                                         <div class="text-muted fs-sm text-start">{{ucfirst(trans(!empty($evento -> venue) ? ($evento -> venue) : 'NO venue'))}}, {{ucfirst(trans(!empty($evento -> city) ? ($evento -> city) : 'nocity'))}}</div>

@@ -405,13 +405,13 @@ class AdminEventEditComponent extends Component
         $searchtag = Expo::get();
 
         if($evento->reference == 'null')
-        {
-          $relativeevent = 'Kindly update reference';
-        }
+          {
+            $relativeevent = 'Kindly update reference';
+          }
         else
-        {
-          $relativeevent = Event::where('reference', $evento->reference)->orderBy('startdate','desc')->get();
-        }
+          {
+            $relativeevent = Event::where('reference', $evento->reference)->orderBy('startdate','desc')->get();
+          }
        
 
         return view('livewire.admin.admin-event-edit-component',['relativeevent' => $relativeevent, 'evento'=>$evento, 'searchtag'=>$searchtag,'pavillion'=>$pavillion,'sec'=>$sec,'cat'=>$cat])->layout('layouts.admin');

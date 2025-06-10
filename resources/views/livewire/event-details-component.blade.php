@@ -3980,30 +3980,31 @@
                     <div class="col-12 col-md-6">
                       <!-- Your second half goes here -->
                        <!-- additive -->
-                       <style>
-                          .avatar-img {
-                                  width: 100%;
-                                  height: 100%;
-                                  -o-object-fit: cover;
-                                  object-fit: cover;
-                              }
-
-                              .avatar-group {
-                                  padding: 0;
-                                  display: -webkit-box;
-                                  display: -ms-flexbox;
-                                  display: flex;
-                              }
-
-                              .text-white {
-                                  --bs-text-opacity: 1;
-                                  --bs-white-rgb: 255, 255, 255;
-                                  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
-                              }
-
-                              h6, .h6 {
-                                    font-size: 1.2rem;
+                            <style>
+                                .avatar-img {
+                                    width: 100%;
+                                    height: 100%;
+                                    -o-object-fit: cover;
+                                    object-fit: cover;
                                 }
+
+                                .avatar-group {
+                                    padding: 0;
+                                    display: -webkit-box;
+                                    display: -ms-flexbox;
+                                    display: flex;
+                                }
+
+                                .text-white {
+                                    --bs-text-opacity: 1;
+                                    --bs-white-rgb: 255, 255, 255;
+                                    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
+                                }
+
+                                h6, .h6 {
+                                        font-size: 1.2rem;
+                                    }
+
                                 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
                                     margin-top: 0;
                                     margin-bottom: 0.5rem;
@@ -4026,38 +4027,38 @@
                                 .avatar-group > li:not(:last-child) {
                                       margin-right: -0.8rem;
                                   }
-                                  .avatar-group > li {
-                                      position: relative;
-                                  }
-                                  .avatar {
-                                      height: 3rem;
-                                      width: 3rem;
-                                      position: relative;
-                                      display: inline-block !important;
-                                  }
-                                  .avatar-xs {
-                                      height: 2.1875rem;
-                                      width: 2.1875rem;
-                                  }
-                        </style>
+                                .avatar-group > li {
+                                    position: relative;
+                                }
+                                .avatar {
+                                    height: 3rem;
+                                    width: 3rem;
+                                    position: relative;
+                                    display: inline-block !important;
+                                }
+                                .avatar-xs {
+                                    height: 2.1875rem;
+                                    width: 2.1875rem;
+                                }
+                            </style>
                         <!-- <div class="d-inline-block bg-dark rounded-4 position-absolute start-0 bottom-0 mb-md-4 ms-md-n5 p-3"> -->
-                        <div class="col-3 border-end">
-                          <div class="stat-value">
-                            <h6 class="text-dark mb-0 me-2">5K+</h6>
-                            <ul class="avatar-group mb-0 align-items-center">
-                              <li class="avatar avatar-xs">
-                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                              </li>
-                              <li class="avatar avatar-xs">
-                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
-                              </li>
-                              <li class="avatar avatar-xs">
-                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
-                              </li>
-                            </ul>
-                          </div>
-                          <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
-                        </div>
+                            <div class="col-3 border-end">
+                            <div class="stat-value">
+                                <h6 class="text-dark mb-0 me-2">5K+</h6>
+                                <ul class="avatar-group mb-0 align-items-center">
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
+                            </div>
                         <!-- </div> -->
                     </div>
                   </div>
@@ -4156,8 +4157,52 @@
 
 
                   <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
-                        
-                  <p class="mb-1 text-right">Understanding Expo</p>
+                    
+                  @php
+                    $relativeevent = Event::where('reference', $evento->reference)->orderBy('startdate','desc')->get();
+                    $countEvent = $relativeevent->count();
+                  @endphp
+
+                  @if($countEvent > '0')
+                     <p class="mb-1 text-right">Understanding Expo</p>
+                         <div class="col-3 border-end">
+                            <div class="stat-value">
+                                <h6 class="text-dark mb-0 me-2">5K+</h6>
+                                <ul class="avatar-group mb-0 align-items-center">
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
+                         </div>
+                    @else
+                     <p class="mb-1 text-right">See Who's Exhibit</p>
+                        <div class="col-3 border-end">
+                            <div class="stat-value">
+                                <h6 class="text-dark mb-0 me-2">5K+</h6>
+                                <ul class="avatar-group mb-0 align-items-center">
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
+                                </li>
+                                <li class="avatar avatar-xs">
+                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
+                                </li>
+                                </ul>
+                            </div>
+                            <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
+                         </div>
+                  @endif
+
                   <hr class="mt-md-2 mb-2">
                 </div>
               </div>
