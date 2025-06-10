@@ -4163,7 +4163,7 @@
                     $countEvent = $relativeevent->count();
                   @endphp
 
-                    @if($countEvent > '0')
+                    @if($countEvent > 1)
                         <div class="text-end">
                             <span class="badge rounded-pill bg-primary">Concurrent</span>
                             <p class="mb-1">Understanding Expo</p>
