@@ -4184,7 +4184,7 @@
                                 </div>
                                 <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
                             </div>
-                        @else
+                        @else()
                         <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
                         <p class="mb-1 text-right">See Who's Exhibit</p>
                         <hr class="mt-md-2 mb-2">
