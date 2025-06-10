@@ -4186,27 +4186,28 @@
                         </div>
 
                         @else()
-                        <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
-                        <p class="mb-1 text-right">See Who's Exhibit</p>
-                        <hr class="mt-md-2 mb-2">
-                            <div class="col">
-                                <div class="stat-value">
-                                    <h6 class="text-dark mb-0 me-2">5K+</h6>
-                                    <ul class="avatar-group mb-0 align-items-center">
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi5.jpg" alt="avatar">
-                                    </li>
-                                    <li class="avatar avatar-xs">
-                                        <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi2.jpg" alt="avatar">
-                                    </li>
+                        <div class="text-end">
+                            <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
+                            <p class="mb-1">See Who's Exhibit</p>
+                            <hr class="mt-md-2 mb-2">
+
+                            <div class="col text-end">
+                                <div class="stat-value d-flex flex-column align-items-end">
+                                    <h6 class="text-dark mb-0">5K+</h6>
+                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                        @foreach($relativeevent as $rel)
+                                            <li class="avatar avatar-xs ms-1">
+                                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                                {{$rel->eventname}}
+                                            </li>
+                                        @endforeach
+                                       
                                     </ul>
                                 </div>
-                                <!-- <p class="text-dark stat-title">Total visitors per month</p> -->
                             </div>
-                        
+                        </div>
+
+                       
                          <span class="badge rounded-pill bg-primary">Membership</span>
                          <p class="mb-1 text-right">See Who's Exhibit</p>
                         
