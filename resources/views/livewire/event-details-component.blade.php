@@ -4164,7 +4164,7 @@
                   @endphp
 
                     @if($countEvent > '0')
-                        <span class="badge rounded-pill bg-primary">Concurrent</span>
+                        <span class="badge rounded-pill bg-primary text-right">Concurrent</span>
                         <p class="mb-1 text-right">Understanding Expo</p>
                         <hr class="mt-md-2 mb-2">
                             <div class="col">
