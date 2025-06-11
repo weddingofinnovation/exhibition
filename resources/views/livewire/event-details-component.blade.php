@@ -4241,7 +4241,7 @@
                                 <div class="col text-end">
                                     <div class="stat-value d-flex flex-column align-items-end">
                                         <small class="fw-bold">Explore. Connect. Grow. Find Exhibitors!</small>
-                                        <small class="fs-sm fw-light mt-3"> Access verified exhibitor profiles, explore their offerings, and connect directly to discuss collaborations, partnerships, or bulk business deals — all in one place.</small>
+                                        <small class="fs-xs fw-light mt-3"> Access verified exhibitor profiles, explore their offerings, and connect directly to discuss collaborations, partnerships, or bulk business deals — all in one place.</small>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
                                             <a href="" class="btn btn-primary btn-sm">Download</a>
                                         </ul>
