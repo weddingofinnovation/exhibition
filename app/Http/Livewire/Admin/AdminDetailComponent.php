@@ -385,7 +385,9 @@ class AdminDetailComponent extends Component
         $category = Denco::where('event_id', $event)->get();
         
         $speaker = Speaker::where('event_id',  $event)->get();
+
         $pavillion = Pavillion::where('event_id',  $event)->get();
+        
         $sponsership = Sponsership::where('event_id' , $event)->get();
         $participants = Brand::where('event_id' , $event)->get();
         $hastag = Hashtag::where('event_id' , $event)->get();

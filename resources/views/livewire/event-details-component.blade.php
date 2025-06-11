@@ -4218,12 +4218,13 @@
                                 <div class="stat-value d-flex flex-column align-items-end">
                                     <h6 class="text-dark mb-0">5K+</h6>
                                     <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                        <p>Access Right place to approach right people at right time</p>
-                                     <a href="" class="btn btn-primary">Activate</a>
+                                        <p>Access Right place to artisan serve  approach right people at right time</p>
+                                        <a href="" class="btn btn-primary">Activate</a>
                                        
                                     </ul>
                                 </div>
                             </div>
+
                         </div>
 
                          <span class="badge rounded-pill bg-primary"></span>

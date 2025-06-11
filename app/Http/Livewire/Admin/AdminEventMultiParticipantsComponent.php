@@ -216,12 +216,13 @@ class AdminEventMultiParticipantsComponent extends Component
             $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
             $brand->pavillion_name = trim($tre);
+            $brand->business = $brand->pavillion_name;
             $brand->slug = str::slug($tre,'-');
             $brand->status = $this->status;
+            $brand->admstatus = $this->admstatus;
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function updateSponsership()
