@@ -4240,7 +4240,7 @@
 
                                 <div class="col text-end">
                                     <div class="stat-value d-flex flex-column align-items-end">
-                                        <p class="fw-bold">Explore. Connect. Grow. Find Exhibitors Ready to Partner with You!</p>
+                                        <small class="fw-bold">Explore. Connect. Grow. Find Exhibitors Ready to Partner with You!</small>
                                         <small class="fs-md fw-light"> Access verified exhibitor profiles, explore their offerings, and connect directly to discuss collaborations, partnerships, or bulk business deals — all in one place.</small>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
                                             <a href="" class="btn btn-primary btn-sm">Download</a>
