@@ -4187,7 +4187,7 @@
                             </div>
                         </div>
 
-                        @else($pavillionmsmeactive)
+                        @elseif($pavillionmsmeactive)
                             msme
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Membership</span>
@@ -4209,7 +4209,7 @@
                             <span class="badge rounded-pill bg-primary"></span>
                             <p class="mb-1 text-right">See Who's Exhibit</p>
                         
-                        @else($pavillionstartupactive)
+                        @elseif($pavillionstartupactive)
                             startup
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Membership</span>
