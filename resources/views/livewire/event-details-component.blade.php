@@ -4210,7 +4210,7 @@
                             <p class="mb-1 text-right">See Who's Exhibit</p>
                         
                         @else($pavillionstartupactive)
-                                startup
+                            startup
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Membership</span>
                                 <p class="mb-1">Register your  Brand</p>
