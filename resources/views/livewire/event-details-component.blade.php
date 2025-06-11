@@ -4232,7 +4232,7 @@
                             <p class="mb-1 text-right">See Who's Exhibit</p>
 
 
-                         @else()
+                         @else
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
                                 <p class="mb-1">See Who's Exhibit</p>
