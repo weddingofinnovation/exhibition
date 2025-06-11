@@ -4166,28 +4166,28 @@
                   @endphp
 
                     @if($countEvent > 1)
-                        <div class="text-end">
-                            <span class="badge rounded-pill bg-primary">Concurrent</span>
-                            <p class="mb-1">Understanding Expo</p>
-                            <hr class="mt-md-2 mb-2">
+                            <div class="text-end">
+                                <span class="badge rounded-pill bg-primary">Concurrent</span>
+                                <p class="mb-1">Understanding Expo</p>
+                                <hr class="mt-md-2 mb-2">
 
-                            <div class="col text-end">
-                                <div class="stat-value d-flex flex-column align-items-end">
-                                    <h6 class="text-dark mb-0">5K+</h6>
-                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                        @foreach($relativeevent as $rel)
-                                            <li class="avatar avatar-xs ms-1">
-                                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                                {{$rel->eventname}}
-                                            </li>
-                                        @endforeach
-                                       
-                                    </ul>
+                                <div class="col text-end">
+                                    <div class="stat-value d-flex flex-column align-items-end">
+                                        <h6 class="text-dark mb-0">5K+</h6>
+                                        <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                            @foreach($relativeevent as $rel)
+                                                <li class="avatar avatar-xs ms-1">
+                                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                                    {{$rel->eventname}}
+                                                </li>
+                                            @endforeach
+                                        
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        @elseif($pavillionmsmeactive)
+                         @elseif($pavillionmsmeactive)
                             msme
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Membership</span>
@@ -4209,7 +4209,7 @@
                             <span class="badge rounded-pill bg-primary"></span>
                             <p class="mb-1 text-right">See Who's Exhibit</p>
                         
-                        @elseif($pavillionstartupactive)
+                         @elseif($pavillionstartupactive)
                             startup
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Membership</span>
