@@ -4161,6 +4161,8 @@
                   @php
                     $relativeevent = DB::table('events')->where('reference', $event->reference)->orderBy('startdate','desc')->get();
                     $countEvent = $relativeevent->count();
+                    $pavillionmsmeactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'msme')->exists();
+                    $pavillionstartupactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'startup')->exists();
                   @endphp
 
                     @if($countEvent > 1)
@@ -4185,51 +4187,72 @@
                             </div>
                         </div>
 
-                        @else()
+                        @else($pavillionmsmeactive)
+                            msme
+                            <div class="text-end">
+                                <span class="badge rounded-pill bg-primary">Membership</span>
+                                <p class="mb-1">Register your  Brand</p>
+                                <hr class="mt-md-2 mb-2">
 
-                        <div class="text-end">
-                            <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
-                            <p class="mb-1">See Who's Exhibit</p>
-                            <hr class="mt-md-2 mb-2">
-
-                            <div class="col text-end">
-                                <div class="stat-value d-flex flex-column align-items-end">
-                                    <h6 class="text-dark mb-0">5K+</h6>
-                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                        @foreach($relativeevent as $rel)
-                                            <li class="avatar avatar-xs ms-1">
-                                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                                {{$rel->eventname}}
-                                            </li>
-                                        @endforeach
-                                       
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-
-                         <div class="text-end">
-                            <span class="badge rounded-pill bg-primary">Membership</span>
-                            <p class="mb-1">See Who's Exhibit</p>
-                            <hr class="mt-md-2 mb-2">
-
-                            <div class="col text-end">
-                                <div class="stat-value d-flex flex-column align-items-end">
-                                    <h6 class="text-dark mb-0">5K+</h6>
-                                    <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                        <p>Access Right place to artisan serve  approach right people at right time</p>
-                                        <a href="" class="btn btn-primary">Activate</a>
-                                       
-                                    </ul>
+                                <div class="col text-end">
+                                    <div class="stat-value d-flex flex-column align-items-end">
+                                        <h6 class="text-dark mb-0">5K+</h6>
+                                        <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                            <p>Access Right place to artisan serve  approach right people at right time</p>
+                                            <a href="" class="btn btn-primary">Activate</a>
+                                        
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
-
-                         <span class="badge rounded-pill bg-primary"></span>
-                         <p class="mb-1 text-right">See Who's Exhibit</p>
+                            <span class="badge rounded-pill bg-primary"></span>
+                            <p class="mb-1 text-right">See Who's Exhibit</p>
                         
+                        @else($pavillionstartupactive)
+                                startup
+                            <div class="text-end">
+                                <span class="badge rounded-pill bg-primary">Membership</span>
+                                <p class="mb-1">Register your  Brand</p>
+                                <hr class="mt-md-2 mb-2">
+
+                                <div class="col text-end">
+                                    <div class="stat-value d-flex flex-column align-items-end">
+                                        <h6 class="text-dark mb-0">5K+</h6>
+                                        <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                            <p>Access Right place to artisan serve  approach right people at right time</p>
+                                            <a href="" class="btn btn-primary">Activate</a>
+                                        
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span class="badge rounded-pill bg-primary"></span>
+                            <p class="mb-1 text-right">See Who's Exhibit</p>
+
+
+                         @else()
+                            <div class="text-end">
+                                <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
+                                <p class="mb-1">See Who's Exhibit</p>
+                                <hr class="mt-md-2 mb-2">
+
+                                <div class="col text-end">
+                                    <div class="stat-value d-flex flex-column align-items-end">
+                                        <h6 class="text-dark mb-0">5K+</h6>
+                                        <ul class="avatar-group mb-0 d-flex justify-content-end">
+                                            @foreach($relativeevent as $rel)
+                                                <li class="avatar avatar-xs ms-1">
+                                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+                                                    {{$rel->eventname}}
+                                                </li>
+                                            @endforeach
+                                        
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                     @endif
                 </div>
               </div>
