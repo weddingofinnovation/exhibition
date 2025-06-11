@@ -4242,13 +4242,7 @@
                                     <div class="stat-value d-flex flex-column align-items-end">
                                         <h6 class="text-dark mb-0">5K+</h6>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                            @foreach($relativeevent as $rel)
-                                                <li class="avatar avatar-xs ms-1">
-                                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                                    {{$rel->eventname}}
-                                                </li>
-                                            @endforeach
-                                        
+                                            <a href="" class="btn btn-primary btn-sm">Download</a>
                                         </ul>
                                     </div>
                                 </div>
