@@ -4178,7 +4178,7 @@
                                             @foreach($relativeevent as $rel)
                                                 <li class="avatar avatar-xs ms-1">
                                                     <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
-                                                    {{$rel->eventname}}
+                                                    
                                                 </li>
                                             @endforeach
                                         
