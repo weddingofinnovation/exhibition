@@ -4159,7 +4159,7 @@
                   <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
                     
                   @php
-                    $relativeevent = DB::table('events')->where('reference', $event->reference)->orderBy('startdate','desc')->get();
+                    $relativeevent = DB::table('events')->where('reference', $event->reference)->orderBy('startdate','desc')->limit(4);
                     $countEvent = $relativeevent->count();
                     $pavillionmsmeactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'msme')->exists();
                     $pavillionstartupactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'startup')->exists();
