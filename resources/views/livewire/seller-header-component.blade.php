@@ -349,22 +349,11 @@
           <!-- Primary menu-->
           <div class="navbar-tool ">
 
-          <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-            <span class="navbar-tool-tooltip">Request</span>
-            <div class="navbar-tool-icon-box text-center">
-              <i class="navbar-tool-icon bi bi-heart"></i>
-              <span class="fs-sm d-block">request</span>
-              <span class="fs-xs text-muted d-block">{{ $upcoming }}</span> <!-- placed below -->
-            </div>
-          </a>
-
-
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
                 <span class="navbar-tool-label"> $upcoming </span>
                 <span class="navbar-tool-tooltip">Request</span>
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
-                  <span class="fs-sm">request</span>
                 </div>
               </a>
 
@@ -373,7 +362,6 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
-                <span class="fs-sm">Expire</span>
               </a>
 
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
@@ -381,7 +369,6 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
-                <span class="fs-sm">Postponed</span>
               </a>
               
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
@@ -389,7 +376,6 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
-                <span class="fs-sm">handpicked</span>
               </a>
 
 
@@ -404,8 +390,7 @@
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $first_day </span>first_day</a>
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $last_day </span>last_day</a>
 
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>Exhibitor</a>
- -->
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>Exhibitor</a>-->
 
 
               @if($lead->count()>0)

@@ -1027,7 +1027,7 @@ public $dtype;
       //total event
       $events = Event::count();
   
-      $monthwise = Event::where('status','1')->where('admstatus','1')->whereMonth('startdate', $this->month)->orderBy('startdate','ASC')->get();
+      $monthwise = Event::where('status','1')->where('admstatus','1')->whereMonth('startdate', $this->month)->orderBy('startdate','desc')->get();
       
       $mythreemonth = Carbon::now()->addDays(90)->format("Y-m-d");
 
