@@ -535,8 +535,8 @@
             </div>
           </div>
 
-
-          <div class="row mb-5 pb-2">
+<div class="col-6">
+  <div class="row mb-5 pb-2">
                             @foreach ($expoaward as $franchise) 
                               <div class="container  ">
                                 <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -577,6 +577,8 @@
                               </div>
                             @endforeach
                           </div>
+</div>
+                          
 
           @if($expoaward->count() > 0)
             <div class="table-responsive fs-md d-none d-sm-block">New Request
