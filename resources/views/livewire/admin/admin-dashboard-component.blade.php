@@ -533,13 +533,15 @@
           @if( $searchforma == "expire")
           
           @php 
-              use Carbon\Carbon;
+            @php 
+                $expired = DB::table('events')
+                    ->where('status', '1')
+                    ->whereYear('startdate', '=', 2025)
+                    ->whereDate('enddate', '<', \Carbon\Carbon::now())
+                    ->orderBy('enddate', 'desc')
+                    ->get();
+            @endphp
 
-              $expired = DB::table('events')
-                  ->where('status', '1')
-                  ->whereDate('enddate', '<', Carbon::now())
-                  ->orderBy('enddate', 'desc')
-                  ->get();
             @endphp
 
 
