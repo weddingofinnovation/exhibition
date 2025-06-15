@@ -351,7 +351,7 @@
 
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
                 <span class="navbar-tool-label"> $upcoming </span>
-                <span class="navbar-tool-tooltip">Upcoming</span>
+                <span class="navbar-tool-tooltip">Request</span>
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
@@ -379,7 +379,7 @@
               </a>
 
 
-              
+
               
 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
