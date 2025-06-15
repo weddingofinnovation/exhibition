@@ -76,6 +76,7 @@ class AdminDashboardComponent extends Component
   public $statement;
 
   public $businessstatement;
+  public $searchforma;
  
   
 public $frequency;
