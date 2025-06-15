@@ -534,7 +534,7 @@
           
           @php 
             @php 
-                $expired = DB::table('events')
+                $expiredo = DB::table('events')
                     ->where('status', '1')
                     ->whereYear('startdate', '=', 2025)
                     ->whereDate('enddate', '<', \Carbon\Carbon::now())
@@ -546,7 +546,7 @@
 
 
             <div class="row mb-5 pb-2">
-                    @foreach ($expired as $franchise) 
+                    @foreach ($expiredo as $franchise) 
                       <div class="container">
                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                           <div class="col  pr-0">
