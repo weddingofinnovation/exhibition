@@ -200,23 +200,6 @@
                                 </div>
                               </div>
                             </div>
-                            
-                            
-                            {{--<div class="accordion">
-                                  <div class="accordion-item">
-                                      <h2 class="accordion-header"></h2>
-                                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                          <li>Details</li>
-                                          <li>Edit</li>
-                                          <li>update</li>
-                                          <li></li>
-                                        </ul>
-                                    </div>
-                                    </div>
-                                  </div>
-                                </div>--}}
                           @endforeach
                         </div>
                       </div>
@@ -536,56 +519,123 @@
           </div>
 
           <div class="row">
-  <div class="col-6">
-    <!-- Left column content -->
-    <p>This is the left column</p>
-  </div>
-  <div class="col-6">
-    <!-- Right column content -->
-    <p>This is the right column</p>
-    <div class="mb-5 pb-2">
-              @foreach ($expoaward as $franchise) 
-                <div class="container  ">
-                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                          <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-                        @else
-                          <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
-                          <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-                        @endif 
-                        <div class="round-circle">{{$franchise -> id}}</div> 
-                    </div>
+            <div class="col-6">
+              <!-- Left column content -->
+              <p>This is the left column</p>
+              <div class="row mb-5 pb-2">
+                          @foreach ($monthwise as $franchise) 
+                            <div class="container">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @else
+                                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                                      <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                                    @endif 
+                                      <div class="round-circle">{{$franchise -> id}}</div> 
+                                      <div class="badge bg-secondary fs-xs">
+                                        @if (Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
+                                            upco
+                                        @elseif (Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                                            first
+                                        @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') < Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                                            ongoi
+                                        @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') == Carbon\Carbon::parse ($franchise->enddate)->format('d M Y')) 
+                                          last
+                                        @elseif (Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->startdate)->format('d M Y') && Carbon\Carbon::now()->format('d M Y') > Carbon\Carbon::parse ($franchise->enddate)->format('d M Y'))
+                                          ended
+                                        @endif
+                                      </div>
 
-                    <div class="col-7  p-0">
-                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                        {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                      <div class="text-muted fs-sm text-start">
-                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @else
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @endif 
-                      </div>  
-                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
-                    </div>
 
-                    <div class="col-3  p-0">
-                      @if(is_null($franchise->image))
-                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
-                            Add</a>
-                      @else
-                        <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                      @endif
+                                      {{--<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">try</button>--}}
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                    @else
+                                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                    @endif 
+                                  </div>  
+                                  <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
+                                  <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
+                                  <span class="bg-primary">
+                                  @php
+                                      $getvalue = $franchise->id;
+                                      $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
+                                  @endphp
+                                    <i class="bi bi-pencil"></i> {{$countReview}}
+                                  </span>
+                                </div>
+                                </div>
+
+                                <div class="col-3  p-0">
+                                  @if(is_null($franchise->image))
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">Add</a>
+                                  @else
+
+                                    <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                  @endif
+                                </div>
+                              </div>
+                            </div>
+                          @endforeach
+                        </div>
+            </div>
+
+            <div class="col-6">
+              <!-- Right column content -->
+              <p>This is the right column</p>
+              <div class="mb-5 pb-2">
+                @foreach ($expoaward as $franchise) 
+                  <div class="container  ">
+                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col  pr-0">
+                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                          @else
+                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> 
+                            <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
+                          @endif 
+                          <div class="round-circle">{{$franchise -> id}}</div> 
+                      </div>
+
+                      <div class="col-7  p-0">
+                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                        <div class="text-muted fs-sm text-start">
+                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                          @else
+                            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                          @endif 
+                        </div>  
+                        <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
+                      </div>
+
+                      <div class="col-3  p-0">
+                        @if(is_null($franchise->image))
+                          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+                              Add</a>
+                        @else
+                          <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                        @endif
+                      </div>
                     </div>
                   </div>
-                </div>
-              @endforeach
+                @endforeach
+              </div>
             </div>
-  </div>
-</div>
+          </div>
 
           <div class="col-6">
             
