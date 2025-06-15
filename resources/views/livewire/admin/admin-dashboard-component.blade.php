@@ -532,7 +532,7 @@
 
           @if( $searchforma == "expire")
           
-          @php 
+          
             @php 
                 $expiredo = DB::table('events')
                     ->where('status', '1')
@@ -542,9 +542,7 @@
                     ->get();
             @endphp
 
-            @endphp
-
-
+           
             <div class="row mb-5 pb-2">
                     @foreach ($expiredo as $franchise) 
                       <div class="container">
