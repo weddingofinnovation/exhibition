@@ -10,7 +10,9 @@
           
           <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox">
             <span class="navbar-tool-tooltip">Search</span>
-            <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-search"></i></div>
+            <div class="navbar-tool-icon-box">
+              <i class="navbar-tool-icon  bi bi-search"></i>
+            </div>
           </a>
 
           <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
@@ -375,6 +377,10 @@
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
               </a>
+
+
+              
+              
 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $expire </span>expire</a> 

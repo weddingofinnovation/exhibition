@@ -51,7 +51,8 @@
       </div>--}}
        
     <!--Mobile event start View-->      
-    @if($board == 'event')          
+    @if($board == 'event') 
+    Mobile         
       <div class="container d-lg-none">
         <div class="row">
           <div class="col-md-6 offset-md-3">
@@ -505,6 +506,7 @@
     @endif
 
     @if($board == 'event')
+    laptop
       <div class="container">
           <div class="d-none d-sm-block">
             <div class="row g-1 ">
