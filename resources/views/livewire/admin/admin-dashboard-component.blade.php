@@ -485,7 +485,7 @@
         </div>
       </div>
     @endif
-
+        
 
     <!-- laptop -->
     @if($board == 'event')
@@ -514,7 +514,7 @@
 
               <div class="col-sm-4">
                   <input class="form-control" type="text" placeholder="Search ID" wire:model.lazy="searchTerm">
-              </div>
+                </div>
             </div>
           </div>
 

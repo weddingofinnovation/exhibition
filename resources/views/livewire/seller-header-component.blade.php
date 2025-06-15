@@ -1,4 +1,4 @@
-<header class="bg-light shadow-sm navbar-sticky">
+<header class="bg-light shadow-sm navbar-fixed">
   <div class="navbar navbar-expand-lg navbar-light">
     <div class="container">
       
@@ -382,7 +382,7 @@
 
               
 
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
+              <!-- <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $expire </span>expire</a> 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $postponed </span>postponed</a>
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $cancealed </span>cancealed</a>
@@ -391,7 +391,7 @@
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $last_day </span>last_day</a>
 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>Exhibitor</a>
-
+ -->
 
 
               @if($lead->count()>0)
