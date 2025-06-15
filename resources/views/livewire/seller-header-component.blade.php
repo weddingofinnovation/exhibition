@@ -354,6 +354,7 @@
                 <span class="navbar-tool-tooltip">Request</span>
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
+                  <span class="fs-sm">request</span>
                 </div>
               </a>
 
@@ -362,6 +363,7 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
+                <span class="fs-sm">Expire</span>
               </a>
 
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
@@ -369,6 +371,7 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
+                <span class="fs-sm">Postponed</span>
               </a>
               
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
@@ -376,6 +379,7 @@
                 <div class="navbar-tool-icon-box">
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
+                <span class="fs-sm">handpicked</span>
               </a>
 
 
