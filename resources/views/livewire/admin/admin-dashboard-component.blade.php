@@ -592,7 +592,7 @@
 
             <div class="col-6">
               <!-- Right column content -->
-              <p>This is the right column</p>
+              <p>Request</p>
               <div class="mb-5 pb-2">
                 @foreach ($expoaward as $franchise) 
                   <div class="container  ">
