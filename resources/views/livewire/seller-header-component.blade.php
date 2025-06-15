@@ -349,6 +349,16 @@
           <!-- Primary menu-->
           <div class="navbar-tool ">
 
+          <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+            <span class="navbar-tool-tooltip">Request</span>
+            <div class="navbar-tool-icon-box text-center">
+              <i class="navbar-tool-icon bi bi-heart"></i>
+              <span class="fs-sm d-block">request</span>
+              <span class="fs-xs text-muted d-block">{{ $upcoming }}</span> <!-- placed below -->
+            </div>
+          </a>
+
+
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
                 <span class="navbar-tool-label"> $upcoming </span>
                 <span class="navbar-tool-tooltip">Request</span>
