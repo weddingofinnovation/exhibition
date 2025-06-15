@@ -8,9 +8,17 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span></button>
           
-          <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Search</span>
-          <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-search"></i></div></a><a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html"><span class="navbar-tool-tooltip">Favorites</span>
-          <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-heart"></i></div></a>
+          <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox">
+            <span class="navbar-tool-tooltip">Search</span>
+            <div class="navbar-tool-icon-box"><i class="navbar-tool-icon  bi bi-search"></i></div>
+          </a>
+
+          <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+            <span class="navbar-tool-tooltip">Favorites</span>
+            <div class="navbar-tool-icon-box">
+              <i class="navbar-tool-icon  bi bi-heart"></i>
+            </div>
+          </a>
 
           <div class="navbar-tool dropdown ms-2"><a class="" href="#">
             <!-- <img src="{{url('Storage/') }}/{{Auth::user()->profile_photo_path}}" width="32" alt="{{Auth::user()->name}}">
@@ -338,7 +346,36 @@
 
           <!-- Primary menu-->
           <div class="navbar-tool ">
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-label"> $upcoming </span>
+                <span class="navbar-tool-tooltip">Upcoming</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">Expire</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">postponed</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
               
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">handpicked</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $expire </span>expire</a> 
               <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $postponed </span>postponed</a>
