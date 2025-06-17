@@ -490,7 +490,7 @@
     <!-- laptop -->
     @if($board == 'event')
     
-        <div class="container">
+        <div class="container d-sm-block">
           <div class="d-none d-sm-block">laptop
             <div class="row g-1 ">
 
@@ -543,7 +543,7 @@
             @endphp
 
            
-            <div class="row mb-5 pb-2">
+            <div class="row mb-5 pb-2 d-sm-block">
                     @foreach ($expiredo as $franchise) 
                       <div class="container">
                         <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
@@ -611,7 +611,7 @@
                   </div>
 
           @else
-            <div class="row">
+            <div class="row d-sm-block">
               <div class="col-6">
                 <!-- Left column content -->
                 <p>Monthwise</p>
