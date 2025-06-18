@@ -4173,7 +4173,7 @@
 
                                 <div class="col text-end">
                                     <div class="stat-value d-flex flex-column align-items-end">
-                                        <h6 class="text-dark mb-0">{{event->view_count}}+</h6>
+                                        <h6 class="text-dark mb-0">{{$event->view_count}}+</h6>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
                                             @foreach($relativeevent as $rel)
                                                 <li class="avatar avatar-xs ms-1">
