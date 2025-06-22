@@ -653,15 +653,64 @@
                             @endif 
                           </div>  
                           <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
-                          <div class="text-muted fs-xs text-start"> <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
-                          <span class="bg-primary">
-                          @php
-                              $getvalue = $franchise->id;
-                              $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
-                          @endphp
-                            <i class="bi bi-pencil"></i> {{$countReview}}
-                          </span>
-                        </div>
+                          
+                          <div class="text-muted fs-xs text-start"> 
+                            <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
+                            <span class="bg-primary">
+                              @php
+                                  $getvalue = $franchise->id;
+                                  $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
+                              @endphp
+                              <i class="bi bi-pencil"></i> {{$countReview}}
+                            </span>
+                          </div>
+
+                          
+                          <div class="navbar-tool ">
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-label"> $upcoming </span>
+                              <span class="navbar-tool-tooltip">Request</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-tooltip">Expire</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-tooltip">postponed</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+                            
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-tooltip">handpicked</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+
+
+                            @if($lead->count()>0)
+                              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                                    <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
+                              </a>
+                            @endif
+
+                            <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                                  <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
+                                  <i class="navbar-tool-icon  bi bi-cart"></i>
+                            </a>
+                          </div>
+
+
                         </div>
 
                         <div class="col-3  p-0">
