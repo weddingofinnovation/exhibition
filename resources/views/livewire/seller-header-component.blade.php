@@ -392,34 +392,12 @@
                 @foreach($yearlyEvents as $item)
                   <a class="navbar-tool d-none d-lg-flex" href="#">
                     <span class="navbar-tool-label">{{ $item->total }}</span>
-                    <span class="navbar-tool-tooltip">{{ $item->year }}</span>
+                    <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
                     <div class="navbar-tool-icon-box">
                       {{ $item->year }}
                     </div>
                   </a>
                 @endforeach
-             
-
-              <a class="navbar-tool d-none d-lg-flex" href="#">
-                <span class="navbar-tool-tooltip">2027</span>
-                <div class="navbar-tool-icon-box">
-                  2027
-                </div>
-              </a>
-
-
-              
-
-              <!-- <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $upcoming </span>upcoming </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $expire </span>expire</a> 
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $postponed </span>postponed</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $cancealed </span>cancealed</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $running </span>running </a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $first_day </span>first_day</a>
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> $last_day </span>last_day</a>
-
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#"><span class="navbar-tool-label"> 1 </span>Exhibitor</a>-->
-
 
               @if($lead->count()>0)
                 <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
