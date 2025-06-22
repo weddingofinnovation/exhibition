@@ -399,7 +399,7 @@
 
               
               @foreach($yearlyEvents as $item)
-                <a class="navbar-tool d-none d-lg-flex" href="?year={{ $item->year }}">
+                <a class="navbar-tool d-none d-lg-flex" href="{{ url()->current() . '?year=' . $item->year }}">
                   <span class="navbar-tool-label">{{ $item->total }}</span>
                   <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
                   <div class="navbar-tool-icon-box">
