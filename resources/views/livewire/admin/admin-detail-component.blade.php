@@ -798,7 +798,7 @@
                           @endforeach
                       </div>
 
-                      <div class="tab-pane fade" id="programs" role="tabpanel">
+                      <div class="tab-pane fade" id="program" role="tabpanel">
                    
                         {{--doubling--}}
 
