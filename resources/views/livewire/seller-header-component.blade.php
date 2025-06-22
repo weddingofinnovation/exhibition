@@ -378,28 +378,28 @@
                 </div>
               </a>
 
-              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                <span class="navbar-tool-tooltip">2024</span>
-                <div class="navbar-tool-icon-box">
-                  <i class="navbar-tool-icon  bi bi-heart"></i>
-                </div>
-              </a>
 
-              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                <span class="navbar-tool-tooltip">2025</span>
-                <div class="navbar-tool-icon-box">
-                  <i class="navbar-tool-icon  bi bi-heart"></i>
-                </div>
-              </a>
+              @php
+                $yearlyEvents = \DB::table('events')
+                    ->select(\DB::raw('YEAR(startdate) as year'), \DB::raw('COUNT(*) as total'))
+                    ->groupBy(\DB::raw('YEAR(startdate)'))
+                    ->orderBy('year', 'desc')
+                    ->get();
+              @endphp
+              
 
-              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                <span class="navbar-tool-tooltip">2026</span>
-                <div class="navbar-tool-icon-box">
-                  <i class="navbar-tool-icon  bi bi-heart"></i>
-                </div>
-              </a>
+              <div class="row">
+                @foreach($yearlyEvents as $item)
+                  <a class="navbar-tool d-none d-lg-flex" href="#">
+                    <span class="navbar-tool-tooltip">{{ $item->total }}</span>
+                    <div class="navbar-tool-icon-box">
+                      {{ $item->year }}
+                    </div>
+                  </a>
+                @endforeach
+              </div>
 
-              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+              <a class="navbar-tool d-none d-lg-flex" href="#">
                 <span class="navbar-tool-tooltip">2027</span>
                 <div class="navbar-tool-icon-box">
                   2027
