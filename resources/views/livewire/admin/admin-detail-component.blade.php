@@ -14,9 +14,13 @@
                   <!-- Nav tabs-->
                   <ul class="nav nav-tabs nav-fill mb-0" role="tablist">
                     <li class="nav-item border-bottom">
-                      <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business {{$businessOrder->count()}}</a></li>
+                      <a class="nav-link px-1 fs-sm" href="#details" data-bs-toggle="tab" role="tab">Business {{$businessOrder->count()}}</a>
+                    </li>
                     <li class="nav-item border-bottom">
                       <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
+                    </li>
+                    <li class="nav-item border-bottom">
+                      <a class="nav-link px-1 fs-sm active" href="#programs" data-bs-toggle="tab" role="tab">Programs</a>
                     </li>
                   </ul>
 
@@ -704,36 +708,7 @@
                           
                         </div>
                       
-                        {{--doubling--}}
-                        <div class=" my-3">
-                            <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                                <div class="col  pr-0">
-                                    <div class="h4 fw-light mb-0"></div> 
-                                  
-                                    <div class="round-circle" >Dbl</div> 
-                                    
-                                </div>
-
-                                <div class="col-7  p-0">
-                                  {{-- @if(is_null($evento->edition))
-                                    <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                                  @else
-                                    <div class="fs-md fw-normal text-start">
-                                      
-                                    </div>
-                                  @endif--}}
-                                </div>
-
-                                <div class="col-3 p-0">
-                                  @if(is_null($evento->edition))
-                                    <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'doubling'])}}" class="btn btn-primary btn-sm">Add</a>
-                                  @else
-                                    <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'doubling'])}}" class="btn btn-primary btn-sm">Edit</a>
-                                  @endif
-                                </div>
-                            </div>
-                        </div>
-
+                        
                         <div class=" mb-5">
                           {{$evento->reference}}
                         </div>
@@ -821,6 +796,42 @@
                               </div>
                             </div>
                           @endforeach
+                      </div>
+
+                      <div class="tab-pane fade" id="programs" role="tabpanel">
+                   
+                      {{--doubling--}}
+                      
+                        <div class=" my-3">
+                            <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
+                                    <div class="h4 fw-light mb-0"></div> 
+                                  
+                                    <div class="round-circle" >Dbl</div> 
+                                    
+                                </div>
+
+                                <div class="col-7  p-0">
+                                  {{-- @if(is_null($evento->edition))
+                                    <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                                  @else
+                                    <div class="fs-md fw-normal text-start">
+                                      
+                                    </div>
+                                  @endif--}}
+                                </div>
+
+                                <div class="col-3 p-0">
+                                  @if(is_null($evento->edition))
+                                    <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'doubling'])}}" class="btn btn-primary btn-sm">Add</a>
+                                  @else
+                                    <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'doubling'])}}" class="btn btn-primary btn-sm">Edit</a>
+                                  @endif
+                                </div>
+                            </div>
+                        </div>
+
+                         
                       </div>
 
                   </div>

@@ -265,7 +265,7 @@
           </style>
 
           <!-- Venues Section -->
-          <div class="venues-list">
+          <div class="venues-list"> mobile
             @foreach($evento as $eventoi)
               <div class="venue-container">
                 <div class="venue-card">
@@ -276,6 +276,7 @@
                       $to = strtotime($eventoi->startdate);
                       $from = strtotime($eventoi->enddate);
                     @endphp
+
                     @if ($current < $to && $current < $from)
                       Upcoming
                     @elseif ($current == $to && $current < $from) 
@@ -551,7 +552,7 @@
         <!-- end-categories -->
 
         <style>
-        .scroll-container {
+                .scroll-container {
                       display: flex;
                       overflow-x: auto;
                       white-space: nowrap;
@@ -561,9 +562,9 @@
                       -ms-overflow-style: none;
                     }
           
-        .scroll-container::-webkit-scrollbar{
-          display: none;
-        }
+                .scroll-container::-webkit-scrollbar{
+                  display: none;
+                }
         </style>
         
         <div class="scroll-container">
