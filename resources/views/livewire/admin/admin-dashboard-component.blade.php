@@ -663,9 +663,17 @@
                                 $getvalue = $franchise->id;
                                 $countReview = DB::table('rates')->where('event_id', $getvalue)->count();
                             @endphp
-                            <span class="bg-primary text-white px-2 py-1 rounded">
+                            {{-- <span class="bg-primary text-white px-2 py-1 rounded">
                               <i class="bi bi-pencil"></i> {{ $countReview }}
-                            </span>
+                            </span> --}}
+
+                            <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+                              <span class="navbar-tool-label">{{ $countReview ?? '' }}</span>
+                              <span class="navbar-tool-tooltip">views</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon bi bi-pencil"></i>
+                              </div>
+                            </a>
 
                             <!-- Action Icons Group (Structured like $upcoming example) -->
                             <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
