@@ -605,7 +605,20 @@
               </div>
             @endforeach
           </div>
-
+        @elseif($selectedYear)
+          <h4 class="mt-4">Events in {{ $selectedYear }}</h4>
+          <ul class="list-group">
+            @forelse($eventsByYear as $event)
+              <li class="list-group-item">
+                <strong>{{ $event->eventname }}</strong> —
+                {{ \Carbon\Carbon::parse($event->startdate)->format('d M Y') }} to
+                {{ \Carbon\Carbon::parse($event->enddate)->format('d M Y') }}<br>
+                Venue: {{ $event->venue }}, {{ ucfirst($event->city) }}
+              </li>
+            @empty
+              <li class="list-group-item">No events found for {{ $selectedYear }}</li>
+            @endforelse
+          </ul>
         @else
           <div class="row">
             <div class="col-6">
@@ -757,6 +770,7 @@
             </div>
           </div>
         @endif
+
       </div>
     @endif
     

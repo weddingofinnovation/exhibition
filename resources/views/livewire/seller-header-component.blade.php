@@ -385,31 +385,35 @@
                     ->groupBy(\DB::raw('YEAR(startdate)'))
                     ->orderBy('year', 'desc')
                     ->get();
+
+                $selectedYear = request()->get('year');
+                $eventsByYear = [];
+                if ($selectedYear) {
+                  $eventsByYear = \DB::table('events')
+                      ->whereYear('startdate', $selectedYear)
+                      ->orderBy('startdate')
+                      ->get();
+                    }
               @endphp
               
 
               
-                @foreach($yearlyEvents as $item)
-                  <a class="navbar-tool d-none d-lg-flex" href="#">
-                    <span class="navbar-tool-label">{{ $item->total }}</span>
-                    <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
-                    <div class="navbar-tool-icon-box">
-                      {{ $item->year }}
-                    </div>
-                  </a>
-                @endforeach
+              @foreach($yearlyEvents as $item)
+                <a class="navbar-tool d-none d-lg-flex" href="?year={{ $item->year }}">
+                  <span class="navbar-tool-label">{{ $item->total }}</span>
+                  <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
+                  <div class="navbar-tool-icon-box">
+                    {{ $item->year }}
+                  </div>
+                </a>
+              @endforeach
 
               @if($lead->count()>0)
                 <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                       <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
                 </a>
               @endif
-
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                    <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
-                    <i class="navbar-tool-icon  bi bi-cart"></i>
-              </a>
-              
+ 
           </div>
         @endif
 
