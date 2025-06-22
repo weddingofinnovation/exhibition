@@ -323,10 +323,10 @@
                 </a>
               @endif
               
-              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+              {{--<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                     <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
                     <i class="navbar-tool-icon  bi bi-cart"></i>
-              </a>
+              </a>--}}
               
           </div>
         @elseif (url()->current() == url('admin/dashboard/event'))
