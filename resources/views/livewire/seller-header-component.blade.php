@@ -388,16 +388,17 @@
               @endphp
               
 
-              <div class="row">
+              
                 @foreach($yearlyEvents as $item)
                   <a class="navbar-tool d-none d-lg-flex" href="#">
-                    <span class="navbar-tool-tooltip">{{ $item->total }}</span>
+                    <span class="navbar-tool-label">{{ $item->total }}</span>
+                    <span class="navbar-tool-tooltip">{{ $item->year }}</span>
                     <div class="navbar-tool-icon-box">
                       {{ $item->year }}
                     </div>
                   </a>
                 @endforeach
-              </div>
+             
 
               <a class="navbar-tool d-none d-lg-flex" href="#">
                 <span class="navbar-tool-tooltip">2027</span>
