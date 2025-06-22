@@ -20,7 +20,7 @@
                       <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
                     </li>
                     <li class="nav-item border-bottom">
-                      <a class="nav-link px-1 fs-sm active" href="#programs" data-bs-toggle="tab" role="tab">Programs</a>
+                      <a class="nav-link px-1 fs-sm" href="#programs" data-bs-toggle="tab" role="tab">Program</a>
                     </li>
                   </ul>
 
@@ -800,8 +800,8 @@
 
                       <div class="tab-pane fade" id="programs" role="tabpanel">
                    
-                      {{--doubling--}}
-                      
+                        {{--doubling--}}
+
                         <div class=" my-3">
                             <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                                 <div class="col  pr-0">
