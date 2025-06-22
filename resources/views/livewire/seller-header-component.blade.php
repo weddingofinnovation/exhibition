@@ -378,6 +378,33 @@
                 </div>
               </a>
 
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">2024</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">2025</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">2026</span>
+                <div class="navbar-tool-icon-box">
+                  <i class="navbar-tool-icon  bi bi-heart"></i>
+                </div>
+              </a>
+
+              <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                <span class="navbar-tool-tooltip">2027</span>
+                <div class="navbar-tool-icon-box">
+                  2027
+                </div>
+              </a>
 
 
               
