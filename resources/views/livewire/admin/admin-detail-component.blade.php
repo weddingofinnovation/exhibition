@@ -20,7 +20,7 @@
                       <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
                     </li>
                     <li class="nav-item border-bottom">
-                      <a class="nav-link px-1 fs-sm" href="#programs" data-bs-toggle="tab" role="tab">Program</a>
+                      <a class="nav-link px-1 fs-sm" href="#program" data-bs-toggle="tab" role="tab">Program</a>
                     </li>
                   </ul>
 
