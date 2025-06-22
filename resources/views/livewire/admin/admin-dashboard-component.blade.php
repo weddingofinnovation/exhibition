@@ -669,8 +669,8 @@
 
                             <!-- Action Icons Group (Structured like $upcoming example) -->
                             <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
-                              <span class="navbar-tool-label">{{ $franchise->view_count ?? '' }}</span>
-                              <span class="navbar-tool-tooltip">Request</span>
+                              <span class="text-primary">{{ $franchise->view_count ?? '' }}</span>
+                              <span class="navbar-tool-tooltip">views</span>
                               <div class="navbar-tool-icon-box">
                                 <i class="navbar-tool-icon bi bi-eye"></i>
                               </div>
