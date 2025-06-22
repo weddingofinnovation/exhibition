@@ -655,6 +655,7 @@
                           <div class="text-muted fs-sm text-start">{{$franchise -> venue}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                           
                           <div class="text-muted fs-xs text-start"> 
+
                             <span class="bg-primary">  <i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
                             <span class="bg-primary">
                               @php
@@ -663,9 +664,32 @@
                               @endphp
                               <i class="bi bi-pencil"></i> {{$countReview}}
                             </span>
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-label"> $upcoming </span>
+                              <span class="navbar-tool-tooltip">Request</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-tooltip">Expire</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+
+                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+                              <span class="navbar-tool-tooltip">postponed</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon  bi bi-heart"></i>
+                              </div>
+                            </a>
+                            
                           </div>
 
-                          test
+                       
                           <div class="navbar-tool ">
 
                             <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
