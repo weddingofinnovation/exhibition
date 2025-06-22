@@ -655,41 +655,58 @@
                           <div class="text-muted fs-sm text-start">
                             {{$franchise -> venue}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}
                           </div>
-                          
-                          <div class="text-muted fs-xs text-start"> 
 
-                            <span class="bg-primary"><i class="bi bi-eye"></i> {{$franchise -> view_count}}</span> 
-                            <span class="bg-primary">
-                              @php
-                                  $getvalue = $franchise->id;
-                                  $countReview = DB::table('rates')->where('event_id', $getvalue)->count()
-                              @endphp
-                              <i class="bi bi-pencil"></i> {{$countReview}}
-                            </span>
+                          <div class="text-muted fs-xs text-start d-flex flex-wrap align-items-center gap-2">
 
-                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                              <span class="navbar-tool-label"> $upcoming </span>
-                              <span class="navbar-tool-tooltip">Request</span>
-                              <div class="navbar-tool-icon-box">
-                                <i class="navbar-tool-icon  bi bi-heart"></i>
-                              </div>
-                            </a>
+  <!-- View Count -->
+  <span class="bg-primary text-white px-2 py-1 rounded">
+    <i class="bi bi-eye"></i> {{ $franchise->view_count }}
+  </span>
 
-                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                              <span class="navbar-tool-tooltip">Expire</span>
-                              <div class="navbar-tool-icon-box">
-                                <i class="navbar-tool-icon  bi bi-heart"></i>
-                              </div>
-                            </a>
+  <!-- Review Count -->
+  @php
+      $getvalue = $franchise->id;
+      $countReview = DB::table('rates')->where('event_id', $getvalue)->count();
+  @endphp
+  <span class="bg-primary text-white px-2 py-1 rounded">
+    <i class="bi bi-pencil"></i> {{ $countReview }}
+  </span>
 
-                            <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-                              <span class="navbar-tool-tooltip">postponed</span>
-                              <div class="navbar-tool-icon-box">
-                                <i class="navbar-tool-icon  bi bi-heart"></i>
-                              </div>
-                            </a>
-                            
-                          </div>
+  <!-- Action Icons Group (Structured like $upcoming example) -->
+  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+    <span class="navbar-tool-label">{{ $upcoming ?? '' }}</span>
+    <span class="navbar-tool-tooltip">Request</span>
+    <div class="navbar-tool-icon-box">
+      <i class="navbar-tool-icon bi bi-heart"></i>
+    </div>
+  </a>
+
+  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+    <span class="navbar-tool-label"></span>
+    <span class="navbar-tool-tooltip">Expire</span>
+    <div class="navbar-tool-icon-box">
+      <i class="navbar-tool-icon bi bi-heart"></i>
+    </div>
+  </a>
+
+  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+    <span class="navbar-tool-label"></span>
+    <span class="navbar-tool-tooltip">Postponed</span>
+    <div class="navbar-tool-icon-box">
+      <i class="navbar-tool-icon bi bi-heart"></i>
+    </div>
+  </a>
+
+  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+    <span class="navbar-tool-label"></span>
+    <span class="navbar-tool-tooltip">Handpicked</span>
+    <div class="navbar-tool-icon-box">
+      <i class="navbar-tool-icon bi bi-heart"></i>
+    </div>
+  </a>
+
+</div>
+
 
 
                         </div>
