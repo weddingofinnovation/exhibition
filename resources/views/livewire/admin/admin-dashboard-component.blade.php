@@ -658,54 +658,25 @@
 
                           <div class="text-muted fs-xs text-start d-flex flex-wrap align-items-center gap-2">
 
-  <!-- View Count -->
-  <span class="bg-primary text-white px-2 py-1 rounded">
-    <i class="bi bi-eye"></i> {{ $franchise->view_count }}
-  </span>
+                            <!-- Review Count -->
+                            @php
+                                $getvalue = $franchise->id;
+                                $countReview = DB::table('rates')->where('event_id', $getvalue)->count();
+                            @endphp
+                            <span class="bg-primary text-white px-2 py-1 rounded">
+                              <i class="bi bi-pencil"></i> {{ $countReview }}
+                            </span>
 
-  <!-- Review Count -->
-  @php
-      $getvalue = $franchise->id;
-      $countReview = DB::table('rates')->where('event_id', $getvalue)->count();
-  @endphp
-  <span class="bg-primary text-white px-2 py-1 rounded">
-    <i class="bi bi-pencil"></i> {{ $countReview }}
-  </span>
+                            <!-- Action Icons Group (Structured like $upcoming example) -->
+                            <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
+                              <span class="navbar-tool-label">{{ $franchise->view_count ?? '' }}</span>
+                              <span class="navbar-tool-tooltip">Request</span>
+                              <div class="navbar-tool-icon-box">
+                                <i class="navbar-tool-icon bi bi-eye"></i>
+                              </div>
+                            </a>
 
-  <!-- Action Icons Group (Structured like $upcoming example) -->
-  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
-    <span class="navbar-tool-label">{{ $upcoming ?? '' }}</span>
-    <span class="navbar-tool-tooltip">Request</span>
-    <div class="navbar-tool-icon-box">
-      <i class="navbar-tool-icon bi bi-heart"></i>
-    </div>
-  </a>
-
-  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
-    <span class="navbar-tool-label"></span>
-    <span class="navbar-tool-tooltip">Expire</span>
-    <div class="navbar-tool-icon-box">
-      <i class="navbar-tool-icon bi bi-heart"></i>
-    </div>
-  </a>
-
-  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
-    <span class="navbar-tool-label"></span>
-    <span class="navbar-tool-tooltip">Postponed</span>
-    <div class="navbar-tool-icon-box">
-      <i class="navbar-tool-icon bi bi-heart"></i>
-    </div>
-  </a>
-
-  <a class="navbar-tool d-none d-lg-flex align-items-center" href="dashboard-favorites.html">
-    <span class="navbar-tool-label"></span>
-    <span class="navbar-tool-tooltip">Handpicked</span>
-    <div class="navbar-tool-icon-box">
-      <i class="navbar-tool-icon bi bi-heart"></i>
-    </div>
-  </a>
-
-</div>
+                          </div>
 
 
 
