@@ -698,11 +698,6 @@
                             </a>
 
 
-                            @if($lead->count()>0)
-                              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                                    <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
-                              </a>
-                            @endif
 
                             <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                                   <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
