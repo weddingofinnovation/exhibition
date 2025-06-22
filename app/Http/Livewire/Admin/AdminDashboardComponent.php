@@ -100,7 +100,7 @@ public $brand_id;
 public $start;
 
 public $dtype;
-    
+public $selectedYear;
     //career
     use WithPagination;
 
