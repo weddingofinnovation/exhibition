@@ -5763,13 +5763,12 @@
                         <span class="badge bg-primary mt-0">{{$event->edition}}th</span>
                         <h3 class="mb-0">{{$event->eventname}}</h3>
 
-                        @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
-                        {{Carbon::parse($event->startdate)->format('D, d M')}} - {{Carbon::parse($event->enddate)->format('D, d M y')}}
-                        @else
-                        {{Carbon::parse($event->startdate)->format('D, d ')}} - {{Carbon::parse($event->enddate)->format('D, d M, Y')}}
-                        @endif
+                            @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
+                                {{Carbon::parse($event->startdate)->format('D, d M')}} - {{Carbon::parse($event->enddate)->format('D, d M y')}}
+                            @else
+                                {{Carbon::parse($event->startdate)->format('D, d ')}} - {{Carbon::parse($event->enddate)->format('D, d M, Y')}}
+                            @endif
 
-                        <br>
                         <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
                     </span>
 
