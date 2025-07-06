@@ -5520,7 +5520,6 @@
                 <h6 class="text-left mb-2">Partner</h6>
                 <div class="">
                       @foreach ($eventbrand as $franchise)
-                      
                         <div class="card product-card-alt">
                           <div class="product-thumb p-3">
                             <div class="product-card-actions p-2">
@@ -5715,19 +5714,19 @@
               <div class="handheld-toolbar bg-secondary">
                 <div class="d-flex justify-content-between py-2 px-2">
                   <div class="text-dark  pl-3 lh-1">
-                    <span class = "fw-medium fs-sm">Call us 999 185 6776</span><br>
+                    <span class = "fw-medium fs-sm">Call us +91-999-185-6776</span><br>
                     <span class=" fw-normal fs-xs">Get extra ad-ons</span></div>
-                    @if( $event->businessrevenue == 'visitor' )  
-                      @if( $ticketOrExhibit != 0 )
-                          <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
-                        @elseif( $ticketOrExhibit == 0 )
-                          {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
-                        
-                          <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
-                      @endif
-                    @else
-                    <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
-                    @endif
+                        @if( $event->businessrevenue == 'visitor' )  
+                        @if( $ticketOrExhibit != 0 )
+                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
+                            @elseif( $ticketOrExhibit == 0 )
+                            {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
+                            
+                            <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
+                        @endif
+                        @else
+                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
+                        @endif
                   </div>
               </div>
             @endif
@@ -5744,7 +5743,7 @@
 
             
               <!-- left: 0; -->
-              <style>
+                <style>
                     .fixed-bottom-div {
                         position: fixed;
                         bottom: 0;
@@ -5766,7 +5765,7 @@
                               
                               @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
                                 {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
-                              @else
+                               @else
                                 {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M, Y')}}
                               @endif 
                               
@@ -5783,10 +5782,11 @@
                                 <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
                                 <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Plan your Visit </a>
                             @endif
+                            <span class = "fw-medium fs-sm">Call us +91-999-185-6776</span><br>
+                            <span class=" fw-normal fs-xs">Get extra ad-ons</span>
                         </span>
-                        <span>Call us at 999-185-6776</span>
                     </li>
-
+  
                     <!-- <li><hr class="mt-md-2 mb-2"></li>
                     <li class="p1 fw-light">
                       {{($event->shortdesc)}} | @if($event->exhibitors != null)| + {{$event->exhibitors}} Exhibitors @endif | 
@@ -5817,8 +5817,6 @@
             });
           </script>
 
-     
-      
           <script type = "application/ld+json">
             {
                   "@context": "https://schema.org",
@@ -5943,9 +5941,6 @@
             }
 
           </script>
-
-
-
 
           <script>
             window.addEventListener('scroll', function() {
