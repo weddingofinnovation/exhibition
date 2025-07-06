@@ -5782,7 +5782,7 @@
                                 <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.exhibit', ['board' => 'business'])}}"> Book your Space </a>
                                 <a class="btn btn-primary btn-sm mt-5" type="button" href="{{route('event.product',['slug' => $event->slug])}}"> Plan your Visit </a>
                             @endif
-                            <span class = "fw-medium fs-sm">Call us +91-999-185-6776</span><br>
+                            <span class = "fw-medium fs-sm">Call us +91-999-185-6776</span>
                             <span class=" fw-normal fs-xs">Get extra ad-ons</span>
                         </span>
                     </li>
