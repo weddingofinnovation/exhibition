@@ -2111,8 +2111,12 @@
                      @endif
                     
                       <ul class="dropdown-menu" width="auto">
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Email</a></li>
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'interest')">Interest</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'email')">Email</a></li>
+
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'exhibitor')">Exhibitor</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'visitor')">Visitor</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'service')">Service</a></li>
+                        
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'check')">Check</a></li>
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">callback</a></li>
                         <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>

@@ -451,7 +451,7 @@ public $selectedYear;
       $visited->save();
       session()->flash('message','info has been deleted Successfully');
       return redirect()->back();
-      //return redirect()->route('admin.dashboard', ['board' => 'visitor']);
+      //return redirect()->route('admin.dashboard', ['board' => 'comment', ]);
     } 
 
     public function Magazinedelete($id)
