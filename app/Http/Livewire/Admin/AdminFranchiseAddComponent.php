@@ -30,7 +30,7 @@ class AdminFranchiseAddComponent extends Component
     {    
         $this->status = 1; 
         $this->admstatus = 1;
-        $this->lead_id = Lead::find($lead_id)->first();
+        $this->lead_id = $lead_id;
     }
 
     public function email()
