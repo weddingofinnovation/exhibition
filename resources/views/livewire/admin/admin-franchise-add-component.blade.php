@@ -69,7 +69,7 @@
                     @foreach($bladepreviousComments as $commen)
                         <div class="list-group-item small">
                             <div>{{ $commen->comment ?: 'No written feedback' }}</div>
-                            <small class="text-muted">{{ $commen->created_at->diffForHumans() }}</small>
+                            <small class="text-muted">{{ \Carbon\Carbon::parse($commen->created_at)->diffForHumans() }}</small>
                         </div>
                     @endforeach
                 </div>
