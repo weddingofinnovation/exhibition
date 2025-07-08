@@ -21,7 +21,7 @@ class AdminFranchiseAddComponent extends Component
     public $user_id;
     public $response;
     public $comment;
-    public $id;
+    //public $id;
 
     public function mount($lead_id)
     {    
@@ -35,10 +35,10 @@ class AdminFranchiseAddComponent extends Component
 
     }
 
-    public function comment($id)
+    public function comment($lead_id)
     {
       $visited = New BusinessCalledo();
-      $visited->lead_id = $id;
+      $visited->lead_id = $lead_id;
       $visited->user_id = Auth::user()->id;
       $visited->comment = $this->comment;
       $visited->status = '1';
