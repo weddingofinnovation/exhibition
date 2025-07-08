@@ -50,8 +50,7 @@ class AdminFranchiseAddComponent extends Component
 
       session()->flash('message','info has been deleted Successfully');
       $this->reset();
-      //return redirect()->back();
-      //return redirect()->route('admin.dashboard', ['board' => 'comment', ]);
+      dd('test is suucesgul');
     } 
 
     public function render()
