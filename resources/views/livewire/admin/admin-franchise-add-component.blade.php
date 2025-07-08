@@ -55,7 +55,7 @@
         </div>
 
        @php
-           $bladepreviousComments = DB::table('business_calledos')->where('lead_id', $this->lead_id)->get();
+           $bladepreviousComments = DB::table('business_calledos')->where('lead_id', $this->lead_id)->orderBy('desc', 'created_at')->get();
            
        @endphp
         
