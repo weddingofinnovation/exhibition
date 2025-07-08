@@ -235,7 +235,7 @@
               bottom: 0;
               left: 0;
               width: 100%;
-              height: 50%;
+              height: 20%;
               background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             }
 
@@ -326,7 +326,7 @@
                 </div>
 
               </div>
-             @endforeach
+            @endforeach
           </div>
 
         </div>
