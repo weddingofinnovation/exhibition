@@ -59,8 +59,6 @@
         <div class="col-md-4 ps-md-4 d-none d-md-block">
             <h6 class="mb-3">Previous Comments</h6>
 
-
-            {{$previousComments}}
             @if($previousComments && $previousComments->count())
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
                     @foreach($previousComments as $commen)

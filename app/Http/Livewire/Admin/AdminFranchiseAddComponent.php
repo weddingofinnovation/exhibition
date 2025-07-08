@@ -55,6 +55,7 @@ class AdminFranchiseAddComponent extends Component
     public function render()
     {  
         $previousComments = BusinessCalledo::where('lead_id', $this->lead_id)->get();
+        dd($previousComments, $this->lead_id);
         
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         $previous = url()->previous();
