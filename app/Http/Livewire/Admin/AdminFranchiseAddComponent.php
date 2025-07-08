@@ -38,10 +38,10 @@ class AdminFranchiseAddComponent extends Component
 
     }
 
-    public function add($lead_id)
+    public function add()
     {
       $visited = New BusinessCalledo();
-      $visited->lead_id = $lead_id;
+      $visited->lead_id = $this->lead_id;
       $visited->user_id = Auth::user()->id;
       $visited->comment = $this->comment;
       $visited->status = '1';
