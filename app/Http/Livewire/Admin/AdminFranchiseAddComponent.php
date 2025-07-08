@@ -4,7 +4,9 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Brand;
 use App\Models\BusinessCalledo;
+use App\Models\Event;
 use App\Models\Franchise;
+use App\Models\Hashtag;
 use App\Models\Lead;
 use App\Models\Location;
 use Illuminate\Support\Facades\Auth;
@@ -52,6 +54,9 @@ class AdminFranchiseAddComponent extends Component
 
     public function render()
     {  
-        return view('livewire.admin.admin-franchise-add-component');
+        $event = Event::where('slug', $this->slug)->value('id');  
+        $hashtag = Hashtag:: where('status', '1')->where('event_id', $event)->orWhere('event_id', NULL)->get();
+        $previous = url()->previous();
+        return view('livewire.admin.admin-franchise-add-component',['previous'=>$previous,'event'=>$event, 'hashtag'=>$hashtag]);
     }
 }
