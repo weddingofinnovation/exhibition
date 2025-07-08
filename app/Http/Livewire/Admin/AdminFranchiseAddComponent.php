@@ -46,8 +46,6 @@ class AdminFranchiseAddComponent extends Component
       $visited->comment = $this->comment;
       $visited->status = '1';
       $visited->admstatus = '1';
- 
-        dd($visited);
       $visited->save();
 
       session()->flash('message','info has been deleted Successfully');
