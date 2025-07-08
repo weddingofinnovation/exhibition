@@ -1,108 +1,92 @@
-<main>
+<div class="container py-4">
+    <div class="row">
 
-    {{-- Mobile Header --}}
-    <div class="bg-secondary d-lg-none mb-3">
-        <div class="container">
-            <div class="col-md-6 offset-md-3 d-flex justify-content-between">
-                <div class="align-content-center py-2">
-                    <a href="#"><i class="bi bi-chevron-left"></i></a>
+        {{-- Left (Form) --}}
+        <div class="col-md-8 border-end">
+            <h5 class="mb-3">Share Your Feedback</h5>
+
+            <form wire:submit.prevent="add">
+                <!-- Hashtag Section -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Use hashtags to describe your experience</label>
+                    <div class="d-flex flex-wrap">
+                        @foreach ($hashtag as $hhtag)
+                            <div class="form-check me-3 mb-2">
+                                <input 
+                                    type="checkbox" 
+                                    class="form-check-input" 
+                                    id="tag-{{ $hhtag->id }}" 
+                                    value="{{ $hhtag->id }}" 
+                                    wire:model="hasttag"
+                                >
+                                <label class="form-check-label" for="tag-{{ $hhtag->id }}">
+                                    #{{ $hhtag->hastag }}
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="text-center py-2">
-                    <div>How was the experience?</div>
+
+                <!-- Text Area -->
+                <div class="mb-3">
+                    <label for="opinion" class="form-label">Write a review <span class="text-muted">(optional)</span></label>
+                    <textarea 
+                        class="form-control" 
+                        id="opinion" 
+                        rows="4" 
+                        wire:model.lazy="opinion" 
+                        maxlength="100"
+                    ></textarea>
+                    <div class="form-text">Max 100 characters.</div>
+                    @error('opinion')
+                        <div class="text-danger small">{{ $message }}</div>
+                    @enderror
                 </div>
-                <div class="align-content-center py-2">
-                    <a href="#"><i class="bi bi-x"></i></a>
-                </div>
+
+                <button type="submit" class="btn btn-primary w-100 w-md-auto mt-3">Submit</button>
+            </form>
+
+            {{-- Mobile Toggle Button for Previous Comments --}}
+            <div class="d-block d-md-none text-end mt-4">
+                <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#mobilePreviousComments">
+                    Show Previous Comments
+                </button>
             </div>
         </div>
-    </div>
 
-    {{-- Feedback Form --}}
-    <div class="container py-lg-5 my-lg-5">
-        <form wire:submit.prevent="add">
-            
-            {{-- Hashtag Rating Section --}}
-            <div class="col-sm-2 col-md-12 pb-5 pb-sm-3">
-                <label class="form-label fw-bold">
-                    What do you think about business learning?
-                    <span class="text-muted">Express yourself with hashtags!</span>
-                </label>
-
-                <div class="input-group flex-wrap">
-                    @foreach ($hashtag as $hhtag)
-                        <div class="col-auto my-1 px-2">
-                            <input 
-                                type="checkbox" 
-                                class="form-check-input" 
-                                value="{{ $hhtag->id }}" 
-                                wire:model="hasttag"
-                                id="tag-{{ $hhtag->id }}"
-                            >
-                            <label for="tag-{{ $hhtag->id }}">{{ $hhtag->hastag }}</label>
+        {{-- Right (Previous Comments) - Desktop View --}}
+        <div class="col-md-4 ps-md-4 d-none d-md-block">
+            <h6 class="mb-3">Previous Comments</h6>
+            @if(count($previousComments))
+                <div class="list-group" style="max-height: 400px; overflow-y: auto;">
+                    @foreach($previousComments as $comment)
+                        <div class="list-group-item small">
+                            <div>{{ $comment->opinion ?: 'No written feedback' }}</div>
+                            <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
                         </div>
                     @endforeach
                 </div>
-            </div>
-
-            {{-- Optional Text Review --}}
-            <div class="col-sm-10 mb-3 pb-sm-2">
-                <label class="form-label fw-normal" for="opinion">
-                    Express more, write a review 
-                    <span class="text-muted">(optional)</span>
-                </label>
-                <textarea 
-                    class="form-control" 
-                    id="opinion"
-                    wire:model.lazy="opinion" 
-                    rows="3"
-                    maxlength="100"
-                ></textarea>
-                <div class="form-text">Maximum 100 characters.</div>
-                @error('opinion')
-                    <div class="form-text text-primary">{{ $message }}</div>
-                @enderror
-            </div>
-
-            {{-- Submit Button (Desktop) --}}
-            <button class="btn btn-primary d-block w-100 mt-5 d-none d-sm-block" type="submit">
-                Submit
-            </button>
-
-            {{-- Submit Button (Mobile Toolbar) --}}
-            <div class="handheld-toolbar bg-secondary">
-                <button class="btn btn-primary d-block w-100" type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-
-    {{-- Mobile Bottom Toolbar Navigation --}}
-    <div class="handheld-toolbar">
-        <div class="d-table table-layout-fixed w-100">
-
-            <a class="d-table-cell handheld-toolbar-item" 
-               href="{{ route('admin.dashboard', ['board' => 'event']) }}">
-                <span class="handheld-toolbar-icon"><i class="ci-filter-alt"></i></span>
-                <span class="handheld-toolbar-label">Admin</span>
-            </a>
-
-            <a class="d-table-cell handheld-toolbar-item" href="#">
-                <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
-                <span class="handheld-toolbar-label">Edit</span>
-            </a>
-
-            <a class="d-table-cell handheld-toolbar-item" href="#">
-                <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                <span class="handheld-toolbar-label">View</span>
-            </a>
-
-            <a class="d-table-cell handheld-toolbar-item" 
-               data-bs-toggle="offcanvas" 
-               href="#offcanvasExample" 
-               role="button" 
-               aria-controls="offcanvasExample">
-                <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-                <span class="handheld-toolbar-label">Menu</span>
-            </a>
+            @else
+                <p class="text-muted">No previous comments yet.</p>
+            @endif
         </div>
+
+        {{-- Mobile Collapsible Comments --}}
+        <div class="col-12 collapse mt-3 d-md-none" id="mobilePreviousComments">
+            <h6 class="mb-3">Previous Comments</h6>
+            @if(count($previousComments))
+                <div class="list-group">
+                    @foreach($previousComments as $comment)
+                        <div class="list-group-item small">
+                            <div>{{ $comment->opinion ?: 'No written feedback' }}</div>
+                            <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="text-muted">No previous comments yet.</p>
+            @endif
+        </div>
+
     </div>
-</main>
+</div>
