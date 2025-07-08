@@ -57,7 +57,7 @@
        
         {{-- Right (Previous Comments) - Desktop View --}}
         <div class="col-md-4 ps-md-4 d-none d-md-block">
-            <h6 class="mb-3">Previous Comments</h6>
+            <h6 class="mb-3">Previous Comments laptop</h6>
 
             @if($previousComments->count() > 1)
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
