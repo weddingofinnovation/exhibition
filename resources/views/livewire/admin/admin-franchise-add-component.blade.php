@@ -3,7 +3,7 @@
 
         {{-- Left (Form) --}}
         <div class="col-md-8 border-end">
-            <h5 class="mb-3">Share Your Feedback</h5>
+            <h5 class="mb-3">Share Your Comment</h5>
 
             <form wire:submit.prevent="add">
                 <!-- Hashtag Section -->
@@ -29,16 +29,16 @@
 
                 <!-- Text Area -->
                 <div class="mb-3">
-                    <label for="opinion" class="form-label">Write a review <span class="text-muted">(optional)</span></label>
+                    <label for="opinion" class="form-label">Write a comment <span class="text-muted">(optional)</span></label>
                     <textarea 
                         class="form-control" 
                         id="opinion" 
                         rows="4" 
-                        wire:model.lazy="opinion" 
+                        wire:model.lazy="comment" 
                         maxlength="100"
                     ></textarea>
                     <div class="form-text">Max 100 characters.</div>
-                    @error('opinion')
+                    @error('comment')
                         <div class="text-danger small">{{ $message }}</div>
                     @enderror
                 </div>

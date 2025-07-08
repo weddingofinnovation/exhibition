@@ -38,14 +38,14 @@ class AdminFranchiseAddComponent extends Component
 
     }
 
-    public function comment($lead_id)
+    public function add($lead_id)
     {
       $visited = New BusinessCalledo();
       $visited->lead_id = $lead_id;
       $visited->user_id = Auth::user()->id;
       $visited->comment = $this->comment;
       $visited->status = '1';
-      $visited->admstatus = '0';
+      $visited->admstatus = '1';
       $visited->save();
 
       session()->flash('message','info has been deleted Successfully');
