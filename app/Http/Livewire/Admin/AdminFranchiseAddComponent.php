@@ -50,7 +50,7 @@ class AdminFranchiseAddComponent extends Component
 
       session()->flash('message','info has been deleted Successfully');
       $this->reset();
-      dd('test is suucesgul');
+      //dd('test is suucesgul');
     } 
 
     public function render()
