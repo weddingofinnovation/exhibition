@@ -60,10 +60,10 @@
             <h6 class="mb-3">Previous Comments</h6>
             @if($previousComments && $previousComments->count())
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
-                    @foreach($previousComments as $comment)
+                    @foreach($previousComments as $commen)
                         <div class="list-group-item small">
-                            <div>{{ $comment->opinion ?: 'No written feedback' }}</div>
-                            <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                            <div>{{ $commen->comment ?: 'No written feedback' }}</div>
+                            <small class="text-muted">{{ $commen->created_at->diffForHumans() }}</small>
                         </div>
                     @endforeach
                 </div>
@@ -77,10 +77,10 @@
             <h6 class="mb-3">Previous Comments</h6>
             @if($previousComments && $previousComments->count())
                 <div class="list-group">
-                    @foreach($previousComments as $comment)
+                    @foreach($previousComments as $commen)
                         <div class="list-group-item small">
-                            <div>{{ $comment->opinion ?: 'No written feedback' }}</div>
-                            <small class="text-muted">{{ $comment->created_at->diffForHumans() }}</small>
+                            <div>{{ $commen->comment ?: 'No written feedback' }}</div>
+                            <small class="text-muted">{{ $commen->created_at->diffForHumans() }}</small>
                         </div>
                     @endforeach
                 </div>
