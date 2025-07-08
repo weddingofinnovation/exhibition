@@ -59,17 +59,14 @@
            
        @endphp
         
-        {{$this->lead_id}} {{$bladepreviousComments->count()}}
-
-        {{$bladepreviousComments}}
-
+        
         {{-- Right (Previous Comments) - Desktop View --}}
         <div class="col-md-4 ps-md-4 d-none d-md-block">
             <h6 class="mb-3">Previous Comments laptop</h6>
 
-             @if($previousComments && $previousComments->count())
+             @if($bladepreviousComments && $bladepreviousComments->count())
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
-                    @foreach($previousComments as $commen)
+                    @foreach($bladepreviousComments as $commen)
                         <div class="list-group-item small">
                             <div>{{ $commen->comment ?: 'No written feedback' }}</div>
                             <small class="text-muted">{{ $commen->created_at->diffForHumans() }}</small>
