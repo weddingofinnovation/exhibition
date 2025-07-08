@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Brand;
 use App\Models\BusinessCalledo;
 use App\Models\Franchise;
+use App\Models\Lead;
 use App\Models\Location;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -22,10 +23,11 @@ class AdminFranchiseAddComponent extends Component
     public $comment;
     public $id;
 
-    public function mount($id)
+    public function mount($lead_id)
     {    
         $this->status = 1; 
         $this->admstatus = 1;
+        $this->lead_id = Lead::find($lead_id)->first();
     }
 
     public function email()

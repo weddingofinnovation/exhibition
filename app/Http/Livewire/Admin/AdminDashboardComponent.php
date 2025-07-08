@@ -452,8 +452,8 @@ public $selectedYear;
       session()->flash('message','info has been deleted Successfully');
       //return redirect()->back();
       //return redirect()->route('admin.dashboard', ['board' => 'comment', ]); admin.addfranchise
-        dd($visited->lead_id, $id);
-      //return redirect()->route('admin.addfranchise', ['board' => $visited->lead_id]);
+        //dd($visited->lead_id, $id);
+      return redirect()->route('admin.addfranchise', ['board' => $visited->lead_id]);
     } 
 
     public function Magazinedelete($id)
