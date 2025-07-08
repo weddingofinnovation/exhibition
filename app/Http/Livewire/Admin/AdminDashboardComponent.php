@@ -453,7 +453,19 @@ public $selectedYear;
       //return redirect()->back();
       //return redirect()->route('admin.dashboard', ['board' => 'comment', ]); admin.addfranchise
         //dd($visited->lead_id, $id);
-      return redirect()->route('admin.addfranchise', ['lead_id' => $visited->lead_id]);
+
+      //return redirect()->route('admin.addfranchise', ['lead_id' => $visited->lead_id]);
+      if ($response === 'email') {
+              return redirect()->route('admin.addfranchise', [
+                  'lead_id' => $visited->lead_id,
+                  'board' => 'email'
+              ]);
+          } else {
+              return redirect()->route('admin.addfranchise', [
+                  'lead_id' => $visited->lead_id,
+                  'board' => 'enquiry'
+          ]);
+      }
     } 
 
     public function Magazinedelete($id)

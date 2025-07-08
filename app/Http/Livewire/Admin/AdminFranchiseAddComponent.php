@@ -24,13 +24,15 @@ class AdminFranchiseAddComponent extends Component
     public $user_id;
     public $response;
     public $comment;
+    public $board;
     //public $id;
 
-    public function mount($lead_id)
+    public function mount($lead_id, $board)
     {    
         $this->status = 1; 
         $this->admstatus = 1;
         $this->lead_id = $lead_id;
+        $this->board = $board;
     }
 
     public function email()
