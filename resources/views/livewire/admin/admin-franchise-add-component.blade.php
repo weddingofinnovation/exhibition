@@ -35,7 +35,7 @@
         <div class="container">
             <div class="col-md-6 offset-md-3 d-flex justify-content-between ">
 
-                <div class="align-content-center py-2 "><a href="{{$previous}}"><i class="bi bi-chevron-left"></i></a></div>
+                <div class="align-content-center py-2 "><a href="#"><i class="bi bi-chevron-left"></i></a></div>
             
                 <div class="text-center py-2"><div>How was the experience?</div></div>
 
