@@ -55,7 +55,7 @@ class AdminFranchiseAddComponent extends Component
     public function render()
     {  
         $event = '231';  
-        $hashtag = Hashtag:: where('status', '1')->where('event_id', $event)->orWhere('event_id', NULL)->get();
+        $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         $previous = url()->previous();
         return view('livewire.admin.admin-franchise-add-component',['previous'=>$previous,'event'=>$event, 'hashtag'=>$hashtag]);
     }
