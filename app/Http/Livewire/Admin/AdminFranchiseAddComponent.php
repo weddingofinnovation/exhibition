@@ -27,6 +27,7 @@ class AdminFranchiseAddComponent extends Component
     public $board;
     public $searchTerm;
     public $selectedItem;
+    public $searchCat;
     //public $id;
 
     public function mount($lead_id, $board)
