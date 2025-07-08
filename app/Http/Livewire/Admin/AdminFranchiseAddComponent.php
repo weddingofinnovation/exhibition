@@ -18,6 +18,7 @@ use Livewire\WithFileUploads;
 class AdminFranchiseAddComponent extends Component
 {
     public $status;
+    public $previousComments;
     public $admstatus;
     public $lead_id;
     public $user_id;
