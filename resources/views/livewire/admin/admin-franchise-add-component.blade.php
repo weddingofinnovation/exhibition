@@ -54,9 +54,7 @@
             </div>
         </div>
 
-        @php
-          $previousComments = DB::table('businessCalledos')->where('lead_id', $this->lead_id)->get();
-        @endphp
+       
         {{-- Right (Previous Comments) - Desktop View --}}
         <div class="col-md-4 ps-md-4 d-none d-md-block">
             <h6 class="mb-3">Previous Comments</h6>
