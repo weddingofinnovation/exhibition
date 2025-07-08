@@ -1,7 +1,7 @@
 <div class="container py-4">
     <div class="row">
 
-        {{-- Left (Form) --}} 9911188360
+        {{-- Left (Form) --}}
         <div class="col-md-8 border-end">
             <h5 class="mb-3">Share Your Feedback</h5>
 
@@ -57,7 +57,7 @@
         {{-- Right (Previous Comments) - Desktop View --}}
         <div class="col-md-4 ps-md-4 d-none d-md-block">
             <h6 class="mb-3">Previous Comments</h6>
-            @if(count($previousComments))
+            @if($previousComments && $previousComments->count())
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
                     @foreach($previousComments as $comment)
                         <div class="list-group-item small">
