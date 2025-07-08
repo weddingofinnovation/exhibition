@@ -293,9 +293,7 @@
                   <!-- Gradient overlay -->
                   <div class="event-overlay"></div>
 
-                    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">
-                    {{$eventoi->view_count}}+</a>
-
+                    <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{$eventoi->view_count}}+</a>
                 </div>
 
                 <!-- Event Name (Separate from Image) -->
