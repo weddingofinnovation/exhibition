@@ -49,7 +49,8 @@ class AdminFranchiseAddComponent extends Component
       $visited->save();
 
       session()->flash('message','info has been deleted Successfully');
-       //add new this
+      $this->reset();
+    
     } 
 
     public function render()
