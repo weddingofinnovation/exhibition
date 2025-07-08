@@ -54,9 +54,9 @@ class AdminFranchiseAddComponent extends Component
     public function render()
     {  
         $previousComments = BusinessCalledo::where('lead_id', $this->lead_id)->get();
-        
+        $countpreviousComments = $previousComments->count();
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         $previous = url()->previous();
-        return view('livewire.admin.admin-franchise-add-component',['previous'=>$previous, 'hashtag'=>$hashtag, 'previousComments'=>$previousComments]);
+        return view('livewire.admin.admin-franchise-add-component',['countpreviousComments' => $countpreviousComments ,'previous'=>$previous, 'hashtag'=>$hashtag, 'previousComments'=>$previousComments]);
     }
 }
