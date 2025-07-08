@@ -50,7 +50,8 @@ class AdminFranchiseAddComponent extends Component
 
       session()->flash('message','info has been deleted Successfully');
       $this->reset();
-      //dd('test is suucesgul');
+      //return redirect()->back();
+      return redirect()->route('admin.addfranchise', ['lead_id' => $this->lead_id ]);
     } 
 
     public function render()
