@@ -2090,20 +2090,13 @@
                   <div class="text-muted fs-xs text-start">{{$evento->email}}</div>
                 </div>
 
-                <div class="col-3  p-0">
-                        {{--@if(is_null($evento->image))
-                          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $evento->slug, 'formm' => 'image' ])}}">Add</a>
-                            @else
-                          <a class="card-img-top d-block overflow-hidden" href="">
-                          <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->name, 24)}}"></a>
-                        @endif--}}
-                  
-                      @php
-                        $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
-                        $resulto = $businesslead->pluck('response')->first();
-                      @endphp
+                @php
+                  $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
+                  $resulto = $businesslead->pluck('response')->first();
+                @endphp
 
-                      
+                <div class="col-3  p-0">
+                       
                      @if(($businesslead->count()) < '1')
                         <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">New</a>
                       @else
