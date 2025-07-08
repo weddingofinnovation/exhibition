@@ -20,7 +20,7 @@
 
                             @else
                               @foreach($searchCat as $franchise)
-                                <div class="container  ">
+                                <div class="container">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
                                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
