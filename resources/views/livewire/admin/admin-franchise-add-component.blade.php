@@ -75,7 +75,7 @@
         {{-- Mobile Collapsible Comments --}}
         <div class="col-12 collapse mt-3 d-md-none" id="mobilePreviousComments">
             <h6 class="mb-3">Previous Comments</h6>
-            @if(count($previousComments))
+            @if($previousComments && $previousComments->count())
                 <div class="list-group">
                     @foreach($previousComments as $comment)
                         <div class="list-group-item small">
