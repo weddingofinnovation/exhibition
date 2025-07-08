@@ -215,7 +215,7 @@
                               </div>  
 
                             @else
-                              @foreach ($searchCat as $franchise) 
+                              @foreach($searchCat as $franchise)
                                 <div class="container  ">
                                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                                     <div class="col  pr-0">
