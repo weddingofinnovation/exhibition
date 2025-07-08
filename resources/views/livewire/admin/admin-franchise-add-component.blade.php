@@ -62,7 +62,7 @@
         
         {{-- Right (Previous Comments) - Desktop View --}}
         <div class="col-md-4 ps-md-4 d-none d-md-block">
-            <h6 class="mb-3">Previous Comments laptop</h6>
+            <h6 class="mb-3">Previous Comments {{$bladepreviousComments->count()}}</h6>
 
              @if($bladepreviousComments && $bladepreviousComments->count())
                 <div class="list-group" style="max-height: 400px; overflow-y: auto;">
@@ -81,12 +81,12 @@
         {{-- Mobile Collapsible Comments --}}
         <div class="col-12 collapse mt-3 d-md-none" id="mobilePreviousComments">
             <h6 class="mb-3">Previous Comments</h6>
-            @if($previousComments && $previousComments->count())
+            @if($bladepreviousComments && $bladepreviousComments->count())
                 <div class="list-group">
-                    @foreach($previousComments as $commen)
+                    @foreach($bladepreviousComments as $commen)
                         <div class="list-group-item small">
                             <div>{{ $commen->comment ?: 'No written feedback' }}</div>
-                            <small class="text-muted">{{ $commen->created_at->diffForHumans() }}</small>
+                            <small class="text-muted">{{ \Carbon\Carbon::parse($commen->created_at)->diffForHumans() }}</small>
                         </div>
                     @endforeach
                 </div>
