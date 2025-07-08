@@ -5,7 +5,7 @@
         <div class="col-md-8 border-end">
             <h5 class="mb-3">Share Your Comment</h5>
 
-            <form wire:submit.prevent="add">
+            <form wire:submit.prevent="addcomm">
                 <!-- Hashtag Section -->
                 <div class="mb-3">
                     <label class="form-label fw-bold">Use hashtags to describe your experience</label>
