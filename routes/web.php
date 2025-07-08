@@ -453,7 +453,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     Route::get('/admin/users', AdminUserComponent::class)->name('admin.user');
 
     //Route::get('/admin/franchises', AdminFranchiseComponent::class)->name('admin.franchise');
-    Route::get('/admin/franchises/add', AdminFranchiseAddComponent::class)->name('admin.addfranchise');
+    Route::get('/admin/franchises/add/{id}', AdminFranchiseAddComponent::class)->name('admin.addfranchise');
+
     Route::get('/admin/franchises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
     
     

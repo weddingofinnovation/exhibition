@@ -264,8 +264,8 @@
             }
           </style>
 
-          <!-- Venues Section -->
-          <div class="venues-list"> mobile
+          <!-- start--Venues Section-desktop -->
+          <div class="venues-list">
             @foreach($evento as $eventoi)
               <div class="venue-container">
                 <div class="venue-card">
@@ -327,6 +327,7 @@
               </div>
             @endforeach
           </div>
+          <!-- end--Venues Section-desktop -->
 
         </div>
       </section>
