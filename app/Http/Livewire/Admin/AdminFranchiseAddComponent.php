@@ -49,7 +49,7 @@ class AdminFranchiseAddComponent extends Component
       $visited->save();
 
       session()->flash('message','info has been deleted Successfully');
-      //return redirect()->route('admin.addfranchise', ['lead_id' => $visited->lead_id]);
+       //add new this
     } 
 
     public function render()
