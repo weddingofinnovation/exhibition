@@ -212,6 +212,7 @@
                           <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
 
                           {{$searchTerm}}
+                          
                           <div class="row mb-5 pb-2">
                             @if(is_null($searchTerm))
 
