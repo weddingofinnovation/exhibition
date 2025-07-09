@@ -68,7 +68,7 @@
                 </div>
 
                 <!-- Sidebar for Desktop -->
-                <div class="col-md-4 d-none d-md-block border-start">
+                <div class="col-md-4 d-none d-md-block border-start">Mayank
                     @if($selectedItem)
                         <h5 class="mt-3">Selected: {{ $selectedItem->name }}</h5>
                         <input type="email" class="form-control my-2" wire:model="email" placeholder="Enter Email">
