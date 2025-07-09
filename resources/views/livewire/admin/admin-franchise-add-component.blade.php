@@ -6,9 +6,8 @@
                 <!-- Search bar -->
                 <div class="col-md-8">
                     <div class="input-group my-3">
-                        <input type="text" class="form-control" placeholder="Search..." wire:model="searchTerm">
+                        <input type="text" class="form-control" placeholder="Search..." wire:model.lazy="searchTerm">
                         <button class="btn btn-primary">Search</button>
-                        <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
                     </div>
 
                     <!-- Search Results -->
