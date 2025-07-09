@@ -13,12 +13,12 @@ use Illuminate\Support\Str;
 class AdminFranchiseEditComponent extends Component
 {
     
-    public function mount(){
-        
-    }
+    public $searchTerm;
 
-        public function render()
+
+    public function render()
     {
-        return view('livewire.admin.admin-franchise-edit-component',['city' => $city,'local' => $local,'tryin' => $tryin]);
+        $searchTerm = '%'.$this->searchTerm. '%';
+        return view('livewire.admin.admin-franchise-edit-component',['searchTerm' => $searchTerm]);
     }
 }
