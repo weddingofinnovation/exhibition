@@ -16,7 +16,7 @@
                         
                     @if(!empty($searchCat) && count($searchCat) > 0)
                         <ul class="list-group">
-                            @foreach($searchCat as $franchise)
+                            @foreach($this->searchCat as $franchise)
                                 <li class="list-group-item p-2">
                                     <div class="row text-center gx-0">
                                         <div class="col">
