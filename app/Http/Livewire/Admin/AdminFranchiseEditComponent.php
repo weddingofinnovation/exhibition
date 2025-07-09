@@ -15,13 +15,20 @@ class AdminFranchiseEditComponent extends Component
 {
     
     public $searchTerm;
-    public $searchCat;
-
+    public $searchCat = [];
     //mayank
     public function render()
     {
-        $searchTerm = '%'.$this->searchTerm. '%';
-        $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+        if (trim($this->searchTerm) !== '') {
+        $searchTerm = '%' . $this->searchTerm . '%';
+        $this->searchCat = Event::where('eventname', 'LIKE', $searchTerm)
+                                ->where('status', '1')
+                                ->orderBy('eventname', 'ASC')
+                                ->get();
+    } else {
+        $this->searchCat = []; // Ensure it's still an array
+    }
+
         return view('livewire.admin.admin-franchise-edit-component',['searchCat' => $searchCat]);
     }
 }
