@@ -15,7 +15,7 @@ class AdminFranchiseEditComponent extends Component
     
     public $searchTerm;
 
-
+    //mayank
     public function render()
     {
         $searchTerm = '%'.$this->searchTerm. '%';
