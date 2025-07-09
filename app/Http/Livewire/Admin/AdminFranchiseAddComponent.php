@@ -61,6 +61,7 @@ class AdminFranchiseAddComponent extends Component
         $searchTerm = '%'.$this->searchTerm. '%';
         $searchResults = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
 
+        dd($searchResults);
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
         $previous = url()->previous();
