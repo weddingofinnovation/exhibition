@@ -8,12 +8,14 @@
                     <div class="input-group my-3">
                         <input type="text" class="form-control" placeholder="Search..." wire:model="searchTerm">
                         <button class="btn btn-primary">Search</button>
+                        <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
                     </div>
 
                     <!-- Search Results -->
                     @if(empty($searchTerm))
                         <div class="text-center text-muted mb-3">Find Some Events</div>
-                    @else
+                        
+                        @else
                         
                             <ul class="list-group">
                                 @foreach($searchCat as $franchise)
