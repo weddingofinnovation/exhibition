@@ -5,7 +5,7 @@
 
                 <!-- Search bar -->
                 <div class="col-md-8">
-                         @livewire('admin-franchise-add-component')
+                         @livewire('admin-franchise-edit-component')
                 </div>
 
                 <!-- Sidebar for Desktop -->
