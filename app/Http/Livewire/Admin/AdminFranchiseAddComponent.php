@@ -27,7 +27,7 @@ class AdminFranchiseAddComponent extends Component
     public $board;
     public $searchTerm;
     public $selectedItem;
-    public $searchCat;
+    public $searchCat = [];
     //public $id;
 
     public function mount($lead_id, $board)
@@ -58,11 +58,22 @@ class AdminFranchiseAddComponent extends Component
 
     public function render()
     {  
-        $searchTerm = '%'.$this->searchTerm. '%';
+       {
+        if (trim($this->searchTerm) !== '') {
+        $searchTerm = '%' . $this->searchTerm . '%';
+        $this->searchCat = Event::where('eventname', 'LIKE', $searchTerm)
+                                ->where('status', '1')
+                                ->orderBy('eventname', 'ASC')
+                                    ->get();
+        } 
+        else 
+        {
+            $this->searchCat = []; // Ensure it's still an array
+        }
 
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
-        $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
+        //$searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
         $previous = url()->previous();
-        return view('livewire.admin.admin-franchise-add-component',['searchCat'=>$searchCat,'previous'=>$previous, 'hashtag'=>$hashtag])->layout('layouts.admin');
+        return view('livewire.admin.admin-franchise-add-component',['searchCat'=>$this->searchCat,'previous'=>$previous, 'hashtag'=>$hashtag])->layout('layouts.admin');
     }
 }
