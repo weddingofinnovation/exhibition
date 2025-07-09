@@ -59,13 +59,10 @@ class AdminFranchiseAddComponent extends Component
     public function render()
     {  
         $searchTerm = '%'.$this->searchTerm. '%';
-        //$searchResults = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
-        dd($searchTerm);
-        
 
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
         $previous = url()->previous();
-        return view('livewire.admin.admin-franchise-add-component',['searchCat'=>$searchCat,'previous'=>$previous, 'hashtag'=>$hashtag, 'searchResults'=>$searchResults])->layout('layouts.admin');
+        return view('livewire.admin.admin-franchise-add-component',['searchCat'=>$searchCat,'previous'=>$previous, 'hashtag'=>$hashtag])->layout('layouts.admin');
     }
 }
