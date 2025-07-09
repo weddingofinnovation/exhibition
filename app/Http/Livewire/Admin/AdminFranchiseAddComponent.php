@@ -58,18 +58,19 @@ class AdminFranchiseAddComponent extends Component
 
     public function render()
     {  
-       {
-        if (trim($this->searchTerm) !== '') {
-        $searchTerm = '%' . $this->searchTerm . '%';
-        $this->searchCat = Event::where('eventname', 'LIKE', $searchTerm)
-                                ->where('status', '1')
-                                ->orderBy('eventname', 'ASC')
-                                    ->get();
-        } 
+       
+        if (trim($this->searchTerm) !== '') 
+            {
+                $searchTerm = '%' . $this->searchTerm . '%';
+                $this->searchCat = Event::where('eventname', 'LIKE', $searchTerm)
+                                        ->where('status', '1')
+                                        ->orderBy('eventname', 'ASC')
+                                            ->get();
+            } 
         else 
-        {
-            $this->searchCat = []; // Ensure it's still an array
-        }
+            {
+                $this->searchCat = []; // Ensure it's still an array
+            }
 
         $hashtag = Hashtag:: where('status', '1')->Where('event_id', NULL)->get();
         //$searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
