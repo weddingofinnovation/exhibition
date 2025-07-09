@@ -1,6 +1,6 @@
     @if($board == 'email') 
         <!-- email -->
-        <div class="container-fluid">
+        <div class="container-fluid"> mank
             <div class="row">
 
                 <!-- Search bar -->
