@@ -29,6 +29,6 @@ class AdminFranchiseEditComponent extends Component
         $this->searchCat = []; // Ensure it's still an array
     }
 
-        return view('livewire.admin.admin-franchise-edit-component',['searchCat' => $searchCat]);
+        return view('livewire.admin.admin-franchise-edit-component',['searchCat' => $this->searchCat]);
     }
 }
