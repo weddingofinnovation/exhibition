@@ -15,7 +15,7 @@
                         <div class="text-center text-muted mb-3">Find Some Events</div>
                         
                         @else
-                        
+                        {{$searchCat}}
                             <ul class="list-group">
                                 @foreach($searchCat as $franchise)
                                     <li class="list-group-item p-2">
