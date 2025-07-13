@@ -147,6 +147,7 @@
       @elseif(Route::currentRouteName() === 'lead.business')
       @elseif(Route::currentRouteName() === 'lead.business.other')
       @elseif(Route::currentRouteName() === 'seller.dashboard')
+      @elseif(Route::currentRouteName() === 'event.exhibit')
       @else
         <footer class="footer bg-dark pt-5 d-none d-sm-block">
             <div class="container">
