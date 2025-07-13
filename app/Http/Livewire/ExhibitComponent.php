@@ -52,7 +52,7 @@ class ExhibitComponent extends Component
         $this->validate([
             'email'=>'required|email:rfc,dns',
             'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'name'=>'required|regex:/^[a-zA-Z\s]+$/', // alpha:ascii
         ]);
 
         $newEvent = new Lead();
