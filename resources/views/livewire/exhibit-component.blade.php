@@ -874,11 +874,46 @@
           </div>
 
         @elseif($this->board == 'know_more')
-        
+<style>
+    .chat-btn {
+      background-color: #f1f3f9;
+      border: none;
+      border-radius: 40px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      box-shadow: none;
+      transition: 0.2s;
+    }
+
+    .chat-btn:hover {
+      background-color: #e0e7ff;
+    }
+
+    .chat-btn i {
+      font-size: 1.2rem;
+      color: #1a73e8;
+    }
+
+    .btn-outline-custom {
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 40px;
+      padding: 12px 20px;
+      font-weight: 500;
+    }
+
+    .btn-outline-custom:hover {
+      background: #f8f9fa;
+    }
+  </style>
+
         <div class="container py-5 text-center">
           <!-- Header -->
           <h2 class="fw-bold mb-1">Need help with your first steps?</h2>
-          <h3 class="fw-semibold mb-3">Chat with <span class="text-primary">The Exhibition Network</span></h3>
+          <h3 class="fw-semibold mb-3">Connect with <span class="text-primary">The Exhibition Network</span></h3>
           <p class="text-muted mb-4">Connect with our support team to get help or advice. Choose a conversation starter below:</p>
 
           <!-- Conversation Starters -->
@@ -887,24 +922,25 @@
             <!-- Option 1 -->
             <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
               <i class="bi bi-arrow-return-right text-primary fs-5"></i>
-              <span>How do our exhibitions work?</span>
+              <span>Visit the Expo</span>
             </button>
 
             <!-- Option 2 -->
             <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
               <i class="bi bi-lightbulb text-warning fs-5"></i>
-              <span>How can I grow my business?</span>
+              <span>Participate as an Exhibitor</span>
             </button>
 
             <!-- Option 3 -->
             <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2">
               <i class="bi bi-chat-dots-fill fs-5"></i>
-              <span>Ask something else</span>
+              <span>Services</span>
             </button>
 
           </div>
         </div>
-
+  
+        @elseif($this->board == 'know_more')  
 
         <div class="container py-5">
           <div class="text-center mb-5">
