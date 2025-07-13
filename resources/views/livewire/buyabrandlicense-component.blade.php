@@ -1,481 +1,60 @@
 <main>
   <style>
-          * { box-sizing: border-box; }
-
-      body {
-        font-family: sans-serif;
-      }
-
-      /* ---- button ---- */
-
-      .button {
-        display: inline-block;
-        padding: 0.5em 1.0em;
-        background: #EEE;
-        border: none;
-        border-radius: 7px;
-        background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-        color: #222;
-        font-family: sans-serif;
-        font-size: 16px;
-        cursor: pointer;
-      }
-
-      .button:hover {
-        background-color: #8CF;
-        color: #222;
-      }
-
-      .button:active,
-      .button.is-checked {
-        background-color: #28F;
-      }
-
-      .button.is-checked {
-        color: white;
-      }
-
-      .button:active {
-        box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-      }
-
-      /* ---- button-group ---- */
-
-      .button-group {
-        margin-bottom: 20px;
-      }
-
-      .button-group:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-
-      .button-group .button {
-        float: left;
-        border-radius: 0;
-        margin-left: 0;
-        margin-right: 1px;
-      }
-
-      .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-      .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
-
-      /* ---- grid ---- */
-
-      .grid {
-        border: 1px solid #333;
-      }
-
-      /* clear fix */
-      .grid:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-
-      /* ---- .element-item ---- */
-
-      .grid-item {
-        position: relative;
-        float: left;
-        width: 100px;
-        height: 100px;
-        margin: 5px;
-        padding: 10px;
-        background: red;
-        color: white;
-        font-size: 50px;
-      }
-
-      .grid-item--width2 { width: 210px; }
-      .grid-item--height2 { height: 210px; }
-
-      .grid-item:nth-child(10n+0) { background: hsl(   0, 100%, 50%); }
-      .grid-item:nth-child(10n+1) { background: hsl(  36, 100%, 50%); }
-      .grid-item:nth-child(10n+2) { background: hsl(  72, 100%, 50%); }
-      .grid-item:nth-child(10n+3) { background: hsl( 108, 100%, 50%); }
-      .grid-item:nth-child(10n+4) { background: hsl( 144, 100%, 50%); }
-      .grid-item:nth-child(10n+5) { background: hsl( 180, 100%, 50%); }
-      .grid-item:nth-child(10n+6) { background: hsl( 216, 100%, 50%); }
-      .grid-item:nth-child(10n+7) { background: hsl( 252, 100%, 50%); }
-      .grid-item:nth-child(10n+8) { background: hsl( 288, 100%, 50%); }
-      .grid-item:nth-child(10n+9) { background: hsl( 324, 100%, 50%); }
-
-
-      * { box-sizing: border-box; }
-
-      body {
-        font-family: sans-serif;
-      }
-
-      /* ---- button ---- */
-
-      .button {
-        display: inline-block;
-        padding: 0.5em 1.0em;
-        background: #EEE;
-        border: none;
-        border-radius: 7px;
-        background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-        color: #222;
-        font-family: sans-serif;
-        font-size: 16px;
-        text-shadow: 0 1px white;
-        cursor: pointer;
-      }
-
-      .button:hover {
-        background-color: #8CF;
-        text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-        color: #222;
-      }
-
-      .button:active,
-      .button.is-checked {
-        background-color: #28F;
-      }
-
-      .button.is-checked {
-        color: white;
-        text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-      }
-
-      .button:active {
-        box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-      }
-
-      /* ---- button-group ---- */
-
-      .button-group {
-        margin-bottom: 20px;
-      }
-
-      .button-group:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-
-      .button-group .button {
-        float: left;
-        border-radius: 0;
-        margin-left: 0;
-        margin-right: 1px;
-      }
-
-      .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-      .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
-
-      /* ---- isotope ---- */
-
-      .grid {
-        border: 1px solid #333;
-      }
-
-      /* clear fix */
-      .grid:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-
-      /* ---- .element-item ---- */
-
-      .element-item {
-        position: relative;
-        float: left;
-        width: 100px;
-        height: 100px;
-        margin: 5px;
-        padding: 10px;
-        background: #888;
-        color: #262524;
-      }
-
-      .element-item > * {
-        margin: 0;
-        padding: 0;
-      }
-
-      .element-item .name {
-        position: absolute;
-
-        left: 10px;
-        top: 60px;
-        text-transform: none;
-        letter-spacing: 0;
-        font-size: 12px;
-        font-weight: normal;
-      }
-
-      .element-item .symbol {
-        position: absolute;
-        left: 10px;
-        top: 0px;
-        font-size: 42px;
-        font-weight: bold;
-        color: white;
-      }
-
-      .element-item .number {
-        position: absolute;
-        right: 8px;
-        top: 5px;
-      }
-
-      .element-item .weight {
-        position: absolute;
-        left: 10px;
-        top: 76px;
-        font-size: 12px;
-      }
-
-      .element-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
-      .element-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
-      .element-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
-      .element-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
-      .element-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
-      .element-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
-      .element-item.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
-      .element-item.diatomic        { background: #00F; background: hsl( 252, 100%, 50%); }
-      .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
-      .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
-
-
+    .hero-section h1, .hero-section p {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+    .hero-section .btn {
+      letter-spacing: 0.5px;
+      border-radius: 0.375rem;
+    }
+    .hero-section .bg-danger {
+      font-size: 0.9rem;
+    }
   </style>
 
-  
-    <h1>Isotope - layout modes</h1>
-
-    <div class="button-group layout-mode-button-group">
-      <button class="button is-checked" data-layout-mode="masonry" checked="checked">masonry</button>
-      <button class="button" data-layout-mode="fitRows">fitRows</button>
-      <button class="button" data-layout-mode="cellsByRow">cellsByRow</button>
-      <button class="button" data-layout-mode="vertical">vertical</button>
-      <button class="button" data-layout-mode="packery">packery</button>
-      <button class="button" data-layout-mode="masonryHorizontal" data-is-horizontal="true">masonryHorizontal</button>
-      <button class="button" data-layout-mode="fitColumns" data-is-horizontal="true">fitColumns</button>
-      <button class="button" data-layout-mode="cellsByColumn" data-is-horizontal="true">cellsByColumn</button>
-      <button class="button" data-layout-mode="horiz" data-is-horizontal="true">horiz</button>
-    </div>
-
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center text-white text-center px-3 py-5" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('your-background.jpg') no-repeat center center / cover; min-height: 100vh;">
     <div class="container">
-    <div class="grid" data-isotope='{ "itemSelector": ".grid-item", "layoutMode": "masonry"}'>
+      
+      <!-- Header Badge Row -->
+      <div class="d-flex align-items-center justify-content-center mb-4">
+        <div class="text-center me-3">
+          <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">30<sup style="font-size: 1rem;">a</sup></h2>
+          <small class="text-uppercase">edition</small>
+        </div>
 
-      <div class="grid-item grid-item--width2">1</div>
-      <div class="grid-item grid-item--height2">2</div>
-      <div class="grid-item">3</div>
-      <div class="grid-item">4</div>
-      <div class="grid-item grid-item--width2 grid-item--height2">5</div>
-      <div class="grid-item grid-item--width2">6</div>
-      <div class="grid-item grid-item--height2">7</div>
-      <div class="grid-item">8</div>
-      <div class="grid-item">9</div>
-      <div class="grid-item grid-item--width2">10</div>
-      <div class="grid-item">11</div>
-      <div class="grid-item">12</div>
-    </div>
-    </div>
+        <div class="bg-danger px-3 py-2 text-uppercase fw-bold me-3">
+          Artigiano <br> in Fiera
+        </div>
 
-
-
-
-
-    <div class="container">
-    <h1>Isotope - filtering &amp; sorting</h1>
-      <h2>Filter</h2>
-      <div id="filters" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
-        <button class="button" data-filter=".metal">metal</button>
-        <button class="button" data-filter=".transition">transition</button>
-        <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
-        <button class="button" data-filter=":not(.transition)">not transition</button>
-        <button class="button" data-filter=".metal:not(.transition)">metal but not transition</button>
-        <button class="button" data-filter="numberGreaterThan50">number > 50</button>
-        <button class="button" data-filter="ium">name ends with &ndash;ium</button>
+        <div class="display-5 fw-semibold">2025</div>
       </div>
 
-      <h2>Sort</h2>
-      <div id="sorts" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
-        <button class="button" data-sort-by="name">name</button>
-        <button class="button" data-sort-by="symbol">symbol</button>
-        <button class="button" data-sort-by="number">number</button>
-        <button class="button" data-sort-by="weight">weight</button>
-        <button class="button" data-sort-by="category">category</button>
+      <!-- Tagline -->
+      <h1 class="display-6 fw-bold mb-3">We put each artisan under the spotlight</h1>
+      <p class="lead mb-4">Artigiano in fiera is the most important worldwide event dedicated to artisanship and small businesses</p>
+
+      <!-- Buttons -->
+      <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
+        <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Book Your Stand</a>
+        <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Stand Out From the Rest</a>
       </div>
 
-      <div class="grido">
-        <div class="element-item transition metal " data-category="transition">
-          <h3 class="name">Mercury</h3>
-          <p class="symbol">Hg</p>
-          <p class="number">80</p>
-          <p class="weight">200.59</p>
-        </div>
-        <div class="element-item metalloid " data-category="metalloid">
-          <h3 class="name">Tellurium</h3>
-          <p class="symbol">Te</p>
-          <p class="number">52</p>
-          <p class="weight">127.6</p>
-        </div>
-        <div class="element-item post-transition metal " data-category="post-transition">
-          <h3 class="name">Bismuth</h3>
-          <p class="symbol">Bi</p>
-          <p class="number">83</p>
-          <p class="weight">208.980</p>
-        </div>
-        <div class="element-item post-transition metal " data-category="post-transition">
-          <h3 class="name">Lead</h3>
-          <p class="symbol">Pb</p>
-          <p class="number">82</p>
-          <p class="weight">207.2</p>
-        </div>
-        <div class="element-item transition metal " data-category="transition">
-          <h3 class="name">Gold</h3>
-          <p class="symbol">Au</p>
-          <p class="number">79</p>
-          <p class="weight">196.967</p>
-        </div>
-        <div class="element-item alkali metal " data-category="alkali">
-          <h3 class="name">Potassium</h3>
-          <p class="symbol">K</p>
-          <p class="number">19</p>
-          <p class="weight">39.0983</p>
-        </div>
-        <div class="element-item alkali metal " data-category="alkali">
-          <h3 class="name">Sodium</h3>
-          <p class="symbol">Na</p>
-          <p class="number">11</p>
-          <p class="weight">22.99</p>
-        </div>
-        <div class="element-item transition metal " data-category="transition">
-          <h3 class="name">Cadmium</h3>
-          <p class="symbol">Cd</p>
-          <p class="number">48</p>
-          <p class="weight">112.411</p>
-        </div>
-        <div class="element-item alkaline-earth metal " data-category="alkaline-earth">
-          <h3 class="name">Calcium</h3>
-          <p class="symbol">Ca</p>
-          <p class="number">20</p>
-          <p class="weight">40.078</p>
-        </div>
-        <div class="element-item transition metal " data-category="transition">
-          <h3 class="name">Rhenium</h3>
-          <p class="symbol">Re</p>
-          <p class="number">75</p>
-          <p class="weight">186.207</p>
-        </div>
-        <div class="element-item post-transition metal " data-category="post-transition">
-          <h3 class="name">Thallium</h3>
-          <p class="symbol">Tl</p>
-          <p class="number">81</p>
-          <p class="weight">204.383</p>
-        </div>
-        <div class="element-item metalloid " data-category="metalloid">
-          <h3 class="name">Antimony</h3>
-          <p class="symbol">Sb</p>
-          <p class="number">51</p>
-          <p class="weight">121.76</p>
-        </div>
-        <div class="element-item transition metal " data-category="transition">
-          <h3 class="name">Cobalt</h3>
-          <p class="symbol">Co</p>
-          <p class="number">27</p>
-          <p class="weight">58.933</p>
-        </div>
-        <div class="element-item lanthanoid metal inner-transition " data-category="lanthanoid">
-          <h3 class="name">Ytterbium</h3>
-          <p class="symbol">Yb</p>
-          <p class="number">70</p>
-          <p class="weight">173.054</p>
-        </div>
-        <div class="element-item noble-gas nonmetal " data-category="noble-gas">
-          <h3 class="name">Argon</h3>
-          <p class="symbol">Ar</p>
-          <p class="number">18</p>
-          <p class="weight">39.948</p>
-        </div>
-        <div class="element-item diatomic nonmetal " data-category="diatomic">
-          <h3 class="name">Nitrogen</h3>
-          <p class="symbol">N</p>
-          <p class="number">7</p>
-          <p class="weight">14.007</p>
-        </div>
-        <div class="element-item actinoid metal inner-transition " data-category="actinoid">
-          <h3 class="name">Uranium</h3>
-          <p class="symbol">U</p>
-          <p class="number">92</p>
-          <p class="weight">238.029</p>
-        </div>
-        <div class="element-item actinoid metal inner-transition " data-category="actinoid">
-          <h3 class="name">Plutonium</h3>
-          <p class="symbol">Pu</p>
-          <p class="number">94</p>
-          <p class="weight">(244)</p>
+      <!-- Optional Calendar (You can plug in live data) -->
+      <div class="d-inline-block bg-white text-dark p-3 rounded shadow-sm">
+        <div class="d-flex gap-4">
+          <div class="text-center">
+            <div class="fw-bold text-danger">Saturday</div>
+            <div class="fs-3 fw-bold">28</div>
+          </div>
+          <div class="text-center">
+            <div class="fw-bold">Sunday</div>
+            <div class="fs-3 fw-bold">11</div>
+          </div>
         </div>
       </div>
 
     </div>
-  </main>
+  </section>
 
-  @push('scripts')
-     
-    
-      <script type="text/javascript" src="{{asset('js/isotope.pkgd.min.js')}}">
-        $(document).ready(function(){ 
-          var grid = $('.grido').isotope({
-          itemSelector: '.element-item',
-          layoutMode: 'masonry',
-          getSortData: {
-            name: '.name',
-            symbol: '.symbol',
-            number: '.number parseInt',
-            category: '[data-category]',
-            weight: function( itemElem ) {
-              var weight = $( itemElem ).find('.weight').text();
-              return parseFloat( weight.replace( /[\(\)]/g, '') );
-              }
-            }
-          });
-         // filter functions
-         var filterFns = {
-          // show if number is greater than 50
-          numberGreaterThan50: function() {
-            var number = $(this).find('.number').text();
-            return parseInt( number, 10 ) > 50;
-          },
-          // show if name ends with -ium
-          ium: function() {
-            var name = $(this).find('.name').text();
-            return name.match( /ium$/ );
-          }
-        };
-
-        // bind filter button click
-        $('#filters').on( 'click', 'button', function() {
-          var filterValue = $( this ).attr('data-filter');
-          // use filterFn if matches value
-          filterValue = filterFns[ filterValue ] || filterValue;
-          $grid.isotope({ filter: filterValue });
-        });
-
-        // bind sort button click
-        $('#sorts').on( 'click', 'button', function() {
-          var sortByValue = $(this).attr('data-sort-by');
-          $grid.isotope({ sortBy: sortByValue });
-        });
-
-        // change is-checked class on buttons
-        $('.button-group').each( function( i, buttonGroup ) {
-          var $buttonGroup = $( buttonGroup );
-          $buttonGroup.on( 'click', 'button', function() {
-            $buttonGroup.find('.is-checked').removeClass('is-checked');
-            $( this ).addClass('is-checked');
-          });
-
-      }); 
-    });
-  
-      </script>
-  @endpush
-
+</main>

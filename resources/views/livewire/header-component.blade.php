@@ -135,7 +135,8 @@
                 <div class="justify-content-end d-none d-md-block">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a>
+                            <!-- <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a> -->
+                            <a class="nav-link" href="{{route('design.strategy')}}">Great Exhibition To Exhibt</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{asset('/awards')}}">Find Exhibitor</a>
@@ -147,7 +148,7 @@
                             <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/investment')}}">Design & Fabrication</a>
+                            <a class="nav-link" href="{{route('design.strategy')}}">Design & Fabrication</a>
                         </li>
                         
                     </ul>

@@ -266,7 +266,7 @@ Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::cla
 
 
 //as per upcoming venue 
-Route::get('Great-Exhibition-to-Exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
+Route::get('great-exhibition-to-exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
 
 Route::get('/pass/{slug}', ProductComponent::class)->name('event.product');
@@ -287,9 +287,10 @@ Route::get('/partner', MembershipComponent::class)->name('business.membership');
 //product
 Route::get('/sell-your-business', SellyourbusinessComponent::class)->name('sell.business');
 Route::get('/expand-your-business', ExpandyourbusinessComponent::class)->name('expand.business');
-Route::get('/buy-a-brand-license', BuyabrandlicenseComponent::class)->name('buy.license');
 
-Route::get('/Great-Exhibition-To-Exhibit', BusinessDesignStrategyComponent::class)->name('design.strategy');
+Route::get('/design_fabrication', BuyabrandlicenseComponent::class)->name('buy.license');
+
+Route::get('/great_exhibition_to_exhibit', BusinessDesignStrategyComponent::class)->name('design.strategy');
 
 Route::get('/product/{productservice}', OnlineContractFormComponent::class)->name('service.product');
 
