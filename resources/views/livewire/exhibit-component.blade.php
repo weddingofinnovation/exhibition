@@ -1006,13 +1006,20 @@
                         Your badge will be sent <strong>4 weeks prior</strong> to the event.
                     </p>
 
+                    <div class="">
+                      <a href="#" id="shareBtn" class="mx-2 text-dark"><i class="bi bi-share fs-4"></i></a>
+                      <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
+                    </div>
+
                     <div class="text-center mt-4">
-                        <button class="btn btn-outline-primary px-4 me-2">
-                            <i class="bi bi-calendar-event"></i> Add to Calendar
-                        </button>
-                        <button class="btn btn-primary px-4">
-                            <i class="bi bi-person-circle"></i> Add Your Profile
-                        </button>
+                        
+                        <a href="{{$link->google()}}" class="btn btn-outline-primary px-4 me-2"><i class="bi bi-calendar-event"></i>Add to Calender</a>
+
+                        @if(Auth::check())
+                          <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
+                        @else
+                          <a href="{{route('login')}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
+                        @endif
                     </div>
 
                     <div class="mt-5">
@@ -1075,9 +1082,6 @@
                 </div>
               </div>
             </div> 
-
-
-
 
           @elseif($board == 'thankyou-for-request')
             <div class="container py-4 py-lg-5 my-4">
