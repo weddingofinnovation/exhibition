@@ -1,9 +1,8 @@
 <main>
-  <div class="container"> Mayanksing
+  <div class="container">
 
 
   <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
-
 
       @if(!empty($searchCat) && count($searchCat) > 0)
           

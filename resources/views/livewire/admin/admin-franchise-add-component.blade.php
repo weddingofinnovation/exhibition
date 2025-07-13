@@ -1,6 +1,6 @@
     @if($board == 'email') 
         <!-- email -->
-        <div class="container-fluid">may
+        <div class="container-fluid">
             <div class="row">
 
                 <!-- Search bar -->

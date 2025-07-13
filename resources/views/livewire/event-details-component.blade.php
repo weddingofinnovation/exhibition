@@ -5755,7 +5755,7 @@
                 </style>
 
                 <!-- fixedthis -->
-               <div class="d-none d-sm-block fixed-bottom-div">
+               <div class="d-none d-sm-block fixed-bottom-div" style="background: linear-gradient(0deg, #000 24.34%, rgba(0, 0, 0, 0) 91.66%);">
                 <ul class="container list-unstyled fs-sm py-2">
                     <li class="d-flex justify-content-between p-0 m-0">
                     <span class="col bg-light mb-0">
