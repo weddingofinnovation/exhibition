@@ -12,10 +12,10 @@
 
               <div class="col-lg-8 col-md-10">
                  <p>A Warm Welcome</p>
-                <h2 class="h3 mb-2">Intention to exhibit</h2>
+                <h2 class="h3 mb-1">Intention to exhibit</h2>
                
-                <small class="">We are glad you are interested in attending {{$findevent->eventname}}.
-                 Here you can make a non-binding request for stand space and find useful information for a 
+                <small class="">We are glad you are interested in attending <ul>{{$findevent->eventname}}</ul>.
+                 Here you can make a non-binding request<br> for stand space and find useful information for a 
                  successful presentation at the fair.
                 </small>
 
