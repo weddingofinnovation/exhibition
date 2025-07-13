@@ -874,47 +874,79 @@
           </div>
 
         @elseif($this->board == 'know_more')
-       <div class="container py-5">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold">Choose your participation package</h2>
-    <p class="text-muted">Select an option to proceed with registration. You can edit this later if needed.</p>
-  </div>
+        
+        <div class="container py-5 text-center">
+          <!-- Header -->
+          <h2 class="fw-bold mb-1">Need help with your first steps?</h2>
+          <h3 class="fw-semibold mb-3">Chat with <span class="text-primary">The Exhibition Network</span></h3>
+          <p class="text-muted mb-4">Connect with our support team to get help or advice. Choose a conversation starter below:</p>
 
-  <div class="row g-4">
-    <!-- Option A -->
-    <div class="col-md-4">
-      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-        <span class="badge bg-primary mb-2">STANDARD</span>
-        <h3 class="fw-bold mb-1">₹20,000</h3>
-        <div class="text-muted mb-3">For 6–9 Sqm Booth</div>
-        <p class="small text-muted">Ideal for startups or sampling counters. Includes fascia & basic furniture.</p>
-      </label>
-    </div>
+          <!-- Conversation Starters -->
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            
+            <!-- Option 1 -->
+            <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+              <i class="bi bi-arrow-return-right text-primary fs-5"></i>
+              <span>How do our exhibitions work?</span>
+            </button>
 
-    <!-- Option B -->
-    <div class="col-md-4">
-      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-        <span class="badge bg-info text-dark mb-2">BUSINESS</span>
-        <h3 class="fw-bold mb-1">₹40,000</h3>
-        <div class="text-muted mb-3">For 12–18 Sqm Booth</div>
-        <p class="small text-muted">Get visibility and branding benefits. Includes branding wall & storage area.</p>
-      </label>
-    </div>
+            <!-- Option 2 -->
+            <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+              <i class="bi bi-lightbulb text-warning fs-5"></i>
+              <span>How can I grow my business?</span>
+            </button>
 
-    <!-- Option C -->
-    <div class="col-md-4">
-      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-        <span class="badge bg-success mb-2">PREMIUM</span>
-        <h3 class="fw-bold mb-1">₹60,000</h3>
-        <div class="text-muted mb-3">For 24+ Sqm Booth</div>
-        <p class="small text-muted">Premium corner stall with LED display support, reception & meeting zone.</p>
-      </label>
-    </div>
-  </div>
-</div>
+            <!-- Option 3 -->
+            <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+              <i class="bi bi-chat-dots-fill fs-5"></i>
+              <span>Ask something else</span>
+            </button>
+
+          </div>
+        </div>
+
+
+        <div class="container py-5">
+          <div class="text-center mb-5">
+            <h2 class="fw-bold">Choose your participation package</h2>
+            <p class="text-muted">Select an option to proceed with registration. You can edit this later if needed.</p>
+          </div>
+
+          <div class="row g-4">
+            <!-- Option A -->
+            <div class="col-md-4">
+              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                <span class="badge bg-primary mb-2">STANDARD</span>
+                <h3 class="fw-bold mb-1">₹20,000</h3>
+                <div class="text-muted mb-3">For 6–9 Sqm Booth</div>
+                <p class="small text-muted">Ideal for startups or sampling counters. Includes fascia & basic furniture.</p>
+              </label>
+            </div>
+
+            <!-- Option B -->
+            <div class="col-md-4">
+              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                <span class="badge bg-info text-dark mb-2">BUSINESS</span>
+                <h3 class="fw-bold mb-1">₹40,000</h3>
+                <div class="text-muted mb-3">For 12–18 Sqm Booth</div>
+                <p class="small text-muted">Get visibility and branding benefits. Includes branding wall & storage area.</p>
+              </label>
+            </div>
+
+            <!-- Option C -->
+            <div class="col-md-4">
+              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                <span class="badge bg-success mb-2">PREMIUM</span>
+                <h3 class="fw-bold mb-1">₹60,000</h3>
+                <div class="text-muted mb-3">For 24+ Sqm Booth</div>
+                <p class="small text-muted">Premium corner stall with LED display support, reception & meeting zone.</p>
+              </label>
+            </div>
+          </div>
+        </div>
 
 
         @else
