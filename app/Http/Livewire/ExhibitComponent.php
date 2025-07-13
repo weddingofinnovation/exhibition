@@ -76,12 +76,23 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou 
-        return redirect()->route('event.exhibit', ['board' => 'know_more', 'visitorid' => $newEvent->id ]);
-        //return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        //return redirect()->route('event.exhibit', ['board' => 'know_more', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message','Thanks for sharing your review.');
         
     }
+
+    public function detailswaypath()
+    {
+        $newEvent = new Lead();
+        $newEvent->name = Str::lower(trim($this->name));
+        $newEvent->email = Str::lower(trim($this->email));
+        $newEvent->phone = Str::trim($this->phone);
+        $newEvent->type = Str::lower(trim($this->board));
+        $newEvent->event_id = session()->get('eventID');
+    }
+
 
     public function multiadd()
     {

@@ -874,41 +874,41 @@
           </div>
 
         @elseif($this->board == 'know_more')
-<style>
-    .chat-btn {
-      background-color: #f1f3f9;
-      border: none;
-      border-radius: 40px;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      box-shadow: none;
-      transition: 0.2s;
-    }
+        <style>
+          .chat-btn {
+            background-color: #f1f3f9;
+            border: none;
+            border-radius: 40px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            box-shadow: none;
+            transition: 0.2s;
+          }
 
-    .chat-btn:hover {
-      background-color: #e0e7ff;
-    }
+          .chat-btn:hover {
+            background-color: #e0e7ff;
+          }
 
-    .chat-btn i {
-      font-size: 1.2rem;
-      color: #1a73e8;
-    }
+          .chat-btn i {
+            font-size: 1.2rem;
+            color: #1a73e8;
+          }
 
-    .btn-outline-custom {
-      border: 1px solid #ddd;
-      background: white;
-      border-radius: 40px;
-      padding: 12px 20px;
-      font-weight: 500;
-    }
+          .btn-outline-custom {
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 40px;
+            padding: 12px 20px;
+            font-weight: 500;
+          }
 
-    .btn-outline-custom:hover {
-      background: #f8f9fa;
-    }
-  </style>
+          .btn-outline-custom:hover {
+            background: #f8f9fa;
+          }
+        </style>
 
         <div class="container py-5 text-center">
           <!-- Header -->
@@ -932,15 +932,15 @@
             </button>
 
             <!-- Option 3 -->
-            <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+            <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2" wire:click.prevent="detailswaypath({{ $this->visitorid->id }}, 'service')">
               <i class="bi bi-chat-dots-fill fs-5"></i>
-              <span>Services</span>
+              <span>Services</span> 
             </button>
 
           </div>
         </div>
   
-        @elseif($this->board == 'know_more')  
+        @elseif($this->board == 'service')  
 
         <div class="container py-5">
           <div class="text-center mb-5">
@@ -982,7 +982,7 @@
               </label>
             </div>
           </div>
-        </div>
+        </div>  
 
 
         @else
