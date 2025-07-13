@@ -874,45 +874,48 @@
           </div>
 
         @elseif($this->board == 'know_more')
-        <div class="card shadow-sm rounded-4 overflow-hidden" style="max-width: 400px; margin: auto;">
-          <!-- Banner Image -->
-          <img src="your-banner.jpg" class="img-fluid" alt="Banner">
+       <div class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Choose your participation package</h2>
+    <p class="text-muted">Select an option to proceed with registration. You can edit this later if needed.</p>
+  </div>
 
-          <!-- Header -->
-          <div class="d-flex align-items-center p-3">
-            <img src="your-logo.png" width="40" height="40" class="me-2 rounded-circle" alt="Logo">
-            <div>
-              <div class="fw-bold">Experience Expo 2025</div>
-              <small class="text-muted">Sponsored · exhibition.org.in</small>
-            </div>
-          </div>
+  <div class="row g-4">
+    <!-- Option A -->
+    <div class="col-md-4">
+      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+        <span class="badge bg-primary mb-2">STANDARD</span>
+        <h3 class="fw-bold mb-1">₹20,000</h3>
+        <div class="text-muted mb-3">For 6–9 Sqm Booth</div>
+        <p class="small text-muted">Ideal for startups or sampling counters. Includes fascia & basic furniture.</p>
+      </label>
+    </div>
 
-          <!-- Bullet Sections -->
-          <div class="px-3 pb-3">
-            <div class="bg-light rounded p-2 mb-2">
-              <div class="fw-semibold">Get Free VIP Entry</div>
-              <small>Register today and access exclusive zones & networking lounges.</small>
-            </div>
+    <!-- Option B -->
+    <div class="col-md-4">
+      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+        <span class="badge bg-info text-dark mb-2">BUSINESS</span>
+        <h3 class="fw-bold mb-1">₹40,000</h3>
+        <div class="text-muted mb-3">For 12–18 Sqm Booth</div>
+        <p class="small text-muted">Get visibility and branding benefits. Includes branding wall & storage area.</p>
+      </label>
+    </div>
 
-            <div class="bg-light rounded p-2 mb-2">
-              <div class="fw-semibold">Meet Industry Leaders</div>
-              <small>Join sessions with tech brands like LG, IFB, AMD, Vodafone & more.</small>
-            </div>
+    <!-- Option C -->
+    <div class="col-md-4">
+      <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+        <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+        <span class="badge bg-success mb-2">PREMIUM</span>
+        <h3 class="fw-bold mb-1">₹60,000</h3>
+        <div class="text-muted mb-3">For 24+ Sqm Booth</div>
+        <p class="small text-muted">Premium corner stall with LED display support, reception & meeting zone.</p>
+      </label>
+    </div>
+  </div>
+</div>
 
-            <div class="bg-light rounded p-2 mb-2">
-              <div class="fw-semibold">Experience Product Zones</div>
-              <small>Touch, try, and experience products live at the event.</small>
-            </div>
-
-            <div class="bg-light rounded p-2 mb-3">
-              <div class="fw-semibold">Win Exclusive Hampers</div>
-              <small>Be part of lucky draws, selfie zones, contests & giveaways.</small>
-            </div>
-
-            <!-- CTA Button -->
-            <a href="https://exhibition.org.in/register" class="btn btn-primary w-100 fw-bold">Register Now</a>
-          </div>
-        </div>
 
         @else
         @endif
