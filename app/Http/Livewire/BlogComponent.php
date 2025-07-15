@@ -12,6 +12,7 @@ use Livewire\Component;
 class BlogComponent extends Component
 {  
 
+    public $openReply;
     public function likePost($mag)
     {
         $user = Auth::user();
