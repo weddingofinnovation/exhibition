@@ -32,13 +32,28 @@
 							{{ $evento->question }}
 						</button>
 					</h2>
+
 					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}" aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
-						<div class="accordion-body">
-							Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+						<div class="accordion-body" x-data="{ openReply: false }">
+							<p>
+								Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+							</p>
+
+							<!-- Give Reply Button -->
+							<button class="btn btn-sm btn-outline-primary mt-2" @click="openReply = !openReply">
+								{{ openReply ? 'Cancel' : 'Give Reply' }}
+							</button>
+
+							<!-- Reply Input Form -->
+							<div x-show="openReply" class="mt-3">
+								<textarea class="form-control mb-2" rows="3" placeholder="Type your answer..."></textarea>
+								<button class="btn btn-success btn-sm">Submit Answer</button>
+							</div>
 						</div>
 					</div>
 				</div>
 			@endforeach
+
 
 
 
