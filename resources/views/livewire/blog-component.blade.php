@@ -24,51 +24,7 @@
 		<input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
 		</div>
 
-		<div class="accordion" id="faqAccordion">
-			@foreach($updateQuestion as $key => $evento)
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="heading{{$key}}">
-						<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="{{ $key == 0 ? 'true' : 'false' }}" aria-controls="collapse{{$key}}">
-							{{ $evento->question }}
-						</button>
-					</h2>
-
-					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}" aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
-						<div class="accordion-body" x-data="{ openReply: false }">
-							<p>
-								Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-							</p>
-
-							<!-- Give Reply Button -->
-							<button class="btn btn-sm btn-outline-primary mt-2" @click="openReply = !openReply">
-								{{ openReply ? 'Cancel' : 'Give Reply' }}
-							</button>
-
-							<!-- Reply Input Form -->
-							<div x-show="openReply" class="mt-3">
-								<textarea class="form-control mb-2" rows="3" placeholder="Type your answer..."></textarea>
-								<button class="btn btn-success btn-sm">Submit Answer</button>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			@endforeach
-
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingTwo">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-						What is digital marketing for exhibitions?
-					</button>
-					</h2>
-					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">
-						Digital marketing includes SEO, paid ads, social media, influencer marketing, and email campaigns tailored to attract visitors and exhibitors to your show.
-					</div>
-					</div>
-				</div>
-		<!-- Add more questions as needed -->
-		</div>
+		
 
 		<div class="accordion" id="faqAccordion">
 			@foreach($updateQuestion as $key => $evento)
