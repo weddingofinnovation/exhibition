@@ -13,7 +13,7 @@
 	</section>
 
 	@php
-		$updateQuestion = DB::table('questions')->where('event_id','null')->get();
+		$updateQuestion = DB::table('questions')->whereNull('event_id')->get();
 	@endphp
 
 	<section class="py-5 bg-white">
