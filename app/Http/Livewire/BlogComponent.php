@@ -55,18 +55,18 @@ class BlogComponent extends Component
     public function submitReply($questionId)
     {
         if (trim($this->replyText)) {
-            // Answer::create([
-            //     'question_id' => $questionId,
-            //     'answer' => $this->replyText,
-            // ]);
+            Answer::create([
+                'question_id' => $questionId,
+                'answer' => $this->replyText,
+            ]);
                             // $questionbrand = Answer::updateOrCreate();
                             // $questionbrand->question_id = $questionId;        // Search condition
                             // $questionbrand->answer = $this->replyText;          // Data to insert or update
                             // $questionbrand->save();
                         
-            $answer = Answer::firstOrNew(['question_id' => $questionId]);
-            $answer->answer = $this->replyText;
-            $answer->save();
+            // $answer = Answer::firstOrNew(['question_id' => $questionId]);
+            // $answer->answer = $this->replyText;
+            // $answer->save();
 
 
             session()->flash('message', 'Reply submitted successfully!');

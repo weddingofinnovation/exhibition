@@ -9,4 +9,10 @@ class Answer extends Model
 {
     use HasFactory;
     protected $table="answers";
+
+
+    protected $fillable = [
+        'question_id',
+        'answer',
+    ];
 }
