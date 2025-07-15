@@ -16,7 +16,10 @@ class BlogComponent extends Component
     public $openReply;
      public $showReplyBox = [];
     public $reply = [];
-    
+
+     public $replyingTo = null;     // Track question being replied to
+    public $replyText = '';        // The typed answer
+
     public function likePost($mag)
     {
         $user = Auth::user();
@@ -42,28 +45,27 @@ class BlogComponent extends Component
       return view('post', compact('post'));
     }
 
-    public function toggleReplyBox($index)
+   public function showReplyBox($questionId)
     {
-        $this->showReplyBox[$index] = !$this->showReplyBox[$index];
+        // Toggle visibility
+        $this->replyingTo = $this->replyingTo === $questionId ? null : $questionId;
+        $this->replyText = '';
     }
 
-    public function submitReply($index, $questionId)
+    public function submitReply($questionId)
     {
-        $content = trim($this->reply[$index] ?? '');
-
-        if ($content) {
+        if (trim($this->replyText)) {
             Answer::create([
                 'question_id' => $questionId,
-                'answer' => $content,
+                'answer' => $this->replyText,
             ]);
 
-            // Optional: Reset input and hide box
-            $this->reply[$index] = '';
-            $this->showReplyBox[$index] = false;
-
             session()->flash('message', 'Reply submitted successfully!');
+            $this->replyText = '';
+            $this->replyingTo = null; // hide box
         }
     }
+
 
     public function render()
     {

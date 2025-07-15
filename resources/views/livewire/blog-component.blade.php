@@ -45,16 +45,19 @@
 								Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
 							</p>
 
-							<button class="btn btn-sm btn-outline-primary mt-2" wire:click="toggleReplyBox({{ $key }})">
-							test
-							</button>
+							 <!-- Give Reply button -->
+                    <button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
+                        {{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+                    </button>
 
-							@if(isset($showReplyBox[$key]) && $showReplyBox[$key])
-								<div class="mt-3">
-									<textarea wire:model.defer="reply.{{ $key }}" class="form-control mb-2" rows="3" placeholder="Type your answer..."></textarea>
-									<button class="btn btn-success btn-sm" wire:click="submitReply({{ $key }}, {{ $evento->id }})">Submit Answer</button>
-								</div>
-							@endif
+                    <!-- Conditional reply box -->
+                    @if($replyingTo === $evento->id)
+                        <div class="mt-3">
+                            <textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
+                            <button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
+                        </div>
+                    @endif
+					
 						</div>
 					</div>
 				</div>
