@@ -12,6 +12,10 @@
 	</div>
 	</section>
 
+	@php
+		$updateQuestion = DB::table('questions')->where('event_id' , $this->eventid)->get();
+	@endphp
+
 	<section class="py-5 bg-white">
 	<div class="container">
 		<h2 class="mb-4 text-center">Frequently Asked Questions</h2>
@@ -21,18 +25,23 @@
 		</div>
 
 		<div class="accordion" id="faqAccordion">
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="headingOne">
-			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-				How do I promote my trade show online?
-			</button>
-			</h2>
-			<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-			<div class="accordion-body">
-				Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-			</div>
-			</div>
-		</div>
+			@foreach($updateQuestion as $evento)
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+						{{$evento->question}}
+					</button>
+					</h2>
+
+					<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+					<div class="accordion-body">
+						Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+					</div>
+					</div>
+				</div>
+			@endforeach
+
+
 		<div class="accordion-item">
 			<h2 class="accordion-header" id="headingTwo">
 			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
