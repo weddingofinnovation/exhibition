@@ -59,10 +59,11 @@ class BlogComponent extends Component
             //     'question_id' => $questionId,
             //     'answer' => $this->replyText,
             // ]);
-            $addchange = Answer::updateOrCreate(
-                            ['question_id' => $questionId],         // Search condition
-                            ['answer' => $this->replyText]          // Data to insert or update
-                        );
+                            $questionbrand = Answer::updateOrCreate();
+                            $questionbrand->question_id = $questionId;        // Search condition
+                            $questionbrand->answer = $this->replyText;          // Data to insert or update
+                            $questionbrand->save();
+                        ;
 
 
             session()->flash('message', 'Reply submitted successfully!');
