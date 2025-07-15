@@ -25,21 +25,21 @@
 		</div>
 
 		<div class="accordion" id="faqAccordion">
-			@foreach($updateQuestion as $evento)
+			@foreach($updateQuestion as $key => $evento)
 				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
-					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-						{{$evento->question}}
-					</button>
+					<h2 class="accordion-header" id="heading{{$key}}">
+						<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}" aria-expanded="{{ $key == 0 ? 'true' : 'false' }}" aria-controls="collapse{{$key}}">
+							{{ $evento->question }}
+						</button>
 					</h2>
-
-					<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-					<div class="accordion-body">
-						Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-					</div>
+					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}" aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+						</div>
 					</div>
 				</div>
 			@endforeach
+
 
 
 		<div class="accordion-item">
