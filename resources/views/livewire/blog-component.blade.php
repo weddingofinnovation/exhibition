@@ -46,7 +46,7 @@
 							</p>
 
 							<button class="btn btn-sm btn-outline-primary mt-2" wire:click="toggleReplyBox({{ $key }})">
-								@if(isset($showReplyBox[$key]) && $showReplyBox[$key])
+							test
 							</button>
 
 							@if(isset($showReplyBox[$key]) && $showReplyBox[$key])
