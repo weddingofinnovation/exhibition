@@ -20,7 +20,7 @@ class AdminQuestionComponent extends Component
     public $eventid;
     public $board = null;
 
-    public $eventname;
+    public $eventname = null;
     public $eventdatestartdate;
     public $eventdateenddate;
     public $eventvenue;
