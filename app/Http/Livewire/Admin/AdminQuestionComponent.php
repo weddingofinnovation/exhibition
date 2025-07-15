@@ -94,18 +94,32 @@ class AdminQuestionComponent extends Component
 
         foreach($ret as $tre)
         {
+            $trimmed = trim($tre);
+            if (empty($trimmed)) {
+                continue; // skip if it's blank (avoids extra '?')
+            }
+
             $questionbrand = new Question();
+            $questionbrand->question = Str::lower($trimmed) . '?';
+            $questionbrand->user_id = Auth::user()->id;
+            $questionbrand->status = $this->status;
+            $questionbrand->admstatus = $this->admstatus;
+            $questionbrand->save();
+            $this->resetErrorBag(); // optional
+            $this->reset('quest');  // resets just the quest input
+            
+            //$questionbrand = new Question();
 
             // $bran = Event::find($this->event_id);
             // $brand->brand_name = trim($tre);
             // $brand->slug = str::slug($tre,'-');
             
             
-            $questionbrand->question = Str::lower(trim($tre)) . '?';
-            $questionbrand->user_id = Auth::user()->id;
-            $questionbrand->status = $this->status;
-            $questionbrand->admstatus = $this->admstatus;
-            $questionbrand->save();
+            //$questionbrand->question = Str::lower(trim($tre)) . '?';
+            //$questionbrand->user_id = Auth::user()->id;
+            //$questionbrand->status = $this->status;
+            //$questionbrand->admstatus = $this->admstatus;
+            //$questionbrand->save();
         }
 
     }
