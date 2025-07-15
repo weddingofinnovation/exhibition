@@ -1,5 +1,55 @@
 <main>
 
+	<section class="bg-light py-5 text-center">
+	<div class="container">
+		<h1 class="display-5 fw-bold mb-3">Got a Question? Ask Us Anything!</h1>
+		<p class="lead mb-4 text-muted">We're here to help you with anything related to exhibitions, marketing, events, or your business queries.</p>
+		
+		<form class="d-flex justify-content-center" style="max-width: 600px; margin: 0 auto;">
+		<input type="text" class="form-control form-control-lg rounded-start-pill" placeholder="Type your question here..." />
+		<button type="submit" class="btn btn-primary btn-lg rounded-end-pill px-4">Ask Now</button>
+		</form>
+	</div>
+	</section>
+
+	<section class="py-5 bg-white">
+	<div class="container">
+		<h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+
+		<div class="mb-4">
+		<input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
+		</div>
+
+		<div class="accordion" id="faqAccordion">
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingOne">
+			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+				How do I promote my trade show online?
+			</button>
+			</h2>
+			<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+			<div class="accordion-body">
+				Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+			</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header" id="headingTwo">
+			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+				What is digital marketing for exhibitions?
+			</button>
+			</h2>
+			<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+			<div class="accordion-body">
+				Digital marketing includes SEO, paid ads, social media, influencer marketing, and email campaigns tailored to attract visitors and exhibitors to your show.
+			</div>
+			</div>
+		</div>
+		<!-- Add more questions as needed -->
+		</div>
+	</div>
+	</section>
+
 	<!-- Trending START -->
 	<section class="py-2">
 		<div class="container">
