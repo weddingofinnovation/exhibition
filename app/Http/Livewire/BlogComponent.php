@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Answer;
 use App\Models\Cag;
 use App\Models\Mag;
 use App\Models\User;
@@ -13,6 +14,9 @@ class BlogComponent extends Component
 {  
 
     public $openReply;
+     public $showReplyBox = [];
+    public $reply = [];
+    
     public function likePost($mag)
     {
         $user = Auth::user();
@@ -36,6 +40,29 @@ class BlogComponent extends Component
       }
     
       return view('post', compact('post'));
+    }
+
+    public function toggleReplyBox($index)
+    {
+        $this->showReplyBox[$index] = !$this->showReplyBox[$index];
+    }
+
+    public function submitReply($index, $questionId)
+    {
+        $content = trim($this->reply[$index] ?? '');
+
+        if ($content) {
+            Answer::create([
+                'question_id' => $questionId,
+                'answer' => $content,
+            ]);
+
+            // Optional: Reset input and hide box
+            $this->reply[$index] = '';
+            $this->showReplyBox[$index] = false;
+
+            session()->flash('message', 'Reply submitted successfully!');
+        }
     }
 
     public function render()

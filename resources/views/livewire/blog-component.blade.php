@@ -51,25 +51,64 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			@endforeach
 
-
-
-
-		<div class="accordion-item">
-			<h2 class="accordion-header" id="headingTwo">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-				What is digital marketing for exhibitions?
-			</button>
-			</h2>
-			<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-			<div class="accordion-body">
-				Digital marketing includes SEO, paid ads, social media, influencer marketing, and email campaigns tailored to attract visitors and exhibitors to your show.
-			</div>
-			</div>
-		</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+						What is digital marketing for exhibitions?
+					</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+					<div class="accordion-body">
+						Digital marketing includes SEO, paid ads, social media, influencer marketing, and email campaigns tailored to attract visitors and exhibitors to your show.
+					</div>
+					</div>
+				</div>
 		<!-- Add more questions as needed -->
+		</div>
+
+		<div class="accordion" id="faqAccordion">
+			@foreach($updateQuestion as $key => $evento)
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="heading{{$key}}">
+						<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
+								data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
+								aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+								aria-controls="collapse{{$key}}">
+							{{ $evento->question }}
+						</button>
+					</h2>
+
+					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+						aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							<p>
+								Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+							</p>
+
+							<button class="btn btn-sm btn-outline-primary mt-2" wire:click="toggleReplyBox({{ $key }})">
+								{{ isset($showReplyBox[$key]) && $showReplyBox[$key] ? 'Cancel' : 'Give Reply' }}
+							</button>
+
+							@if(isset($showReplyBox[$key]) && $showReplyBox[$key])
+								<div class="mt-3">
+									<textarea wire:model.defer="reply.{{ $key }}" class="form-control mb-2" rows="3" placeholder="Type your answer..."></textarea>
+									<button class="btn btn-success btn-sm" wire:click="submitReply({{ $key }}, {{ $evento->id }})">Submit Answer</button>
+								</div>
+							@endif
+						</div>
+					</div>
+				</div>
+			@endforeach
+
+			@if (session()->has('message'))
+				<div class="alert alert-success mt-4">
+					{{ session('message') }}
+				</div>
+			@endif
 		</div>
 	</div>
 	</section>
