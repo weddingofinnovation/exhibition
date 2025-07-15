@@ -30,21 +30,20 @@ class AdminQuestionComponent extends Component
 
     public function mount($eventid = null)
     {
-        $this->eventid = $eventid;
-        $eventdetails = Event::find($this->eventid);
-
-        $this->eventname =  $eventdetails->eventname;
-        $this->eventdatestartdate = Carbon::parse (trim($eventdetails->startdate))->format('d F Y');
-        //  Carbon::createFromFormat('Yy-mm-dd', trim($eventdetails->startdate))->format('d F Y');
-        $this->eventdateenddate =  Carbon::parse(trim($eventdetails->enddate))->format('d F Y');
-        $this->eventvenue = trim($eventdetails->venue);
-
-        $this->questions = Question::all();
-
+        
         if($this->eventid)
         {
-          $this->selectedQuestions  = Question::where('event_id', $this->eventid)->pluck('id')->toArray();
+            $this->eventid = $eventid;
+            $eventdetails = Event::find($this->eventid);
 
+            $this->eventname =  $eventdetails->eventname;
+            $this->eventdatestartdate = Carbon::parse (trim($eventdetails->startdate))->format('d F Y');
+            //  Carbon::createFromFormat('Yy-mm-dd', trim($eventdetails->startdate))->format('d F Y');
+            $this->eventdateenddate =  Carbon::parse(trim($eventdetails->enddate))->format('d F Y');
+            $this->eventvenue = trim($eventdetails->venue);
+
+            $this->questions = Question::all();
+            $this->selectedQuestions  = Question::where('event_id', $this->eventid)->pluck('id')->toArray();
         }
         // $this->month = Carbon::today()->format("m");
         // $this->monthly = Carbon::today()->format("m");
