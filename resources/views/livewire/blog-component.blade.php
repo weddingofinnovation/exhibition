@@ -52,50 +52,72 @@
 					</div>
 
 					<div class="my-Slider5 arrow-blur arrow-round rounded-3">
-						@foreach( $highlight as $post)
-							<div class="card">
-								<!-- Card img -->
-								<div class="position-relative">
-									<img class="card-img" href="{{route('blog.details',['slug' => $post->slug])}}" src="{{url('public/assets/image/exhibition/'.$post->image)}}" alt="{{Str::limit($post->tittle, 24)}}">
-									<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-										<!-- Card overlay bottom -->
-										<div class="w-100 mt-auto" >
-											<!-- Card category -->
-											<a href="{{--route('blog.category', ['category_slug'=> $post->tag])--}}" class="badge badgecolor mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>{{$post->tag}}</a>
-										</div>
-									</div>
-								</div>
-								<div class="card-body px-0 pt-3">
-									<h4 class="card-title"><a href="{{route('blog.details',['slug' => $post->slug])}}" class="btn-link text-reset fw-bold">{{Str::limit($post->tittle,51)}}</a></h4>
-									<p class="card-text">{{Str::limit($post->desc,141)}}</p>
-									<!-- Card info -->
-									<ul class="nav nav-divider align-items-center d-none d-sm-inline-block">
-										<li class="nav-item">
-											<div class="nav-link">
-												<div class="d-flex align-items-center position-relative">
-													<div class="avatar avatar-xs"> 
-														{{--<img class="avatar-img rounded-circle" src="{{url('public/assets/image/exhibition/'.$post->user->profile_photo_url ?? '')}}" alt="{{Str::limit($post->tittle, 24)}}">--}}
-													</div>
-													{{-- <span class="ms-3">by <a href="{{route('blog.author',['slug' => $post->user->slug])}}" class="stretched-link text-reset btn-link">{{$post->user->name}}</a></span> --}}
-												</div>
-											</div>
-										</li>
-										<li class="nav-item">
-											@guest
-												<a href="{{asset('/login')}}"><i class="bi bi-hand-thumbs-up-fill" aria-hidden="true"></i> </a>
-												@else
-													<a href="#" onclick="document.getElementById('like-form-{{$post->user->id}}').submit();">{{$post->likedUsers->count()}}<i class="bi bi-hand-thumbs-up" aria-hidden="true"></i></a>
-													<form action="{{route('post.like',$post->user->id)}}" method="POST" style="display:none" id="like-form-{{$post->user->id}}">
-														@csrf
-													</form>
-											@endguest
-										</li>
-										<li class="nav-item">{{ Carbon\Carbon::parse($post->created_at)->diffForHumans()}}</li>
-										<li class="nav-item"><a href="#" class="btn-link"><i class="far fa-comment-alt me-1"></i> 1 </a></li>
-									</ul>
-								</div>
+						<section class="py-5 bg-white">
+		<div class="container">
+			<h2 class="mb-4 text-center">Frequently Asked Questions</h2>
+
+			<div class="mb-4">
+			  <input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
+			</div>
+
+			<div class="accordion" id="faqAccordion">
+				@foreach($updateQuestion as $key => $evento)
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="heading{{$key}}">
+							<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
+									data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
+									aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+									aria-controls="collapse{{$key}}">
+								{{ $evento->question }}
+							</button>
+						</h2>
+
+						@php
+						$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+						@endphp
+
+						<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+							aria-labelledby="heading{{$key}}">
+
+							<div class="accordion-body">
+
+								@if($answero->count())
+									@foreach($answero as $ans)
+										<p class="mb-2">{{ $ans->answer }}</p>
+									@endforeach
+								@else
+									<p class="text-muted">
+										Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+									</p>
+								@endif
+
+
+								<!-- Give Reply button -->
+						<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
+							{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+						</button>
+
+						<!-- Conditional reply box -->
+						@if($replyingTo === $evento->id)
+							<div class="mt-3">
+								<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
+								<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
 							</div>
-						@endforeach
+						@endif
+						
+							</div>
+						</div>
+					</div>
+				@endforeach
+
+				@if (session()->has('message'))
+					<div class="alert alert-success mt-4">
+						{{ session('message') }}
+					</div>
+				@endif
+			</div>
+		</div>
+	</section>
 					</div>
 					<!-- Top highlights START -->
 
@@ -257,6 +279,7 @@
 					
 				</div>
 				<!-- Main Post END -->
+
 				<!-- Sidebar START -->
 				<div class="col-lg-3 mt-5 mt-lg-0">
 					<div data-sticky="" data-margin-top="80" data-sticky-for="767">
@@ -312,72 +335,9 @@
 		</div>
 	</section>
 	<!--testingend-->
-	<section class="py-5 bg-white">
-		<div class="container">
-			<h2 class="mb-4 text-center">Frequently Asked Questions</h2>
 
-			<div class="mb-4">
-			  <input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
-			</div>
-
-			<div class="accordion" id="faqAccordion">
-				@foreach($updateQuestion as $key => $evento)
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading{{$key}}">
-							<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
-									data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
-									aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
-									aria-controls="collapse{{$key}}">
-								{{ $evento->question }}
-							</button>
-						</h2>
-
-						@php
-						$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
-						@endphp
-
-						<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-							aria-labelledby="heading{{$key}}">
-
-							<div class="accordion-body">
-
-								@if($answero->count())
-									@foreach($answero as $ans)
-										<p class="mb-2">{{ $ans->answer }}</p>
-									@endforeach
-								@else
-									<p class="text-muted">
-										Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-									</p>
-								@endif
-
-
-								<!-- Give Reply button -->
-						<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
-							{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
-						</button>
-
-						<!-- Conditional reply box -->
-						@if($replyingTo === $evento->id)
-							<div class="mt-3">
-								<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
-								<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
-							</div>
-						@endif
-						
-							</div>
-						</div>
-					</div>
-				@endforeach
-
-				@if (session()->has('message'))
-					<div class="alert alert-success mt-4">
-						{{ session('message') }}
-					</div>
-				@endif
-			</div>
-		</div>
-	</section>
+	
+	
 
 	
     @push('scripts')
