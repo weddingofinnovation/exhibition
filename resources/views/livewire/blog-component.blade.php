@@ -46,7 +46,7 @@
 					<!-- Main Post START -->
 					<div class="col-lg-9">
 						<!-- Top highlights START -->
-						<div class="mb-4">
+						<div class="mb-3">
 							<!-- <h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Today's top highlights</h2> -->
 							<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Frequently Asked Questions</h2>
 							

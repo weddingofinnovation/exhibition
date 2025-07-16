@@ -1,4 +1,3 @@
-
 <header class="navbar-light navbar-sticky header-static navbar-sticky-on">
 	<div class="navbar-top  small">
 		<div class="container">
@@ -100,9 +99,11 @@
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
 			<!-- Logo START -->
-			<a class="navbar-brand" href="#">
-				<img class="navbar-brand-item light-mode-item" src="{{asset('mag/logo.svg')}}"  alt="logo">			
-				<img class="navbar-brand-item dark-mode-item"  src="{{asset('mag/logo-light.svg')}}"  alt="logo">			
+			<a class="navbar-brand" href="#">Web-banner.png
+				<img class="navbar-brand-item light-mode-item" src="{{asset('mag/Web-banner.png')}}"  alt="logo">			
+				<img class="navbar-brand-item dark-mode-item"  src="{{asset('mag/Web-banner.png')}}"  alt="logo">
+				<!-- <img class="navbar-brand-item light-mode-item" src="{{asset('mag/logo.svg')}}"  alt="logo">			
+				<img class="navbar-brand-item dark-mode-item"  src="{{asset('mag/logo-light.svg')}}"  alt="logo">			 -->
 			</a>
 			<!-- Logo END -->
 

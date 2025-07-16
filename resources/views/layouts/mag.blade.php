@@ -41,16 +41,15 @@
 	<link id="style-switch" rel="stylesheet" type="text/css" href="{{asset('mag/style.css')}}" >
     
     @livewireStyles
-
 	
-<style>
+	<style>
 
-	.badgecolor
-	{
-		background-color : #ff0440;
-		}
+		.badgecolor
+		{
+			background-color : #ff0440;
+			}
 
-</style>
+	</style>
 </head>
 
 <body >
@@ -95,8 +94,8 @@
 			<!-- Address -->
 			<p class="text-body mb-2 fw-bold">New York, USA (HQ)</p>
 			<address class="mb-0">750 Sing Sing Rd, Horseheads, NY, 14845</address>
-			<p class="mb-2">Call: <a href="" class="text-body"><u>469-537-2410</u> (Toll-free)</a> </p>
-			<a href="" class="text-body d-block">hello@blogzine.com</a>
+			<p class="mb-2">Call: <a href="" class="text-body"><u>+91-999-185-6776</u> (Toll-free)</a> </p>
+			<a href="" class="text-body d-block">team@exhibition.org.in</a>
 		</div>
   </div>
 </div>
