@@ -55,10 +55,10 @@
 
 						<div class="arrow-blur arrow-round rounded-3">
 							<section class="bg-white">
-								<!-- <div class="container"> -->
+								<div class="">
 									<!-- <h2 class="mb-4 text-center">Frequently Asked Questions</h2> -->
 
-									<div class="mb-4">
+									<div class="mb-2">
 									<input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
 									</div>
 
@@ -122,8 +122,6 @@
 							</section>
 						</div>
 						<!-- Top highlights START -->
-
-					
 
 						<!-- Adv -->
 						<div>
