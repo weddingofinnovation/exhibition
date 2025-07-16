@@ -54,8 +54,8 @@
 						</div>
 
 						<div class="arrow-blur arrow-round rounded-3">
-							<section class="bg-white">
-								<div class="">
+							<div class="bg-white">
+								<!-- <div class=""> -->
 									<!-- <h2 class="mb-4 text-center">Frequently Asked Questions</h2> -->
 
 									<div class="mb-2">
@@ -118,8 +118,8 @@
 											</div>
 										@endif
 									</div>
-								</div>
-							</section>
+								<!-- </div> -->
+							</div>
 						</div>
 						<!-- Top highlights START -->
 
