@@ -13,7 +13,11 @@
 	</section>
 
 	@php
-		$updateQuestion = DB::table('questions')->whereNull('event_id')->where('updated_at', 'desc')->get();
+		$updateQuestion = DB::table('questions')
+						->whereNull('event_id')
+						->orderBy('updated_at', 'desc')  // ✅ Correct way to sort by latest update
+						->get();
+
 	@endphp
 
 	<section class="py-5 bg-white">
