@@ -47,7 +47,7 @@
 					@endphp
 
 					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-						aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
+						aria-labelledby="heading{{$key}}">
 
 						<div class="accordion-body">
 
