@@ -39,161 +39,158 @@
 
 		@endphp
 
-		<!--testing-->
-	<section class="position-relative">
-		<div class="container">
-			<div class="row">
-				<!-- Main Post START -->
-				<div class="col-lg-9">
-					<!-- Top highlights START -->
-					<div class="mb-4">
-						<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Today's top highlights</h2>
-						<p>Latest breaking news, pictures, videos, and special reports</p>
-					</div>
-
-					<div class="my-Slider5 arrow-blur arrow-round rounded-3">
-						<section class="py-5 bg-white">
-		<div class="container">
-			<h2 class="mb-4 text-center">Frequently Asked Questions</h2>
-
-			<div class="mb-4">
-			  <input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
-			</div>
-
-			<div class="accordion" id="faqAccordion">
-				@foreach($updateQuestion as $key => $evento)
-					<div class="accordion-item">
-						<h2 class="accordion-header" id="heading{{$key}}">
-							<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
-									data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
-									aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
-									aria-controls="collapse{{$key}}">
-								{{ $evento->question }}
-							</button>
-						</h2>
-
-						@php
-						$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
-						@endphp
-
-						<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-							aria-labelledby="heading{{$key}}">
-
-							<div class="accordion-body">
-
-								@if($answero->count())
-									@foreach($answero as $ans)
-										<p class="mb-2">{{ $ans->answer }}</p>
-									@endforeach
-								@else
-									<p class="text-muted">
-										Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-									</p>
-								@endif
-
-
-								<!-- Give Reply button -->
-						<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
-							{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
-						</button>
-
-						<!-- Conditional reply box -->
-						@if($replyingTo === $evento->id)
-							<div class="mt-3">
-								<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
-								<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
-							</div>
-						@endif
-						
-							</div>
+	<!--testing-->
+		<section class="position-relative">
+			<div class="container">
+				<div class="row">
+					<!-- Main Post START -->
+					<div class="col-lg-9">
+						<!-- Top highlights START -->
+						<div class="mb-4">
+							<!-- <h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Today's top highlights</h2> -->
+							<h2 class="m-0"><i class="bi bi-hourglass-top me-2"></i>Frequently Asked Questions</h2>
+							
+							<p>Latest breaking news, pictures, videos, and special reports</p>
 						</div>
-					</div>
-				@endforeach
 
-				@if (session()->has('message'))
-					<div class="alert alert-success mt-4">
-						{{ session('message') }}
-					</div>
-				@endif
-			</div>
-		</div>
-	</section>
+						<div class="arrow-blur arrow-round rounded-3">
+							<section class="bg-white">
+								<!-- <div class="container"> -->
+									<!-- <h2 class="mb-4 text-center">Frequently Asked Questions</h2> -->
 
-					</div>
-					<!-- Top highlights START -->
+									<div class="mb-4">
+									<input type="search" class="form-control form-control-lg" placeholder="Search questions..." />
+									</div>
 
-				
+									<div class="accordion" id="faqAccordion">
+										@foreach($updateQuestion as $key => $evento)
+											<div class="accordion-item">
+												<h2 class="accordion-header" id="heading{{$key}}">
+													<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
+															data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
+															aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+															aria-controls="collapse{{$key}}">
+														{{ $evento->question }}
+													</button>
+												</h2>
 
-					<!-- Adv -->
-					<div>
-						<a href="" class="card-img-flash d-block mt-4">
-							<img src="{{asset('mag/adv-3.png')}}" alt="adv">
-						</a>
-					</div>
+												@php
+												$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+												@endphp
+
+												<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+													aria-labelledby="heading{{$key}}">
+
+													<div class="accordion-body">
+
+														@if($answero->count())
+															@foreach($answero as $ans)
+																<p class="mb-2">{{ $ans->answer }}</p>
+															@endforeach
+														@else
+															<p class="text-muted">
+																Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+															</p>
+														@endif
+
+
+														<!-- Give Reply button -->
+												<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
+													{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+												</button>
+
+												<!-- Conditional reply box -->
+												@if($replyingTo === $evento->id)
+													<div class="mt-3">
+														<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
+														<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
+													</div>
+												@endif
+												
+													</div>
+												</div>
+											</div>
+										@endforeach
+
+										@if (session()->has('message'))
+											<div class="alert alert-success mt-4">
+												{{ session('message') }}
+											</div>
+										@endif
+									</div>
+								</div>
+							</section>
+						</div>
+						<!-- Top highlights START -->
+
 					
-				</div>
-				<!-- Main Post END -->
 
-				<!-- Sidebar START -->
-				<div class="col-lg-3 mt-5 mt-lg-0">
-					<div data-sticky="" data-margin-top="80" data-sticky-for="767">
-						<!-- Social links -->
-						<div class="row g-2">
-							<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-facebook text-white-force rounded p-2 position-relative">
-								<i class="fab fa-facebook-square fs-3"></i>
-								<div class="d-flex">
-									<h6 class="me-1 mb-0">1.5K</h6>
-									<small class="small">Fans</small>
-								</div>
-							</a>
-							<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-instagram-gradient text-white-force rounded p-2 position-relative">
-								<i class="fab fa-instagram fs-3"></i>
-								<div class="d-flex">
-									<h6 class="me-1 mb-0">1.8M</h6>
-									<small class="small">Followers</small>
-								</div>
-							</a>
-							<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-youtube text-white-force rounded p-2 position-relative">
-								<i class="fab fa-youtube-square fs-3"></i>
-								<div class="d-flex">
-									<h6 class="me-1 mb-0">22K</h6>
-									<small class="small">Subscribers</small>
-								</div>
+						<!-- Adv -->
+						<div>
+							<a href="" class="card-img-flash d-block mt-4">
+								<img src="{{asset('mag/adv-3.png')}}" alt="adv">
 							</a>
 						</div>
-						<!-- Categories -->
-						<div class="row g-2 mt-5">
-							<h5>Categories</h5>
-									@foreach($cag as $post)
-										<div class="d-flex justify-content-between align-items-center bg-warning-soft rounded p-2 position-relative">
-											<h6 class="m-0 text-warning">{{$post->tag}}</h6>
-											<a href="{{--route('blog.category', ['category_slug'=> $post->tag])--}}" class="badge badgecolor text-dark stretched-link">{{$post->mag->count()}}</a>
-										</div>
-									@endforeach
-						</div>
-						<!-- Most read -->
-						<div class="row g-2 mt-5">
-						  <h5 class="mt-5 mb-3">Most read</h5>
-							@foreach ($tittlemostread as $post)
-								<div class="d-flex position-relative mb-3">
-									<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
-									<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
-								</div>
-							@endforeach
-						</div>
-
+						
 					</div>
-				</div>
-				<!-- Sidebar END -->
-			</div> <!-- Row end -->
-		</div>
-	</section>
+					<!-- Main Post END -->
+
+					<!-- Sidebar START -->
+					<div class="col-lg-3 mt-5 mt-lg-0">
+						<div data-sticky="" data-margin-top="80" data-sticky-for="767">
+							<!-- Social links -->
+							<div class="row g-2">
+								<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-facebook text-white-force rounded p-2 position-relative">
+									<i class="fab fa-facebook-square fs-3"></i>
+									<div class="d-flex">
+										<h6 class="me-1 mb-0">1.5K</h6>
+										<small class="small">Fans</small>
+									</div>
+								</a>
+								<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-instagram-gradient text-white-force rounded p-2 position-relative">
+									<i class="fab fa-instagram fs-3"></i>
+									<div class="d-flex">
+										<h6 class="me-1 mb-0">1.8M</h6>
+										<small class="small">Followers</small>
+									</div>
+								</a>
+								<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-youtube text-white-force rounded p-2 position-relative">
+									<i class="fab fa-youtube-square fs-3"></i>
+									<div class="d-flex">
+										<h6 class="me-1 mb-0">22K</h6>
+										<small class="small">Subscribers</small>
+									</div>
+								</a>
+							</div>
+							<!-- Categories -->
+							<div class="row g-2 mt-5">
+								<h5>Categories</h5>
+										@foreach($cag as $post)
+											<div class="d-flex justify-content-between align-items-center bg-warning-soft rounded p-2 position-relative">
+												<h6 class="m-0 text-warning">{{$post->tag}}</h6>
+												<a href="{{--route('blog.category', ['category_slug'=> $post->tag])--}}" class="badge badgecolor text-dark stretched-link">{{$post->mag->count()}}</a>
+											</div>
+										@endforeach
+							</div>
+							<!-- Most read -->
+							<div class="row g-2 mt-5">
+							<h5 class="mt-5 mb-3">Most read</h5>
+								@foreach ($tittlemostread as $post)
+									<div class="d-flex position-relative mb-3">
+										<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
+										<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
+									</div>
+								@endforeach
+							</div>
+
+						</div>
+					</div>
+					<!-- Sidebar END -->
+				</div> <!-- Row end -->
+			</div>
+		</section>
 	<!--testingend-->
 
-	
-	
-
-	
     @push('scripts')
 		<script>
 			var slider = tns({
