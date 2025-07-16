@@ -42,12 +42,25 @@
 						</button>
 					</h2>
 
+					@php
+					  $answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+					@endphp
+
 					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
 						aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
+						
 						<div class="accordion-body">
-							<p>
-								Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-							</p>
+
+							@if($answers->count())
+								@foreach($answers as $ans)
+									<p class="mb-2">{{ $ans->answer }}</p>
+								@endforeach
+							@else
+								<p class="text-muted">
+									Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+								</p>
+							@endif
+
 
 							 <!-- Give Reply button -->
                     <button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
