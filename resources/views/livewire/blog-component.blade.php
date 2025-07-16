@@ -48,11 +48,11 @@
 
 					<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
 						aria-labelledby="heading{{$key}}" data-bs-parent="#faqAccordion">
-						
+
 						<div class="accordion-body">
 
-							@if($answers->count())
-								@foreach($answers as $ans)
+							@if($answero->count())
+								@foreach($answero as $ans)
 									<p class="mb-2">{{ $ans->answer }}</p>
 								@endforeach
 							@else
