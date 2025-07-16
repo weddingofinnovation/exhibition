@@ -99,7 +99,7 @@
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
 			<!-- Logo START -->
-			<a class="navbar-brand" href="#">Web-banner.png
+			<a class="navbar-brand" href="#">
 				<img class="navbar-brand-item light-mode-item" src="{{asset('mag/Web-banner.png')}}"  alt="logo">			
 				<img class="navbar-brand-item dark-mode-item"  src="{{asset('mag/Web-banner.png')}}"  alt="logo">
 				<!-- <img class="navbar-brand-item light-mode-item" src="{{asset('mag/logo.svg')}}"  alt="logo">			
