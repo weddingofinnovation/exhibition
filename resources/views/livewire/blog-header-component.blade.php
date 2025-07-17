@@ -1,4 +1,4 @@
-<header class="navbar-light navbar-sticky header-static navbar-sticky-on">
+ <header class="navbar-light navbar-sticky header-static navbar-sticky-on">
 	<div class="navbar-top  small">
 		<div class="container">
 			<div class="d-md-flex justify-content-between align-items-center my-2">
@@ -8,60 +8,63 @@
 					<li class="nav-item">
 						<a class="nav-link ps-0" href="{{route('about')}}">About</a>
 					</li>
+
 					<li class="nav-item">
 						<a class="nav-link" href="">Forum</a>
 					</li>
+					
 					<li class="nav-item">
 						<a class="nav-link" href="">Buy now!</a>
 					</li>
 					
-					@if(Route::has('login'))
-					  @auth
-						@if(Auth::user()->utype === 'ADM')
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="{{route('login')}}" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<small>Hello, </small>{{Auth::user()->name}}</a>
-					
+						@if(Route::has('login'))
 						
-							<div class="dropdown-menu dropdown-menu-end">
-                  <div style="min-width: 14rem;">
-                  <h6 class="dropdown-header">Account</h6>
-                  <a class="dropdown-item d-flex align-items-center" href=""><i class="ci-settings opacity-60 me-2"></i>Dashboard</a>
-                  <a class="dropdown-item d-flex align-items-center" href="{{--route('profile.show')--}}"><i class="ci-settings opacity-60 me-2"></i>Profile</a>
-                  <a class="dropdown-item d-flex align-items-center" ><i class="ci-basket opacity-60 me-2"></i>Categories</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                  <i class="ci-sign-out opacity-60 me-2"></i>Sign Out</a>
-                  <form id="logout-form" action="{{route('logout')}}" method="POST">
-                  @csrf
-								 </form>
-                </div>
-                </div>
-		        </ul>
-					</li>
-					    @elseif(Auth::user()->utype === 'SLR')
-					<li class="nav-item">
-						<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
-					</li>
-					   @elseif(Auth::user()->utype === 'MSR')
-					<li class="nav-item">
-						<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
-					</li>
-					  @elseif(Auth::user()->utype === 'EMP')
-					<li class="nav-item">
-						<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
-					</li>
-					  @elseif(Auth::user()->utype === 'USR')
-					<li class="nav-item">
-						<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
-					</li>
-					@endif
-                     @else
-					 <li class="nav-item">
-						<a class="nav-link" href="{{route('login')}}">Login / Join</a>
-					</li>
-				   @endif
-                 @endif
+							@auth
+								@if(Auth::user()->utype === 'ADM')
+									<li class="nav-item dropdown">
+										<a class="nav-link dropdown-toggle" href="{{route('login')}}" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<small>Hello, </small>{{Auth::user()->name}}</a>
+									
+											<div class="dropdown-menu dropdown-menu-end">
+												<div style="min-width: 14rem;">
+													<h6 class="dropdown-header">Account</h6>
+													<a class="dropdown-item d-flex align-items-center" href=""><i class="ci-settings opacity-60 me-2"></i>Dashboard</a>
+													<a class="dropdown-item d-flex align-items-center" href="{{--route('profile.show')--}}"><i class="ci-settings opacity-60 me-2"></i>Profile</a>
+													<a class="dropdown-item d-flex align-items-center" ><i class="ci-basket opacity-60 me-2"></i>Categories</a>
+													<div class="dropdown-divider"></div>
+													<a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+													<i class="ci-sign-out opacity-60 me-2"></i>Sign Out</a>
+																		<form id="logout-form" action="{{route('logout')}}" method="POST">
+																		@csrf
+																	</form>
+												</div>
+											</div> 
+										</ul>
+									</li>
+										@elseif(Auth::user()->utype === 'SLR')
+									<li class="nav-item">
+										<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
+									</li>
+									@elseif(Auth::user()->utype === 'MSR')
+									<li class="nav-item">
+										<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
+									</li>
+									@elseif(Auth::user()->utype === 'EMP')
+									<li class="nav-item">
+										<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
+									</li>
+									@elseif(Auth::user()->utype === 'USR')
+									<li class="nav-item">
+										<a class="nav-link" href="{{route('login')}}"><small>Hello, </small>{{Auth::user()->name}}</a>
+									</li>
+								@endif
+							@else
+								<li class="nav-item">
+									<a class="nav-link" href="{{route('login')}}">Login / Join</a>
+								</li>
+							@endif
+
+						@endif
 					
 				</ul>
 				<!-- Top bar right -->

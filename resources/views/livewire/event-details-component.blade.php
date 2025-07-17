@@ -3886,9 +3886,9 @@
                   <div class="">
                         <h5 class="text-dark fw-normal pt-2 pb-0">
                             @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                              {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
                             @else
-                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
+                              {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
                             @endif 
                         </h5>
                   </div>
@@ -3897,9 +3897,9 @@
                       <div class="">
                             <h5 class="text-dark fw-normal pt-2 pb-0">
                                 @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                  {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M y ')}}
+                                  {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
                                 @else
-                                  {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M y')}}
+                                  {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
                                 @endif 
                             </h5>
                       </div>
