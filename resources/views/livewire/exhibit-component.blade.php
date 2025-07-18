@@ -1058,7 +1058,7 @@
 
                   <div class=" mb-4 text-center">
                     <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
-                    <a class="btn btn-sm btn-outline-dark text-dark"  ><i class="bi bi-arrow-up"></i></a>
+                    <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
                   </div>
                   
                   <div class = "mt-1">
@@ -1102,7 +1102,10 @@
               <div class="container my-5">
                 <div class="card shadow rounded-4 p-4">
                     <div class="text-center">
-                    
+                      
+
+
+
                         <h2 class="mb-3 text-success">Thank You for Your Interest!<strong>We truly appreciate your enthusiasm in registering.</strong>!</h2>
                         <p class="lead">However, due to overwhelming response and limited capacity, visitor entry has been closed at this time.
                            This event is exclusively curated for business owners and trade professionals.<strong></strong>.</p>
@@ -1116,10 +1119,7 @@
                     </p>
 
                     <p> <strong>— Team Exhibition Network</strong></p>
-                    <div class="">
-                      <a href="#" id="shareBtn" class="mx-2 text-dark"><i class="bi bi-share fs-4"></i></a>
-                      <a class="btn btn-sm btn-outline-dark text-dark" ><i class="bi bi-arrow-up"></i></a>
-                    </div>
+                    
 
                     <div class="text-center mt-4">
                         
