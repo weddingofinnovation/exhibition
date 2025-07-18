@@ -1118,7 +1118,7 @@
                     <p> <strong>— Team Exhibition Network</strong></p>
                     <div class="">
                       <a href="#" id="shareBtn" class="mx-2 text-dark"><i class="bi bi-share fs-4"></i></a>
-                      <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}" ><i class="bi bi-arrow-up"></i></a>
+                      <a class="btn btn-sm btn-outline-dark text-dark"><i class="bi bi-arrow-up"></i></a>
                     </div>
 
                     <div class="text-center mt-4">
