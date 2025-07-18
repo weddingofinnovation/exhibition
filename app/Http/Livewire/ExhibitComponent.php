@@ -453,6 +453,8 @@ class ExhibitComponent extends Component
     //  $data = session()->all();
     //  dd($data);
 
+    dd($this->visitorid);
+
        $findID = session()->get('eventID');
        $findevent = Event::where('id', $findID)->first();
        
