@@ -1106,7 +1106,7 @@
 
 
 
-                        <h2 class="mb-3 text-success">Thank You for Your Interest!<strong>We truly appreciate your enthusiasm in registering.</strong>!</h2>
+                        <h2 class="mb-3 text-success">Thank You for Your Interest! <strong>We truly appreciate your enthusiasm in registering.</strong>!</h2>
                         <p class="lead">However, due to overwhelming response and limited capacity, visitor entry has been closed at this time.
                            This event is exclusively curated for business owners and trade professionals.<strong></strong>.</p>
                     </div>
@@ -1121,26 +1121,7 @@
                     <p> <strong>— Team Exhibition Network</strong></p>
                     
 
-                    <div class="text-center mt-4">
-                        
-                        <a href="{{$link->google()}}" class="btn btn-outline-primary px-4 me-2"><i class="bi bi-calendar-event"></i>Add to Calender</a>
-
-                        @if(Auth::check())
-                          <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
-                        @else
-                          <a href="{{route('login')}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
-                        @endif
-                    </div>
-
-                    <div class="mt-5">
-                        <h5 class="mb-3">Travel Made Easy</h5>
-                        <p>
-                            Our official travel partner can help arrange accommodation and travel. 
-                            Enjoy <strong>preferential hotel rates</strong> and <strong>seamless planning</strong> 
-                            to <em>Surface & Coating Expo, Chennai</em>.
-                        </p>
-                    </div>
-
+                    
                     <div class="text-muted small mt-4">
                         <strong>Disclaimer:</strong> Registration cancellations are not permitted. 
                         For queries, contact: 
