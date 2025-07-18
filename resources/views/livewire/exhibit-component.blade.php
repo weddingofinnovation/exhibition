@@ -1098,7 +1098,7 @@
                 </div>
               </div>
             </div>
-          @else
+          @elseif($board == 'thankyou-for-stop')
               <div class="container my-5">
                 <div class="card shadow rounded-4 p-4">
                     <div class="text-center">
@@ -1147,7 +1147,7 @@
                         <a href="mailto:team@exhibition.org.in" class="text-danger">team@exhibition.org.in</a>
                     </div>
                 </div>
-            </div>
+              </div>
         @endif
 
         @if($board == 'registration-great-exhibition-to-visit')

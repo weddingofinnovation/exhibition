@@ -44,6 +44,7 @@ class ExhibitComponent extends Component
         //$this->type = 'exhibit';
         $this->visitorid = $visitorid;  
         $this->board = $board;
+       
         //$findevent = DB::table('events')->where('id', $data)->first();
     }
 
@@ -77,9 +78,23 @@ class ExhibitComponent extends Component
 
         //return redirect()->route('coicart');thankyou 
         //return redirect()->route('event.exhibit', ['board' => 'know_more', 'visitorid' => $newEvent->id ]);
-        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        
+         
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message','Thanks for sharing your review.');
+        // Use if-else for conditional redirect
+
+         $eventID = session()->get('eventID');
+        $evento = Event::find($eventID);
+            if ($evento && $evento->businessrevenue === 'no-more') {
+                return redirect()->route('event.exhibit', [
+                    'board' => 'thankyou-for-stop',
+                    'visitorid' => $newEvent->id
+                ]);
+            } else {
+                session()->flash('message', 'Thanks for sharing your review.');
+                return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+            }
         
     }
 
