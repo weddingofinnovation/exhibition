@@ -4169,9 +4169,6 @@
            </div>
           </section>
 
-         
-
-
           <!--participants-->  
           <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
             <div class="row text-center text-sm-start">
@@ -4451,11 +4448,6 @@
 
             </div>
           </section>
-
-          
-
-
-
 
           <!-- mobile -->
           <section class=" d-lg-none bg-position-top-center bg-repeat-0 pt-0 pb-5 pt-md-7 pb-md-10" data-bs-theme="light">

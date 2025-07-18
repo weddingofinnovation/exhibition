@@ -192,7 +192,7 @@
                                 @elseif($evento->businessrevenue == 'exhibitor')
                                 <a href="#" wire:click.prevent="updatebusinessrevenue({{$evento->id}},'visitor')" class="btn btn-primary btn-sm">Visitor</a>
                                 @else
-                                <a href="#" wire:click.prevent="updatebusinessrevenue({{$evento->id}},'exhibitor')" class="btn btn-primary btn-sm">Exhibitor</a>
+                                <a href="#" wire:click.prevent="updatebusinessrevenue({{$evento->id}},'no-more')" class="btn btn-primary btn-sm">no more</a>
                               @endif
                           </div>
                         </div>
