@@ -320,6 +320,7 @@ Route::get('/registration-pass/{visitorid?}', [BuyabrandlicenseComponent::class,
 Route::get('/birthday', GiftBirthdayComponent::class)->name('gift.business');
 Route::get('/birthday/{board}/tie/{ido}', GiftDateComponent::class)->name('date.business');
 
+
 //track
 Route::get('/COIbusiness', TrackComponent::class)->name('admin.track');
 Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishlist');
