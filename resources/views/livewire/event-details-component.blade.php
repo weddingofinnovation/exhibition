@@ -5400,10 +5400,11 @@
                                         <!-- <a href=""><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a> -->
                                 </div>
 
+                                04/08/2025/test
 
                                 <div class="col-7  p-0">
                                     <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                    {{ucwords(trans(Str::limit($franchise->brand_name, 24)))}}</a></div>
+                                    {{ucwords(Str::limit($franchise->brand_name, 24))}}</a></div>
                                 
                                     <div class="text-muted fs-sm text-start">category</div>
                                 </div>
