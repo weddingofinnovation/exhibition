@@ -2089,29 +2089,20 @@
                 </div>
               </form>
 
-              <div class="d-flex gap-3 flex-wrap">
-  <!-- single card -->
-  <div class="d-flex flex-column align-items-center text-center">
-    <div class="d-inline-flex rounded-circle bg-primary text-white justify-content-center align-items-center p-3">
-      <i class="bi bi-calendar-event fs-3"></i>
-    </div>
-    <div class="mt-2">
-      <div class="h5 mb-0">124</div>
-      <div class="small text-muted">Leads</div>
-    </div>
-  </div>
-
-  <!-- example: another event -->
-  <div class="d-flex flex-column align-items-center text-center">
-    <div class="d-inline-flex rounded-circle bg-success text-white justify-content-center align-items-center p-3">
-      <i class="bi bi-person-badge fs-3"></i>
-    </div>
-    <div class="mt-2">
-      <div class="h5 mb-0">87</div>
-      <div class="small text-muted">Leads</div>
-    </div>
-  </div>
-</div>
+              <div class="d-flex justify-content-center">
+                <div class="position-relative" style="width:120px; height:120px;">
+                  <!-- Event Image Circle -->
+                  <img src="https://via.placeholder.com/120" 
+                      class="rounded-circle img-fluid" 
+                      alt="Event"
+                      style="width:120px; height:120px; object-fit:cover;">
+                  
+                  <!-- Lead Count Badge -->
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    25
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
