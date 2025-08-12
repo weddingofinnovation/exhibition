@@ -2062,7 +2062,33 @@
           <!-- LEFT SCREEN (Laptop) -->
           <div class="col-md-6 d-none d-md-block bg-light p-3 overflow-auto">
             <!-- Put your left panel content here -->
-            Left panel content (search, filters, etc.)
+            <div class="container">
+  <h4 class="mb-3">Search Records</h4>
+
+  <form class="row g-2 align-items-center">
+    <!-- Main Search Input -->
+    <div class="col-sm-9 col-12">
+      <input type="text" class="form-control" placeholder="Search by name, phone, email, date, or event name">
+    </div>
+
+    <!-- Filter Dropdown -->
+    <div class="col-sm-3 col-12">
+      <select class="form-select">
+        <option value="">All Fields</option>
+        <option value="name">Name</option>
+        <option value="phone">Phone Number</option>
+        <option value="email">Email</option>
+        <option value="date">Date</option>
+        <option value="event">Event Name</option>
+      </select>
+    </div>
+
+    <!-- Search Button -->
+    <div class="col-12 mt-2">
+      <button class="btn btn-primary w-100" type="submit">Search</button>
+    </div>
+  </form>
+</div>
           </div>
 
           <!-- RIGHT SCREEN (List) -->
@@ -2136,8 +2162,6 @@
 
         </div>
       </div>
-
-       
 
 
       @elseif($board == 'all')
