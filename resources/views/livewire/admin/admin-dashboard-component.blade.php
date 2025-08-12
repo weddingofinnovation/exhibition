@@ -2063,32 +2063,56 @@
           <div class="col-md-6 d-none d-md-block bg-light p-3 overflow-auto">
             <!-- Put your left panel content here -->
             <div class="container">
-  <h4 class="mb-3">Search Records</h4>
+              <h4 class="mb-3">Search Records</h4>
 
-  <form class="row g-2 align-items-center">
-    <!-- Main Search Input -->
-    <div class="col-sm-9 col-12">
-      <input type="text" class="form-control" placeholder="Search by name, phone, email, date, or event name">
-    </div>
+              <form class="row g-2 align-items-center">
+                <!-- Main Search Input -->
+                <div class="col-sm-9 col-12">
+                  <input type="text" class="form-control" placeholder="Search by name, phone, email, date, or event name">
+                </div>
 
-    <!-- Filter Dropdown -->
-    <div class="col-sm-3 col-12">
-      <select class="form-select">
-        <option value="">All Fields</option>
-        <option value="name">Name</option>
-        <option value="phone">Phone Number</option>
-        <option value="email">Email</option>
-        <option value="date">Date</option>
-        <option value="event">Event Name</option>
-      </select>
-    </div>
+                <!-- Filter Dropdown -->
+                <div class="col-sm-3 col-12">
+                  <select class="form-select">
+                    <option value="">All Fields</option>
+                    <option value="name">Name</option>
+                    <option value="phone">Phone Number</option>
+                    <option value="email">Email</option>
+                    <option value="date">Date</option>
+                    <option value="event">Event Name</option>
+                  </select>
+                </div>
 
-    <!-- Search Button -->
-    <div class="col-12 mt-2">
-      <button class="btn btn-primary w-100" type="submit">Search</button>
+                <!-- Search Button -->
+                <div class="col-12 mt-2">
+                  <button class="btn btn-primary w-100" type="submit">Search</button>
+                </div>
+              </form>
+
+              <div class="d-flex gap-3 flex-wrap">
+  <!-- single card -->
+  <div class="d-flex flex-column align-items-center text-center">
+    <div class="d-inline-flex rounded-circle bg-primary text-white justify-content-center align-items-center p-3">
+      <i class="bi bi-calendar-event fs-3"></i>
     </div>
-  </form>
+    <div class="mt-2">
+      <div class="h5 mb-0">124</div>
+      <div class="small text-muted">Leads</div>
+    </div>
+  </div>
+
+  <!-- example: another event -->
+  <div class="d-flex flex-column align-items-center text-center">
+    <div class="d-inline-flex rounded-circle bg-success text-white justify-content-center align-items-center p-3">
+      <i class="bi bi-person-badge fs-3"></i>
+    </div>
+    <div class="mt-2">
+      <div class="h5 mb-0">87</div>
+      <div class="small text-muted">Leads</div>
+    </div>
+  </div>
 </div>
+            </div>
           </div>
 
           <!-- RIGHT SCREEN (List) -->
