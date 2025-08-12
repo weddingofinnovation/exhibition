@@ -2057,19 +2057,20 @@
       @if($board == 'order')
 
       <div class="container-fluid vh-100">
-  <div class="row h-100 flex-md-column flex-sm-row">
+  <div class="row h-100">
     
-    <!-- Left Column -->
-    <div class="col-6 col-md-12 bg-light p-3 overflow-auto">
-      find new one
+    <!-- LEFT SCREEN (Laptop) -->
+    <div class="col-md-6 d-none d-md-block bg-light p-3 overflow-auto">
+      <!-- Put your left panel content here -->
+      Left panel content (search, filters, etc.)
     </div>
 
-    <!-- Right Column -->
-    <div class="col-6 col-md-12 bg-white p-3 overflow-auto">
+    <!-- RIGHT SCREEN (List) -->
+    <div class="col-12 col-md-6 bg-white p-3 overflow-auto">
       @foreach ($businessOrder as $evento)
         <div class="container my-1">
           <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1">
-            
+
             <!-- Event Image -->
             <div class="col-2 p-0">
               @if($evento->event_id == 'null')
@@ -2108,10 +2109,100 @@
               $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
               $resulto = $businesslead->pluck('response')->first();
             @endphp
-
             <div class="col-3 p-0">
-              @if($busin
+              @if($businesslead->count() < 1)
+                <a href="#" class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown">New</a>
+              @else
+                <a href="#" class="btn btn-outline-primary btn-sm dropdown-toggle" data-bs-toggle="dropdown">{{$resulto}}</a>
+              @endif
+              
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'email')">Email</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'exhibitor')">Exhibitor</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'visitor')">Visitor</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'service')">Service</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'check')">Check</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">Callback</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>
+                <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'Not')">Not</a></li>
+                <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
+              </ul>
+            </div>
 
+          </div>
+        </div>
+      @endforeach
+    </div>
+
+  </div>
+</div>
+
+        @foreach ($businessOrder as $evento)
+          <div class="container my-1">
+            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                <div class="col-2  p-0">
+                  
+                      <!-- <div class="p fw-light mb-0">{{$evento->type}}</div> 
+                      <div class="small text-muted">{{$evento->id}}</div> -->
+                    @if($evento->event_id == 'null' )
+                        {{$evento->type}}
+                    @else
+                        @php
+                            $eventdetails = DB::table('events')->where('id', $evento->event_id)->get();
+                        @endphp
+
+                        @foreach($eventdetails as $evet)
+                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
+                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" 
+                                  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                  class="img-fluid rounded" 
+                                  style="height: 80px; width: auto; object-fit: contain;">
+                          </a>
+                        @endforeach
+                    @endif
+                    
+                </div>
+
+                <div class="col-7  p-0">
+                  <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$evento->name}}</a><span class="fs-xs bg-success">{{ $evento->created_at->format('D d M  H:m')}}</span></div>
+                  <div class="fs-sm fw-normal text-start">
+                    <a class="text-dark" href="" onclick="makeCall('{{$evento->phone}}')">{{$evento->phone}}</a> <span class="fs-xs bg-danger text-light">{{$evento->type}}</span>
+                    <a class="text-dark" href="" onclick="copyToclipboard('{{$evento->phone}}')"><i class="bi bi-plus"></i></a>
+                  </div>
+                  <div class="text-muted fs-xs text-start">{{$evento->email}}</div>
+                </div>
+
+                @php
+                  $businesslead = DB::table('business_calledos')->where('lead_id', $evento->id)->latest()->get();
+                  $resulto = $businesslead->pluck('response')->first();
+                @endphp
+
+                <div class="col-3  p-0">
+                      
+                    @if(($businesslead->count()) < '1')
+                        <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">New</a>
+                      @else
+                        <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{$resulto}}</a>
+                    @endif
+                    
+                      <ul class="dropdown-menu" width="auto">
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'email')">Email</a></li>
+
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'exhibitor')">Exhibitor</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'visitor')">Visitor</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'service')">Service</a></li>
+                        
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'check')">Check</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'callback')">callback</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'ringing')">Ringing</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'Not')">Not</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$evento->id}})">Delete</a></li>
+                      </ul>
+
+                </div>
+            </div>
+          </div>
+        @endforeach
 
 
       @elseif($board == 'all')
