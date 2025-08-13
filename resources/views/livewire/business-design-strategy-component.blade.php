@@ -38,9 +38,47 @@
       <span class="text-white fs-4">+</span>
 
       <!-- Analytics -->
+       <style>
+        .analytics-pill {
+            display: flex;
+            align-items: center;
+            background-color: #1e1e1e; /* dark but not pure black */
+            border-radius: 50px;
+            padding: 8px 16px;
+            color: white;
+            font-weight: 600;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .analytics-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+        }
+
+        .analytics-text {
+            font-size: 14px;
+            letter-spacing: 0.5px;
+        }
+
+        .analytics-text .highlight {
+            color: #0d6efd; /* bootstrap primary blue */
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+       </style>
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon4.png" alt="Analytics" class="me-2" width="24">
         <span><small class="text-primary">Up-to-date</small> ANALYTICS</span>
+      </div>
+
+      <div class="analytics-pill">
+          <img src="icon4.png" alt="Analytics" class="analytics-icon">
+          <span class="analytics-text">
+              <small class="highlight">Up-to-date</small> ANALYTICS
+          </span>
       </div>
 
     </div>
