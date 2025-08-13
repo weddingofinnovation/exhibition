@@ -72,25 +72,25 @@
           <small>Our database include:</small>
         </div>
 
-        <div class="col">
-          <div class="fw-bold fs-4">74 918</div>
+        <div class="col border-end">
+          <div class="fw-bold fs-lg">74 918</div>
           <div class="fs-xs">TOURNAMENTS & EVENTS</div>
         </div>
-        <div class="col">
-          <div class="fw-bold fs-4">320 466</div>
-          <div class="text-muted small">MATCHES</div>
+        <div class="col border-end">
+          <div class="fw-bold fs-lg">320 466</div>
+          <div class="fs-xs">MATCHES</div>
         </div>
-        <div class="col">
-          <div class="fw-bold fs-4">51 293</div>
-          <div class="text-muted small">TEAMS</div>
+        <div class="col border-end">
+          <div class="fw-bold fs-lg">51 293</div>
+          <div class="fs-xs">TEAMS</div>
         </div>
-        <div class="col">
-          <div class="fw-bold fs-4">80 248</div>
-          <div class="text-muted small">PLAYERS</div>
+        <div class="col border-end">
+          <div class="fw-bold fs-lg">80 248</div>
+          <div class="fs-xs">PLAYERS</div>
         </div>
-        <div class="col">
-          <div class="fw-bold fs-4">152</div>
-          <div class="text-muted small">GAMES</div>
+        <div class="col border-end">
+          <div class="fw-bold fs-lg">152</div>
+          <div class="fs-xs">GAMES</div>
         </div>
       </div>
 
