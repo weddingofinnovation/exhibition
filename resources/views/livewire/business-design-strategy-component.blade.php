@@ -135,21 +135,21 @@
 
           <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
    
-          <!-- Left: Icon + text -->
-          <div class="d-flex align-items-center">
-            <img src="icon.png" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
-            <div>
-              <div class="fw-bold small">PUBG Players Cup Americas #11</div>
-              <div class="text-muted fs-xss">PUBG, PUBG Players Tour, KRAFTON</div>
+            <!-- Left: Icon + text -->
+            <div class="d-flex align-items-center">
+              <img src="icon.png" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
+              <div>
+                <div class="fw-bold small">PUBG Players Cup Americas #11</div>
+                <div class="text-muted fs-xss">PUBG, PUBG Players Tour, KRAFTON</div>
+              </div>
             </div>
-          </div>
+            
+            <!-- Right: Date -->
+            <div class="small text-end">
+              09.08.25 - 11.08.25
+            </div>
           
-          <!-- Right: Date -->
-          <div class="small text-end">
-            09.08.25 - 11.08.25
           </div>
-          
-        </div>
 
 
         </div>
@@ -160,7 +160,7 @@
             <span class="fw-bold">Upcoming tournaments</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
-          <div class="p-3 bg-secondary rounded">
+          <div class="p-3 bg-dark rounded">
             <div class="fw-bold">Esports World Cup 2025</div>
             <div class="text-muted small">RL</div>
             <div class="small mt-1">14.08.25 - 17.08.25</div>
@@ -173,12 +173,20 @@
             <span class="fw-bold text-danger">LIVE matches</span>
           </div>
 
-          <div class="p-3 bg-secondary rounded d-flex justify-content-between">
+          <div class="p-3 bg-dark rounded d-flex justify-content-between">
             <div>
               <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
               <div class="small text-muted">LCK 2025 Season</div>
             </div>
             <span class="fs-4">→</span>
+          </div>
+
+          <div class="card bg-dark border border-danger text-white mb-2">
+            <div class="card-body py-2">
+              <span class="badge bg-danger me-2">LIVE</span>
+              <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
+              <div class="small text-muted">LCK 2025 Season</div>
+            </div>
           </div>
 
         </div>
