@@ -14,43 +14,57 @@
     font-size: 0.75rem; /* adjust as needed */
     }
 
-  .live-card {
+
+
+.match-card {
   display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  border-radius: 6px;
+  align-items: stretch;
+  border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 6px;
+  background: #1a1a1a; /* fallback */
 }
 
-.live-label {
+/* Left side LIVE strip */
+.live-tag {
   writing-mode: vertical-rl;
-  text-orientation: mixed;
-  background: linear-gradient(to bottom, #ff4d4d, #990000);
-  color: white;
+  text-orientation: upright;
+  background: linear-gradient(to bottom, #ff4b4b, #a60000);
+  color: #fff;
   font-weight: bold;
-  padding: 6px 4px;
-  font-size: 0.75rem;
+  font-size: 12px;
+  padding: 8px 4px;
+  letter-spacing: 1px;
 }
 
+/* Middle part with gradient running FULL width */
 .match-info {
   flex: 1;
-  padding: 6px 10px;
+  padding: 8px 12px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.2), transparent);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .teams {
   font-weight: bold;
+  font-size: 14px;
 }
 
-.league {
-  font-size: 0.8rem;
-  color: #aaa;
+.event {
+  font-size: 12px;
+  color: #ddd;
 }
 
+/* Right side arrow */
 .arrow {
-  padding: 0 10px;
-  font-size: 1.2rem;
-  color: #aaa;
+  background-color: #111;  /* solid, no gradient */
+  color: white;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 </style>
@@ -244,33 +258,46 @@
           </div>
 
           <!-- Single live match row -->
-<div class="rounded-3 overflow-hidden mb-2 d-flex align-items-stretch" style="background:#151515;">
-  <!-- FULL-HEIGHT vertical LIVE tag -->
-  <div class="d-flex justify-content-center align-items-center text-white fw-bold"
-       style="writing-mode:vertical-rl;text-orientation:mixed;
-              background:linear-gradient(180deg,#ff4d4d 0%, #8b0000 100%);
-              padding:8px 6px; letter-spacing:.5px;">
-    LIVE
-  </div>
+          <div class="rounded-3 overflow-hidden mb-2 d-flex align-items-stretch" style="background:#151515;">
+            <!-- FULL-HEIGHT vertical LIVE tag -->
+            <div class="d-flex justify-content-center align-items-center text-white fw-bold"
+                style="writing-mode:vertical-rl;text-orientation:mixed;
+                        background:linear-gradient(180deg,#ff4d4d 0%, #8b0000 100%);
+                        letter-spacing:.5px;">
+              LIVE
+            </div>
 
-  <!-- Match info with slight red gradient -->
-  <div class="flex-grow-1 text-white py-2 px-3 d-flex flex-column justify-content-center"
-       style="background:linear-gradient(90deg,#1e1e1f 0%, #261a1a 100%);">
-    <div class="fw-semibold">
-      <!-- optional team icons -->
-      <!-- <img src="t1.png" class="me-2" width="18"> -->
-      T1 <span class="text-muted mx-1">VS</span> KT
-    </div>
-    <div class="small text-muted">LCK 2025 Season</div>
-  </div>
+            <!-- Match info with slight red gradient -->
+            <div class="flex-grow-1 text-white py-2 px-3 d-flex flex-column justify-content-center"
+                style="background:linear-gradient(90deg,#1e1e1f 0%, #261a1a 100%);">
+              <div class="fw-semibold">
+                <!-- optional team icons -->
+                <!-- <img src="t1.png" class="me-2" width="18"> -->
+                T1 <span class="text-muted mx-1">VS</span> KT
+              </div>
+              <div class="small text-muted">LCK 2025 Season</div>
+            </div>
 
-  <!-- Arrow cell on the right -->
-  <div class="d-flex align-items-center justify-content-center"
-       style="width:48px;background:rgba(255,255,255,0.06);">
-    <span class="fs-5 text-white-50">→</span>
-  </div>
-</div>
+            <!-- Arrow cell on the right -->
+            <div class="d-flex align-items-center justify-content-center"
+                style="width:48px;background:rgba(255,255,255,0.06);">
+              <span class="fs-5 text-white-50">→</span>
+            </div>
+          </div>
 
+          <div class="match-card">
+            <!-- Part 1: LIVE -->
+            <div class="live-tag">LIVE</div>
+
+            <!-- Part 2: Info with gradient full width -->
+            <div class="match-info">
+              <div class="teams">T1 <span>VS</span> KT</div>
+              <div class="event">LCK 2025 Season</div>
+            </div>
+
+            <!-- Part 3: Arrow -->
+            <div class="arrow">➜</div>
+          </div>
 
 
         </div>
