@@ -66,7 +66,7 @@
 
 
 
-    <div class="container-fluid bg-dark text-white py-4">
+    <div class="container-fluid text-white py-4" style="background-color: #000000;">
       <div class="row text-center border-bottom border-secondary pb-3 mb-4">
          <div class="col border-end">
           <small>Our database include:</small>
