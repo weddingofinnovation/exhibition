@@ -138,7 +138,7 @@
     </div>
 
 
-    <div class="container-fluid text-white py-3 style="background-color: #000000;">
+    <div class="container-fluid text-white py-3" style="background-color: #000000;">
       
       <div class="row">
         <!-- Recent Tournaments -->
