@@ -30,7 +30,7 @@
 
         <div class="d-flex flex-column lh-1">
           <small class="text-primary fw-bold">Streaming</small>
-          <span class="">DATA</span>
+          <span class="fs-sm fw-bold">DATA</span>
         </div>
       </div>
 
