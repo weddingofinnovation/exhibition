@@ -139,32 +139,7 @@
 
 
     <div class="container-fluid bg-dark text-white py-3">
-      <div class="row text-center mb-3">
-        <div class="col border-end">
-          <small>Our database include:</small>
-        </div>
-        <div class="col border-end">
-          <h5 class="mb-0">74 918</h5>
-          <small class="text-muted">TOURNAMENTS & EVENTS</small>
-        </div>
-        <div class="col border-end">
-          <h5 class="mb-0">320 466</h5>
-          <small class="text-muted">MATCHES</small>
-        </div>
-        <div class="col border-end">
-          <h5 class="mb-0">51 293</h5>
-          <small class="text-muted">TEAMS</small>
-        </div>
-        <div class="col border-end">
-          <h5 class="mb-0">80 248</h5>
-          <small class="text-muted">PLAYERS</small>
-        </div>
-        <div class="col">
-          <h5 class="mb-0">152</h5>
-          <small class="text-muted">GAMES</small>
-        </div>
-      </div>
-
+      
       <div class="row">
         <!-- Recent Tournaments -->
         <div class="col-md-4">
