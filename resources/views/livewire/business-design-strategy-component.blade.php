@@ -110,11 +110,26 @@
             <span class="fw-bold">Recent tournaments</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
-          <div class="p-3 bg-secondary rounded">
+
+          <!-- <div class="p-3 bg-secondary rounded">
             <div class="fw-bold">PUBG Players Cup Americas #11</div>
             <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
             <div class="small mt-1">09.08.25 - 11.08.25</div>
+          </div> -->
+
+          <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+            <!-- Left content -->
+            <div>
+              <div class="fw-bold">PUBG Players Cup Americas #11</div>
+              <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+            </div>
+            
+            <!-- Right content (date) -->
+            <div class="small text-end">
+              09.08.25 - 11.08.25
+            </div>
           </div>
+
         </div>
 
         <!-- Upcoming tournaments -->
