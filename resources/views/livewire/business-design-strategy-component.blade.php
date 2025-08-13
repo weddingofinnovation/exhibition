@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
+  /* width: 24px; */
 }
 
 /* Middle info section */
@@ -227,7 +227,7 @@
         <!-- Live matches -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold text-danger">LIVE matches</span>4
+            <span class="fw-bold text-danger">LIVE matches</span>
           </div>
 
           <!-- <div class="p-3 bg-dark rounded d-flex justify-content-between">
