@@ -14,95 +14,60 @@
     font-size: 0.75rem; /* adjust as needed */
     }
 
-  .live-card {
-  display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  border-radius: 6px;
-  overflow: hidden;
-  margin-bottom: 6px;
-}
-
-.live-label {
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  background: linear-gradient(to bottom, #ff4d4d, #990000);
-  color: white;
-  font-weight: bold;
-  padding: 6px 4px;
-  font-size: 0.75rem;
-}
-
-.match-info {
-  flex: 1;
-  padding: 6px 10px;
-}
-
-.teams {
-  font-weight: bold;
-}
-
-.league {
-  font-size: 0.8rem;
-  color: #aaa;
-}
-
-.arrow {
-  padding: 0 10px;
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-
 .match-card {
   display: flex;
   align-items: stretch;
-  border-radius: 8px;
+  height: 60px;
   overflow: hidden;
-  background: #1a1a1a; /* fallback */
+  border-radius: 6px;
+  background: #222;
 }
 
-/* Left side LIVE strip */
-.live-tag {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  background: linear-gradient(to bottom, #ff4b4b, #a60000);
+/* LIVE strip */
+.live-strip {
+  background: linear-gradient(to bottom, #ff2b2b, #a50000);
   color: #fff;
   font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* Makes text bottom-to-top */
+  text-align: center;
   font-size: 12px;
-  padding: 8px 4px;
-  letter-spacing: 1px;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
 }
 
-/* Middle part with gradient running FULL width */
+/* Middle info section */
 .match-info {
   flex: 1;
   padding: 8px 12px;
-  background: linear-gradient(to right, rgba(255, 0, 0, 0.2), transparent);
-  color: #fff;
+  background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.teams {
-  font-weight: bold;
+.match-info .title {
   font-size: 14px;
+  font-weight: bold;
+  color: #fff;
 }
-
-.event {
+.match-info .subtitle {
   font-size: 12px;
-  color: #ddd;
+  color: #bbb;
 }
 
-/* Right side arrow */
-.arrow {
-  background-color: #111;  /* solid, no gradient */
-  color: white;
-  padding: 0 12px;
+/* Arrow section */
+.arrow-btn {
+  width: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
 }
 
 </style>
@@ -318,7 +283,7 @@
 
             <!-- Arrow cell on the right -->
             <div class="arrow">➜</div>
-            
+
           </div>
 
           <div class="match-card">
@@ -334,6 +299,24 @@
             <!-- Part 3: Arrow -->
             <div class="arrow">➜</div>
           </div>
+
+          <!-- latest -->
+           <div class="match-card">
+            <!-- LIVE Strip -->
+            <div class="live-strip">
+              <span>LIVE</span>
+            </div>
+
+            <!-- Middle Gradient Info -->
+            <div class="match-info">
+              <div class="title">PUBG Players Cup Americas #11</div>
+              <div class="subtitle">PUBG, PUBG Players Tour, KRAFTON</div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow-btn">➜</div>
+          </div>
+
 
 
         </div>
