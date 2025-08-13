@@ -130,19 +130,19 @@
             </div>
           </div>
 
-          <div class="p-3 bg-secondary rounded d-flex justify-content-between align-items-center">
-  
+          <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+   
           <!-- Left: Icon + text -->
           <div class="d-flex align-items-center">
             <img src="icon.png" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
             <div>
-              <div class="fw-bold">PUBG Players Cup Americas #11</div>
-              <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+              <div class="fw-bold small">PUBG Players Cup Americas #11</div>
+              <div class="text-muted fs-xxs">PUBG, PUBG Players Tour, KRAFTON</div>
             </div>
           </div>
           
           <!-- Right: Date -->
-          <div class="small text-end">
+          <div class="text-end">
             09.08.25 - 11.08.25
           </div>
           
