@@ -181,14 +181,26 @@
             <span class="fs-4">→</span>
           </div>
 
-          <div class="card bg-dark border border-danger text-white mb-2 d-flex justify-content-between">
-            <div class="card-body py-2">
+          <div class="card bg-dark border border-danger text-white mb-2 ">
+            <div class="card-body py-2 d-flex justify-content-between">
               <span class="badge bg-danger me-2">LIVE</span>
               <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
               <div class="small text-muted">LCK 2025 Season</div>
             </div>
             <span class="fs-4">→</span>
           </div>
+
+          <div class="card bg-dark border border-danger text-white mb-2">
+            <div class="card-body py-2 d-flex justify-content-between align-items-center">
+              <div>
+                <span class="badge bg-danger me-2">LIVE</span>
+                <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
+                <div class="small text-muted">LCK 2025 Season</div>
+              </div>
+              <span class="fs-4">→</span>
+            </div>
+          </div>
+
 
         </div>
       </div>
