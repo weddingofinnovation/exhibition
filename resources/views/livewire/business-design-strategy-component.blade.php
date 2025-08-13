@@ -3,129 +3,127 @@
 @section('page_description', 'Great Exhibtion To Exhibit, plan with rank and rating review your upcoming trade show, conference, awards  and get subsidies space to find right people at right time at right place')
 @section('page_keyword',  'Exhibition Navigator, The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
-
-
 <style>
-  .event-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    color: #fff;
-    font-family: sans-serif;
-}
+        .event-row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 8px 0;
+          color: #fff;
+          font-family: sans-serif;
+      }
 
-.event-details {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+      .event-details {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+      }
 
-.event-logo {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
+      .event-logo {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+      }
 
-.event-title {
-    font-weight: bold;
-    font-size: 14px;
-}
+      .event-title {
+          font-weight: bold;
+          font-size: 14px;
+      }
 
-.event-date {
-    font-size: 12px;
-    color: #aaa;
-}
+      .event-date {
+          font-size: 12px;
+          color: #aaa;
+      }
 
-.event-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+      .event-stats {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+      }
 
-.event-viewers {
-    font-size: 12px;
-    font-weight: bold;
-    color: #f27da0; /* pink like in image */
-}
+      .event-viewers {
+          font-size: 12px;
+          font-weight: bold;
+          color: #f27da0; /* pink like in image */
+      }
 
-.progress-line {
-    width: 40px;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.2); /* faded base line */
-    margin-top: 2px;
-    position: relative;
-}
+      .progress-line {
+          width: 40px;
+          height: 2px;
+          background-color: rgba(255, 255, 255, 0.2); /* faded base line */
+          margin-top: 2px;
+          position: relative;
+      }
 
-.progress-fill {
-    height: 100%;
-    background-color: #f27da0; /* progress color */
-}
+      .progress-fill {
+          height: 100%;
+          background-color: #f27da0; /* progress color */
+      }
 
 
-  .fs-xxs {
-  font-size: 0.65rem; /* adjust as needed */
-  }
+        .fs-xxs {
+        font-size: 0.65rem; /* adjust as needed */
+        }
 
-  .fs-xss {
-    font-size: 0.75rem; /* adjust as needed */
-    }
+        .fs-xss {
+          font-size: 0.75rem; /* adjust as needed */
+          }
 
-.match-card {
-  display: flex;
-  align-items: stretch;
-  height: 60px;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #222;
-}
+      .match-card {
+        display: flex;
+        align-items: stretch;
+        height: 60px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #222;
+      }
 
-/* LIVE strip */
-.live-strip {
-  background: linear-gradient(to bottom, #ff2b2b, #a50000);
-  color: #fff;
-  font-weight: bold;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg); /* Makes text bottom-to-top */
-  text-align: center;
-  font-size: 12px;
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* width: 24px; */
-}
+      /* LIVE strip */
+      .live-strip {
+        background: linear-gradient(to bottom, #ff2b2b, #a50000);
+        color: #fff;
+        font-weight: bold;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg); /* Makes text bottom-to-top */
+        text-align: center;
+        font-size: 12px;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* width: 24px; */
+      }
 
-/* Middle info section */
-.match-info {
-  flex: 1;
-  padding: 8px 12px;
-  background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+      /* Middle info section */
+      .match-info {
+        flex: 1;
+        padding: 8px 12px;
+        background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-.match-info .title {
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
-}
-.match-info .subtitle {
-  font-size: 12px;
-  color: #bbb;
-}
+      .match-info .title {
+        font-size: 14px;
+        font-weight: bold;
+        color: #fff;
+      }
+      .match-info .subtitle {
+        font-size: 12px;
+        color: #bbb;
+      }
 
-/* Arrow section */
-.arrow-btn {
-  width: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: #fff;
-  font-size: 18px;
-}
+      /* Arrow section */
+      .arrow-btn {
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        color: #fff;
+        font-size: 18px;
+      }
 
 </style>
 
@@ -191,7 +189,6 @@
     </div>
 
 
-
     <div class="container-fluid text-white py-4" style="background-color: #000000;">
       <div class="row text-center border-bottom border-secondary pb-3 mb-4">
          <div class="col border-end">
@@ -224,7 +221,7 @@
         <!-- Recent tournaments -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold">Recent tournaments</span>
+            <span class="fw-bold">Recent Viewers</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
 
@@ -234,18 +231,48 @@
             <div class="small mt-1">09.08.25 - 11.08.25</div>
           </div> -->
 
+@foreach( $descRankingViews as $franchise)
+@if($franchise->updated_at->format("Y-m-d") == $mytime)
           <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
             <!-- Left content -->
             <div>
-              <div class="small fw-bold">PUBG Players Cup Americas #11</div>
+              <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
               <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
             </div>
             
             <!-- Right content (date) -->
             <div class="small text-end">
-              09.08.25 - 11.08.25
+              <!-- 09.08.25 - 11.08.25 -->
+
+              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+              @else
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+              @endif
             </div>
           </div>
+          @else
+            <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+            <!-- Left content -->
+            <div>
+              <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+              <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+            </div>
+            
+            <!-- Right content (date) -->
+            <div class="small text-end">
+              <!-- 09.08.25 - 11.08.25 -->
+
+              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+              @else
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+              @endif
+            </div>
+          </div>
+          @endif
+@endforeach
+
 
           <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
    
