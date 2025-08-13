@@ -4465,7 +4465,7 @@
                     </a>
 
 
-                    @if( $event->businessrevenue == 'visitor' )  
+                    <!-- @if( $event->businessrevenue == 'visitor' )  
                         <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-outline-light btn-sm">Advertise</a>
                       @else
                     
@@ -4476,7 +4476,7 @@
                         
                           <a href="#" class="btn btn-outline-light btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Plan Your Visit</a>
                       @endif
-                    @endif
+                    @endif -->
 
                     <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                       <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
@@ -5767,14 +5767,14 @@
                     <span class="text-end">
                         {{-- CTA Buttons --}}
                         @if($event->businessrevenue == 'visitor')       
-                        @if($ticketOrExhibit != 0)
-                            <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Book your Tickets</a>
-                        @elseif($ticketOrExhibit == 0)
-                            <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan your Visit</a>
-                        @endif
+                            @if($ticketOrExhibit != 0)
+                                <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Book your Tickets</a>
+                            @elseif($ticketOrExhibit == 0)
+                                <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan your Visit</a>
+                            @endif
                         @else
-                        <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Book your Space</a>
-                        <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Plan your Visit</a>
+                            <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Book your Space</a>
+                            <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Plan your Visit</a>
                         @endif
 
                         {{-- Call Info Below Buttons --}}
