@@ -129,10 +129,10 @@
 
     <div class="container-fluid py-5 text-center" style="background: linear-gradient(to bottom, #000000, #005baa);">
       <div class="container">
-        <h2 class="fw-bold text-white">Everything about the esports popularity</h2>
+        <h2 class="fw-bold text-white">Everything about the Events popularity</h2>
         <p class="text-white-50 mb-5">
-          Esports Charts makes esports transparent and helps sponsors, organizers, and viewers discover 
-          the popularity level of any live or esports event.
+          Great Exhibition To Exhibit Charts makes events transparent and helps sponsors, organizers, and viewers discover 
+          the popularity level of any event.
         </p>
 
         <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
@@ -231,47 +231,47 @@
             <div class="small mt-1">09.08.25 - 11.08.25</div>
           </div> -->
 
-@foreach( $descRankingViews as $franchise)
-@if($franchise->updated_at->format("Y-m-d") == $mytime)
-          <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
-            <!-- Left content -->
-            <div>
-              <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-              <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
-            </div>
-            
-            <!-- Right content (date) -->
-            <div class="small text-end">
-              <!-- 09.08.25 - 11.08.25 -->
+          @foreach( $descRankingViews as $franchise)
+              @if($franchise->updated_at->format("Y-m-d") == $mytime)
+                    <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+                      <!-- Left content -->
+                      <div>
+                        <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                      </div>
+                      
+                      <!-- Right content (date) -->
+                      <div class="small text-end">
+                        <!-- 09.08.25 - 11.08.25 -->
 
-              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @else
-                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @endif
-            </div>
-          </div>
-          @else
-            <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
-            <!-- Left content -->
-            <div>
-              <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-              <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
-            </div>
-            
-            <!-- Right content (date) -->
-            <div class="small text-end">
-              <!-- 09.08.25 - 11.08.25 -->
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @else
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @endif
+                      </div>
+                    </div>
+                    @else
+                      <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+                      <!-- Left content -->
+                      <div>
+                        <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                      </div>
+                      
+                      <!-- Right content (date) -->
+                      <div class="small text-end">
+                        <!-- 09.08.25 - 11.08.25 -->
 
-              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @else
-                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @endif
-            </div>
-          </div>
-          @endif
-@endforeach
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @else
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @endif
+                      </div>
+                    </div>
+                    @endif
+          @endforeach
 
 
           <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
@@ -352,24 +352,33 @@
           </div>
 
 
-          <div class="event-row">
-              <div class="event-details">
-                  <img src="logo.png" alt="Logo" class="event-logo">
-                  <div>
-                      <div class="event-title">LCK 2025 Season</div>
-                      <div class="event-date">02.04.25 - 01.09.25</div>
-                  </div>
-              </div>
-              <div class="event-stats">
-                  <div class="event-viewers">1.58M</div>
-                  <div class="progress-line">
-                      <div class="progress-fill" style="width: 80%;"></div>
-                  </div>
-              </div>
-          </div>
+          
+          @foreach($evento as $franchise)
+            <div class="event-row">
+                <div class="event-details">
+                    <img src="logo.png" alt="Logo" class="event-logo">
+                    <div>
+                        <div class="event-title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="event-date">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @else
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @endif</div>
+                        
+                    </div>
+                </div>
+                <div class="event-stats">
+                    <div class="event-viewers">1.58M</div>
+                    <div class="progress-line">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+          @endforeach
 
 
         </div>
+
       </div>
     </div>
 
@@ -378,7 +387,7 @@
 
 
 
-      @foreach( $descRankingViews as $franchise)
+      @foreach( $descRankingViews as $franchise) 
           <div class="container">
             @if($franchise->updated_at->format("Y-m-d") == $mytime)
               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
