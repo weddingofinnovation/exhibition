@@ -14,6 +14,44 @@
     font-size: 0.75rem; /* adjust as needed */
     }
 
+  .live-card {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.live-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  background: linear-gradient(to bottom, #ff4d4d, #990000);
+  color: white;
+  font-weight: bold;
+  padding: 6px 4px;
+  font-size: 0.75rem;
+}
+
+.match-info {
+  flex: 1;
+  padding: 6px 10px;
+}
+
+.teams {
+  font-weight: bold;
+}
+
+.league {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.arrow {
+  padding: 0 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+}
 
 
 .match-card {
