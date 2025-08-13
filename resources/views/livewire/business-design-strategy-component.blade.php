@@ -138,7 +138,7 @@
     </div>
 
 
-    <div class="container-fluid bg-dark text-white py-3">
+    <div class="container-fluid text-white py-3 style="background-color: #000000;">
       
       <div class="row">
         <!-- Recent Tournaments -->
@@ -149,7 +149,7 @@
           </div>
           <div class="card bg-secondary text-white mb-2">
             <div class="card-body py-2">
-              <h6 class="mb-0">PUBG Players Cup Americas #11</h6>
+              <h6 class="mb-0">PUBG Players Cup Americas #11</h6> 
               <small class="text-muted">PUBG, PUBG Players Tour, KRAFTON</small>
               <div class="text-end small">09.08.25 - 11.08.25</div>
             </div>
