@@ -101,14 +101,18 @@
             <span class="fw-bold">Recent tournaments</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
-          
+          <div class="p-3 bg-dark rounded">
+            <div class="fw-bold">PUBG Players Cup Americas #11</div>
+            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+            <div class="small mt-1">09.08.25 - 11.08.25</div>
+          </div>
         </div>
 
         <!-- Upcoming tournaments -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="fw-bold">Upcoming tournaments</span>
-            <button class="btn btn-secondary btn-sm">More</button>
+            <button class="btn btn-dark btn-sm">More</button>
           </div>
           <div class="p-3 bg-dark rounded">
             <div class="fw-bold">Esports World Cup 2025</div>
@@ -143,7 +147,7 @@
             <h6 class="mb-0">Recent tournaments</h6>
             <button class="btn btn-sm btn-secondary">More</button>
           </div>
-          <div class="card bg-secondary text-white mb-2">
+          <div class="card bg-dark text-white mb-2">
             <div class="card-body py-2">
               <h6 class="mb-0">PUBG Players Cup Americas #11</h6> 
               <small class="text-muted">PUBG, PUBG Players Tour, KRAFTON</small>
@@ -158,7 +162,7 @@
             <h6 class="mb-0">Upcoming tournaments</h6>
             <button class="btn btn-sm btn-secondary">More</button>
           </div>
-          <div class="card bg-secondary text-white mb-2">
+          <div class="card bg-dark text-white mb-2">
             <div class="card-body py-2">
               <h6 class="mb-0">Esports World Cup 2025</h6>
               <small class="text-muted">RL</small>
