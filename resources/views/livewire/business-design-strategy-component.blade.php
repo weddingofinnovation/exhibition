@@ -48,11 +48,7 @@
       <span class="text-white fs-4">+</span>
 
       <!-- Analytics -->
-      font-weight: 400;
-      font-size: .625rem;
-      line-height: .875rem;
-
-
+    
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon4.png" alt="Analytics" class="me-2" width="24">
         <div class="d-flex flex-column lh-1">
