@@ -10,6 +10,9 @@
   font-size: 0.65rem; /* adjust as needed */
   }
 
+  .fs-xss {
+    font-size: 0.75rem; /* adjust as needed */
+    }
 </style>
 
     <div class="container-fluid py-5 text-center" style="background: linear-gradient(to bottom, #000000, #005baa);">
@@ -137,12 +140,12 @@
             <img src="icon.png" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
             <div>
               <div class="fw-bold small">PUBG Players Cup Americas #11</div>
-              <div class="text-muted fs-xxs">PUBG, PUBG Players Tour, KRAFTON</div>
+              <div class="text-muted fs-xss">PUBG, PUBG Players Tour, KRAFTON</div>
             </div>
           </div>
           
           <!-- Right: Date -->
-          <div class="text-end">
+          <div class="small text-end">
             09.08.25 - 11.08.25
           </div>
           
