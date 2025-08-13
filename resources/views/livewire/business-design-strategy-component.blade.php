@@ -16,7 +16,7 @@
       <!-- Esports Charts -->
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon1.png" alt="Esports" class="me-2" width="24">
-        <span class="fw-bold">Great Exhibition To Exhibit</span>
+        <span class="">Great Exhibition To Exhibit</span>
 
         
       </div>
@@ -30,7 +30,7 @@
 
         <div class="d-flex flex-column lh-1">
           <small class="text-primary fw-bold">Streaming</small>
-          <span class="fw-bold">DATA</span>
+          <span class="">DATA</span>
         </div>
       </div>
 
@@ -41,19 +41,21 @@
         <img src="icon3.png" alt="Events" class="me-2" width="24">
         <div class="d-flex flex-column lh-1">
           <small class="text-primary fw-bold">Events</small>
-          <span class="fw-bold">SCHEDULE</span>
+          <span class="">SCHEDULE</span>
         </div>
       </div>
 
       <span class="text-white fs-4">+</span>
 
       <!-- Analytics -->
-    
+     
+
+
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon4.png" alt="Analytics" class="me-2" width="24">
         <div class="d-flex flex-column lh-1">
           <small class="text-primary fw-bold">Up-to-date</small>
-          <span class="fw-bold">ANALYTICS</span>
+          <span class="">ANALYTICS</span>
         </div>
       </div>
 
