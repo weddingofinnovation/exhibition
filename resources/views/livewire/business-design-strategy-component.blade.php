@@ -67,71 +67,75 @@
 
 
     <div class="container-fluid bg-dark text-white py-4">
-  <div class="row text-center border-bottom border-secondary pb-3 mb-4">
-    <div class="col">
-      <div class="fw-bold fs-4">74 918</div>
-      <div class="text-muted small">TOURNAMENTS & EVENTS</div>
-    </div>
-    <div class="col">
-      <div class="fw-bold fs-4">320 466</div>
-      <div class="text-muted small">MATCHES</div>
-    </div>
-    <div class="col">
-      <div class="fw-bold fs-4">51 293</div>
-      <div class="text-muted small">TEAMS</div>
-    </div>
-    <div class="col">
-      <div class="fw-bold fs-4">80 248</div>
-      <div class="text-muted small">PLAYERS</div>
-    </div>
-    <div class="col">
-      <div class="fw-bold fs-4">152</div>
-      <div class="text-muted small">GAMES</div>
-    </div>
-  </div>
-
-  <div class="row g-3">
-    <!-- Recent tournaments -->
-    <div class="col-md-4">
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <span class="fw-bold">Recent tournaments</span>
-        <button class="btn btn-secondary btn-sm">More</button>
-      </div>
-      <div class="p-3 bg-secondary rounded">
-        <div class="fw-bold">PUBG Players Cup Americas #11</div>
-        <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
-        <div class="small mt-1">09.08.25 - 11.08.25</div>
-      </div>
-    </div>
-
-    <!-- Upcoming tournaments -->
-    <div class="col-md-4">
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <span class="fw-bold">Upcoming tournaments</span>
-        <button class="btn btn-secondary btn-sm">More</button>
-      </div>
-      <div class="p-3 bg-secondary rounded">
-        <div class="fw-bold">Esports World Cup 2025</div>
-        <div class="text-muted small">RL</div>
-        <div class="small mt-1">14.08.25 - 17.08.25</div>
-      </div>
-    </div>
-
-    <!-- Live matches -->
-    <div class="col-md-4">
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <span class="fw-bold text-danger">LIVE matches</span>
-      </div>
-      <div class="p-3 bg-secondary rounded d-flex justify-content-between">
-        <div>
-          <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
-          <div class="small text-muted">LCK 2025 Season</div>
+      <div class="row text-center border-bottom border-secondary pb-3 mb-4">
+         <div class="col border-end">
+          <small>Our database include:</small>
         </div>
-        <span class="fs-4">→</span>
+
+        <div class="col">
+          <div class="fw-bold fs-4">74 918</div>
+          <div class="fs-xs">TOURNAMENTS & EVENTS</div>
+        </div>
+        <div class="col">
+          <div class="fw-bold fs-4">320 466</div>
+          <div class="text-muted small">MATCHES</div>
+        </div>
+        <div class="col">
+          <div class="fw-bold fs-4">51 293</div>
+          <div class="text-muted small">TEAMS</div>
+        </div>
+        <div class="col">
+          <div class="fw-bold fs-4">80 248</div>
+          <div class="text-muted small">PLAYERS</div>
+        </div>
+        <div class="col">
+          <div class="fw-bold fs-4">152</div>
+          <div class="text-muted small">GAMES</div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <!-- Recent tournaments -->
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold">Recent tournaments</span>
+            <button class="btn btn-secondary btn-sm">More</button>
+          </div>
+          <div class="p-3 bg-secondary rounded">
+            <div class="fw-bold">PUBG Players Cup Americas #11</div>
+            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+            <div class="small mt-1">09.08.25 - 11.08.25</div>
+          </div>
+        </div>
+
+        <!-- Upcoming tournaments -->
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold">Upcoming tournaments</span>
+            <button class="btn btn-secondary btn-sm">More</button>
+          </div>
+          <div class="p-3 bg-secondary rounded">
+            <div class="fw-bold">Esports World Cup 2025</div>
+            <div class="text-muted small">RL</div>
+            <div class="small mt-1">14.08.25 - 17.08.25</div>
+          </div>
+        </div>
+
+        <!-- Live matches -->
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold text-danger">LIVE matches</span>
+          </div>
+          <div class="p-3 bg-secondary rounded d-flex justify-content-between">
+            <div>
+              <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
+              <div class="small text-muted">LCK 2025 Season</div>
+            </div>
+            <span class="fs-4">→</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
 
     <div class="container-fluid bg-dark text-white py-3">
