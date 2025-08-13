@@ -16,7 +16,9 @@
       <!-- Esports Charts -->
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon1.png" alt="Esports" class="me-2" width="24">
-        <span class="fw-bold">Esports Charts</span>
+        <span class="fw-bold">Great Exhibition To Exhibit</span>
+
+        
       </div>
 
       <span class="text-white fs-4">=</span>
@@ -24,7 +26,12 @@
       <!-- Streaming Data -->
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon2.png" alt="Streaming" class="me-2" width="24">
-        <span><small class="text-warning">Streaming</small> DATA</span>
+       
+
+        <div class="d-flex flex-column lh-1">
+          <small class="text-primary fw-bold">Streaming</small>
+          <span class="fw-bold">DATA</span>
+        </div>
       </div>
 
       <span class="text-white fs-4">+</span>
@@ -32,17 +39,19 @@
       <!-- Event Schedule -->
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon3.png" alt="Events" class="me-2" width="24">
-        <span><small class="text-danger">Events</small> SCHEDULE</span>
+        <div class="d-flex flex-column lh-1">
+          <small class="text-primary fw-bold">Events</small>
+          <span class="fw-bold">SCHEDULE</span>
+        </div>
       </div>
 
       <span class="text-white fs-4">+</span>
 
       <!-- Analytics -->
-      
-      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
-        <img src="icon4.png" alt="Analytics" class="me-2" width="24">
-        <span><small class="text-primary">Up-to-date</small> ANALYTICS</span>
-      </div>
+      font-weight: 400;
+      font-size: .625rem;
+      line-height: .875rem;
+
 
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon4.png" alt="Analytics" class="me-2" width="24">
