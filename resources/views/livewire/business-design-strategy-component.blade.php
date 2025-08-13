@@ -13,6 +13,46 @@
   .fs-xss {
     font-size: 0.75rem; /* adjust as needed */
     }
+
+  .live-card {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.live-label {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  background: linear-gradient(to bottom, #ff4d4d, #990000);
+  color: white;
+  font-weight: bold;
+  padding: 6px 4px;
+  font-size: 0.75rem;
+}
+
+.match-info {
+  flex: 1;
+  padding: 6px 10px;
+}
+
+.teams {
+  font-weight: bold;
+}
+
+.league {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.arrow {
+  padding: 0 10px;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
 </style>
 
     <div class="container-fluid py-5 text-center" style="background: linear-gradient(to bottom, #000000, #005baa);">
@@ -181,15 +221,6 @@
             <span class="fs-4">→</span>
           </div>
 
-          <div class="card bg-dark border border-danger text-white mb-2 ">
-            <div class="card-body py-2 d-flex justify-content-between">
-              <span class="badge bg-danger me-2">LIVE</span>
-              <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
-              <div class="small text-muted">LCK 2025 Season</div>
-            </div>
-            <span class="fs-4">→</span>
-          </div>
-
           <div class="card bg-dark border border-danger text-white mb-2">
             <div class="card-body py-2 d-flex justify-content-between align-items-center">
               <div>
@@ -201,7 +232,17 @@
             </div>
           </div>
 
-          
+          <div class="live-card">
+            <div class="live-label">LIVE</div>
+            <div class="match-info">
+              <div class="teams">
+                <span class="team">T1</span> VS <span class="team">KT</span>
+              </div>
+              <div class="league">LCK 2025 Season</div>
+            </div>
+            <div class="arrow">→</div>
+          </div>
+
 
         </div>
       </div>
