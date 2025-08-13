@@ -6,6 +6,63 @@
 
 
 <style>
+  .event-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.event-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.event-title {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.event-date {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.event-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.event-viewers {
+    font-size: 12px;
+    font-weight: bold;
+    color: #f27da0; /* pink like in image */
+}
+
+.progress-line {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2); /* faded base line */
+    margin-top: 2px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #f27da0; /* progress color */
+}
+
+
   .fs-xxs {
   font-size: 0.65rem; /* adjust as needed */
   }
@@ -267,6 +324,22 @@
             <div class="arrow-btn">➜</div>
           </div>
 
+
+          <div class="event-row">
+              <div class="event-details">
+                  <img src="logo.png" alt="Logo" class="event-logo">
+                  <div>
+                      <div class="event-title">LCK 2025 Season</div>
+                      <div class="event-date">02.04.25 - 01.09.25</div>
+                  </div>
+              </div>
+              <div class="event-stats">
+                  <div class="event-viewers">1.58M</div>
+                  <div class="progress-line">
+                      <div class="progress-fill" style="width: 80%;"></div>
+                  </div>
+              </div>
+          </div>
 
 
         </div>
