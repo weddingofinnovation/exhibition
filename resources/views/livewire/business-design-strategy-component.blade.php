@@ -4,65 +4,140 @@
 @section('page_keyword',  'Exhibition Navigator, The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
     <div class="container-fluid py-5 text-center" style="background: linear-gradient(to bottom, #000000, #005baa);">
-  <div class="container">
-    <h2 class="fw-bold text-white">Everything about the esports popularity</h2>
-    <p class="text-white-50 mb-5">
-      Esports Charts makes esports transparent and helps sponsors, organizers, and viewers discover 
-      the popularity level of any live or esports event.
-    </p>
+      <div class="container">
+        <h2 class="fw-bold text-white">Everything about the esports popularity</h2>
+        <p class="text-white-50 mb-5">
+          Esports Charts makes esports transparent and helps sponsors, organizers, and viewers discover 
+          the popularity level of any live or esports event.
+        </p>
 
-    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
-      
-      <!-- Esports Charts -->
-      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
-        <img src="icon1.png" alt="Esports" class="me-2" width="24">
-        <span class="">Great Exhibition To Exhibit</span>
+        <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+          
+          <!-- Esports Charts -->
+          <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+            <img src="icon1.png" alt="Esports" class="me-2" width="24">
+            <span class="">Great Exhibition To Exhibit</span>
 
+            
+          </div>
+
+          <span class="text-white fs-4">=</span>
+
+          <!-- Streaming Data -->
+          <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+            <img src="icon2.png" alt="Streaming" class="me-2" width="24">
+          
+
+            <div class="d-flex flex-column lh-1">
+              <small class="fw-light">Streaming</small>
+              <span class="fs-sm fw-bold">DATA</span>
+            </div>
+          </div>
+
+          <span class="text-white fs-4">+</span>
+
+          <!-- Event Schedule -->
+          <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+            <img src="icon3.png" alt="Events" class="me-2" width="24">
+            <div class="d-flex flex-column lh-1">
+              <small class="fw-light">Events</small>
+              <span class="fs-sm fw-bold">SCHEDULE</span>
+            </div>
+          </div>
+
+          <span class="text-white fs-4">+</span>
+
+          <!-- Analytics -->
         
-      </div>
 
-      <span class="text-white fs-4">=</span>
 
-      <!-- Streaming Data -->
-      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
-        <img src="icon2.png" alt="Streaming" class="me-2" width="24">
-       
+          <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+            <img src="icon4.png" alt="Analytics" class="me-2" width="24">
+            <div class="d-flex flex-column lh-1">
+              <small class="fw-light">Up-to-date</small>
+              <span class="fs-sm fw-bold">ANALYTICS</span>
+            </div>
+          </div>
 
-        <div class="d-flex flex-column lh-1">
-          <small class="fw-light">Streaming</small>
-          <span class="fs-sm fw-bold">DATA</span>
+
         </div>
       </div>
+    </div>
 
-      <span class="text-white fs-4">+</span>
+    <div class="container-fluid bg-dark text-white py-3">
+  <div class="row text-center mb-3">
+    <div class="col border-end">
+      <small>Our database include:</small>
+    </div>
+    <div class="col border-end">
+      <h5 class="mb-0">74 918</h5>
+      <small class="text-muted">TOURNAMENTS & EVENTS</small>
+    </div>
+    <div class="col border-end">
+      <h5 class="mb-0">320 466</h5>
+      <small class="text-muted">MATCHES</small>
+    </div>
+    <div class="col border-end">
+      <h5 class="mb-0">51 293</h5>
+      <small class="text-muted">TEAMS</small>
+    </div>
+    <div class="col border-end">
+      <h5 class="mb-0">80 248</h5>
+      <small class="text-muted">PLAYERS</small>
+    </div>
+    <div class="col">
+      <h5 class="mb-0">152</h5>
+      <small class="text-muted">GAMES</small>
+    </div>
+  </div>
 
-      <!-- Event Schedule -->
-      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
-        <img src="icon3.png" alt="Events" class="me-2" width="24">
-        <div class="d-flex flex-column lh-1">
-          <small class="fw-light">Events</small>
-          <span class="fs-sm fw-bold">SCHEDULE</span>
+  <div class="row">
+    <!-- Recent Tournaments -->
+    <div class="col-md-4">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="mb-0">Recent tournaments</h6>
+        <button class="btn btn-sm btn-secondary">More</button>
+      </div>
+      <div class="card bg-secondary text-white mb-2">
+        <div class="card-body py-2">
+          <h6 class="mb-0">PUBG Players Cup Americas #11</h6>
+          <small class="text-muted">PUBG, PUBG Players Tour, KRAFTON</small>
+          <div class="text-end small">09.08.25 - 11.08.25</div>
         </div>
       </div>
+    </div>
 
-      <span class="text-white fs-4">+</span>
-
-      <!-- Analytics -->
-     
-
-
-      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
-        <img src="icon4.png" alt="Analytics" class="me-2" width="24">
-        <div class="d-flex flex-column lh-1">
-          <small class="fw-light">Up-to-date</small>
-          <span class="fs-sm fw-bold">ANALYTICS</span>
+    <!-- Upcoming Tournaments -->
+    <div class="col-md-4">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="mb-0">Upcoming tournaments</h6>
+        <button class="btn btn-sm btn-secondary">More</button>
+      </div>
+      <div class="card bg-secondary text-white mb-2">
+        <div class="card-body py-2">
+          <h6 class="mb-0">Esports World Cup 2025</h6>
+          <small class="text-muted">RL</small>
+          <div class="text-end small">14.08.25 - 17.08.25</div>
         </div>
       </div>
+    </div>
 
-
+    <!-- Live Matches -->
+    <div class="col-md-4">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="mb-0">LIVE matches</h6>
+      </div>
+      <div class="card bg-dark border border-danger text-white mb-2">
+        <div class="card-body py-2">
+          <span class="badge bg-danger me-2">LIVE</span>
+          <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
+          <div class="small text-muted">LCK 2025 Season</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 
       @foreach( $descRankingViews as $franchise)
