@@ -149,56 +149,7 @@
     </div>
 
 
-    <div class="container-fluid text-white py-3" style="background-color: #000000;">
-      
-      <div class="row">
-        <!-- Recent Tournaments -->
-        <div class="col-md-4">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">Recent tournaments</h6>
-            <button class="btn btn-sm btn-secondary">More <span class="fs-4">→</span></button>
-          </div>
-          <div class="card bg-secondary text-white mb-2">
-            <div class="card-body py-2">
-              <h6 class="mb-0">PUBG Players Cup Americas #11</h6> 
-              <small class="text-muted">PUBG, PUBG Players Tour, KRAFTON</small>
-              <div class="text-end small">09.08.25 - 11.08.25</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Upcoming Tournaments -->
-        <div class="col-md-4">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">Upcoming tournaments</h6>
-            <button class="btn btn-sm btn-secondary">More <span class="fs-4">→</span></button>
-          </div>
-          <div class="card bg-secondary text-white mb-2">
-            <div class="card-body py-2">
-              <h6 class="mb-0">Esports World Cup 2025</h6>
-              <small class="text-muted">RL</small>
-              <div class="text-end small">14.08.25 - 17.08.25</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Live Matches -->
-        <div class="col-md-4">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h6 class="mb-0">LIVE matches</h6>
-          </div>
-
-          <div class="card bg-dark border border-danger text-white mb-2">
-            <div class="card-body py-2">
-              <span class="badge bg-danger me-2">LIVE</span>
-              <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
-              <div class="small text-muted">LCK 2025 Season</div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-    </div>
+   
 
 
 
