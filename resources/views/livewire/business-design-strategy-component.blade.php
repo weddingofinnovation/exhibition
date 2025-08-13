@@ -3,7 +3,51 @@
 @section('page_description', 'Great Exhibtion To Exhibit, plan with rank and rating review your upcoming trade show, conference, awards  and get subsidies space to find right people at right time at right place')
 @section('page_keyword',  'Exhibition Navigator, The Exhibition Network, Exhibition, World largest business event platform, find all upcoming events, business conferences, exhibition 2023, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in')
 
-    
+    <div class="container-fluid py-5 text-center" style="background: linear-gradient(to bottom, #000000, #005baa);">
+  <div class="container">
+    <h2 class="fw-bold text-white">Everything about the esports popularity</h2>
+    <p class="text-white-50 mb-5">
+      Esports Charts makes esports transparent and helps sponsors, organizers, and viewers discover 
+      the popularity level of any live or esports event.
+    </p>
+
+    <div class="d-flex flex-wrap justify-content-center align-items-center gap-3">
+      
+      <!-- Esports Charts -->
+      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+        <img src="icon1.png" alt="Esports" class="me-2" width="24">
+        <span class="fw-bold">Esports Charts</span>
+      </div>
+
+      <span class="text-white fs-4">=</span>
+
+      <!-- Streaming Data -->
+      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+        <img src="icon2.png" alt="Streaming" class="me-2" width="24">
+        <span><small class="text-warning">Streaming</small> DATA</span>
+      </div>
+
+      <span class="text-white fs-4">+</span>
+
+      <!-- Event Schedule -->
+      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+        <img src="icon3.png" alt="Events" class="me-2" width="24">
+        <span><small class="text-danger">Events</small> SCHEDULE</span>
+      </div>
+
+      <span class="text-white fs-4">+</span>
+
+      <!-- Analytics -->
+      <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
+        <img src="icon4.png" alt="Analytics" class="me-2" width="24">
+        <span><small class="text-primary">Up-to-date</small> ANALYTICS</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
       @foreach( $descRankingViews as $franchise)
           <div class="container">
             @if($franchise->updated_at->format("Y-m-d") == $mytime)
@@ -53,8 +97,7 @@
                         Add</a>
                   @else
                     <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" class="img-fluid rounded" 
-    style="max-width: 80px; height: auto;"></a>
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" class="img-fluid rounded" style="max-width: 80px; height: auto;"></a>
                   @endif
                 </div>
               </div>
