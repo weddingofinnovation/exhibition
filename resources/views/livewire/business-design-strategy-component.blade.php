@@ -356,7 +356,7 @@
           @foreach($evento as $franchise)
             <div class="event-row">
                 <div class="event-details">
-                    <img src="logo.png" alt="Logo" class="event-logo">
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Logo" class="event-logo">
                     <div>
                         <div class="event-title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
                         <div class="event-date">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
