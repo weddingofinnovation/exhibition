@@ -29,7 +29,7 @@
        
 
         <div class="d-flex flex-column lh-1">
-          <small class="text-primary fw-bold">Streaming</small>
+          <small class="fw-light">Streaming</small>
           <span class="fs-sm fw-bold">DATA</span>
         </div>
       </div>
@@ -40,8 +40,8 @@
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon3.png" alt="Events" class="me-2" width="24">
         <div class="d-flex flex-column lh-1">
-          <small class="text-primary fw-bold">Events</small>
-          <span class="">SCHEDULE</span>
+          <small class="fw-light">Events</small>
+          <span class="fs-sm fw-bold">SCHEDULE</span>
         </div>
       </div>
 
