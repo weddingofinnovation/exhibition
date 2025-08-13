@@ -135,6 +135,7 @@
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="fw-bold text-danger">LIVE matches</span>
           </div>
+
           <div class="p-3 bg-secondary rounded d-flex justify-content-between">
             <div>
               <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
@@ -142,6 +143,7 @@
             </div>
             <span class="fs-4">→</span>
           </div>
+
         </div>
       </div>
     </div>
@@ -185,14 +187,16 @@
           <div class="d-flex justify-content-between align-items-center mb-2">
             <h6 class="mb-0">LIVE matches</h6>
           </div>
+
           <div class="card bg-dark border border-danger text-white mb-2">
-            <div class="card-body py-2">
-              <span class="badge bg-danger me-2">LIVE</span>
-              <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
+            <div>
+              <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
               <div class="small text-muted">LCK 2025 Season</div>
             </div>
             <span class="fs-4">→</span>
+            
           </div>
+
         </div>
       </div>
     </div>
