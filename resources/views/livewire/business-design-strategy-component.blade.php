@@ -317,10 +317,8 @@
             </div>
 
             <!-- Arrow cell on the right -->
-            <div class="d-flex align-items-center justify-content-center"
-                style="width:48px;background:rgba(255,255,255,0.06);">
-              <span class="fs-5 text-white-50">→</span>
-            </div>
+            <div class="arrow">➜</div>
+            
           </div>
 
           <div class="match-card">
