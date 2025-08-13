@@ -54,8 +54,8 @@
       <div class="d-flex align-items-center bg-dark rounded-pill px-3 py-2 text-white">
         <img src="icon4.png" alt="Analytics" class="me-2" width="24">
         <div class="d-flex flex-column lh-1">
-          <small class="text-primary fw-bold">Up-to-date</small>
-          <span class="">ANALYTICS</span>
+          <small class="fw-light">Up-to-date</small>
+          <span class="fs-sm fw-bold">ANALYTICS</span>
         </div>
       </div>
 
