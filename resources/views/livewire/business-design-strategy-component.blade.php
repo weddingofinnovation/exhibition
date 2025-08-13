@@ -230,7 +230,7 @@
             <span class="fw-bold text-danger">LIVE matches</span>4
           </div>
 
-          <div class="p-3 bg-dark rounded d-flex justify-content-between">
+          <!-- <div class="p-3 bg-dark rounded d-flex justify-content-between">
             <div>
               <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
               <div class="small text-muted">LCK 2025 Season</div>
@@ -247,58 +247,8 @@
               </div>
               <span class="fs-4">→</span>
             </div>
-          </div>
+          </div> -->
 
-          <div class="live-card">
-            <div class="live-label">LIVE</div>
-            <div class="match-info">
-              <div class="teams">
-                <span class="team">T1</span> VS <span class="team">KT</span>
-              </div>
-              <div class="league">LCK 2025 Season</div>
-            </div>
-            <div class="arrow">→</div>
-          </div>
-
-          <!-- Single live match row -->
-          <div class="rounded-3 overflow-hidden mb-2 d-flex align-items-stretch" style="background:#151515;">
-            <!-- FULL-HEIGHT vertical LIVE tag -->
-            <div class="d-flex justify-content-center align-items-center text-white fw-bold"
-                style="writing-mode:vertical-rl;text-orientation:mixed;
-                        background:linear-gradient(180deg,#ff4d4d 0%, #8b0000 100%);
-                        letter-spacing:.5px;">
-              LIVE
-            </div>
-
-            <!-- Match info with slight red gradient -->
-            <div class="flex-grow-1 text-white py-2 px-3 d-flex flex-column justify-content-center"
-                style="background:linear-gradient(90deg,#1e1e1f 0%, #261a1a 100%);">
-              <div class="fw-semibold">
-                <!-- optional team icons -->
-                <!-- <img src="t1.png" class="me-2" width="18"> -->
-                T1 <span class="text-muted mx-1">VS</span> KT
-              </div>
-              <div class="small text-muted">LCK 2025 Season</div>
-            </div>
-
-            <!-- Arrow cell on the right -->
-            <div class="arrow">➜</div>
-
-          </div>
-
-          <div class="match-card">
-            <!-- Part 1: LIVE -->
-            <div class="live-tag">LIVE</div>
-
-            <!-- Part 2: Info with gradient full width -->
-            <div class="match-info">
-              <div class="teams">T1 <span>VS</span> KT</div>
-              <div class="event">LCK 2025 Season</div>
-            </div>
-
-            <!-- Part 3: Arrow -->
-            <div class="arrow">➜</div>
-          </div>
 
           <!-- latest -->
            <div class="match-card">
