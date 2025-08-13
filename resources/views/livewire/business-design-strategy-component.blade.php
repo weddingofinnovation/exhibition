@@ -53,7 +53,8 @@
                         Add</a>
                   @else
                     <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" class="img-fluid rounded" 
+    style="max-width: 80px; height: auto;"></a>
                   @endif
                 </div>
               </div>
@@ -121,7 +122,8 @@
                         Add</a>
                   @else
                     <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" class="img-fluid rounded" 
+    style="max-width: 80px; height: auto;"></a>
                   @endif
                 </div>
               </div>
