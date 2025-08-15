@@ -298,10 +298,17 @@
         <!-- Upcoming tournaments -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold">Upcoming tournaments</span>
+            <span class="fw-bold">Upcoming MSME Events</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
-          <div class="p-3 bg-dark rounded">
+
+          <div class="p-3 rounded" style="background-color:#373f5059;">
+            <div class="fw-bold">Esports World Cup 2025</div>
+            <div class="text-muted small">RL</div>
+            <div class="small mt-1">14.08.25 - 17.08.25</div>
+          </div>
+          
+          <div class="p-3 rounded" style="background-color:#373f5030;">
             <div class="fw-bold">Esports World Cup 2025</div>
             <div class="text-muted small">RL</div>
             <div class="small mt-1">14.08.25 - 17.08.25</div>
