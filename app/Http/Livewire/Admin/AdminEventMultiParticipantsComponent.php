@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\association;
 use App\Models\Brand;
 use App\Models\Contact;
 use App\Models\Denco;
@@ -457,6 +458,20 @@ public function directbrandBcontact()
 
     }
    
+
+    public function asscoiationlist()
+    {
+       $upted = new Association();
+
+       $upted->type = $this->designation;
+       $upted->assoname = $this->email;
+
+       $upted->user_id = Auth::user()->id;
+       $upted->status = $this->status;
+       $upted->admstatus = $this->admstatus;
+
+       $upted->save();
+    }
 
     public function render()
     {

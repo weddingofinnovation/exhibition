@@ -6,6 +6,7 @@ use App\Mail\ContactMail;
 use App\Models\Category;
 use App\Models\Comment;
 use App\Models\Event;
+use App\Models\Eventedition;
 use App\Models\Expo;
 use App\Models\Location;
 use App\Models\Rate;
@@ -171,6 +172,54 @@ class AdminEventAddComponent extends Component
           return redirect()->back();
           $this->reset();
         }
+
+    public function editionlocktoupdatenexttimeauto($edition, $eventid)
+    {
+        $edition = Str::lower(trim($edition));
+
+    // Find existing edition for the event
+    $existing = Eventedition::where('event_id', $eventid)
+        ->where('edition', $edition)
+        ->first();
+
+    if ($existing) {
+        // Check if dates changed but edition is the same → postpone
+        if (
+            $existing->start_date != $startDate ||
+            $existing->end_date != $endDate
+        ) {
+            $existing->start_date = $startDate;
+            $existing->end_date   = $endDate;
+            $existing->status     = 'postponed'; // custom label if needed
+            $existing->save();
+
+            return 'updated_postponed';
+        }
+
+        return 'no_change';
+    }
+
+    // If no existing edition → create new
+    $event = new Eventedition();
+    $event->edition    = $edition;
+    $event->status     = '1';
+    $event->admstatus  = '1';
+    $event->event_id   = $eventid;
+    $event->user_id    = Auth::id();
+    $event->start_date = $startDate;
+    $event->end_date   = $endDate;
+    $event->save();
+
+    return 'created_new';
+    
+        $event = new Eventedition();
+        $event->edition = Str::lower(trim($edition));
+        $event->status = '1'; 
+        $event->admstatus = '1';
+        $event->event_id = $eventid;
+        $event->user_id = Auth::user()->id;
+        $event->save();
+    }
         
     public function render()
     {

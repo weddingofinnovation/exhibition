@@ -307,7 +307,7 @@
             <div class="text-muted small">RL</div>
             <div class="small mt-1">14.08.25 - 17.08.25</div>
           </div>
-          
+
           <div class="p-3 rounded" style="background-color:#373f5030;">
             <div class="fw-bold">Esports World Cup 2025</div>
             <div class="text-muted small">RL</div>
@@ -318,28 +318,8 @@
         <!-- Live matches -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold">LIVE matches</span>
+            <span class="fw-bold">Ongoing Events</span>
           </div>
-
-          <!-- <div class="p-3 bg-dark rounded d-flex justify-content-between">
-            <div>
-              <span class="badge bg-danger me-2">LIVE</span> T1 VS KT
-              <div class="small text-muted">LCK 2025 Season</div>
-            </div>
-            <span class="fs-4">→</span>
-          </div>
-
-          <div class="card bg-dark border border-danger text-white mb-2">
-            <div class="card-body py-2 d-flex justify-content-between align-items-center">
-              <div>
-                <span class="badge bg-danger me-2">LIVE</span>
-                <span class="me-2">T1</span> VS <span class="ms-2">KT</span>
-                <div class="small text-muted">LCK 2025 Season</div>
-              </div>
-              <span class="fs-4">→</span>
-            </div>
-          </div> -->
-
 
           <!-- latest -->
            <div class="match-card">
