@@ -61,6 +61,9 @@ class AdminEventMultiParticipantsComponent extends Component
 
     public $organisation;
     
+    public $assoname;
+    public $assoimage;
+    public $type;
    
     Use WithFileUploads;
 
@@ -481,7 +484,7 @@ class AdminEventMultiParticipantsComponent extends Component
         $upted->assoname = $this->assoname;
         $upted->assoimage = $this->assoimage;
         $upted->type = $this->type;
-        
+
         $upted->user_id = Auth::user()->id;
         $upted->status = $this->status;
         $upted->admstatus = $this->admstatus;
