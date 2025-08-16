@@ -489,14 +489,15 @@ class AdminEventMultiParticipantsComponent extends Component
     public function listgovermentassocaition()
     {
         $upted = new Association();
-        $upted->assoname = $this->assoname;
-        $upted->assoimage = $this->assoimage;
-        $upted->type = $this->type;
+        $upted->assoname = Str::lower(trim($this->assoname));
+        $upted->assoimage = $this->assoimage; 
+        $upted->type = Str::lower(trim($this->type));
 
         $upted->user_id = Auth::user()->id;
         $upted->status = $this->status;
         $upted->admstatus = $this->admstatus;
         $upted->save();
+        $this->reset();
     }
 
     public function render()
