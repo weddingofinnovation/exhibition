@@ -64,6 +64,14 @@ class AdminEventMultiParticipantsComponent extends Component
     public $assoname;
     public $assoimage;
     public $type;
+
+   public $findidvenue;
+   public $costrate;
+   public $stall_area;
+   public $closing_date;
+   public $approved_date;
+
+
    
     Use WithFileUploads;
 

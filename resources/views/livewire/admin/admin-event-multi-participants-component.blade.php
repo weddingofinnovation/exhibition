@@ -1063,7 +1063,7 @@
                 </div>
 
                 <div class="col col-sm-1 mb-2">
-                    <input class="form-control" type="number" placeholder="Area of stall/Booth booked" wire:model.lazy="Stall_area" > 
+                    <input class="form-control" type="number" placeholder="Area of stall/Booth booked" wire:model.lazy="stall_area" > 
                     @error( 'Stall_area' ){{ $message}}@enderror
                 </div>
 
