@@ -1085,7 +1085,33 @@
                     @error( 'approved_date' ){{ $message}}@enderror
                 </div>
 
-                <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <form wire:submit.prevent="listgovermentassocaition">
+
+                <div class="col-sm-1">
+                    <input class="form-control" type="number" placeholder="Association Name" wire:model.lazy="assoname" > 
+                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
+                    @error( 'assoname' ){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-1">
+                    <input class="form-control" type="image" placeholder="Rate Cost per sqm" wire:model.lazy="assoimage" > 
+                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
+                    @error( 'assoimage' ){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-1">
+               
+                    <input class="form-control" type="text" placeholder="type" wire:model.lazy="type" > 
+                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
+                    @error( 'type' ){{ $message}}@enderror
+                </div>
+
+                <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
             </form>
         </div>
 
