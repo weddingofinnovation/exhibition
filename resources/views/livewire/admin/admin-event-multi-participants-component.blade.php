@@ -1046,7 +1046,7 @@
                     $venueoption = DB::table('associations')->where('status', 1)->get();
                 @endphp
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <label class="form-label" for="seniority">Association</label>
                     <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
                         <option selected>Choose</option>
@@ -1057,50 +1057,50 @@
                         @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <input class="form-control" type="number" placeholder="Rate Cost per sqm" wire:model.lazy="costrate" > 
                     @error( 'costrate' ){{ $message}}@enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <input class="form-control" type="number" placeholder="Area of stall/Booth booked" wire:model.lazy="Stall_area" > 
                     @error( 'Stall_area' ){{ $message}}@enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <label class="form-label" for="cf-name">Closing Date</label>
                     <input class="form-control" type="date" placeholder="Closing Date" wire:model.lazy="closing_date" > 
                     
                     @error( 'closing_date' ){{ $message}}@enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <label class="form-label" for="cf-name">Approved Date</label>
                     <input class="form-control" type="date" placeholder="Approved Date" wire:model.lazy="approved_date" > 
                     
                     @error( 'approved_date' ){{ $message}}@enderror
                 </div>
 
-                <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
+                <button class="btn btn-primary mb-2 form-control" type="submit">Submit</button>
             </form>
         </div>
 
-        
 
-        <div class="container mb-5">
+
+        <div class="container mb-5 bg-success">
             <form wire:submit.prevent="listgovermentassocaition">
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <input class="form-control" type="number" placeholder="Association Name" wire:model.lazy="assoname" > 
                     @error( 'assoname' ){{ $message}}@enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                     <input class="form-control" type="image" placeholder="Rate Cost per sqm" wire:model.lazy="assoimage" > 
                     @error( 'assoimage' ){{ $message}}@enderror
                 </div>
 
-                <div class="col-sm-1">
+                <div class="col-sm-1 mb-2">
                
                     <input class="form-control" type="text" placeholder="type" wire:model.lazy="type" > 
                     @error( 'type' ){{ $message}}@enderror
