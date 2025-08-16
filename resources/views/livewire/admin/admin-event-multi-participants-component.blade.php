@@ -1058,7 +1058,7 @@
                 </div>
 
                 <div class="col col-sm-1 mb-2">
-                    <input class="form-control" type="number" placeholder="Rate Cost per sqm" wire:model.lazy="costrate" > 
+                    <input class="form-control" type="number" placeholder="Rate Cost per sqm" wire:model.lazy="disrate" > 
                     @error( 'costrate' ){{ $message}}@enderror
                 </div>
 
