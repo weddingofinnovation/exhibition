@@ -107,6 +107,7 @@ class AdminEventMultiParticipantsComponent extends Component
     {
         $this->slug = Str::slug($this->pavillion_name,'-');
     }
+
     public function add()
     {
         $this->validate([
@@ -426,37 +427,37 @@ class AdminEventMultiParticipantsComponent extends Component
     }
 
 
-public function directbrandBcontact()
-    {
-       $uptedetail = new Brand();
-       $uptedetail->brand_name = $this->brand_name;
-       $uptedetail->brand_logo = $this->brand_logo;
+    public function directbrandBcontact()
+        {
+        $uptedetail = new Brand();
+        $uptedetail->brand_name = $this->brand_name;
+        $uptedetail->brand_logo = $this->brand_logo;
 
-       $uptedetail->organisation = $this->organisation;
+        $uptedetail->organisation = $this->organisation;
 
-       $uptedetail->industry = $this->industry;
-       $uptedetail->user_id = Auth::user()->id;
-       $uptedetail->status = $this->status;
-       $uptedetail->save();
+        $uptedetail->industry = $this->industry;
+        $uptedetail->user_id = Auth::user()->id;
+        $uptedetail->status = $this->status;
+        $uptedetail->save();
 
 
-       $upted = new Bcontact();
-       $upted->name = $this->name;
-       $upted->designation = $this->designation;
-       $upted->email = $this->email;
-       $upted->phone = $this->phone;
-       $upted->user_id = Auth::user()->id;
+        $upted = new Bcontact();
+        $upted->name = $this->name;
+        $upted->designation = $this->designation;
+        $upted->email = $this->email;
+        $upted->phone = $this->phone;
+        $upted->user_id = Auth::user()->id;
 
-       $upted->brand_id = $uptedetail->brand_id;
+        $upted->brand_id = $uptedetail->brand_id;
 
-       $upted->status = $this->status;
-       $upted->admstatus = $this->admstatus;
-       $upted->save();
-        
-       //return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
-      // return redirect()->url()->previous();
+        $upted->status = $this->status;
+        $upted->admstatus = $this->admstatus;
+        $upted->save();
+            
+        //return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+        // return redirect()->url()->previous();
 
-    }
+        }
    
 
     public function asscoiationlist()
@@ -471,6 +472,20 @@ public function directbrandBcontact()
        $upted->admstatus = $this->admstatus;
 
        $upted->save();
+    }
+
+
+    public function listgovermentassocaition()
+    {
+        $upted = new Association();
+        $upted->assoname = $this->assoname;
+        $upted->assoimage = $this->assoimage;
+        $upted->type = $this->type;
+        
+        $upted->user_id = Auth::user()->id;
+        $upted->status = $this->status;
+        $upted->admstatus = $this->admstatus;
+        $upted->save();
     }
 
     public function render()
