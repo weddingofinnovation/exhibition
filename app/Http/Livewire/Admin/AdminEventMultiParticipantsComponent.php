@@ -66,9 +66,11 @@ class AdminEventMultiParticipantsComponent extends Component
     public $type;
 
    public $findidvenue;
-   public $costrate;
+   public $rate;
+   public $disrate;
    public $stall_area;
-   public $closing_date;
+   public $expiredate;
+
    public $approved_date;
    public $reference_id;
 
