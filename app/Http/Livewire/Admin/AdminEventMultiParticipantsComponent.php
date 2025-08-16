@@ -483,12 +483,12 @@ class AdminEventMultiParticipantsComponent extends Component
        $upted->expiredate =    $this->closing_date;
        $upted->startdate =    $this->approved_date;
 
-       $upted->event_id = Auth::user()->id;
+       $upted->event_id = $this->event_id;
        $upted->user_id = Auth::user()->id;
        $upted->status = $this->status;
-       $upted->admstatus = $this->admstatus;
+       $upted->admstatus = "1";
 
-
+       dd($upted);
        $upted->save();
     }
 
