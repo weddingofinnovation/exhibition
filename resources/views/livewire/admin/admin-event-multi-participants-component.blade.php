@@ -1048,7 +1048,7 @@
 
                 <div class="col col-sm-1 mb-2">
                     <label class="form-label" for="seniority">Association</label>
-                    <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                    <select class="form-control" type="text"   wire:model.lazy="reference_id"  id="seniority"  placeholder="Provide short title of your request">
                         <option selected>Choose</option>
                         @foreach($venueoption as $venueo)
                          <option value="{{$venueo->id}}">{{$venueo->assoname}}</option>
@@ -1069,14 +1069,14 @@
 
                 <div class="col col-sm-1 mb-2">
                     <label class="form-label" for="cf-name">Closing Date</label>
-                    <input class="form-control" type="date" placeholder="Closing Date" wire:model.lazy="closing_date" > 
+                    <input class="form-control" type="date" placeholder="Closing Date" wire:model.lazy="expiredate" > 
                     
                     @error( 'closing_date' ){{ $message}}@enderror
                 </div>
 
                 <div class="col col-sm-1 mb-2">
                     <label class="form-label" for="cf-name">Approved Date</label>
-                    <input class="form-control" type="date" placeholder="Approved Date" wire:model.lazy="approved_date" > 
+                    <input class="form-control" type="date" placeholder="Approved Date" wire:model.lazy="startdate" > 
                     
                     @error( 'approved_date' ){{ $message}}@enderror
                 </div>

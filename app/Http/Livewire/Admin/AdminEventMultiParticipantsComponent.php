@@ -475,12 +475,19 @@ class AdminEventMultiParticipantsComponent extends Component
     {
        $upted = new Association();
 
-       $upted->type = $this->designation;
-       $upted->assoname = $this->email;
+       $upted->reference_id =    $this->reference_id;
 
+       $upted->rate =    $this->rate;
+       $upted->disrate =    $this->disrate;
+       $upted->stall_area =    $this->stall_area;?
+       $upted->expiredate =    $this->closing_date;
+       $upted->startdate =    $this->approved_date;
+
+       $upted->event_id = Auth::user()->id;
        $upted->user_id = Auth::user()->id;
        $upted->status = $this->status;
        $upted->admstatus = $this->admstatus;
+
 
        $upted->save();
     }
@@ -488,15 +495,28 @@ class AdminEventMultiParticipantsComponent extends Component
 
     public function listgovermentassocaition()
     {
-        $upted = new Association();
-        $upted->assoname = Str::lower(trim($this->assoname));
-        $upted->assoimage = $this->assoimage; 
-        $upted->type = Str::lower(trim($this->type));
+        $this->validate([
+            'assoname' => 'required|string|max:255|unique:associations,assoname',
+            'assoimage' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'type' => 'required|string|max:100',
+            'status' => 'required|boolean',
+        ]);
 
-        $upted->user_id = Auth::user()->id;
-        $upted->status = $this->status;
-        $upted->admstatus = $this->admstatus;
-        $upted->save();
+        $association = new Association();
+        $association->assoname = Str::lower(trim($this->assoname));
+
+        if ($this->assoimage) {
+            $association->assoimage = $this->assoimage->store('associations', 'public');
+        }
+
+        $association->type = Str::lower(trim($this->type));
+        $association->user_id = Auth::id();
+        $association->status = $this->status;
+        $association->admstatus = "1";
+        $association->save();
+
+        session()->flash('success', 'Government association added successfully.');
+
         $this->reset();
     }
 
