@@ -1096,7 +1096,7 @@
                 </div>
 
                 <div class="col-sm-1 mb-2">
-                    <input class="form-control" type="image" placeholder="Rate Cost per sqm" wire:model.lazy="assoimage" > 
+                    <input class="form-control" type="file" placeholder="" wire:model.lazy="assoimage" > 
                     @error( 'assoimage' ){{ $message}}@enderror
                 </div>
 
