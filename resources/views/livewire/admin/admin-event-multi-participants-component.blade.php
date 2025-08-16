@@ -1058,16 +1058,12 @@
                 </div>
 
                 <div class="col-sm-1">
-                    <label class="form-label" for="cf-name">Rate Cost per sqm</label>
                     <input class="form-control" type="number" placeholder="Rate Cost per sqm" wire:model.lazy="costrate" > 
-                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
                     @error( 'costrate' ){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-1">
-                    <label class="form-label" for="cf-name">Area of stall/Booth booked</label>
                     <input class="form-control" type="number" placeholder="Area of stall/Booth booked" wire:model.lazy="Stall_area" > 
-                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
                     @error( 'Stall_area' ){{ $message}}@enderror
                 </div>
 
@@ -1089,25 +1085,22 @@
             </form>
         </div>
 
-        <div class="container">
+        <div class="container mb-5">
             <form wire:submit.prevent="listgovermentassocaition">
 
                 <div class="col-sm-1">
                     <input class="form-control" type="number" placeholder="Association Name" wire:model.lazy="assoname" > 
-                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
                     @error( 'assoname' ){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-1">
                     <input class="form-control" type="image" placeholder="Rate Cost per sqm" wire:model.lazy="assoimage" > 
-                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
                     @error( 'assoimage' ){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-1">
                
                     <input class="form-control" type="text" placeholder="type" wire:model.lazy="type" > 
-                    <a href="" clas="btn btn-primary btn-sm">Verify</a>
                     @error( 'type' ){{ $message}}@enderror
                 </div>
 
