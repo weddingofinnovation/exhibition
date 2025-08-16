@@ -483,8 +483,8 @@ class AdminEventMultiParticipantsComponent extends Component
        $upted->rate =    $this->rate;
        $upted->disrate =    $this->disrate;
        $upted->stall_area =    $this->stall_area;
-       $upted->expiredate =    $this->closing_date;
-       $upted->startdate =    $this->approved_date;
+       $upted->expiredate =    $this->expiredate;
+       $upted->startdate =    $this->startdate;
 
        $upted->event_id = $this->event_id;
        $upted->user_id = Auth::user()->id;
