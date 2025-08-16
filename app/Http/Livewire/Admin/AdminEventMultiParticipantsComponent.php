@@ -70,6 +70,7 @@ class AdminEventMultiParticipantsComponent extends Component
    public $stall_area;
    public $closing_date;
    public $approved_date;
+   public $reference_id;
 
 
    
