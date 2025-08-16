@@ -1091,12 +1091,12 @@
             <form wire:submit.prevent="listgovermentassocaition">
 
                 <div class="col-sm-1 mb-2">
-                    <input class="form-control" type="number" placeholder="Association Name" wire:model.lazy="assoname" > 
+                    <input class="form-control" type="text" placeholder="Association Name" wire:model.lazy="assoname" > 
                     @error( 'assoname' ){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-1 mb-2">
-                    <input class="form-control" type="file" wire:model.lazy="assoimage" > 
+                    <input class="form-control" type="file" wire:model="assoimage" > 
                     @error( 'assoimage' ){{ $message}}@enderror
                 </div>
 
