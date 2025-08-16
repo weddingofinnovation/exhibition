@@ -1087,7 +1087,7 @@
 
 
 
-        <div class="container mb-5 bg-success">
+        <div class="container mb-5">
             <form wire:submit.prevent="listgovermentassocaition">
 
                 <div class="col-sm-1 mb-2">
