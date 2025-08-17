@@ -301,19 +301,20 @@
             <span class="fw-bold">Upcoming MSME Events</span>
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
+                  @php
+                    $findmsme = DB::table('associations')
+                            ->where('reference_id', 1)
+                            ->pluck('event_id'); // just association IDs
 
-          $findmsme = DB::table('associations')
-                  ->where('reference_id', 1)
-                  ->pluck('event_id'); // just association IDs
+                        $events = DB::table('events')
+                            ->whereIn('id', $findmsme)
+                            ->get();
+                  @endphp
 
-              $events = DB::table('events')
-                  ->whereIn('id', $findmsme)
-                  ->get();
-
-                  @foreach($events as $msmeevents)
+                  @foreach($events as $franchise)
 
                     <div class="p-3 rounded" style="background-color:#373f5059;">
-                      <div class="fw-bold">{{ucwords(trans(Str::limit($msmeevents->eventname, 24)))}}</div>
+                      <div class="fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
                       <div class="text-muted small">RL</div>
                       <div class="small mt-1">
                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
