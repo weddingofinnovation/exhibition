@@ -1043,7 +1043,9 @@
         <div class="container mb-5">
             <form wire:submit.prevent="asscoiationlist">
                 @php 
-                    $venueoption = DB::table('associations')->where('status', 1)->get();
+                    $venueoption = DB::table('associations')
+                                    ->whereNotNull('assoname')
+                                    ->get();
                 @endphp
 
                 <div class="col col-sm-1 mb-2">

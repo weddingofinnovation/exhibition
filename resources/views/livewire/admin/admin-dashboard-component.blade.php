@@ -1264,8 +1264,10 @@
 
           @endphp
 
-          {{$findmsme}} {{$events}}
+          
+
         <div class="container">
+          {{$findmsme}} {{$events}}
           <div class="row mb-5 pb-2">
             @foreach ($events as $franchise) 
               <div class="container  ">
