@@ -225,19 +225,16 @@
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
 
-          <!-- <div class="p-3 bg-secondary rounded">
-            <div class="fw-bold">PUBG Players Cup Americas #11</div>
-            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
-            <div class="small mt-1">09.08.25 - 11.08.25</div>
-          </div> -->
-
           @foreach( $descRankingViews as $franchise)
               @if($franchise->updated_at->format("Y-m-d") == $mytime)
                     <div class="p-3 rounded d-flex justify-content-between align-items-center" style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
                       <!-- Left content -->
-                      <div>
-                        <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                        <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                       <div class="d-flex align-items-center">
+                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
+                          <div>
+                            <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                          </div>
                       </div>
                       
                       <!-- Right content (date) -->
@@ -251,47 +248,27 @@
                         @endif
                       </div>
                     </div>
-                    @else
+              @else
                       <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
-                      <!-- Left content -->
-                      <div>
-                        <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                        <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
-                      </div>
-                      
-                      <!-- Right content (date) -->
-                      <div class="small text-end">
-                        <!-- 09.08.25 - 11.08.25 -->
+                          <!-- Left content -->
+                          <div>
+                            <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                          </div>
+                          
+                          <!-- Right content (date) -->
+                          <div class="small text-end">
+                            <!-- 09.08.25 - 11.08.25 -->
 
-                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @else
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @endif
+                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                            @else
+                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                            @endif
+                          </div>
                       </div>
-                    </div>
-                    @endif
+              @endif
           @endforeach
-
-
-          <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
-   
-            <!-- Left: Icon + text -->
-            <div class="d-flex align-items-center">
-              <img src="icon.png" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
-              <div>
-                <div class="fw-bold small">PUBG Players Cup Americas #11</div>
-                <div class="text-muted fs-xss">PUBG, PUBG Players Tour, KRAFTON</div>
-              </div>
-            </div>
-            
-            <!-- Right: Date -->
-            <div class="small text-end">
-              09.08.25 - 11.08.25
-            </div>
-          
-          </div>
-
 
         </div>
 
