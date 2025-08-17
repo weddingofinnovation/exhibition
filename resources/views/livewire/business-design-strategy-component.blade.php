@@ -233,7 +233,7 @@
 
           @foreach( $descRankingViews as $franchise)
               @if($franchise->updated_at->format("Y-m-d") == $mytime)
-                    <div class="p-3 bg-dark rounded d-flex justify-content-between align-items-center">
+                    <div class="p-3 rounded d-flex justify-content-between align-items-center" style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
                       <!-- Left content -->
                       <div>
                         <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
@@ -313,9 +313,8 @@
 
                   @foreach($events as $franchise)
 
-                    <div class="p-3 rounded" 
-         style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
-         
+                    <div class="p-3 rounded" style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
+
                       <div class="fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
                       <div class="text-muted small">RL</div>
                       <div class="small mt-1">
@@ -328,13 +327,6 @@
                     </div>
 
                   @endforeach
-
-
-          <div class="p-3 rounded" style="background-color:#373f5030;">
-            <div class="fw-bold">Esports World Cup 2025</div>
-            <div class="text-muted small">RL</div>
-            <div class="small mt-1">14.08.25 - 17.08.25</div>
-          </div>
         </div>
 
         <!-- Live matches -->
