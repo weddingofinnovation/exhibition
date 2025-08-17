@@ -1259,7 +1259,7 @@
                   ->pluck('id'); // just association IDs
 
               $events = DB::table('events')
-                  ->whereIn('association_id', $findmsme)
+                  ->whereIn('id', $findmsme)
                   ->get();
 
           @endphp
