@@ -428,8 +428,9 @@
             </div>
           </div>
         </div>
-      <!--end Google-->  
-<div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
+      <!--end Google--> 
+       
+            <div class="container page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
 
               <h2 class="fw-bold">Esports Tournaments - Statistics and Analytics</h2>
               
