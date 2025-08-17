@@ -492,8 +492,6 @@ class AdminEventMultiParticipantsComponent extends Component
        $upted->user_id = Auth::user()->id;
        $upted->status = $this->status;
        $upted->admstatus = "1";
-
-       dd($upted);
        $upted->save();
     }
 
