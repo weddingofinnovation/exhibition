@@ -302,11 +302,30 @@
             <button class="btn btn-secondary btn-sm">More</button>
           </div>
 
-          <div class="p-3 rounded" style="background-color:#373f5059;">
-            <div class="fw-bold">Esports World Cup 2025</div>
-            <div class="text-muted small">RL</div>
-            <div class="small mt-1">14.08.25 - 17.08.25</div>
-          </div>
+          $findmsme = DB::table('associations')
+                  ->where('reference_id', 1)
+                  ->pluck('event_id'); // just association IDs
+
+              $events = DB::table('events')
+                  ->whereIn('id', $findmsme)
+                  ->get();
+
+                  @foreach($events as $msmeevents)
+
+                    <div class="p-3 rounded" style="background-color:#373f5059;">
+                      <div class="fw-bold">{{ucwords(trans(Str::limit($msmeevents->eventname, 24)))}}</div>
+                      <div class="text-muted small">RL</div>
+                      <div class="small mt-1">
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @else
+                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                        @endif
+                      </div>
+                    </div>
+
+                  @endforeach
+
 
           <div class="p-3 rounded" style="background-color:#373f5030;">
             <div class="fw-bold">Esports World Cup 2025</div>
@@ -371,6 +390,13 @@
 
 
    
+$findmsme = DB::table('associations')
+                  ->where('reference_id', 1)
+                  ->pluck('event_id'); // just association IDs
+
+              $events = DB::table('events')
+                  ->whereIn('id', $findmsme)
+                  ->get();
 
 
 

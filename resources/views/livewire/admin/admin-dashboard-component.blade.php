@@ -1252,8 +1252,7 @@
 
       @if($board == "msme")
           @php 
-            //$findmsme = table::DB('associations')->where('reference_id', '1')->get();
-
+            
               $findmsme = DB::table('associations')
                   ->where('reference_id', 1)
                   ->pluck('event_id'); // just association IDs
