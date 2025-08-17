@@ -4,51 +4,51 @@
 
     <main>
 
-<style>
-            .tns-outer {
-              padding: 0 !important;
-              margin: 0 !important;
+      <style>
+          .tns-outer {
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+
+          .tns-nav, .tns-controls {
+            display:none !important;
+          }
+
+          .delete-notification {
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            top: 5px;
+            right: 5px;
+          }
+
+          .used-notification {
+            width: 15px;
+            height: 15px;
+            background-color: green;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+          }
+
+          @media (max-width: 768px) {
+            .delete-notification {
+              width: 10px;
+              height: 10px;
             }
 
-            .tns-nav, .tns-controls {
-              display:none !important;
+            .used-notification {
+              width: 10px;
+              height: 10px;
             }
 
-  .delete-notification {
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    border-radius: 50%;
-    top: 5px;
-    right: 5px;
-  }
-
-  .used-notification {
-    width: 15px;
-    height: 15px;
-    background-color: green;
-    border-radius: 50%;
-    top: 5px;
-    left: 5px;
-  }
-
-  @media (max-width: 768px) {
-    .delete-notification {
-      width: 10px;
-      height: 10px;
-    }
-
-    .used-notification {
-      width: 10px;
-      height: 10px;
-    }
-
-    img.img-fluid {
-      height: 80px; /* Adjust image height for mobile */
-      object-fit: cover;
-    }
-  }
-</style>
+            img.img-fluid {
+              height: 80px; /* Adjust image height for mobile */
+              object-fit: cover;
+            }
+          }
+      </style>
 
       <!--google-->
         <div class="bg-secondary d-lg-none">
@@ -430,9 +430,10 @@
         </div>
       <!--end Google-->  
 
-      <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
+      <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
         <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
           <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start">
                 <li class="breadcrumb-item"><a class="text-nowrap" href="{{asset('/')}}"><i class=" bi bi-house-fill"></i>Home</a></li>
@@ -441,6 +442,65 @@
                 <li class="breadcrumb-item text-nowrap active" aria-current="page"><i class=" bi bi-chevron-right"></i>Business </li>
               </ol>
             </nav>
+            <div class="container mt-4">
+  <h2 class="fw-bold">Esports Tournaments - Statistics and Analytics</h2>
+  
+  <!-- Filter Section -->
+  <div class="filter-box mt-4">
+    <div class="row g-3">
+      <div class="col-md-3">
+        <select class="form-select bg-dark text-white">
+          <option selected>All Games / Categories</option>
+          <option>LoL</option>
+          <option>CS2</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select bg-dark text-white">
+          <option selected>All Publishers</option>
+          <option>Riot</option>
+          <option>Valve</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select bg-dark text-white">
+          <option selected>All Time</option>
+          <option>2023</option>
+          <option>2024</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-select bg-dark text-white">
+          <option selected>All Teams</option>
+          <option>Navi</option>
+          <option>OG</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="mt-3">
+      <button class="tag-btn">Esports only</button>
+      <button class="tag-btn">Mobile Esports</button>
+      <button class="tag-btn">Female Esports</button>
+      <button class="tag-btn">Battle Royale</button>
+      <button class="tag-btn">Collegiate</button>
+    </div>
+  </div>
+
+  <!-- Search and Sorting -->
+  <div class="d-flex align-items-center justify-content-between mt-3">
+    <div class="search-bar w-50">
+      <input type="text" class="form-control" placeholder="Search tournament by name">
+    </div>
+    <select class="form-select bg-dark text-white w-auto">
+      <option selected>Sort by: Event Date</option>
+      <option>Most Viewed</option>
+      <option>Top Teams</option>
+    </select>
+    <button class="btn btn-danger">LIVE Matches</button>
+  </div>
+</div>
           </div>
           <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
             <h1 class="h3 text-light mb-0"></h1>
