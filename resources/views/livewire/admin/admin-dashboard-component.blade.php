@@ -1256,7 +1256,7 @@
 
               $findmsme = DB::table('associations')
                   ->where('reference_id', 1)
-                  ->pluck('id'); // just association IDs
+                  ->pluck('event_id'); // just association IDs
 
               $events = DB::table('events')
                   ->whereIn('id', $findmsme)
