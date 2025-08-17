@@ -313,7 +313,9 @@
 
                   @foreach($events as $franchise)
 
-                    <div class="p-3 rounded" style="background-color:#373f5059;">
+                    <div class="p-3 rounded" 
+         style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
+         
                       <div class="fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
                       <div class="text-muted small">RL</div>
                       <div class="small mt-1">
