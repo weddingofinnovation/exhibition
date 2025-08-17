@@ -1263,6 +1263,8 @@
                   ->get();
 
           @endphp
+
+          {{$findmsme}} {{$events}}
         <div class="container">
           <div class="row mb-5 pb-2">
             @foreach ($events as $franchise) 
