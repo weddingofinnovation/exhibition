@@ -779,10 +779,12 @@
     
       <!--event stop--> 
       @if($board == 'findSearch')
-        @foreach($findSearch as $searcho)
-         {{$searcho->search}}
-         <hr>
-        @endforeach
+        <div class ="container">
+          @foreach($findSearch as $searcho)
+            {{$searcho->search}}
+            <hr>
+          @endforeach
+        </div>
       @endif
 
       @if($board == 'visitcard')
