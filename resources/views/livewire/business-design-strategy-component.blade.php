@@ -233,7 +233,7 @@
                         <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
                           <div>
                             <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                            <div class="text-muted small">PUBG, PUBG Players Tour, KRAFTON</div>
+                            <div class="text-muted small">{{ucwords(trans($eventoi -> city))}}</div>
                           </div>
                       </div>
                       
