@@ -1117,7 +1117,7 @@ public $selectedYear;
 
       $photos = Photo::get();
 
-      $findSearch = Viewso::whereNotNull('search')->orderBy('created_at','ASC')->get();
+      $findSearch = Viewso::whereNotNull('search')->orderBy('created_at','desc')->get();
 
       $findoorganizer = Brand::where('dtype','organiser')->orderBy('brand_name','ASC')->get();
 
