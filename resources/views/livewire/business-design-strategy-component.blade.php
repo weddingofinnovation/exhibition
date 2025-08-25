@@ -312,7 +312,7 @@
           </div>
 
           <!-- latest -->
-           <div class="match-card">
+          <div class="match-card">
             <!-- LIVE Strip -->
             <div class="live-strip">
               <span>LIVE</span>
@@ -331,26 +331,63 @@
 
           
           @foreach($evento as $franchise)
-            <div class="event-row">
-                <div class="event-details">
-                    <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Logo" class="event-logo">
-                    <div>
-                        <div class="event-title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                        <div class="event-date">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @else
-                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                        @endif</div>
-                        
+              @if ($current >= $notifyDate && $current < $to)
+                  notify // event is in upcoming notify window (within 3 weeks)
+                  <div class="event-row">
+                      <div class="event-details">
+                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Logo" class="event-logo">
+                          <div>
+                              <div class="event-title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                              <div class="event-date">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif</div>
+                              
+                          </div>
+                      </div>
+                      <div class="event-stats">
+                          <div class="event-viewers">{{$franchise->view_count}}M</div>
+                          <div class="progress-line">
+                              <div class="progress-fill" style="width: 80%;"></div>
+                          </div>
+                      </div>
+                  </div>
+              @elseif ($current < $notifyDate)
+                  upcom  // event is more than 3 weeks away (still far future)
+              @elseif ($current == $to && $current < $from)
+                  first
+                    <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
                     </div>
-                </div>
-                <div class="event-stats">
-                    <div class="event-viewers">{{$franchise->view_count}}M</div>
-                    <div class="progress-line">
-                        <div class="progress-fill" style="width: 80%;"></div>
-                    </div>
-                </div>
-            </div>
+              @elseif ($current > $to && $current < $from)
+                  ongoi
+              @elseif ($current > $to && $current == $from)
+                  last
+              @elseif ($current > $to && $current > $from)
+                  ended
+              @endif
+
+            
+
           @endforeach
 
 
