@@ -781,7 +781,7 @@
       @if($board == 'findSearch')
         <div class ="container">
           @foreach($findSearch as $searcho)
-            {{$searcho->search}}
+            {{$searcho->search}}  | {{$searcho->created_at}}
             <hr>
           @endforeach
         </div>

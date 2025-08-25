@@ -1117,7 +1117,8 @@ public $selectedYear;
 
       $photos = Photo::get();
 
-      $findSearch = Viewso::whereNotNull('search')->get();
+      $findSearch = Viewso::whereNotNull('search')->orderBy('created_at','ASC')->get();
+
       $findoorganizer = Brand::where('dtype','organiser')->orderBy('brand_name','ASC')->get();
 
         return view('livewire.admin.admin-dashboard-component',[ 'findoorganizer' => $findoorganizer, 'findSearch' => $findSearch,'photos' => $photos, 'ticket' => $ticket, 'getContact'=> $getContact,'checkSelected'=> $checkSelected, 'counteventWithCategory'=> $counteventWithCategory,'resultAdded'=> $resultAdded, 'searchcat'=> $searchcat, 'searchBrandcat'=> $searchBrandcat,'businessOrder' => $businessOrder,'upcomingViews' => $upcomingViews, 'current'=>$current, 'mytime' => $mytime,'descRankingViews' => $descRankingViews,'eventShtdesc' => $eventShtdesc, 'hastago' => $hastago, 'visitors' => $visitors,'magazine' => $magazine, 'nEwComment' => $nEwComment,'findInspection' => $findInspection,'blogfindo' => $blogfindo,'searchId' => $searchId,'expireplan' => $expireplan,'searchCat' => $searchCat,'mymonth' => $mymonth,'monthwise' => $monthwise,'eventthreemonth' => $eventthreemonth,'eventmonth' => $eventmonth,'eventweek' => $eventweek, 'eventomorrow'=>$eventomorrow, 'evento'=>$evento,'optios'=>$optios,'orders'=>$orders,'coupons'=>$coupons,'events'=>$events,'expoaward'=>$expoaward,'fattributes'=>$fattributes,'jobs'=>$jobs,'franchises'=>$franchises,'resume'=>$resume,'users'=>$users,
