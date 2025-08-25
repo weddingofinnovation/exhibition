@@ -331,6 +331,12 @@
 
           
           @foreach($evento as $franchise)
+                    @php
+                      $to = strtotime($eventoi->startdate);
+                      $from = strtotime($eventoi->enddate);
+                      $notifyDate = strtotime("-3 weeks", $to); 
+                    @endphp
+
               @if ($current >= $notifyDate && $current < $to)
                   notify // event is in upcoming notify window (within 3 weeks)
                   <div class="event-row">

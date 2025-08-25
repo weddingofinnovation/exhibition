@@ -17,6 +17,6 @@ class BusinessDesignStrategyComponent extends Component
 
         $evento = Event::where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(15)->get();
        
-        return view('livewire.business-design-strategy-component',['evento'=> $evento, 'descRankingViews' => $descRankingViews,  'current' => $current ,'upcomingViews' => $upcomingViews ,'mytime' => $mytime])->layout('layouts.eblog');
+        return view('livewire.business-design-strategy-component',[ 'evento'=> $evento, 'descRankingViews' => $descRankingViews,  'current' => $current ,'upcomingViews' => $upcomingViews ,'mytime' => $mytime])->layout('layouts.eblog');
     }
 }
