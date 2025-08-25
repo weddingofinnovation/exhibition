@@ -292,7 +292,7 @@
                     <div class="p-3 rounded" style="background-color: {{ $loop->odd ? '#373f5059' : '#373f5030' }};">
 
                       <div class="fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                      <div class="text-muted small">RL</div>
+                      <!-- <div class="text-muted small">RL</div> -->
                       <div class="small mt-1">
                         @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
                           {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
