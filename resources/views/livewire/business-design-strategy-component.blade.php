@@ -346,7 +346,7 @@
                     </div>
                 </div>
                 <div class="event-stats">
-                    <div class="event-viewers">1.58M</div>
+                    <div class="event-viewers">{{$franchise->view_count}}M</div>
                     <div class="progress-line">
                         <div class="progress-fill" style="width: 80%;"></div>
                     </div>
@@ -362,13 +362,13 @@
 
 
    
-$findmsme = DB::table('associations')
+<!-- $findmsme = DB::table('associations')
                   ->where('reference_id', 1)
                   ->pluck('event_id'); // just association IDs
 
               $events = DB::table('events')
                   ->whereIn('id', $findmsme)
-                  ->get();
+                  ->get(); -->
 
 
 
