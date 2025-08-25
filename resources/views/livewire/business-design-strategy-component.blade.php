@@ -197,19 +197,19 @@
 
         <div class="col border-end">
           <div class="fw-bold fs-lg">74 918</div>
-          <div class="fs-xxs">TOURNAMENTS & EVENTS</div>
+          <div class="fs-xxs">EXHIBITION</div>
         </div>
         <div class="col border-end">
           <div class="fw-bold fs-lg">320 466</div>
-          <div class="fs-xxs">MATCHES</div>
+          <div class="fs-xxs">AWARDS</div>
         </div>
         <div class="col border-end">
           <div class="fw-bold fs-lg">51 293</div>
-          <div class="fs-xxs">TEAMS</div>
+          <div class="fs-xxs">SPACES</div>
         </div>
         <div class="col border-end">
           <div class="fw-bold fs-lg">80 248</div>
-          <div class="fs-xxs">PLAYERS</div>
+          <div class="fs-xxs">EXHIBITORS</div>
         </div>
         <div class="col border-end">
           <div class="fw-bold fs-lg">152</div>
@@ -233,7 +233,7 @@
                         <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Icon" class="me-2" style="width: 32px; height: 32px;">
                           <div>
                             <div class="small fw-bold">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
-                            <div class="text-muted small">{{ucwords(trans($franchise -> city))}}</div>
+                            <div class="text-muted small">{{ucwords(trans($eventoi -> venue))}}, {{ucwords(trans($franchise -> city))}}</div>
                           </div>
                       </div>
                       
@@ -269,7 +269,6 @@
                       </div>
               @endif
           @endforeach
-
         </div>
 
         <!-- Upcoming tournaments -->
