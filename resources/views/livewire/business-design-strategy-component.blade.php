@@ -386,10 +386,73 @@
                     </div>
               @elseif ($current > $to && $current < $from)
                   ongoi
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
               @elseif ($current > $to && $current == $from)
                   last
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
               @elseif ($current > $to && $current > $from)
                   ended
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
               @endif
 
             
