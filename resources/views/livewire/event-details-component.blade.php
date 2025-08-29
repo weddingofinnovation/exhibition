@@ -4375,9 +4375,10 @@
                                     <div class="small text-muted text-capitalize">{{Carbon::parse ($franchise->startdate)->format('M')}} </div>
 
                                 @endif 
+                               
                                 @php 
-                                  $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                  $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                  $from = $franchise->startdate;
+                                  $to = $franchise->enddate;
                                   $name = $franchise->eventname;
                                   $venue = $franchise->venue;
                                   $city = $franchise->city;
