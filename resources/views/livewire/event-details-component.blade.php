@@ -4377,8 +4377,8 @@
                                 @endif 
                                
                                 @php 
-                                  $from = $franchise->startdate;
-                                  $to = $franchise->enddate;
+                                  $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
+                                  $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
                                   $name = $franchise->eventname;
                                   $venue = $franchise->venue;
                                   $city = $franchise->city;
