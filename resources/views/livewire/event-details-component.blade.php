@@ -4604,7 +4604,7 @@
                                         href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                 @endif  
                                 <!-- calender -->
-                              <a class="btn btn-primary btn-sm" href="#">Add to Calender</a>
+                              <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
                               <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
                             </li>
                       </ul>
