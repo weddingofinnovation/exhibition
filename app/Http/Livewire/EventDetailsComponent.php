@@ -125,20 +125,18 @@ class EventDetailsComponent extends Component
       // $data = session()->all();
        //dd($data);
       
-        $findEvent = $event->id;
-        
+        // $findEvent = $event->id;
+        // $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
+        // $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
 
-        $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
-        $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
+        // $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
+        // $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
 
-        $name = $event->eventname;
-        $venue = $event->venue;
-        $city = $event->city;
-        $country = $event->country;
-        $link = Link::create($name, $from, $to)
-                      ->description($name)
-                      ->address($venue . ', ' . $city . ', ' . $country);
-
+        // $name = $event->eventname;
+        // $venue = $event->venue;
+        // $city = $event->city;
+        // $country = $event->country;
+        // $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
 
 
         // $finrty = $detailProductprice->count();
