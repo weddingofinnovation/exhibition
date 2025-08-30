@@ -3877,8 +3877,12 @@
                   use Carbon\Carbon;
                   $startto = Carbon::parse ($event->startdate);
                   $endfrom = Carbon::parse ($event->enddate);
-
                   $now= carbon::now();
+                  $name = $event->eventname;
+                    $venue = $event->venue;
+                    $city = $event->city;
+                    $country = $event->country;
+                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue, $city, $country);
                 @endphp
 
                 @if ($now ->lt($startto))
@@ -3985,20 +3989,7 @@
                       <li class="d-flex">
                         <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
                         <!-- updated calender -->
-                                @php 
-                                  $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
-                                  $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
-
-                                  $name = $event->eventname;
-                                  $venue = $event->venue;
-                                  $city = $event->city;
-                                  $country = $event->country;
-                                  
-                                  
-                                @endphp
-                                {{$event->startdate}} {{$event->enddate}}
-
-                                {{$from}} {{$to}}
+                             {{$link->google()}}
                         <a class ="btn btn-sm btn-primary mx-1" href="#">Add to Calender</a> 
                         <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                         <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
