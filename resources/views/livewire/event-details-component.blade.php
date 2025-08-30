@@ -4390,8 +4390,7 @@
                                   
                                 @endphp
                                   
-                                <!-- calender -->
-                                    <a href="#"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                                    <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
                             </div>
 
                             <div class="col-7  p-0">
