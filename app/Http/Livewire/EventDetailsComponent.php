@@ -126,8 +126,10 @@ class EventDetailsComponent extends Component
        //dd($data);
       
         $findEvent = $event->id;
-        $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
-        $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
+        
+
+        $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
+        $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
 
         $name = $event->eventname;
         $venue = $event->venue;
