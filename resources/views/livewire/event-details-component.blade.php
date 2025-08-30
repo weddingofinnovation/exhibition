@@ -3882,7 +3882,7 @@
                     $venue = $event->venue;
                     $city = $event->city;
                     $country = $event->country;
-                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue, $city, $country);
+                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
                 @endphp
 
                 @if ($now ->lt($startto))
@@ -4390,7 +4390,7 @@
                                   $venue = $franchise->venue;
                                   $city = $franchise->city;
                                   $country = $franchise->country;
-                                  $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                  $link = Link::create($name, $from , $to)->description($name)->address($venue . ', ' . $city . ', ' . $country);
                                   
                                 @endphp
                                   <!-- testing -->
