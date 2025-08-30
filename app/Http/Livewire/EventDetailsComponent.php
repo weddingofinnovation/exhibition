@@ -135,7 +135,10 @@ class EventDetailsComponent extends Component
         $venue = $event->venue;
         $city = $event->city;
         $country = $event->country;
-        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+        $link = Link::create($name, $from, $to)
+                      ->description($name)
+                      ->address($venue . ', ' . $city . ', ' . $country);
+
 
 
         // $finrty = $detailProductprice->count();
