@@ -4377,8 +4377,8 @@
                                 @endif 
                                
                                 @php 
-                                  $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
-                                  $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                                  $from = Carbon::parse('Y-m-d', ($franchise->startdate));
+                                  $to = Carbon::parse('Y-m-d', ($franchise->enddate));
                                   $name = $franchise->eventname;
                                   $venue = $franchise->venue;
                                   $city = $franchise->city;
