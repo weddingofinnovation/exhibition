@@ -3989,10 +3989,10 @@
                                   $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
                                   $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
 
-                                  $name = $franchise->eventname;
-                                  $venue = $franchise->venue;
-                                  $city = $franchise->city;
-                                  $country = $franchise->country;
+                                  $name = $event->eventname;
+                                  $venue = $event->venue;
+                                  $city = $event->city;
+                                  $country = $event->country;
                                   $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
                                   
                                 @endphp
