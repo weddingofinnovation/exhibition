@@ -3986,8 +3986,8 @@
                         <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
                         <!-- updated calender -->
                                 @php 
-                                  $from = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->startdate . ' 10:00:00');
-                                  $to   = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->enddate . ' 17:00:00');
+                                  $from = DateTime::createFromFormat('Y-m-d H:i:s', $event->startdate . ' 10:00:00');
+                                  $to   = DateTime::createFromFormat('Y-m-d H:i:s', $event->enddate . ' 17:00:00');
 
                                   $name = $franchise->eventname;
                                   $venue = $franchise->venue;
