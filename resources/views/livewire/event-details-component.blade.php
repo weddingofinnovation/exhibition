@@ -3984,9 +3984,19 @@
                     <ul class="list-unstyled text-light">
                       <li class="d-flex">
                         <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
-                        <!-- calender -->
+                        <!-- updated calender -->
+                                @php 
+                                  $from = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->startdate . ' 10:00:00');
+                                  $to   = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->enddate . ' 17:00:00');
 
-                        <a class ="btn btn-sm btn-primary mx-1" href="#">Add to Calender</a> 
+                                  $name = $franchise->eventname;
+                                  $venue = $franchise->venue;
+                                  $city = $franchise->city;
+                                  $country = $franchise->country;
+                                  $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+                                  
+                                @endphp
+                        <a class ="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a> 
                         <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                         <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                       </li>
@@ -4390,7 +4400,7 @@
                                   
                                 @endphp
                                   <!-- testing -->
-                                    <a href="{{$link->google()}}"><div class=" round-circle">faltu<i class="bi bi-bookmark"></i></div> </a> faltu
+                                    <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
                             </div>
 
                             <div class="col-7  p-0">
