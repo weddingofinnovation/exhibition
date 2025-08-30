@@ -3984,7 +3984,9 @@
                     <ul class="list-unstyled text-light">
                       <li class="d-flex">
                         <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
-                        <a class ="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a>
+                        <!-- calender -->
+
+                        <a class ="btn btn-sm btn-primary mx-1" href="#">Add to Calender</a> 
                         <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                         <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
                       </li>
@@ -4597,7 +4599,8 @@
                                   <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button" 
                                         href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                 @endif  
-                              <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                                <!-- calender -->
+                              <a class="btn btn-primary btn-sm" href="#">Add to Calender</a>
                               <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
                             </li>
                       </ul>
