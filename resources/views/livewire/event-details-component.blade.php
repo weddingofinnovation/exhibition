@@ -4389,7 +4389,7 @@
                                   $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
                                   
                                 @endphp
-                                  
+                                  <!-- testing -->
                                     <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
                             </div>
 
