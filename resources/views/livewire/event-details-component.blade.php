@@ -3787,7 +3787,7 @@
                   <div class="_DatePlaceWrapper_1vqbc_103">
                   <p class="_Date_1vqbc_103">9-11 APR 2024</p><p class="_Place_1vqbc_119">MEXICO CITY, MEXICO</p></div>
               </div>
-              <ul class="ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-light _HorizontalMenu_1vqbc_124 css-jjxuhz" role="menu" tabindex="0" data-menu-list="true" style="font-family: &quot;Plus Jakarta Sans&quot;;">
+              <ul class="ant-menu-overflow ant-menu ant-menu-root ant-menu-horizontal ant-menu-light _HorizontalMenu_1vqbc_124 css-jjxuhz" role="menu" tabindex="0" data-menu-list="true" style="font-family: Plus Jakarta Sans;">
                   <li class="ant-menu-overflow-item ant-menu-submenu ant-menu-submenu-horizontal _MenuItem_1vqbc_135" role="none" style="opacity: 1; order: 0;">
                       <div role="menuitem" class="ant-menu-submenu-title" tabindex="-1" aria-expanded="false" aria-haspopup="true" data-menu-id="rc-menu-uuid-60918-1-meet" aria-controls="rc-menu-uuid-60918-1-meet-popup"><span class="ant-menu-title-content">
                                   <div>
