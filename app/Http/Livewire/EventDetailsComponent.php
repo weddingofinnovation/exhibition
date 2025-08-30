@@ -125,7 +125,7 @@ class EventDetailsComponent extends Component
       // $data = session()->all();
        //dd($data);
       
-        // $findEvent = $event->id;
+        $findEvent = $event->id;
         // $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
         // $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
 
@@ -211,14 +211,15 @@ class EventDetailsComponent extends Component
          //$testi = strtotime($checkCommentop);
 
          //dd($fromdate, $todate, $checkCommentop );
-        return view('livewire.event-details-component',['exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand, 'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
+        return view('livewire.event-details-component',['exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand,
+         'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
                                                         'commentedRates' => $commentedRates,
                                                         'detailProductprice' => $detailProductprice,
                                                         'pavillion'=>$pavillion,'category'=>$category,
                                                         'rating'=> $rating,
                                                         'rate'=> $rate,
                                                         'productPrice' => $productPrice,
-                                                        'link' => $link,
+                                                        
                                                         'premium'=> $premium,
                                                         'event' => $event,
                                                         'sponSer' => $sponSer,
