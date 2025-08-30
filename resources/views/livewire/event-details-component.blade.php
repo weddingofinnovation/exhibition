@@ -3988,7 +3988,7 @@
                     <ul class="list-unstyled text-light">
                       <li class="d-flex">
                         <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
-                        <!-- updated calender -->
+                        <!-- updated calender --> check
                              {{$link->google()}}
                         <a class ="btn btn-sm btn-primary mx-1" href="#">Add to Calender</a> 
                         <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
