@@ -3996,7 +3996,7 @@
                                   
                                   
                                 @endphp
-                                {{$from}} {{$to}}
+                                {{$event->startdate}} {{$event->enddate}}
                         <a class ="btn btn-sm btn-primary mx-1" href="#">Add to Calender</a> 
                         <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
                         <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
