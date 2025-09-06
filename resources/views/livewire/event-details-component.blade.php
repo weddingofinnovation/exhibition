@@ -4391,12 +4391,13 @@
                                   $city = $franchise->city;
                                   $country = $franchise->country;
                                   
-                                  $description = $name . ' | Date: ' . $eventDate . ' | Time: ' . $eventTime;
+                                  
 
                                   $link = Link::create($name, $from , $to)->description($name)->address($venue . ', ' . $city . ', ' . $country);
                                   
                                 @endphp
-                                  <!-- testing -->
+                                  <!-- testing --> 
+                                   {{--$description = $name . ' | Date: ' . $eventDate . ' | Time: ' . $eventTime;--}}
                                     <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
                             </div>
 
