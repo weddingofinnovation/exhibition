@@ -482,7 +482,9 @@ class ExhibitComponent extends Component
         $venue = $event->venue;
         $city = $event->city;
         $country = $event->country;
-        $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
+
+        dd($from, $to);
+        //$link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
               
        $franchise = $findevent; 
        

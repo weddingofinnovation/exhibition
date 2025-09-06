@@ -4390,6 +4390,9 @@
                                   $venue = $franchise->venue;
                                   $city = $franchise->city;
                                   $country = $franchise->country;
+                                  
+                                  $description = $name . ' | Date: ' . $eventDate . ' | Time: ' . $eventTime;
+
                                   $link = Link::create($name, $from , $to)->description($name)->address($venue . ', ' . $city . ', ' . $country);
                                   
                                 @endphp
