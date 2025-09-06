@@ -475,19 +475,19 @@ class ExhibitComponent extends Component
        
         $event = Event::where('id', $findID)->first();
         //$findEvent = $event->id;
-        $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
-        $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
+        // $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
+        // $to = DateTime::createFromFormat('Y-m-d', ($event->enddate));
 
-        $name = $event->eventname;
-        $venue = $event->venue;
-        $city = $event->city;
-        $country = $event->country;
+        // $name = $event->eventname;
+        // $venue = $event->venue;
+        // $city = $event->city;
+        // $country = $event->country;
 
-        dd($from, $to);
+        //dd($from, $to);
         //$link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
               
        $franchise = $findevent; 
        
-        return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise,'link' => $link]);
+        return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise]);
     }
 }
