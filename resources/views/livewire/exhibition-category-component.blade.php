@@ -431,7 +431,7 @@
       <!--end Google--> 
        
             <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
-
+            <div class="container">
               <h2 class="fw-bold">Esports Tournaments - Statistics and Analytics</h2>
               
               <!-- Filter Section -->
@@ -489,6 +489,7 @@
                 </select>
                 <button class="btn btn-danger">LIVE Matches</button>
               </div>
+            </div>
             </div>
 
     
