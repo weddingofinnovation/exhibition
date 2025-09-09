@@ -429,67 +429,161 @@
           </div>
         </div>
       <!--end Google--> 
-       
+       <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000;">
+  <div class="container">
+    <!-- Title -->
+    <h2 class="fw-bold text-white">Esports Tournaments - Statistics and Analytics</h2>
+
+    <!-- Filter Section -->
+    <div class="filter-box mt-4">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <select class="form-select custom-select">
+            <option selected>All Games / Categories</option>
+            <option>LoL</option>
+            <option>CS2</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select custom-select">
+            <option selected>All Publishers</option>
+            <option>Riot</option>
+            <option>Valve</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select custom-select">
+            <option selected>All Time</option>
+            <option>2023</option>
+            <option>2024</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select custom-select">
+            <option selected>All Teams</option>
+            <option>Navi</option>
+            <option>OG</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="mt-3 d-flex flex-wrap gap-2">
+        <button class="tag-btn">Esports only</button>
+        <button class="tag-btn">Mobile Esports</button>
+        <button class="tag-btn">Female Esports</button>
+        <button class="tag-btn">Battle Royale</button>
+        <button class="tag-btn">Collegiate</button>
+      </div>
+    </div>
+
+    <!-- Search and Sorting -->
+    <div class="d-flex align-items-center justify-content-between mt-4">
+      <div class="search-bar w-50">
+        <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+      </div>
+      <div class="d-flex gap-2">
+        <select class="form-select custom-select w-auto">
+          <option selected>Sort by: Event Date</option>
+          <option>Most Viewed</option>
+          <option>Top Teams</option>
+        </select>
+        <button class="btn btn-danger fw-bold px-4">LIVE Matches</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom CSS -->
+<style>
+  .custom-select {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+  }
+  .custom-select:focus {
+    border-color: #00ff99;
+    box-shadow: 0 0 5px rgba(0,255,153,0.5);
+  }
+  .tag-btn {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+  }
+  .tag-btn:hover {
+    background-color: #00ff99;
+    color: #000;
+    border-color: #00ff99;
+  }
+  .search-bar input::placeholder {
+    color: #aaa;
+  }
+</style>
+
             <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
-            <div class="container">
-              <h2 class="fw-bold">Esports Tournaments - Statistics and Analytics</h2>
-              
-              <!-- Filter Section -->
-              <div class="filter-box mt-4">
-                <div class="row g-3">
-                  <div class="col-md-3">
-                    <select class="form-select bg-dark text-white">
-                      <option selected>All Games / Categories</option>
-                      <option>LoL</option>
-                      <option>CS2</option>
-                    </select>
+              <div class="container">
+                <h2 class="fw-bold " style="background-color: #fff;">Esports Tournaments - Statistics and Analytics</h2>
+                
+                <!-- Filter Section -->
+                <div class="filter-box mt-4">
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <select class="form-select bg-dark text-white">
+                        <option selected>All Games / Categories</option>
+                        <option>LoL</option>
+                        <option>CS2</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select class="form-select bg-dark text-white">
+                        <option selected>All Publishers</option>
+                        <option>Riot</option>
+                        <option>Valve</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select class="form-select bg-dark text-white">
+                        <option selected>All Time</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <select class="form-select bg-dark text-white">
+                        <option selected>All Teams</option>
+                        <option>Navi</option>
+                        <option>OG</option>
+                      </select>
+                    </div>
                   </div>
-                  <div class="col-md-3">
-                    <select class="form-select bg-dark text-white">
-                      <option selected>All Publishers</option>
-                      <option>Riot</option>
-                      <option>Valve</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-select bg-dark text-white">
-                      <option selected>All Time</option>
-                      <option>2023</option>
-                      <option>2024</option>
-                    </select>
-                  </div>
-                  <div class="col-md-3">
-                    <select class="form-select bg-dark text-white">
-                      <option selected>All Teams</option>
-                      <option>Navi</option>
-                      <option>OG</option>
-                    </select>
+
+                  <!-- Tags -->
+                  <div class="mt-3">
+                    <button class="tag-btn">Esports only</button>
+                    <button class="tag-btn">Mobile Esports</button>
+                    <button class="tag-btn">Female Esports</button>
+                    <button class="tag-btn">Battle Royale</button>
+                    <button class="tag-btn">Collegiate</button>
                   </div>
                 </div>
 
-                <!-- Tags -->
-                <div class="mt-3">
-                  <button class="tag-btn">Esports only</button>
-                  <button class="tag-btn">Mobile Esports</button>
-                  <button class="tag-btn">Female Esports</button>
-                  <button class="tag-btn">Battle Royale</button>
-                  <button class="tag-btn">Collegiate</button>
+                <!-- Search and Sorting -->
+                <div class="d-flex align-items-center justify-content-between mt-3">
+                  <div class="search-bar w-50">
+                    <input type="text" class="form-control" placeholder="Search tournament by name">
+                  </div>
+                  <select class="form-select bg-dark text-white w-auto">
+                    <option selected>Sort by: Event Date</option>
+                    <option>Most Viewed</option>
+                    <option>Top Teams</option>
+                  </select>
+                  <button class="btn btn-danger">LIVE Matches</button>
                 </div>
               </div>
-
-              <!-- Search and Sorting -->
-              <div class="d-flex align-items-center justify-content-between mt-3">
-                <div class="search-bar w-50">
-                  <input type="text" class="form-control" placeholder="Search tournament by name">
-                </div>
-                <select class="form-select bg-dark text-white w-auto">
-                  <option selected>Sort by: Event Date</option>
-                  <option>Most Viewed</option>
-                  <option>Top Teams</option>
-                </select>
-                <button class="btn btn-danger">LIVE Matches</button>
-              </div>
-            </div>
             </div>
 
     
