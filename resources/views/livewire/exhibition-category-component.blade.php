@@ -429,100 +429,279 @@
           </div>
         </div>
       <!--end Google--> 
-       <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000;">
-  <div class="container">
-    <!-- Title -->
-    <h2 class="fw-bold text-white">Esports Tournaments - Statistics and Analytics</h2>
 
-    <!-- Filter Section -->
-    <div class="filter-box mt-4">
-      <div class="row g-3">
-        <div class="col-md-3">
-          <select class="form-select custom-select">
-            <option selected>All Games / Categories</option>
-            <option>LoL</option>
-            <option>CS2</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <select class="form-select custom-select">
-            <option selected>All Publishers</option>
-            <option>Riot</option>
-            <option>Valve</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <select class="form-select custom-select">
-            <option selected>All Time</option>
-            <option>2023</option>
-            <option>2024</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <select class="form-select custom-select">
-            <option selected>All Teams</option>
-            <option>Navi</option>
-            <option>OG</option>
-          </select>
-        </div>
-      </div>
 
-      <!-- Tags -->
-      <div class="mt-3 d-flex flex-wrap gap-2">
-        <button class="tag-btn">Esports only</button>
-        <button class="tag-btn">Mobile Esports</button>
-        <button class="tag-btn">Female Esports</button>
-        <button class="tag-btn">Battle Royale</button>
-        <button class="tag-btn">Collegiate</button>
-      </div>
-    </div>
+      
+        <!-- Custom CSS -->
+        <style>
+          .custom-select {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+          }
+          .custom-select:focus {
+            border-color: #00ff99;
+            box-shadow: 0 0 5px rgba(0,255,153,0.5);
+          }
+          .tag-btn {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+          }
+          .tag-btn:hover {
+            background-color: #00ff99;
+            color: #000;
+            border-color: #00ff99;
+          }
+          .search-bar input::placeholder {
+            color: #aaa;
+          }
+        </style>
 
-    <!-- Search and Sorting -->
-    <div class="d-flex align-items-center justify-content-between mt-4">
-      <div class="search-bar w-50">
-        <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
-      </div>
-      <div class="d-flex gap-2">
-        <select class="form-select custom-select w-auto">
-          <option selected>Sort by: Event Date</option>
-          <option>Most Viewed</option>
-          <option>Top Teams</option>
-        </select>
-        <button class="btn btn-danger fw-bold px-4">LIVE Matches</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000;">
+          <div class="container">
+            <!-- Title -->
+            <h2 class="fw-bold text-white">Esports Tournaments - Statistics and Analytics</h2>
 
-<!-- Custom CSS -->
-<style>
-  .custom-select {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: 1px solid #333;
-  }
-  .custom-select:focus {
-    border-color: #00ff99;
-    box-shadow: 0 0 5px rgba(0,255,153,0.5);
-  }
-  .tag-btn {
-    background-color: #1a1a1a;
-    color: #fff;
-    border: 1px solid #333;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    transition: 0.3s;
-  }
-  .tag-btn:hover {
-    background-color: #00ff99;
-    color: #000;
-    border-color: #00ff99;
-  }
-  .search-bar input::placeholder {
-    color: #aaa;
-  }
-</style>
+            <!-- Filter Section -->
+            <div class="filter-box mt-4">
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Games / Categories</option>
+                    <option>LoL</option>
+                    <option>CS2</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Publishers</option>
+                    <option>Riot</option>
+                    <option>Valve</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Time</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Teams</option>
+                    <option>Navi</option>
+                    <option>OG</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Tags -->
+              <div class="mt-3 d-flex flex-wrap gap-2">
+                <button class="tag-btn">Esports only</button>
+                <button class="tag-btn">Mobile Esports</button>
+                <button class="tag-btn">Female Esports</button>
+                <button class="tag-btn">Battle Royale</button>
+                <button class="tag-btn">Collegiate</button>
+              </div>
+            </div>
+
+            <!-- Search and Sorting -->
+            <div class="d-flex align-items-center justify-content-between mt-4">
+              <div class="search-bar w-50">
+                <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+              </div>
+              <div class="d-flex gap-2">
+                <select class="form-select custom-select w-auto">
+                  <option selected>Sort by: Event Date</option>
+                  <option>Most Viewed</option>
+                  <option>Top Teams</option>
+                </select>
+                <button class="btn btn-danger fw-bold px-4">LIVE Matches</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- -------------- -->
+
+        <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color:#000;">
+          <div class="container text-white">
+
+            <!-- Title -->
+            <h2 class="fw-bold">Esports Tournaments - Statistics and Analytics</h2>
+
+            <!-- Filters -->
+            <div class="row g-3 mt-4">
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Games / Categories</option>
+                  <option>LoL</option>
+                  <option>CS2</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Publishers</option>
+                  <option>Riot</option>
+                  <option>Valve</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Time</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Teams</option>
+                  <option>Navi</option>
+                  <option>OG</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-3 d-flex flex-wrap gap-2">
+              <button class="tag-btn">Esports only</button>
+              <button class="tag-btn">Mobile Esports</button>
+              <button class="tag-btn">Female Esports</button>
+              <button class="tag-btn">Battle Royale</button>
+              <button class="tag-btn">Collegiate</button>
+            </div>
+
+            <!-- Popular Filters -->
+            <div class="popular-filters mt-3 d-flex gap-3">
+              <span class="pop-filter">LoL</span>
+              <span class="pop-filter">CS2</span>
+              <span class="pop-filter">MLBB</span>
+              <span class="pop-filter">Valorant</span>
+              <span class="pop-filter">Natus Vincere</span>
+              <span class="pop-filter">2023</span>
+              <span class="pop-filter">Valve</span>
+            </div>
+
+            <!-- Search + Sort -->
+            <div class="d-flex align-items-center justify-content-between mt-4">
+              <input type="text" class="form-control bg-dark text-white border-0 w-50" placeholder="Search tournament by name">
+              <div class="d-flex gap-2">
+                <select class="form-select custom-select w-auto">
+                  <option selected>Sort by: Event Date</option>
+                  <option>Most Viewed</option>
+                  <option>Top Teams</option>
+                </select>
+                <button class="btn btn-danger fw-bold px-4">LIVE Matches</button>
+              </div>
+            </div>
+
+            <!-- Tournament Table -->
+            <div class="tournament-table mt-5">
+              <div class="table-responsive">
+                <table class="table table-dark table-borderless align-middle">
+                  <thead class="border-bottom border-secondary">
+                    <tr>
+                      <th>Name</th>
+                      <th>Prize Pool</th>
+                      <th>Hours Watched</th>
+                      <th>Peak Viewers</th>
+                      <th>Airtime</th>
+                      <th>Event Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <img src="logo1.png" width="24" class="me-2">
+                        MPL Indonesia Season 16 <span class="badge bg-success">Ongoing</span>
+                      </td>
+                      <td>$298,460</td>
+                      <td>20,445,156</td>
+                      <td>1,971,626</td>
+                      <td>60h 15m</td>
+                      <td>22.08.25 - 02.11.25</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img src="logo2.png" width="24" class="me-2">
+                        Copa Sul-Americana - 2025 <span class="badge bg-success">Ongoing</span>
+                      </td>
+                      <td>$49,828</td>
+                      <td>65,593</td>
+                      <td>6,738</td>
+                      <td>47h 20m</td>
+                      <td>17.06.25 - 01.11.25</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <img src="logo3.png" width="24" class="me-2">
+                        MDL Indonesia Season 12 <span class="badge bg-success">Ongoing</span>
+                      </td>
+                      <td>$40,000</td>
+                      <td>1,376,095</td>
+                      <td>73,656</td>
+                      <td>93h 40m</td>
+                      <td>18.08.25 - 26.10.25</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Styles -->
+        <style>
+          .custom-select {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+          }
+          .custom-select:focus {
+            border-color: #00ff99;
+            box-shadow: 0 0 5px rgba(0,255,153,0.5);
+          }
+          .tag-btn {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+          }
+          .tag-btn:hover {
+            background-color: #00ff99;
+            color: #000;
+            border-color: #00ff99;
+          }
+          .pop-filter {
+            padding: 6px 12px;
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+          }
+          .pop-filter:hover {
+            background-color: #00ff99;
+            color: #000;
+          }
+          .table th, .table td {
+            vertical-align: middle;
+          }
+          .badge {
+            font-size: 0.7rem;
+            margin-left: 6px;
+          }
+        </style>
 
           
     
