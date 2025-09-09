@@ -4201,7 +4201,7 @@
 
                     <li class="d-flex justify-content-between px-2 m-0 lh-1">
                       <span class="text-dark fw-medium fs-sm">  Become a Member <br><span class="text-muted fw-light fs-xs">Enjoy unlimited free registration for you and your guest(s) on every visit.</span></span>
-                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-primary btn-sm ">Join Today</a></span>
+                      <span><a href="{{route('coi.ratenow',['slug' => $event->slug])}}" class="btn btn-outline-dark btn-sm ">Join</a></span>
                     </li>
                   </ul>
               
@@ -4304,7 +4304,8 @@
                       <li><!-- No image -->
                         <div class="card ">
                           <div class="expo_Initiatives">
-                                <div class="card-body ">
+
+                                <!-- <div class="card-body ">
                                   <h5 class="card-title">Expo live</h5>
                                   <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                   <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
@@ -4314,7 +4315,7 @@
                                   <h5 class="card-title">Global Best Practice Programme</h5>
                                   <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                   <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                </div>
+                                </div> -->
 
                                 <div class="card-body">
                                   <h5 class="card-title">Start-up Program</h5>
