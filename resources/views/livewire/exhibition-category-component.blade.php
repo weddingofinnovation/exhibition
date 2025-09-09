@@ -524,68 +524,7 @@
   }
 </style>
 
-            <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000000;">
-              <div class="container">
-                <h2 class="fw-bold " style="background-color: #fff;">Esports Tournaments - Statistics and Analytics</h2>
-                
-                <!-- Filter Section -->
-                <div class="filter-box mt-4">
-                  <div class="row g-3">
-                    <div class="col-md-3">
-                      <select class="form-select bg-dark text-white">
-                        <option selected>All Games / Categories</option>
-                        <option>LoL</option>
-                        <option>CS2</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <select class="form-select bg-dark text-white">
-                        <option selected>All Publishers</option>
-                        <option>Riot</option>
-                        <option>Valve</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <select class="form-select bg-dark text-white">
-                        <option selected>All Time</option>
-                        <option>2023</option>
-                        <option>2024</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <select class="form-select bg-dark text-white">
-                        <option selected>All Teams</option>
-                        <option>Navi</option>
-                        <option>OG</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <!-- Tags -->
-                  <div class="mt-3">
-                    <button class="tag-btn">Esports only</button>
-                    <button class="tag-btn">Mobile Esports</button>
-                    <button class="tag-btn">Female Esports</button>
-                    <button class="tag-btn">Battle Royale</button>
-                    <button class="tag-btn">Collegiate</button>
-                  </div>
-                </div>
-
-                <!-- Search and Sorting -->
-                <div class="d-flex align-items-center justify-content-between mt-3">
-                  <div class="search-bar w-50">
-                    <input type="text" class="form-control" placeholder="Search tournament by name">
-                  </div>
-                  <select class="form-select bg-dark text-white w-auto">
-                    <option selected>Sort by: Event Date</option>
-                    <option>Most Viewed</option>
-                    <option>Top Teams</option>
-                  </select>
-                  <button class="btn btn-danger">LIVE Matches</button>
-                </div>
-              </div>
-            </div>
-
+          
     
       <div class="container pb-5 mb-2 mb-md-4 d-none d-sm-block">
         <div class="row">
