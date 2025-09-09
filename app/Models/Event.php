@@ -36,10 +36,5 @@ class Event extends Model
     }
 
    
-    protected $casts = [
-        'startdate' => 'datetime',   // auto convert to Carbon
-        'enddate'   => 'datetime',
-    ];
-
    
 }
