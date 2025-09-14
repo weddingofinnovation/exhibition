@@ -1147,15 +1147,15 @@
                   @php 
                     $from = DateTime::createFromFormat('Y-m-d', ($franchise->startdate));
                     $to = DateTime::createFromFormat('Y-m-d', ($franchise->enddate));
+                    
                     $name = $franchise->eventname;
                     $venue = $franchise->venue;
                     $city = $franchise->city;
                     $country = $franchise->country;
-                    $link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-                    
+                    $linko = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
                   @endphp
                     
-                      <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
+                      <a href="{{$linko->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
               </div>
 
               <div class="col-7  p-0">
