@@ -51,10 +51,10 @@
           gap: 15px;
           }
 
-          .venue-card{
+          .venue-carde{
           flex: 0 0 auto;
           width: 120px;
-          border-radius: 10px;
+          /* border-radius: 10px; */
           background: linear-gradient(to right, #0c1e0e,#153b1e);
           color: white;
           padding: 10px;
@@ -62,14 +62,14 @@
           box-shadow: 0px 4px 10px rgba(0, 255, 76, 0.2);
           }
 
-          .venue-card img{
+          .venue-carde img{
           width: 100%;
           height: 80px;
           object-fit: cover;
-          border-radius: 8px;
+          /* border-radius: 8px; */
           }
 
-          .venue-card p {
+          .venue-carde p {
           margin: 5px 0;
           font-size: 14px;
           }
@@ -95,7 +95,9 @@
           
         <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
           <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-            <span class="fs-sm"> Upcoming<br><span class="fw-medium h5">Exhibition</span></span>
+            <span class="fs-sm"> Upcoming<br>
+              <span class="fw-medium h5">Exhibition</span>
+            </span>
             <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
               <!-- <a  class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a> -->
               <!-- <ul class="dropdown-menu" width="auto">
@@ -268,7 +270,7 @@
           <div class="venues-list">
             @foreach($evento as $eventoi)
               <div class="venue-container">
-                <div class="venue-card">
+                <div class="venue-carde">
                   <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
                   <div class="event-status">
