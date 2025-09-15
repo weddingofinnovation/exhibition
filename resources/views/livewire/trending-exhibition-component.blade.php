@@ -175,7 +175,7 @@
               display: none;
             }
 
-            .venue-card {
+            .venue-carde {
               position: relative;
               flex: 0 0 auto;
               width: 120px;
@@ -188,7 +188,7 @@
               overflow: hidden;
             }
 
-            .venue-card img {
+            .venue-carde img {
               width: 100%;
               height: 100%;
               object-fit: cover;
