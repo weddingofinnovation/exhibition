@@ -273,7 +273,7 @@
                 <div class="venue-carde">
                   <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-                  <div class="event-status">
+                  <!-- <div class="event-status">
                     @php
                       $to = strtotime($eventoi->startdate);
                       $from = strtotime($eventoi->enddate);
@@ -290,7 +290,7 @@
                     @elseif ($current > $to && $current > $from)
                       Ended
                     @endif
-                  </div>
+                  </div> -->
 
                   <!-- Gradient overlay -->
                   <!-- <div class="event-overlay"></div> -->
