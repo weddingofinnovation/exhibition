@@ -283,8 +283,9 @@
              
 
              
-                    @foreach ($searchVenue as $franchise) new test laptop
-                      
+                    @foreach ($searchVenue as $franchise) 
+                    
+                    <!-- new test laptop -->
                         <div class="col-md-4 col-sm-6 px-2 mb-4">
 
                           <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
