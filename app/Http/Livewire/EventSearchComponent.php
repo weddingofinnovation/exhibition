@@ -40,8 +40,6 @@ class EventSearchComponent extends Component
     {
         $mytime = Carbon::now();
 
-       
-        
         if($this->venue != 'all' && $this->city != 'all' )
         {
             //dd('tst1',$this->venue, $this->country, $this->city);

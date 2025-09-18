@@ -4383,20 +4383,7 @@
 
                                 @endif 
                                
-                                @php 
-                                  $from = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->startdate . ' 10:00:00');
-                                  $to   = DateTime::createFromFormat('Y-m-d H:i:s', $franchise->enddate . ' 17:00:00');
-
-                                  $name = $franchise->eventname;
-                                  $venue = $franchise->venue;
-                                  $city = $franchise->city;
-                                  $country = $franchise->country;
-                                  
-                                  
-
-                                  $link = Link::create($name, $from , $to)->description($name)->address($venue . ', ' . $city . ', ' . $country);
-                                  
-                                @endphp
+                                
                                   <!-- testing --> 
                                    {{--$description = $name . ' | Date: ' . $eventDate . ' | Time: ' . $eventTime;--}}
                                     <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
