@@ -4383,7 +4383,17 @@
 
                                 @endif 
                                
-                                
+                                @php
+                                    use Carbon\Carbon;
+                                    $startto = Carbon::parse ($event->startdate);
+                                    $endfrom = Carbon::parse ($event->enddate);
+                                    $now= carbon::now();
+                                    $name = $event->eventname;
+                                    $venue = $event->venue;
+                                    $city = $event->city;
+                                    $country = $event->country;
+                                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
+                                @endphp
                                   <!-- testing --> 
                                    {{--$description = $name . ' | Date: ' . $eventDate . ' | Time: ' . $eventTime;--}}
                                     <a href="{{$link->google()}}"><div class=" round-circle"><i class="bi bi-bookmark"></i></div> </a>
