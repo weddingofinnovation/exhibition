@@ -15,7 +15,7 @@
           <div class="col-md-6">
             <h4 class="fw-bold" style="color: #000; max-width:500px;">
               Find a business events that works for you 
-              <span class="badge bg-success ms-0 fs-ms" style="color: #000;">New</span>
+              <!-- <span class="badge bg-success ms-0 fs-ms" style="color: #000;">New</span> -->
             </h4>
 
             <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
