@@ -5,27 +5,9 @@
   <div class="container">
     <div class="row align-items-center">
       
-      <!-- Illustration / Icon Grid -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="d-grid" style="grid-template-columns: repeat(4, 1fr); gap:10px;">
-          <!-- Row 1 -->
-          <div class="cube"><i class="bi bi-bicycle"></i></div>
-          <div class="cube"><i class="bi bi-cup-hot"></i></div>
-          <div class="cube"></div>
-          <div class="cube"><i class="bi bi-emoji-smile"></i></div>
-          
-          <!-- Row 2 -->
-          <div class="cube"><i class="bi bi-chat-dots"></i></div>
-          <div class="cube"></div>
-          <div class="cube"><i class="bi bi-graph-up"></i></div>
-          <div class="cube"></div>
-          
-          <!-- Row 3 -->
-          <div class="cube"><i class="bi bi-laptop"></i></div>
-          <div class="cube"><i class="bi bi-heart-pulse"></i></div>
-          <div class="cube"><i class="bi bi-hand-thumbs-up"></i></div>
-          <div class="cube"><i class="bi bi-piggy-bank"></i></div>
-        </div>
+      <!-- Illustration Image -->
+      <div class="col-md-6 mb-4 mb-md-0 text-center">
+        <img src="hero-reviews.webp" alt="Workplace Illustration" class="img-fluid" style="max-width:100%; height:auto;">
       </div>
       
       <!-- Content -->
@@ -51,24 +33,6 @@
     </div>
   </div>
 </section>
-
-<!-- Styles -->
-<style>
-  .cube {
-    background:#fff;
-    border:1px solid #ddd;
-    aspect-ratio:1/1; /* keeps square */
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:2rem;
-    color:#28a745;
-    border-radius:4px;
-  }
-</style>
-
-<!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 
       <!-- Bootstrap Icons CDN -->
