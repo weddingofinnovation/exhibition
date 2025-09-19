@@ -1,4 +1,40 @@
 <main>
+
+
+<!-- Workplace Finder Section -->
+<section class="workplace-section py-5" style="background-color:#f3f9f6;">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Illustration -->
+      <div class="col-md-6 text-center mb-4 mb-md-0">
+        <img src="https://cdn-icons-png.flaticon.com/512/940/940631.png" 
+             alt="illustration" class="img-fluid" style="max-height: 350px;">
+      </div>
+      
+      <!-- Content -->
+      <div class="col-md-6">
+        <h2 class="fw-bold">
+          Find a workplace that works for you 
+          <span class="badge bg-success ms-2">New</span>
+        </h2>
+        <p class="mt-3 text-secondary">
+          Discover what an employer is really like before you make your next move. 
+          Search reviews and ratings, and filter companies based on the qualities 
+          that matter most to your job search.
+        </p>
+        <div class="mt-4">
+          <a href="#" class="btn btn-dark me-2 mb-2">Work/life balance</a>
+          <a href="#" class="btn btn-dark me-2 mb-2">Diversity and inclusion</a>
+          <a href="#" class="btn btn-dark me-2 mb-2">Compensation and benefits</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   <style>
     .hero-section h1, .hero-section p {
       text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
