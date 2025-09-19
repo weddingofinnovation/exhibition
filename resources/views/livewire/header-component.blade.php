@@ -148,7 +148,7 @@
                             <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('design.strategy')}}">Design & Fabrication</a>
+                            <a class="nav-link" href="{{route('buy.license')}}">Design & Fabrication</a>
                         </li>
                         
                     </ul>

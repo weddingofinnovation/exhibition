@@ -280,8 +280,9 @@ Route::get('/payment', PaymentComponent::class)->name('payment');
 
 Route::get('/thank-you/{board}/{visitorid?}', ThankyouComponent::class)->name('thankyou');
 
-Route::get('/review', CoiReviewComponent::class)->name('review');
 
+
+Route::get('/review', CoiReviewComponent::class)->name('review');
 Route::get('/partner', MembershipComponent::class)->name('business.membership');
 
 //product
@@ -300,7 +301,9 @@ Route::get('/exhibitor/{formm}/{user_id?}/{contractioid?}', ContractFromComponen
 Route::get('/career', CareerComponent::class)->name('career');
 Route::get('/contact/{board}', ContactComponent::class)->name('contact');
 Route::get('/about-us', AboutComponent::class)->name('about');
+
 Route::get('/leadership', TeamComponent::class)->name('team');
+
 Route::get('/terms', TermsComponent::class)->name('terms.condition');
 Route::get('/privacy-policy', PrivacyComponent::class)->name('privacy.condition');
 
@@ -308,7 +311,6 @@ Route::get('/privacy-policy', PrivacyComponent::class)->name('privacy.condition'
 
 //catch exhibition data
 Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.add');
-
 
 //catch lead participants || help to login to get contact details
 Route::get('/exhibit/{board}/{visitorid?}', ExhibitComponent::class)->name('event.exhibit');
@@ -323,6 +325,7 @@ Route::get('/birthday/{board}/tie/{ido}', GiftDateComponent::class)->name('date.
 
 //track
 Route::get('/COIbusiness', TrackComponent::class)->name('admin.track');
+
 Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishlist');
 
 
