@@ -14,21 +14,19 @@
           <!-- Content -->
           <div class="col-md-6">
             <h4 class="fw-bold" style="color: #000; max-width:500px;">
-              Find a workplace that works for you 
-              <span class="badge bg-success ms-0">New</span>
+              Find a business events that works for you 
+              <span class="badge bg-success ms-0 fs-ms" style="color: #000;">New</span>
             </h4>
 
             <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
-              Discover what an employer is really like before you make your next move. 
-              Search reviews and ratings, and filter companies based on the qualities 
-              that matter most to your job search.
+             Discover what an exhibition audience is really like before you make your next move. Search reviews and ratings, and filter Business events based on the qualities that matter most to your business search.
             </div>
 
             <div class="mt-4">
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Work/life balance</a>
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Diversity and inclusion</a>
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Our Data Your Customers</a>
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Great Place to Exhibit</a>
               <br>
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Compensation and benefits</a>
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Design & Fabrication</a>
             </div>
           </div>
         </div>
