@@ -1,15 +1,59 @@
 <main>
 
-
 <!-- Workplace Finder Section -->
 <section class="workplace-section py-5" style="background-color:#f3f9f6;">
   <div class="container">
     <div class="row align-items-center">
       
-      <!-- Illustration -->
-      <div class="col-md-6 text-center mb-4 mb-md-0">
-        <img src="https://cdn-icons-png.flaticon.com/512/940/940631.png" 
-             alt="illustration" class="img-fluid" style="max-height: 350px;">
+      <!-- Illustration / Icon Grid -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="row g-3">
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-bicycle fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-cup-hot fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-emoji-smile fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-chat-dots fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-graph-up fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-people fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-book fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-heart-pulse fs-2 text-success"></i>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="p-4 border bg-white text-center rounded">
+              <i class="bi bi-piggy-bank fs-2 text-success"></i>
+            </div>
+          </div>
+        </div>
       </div>
       
       <!-- Content -->
@@ -33,6 +77,8 @@
   </div>
 </section>
 
+<!-- Bootstrap Icons CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 
   <style>
