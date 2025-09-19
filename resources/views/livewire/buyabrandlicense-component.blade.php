@@ -1,149 +1,149 @@
 <main>
 
-<!-- Workplace Finder Section -->
-<section class="workplace-section py-5" style="background-color:#f3f9f6;">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Illustration / Icon Grid -->
-      <div class="col-md-6 mb-4 mb-md-0">
-        <div class="row g-3">
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-bicycle fs-2 text-success"></i>
+      <!-- Workplace Finder Section -->
+      <section class="workplace-section py-5" style="background-color:#f3f9f6;">
+        <div class="container">
+          <div class="row align-items-center">
+            
+            <!-- Illustration / Icon Grid -->
+            <div class="col-md-6 mb-4 mb-md-0">
+              <div class="row g-3">
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-bicycle fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-cup-hot fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-emoji-smile fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-chat-dots fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-graph-up fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-people fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-book fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-heart-pulse fs-2 text-success"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="p-4 border bg-white text-center rounded">
+                    <i class="bi bi-piggy-bank fs-2 text-success"></i>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-cup-hot fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-emoji-smile fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-chat-dots fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-graph-up fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-people fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-book fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-heart-pulse fs-2 text-success"></i>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="p-4 border bg-white text-center rounded">
-              <i class="bi bi-piggy-bank fs-2 text-success"></i>
+            
+            <!-- Content -->
+            <div class="col-md-6">
+              <h4 class="fw-bold">
+                Find a workplace that works for you 
+                <span class="badge bg-success ms-0">New</span>
+              </h4>
+              <p class="mt-3 text-dark">
+                Discover what an employer is really like before you make your next move. 
+                Search reviews and ratings, and filter companies based on the qualities 
+                that matter most to your job search.
+              </p>
+              <div class="mt-4">
+                <a href="#" class="btn btn-dark me-2 mb-2">Work/life balance</a>
+                <a href="#" class="btn btn-dark me-2 mb-2">Diversity and inclusion</a>
+                <a href="#" class="btn btn-dark me-2 mb-2">Compensation and benefits</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      
-      <!-- Content -->
-      <div class="col-md-6">
-        <h2 class="fw-bold">
-          Find a workplace that works for you 
-          <span class="badge bg-success ms-2">New</span>
-        </h2>
-        <p class="mt-3 text-secondary">
-          Discover what an employer is really like before you make your next move. 
-          Search reviews and ratings, and filter companies based on the qualities 
-          that matter most to your job search.
-        </p>
-        <div class="mt-4">
-          <a href="#" class="btn btn-dark me-2 mb-2">Work/life balance</a>
-          <a href="#" class="btn btn-dark me-2 mb-2">Diversity and inclusion</a>
-          <a href="#" class="btn btn-dark me-2 mb-2">Compensation and benefits</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- Bootstrap Icons CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+      <!-- Bootstrap Icons CDN -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
 
-  <style>
-    .hero-section h1, .hero-section p {
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    }
-    .hero-section .btn {
-      letter-spacing: 0.5px;
-      border-radius: 0.375rem;
-    }
-    .hero-section .bg-danger {
-      font-size: 0.9rem;
-    }
-  </style>
+      <style>
+        .hero-section h1, .hero-section p {
+          text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+        .hero-section .btn {
+          letter-spacing: 0.5px;
+          border-radius: 0.375rem;
+        }
+        .hero-section .bg-danger {
+          font-size: 0.9rem;
+        }
+      </style>
 
-  <!-- Hero Section -->
-  <section class="hero-section d-flex align-items-center text-white text-center px-3 py-5" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('your-background.jpg') no-repeat center center / cover; min-height: 100vh;">
-    <div class="container">
-      
-      <!-- Header Badge Row -->
-      <div class="d-flex align-items-center justify-content-center mb-4">
-        <div class="text-center me-3">
-          <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">30<sup style="font-size: 1rem;">a</sup></h2>
-          <small class="text-uppercase">edition</small>
-        </div>
+      <!-- Hero Section -->
+      <section class="hero-section d-flex align-items-center text-white text-center px-3 py-5" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('your-background.jpg') no-repeat center center / cover; min-height: 100vh;">
+        <div class="container">
+          
+          <!-- Header Badge Row -->
+          <div class="d-flex align-items-center justify-content-center mb-4">
+            <div class="text-center me-3">
+              <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">30<sup style="font-size: 1rem;">a</sup></h2>
+              <small class="text-uppercase">edition</small>
+            </div>
 
-        <div class="bg-danger px-3 py-2 text-uppercase fw-bold me-3">
-          Artigiano <br> in Fiera
-        </div>
+            <div class="bg-danger px-3 py-2 text-uppercase fw-bold me-3">
+              Artigiano <br> in Fiera
+            </div>
 
-        <div class="display-5 fw-semibold">2025</div>
-      </div>
-
-      <!-- Tagline -->
-      <h1 class="display-6 fw-bold mb-3">We put each artisan under the spotlight</h1>
-      <p class="lead mb-4">Artigiano in fiera is the most important worldwide event dedicated to artisanship and small businesses</p>
-
-      <!-- Buttons -->
-      <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
-        <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Book Your Stand</a>
-        <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Stand Out From the Rest</a>
-      </div>
-
-      <!-- Optional Calendar (You can plug in live data) -->
-      <div class="d-inline-block bg-white text-dark p-3 rounded shadow-sm">
-        <div class="d-flex gap-4">
-          <div class="text-center">
-            <div class="fw-bold text-danger">Saturday</div>
-            <div class="fs-3 fw-bold">28</div>
+            <div class="display-5 fw-semibold">2025</div>
           </div>
-          <div class="text-center">
-            <div class="fw-bold">Sunday</div>
-            <div class="fs-3 fw-bold">11</div>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </section>
+          <!-- Tagline -->
+          <h1 class="display-6 fw-bold mb-3">We put each artisan under the spotlight</h1>
+          <p class="lead mb-4">Artigiano in fiera is the most important worldwide event dedicated to artisanship and small businesses</p>
+
+          <!-- Buttons -->
+          <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
+            <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Book Your Stand</a>
+            <a href="#" class="btn btn-danger btn-lg fw-bold text-uppercase px-4">Stand Out From the Rest</a>
+          </div>
+
+          <!-- Optional Calendar (You can plug in live data) -->
+          <div class="d-inline-block bg-white text-dark p-3 rounded shadow-sm">
+            <div class="d-flex gap-4">
+              <div class="text-center">
+                <div class="fw-bold text-danger">Saturday</div>
+                <div class="fs-3 fw-bold">28</div>
+              </div>
+              <div class="text-center">
+                <div class="fw-bold">Sunday</div>
+                <div class="fs-3 fw-bold">11</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
 </main>
 
 
 
-<section  class="container-fluid py-3 py-lg-5  ">
+        <section  class="container-fluid py-3 py-lg-5  ">
           <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
               
