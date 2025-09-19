@@ -22,7 +22,7 @@
         <div class="row">
           <section class="col-lg-8">
             <!-- Steps-->
-            <div class="steps steps-light pt-2 pb-3 mb-5"><a class="step-item active" href="shop-cart.html">
+              <div class="steps steps-light pt-2 pb-3 mb-5"><a class="step-item active" href="shop-cart.html">
                 <div class="step-progress"><span class="step-count">1</span></div>
                 <div class="step-label"><i class="ci-cart"></i>Cart</div></a><a class="step-item active" href="checkout-details.html">
                 <div class="step-progress"><span class="step-count">2</span></div>
@@ -32,7 +32,8 @@
                 <div class="step-progress"><span class="step-count">4</span></div>
                 <div class="step-label"><i class="ci-card"></i>Payment</div></a><a class="step-item active current" href="checkout-review.html">
                 <div class="step-progress"><span class="step-count">5</span></div>
-                <div class="step-label"><i class="ci-check-circle"></i>Review</div></a></div>
+                <div class="step-label"><i class="ci-check-circle"></i>Review</div></a>
+              </div>
             <!-- Order details-->
             <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Review your order</h2>
             <!-- Item-->

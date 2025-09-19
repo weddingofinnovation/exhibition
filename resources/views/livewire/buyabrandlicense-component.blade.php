@@ -33,8 +33,12 @@
       </div>
     </section>
 
-    <div class="container">
-      <!-- Order details-->
+
+    <div class="container pb-5 mb-2 mb-md-4">
+        <div class="row">
+          <section class="col-lg-8">
+
+              <!-- Order details-->
       <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Review your order</h2>
       <!-- Item-->
       <div class="d-sm-flex justify-content-between my-4 pb-3 border-bottom">
@@ -96,6 +100,9 @@
           <button class="btn btn-link px-0" type="button"><i class="ci-edit me-2"></i><span class="fs-sm">Edit</span></button>
         </div>
       </div>
+      
+      </section>
+     </div>
     </div>
 
       <!-- Bootstrap Icons CDN -->
