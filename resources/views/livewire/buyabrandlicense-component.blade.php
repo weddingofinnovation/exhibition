@@ -1,83 +1,75 @@
 <main>
 
       <!-- Workplace Finder Section -->
-      <section class="workplace-section py-5" style="background-color:#f3f9f6;">
-        <div class="container">
-          <div class="row align-items-center">
-            
-            <!-- Illustration / Icon Grid -->
-            <div class="col-md-6 mb-4 mb-md-0">
-              <div class="row g-3">
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-bicycle fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-cup-hot fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-emoji-smile fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-chat-dots fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-graph-up fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-people fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-book fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-heart-pulse fs-2 text-success"></i>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="p-4 border bg-white text-center rounded">
-                    <i class="bi bi-piggy-bank fs-2 text-success"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- Content -->
-            <div class="col-md-6">
-              <h4 class="fw-bold" style="color: #000;">
-                Find a workplace that works for you 
-                <span class="badge bg-success ms-0">New</span>
-              </h4>
-
-              <div class="mt-3 text-dark" style="max-width: 500px; color: #000;">
-                Discover what an employer is really like before you make your next move. 
-                Search reviews and ratings, and filter companies based on the qualities 
-                that matter most to your job search.
-              </div>
-
-              <div class="mt-4">
-                <a href="#" class="btn btn-sm btn-dark me-2 mb-2" style="color: #000;">Work/life balance</a>
-                <a href="#" class="btn btn-sm btn-dark me-2 mb-2" style="color: #000;">Diversity and inclusion</a>
-                <a href="#" class="btn btn-sm btn-dark me-2 mb-2" style="color: #000;">Compensation and benefits</a>
-              </div>
-            </div>
-          </div>
+    <section class="workplace-section py-5" style="background-color:#f3f9f6;">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Illustration / Icon Grid -->
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="d-grid" style="grid-template-columns: repeat(4, 1fr); gap:10px;">
+          <!-- Row 1 -->
+          <div class="cube"><i class="bi bi-bicycle"></i></div>
+          <div class="cube"><i class="bi bi-cup-hot"></i></div>
+          <div class="cube"></div>
+          <div class="cube"><i class="bi bi-emoji-smile"></i></div>
+          
+          <!-- Row 2 -->
+          <div class="cube"><i class="bi bi-chat-dots"></i></div>
+          <div class="cube"></div>
+          <div class="cube"><i class="bi bi-graph-up"></i></div>
+          <div class="cube"></div>
+          
+          <!-- Row 3 -->
+          <div class="cube"><i class="bi bi-laptop"></i></div>
+          <div class="cube"><i class="bi bi-heart-pulse"></i></div>
+          <div class="cube"><i class="bi bi-hand-thumbs-up"></i></div>
+          <div class="cube"><i class="bi bi-piggy-bank"></i></div>
         </div>
-      </section>
+      </div>
+      
+      <!-- Content -->
+      <div class="col-md-6">
+        <h4 class="fw-bold" style="color: #000; max-width:500px;">
+          Find a workplace that works for you 
+          <span class="badge bg-success ms-0">New</span>
+        </h4>
+
+        <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
+          Discover what an employer is really like before you make your next move. 
+          Search reviews and ratings, and filter companies based on the qualities 
+          that matter most to your job search.
+        </div>
+
+        <div class="mt-4">
+          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Work/life balance</a>
+          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Diversity and inclusion</a>
+          <br>
+          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Compensation and benefits</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+  .cube {
+    background:#fff;
+    border:1px solid #ddd;
+    aspect-ratio:1/1; /* keeps square */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2rem;
+    color:#28a745;
+    border-radius:4px;
+  }
+</style>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
 
       <!-- Bootstrap Icons CDN -->
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
