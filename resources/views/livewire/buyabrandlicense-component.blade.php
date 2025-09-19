@@ -62,17 +62,17 @@
                 Find a workplace that works for you 
                 <span class="badge bg-success ms-0">New</span>
               </h4>
-              
-              <div class="mt-3 text-dark">
+
+              <div class="mt-3 text-dark" style="max-width: 500px;">
                 Discover what an employer is really like before you make your next move. 
                 Search reviews and ratings, and filter companies based on the qualities 
                 that matter most to your job search.
               </div>
 
               <div class="mt-4">
-                <a href="#" class="btn btn-dark me-2 mb-2">Work/life balance</a>
-                <a href="#" class="btn btn-dark me-2 mb-2">Diversity and inclusion</a>
-                <a href="#" class="btn btn-dark me-2 mb-2">Compensation and benefits</a>
+                <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Work/life balance</a>
+                <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Diversity and inclusion</a>
+                <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Compensation and benefits</a>
               </div>
             </div>
           </div>
