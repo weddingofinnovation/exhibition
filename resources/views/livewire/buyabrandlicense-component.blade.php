@@ -2,37 +2,38 @@
 
       <!-- Workplace Finder Section -->
     <section class="workplace-section py-5" style="background-color:#f3f9f6;">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Illustration Image -->
-      <div class="col-md-6 mb-4 mb-md-0 text-center">
-        <img src="hero-reviews.webp" alt="Workplace Illustration" class="img-fluid" style="max-width:100%; height:auto;">
-      </div>
-      
-      <!-- Content -->
-      <div class="col-md-6">
-        <h4 class="fw-bold" style="color: #000; max-width:500px;">
-          Find a workplace that works for you 
-          <span class="badge bg-success ms-0">New</span>
-        </h4>
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <!-- Illustration Image -->
+          <div class="col-md-6 mb-4 mb-md-0 text-center">
+            <img src="{{url('public/assets/image/exhibition/hero-reviews.webp')}}" alt="Workplace Illustration" class="img-fluid" style="max-width:100%; height:auto;">
+          </div>
 
-        <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
-          Discover what an employer is really like before you make your next move. 
-          Search reviews and ratings, and filter companies based on the qualities 
-          that matter most to your job search.
-        </div>
+          
+          <!-- Content -->
+          <div class="col-md-6">
+            <h4 class="fw-bold" style="color: #000; max-width:500px;">
+              Find a workplace that works for you 
+              <span class="badge bg-success ms-0">New</span>
+            </h4>
 
-        <div class="mt-4">
-          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Work/life balance</a>
-          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Diversity and inclusion</a>
-          <br>
-          <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Compensation and benefits</a>
+            <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
+              Discover what an employer is really like before you make your next move. 
+              Search reviews and ratings, and filter companies based on the qualities 
+              that matter most to your job search.
+            </div>
+
+            <div class="mt-4">
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Work/life balance</a>
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Diversity and inclusion</a>
+              <br>
+              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Compensation and benefits</a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
       <!-- Bootstrap Icons CDN -->
