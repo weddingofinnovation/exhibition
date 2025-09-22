@@ -218,8 +218,8 @@
         display: flex;
         overflow: hidden;
         white-space: nowrap;
-        gap: 15px;
-        padding: 10px;
+        gap: 10px;
+        padding: 5px 0; /* reduced height */
         position: relative;
         width: 100%;
     }
@@ -227,13 +227,13 @@
     .scroll-content {
         display: flex;
         animation: scrollLeft 50s linear infinite;
-        gap: 15px;
+        gap: 10px;
     }
 
     .scroll-content img {
-        max-height: 50px;
+        max-height: 40px; /* slightly smaller */
         object-fit: contain;
-        padding: 10px;
+        padding: 5px;
         background: #fff;
     }
 
@@ -255,17 +255,22 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            background: #f9f9f9; /* or your site background */
+            background: #fff; /* white background */
             z-index: 999;
-            border-top: 1px solid #ddd;
-            padding: 5px 15px;
+            border-top: 1px solid #eee;
+            padding: 5px 10px; /* reduced bar height */
+        }
+
+        .featured-companies-bar h5 {
+            font-size: 14px; /* smaller heading */
+            margin: 0 10px 0 0;
         }
     }
 </style>
 
 <div class="container-fluid featured-companies-bar d-none d-md-block">
     <div class="d-flex align-items-center">
-        <h5 class="me-3 mb-0">Featured Companies</h5>
+        <h5 class="me-2 mb-0">Featured Companies</h5>
         <div class="scroll-container">
             @php 
               $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
