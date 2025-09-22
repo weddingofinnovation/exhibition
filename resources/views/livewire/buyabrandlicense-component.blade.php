@@ -1,6 +1,6 @@
 <main>
 
-      <!-- Workplace Finder Section -->
+    <!-- Workplace Finder Section -->
     <section class="workplace-section py-5" style="background-color:#f3f9f6;">
       <div class="container">
         <div class="row align-items-center">
