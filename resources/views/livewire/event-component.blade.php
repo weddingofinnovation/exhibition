@@ -213,78 +213,78 @@
         </section>
              
         <style>
-    /* Featured Companies - Auto Scrolling */
-    .scroll-container {
-        display: flex;
-        overflow: hidden;
-        white-space: nowrap;
-        gap: 10px;
-        padding: 5px 0; /* reduced height */
-        position: relative;
-        width: 100%;
-    }
+                  /* Featured Companies - Auto Scrolling */
+                  .scroll-container {
+                      display: flex;
+                      overflow: hidden;
+                      white-space: nowrap;
+                      gap: 10px;
+                      padding: 5px 0; /* reduced height */
+                      position: relative;
+                      width: 100%;
+                  }
 
-    .scroll-content {
-        display: flex;
-        animation: scrollLeft 50s linear infinite;
-        gap: 10px;
-    }
+                  .scroll-content {
+                      display: flex;
+                      animation: scrollLeft 50s linear infinite;
+                      gap: 10px;
+                  }
 
-    .scroll-content img {
-        max-height: 40px; /* slightly smaller */
-        object-fit: contain;
-        padding: 5px;
-        background: #fff;
-    }
+                  .scroll-content img {
+                      max-height: 40px; /* slightly smaller */
+                      object-fit: contain;
+                      padding: 5px;
+                      background: #fff;
+                  }
 
-    /* Keyframes for Auto Scroll */
-    @keyframes scrollLeft {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(-100%); }
-    }
+                  /* Keyframes for Auto Scroll */
+                  @keyframes scrollLeft {
+                      0% { transform: translateX(0%); }
+                      100% { transform: translateX(-100%); }
+                  }
 
-    /* Pause on hover */
-    .scroll-content:hover {
-        animation-play-state: paused;
-    }
+                  /* Pause on hover */
+                  .scroll-content:hover {
+                      animation-play-state: paused;
+                  }
 
-    /* Stick to bottom only on desktop */
-    @media (min-width: 768px) {
-        .featured-companies-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #fff; /* white background */
-            z-index: 999;
-            border-top: 1px solid #eee;
-            padding: 5px 10px; /* reduced bar height */
-        }
+                  /* Stick to bottom only on desktop */
+                  @media (min-width: 768px) {
+                      .featured-companies-bar {
+                          position: fixed;
+                          bottom: 0;
+                          left: 0;
+                          width: 100%;
+                          background: #fff; /* white background */
+                          z-index: 999;
+                          border-top: 1px solid #eee;
+                          padding: 5px 10px; /* reduced bar height */
+                      }
 
-        .featured-companies-bar h5 {
-            font-size: 14px; /* smaller heading */
-            margin: 0 10px 0 0;
-        }
-    }
-</style>
+                      .featured-companies-bar h5 {
+                          font-size: 14px; /* smaller heading */
+                          margin: 0 10px 0 0;
+                      }
+                  }
+        </style>
 
-<div class="container-fluid featured-companies-bar d-none d-md-block">
-    <div class="d-flex align-items-center">
-        <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-         <h5 class="me-2 mb-0">we are featured by:</h5>
-        <div class="scroll-container">
-            @php 
-              $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-            @endphp
-            <div class="scroll-content">
-                @foreach($photos as $image)
-                  <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
-                @endforeach
+        <div class="container-fluid featured-companies-bar d-none d-md-block">
+            <div class="d-flex align-items-center">
+                <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
+                <h5 class="me-2 mb-0">we are featured by:</h5>
+                <div class="scroll-container">
+                    @php 
+                      $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+                    @endphp
+                    <div class="scroll-content">
+                        @foreach($photos as $image)
+                          <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
+                        @endforeach
+                    </div>
+                </div>
+                <h5 class="me-2 mb-0">become our Client</h5>
             </div>
         </div>
-        <h5 class="me-2 mb-0">become our Client</h5>
-    </div>
-</div>
 
 
         <!--Trending Exhibition-->
