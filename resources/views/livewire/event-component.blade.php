@@ -213,61 +213,72 @@
         </section>
              
         <style>
-            /* Featured Companies - Auto Scrolling */
-            .scroll-container {
-                display: flex;
-                overflow: hidden;
-                white-space: nowrap;
-                gap: 15px;
-                padding: 10px;
-                position: relative;
-                width: 100%;
-            }
-            
-            .scroll-content {
-                display: flex;
-                animation: scrollLeft 50s linear infinite;
-                gap: 15px;
-            }
+    /* Featured Companies - Auto Scrolling */
+    .scroll-container {
+        display: flex;
+        overflow: hidden;
+        white-space: nowrap;
+        gap: 15px;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+    }
 
-            .scroll-content img {
-                max-height: 50px;
-                object-fit: contain;
-                /* border: 1px solid #ddd;
-                border-radius: 5px; */
-                padding: 10px;
-                background: #fff;
-            }
+    .scroll-content {
+        display: flex;
+        animation: scrollLeft 50s linear infinite;
+        gap: 15px;
+    }
 
-            /* Keyframes for Auto Scroll */
-            @keyframes scrollLeft {
-                0% { transform: translateX(0%); }
-                100% { transform: translateX(-100%); }
-            }
+    .scroll-content img {
+        max-height: 50px;
+        object-fit: contain;
+        padding: 10px;
+        background: #fff;
+    }
 
-            /* Duplicate content to create infinite scrolling */
-            .scroll-content:hover {
-                animation-play-state: paused;
-            }
-        </style>
+    /* Keyframes for Auto Scroll */
+    @keyframes scrollLeft {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-100%); }
+    }
 
-        <div class="container mt-4 d-none d-md-block">
-            <!-- <h5 class="mb-3">Featured Companies</h5>-->
-            <div class="d-flex align-items-center mb-3">
-              <h5 class="me-3">Featured Companies</h5>
+    /* Pause on hover */
+    .scroll-content:hover {
+        animation-play-state: paused;
+    }
 
-              <div class="scroll-container">
-                @php 
-                  $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-                @endphp
-                  <div class="scroll-content">
-                    @foreach($photos as $image)
-                      <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="HTC">
-                    @endforeach
-                  </div>
-              </div>
+    /* Stick to bottom only on desktop */
+    @media (min-width: 768px) {
+        .featured-companies-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f9f9f9; /* or your site background */
+            z-index: 999;
+            border-top: 1px solid #ddd;
+            padding: 5px 15px;
+        }
+    }
+</style>
+
+<div class="container-fluid featured-companies-bar d-none d-md-block">
+    <div class="d-flex align-items-center">
+        <h5 class="me-3 mb-0">Featured Companies</h5>
+        <div class="scroll-container">
+            @php 
+              $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+            @endphp
+            <div class="scroll-content">
+                @foreach($photos as $image)
+                  <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
+                @endforeach
             </div>
         </div>
+    </div>
+</div>
+
 
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
