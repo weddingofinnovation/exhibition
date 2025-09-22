@@ -271,18 +271,18 @@
         <div class="container-fluid featured-companies-bar d-none d-md-block">
             <div class="d-flex align-items-center">
                 <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-                <h5 class="me-2 mb-0">we are featured by:</h5>
-                <div class="scroll-container">
-                    @php 
-                      $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-                    @endphp
-                    <div class="scroll-content">
-                        @foreach($photos as $image)
-                          <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
-                        @endforeach
-                    </div>
-                </div>
-                <h5 class="me-2 mb-0">become our Client</h5>
+                <h5 class="me-2 mb-0">Featured by:</h5>
+                  <div class="scroll-container">
+                      @php 
+                        $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+                      @endphp
+                      <div class="scroll-content">
+                          @foreach($photos as $image)
+                            <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
+                          @endforeach
+                      </div>
+                  </div>
+                <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
             </div>
         </div>
 
