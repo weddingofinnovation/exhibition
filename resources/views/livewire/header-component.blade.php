@@ -124,7 +124,7 @@
           <div class="navbar navbar-expand-lg navbar-light py-0">
             <div class="container p-0">
                 <a class="navbar-brand d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
-                <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1" href="{{asset('/')}}">
+                <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1 py-0" href="{{asset('/')}}">
                     <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
                 </a> 
                 <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}"> 
