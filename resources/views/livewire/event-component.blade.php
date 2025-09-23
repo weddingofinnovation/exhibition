@@ -268,7 +268,7 @@
                   }
         </style>
 
-        <div class="container featured-companies-bar d-none d-md-block">
+        <div class="container-fluid featured-companies-bar d-none d-md-block">
             <div class="d-flex align-items-center">
                 <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
                 <h5 class="me-2 mb-0">Featured by:</h5>
