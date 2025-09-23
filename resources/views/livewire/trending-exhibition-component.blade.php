@@ -95,69 +95,64 @@
           
 
        <!-- new design -->
-        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
-  <div class="d-flex justify-content-between align-items-center px-0 m-0 lh-1">
-    <!-- Left: Title -->
-    <span class="fs-sm">
-      Upcoming<br>
-      <span class="fw-medium h5">Exhibition</span>
-    </span>
+        <div class="container">
+           <div class="d-flex align-items-center">
+            <span class="fs-sm"> Upcoming<br>
+              <span class="fw-medium h5">Exhibition</span>
+            </span>
+<style>
+            .categories-list {
+              display: flex;
+              overflow-x: auto;
+              padding: 5px;
+              gap: 5px;
+              white-space: nowrap;
+              scrollbar-width: none;
+            }
 
-    <!-- Right: Button / Dropdown -->
-    <a class="btn btn-outline-primary btn-sm" href="{{ route('coievent.add', ['board' => 'add-your-event']) }}">
-      Submit Event
-    </a>
-  </div>
+            .categories-list::-webkit-scrollbar{
+              display: none;
+            }
 
-  <!-- start-categories -->
-  <style>
-    .categories-list {
-      display: flex;
-      overflow-x: auto;
-      padding: 5px 0;
-      gap: 5px;
-      white-space: nowrap;
-      scrollbar-width: none;
-    }
-    .categories-list::-webkit-scrollbar {
-      display: none;
-    }
-    .category-badge {
-      flex: 0 0 auto;
-      padding: 4px 7px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      font-weight: 400;
-      text-align: center;
-      display: inline-block;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .category-badge:hover {
-      background-color: black;
-      color: white;
-    }
-  </style>
+            
+            .category-badge {
+              flex: 0 0 auto;
+              padding: 4px 7px;
+              border-radius: 5px;
+              border: 1px solid #ccc ;
+              background-color: #fff;
+              
+              font-weight: 400;
+              text-align: center;
+              display: inline-block;
+              font-size: 14px;
+            }
 
-  <div class="categories-list">
-    @foreach ($getnamecategoryresult as $categ) 
-      @php
-        $findcountevent = DB::table('expos')
-          ->where('id', $categ->Category)
-          ->where('admstatus', 1)
-          ->get();
-      @endphp
-      @foreach($findcountevent as $finderlo)
-        <span class="category-badge" wire:click.prevent="insertEventToSess({{ $finderlo->id }})">
-          {{ ucwords(trans($finderlo->tag)) }}
-        </span>
-      @endforeach
-    @endforeach
-  </div>
-  <!-- end-categories -->
-</div>
+            
+            .category-badge:hover {
+              background-color: black;
+              color: white;
+              
+            }
 
+          </style>
+
+          <div class="categories-list">
+            @foreach ($getnamecategoryresult as $categ) 
+              @php
+                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+              @endphp
+              
+              @foreach($findcountevent as $finderlo)
+                  <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+              @endforeach
+            @endforeach
+          </div>
+
+
+            <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
+         </div>    
+        </div>
         <!-- end new design -->
 
 
