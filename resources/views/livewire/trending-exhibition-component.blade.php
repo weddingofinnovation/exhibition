@@ -96,98 +96,6 @@
 
        <!-- new design -->
           <style>
-  .categories-list {
-    display: flex;
-    overflow-x: auto;
-    padding: 5px;
-    gap: 5px;
-    white-space: nowrap;
-    scrollbar-width: none;
-    flex: 1; /* take up remaining space */
-    margin: 0 10px; /* spacing between title & button */
-  }
-
-  .categories-list::-webkit-scrollbar {
-    display: none;
-  }
-
-  .category-badge {
-    flex: 0 0 auto;
-    padding: 4px 7px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    font-weight: 400;
-    text-align: center;
-    display: inline-block;
-    font-size: 14px;
-    cursor: pointer;
-  }
-
-  .category-badge:hover {
-    background-color: black;
-    color: white;
-  }
-</style>
-
-<div class="container px-0">
-  <div class="d-flex align-items-center">
-    <!-- Left: Title -->
-    <span class="fs-sm">
-      Upcoming<br>
-      <span class="fw-medium h5">Exhibition</span>
-    </span>
-
-    <!-- Middle: Scrollable Categories -->
-    <div class="categories-list">
-      @foreach ($getnamecategoryresult as $categ) 
-        @php
-          $findcountevent = DB::table('expos')
-            ->where('id', $categ->Category)
-            ->where('admstatus',1)
-            ->get();
-        @endphp
-        @foreach($findcountevent as $finderlo)
-          <span class="category-badge" 
-                wire:click.prevent="insertEventToSess({{ $finderlo->id }})">
-            {{ ucwords(trans($finderlo->tag)) }}
-          </span>
-        @endforeach
-      @endforeach
-    </div>
-
-    <!-- Right: Button -->
-    <a class="btn btn-outline-primary btn-sm" href="#">
-      Submit Event
-    </a>
-  </div>
-</div>
-
-        <!-- end new design -->
-
-
-
-
-        <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
-          <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-            <span class="fs-sm"> Upcoming<br>
-              <span class="fw-medium h5">Exhibition</span>
-            </span>
-
-            <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
-              <!-- <a  class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a> -->
-              <!-- <ul class="dropdown-menu" width="auto">
-                    <li><a class="dropdown-item" href="{{route('coi.exhibition', ['eventype' => 'expo'])}}">More</a></li>
-                    <li><a class="dropdown-item" href="#">Exhibit</a></li>
-                    <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>
-                    <li><a class="dropdown-item" href="{{route('coievent.add', ['board' => 'add-your-event'])}}">Add Event</a></li>        
-                  </ul> -->
-            </span>
-          </div>
-        </div>
-
-        <!-- start-categories -->
-          <style>
             .categories-list {
               display: flex;
               overflow-x: auto;
@@ -195,54 +103,67 @@
               gap: 5px;
               white-space: nowrap;
               scrollbar-width: none;
+              flex: 1; /* take up remaining space */
+              margin: 0 10px; /* spacing between title & button */
             }
 
-            .categories-list::-webkit-scrollbar{
+            .categories-list::-webkit-scrollbar {
               display: none;
             }
 
-            
             .category-badge {
               flex: 0 0 auto;
               padding: 4px 7px;
               border-radius: 5px;
-              border: 1px solid #ccc ;
+              border: 1px solid #ccc;
               background-color: #fff;
-              
               font-weight: 400;
               text-align: center;
               display: inline-block;
               font-size: 14px;
+              cursor: pointer;
             }
 
-            
             .category-badge:hover {
               background-color: black;
               color: white;
-              
             }
-
           </style>
 
-          <div class="categories-list">
-            @foreach ($getnamecategoryresult as $categ) 
-              @php
-                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-              @endphp
-              
-              @foreach($findcountevent as $finderlo)
-                  <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-              @endforeach
-            @endforeach
+          <div class="container px-0">
+            <div class="d-flex align-items-center">
+              <!-- Left: Title -->
+              <span class="fs-sm">
+                Upcoming<br>
+                <span class="fw-medium h5">Exhibition</span>
+              </span>
+
+              <!-- Middle: Scrollable Categories -->
+              <div class="categories-list">
+                @foreach ($getnamecategoryresult as $categ) 
+                  @php
+                    $findcountevent = DB::table('expos')
+                      ->where('id', $categ->Category)
+                      ->where('admstatus',1)
+                      ->get();
+                  @endphp
+                  @foreach($findcountevent as $finderlo)
+                    <span class="category-badge" 
+                          wire:click.prevent="insertEventToSess({{ $finderlo->id }})">
+                      {{ ucwords(trans($finderlo->tag)) }}
+                    </span>
+                  @endforeach
+                @endforeach
+              </div>
+
+              <!-- Right: Button -->
+              <a class="btn btn-outline-primary btn-sm" href="#">
+                Submit Event
+              </a>
+            </div>
           </div>
-        <!-- end-categories -->
 
-
-
-
-
-
-
+        <!-- end new design -->
 
         
           <style>
