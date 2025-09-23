@@ -75,7 +75,7 @@
     @else
       <header class="shadow-sm ">
         
-        <div class="topbar topbar-dark bg-dark d-none d-md-block" style="padding: 6px; font-size: 12px;">
+        <div class="topbar topbar-dark bg-dark d-none d-md-block" style="padding: 3px; font-size: 12px; color:#fff;">
           <div class="container">
             <div>
               <div class="topbar-text dropdown disable-autohide">
