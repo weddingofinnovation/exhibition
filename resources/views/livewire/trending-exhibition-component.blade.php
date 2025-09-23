@@ -95,64 +95,74 @@
           
 
        <!-- new design -->
-        <div class="container">
-           <div class="d-flex align-items-center">
-            <span class="fs-sm"> Upcoming<br>
-              <span class="fw-medium h5">Exhibition</span>
-            </span>
-<style>
-            .categories-list {
-              display: flex;
-              overflow-x: auto;
-              padding: 5px;
-              gap: 5px;
-              white-space: nowrap;
-              scrollbar-width: none;
-            }
+          <style>
+  .categories-list {
+    display: flex;
+    overflow-x: auto;
+    padding: 5px;
+    gap: 5px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    flex: 1; /* take up remaining space */
+    margin: 0 10px; /* spacing between title & button */
+  }
 
-            .categories-list::-webkit-scrollbar{
-              display: none;
-            }
+  .categories-list::-webkit-scrollbar {
+    display: none;
+  }
 
-            
-            .category-badge {
-              flex: 0 0 auto;
-              padding: 4px 7px;
-              border-radius: 5px;
-              border: 1px solid #ccc ;
-              background-color: #fff;
-              
-              font-weight: 400;
-              text-align: center;
-              display: inline-block;
-              font-size: 14px;
-            }
+  .category-badge {
+    flex: 0 0 auto;
+    padding: 4px 7px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-weight: 400;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
 
-            
-            .category-badge:hover {
-              background-color: black;
-              color: white;
-              
-            }
+  .category-badge:hover {
+    background-color: black;
+    color: white;
+  }
+</style>
 
-          </style>
+<div class="container px-0">
+  <div class="d-flex align-items-center">
+    <!-- Left: Title -->
+    <span class="fs-sm">
+      Upcoming<br>
+      <span class="fw-medium h5">Exhibition</span>
+    </span>
 
-          <div class="categories-list">
-            @foreach ($getnamecategoryresult as $categ) 
-              @php
-                $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-              @endphp
-              
-              @foreach($findcountevent as $finderlo)
-                  <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-              @endforeach
-            @endforeach
-          </div>
+    <!-- Middle: Scrollable Categories -->
+    <div class="categories-list">
+      @foreach ($getnamecategoryresult as $categ) 
+        @php
+          $findcountevent = DB::table('expos')
+            ->where('id', $categ->Category)
+            ->where('admstatus',1)
+            ->get();
+        @endphp
+        @foreach($findcountevent as $finderlo)
+          <span class="category-badge" 
+                wire:click.prevent="insertEventToSess({{ $finderlo->id }})">
+            {{ ucwords(trans($finderlo->tag)) }}
+          </span>
+        @endforeach
+      @endforeach
+    </div>
 
+    <!-- Right: Button -->
+    <a class="btn btn-outline-primary btn-sm" href="#">
+      Submit Event
+    </a>
+  </div>
+</div>
 
-            <a  class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
-         </div>    
-        </div>
         <!-- end new design -->
 
 
