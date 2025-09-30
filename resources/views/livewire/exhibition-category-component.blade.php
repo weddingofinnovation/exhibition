@@ -576,6 +576,13 @@
 
         <div class="container py-4">
             <div class="row g-3"> <!-- g-3 adds some gap between columns -->
+              <div class="border-bottom pt-2 mt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="fw-bold mb-0">Search your business event get right business people for your business</h6>
+                  <a href="#" class="text-primary small">View all</a>
+                </div>
+              </div>
+
               @foreach ($exhibition as $business)
                       @php
                           $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
