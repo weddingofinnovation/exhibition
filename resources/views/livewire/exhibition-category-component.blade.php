@@ -594,7 +594,7 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
                             
@@ -624,7 +624,7 @@
                               <div class="d-flex justify-content-start align-items-center mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i>  {{ucwords(trans(Str::limit($franchise -> city)))}}, {{ucwords(trans(Str::limit($franchise -> country)))}}</small>
                               </div>
 
                             <!-- Meet for & button -->
@@ -650,7 +650,7 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
                             
@@ -680,7 +680,7 @@
                               <div class="d-flex justify-content-start align-items-center mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i>  {{ucwords(trans(Str::limit($franchise -> city)))}}, {{ucwords(trans(Str::limit($franchise -> country)))}}</small>
                               </div>
 
                             <!-- Meet for & button -->
@@ -702,11 +702,11 @@
                         </div>
                       </div>
                     @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate)
-                        <div class="col-md-4">
+                       <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
                             
@@ -736,7 +736,7 @@
                               <div class="d-flex justify-content-start align-items-center mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i>  {{ucwords(trans(Str::limit($franchise -> city)))}}, {{ucwords(trans(Str::limit($franchise -> country)))}}</small>
                               </div>
 
                             <!-- Meet for & button -->
@@ -762,7 +762,7 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
                             
@@ -792,7 +792,7 @@
                               <div class="d-flex justify-content-start align-items-center mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i>  {{ucwords(trans(Str::limit($franchise -> city)))}}, {{ucwords(trans(Str::limit($franchise -> country)))}}</small>
                               </div>
 
                             <!-- Meet for & button -->
@@ -818,7 +818,7 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
                             
@@ -848,7 +848,7 @@
                               <div class="d-flex justify-content-start align-items-center mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i>  {{ucwords(trans(Str::limit($franchise -> city)))}}, {{ucwords(trans(Str::limit($franchise -> country)))}}</small>
                               </div>
 
                             <!-- Meet for & button -->
