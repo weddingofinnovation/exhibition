@@ -5763,26 +5763,27 @@
                 <ul class="container list-unstyled fs-sm py-2">
                     <li class="d-flex justify-content-between p-0 m-0">
 
-                        <span class="d-flex align-items-center justify-content-center mb-4">
-                            <div class="text-center me-3">
-                                <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
-                                <small class="text-uppercase">edition</small>
-                            </div>
-
-                            <div class="px-3 py-2 text-uppercase fw-bold me-3">
-                            {{$event->eventname}}<br> in Fiera
-                            </div>
-
-                            <div class="display-5 fw-semibold">
-                                @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
-                                    {{Carbon::parse($event->enddate)->format('y')}}
-                                @else
-                                    {{Carbon::parse($event->enddate)->format('Y')}}
-                                @endif
-                            </div>
-                        </span>
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                            
+                        </div>
 
                             <span class="col bg-light mb-0">
+                                <div class="text-center me-3">
+                                    <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
+                                    <small class="text-uppercase">edition</small>
+                                </div>
+
+                                <div class="px-3 py-2 text-uppercase fw-bold me-3">
+                                {{$event->eventname}}<br> in Fiera
+                                </div>
+
+                                <div class="display-5 fw-semibold">
+                                    @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
+                                        {{Carbon::parse($event->enddate)->format('y')}}
+                                    @else
+                                        {{Carbon::parse($event->enddate)->format('Y')}}
+                                    @endif
+                                </div>
                                 <!-- <span class="badge bg-primary mt-0">{{$event->edition}}th</span> -->
                                 <!-- <h3 class="mb-0">{{$event->eventname}}</h3> -->
 
