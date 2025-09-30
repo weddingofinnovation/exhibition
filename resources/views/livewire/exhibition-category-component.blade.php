@@ -619,6 +619,94 @@
                     </div>
                   </div>
               </div>
+
+              <div class="card p-3 mb-3 shadow-sm rounded" style="max-width: auto;">
+                  <!-- Header -->
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="mb-0 fw-bold">Product Manager</h5>
+                      <small class="text-muted">4d ago</small>
+                  </div>
+
+                  <!-- Company info & tags -->
+                  <div class="mb-2">
+                      <p class="mb-1">Leading Indian MNC in Beverage</p>
+                      <div class="d-flex flex-wrap gap-2">
+                          <span class="badge bg-warning text-dark">3.5+</span>
+                          <span class="badge bg-light text-dark border">Indian MNC</span>
+                          <span class="badge bg-light text-dark border">Fortune India 500 (2023)</span>
+                      </div>
+                  </div>
+
+                  <!-- Details -->
+                  <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                      <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
+                      <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                      <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                  </div>
+
+                  <small class="text-muted me-2">Meet for:</small>
+                  <div class="d-flex justify-content-between align-items-center mb-0 mt-2">
+                    <!-- Hiring companies -->
+                    
+                    <div class="d-flex align-items-center mb-3 gap-2">
+                        
+                        <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="text-end">
+                        <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="card p-3 mb-3 shadow-sm rounded" style="max-width: auto;">
+                  <!-- Header -->
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                      <h5 class="mb-0 fw-bold">Product Manager</h5>
+                      <small class="text-muted">4d ago</small>
+                  </div>
+
+                  <!-- Company info & tags -->
+                  <div class="mb-2">
+                      <p class="mb-1">Leading Indian MNC in Beverage</p>
+                      <div class="d-flex flex-wrap gap-2">
+                          <span class="badge bg-warning text-dark">3.5+</span>
+                          <span class="badge bg-light text-dark border">Indian MNC</span>
+                          <span class="badge bg-light text-dark border">Fortune India 500 (2023)</span>
+                      </div>
+                  </div>
+
+                  <!-- Details -->
+                  <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                      <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
+                      <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                      <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                  </div>
+
+                  <small class="text-muted me-2">Meet for:</small>
+                  <div class="d-flex justify-content-between align-items-center mb-0 mt-2">
+                    <!-- Hiring companies -->
+                    
+                    <div class="d-flex align-items-center mb-3 gap-2">
+                        
+                        <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
+                    </div>
+
+                    <!-- CTA Button -->
+                    <div class="text-end">
+                        <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                    </div>
+                  </div>
+              </div>
       </div>
 
     
