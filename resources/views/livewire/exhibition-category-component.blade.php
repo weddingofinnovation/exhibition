@@ -595,7 +595,16 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago</small>
+                                <!-- <small class="text-muted">4d ago</small> -->
+                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
+                                  @if($witems->contains($franchise->id))
+                                      <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <i class=" bi bi-heart-fill"></i></button>
+                                  @else
+                                      <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
+                                        <i class=" bi bi-heart"></i></a></button>
+                                  @endif
                             </div>
                             
                               
@@ -646,12 +655,21 @@
                         </div>
                       </div>
                     @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
-                        <div class="col-md-4">
+                      <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago</small>
+                                <!-- <small class="text-muted">4d ago</small> -->
+                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
+                                  @if($witems->contains($franchise->id))
+                                      <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <i class=" bi bi-heart-fill"></i></button>
+                                  @else
+                                      <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
+                                        <i class=" bi bi-heart"></i></a></button>
+                                  @endif
                             </div>
                             
                               
@@ -707,7 +725,16 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago</small>
+                                <!-- <small class="text-muted">4d ago</small> -->
+                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
+                                  @if($witems->contains($franchise->id))
+                                      <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <i class=" bi bi-heart-fill"></i></button>
+                                  @else
+                                      <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
+                                        <i class=" bi bi-heart"></i></a></button>
+                                  @endif
                             </div>
                             
                               
@@ -758,12 +785,21 @@
                         </div>
                       </div>
                     @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate)
-                        <div class="col-md-4">
+                      <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago</small>
+                                <!-- <small class="text-muted">4d ago</small> -->
+                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
+                                  @if($witems->contains($franchise->id))
+                                      <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <i class=" bi bi-heart-fill"></i></button>
+                                  @else
+                                      <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
+                                        <i class=" bi bi-heart"></i></a></button>
+                                  @endif
                             </div>
                             
                               
@@ -819,7 +855,16 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago</small>
+                                <!-- <small class="text-muted">4d ago</small> -->
+                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
+                                  @if($witems->contains($franchise->id))
+                                      <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <i class=" bi bi-heart-fill"></i></button>
+                                  @else
+                                      <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
+                                      <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
+                                        <i class=" bi bi-heart"></i></a></button>
+                                  @endif
                             </div>
                             
                               
