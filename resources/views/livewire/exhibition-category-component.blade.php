@@ -587,7 +587,7 @@
                         <!-- Company info & tags -->
                         <div class="mb-2">
                             <p class="mb-1">Leading Indian MNC in Beverage</p>
-                            <div class="d-flex flex-wrap gap-2">
+                            <div class="d-flex flex-wrap gap-1">
                                 <span class="badge bg-warning text-dark">3.5+</span>
                                 <span class="badge bg-light text-dark border">Indian MNC</span>
                                 <span class="badge bg-light text-dark border">Fortune India 500 (2023)</span>
@@ -625,7 +625,7 @@
                         <!-- Company info & tags -->
                         <div class="mb-2">
                             <p class="mb-1">Leading Indian MNC in Beverage</p>
-                            <div class="d-flex flex-wrap gap-2">
+                            <div class="d-flex flex-wrap gap-1">
                                 <span class="badge bg-warning text-dark">3.5+</span>
                                 <span class="badge bg-light text-dark border">Indian MNC</span>
                                 <span class="badge bg-light text-dark border">Fortune India 500 (2023)</span>
@@ -662,7 +662,7 @@
                         <!-- Company info & tags -->
                         <div class="mb-2">
                             <p class="mb-1">Leading Indian MNC in Beverage</p>
-                            <div class="d-flex flex-wrap gap-2">
+                            <div class="d-flex flex-wrap gap-1">
                                 <span class="badge bg-warning text-dark">3.5+</span>
                                 <span class="badge bg-light text-dark border">Indian MNC</span>
                                 <span class="badge bg-light text-dark border">Fortune India 500 (2023)</span>
