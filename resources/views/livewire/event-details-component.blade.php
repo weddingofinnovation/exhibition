@@ -5764,21 +5764,34 @@
                     <li class="d-flex justify-content-between p-0 m-0">
 
                         <div class="d-flex align-items-center justify-content-center mb-4">
-                                <div class="text-center me-3">
+                                <span class="text-center me-3">
                                     <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
                                     <small class="text-uppercase">edition</small>
-                                </div>
+                                </span>
 
-                                <div class="px-3 py-2 text-uppercase fw-bold me-3">{{$event->eventname}}<br> in Fiera</div>
+                                <span class="px-3 py-2 text-uppercase fw-bold me-3">{{$event->eventname}}<br> in Fiera</span>
 
-                                <div class="display-5 fw-semibold">
+                                <span class="display-5 fw-semibold">
                                     @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
                                         {{Carbon::parse($event->enddate)->format('y')}}
                                     @else
                                         {{Carbon::parse($event->enddate)->format('Y')}}
                                     @endif
-                                </div>
+                                </span>
  check
+ <span class="col bg-light mb-0">
+                                
+                                    <!-- <span class="badge bg-primary mt-0">{{$event->edition}}th</span> -->
+                                    <!-- <h3 class="mb-0">{{$event->eventname}}</h3> -->
+
+                                    @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
+                                        {{Carbon::parse($event->startdate)->format('D, d M')}} - {{Carbon::parse($event->enddate)->format('D, d M y')}}
+                                    @else
+                                        {{Carbon::parse($event->startdate)->format('D, d ')}} - {{Carbon::parse($event->enddate)->format('D, d M, Y')}}
+                                    @endif
+
+                                    <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+                </span>
                                 
                         </div>
 
