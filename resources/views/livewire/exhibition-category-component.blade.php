@@ -587,7 +587,7 @@
                         <!-- Company info & tags -->
                         <div class="mb-2">
                             <p class="mb-1">Leading Indian MNC in Beverage</p>
-                            <div class="d-flex flex-wrap gap-1">
+                            <div class="d-flex flex-wrap gap-0">
                                 <span class="badge bg-warning text-dark" style="margin-left: 0px;">3.5+</span>
                                 <span class="badge bg-light text-dark border" style="margin-left:0 px;">Indian MNC</span>
                                 <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
