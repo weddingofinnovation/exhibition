@@ -576,7 +576,7 @@
 
 
       <div class="container">
-              <div class="card p-3 mb-3 shadow-sm rounded" style="max-width: 500px;">
+              <div class="card p-3 mb-3 shadow-sm rounded" style="max-width: auto;">
                   <!-- Header -->
                   <div class="d-flex justify-content-between align-items-start mb-2">
                       <h5 class="mb-0 fw-bold">Product Manager</h5>
