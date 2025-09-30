@@ -608,7 +608,7 @@
                               <!-- Meet for & button -->
                                 <div class="border-top pt-2 mt-2">
                                     <small class="text-muted me-2">Meet for:</small>
-                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center gap-2">
                                             <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
                                             <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
@@ -686,7 +686,7 @@
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
-                                  <div class="d-flex justify-content-between align-items-center mt-2">
+                                  <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
                                           <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
@@ -725,7 +725,7 @@
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
-                                  <div class="d-flex justify-content-between align-items-center mt-2">
+                                  <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
                                           <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
@@ -764,7 +764,7 @@
                               <!-- Meet for & button -->
                                 <div class="border-top pt-2 mt-2">
                                     <small class="text-muted me-2">Meet for:</small>
-                                    <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center gap-2">
                                             <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
                                             <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
