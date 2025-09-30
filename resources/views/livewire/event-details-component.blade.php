@@ -5782,6 +5782,7 @@
                                 
                         </div>
 
+                        check2
                                 <div class="col bg-light mb-0">
                                 
                                     <!-- <span class="badge bg-primary mt-0">{{$event->edition}}th</span> -->
