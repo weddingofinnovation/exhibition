@@ -600,19 +600,21 @@
                       <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
                   </div>
 
-                  <!-- Hiring companies -->
-                  <div class="d-flex align-items-center mb-3 gap-2">
-                      <small class="text-muted me-2">Hiring for:</small>
-                      <img src="company1.png" alt="Café Coffee Day" class="rounded-circle" width="30" height="30">
-                      <img src="company2.png" alt="Diageo" class="rounded-circle" width="30" height="30">
-                      <img src="company3.png" alt="VB" class="rounded-circle" width="30" height="30">
-                      <img src="company4.png" alt="CocaCola" class="rounded-circle" width="30" height="30">
-                      <img src="company5.png" alt="Another" class="rounded-circle" width="30" height="30">
-                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <!-- Hiring companies -->
+                    <div class="d-flex align-items-center mb-3 gap-2">
+                        <small class="text-muted me-2">Meet for:</small>
+                        <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
+                        <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
+                    </div>
 
-                  <!-- CTA Button -->
-                  <div class="text-end">
-                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                    <!-- CTA Button -->
+                    <div class="text-end">
+                        <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                    </div>
                   </div>
               </div>
       </div>
