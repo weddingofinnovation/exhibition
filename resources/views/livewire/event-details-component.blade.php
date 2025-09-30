@@ -5761,80 +5761,62 @@
                 <!-- fixedthis -->
                <div class="d-none d-sm-block fixed-bottom-div shadow-lg">
                 <ul class="container list-unstyled fs-sm py-2">
-                    <li class="d-flex justify-content-between align-items-start p-0 m-0">
-                        <!-- Left Block -->
-                        <div class="d-flex flex-column bg-light p-3 rounded col me-3">
-                            <div class="text-center mb-2">
-                                <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">
-                                    {{$event->edition}}
-                                    <sup style="font-size: 1rem;">a</sup>
-                                </h2>
-                                <small class="text-uppercase">edition</small>
-                            </div>
+                    <li class="d-flex justify-content-between p-0 m-0">
 
-                            <div class="px-2 py-2 text-uppercase fw-bold text-center">
-                                {{$event->eventname}} <br> in Fiera
-                            </div>
+                        <div class="d-flex align-items-center justify-content-center mb-4">
+                                <div class="text-center me-3">
+                                    <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
+                                    <small class="text-uppercase">edition</small>
+                                </div>
 
-                            <div class="display-6 fw-semibold text-center mb-2">
-                                @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
-                                    {{Carbon::parse($event->enddate)->format('y')}}
-                                @else
-                                    {{Carbon::parse($event->enddate)->format('Y')}}
-                                @endif
-                            </div>
+                                <div class="px-3 py-2 text-uppercase fw-bold me-3">{{$event->eventname}}<br> in Fiera</div>
 
-                            <div class="text-center mb-2">
+                                <div class="display-5 fw-semibold">
+                                    @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
+                                        {{Carbon::parse($event->enddate)->format('y')}}
+                                    @else
+                                        {{Carbon::parse($event->enddate)->format('Y')}}
+                                    @endif
+                                </div>
+
+                                <span class="col bg-light mb-0">
+                                
+                                <!-- <span class="badge bg-primary mt-0">{{$event->edition}}th</span> -->
+                                <!-- <h3 class="mb-0">{{$event->eventname}}</h3> -->
+
                                 @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
                                     {{Carbon::parse($event->startdate)->format('D, d M')}} - {{Carbon::parse($event->enddate)->format('D, d M y')}}
                                 @else
-                                    {{Carbon::parse($event->startdate)->format('D, d')}} - {{Carbon::parse($event->enddate)->format('D, d M, Y')}}
+                                    {{Carbon::parse($event->startdate)->format('D, d ')}} - {{Carbon::parse($event->enddate)->format('D, d M, Y')}}
                                 @endif
-                            </div>
 
-                            <div class="text-center">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                {{ucwords(trans($event->venue))}}, 
-                                {{ucwords(trans($event->city))}}, 
-                                {{ucwords(trans($event->country))}}
-                            </div>
+                               <i class="bi bi-geo-alt-fill"></i> {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+                            </span>
                         </div>
 
-                        <!-- Right Block (Buttons + Contact) -->
-                        <div class="text-end">
-                            {{-- CTA Buttons --}}
-                            @if($event->businessrevenue == 'visitor')       
-                                @if($ticketOrExhibit != 0)
-                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">
-                                        Book your Tickets
-                                    </a>
+                            
+
+                            <span class="text-end">
+                                {{-- CTA Buttons --}}
+                                @if($event->businessrevenue == 'visitor')       
+                                    @if($ticketOrExhibit != 0)
+                                        <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Book your Tickets</a>
+                                    @elseif($ticketOrExhibit == 0)
+                                        <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan your Visit</a>
+                                    @endif
                                 @else
-                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">
-                                        Plan your Visit
-                                    </a>
+                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Book your Space</a>
+                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Plan your Visit</a>
                                 @endif
-                            @else
-                                <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">
-                                    Book your Space
-                                </a>
-                                <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">
-                                    Plan your Visit
-                                </a>
-                            @endif
 
-                            {{-- Call Info --}}
-                            <div class="mt-3">
+                                {{-- Call Info Below Buttons --}}
+                                <div class="mt-2">
                                 <span class="d-block fw-medium fs-sm">
-                                    📞 Call us 
-                                    <a href="tel:+919991856776" class="text-decoration-none text-dark">
-                                        +91-999-185-6776
-                                    </a>
+                                    📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
                                 </span>
-                                <span class="d-block fw-normal fs-xs text-muted">
-                                    Get extra add-ons
-                                </span>
-                            </div> 
-                        </div>
+                                <span class="d-block fw-normal fs-xs text-muted">Get extra ad-ons</span>
+                                </div> 
+                            </span>
                     </li>
                 </ul>
                </div>
