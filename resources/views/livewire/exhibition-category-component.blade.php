@@ -2527,70 +2527,15 @@
             @endforeach
 
             <!-- Banner-->
-            <!--<div class="py-sm-2">
+            <div class="py-sm-2">
               <div class="d-sm-flex justify-content-between align-items-center bg-secondary overflow-hidden mb-4 rounded-3">
                 <div class="py-4 my-2 my-md-0 py-md-5 px-4 ms-md-3 text-center text-sm-start">
                   <h4 class="fs-lg fw-light mb-2">Converse All Star</h4>
                   <h3 class="mb-4">Make Your Day Comfortable</h3><a class="btn btn-primary btn-shadow btn-sm" href="#">Shop Now</a>
                 </div><img class="d-block ms-auto" src="{{asset ('assets/images/04.jpg')}}" width="100" alt="Shop Converse">
               </div>
-            </div>-->
-            <!-- Products grid-->
-            <div class="row mx-n2">
-            test3
-               <!-- Product-->
-               <!--<div class="col-md-4 col-sm-6 px-2 mb-4">
-                <div class="card product-card"><span class="badge bg-danger badge-shadow">Sale</span>
-                  <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist"><i class="ci-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html"><img src="img/shop/catalog/02.jpg" alt="Product"></a>
-                  <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">Women’s T-shirt</a>
-                    <h3 class="product-title fs-sm"><a href="shop-single-v1.html">Cotton Lace Blouse</a></h3>
-                    <div class="d-flex justify-content-between">
-                      <div class="product-price"><span class="text-accent">$28.<small>50</small></span>
-                        <del class="fs-sm text-muted">38.<small>50</small></del>
-                      </div>
-                      <div class="star-rating"><i class="star-rating-icon ci-star-fill active"></i><i class="star-rating-icon ci-star-fill active"></i><i class="star-rating-icon ci-star-fill active"></i><i class="star-rating-icon ci-star"></i><i class="star-rating-icon ci-star"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-body card-body-hidden">
-                    <div class="text-center pb-2">
-                      <div class="form-check form-option form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                        <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                      </div>
-                      <div class="form-check form-option form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="color1" id="blue">
-                        <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                      </div>
-                      <div class="form-check form-option form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="color1" id="yellow">
-                        <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                      </div>
-                      <div class="form-check form-option form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="color1" id="pink">
-                        <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                      </div>
-                    </div>
-                    <div class="d-flex mb-2">
-                      <select class="form-select form-select-sm me-2">
-                        <option>XS</option>
-                        <option>S</option>
-                        <option>M</option>
-                        <option>L</option>
-                        <option>XL</option>
-                      </select>
-                      <button class="btn btn-primary btn-sm" type="button"><i class="ci-cart fs-sm me-1"></i>Add to Cart</button>
-                    </div>
-                    <div class="text-center"><a class="nav-link-style fs-ms" href="#quick-view" data-bs-toggle="modal"><i class="ci-eye align-middle me-1"></i>Quick view</a></div>
-                  </div>
-                </div>
-                <hr class="d-sm-none">
-              </div>-->
-
             </div>
-            <hr class="my-3">
-
-           {{--{{$exhibition->links('pagination-links')}}--}}
+          
 
           </section>         
         </div>
