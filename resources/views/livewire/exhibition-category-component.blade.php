@@ -591,51 +591,33 @@
                 @foreach ($franchiso as $franchise)
                   @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
                       <div class="col-md-4">
-                          <div class="card p-3 shadow-sm rounded">
-                              <!-- Header -->
-                              <div class="d-flex justify-content-between align-items-start mb-2">
-                                  <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
-                                  <small class="text-muted">4d ago</small>
-                              </div>
-                              <!-- Company info & tags -->
-                              <div class="mb-2">
-                                  <p class="mb-1">Leading Indian MNC in Beverage</p>
-                                  <div class="d-flex flex-wrap gap-0">
-                                      <span class="badge bg-warning text-dark" style="margin-left: 0px;">3.5+</span>
-                                      <span class="badge bg-light text-dark border" style="margin-left:0 px;">Indian MNC</span>
-                                      <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
-                                  </div>
-                              </div>
-                              <!-- Details -->
-                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
-                              </div>
-                              <!-- Meet for & button -->
-                                <div class="border-top pt-2 mt-2">
-                                    <small class="text-muted me-2">Meet for:</small>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
-                                        </div>
-                                        <button class="btn btn-outline-primary btn-sm">Share interest</button>
-                                    </div>
-                                </div>
-                          </div>
-                      </div>
-                    @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
-                      <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> 
+                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
+                                        @else
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                        @endif 
+                                  </small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <!-- <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small> -->
+                              </div>
+
+                            <!-- Details -->
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                              </div>
+
                             <!-- Company info & tags -->
                             <div class="mb-2">
                                 <p class="mb-1">Leading Indian MNC in Beverage</p>
@@ -645,12 +627,62 @@
                                     <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
                                 </div>
                             </div>
+
+                            <!-- Meet for & button -->
+                              <div class="border-top pt-2 mt-2">
+                                  <small class="text-muted me-2">Meet for:</small>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center gap-2">
+                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
+                                      </div>
+                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                  </div>
+                              </div>
+                        </div>
+                      </div>
+                    @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
+                      <div class="col-md-4">
+                        <div class="card p-3 shadow-sm rounded">
+                            <!-- Header -->
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <small class="text-muted">4d ago</small>
+                            </div>
+
+                            
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> 
+                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
+                                        @else
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                        @endif 
+                                  </small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <!-- <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small> -->
+                              </div>
+
                             <!-- Details -->
-                            <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
+
+                            <!-- Company info & tags -->
+                            <div class="mb-2">
+                                <p class="mb-1">Leading Indian MNC in Beverage</p>
+                                <div class="d-flex flex-wrap gap-0">
+                                    <span class="badge bg-warning text-dark" style="margin-left: 0px;">3.5+</span>
+                                    <span class="badge bg-light text-dark border" style="margin-left:0 px;">Indian MNC</span>
+                                    <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
+                                </div>
+                            </div>
+
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
@@ -675,6 +707,27 @@
                                 <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> 
+                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
+                                        @else
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                        @endif 
+                                  </small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <!-- <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small> -->
+                              </div>
+
+                            <!-- Details -->
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                              </div>
+
                             <!-- Company info & tags -->
                             <div class="mb-2">
                                 <p class="mb-1">Leading Indian MNC in Beverage</p>
@@ -684,12 +737,7 @@
                                     <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
                                 </div>
                             </div>
-                            <!-- Details -->
-                            <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
-                            </div>
+
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
@@ -714,6 +762,27 @@
                                 <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> 
+                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
+                                        @else
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                        @endif 
+                                  </small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <!-- <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small> -->
+                              </div>
+
+                            <!-- Details -->
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                              </div>
+
                             <!-- Company info & tags -->
                             <div class="mb-2">
                                 <p class="mb-1">Leading Indian MNC in Beverage</p>
@@ -723,12 +792,7 @@
                                     <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
                                 </div>
                             </div>
-                            <!-- Details -->
-                            <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
-                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
-                            </div>
+
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
@@ -747,42 +811,58 @@
                       </div>
                     @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
                       <div class="col-md-4">
-                          <div class="card p-3 shadow-sm rounded">
-                              <!-- Header -->
-                              <div class="d-flex justify-content-between align-items-start mb-2">
-                                  <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
-                                  <small class="text-muted">4d ago</small>
+                        <div class="card p-3 shadow-sm rounded">
+                            <!-- Header -->
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <small class="text-muted">4d ago</small>
+                            </div>
+
+                            
+                              <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
+                                  <small><i class="bi bi-briefcase-fill"></i> 
+                                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
+                                        @else
+                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
+                                        @endif 
+                                  </small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
+                                  <!-- <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small> -->
                               </div>
-                              <!-- Company info & tags -->
-                              <div class="mb-2">
-                                  <p class="mb-1">Leading Indian MNC in Beverage</p>
-                                  <div class="d-flex flex-wrap gap-0">
-                                      <span class="badge bg-warning text-dark" style="margin-left: 0px;">3.5+</span>
-                                      <span class="badge bg-light text-dark border" style="margin-left:0 px;">Indian MNC</span>
-                                      <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
-                                  </div>
-                              </div>
-                              <!-- Details -->
+
+                            <!-- Details -->
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
-                              <!-- Meet for & button -->
-                                <div class="border-top pt-2 mt-2">
-                                    <small class="text-muted me-2">Meet for:</small>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center gap-2">
-                                            <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
-                                            <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
-                                        </div>
-                                        <button class="btn btn-outline-primary btn-sm">Share interest</button>
-                                    </div>
+
+                            <!-- Company info & tags -->
+                            <div class="mb-2">
+                                <p class="mb-1">Leading Indian MNC in Beverage</p>
+                                <div class="d-flex flex-wrap gap-0">
+                                    <span class="badge bg-warning text-dark" style="margin-left: 0px;">3.5+</span>
+                                    <span class="badge bg-light text-dark border" style="margin-left:0 px;">Indian MNC</span>
+                                    <span class="badge bg-light text-dark border" style="margin-left:0 px;">Fortune India 500 (2023)</span>
                                 </div>
-                          </div>
+                            </div>
+
+                            <!-- Meet for & button -->
+                              <div class="border-top pt-2 mt-2">
+                                  <small class="text-muted me-2">Meet for:</small>
+                                  <div class="d-flex justify-content-between align-items-center">
+                                      <div class="d-flex align-items-center gap-2">
+                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
+                                          <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
+                                      </div>
+                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                  </div>
+                              </div>
+                        </div>
                       </div>
                   @endif
                 @endforeach
