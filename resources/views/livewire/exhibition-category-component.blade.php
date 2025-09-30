@@ -600,9 +600,10 @@
                       <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
                   </div>
 
+                  <small class="text-muted me-2">Meet for:</small>
                   <div class="d-flex justify-content-between align-items-center mb-0 mt-2">
                     <!-- Hiring companies -->
-                     <small class="text-muted me-2">Meet for:</small>
+                    
                     <div class="d-flex align-items-center mb-3 gap-2">
                         
                         <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
