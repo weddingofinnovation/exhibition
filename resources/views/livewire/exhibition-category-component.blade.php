@@ -595,7 +595,7 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago
+                                <small class="text-muted">
                                     <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
                                     @if($witems->contains($franchise->id))
                                         <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
@@ -661,7 +661,7 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago
+                                <small class="text-muted">
                                     <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
                                     @if($witems->contains($franchise->id))
                                         <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
@@ -727,7 +727,7 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago
+                                <small class="text-muted">
                                     <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
                                     @if($witems->contains($franchise->id))
                                         <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
@@ -793,7 +793,7 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago
+                                <small class="text-muted">
                                     <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
                                     @if($witems->contains($franchise->id))
                                         <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
@@ -859,7 +859,7 @@
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}" style="color: #000;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                                <small class="text-muted">4d ago
+                                <small class="text-muted">
                                     <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
                                     @if($witems->contains($franchise->id))
                                         <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
