@@ -782,6 +782,76 @@
               @endforeach
             </div>
         </div>
+<div class="container my-4">
+  <div class="row g-4">
+    
+    <!-- Left card (invitation + jobs) -->
+    <div class="col-md-6">
+      <div class="card shadow-sm rounded-4 p-3">
+        <div class="d-flex">
+          <!-- Left side -->
+          <div class="flex-shrink-0 text-center pe-3">
+            <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mb-2" style="width:60px; height:60px;">
+              <i class="bi bi-envelope fs-3 text-primary"></i>
+            </div>
+            <h6 class="fw-bold mb-1">NVites: Invitation<br>to apply</h6>
+            <a href="#" class="text-primary small">View all</a>
+          </div>
+
+          <!-- Divider -->
+          <div class="border-end mx-3"></div>
+
+          <!-- Right side -->
+          <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h6 class="fw-bold mb-0">Sales Team Lead</h6>
+                <small class="text-muted">Hiring for Corporate</small>
+              </div>
+              <small class="text-muted">2:46 PM</small>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <h6 class="fw-bold mb-0">Senior Php Developer/ Tech Lead</h6>
+                <small class="text-muted">Markup Designs</small>
+              </div>
+              <small class="text-muted">2:36 PM</small>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="fw-bold mb-0">Senior Php Developer/ Tech Lead</h6>
+                <small class="text-muted">Markup Designs</small>
+              </div>
+              <small class="text-muted">2:35 PM</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right card (AI mock interview) -->
+    <div class="col-md-6">
+      <div class="card shadow-sm rounded-4 p-4 d-flex flex-row align-items-center" style="background: #f2f0ff;">
+        <!-- Icon -->
+        <div class="me-3">
+          <div class="bg-white rounded-circle d-flex align-items-center justify-content-center" style="width:70px; height:70px;">
+            <i class="bi bi-robot fs-2 text-primary"></i>
+          </div>
+        </div>
+        <!-- Text -->
+        <div class="flex-grow-1">
+          <h6 class="fw-bold mb-1">Increase your chances in interviews with AI</h6>
+          <small class="text-muted">Access AI-powered mock interview and question bank for your desired role</small>
+        </div>
+        <!-- Button -->
+        <div class="ms-3">
+          <button class="btn btn-primary rounded-pill px-3">Start preparing</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 
      
     
