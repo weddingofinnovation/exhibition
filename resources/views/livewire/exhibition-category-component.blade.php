@@ -594,9 +594,11 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
 
                             
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
@@ -633,13 +635,15 @@
                                   <small class="text-muted me-2">Meet for:</small>
                                   <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
-                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
                                       </div>
-                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                      <a class="btn btn-outline-primary btn-sm" href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">Share interest</a>
                                   </div>
                               </div>
                         </div>
@@ -649,9 +653,11 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
 
                             
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
@@ -688,25 +694,29 @@
                                   <small class="text-muted me-2">Meet for:</small>
                                   <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
-                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
                                       </div>
-                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                      <a class="btn btn-outline-primary btn-sm" href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">Share interest</a>
                                   </div>
                               </div>
                         </div>
                       </div>
                     @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate)
-                      <div class="col-md-4">
+                       <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
 
                             
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
@@ -743,13 +753,15 @@
                                   <small class="text-muted me-2">Meet for:</small>
                                   <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
-                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
                                       </div>
-                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                      <a class="btn btn-outline-primary btn-sm" href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">Share interest</a>
                                   </div>
                               </div>
                         </div>
@@ -759,9 +771,11 @@
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
 
                             
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
@@ -798,25 +812,29 @@
                                   <small class="text-muted me-2">Meet for:</small>
                                   <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
-                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
                                       </div>
-                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                      <a class="btn btn-outline-primary btn-sm" href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">Share interest</a>
                                   </div>
                               </div>
                         </div>
                       </div>
                     @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
-                      <div class="col-md-4">
+                       <div class="col-md-4">
                         <div class="card p-3 shadow-sm rounded">
                             <!-- Header -->
                             <div class="d-flex justify-content-between align-items-start mb-2">
-                                <h5 class="mb-0 fw-bold">{{$franchise->eventname}}</h5>
+                                <a class="mb-0 fw-bold" href="{{route('event.details',['slug' => $franchise->slug])}}">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                                 <small class="text-muted">4d ago</small>
                             </div>
+
+                            
 
                             
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
@@ -853,13 +871,15 @@
                                   <small class="text-muted me-2">Meet for:</small>
                                   <div class="d-flex justify-content-between align-items-center">
                                       <div class="d-flex align-items-center gap-2">
-                                          <img src="company1.png" alt="" class="rounded-circle" width="30" height="30">
+                                          
+                                          <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="company2.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company3.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company4.png" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="company5.png" alt="" class="rounded-circle" width="30" height="30">
                                       </div>
-                                      <button class="btn btn-outline-primary btn-sm">Share interest</button>
+                                      <a class="btn btn-outline-primary btn-sm" href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">Share interest</a>
                                   </div>
                               </div>
                         </div>
