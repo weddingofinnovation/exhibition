@@ -608,9 +608,9 @@
                               </div>
                               <!-- Details -->
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                  <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
-                                  <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
                               <!-- Meet for & button -->
                                 <div class="border-top pt-2 mt-2">
@@ -647,10 +647,10 @@
                             </div>
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
-                                <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
-                                <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
-                            </div>
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
+                              </div>
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
                                   <small class="text-muted me-2">Meet for:</small>
@@ -686,9 +686,9 @@
                             </div>
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
-                                <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
-                                <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                             </div>
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
@@ -725,9 +725,9 @@
                             </div>
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
-                                <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
-                                <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
+                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                             </div>
                             <!-- Meet for & button -->
                               <div class="border-top pt-2 mt-2">
@@ -764,9 +764,9 @@
                               </div>
                               <!-- Details -->
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
-                                  <small><i class="bi bi-briefcase-fill"></i> 10-16 Yrs</small>
+                                  <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
                                   <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
-                                  <small><i class="bi bi-geo-alt-fill"></i> Faridabad, Delhi</small>
+                                  <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
                               <!-- Meet for & button -->
                                 <div class="border-top pt-2 mt-2">
