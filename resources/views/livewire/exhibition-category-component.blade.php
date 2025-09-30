@@ -528,52 +528,6 @@
           </div>
         </div>
 
-        <!-- Styles -->
-        <style>
-          .custom-select {
-            background-color: #1a1a1a;
-            color: #fff;
-            border: 1px solid #333;
-          }
-          .custom-select:focus {
-            border-color: #00ff99;
-            box-shadow: 0 0 5px rgba(0,255,153,0.5);
-          }
-          .tag-btn {
-            background-color: #1a1a1a;
-            color: #fff;
-            border: 1px solid #333;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: 0.3s;
-          }
-          .tag-btn:hover {
-            background-color: #00ff99;
-            color: #000;
-            border-color: #00ff99;
-          }
-          .pop-filter {
-            padding: 6px 12px;
-            background-color: #111;
-            border: 1px solid #333;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: 0.3s;
-          }
-          .pop-filter:hover {
-            background-color: #00ff99;
-            color: #000;
-          }
-          .table th, .table td {
-            vertical-align: middle;
-          }
-          .badge {
-            font-size: 0.7rem;
-            margin-left: 6px;
-          }
-        </style>
-
         <div class="container py-4">
             <div class="row g-3"> <!-- g-3 adds some gap between columns -->
               <div class="border-bottom pt-2 mt-2">
