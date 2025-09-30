@@ -609,7 +609,7 @@
                               <!-- Details -->
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
                               <!-- Meet for & button -->
@@ -648,7 +648,7 @@
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
                             <!-- Meet for & button -->
@@ -687,7 +687,7 @@
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                             </div>
                             <!-- Meet for & button -->
@@ -726,7 +726,7 @@
                             <!-- Details -->
                             <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                             </div>
                             <!-- Meet for & button -->
@@ -765,7 +765,7 @@
                               <!-- Details -->
                               <div class="d-flex justify-content-start align-items-center text-muted mb-2 gap-3">
                                   <small><i class="bi bi-briefcase-fill"></i> {{$franchise -> venue}}</small>
-                                  <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small>
+                                  <!-- <small><i class="bi bi-currency-rupee"></i> 14-17 Lacs P.A.</small> -->
                                   <small><i class="bi bi-geo-alt-fill"></i> {{$franchise -> city}}, {{$franchise -> country}}</small>
                               </div>
                               <!-- Meet for & button -->
