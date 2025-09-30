@@ -462,10 +462,10 @@
           }
         </style>
 
-        <div class="page-title-overlap pt-4 d-none d-sm-block" style="background-color: #000;">
+        <div class="pt-4 d-none d-sm-block" style="background-color: #000;">
           <div class="container">
             <!-- Title -->
-            <h2 class="fw-bold text-white">Esports Tournaments - Statistics and Analytics</h2>
+            <h5 class="fw-bold text-white">Business events- Statistics and Analytics</h2>
 
             <!-- Filter Section -->
             <div class="filter-box mt-4">
@@ -521,9 +521,10 @@
                   <option>Most Viewed</option>
                   <option>Top Teams</option>
                 </select>
-                <button class="btn btn-danger fw-bold px-4">LIVE Matches</button>
+                <button class="btn btn-danger fw-bold px-4">LIVE Business Events</button>
               </div>
             </div>
+
           </div>
         </div>
 
