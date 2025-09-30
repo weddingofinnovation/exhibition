@@ -148,8 +148,9 @@
     <style>
         /* Custom Styling */
         .search-section {
-            background: linear-gradient(to right, #f8f3ff, #f0e6ff);
-            padding: 60px 0;
+            /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
+            background:#f3f9f6;
+            padding: 30px 0;
             text-align: center;
         }
 
