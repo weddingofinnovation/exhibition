@@ -26,12 +26,14 @@
                               
                               <div class="d-flex align-items-center">
                               
-                              <a class="d-block flex-shrink-0" href="{{route ('franchise.details',['slug'=>$item->model->slug])}}">
+                              {{-- <a class="d-block flex-shrink-0" href="{{route ('franchise.details',['slug'=>$item->model->slug])}}">
+                              <img src="{{asset ('Storage/brands') }}/{{$item->model->image}}" width="64" alt="{{$item->model->brand_name}}"></a> --}}
+                              <a class="d-block flex-shrink-0" href="#">
                               <img src="{{asset ('Storage/brands') }}/{{$item->model->image}}" width="64" alt="{{$item->model->brand_name}}"></a>
                               
                                 <div class="ps-2">
                                   <h6 class="widget-product-title">
-                                  <a href="{{route ('franchise.details',['slug'=>$item->model->slug])}}">{{Str::limit($item->model->brand_name,28)}}</a></h6>
+                                  <a href="#">{{Str::limit($item->model->brand_name,28)}}</a></h6>
                                   <div class="widget-product-meta">
                                   <span class="text-accent me-2">{{$item->model->max_investment}} lac<small> - {{$item->model->min_investment}} lac</small></span>
                                   <span class="text-muted">x 1</span></div>
