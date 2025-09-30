@@ -908,7 +908,7 @@
                                       <div class="d-flex align-items-center gap-2">
                                           
                                           <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                           <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="" class="rounded-circle" width="30" height="30">
                                           <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="" class="rounded-circle" width="30" height="30">
@@ -996,687 +996,114 @@
           </div>
         </div>
 
-     <div class="container my-4">
+        <div class="container my-4">
 
-  <!-- Top Banner -->
-  <div class="card shadow-sm rounded-4 mb-4 p-4" style="background:#e8f4ff;">
-    <div class="d-flex justify-content-between align-items-center flex-wrap">
-      <!-- Left Text -->
-      <div class="mb-3 mb-md-0">
-        <h6 class="fw-bold mb-2">Highlight your application and stand out from rest of the applicants</h6>
-        <button class="btn btn-primary rounded-pill px-3">Know more</button>
-        <div class="small text-muted mt-2">Paid service by Fastforward</div>
-      </div>
-      <!-- Right Illustration -->
-      <div>
-        <img src="illustration.png" alt="illustration" class="img-fluid" style="max-height:120px;">
-      </div>
-    </div>
-  </div>
-
-  <!-- Match Section -->
-  <div class="card shadow-sm rounded-4 p-3">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
-      <a href="#" class="text-primary small">View all</a>
-    </div>
-
-    <!-- Scrollable stats cards -->
-    <div class="d-flex gap-3 overflow-auto pb-2">
-      <!-- Card 1 -->
-      <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
-        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-          <i class="bi bi-key fs-4 text-primary"></i>
-        </div>
-        <h6 class="fw-bold small mb-1">Keyskills</h6>
-        <small class="text-muted">Planning, Budget...</small>
-        <div class="fw-bold mt-2">% match</div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
-        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-          <i class="bi bi-building fs-4 text-primary"></i>
-        </div>
-        <h6 class="fw-bold small mb-1">Industry</h6>
-        <small class="text-muted">Advertising & Marketing</small>
-        <div class="fw-bold mt-2">0% match</div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
-        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-          <i class="bi bi-people fs-4 text-primary"></i>
-        </div>
-        <h6 class="fw-bold small mb-1">Department</h6>
-        <small class="text-muted">Marketing & Comm..</small>
-        <div class="fw-bold mt-2">29% match</div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
-        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-          <i class="bi bi-graph-up fs-4 text-primary"></i>
-        </div>
-        <h6 class="fw-bold small mb-1">Early Applicant</h6>
-        <small class="text-muted">Applied to fresh jobs</small>
-        <div class="fw-bold mt-2">14% match</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-      <div class="container pb-5 mb-2 mb-md-4 d-none d-sm-block">
-        <div class="row">
-          <!-- Content  -->
-          <section class="col-lg-8">
-            <!-- Toolbar-->
-            <div class="d-flex justify-content-center justify-content-sm-between align-items-center pt-2 pb-4 pb-sm-5">
-              <div class="d-flex flex-wrap">
-                <div class="d-flex align-items-center flex-nowrap me-3 me-sm-4 pb-3">
-                  <label class="text-light fs-sm opacity-75 text-nowrap me-2 d-none d-sm-block" for="sorting">Sort by:</label>
-                  <select class="form-select"  wire:model="sorting">
-                    <option value="today" selected="selected">Today</option>
-                    <option value="tomorrow"  >Tomorrow</option>
-                    <option value="weekend">This weekend</option>
-                  </select>
-                  <span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">of {{$exhibition->count()}} {{$this->eventype}} </span>
-                </div>
-
-                <div class="d-flex pb-3">
-                  <select class="form-select"  wire:model="pagesize">
-                    <!--<option value="12" selected="selected">12 per page</option>-->
-                              <option value="12">12 per page</option>
-                              <option value="16">16 per page</option>
-                              <option value="18">18 per page</option>
-                              <option value="21">21 per page</option>
-                              <option value="24">24 per page</option>
-                              <option value="30">30 per page</option>
-                              <option value="32">32 per page</option>
-                  </select>
-                </div>
+          <!-- Top Banner -->
+          <div class="card shadow-sm rounded-4 mb-4 p-4" style="background:#e8f4ff;">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+              <!-- Left Text -->
+              <div class="mb-3 mb-md-0">
+                <h6 class="fw-bold mb-2">Highlight your application and stand out from rest of the applicants</h6>
+                <button class="btn btn-primary rounded-pill px-3">Know more</button>
+                <div class="small text-muted mt-2">Paid service by Fastforward</div>
               </div>
-              <!--<div class="d-flex pb-3">
-                    <a class="nav-link-style nav-link-light me-3" href="#"><i class="bi bi-chevron-left"></i></a>
-                    <span class="fs-md text-light">1 / 5</span>
-                    <a class="nav-link-style nav-link-light ms-3" href="#"><i class="bi bi-chevron-right"></i></a></div>
+              <!-- Right Illustration -->
+              <div>
+                <img src="illustration.png" alt="illustration" class="img-fluid" style="max-height:120px;">
+              </div>
+            </div>
+          </div>
 
-                    <div class="d-none d-sm-flex pb-3">
-                    <a class="btn btn-icon nav-link-style bg-light text-dark disabled opacity-100 me-2" href="#">
-                      <i class=" bi bi-view-grid"></i></a><a class="btn btn-icon nav-link-style nav-link-light" href="shop-list-rs.html">
-                        <i class="ci-view-list"></i></a>
-                  </div>--> 
-
+          <!-- Match Section -->
+          <div class="card shadow-sm rounded-4 p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
+              <a href="#" class="text-primary small">View all</a>
             </div>
 
-            <!-- Item -->
-            <div class="row mx-n2">
-              test1
-              @php $witems = Cart::instance('wishlist')->content()->pluck('id');  @endphp
-              @foreach ($exhibition as $business)
+            <!-- Scrollable stats cards -->
+            <div class="d-flex gap-3 overflow-auto pb-2">
+              <!-- Card 1 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-key fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Keyskills</h6>
+                <small class="text-muted">Planning, Budget...</small>
+                <div class="fw-bold mt-2">% match</div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-building fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Industry</h6>
+                <small class="text-muted">Advertising & Marketing</small>
+                <div class="fw-bold mt-2">0% match</div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-people fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Department</h6>
+                <small class="text-muted">Marketing & Comm..</small>
+                <div class="fw-bold mt-2">29% match</div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-graph-up fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Early Applicant</h6>
+                <small class="text-muted">Applied to fresh jobs</small>
+                <div class="fw-bold mt-2">14% match</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  
+        @if(count($selectedImages) > 0)
+          <div class="fixed-bottom bg-light p-3 border-top">
+            <p class="text-dark"> {{ count($selectedImages) }} Selected Exhibition</p>
+
+            <hr class="">
+            <div class="row">
+              @foreach($selectedImages as $key => $selectedImageId)
+                @if($key < 5)
                   @php
-                      $franchiso = DB::table('events')->where('id', $business->EventName)->get(); 
+                    $selectedImage = DB::table('events')->find($selectedImageId)
                   @endphp
-
-                    @foreach ($franchiso as $franchise)
-                      @if ($mytime < $franchise->startdate  && $mytime < $franchise->enddate)
-                        <div class="col-md-4 col-sm-6 px-2 mb-4">
-
-                          <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
-                            <div class="product-card-actions d-flex align-items-center">
-                              <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
-                                @if($witems->contains($franchise->id))
-                                    <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <i class=" bi bi-heart-fill"></i></button>
-                                @else
-                                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                      <i class=" bi bi-heart"></i></a></button>
-                                @endif
-                            </div>
-
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                            
-                            <div class="card-body py-2">
-                                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                    </a>
-                                    {{--<h3 class="product-title fs-sm"><a href="">{{Str::limit($franchise->brand_name, 24)}}</a></h3>--}}
-                              
-                                <div class="d-flex justify-content-between">
-                                  <div class="product-price"><h3 class="product-title fs-sm">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}"><strong>{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</strong></a></h3></div>
-                                  <div class="star-rating align-center">
-                                  <!--untitled-1 line 558 -574-->
-                                  </div>
-                                </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small> <i class="bi bi-calendar3"></i>
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
-                                        @else
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                                        @endif 
-                                      </small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small><i class="bi bi-geo-alt-fill fs-sm"></i>{{$franchise -> venue}}, {{$franchise -> city}}</small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-                            </div>
-
-                            <div class="card-body card-body-hidden">
-                              <div class="text-center pb-2">
-                                <!--<div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                                  <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="blue">
-                                  <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="yellow">
-                                  <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="pink">
-                                  <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                                </div>-->
-                              </div>
-
-                              <div class="d-flex mb-2">
-                                
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a></li>
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" 
-                                href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                <i class=" bi bi-cart fs-sm me-1"></i>Apply</a></li>
-                                
-                                </div>
-                                <div class="text-center"><a class="nav-link-style fs-ms" href="{{route('event.details',['slug' => $franchise->slug])}}" data-bs-toggle="modal"><i class=" bi bi-eye align-middle me-1"></i>Contact details</a></div> 
-                            
-                            </div>
-                          
-                          </div>
-
-                          <hr class="d-sm-none">
-                        </div>
-                        @elseif ($mytime == $franchise->startdate  && $mytime < $franchise->enddate)
-                        <div class="col-md-4 col-sm-6 px-2 mb-4">
-
-                              <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
-                                <div class="product-card-actions d-flex align-items-center">
-                                  <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
-                                    @if($witems->contains($franchise->id))
-                                        <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                        <i class=" bi bi-heart-fill"></i></button>
-                                      @else
-                                        <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                        <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                          <i class=" bi bi-heart"></i></a></button>
-                                    @endif
-                                </div>
-
-                                <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                                
-                                <div class="card-body py-2">
-                                      <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                        </a>
-                                        {{--<h3 class="product-title fs-sm"><a href="">{{Str::limit($franchise->brand_name, 24)}}</a></h3>--}}
-                                  
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><h3 class="product-title fs-sm">
-                                        <a href="{{route('event.details',['slug' => $franchise->slug])}}"><strong>{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</strong></a></h3></div>
-                                      <div class="star-rating align-center">
-                                      <!--untitled-1 line 558 -574-->
-                                      </div>
-                                    </div>
-
-                                        <div class="d-flex justify-content-between">
-                                          <div class="product-price"><span class="text">
-                                          <small> <i class="bi bi-calendar3"></i>
-                                          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
-                                            @else
-                                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                                            @endif 
-                                          </small></span>
-                                            <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                          </div>
-                                          
-                                          <div class="star-rating">
-                                          <span class="text">
-                                          <small></small></span>
-                                          </div>
-                                        </div>
-
-                                        <div class="d-flex justify-content-between">
-                                          <div class="product-price"><span class="text">
-                                          <small><i class="bi bi-geo-alt-fill fs-sm"></i>{{$franchise -> venue}}, {{$franchise -> city}}</small></span>
-                                            <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                          </div>
-
-                                          
-                                          <div class="star-rating">
-                                          <span class="text">
-                                          <small></small></span>
-                                          </div>
-                                        </div>
-                                </div>
-
-                                <div class="card-body card-body-hidden">
-                                  <div class="text-center pb-2">
-                                    <!--<div class="form-check form-option form-check-inline mb-2">
-                                      <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                                      <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                                    </div>
-                                    <div class="form-check form-option form-check-inline mb-2">
-                                      <input class="form-check-input" type="radio" name="color1" id="blue">
-                                      <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                                    </div>
-                                    <div class="form-check form-option form-check-inline mb-2">
-                                      <input class="form-check-input" type="radio" name="color1" id="yellow">
-                                      <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                                    </div>
-                                    <div class="form-check form-option form-check-inline mb-2">
-                                      <input class="form-check-input" type="radio" name="color1" id="pink">
-                                      <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                                    </div>-->
-                                  </div>
-
-                                  <div class="d-flex mb-2">
-                                    
-                                    <a class=" text-center btn btn-primary btn-sm mx-1" type="button" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a></li>
-                                    <a class=" text-center btn btn-primary btn-sm mx-1" type="button" 
-                                    href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                    <i class=" bi bi-cart fs-sm me-1"></i>Apply</a></li>
-                                    
-                                    </div>
-                                    <div class="text-center"><a class="nav-link-style fs-ms" href="{{route('event.details',['slug' => $franchise->slug])}}" data-bs-toggle="modal"><i class=" bi bi-eye align-middle me-1"></i>Contact details</a></div> 
-                                
-                                </div>
-                              </div>
-                          <hr class="d-sm-none">
-                        </div>
-                        @elseif ($mytime > $franchise->startdate  && $mytime < $franchise->enddate)
-                        <div class="col-md-4 col-sm-6 px-2 mb-4">
-
-                          <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
-                            <div class="product-card-actions d-flex align-items-center">
-                              <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
-                                @if($witems->contains($franchise->id))
-                                    <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <i class=" bi bi-heart-fill"></i></button>
-                                @else
-                                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                      <i class=" bi bi-heart"></i></a></button>
-                                @endif
-                            </div>
-
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                            
-                            <div class="card-body py-2">
-                                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                    </a>
-                                    {{--<h3 class="product-title fs-sm"><a href="">{{Str::limit($franchise->brand_name, 24)}}</a></h3>--}}
-                              
-                                <div class="d-flex justify-content-between">
-                                  <div class="product-price"><h3 class="product-title fs-sm">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}"><strong>{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</strong></a></h3></div>
-                                  <div class="star-rating align-center">
-                                  <!--untitled-1 line 558 -574-->
-                                  </div>
-                                </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small> <i class="bi bi-calendar3"></i>
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
-                                        @else
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                                        @endif 
-                                      </small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small><i class="bi bi-geo-alt-fill fs-sm"></i>{{$franchise -> venue}}, {{$franchise -> city}}</small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-                            </div>
-
-                            <div class="card-body card-body-hidden">
-                              <div class="text-center pb-2">
-                                <!--<div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                                  <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="blue">
-                                  <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="yellow">
-                                  <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="pink">
-                                  <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                                </div>-->
-                              </div>
-
-                              <div class="d-flex mb-2">
-                                
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a></li>
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" 
-                                href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                <i class=" bi bi-cart fs-sm me-1"></i>Apply</a></li>
-                                
-                                </div>
-                                <div class="text-center"><a class="nav-link-style fs-ms" href="{{route('event.details',['slug' => $franchise->slug])}}" data-bs-toggle="modal"><i class=" bi bi-eye align-middle me-1"></i>Contact details</a></div> 
-                            
-                            </div>
-                          
-                          </div>
-
-                          <hr class="d-sm-none">
-                        </div>
-                        @elseif ($mytime > $franchise->startdate  && $mytime == $franchise->enddate) 
-                        <div class="col-md-4 col-sm-6 px-2 mb-4">
-
-                          <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
-                            <div class="product-card-actions d-flex align-items-center">
-                              <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
-                                @if($witems->contains($franchise->id))
-                                    <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <i class=" bi bi-heart-fill"></i></button>
-                                @else
-                                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                      <i class=" bi bi-heart"></i></a></button>
-                                @endif
-                            </div>
-
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                            
-                            <div class="card-body py-2">
-                                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                    </a>
-                                    {{--<h3 class="product-title fs-sm"><a href="">{{Str::limit($franchise->brand_name, 24)}}</a></h3>--}}
-                              
-                                <div class="d-flex justify-content-between">
-                                  <div class="product-price"><h3 class="product-title fs-sm">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}"><strong>{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</strong></a></h3></div>
-                                  <div class="star-rating align-center">
-                                  <!--untitled-1 line 558 -574-->
-                                  </div>
-                                </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small> <i class="bi bi-calendar3"></i>
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
-                                        @else
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                                        @endif 
-                                      </small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small><i class="bi bi-geo-alt-fill fs-sm"></i>{{$franchise -> venue}}, {{$franchise -> city}}</small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-                            </div>
-
-                            <div class="card-body card-body-hidden">
-                              <div class="text-center pb-2">
-                                <!--<div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                                  <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="blue">
-                                  <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="yellow">
-                                  <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="pink">
-                                  <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                                </div>-->
-                              </div>
-
-                              <div class="d-flex mb-2">
-                                
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a></li>
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" 
-                                href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                <i class=" bi bi-cart fs-sm me-1"></i>Apply</a></li>
-                                
-                                </div>
-                                <div class="text-center"><a class="nav-link-style fs-ms" href="{{route('event.details',['slug' => $franchise->slug])}}" data-bs-toggle="modal"><i class=" bi bi-eye align-middle me-1"></i>Contact details</a></div> 
-                            
-                            </div>
-                          
-                          </div>
-
-                          <hr class="d-sm-none">
-                        </div>
-                        @elseif ($mytime > $franchise->startdate  && $mytime > $franchise->enddate)
-                        <div class="col-md-4 col-sm-6 px-2 mb-4">
-
-                          <div class="card product-card"> <!--<span class="badge bg-danger badge-shadow">Sale</span>-->
-                            <div class="product-card-actions d-flex align-items-center">
-                              <a class="btn-action nav-link-style me-2" href=""><i class="bi bi-shuffle me-1"></i>Compare</a>
-                                @if($witems->contains($franchise->id))
-                                    <button class="btn-wishlist btn-sm" type="button" href="" wire:click.prevent="removefromWishlist({{$franchise->id}})" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <i class=" bi bi-heart-fill"></i></button>
-                                @else
-                                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Add to wishlist" aria-label="Add to wishlist">
-                                    <a href="#" wire:click.prevent="addtoWishlist({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                      <i class=" bi bi-heart"></i></a></button>
-                                @endif
-                            </div>
-
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-                            
-                            <div class="card-body py-2">
-                                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                    </a>
-                                    {{--<h3 class="product-title fs-sm"><a href="">{{Str::limit($franchise->brand_name, 24)}}</a></h3>--}}
-                              
-                                <div class="d-flex justify-content-between">
-                                  <div class="product-price"><h3 class="product-title fs-sm">
-                                    <a href="{{route('event.details',['slug' => $franchise->slug])}}"><strong>{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</strong></a></h3></div>
-                                  <div class="star-rating align-center">
-                                  <!--untitled-1 line 558 -574-->
-                                  </div>
-                                </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small> <i class="bi bi-calendar3"></i>
-                                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y ')}}
-                                        @else
-                                          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M Y')}}
-                                        @endif 
-                                      </small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between">
-                                      <div class="product-price"><span class="text">
-                                      <small><i class="bi bi-geo-alt-fill fs-sm"></i>{{$franchise -> venue}}, {{$franchise -> city}}</small></span>
-                                        <!--<del class="fs-sm text-muted">38.<small>50</small></del>-->
-                                      </div>
-
-                                      
-                                      <div class="star-rating">
-                                      <span class="text">
-                                      <small></small></span>
-                                      </div>
-                                    </div>
-                            </div>
-
-                            <div class="card-body card-body-hidden">
-                              <div class="text-center pb-2">
-                                <!--<div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="white" checked="">
-                                  <label class="form-option-label rounded-circle" for="white"><span class="form-option-color rounded-circle" style="background-color: #eaeaeb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="blue">
-                                  <label class="form-option-label rounded-circle" for="blue"><span class="form-option-color rounded-circle" style="background-color: #d1dceb;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="yellow">
-                                  <label class="form-option-label rounded-circle" for="yellow"><span class="form-option-color rounded-circle" style="background-color: #f4e6a2;"></span></label>
-                                </div>
-                                <div class="form-check form-option form-check-inline mb-2">
-                                  <input class="form-check-input" type="radio" name="color1" id="pink">
-                                  <label class="form-option-label rounded-circle" for="pink"><span class="form-option-color rounded-circle" style="background-color: #f3dcff;"></span></label>
-                                </div>-->
-                              </div>
-
-                              <div class="d-flex mb-2">
-                                
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a></li>
-                                <a class=" text-center btn btn-primary btn-sm mx-1" type="button" 
-                                href="#" wire:click.prevent="store({{$franchise->id}},'{{$franchise->eventname}}', 1)">
-                                <i class=" bi bi-cart fs-sm me-1"></i>Apply</a></li>
-                                
-                                </div>
-                                <div class="text-center"><a class="nav-link-style fs-ms" href="{{route('event.details',['slug' => $franchise->slug])}}" data-bs-toggle="modal"><i class=" bi bi-eye align-middle me-1"></i>Contact details</a></div> 
-                            
-                            </div>
-                          
-                          </div>
-
-                          <hr class="d-sm-none">
-                        </div>
-                      @endif
-                    @endforeach
+                  <div class="col-4 col-md-2 position-relative mb-3 mx-1">
+                    <img 
+                      src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
+                      class="img-fluid"
+                      style="cursor: pointer;"
+                    >
+                  </div>
+                  <!-- Delete Icon -->
+                  <span class="position-absolute top-0 end-0 m-2">
+                    <i 
+                      class="text-danger fas fa-times-circle" 
+                      style="cursor: pointer;" 
+                      wire:click="deleteImage({{ $selectedImageId }})">
+                    </i>
+                  </span>
+                @endif
               @endforeach
             </div>
 
-           
-
-            <!-- Banner-->
-            <div class="py-sm-2">
-              <div class="d-sm-flex justify-content-between align-items-center bg-secondary overflow-hidden mb-4 rounded-3">
-                <div class="py-4 my-2 my-md-0 py-md-5 px-4 ms-md-3 text-center text-sm-start">
-                  <h4 class="fs-lg fw-light mb-2">Converse All Star</h4>
-                  <h3 class="mb-4">Make Your Day Comfortable</h3><a class="btn btn-primary btn-shadow btn-sm" href="#">Shop Now</a>
-                </div><img class="d-block ms-auto" src="{{asset ('assets/images/04.jpg')}}" width="100" alt="Shop Converse">
-              </div>
+            <div class="d-flex justify-content-between mt-2">
+              <!-- Show count and email button -->
+              <p>{{ count($selectedImages) }}selected</p>
+              <button wire:click="sendEmail" class="btn btn-dark-outline btn-sm">Send Email</button>
             </div>
-          
-
-          </section>         
-        </div>
-      </div>
-
-      @if(count($selectedImages) > 0)
-        <div class="fixed-bottom bg-light p-3 border-top">
-          <p class="text-dark"> {{ count($selectedImages) }} Selected Exhibition</p>
-
-          <hr class="">
-          <div class="row">
-            @foreach($selectedImages as $key => $selectedImageId)
-              @if($key < 5)
-                @php
-                  $selectedImage = DB::table('events')->find($selectedImageId)
-                @endphp
-                <div class="col-4 col-md-2 position-relative mb-3 mx-1">
-                  <img 
-                    src="{{url('public/assets/image/exhibition/'.$selectedImage->image)}}" 
-                    class="img-fluid"
-                    style="cursor: pointer;"
-                  >
-                </div>
-                <!-- Delete Icon -->
-                <span class="position-absolute top-0 end-0 m-2">
-                  <i 
-                    class="text-danger fas fa-times-circle" 
-                    style="cursor: pointer;" 
-                    wire:click="deleteImage({{ $selectedImageId }})">
-                  </i>
-                </span>
-              @endif
-            @endforeach
           </div>
-
-          <div class="d-flex justify-content-between mt-2">
-            <!-- Show count and email button -->
-            <p>{{ count($selectedImages) }}selected</p>
-            <button wire:click="sendEmail" class="btn btn-dark-outline btn-sm">Send Email</button>
-          </div>
-        </div>
-      @endif
+        @endif
       
     </main>
 
