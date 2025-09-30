@@ -977,6 +977,7 @@
 
             <!-- Item -->
             <div class="row mx-n2">
+              test1
               @php $witems = Cart::instance('wishlist')->content()->pluck('id');  @endphp
               @foreach ($exhibition as $business)
                   @php
@@ -1488,6 +1489,7 @@
             </div>
 
             <div class="row mx-n2">
+              test2
                 @foreach($findsubcategory as $findsubcateg)
                   
                   @php
@@ -2535,7 +2537,7 @@
             </div>-->
             <!-- Products grid-->
             <div class="row mx-n2">
-
+            test3
                <!-- Product-->
                <!--<div class="col-md-4 col-sm-6 px-2 mb-4">
                 <div class="card product-card"><span class="badge bg-danger badge-shadow">Sale</span>
@@ -2631,7 +2633,6 @@
           </div>
         </div>
       @endif
-      
       
     </main>
 
