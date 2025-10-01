@@ -299,9 +299,9 @@
             .featured-companies {
                 display: flex;
                 align-items: center;
-                gap: 15px;
+                gap: 5px;
                 overflow-x: auto;
-                padding: 20px;
+                padding: 5px;
                 white-space: nowrap;
                 scrollbar-width: none;
             }
@@ -403,14 +403,16 @@
                   $allcategory = DB::table('categories')->get();
                 @endphp
 
-            <div class="d-flex align-items-center mb-3">
-               <!-- Popular Venue -->
               <div class="border-bottom pt-2 mt-2">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+                  <h6 class="fw-bold mb-0">2Search your business event with right place people for your business</h6>
                   <a href="#" class="text-primary small">View all</a>
                 </div>
               </div>
+
+            <div class="d-flex align-items-center mb-3">
+               <!-- Popular Venue -->
+              
               <h5 class="me-3">Popular Venue</h5>
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
@@ -427,6 +429,7 @@
                   <a href="#" class="text-primary small">View all</a>
                 </div>
               </div>
+
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
                 @foreach($allcategory as $category)
