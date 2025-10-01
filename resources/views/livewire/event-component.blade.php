@@ -204,7 +204,12 @@
                             <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
                             <select class="form-select">
                                 <option>Venue</option>
-                
+                                @php 
+                                  $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+                                @endphp
+                                @foreach($venueoption as $franchise)
+                                   <option>{{$franchise->venue}}Venue</option>
+                                @endforeach
                             </select>
                             <button type="submit" class="btn">Plan your Event</button>
                         </div>
@@ -286,7 +291,6 @@
                 <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
             </div>
         </div>
-
 
         <!--Trending Exhibition-->
         @livewire('trending-exhibition-component')
@@ -394,120 +398,47 @@
                 </div>
             </div>
 
+                @php 
+                  $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+                  $allcategory = DB::table('categories')->get();
+                @endphp
 
             <div class="d-flex align-items-center mb-3">
+               <!-- Popular Venue -->
+              <div class="border-bottom pt-2 mt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+                  <a href="#" class="text-primary small">View all</a>
+                </div>
+              </div>
               <h5 class="me-3">Popular Venue</h5>
-              <style>
-                .scroll-container {
-                            display: flex;
-                            overflow-x: auto;
-                            white-space: nowrap;
-                            gap: 15px;
-                            padding: 10px;                      
-                            scrollbar-width: none;
-                            -ms-overflow-style: none;
-                          }
-                
-                .scroll-container::-webkit-scrollbar{
-                  display: none;
-                }
-                .city-item {
-                  text-decoration: none;
-                  color: black;
-                  font-weight: 500;
-                  text-align: center;
-                  flex: 0 0 auto;
-                  width: 90px;
-                }
-                .city-icon {
-                  width: 160px;
-                  height: 60px;
-                }
-                .selected{
-                  color: red !important;
-                }
-              </style>
-
-              @php 
-                $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
-              @endphp
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
                     <span class="category-badge" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
-                      {{$franchise->venue}}
-              </span>
+                      {{$franchise->venue}}</span>
                   @endforeach
               </div>
             </div>
 
             <!-- Popular Categories -->
+              <div class="border-bottom pt-2 mt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+                  <a href="#" class="text-primary small">View all</a>
+                </div>
+              </div>
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
-              @php
-                $allcategory = DB::table('categories')->get();
-              @endphp
-
-              @foreach($allcategory as $category)
+                @foreach($allcategory as $category)
                   <span class="category-badge" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                       {{$category -> industry}}
+                        {{$category -> industry}}
                   </span>
-              @endforeach
-
-                <!-- <div class="category-item">  
-                    <i class="bi bi-house"></i> Work From Home
-                </div> -->
-                
+                @endforeach    
             </div>
+
         </div>
 
-        <style>
-          .companies-section {
-              background-color: #f8f9fa;
-              padding: 60px 0;
-          }
-          .companies-title {
-              font-size: 28px;
-              font-weight: bold;
-              text-align: center;
-              margin-bottom: 40px;
-          }
-          .company-card {
-              background: white;
-              padding: 20px;
-              border-radius: 10px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-              text-align: center;
-              transition: transform 0.3s;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              height: 100%;
-          }
-          .company-card:hover {
-              transform: translateY(-5px);
-          }
-          .company-logo {
-              width: 80px;
-              height: 80px;
-              object-fit: contain;
-              margin-bottom: 15px;
-          }
-          .company-name {
-              font-size: 18px;
-              font-weight: bold;
-              margin-bottom: 5px;
-          }
-          .company-jobs {
-              color: #6c757d;
-              font-size: 14px;
-          }
-          @media (max-width: 767px) {
-              .company-card {
-                  margin-bottom: 20px;
-              }
-          }
-        </style>
+        
 
    <!-- <section class="companies-section d-none d-md-block">
             <div class="container">
@@ -820,110 +751,110 @@
 
 </main>
 
-@push('scripts')
-    
-    <script>
-      var slider = tns({
-        "container": '.my-Slider1',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
+      @push('scripts')
           
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
+          <script>
+            var slider = tns({
+              "container": '.my-Slider1',            
+              "responsive": {
+                "300": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": true,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 4,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay":true,
+                  "autoplayButtonOutput":false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
 
-    <script>
-      var slider = tns({
-        "container": '.my-Slider2',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
+          <script>
+            var slider = tns({
+              "container": '.my-Slider2',            
+              "responsive": {
+                "300": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": true,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 4,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay":true,
+                  "autoplayButtonOutput":false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
 
-    <script>
-      var slider = tns({
-        "container": '.my-Slider7',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
+          <script>
+            var slider = tns({
+              "container": '.my-Slider7',            
+              "responsive": {
+                "300": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": true,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 4,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay":true,
+                  "autoplayButtonOutput":false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
 
-    <script>
-      var slider = tns({
-        "container": '.my-Slider8',            
-        "responsive": {
-          "300": {
-            "items": 1,
-            "controls": false,
-            "mouseDrag": true,
-            "autoplay": true,
-            "autoplayButtonOutput":false,
-            "autoplayHoverPause": true,
-          },
-          "500": {
-            "items": 4,
-            "nav": false,
-            "controls": false,
-            "autoplayHoverPause": true,
-            "autoplay":true,
-            "autoplayButtonOutput":false
-          },
-          
-        },
-        "autoplayButtonOutput":false
-      });
-    </script>
+          <script>
+            var slider = tns({
+              "container": '.my-Slider8',            
+              "responsive": {
+                "300": {
+                  "items": 1,
+                  "controls": false,
+                  "mouseDrag": true,
+                  "autoplay": true,
+                  "autoplayButtonOutput":false,
+                  "autoplayHoverPause": true,
+                },
+                "500": {
+                  "items": 4,
+                  "nav": false,
+                  "controls": false,
+                  "autoplayHoverPause": true,
+                  "autoplay":true,
+                  "autoplayButtonOutput":false
+                },
+                
+              },
+              "autoplayButtonOutput":false
+            });
+          </script>
 
-@endpush
+      @endpush
