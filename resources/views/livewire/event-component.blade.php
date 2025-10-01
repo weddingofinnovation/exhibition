@@ -457,7 +457,7 @@
                 @endforeach
             </div>
 
-            <div class="card shadow-sm rounded-4 p-3">
+          <div class="card shadow-sm rounded-4 p-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
               <a href="#" class="text-primary small">View all</a>
