@@ -5,7 +5,48 @@
      
        
      <div class="container">
-      <div class="col-3"></div>
+      <div class="col-3">
+        <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
+    <!-- Logo & Name -->
+    <div class="d-flex align-items-center mb-3">
+        <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
+        <div>
+            <h6 class="mb-0 fw-bold">The Exhibition Network</h6>
+            <small class="text-muted">60 followers</small>
+        </div>
+    </div>
+
+    <!-- Create Button -->
+    <button class="btn btn-primary w-100 mb-2">+ Create</button>
+
+    <!-- View as Member -->
+    <button class="btn btn-outline-secondary w-100 mb-3">👁 View as member</button>
+
+    <!-- Navigation Menu -->
+    <ul class="nav nav-pills flex-column">
+        <li class="nav-item mb-1">
+            <a href="#" class="nav-link text-dark">Dashboard</a>
+        </li>
+        <li class="nav-item mb-1">
+            <a href="#" class="nav-link text-dark">Page posts</a>
+        </li>
+        <li class="nav-item mb-1">
+            <a href="#" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
+        </li>
+        <li class="nav-item mb-1">
+            <a href="#" class="nav-link text-dark">Feed</a>
+        </li>
+        <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+            <a href="#" class="nav-link text-dark">Activity</a>
+            <span class="badge bg-danger rounded-pill">2</span>
+        </li>
+        <li class="nav-item mb-1">
+            <a href="#" class="nav-link text-dark">Inbox</a>
+        </li>
+    </ul>
+</div>
+
+      </div>
       <div class="col-9">
         <div class="container my-4">
           <!-- Page Title -->
