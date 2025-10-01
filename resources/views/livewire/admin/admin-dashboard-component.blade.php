@@ -58,7 +58,7 @@
 
                     <div class="d-flex justify-content-between align-items-center mb-3">
                       <h4 class="fw-bold mb-2">Analytics</h4>
-                      <div>
+                      <div class="d-flex justify-content-between align-items-center">
                         <input type="date" class="form-control w-auto">
                         <button class="btn btn-primary">
                             <i class="bi bi-download"></i> Export
