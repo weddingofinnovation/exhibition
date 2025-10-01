@@ -457,6 +457,55 @@
                 @endforeach
             </div>
 
+            <div class="card shadow-sm rounded-4 p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
+              <a href="#" class="text-primary small">View all</a>
+            </div>
+
+            <!-- Scrollable stats cards -->
+            <div class="d-flex gap-3 overflow-auto pb-2">
+              <!-- Card 1 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-key fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Keyskills</h6>
+                <small class="text-muted">Planning, Budget...</small>
+                <div class="fw-bold mt-2">% match</div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-building fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Industry</h6>
+                <small class="text-muted">Advertising & Marketing</small>
+                <div class="fw-bold mt-2">0% match</div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-people fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Department</h6>
+                <small class="text-muted">Marketing & Comm..</small>
+                <div class="fw-bold mt-2">29% match</div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-graph-up fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">Early Applicant</h6>
+                <small class="text-muted">Applied to fresh jobs</small>
+                <div class="fw-bold mt-2">14% match</div>
+              </div>
+            </div>
+          </div>
 
         </div>
 
