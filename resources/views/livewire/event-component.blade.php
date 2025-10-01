@@ -429,16 +429,6 @@
                   <a href="#" class="text-primary small">View all</a>
                 </div>
               </div>
-<!-- 
-            <h5 class="mb-3">Popular Categories</h5>
-            <div class="popular-categories">
-                @foreach($allcategory as $category)
-                  <span class="category-badge" href="">
-                        {{$category -> industry}}
-                  </span>
-                @endforeach    
-            </div> -->
-
            
 
           <div class="card shadow-sm rounded-4 p-3">

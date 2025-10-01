@@ -16,28 +16,28 @@
           </div>
           <div class="d-flex">
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Total Event</div>
-              <h3 class="text-light"> {{$events}}</h3>
+              <div class="text-light fs-base">Content</div>
+              <!-- <h3 class="text-light"> {{$events}}</h3> -->
             </div>
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Today</div>
-              <h3 class="text-light"> {{$evento->count()}}</h3>
+              <div class="text-light fs-base">Visitors</div>
+              <!-- <h3 class="text-light"> {{$evento->count()}}</h3> -->
             </div>
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Tomorrow</div>
-              <h3 class="text-light"> {{$eventomorrow->count()}}</h3>
+              <div class="text-light fs-base">Followers</div>
+              <!-- <h3 class="text-light"> {{$eventomorrow->count()}}</h3> -->
             </div>
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Next Week</div>
-              <h3 class="text-light"> {{$eventweek->count()}}</h3>
+              <div class="text-light fs-base">Search appearances</div>
+              <!-- <h3 class="text-light"> {{$eventweek->count()}}</h3> -->
             </div>
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Next Month</div>
-              <h3 class="text-light"> {{$eventmonth->count()}}</h3>
+              <div class="text-light fs-base">Leads</div>
+              <!-- <h3 class="text-light"> {{$eventmonth->count()}}</h3> -->
             </div>
             <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Three Month</div>
-              <h3 class="text-light"> {{$eventthreemonth->count()}}</h3>
+              <div class="text-light fs-base">Competitors</div>
+              <!-- <h3 class="text-light"> {{$eventthreemonth->count()}}</h3> -->
             </div>
 
             <div class="text-sm-end">
@@ -50,6 +50,11 @@
         </div>
       </div>
        
+
+
+
+
+
       <!--Mobile event start View-->      
       @if($board == 'event')   
         <div class="container d-lg-none">  
