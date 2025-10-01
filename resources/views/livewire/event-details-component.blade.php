@@ -5771,7 +5771,7 @@
                                     <small class="text-uppercase">edition</small>
                                 </div>
 
-                                <div class="px-3 py-2 text-uppercase fw-bold fs-lg me-0">{{$event->eventname}}<br>{{$event}}</div>
+                                <div class="px-3 py-2 text-uppercase fw-bold fs-lg me-0">{{$event->eventname}}<br>{{$event->eventype}}</div>
 
                                 <div class="h1 fw-bold">
                                     @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
