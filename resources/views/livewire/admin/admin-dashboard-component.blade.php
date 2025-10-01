@@ -66,31 +66,31 @@
 
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       
-                    @if($board == 'order')
-                      <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <input type="search" class="form-control w-auto" placeholder="Search...">
-                          <button class="btn btn-primary ml-4">
-                              <i class="bi bi-download"></i> Export
-                          </button>
-                        </div>
-                    @elseif($board == 'event')
-                      <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
-                        <div class="d-flex justify-content-between align-items-center">
-                          <input type="search" class="form-control w-auto" placeholder="Search...">
-                          <button class="btn btn-primary ml-4">
-                              <i class="bi bi-download"></i> Export
-                          </button>
-                        </div>
-                    @else
-                      <h4 class="fw-bold mb-2">Analytics</h4>
-                        <div class="d-flex justify-content-between align-items-center">
-                          <input type="date" class="form-control w-auto">
-                          <button class="btn btn-primary ml-4">
-                              <i class="bi bi-download"></i> Export
-                          </button>
-                        </div>
-                    @endif
+                      @if($board == 'order')
+                        <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <input type="search" class="form-control w-auto" placeholder="Search...">
+                            <button class="btn btn-primary ml-4">
+                                <i class="bi bi-download"></i> Export
+                            </button>
+                          </div>
+                      @elseif($board == 'event')
+                        <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
+                          <div class="d-flex justify-content-between align-items-center">
+                            <input type="search" class="form-control w-auto" placeholder="Search...">
+                            <button class="btn btn-primary ml-4">
+                                <i class="bi bi-download"></i> Export
+                            </button>
+                          </div>
+                      @else
+                        <h4 class="fw-bold mb-2">Analytics</h4>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <input type="date" class="form-control w-auto">
+                            <button class="btn btn-primary ml-4">
+                                <i class="bi bi-download"></i> Export
+                            </button>
+                          </div>
+                      @endif
                       
                     </div>
 
@@ -281,7 +281,7 @@
                                     </div> -->
                                     <div class="col-3 p-0">
                                         @if(is_null($franchise->image))
-                                            <a class="card-img-top d-block overflow-hidden text-center bg-light p-5" 
+                                            <a class="card-img-top d-block overflow-hidden" 
                                               href="{{ route('admin.eventMultiEdit', ['event_id' => $franchise->id, 'formm' => 'image' ]) }}">
                                                 Add
                                             </a>
@@ -388,7 +388,7 @@
                                   </div> -->
                                   <div class="col-3 p-0">
                                       @if(is_null($franchise->image))
-                                          <a class="card-img-top d-block overflow-hidden text-center bg-light p-5" 
+                                          <a class="card-img-top d-block overflow-hidden" 
                                             href="{{ route('admin.eventMultiEdit', ['event_id' => $franchise->id, 'formm' => 'image' ]) }}">
                                               Add
                                           </a>
