@@ -357,6 +357,13 @@
             </div>
 
             <!-- Popular City -->
+              <div class="border-bottom pt-2 mt-2">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+                  <a href="#" class="text-primary small">View all</a>
+                </div>
+              </div>
+
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular City</h5>
                 <div class="featured-companies">
