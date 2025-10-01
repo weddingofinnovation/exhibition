@@ -4,7 +4,7 @@
       
 
       <!-- Toolbar-->
-      <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+      <div class="navbar-toolbar d-flex align-items-center order-lg-3" style="padding-bottom: .25rem;">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span></button>
           

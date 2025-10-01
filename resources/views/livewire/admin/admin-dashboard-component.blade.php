@@ -4,7 +4,7 @@
 <main>
      
        
-     <div class="container">
+     <div class="container mt-2">
       <div class="row">
         <div class="col-3">
           <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
@@ -51,6 +51,7 @@
 
         <div class="col-9">
           <div class="my-0">
+
               <div class="card shadow-sm border-0 mb-2">
                 <div class="card-body">
                     <!-- Page Title -->
@@ -60,11 +61,12 @@
                       <h4 class="fw-bold mb-2">Analytics</h4>
                       <div class="d-flex justify-content-between align-items-center">
                         <input type="date" class="form-control w-auto">
-                        <button class="btn btn-primary mr-1">
+                        <button class="btn btn-primary ml-4">
                             <i class="bi bi-download"></i> Export
                         </button>
                       </div>
                   </div>
+
 
                     <!-- Tabs -->
                     <ul class="nav nav-tabs mb-2" id="analyticsTabs">
@@ -90,60 +92,65 @@
                 </div>
               </div>
 
-            <!-- Date Filter + Export -->
-              <div class="card shadow-sm border-0 mb-2">
-                <div class="card-body">
+              @if($board == 'order')
 
-                  <div class="d-flex justify-content-between align-items-center mb-3">
-                      <input type="date" class="form-control w-auto">
-                      <button class="btn btn-primary">
-                          <i class="bi bi-download"></i> Export
-                      </button>
-                  </div>
+                        <h1>Check list of events</h1>
+              @else
+                          <!-- Date Filter + Export -->
+                          <div class="card shadow-sm border-0 mb-2">
+                            <div class="card-body">
 
-                </div>
-              </div>
+                              <div class="d-flex justify-content-between align-items-center mb-3">
+                                  <input type="date" class="form-control w-auto">
+                                  <button class="btn btn-primary">
+                                      <i class="bi bi-download"></i> Export
+                                  </button>
+                              </div>
 
-            <!-- Highlights Card -->
-            <div class="card shadow-sm border-0 mb-4">
-                <div class="card-body">
-                    <h6 class="fw-bold mb-3">Highlights</h6>
-                    <div class="row text-center">
-                        <div class="col">
-                            <h5 class="fw-bold mb-0">201</h5>
-                            <small class="text-muted">Impressions</small>
-                        </div>
-                        <div class="col">
-                            <h5 class="fw-bold mb-0">1</h5>
-                            <small class="text-muted">Reactions</small>
-                        </div>
-                        <div class="col">
-                            <h5 class="fw-bold mb-0">1</h5>
-                            <small class="text-muted">Comments</small>
-                        </div>
-                        <div class="col">
-                            <h5 class="fw-bold mb-0">0</h5>
-                            <small class="text-muted">Reposts</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                            </div>
+                          </div>
 
-            <!-- Metrics Card -->
-            <div class="card shadow-sm border-0">
-                <div class="card-body">
-                    <h6 class="fw-bold mb-3">Metrics</h6>
-                    <select class="form-select w-auto mb-3">
-                        <option>Impressions</option>
-                        <option>Reactions</option>
-                        <option>Comments</option>
-                    </select>
-                    <!-- Graph Placeholder -->
-                    <div class="bg-light rounded p-5 text-center text-muted">
-                        Graph / Chart Area
-                    </div>
-                </div>
-            </div>
+                          <!-- Highlights Card -->
+                          <div class="card shadow-sm border-0 mb-4">
+                              <div class="card-body">
+                                  <h6 class="fw-bold mb-3">Highlights</h6>
+                                  <div class="row text-center">
+                                      <div class="col">
+                                          <h5 class="fw-bold mb-0">201</h5>
+                                          <small class="text-muted">Impressions</small>
+                                      </div>
+                                      <div class="col">
+                                          <h5 class="fw-bold mb-0">1</h5>
+                                          <small class="text-muted">Reactions</small>
+                                      </div>
+                                      <div class="col">
+                                          <h5 class="fw-bold mb-0">1</h5>
+                                          <small class="text-muted">Comments</small>
+                                      </div>
+                                      <div class="col">
+                                          <h5 class="fw-bold mb-0">0</h5>
+                                          <small class="text-muted">Reposts</small>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <!-- Metrics Card -->
+                          <div class="card shadow-sm border-0">
+                              <div class="card-body">
+                                  <h6 class="fw-bold mb-3">Metrics</h6>
+                                  <select class="form-select w-auto mb-3">
+                                      <option>Impressions</option>
+                                      <option>Reactions</option>
+                                      <option>Comments</option>
+                                  </select>
+                                  <!-- Graph Placeholder -->
+                                  <div class="bg-light rounded p-5 text-center text-muted">
+                                      Graph / Chart Area
+                                  </div>
+                              </div>
+                          </div>
+              @endif
           </div>
         </div>
       </div>
