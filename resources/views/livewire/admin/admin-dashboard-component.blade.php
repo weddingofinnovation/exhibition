@@ -269,7 +269,8 @@
                                       <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
                                     </div>
 
-                                    <div class="col-3  p-0">
+                                    <!-- <div class="col-3  p-0">
+                                      
                                       @if(is_null($franchise->image))
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
                                             Add</a>
@@ -277,7 +278,23 @@
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
                                         <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                       @endif
+                                    </div> -->
+                                    <div class="col-3 p-0">
+                                        @if(is_null($franchise->image))
+                                            <a class="card-img-top d-block overflow-hidden text-center bg-light p-5" 
+                                              href="{{ route('admin.eventMultiEdit', ['event_id' => $franchise->id, 'formm' => 'image' ]) }}">
+                                                Add
+                                            </a>
+                                        @else
+                                            <a class="card-img-top d-block overflow-hidden" 
+                                              href="{{ route('adminevent.detail', ['slug' => $franchise->slug]) }}">
+                                                <img src="{{ url('public/assets/image/exhibition/' . $franchise->image) }}" 
+                                                    alt="{{ Str::limit($franchise->eventname, 24) }}"
+                                                    class="img-fluid rounded h-100 object-fit-cover">
+                                            </a>
+                                        @endif
                                     </div>
+
                                   </div>
                                 </div>
                               @endforeach
@@ -357,7 +374,7 @@
                                   </div>
                                   </div>
 
-                                  <div class="col-3  p-0">
+                                  <!-- <div class="col-3  p-0">
                                     @if(is_null($franchise->image))
                                       <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">Add</a>
                                     @else
@@ -365,7 +382,23 @@
                                       <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
                                       <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
                                     @endif
+                                  </div> -->
+                                  <div class="col-3 p-0">
+                                      @if(is_null($franchise->image))
+                                          <a class="card-img-top d-block overflow-hidden text-center bg-light p-5" 
+                                            href="{{ route('admin.eventMultiEdit', ['event_id' => $franchise->id, 'formm' => 'image' ]) }}">
+                                              Add
+                                          </a>
+                                      @else
+                                          <a class="card-img-top d-block overflow-hidden" 
+                                            href="{{ route('adminevent.detail', ['slug' => $franchise->slug]) }}">
+                                              <img src="{{ url('public/assets/image/exhibition/' . $franchise->image) }}" 
+                                                  alt="{{ Str::limit($franchise->eventname, 24) }}"
+                                                  class="img-fluid rounded h-100 object-fit-cover">
+                                          </a>
+                                      @endif
                                   </div>
+
                                 </div>
                               </div>
                             @endforeach
