@@ -50,39 +50,49 @@
         </div>
 
         <div class="col-9">
-          <div class="container my-4">
-            <!-- Page Title -->
-            <h4 class="fw-bold mb-3">Analytics</h4>
+          <div class="my-4">
+              <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <!-- Page Title -->
+                    <h4 class="fw-bold mb-3">Analytics</h4>
 
-            <!-- Tabs -->
-            <ul class="nav nav-tabs mb-4" id="analyticsTabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Content</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Visitors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Followers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Search appearances</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Leads</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Competitors</a>
-                </li>
-            </ul>
+                    <!-- Tabs -->
+                    <ul class="nav nav-tabs mb-4" id="analyticsTabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Content</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Visitors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Followers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Search appearances</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Leads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Competitors</a>
+                        </li>
+                    </ul>
+                </div>
+              </div>
 
             <!-- Date Filter + Export -->
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <input type="date" class="form-control w-auto">
-                <button class="btn btn-primary">
-                    <i class="bi bi-download"></i> Export
-                </button>
-            </div>
+              <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                      <input type="date" class="form-control w-auto">
+                      <button class="btn btn-primary">
+                          <i class="bi bi-download"></i> Export
+                      </button>
+                  </div>
+
+                </div>
+              </div>
 
             <!-- Highlights Card -->
             <div class="card shadow-sm border-0 mb-4">
