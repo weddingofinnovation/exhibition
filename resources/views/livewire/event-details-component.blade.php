@@ -5753,7 +5753,7 @@
                         width: 100%;
                         background-color: #fff; /* Light background color */
                         border-top: 1px solid #dee2e6; /* Optional border */
-                        padding: 10px;
+                        padding: 4px;
                         z-index: 9999; /* Ensures it stays on top */
                     }
                 </style>
