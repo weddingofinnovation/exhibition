@@ -5718,17 +5718,17 @@
                 <div class="d-flex justify-content-between py-2 px-2">
                   <div class="text-dark  pl-3 lh-1">
                     <span class = "fw-medium fs-sm">Call us +91-999-185-6776</span><br>
-                    <span class=" fw-normal fs-xs">Get extra ad-ons</span></div>
+                     <span class=" fw-normal fs-xs">Get extra ad-ons</span></div>
                         @if( $event->businessrevenue == 'visitor' )  
-                        @if( $ticketOrExhibit != 0 )
-                            <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
-                            @elseif( $ticketOrExhibit == 0 )
-                            {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
-                            
-                            <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
-                        @endif
+                            @if( $ticketOrExhibit != 0 )
+                                <a href="#"  wire:click.prevent="insertEventToSess({{$event->id}})" class="btn btn-primary btn-sm">Plan Your Visit</a>
+                                @elseif( $ticketOrExhibit == 0 )
+                                {{--<a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>{{route('event.product',['slug' => $event->slug])}}--}}
+                                
+                                <a href="#" class="btn btn-primary btn-sm"  wire:click.prevent="insertEventToSess({{$event->id}})">Book your Space</a>
+                            @endif
                         @else
-                        <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
+                            <a href="{{route('event.exhibit', ['board' => 'business'])}}" class="btn btn-primary btn-sm">Book your Space</a>
                         @endif
                   </div>
               </div>
@@ -5766,14 +5766,14 @@
 
                     <div class="cl">
                         <div class="d-flex align-items-center justify-content-center mb-1">
-                                <div class="text-center me-3">
-                                    <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
+                                <div class="text-center me-3" style="color:#000;">
+                                    <h2 class="mb-0 fw-bold">{{$event->edition}}<sup style="font-size: 2rem;">a</sup></h2>
                                     <small class="text-uppercase">edition</small>
                                 </div>
 
-                                <div class="px-3 py-2 text-uppercase fw-bold me-3">{{$event->eventname}}<br> in Fiera</div>
+                                <div class="px-0 py-0 text-uppercase fw-bold me-0" style="color:#000;">{{$event->eventname}}</div>
 
-                                <div class="h1 fw-bold">
+                                <div class="h1 fw-bold" style="color:#000;">
                                     @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
                                         {{Carbon::parse($event->enddate)->format('y')}}
                                     @else
