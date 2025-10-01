@@ -208,7 +208,7 @@
                                   $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
                                 @endphp
                                 @foreach($venueoption as $franchise)
-                                   <option>{{$franchise->venue}}Venue</option>
+                                   <option>{{ucwords($franchise->venue)}}</option>
                                 @endforeach
                             </select>
                             <button type="submit" class="btn">Plan your Event</button>
@@ -403,7 +403,7 @@
                   $allcategory = DB::table('categories')->get();
                 @endphp
 
-              <div class="border-bottom pt-2 mt-2">
+              <div class="border-bottom pt-2 my-2">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h6 class="fw-bold mb-0">2Search your business event with right place people for your business</h6>
                   <a href="#" class="text-primary small">View all</a>
@@ -413,7 +413,7 @@
             <div class="d-flex align-items-center mb-3">
                <!-- Popular Venue -->
               
-              <h5 class="me-3">Popular Venue</h5>
+              <h5 class="me-0">Popular Venue</h5>
               <div class="featured-companies">
                   @foreach($venueoption as $franchise)
                     <span class="category-badge" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
@@ -423,7 +423,7 @@
             </div>
 
             <!-- Popular Categories -->
-              <div class="border-bottom pt-2 mt-2">
+              <div class="border-bottom pt-2 my-2">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
                   <a href="#" class="text-primary small">View all</a>
