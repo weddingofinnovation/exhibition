@@ -5,124 +5,127 @@
      
        
      <div class="container">
-      <div class="col-3">
-        <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
-    <!-- Logo & Name -->
-    <div class="d-flex align-items-center mb-3">
-        <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
-        <div>
-            <h6 class="mb-0 fw-bold">The Exhibition Network</h6>
-            <small class="text-muted">60 followers</small>
+      <div class="row">
+        <div class="col-3">
+          <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
+              <!-- Logo & Name -->
+              <div class="d-flex align-items-center mb-3">
+                  <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
+                  <div>
+                      <h6 class="mb-0 fw-bold">The Exhibition Network</h6>
+                      <small class="text-muted">60 followers</small>
+                  </div>
+              </div>
+
+              <!-- Create Button -->
+              <button class="btn btn-primary w-100 mb-2">+ Create</button>
+
+              <!-- View as Member -->
+              <button class="btn btn-outline-secondary w-100 mb-3">👁 View as member</button>
+
+              <!-- Navigation Menu -->
+              <ul class="nav nav-pills flex-column">
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link text-dark">Dashboard</a>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link text-dark">Page posts</a>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link text-dark">Feed</a>
+                  </li>
+                  <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+                      <a href="#" class="nav-link text-dark">Activity</a>
+                      <span class="badge bg-danger rounded-pill">2</span>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link text-dark">Inbox</a>
+                  </li>
+              </ul>
+          </div>
+
         </div>
-    </div>
 
-    <!-- Create Button -->
-    <button class="btn btn-primary w-100 mb-2">+ Create</button>
+        <div class="col-9">
+          <div class="container my-4">
+            <!-- Page Title -->
+            <h4 class="fw-bold mb-3">Analytics</h4>
 
-    <!-- View as Member -->
-    <button class="btn btn-outline-secondary w-100 mb-3">👁 View as member</button>
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-4" id="analyticsTabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Content</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Visitors</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Followers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Search appearances</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Leads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Competitors</a>
+                </li>
+            </ul>
 
-    <!-- Navigation Menu -->
-    <ul class="nav nav-pills flex-column">
-        <li class="nav-item mb-1">
-            <a href="#" class="nav-link text-dark">Dashboard</a>
-        </li>
-        <li class="nav-item mb-1">
-            <a href="#" class="nav-link text-dark">Page posts</a>
-        </li>
-        <li class="nav-item mb-1">
-            <a href="#" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
-        </li>
-        <li class="nav-item mb-1">
-            <a href="#" class="nav-link text-dark">Feed</a>
-        </li>
-        <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-            <a href="#" class="nav-link text-dark">Activity</a>
-            <span class="badge bg-danger rounded-pill">2</span>
-        </li>
-        <li class="nav-item mb-1">
-            <a href="#" class="nav-link text-dark">Inbox</a>
-        </li>
-    </ul>
-</div>
+            <!-- Date Filter + Export -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <input type="date" class="form-control w-auto">
+                <button class="btn btn-primary">
+                    <i class="bi bi-download"></i> Export
+                </button>
+            </div>
 
-      </div>
-      <div class="col-9">
-        <div class="container my-4">
-          <!-- Page Title -->
-          <h4 class="fw-bold mb-3">Analytics</h4>
+            <!-- Highlights Card -->
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <h6 class="fw-bold mb-3">Highlights</h6>
+                    <div class="row text-center">
+                        <div class="col">
+                            <h5 class="fw-bold mb-0">201</h5>
+                            <small class="text-muted">Impressions</small>
+                        </div>
+                        <div class="col">
+                            <h5 class="fw-bold mb-0">1</h5>
+                            <small class="text-muted">Reactions</small>
+                        </div>
+                        <div class="col">
+                            <h5 class="fw-bold mb-0">1</h5>
+                            <small class="text-muted">Comments</small>
+                        </div>
+                        <div class="col">
+                            <h5 class="fw-bold mb-0">0</h5>
+                            <small class="text-muted">Reposts</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          <!-- Tabs -->
-          <ul class="nav nav-tabs mb-4" id="analyticsTabs">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#">Content</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Visitors</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Followers</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Search appearances</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Leads</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Competitors</a>
-              </li>
-          </ul>
-
-          <!-- Date Filter + Export -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-              <input type="date" class="form-control w-auto">
-              <button class="btn btn-primary">
-                  <i class="bi bi-download"></i> Export
-              </button>
+            <!-- Metrics Card -->
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6 class="fw-bold mb-3">Metrics</h6>
+                    <select class="form-select w-auto mb-3">
+                        <option>Impressions</option>
+                        <option>Reactions</option>
+                        <option>Comments</option>
+                    </select>
+                    <!-- Graph Placeholder -->
+                    <div class="bg-light rounded p-5 text-center text-muted">
+                        Graph / Chart Area
+                    </div>
+                </div>
+            </div>
           </div>
-
-          <!-- Highlights Card -->
-          <div class="card shadow-sm border-0 mb-4">
-              <div class="card-body">
-                  <h6 class="fw-bold mb-3">Highlights</h6>
-                  <div class="row text-center">
-                      <div class="col">
-                          <h5 class="fw-bold mb-0">201</h5>
-                          <small class="text-muted">Impressions</small>
-                      </div>
-                      <div class="col">
-                          <h5 class="fw-bold mb-0">1</h5>
-                          <small class="text-muted">Reactions</small>
-                      </div>
-                      <div class="col">
-                          <h5 class="fw-bold mb-0">1</h5>
-                          <small class="text-muted">Comments</small>
-                      </div>
-                      <div class="col">
-                          <h5 class="fw-bold mb-0">0</h5>
-                          <small class="text-muted">Reposts</small>
-                      </div>
-                  </div>
-              </div>
-          </div>
-
-          <!-- Metrics Card -->
-          <div class="card shadow-sm border-0">
-              <div class="card-body">
-                  <h6 class="fw-bold mb-3">Metrics</h6>
-                  <select class="form-select w-auto mb-3">
-                      <option>Impressions</option>
-                      <option>Reactions</option>
-                      <option>Comments</option>
-                  </select>
-                  <!-- Graph Placeholder -->
-                  <div class="bg-light rounded p-5 text-center text-muted">
-                      Graph / Chart Area
-                  </div>
-              </div>
-          </div>
-      </div>
+        </div>
       </div>
      </div>
     
