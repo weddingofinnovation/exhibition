@@ -2,7 +2,7 @@
 @section('page_description','Dashboard')
 @section('page_keywords', 'Council, Innovation, sell your business, market, expand your franchise, buy a brand licenese,  business_design, business_strategy, business_design_sprint, innovation_accelerator, product_service, go_to_market, entrepreneur_residence, strategy_sprint, creative')
 <main>
-      {{--<div class="page-title-overlap bg-accent pt-4">
+      <div class="page-title-overlap bg-accent pt-4">
         <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center pt-2">
           <div class="d-flex align-items-center pb-3">
             <div class="img-thumbnail rounded-circle position-relative flex-shrink-0" style="max-width: 50%;">
@@ -48,7 +48,7 @@
             </div>
           </div>
         </div>
-      </div>--}}
+      </div>
        
       <!--Mobile event start View-->      
       @if($board == 'event')   
