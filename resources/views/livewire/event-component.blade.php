@@ -429,33 +429,17 @@
                   <a href="#" class="text-primary small">View all</a>
                 </div>
               </div>
-
+<!-- 
             <h5 class="mb-3">Popular Categories</h5>
             <div class="popular-categories">
                 @foreach($allcategory as $category)
-                  <span class="category-badge" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                  <span class="category-badge" href="">
                         {{$category -> industry}}
                   </span>
                 @endforeach    
-            </div>
+            </div> -->
 
-            <h5 class="mb-3">Popular Categories</h5>
-            <div class="row g-3">
-                @foreach($allcategory as $category)
-                    <div class="col-6 col-md-3">
-                        <a href="{{ route('coi.exhibitioncategory', ['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug]) }}" 
-                          class="text-decoration-none text-dark">
-                            <div class="card text-center shadow-sm border-0 h-100">
-                                <div class="card-body">
-                                    {{-- Example icon (you can replace with FontAwesome, Bootstrap Icons, or custom DB icons) --}}
-                                    <i class="bi bi-briefcase-fill fs-2 text-primary mb-2"></i>
-                                    <h6 class="mb-0">{{ ucwords($category->industry) }}</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+           
 
           <div class="card shadow-sm rounded-4 p-3">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -468,14 +452,14 @@
 
             @foreach($allcategory as $category)
               <!-- Card 1 -->
-              <div class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;">
+              <a class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
                 <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
                   <i class="bi bi-key fs-4 text-primary"></i>
                 </div>
                 <h6 class="fw-bold small mb-1">{{ ucwords($category->industry) }}</h6>
                 <small class="text-muted">Planning, Budget...</small>
                 <div class="fw-bold mt-2">% match</div>
-              </div>   
+              </a>   
             @endforeach         
 
             </div>
