@@ -2,53 +2,7 @@
 @section('page_description','Dashboard')
 @section('page_keywords', 'Council, Innovation, sell your business, market, expand your franchise, buy a brand licenese,  business_design, business_strategy, business_design_sprint, innovation_accelerator, product_service, go_to_market, entrepreneur_residence, strategy_sprint, creative')
 <main>
-      <div class="page-title-overlap bg-accent pt-4">
-        <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center pt-2">
-          <div class="d-flex align-items-center pb-3">
-            <div class="img-thumbnail rounded-circle position-relative flex-shrink-0" style="max-width: 50%;">
-            
-            <img  class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}"  alt="{{Auth::user()->name}}" >
-          </div>
-            <div class="ps-3">
-              <h3 class="text-light fs-lg mb-0">{{Auth::user()->name}}</h3>
-              <span class="d-block text-light fs-ms opacity-60 py-1">Member since {{ Carbon\Carbon::parse(Auth::user()->created_at)->format('F  Y ')}}</span>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Content</div>
-              <!-- <h3 class="text-light"> {{$events}}</h3> -->
-            </div>
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Visitors</div>
-              <!-- <h3 class="text-light"> {{$evento->count()}}</h3> -->
-            </div>
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Followers</div>
-              <!-- <h3 class="text-light"> {{$eventomorrow->count()}}</h3> -->
-            </div>
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Search appearances</div>
-              <!-- <h3 class="text-light"> {{$eventweek->count()}}</h3> -->
-            </div>
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Leads</div>
-              <!-- <h3 class="text-light"> {{$eventmonth->count()}}</h3> -->
-            </div>
-            <div class="text-sm-end me-5">
-              <div class="text-light fs-base">Competitors</div>
-              <!-- <h3 class="text-light"> {{$eventthreemonth->count()}}</h3> -->
-            </div>
-
-            <div class="text-sm-end">
-              <div class="text-light fs-base">Seller rating</div>
-              <div class="star-rating"><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star-filled active"></i><i class="star-rating-icon ci-star"></i>
-              </div>
-              <div class="text-light opacity-60 fs-xs">Based on 98 reviews</div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
        
      <div class="container">
       <div class="col-3"></div>
