@@ -289,7 +289,7 @@
                                             <a class="card-img-top d-block overflow-hidden" 
                                               href="{{ route('adminevent.detail', ['slug' => $franchise->slug]) }}">
                                                 <img src="{{ url('public/assets/image/exhibition/' . $franchise->image) }}" 
-                                                    alt="{{Str::limit($evet->eventname, 24)}}" 
+                                                    alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;">
                                             </a>
@@ -396,7 +396,7 @@
                                           <a class="card-img-top d-block overflow-hidden" 
                                             href="{{ route('adminevent.detail', ['slug' => $franchise->slug]) }}">
                                               <img src="{{ url('public/assets/image/exhibition/' . $franchise->image) }}" 
-                                                   alt="{{Str::limit($evet->eventname, 24)}}" 
+                                                   alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;">
                                           </a>
@@ -542,7 +542,7 @@
                                             Add</a>
                                       @else
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;"></a>
                                       @endif
@@ -588,7 +588,7 @@
                                             Add</a>
                                       @else
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;"></a>
                                       @endif
@@ -634,7 +634,7 @@
                                             Add</a>
                                       @else
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;"></a>
                                       @endif
@@ -680,7 +680,7 @@
                                             Add</a>
                                       @else
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($evet->eventname, 24)}}" 
+                                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}"  alt="{{Str::limit($franchise->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;"></a>
                                       @endif
