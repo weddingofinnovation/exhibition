@@ -50,14 +50,24 @@
         </div>
 
         <div class="col-9">
-          <div class="my-4">
-              <div class="card shadow-sm border-0 mb-4">
+          <div class="my-0">
+              <div class="card shadow-sm border-0 mb-2">
                 <div class="card-body">
                     <!-- Page Title -->
-                    <h4 class="fw-bold mb-3">Analytics</h4>
+                    
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                      <h4 class="fw-bold mb-2">Analytics</h4>
+                      <div>
+                        <input type="date" class="form-control w-auto">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-download"></i> Export
+                        </button>
+                      </div>
+                  </div>
 
                     <!-- Tabs -->
-                    <ul class="nav nav-tabs mb-4" id="analyticsTabs">
+                    <ul class="nav nav-tabs mb-2" id="analyticsTabs">
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Content</a>
                         </li>
@@ -81,7 +91,7 @@
               </div>
 
             <!-- Date Filter + Export -->
-              <div class="card shadow-sm border-0 mb-4">
+              <div class="card shadow-sm border-0 mb-2">
                 <div class="card-body">
 
                   <div class="d-flex justify-content-between align-items-center mb-3">
