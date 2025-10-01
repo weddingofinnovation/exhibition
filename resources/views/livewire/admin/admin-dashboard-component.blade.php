@@ -63,7 +63,7 @@
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       
                     @if($board == 'order')
-                      <h4 class="fw-bold mb-2">Leads</h4>
+                      <h4 class="fw-bold mb-2">Leads</h4> <small>{{$businessOrder->count()}}</small>
                       <div class="d-flex justify-content-between align-items-center">
                         <input type="search" class="form-control w-auto" placeholder="Search...">
                         <button class="btn btn-primary ml-4">
