@@ -57,6 +57,57 @@
             </div>
           </div>
 
+        @elseif($this->board == 'visit')
+          <div class="container py-4 py-lg-5 my-4">
+            <div class="row justify-content-center">
+
+
+              <div class="col-lg-8 col-md-10">
+                 <p>A Warm Welcome</p>
+                <h2 class="h3 mb-2">Intention to VIsit</h2>
+               
+                <small class="mb-2">We are glad you are interested in attending {{$findevent->eventname}}.
+                 Here you can make a non-binding request for stand space and find useful information for a 
+                 successful presentation at the fair.
+                </small>
+
+                {{--<ol class="list-unstyled fs-md">
+                  <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                  <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                  <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                </ol>--}}
+
+                
+                  <form  wire:submit.prevent="add" >
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                      @error('name')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                      <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                      @error('email')
+                      <div class="form-text text-primary">{{$message}}</div>
+                    @enderror
+                    </div>
+                    <div class="mb-1">
+                      <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                      <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                      @error('phone')
+                        <div class="form-text text-primary">{{$message}}</div>
+                      @enderror
+                    </div>
+                    <button class="btn btn-primary form-control" type="submit">Submit</button>
+                  </form>
+
+                  <small class="mb-2">If you have any questions or would like more information, please feel free to contact the Exhitbion Network team at +91-999-185-6776</small>
+              
+              </div>
+            </div>
+          </div>
         @elseif($this->board == 'award')
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
@@ -874,115 +925,115 @@
           </div>
 
         @elseif($this->board == 'know_more')
-        <style>
-          .chat-btn {
-            background-color: #f1f3f9;
-            border: none;
-            border-radius: 40px;
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 500;
-            box-shadow: none;
-            transition: 0.2s;
-          }
+          <style>
+            .chat-btn {
+              background-color: #f1f3f9;
+              border: none;
+              border-radius: 40px;
+              padding: 12px 20px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-weight: 500;
+              box-shadow: none;
+              transition: 0.2s;
+            }
 
-          .chat-btn:hover {
-            background-color: #e0e7ff;
-          }
+            .chat-btn:hover {
+              background-color: #e0e7ff;
+            }
 
-          .chat-btn i {
-            font-size: 1.2rem;
-            color: #1a73e8;
-          }
+            .chat-btn i {
+              font-size: 1.2rem;
+              color: #1a73e8;
+            }
 
-          .btn-outline-custom {
-            border: 1px solid #ddd;
-            background: white;
-            border-radius: 40px;
-            padding: 12px 20px;
-            font-weight: 500;
-          }
+            .btn-outline-custom {
+              border: 1px solid #ddd;
+              background: white;
+              border-radius: 40px;
+              padding: 12px 20px;
+              font-weight: 500;
+            }
 
-          .btn-outline-custom:hover {
-            background: #f8f9fa;
-          }
-        </style>
+            .btn-outline-custom:hover {
+              background: #f8f9fa;
+            }
+          </style>
 
-        <div class="container py-5 text-center">
-          <!-- Header -->
-          <h2 class="fw-bold mb-1">Need help with your first steps?</h2>
-          <h3 class="fw-semibold mb-3">Connect with <span class="text-primary">The Exhibition Network</span></h3>
-          <p class="text-muted mb-4">Connect with our support team to get help or advice. Choose a conversation starter below:</p>
+          <div class="container py-5 text-center">
+            <!-- Header -->
+            <h2 class="fw-bold mb-1">Need help with your first steps?</h2>
+            <h3 class="fw-semibold mb-3">Connect with <span class="text-primary">The Exhibition Network</span></h3>
+            <p class="text-muted mb-4">Connect with our support team to get help or advice. Choose a conversation starter below:</p>
 
-          <!-- Conversation Starters -->
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            
-            <!-- Option 1 -->
-            <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
-              <i class="bi bi-arrow-return-right text-primary fs-5"></i>
-              <span>Visit the Expo</span>
-            </button>
+            <!-- Conversation Starters -->
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+              
+              <!-- Option 1 -->
+              <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+                <i class="bi bi-arrow-return-right text-primary fs-5"></i>
+                <span>Visit the Expo</span>
+              </button>
 
-            <!-- Option 2 -->
-            <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
-              <i class="bi bi-lightbulb text-warning fs-5"></i>
-              <span>Participate as an Exhibitor</span>
-            </button>
+              <!-- Option 2 -->
+              <button class="btn btn-light px-4 py-2 rounded-pill shadow-sm d-flex align-items-center gap-2">
+                <i class="bi bi-lightbulb text-warning fs-5"></i>
+                <span>Participate as an Exhibitor</span>
+              </button>
 
-            <!-- Option 3 -->
-            <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2" wire:click.prevent="detailswaypath({{ $this->visitorid->id }}, 'service')">
-              <i class="bi bi-chat-dots-fill fs-5"></i>
-              <span>Services</span> 
-            </button>
+              <!-- Option 3 -->
+              <button class="btn btn-outline-secondary px-4 py-2 rounded-pill d-flex align-items-center gap-2" wire:click.prevent="detailswaypath({{ $this->visitorid->id }}, 'service')">
+                <i class="bi bi-chat-dots-fill fs-5"></i>
+                <span>Services</span> 
+              </button>
 
+            </div>
           </div>
-        </div>
   
         @elseif($this->board == 'service')  
 
-        <div class="container py-5">
-          <div class="text-center mb-5">
-            <h2 class="fw-bold">Choose your participation package</h2>
-            <p class="text-muted">Select an option to proceed with registration. You can edit this later if needed.</p>
-          </div>
-
-          <div class="row g-4">
-            <!-- Option A -->
-            <div class="col-md-4">
-              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-                <span class="badge bg-primary mb-2">STANDARD</span>
-                <h3 class="fw-bold mb-1">₹20,000</h3>
-                <div class="text-muted mb-3">For 6–9 Sqm Booth</div>
-                <p class="small text-muted">Ideal for startups or sampling counters. Includes fascia & basic furniture.</p>
-              </label>
+          <div class="container py-5">
+            <div class="text-center mb-5">
+              <h2 class="fw-bold">Choose your participation package</h2>
+              <p class="text-muted">Select an option to proceed with registration. You can edit this later if needed.</p>
             </div>
 
-            <!-- Option B -->
-            <div class="col-md-4">
-              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-                <span class="badge bg-info text-dark mb-2">BUSINESS</span>
-                <h3 class="fw-bold mb-1">₹40,000</h3>
-                <div class="text-muted mb-3">For 12–18 Sqm Booth</div>
-                <p class="small text-muted">Get visibility and branding benefits. Includes branding wall & storage area.</p>
-              </label>
-            </div>
+            <div class="row g-4">
+              <!-- Option A -->
+              <div class="col-md-4">
+                <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                  <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                  <span class="badge bg-primary mb-2">STANDARD</span>
+                  <h3 class="fw-bold mb-1">₹20,000</h3>
+                  <div class="text-muted mb-3">For 6–9 Sqm Booth</div>
+                  <p class="small text-muted">Ideal for startups or sampling counters. Includes fascia & basic furniture.</p>
+                </label>
+              </div>
 
-            <!-- Option C -->
-            <div class="col-md-4">
-              <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
-                <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
-                <span class="badge bg-success mb-2">PREMIUM</span>
-                <h3 class="fw-bold mb-1">₹60,000</h3>
-                <div class="text-muted mb-3">For 24+ Sqm Booth</div>
-                <p class="small text-muted">Premium corner stall with LED display support, reception & meeting zone.</p>
-              </label>
+              <!-- Option B -->
+              <div class="col-md-4">
+                <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                  <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                  <span class="badge bg-info text-dark mb-2">BUSINESS</span>
+                  <h3 class="fw-bold mb-1">₹40,000</h3>
+                  <div class="text-muted mb-3">For 12–18 Sqm Booth</div>
+                  <p class="small text-muted">Get visibility and branding benefits. Includes branding wall & storage area.</p>
+                </label>
+              </div>
+
+              <!-- Option C -->
+              <div class="col-md-4">
+                <label class="card p-4 border rounded-4 text-center shadow-sm position-relative h-100">
+                  <input type="radio" name="offer" class="form-check-input position-absolute top-0 end-0 m-3" />
+                  <span class="badge bg-success mb-2">PREMIUM</span>
+                  <h3 class="fw-bold mb-1">₹60,000</h3>
+                  <div class="text-muted mb-3">For 24+ Sqm Booth</div>
+                  <p class="small text-muted">Premium corner stall with LED display support, reception & meeting zone.</p>
+                </label>
+              </div>
             </div>
-          </div>
-        </div>  
+          </div>  
 
 
         @else

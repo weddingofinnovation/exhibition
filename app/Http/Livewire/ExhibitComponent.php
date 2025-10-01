@@ -51,20 +51,17 @@ class ExhibitComponent extends Component
     public function add()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|regex:/^[a-zA-Z\s]+$/', // alpha:ascii
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name'  => 'required|regex:/^[a-zA-Z\s]+$/',
         ]);
 
         $newEvent = new Lead();
         $newEvent->name = $this->name;
         $newEvent->email = $this->email;
         $newEvent->phone = $this->phone;
-        $newEvent->type = 'business';
+        $newEvent->type = $this->board;   // save board type
         $newEvent->event_id = session()->get('eventID');
-
-        //$newEvent->user_id = Auth::user()->id;
-        
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -76,27 +73,32 @@ class ExhibitComponent extends Component
         $logino->phone = $this->phone;
         $logino->save();
 
-        //return redirect()->route('coicart');thankyou 
-        //return redirect()->route('event.exhibit', ['board' => 'know_more', 'visitorid' => $newEvent->id ]);
-        
-         
-        //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
-        // Use if-else for conditional redirect
-
-         $eventID = session()->get('eventID');
+        $eventID = session()->get('eventID');
         $evento = Event::find($eventID);
-            if ($evento && $evento->businessrevenue === 'no-more') {
-                return redirect()->route('event.exhibit', [
-                    'board' => 'thankyou-for-stop',
-                    'visitorid' => $newEvent->id
-                ]);
-            } else {
-                session()->flash('message', 'Thanks for sharing your review.');
-                return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
-            }
-        
+
+        // conditional routing
+        if ($this->board === 'visit') {
+            return redirect()->route('event.product', [
+                'slug' => $evento->slug
+            ]); //href="{{route('event.product',['slug' => $event->slug])}}"
+        } elseif ($this->board === 'business') {
+            return redirect()->route('event.exhibit', [
+                'board' => 'business-thankyou',
+                'visitorid' => $newEvent->id
+            ]);
+        } elseif ($evento && $evento->businessrevenue === 'no-more') {
+            return redirect()->route('event.exhibit', [
+                'board' => 'thankyou-for-stop',
+                'visitorid' => $newEvent->id
+            ]);
+        } else {
+            return redirect()->route('event.exhibit', [
+                'board' => 'thankyou',
+                'visitorid' => $newEvent->id
+            ]);
+        }
     }
+
 
     public function detailswaypath()
     {

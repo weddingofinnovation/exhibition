@@ -5809,7 +5809,8 @@
                                     @endif
                                 @else
                                     <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Book your Space</a>
-                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Plan your Visit</a>
+                                    <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.exhibit', ['board' => 'visit'])}}">Plan your Visit</a>
+                                    <!-- <a class="btn btn-primary btn-sm mt-3 me-1" href="{{route('event.product',['slug' => $event->slug])}}">Plan your Visit</a> -->
                                 @endif
 
                                 {{-- Call Info Below Buttons --}}
