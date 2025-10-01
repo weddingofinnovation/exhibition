@@ -26,7 +26,10 @@
               <!-- Navigation Menu -->
               <ul class="nav nav-pills flex-column">
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
+                      <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
                   </li>
                   <li class="nav-item mb-1">
                       <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
@@ -58,6 +61,16 @@
                     
 
                     <div class="d-flex justify-content-between align-items-center mb-2">
+                      
+                    @if($board == 'order')
+                      <h4 class="fw-bold mb-2">Leads</h4>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <input type="search" class="form-control w-auto" placeholder="Search...">
+                        <button class="btn btn-primary ml-4">
+                            <i class="bi bi-download"></i> Export
+                        </button>
+                      </div>
+                    @else
                       <h4 class="fw-bold mb-2">Analytics</h4>
                       <div class="d-flex justify-content-between align-items-center">
                         <input type="date" class="form-control w-auto">
@@ -65,7 +78,9 @@
                             <i class="bi bi-download"></i> Export
                         </button>
                       </div>
-                  </div>
+                    @endif
+                      
+                    </div>
 
 
                     <!-- Tabs -->
