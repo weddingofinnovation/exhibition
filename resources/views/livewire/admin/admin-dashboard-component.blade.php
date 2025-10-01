@@ -53,7 +53,7 @@
           <div class="my-0">
 
               <div class="card shadow-sm border-0 mb-2">
-                <div class="card-body">
+                <div class="card-body pb-1 pt-2">
                     <!-- Page Title -->
                     
 
