@@ -405,7 +405,7 @@
 
               <div class="border-bottom pt-2 my-2">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="fw-bold mb-0">2Search your business event with right place people for your business</h6>
+                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
                   <a href="#" class="text-primary small">View all</a>
                 </div>
               </div>
@@ -438,6 +438,25 @@
                   </span>
                 @endforeach    
             </div>
+
+            <h5 class="mb-3">Popular Categories</h5>
+            <div class="row g-3">
+                @foreach($allcategory as $category)
+                    <div class="col-6 col-md-3">
+                        <a href="{{ route('coi.exhibitioncategory', ['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug]) }}" 
+                          class="text-decoration-none text-dark">
+                            <div class="card text-center shadow-sm border-0 h-100">
+                                <div class="card-body">
+                                    {{-- Example icon (you can replace with FontAwesome, Bootstrap Icons, or custom DB icons) --}}
+                                    <i class="bi bi-briefcase-fill fs-2 text-primary mb-2"></i>
+                                    <h6 class="mb-0">{{ ucwords($category->industry) }}</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
 
         </div>
 
