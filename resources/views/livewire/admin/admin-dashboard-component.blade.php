@@ -26,11 +26,15 @@
               <!-- Navigation Menu -->
               <ul class="nav nav-pills flex-column">
                   <li class="nav-item mb-1">
-                      <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
+                      <a href="{{route('admin.global')}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
                   </li>
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
+                      <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
                   </li>
+                   <li class="nav-item mb-1">
+                      <a href="{{route('admin.dashboard', ['board' => 'event'])}}" class="nav-link text-dark" style="background-color: #fff;">Events</a>
+                  </li>
+
                   <li class="nav-item mb-1">
                       <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
                   </li>
@@ -63,21 +67,29 @@
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       
                     @if($board == 'order')
-                      <h4 class="fw-bold mb-2">Leads</h4> <small>{{$businessOrder->count()}}</small>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <input type="search" class="form-control w-auto" placeholder="Search...">
-                        <button class="btn btn-primary ml-4">
-                            <i class="bi bi-download"></i> Export
-                        </button>
-                      </div>
+                      <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <input type="search" class="form-control w-auto" placeholder="Search...">
+                          <button class="btn btn-primary ml-4">
+                              <i class="bi bi-download"></i> Export
+                          </button>
+                        </div>
+                    @elseif($board == 'event')
+                      <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
+                        <div class="d-flex justify-content-between align-items-center">
+                          <input type="search" class="form-control w-auto" placeholder="Search...">
+                          <button class="btn btn-primary ml-4">
+                              <i class="bi bi-download"></i> Export
+                          </button>
+                        </div>
                     @else
                       <h4 class="fw-bold mb-2">Analytics</h4>
-                      <div class="d-flex justify-content-between align-items-center">
-                        <input type="date" class="form-control w-auto">
-                        <button class="btn btn-primary ml-4">
-                            <i class="bi bi-download"></i> Export
-                        </button>
-                      </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                          <input type="date" class="form-control w-auto">
+                          <button class="btn btn-primary ml-4">
+                              <i class="bi bi-download"></i> Export
+                          </button>
+                        </div>
                     @endif
                       
                     </div>
@@ -100,6 +112,25 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Email</a>
+                        </li>
+                        @elseif($board == 'event')
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">New</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Finish</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">upcoming</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Featured</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Today</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Email</a>
@@ -194,6 +225,8 @@
                     </div>
                   </div>
                 @endforeach
+              @elseif($board == 'event')
+               <h1>this is event</h1>
               @else
                           <!-- Date Filter + Export -->
                           <div class="card shadow-sm border-0 mb-2">
