@@ -26,23 +26,23 @@
               <!-- Navigation Menu -->
               <ul class="nav nav-pills flex-column">
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark">Dashboard</a>
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
                   </li>
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark">Page posts</a>
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
                   </li>
                   <li class="nav-item mb-1">
                       <a href="#" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
                   </li>
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark">Feed</a>
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Feed</a>
                   </li>
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="#" class="nav-link text-dark">Activity</a>
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
                       <span class="badge bg-danger rounded-pill">2</span>
                   </li>
                   <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark">Inbox</a>
+                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Inbox</a>
                   </li>
               </ul>
           </div>
@@ -56,11 +56,11 @@
                     <!-- Page Title -->
                     
 
-                    <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
                       <h4 class="fw-bold mb-2">Analytics</h4>
                       <div class="d-flex justify-content-between align-items-center">
                         <input type="date" class="form-control w-auto">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary mr-1">
                             <i class="bi bi-download"></i> Export
                         </button>
                       </div>
