@@ -779,7 +779,7 @@
         @php 
         
           $nextMonthDate = Carbon\Carbon::now()->addMonth();
-          $evento = Event::where('status', '1')
+          $evento = DB::table('events')->where('status', '1')
                       ->where('admstatus', '1')
                       ->whereMonth('startdate', $nextMonthDate->month)
                       ->whereYear('startdate', $nextMonthDate->year)
