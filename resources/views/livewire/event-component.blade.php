@@ -957,22 +957,22 @@
 
                   <div class="event-status">
                     @php
-                  
+                      $current = strtotime(date("Y-m-d")); // timestamp for today
                       $to = strtotime($eventoi->startdate);
                       $from = strtotime($eventoi->enddate);
                     @endphp
 
-                    @if ($current < $to && $current < $from)
+                   @if ($current->lt($to) && $current->lt($from))
                       Upcoming
-                    @elseif ($current == $to && $current < $from) 
+                    @elseif ($current->eq($to) && $current->lt($from)) 
                       First Day
-                    @elseif ($current > $to && $current < $from) 
+                    @elseif ($current->gt($to) && $current->lt($from)) 
                       Ongoing
-                    @elseif ($current > $to && $current == $from) 
+                    @elseif ($current->gt($to) && $current->eq($from)) 
                       Last Day
-                    @elseif ($current > $to && $current > $from)
+                    @elseif ($current->gt($from))
                       Ended
-                    @endif
+                   @endif
                   </div>
                 </div>
 
