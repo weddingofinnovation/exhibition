@@ -470,15 +470,12 @@
             <div class="d-flex align-items-center justify-content-between mt-2">
             
               <!-- Title -->
-              <!-- <div class=" h4 fw-bold text-white"> <span cl></span></div> -->
-
-              <div class="flex-grow-1">
-                  <h4 class="fw-bold mb-1 text-white">Statistics and Analytics</h4>
-                  <small class="">Business events</small>
-              </div>
-
-              <div class="search-bar w-auto">
-                <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+               <div class="">
+                  <div class=" h4 fw-bold text-white">Statistics and Analytics <span>Business events</span></div>
+              
+                  <div class="search-bar w-50">
+                    <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+                  </div>
               </div>
 
               <div class="d-flex gap-2">
