@@ -962,17 +962,17 @@
                       $from = strtotime($eventoi->enddate);
                     @endphp
 
-                   @if ($current->lt($to) && $current->lt($from))
+                   @if ($current < $to && $current < $from)
                       Upcoming
-                    @elseif ($current->eq($to) && $current->lt($from)) 
+                    @elseif ($current == $to && $current < $from) 
                       First Day
-                    @elseif ($current->gt($to) && $current->lt($from)) 
+                    @elseif ($current > $to && $current < $from) 
                       Ongoing
-                    @elseif ($current->gt($to) && $current->eq($from)) 
+                    @elseif ($current > $to && $current == $from) 
                       Last Day
-                    @elseif ($current->gt($from))
+                    @elseif ($current > $from)
                       Ended
-                   @endif
+                    @endif
                   </div>
                 </div>
 
