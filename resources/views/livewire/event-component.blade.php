@@ -976,6 +976,36 @@
                   </div>
                 </div>
 
+                <div class="d-flex">
+                    <!-- Product-->
+                    @foreach ($evento as $franchise)
+                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                        <div class="card product-card">
+                          <div class="card-body py-2">
+                            <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                              <span class="text-bolder">
+                                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                                  @else
+                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                  @endif 
+                              </span>
+                            </a>
+                            <div class="d-flex justify-content-between">
+                              <div class="product-price">
+                                <div class="product-title h3 fs-sm mb-0">
+                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        
+                      </div>
+                    @endforeach
+                </div>
+
                 <!-- Event Name (Separate from Image) -->
                 <div class="event-title">
                     <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
