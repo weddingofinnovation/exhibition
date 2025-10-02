@@ -194,7 +194,7 @@
         <!-- bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
         <section class="search-section d-none d-md-block">
             <div class="container">
-            <span class=" fs-xs text-primary text-center">Right Place, Right Time, Right People</span>
+            <span class=" fs-xs text-center fw-bold" style="color: #FF1628;">Right Place, Right Time, Right People</span>
                 <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
 
                 <div class="row justify-content-center">
