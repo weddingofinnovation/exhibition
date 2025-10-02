@@ -588,7 +588,7 @@
               <div class="col-md-8 d-none d-sm-block">
                 <div class="d-flex">
                     <!-- Product-->
-                    @foreach ($evento as $franchise)
+                    @foreach ($evento->limit(4) as $franchise)
                       <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
                         <div class="card product-card">
                           <div class="card-body py-2">
@@ -618,7 +618,7 @@
 
                 <div class="d-flex">
                   <!-- Product-->
-                  @foreach ($evento as $franchise)
+                  @foreach ($evento->limit(4) as $franchise)
                     <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
                       <div class="card product-card">
                         <div class="card-body py-2">
