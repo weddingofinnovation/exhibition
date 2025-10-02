@@ -277,9 +277,10 @@
         <div class="container-fluid featured-companies-bar d-none d-md-block">
             <div class="d-flex align-items-center">
                 <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-                 <div class="bg-dark" style="width:325px;">
+
+                 <div class="d-flex align-items-center gap-3" style="width:325px;">
                     <div class="">India's Biggest Exhibitor Database</div>
-                    <h5 class="me-2 mb-0">Find Exhibitor</h5>
+                    <div class="me-2 mb-0">Find Exhibitor</div>
                  </div>
                 
 
@@ -294,9 +295,10 @@
                     </div>
                 </div>
                 
-                <div class="" style="width:325px;"> 
-                  <h2>List your upcoming brand presence, Get free pre-meet.</h2>  
-                <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a></div>
+                <div class="d-flex justify-content-end gap-2 align-items-center" style="width:325px;"> 
+                  <div class="small">List your upcoming brand presence, Get free pre-meet.</div>  
+                  <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
+                </div>
                 
             </div>
         </div>
