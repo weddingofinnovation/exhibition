@@ -164,8 +164,8 @@
         .search-box {
             display: flex;
             background: white;
-            border-radius: 50px;
-            padding: 10px;
+            /* border-radius: 50px; */
+            padding: 2px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
@@ -178,11 +178,11 @@
         }
 
         .search-box button {
-            background: #7d00ff;
+            background: #fff;
             color: white;
             border: none;
             padding: 12px 30px;
-            border-radius: 50px;
+            /* border-radius: 50px; */
             font-weight: bold;
         }
 

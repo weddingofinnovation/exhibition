@@ -66,7 +66,7 @@
                  <p>A Warm Welcome</p>
                 <h2 class="h3 mb-2">Intention to Visit</h2>
                
-                <small class="mb-2">We are glad you are interested in attending ,<strong>{{ucwords($findevent->eventname)}}</strong>.
+                <small class="mb-2">We are glad you are interested in attending, <strong>{{ucwords($findevent->eventname)}}</strong>.
                  Here you can make a non-binding request for stand space and find useful information for a 
                  successful presentation at the fair.
                 </small>
