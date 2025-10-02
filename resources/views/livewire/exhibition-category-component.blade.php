@@ -464,67 +464,87 @@
 
         <div class="py-4 d-none d-sm-block" style="background-color: #000;">
           <div class="container">
-            <!-- Title -->
-            <h5 class="fw-bold text-white">Business events- Statistics and Analytics</h2>
-
-            <!-- Filter Section -->
-            <div class="filter-box mt-4">
-              <div class="row g-3">
-                <div class="col-md-3">
-                  <select class="form-select custom-select">
-                    <option selected>All Games / Categories</option>
-                    <option>LoL</option>
-                    <option>CS2</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <select class="form-select custom-select">
-                    <option selected>All Publishers</option>
-                    <option>Riot</option>
-                    <option>Valve</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <select class="form-select custom-select">
-                    <option selected>All Time</option>
-                    <option>2023</option>
-                    <option>2024</option>
-                  </select>
-                </div>
-                <div class="col-md-3">
-                  <select class="form-select custom-select">
-                    <option selected>All Teams</option>
-                    <option>Navi</option>
-                    <option>OG</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Tags -->
-              <div class="mt-3 d-flex flex-wrap gap-1">
-                <button class="tag-btn">Esports only</button>
-                <button class="tag-btn">Mobile Esports</button>
-                <button class="tag-btn">Female Esports</button>
-                <button class="tag-btn">Battle Royale</button>
-                <button class="tag-btn">Collegiate</button>
-              </div>
-            </div>
-
+            
+            
             <!-- Search and Sorting -->
-            <div class="d-flex align-items-center justify-content-between mt-4">
-              <div class="search-bar w-50">
+            <div class="d-flex align-items-center justify-content-between mt-2">
+            
+              <!-- Title -->
+              <div class=" h4 fw-bold text-white">Statistics and Analytics <span>Business events</span></div>
+
+              <div class="search-bar w-auto">
                 <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
               </div>
+
               <div class="d-flex gap-2">
                 <select class="form-select custom-select w-auto">
                   <option selected>Sort by: Event Date</option>
                   <option>Most Viewed</option>
                   <option>Top Teams</option>
                 </select>
-                <button class="btn btn-danger fw-bold px-4">LIVE Business Events</button>
+                <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">LIVE Business Events</button>
+              </div>
+              
+            </div>
+
+
+
+            <!-- Filter Section -->
+            <div class="filter-box mt-4">
+              <div class="row g-3">
+                <div class="col-md-3">
+
+                  <select class="form-select custom-select">
+                    <option selected>All Industries</option>
+                    <option>LoL</option>
+                    <option>CS2</option>
+                  </select>
+                </div>
+
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Cities</option>
+                    <option>Riot</option>
+                    <option>Valve</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Venues</option>
+                    <option>Navi</option>
+                    <option>OG</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-select custom-select">
+                    <option selected>All Types</option>
+                    <option>Entry Free</option>
+                    <option>Rating</option>
+                    <option>Popular</option>
+                    <option>Trending</option>
+                    <option>Featured</option>
+                    <option>Industry Leader</option>
+                    <option>B2B focus</option>
+                    <option>Registration open</option>
+                    <option>Early Bird</option>
+                    <option>Upcoming</option>
+                    <option>New Event</option>
+                  </select>
+                </div>
+                
+              </div>
+
+              <!-- Tags -->
+              <div class="mt-3 d-flex flex-wrap gap-1">
+                <button class="tag-btn">Trending</button>
+                <button class="tag-btn">International Trade</button>
+                <button class="tag-btn">Business Supplies</button>
+                <button class="tag-btn">Battle Royale</button>
+                <button class="tag-btn">Collegiate</button>
               </div>
             </div>
 
+            
           </div>
         </div>
 
