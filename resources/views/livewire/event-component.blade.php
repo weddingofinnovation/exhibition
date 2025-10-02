@@ -277,29 +277,18 @@
         <div class="container-fluid featured-companies-bar d-none d-md-block">
             <div class="d-flex align-items-center">
                 <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-
-                 <div class="d-flex align-items-center gap-3" style="width:325px;">
-                    <div class="">India's Biggest Exhibitor Database</div>
-                    <div class="me-2 mb-0">Find Exhibitor</div>
-                 </div>
-                
-
-                <div class="scroll-container">
-                    @php 
-                      $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-                    @endphp
-                    <div class="scroll-content">
-                        @foreach($photos as $image)
-                          <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
-                        @endforeach
-                    </div>
-                </div>
-                
-                <div class="d-flex justify-content-end gap-2 align-items-center" style="width:325px;"> 
-                  <div class="small">List your upcoming brand presence, Get free pre-meet.</div>  
-                  <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
-                </div>
-                
+                <h5 class="me-2 mb-0">Featured by:</h5>
+                  <div class="scroll-container">
+                      @php 
+                        $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+                      @endphp
+                      <div class="scroll-content">
+                          @foreach($photos as $image)
+                            <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
+                          @endforeach
+                      </div>
+                  </div>
+                <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
             </div>
         </div>
 
@@ -358,7 +347,7 @@
             <!-- Popular Companies -->
             <div class="d-flex align-items-center mb-3">
                 <h5 class="me-3">Popular Industries</h5>
-                <div class="featured-companies overflow-auto">
+                <div class="featured-companies">
                   @foreach ($getnamecategoryresult as $categ) 
                     @php
                       $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
@@ -370,6 +359,30 @@
                   @endforeach
                 </div>
             </div>
+
+              <div class="card shadow-sm rounded-4 p-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
+              <a href="#" class="text-primary small">View all</a>
+            </div>
+
+            <!-- Scrollable stats cards -->
+            <div class="d-flex gap-3 overflow-auto pb-2">
+
+            @foreach($allcategory as $category)
+              <!-- Card 1 -->
+              <a class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+                  <i class="bi bi-key fs-4 text-primary"></i>
+                </div>
+                <h6 class="fw-bold small mb-1">{{ ucwords($category->industry) }}</h6>
+                <small class="text-muted">Planning, Budget...</small>
+                <div class="fw-bold mt-2">% match</div>
+              </a>   
+            @endforeach         
+
+            </div>
+          </div>
 
             <!-- Popular City -->
               <div class="border-bottom pt-2 mt-2">
@@ -442,29 +455,7 @@
               </div>
            
 
-          <div class="card shadow-sm rounded-4 p-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
-              <a href="#" class="text-primary small">View all</a>
-            </div>
-
-            <!-- Scrollable stats cards -->
-            <div class="d-flex gap-3 overflow-auto pb-2">
-
-            @foreach($allcategory as $category)
-              <!-- Card 1 -->
-              <a class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-                  <i class="bi bi-key fs-4 text-primary"></i>
-                </div>
-                <h6 class="fw-bold small mb-1">{{ ucwords($category->industry) }}</h6>
-                <small class="text-muted">Planning, Budget...</small>
-                <div class="fw-bold mt-2">% match</div>
-              </a>   
-            @endforeach         
-
-            </div>
-          </div>
+        
 
         </div>
 
