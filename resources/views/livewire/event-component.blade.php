@@ -759,7 +759,7 @@
             <div class="col-md-12">
               <div class="row">
                 @foreach ($evento as $franchise)
-                  <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                  <div class="col-lg-3 col-md-4 col-sm-6 mb-3" style="linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);">
                     <div class="card product-card h-100">
                       <div class="card-body py-2">
                         <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
