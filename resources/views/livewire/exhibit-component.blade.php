@@ -64,9 +64,9 @@
 
               <div class="col-lg-8 col-md-10">
                  <p>A Warm Welcome</p>
-                <h2 class="h3 mb-2">Intention to VIsit</h2>
+                <h2 class="h3 mb-2">Intention to Visit</h2>
                
-                <small class="mb-2">We are glad you are interested in attending {{$findevent->eventname}}.
+                <small class="mb-2">We are glad you are interested in attending ,<strong>{{$findevent->eventname}}</strong>.
                  Here you can make a non-binding request for stand space and find useful information for a 
                  successful presentation at the fair.
                 </small>
@@ -103,7 +103,7 @@
                     <button class="btn btn-primary form-control" type="submit">Submit</button>
                   </form>
 
-                  <small class="mb-2">If you have any questions or would like more information, please feel free to contact the Exhitbion Network team at +91-999-185-6776</small>
+                  <small class="mb-2">If you have any questions or would like more information, please feel free to contact <strong>The Exhitbion Network Team</strong> at <strong>+91-999-185-6776</strong></small>
               
               </div>
             </div>

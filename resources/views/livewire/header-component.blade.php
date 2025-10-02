@@ -138,9 +138,11 @@
                             <!-- <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a> -->
                             <a class="nav-link" href="{{route('design.strategy')}}">Great Exhibition To Exhibt</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{asset('/awards')}}">Find Exhibitor</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
                         </li>
