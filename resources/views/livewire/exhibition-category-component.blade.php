@@ -471,7 +471,7 @@
               <!-- Left side: Title + Search -->
               <div class="d-flex align-items-center gap-3">
                 <div class="h4 fw-bold text-white mb-0">
-                  Statistics & Analytics Business Events
+                  Statistics & Analytics <span class="small" style="color: #FF1628;">Business Events</span>
                 </div>
 
                 <div class="search-bar w-50">
