@@ -740,107 +740,62 @@
                       ->where('admstatus', '1')
                       ->whereMonth('startdate', $nextMonthDate->month)
                       ->whereYear('startdate', $nextMonthDate->year)
-                      ->orderBy('startdate', 'desc')
+                      ->orderBy('startdate', 'asc')
                       ->get();
 
         @endphp
-      
-      <section class=" container mb-5 d-none d-sm-block">
-          
-          <div class="container px-0">
-            <div class="d-flex align-items-center">
-              <!-- Left: Title -->
-              <span class="fs-sm">
-                Upcoming<br>
-                <span class="fw-medium h5">Exhibition</span>
-              </span>
 
-              
-              <!-- Right: Button -->
-              <a class="btn btn-outline-primary btn-sm" href="#">
-                Submit Event
-              </a>
-            </div>
+        <div class="border-bottom pt-2 mt-2">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 class="fw-bold mb-0">Search your business event at right time people for your business</h6>
+            <small>Call us to plan your upcoming month business event</small>
+            <a href="#" class="text-primary small">View all</a>
           </div>
-
-          <!-- new start-->
-            <div class="d-flex">
-                <!-- Product-->
-                @foreach ($evento as $franchise)
-                  <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                    <div class="card product-card">
-                      <div class="card-body py-2">
-                        <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                          <span class="text-bolder">
-                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+        </div>
+        <section class="container mt-4 mb-grid-gutter">
+          <div class=" rounded-3 py-2">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row">
+                  @foreach ($evento as $franchise)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                      <div class="card product-card h-100">
+                        <div class="card-body py-2">
+                          <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                            <span class="text-bolder">
+                              @if(Carbon\Carbon::parse($franchise->startdate)->format('M') != Carbon\Carbon::parse($franchise->enddate)->format('M'))
+                                {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d M') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
                               @else
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                              @endif 
+                                {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
+                              @endif
+                            </span>
+                          </a>
+
+                          <div class="product-title h3 fs-sm mb-0">
+                            <a href="{{ route('event.details',['slug' => $franchise->slug]) }}" class="fw-normal">
+                              {{ ucwords(trans(Str::limit($franchise->eventname, 24))) }}
+                            </a>
+                          </div>
+                          <span class="fs-xs fw-light">
+                            {{ $franchise->venue }}, {{ $franchise->city }}
                           </span>
-                        </a>
-                        <div class="d-flex justify-content-between">
-                          <div class="product-price">
-                            <div class="product-title h3 fs-sm mb-0">
-                              <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                              <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
-                            </div>
+                        </div>
+
+                        <div class="card-body card-body-hidden">
+                          <div class="mb-2">
+                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                              <i class="bi bi-brush fs-sm me-1"></i>Know More
+                            </a>
+                          </div>
                         </div>
                       </div>
-
                     </div>
-                    
-                  </div>
-                @endforeach
-            </div>
-          <!-- new end-->
-
-      </section>
-
-       <section class="container mt-4 mb-grid-gutter">
-  <div class="bg-faded-info rounded-3 py-2">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="row">
-          @foreach ($evento as $franchise)
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-              <div class="card product-card h-100">
-                <div class="card-body py-2">
-                  <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
-                    <span class="text-bolder">
-                      @if(Carbon\Carbon::parse($franchise->startdate)->format('M') != Carbon\Carbon::parse($franchise->enddate)->format('M'))
-                        {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d M') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
-                      @else
-                        {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
-                      @endif
-                    </span>
-                  </a>
-
-                  <div class="product-title h3 fs-sm mb-0">
-                    <a href="{{ route('event.details',['slug' => $franchise->slug]) }}" class="fw-normal">
-                      {{ ucwords(trans(Str::limit($franchise->eventname, 24))) }}
-                    </a>
-                  </div>
-                  <span class="fs-xs fw-light">
-                    {{ $franchise->venue }}, {{ $franchise->city }}
-                  </span>
-                </div>
-
-                <div class="card-body card-body-hidden">
-                  <div class="mb-2">
-                    <a class="btn btn-primary btn-sm d-block w-auto mx-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
-                      <i class="bi bi-brush fs-sm me-1"></i>Know More
-                    </a>
-                  </div>
+                  @endforeach
                 </div>
               </div>
             </div>
-          @endforeach
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </section>
 
 </main>
 
