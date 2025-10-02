@@ -464,12 +464,11 @@
 
         <div class="py-4 d-none d-sm-block" style="background-color: #000;">
           <div class="container">
-            
-            
-            <div class="d-flex align-items-center justify-content-between mt-2">
+           
+            <div class="row align-items-center mt-2">
 
-              <!-- Left side: Title + Search -->
-              <div class="d-flex align-items-center gap-3">
+              <!-- Left side: 70% -->
+              <div class="col-12 col-md-8 d-flex align-items-center gap-3">
                 <div class="h4 fw-bold text-white mb-0">
                   Statistics & Analytics <span class="small fw-normal" style="color: #FF1628;">Business Events</span>
                 </div>
@@ -479,8 +478,8 @@
                 </div>
               </div>
 
-              <!-- Right side: Sort + Live -->
-              <div class="d-flex gap-2 align-items-center">
+              <!-- Right side: 30% -->
+              <div class="col-12 col-md-4 d-flex justify-content-end gap-2 align-items-center">
                 <select class="form-select custom-select w-auto">
                   <option selected>Sort by: Event Date</option>
                   <option>Most Viewed</option>
@@ -492,35 +491,6 @@
               </div>
 
             </div>
-
-
-          <div class="row align-items-center mt-2">
-
-            <!-- Left side: 70% -->
-            <div class="col-12 col-md-8 d-flex align-items-center gap-3">
-              <div class="h4 fw-bold text-white mb-0">
-                Statistics & Analytics <span class="small fw-normal" style="color: #FF1628;">Business Events</span>
-              </div>
-
-              <div class="search-bar w-100">
-                <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
-              </div>
-            </div>
-
-            <!-- Right side: 30% -->
-            <div class="col-12 col-md-4 d-flex justify-content-end gap-2 align-items-center">
-              <select class="form-select custom-select w-auto">
-                <option selected>Sort by: Event Date</option>
-                <option>Most Viewed</option>
-                <option>Top Teams</option>
-              </select>
-              <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">
-                LIVE Business Events
-              </button>
-            </div>
-
-          </div>
-
 
 
               @php 
