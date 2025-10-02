@@ -470,7 +470,7 @@
             <div class="d-flex align-items-center justify-content-between mt-2">
             
               <!-- Title -->
-               <div class="">
+               <div class="row">
                   <div class=" h4 fw-bold text-white">Statistics and Analytics <span>Business events</span></div>
               
                   <div class="search-bar w-50">
