@@ -777,7 +777,7 @@
 
 
         @php 
-          $current = Carbon::today()->format("Y-m-d");
+          $current = Carbon\Carbon::today()->format("Y-m-d");
           $nextMonthDate = Carbon\Carbon::now()->addMonth();
           $evento = DB::table('events')->where('status', '1')
                       ->where('admstatus', '1')
