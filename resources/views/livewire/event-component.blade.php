@@ -948,35 +948,10 @@
             </div>
           </div>
 
-          <!-- start--Venues Section-desktop -->
-          <div class="venues-list">
-            @foreach($evento as $eventoi)
-              <div class="venue-container">
-                <div class="venue-carde">
-                  <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-                  <div class="event-status">
-                    @php
-                      $current = strtotime(date("Y-m-d")); // timestamp for today
-                      $to = strtotime($eventoi->startdate);
-                      $from = strtotime($eventoi->enddate);
-                    @endphp
 
-                   @if ($current < $to && $current < $from)
-                      Upcoming
-                    @elseif ($current == $to && $current < $from) 
-                      First Day
-                    @elseif ($current > $to && $current < $from) 
-                      Ongoing
-                    @elseif ($current > $to && $current == $from) 
-                      Last Day
-                    @elseif ($current > $from)
-                      Ended
-                    @endif
-                  </div>
-                </div>
-
-                <div class="d-flex">
+   <!-- new start-->
+    <div class="d-flex my-Slider7">
                     <!-- Product-->
                     @foreach ($evento as $franchise)
                       <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
@@ -1005,7 +980,37 @@
                       </div>
                     @endforeach
                 </div>
+   <!-- new end-->
+          <!-- start--Venues Section-desktop -->
+          <div class="venues-list">
+            
+            @foreach($evento as $eventoi)
+              <div class="venue-container">
+                <div class="venue-carde">
+                  <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
+                  <div class="event-status">
+                    @php
+                      $current = strtotime(date("Y-m-d")); // timestamp for today
+                      $to = strtotime($eventoi->startdate);
+                      $from = strtotime($eventoi->enddate);
+                    @endphp
+
+                   @if ($current < $to && $current < $from)
+                      Upcoming
+                    @elseif ($current == $to && $current < $from) 
+                      First Day
+                    @elseif ($current > $to && $current < $from) 
+                      Ongoing
+                    @elseif ($current > $to && $current == $from) 
+                      Last Day
+                    @elseif ($current > $from)
+                      Ended
+                    @endif
+                  </div>
+                </div>
+
+                
                 <!-- Event Name (Separate from Image) -->
                 <div class="event-title">
                     <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
