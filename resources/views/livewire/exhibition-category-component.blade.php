@@ -466,28 +466,33 @@
           <div class="container">
             
             
-            <!-- Search and Sorting -->
             <div class="d-flex align-items-center justify-content-between mt-2">
-            
-              <!-- Title -->
-               <div class="row">
-                  <div class=" h4 fw-bold text-white">Statistics and Analytics <span>Business events</span></div>
-              
-                  <div class="search-bar w-50">
-                    <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
-                  </div>
+
+              <!-- Left side: Title + Search -->
+              <div class="d-flex align-items-center gap-3">
+                <div class="h4 fw-bold text-white mb-0">
+                  Statistics and Analytics <span>Business Events</span>
+                </div>
+
+                <div class="search-bar w-50">
+                  <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+                </div>
               </div>
 
-              <div class="d-flex gap-2">
+              <!-- Right side: Sort + Live -->
+              <div class="d-flex gap-2 align-items-center">
                 <select class="form-select custom-select w-auto">
                   <option selected>Sort by: Event Date</option>
                   <option>Most Viewed</option>
                   <option>Top Teams</option>
                 </select>
-                <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">LIVE Business Events</button>
+                <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">
+                  LIVE Business Events
+                </button>
               </div>
 
             </div>
+
 
               @php 
                 $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
