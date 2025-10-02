@@ -157,8 +157,8 @@
         .search-title {
             /* font-size: 32px; */
             font-weight: bold;
-            color: #03593e;
-            margin-bottom: 20px;
+            color: #fff;
+            margin-bottom: 10px;
         }
 
         .search-box {
@@ -178,8 +178,8 @@
         }
 
         .search-box button {
-            background: #fff;
-            color: white;
+            background: #000;
+            color: #fff;
             border: none;
             padding: 12px 30px;
             /* border-radius: 50px; */
@@ -187,7 +187,7 @@
         }
 
         .search-box button:hover {
-            background: #6600cc;
+            background: #fff;
         }
     </style>
 
