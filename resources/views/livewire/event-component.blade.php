@@ -144,10 +144,10 @@
         </div>
       </div>
     </section>
-  @php 
-    $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
-    $allcategory = DB::table('categories')->get();
-  @endphp
+    @php 
+      $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+      $allcategory = DB::table('categories')->get();
+    @endphp
     <style>
         /* Custom Styling */
         .search-section {
@@ -461,7 +461,10 @@
 
         
 
-   <!-- <section class="companies-section d-none d-md-block">
+
+        
+
+        <!-- <section class="companies-section d-none d-md-block">
             <div class="container">
                 <h2 class="companies-title">Featured <span class="text-primary">Companies</span></h2>
                 <div class="row justify-content-center">
