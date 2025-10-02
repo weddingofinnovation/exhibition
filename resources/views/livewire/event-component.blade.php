@@ -560,6 +560,81 @@
         <!--COI Awards-->
         @livewire('trending-award-component')
 
+        @php
+           $evento = DB::table('events')->
+        @endphp
+
+        <section class="container mt-4">
+           <div class="col-md-8 d-none d-sm-block">
+                <div class="d-flex">
+                    <!-- Product-->
+                    @foreach ($evento as $franchise)
+                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                        <div class="card product-card">
+                          <div class="card-body py-2">
+                            <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                              <span class="text-bolder">
+                                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                                  @else
+                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                  @endif 
+                              </span>
+                            </a>
+                            <div class="d-flex justify-content-between">
+                              <div class="product-price">
+                                <div class="product-title h3 fs-sm mb-0">
+                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                                  <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
+                                </div>
+                            </div>
+                          </div>
+
+                        </div>
+                        
+                      </div>
+                    @endforeach
+                </div>
+
+                <div class="d-flex">
+                  <!-- Product-->
+                  @foreach ($evento as $franchise)
+                    <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+                      <div class="card product-card">
+                        <div class="card-body py-2">
+                          <a class="product-meta d-block fs-xs pb-1" href="#">
+                            <span class="text-bolder">
+                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                                @else
+                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                                @endif 
+                            </span>
+                          </a>
+                          <div class="d-flex justify-content-between">
+                            <div class="product-price">
+                              <div class="product-title h3 fs-sm mb-0">
+                                <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                              
+                              </div>
+                          </div>
+                        </div>
+                        <div class="card-body card-body-hidden">
+                          <div class="mb-2">
+                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
+                          </div>
+                        </div>
+                      </div>
+                    
+                    </div>
+                  @endforeach
+                </div>
+              </div>
+        </section>
+
+
+        
+
         <!-- Promo banner-->
         <section class="container mt-4 mb-grid-gutter">
           <div class="bg-faded-info rounded-3 py-2">
@@ -772,6 +847,243 @@
                 </div>
             </div>
         </section>
+
+
+        @php 
+        
+          $nextMonthDate = Carbon::now()->addMonth();
+          $evento = Event::where('status', '1')
+                      ->where('admstatus', '1')
+                      ->whereMonth('startdate', $nextMonthDate->month)
+                      ->whereYear('startdate', $nextMonthDate->year)
+                      ->orderBy('startdate', 'desc')
+                      ->get();
+
+        @endphp
+      
+      <style>
+          .venues-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .venues-list::-webkit-scrollbar {
+            display: none;
+          }
+
+          .venue-carde {
+            position: relative;
+            flex: 0 0 auto;
+            width: 120px;
+            height: 120px;
+            background: white;
+            color: black;
+            padding: 0;
+            text-align: center;
+            box-shadow: none;
+            overflow: hidden;
+          }
+
+          .venue-carde img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          /* Event Status Badge at Top-Left */
+          .event-status {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+            z-index: 2;
+          }
+
+          /* Event Name at Bottom */
+          .event-name {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 12px;
+            padding: 4px 5px;
+            text-align: left;
+            z-index: 2;
+          }
+
+          .event-name a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+          }
+
+          .event-name a:hover {
+            text-decoration: underline;
+          }
+
+          /* Gradient overlay for the event name */
+          .event-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+          }
+
+          .venue-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px; /* Adjust based on your design */
+          }
+
+          .event-title {
+          /* text-align: center;
+          font-size: 14px;
+          font-weight: bold; */
+          margin-top: 5px; /* Space between image and text */
+          /* z-index: 2; */
+          }
+
+          .event-title a {
+            color: black;
+            text-decoration: none;
+          }
+
+          .event-title a:hover {
+            text-decoration: underline;
+          }
+      </style>
+
+      <!-- new design -->
+      <style>
+        .categories-list {
+          display: flex;
+          overflow-x: auto;
+          padding: 5px;
+          gap: 5px;
+          white-space: nowrap;
+          scrollbar-width: none;
+          flex: 1; /* take up remaining space */
+          margin: 0 10px; /* spacing between title & button */
+        }
+
+        .categories-list::-webkit-scrollbar {
+          display: none;
+        }
+
+        .category-badge {
+          flex: 0 0 auto;
+          padding: 4px 7px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          font-weight: 400;
+          text-align: center;
+          display: inline-block;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        .category-badge:hover {
+          background-color: black;
+          color: white;
+        }
+      </style>
+
+      <section class=" container award mb-5 d-none d-sm-block">
+        <div class="mt-4">
+          
+          <div class="container px-0">
+            <div class="d-flex align-items-center">
+              <!-- Left: Title -->
+              <span class="fs-sm">
+                Upcoming<br>
+                <span class="fw-medium h5">Exhibition</span>
+              </span>
+
+              
+              <!-- Right: Button -->
+              <a class="btn btn-outline-primary btn-sm" href="#">
+                Submit Event
+              </a>
+            </div>
+          </div>
+
+          <!-- start--Venues Section-desktop -->
+          <div class="venues-list">
+            @foreach($evento as $eventoi)
+              <div class="venue-container">
+                <div class="venue-carde">
+                  <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+
+                  <div class="event-status">
+                    @php
+                      $to = strtotime($eventoi->startdate);
+                      $from = strtotime($eventoi->enddate);
+                    @endphp
+
+                    @if ($current < $to && $current < $from)
+                      Upcoming
+                    @elseif ($current == $to && $current < $from) 
+                      First Day
+                    @elseif ($current > $to && $current < $from) 
+                      Ongoing
+                    @elseif ($current > $to && $current == $from) 
+                      Last Day
+                    @elseif ($current > $to && $current > $from)
+                      Ended
+                    @endif
+                  </div>
+                </div>
+
+                <!-- Event Name (Separate from Image) -->
+                <div class="event-title">
+                    <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
+                    
+                    <small class="text-left text-bolder d-none d-sm-block">
+                      <i class="bi bi-calendar3"></i>
+                      @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @else
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @endif
+                    </small>
+
+                    <small class="d-none d-sm-block text-left"><i class="bi bi-geo-alt-fill fs-sm"></i>
+                      {{ucwords(trans($eventoi -> city))}}
+                    </small>
+                    <br>
+                    <small class="text-bolder d-lg-none"> <i class="bi bi-calendar3"></i>
+                      @if(Carbon\Carbon::parse ($eventoi->startdate)->format('M') != Carbon\Carbon::parse ($eventoi->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d M')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @else
+                        {{Carbon\Carbon::parse ($eventoi->startdate)->format('d ')}} - {{Carbon\Carbon::parse ($eventoi->enddate)->format('d M, y')}}
+                      @endif 
+                    </small><br>
+
+                    <small class="d-lg-none"><i class="bi bi-geo-alt-fill fs-sm"></i>{{ucwords(trans($eventoi -> city))}}</small>
+                </div>
+
+              </div>
+            @endforeach
+          </div>
+          <!-- end--Venues Section-desktop -->
+
+        </div>
+      </section>
+
 
 </main>
 
