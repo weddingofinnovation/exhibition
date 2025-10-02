@@ -798,81 +798,50 @@
       </section>
 
        <section class="container mt-4 mb-grid-gutter">
-          <div class="bg-faded-info rounded-3 py-2">
-            <div class="row align-items-center">
-             
-              
-              <!--<div class="col-md-7 d-none d-sm-block">
-                <img src="{{asset ('images/7.jpg')}}" alt="iPad Pro Offer"></div>-->
-              <div class="col-md-12 d-none d-sm-block">
-                <div class="d-flex">
-                    <!-- Product-->
-                    @foreach ($evento as $franchise)
-                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                        <div class="card product-card">
-                          <div class="card-body py-2">
-                            <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                              <span class="text-bolder">
-                                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </span>
-                            </a>
-                            <div class="d-flex justify-content-between">
-                              <div class="product-price">
-                                <div class="product-title h3 fs-sm mb-0">
-                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                  <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
-                                </div>
-                            </div>
-                          </div>
+  <div class="bg-faded-info rounded-3 py-2">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          @foreach ($evento as $franchise)
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+              <div class="card product-card h-100">
+                <div class="card-body py-2">
+                  <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                    <span class="text-bolder">
+                      @if(Carbon\Carbon::parse($franchise->startdate)->format('M') != Carbon\Carbon::parse($franchise->enddate)->format('M'))
+                        {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d M') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
+                      @else
+                        {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
+                      @endif
+                    </span>
+                  </a>
 
-                        </div>
-                        
-                      </div>
-                    @endforeach
+                  <div class="product-title h3 fs-sm mb-0">
+                    <a href="{{ route('event.details',['slug' => $franchise->slug]) }}" class="fw-normal">
+                      {{ ucwords(trans(Str::limit($franchise->eventname, 24))) }}
+                    </a>
+                  </div>
+                  <span class="fs-xs fw-light">
+                    {{ $franchise->venue }}, {{ $franchise->city }}
+                  </span>
                 </div>
 
-                <div class="d-flex">
-                  <!-- Product-->
-                  @foreach ($evento as $franchise)
-                    <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
-                      <div class="card product-card">
-                        <div class="card-body py-2">
-                          <a class="product-meta d-block fs-xs pb-1" href="#">
-                            <span class="text-bolder">
-                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                @else
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                @endif 
-                            </span>
-                          </a>
-                          <div class="d-flex justify-content-between">
-                            <div class="product-price">
-                              <div class="product-title h3 fs-sm mb-0">
-                                <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                              
-                              </div>
-                          </div>
-                        </div>
-                        <div class="card-body card-body-hidden">
-                          <div class="mb-2">
-                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
-                          </div>
-                        </div>
-                      </div>
-                    
-                    </div>
-                  @endforeach
+                <div class="card-body card-body-hidden">
+                  <div class="mb-2">
+                    <a class="btn btn-primary btn-sm d-block w-auto mx-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                      <i class="bi bi-brush fs-sm me-1"></i>Know More
+                    </a>
+                  </div>
                 </div>
               </div>
-            
             </div>
-          </div>
-        </section>
+          @endforeach
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
       @push('scripts')
