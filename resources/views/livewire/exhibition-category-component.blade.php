@@ -447,8 +447,8 @@
             background-color: #1a1a1a;
             color: #fff;
             border: 1px solid #333;
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 3px 7px;
+            border-radius: 5px;
             font-size: 0.9rem;
             transition: 0.3s;
           }
@@ -484,13 +484,13 @@
                 </select>
                 <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">LIVE Business Events</button>
               </div>
-              
+
             </div>
 
 
 
             <!-- Filter Section -->
-            <div class="filter-box mt-4">
+            <div class="filter-box mt-2">
               <div class="row g-3">
                 <div class="col-md-3">
 
@@ -511,8 +511,12 @@
                 <div class="col-md-3">
                   <select class="form-select custom-select">
                     <option selected>All Venues</option>
-                    <option>Navi</option>
-                    <option>OG</option>
+                    @php 
+                      $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+                    @endphp
+                    @foreach($venueoption as $franchise)
+                        <option>{{ucwords($franchise->venue)}}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="col-md-3">
@@ -535,7 +539,7 @@
               </div>
 
               <!-- Tags -->
-              <div class="mt-3 d-flex flex-wrap gap-1">
+              <div class="mt-2 d-flex flex-wrap gap-1">
                 <button class="tag-btn">Trending</button>
                 <button class="tag-btn">International Trade</button>
                 <button class="tag-btn">Business Supplies</button>
