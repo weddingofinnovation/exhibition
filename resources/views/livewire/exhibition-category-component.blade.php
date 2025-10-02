@@ -487,7 +487,10 @@
 
             </div>
 
-
+              @php 
+                $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+                $allcategory = DB::table('categories')->get();
+              @endphp
 
             <!-- Filter Section -->
             <div class="filter-box mt-2">
@@ -496,8 +499,9 @@
 
                   <select class="form-select custom-select">
                     <option selected>All Industries</option>
-                    <option>LoL</option>
-                    <option>CS2</option>
+                    @foreach($allcategory as $category)
+                      <option>{{ ucwords($category->industry) }}</option>
+                    @endforeach
                   </select>
                 </div>
 
@@ -511,9 +515,7 @@
                 <div class="col-md-3">
                   <select class="form-select custom-select">
                     <option selected>All Venues</option>
-                    @php 
-                      $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
-                    @endphp
+                    
                     @foreach($venueoption as $franchise)
                         <option>{{ucwords($franchise->venue)}}</option>
                     @endforeach
