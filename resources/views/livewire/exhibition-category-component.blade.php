@@ -473,8 +473,8 @@
               <!-- <div class=" h4 fw-bold text-white"> <span cl></span></div> -->
 
               <div class="flex-grow-1">
-                  <h6 class="fw-bold mb-1">Statistics and Analytics</h6>
-                  <small class="text-muted">Business events</small>
+                  <h4 class="fw-bold mb-1 text-white">Statistics and Analytics</h4>
+                  <small class="">Business events</small>
               </div>
 
               <div class="search-bar w-auto">
