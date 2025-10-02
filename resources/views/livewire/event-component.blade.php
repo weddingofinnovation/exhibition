@@ -149,7 +149,7 @@
         /* Custom Styling */
         .search-section {
             /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
-            background:#f3f9f6;
+            background:#000;
             padding: 30px 0;
             text-align: center;
         }
