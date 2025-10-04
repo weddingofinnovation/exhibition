@@ -87,14 +87,7 @@
                           </div>
                       @elseif($board == 'floor')
                           
-                              <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
-
-                              <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
-
-                              <div class="mt-4">
-                                  <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                                  <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
-                              </div>
+                            test
                           
                       @else
                         <h4 class="fw-bold mb-2">Analytics</h4>
@@ -240,7 +233,7 @@
                   </div>
                 @endforeach
               @elseif($board == 'event')
-                <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+                  <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
                     <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
                     <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
                     <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent = "switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
@@ -705,6 +698,17 @@
                             </div>
                         </div>
                     @endif
+                  </div>
+              @elseif($board == 'floor')
+                  <div class="con">
+                      <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+
+                      <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
+
+                      <div class="mt-4">
+                          <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
+                          <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+                      </div>
                   </div>
               @else
                           <!-- Date Filter + Export -->
