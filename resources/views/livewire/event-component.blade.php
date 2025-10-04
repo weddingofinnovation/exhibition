@@ -965,7 +965,7 @@
                     @endphp
 
 
-                    {{$to}} {{$from}} {{$notifyDate}}
+                    {{$to}} {{$from}} {{$notifyDate}} {{$newcurrent}}
 
               @if ($newcurrent >= $notifyDate && $newcurrent < $to)
                   notify // event is in upcoming notify window (within 3 weeks)
