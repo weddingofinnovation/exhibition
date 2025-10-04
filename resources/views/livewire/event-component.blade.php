@@ -959,12 +959,13 @@
           
           @foreach($eventnewmonth as $franchise)
                     @php
+                      $newcurrent = strtotime(Carbon::now());
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
                     @endphp
 
-              @if ($current >= $notifyDate && $current < $to)
+              @if ($newcurrent >= $notifyDate && $newcurrent < $to)
                   notify // event is in upcoming notify window (within 3 weeks)
                   <div class="event-row">
                       <div class="event-details">
@@ -986,9 +987,9 @@
                           </div>
                       </div>
                   </div>
-              @elseif ($current < $notifyDate)
+              @elseif ($newcurrent < $notifyDate)
                   upcom  // event is more than 3 weeks away (still far future)
-              @elseif ($current == $to && $current < $from)
+              @elseif ($newcurrent == $to && $newcurrent < $from)
                   first
                     <div class="match-card">
                       <!-- LIVE Strip -->
@@ -1011,7 +1012,7 @@
                       <!-- Arrow -->
                       <div class="arrow-btn">➜</div>
                     </div>
-              @elseif ($current > $to && $current < $from)
+              @elseif ($newcurrent > $to && $newcurrent < $from)
                   ongoi
                   <div class="match-card">
                       <!-- LIVE Strip -->
@@ -1034,7 +1035,7 @@
                       <!-- Arrow -->
                       <div class="arrow-btn">➜</div>
                     </div>
-              @elseif ($current > $to && $current == $from)
+              @elseif ($newcurrent > $to && $newcurrent == $from)
                   last
                   <div class="match-card">
                       <!-- LIVE Strip -->
@@ -1057,7 +1058,7 @@
                       <!-- Arrow -->
                       <div class="arrow-btn">➜</div>
                     </div>
-              @elseif ($current > $to && $current > $from)
+              @elseif ($newcurrent > $to && $newcurrent > $from)
                   ended
                   <div class="match-card">
                       <!-- LIVE Strip -->
