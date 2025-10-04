@@ -444,7 +444,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     Route::get('/admin/account', AdminAccountComponent::class)->name('admin.account');
     
 
-    Route::get('/admin/franchises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
+    //Route::get('/admin/franchises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
 
 
     // sub categor
