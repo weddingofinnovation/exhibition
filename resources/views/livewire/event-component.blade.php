@@ -967,7 +967,7 @@
                     
                         <div class="match-info">
                             <div class="title">{{ ucwords(Str::limit($franchise->eventname, 24)) }}</div>
-                            <div class="subtitle">{{ $eventDate }}</div>
+                            <div class="subtitle">Test</div>
                         </div>
 
                         <div class="arrow-btn">➜</div>
