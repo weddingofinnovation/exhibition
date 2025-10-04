@@ -959,7 +959,7 @@
         <div class="row">
                 @foreach($eventnewmonth as $franchise)
                   <div class="col-md-4">
-                    <div class="match-card {{ $status }}">
+                    <div class="match-card">
                         
                             <div class="live-strip">
                                 <span>LIVE</span>
