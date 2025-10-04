@@ -960,22 +960,25 @@
 
                 @foreach($eventnewmonth as $franchise)
                     @php
-                        
+                        <!-- $to = Carbon/Carbon::parse($franchise->startdate);
+                        $from = Carbon/Carbon::parse($franchise->enddate);
+                        $notifyDate = $to->copy()->subWeeks(3);
+                     -->
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
                     
 
                         // Determine event status
-                        if($newcurrent >= $notifyDate->timestamp && $newcurrent < $to->timestamp) {
+                        if($newcurrent >= $notifyDate && $newcurrent < $to) {
                             $status = 'notify';
-                        } elseif ($newcurrent < $notifyDate->timestamp) {
+                        } elseif ($newcurrent < $notifyDate) {
                             $status = 'upcom';
-                        } elseif ($newcurrent == $to->timestamp) {
+                        } elseif ($newcurrent == $to) {
                             $status = 'first';
-                        } elseif ($newcurrent > $to->timestamp && $newcurrent < $from->timestamp) {
+                        } elseif ($newcurrent > $to && $newcurrent < $from) {
                             $status = 'ongoing';
-                        } elseif ($newcurrent > $to->timestamp && $newcurrent == $from->timestamp) {
+                        } elseif ($newcurrent > $to && $newcurrent == $from) {
                             $status = 'last';
                         } else {
                             $status = 'ended';
