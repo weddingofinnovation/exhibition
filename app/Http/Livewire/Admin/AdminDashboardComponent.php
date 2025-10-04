@@ -43,8 +43,10 @@ use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use App\Models\Bcontact;
 use App\Models\Brandemograhic;
+use App\Models\Floorplan;
 use App\Models\Location;
 use App\Models\Photo;
+use App\Models\Space;
 use App\Models\Ticket;
 use App\Models\Viewso;
 use App\Notifications\BadgeApproved;
@@ -104,15 +106,45 @@ public $selectedYear;
     //career
     use WithPagination;
 
-    public function mount($board)
+
+    public $floorPlanId;
+    public $floorPlanUrl;
+    public $spaces = [];
+
+    protected $listeners = ['saveSpace']; // listens to frontend event
+
+
+    public function mount($board, $floorPlanId)
     {
         $this->board = $board;
         $this->month = Carbon::today()->format("m");
         $this->monthly = Carbon::today()->format("m");
         $this->visited = '1';
         $this->currentTab = session()->get('currentTab','tab1');
+
+
+        $plan = Floorplan::findOrFail($floorPlanId);
+        $this->floorPlanId = $plan->id;
+        $this->floorPlanUrl = $plan->image_url;
+        $this->spaces = $plan->spaces()->get()->toArray();
     }
     
+     public function saveSpace($name, $coordinates)
+    {
+        $space = Space::create([
+            'floor_plan_id' => $this->floorPlanId,
+            'name' => $name,
+            'coordinates' => json_encode($coordinates),
+        ]);
+
+        $this->spaces[] = $space->toArray();
+
+        $this->dispatchBrowserEvent('spaceSaved', [
+            'name' => $name,
+            'id' => $space->id
+        ]);
+    }
+
     public function bulkReview()
     {
       
