@@ -78,7 +78,7 @@
                             </button>
                           </div>
                       @elseif($board == 'event')
-                        <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
+                          <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
                           <div class="d-flex justify-content-between align-items-center">
                             <input type="search" class="form-control w-auto" placeholder="Search...">
                             <button class="btn btn-primary ml-4">
@@ -86,9 +86,13 @@
                             </button>
                           </div>
                       @elseif($board == 'floor')
-                          
-                            test
-                          
+                          <h4 class="fw-bold mb-2">Floor</h4> 
+                          <div class="d-flex justify-content-between align-items-center">
+                            <input type="search" class="form-control w-auto" placeholder="Search...">
+                            <button class="btn btn-primary ml-4">
+                                <i class="bi bi-download"></i> Export
+                            </button>
+                          </div>
                       @else
                         <h4 class="fw-bold mb-2">Analytics</h4>
                           <div class="d-flex justify-content-between align-items-center">
@@ -3629,6 +3633,86 @@
 </main>
 
     @push('scripts')
+
+      <script src="https://cdn.jsdelivr.net/npm/konva@9.4.1/konva.min.js"></script>
+
+<script>
+document.addEventListener('livewire:load', function () {
+  const width = 1000;
+  const height = 600;
+  const stage = new Konva.Stage({
+    container: 'konvaContainer',
+    width,
+    height
+  });
+  const layer = new Konva.Layer();
+  stage.add(layer);
+
+  // Background image (floor plan)
+  const imageObj = new Image();
+  imageObj.src = "{{ $floorPlanUrl }}";
+  imageObj.onload = function () {
+    const floorImage = new Konva.Image({ image: imageObj, width, height });
+    layer.add(floorImage);
+    layer.draw();
+  };
+
+  // Draw existing spaces
+  @foreach ($spaces as $space)
+    const existing = new Konva.Line({
+      points: @json(collect(json_decode($space['coordinates']))->flatten()),
+      stroke: 'green',
+      strokeWidth: 2,
+      closed: true,
+      fill: 'rgba(0,255,0,0.2)',
+       draggable: true,
+    });
+    layer.add(existing);
+  @endforeach
+
+  // Drawing logic
+  let drawing = false;
+  let points = [];
+  let currentShape = null;
+
+  stage.on('click', function(e) {
+    const pos = stage.getPointerPosition();
+    if (!drawing) {
+      drawing = true;
+      points = [pos.x, pos.y];
+      currentShape = new Konva.Line({
+        points,
+        stroke: 'red',
+        strokeWidth: 2,
+        fill: 'rgba(255,255,0,0.3)',
+        closed: false
+      });
+      layer.add(currentShape);
+    } else {
+      points.push(pos.x, pos.y);
+      currentShape.points(points);
+      layer.batchDraw();
+    }
+  });
+
+  // Save to Livewire
+  document.getElementById('saveSpaceBtn').addEventListener('click', () => {
+    if (!currentShape) return alert('Draw a shape first.');
+    const name = document.getElementById('spaceName').value || 'New Space';
+    const coords = currentShape.points();
+    Livewire.emit('saveSpace', name, coords);
+    drawing = false;
+    points = [];
+    currentShape = null;
+  });
+
+  window.addEventListener('spaceSaved', e => {
+    alert('Space saved: ' + e.detail.name);
+  });
+});
+</script>
+
+
       <script>
         var slider = tns({
           "container": '.badgese',   
