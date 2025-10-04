@@ -952,43 +952,13 @@
     </div>
 
     <div class="col-md-12">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold">New Events</span>
+        </div>
+
         <div class="row">
-            <div class="col-md-4">
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="fw-bold">New Events</span>
-                </div>
-
                 @foreach($eventnewmonth as $franchise)
-                    @php
-                      
-                      $to = strtotime($franchise->startdate);
-                      $from = strtotime($franchise->enddate);
-                      $notifyDate = strtotime("-3 weeks", $to); 
-                    
-
-                        // Determine event status
-                        if($newcurrent >= $notifyDate && $newcurrent < $to) {
-                            $status = 'notify';
-                        } elseif ($newcurrent < $notifyDate) {
-                            $status = 'upcom';
-                        } elseif ($newcurrent == $to) {
-                            $status = 'first';
-                        } elseif ($newcurrent > $to && $newcurrent < $from) {
-                            $status = 'ongoing';
-                        } elseif ($newcurrent > $to && $newcurrent == $from) {
-                            $status = 'last';
-                        } else {
-                            $status = 'ended';
-                        }
-
-                        // Format event date for display
-                        if($to->format('M') != $from->format('M')) {
-                            $eventDate = $to->format('D, d M') . ' - ' . $from->format('D, d M y');
-                        } else {
-                            $eventDate = $to->format('D, d') . ' - ' . $from->format('D, d M y');
-                        }
-                    @endphp
-
+                  <div class="col-md-4">
                     <div class="match-card {{ $status }}">
                         @if(in_array($status, ['first', 'ongoing', 'last']))
                             <div class="live-strip">
@@ -1009,10 +979,9 @@
                                 <div class="progress-fill" style="width: 80%;"></div>
                             </div>
                         </div>
-                    </div>
+                    </div>  
+                  </div>
                 @endforeach
-
-            </div>
         </div>
     </div>
 </section>
