@@ -163,7 +163,9 @@ use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
 use App\Http\Livewire\Admin\AdminScraperComponent;
-use App\Http\Livewire\Livewire\AdminMagazineComponent;
+
+//use App\Http\Livewire\Livewire\AdminMagazineComponent;
+
 use App\Http\Livewire\PrivacyComponent;
 use App\Http\Livewire\OnlineContractFormComponent;
 use App\Http\Livewire\SearchComponent;
@@ -404,9 +406,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
     Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
 
-    Route::get('/admin/panel/test', AdminPanelComponent::class)->name('admin.panel');
-
-    Route::get('/admin/dashtestboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/dashboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
     Route::get('/admin/event/add', AdminEventAddComponent::class)->name('admin.eventadd');
     
@@ -416,7 +416,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 
     Route::get('/admin/multi/{event_id?}/detail/{formm}/{location_id?}', AdminEventMultipleAddComponent::class)->name('admin.eventMultiEdit');
 
-    Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazinedetails');
+    //Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazinedetails');
     
     //Brand
     Route::get('/admin/contact/{brand_id}', AdminBrandComponent::class)->name('admin.brand');
@@ -447,8 +447,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     //Route::get('/oemail', 'App\Http\Controllers\AdminDashboardComponent')->name('admin.email');
     Route::get('/admin/account', AdminAccountComponent::class)->name('admin.account');
     
-
-    //Route::get('/admin/franchises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
+     ///reminder--check it--04-oct-2025- 2117 --/admin/franchises/edit/
+    //Route::get('/admin/anises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
 
 
     // sub categor
@@ -464,7 +464,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     //Route::get('/admin/franchises', AdminFranchiseComponent::class)->name('admin.franchise');
     Route::get('/admin/lead/{board}/{lead_id}', AdminFranchiseAddComponent::class)->name('admin.addfranchise');
 
-    Route::get('/admin/franchises/edit', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
+    ///reminder--check it--04-oct-2025- 2117
+    //Route::get('/admin/franchises/edit', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
     
     
     //Franchise Attributes
