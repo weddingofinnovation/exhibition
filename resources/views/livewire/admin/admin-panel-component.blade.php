@@ -39,18 +39,7 @@
 @push('scripts')
     
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const svg = document.getElementById('drawingSvg');
-            const rect = svg.getBoundingClientRect();
-
-            svg.addEventListener('click', function(e) {
-                const x = e.offsetX;
-                const y = e.offsetY;
-                @this.addPoint(x, y);
-            });
-        });
-    </script>
+  
 
 @endpush
 

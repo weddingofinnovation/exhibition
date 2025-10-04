@@ -17,15 +17,15 @@ class AdminPanelComponent extends Component
 
     protected $listeners = ['saveSpace']; // listens to frontend event
 
-    public function mount($floorPlanId = null)
+    public function mount()
     {
         // $plan = Floorplan::findOrFail($floorPlanId);
         // $this->floorPlanId = $plan->id;
         // $this->floorPlanUrl = $plan->image_url;
         // $this->spaces = $plan->spaces()->get()->toArray();
 
-        $this->floorPlanId = $floorPlanId;
-        $floorPlan = FloorPlan::findOrFail($floorPlanId);
+        //$this->floorPlanId = $floorPlanId;
+        $floorPlan = FloorPlan::findOrFail('1');
         $this->floorPlanUrl = $floorPlan->image_url;
         $this->spaces = $floorPlan->spaces()->get()->toArray();
     }
