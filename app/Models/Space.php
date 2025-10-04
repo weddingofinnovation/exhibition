@@ -9,18 +9,17 @@ class Space extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //     'floorplan_id', 'name', 'coordinates', 'capacity', 'amenities', 'pricing'
-    // ];
+    protected $fillable = [
+        'floorplan_id', 'name', 'coordinates', 'capacity', 'amenities', 'pricing'
+    ];
 
-    // protected $casts = [
-    //     'coordinates' => 'array',
-    //     'amenities' => 'array',
-    // ];
+    protected $casts = [
+        'coordinates' => 'array',
+        'amenities' => 'array',
+    ];
 
-    // public function floorPlan()
-    // {
-    //     return $this->belongsTo(Floorplan::class);
-    // }
-
+    public function floorPlan()
+    {
+        return $this->belongsTo(Floorplan::class);
+    }
 }
