@@ -733,6 +733,130 @@
           }
         </style>
 
+        <style>
+            .event-row {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 8px 0;
+              color: #fff;
+              font-family: sans-serif;
+          }
+
+          .event-details {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+          }
+
+          .event-logo {
+              width: 24px;
+              height: 24px;
+              object-fit: contain;
+          }
+
+          .event-title {
+              font-weight: bold;
+              font-size: 14px;
+          }
+
+          .event-date {
+              font-size: 12px;
+              color: #aaa;
+          }
+
+          .event-stats {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+          }
+
+          .event-viewers {
+              font-size: 12px;
+              font-weight: bold;
+              color: #f27da0; /* pink like in image */
+          }
+
+          .progress-line {
+              width: 40px;
+              height: 2px;
+              background-color: rgba(255, 255, 255, 0.2); /* faded base line */
+              margin-top: 2px;
+              position: relative;
+          }
+
+          .progress-fill {
+              height: 100%;
+              background-color: #f27da0; /* progress color */
+          }
+
+
+            .fs-xxs {
+            font-size: 0.65rem; /* adjust as needed */
+            }
+
+            .fs-xss {
+              font-size: 0.75rem; /* adjust as needed */
+              }
+
+          .match-card {
+            display: flex;
+            align-items: stretch;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 6px;
+            background: #222;
+          }
+
+          /* LIVE strip */
+          .live-strip {
+            background: linear-gradient(to bottom, #ff2b2b, #a50000);
+            color: #fff;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg); /* Makes text bottom-to-top */
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* width: 24px; */
+          }
+
+          /* Middle info section */
+          .match-info {
+            flex: 1;
+            padding: 8px 12px;
+            background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          .match-info .title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+          }
+          .match-info .subtitle {
+            font-size: 12px;
+            color: #bbb;
+          }
+
+          /* Arrow section */
+          .arrow-btn {
+            width: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            color: #fff;
+            font-size: 18px;
+          }
+
+        </style>
+        
         @php 
           $current = Carbon\Carbon::today()->format("Y-m-d");
           $nextMonthDate = Carbon\Carbon::now()->addMonth();
