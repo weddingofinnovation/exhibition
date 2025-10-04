@@ -107,14 +107,14 @@ public $selectedYear;
     use WithPagination;
 
 
-    public $floorPlanId;
-    public $floorPlanUrl;
-    public $spaces = [];
+    // public $floorPlanId;
+    // public $floorPlanUrl;
+    // public $spaces = [];
 
-    protected $listeners = ['saveSpace']; // listens to frontend event
+    // protected $listeners = ['saveSpace']; // listens to frontend event
 
 
-    public function mount($board, $floorPlanId =  null)
+    public function mount($board)
     {
         $this->board = $board;
         $this->month = Carbon::today()->format("m");
@@ -123,27 +123,27 @@ public $selectedYear;
         $this->currentTab = session()->get('currentTab','tab1');
 
 
-        $plan = Floorplan::findOrFail($floorPlanId);
-        $this->floorPlanId = $plan->id;
-        $this->floorPlanUrl = $plan->image_url;
-        $this->spaces = $plan->spaces()->get()->toArray();
+        // $plan = Floorplan::findOrFail($floorPlanId);
+        // $this->floorPlanId = $plan->id;
+        // $this->floorPlanUrl = $plan->image_url;
+        // $this->spaces = $plan->spaces()->get()->toArray();
     }
     
-     public function saveSpace($name, $coordinates)
-    {
-        $space = Space::create([
-            'floor_plan_id' => $this->floorPlanId,
-            'name' => $name,
-            'coordinates' => json_encode($coordinates),
-        ]);
+    //  public function saveSpace($name, $coordinates)
+    // {
+    //     $space = Space::create([
+    //         'floor_plan_id' => $this->floorPlanId,
+    //         'name' => $name,
+    //         'coordinates' => json_encode($coordinates),
+    //     ]);
 
-        $this->spaces[] = $space->toArray();
+    //     $this->spaces[] = $space->toArray();
 
-        $this->dispatchBrowserEvent('spaceSaved', [
-            'name' => $name,
-            'id' => $space->id
-        ]);
-    }
+    //     $this->dispatchBrowserEvent('spaceSaved', [
+    //         'name' => $name,
+    //         'id' => $space->id
+    //     ]);
+    // }
 
     public function bulkReview()
     {

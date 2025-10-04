@@ -149,6 +149,7 @@ use App\Http\Livewire\Admin\AdminEventMultiDetailComponent;
 use App\Http\Livewire\Admin\AdminEventMultiParticipantsComponent;
 use App\Http\Livewire\Admin\AdminEventMultipleAddComponent;
 use App\Http\Livewire\Admin\AdminLandingComponent;
+use App\Http\Livewire\Admin\AdminPanelComponent;
 use App\Http\Livewire\Admin\AdminQuestionComponent;
 use App\Http\Livewire\Admin\MagazineUpgradingComponent;
 use App\Http\Livewire\AwardDetailsComponent;
@@ -402,6 +403,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   //Admin-ADM
   Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
     Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
+
+    Route::get('/admin/panel/business/{board}', AdminPanelComponent::class)->name('admin.panel');
 
     Route::get('/admin/dashtestboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
