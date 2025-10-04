@@ -28,6 +28,7 @@
                               
                               {{-- <a class="d-block flex-shrink-0" href="{{route ('franchise.details',['slug'=>$item->model->slug])}}">
                               <img src="{{asset ('Storage/brands') }}/{{$item->model->image}}" width="64" alt="{{$item->model->brand_name}}"></a> --}}
+                              
                               <a class="d-block flex-shrink-0" href="#">
                               <img src="{{asset ('Storage/brands') }}/{{$item->model->image}}" width="64" alt="{{$item->model->brand_name}}"></a>
                               
@@ -35,7 +36,7 @@
                                   <h6 class="widget-product-title">
                                   <a href="#">{{Str::limit($item->model->eventname,28)}}</a></h6>
                                   <div class="widget-product-meta">
-                                  <span class="text-accent me-2">{{$item->model->eventname}} lac<small> - {{$item->model->min_investment}} lac</small></span>
+                                  <span class="text-accent me-2">{{$item->model->venue}}<small> - {{$item->model->startdate}}</small></span>
                                   <span class="text-muted">x 1</span></div>
                                 </div>
                               </div>
