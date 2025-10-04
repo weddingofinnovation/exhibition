@@ -67,7 +67,7 @@
           <div class="navbar-tool ms-4">
             <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <span class="navbar-tool-label">3</span><i class="navbar-tool-icon  bi bi-cart"></i></a>
-            @livewire('wishlist-component')
+            
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
                         
               <div class="offcanvas-header">
