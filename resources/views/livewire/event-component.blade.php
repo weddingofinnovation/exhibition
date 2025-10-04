@@ -736,12 +736,27 @@
         @php 
           $current = Carbon\Carbon::today()->format("Y-m-d");
           $nextMonthDate = Carbon\Carbon::now()->addMonth();
-          $evento = DB::table('events')->where('status', '1')
+          $eventcurrentmonth = DB::table('events')->where('status', '1')
                       ->where('admstatus', '1')
                       ->whereMonth('startdate', $nextMonthDate->month)
                       ->whereYear('startdate', $nextMonthDate->year)
                       ->orderBy('startdate', 'asc')
                       ->get();
+
+          // Current date
+$current = Carbon::today();
+
+// Date after 3 months
+$threeMonthsLater = Carbon::today()->addMonths(3);
+
+// Fetch exhibitions
+$eventcurrentmonth = DB::table('events')
+    ->where('status', '1')
+    ->where('admstatus', '1')
+    ->whereIn('edition', [0, 1, 2, 3]) // editions filter
+    ->whereBetween('startdate', [$current, $threeMonthsLater]) // upcoming in next 3 months
+    ->orderBy('startdate', 'asc')
+    ->get();
 
         @endphp
 
@@ -749,7 +764,7 @@
           <div class="rounded-3 py-2">
             <div class="border-bottom pt-2 mt-2">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="fw-bold mb-0">Search your business event at right time people for your business
+                <h6 class="fw-bold mb-0" style="max-width: 550px;">Search your business event at right time people for your business
                 <small>Call us to plan your upcoming month business event</small></h6>
 
                 <a href="#" class="text-primary small">View all</a>
@@ -758,7 +773,7 @@
 
             <div class="col-md-12">
               <div class="row">
-                @foreach ($evento as $franchise)
+                @foreach ($eventcurrentmonth as $franchise)
                   <div class="col-lg-3 col-md-4 col-sm-6 mb-3" style="background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);">
                     <div class="card product-card h-100">
                       <div class="card-body py-2">
