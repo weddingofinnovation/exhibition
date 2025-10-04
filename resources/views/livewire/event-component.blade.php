@@ -743,11 +743,10 @@
                       ->orderBy('startdate', 'asc')
                       ->get();
 
-          // Current date
-          $current = Carbon::today();
+          
 
           // Date after 3 months
-          $threeMonthsLater = Carbon::today()->addMonths(3);
+          $threeMonthsLater = Carbon\Carbon::today()->addMonths(3);
 
           // Fetch exhibitions
           $eventnewmonth = DB::table('events')
