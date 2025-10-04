@@ -960,12 +960,11 @@
                 @foreach($eventnewmonth as $franchise)
                   <div class="col-md-4">
                     <div class="match-card {{ $status }}">
-                        @if(in_array($status, ['first', 'ongoing', 'last']))
+                        
                             <div class="live-strip">
                                 <span>LIVE</span>
                             </div>
-                        @endif
-
+                    
                         <div class="match-info">
                             <div class="title">{{ ucwords(Str::limit($franchise->eventname, 24)) }}</div>
                             <div class="subtitle">{{ $eventDate }}</div>
