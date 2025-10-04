@@ -33,10 +33,10 @@
                               
                                 <div class="ps-2">
                                   <h6 class="widget-product-title">
-                                  <a href="#">{{Str::limit($item->model->brand_name,28)}}</a></h6>
+                                  <a href="#">{{Str::limit($item->model->eventname,28)}}</a></h6>
                                   <div class="widget-product-meta">
-                                  <span class="text-accent me-2">{{$item->model->max_investment}} lac<small> - {{$item->model->min_investment}} lac</small></span>
-                                  <span class="text-muted">x 1</span></div>{{$item->model}}
+                                  <span class="text-accent me-2">{{$item->model->eventname}} lac<small> - {{$item->model->min_investment}} lac</small></span>
+                                  <span class="text-muted">x 1</span></div>
                                 </div>
                               </div>
                             </div>
