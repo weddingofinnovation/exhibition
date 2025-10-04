@@ -402,7 +402,8 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   //Admin-ADM
   Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
     Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
-    Route::get('/admin/dashboard/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
+
+    Route::get('/admin/dashtestboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
     Route::get('/admin/event/add', AdminEventAddComponent::class)->name('admin.eventadd');
     
