@@ -114,7 +114,7 @@ public $selectedYear;
     protected $listeners = ['saveSpace']; // listens to frontend event
 
 
-    public function mount($board, $floorPlanId)
+    public function mount($board, $floorPlanId =  null)
     {
         $this->board = $board;
         $this->month = Carbon::today()->format("m");
