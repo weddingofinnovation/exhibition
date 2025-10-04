@@ -958,7 +958,7 @@
 
         <div class="row">
                 @foreach($eventnewmonth as $franchise)
-                  <div class="col-md-4">
+                  <div class="col-md-4 mb-2">
                     <div class="match-card">
                         
                             <div class="live-strip">
@@ -967,17 +967,22 @@
                     
                         <div class="match-info">
                             <div class="title">{{ ucwords(Str::limit($franchise->eventname, 24)) }}</div>
-                            <div class="subtitle">Test</div>
+                            <div class="subtitle">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif</div>
+                            <div class="event-stats">
+                                <div class="event-viewers">{{ $franchise->view_count }}M</div>
+                                <div class="progress-line">
+                                    <div class="progress-fill" style="width: 80%;"></div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="arrow-btn">➜</div>
 
-                        <div class="event-stats">
-                            <div class="event-viewers">{{ $franchise->view_count }}M</div>
-                            <div class="progress-line">
-                                <div class="progress-fill" style="width: 80%;"></div>
-                            </div>
-                        </div>
+                        
                     </div>  
                   </div>
                 @endforeach
