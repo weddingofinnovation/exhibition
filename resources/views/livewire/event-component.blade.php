@@ -744,19 +744,19 @@
                       ->get();
 
           // Current date
-$current = Carbon::today();
+          $current = Carbon::today();
 
-// Date after 3 months
-$threeMonthsLater = Carbon::today()->addMonths(3);
+          // Date after 3 months
+          $threeMonthsLater = Carbon::today()->addMonths(3);
 
-// Fetch exhibitions
-$eventcurrentmonth = DB::table('events')
-    ->where('status', '1')
-    ->where('admstatus', '1')
-    ->whereIn('edition', [0, 1, 2, 3]) // editions filter
-    ->whereBetween('startdate', [$current, $threeMonthsLater]) // upcoming in next 3 months
-    ->orderBy('startdate', 'asc')
-    ->get();
+          // Fetch exhibitions
+          $eventnewmonth = DB::table('events')
+              ->where('status', '1')
+              ->where('admstatus', '1')
+              ->whereIn('edition', [0, 1, 2, 3]) // editions filter
+              ->whereBetween('startdate', [$current, $threeMonthsLater]) // upcoming in next 3 months
+              ->orderBy('startdate', 'asc')
+              ->get();
 
         @endphp
 
@@ -809,6 +809,162 @@ $eventcurrentmonth = DB::table('events')
                 @endforeach 
               </div>
             </div>
+
+
+            <!-- Live matches -->
+        <div class="col-md-4">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="fw-bold">Ongoing Events</span>
+          </div>
+
+          <!-- latest -->
+          <div class="match-card">
+            <!-- LIVE Strip -->
+            <div class="live-strip">
+              <span>LIVE</span>
+            </div>
+
+            <!-- Middle Gradient Info -->
+            <div class="match-info">
+              <div class="title">PUBG Players Cup Americas #11</div>
+              <div class="subtitle">PUBG, PUBG Players Tour, KRAFTON</div>
+            </div>
+
+            <!-- Arrow -->
+            <div class="arrow-btn">➜</div>
+          </div>
+          
+          @foreach($evento as $franchise)
+                    @php
+                      $to = strtotime($franchise->startdate);
+                      $from = strtotime($franchise->enddate);
+                      $notifyDate = strtotime("-3 weeks", $to); 
+                    @endphp
+
+              @if ($current >= $notifyDate && $current < $to)
+                  notify // event is in upcoming notify window (within 3 weeks)
+                  <div class="event-row">
+                      <div class="event-details">
+                          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="Logo" class="event-logo">
+                          <div>
+                              <div class="event-title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                              <div class="event-date">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif</div>
+                              
+                          </div>
+                      </div>
+                      <div class="event-stats">
+                          <div class="event-viewers">{{$franchise->view_count}}M</div>
+                          <div class="progress-line">
+                              <div class="progress-fill" style="width: 80%;"></div>
+                          </div>
+                      </div>
+                  </div>
+              @elseif ($current < $notifyDate)
+                  upcom  // event is more than 3 weeks away (still far future)
+              @elseif ($current == $to && $current < $from)
+                  first
+                    <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
+              @elseif ($current > $to && $current < $from)
+                  ongoi
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
+              @elseif ($current > $to && $current == $from)
+                  last
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
+              @elseif ($current > $to && $current > $from)
+                  ended
+                  <div class="match-card">
+                      <!-- LIVE Strip -->
+                      <div class="live-strip">
+                        <span>LIVE</span>
+                      </div>
+
+                      <!-- Middle Gradient Info -->
+                      <div class="match-info">
+                        <div class="title">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</div>
+                        <div class="subtitle">
+                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @else
+                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                              @endif
+                        </div>
+                      </div>
+
+                      <!-- Arrow -->
+                      <div class="arrow-btn">➜</div>
+                    </div>
+              @endif
+
+            
+
+          @endforeach
+
+        </div>
+        
 
           </div>
         </section>
