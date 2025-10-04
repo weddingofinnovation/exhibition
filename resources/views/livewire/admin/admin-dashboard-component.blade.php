@@ -86,7 +86,7 @@
                             </button>
                           </div>
                       @elseif($board == 'floor')
-                          <div>
+                          
                               <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
 
                               <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
@@ -95,7 +95,7 @@
                                   <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
                                   <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
                               </div>
-                          </div>s
+                          
                       @else
                         <h4 class="fw-bold mb-2">Analytics</h4>
                           <div class="d-flex justify-content-between align-items-center">
