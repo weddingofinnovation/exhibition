@@ -16,8 +16,7 @@ class CreateSpacesTable extends Migration
         Schema::create('spaces', function (Blueprint $table) {
             $table->id();
             
-            // ✅ Important: use the exact table name + unsignedBigInteger
-            $table->unsignedBigInteger('floorplan_id');
+          
 
             $table->string('name');
             $table->json('coordinates');
@@ -26,12 +25,7 @@ class CreateSpacesTable extends Migration
             $table->decimal('pricing', 10, 2)->nullable();
             $table->timestamps();
 
-            // ✅ Correct foreign key reference
-            $table->foreign('floorplan_id')
-                ->references('id')
-                ->on('floor_plans')
-                ->onDelete('cascade');
-
+        
         });
     }
 
