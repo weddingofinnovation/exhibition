@@ -814,7 +814,7 @@
             <!-- Live matches -->
         <div class="col-md-4">
           <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold">Ongoing Events</span>
+            <span class="fw-bold">New Events</span>
           </div>
 
           <!-- latest -->
@@ -834,7 +834,7 @@
             <div class="arrow-btn">➜</div>
           </div>
           
-          @foreach($evento as $franchise)
+          @foreach($eventnewmonth as $franchise)
                     @php
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
@@ -964,7 +964,7 @@
           @endforeach
 
         </div>
-        
+
 
           </div>
         </section>
