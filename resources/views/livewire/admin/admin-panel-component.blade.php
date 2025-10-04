@@ -36,12 +36,6 @@
 </div>
 
 
-@push('scripts')
-    
-
-  
-
-@endpush
 
 
 

@@ -24,10 +24,10 @@ class AdminPanelComponent extends Component
         // $this->floorPlanUrl = $plan->image_url;
         // $this->spaces = $plan->spaces()->get()->toArray();
 
-        //$this->floorPlanId = $floorPlanId;
-        $floorPlan = FloorPlan::findOrFail('1');
-        $this->floorPlanUrl = $floorPlan->image_url;
-        $this->spaces = $floorPlan->spaces()->get()->toArray();
+        // //$this->floorPlanId = $floorPlanId;
+        // //$floorPlan = FloorPlan::findOrFail('1');
+        // $this->floorPlanUrl = $floorPlan->image_url;
+        // $this->spaces = $floorPlan->spaces()->get()->toArray();
     }
 
     // public function saveSpace($name, $coordinates)
