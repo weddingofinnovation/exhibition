@@ -959,8 +959,6 @@
           
           @foreach($eventnewmonth as $franchise)
                     @php
-                      
-
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
