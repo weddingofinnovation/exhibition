@@ -57,7 +57,7 @@ class ExhibitionCategoryComponent extends Component
 
     public function addtoWishlist($event_id,$event_brand_name,$event_max_investment)
     {
-        Cart::instance('wishlist')->add($event_id,$event_brand_name,1,$event_max_investment)->associate('App\Models\event');
+        Cart::instance('wishlist')->add($event_id,$event_brand_name,1,$event_max_investment)->associate('App\Models\Event');
         $this->emitTo('wishlist-component','refreshComponent');
         session()->flash('success_message','Item has been removed');
     }
