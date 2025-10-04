@@ -17,7 +17,7 @@ class AdminPanelComponent extends Component
 
     protected $listeners = ['saveSpace']; // listens to frontend event
 
-    public function mount($floorPlanId)
+    public function mount($floorPlanId = null)
     {
         // $plan = Floorplan::findOrFail($floorPlanId);
         // $this->floorPlanId = $plan->id;
