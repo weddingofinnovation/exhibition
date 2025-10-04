@@ -404,7 +404,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
   Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
     Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
 
-    Route::get('/admin/panel/business/{board}', AdminPanelComponent::class)->name('admin.panel');
+    Route::get('/admin/panel/test', AdminPanelComponent::class)->name('admin.panel');
 
     Route::get('/admin/dashtestboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
