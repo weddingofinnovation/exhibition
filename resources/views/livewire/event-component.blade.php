@@ -959,7 +959,7 @@
           
           @foreach($eventnewmonth as $franchise)
                     @php
-                      $current = Carbon::today();
+                      $current = Carbon/Carbon::today();
                       $newcurrent = strtotime($current);
 
                       $to = strtotime($franchise->startdate);
