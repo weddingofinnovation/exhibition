@@ -940,7 +940,7 @@
 
    
 
-<section class="container d-none d-sm-block" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
+<section class="container-fluid d-none d-sm-block" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
     <div class="border-bottom pt-2 mt-2">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h6 class="fw-bold mb-0" style="max-width: 550px;">
@@ -952,10 +952,6 @@
     </div>
 
     <div class="col-md-12">
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="fw-bold">New Events</span>
-        </div>
-
         <div class="row">
                 @foreach($eventnewmonth as $franchise)
                   <div class="col-md-4 mb-2">
