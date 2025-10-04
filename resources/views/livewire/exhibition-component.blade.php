@@ -169,7 +169,7 @@
                   <label class="text-light fs-sm opacity-75 text-nowrap me-2 d-none d-sm-block" for="sorting">Sort by:</label>
                   <select class="form-select"  wire:model="sorting">
                     <option value="today" selected="selected">Today</option>
-                    <option value="tomorrow"  >Tomorrow</option>
+                    <option value="tomorrow">Tomorrow</option>
                     <option value="weekend">This weekend</option>
                   </select>
                   <span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">of {{$exhibition->count()}} {{$this->eventype}} </span>
@@ -177,14 +177,14 @@
 
                 <div class="d-flex pb-3">
                   <select class="form-select"  wire:model="pagesize">
-                    <!--<option value="12" selected="selected">12 per page</option>-->
-                              <option value="12">12 per page</option>
-                              <option value="16">16 per page</option>
-                              <option value="18">18 per page</option>
-                              <option value="21">21 per page</option>
-                              <option value="24">24 per page</option>
-                              <option value="30">30 per page</option>
-                              <option value="32">32 per page</option>
+                  <!--<option value="12" selected="selected">12 per page</option>-->
+                        <option value="12">12 per page</option>
+                        <option value="16">16 per page</option>
+                        <option value="18">18 per page</option>
+                        <option value="21">21 per page</option>
+                        <option value="24">24 per page</option>
+                        <option value="30">30 per page</option>
+                        <option value="32">32 per page</option>
                   </select>
                 </div>
 
@@ -422,7 +422,8 @@
               <div class=" ms-1 toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">    
 
                 <div class="offcanvas-header">
-                  <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br><span class="fs-sm fw-lighter">Got an event? Partner with us</span></div>
+                  <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
+                  <span class="fs-sm fw-lighter">Got an event? Partner with us</span></div>
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> 
                 </div>
               
