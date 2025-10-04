@@ -935,7 +935,7 @@
 
 
             <!-- Live matches -->
-        <div class="col-md-4">
+        <div class="col-md-4" style="background-color: #000000;">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="fw-bold">New Events</span>
           </div>
@@ -963,9 +963,6 @@
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
                     @endphp
-
-
-                    {{$to}} {{$from}} {{$notifyDate}} {{$newcurrent}}
 
               @if ($newcurrent >= $notifyDate && $newcurrent < $to)
                   notify // event is in upcoming notify window (within 3 weeks)
