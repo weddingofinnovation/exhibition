@@ -36,7 +36,7 @@
                                   <a href="#">{{Str::limit($item->model->brand_name,28)}}</a></h6>
                                   <div class="widget-product-meta">
                                   <span class="text-accent me-2">{{$item->model->max_investment}} lac<small> - {{$item->model->min_investment}} lac</small></span>
-                                  <span class="text-muted">x 1</span></div>
+                                  <span class="text-muted">x 1</span></div>{{$item->model}}
                                 </div>
                               </div>
                             </div>
