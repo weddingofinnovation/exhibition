@@ -176,6 +176,16 @@ body {
                       <p class="weight">200.59</p> -->
                     </a>
 
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'floor'])}}">
+                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+                        <h3 class="name">Floor</h3>
+                      <!-- </a>  -->
+                      <p class="symbol"></p>
+                      <!-- <p class="number">80</p>
+                      <p class="weight">200.59</p> -->
+                    </a>
+
+
                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'badge'])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                         <h3 class="name">Badge</h3>

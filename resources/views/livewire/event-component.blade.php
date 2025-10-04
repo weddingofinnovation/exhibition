@@ -940,10 +940,10 @@
 
    
 
-<section class="container-fluid d-none d-sm-block" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
+<section class="container-fluid d-none d-sm-block py-3" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
     <div class="border-bottom pt-2 mt-2">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="fw-bold mb-0" style="max-width: 550px;">
+            <h6 class="fw-bold mb-0" style="max-width: 3 50px; color:#fff;">
                 New Business Events
                 <small>Call us to plan your upcoming month business event</small>
             </h6>

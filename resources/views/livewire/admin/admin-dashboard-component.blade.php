@@ -31,8 +31,11 @@
                   <li class="nav-item mb-1">
                       <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
                   </li>
-                   <li class="nav-item mb-1">
+                  <li class="nav-item mb-1">
                       <a href="{{route('admin.dashboard', ['board' => 'event'])}}" class="nav-link text-dark" style="background-color: #fff;">Events</a>
+                  </li>
+                  <li class="nav-item mb-1">
+                      <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor</a>
                   </li>
 
                   <li class="nav-item mb-1">
@@ -82,6 +85,17 @@
                                 <i class="bi bi-download"></i> Export
                             </button>
                           </div>
+                      @elseif($board == 'floor')
+                          <div>
+                              <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+
+                              <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
+
+                              <div class="mt-4">
+                                  <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
+                                  <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+                              </div>
+                          </div>s
                       @else
                         <h4 class="fw-bold mb-2">Analytics</h4>
                           <div class="d-flex justify-content-between align-items-center">
