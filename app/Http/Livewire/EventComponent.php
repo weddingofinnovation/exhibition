@@ -77,7 +77,8 @@ class EventComponent extends Component
 
         $evento = Event::where('admstatus','1')->where('status','1')->where('eventype','expo')->wheredate('startdate', '>=' , $mytime)->orderBy('startdate','ASC')->limit(15)->get();
        
-
-        return view('livewire.event-component', ['evento' => $evento ,'getnamecategoryresult' => $getnamecategoryresult ,'eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
+                      $current = Carbon::today();
+                      $newcurrent = strtotime($current);
+        return view('livewire.event-component', ['newcurrent' =>  $newcurrent, 'evento' => $evento ,'getnamecategoryresult' => $getnamecategoryresult ,'eventD'=> $eventD,'finder' => $finder, 'newlead'=>$newlead,'industry'=>$industry,'evento'=>$evento])->layout('layouts.eblog');
     }
 }

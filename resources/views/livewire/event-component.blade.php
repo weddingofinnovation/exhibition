@@ -959,13 +959,15 @@
           
           @foreach($eventnewmonth as $franchise)
                     @php
-                      $current = Carbon/Carbon::today();
-                      $newcurrent = strtotime($current);
+                      
 
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
                     @endphp
+
+
+                    {{$to}} {{$from}} {{$notifyDate}}
 
               @if ($newcurrent >= $notifyDate && $newcurrent < $to)
                   notify // event is in upcoming notify window (within 3 weeks)
