@@ -959,7 +959,7 @@
           
           @foreach($eventnewmonth as $franchise)
                     @php
-                      $newcurrent = strtotime(Carbon::now());
+                      $newcurrent = strtotime(Carbon/Carbon::now());
                       $to = strtotime($franchise->startdate);
                       $from = strtotime($franchise->enddate);
                       $notifyDate = strtotime("-3 weeks", $to); 
