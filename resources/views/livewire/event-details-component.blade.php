@@ -4099,12 +4099,19 @@
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
 
                             
-
                                             @foreach($relativeevent as $rel)
-                                                <li class="avatar avatar-xs ms-1">
-                                                  <img class="avatar-img rounded-circle" src="{{url('public/assets/image/exhibition/'.$rel->image)}}" alt="avatar">
-                                                </li>
+                                                <a href="{{ route('adminevent.detail', ['slug' => $rel->slug]) }}" class="text-decoration-none">
+                                                    <li class="avatar avatar-xs ms-1" style="cursor: pointer;">
+                                                        <img 
+                                                            class="avatar-img rounded-circle" 
+                                                            src="{{ url('public/assets/image/exhibition/' . $rel->image) }}" 
+                                                            alt="{{ $rel->title ?? 'Event' }}"
+                                                            onerror="this.src='{{ url('public/assets/image/default-avatar.png') }}';"
+                                                        >
+                                                    </li>
+                                                </a>
                                             @endforeach
+
                                         
                                         </ul>
                                     </div>
