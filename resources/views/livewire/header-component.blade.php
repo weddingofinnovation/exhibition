@@ -140,7 +140,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="{{asset('/awards')}}">Find Exhibitor</a>
+                            <a class="nav-link" href="{{route('expand.business')}}">Find Exhibitor</a>
                         </li>
 
                         <li class="nav-item">
