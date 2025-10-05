@@ -4105,7 +4105,7 @@
                                                         <img 
                                                             class="avatar-img rounded-circle" 
                                                             src="{{ url('public/assets/image/exhibition/' . $rel->image) }}" 
-                                                            alt="{{ $rel->title ?? 'Event' }}"
+                                                            alt="{{ $rel->eventname ?? 'Event' }}"
                                                             
                                                         >
                                                     </li>
