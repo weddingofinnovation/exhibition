@@ -4100,13 +4100,13 @@
 
                             
                                             @foreach($relativeevent as $rel)
-                                                <a href="{{ route('adminevent.detail', ['slug' => $rel->slug]) }}" class="text-decoration-none">
+                                                <a href="{{ route('event.details', ['slug' => $rel->slug]) }}" class="text-decoration-none">
                                                     <li class="avatar avatar-xs ms-1" style="cursor: pointer;">
                                                         <img 
                                                             class="avatar-img rounded-circle" 
                                                             src="{{ url('public/assets/image/exhibition/' . $rel->image) }}" 
                                                             alt="{{ $rel->title ?? 'Event' }}"
-                                                            onerror="this.src='{{ url('public/assets/image/default-avatar.png') }}';"
+                                                            
                                                         >
                                                     </li>
                                                 </a>
