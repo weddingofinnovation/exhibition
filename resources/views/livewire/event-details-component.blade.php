@@ -4081,7 +4081,7 @@
                   <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}"  alt="{{Str::limit($event->image, 24)}}">
                     
                   @php
-                    $relativeevent = DB::table('events')->where('reference', $event->reference)->orderBy('startdate','desc')->limit(4)->get();
+                    $relativeevent = DB::table('events')->where('reference', $event->reference)->where('id', '!=', $event->id)->orderBy('startdate','desc')->limit(4)->get();
                     $countEvent = $relativeevent->count();
                     $pavillionmsmeactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'msme')->exists();
                     $pavillionstartupactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'startup')->exists();
@@ -4106,7 +4106,6 @@
                                                             class="avatar-img rounded-circle" 
                                                             src="{{ url('public/assets/image/exhibition/' . $rel->image) }}" 
                                                             alt="{{ $rel->eventname ?? 'Event' }}"
-                                                            
                                                         >
                                                     </li>
                                                 </a>
