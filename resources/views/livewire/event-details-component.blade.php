@@ -4097,9 +4097,13 @@
                                     <div class="stat-value d-flex flex-column align-items-end">
                                         <h6 class="text-dark mb-0">{{$event->view_count}}+</h6>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
+
+                                       {{ $event}}
+
                                             @foreach($relativeevent as $rel)
                                                 <li class="avatar avatar-xs ms-1">
-                                                    <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
+
+                                                <img class="avatar-img rounded-circle" src="https://www.exhibition.org.in/public/image/visi1.jpg" alt="avatar">
                                                 </li>
                                             @endforeach
                                         
