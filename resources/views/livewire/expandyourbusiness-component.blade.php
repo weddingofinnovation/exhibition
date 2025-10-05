@@ -8,6 +8,36 @@
 @section('page_list',' addJob')
 @section('page_name',' All Job')
 
+        <!-- Custom CSS -->
+        <style>
+          .custom-select {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+          }
+          .custom-select:focus {
+            border-color: #00ff99;
+            box-shadow: 0 0 5px rgba(0,255,153,0.5);
+          }
+          .tag-btn {
+            background-color: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+          }
+          .tag-btn:hover {
+            background-color: #00ff99;
+            color: #000;
+            border-color: #00ff99;
+          }
+          .search-bar input::placeholder {
+            color: #aaa;
+          }
+        </style>
+
  <div class="py-4 d-none d-sm-block" style="background-color: #000;">
           <div class="container">
            
