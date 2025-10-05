@@ -4086,7 +4086,7 @@
                     $pavillionmsmeactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'msme')->exists();
                     $pavillionstartupactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'startup')->exists();
                   @endphp
-
+ {{ $event}}
                     @if($countEvent > 1)
                             <div class="text-end">
                                 <span class="badge rounded-pill bg-primary">Concurrent</span>
@@ -4098,7 +4098,7 @@
                                         <h6 class="text-dark mb-0">{{$event->view_count}}+</h6>
                                         <ul class="avatar-group mb-0 d-flex justify-content-end">
 
-                                       {{ $event}}
+                                      
 
                                             @foreach($relativeevent as $rel)
                                                 <li class="avatar avatar-xs ms-1">
