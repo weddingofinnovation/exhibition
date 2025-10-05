@@ -206,8 +206,8 @@
                       <!-- <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
                           <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a> -->
                     
-                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
-                              <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" 
+                            <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" 
                                   alt="{{Str::limit($evet->eventname, 24)}}" 
                                   class="img-fluid rounded" 
                                   style="height: 80px; width: auto; object-fit: contain;">
