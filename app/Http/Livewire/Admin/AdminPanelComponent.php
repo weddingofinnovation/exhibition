@@ -40,6 +40,8 @@ class AdminPanelComponent extends Component
         ]);
 
         $path = $this->image->store('floor_plans', 'public');
+        //$url = Storage::url($path);
+
         $url = Storage::url($path);
 
         $plan = FloorPlan::create([
@@ -57,7 +59,7 @@ class AdminPanelComponent extends Component
 
         $eventData = [
             'url1' => asset(str_replace('/storage/floor_plans','',$this->floorPlanUrl)),
-            'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
+            'url2' => asset('storage/app/public/floor_plan' . $this->floorPlanUrl),
             'id' => $this->floorPlanId
         ];
 
