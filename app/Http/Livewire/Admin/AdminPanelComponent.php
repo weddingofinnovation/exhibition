@@ -54,7 +54,10 @@ class AdminPanelComponent extends Component
         $this->spaces = [];
         $this->reset(['name','image']);
 
-        $this->dispatchBrowserEvent('floorplan-saved', ['id' => $plan->id]);
+        // $this->dispatchBrowserEvent('floorplan-saved', ['id' => $plan->id]);
+
+        //Load into Konva 
+        $this->dispatchBrowserEvent('floorplanUploaded', [ 'url' => $this->latestImagePath, 'id' => $this->floorPlanId ]);
     }
 
     

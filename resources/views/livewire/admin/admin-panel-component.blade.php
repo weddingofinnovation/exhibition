@@ -119,6 +119,24 @@
     @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
   </div>
 
+
+    @php 
+        $allPlans = DB::('floorplans')->get()
+    @endphp
+    
+   <!-- Select existing floor plan -->
+    <div class="mb-3">
+        <label>Select Existing Floor Plan</label>
+        <select wire:model="floorPlanId" wire:change="$emit('loadFloorPlan', $event.target.value)">
+            <option value="">-- Choose --</option>
+            @foreach ($allPlans as $plan)
+                <option value="{{ $plan->id }}">{{ $plan->name }}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div wire:ignore id="container" style="border: 1px solid #ccc;"></div>
+
   <!-- Konva container (only show after floor plan is set) -->
   @if($floorPlanUrl)
     <div>
@@ -150,7 +168,7 @@
           </div>
         </div>
       </div>
-     </div>Admin
+     </div>
 
  @push('scripts')
     <script>
