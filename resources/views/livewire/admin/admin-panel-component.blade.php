@@ -86,38 +86,17 @@
                     </div>
 
 
-                    <!-- Tabs -->
-                    <ul class="nav nav-tabs mb-2" id="analyticsTabs">
-                        <li class="nav-item">
-                            <button id="drawRectBtn" class="bg-green-500 text-white px-0 py-1 rounded nav-link active">Draw Rectangle</button>
-                        </li>
-                        <li class="nav-item">
-                            <!-- <a class="nav-link" href="#">Visitors</a> -->
-                             <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-o py-1 rounded nav-link active">Clear Drawing</button>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Followers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search appearances</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Leads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Competitors</a>
-                        </li>
-                    </ul>
+                  <!-- start Konva Controls -->
+                        <div class="mb-2">
+                            <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
+                            <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
+                        </div>
                 </div>
               </div>
 
               
                   <div class="">
-                      <!-- start Konva Controls -->
-                        <div class="mb-2">
-                            <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
-                            <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
-                        </div>
+                        
 
                         <!-- Konva Container -->
                         <div id="konvaContainer" style="border:1px solid #ccc; width:100%; max-width:1200px; height:400px;" wire:ignore></div>
