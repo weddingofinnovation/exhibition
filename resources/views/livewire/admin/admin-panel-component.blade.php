@@ -52,9 +52,12 @@
 
 @push('scripts')
 
-window.addEventListener('floorplanUploaded', event => {
+
+<script>
+    window.addEventListener('floorplanUploaded', event => {
     console.log('✅ Browser event received:', event.detail);
 });
+</script>
 
 <script>
     let stage, layer, rect;
