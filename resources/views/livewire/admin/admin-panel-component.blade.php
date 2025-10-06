@@ -66,7 +66,7 @@
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       
                       
-                        <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
+                        <h4 class="fw-bold mb-2">Room<small>0</small></h4>
                           <div class="d-flex justify-content-between align-items-center">
                             <input type="search" class="form-control w-auto" placeholder="Search...">
                             <button class="btn btn-primary ml-4">
