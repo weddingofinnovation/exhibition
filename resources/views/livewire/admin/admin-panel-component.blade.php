@@ -105,51 +105,47 @@
               </div>
 
               
-                <div>
-                    <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan</h2>
+           <div class="p-4">
+  <h2 class="text-xl font-semibold mb-4">Upload Floor Plan & Draw Boxes</h2>
 
-                    <div class="relative border w-full max-w-4xl" style="height:600px;">
-                        <img src="{{ $floorPlanUrl }}" class="w-full h-full object-contain" id="floorPlanImage">
+  <!-- Upload form -->
+  <div class="mb-4">
+    <input type="text" wire:model="name" placeholder="Floor plan name" class="border p-2 mr-2">
+    <input type="file" wire:model="image" accept="image/*">
+    <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Floor Plan</button>
 
-                        <svg class="absolute top-0 left-0 w-full h-full" 
-                            id="drawingSvg"
-                            wire:ignore
-                            style="cursor:crosshair;">
-                            <!-- Existing spaces -->
-                            @foreach($spaces as $space)
-                                <polygon 
-                                    points="{{ collect(json_decode($space['coordinates']))->map(fn($p)=>implode(',',$p))->join(' ') }}"
-                                    class="fill-green-400 fill-opacity-30 stroke-black stroke-2"
-                                    title="{{ $space['name'] }}">
-                                </polygon>
-                            @endforeach
+    <div wire:loading wire:target="image">Uploading…</div>
+    @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
+    @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
+  </div>
 
-                            <!-- Current polygon -->
-                            @if($drawing)
-                                <polygon 
-                                    points="{{ collect($currentPolygon)->map(fn($p)=>implode(',',$p))->join(' ') }}"
-                                    class="fill-yellow-400 fill-opacity-30 stroke-red-500 stroke-2">
-                                </polygon>
-                            @endif
-                        </svg>
-                    </div>
+  <!-- Konva container (only show after floor plan is set) -->
+  @if($floorPlanUrl)
+    <div>
+      <div class="mb-2">
+        <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
+        <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
+      </div>
 
-                    <div class="mt-4">
-                        <input type="text" wire:model="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                        <button wire:click="saveSpace('New Space')" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
-                    </div>
-                </div>
-              
-                  <div class="con">
-                      <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+      <div id="konvaContainer" style="border:1px solid #ddd; width:100%; max-width:1200px; height:600px;"></div>
 
-                      <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
+      <div class="mt-3">
+        <input id="spaceNameInput" placeholder="Space name (for saving)" class="border p-2">
+        <button id="saveRectBtn" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Selected Box</button>
+      </div>
 
-                      <div class="mt-4">
-                          <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                          <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
-                      </div>
-                  </div>
+      <div class="mt-4">
+        <h3 class="font-semibold mb-2">Saved spaces</h3>
+        <ul>
+          @foreach($spaces as $s)
+            <li class="text-sm">#{{ $s['id'] ?? '—' }} — {{ $s['name'] ?? 'Unnamed' }}</li>
+          @endforeach
+        </ul>
+      </div>
+    </div>
+  @endif
+</div>
+
             
           </div>
         </div>
@@ -158,6 +154,8 @@
     
 
 
+<!-- Konva -->
+<script src="https://cdn.jsdelivr.net/npm/konva@9.4.1/konva.min.js"></script>
 
 
 
