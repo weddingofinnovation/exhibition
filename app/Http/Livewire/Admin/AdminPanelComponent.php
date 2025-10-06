@@ -51,8 +51,8 @@ class AdminPanelComponent extends Component
         // $this->image->move(public_path('floor_plans'), $fileName);
 
         // Publicly accessible URL
-        $url = url('floor_plans/' . $fileName);
-
+        //$url = url('floor_plans/' . $fileName);
+        $url = url($fileName);
         $plan = FloorPlan::create([
             'name' => $this->name,
             'image_url' => $url,
