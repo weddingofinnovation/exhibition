@@ -57,18 +57,18 @@ class AdminPanelComponent extends Component
         // Prepare the data array asset('storage/exhibition/' . $newFileName), 
         //str_replace('app/public/', '', $this->floorPlanUrl)
 
-        $eventData = [
-            'url1' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
-            'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
-            'id' => $this->floorPlanId
-        ];
+        // $eventData = [
+        //     'url1' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
+        //     //'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
+        //     'id' => $this->floorPlanId
+        // ];
 
-        // Debug the data before dispatching
-        dd($eventData);
+        // // Debug the data before dispatching
+        // dd($eventData);
  
         // Fire JS event to load Konva
         $this->dispatchBrowserEvent('floorplanUploaded', [
-            'url' => $this->floorPlanUrl,
+            'url' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
             'id' => $this->floorPlanId
         ]);
     }
