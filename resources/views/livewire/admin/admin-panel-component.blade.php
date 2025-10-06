@@ -230,10 +230,10 @@
                                         </h5>
                                             @php 
                                                 $Countstalldesignedonfloor = DB::table('stalls')->where('floorplan_id', $floor->id)->get();
-                                                $stallCount = $stalls->count();
+                                                $stallCount = $Countstalldesignedonfloor->count();
                                             @endphp
 
-                                        <span class="fs-xs text-muted">{{$Countstalldesignedonfloor}} Stalls</span>
+                                        <span class="fs-xs text-muted">{{$stallCount}} Stalls</span>
                                      </div>
                                     </div>
                                     <button class="btn btn-sm btn-outline-secondary ms-2">Map</button>
