@@ -52,6 +52,15 @@ class AdminPanelComponent extends Component
         $this->spaces = [];
         $this->reset(['name','image']);
 
+        // Prepare the data array
+        $eventData = [
+            'url' => $this->floorPlanUrl,
+            'id' => $this->floorPlanId
+        ];
+
+        // Debug the data before dispatching
+        dd($eventData);
+ 
         // Fire JS event to load Konva
         $this->dispatchBrowserEvent('floorplanUploaded', [
             'url' => $this->floorPlanUrl,
