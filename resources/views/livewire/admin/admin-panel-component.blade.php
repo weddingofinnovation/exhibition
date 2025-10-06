@@ -90,6 +90,7 @@
                         <div class="mb-2">
                             <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
                             <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
+                            <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Upload</button>
                         </div>
                 </div>
               </div>
@@ -105,10 +106,6 @@
                         <div class="mt-2">
                             <input id="spaceNameInput" placeholder="Space name" class="border p-2">
                             <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
-                        </div>
-                        <div class="mt-4">
-                          <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                          <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
                         </div>
                         <!-- end Konva Controls -->
                       
