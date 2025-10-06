@@ -123,7 +123,7 @@
     @php 
         $allPlans = DB::('floorplans')->get()
     @endphp
-    
+
    <!-- Select existing floor plan -->
     <div class="mb-3">
         <label>Select Existing Floor Plan</label>
@@ -171,6 +171,98 @@
      </div>
 
  @push('scripts')
+
+ 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const stage = new Konva.Stage({
+                container: 'konvaContainer',
+                width: document.getElementById('konvaContainer').clientWidth,
+                height: 400
+            });
+
+            const layer = new Konva.Layer();
+            stage.add(layer);
+
+            // ✅ Get image URL from Livewire (Blade variable)
+            const imageURL = @json($floorPlanUrl);
+
+            if (imageURL) {
+                const imageObj = new Image();
+                imageObj.onload = function () {
+                    const floorImage = new Konva.Image({
+                        image: imageObj,
+                        width: stage.width(),
+                        height: stage.height(),
+                    });
+                    layer.add(floorImage);
+                    layer.draw();
+                };
+                imageObj.src = imageURL;
+            } else {
+                console.warn("No floor plan URL found.");
+            }
+
+            // 🟢 Rectangle drawing setup
+            let isDrawing = false;
+            let startX, startY, rect;
+
+            document.getElementById('drawRectBtn').addEventListener('click', function () {
+                isDrawing = true;
+            });
+
+            stage.on('mousedown', function (e) {
+                if (!isDrawing) return;
+                const pos = stage.getPointerPosition();
+                startX = pos.x;
+                startY = pos.y;
+
+                rect = new Konva.Rect({
+                    x: startX,
+                    y: startY,
+                    width: 0,
+                    height: 0,
+                    stroke: 'red',
+                    strokeWidth: 2,
+                });
+                layer.add(rect);
+            });
+
+            stage.on('mousemove', function (e) {
+                if (!isDrawing || !rect) return;
+                const pos = stage.getPointerPosition();
+                rect.width(pos.x - startX);
+                rect.height(pos.y - startY);
+                layer.batchDraw();
+            });
+
+            stage.on('mouseup', function (e) {
+                if (!isDrawing) return;
+                isDrawing = false;
+                console.log("Rectangle drawn:", rect.x(), rect.y(), rect.width(), rect.height());
+            });
+
+            document.getElementById('clearCurrentBtn').addEventListener('click', function () {
+                layer.destroyChildren();
+                layer.draw();
+            });
+
+            document.getElementById('saveRectBtn').addEventListener('click', function () {
+                const name = document.getElementById('spaceNameInput').value || 'Unnamed';
+                if (!rect) return alert('Draw a rectangle first!');
+                const coords = {
+                    x: rect.x(),
+                    y: rect.y(),
+                    width: rect.width(),
+                    height: rect.height()
+                };
+                Livewire.emit('saveRect', { name: name, coords: coords });
+            });
+        });
+    </script>
+
+
     <script>
         document.addEventListener('livewire:load', function () {
         const floorPlanUrl = @json($floorPlanUrl);
