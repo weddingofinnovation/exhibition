@@ -229,7 +229,8 @@
                                           <a class="nav-link-style stretched-link" href="#">1</a>
                                         </h5>
                                             @php 
-                                            $Countstalldesignedonfloor = DB::table('stalls')->where('floorplan_id', $floor->id)->count()
+                                                $Countstalldesignedonfloor = DB::table('stalls')->where('floorplan_id', $floor->id)->get();
+                                                $stallCount = $stalls->count();
                                             @endphp
 
                                         <span class="fs-xs text-muted">{{$Countstalldesignedonfloor}} Stalls</span>
@@ -238,9 +239,6 @@
                                     <button class="btn btn-sm btn-outline-secondary ms-2">Map</button>
                                 </div>
 
-                                <div class="container">
-                                    {{$floor->name}} 
-                                </div>
                             @endforeach
                         </div>
                         <hr>
