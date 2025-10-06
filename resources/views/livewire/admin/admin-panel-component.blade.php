@@ -173,7 +173,7 @@
                  @elseif($board == 'floorplan')
                     <div class="container">
                       @php 
-                        $findallfloorplanuploaded = DB::table('spaces')->get()
+                        $findallfloorplanuploaded = DB::table('floorplans')->get()
                       @endphp
 
                       @foreach ($findallfloorplanuploaded as $floor)
