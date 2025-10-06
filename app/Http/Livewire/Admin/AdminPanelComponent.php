@@ -33,7 +33,7 @@ class AdminPanelComponent extends Component
     }
 
 
-     public function saveFloorPlan()
+    public function saveFloorPlan()
     {
         $this->validate([
             'name' => 'required|string',
@@ -58,8 +58,34 @@ class AdminPanelComponent extends Component
     }
 
     
-    
+    public function saveRect($data)
+    {
+        if (!$this->floorPlanId) {
+            $this->dispatchBrowserEvent('notify', ['type'=>'error','message'=>'Save floor plan first.']);
+            return;
+        }
 
+        $decoded = is_string($data) ? json_decode($data, true) : $data;
+        $name = $decoded['name'] ?? 'Unnamed';
+        $coords = $decoded['coords'] ?? null;
+
+        if (!$coords) {
+            $this->dispatchBrowserEvent('notify', ['type'=>'error','message'=>'No coordinates provided.']);
+            return;
+        }
+
+        $space = Space::create([
+            'floor_plan_id' => $this->floorPlanId,
+            'name' => $name,
+            'coordinates' => $coords,
+        ]);
+
+        $this->spaces[] = $space->toArray();
+
+        $this->dispatchBrowserEvent('rect-saved', ['id' => $space->id, 'name' => $name]);
+    }
+
+  
     public function render()
     {
         return view('livewire.admin.admin-panel-component')->layout('layouts.admin');
