@@ -39,10 +39,12 @@ class AdminPanelComponent extends Component
             'image' => 'required|image|max:5120',
         ]);
 
-        $path = $this->image->store('floor_plans', 'public');
-        //$url = Storage::url($path);
+       // ✅ Save image directly to /public/floor_plans/
+        $fileName = time() . '_' . $this->image->getClientOriginalName();
+        $this->image->move(public_path('floor_plans'), $fileName);
 
-        $url = Storage::url($path);
+        // Publicly accessible URL
+        $url = url('floor_plans/' . $fileName);
 
         $plan = FloorPlan::create([
             'name' => $this->name,
@@ -68,8 +70,9 @@ class AdminPanelComponent extends Component
  
         // Fire JS event to load Konva
         $this->dispatchBrowserEvent('floorplanUploaded', [
-            'url' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
-            'id' => $this->floorPlanId
+           // 'url' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
+           'url' => $url,
+           'id' => $this->floorPlanId
         ]);
     }
 
@@ -82,7 +85,10 @@ class AdminPanelComponent extends Component
         $this->floorPlanUrl = $plan->image_url;
         $this->spaces = $plan->spaces->toArray();
 
-        $this->dispatchBrowserEvent('floorplanUploaded', ['url' => $this->floorPlanUrl]);
+        $this->dispatchBrowserEvent('floorplanUploaded', [
+            'url' => $this->floorPlanUrl,
+            'id' => $this->floorPlanId
+        ]);
     }
 
     public function saveRect($data)
