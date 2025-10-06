@@ -58,8 +58,8 @@ class AdminPanelComponent extends Component
         //str_replace('app/public/', '', $this->floorPlanUrl)
 
         $eventData = [
-            'url1' => asset(str_replace('/storage/floor_plans','',$this->floorPlanUrl)),
-            'url2' => asset('storage/app/public/floor_plan' . $this->floorPlanUrl),
+            'url1' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
+            'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
             'id' => $this->floorPlanId
         ];
 
