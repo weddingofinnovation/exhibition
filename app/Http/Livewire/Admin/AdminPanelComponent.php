@@ -59,7 +59,6 @@ class AdminPanelComponent extends Component
             'image' => $fileName,
         ]);
 
-        dd($plan);
         $this->floorPlanId = $plan->id;
         $this->floorPlanUrl = $url;
         $this->spaces = [];
