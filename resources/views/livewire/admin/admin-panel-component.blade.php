@@ -171,16 +171,70 @@
                     </div>
                  
                  @elseif($board == 'floorplan')
+                    <div class="card shadow-sm border-0 mb-2">
+                        <div class="card-body pb-1 pt-2">
+                            <!-- Page Title -->
+                            
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                            
+                            
+                                <h4 class="fw-bold mb-2">Design<small>0</small></h4>
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <!-- <input type="search" class="form-control w-auto" placeholder="Search...">
+                                    <button class="btn btn-primary ml-4">
+                                        <i class="bi bi-download"></i> Export
+                                    </button> -->
+
+                                    <input type="text" wire:model="name" placeholder="Floor plan name" class="border p-2 mr-2">
+                                    <input type="file" wire:model="image" accept="image/*">
+                                    <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
+
+                                    <div wire:loading wire:target="image">Uploading…</div>
+                                    @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
+                                    @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
+
+                                </div>
+                            
+                            </div>
+
+
+                        <!-- start Konva Controls -->
+                                <div class="mb-2">
+                                    <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded"> <i class="bi bi-pencil"></i></button>
+                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-eraser"></i></button>
+                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
+                                </div>
+                        </div>
+                    </div>
+
                     <div class="container">
                       @php 
                         $findallfloorplanuploaded = DB::table('floorplans')->get()
                       @endphp
 
                       
-                        <div class="row mb-5 pb-2">
+                        <div class="mb-5 pb-2">
                             @foreach ($findallfloorplanuploaded as $floor)
+                                <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                    <div class="d-flex align-items-center position-relative">
+                                    
+                                    <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar">
+                                    <div class="ms-2">
+                                        <h4 class="mb-1 fs-base text-body">
+                                        <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a></h4>
+                                        <h5 class="mb-1 fs-xs">
+                                          <a class="nav-link-style stretched-link" href="#"></a>
+                                        </h5>
+                                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                                    </div>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
+                                </div>
+
                                 <div class="container">
-                                    {{$floor->name}}
+                                    {{$floor->name}} 
                                 </div>
                             @endforeach
                         </div>
