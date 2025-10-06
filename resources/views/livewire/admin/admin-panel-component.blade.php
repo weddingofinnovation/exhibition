@@ -63,7 +63,7 @@
                             <div class="d-flex justify-content-between align-items-center mb-2">
                             
                             
-                                <h4 class="fw-bold mb-2">Design<small>count</small></h4>
+                                <h4 class="fw-bold mb-2">Design<small>0</small></h4>
                                 <div class="d-flex justify-content-between align-items-center">
 
                                     <!-- <input type="search" class="form-control w-auto" placeholder="Search...">
@@ -73,7 +73,7 @@
 
                                     <input type="text" wire:model="name" placeholder="Floor plan name" class="border p-2 mr-2">
                                     <input type="file" wire:model="image" accept="image/*">
-                                    <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Floor Plan</button>
+                                    <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
 
                                     <div wire:loading wire:target="image">Uploading…</div>
                                     @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
@@ -86,9 +86,9 @@
 
                         <!-- start Konva Controls -->
                                 <div class="mb-2">
-                                    <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
-                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
-                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Upload</button>
+                                    <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded"> <i class="bi bi-pencil"></i></button>
+                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-eraser"></i></button>
+                                    <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
                                 </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                             <!-- Space Input -->
                             <div class="mt-2">
                                 <input id="spaceNameInput" placeholder="Space name" class="border p-2">
-                                <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
+                                <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Booth</button>
                             </div>
                             <!-- end Konva Controls -->
 
