@@ -13,12 +13,12 @@ class AdminPanelComponent extends Component
     use WithFileUploads;
 
     public $name;
-    public $image; // uploaded file
+    public $image;
     public $floorPlanId;
     public $floorPlanUrl;
     public $spaces = [];
 
-    protected $listeners = ['saveRect' => 'saveRect'];
+    protected $listeners = ['saveRect' => 'saveRect', 'loadFloorPlan' => 'loadFloorPlan'];
 
     public function mount($floorPlanId = null)
     {
@@ -32,17 +32,15 @@ class AdminPanelComponent extends Component
         }
     }
 
-
     public function saveFloorPlan()
     {
         $this->validate([
             'name' => 'required|string',
-            'image' => 'required|image|max:5120', // 5MB
+            'image' => 'required|image|max:5120',
         ]);
 
-        // store image in public disk
         $path = $this->image->store('floor_plans', 'public');
-        $url = Storage::url($path); // /storage/floor_plans/xxx.jpg
+        $url = Storage::url($path);
 
         $plan = FloorPlan::create([
             'name' => $this->name,
@@ -54,20 +52,20 @@ class AdminPanelComponent extends Component
         $this->spaces = [];
         $this->reset(['name','image']);
 
-        // $this->dispatchBrowserEvent('floorplan-saved', ['id' => $plan->id]);
-
-        //Load into Konva 
-        $this->dispatchBrowserEvent('floorplanUploaded', [ 'url' => $this->latestImagePath, 'id' => $this->floorPlanId ]);
+        // Fire JS event to load Konva
+        $this->dispatchBrowserEvent('floorplanUploaded', [
+            'url' => $this->floorPlanUrl,
+            'id' => $this->floorPlanId
+        ]);
     }
 
-    
-     public function loadFloorPlan($id)
+    public function loadFloorPlan($id)
     {
         $plan = Floorplan::with('spaces')->find($id);
         if (!$plan) return;
 
         $this->floorPlanId = $plan->id;
-        $this->floorPlanUrl = asset('storage/' . $plan->image_path);
+        $this->floorPlanUrl = $plan->image_url;
         $this->spaces = $plan->spaces->toArray();
 
         $this->dispatchBrowserEvent('floorplanUploaded', ['url' => $this->floorPlanUrl]);
@@ -99,9 +97,10 @@ class AdminPanelComponent extends Component
 
         $this->dispatchBrowserEvent('rect-saved', ['id' => $space->id, 'name' => $name]);
     }
-  
+
     public function render()
     {
-        return view('livewire.admin.admin-panel-component')->layout('layouts.admin');
+        $allPlans = Floorplan::all();
+        return view('livewire.admin.admin-panel-component', compact('allPlans'))->layout('layouts.admin');
     }
 }
