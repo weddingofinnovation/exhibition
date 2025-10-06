@@ -169,6 +169,17 @@
                             @endforeach
                         </select>
                     </div>
+                 
+                 @elseif($board == 'floorplan')
+                    <div class="container">
+                      @php 
+                        $findallfloorplanuploaded = DB::table('spaces')->get()
+                      @endphp
+
+                      @foreach ($findallfloorplanuploaded as $floor)
+                        {{$floor}}
+                      @endforeach
+                    </div>
                  @elseif($board == 'launch')
                     <h1>Launch</h1>
 
