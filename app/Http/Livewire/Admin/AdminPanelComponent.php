@@ -52,10 +52,12 @@ class AdminPanelComponent extends Component
         $this->spaces = [];
         $this->reset(['name','image']);
 
-        // Prepare the data array asset('storage/exhibition/' . $newFileName),
+        // Prepare the data array asset('storage/exhibition/' . $newFileName), 
+        //str_replace('app/public/', '', $this->floorPlanUrl)
+
         $eventData = [
-            'url1' => asset('public/app','',$this->floorPlanUrl),
-            'url2' => asset('storage/app/public/floor_plans/' . $this->floorPlanUrl),
+            'url1' => asset(str_replace('/storage/floor_plans','',$this->floorPlanUrl)),
+            'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
             'id' => $this->floorPlanId
         ];
 
