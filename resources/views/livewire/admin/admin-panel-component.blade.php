@@ -171,10 +171,12 @@
                     </div>
                  @elseif($board == 'launch')
                     <h1>Launch</h1>
-                    <div>
-                        <input id="scaleInput" placeholder="Meters per pixel" value="0.05">
-                        <button id="drawRectBtn">Draw Rectangle</button>
+
+                    <div class="bg-dark">
+                        <input id="scaleInput" placeholder="Meters per pixel" value="0.05" class="form-control">
+                        <button id="drawRectBtn" class="form-control">Draw Rectangle</button>
                     </div>
+
                     <div id="konvaContainer" style="width: 800px; height: 400px; border:1px solid #ccc;"></div>
                  @endif
               
