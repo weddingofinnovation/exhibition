@@ -52,86 +52,90 @@
 
 @push('scripts')
 
-<script>
-let stage, layer, rect;
-let isDrawing = false;
-
-function initKonva(imageURL) {
-    const container = document.getElementById('konvaContainer');
-    if (!container) return;
-
-    container.innerHTML = "";
-    rect = null;
-
-    stage = new Konva.Stage({
-        container: 'konvaContainer',
-        width: container.clientWidth,
-        height: 400
-    });
-
-    layer = new Konva.Layer();
-    stage.add(layer);
-
-    const imageObj = new Image();
-    imageObj.onload = function () {
-        const floorImage = new Konva.Image({
-            image: imageObj,
-            width: stage.width(),
-            height: stage.height()
-        });
-        layer.add(floorImage);
-        layer.draw();
-    };
-    imageObj.src = imageURL;
-
-    // Rectangle Drawing
-    stage.on('mousedown', function () {
-        if (!isDrawing) return;
-        const pos = stage.getPointerPosition();
-        rect = new Konva.Rect({
-            x: pos.x,
-            y: pos.y,
-            width: 0,
-            height: 0,
-            stroke: 'red',
-            strokeWidth: 2
-        });
-        layer.add(rect);
-    });
-
-    stage.on('mousemove', function () {
-        if (!isDrawing || !rect) return;
-        const pos = stage.getPointerPosition();
-        rect.width(pos.x - rect.x());
-        rect.height(pos.y - rect.y());
-        layer.batchDraw();
-    });
-
-    stage.on('mouseup', function () {
-        if (!isDrawing) return;
-        isDrawing = false;
-    });
-}
-
-// Draw Button
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('drawRectBtn')?.addEventListener('click', () => { isDrawing = true; });
-
-    document.getElementById('saveRectBtn')?.addEventListener('click', () => {
-        if (!rect) return alert('Draw rectangle first!');
-        const name = document.getElementById('spaceNameInput').value || 'Unnamed';
-        const coords = { x: rect.x(), y: rect.y(), width: rect.width(), height: rect.height() };
-        Livewire.emit('saveRect', { name, coords });
-    });
-
-    document.getElementById('clearCurrentBtn')?.addEventListener('click', () => {
-        if (rect) {
-            rect.destroy();
-            rect = null;
-            layer.draw();
-        }
-    });
+window.addEventListener('floorplanUploaded', event => {
+    console.log('✅ Browser event received:', event.detail);
 });
+
+<script>
+    let stage, layer, rect;
+    let isDrawing = false;
+
+    function initKonva(imageURL) {
+        const container = document.getElementById('konvaContainer');
+        if (!container) return;
+
+        container.innerHTML = "";
+        rect = null;
+
+        stage = new Konva.Stage({
+            container: 'konvaContainer',
+            width: container.clientWidth,
+            height: 400
+        });
+
+        layer = new Konva.Layer();
+        stage.add(layer);
+
+        const imageObj = new Image();
+        imageObj.onload = function () {
+            const floorImage = new Konva.Image({
+                image: imageObj,
+                width: stage.width(),
+                height: stage.height()
+            });
+            layer.add(floorImage);
+            layer.draw();
+        };
+        imageObj.src = imageURL;
+
+        // Rectangle Drawing
+        stage.on('mousedown', function () {
+            if (!isDrawing) return;
+            const pos = stage.getPointerPosition();
+            rect = new Konva.Rect({
+                x: pos.x,
+                y: pos.y,
+                width: 0,
+                height: 0,
+                stroke: 'red',
+                strokeWidth: 2
+            });
+            layer.add(rect);
+        });
+
+        stage.on('mousemove', function () {
+            if (!isDrawing || !rect) return;
+            const pos = stage.getPointerPosition();
+            rect.width(pos.x - rect.x());
+            rect.height(pos.y - rect.y());
+            layer.batchDraw();
+        });
+
+        stage.on('mouseup', function () {
+            if (!isDrawing) return;
+            isDrawing = false;
+        });
+    }
+
+    // Draw Button
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('drawRectBtn')?.addEventListener('click', () => { isDrawing = true; });
+
+        document.getElementById('saveRectBtn')?.addEventListener('click', () => {
+            if (!rect) return alert('Draw rectangle first!');
+            const name = document.getElementById('spaceNameInput').value || 'Unnamed';
+            const coords = { x: rect.x(), y: rect.y(), width: rect.width(), height: rect.height() };
+            Livewire.emit('saveRect', { name, coords });
+        });
+
+        document.getElementById('clearCurrentBtn')?.addEventListener('click', () => {
+            if (rect) {
+                rect.destroy();
+                rect = null;
+                layer.draw();
+            }
+        });
+    });
 
     //Listen for uploaded floor plan
     Livewire.on('floorplanUploaded', e => {
