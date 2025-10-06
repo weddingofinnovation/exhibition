@@ -116,7 +116,7 @@ class AdminPanelComponent extends Component
         }
 
         $space = Space::create([
-            'floor_plan_id' => $this->floorPlanId,
+            'floorplan_id' => $this->floorPlanId,
             'name' => $name,
             'coordinates' => $coords,
         ]);
