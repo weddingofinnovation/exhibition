@@ -79,7 +79,7 @@
 
                     <!-- Tabs -->
                     <ul class="nav nav-tabs mb-2" id="analyticsTabs">
-                      @if($board == 'order')
+                      
                         <li class="nav-item">
                             <a class="nav-link active" href="#">New</a>
                         </li>
@@ -98,45 +98,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Email</a>
                         </li>
-                        @elseif($board == 'event')
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">New</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Finish</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">upcoming</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Featured</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Today</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Email</a>
-                        </li>
-                      @else
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Content</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Visitors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Followers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Search appearances</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Leads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Competitors</a>
-                        </li>
-                      @endif
+                       
+                      
                     </ul>
                 </div>
               </div>
