@@ -133,10 +133,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Listen for uploaded floor plan
-Livewire.on('floorplanUploaded', e => {
+    // Listen for uploaded floor plan
+    // Livewire.on('floorplanUploaded', e => {
+    //     initKonva(e.url);
+    // });
+
+    Livewire.on('floorplanUploaded', e => {
+    console.log('Loading floor plan:', e.url);
     initKonva(e.url);
-});
+    });
 </script>
 @endpush
 
