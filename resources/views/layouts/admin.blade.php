@@ -92,6 +92,9 @@
     <script src="{{asset('js/lightgallery.min.js')}}"></script>
     <script src="{{asset('js/lg-video.min.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+    <!-- Konva -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/konva@9.4.1/konva.min.js"></script>
+
     <!-- Main theme script-->
     <script src="{{asset('js/theme.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
