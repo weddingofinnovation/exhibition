@@ -131,11 +131,7 @@
                           <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
                           <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
                         </div>
-                      <!-- end Konva Controls -->
-
-
-                      <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
-
+                        <!-- end Konva Controls -->
                       
                   </div>
               
