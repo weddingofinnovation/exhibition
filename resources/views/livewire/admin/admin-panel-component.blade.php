@@ -89,10 +89,11 @@
                     <!-- Tabs -->
                     <ul class="nav nav-tabs mb-2" id="analyticsTabs">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Content</a>
+                            <button id="drawRectBtn" class="bg-green-500 text-white px-0 py-1 rounded nav-link active">Draw Rectangle</button>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Visitors</a>
+                            <!-- <a class="nav-link" href="#">Visitors</a> -->
+                             <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-o py-1 rounded nav-link active">Clear Drawing</button>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Followers</a>
