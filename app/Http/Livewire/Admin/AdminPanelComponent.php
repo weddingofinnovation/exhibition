@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Floorplan;
 use App\Models\Space;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -39,9 +40,15 @@ class AdminPanelComponent extends Component
             'image' => 'required|image|max:5120',
         ]);
 
+
+        $fileName = Carbon::now()->timestamp.'.'.$this->image->extension();
+        $this->image->storeAs('exhibition', $fileName);
+
+        //$fattribute->image = $newimage;
+
        // ✅ Save image directly to /public/floor_plans/
-        $fileName = time() . '_' . $this->image->getClientOriginalName();
-        $this->image->move(public_path('floor_plans'), $fileName);
+        // $fileName = time() . '_' . $this->image->getClientOriginalName();
+        // $this->image->move(public_path('floor_plans'), $fileName);
 
         // Publicly accessible URL
         $url = url('floor_plans/' . $fileName);
@@ -51,6 +58,7 @@ class AdminPanelComponent extends Component
             'image_url' => $url,
         ]);
 
+        dd($plan);
         $this->floorPlanId = $plan->id;
         $this->floorPlanUrl = $url;
         $this->spaces = [];
