@@ -61,10 +61,22 @@ class AdminPanelComponent extends Component
     }
 
     
+     public function loadFloorPlan($id)
+    {
+        $plan = Floorplan::with('spaces')->find($id);
+        if (!$plan) return;
+
+        $this->floorPlanId = $plan->id;
+        $this->floorPlanUrl = asset('storage/' . $plan->image_path);
+        $this->spaces = $plan->spaces->toArray();
+
+        $this->dispatchBrowserEvent('floorplanUploaded', ['url' => $this->floorPlanUrl]);
+    }
+
     public function saveRect($data)
     {
         if (!$this->floorPlanId) {
-            $this->dispatchBrowserEvent('notify', ['type'=>'error','message'=>'Save floor plan first.']);
+            $this->dispatchBrowserEvent('notify', ['type'=>'error','message'=>'Save/select floor plan first.']);
             return;
         }
 
@@ -87,7 +99,6 @@ class AdminPanelComponent extends Component
 
         $this->dispatchBrowserEvent('rect-saved', ['id' => $space->id, 'name' => $name]);
     }
-
   
     public function render()
     {

@@ -115,8 +115,8 @@
     <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Floor Plan</button>
 
     <div wire:loading wire:target="image">Uploading…</div>
-    @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
-    @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
+        @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
+        @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
   </div>
 
 
@@ -137,31 +137,28 @@
 
     <div wire:ignore id="container" style="border: 1px solid #ccc;"></div>
 
-  <!-- Konva container (only show after floor plan is set) -->
-  @if($floorPlanUrl)
-    <div>
-      <div class="mb-2">
-        <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
-        <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
-      </div>
+   <!-- Konva Container -->
+    <div id="konvaContainer" style="border:1px solid #ccc; width:100%; max-width:1200px; height:400px;" wire:ignore></div>
 
-      <div id="konvaContainer" style="border:1px solid #ddd; width:100%; max-width:1200px; height:400px;"></div>
-
-      <div class="mt-3">
-        <input id="spaceNameInput" placeholder="Space name (for saving)" class="border p-2">
-        <button id="saveRectBtn" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Selected Box</button>
-      </div>
-
-      <div class="mt-4">
-        <h3 class="font-semibold mb-2">Saved spaces</h3>
-        <ul>
-          @foreach($spaces as $s)
-            <li class="text-sm">#{{ $s['id'] ?? '—' }} — {{ $s['name'] ?? 'Unnamed' }}</li>
-          @endforeach
-        </ul>
-      </div>
+    <!-- Space Input -->
+    <div class="mt-2">
+        <input id="spaceNameInput" placeholder="Space name">
+        <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
     </div>
-  @endif
+
+    <!-- Saved Spaces -->
+    <div class="mt-4">
+        <h3>Saved Spaces</h3>
+        <ul>
+            @foreach($spaces as $s)
+                <li>#{{ $s['id'] ?? '—' }} — {{ $s['name'] ?? 'Unnamed' }}</li>
+            @endforeach
+        </ul>
+    </div>
+</div>
+
+
+
 </div>
 
             
@@ -170,259 +167,85 @@
       </div>
      </div>
 
- @push('scripts')
+@push('scripts')
+<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+<script>
+let stage, layer, rect;
+let isDrawing = false;
 
- 
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const stage = new Konva.Stage({
-                container: 'konvaContainer',
-                width: document.getElementById('konvaContainer').clientWidth,
-                height: 400
-            });
+function initKonva(imageURL) {
+    const container = document.getElementById('konvaContainer');
+    if (!container) return;
 
-            const layer = new Konva.Layer();
-            stage.add(layer);
+    container.innerHTML = ""; // Clear previous stage
 
-            // ✅ Get image URL from Livewire (Blade variable)
-            const imageURL = @json($floorPlanUrl);
+    stage = new Konva.Stage({
+        container: 'konvaContainer',
+        width: container.clientWidth,
+        height: 400
+    });
 
-            if (imageURL) {
-                const imageObj = new Image();
-                imageObj.onload = function () {
-                    const floorImage = new Konva.Image({
-                        image: imageObj,
-                        width: stage.width(),
-                        height: stage.height(),
-                    });
-                    layer.add(floorImage);
-                    layer.draw();
-                };
-                imageObj.src = imageURL;
-            } else {
-                console.warn("No floor plan URL found.");
-            }
+    layer = new Konva.Layer();
+    stage.add(layer);
 
-            // 🟢 Rectangle drawing setup
-            let isDrawing = false;
-            let startX, startY, rect;
-
-            document.getElementById('drawRectBtn').addEventListener('click', function () {
-                isDrawing = true;
-            });
-
-            stage.on('mousedown', function (e) {
-                if (!isDrawing) return;
-                const pos = stage.getPointerPosition();
-                startX = pos.x;
-                startY = pos.y;
-
-                rect = new Konva.Rect({
-                    x: startX,
-                    y: startY,
-                    width: 0,
-                    height: 0,
-                    stroke: 'red',
-                    strokeWidth: 2,
-                });
-                layer.add(rect);
-            });
-
-            stage.on('mousemove', function (e) {
-                if (!isDrawing || !rect) return;
-                const pos = stage.getPointerPosition();
-                rect.width(pos.x - startX);
-                rect.height(pos.y - startY);
-                layer.batchDraw();
-            });
-
-            stage.on('mouseup', function (e) {
-                if (!isDrawing) return;
-                isDrawing = false;
-                console.log("Rectangle drawn:", rect.x(), rect.y(), rect.width(), rect.height());
-            });
-
-            document.getElementById('clearCurrentBtn').addEventListener('click', function () {
-                layer.destroyChildren();
-                layer.draw();
-            });
-
-            document.getElementById('saveRectBtn').addEventListener('click', function () {
-                const name = document.getElementById('spaceNameInput').value || 'Unnamed';
-                if (!rect) return alert('Draw a rectangle first!');
-                const coords = {
-                    x: rect.x(),
-                    y: rect.y(),
-                    width: rect.width(),
-                    height: rect.height()
-                };
-                Livewire.emit('saveRect', { name: name, coords: coords });
-            });
+    const imageObj = new Image();
+    imageObj.onload = function () {
+        const floorImage = new Konva.Image({
+            image: imageObj,
+            width: stage.width(),
+            height: stage.height()
         });
-    </script>
+        layer.add(floorImage);
+        layer.draw();
+    };
+    imageObj.src = imageURL;
 
-
-    <script>
-        document.addEventListener('livewire:load', function () {
-        const floorPlanUrl = @json($floorPlanUrl);
-        if (!floorPlanUrl) return;
-
-        // Stage size — you can adapt to container size. We'll compute based on image natural size for accuracy.
-        const container = document.getElementById('konvaContainer');
-        container.innerHTML = ''; // ensure empty
-
-        const stage = new Konva.Stage({
-            container: 'konvaContainer',
-            width: container.clientWidth,
-            height: container.clientHeight,
+    // Rectangle drawing
+    stage.on('mousedown', function (e) {
+        if (!isDrawing) return;
+        const pos = stage.getPointerPosition();
+        rect = new Konva.Rect({
+            x: pos.x,
+            y: pos.y,
+            width: 0,
+            height: 0,
+            stroke: 'red',
+            strokeWidth: 2
         });
-        const layer = new Konva.Layer();
-        stage.add(layer);
+        layer.add(rect);
+    });
 
-        // load image to determine natural width/height
-        const img = new Image();
-        img.src = floorPlanUrl;
-        img.onload = function() {
-            // scale image to fit container while keeping aspect ratio
-            const imgW = img.naturalWidth;
-            const imgH = img.naturalHeight;
-            const containerW = container.clientWidth;
-            const containerH = container.clientHeight;
-            let drawW = containerW, drawH = containerH;
+    stage.on('mousemove', function () {
+        if (!isDrawing || !rect) return;
+        const pos = stage.getPointerPosition();
+        rect.width(pos.x - rect.x());
+        rect.height(pos.y - rect.y());
+        layer.batchDraw();
+    });
 
-            // fit inside container
-            const ratio = Math.min(containerW / imgW, containerH / imgH);
-            drawW = imgW * ratio;
-            drawH = imgH * ratio;
+    stage.on('mouseup', function () {
+        if (!isDrawing) return;
+        isDrawing = false;
+    });
+}
 
-            stage.width(drawW);
-            stage.height(drawH);
+// Start drawing
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('drawRectBtn')?.addEventListener('click', () => { isDrawing = true; });
 
-            const floorImage = new Konva.Image({
-            x: 0, y: 0, image: img,
-            width: drawW, height: drawH,
-            });
-            layer.add(floorImage);
-            layer.draw();
+    document.getElementById('saveRectBtn')?.addEventListener('click', () => {
+        if (!rect) return alert('Draw rectangle first!');
+        const name = document.getElementById('spaceNameInput').value || 'Unnamed';
+        const coords = { x: rect.x(), y: rect.y(), width: rect.width(), height: rect.height() };
+        Livewire.emit('saveRect', { name, coords });
+    });
+});
 
-            // draw previously saved spaces (server-provided via blade)
-            const existingSpaces = @json($spaces);
-            existingSpaces.forEach(s => {
-            // coordinates stored as percentages {x, y, width, height}
-            if (!s.coordinates) return;
-            const c = s.coordinates;
-            const x = c.x * drawW;
-            const y = c.y * drawH;
-            const w = c.width * drawW;
-            const h = c.height * drawH;
-            const rect = new Konva.Rect({
-                x, y, width: w, height: h,
-                fill: 'rgba(0,255,0,0.2)', stroke: 'green', strokeWidth: 2,
-                draggable: true,
-            });
-            // allow transform
-            layer.add(rect);
-            });
-            layer.draw();
-
-            // DRAWING: click & drag to create rectangle
-            let isDrawing = false;
-            let newRect;
-            let startPos = null;
-
-            function startDrawing(pos) {
-            isDrawing = true;
-            startPos = pos;
-            newRect = new Konva.Rect({
-                x: pos.x, y: pos.y, width: 1, height: 1,
-                fill: 'rgba(255,255,0,0.3)', stroke: 'red', strokeWidth: 2,
-            });
-            layer.add(newRect);
-            }
-
-            function updateDrawing(pos) {
-            if (!isDrawing || !newRect) return;
-            const x = Math.min(startPos.x, pos.x);
-            const y = Math.min(startPos.y, pos.y);
-            const w = Math.abs(pos.x - startPos.x);
-            const h = Math.abs(pos.y - startPos.y);
-            newRect.position({ x, y });
-            newRect.size({ width: w, height: h });
-            layer.batchDraw();
-            }
-
-            function finishDrawing() {
-            isDrawing = false;
-            // newRect remains on layer for manipulation
-            layer.batchDraw();
-            }
-
-            // enable/disable drawing mode by button
-            let drawingMode = false;
-            document.getElementById('drawRectBtn').addEventListener('click', () => {
-            drawingMode = !drawingMode;
-            document.getElementById('drawRectBtn').textContent = drawingMode ? 'Drawing: ON (click-drag)' : 'Draw Rectangle';
-            });
-
-            document.getElementById('clearCurrentBtn').addEventListener('click', () => {
-            if (newRect) { newRect.destroy(); newRect = null; layer.draw(); }
-            });
-
-            stage.on('mousedown touchstart', function(e) {
-            if (!drawingMode) return;
-            const pos = stage.getPointerPosition();
-            startDrawing(pos);
-            });
-
-            stage.on('mousemove touchmove', function(e) {
-            if (!drawingMode) return;
-            const pos = stage.getPointerPosition();
-            if (isDrawing) updateDrawing(pos);
-            });
-
-            stage.on('mouseup touchend', function(e) {
-            if (!drawingMode) return;
-            if (isDrawing) finishDrawing();
-            });
-
-            // Save selected rectangle
-            document.getElementById('saveRectBtn').addEventListener('click', () => {
-            const name = document.getElementById('spaceNameInput').value || 'New Space';
-            // choose rectangle to save: the last drawn newRect or currently selected rect
-            const rectToSave = newRect;
-            if (!rectToSave) {
-                alert('Draw a rectangle first (enable Draw Rectangle).');
-                return;
-            }
-            // compute percentages
-            const xPct = rectToSave.x() / drawW;
-            const yPct = rectToSave.y() / drawH;
-            const wPct = rectToSave.width() / drawW;
-            const hPct = rectToSave.height() / drawH;
-            const payload = { name: name, coords: { x: xPct, y: yPct, width: wPct, height: hPct } };
-
-            // emit to Livewire (listener 'saveRect' in PHP)
-            Livewire.emit('saveRect', payload);
-
-            // optional: visually mark it as saved (green)
-            rectToSave.fill('rgba(0,255,0,0.25)');
-            rectToSave.stroke('green');
-            rectToSave.draggable(true);
-            newRect = null;
-            layer.draw();
-            });
-
-            // Listen for server events
-            window.addEventListener('rect-saved', (e) => {
-            // e.detail has id, name
-            console.log('Saved rect: ', e.detail);
-            });
-
-        }; // img.onload
-
-        }); // livewire:load
-    </script>
+// Listen for uploaded floor plan
+Livewire.on('floorplanUploaded', e => {
+    initKonva(e.url);
+});
+</script>
 @endpush
 
 
