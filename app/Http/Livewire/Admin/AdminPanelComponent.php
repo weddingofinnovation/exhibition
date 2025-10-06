@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Floorplan;
 use App\Models\Space;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -31,6 +32,32 @@ class AdminPanelComponent extends Component
         }
     }
 
+
+     public function saveFloorPlan()
+    {
+        $this->validate([
+            'name' => 'required|string',
+            'image' => 'required|image|max:5120', // 5MB
+        ]);
+
+        // store image in public disk
+        $path = $this->image->store('floor_plans', 'public');
+        $url = Storage::url($path); // /storage/floor_plans/xxx.jpg
+
+        $plan = FloorPlan::create([
+            'name' => $this->name,
+            'image_url' => $url,
+        ]);
+
+        $this->floorPlanId = $plan->id;
+        $this->floorPlanUrl = $url;
+        $this->spaces = [];
+        $this->reset(['name','image']);
+
+        $this->dispatchBrowserEvent('floorplan-saved', ['id' => $plan->id]);
+    }
+
+    
     
 
     public function render()
