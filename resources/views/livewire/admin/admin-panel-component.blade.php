@@ -23,31 +23,27 @@
                   <li class="nav-item mb-1">
                       <a href="{{route('admin.global')}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
                   </li>
-                  <li class="nav-item mb-1">
-                      <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
-                  </li>
-                  <li class="nav-item mb-1">
-                      <a href="{{route('admin.dashboard', ['board' => 'event'])}}" class="nav-link text-dark" style="background-color: #fff;">Events</a>
-                  </li>
-                  <li class="nav-item mb-1">
-                      <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor</a>
-                  </li>
-
-                  <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
-                  </li>
-                  <li class="nav-item mb-1">
-                      <a href="#" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
-                  </li>
-                  <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Feed</a>
+                  <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+                      <a href="{{route('admin.dashboard', ['board' => 'floorplan','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Plan</a>
+                      <span class="badge bg-danger rounded-pill">0</span>
                   </li>
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
-                      <span class="badge bg-danger rounded-pill">2</span>
+                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Design</a>
+                      <span class="badge bg-danger rounded-pill">0</span>
                   </li>
-                  <li class="nav-item mb-1">
-                      <a href="#" class="nav-link text-dark" style="background-color: #fff;">Inbox</a>
+                
+                  <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Boxes</a>
+                      <span class="badge bg-danger rounded-pill">0</span>
+                  </li>
+                  <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
+                      <span class="badge bg-danger rounded-pill">0</span>
+                  </li>
+                 
+                  <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
+                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
+                      <span class="badge bg-danger rounded-pill">0</span>
                   </li>
               </ul>
           </div>
@@ -67,7 +63,7 @@
                             <div class="d-flex justify-content-between align-items-center mb-2">
                             
                             
-                                <h4 class="fw-bold mb-2">Draw Spaces on Floor Plan<small>count</small></h4>
+                                <h4 class="fw-bold mb-2">Design<small>count</small></h4>
                                 <div class="d-flex justify-content-between align-items-center">
 
                                     <!-- <input type="search" class="form-control w-auto" placeholder="Search...">
@@ -109,6 +105,16 @@
                                 <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
                             </div>
                             <!-- end Konva Controls -->
+
+                            <!-- Saved Spaces -->
+                            <div class="mt-4">
+                                <h3>Saved Spaces</h3>
+                                <ul>
+                                    @foreach($spaces as $s)
+                                        <li>#{{ $s['id'] ?? '—' }} — {{ $s['name'] ?? 'Unnamed' }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         
                     </div>
                  @elseif($board == 'stall') 
@@ -201,15 +207,7 @@
                 <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
             </div>
 
-            <!-- Saved Spaces -->
-            <div class="mt-4">
-                <h3>Saved Spaces</h3>
-                <ul>
-                    @foreach($spaces as $s)
-                        <li>#{{ $s['id'] ?? '—' }} — {{ $s['name'] ?? 'Unnamed' }}</li>
-                    @endforeach
-                </ul>
-            </div>
+            
         </div>
     <!-- Stop First Design -->
 
