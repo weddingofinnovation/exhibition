@@ -54,7 +54,8 @@ class AdminPanelComponent extends Component
 
         // Prepare the data array asset('storage/exhibition/' . $newFileName),
         $eventData = [
-            'url' => asset('public/app','',$this->floorPlanUrl),
+            'url1' => asset('public/app','',$this->floorPlanUrl),
+            'url2' => asset('storage/app/public/floor_plans/' . $this->floorPlanUrl),
             'id' => $this->floorPlanId
         ];
 
