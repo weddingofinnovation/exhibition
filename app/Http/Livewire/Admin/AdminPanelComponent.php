@@ -62,10 +62,10 @@ class AdminPanelComponent extends Component
         dd($eventData);
  
         // Fire JS event to load Konva
-        $this->dispatchBrowserEvent('floorplanUploaded', [
-            'url' => asset(str_replace('app/public/', '', $this->floorPlanUrl)),
-            'id' => $this->floorPlanId
-        ]);
+        // $this->dispatchBrowserEvent('floorplanUploaded', [
+        //     'url' => asset(str_replace('app/public/', '', $this->floorPlanUrl)),
+        //     'id' => $this->floorPlanId
+        // ]);
     }
 
     public function loadFloorPlan($id)
