@@ -177,7 +177,7 @@
                       @endphp
 
                       @foreach ($findallfloorplanuploaded as $floor)
-                        {{$floor}}
+                        {{$floor->name}}
                       @endforeach
                     </div>
                  @elseif($board == 'launch')
