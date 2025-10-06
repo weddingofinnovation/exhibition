@@ -65,12 +65,22 @@
                     <div class="d-flex justify-content-between align-items-center mb-2">
                       
                      
-                        <h4 class="fw-bold mb-2">Leads<small>count</small></h4>
+                        <h4 class="fw-bold mb-2">Draw Spaces on Floor Plan<small>count</small></h4>
                           <div class="d-flex justify-content-between align-items-center">
-                            <input type="search" class="form-control w-auto" placeholder="Search...">
+
+                            <!-- <input type="search" class="form-control w-auto" placeholder="Search...">
                             <button class="btn btn-primary ml-4">
                                 <i class="bi bi-download"></i> Export
-                            </button>
+                            </button> -->
+
+                            <input type="text" wire:model="name" placeholder="Floor plan name" class="border p-2 mr-2">
+                            <input type="file" wire:model="image" accept="image/*">
+                            <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Floor Plan</button>
+
+                            <div wire:loading wire:target="image">Uploading…</div>
+                            @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
+                            @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
+
                           </div>
                       
                     </div>
@@ -101,15 +111,31 @@
               </div>
 
               
-                  <div class="con">
-                      <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+                  <div class="">
+                      <!-- start Konva Controls -->
+                        <div class="mb-2">
+                            <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
+                            <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
+                        </div>
+
+                        <!-- Konva Container -->
+                        <div id="konvaContainer" style="border:1px solid #ccc; width:100%; max-width:1200px; height:400px;" wire:ignore></div>
+
+                        <!-- Space Input -->
+                        <div class="mt-2">
+                            <input id="spaceNameInput" placeholder="Space name" class="border p-2">
+                            <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
+                        </div>
+                        <div class="mt-4">
+                          <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
+                          <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+                        </div>
+                      <!-- end Konva Controls -->
+
 
                       <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
 
-                      <div class="mt-4">
-                          <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                          <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
-                      </div>
+                      
                   </div>
               
                          
