@@ -55,10 +55,11 @@
         // Listen for Livewire event after upload
         window.addEventListener('floorplanUploaded', event => {
             console.log('✅ Floor plan loaded:', event.detail.url);
+            window.currentFloorPlanId = event.detail.id; // store it globally
             initKonva(event.detail.url);
         });
 
-        
+
 
         let stage, layer, rect;
         let isDrawing = false;
@@ -128,7 +129,7 @@
                 if (!rect) return alert('Draw rectangle first!');
                 const name = document.getElementById('spaceNameInput').value || 'Unnamed';
                 const coords = { x: rect.x(), y: rect.y(), width: rect.width(), height: rect.height() };
-                Livewire.emit('saveRect', { name, coords });
+                Livewire.emit('saveRect', { name, coords, floor_plan_id: window.currentFloorPlanId });
             });
 
             document.getElementById('clearCurrentBtn')?.addEventListener('click', () => {
