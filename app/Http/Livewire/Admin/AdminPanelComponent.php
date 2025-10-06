@@ -56,6 +56,7 @@ class AdminPanelComponent extends Component
         $plan = FloorPlan::create([
             'name' => $this->name,
             'image_url' => $url,
+            'image' => $fileName,
         ]);
 
         dd($plan);
