@@ -121,7 +121,7 @@
 
 
     @php 
-        $allPlans = DB::('floorplans')->get()
+        $allPlans = DB::table('floorplans')->get()
     @endphp
 
    <!-- Select existing floor plan -->
