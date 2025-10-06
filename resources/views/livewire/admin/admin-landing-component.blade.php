@@ -153,7 +153,7 @@
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.panel')}}">
+                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.panel', ['board' => 'upload-floor','floorPlanId' => 'null' ])}}">
                       <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
                         <h3 class="name">Panel</h3>
                       <!-- </a>  -->
