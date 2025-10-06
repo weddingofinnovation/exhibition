@@ -176,9 +176,16 @@
                         $findallfloorplanuploaded = DB::table('floorplans')->get()
                       @endphp
 
-                      @foreach ($findallfloorplanuploaded as $floor)
-                        {{$floor->name}}
-                      @endforeach
+                      
+                        <div class="row mb-5 pb-2">
+                            @foreach ($findallfloorplanuploaded as $floor)
+                                <div class="container">
+                                    {{$floor->name}}
+                                </div>
+                            @endforeach
+                        </div>
+                        <hr>
+                     
                     </div>
                  @elseif($board == 'launch')
                     <h1>Launch</h1>
