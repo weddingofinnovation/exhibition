@@ -24,25 +24,25 @@
                       <a href="{{route('admin.global')}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
                   </li>
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="{{route('admin.dashboard', ['board' => 'floorplan','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Plan</a>
+                      <a href="{{route('admin.panel', ['board' => 'floorplan','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Plan</a>
                       <span class="badge bg-danger rounded-pill">0</span>
                   </li>
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Design</a>
+                      <a href="{{route('admin.panel', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Design</a>
                       <span class="badge bg-danger rounded-pill">0</span>
                   </li>
                 
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Boxes</a>
+                      <a href="{{route('admin.panel', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor Boxes</a>
                       <span class="badge bg-danger rounded-pill">0</span>
                   </li>
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
+                      <a href="{{route('admin.panel', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link active bg-light text-success border-start border-3 border-success">Analytics</a>
                       <span class="badge bg-danger rounded-pill">0</span>
                   </li>
                  
                   <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
-                      <a href="{{route('admin.dashboard', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
+                      <a href="{{route('admin.panel', ['board' => 'design','floorPlanId' => 'null'])}}" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
                       <span class="badge bg-danger rounded-pill">0</span>
                   </li>
               </ul>
@@ -158,58 +158,23 @@
                             </div>
                         </div>
                     </div>
+
+                     <!-- Select Existing Floor Plan -->
+                    <div class="mb-3">
+                        <label>Select Existing Floor Plan</label>
+                        <select wire:model="floorPlanId" wire:change="$emit('loadFloorPlan', $event.target.value)">
+                            <option value="">-- Choose --</option>
+                            @foreach ($allPlans as $plan)
+                                <option value="{{ $plan->id }}">{{ $plan->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                  @endif
               
           </div>
         </div>
       </div>
      </div>
-
-
-    <!-- Start First Design -->
-        <div class="p-4">
-            <h2 class="text-xl font-semibold mb-4">Upload Floor Plan & Draw Boxes</h2>
-
-            <!-- Upload Form -->
-            <div class="mb-4">
-                <input type="text" wire:model="name" placeholder="Floor plan name" class="border p-2 mr-2">
-                <input type="file" wire:model="image" accept="image/*">
-                <button wire:click="saveFloorPlan" class="ml-2 bg-blue-600 text-white px-3 py-1 rounded">Save Floor Plan</button>
-
-                <div wire:loading wire:target="image">Uploading…</div>
-                @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
-                @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
-            </div>
-
-            <!-- Select Existing Floor Plan -->
-            <div class="mb-3">
-                <label>Select Existing Floor Plan</label>
-                <select wire:model="floorPlanId" wire:change="$emit('loadFloorPlan', $event.target.value)">
-                    <option value="">-- Choose --</option>
-                    @foreach ($allPlans as $plan)
-                        <option value="{{ $plan->id }}">{{ $plan->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-
-            <!-- Konva Controls -->
-            <div class="mb-2">
-                <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded">Draw Rectangle</button>
-                <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded">Clear Drawing</button>
-            </div>
-
-            <!-- Konva Container -->
-            <div id="konvaContainer" style="border:1px solid #ccc; width:100%; max-width:1200px; height:400px;" wire:ignore></div>
-
-            <!-- Space Input -->
-            <div class="mt-2">
-                <input id="spaceNameInput" placeholder="Space name" class="border p-2">
-                <button id="saveRectBtn" class="bg-blue-600 text-white px-3 py-1 rounded">Save Rectangle</button>
-            </div>
-
-            
-        </div>
-    <!-- Stop First Design -->
 
     @push('scripts')
 
