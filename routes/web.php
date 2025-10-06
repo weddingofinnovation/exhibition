@@ -407,7 +407,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
     Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
 
 
-    Route::get('/admin/panel', AdminPanelComponent::class)->name('admin.panel');
+    Route::get('/admin/panel/{board}/floor/{floorPlanId}', AdminPanelComponent::class)->name('admin.panel');
 
     Route::get('/admin/dashboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 

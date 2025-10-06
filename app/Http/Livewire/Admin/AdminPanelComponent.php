@@ -18,11 +18,13 @@ class AdminPanelComponent extends Component
     public $floorPlanId;
     public $floorPlanUrl;
     public $spaces = [];
+    public $board;
 
     protected $listeners = ['saveRect' => 'saveRect', 'loadFloorPlan' => 'loadFloorPlan'];
 
-    public function mount($floorPlanId = null)
+    public function mount($floorPlanId = null, $board = null)
     {
+        $this->board = $board;
         $this->floorPlanId = $floorPlanId;
         if ($floorPlanId) {
             $plan = FloorPlan::with('spaces')->find($floorPlanId);
