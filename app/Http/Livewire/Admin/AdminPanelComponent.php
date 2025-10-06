@@ -65,12 +65,12 @@ class AdminPanelComponent extends Component
         $this->reset(['name','image']);
 
         // Prepare the data array asset('storage/exhibition/' . $newFileName), 
-        //str_replace('app/public/', '', $this->floorPlanUrl)
+        //str_replace('app/public/', '', $this->floorPlanUrl)public/assets/image/exhibition/
 
         // $eventData = [
-        //     'url1' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
-        //     //'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
-        //     'id' => $this->floorPlanId
+        //    'url' => asset('public/assets/image/exhibition/' . $this->floorPlanUrl),
+        // //     //'url2' => asset('storage/app/public/floor_plans' . $this->floorPlanUrl),
+        //    'id' => $this->floorPlanId
         // ];
 
         // // Debug the data before dispatching
@@ -79,7 +79,7 @@ class AdminPanelComponent extends Component
         // Fire JS event to load Konva
         $this->dispatchBrowserEvent('floorplanUploaded', [
            // 'url' => asset(str_replace('/storage/floor_plans','','storage/app/public/floor_plans' . $this->floorPlanUrl)),
-           'url' => $url,
+           'url' => asset('public/assets/image/exhibition/' . $this->floorPlanUrl),
            'id' => $this->floorPlanId
         ]);
     }
@@ -89,13 +89,13 @@ class AdminPanelComponent extends Component
         $plan = Floorplan::with('spaces')->find($id);
         if (!$plan) return;
 
-        $this->floorPlanId = $plan->id;
-        $this->floorPlanUrl = $plan->image_url;
-        $this->spaces = $plan->spaces->toArray();
+            $this->floorPlanId = $plan->id;
+            $this->floorPlanUrl = $plan->image_url;
+            $this->spaces = $plan->spaces->toArray();
 
-        $this->dispatchBrowserEvent('floorplanUploaded', [
-            'url' => $this->floorPlanUrl,
-            'id' => $this->floorPlanId
+            $this->dispatchBrowserEvent('floorplanUploaded', [
+                'url' => $this->floorPlanUrl,
+                'id' => $this->floorPlanId
         ]);
     }
 
