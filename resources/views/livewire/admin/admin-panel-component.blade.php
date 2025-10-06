@@ -51,7 +51,7 @@
 </div>
 
 @push('scripts')
-<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+
 <script>
 let stage, layer, rect;
 let isDrawing = false;
