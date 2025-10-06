@@ -52,9 +52,9 @@ class AdminPanelComponent extends Component
         $this->spaces = [];
         $this->reset(['name','image']);
 
-        // Prepare the data array {{url('public/assets/image/exhibition/'.$evet->image)}}" 
+        // Prepare the data array
         $eventData = [
-            'url' => asset('app/public/'. $this->floorPlanUrl),
+            'url' => $this->floorPlanUrl,
             'id' => $this->floorPlanId
         ];
 
@@ -62,10 +62,10 @@ class AdminPanelComponent extends Component
         dd($eventData);
  
         // Fire JS event to load Konva
-        // $this->dispatchBrowserEvent('floorplanUploaded', [
-        //     'url' => asset(str_replace('app/public/', '', $this->floorPlanUrl)),
-        //     'id' => $this->floorPlanId
-        // ]);
+        $this->dispatchBrowserEvent('floorplanUploaded', [
+            'url' => $this->floorPlanUrl,
+            'id' => $this->floorPlanId
+        ]);
     }
 
     public function loadFloorPlan($id)
