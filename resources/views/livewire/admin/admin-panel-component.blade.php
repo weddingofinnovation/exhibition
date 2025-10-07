@@ -205,6 +205,7 @@
                                     <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded"> <i class="bi bi-pencil"></i></button>
                                     <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-eraser"></i></button>
                                     <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
+                                <button class="ml-2 bg-gray-300 px-3 py-1 rounded" wire:click="deleteSelected" @disabled(empty($selected))><i class="bi bi-trash3"></i></button>
                                 </div>
                         </div>
                     </div>
@@ -217,17 +218,7 @@
                                 ->get();
                         @endphp
 
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h5>All Floor Plans</h5>
-                            <button 
-                                class="btn btn-danger btn-sm" 
-                                wire:click="deleteSelected" 
-                                @disabled(empty($selected))
-                            >
-                                Delete Selected
-                            </button>
-                        </div>
-
+                       
                         <div class="row mb-5 pb-2">
                             @foreach ($findallfloorplanuploaded as $floor)
                                 @php 
