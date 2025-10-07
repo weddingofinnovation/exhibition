@@ -131,6 +131,17 @@ class AdminPanelComponent extends Component
         $this->dispatchBrowserEvent('rect-saved', ['id' => $space->id, 'name' => $name]);
     }
 
+    public $selected = [];
+
+    public function deleteSelected()
+    {
+        if (count($this->selected)) {
+            DB::table('floorplans')->whereIn('id', $this->selected)->delete();
+            $this->selected = [];
+            session()->flash('message', 'Selected floorplans deleted successfully!');
+        }
+    }
+    
   public function loadFloorData($floorId)
 {
     // Fetch the floor record (assuming you have a `FloorPlan` model or table)
