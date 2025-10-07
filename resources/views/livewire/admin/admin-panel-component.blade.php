@@ -211,7 +211,7 @@
 
                     <div class="container">
                       @php 
-                        $findallfloorplanuploaded = DB::table('floorplans')->get()
+                        $findallfloorplanuploaded = DB::table('floorplans')->orderBy('created_at','asc')->get()
                       @endphp
 
                       
