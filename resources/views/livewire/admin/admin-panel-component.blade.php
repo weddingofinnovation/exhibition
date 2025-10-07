@@ -233,7 +233,7 @@
                                                 $stallCount = $Countstalldesignedonfloor->count();
                                             @endphp
 
-                                        <span class="fs-xs text-muted">Stalls</span>
+                                        <span class="fs-xs text-muted">{{$stallCount}}Stalls</span>
                                      </div>
                                     </div>
                                     <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button>
