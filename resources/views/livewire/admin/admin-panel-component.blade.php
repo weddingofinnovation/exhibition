@@ -228,8 +228,7 @@
                                         <h5 class="mb-1 fs-xs">
                                           <a class="nav-link-style stretched-link" href="#">1</a>
                                         </h5>
-                                            
-
+                                           
                                         <span class="fs-xs text-muted">Stalls</span>
                                      </div>
                                     </div>
