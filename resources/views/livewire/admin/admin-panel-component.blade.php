@@ -217,28 +217,29 @@
                       
                         <div class="mb-5 pb-2">
                             @foreach ($findallfloorplanuploaded as $floor)
-                                <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                                    <div class="d-flex align-items-center position-relative">
-                                    
-                                    <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar">
-                                     <div class="ms-2">
-                                        <h4 class="mb-1 fs-base text-body">
-                                          <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a>
-                                        </h4>
-                                        <h5 class="mb-1 fs-xs">
-                                          <a class="nav-link-style stretched-link" href="#">1</a>
-                                        </h5>
-                                            @php 
-                                                $Countstalldesignedonfloor = DB::table('spaces')->where('floorplan_id', $floor->id)->get();
-                                                $stallCount = $Countstalldesignedonfloor->count();
-                                            @endphp
+                                <div class="col-3">
+                                    <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                                        <div class="d-flex align-items-center position-relative">
+                                        
+                                        <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar">
+                                        <div class="ms-2">
+                                            <h4 class="mb-1 fs-base text-body">
+                                            <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a>
+                                            </h4>
+                                            <h5 class="mb-1 fs-xs">
+                                            <a class="nav-link-style stretched-link" href="#">1</a>
+                                            </h5>
+                                                @php 
+                                                    $Countstalldesignedonfloor = DB::table('spaces')->where('floorplan_id', $floor->id)->get();
+                                                    $stallCount = $Countstalldesignedonfloor->count();
+                                                @endphp
 
-                                        <span class="fs-xs text-muted">{{$stallCount}}Stalls</span>
-                                     </div>
+                                            <span class="fs-xs text-muted">{{$stallCount}}Stalls</span>
+                                        </div>
+                                        </div>
+                                        <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button>
                                     </div>
-                                    <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button>
                                 </div>
-
                             @endforeach
                         </div>
                         <hr>
