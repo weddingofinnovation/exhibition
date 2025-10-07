@@ -23,6 +23,8 @@ class AdminPanelComponent extends Component
     public $board;
     public $stalls;
 
+    public $floorplan_id;
+
     protected $listeners = ['saveRect' => 'saveRect', 'loadFloorPlan' => 'loadFloorPlan'];
 
     public function mount($floorPlanId = null, $board = null)
@@ -186,7 +188,24 @@ class AdminPanelComponent extends Component
         ]);
     }
 
+    public function saveSpace($data)
+    {
+        Space::create([
+            'floorplan_id' => $data['floorplan_id'],
+            'name' => $data['name'],
+            'x' => $data['x'],
+            'y' => $data['y'],
+            'width' => $data['width'],
+            'height' => $data['height'],
+        ]);
+    }
 
+    public function deleteSpace($data)
+    {
+        Space::where('floorplan_id', $data['floorplan_id'])
+            ->where('name', $data['name'])
+            ->delete();
+    }
 
     public function render()
     {
