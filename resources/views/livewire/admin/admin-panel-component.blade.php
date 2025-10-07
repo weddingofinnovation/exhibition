@@ -245,12 +245,10 @@
 
 
                                 <div class="col-md-4 col-sm-6 mb-4">
-                                     <div 
-                class="card shadow-sm border-0 h-100 selectable-card {{ in_array($floor->id, $selected) ? 'selected' : '' }}" 
-                wire:click="toggleSelect({{ $floor->id }})"
-                style="cursor:pointer; transition: all 0.2s ease;"
-            >
-            
+                                     <div class="card shadow-sm border-0 h-100 selectable-card {{ in_array($floor->id, $selected) ? 'selected' : '' }}" 
+                                        wire:click="toggleSelect({{ $floor->id }})"
+                                        style="cursor:pointer; transition: all 0.2s ease;">
+                                    
                                         <div class="card-body d-flex align-items-center justify-content-between">
                                             <div class="d-flex align-items-center">
                                                 <div class="form-check mb-2">
@@ -258,11 +256,7 @@
                                                         type="checkbox" 
                                                         class="form-check-input" 
                                                         wire:model="selected" 
-                                                        value="{{ $floor->id }}"
-                                                    >
-                                                    <label class="form-check-label">
-                                                        Select
-                                                    </label>
+                                                        value="{{ $floor->id }}">
                                                 </div>
 
                                                 <img 
