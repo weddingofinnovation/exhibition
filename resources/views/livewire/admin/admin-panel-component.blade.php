@@ -189,7 +189,7 @@
 
                                     <input type="text" wire:model="name" placeholder="Floor plan name" class=" form-control p-2 mr-2">
                                     <input type="file" wire:model="image" accept="image/*" class="form-control">
-                                    <button wire:click="saveFloorPlan" class="form-control"><i class="bi bi-upload"></i></button>
+                                    <button wire:click="saveFloorPlan" class="bg-green-500 text-white px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
 
                                     <div wire:loading wire:target="image">Uploading…</div>
                                     @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
@@ -205,7 +205,7 @@
                                     <button id="drawRectBtn" class="bg-green-500 text-white px-3 py-1 rounded"> <i class="bi bi-pencil"></i></button>
                                     <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-eraser"></i></button>
                                     <button id="clearCurrentBtn" class="ml-2 bg-gray-300 px-3 py-1 rounded"><i class="bi bi-upload"></i></button>
-                                <button class="ml-2 bg-gray-300 px-3 py-1 rounded" wire:click="deleteSelected" @disabled(empty($selected))><i class="bi bi-trash3"></i></button>
+                                    <button class="ml-2 bg-gray-300 px-3 py-1 rounded" wire:click="deleteSelected" @disabled(empty($selected))><i class="bi bi-x"></i></button>
                                 </div>
                         </div>
                     </div>
