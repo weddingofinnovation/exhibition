@@ -228,7 +228,11 @@
                                         <h5 class="mb-1 fs-xs">
                                           <a class="nav-link-style stretched-link" href="#">1</a>
                                         </h5>
-                                           
+                                            @php 
+                                                $Countstalldesignedonfloor = DB::table('spaces')->where('floorplan_id', $floor->id)->get();
+                                                $stallCount = $Countstalldesignedonfloor->count();
+                                            @endphp
+
                                         <span class="fs-xs text-muted">Stalls</span>
                                      </div>
                                     </div>
