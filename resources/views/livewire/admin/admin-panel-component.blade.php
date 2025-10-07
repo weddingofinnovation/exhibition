@@ -224,7 +224,7 @@
                                     $stallCount = DB::table('spaces')->where('floorplan_id', $floor->id)->count();
                                 @endphp
 
-                                <div class="col-md-3 col-sm-6 mb-4">
+                                <div class="col-md-4 col-sm-6 mb-4">
                                     <div class="card shadow-sm border-0 h-100">
                                         <div class="card-body d-flex align-items-center justify-content-between">
                                             <div class="d-flex align-items-center">
@@ -253,11 +253,20 @@
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
 
-                                <div class="d-flex align-items-center justify-content-between w-100 mb-2"> 
-                                    <div class="d-flex align-items-center position-relative"> 
-                                        <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar"> <div class="ms-2"> <h4 class="mb-1 fs-base text-body"> <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a> </h4> <h5 class="mb-1 fs-xs"> <a class="nav-link-style stretched-link" href="#">1</a> </h5> @php $Countstalldesignedonfloor = DB::table('spaces')->where('floorplan_id', $floor->id)->get(); $stallCount = $Countstalldesignedonfloor->count(); @endphp <span class="fs-xs text-muted">{{$stallCount}}Stalls</span> </div> </div> <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button> </div>
+                            @foreach ($findallfloorplanuploaded as $floor)
+                                @php 
+                                    // Count stalls directly (no need to fetch all rows)
+                                    $stallCount = DB::table('spaces')->where('floorplan_id', $floor->id)->count();
+                                @endphp
+                                <div class="col-md-4 col-sm-6 mb-4">
+                                    <div class="card shadow-sm border-0 h-100">
 
+                                 <div class="d-flex align-items-center justify-content-between w-100 mb-2"> <div class="d-flex align-items-center position-relative"> <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar"> <div class="ms-2"> <h4 class="mb-1 fs-base text-body"> <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a> </h4> <h5 class="mb-1 fs-xs"> <a class="nav-link-style stretched-link" href="#">1</a> </h5> @php $Countstalldesignedonfloor = DB::table('spaces')->where('floorplan_id', $floor->id)->get(); $stallCount = $Countstalldesignedonfloor->count(); @endphp <span class="fs-xs text-muted">{{$stallCount}}Stalls</span> </div> </div> <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button> </div>
+                                 
+                                 </div>
+                                </div>
                             @endforeach
                         </div>
                         
