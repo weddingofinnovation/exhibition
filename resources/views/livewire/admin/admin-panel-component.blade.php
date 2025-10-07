@@ -505,7 +505,7 @@
 
         </script>
 
-        //load grap
+    
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
