@@ -216,7 +216,7 @@
                                 ->orderBy('created_at', 'desc')
                                 ->get();
                         @endphp
-                        
+
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5>All Floor Plans</h5>
                             <button 
@@ -235,8 +235,22 @@
                                     $stallCount = DB::table('spaces')->where('floorplan_id', $floor->id)->count();
                                 @endphp
 
+                                <style>
+                                    .selectable-card.selected {
+                                        border: 2px solid #007bff !important;
+                                        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5) !important;
+                                        transform: scale(1.03);
+                                    }
+                                </style>
+
+
                                 <div class="col-md-4 col-sm-6 mb-4">
-                                    <div class="card shadow-sm border-0 h-100">
+                                     <div 
+                class="card shadow-sm border-0 h-100 selectable-card {{ in_array($floor->id, $selected) ? 'selected' : '' }}" 
+                wire:click="toggleSelect({{ $floor->id }})"
+                style="cursor:pointer; transition: all 0.2s ease;"
+            >
+            
                                         <div class="card-body d-flex align-items-center justify-content-between">
                                             <div class="d-flex align-items-center">
                                                 <div class="form-check mb-2">

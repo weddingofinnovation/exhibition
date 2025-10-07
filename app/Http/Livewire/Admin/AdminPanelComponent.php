@@ -141,41 +141,50 @@ class AdminPanelComponent extends Component
             session()->flash('message', 'Selected floorplans deleted successfully!');
         }
     }
-    
-  public function loadFloorData($floorId)
-{
-    // Fetch the floor record (assuming you have a `FloorPlan` model or table)
-    $floor = DB::table('floorplans')->find($floorId);
 
-    if (!$floor) {
-        $this->dispatchBrowserEvent('notify', [
-            'type' => 'error',
-            'message' => 'Floor plan not found.'
+    public function toggleSelect($id)
+    {
+        if (in_array($id, $this->selected)) {
+            $this->selected = array_diff($this->selected, [$id]);
+        } else {
+            $this->selected[] = $id;
+        }
+    }
+
+    public function loadFloorData($floorId)
+    {
+        // Fetch the floor record (assuming you have a `FloorPlan` model or table)
+        $floor = DB::table('floorplans')->find($floorId);
+
+        if (!$floor) {
+            $this->dispatchBrowserEvent('notify', [
+                'type' => 'error',
+                'message' => 'Floor plan not found.'
+            ]);
+            return;
+        }
+
+        // Assign floor info
+        $this->floorPlanId = $floor->id;
+        $this->floorPlanUrl = asset('public/assets/image/exhibition/' . $floor->image);
+    // 'url' => asset('public/assets/image/exhibition/' . $fileName),
+
+        // Check if `spaces` table exists before querying
+        if (Schema::hasTable('spaces')) {
+            $this->spaces = Space::where('floorplan_id', $floor->id)
+                ->select('id', 'name', 'x', 'y', 'width', 'height', 'area', 'color')
+                ->get()
+                ->toArray();
+        } else {
+            $this->spaces = [];
+        }
+
+        // Send data to JavaScript for Konva rendering
+        $this->dispatchBrowserEvent('load-floorplan', [
+            'url' => $this->floorPlanUrl,
+            'stalls' => $this->spaces
         ]);
-        return;
     }
-
-    // Assign floor info
-    $this->floorPlanId = $floor->id;
-    $this->floorPlanUrl = asset('public/assets/image/exhibition/' . $floor->image);
-   // 'url' => asset('public/assets/image/exhibition/' . $fileName),
-
-    // Check if `spaces` table exists before querying
-    if (Schema::hasTable('spaces')) {
-        $this->spaces = Space::where('floorplan_id', $floor->id)
-            ->select('id', 'name', 'x', 'y', 'width', 'height', 'area', 'color')
-            ->get()
-            ->toArray();
-    } else {
-        $this->spaces = [];
-    }
-
-    // Send data to JavaScript for Konva rendering
-    $this->dispatchBrowserEvent('load-floorplan', [
-        'url' => $this->floorPlanUrl,
-        'stalls' => $this->spaces
-    ]);
-}
 
 
 
