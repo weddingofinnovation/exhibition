@@ -228,15 +228,15 @@
                                         <h5 class="mb-1 fs-xs">
                                           <a class="nav-link-style stretched-link" href="#">1</a>
                                         </h5>
-                                            @php 
+                                            <!-- @php 
                                                 $Countstalldesignedonfloor = DB::table('stalls')->where('floorplan_id', $floor->id)->get();
                                                 $stallCount = $Countstalldesignedonfloor->count();
-                                            @endphp
+                                            @endphp -->
 
-                                        <span class="fs-xs text-muted">{{$stallCount}} Stalls</span>
+                                        <span class="fs-xs text-muted">Stalls</span>
                                      </div>
                                     </div>
-                                    <button class="btn btn-sm btn-outline-secondary ms-2">Map</button>
+                                    <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">Map</button>
                                 </div>
 
                             @endforeach
@@ -252,7 +252,7 @@
                         <button id="drawRectBtn" class="form-control">Draw Rectangle</button>
                     </div>
 
-                    <div id="konvaContainer" style="width: 800px; height: 400px; border:1px solid #ccc;"></div>
+                    <div id="loadkonvaContainer" style="width: 800px; height: 400px; border:1px solid #ccc;"></div>
                  @endif
               
           </div>
@@ -359,151 +359,218 @@
             let scaleMetersPerPixel = parseFloat(document.getElementById('scaleInput').value);
             let savedSpaces = []; // Example: load from DB [{coordinates: {x:..., y:..., width:..., height:...}, name: "A"}]
 
-     function initKonva(imageURL = null, savedSpacesData = []) {
-     const container = document.getElementById('konvaContainer');
-    container.innerHTML = "";
-    rect = null;
-    savedSpaces = savedSpacesData;
+            function initKonva(imageURL = null, savedSpacesData = []) {
+            const container = document.getElementById('konvaContainer');
+            container.innerHTML = "";
+            rect = null;
+            savedSpaces = savedSpacesData;
 
-    stage = new Konva.Stage({
-        container: 'konvaContainer',
-        width: container.clientWidth,
-        height: container.clientHeight
-    });
-
-    layer = new Konva.Layer();
-    stage.add(layer);
-
-    // Draw grid
-    drawGrid(stage.width(), stage.height(), layer);
-
-    // Load floor plan image if provided
-    if (imageURL) {
-        const img = new Image();
-        img.onload = function () {
-            const floorImage = new Konva.Image({
-                image: img,
-                width: stage.width(),
-                height: stage.height()
+            stage = new Konva.Stage({
+                container: 'konvaContainer',
+                width: container.clientWidth,
+                height: container.clientHeight
             });
-            layer.add(floorImage);
-            layer.batchDraw();
-            drawSavedRectangles();
-        };
-        img.src = imageURL;
-    } else {
-        drawSavedRectangles();
-    }
 
-    // Rectangle drawing
-    stage.on('mousedown', () => {
-        if (!isDrawing) return;
-        const pos = stage.getPointerPosition();
-        rect = new Konva.Rect({
-            x: pos.x,
-            y: pos.y,
-            width: 0,
-            height: 0,
-            stroke: 'red',
-            strokeWidth: 2
-        });
-        layer.add(rect);
+            layer = new Konva.Layer();
+            stage.add(layer);
 
-        areaText = new Konva.Text({
-            x: pos.x,
-            y: pos.y - 20,
-            text: '0 sqm',
-            fontSize: 14,
-            fill: 'black'
-        });
-        layer.add(areaText);
-    });
+            // Draw grid
+            drawGrid(stage.width(), stage.height(), layer);
 
-    stage.on('mousemove', () => {
-        if (!isDrawing || !rect) return;
-        const pos = stage.getPointerPosition();
-        rect.width(pos.x - rect.x());
-        rect.height(pos.y - rect.y());
+            // Load floor plan image if provided
+            if (imageURL) {
+                const img = new Image();
+                img.onload = function () {
+                    const floorImage = new Konva.Image({
+                        image: img,
+                        width: stage.width(),
+                        height: stage.height()
+                    });
+                    layer.add(floorImage);
+                    layer.batchDraw();
+                    drawSavedRectangles();
+                };
+                img.src = imageURL;
+            } else {
+                drawSavedRectangles();
+            }
 
-        const widthMeters = rect.width() * scaleMetersPerPixel;
-        const heightMeters = rect.height() * scaleMetersPerPixel;
-        const area = widthMeters * heightMeters;
-
-        areaText.text(`W: ${widthMeters.toFixed(2)}m H: ${heightMeters.toFixed(2)}m Area: ${area.toFixed(2)} sqm`);
-        layer.batchDraw();
-    });
-
-    stage.on('mouseup', () => {
-        if (!isDrawing) return;
-        isDrawing = false;
-        // Optionally: save rectangle to DB here via Livewire.emit()
-    });
-    }
-
-        // Draw saved rectangles from DB
-        function drawSavedRectangles() {
-            savedSpaces.forEach(space => {
-                const coords = space.coordinates;
-                const savedRect = new Konva.Rect({
-                    x: coords.x,
-                    y: coords.y,
-                    width: coords.width,
-                    height: coords.height,
-                    stroke: 'blue',
-                    strokeWidth: 2,
-                    name: 'savedRect'
+            // Rectangle drawing
+            stage.on('mousedown', () => {
+                if (!isDrawing) return;
+                const pos = stage.getPointerPosition();
+                rect = new Konva.Rect({
+                    x: pos.x,
+                    y: pos.y,
+                    width: 0,
+                    height: 0,
+                    stroke: 'red',
+                    strokeWidth: 2
                 });
-                layer.add(savedRect);
+                layer.add(rect);
 
-                const widthMeters = coords.width * scaleMetersPerPixel;
-                const heightMeters = coords.height * scaleMetersPerPixel;
-                const area = widthMeters * heightMeters;
-
-                const text = new Konva.Text({
-                    x: coords.x,
-                    y: coords.y - 20,
-                    text: `${space.name || 'Unnamed'} W:${widthMeters.toFixed(2)} H:${heightMeters.toFixed(2)} Area:${area.toFixed(2)} sqm`,
+                areaText = new Konva.Text({
+                    x: pos.x,
+                    y: pos.y - 20,
+                    text: '0 sqm',
                     fontSize: 14,
                     fill: 'black'
                 });
-                layer.add(text);
+                layer.add(areaText);
             });
-            layer.draw();
-        }
 
-        // Draw 1 sqm grid
-        function drawGrid(width, height, layer) {
-            const gridSize = 1 / scaleMetersPerPixel; // pixels per meter
-            for (let i = 0; i <= width; i += gridSize) {
-                layer.add(new Konva.Line({
-                    points: [i, 0, i, height],
-                    stroke: '#ddd',
-                    strokeWidth: 1
-                }));
+            stage.on('mousemove', () => {
+                if (!isDrawing || !rect) return;
+                const pos = stage.getPointerPosition();
+                rect.width(pos.x - rect.x());
+                rect.height(pos.y - rect.y());
+
+                const widthMeters = rect.width() * scaleMetersPerPixel;
+                const heightMeters = rect.height() * scaleMetersPerPixel;
+                const area = widthMeters * heightMeters;
+
+                areaText.text(`W: ${widthMeters.toFixed(2)}m H: ${heightMeters.toFixed(2)}m Area: ${area.toFixed(2)} sqm`);
+                layer.batchDraw();
+            });
+
+            stage.on('mouseup', () => {
+                if (!isDrawing) return;
+                isDrawing = false;
+                // Optionally: save rectangle to DB here via Livewire.emit()
+            });
             }
-            for (let j = 0; j <= height; j += gridSize) {
-                layer.add(new Konva.Line({
-                    points: [0, j, width, j],
-                    stroke: '#ddd',
-                    strokeWidth: 1
-                }));
-            }
-            layer.draw();
-        }
 
-        // Activate drawing
-        document.getElementById('drawRectBtn').addEventListener('click', () => { isDrawing = true; });
+                // Draw saved rectangles from DB
+                function drawSavedRectangles() {
+                    savedSpaces.forEach(space => {
+                        const coords = space.coordinates;
+                        const savedRect = new Konva.Rect({
+                            x: coords.x,
+                            y: coords.y,
+                            width: coords.width,
+                            height: coords.height,
+                            stroke: 'blue',
+                            strokeWidth: 2,
+                            name: 'savedRect'
+                        });
+                        layer.add(savedRect);
 
-        // Update scale dynamically
-        document.getElementById('scaleInput').addEventListener('change', (e) => {
-            scaleMetersPerPixel = parseFloat(e.target.value);
-            initKonva(); // redraw stage with new scale
-        });
+                        const widthMeters = coords.width * scaleMetersPerPixel;
+                        const heightMeters = coords.height * scaleMetersPerPixel;
+                        const area = widthMeters * heightMeters;
 
-        // Example: load floor plan with existing spaces
-        // initKonva('floorplan.jpg', savedSpaces);
+                        const text = new Konva.Text({
+                            x: coords.x,
+                            y: coords.y - 20,
+                            text: `${space.name || 'Unnamed'} W:${widthMeters.toFixed(2)} H:${heightMeters.toFixed(2)} Area:${area.toFixed(2)} sqm`,
+                            fontSize: 14,
+                            fill: 'black'
+                        });
+                        layer.add(text);
+                    });
+                    layer.draw();
+                }
 
-</script>
+                // Draw 1 sqm grid
+                function drawGrid(width, height, layer) {
+                    const gridSize = 1 / scaleMetersPerPixel; // pixels per meter
+                    for (let i = 0; i <= width; i += gridSize) {
+                        layer.add(new Konva.Line({
+                            points: [i, 0, i, height],
+                            stroke: '#ddd',
+                            strokeWidth: 1
+                        }));
+                    }
+                    for (let j = 0; j <= height; j += gridSize) {
+                        layer.add(new Konva.Line({
+                            points: [0, j, width, j],
+                            stroke: '#ddd',
+                            strokeWidth: 1
+                        }));
+                    }
+                    layer.draw();
+                }
+
+                // Activate drawing
+                document.getElementById('drawRectBtn').addEventListener('click', () => { isDrawing = true; });
+
+                // Update scale dynamically
+                document.getElementById('scaleInput').addEventListener('change', (e) => {
+                    scaleMetersPerPixel = parseFloat(e.target.value);
+                    initKonva(); // redraw stage with new scale
+                });
+
+                // Example: load floor plan with existing spaces
+                // initKonva('floorplan.jpg', savedSpaces);
+
+        </script>
+
+        //load grap
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+            Livewire.on('loadfloorplan', e => {
+                console.log('Loading floor plan:', e);
+
+                const container = document.getElementById('loadkonvaContainer');
+                if (!container) return;
+
+                const stage = new Konva.Stage({
+                    container: 'konvaContainer',
+                    width: container.clientWidth,
+                    height: container.clientHeight
+                });
+
+                const layer = new Konva.Layer();
+                stage.add(layer);
+
+                const imageObj = new Image();
+                imageObj.onload = function() {
+                    const bg = new Konva.Image({
+                        image: imageObj,
+                        width: stage.width(),
+                        height: stage.height()
+                    });
+                    layer.add(bg);
+                    layer.batchDraw();
+
+                    // Load all stalls from DB
+                    e.stalls.forEach(stall => {
+                        const rect = new Konva.Rect({
+                            x: stall.x,
+                            y: stall.y,
+                            width: stall.width,
+                            height: stall.height,
+                            fill: stall.color || 'rgba(52,152,219,0.4)',
+                            stroke: 'black',
+                            strokeWidth: 1,
+                            draggable: false
+                        });
+
+                        const label = new Konva.Text({
+                            x: stall.x + 5,
+                            y: stall.y + 5,
+                            text: stall.name + "\n" + stall.area + " sqm",
+                            fontSize: 12,
+                            fill: '#000'
+                        });
+
+                        // On click show stall info
+                        rect.on('click', () => {
+                            alert(`Stall: ${stall.name}\nArea: ${stall.area} sqm`);
+                        });
+
+                        layer.add(rect);
+                        layer.add(label);
+                    });
+
+                    layer.batchDraw();
+                };
+
+                imageObj.src = e.url;
+                });
+            });
+        </script>
 
     @endpush
 </main>

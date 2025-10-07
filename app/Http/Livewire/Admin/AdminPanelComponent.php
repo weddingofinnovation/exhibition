@@ -5,6 +5,8 @@ namespace App\Http\Livewire\Admin;
 use App\Models\Floorplan;
 use App\Models\Space;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -19,6 +21,7 @@ class AdminPanelComponent extends Component
     public $floorPlanUrl;
     public $spaces = [];
     public $board;
+    public $stalls;
 
     protected $listeners = ['saveRect' => 'saveRect', 'loadFloorPlan' => 'loadFloorPlan'];
 
@@ -127,6 +130,43 @@ class AdminPanelComponent extends Component
 
         $this->dispatchBrowserEvent('rect-saved', ['id' => $space->id, 'name' => $name]);
     }
+
+  public function loadFloorData($floorId)
+{
+    // Fetch the floor record (assuming you have a `FloorPlan` model or table)
+    $floor = DB::table('floorplans')->find($floorId);
+
+    if (!$floor) {
+        $this->dispatchBrowserEvent('notify', [
+            'type' => 'error',
+            'message' => 'Floor plan not found.'
+        ]);
+        return;
+    }
+
+    // Assign floor info
+    $this->floorPlanId = $floor->id;
+    $this->floorPlanUrl = asset('public/assets/image/exhibition/' . $floor->image);
+   // 'url' => asset('public/assets/image/exhibition/' . $fileName),
+
+    // Check if `spaces` table exists before querying
+    if (Schema::hasTable('spaces')) {
+        $this->spaces = Space::where('floorplan_id', $floor->id)
+            ->select('id', 'name', 'x', 'y', 'width', 'height', 'area', 'color')
+            ->get()
+            ->toArray();
+    } else {
+        $this->spaces = [];
+    }
+
+    // Send data to JavaScript for Konva rendering
+    $this->dispatchBrowserEvent('load-floorplan', [
+        'url' => $this->floorPlanUrl,
+        'stalls' => $this->spaces
+    ]);
+}
+
+
 
     public function render()
     {
