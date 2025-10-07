@@ -189,7 +189,7 @@
 
                                     <input type="text" wire:model="name" placeholder="Floor plan name" class=" form-control p-2 mr-2">
                                     <input type="file" wire:model="image" accept="image/*" class="form-control">
-                                    <button wire:click="saveFloorPlan" class="btn btn-sm btn-primary form-control"><i class="bi bi-upload"></i></button>
+                                    <button wire:click="saveFloorPlan" class="form-control"><i class="bi bi-upload"></i></button>
 
                                     <div wire:loading wire:target="image">Uploading…</div>
                                     @error('image') <div class="text-red-600">{{ $message }}</div> @enderror
