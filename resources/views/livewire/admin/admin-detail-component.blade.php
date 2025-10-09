@@ -842,9 +842,8 @@
           </div>
         </div>
 
-         <div class="container">
-            <div class="row">
-              <div class="col-md-6 offset-md-3">
+        <div class="container">
+            <div class="col-12">
                 
               <div class="mb-4 mb-lg-5">
                   <!-- Nav tabs-->
@@ -1672,10 +1671,9 @@
 
                   </div>
               </div>
-
-              </div>
-            </div>
+              
           </div>
+        </div>
 
     {{--<div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">
