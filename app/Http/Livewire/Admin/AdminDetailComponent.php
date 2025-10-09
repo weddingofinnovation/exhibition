@@ -389,7 +389,10 @@ class AdminDetailComponent extends Component
       $agenda->starttime = $this->starttime;
       $agenda->endtime = $this->endtime;
       $agenda->desc = $this->desc;
-      $agenda->event_id = Event::where('slug', $this->slug)->id();
+
+      $agendao = Event::where('slug', $this->slug)->first();
+      $agenda->event_id = $agendao->id;
+
       $agenda->status = '1'; 
       $agenda->admstatus = '1';
       $agenda->user_id = Auth::user()->id;
