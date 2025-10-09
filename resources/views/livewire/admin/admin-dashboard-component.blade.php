@@ -6,6 +6,7 @@
        
      <div class="container mt-2">
       <div class="row">
+        
         <div class="col-3">
           <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
               <!-- Logo & Name -->
@@ -772,6 +773,7 @@
               @endif
           </div>
         </div>
+
       </div>
      </div>
     
