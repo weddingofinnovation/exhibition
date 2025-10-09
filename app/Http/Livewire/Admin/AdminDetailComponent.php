@@ -380,7 +380,7 @@ class AdminDetailComponent extends Component
     public $date;
     public $starttime;
     public $endtime;
-    public $activity;
+    public $desc;
 
     public function addagenda()
     {
