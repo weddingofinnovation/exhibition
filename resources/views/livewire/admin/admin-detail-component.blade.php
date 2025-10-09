@@ -1739,18 +1739,18 @@
         </div>
 
 
-        
+        <div class="container">
           <form wire:submit.prevent="addagenda">
-              <input type="text" class="form-control" placeholder="date" wire:model.lazy="date">
-              <input type="text" class="form-control" placeholder="start time" wire:model.lazy="starttime">
+              <input type="date" class="form-control" placeholder="date" wire:model.lazy="date">
+              <input type="time" class="form-control" placeholder="start time" wire:model.lazy="starttime">
               
-              <input type="text" class="form-control" placeholder="end time" wire:model.lazy="endtime">
+              <input type="time" class="form-control" placeholder="end time" wire:model.lazy="endtime">
               
               <input type="text" class="form-control" placeholder="activity" wire:model.lazy="desc">
 
               <button class="form-control  btn btn-primary" type="submit">Submit</button>
           </form>
-
+        </div>
 
     {{--<div class="handheld-toolbar">
           <div class="d-table table-layout-fixed w-100">
