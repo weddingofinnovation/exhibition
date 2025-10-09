@@ -5,6 +5,9 @@
             $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
         @endphp
 
+       
+
+       <div class="d-none d-lg-block">
 
         <div class="container mt-2">
           <div class="row">
@@ -898,7 +901,7 @@
           </div>
         </div>
     
-
+      </div>
 
         <div class="d-lg-none">
           <div class="container">
