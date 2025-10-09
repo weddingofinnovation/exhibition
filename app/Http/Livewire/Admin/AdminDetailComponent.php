@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\DB;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\BrandsImport;
+use App\Models\Agenda;
 
 class AdminDetailComponent extends Component
 {  
@@ -375,6 +376,26 @@ class AdminDetailComponent extends Component
   }
 
     use WithPagination;
+
+    public $date;
+    public $starttime;
+    public $endtime;
+    public $activity;
+
+    public function addagenda()
+    {
+      $agenda = New Agenda();
+      $agenda->date = $this->date;
+      $agenda->starttime = $this->starttime;
+      $agenda->endtime = $this->endtime;
+      $agenda->desc = $this->desc;
+      $agenda->event_id = Event::where('slug', $this->slug)->id();
+      $agenda->status = '1'; 
+      $agenda->admstatus = '1';
+      $agenda->user_id = Auth::user()->id;
+      $agenda->save();
+    }
+
     public function render()
     {
         $evento = Event::where('slug', $this->slug)->first();

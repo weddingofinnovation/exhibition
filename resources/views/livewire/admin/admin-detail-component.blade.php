@@ -5,8 +5,6 @@
             $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
         @endphp
 
-       
-
        <div class="d-none d-lg-block">
 
         <div class="container mt-2">
@@ -901,7 +899,7 @@
           </div>
         </div>
     
-      </div>
+       </div>
 
         <div class="d-lg-none">
           <div class="container">
@@ -1740,30 +1738,42 @@
           </div>
         </div>
 
+
         
+          <form wire:submit.prevent="addagenda">
+              <input type="text" class="form-control" placeholder="date" wire:model.lazy="date">
+              <input type="text" class="form-control" placeholder="start time" wire:model.lazy="starttime">
+              
+              <input type="text" class="form-control" placeholder="end time" wire:model.lazy="endtime">
+              
+              <input type="text" class="form-control" placeholder="activity" wire:model.lazy="desc">
+
+              <button class="form-control  btn btn-primary" type="submit">Submit</button>
+          </form>
+
 
     {{--<div class="handheld-toolbar">
-      <div class="d-table table-layout-fixed w-100">
-        <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar">
-          <span class="handheld-toolbar-icon">
-          <i class="ci-filter-alt"></i></span>
-          <span class="handheld-toolbar-label">Filters</span>
-        </a>
-        <a class="d-table-cell handheld-toolbar-item" href="">
-          <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-          <span class="handheld-toolbar-label">Status</span>
-        </a>
-        <a class="d-table-cell handheld-toolbar-item" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" onclick="window.scrollTo(0, 0)">
-          <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
-        <span class="handheld-toolbar-label">Edit</span></a>
-        
-        <a class="d-table-cell handheld-toolbar-item" href="">
-          <span class="handheld-toolbar-icon"><i class="ci-cart"></i>
-          <span class="badge bg-primary rounded-pill ms-1">4</span></span>
-          <span class="handheld-toolbar-label">$265.00</span>
-        </a>
-      </div>
-    </div>--}}
+          <div class="d-table table-layout-fixed w-100">
+            <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar">
+              <span class="handheld-toolbar-icon">
+              <i class="ci-filter-alt"></i></span>
+              <span class="handheld-toolbar-label">Filters</span>
+            </a>
+            <a class="d-table-cell handheld-toolbar-item" href="">
+              <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+              <span class="handheld-toolbar-label">Status</span>
+            </a>
+            <a class="d-table-cell handheld-toolbar-item" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" onclick="window.scrollTo(0, 0)">
+              <span class="handheld-toolbar-icon"><i class="ci-menu"></i></span>
+            <span class="handheld-toolbar-label">Edit</span></a>
+            
+            <a class="d-table-cell handheld-toolbar-item" href="">
+              <span class="handheld-toolbar-icon"><i class="ci-cart"></i>
+              <span class="badge bg-primary rounded-pill ms-1">4</span></span>
+              <span class="handheld-toolbar-label">$265.00</span>
+            </a>
+          </div>
+        </div>--}}
 
     <div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">
