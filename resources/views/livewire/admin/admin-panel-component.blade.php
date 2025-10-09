@@ -266,10 +266,7 @@
                                                     <small class="text-muted">{{ $stallCount }} Stalls</small>
                                                 </div>
                                             </div>
-                                            <button 
-                                                id="loadkonvaContainer" 
-                                                class="btn btn-sm btn-outline-secondary ms-2"
-                                            >
+                                            <button id="loadkonvaContainer" class="btn btn-sm btn-outline-secondary ms-2">
                                                 Map
                                             </button>
                                         </div>
