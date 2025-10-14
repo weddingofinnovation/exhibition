@@ -181,16 +181,24 @@ public $selectedYear;
 
         $leads = Lead::whereIn('id', $this->selectedLeads)->get();
         
-        dd($leads);
         
+
         foreach ($leads as $lead) {
             $event = Event::find($lead->event_id);
 
-            if ($event) {
-                Mail::to($lead->email)->send(new EventToClient($lead, $event));
-            }
+            // if ($event) {
+            //     Mail::to($lead->email)->send(new EventToClient($lead, $event));
+            // }
+
+             if ($event) {
+                  Mail::to($lead->email)->send(new EventToClient($lead, $event));
+                  dump("Email sent to: " . $lead->email);
+              } else {
+                  dump("Skipped (no event) for: " . $lead->email);
+              }
         }
 
+        dd('Bulk email process completed.');
         session()->flash('success', count($leads) . ' emails sent successfully!');
         
         // reset mode
