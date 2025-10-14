@@ -368,18 +368,22 @@ class AdminDetailComponent extends Component
     {
       
          
-        $user = Lead::find($id);
+        $event = Lead::find($id);
 
-        if (!$user) {
+        if (!$event) {
             session()->flash('error', 'User not found.');
             return;
         }
 
+        // Mail::to('team@exhibition.org.in')->send(
+        //     new EventToClient ($this->subject ?? 'Hello from our app', $this->message ?? 'This is a test email.')
+        // );
+
         Mail::to('team@exhibition.org.in')->send(
-            new EventToClient ($this->subject ?? 'Hello from our app', $this->message ?? 'This is a test email.')
+            new EventToClient($event)
         );
 
-        session()->flash('success', 'Email sent to ' . $user->name);
+        session()->flash('success', 'Email sent to ' . $event->name);
     
 
     }
