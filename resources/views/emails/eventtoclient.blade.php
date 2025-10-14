@@ -7,10 +7,6 @@
     <title>The Exhbition Network</title>
 </head>
     <body>
-        {{$event->email}}
-
-        
-
         @component('mail::message')
             # Introduction
 
