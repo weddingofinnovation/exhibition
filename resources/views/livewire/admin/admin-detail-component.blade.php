@@ -837,8 +837,7 @@
                                         @else
                                           <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{$resulto}}</a>
                                         @endif
-                                        
-                                        {{$eventol}}
+                                       
                                           <ul class="dropdown-menu" width="auto">
                                             <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}})">Email</a></li>
                                             <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Interest</a></li>
