@@ -23,9 +23,10 @@ class EventToClient extends Mailable
      *
      * @return void
      */
-    public function __construct(Lead $user)
+    public function __construct(Lead $user , Event $event)
     {
        $this->user = $user;
+       $this->event = $event;
     }
 
     /**
