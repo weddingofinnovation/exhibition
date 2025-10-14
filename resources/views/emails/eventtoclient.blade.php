@@ -21,8 +21,8 @@
                     <img src="https://via.placeholder.com/220x48?text=Delhi+Ethnic+Expo+Logo" alt="Delhi Ethnic Expo" width="220" style="display:block;border:0;outline:none;text-decoration:none;">
                   </td>
                   <td align="right" style="font-size:13px;color:#6b7280;">
-                    <strong>17–18 January</strong><br>
-                    Pragati Maidan, New Delhi
+                    <strong>17–18 January {{$event->startdate}}</strong><br>
+                    Pragati Maidan, New Delhi {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
                   </td>
                 </tr>
               </table>
@@ -40,7 +40,7 @@
           <tr>
             <td style="padding:8px 28px 18px 28px;">
               <h1 style="margin:0;font-size:22px;color:#0f1724;line-height:1.2;font-weight:700;">
-                Delhi Ethnic Expo 2025
+                Delhi Ethnic Expo 2025 {{ucwords($event->eventname) }}
               </h1>
               <p style="margin:10px 0 0 0;color:#374151;font-size:15px;line-height:1.5;">
                 India’s Largest Ethnic & Fashion Business Networking Platform — a focused 2-day B2B market to connect manufacturers, brands, and verified buyers at Pragati Maidan.
@@ -73,7 +73,7 @@
           <!-- Main CTA -->
           <tr>
             <td align="center" style="padding:12px 28px 22px 28px;">
-              <a href="https://www.delhiethnicexpo.com/book-booth" target="_blank" style="text-decoration:none;">
+              <a href="{{route('event.exhibit', ['board' => 'business'])}}" target="_blank" style="text-decoration:none;">
                 <table cellpadding="0" cellspacing="0" role="presentation" style="margin:0 auto;">
                   <tr>
                     <td style="background:#e11d48;border-radius:6px;padding:12px 20px;color:#ffffff;font-weight:700;font-size:15px;">
@@ -155,7 +155,7 @@
                       <span style="display:inline-block;padding:10px 14px;border-radius:6px;border:1px solid #0f1724;font-weight:700;font-size:13px;color:#0f1724;">Email Us</span>
                     </a>
                     <a href="tel:+91XXXXXXXXXX" style="text-decoration:none;">
-                      <span style="display:inline-block;padding:10px 14px;border-radius:6px;background:#0f1724;color:#ffffff;font-weight:700;font-size:13px;">Call +91-XXXXXXXXXX</span>
+                      <span style="display:inline-block;padding:10px 14px;border-radius:6px;background:#0f1724;color:#ffffff;font-weight:700;font-size:13px;">Call +91 999-185-6776</span>
                     </a>
                   </td>
                 </tr>
@@ -168,7 +168,7 @@
             <td style="padding:16px 28px;background:#fafafa;color:#6b7280;font-size:13px;border-top:1px solid #eef2f6;">
               <p style="margin:0 0 6px 0;">
                 The Exhibition Network – Help Center<br>
-                📧 <a href="mailto:info@delhiethnicexpo.com" style="color:#6b7280;text-decoration:underline;">info@delhiethnicexpo.com</a> • 🌐 <a href="https://www.delhiethnicexpo.com" style="color:#6b7280;text-decoration:underline;">www.delhiethnicexpo.com</a>
+                📧 <a href="mailto:team@exhibition.com" style="color:#6b7280;text-decoration:underline;">team@exhibition.org.in</a> • 🌐 <a href="{{route('event.details', ['slug' => $event->slug])}}" style="color:#6b7280;text-decoration:underline;">www.delhiethnicexpo.com</a>
               </p>
               <p style="margin:0;color:#9aa3ad;font-size:12px;">
                 You are receiving this email because you opted in to receive updates about trade shows and business events. If you prefer not to receive these emails, <a href="%%unsubscribe_link%%" style="color:#9aa3ad;text-decoration:underline;">unsubscribe here</a>.
