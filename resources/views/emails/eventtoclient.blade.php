@@ -11,14 +11,14 @@
     <tr>
       <td align="center">
         <table width="660" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.06);">
-         {{$event}} {{$user}}
+         
           <!-- Header / Logo -->
           <tr>
             <td style="padding:20px 28px;border-bottom:1px solid #e9edf0;">
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
                   <td style="vertical-align:middle;">
-                    <img src="https://via.placeholder.com/220x48?text=Delhi+Ethnic+Expo+Logo" alt="Delhi Ethnic Expo" width="220" style="display:block;border:0;outline:none;text-decoration:none;">
+                    <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="Delhi Ethnic Expo" width="220" style="display:block;border:0;outline:none;text-decoration:none;">
                   </td>
                   <td align="right" style="font-size:13px;color:#6b7280;">
                     <strong>17–18 January {{$event->startdate}}</strong><br>
@@ -32,7 +32,7 @@
           <!-- Hero -->
           <tr>
             <td style="padding:22px 28px 14px 28px;">
-              <img src="https://via.placeholder.com/600x200?text=Delhi+Ethnic+Expo+2025" alt="Delhi Ethnic Expo 2025" width="100%" style="display:block;border-radius:6px;max-width:100%;height:auto;">
+              <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="Delhi Ethnic Expo 2025" width="100%" style="display:block;border-radius:6px;max-width:100%;height:auto;">
             </td>
           </tr>
 
