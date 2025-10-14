@@ -77,9 +77,7 @@
                             <button class="btn btn-primary ml-4">
                                 <i class="bi bi-download"></i> Export
                             </button>
-                              <button wire:click="sendBulkEmail" class="bg-blue-500 text-white px-3 py-1 rounded">
-                                  Send Bulk Email
-                              </button>
+                            
 
                               <div class="d-flex justify-content-between mb-3">
                                       <button class="btn btn-warning" wire:click="toggleBulkMode">

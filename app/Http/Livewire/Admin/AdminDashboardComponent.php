@@ -180,7 +180,9 @@ public $selectedYear;
         }
 
         $leads = Lead::whereIn('id', $this->selectedLeads)->get();
-
+        
+        dd($leads);
+        
         foreach ($leads as $lead) {
             $event = Event::find($lead->event_id);
 
