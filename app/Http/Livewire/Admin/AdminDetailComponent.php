@@ -24,7 +24,10 @@ use Illuminate\Support\Facades\DB;
 use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\BrandsImport;
+use App\Mail\EventToClient;
 use App\Models\Agenda;
+use App\Models\Lead;
+use Illuminate\Support\Facades\Mail;
 
 class AdminDetailComponent extends Component
 {  
@@ -154,6 +157,9 @@ class AdminDetailComponent extends Component
       $this->referencereview(3);
       session()->flash('message',' Status Successfully Changed');
     } 
+
+
+    
 
     public function updateIDstatus($id) 
     {
@@ -357,6 +363,28 @@ class AdminDetailComponent extends Component
        //}
 
     }
+
+    public function updateCallingStatus($id)
+    {
+      
+         
+        $user = Lead::find('event_id', $id)->first();
+
+        if (!$user) {
+            session()->flash('error', 'User not found.');
+            return;
+        }
+
+        Mail::to($user->email)->send(
+            new EventToClient ($this->subject ?? 'Hello from our app', $this->message ?? 'This is a test email.')
+        );
+
+        session()->flash('success', 'Email sent to ' . $user->name);
+    
+
+    }
+
+    
 
     public $csvFile;
     use WithFileUploads;
