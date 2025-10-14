@@ -191,7 +191,7 @@ public $selectedYear;
             // }
 
              if ($event) {
-                  Mail::to($lead->email)->send(new EventToClient($lead, $event));
+                  Mail::to('team@exhibition.org.in')->send(new EventToClient($lead, $event));
                   dump("Email sent to: " . $lead->email);
               } else {
                   dump("Skipped (no event) for: " . $lead->email);
