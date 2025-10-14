@@ -368,7 +368,7 @@ class AdminDetailComponent extends Component
     {
       
          
-        $user = Lead::find('event_id', $id)->first();
+        $user = Lead::find($id);
 
         if (!$user) {
             session()->flash('error', 'User not found.');
