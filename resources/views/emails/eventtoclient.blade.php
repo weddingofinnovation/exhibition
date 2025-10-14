@@ -11,7 +11,7 @@
     <tr>
       <td align="center">
         <table width="660" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.06);">
-         {{$event}} {{$lead}}
+         {{$event}} {{$user}}
           <!-- Header / Logo -->
           <tr>
             <td style="padding:20px 28px;border-bottom:1px solid #e9edf0;">
