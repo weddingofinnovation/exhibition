@@ -35,6 +35,6 @@ class EventToClient extends Mailable
      */
     public function build()
     {
-        return $this->subject('Detail about upcoming Exhbition')->view('emails.eventtoclient');
+        return $this->view('emails.eventtoclient');
     }
 }
