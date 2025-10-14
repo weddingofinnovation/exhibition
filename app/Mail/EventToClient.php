@@ -17,16 +17,18 @@ class EventToClient extends Mailable
     public $monthwise;
     public $event;
     public $user;
+    public $customSubject;
     
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Lead $user , Event $event)
+    public function __construct(Lead $user , Event $event ,  $customSubject = null )
     {
        $this->user = $user;
        $this->event = $event;
+       $this->customSubject = $customSubject;
     }
 
     /**
@@ -36,6 +38,6 @@ class EventToClient extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.eventtoclient');
+        return $this->subject($this->customSubject ?? 'Event Notification: ' . $this->event->eventname)->view('emails.eventtoclient');
     }
 }

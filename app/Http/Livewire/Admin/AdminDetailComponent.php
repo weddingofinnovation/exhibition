@@ -53,6 +53,7 @@ class AdminDetailComponent extends Component
     public $eventWebsite;
     public $eventImage;
 
+    
     public function mount($slug)
     {
        $this->slug = $slug;

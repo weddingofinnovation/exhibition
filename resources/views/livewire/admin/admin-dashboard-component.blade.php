@@ -77,7 +77,22 @@
                             <button class="btn btn-primary ml-4">
                                 <i class="bi bi-download"></i> Export
                             </button>
-                          </div>
+                              <button wire:click="sendBulkEmail" class="bg-blue-500 text-white px-3 py-1 rounded">
+                                  Send Bulk Email
+                              </button>
+
+                              <div class="d-flex justify-content-between mb-3">
+                                      <button class="btn btn-warning" wire:click="toggleBulkMode">
+                                          {{ $bulkMode ? 'Cancel Bulk Mode' : 'Activate Bulk Email' }}
+                                      </button>
+
+                                      @if($bulkMode && count($selectedLeads) > 0)
+                                          <button class="btn btn-success" wire:click="sendBulkEmails">
+                                              Send Bulk Email ({{ count($selectedLeads) }})
+                                          </button>
+                                      @endif
+                                  </div>
+                              </div>
                       @elseif($board == 'event')
                           <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4> 
                           <div class="d-flex justify-content-between align-items-center">
@@ -172,8 +187,19 @@
               </div>
 
               @if($board == 'order')
+
+              <style>
+                .border-success {
+                    border: 2px solid #28a745 !important;
+                }
+              </style>
                 @foreach ($businessOrder as $evento)
-                  <div class="my-1">
+                  
+                    <div 
+                        class="my-1 {{ in_array($evento->id, $selectedLeads) ? 'border-3 border-success' : '' }}"
+                        wire:click="selectLead({{ $evento->id }})"
+                        style="{{ $bulkMode ? 'cursor:pointer;' : '' }}"
+                      >
                     <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1">
 
                       <!-- Event Image -->

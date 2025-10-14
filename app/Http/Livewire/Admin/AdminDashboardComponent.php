@@ -147,6 +147,56 @@ public $selectedYear;
 
     }
 
+    public $bulkMode = false;
+    public $selectedLeads = [];
+
+    public function toggleBulkMode()
+    {
+        $this->bulkMode = !$this->bulkMode;
+
+        if (!$this->bulkMode) {
+            $this->selectedLeads = []; // reset selection when turned off
+        }
+    }
+
+    public function selectLead($leadId)
+    {
+        if ($this->bulkMode) {
+            if (in_array($leadId, $this->selectedLeads)) {
+                // Deselect if already selected
+                $this->selectedLeads = array_diff($this->selectedLeads, [$leadId]);
+            } else {
+                // Add to selected
+                $this->selectedLeads[] = $leadId;
+            }
+        }
+    }
+
+    public function sendBulkEmails()
+    {
+        if (empty($this->selectedLeads)) {
+            session()->flash('error', 'No leads selected.');
+            return;
+        }
+
+        $leads = Lead::whereIn('id', $this->selectedLeads)->get();
+
+        foreach ($leads as $lead) {
+            $event = Event::find($lead->event_id);
+
+            if ($event) {
+                Mail::to($lead->email)->send(new EventToClient($lead, $event));
+            }
+        }
+
+        session()->flash('success', count($leads) . ' emails sent successfully!');
+        
+        // reset mode
+        $this->bulkMode = false;
+        $this->selectedLeads = [];
+    }
+
+
     public function tryingfaker($eventreview)
     {
 
