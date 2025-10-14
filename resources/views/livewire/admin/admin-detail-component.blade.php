@@ -839,7 +839,7 @@
                                         @endif
                                         
                                           <ul class="dropdown-menu" width="auto">
-                                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}})">Email</a></li>
+                                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}})">Email</a></li>
                                             <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Interest</a></li>
                                             <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'check')">Check</a></li>
                                             <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'callback')">callback</a></li>
