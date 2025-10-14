@@ -379,7 +379,14 @@ class AdminDetailComponent extends Component
         //     new EventToClient ($this->subject ?? 'Hello from our app', $this->message ?? 'This is a test email.')
         // );
 
-        $event = Event::find('id', $user->event_id);
+        $event = Event::find($user->event_id);
+
+         if (!$event) {
+            session()->flash('error', 'event not found.');
+            return;
+        }
+
+
         Mail::to('team@exhibition.org.in')->send(
             new EventToClient ($user, $event)
         );
