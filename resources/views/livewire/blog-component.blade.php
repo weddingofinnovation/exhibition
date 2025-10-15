@@ -75,7 +75,7 @@
 												</h2>
 
 												@php
-												$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+												  $answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
 												@endphp
 
 												<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
@@ -94,10 +94,23 @@
 														@endif
 
 
-														<!-- Give Reply button -->
-												<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
-													{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
-												</button>
+												@auth
+													<!-- Show reply button only if user is logged in -->
+													<button 
+														wire:click="showReplyBox({{ $evento->id }})" 
+														class="btn btn-sm btn-outline-primary"
+													>
+														{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+													</button>
+												@endauth
+
+												@guest
+													<!-- Optional: message or login button -->
+													<a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary">
+														Login to reply
+													</a>
+												@endguest
+
 
 												<!-- Conditional reply box -->
 												@if($replyingTo === $evento->id)

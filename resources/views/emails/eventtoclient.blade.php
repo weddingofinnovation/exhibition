@@ -18,11 +18,12 @@
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
                   <td style="vertical-align:middle;">
-                    <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="Delhi Ethnic Expo" width="220" style="display:block;border:0;outline:none;text-decoration:none;">
+                    <img src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{$event->eventname}}" width="220" style="display:block;border:0;outline:none;text-decoration:none;">
                   </td>
                   <td align="right" style="font-size:13px;color:#6b7280;">
-                    <strong>17–18 January {{$event->startdate}}</strong><br>
-                    Pragati Maidan, New Delhi {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
+                    <strong>17–18 January {{$event->startdate}}-{{$event->enddate}} </strong> 
+                    <br>
+                    {{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}}
                   </td>
                 </tr>
               </table>
