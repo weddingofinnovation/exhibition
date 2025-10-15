@@ -2,26 +2,42 @@
     <div class="container mt-4">
     <h4>{{ $floorplan->name ?? 'Floor Plan' }}</h4>
 
-    <img src="{{ $floorplan->image_url ?? '' }}" alt="Floorplan" style="max-width: 600px;">
-
+   
     <h3>Saved Spaces</h3>
     
-
+        @php
+            $imageName = basename($floorplan->image_url);
+        @endphp
 
     <!-- Floorplan container -->
     <div class="position-relative" style="width:100%; max-width:1200px; height:600px; border:1px solid #ccc; background:#f0f0f0;">
-@if($floorplan && $floorplan['image'])
-    <img src="{{ asset('public/assets/image/exhibition/' . $floorplan['image']) }}" alt="">
-@endif
+       
         <!-- Floorplan image -->
-        @if($floorplan && $floorplan->image)
-            <img src="{{ asset('public/assets/image/exhibition/' . $floorplan->image) }}" 
+        @if($floorplan && $floorplan->image_url)
+            <img src="{{ asset('public/assets/image/exhibition/' . $imageName) }}" 
                  alt="Floor Plan" 
                  style="width:100%; height:100%; object-fit:cover;">
         @endif
 
-        <!-- Rectangles -->
         @foreach($spaces as $space)
+            <div wire:click="selectSpace({{ $space['id'] }})"
+                style="
+                    position:absolute;
+                    left: {{ $space['coordinates']['x'] ?? 0 }}px;
+                    top: {{ $space['coordinates']['y'] ?? 0 }}px;
+                    width: {{ $space['coordinates']['width'] ?? 50 }}px;
+                    height: {{ $space['coordinates']['height'] ?? 50 }}px;
+                    background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
+                    border: 1px solid black;
+                    cursor:pointer;
+                "
+                title="{{ $space['name'] ?? 'Unnamed' }}"
+            ></div>
+        @endforeach
+
+
+        <!-- Rectangles -->
+        <!-- @foreach($spaces as $space)
            <div wire:click="selectSpace({{ $space['id'] }})"
                 style="
                     position:absolute;
@@ -36,7 +52,8 @@
                 title="{{ $space['name'] ?? 'Unnamed' }}"
             ></div>
 
-        @endforeach
+        @endforeach -->
+
 
         <div style="position: relative; width:100%; height:100%;">
     @foreach($spaces as $space)

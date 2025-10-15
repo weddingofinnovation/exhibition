@@ -13,10 +13,15 @@ class AdminPanelViewComponent extends Component
     public $selectedSpace;
 
     public function mount($boardid)
-    {
-        $this->floorplan = Floorplan::findOrFail($boardid);
-        $this->spaces = Space::where('floorplan_id', $boardid)->get()->toArray();
-    }
+{
+    $this->floorplan = Floorplan::findOrFail($boardid);
+
+    // Get spaces from DB, coordinates already cast to array
+    $this->spaces = Space::where('floorplan_id', $boardid)
+                         ->get()
+                         ->toArray(); // now coordinates inside each space are arrays
+}
+
 
 
 
