@@ -1,4 +1,5 @@
-<div class="container mt-4">
+<main>
+    <div class="container mt-4">
     <h4>{{ $floorplan->name ?? 'Floor Plan' }}</h4>
     
 
@@ -47,8 +48,8 @@
 
 @push('scripts')
     <script>
-        // Optional: Log spaces for debugging
-        let spaces = @json($spaces->toArray());
+        let spaces = @json($spaces);
         console.log('Spaces:', spaces);
     </script>
 @endpush
+</main>
