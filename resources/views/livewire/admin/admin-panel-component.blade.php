@@ -255,7 +255,7 @@
                                                     alt="{{ $floor->name }}"
                                                 >
                                                 <div class="ms-3">
-                                                    <h6 class="mb-1 text-body">{{route('event.details',['slug' => $evet->slug])}}
+                                                    <h6 class="mb-1 text-body">
                                                         <a class="text-decoration-none stretched-link" href="{{route('admin.panelview',['boardid' => $evet->id])}}">
                                                             {{ $floor->name }}
                                                         </a>
