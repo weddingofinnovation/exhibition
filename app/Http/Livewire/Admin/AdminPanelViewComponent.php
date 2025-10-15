@@ -25,6 +25,7 @@ class AdminPanelViewComponent extends Component
         $this->selectedSpace = collect($this->spaces)->firstWhere('id', $id);
     }
 
+   
     public function blockSpace($id)
     {
         $space = Space::find($id);
