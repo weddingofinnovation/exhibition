@@ -22,7 +22,11 @@ class BlogComponent extends Component
     public $replyText = '';        // The typed answer
 
     public $openAccordion = null;
-    
+
+     public $search = '';
+    public $category = '';
+    public $sortBy = 'latest';
+   
 
     public function likePost($mag)
     {
