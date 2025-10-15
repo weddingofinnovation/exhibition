@@ -12,10 +12,10 @@ class AdminPanelViewComponent extends Component
     public $spaces = [];
     public $selectedSpace;
 
-    public function mount($id)
+    public function mount($boardid)
     {
-        $this->floorplan = Floorplan::findOrFail($id);
-        $this->spaces = Space::where('floorplan_id', $id)->get()->toArray();
+        $this->floorplan = Floorplan::findOrFail($boardid);
+        $this->spaces = Space::where('floorplan_id', $boardid)->get()->toArray();
     }
 
     public function selectSpace($id)
