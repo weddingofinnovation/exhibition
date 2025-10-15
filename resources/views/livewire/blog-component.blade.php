@@ -300,7 +300,7 @@
     @endif
 
     <div class="mt-4 text-center">
-        <a href="{{ route('ask-question') }}" class="btn btn-outline-dark">Didn’t find what you’re looking for? Ask a Question</a>
+        <a href="#" class="btn btn-outline-dark">Didn’t find what you’re looking for? Ask a Question</a>
     </div>
 </div>
 
