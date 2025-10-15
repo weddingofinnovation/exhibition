@@ -256,7 +256,7 @@
                                                 >
                                                 <div class="ms-3">
                                                     <h6 class="mb-1 text-body">
-                                                        <a class="text-decoration-none stretched-link" href="{{route('admin.panelview',['boardid' => $evet->id])}}">
+                                                        <a class="text-decoration-none stretched-link" href="{{route('admin.panelview',['boardid' => $floor->id])}}">
                                                             {{ $floor->name }}
                                                         </a>
                                                     </h6>
