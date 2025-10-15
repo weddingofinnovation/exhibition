@@ -19,40 +19,7 @@
                  style="width:100%; height:100%; object-fit:cover;">
         @endif
 
-        @foreach($spaces as $space)
-            <div wire:click="selectSpace({{ $space['id'] }})"
-                style="
-                    position:absolute;
-                    left: {{ $space['coordinates']['x'] ?? 0 }}px;
-                    top: {{ $space['coordinates']['y'] ?? 0 }}px;
-                    width: {{ $space['coordinates']['width'] ?? 50 }}px;
-                    height: {{ $space['coordinates']['height'] ?? 50 }}px;
-                    background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
-                    border: 1px solid black;
-                    cursor:pointer;
-                "
-                title="{{ $space['name'] ?? 'Unnamed' }}"
-            ></div>
-        @endforeach
-
-
-        <!-- Rectangles -->
-        <!-- @foreach($spaces as $space)
-           <div wire:click="selectSpace({{ $space['id'] }})"
-                style="
-                    position:absolute;
-                    left: {{ $space['x'] ?? 0 }}px;
-                    top: {{ $space['y'] ?? 0 }}px;
-                    width: {{ $space['width'] ?? 50 }}px;
-                    height: {{ $space['height'] ?? 50 }}px;
-                    background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
-                    border: 1px solid black;
-                    cursor:pointer;
-                "
-                title="{{ $space['name'] ?? 'Unnamed' }}"
-            ></div>
-
-        @endforeach -->
+       
 
 
         <div style="position: relative; width:100%; height:100%;">
@@ -61,10 +28,11 @@
             wire:click="selectSpace({{ $space['id'] }})"
             style="
                 position:absolute;
-                left: {{ $space['x'] ?? 0 }}px;
-                top: {{ $space['y'] ?? 0 }}px;
-                width: {{ $space['width'] ?? 50 }}px;
-                height: {{ $space['height'] ?? 50 }}px;
+                    left: {{ $space['coordinates']['x'] ?? 0 }}px;
+                    top: {{ $space['coordinates']['y'] ?? 0 }}px;
+                    width: {{ $space['coordinates']['width'] ?? 50 }}px;
+                    height: {{ $space['coordinates']['height'] ?? 50 }}px;
+
                 background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
                 border: 1px solid black;
                 cursor:pointer;
