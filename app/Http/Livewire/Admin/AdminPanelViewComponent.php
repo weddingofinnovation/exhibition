@@ -31,7 +31,20 @@ class AdminPanelViewComponent extends Component
             $space->save();
 
             // Refresh spaces
-            $this->spaces = Space::where('floorplan_id', $space->floorplan_id)->get()->toArray();
+           $this->spaces = Space::where('floorplan_id', $this->floorPlanId)
+            ->get(['id','name','x','y','width','height','status']) // select only needed columns
+            ->map(function($space){
+                return [
+                    'id' => $space->id,
+                    'name' => $space->name,
+                    'x' => $space->x ?? 0,
+                    'y' => $space->y ?? 0,
+                    'width' => $space->width ?? 50,   // default value if null
+                    'height' => $space->height ?? 50, // default value if null
+                    'status' => $space->status ?? 'available',
+                ];
+            })->toArray();
+
             $this->selectedSpace = collect($this->spaces)->firstWhere('id', $id);
         }
     }

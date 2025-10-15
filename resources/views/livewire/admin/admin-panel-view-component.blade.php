@@ -14,20 +14,20 @@
 
         <!-- Rectangles -->
         @foreach($spaces as $space)
-            <div 
-                wire:click="selectSpace({{ $space['id'] }})"
+           <div wire:click="selectSpace({{ $space['id'] }})"
                 style="
                     position:absolute;
-                    left: {{ $space['x'] }}px;
-                    top: {{ $space['y'] }}px;
-                    width: {{ $space['width'] }}px;
-                    height: {{ $space['height'] }}px;
+                    left: {{ $space['x'] ?? 0 }}px;
+                    top: {{ $space['y'] ?? 0 }}px;
+                    width: {{ $space['width'] ?? 50 }}px;
+                    height: {{ $space['height'] ?? 50 }}px;
                     background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
                     border: 1px solid black;
                     cursor:pointer;
                 "
                 title="{{ $space['name'] ?? 'Unnamed' }}"
             ></div>
+
         @endforeach
     </div>
 
