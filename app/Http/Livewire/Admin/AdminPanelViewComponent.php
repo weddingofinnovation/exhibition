@@ -10,27 +10,30 @@ class AdminPanelViewComponent extends Component
 {
     public $floorplan;
     public $spaces = [];
-    public $boardid;
+    public $selectedSpace;
 
-    public function mount($boardid)
+    public function mount($id)
     {
-        $this->floorplan = Floorplan::findOrFail($boardid);
-        $this->spaces = Space::where('floorplan_id', $boardid)->get();
+        $this->floorplan = Floorplan::findOrFail($id);
+        $this->spaces = Space::where('floorplan_id', $id)->get()->toArray();
     }
 
-    public function blockSpace($spaceId)
+    public function selectSpace($id)
     {
-        $space = Space::find($spaceId);
-        if (!$space) return;
+        $this->selectedSpace = collect($this->spaces)->firstWhere('id', $id);
+    }
 
-        $space->status = 'blocked';
-        $space->color = '#ff4d4d';
-        $space->save();
+    public function blockSpace($id)
+    {
+        $space = Space::find($id);
+        if ($space) {
+            $space->status = 'blocked';
+            $space->save();
 
-        $this->dispatchBrowserEvent('space-blocked', [
-            'id' => $space->id,
-            'color' => $space->color
-        ]);
+            // Refresh spaces
+            $this->spaces = Space::where('floorplan_id', $space->floorplan_id)->get()->toArray();
+            $this->selectedSpace = collect($this->spaces)->firstWhere('id', $id);
+        }
     }
 
     public function render()
