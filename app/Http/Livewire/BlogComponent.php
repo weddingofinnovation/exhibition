@@ -17,8 +17,11 @@ class BlogComponent extends Component
      public $showReplyBox = [];
     public $reply = [];
 
-     public $replyingTo = null;     // Track question being replied to
+    public $replyingTo = null;     // Track question being replied to
     public $replyText = '';        // The typed answer
+
+    public $openAccordion = null;
+    
 
     public function likePost($mag)
     {
@@ -45,13 +48,22 @@ class BlogComponent extends Component
       return view('post', compact('post'));
     }
 
-   public function showReplyBox($questionId)
+    public function showReplyBox($questionId)
     {
-        // Toggle visibility
-        $this->replyingTo = $this->replyingTo === $questionId ? null : $questionId;
+        if ($this->replyingTo === $questionId) {
+            // If already open, close it
+            $this->replyingTo = null;
+            $this->openAccordion = null;
+        } else {
+            // Open reply box and keep same accordion open
+            $this->replyingTo = $questionId;
+            $this->openAccordion = $questionId;
+        }
+
         $this->replyText = '';
     }
 
+    
     public function submitReply($questionId)
     {
         if (trim($this->replyText)) {
