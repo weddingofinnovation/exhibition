@@ -283,7 +283,7 @@
                                     <div class="d-flex align-items-center position-relative"> 
                                         <img class="rounded-circle ms-2" src="{{url('public/assets/image/exhibition/'.$floor->image_url)}}" width="17%" alt="Avatar"> 
                                         <div class="ms-2"> <h4 class="mb-1 fs-base text-body">
-                                             <a class="nav-link-style stretched-link" href="#">{{$floor->name}}</a> </h4> 
+                                             <a class="nav-link-style stretched-link" href="{{route('admin.panelview',['boardid' => $evet->id])}}">{{$floor->name}}</a> </h4> 
                                              <h5 class="mb-1 fs-xs"> <a class="nav-link-style stretched-link" href="#">1</a> </h5> 
                                              
                                              </div> </div> 
