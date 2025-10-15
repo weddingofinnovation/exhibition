@@ -177,8 +177,6 @@
                             
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                            
-                            
                                 <h4 class="fw-bold mb-2">Design<small>0</small></h4>
                                 <div class="d-flex justify-content-between align-items-center">
 
@@ -196,7 +194,6 @@
                                     @error('name') <div class="text-red-600">{{ $message }}</div> @enderror
 
                                 </div>
-                            
                             </div>
 
 
@@ -258,8 +255,8 @@
                                                     alt="{{ $floor->name }}"
                                                 >
                                                 <div class="ms-3">
-                                                    <h6 class="mb-1 text-body">
-                                                        <a class="text-decoration-none stretched-link" href="#">
+                                                    <h6 class="mb-1 text-body">{{route('event.details',['slug' => $evet->slug])}}
+                                                        <a class="text-decoration-none stretched-link" href="{{route('admin.panelview',['boardid' => $evet->id])}}">
                                                             {{ $floor->name }}
                                                         </a>
                                                     </h6>

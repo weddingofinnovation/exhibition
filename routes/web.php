@@ -150,6 +150,7 @@ use App\Http\Livewire\Admin\AdminEventMultiParticipantsComponent;
 use App\Http\Livewire\Admin\AdminEventMultipleAddComponent;
 use App\Http\Livewire\Admin\AdminLandingComponent;
 use App\Http\Livewire\Admin\AdminPanelComponent;
+use App\Http\Livewire\Admin\AdminPanelViewComponent;
 use App\Http\Livewire\Admin\AdminQuestionComponent;
 use App\Http\Livewire\Admin\MagazineUpgradingComponent;
 use App\Http\Livewire\AwardDetailsComponent;
@@ -408,6 +409,7 @@ Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', User
 
 
     Route::get('/admin/panel/{board}/floor/{floorPlanId}', AdminPanelComponent::class)->name('admin.panel');
+    Route::get('/admin/panel/view/{boardid}', AdminPanelViewComponent::class)->name('admin.panelview');
 
     Route::get('/admin/dashboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
