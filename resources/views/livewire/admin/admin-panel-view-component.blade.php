@@ -30,6 +30,13 @@
                     background-color: {{ $space['status'] ?? 'rgba(0,128,255,0.3)' }};
                     border: 1px solid black;
                     cursor:pointer;
+                      display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 10px;
+                        text-align: center;
+                        color: #000;
+                        overflow: hidden;
                 "
                 title="{{ $space['name'] ?? 'Unnamed' }}"
                 
