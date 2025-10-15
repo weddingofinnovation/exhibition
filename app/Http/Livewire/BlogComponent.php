@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Answer;
 use App\Models\Cag;
 use App\Models\Mag;
+use App\Models\Question;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -63,7 +64,7 @@ class BlogComponent extends Component
         $this->replyText = '';
     }
 
-    
+
     public function submitReply($questionId)
     {
         if (trim($this->replyText)) {
@@ -93,6 +94,36 @@ class BlogComponent extends Component
         }
     }
 
+
+    public function getFilteredQuestionsProperty()
+    {
+        $query = Question::query();
+
+        if ($this->search) {
+            $query->where('question', 'like', '%' . $this->search . '%');
+        }
+
+        if ($this->category) {
+            $query->where('category', $this->category);
+        }
+
+        switch ($this->sortBy) {
+            case 'popular':
+                $query->withCount('answers')->orderBy('answers_count', 'desc');
+                break;
+            case 'answered':
+                $query->has('answers');
+                break;
+            case 'unanswered':
+                $query->doesntHave('answers');
+                break;
+            default:
+                $query->latest();
+                break;
+        }
+
+        return $query->get();
+    }
 
     public function render()
     {
@@ -124,8 +155,9 @@ class BlogComponent extends Component
         $video = Mag::where('status','1')->paginate(2);
         $videoo = Mag::where('status','1')->paginate(2);
         $videooo = Mag::where('status','1')->paginate(1);
+        
       
-        return view('livewire.blog-component',['try'=> $try,'videooo'=> $videooo,'video'=> $video,'videoo'=> $videoo,'oddsmall'=> $oddsmall,'evensmall'=> $evensmall,
+        return view('livewire.blog-component',['updateQuestion' => $this->filteredQuestions,'try'=> $try,'videooo'=> $videooo,'video'=> $video,'videoo'=> $videoo,'oddsmall'=> $oddsmall,'evensmall'=> $evensmall,
                                                'tittlemostread'=> $tittlemostread,'mostread'=> $mostread,'slider'=> $slider,
                                                'latest'=> $latest,'highlight'=> $highlight,'handpick'=> $handpick,
                                                'handpicked'=> $handpicked,'podcast'=> $podcast,'recomend'=> $recomend,
