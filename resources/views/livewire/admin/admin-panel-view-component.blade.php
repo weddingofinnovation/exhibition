@@ -1,5 +1,6 @@
 <div class="container mt-4">
     <h4>{{ $floorplan->name ?? 'Floor Plan' }}</h4>
+    
 
     <!-- Floorplan container -->
     <div class="position-relative" style="width:100%; max-width:1200px; height:600px; border:1px solid #ccc; background:#f0f0f0;">
