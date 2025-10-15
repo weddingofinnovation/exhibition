@@ -16,8 +16,6 @@ class AdminPanelViewComponent extends Component
     {
         $this->floorplan = Floorplan::findOrFail($boardid);
         $this->spaces = Space::where('floorplan_id', $boardid)->get()->toArray();
-
-         dd($this->floorplan, $this->spaces);
     }
 
 

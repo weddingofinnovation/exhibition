@@ -2,6 +2,19 @@
     <div class="container mt-4">
     <h4>{{ $floorplan->name ?? 'Floor Plan' }}</h4>
     
+     <h1>{{ $floorplan->name ?? 'Floorplan not found' }}</h1>
+
+    <img src="{{ $floorplan->image_url ?? '' }}" alt="Floorplan" style="max-width: 600px;">
+
+    <h3>Saved Spaces</h3>
+    <ul>
+        @foreach($spaces as $space)
+            <li>
+                {{ $space['name'] ?? 'Unnamed' }} — x: {{ $space['x'] }}, y: {{ $space['y'] }}, w: {{ $space['width'] }}, h: {{ $space['height'] }}
+            </li>
+        @endforeach
+    </ul>
+
 
     <!-- Floorplan container -->
     <div class="position-relative" style="width:100%; max-width:1200px; height:600px; border:1px solid #ccc; background:#f0f0f0;">
