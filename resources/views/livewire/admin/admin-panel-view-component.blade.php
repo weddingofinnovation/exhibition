@@ -2,7 +2,7 @@
     <div class="container mt-4">
       <div class="row">
 
-        <div class="col-3 bg-dark text-light">
+        <div class="col-3 bg-dark">
             <h4>Floor Plan {{ $floorplan->name ?? 'Floor Plan' }}</h4>
 
             <div class="card card-custom p-3 mx-auto">
@@ -11,11 +11,7 @@
                 <button class="btn-close" aria-label="Close"></button>
                 </div>
 
-                <div class="status-hold mb-3">
-                   <span class="me-1">✋</span> On Hold
-                </div>
-
-                <a href="" class="btn btn-primary btn-lg"><span class="me-1">✋</span> On Hold</a>
+                <a href="" class="btn btn-primary btn-lg mb-3"><span class="me-1">✋</span> On Hold</a>
 
                 <div class="d-flex align-items-center mb-3">
                 <div class="icon-box me-3">
