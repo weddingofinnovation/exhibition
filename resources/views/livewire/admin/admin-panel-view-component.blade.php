@@ -49,16 +49,6 @@
                     </div>
                 </div>
             </div>
-
-                <div class="mt-3 p-3 border rounded shadow-sm bg-white">
-                    <h5>{{ $selectedSpace['name'] }}</h5>
-                    <p>Area: {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} sq units</p>
-            
-                    <p>Status: {{ $selectedSpace['status'] ?? 'available' }}</p>
-                    @if(($selectedSpace['status'] ?? 'available') !== 'blocked')
-                        <button wire:click="blockSpace({{ $selectedSpace['id'] }})" class="btn btn-danger btn-sm">Block Space</button>
-                    @endif
-                </div>
             @endif
         </div>
 
