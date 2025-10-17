@@ -2,7 +2,7 @@
     <div class="container mt-4">
       <div class="row">
 
-        <div class="col-3 bg-light">
+        <div class="col-3 bg-dark text-light">
             <h4>Floor Plan {{ $floorplan->name ?? 'Floor Plan' }}</h4>
 
             <div class="card card-custom p-3 mx-auto">
@@ -12,8 +12,10 @@
                 </div>
 
                 <div class="status-hold mb-3">
-                <span class="me-1">✋</span> On Hold
+                   <span class="me-1">✋</span> On Hold
                 </div>
+
+                <a href="" class="btn btn-primary btn-lg"><span class="me-1">✋</span> On Hold</a>
 
                 <div class="d-flex align-items-center mb-3">
                 <div class="icon-box me-3">
