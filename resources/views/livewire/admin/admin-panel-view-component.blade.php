@@ -7,11 +7,12 @@
 
             <div class="card card-custom p-3 mx-auto">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                <h6 class="mb-0 fw-bold">32AE</h6>
+                <h6 class="mb-0 fw-bold">{{ $selectedSpace['name'] }}</h6>
                 <button class="btn-close" aria-label="Close"></button>
                 </div>
 
-                <a href="" class="btn btn-primary btn-lg mb-3"><span class="me-1">✋</span> On Hold</a>
+                <a href="" wire:click="blockSpace({{ $selectedSpace['id'] }})" class="btn btn-primary btn-lg mb-3">
+                    <span class="me-1">✋</span> Block Space</a>
 
                 <div class="d-flex align-items-center mb-3">
                 <div class="icon-box me-3">
@@ -29,7 +30,7 @@
                 </div>
                 <div>
                     <small class="text-muted d-block">Size</small>
-                    <strong>7 × 7 / 49 m²</strong>
+                    <strong>{{ ($selectedSpace['coordinates']['width'] ?? 0)}} × {{($selectedSpace['coordinates']['height'] ?? 0) }} / {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} m²</strong>
                 </div>
                 </div>
 
