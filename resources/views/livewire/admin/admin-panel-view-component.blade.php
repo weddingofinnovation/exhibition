@@ -5,7 +5,11 @@
         <div class="col-3 bg-dark">
             <h4>Floor Plan {{ $floorplan->name ?? 'Floor Plan' }}</h4>
 
-            <div class="card card-custom p-3 mx-auto">
+           
+
+             <!-- Selected Space Details -->
+            @if($selectedSpace)
+             <div class="card card-custom p-3 mx-auto">
                 <div class="d-flex justify-content-between align-items-center mb-2">
                 <h6 class="mb-0 fw-bold">{{ $selectedSpace['name'] }}</h6>
                 <button class="btn-close" aria-label="Close"></button>
@@ -44,9 +48,6 @@
                 </div>
                 </div>
             </div>
-
-             <!-- Selected Space Details -->
-            @if($selectedSpace)
                 <div class="mt-3 p-3 border rounded shadow-sm bg-white">
                     <h5>{{ $selectedSpace['name'] }}</h5>
                     <p>Area: {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} sq units</p>
