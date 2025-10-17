@@ -15,39 +15,41 @@
                 <button class="btn-close" aria-label="Close"></button>
                 </div>
 
-                <a href="" wire:click="blockSpace({{ $selectedSpace['id'] }})" class="btn btn-primary btn-lg mb-3">
-                    <span class="me-1">✋</span> Block Space</a>
+                    @if(($selectedSpace['status'] ?? 'available') !== 'blocked')
+                        <button wire:click="blockSpace({{ $selectedSpace['id'] }})" class="btn btn-danger btn-lg mb-3"> <span class="me-1">✋</span> Block Space</button>
+                    @endif
 
                 <div class="d-flex align-items-center mb-3">
-                <div class="icon-box me-3">
-                    <i class="bi bi-box"></i>
-                </div>
-                <div>
-                    <small class="text-muted d-block">Booth Type</small>
-                    <strong>MSME</strong>
-                </div>
+                    <div class="icon-box me-3">
+                        <i class="bi bi-box"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block">Booth Type</small>
+                        <strong>MSME</strong> {{ $selectedSpace['status'] ?? 'available' }}
+                    </div>
                 </div>
 
                 <div class="d-flex align-items-center mb-3">
-                <div class="icon-box me-3">
-                    <i class="bi bi-arrows-angle-expand"></i>
-                </div>
-                <div>
-                    <small class="text-muted d-block">Size</small>
-                    <strong>{{ ($selectedSpace['coordinates']['width'] ?? 0)}} × {{($selectedSpace['coordinates']['height'] ?? 0) }} / {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} m²</strong>
-                </div>
+                    <div class="icon-box me-3">
+                        <i class="bi bi-arrows-angle-expand"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block">Size</small>
+                        <strong>{{ ($selectedSpace['coordinates']['width'] ?? 0)}} × {{($selectedSpace['coordinates']['height'] ?? 0) }} / {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} m²</strong>
+                    </div>
                 </div>
 
                 <div class="d-flex align-items-center">
-                <div class="icon-box me-3">
-                    <i class="bi bi-currency-rupee"></i>
-                </div>
-                <div>
-                    <small class="text-muted d-block">Price</small>
-                    <strong>₹519,067.78</strong>
-                </div>
+                    <div class="icon-box me-3">
+                        <i class="bi bi-currency-rupee"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block">Price</small>
+                        <strong>₹519,067.78</strong>
+                    </div>
                 </div>
             </div>
+
                 <div class="mt-3 p-3 border rounded shadow-sm bg-white">
                     <h5>{{ $selectedSpace['name'] }}</h5>
                     <p>Area: {{ ($selectedSpace['coordinates']['width'] ?? 0) * ($selectedSpace['coordinates']['height'] ?? 0) }} sq units</p>
