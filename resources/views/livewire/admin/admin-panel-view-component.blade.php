@@ -2,8 +2,50 @@
     <div class="container mt-4">
       <div class="row">
 
-        <div class="col-3">
-            <h4>Saved Spaces {{ $floorplan->name ?? 'Floor Plan' }}</h4>
+        <div class="col-3 bg-light">
+            <h4>Floor Plan {{ $floorplan->name ?? 'Floor Plan' }}</h4>
+
+            <div class="card card-custom p-3 mx-auto">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                <h6 class="mb-0 fw-bold">32AE</h6>
+                <button class="btn-close" aria-label="Close"></button>
+                </div>
+
+                <div class="status-hold mb-3">
+                <span class="me-1">✋</span> On Hold
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                <div class="icon-box me-3">
+                    <i class="bi bi-box"></i>
+                </div>
+                <div>
+                    <small class="text-muted d-block">Booth Type</small>
+                    <strong>MSME</strong>
+                </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                <div class="icon-box me-3">
+                    <i class="bi bi-arrows-angle-expand"></i>
+                </div>
+                <div>
+                    <small class="text-muted d-block">Size</small>
+                    <strong>7 × 7 / 49 m²</strong>
+                </div>
+                </div>
+
+                <div class="d-flex align-items-center">
+                <div class="icon-box me-3">
+                    <i class="bi bi-currency-rupee"></i>
+                </div>
+                <div>
+                    <small class="text-muted d-block">Price</small>
+                    <strong>₹519,067.78</strong>
+                </div>
+                </div>
+            </div>
+
              <!-- Selected Space Details -->
             @if($selectedSpace)
                 <div class="mt-3 p-3 border rounded shadow-sm bg-white">
@@ -100,7 +142,7 @@
 
             </div>
         </div>
-        
+
       </div>
 
     </div>
