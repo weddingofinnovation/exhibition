@@ -18,13 +18,15 @@
 
     <!-- Mobile Header -->
     <header class="d-block d-md-none bg-dark text-white p-3">
-      <div class="container">
-        <!-- <div class="d-flex justify-content-between align-items-center">
+      <!-- <div class="container"> -->
+      <!-- <div class="d-flex justify-content-between align-items-center">
           <h4 class="m-0">MySite</h4>
           <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
             Menu
           </button> 
         </div>-->
+
+      <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
 
         <!-- Collapsible menu -->
         <div class="collapse mt-2" id="mobileMenu">
@@ -38,6 +40,7 @@
           </ul>
         </div>
       </div>
+      <!-- </div> -->
     </header>
 
 
