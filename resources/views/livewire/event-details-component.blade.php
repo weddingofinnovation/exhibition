@@ -4066,6 +4066,43 @@
     <header class="d-none d-md-block bg-primary text-white p-3">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- <h2 class="m-0">MySite (Desktop)</h2> -->
+            @php
+            use Carbon\Carbon;
+            $startto = Carbon::parse ($event->startdate);
+            $endfrom = Carbon::parse ($event->enddate);
+            $now= carbon::now();
+            $name = $event->eventname;
+            $venue = $event->venue;
+            $city = $event->city;
+            $country = $event->country;
+            $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
+            @endphp
+
+            @if ($now ->lt($startto))
+            <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
+            <div class="">
+                <h5 class="text-dark fw-normal pt-2 pb-0">
+                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                    @else
+                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                    @endif
+                </h5>
+            </div>
+            @elseif($now->between($startto, $endfrom))
+            <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
+            <div class="">
+                <h5 class="text-dark fw-normal pt-2 pb-0">
+                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                    @else
+                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                    @endif
+                </h5>
+            </div>
+            @else
+            <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+            @endif
             <nav>
                 <a href="#" class="text-white fw-bold fs-lg me-3">Our Topics</a>
                 <a href="#" class="text-white fw-bold fs-lg me-3">Program</a>
@@ -4081,46 +4118,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-
-
-                    @php
-                    use Carbon\Carbon;
-                    $startto = Carbon::parse ($event->startdate);
-                    $endfrom = Carbon::parse ($event->enddate);
-                    $now= carbon::now();
-                    $name = $event->eventname;
-                    $venue = $event->venue;
-                    $city = $event->city;
-                    $country = $event->country;
-                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
-                    @endphp
-
-                    @if ($now ->lt($startto))
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
-                    <div class="">
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @else
-                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @endif
-                        </h5>
-                    </div>
-                    @elseif($now->between($startto, $endfrom))
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
-                    <div class="">
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @else
-                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @endif
-                        </h5>
-                    </div>
-                    @else
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
-                    @endif
-
 
 
 
