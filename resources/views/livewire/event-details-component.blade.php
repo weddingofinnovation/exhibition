@@ -4062,6 +4062,20 @@
         </div>
     </div>
 
+    <!-- Desktop Header -->
+    <header class="d-none d-md-block bg-primary text-white p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- <h2 class="m-0">MySite (Desktop)</h2> -->
+            <nav>
+                <a href="#" class="text-white fw-bold fs-lg me-3">Our Topics</a>
+                <a href="#" class="text-white fw-bold fs-lg me-3">Program</a>
+                <a href="#" class="text-white fw-bold fs-lg me-3">Exhbit</a>
+                <a href="#" class="text-white fw-bold fs-lg me-3">Visit</a>
+                <a href="#" class="text-white fw-bold fs-lg me-3">About US</a>
+                <a href="#" class="text-white fw-bold fs-lg me-3">get involved</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
         <div class="container">

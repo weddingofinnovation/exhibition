@@ -1,20 +1,7 @@
   <main>
 
     @if(Route::currentRouteName() === 'event.details')
-    <!-- Desktop Header -->
-    <header class="d-none d-md-block bg-primary text-white p-3">
-      <div class="container d-flex justify-content-between align-items-center">
-        <h2 class="m-0">MySite (Desktop)</h2>
-        <nav>
-          <a href="#" class="text-white me-3">Our Topics</a>
-          <a href="#" class="text-white me-3">Program</a>
-          <a href="#" class="text-white">Exhbit</a>
-          <a href="#" class="text-white me-3">Visit</a>
-          <a href="#" class="text-white">About US</a>
-          <a href="#" class="text-white">get involved</a>
-        </nav>
-      </div>
-    </header>
+    
 
     <!-- Mobile Header -->
     <header class="d-block d-md-none">
@@ -30,6 +17,7 @@
         <div class="offcanvas-header border-bottom">
           <!-- <h5 class="offcanvas-title">Menu</h5> -->
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          
         </div>
 
         <!-- Collapsible menu -->
