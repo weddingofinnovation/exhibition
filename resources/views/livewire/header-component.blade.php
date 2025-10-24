@@ -17,7 +17,7 @@
     </header>
 
     <!-- Mobile Header -->
-    <header class="d-block d-md-none bg-dark text-white p-3">
+    <header class="d-block d-md-none">
       <!-- <div class="container"> -->
       <!-- <div class="d-flex justify-content-between align-items-center">
           <h4 class="m-0">MySite</h4>
