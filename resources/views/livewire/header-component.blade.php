@@ -27,6 +27,10 @@
         </div>-->
 
       <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
+        <div class="offcanvas-header border-bottom">
+          <!-- <h5 class="offcanvas-title">Menu</h5> -->
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
         <!-- Collapsible menu -->
         <div class="collapse mt-2" id="mobileMenu">
