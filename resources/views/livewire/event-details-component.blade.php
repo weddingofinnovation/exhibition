@@ -4706,9 +4706,13 @@
                       @endif
                     @endif -->
 
-                <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
+                <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                     <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
-                </a>
+                </a> -->
+
+                <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    Menu
+                </button>
 
                 <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
                       <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
