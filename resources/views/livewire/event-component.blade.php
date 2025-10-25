@@ -294,7 +294,49 @@
       }
     </style>
 
+    <!-- Email Modal -->
+    @if($showEmailModal)
+    <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Send Selected Events</h5>
+            <button type="button" class="btn-close" wire:click="$set('showEmailModal', false)"></button>
+          </div>
+          <div class="modal-body">
+            <label for="email" class="form-label">Enter your email address</label>
+            <input type="email" id="email" class="form-control" wire:model="email" placeholder="you@example.com">
+            @error('email')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" wire:click="$set('showEmailModal', false)">Cancel</button>
+            <button class="btn btn-primary" wire:click="sendSelectedEvents">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
     @endif
+  </div>
+
+  <!-- Styling for smooth mobile tap -->
+  <style>
+    .list-group-item {
+      transition: background-color 0.2s ease;
+    }
+
+    .list-group-item:active {
+      background-color: #0d6efd !important;
+      color: #fff !important;
+    }
+
+    .modal {
+      display: block;
+    }
+  </style>
+
+  @endif
   </div>
 
 
