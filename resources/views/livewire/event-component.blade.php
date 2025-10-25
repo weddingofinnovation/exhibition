@@ -225,20 +225,20 @@
     </div>
   </section>
 
-  <div class="mt-4">
+  <div class=" container mt-4">
     @if($events->isEmpty())
     <p>No events found.</p>
     @else
-      <div class="container">
-        {{$events->count()}}
-        <ul class="list-group">
-          @foreach($events as $event)
-          <li class="list-group-item">
-            <strong>{{ $event->eventname }}</strong> — {{ $event->country}}-{{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }}
-          </li>
-          @endforeach
-        </ul>
-      </div>
+    <div class="">
+      {{$events->count()}}
+      <ul class="list-group">
+        @foreach($events as $event)
+        <li class="list-group-item">
+          <strong>{{ $event->eventname }}</strong> — {{ $event->country}}-{{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }}
+        </li>
+        @endforeach
+      </ul>
+    </div>
     @endif
   </div>
   <style>
