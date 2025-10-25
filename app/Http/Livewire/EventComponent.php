@@ -94,9 +94,9 @@ class EventComponent extends Component
 
     // Search by name, month, or today’s date
     if ($this->search) {
-      $query->where('name', 'like', '%' . $this->search . '%')
-        ->orWhereMonth('date', 'like', '%' . $this->search . '%')
-        ->orWhereDate('date', 'like', '%' . $this->search . '%');
+      $query->where('eventname', 'like', '%' . $this->search . '%')
+        ->orWhereMonth('startdate', 'like', '%' . $this->search . '%')
+        ->orWhereDate('startdate', 'like', '%' . $this->search . '%');
     }
 
     // Filter by venue/location
