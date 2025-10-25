@@ -229,6 +229,69 @@
     @if($events->isEmpty())
     <p>No events found.</p>
     @else
+    <div class="container my-4">
+
+      <!-- Instruction Banner -->
+      <div class="alert alert-info text-center shadow-sm">
+        <strong>Select</strong> your yearly exhibitions and
+        <strong>book premium space in advance!</strong><br>
+        Click the button below to get the list of your selected events by email.
+      </div>
+
+      <!-- Count and List -->
+      <h6 class="text-secondary mb-2">
+        Total Events: {{$events->count()}} | Selected: {{ count($selectedEvents) }}
+      </h6>
+
+      <ul class="list-group">
+        @foreach($events as $event)
+        <li class="list-group-item d-flex justify-content-between align-items-center
+                 {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}"
+          wire:click="toggleEvent({{ $event->id }})"
+          style="cursor: pointer; user-select: none;">
+
+          <div>
+            <strong>{{ $event->eventname }}</strong> —
+            {{ $event->country }} {{ $event->city }} - {{ $event->venue }} —
+            {{ $event->startdate }} to {{ $event->enddate }}
+          </div>
+
+          <!-- Checkmark Icon -->
+          @if(in_array($event->id, $selectedEvents))
+          <span class="badge bg-light text-dark">✓</span>
+          @endif
+        </li>
+        @endforeach
+      </ul>
+
+      <!-- Submit Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="sendSelectedEvents">
+          Get Selected Events by Email
+        </button>
+      </div>
+
+      <!-- Confirmation Message -->
+      @if (session()->has('message'))
+      <div class="alert alert-success mt-3 text-center">
+        {{ session('message') }}
+      </div>
+      @endif
+    </div>
+
+    <!-- Mobile-Friendly Touch Effect -->
+    <style>
+      .list-group-item {
+        transition: background-color 0.2s ease;
+      }
+
+      .list-group-item:active {
+        background-color: #0d6efd !important;
+        color: #fff !important;
+      }
+    </style>
+
+
     <div class="">
       {{$events->count()}}
       <ul class="list-group">
@@ -239,8 +302,12 @@
         @endforeach
       </ul>
     </div>
+
+
     @endif
   </div>
+
+
   <style>
     /* Featured Companies - Auto Scrolling */
     .scroll-container {

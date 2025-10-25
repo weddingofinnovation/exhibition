@@ -26,9 +26,22 @@ class EventComponent extends Component
   public $venue = '';
   public $venues = [];
 
+  public $selectedEvents = []; // store selected event IDs
+
   public function mount()
   {
     $this->venues = Event::select('venue')->distinct()->pluck('venue');
+  }
+
+  public function toggleEvent($id)
+  {
+    if (in_array($id, $this->selectedEvents)) {
+      // Unselect
+      $this->selectedEvents = array_diff($this->selectedEvents, [$id]);
+    } else {
+      // Select
+      $this->selectedEvents[] = $id;
+    }
   }
 
   public function store($event_id, $event_eventname, $event_eventype)

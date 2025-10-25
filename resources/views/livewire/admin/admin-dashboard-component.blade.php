@@ -750,7 +750,7 @@
 
           <div class="row">
             @foreach ($network as $franchise)
-            <div class="col-md-4 col-sm-6 mb-3 py-2">
+            <div class="col-md-4 col-sm-6 mb-1 py-1">
               <div class="d-flex align-items-center justify-content-between w-100 mb-2 border rounded p-2">
                 <div class="d-flex align-items-center position-relative">
                   <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%" alt="Avatar">
