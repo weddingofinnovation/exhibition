@@ -18,17 +18,20 @@ class EventToClient extends Mailable
     public $event;
     public $user;
     public $customSubject;
-    
+    public $selectedEvents;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Lead $user , Event $event ,  $customSubject = null )
+    public function __construct(Lead $user, Event $event,  $customSubject = null, $selectedEvents)
     {
-       $this->user = $user;
-       $this->event = $event;
-       $this->customSubject = $customSubject;
+        $this->user = $user;
+        $this->event = $event;
+        $this->customSubject = $customSubject;
+
+        $this->selectedEvents = $selectedEvents;
     }
 
     /**

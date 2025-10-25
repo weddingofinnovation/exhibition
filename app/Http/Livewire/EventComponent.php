@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\EventToClient;
+use App\Mail\MonthlyEvent;
 use App\Models\Award;
 use App\Models\Category;
 use App\Models\Denco;
@@ -81,7 +83,7 @@ class EventComponent extends Component
     $newEvent->phone = $this->phone;
     $newEvent->type = 'email';   // save board type
     // $newEvent->event_id = session()->get('eventID');
-    $newEvent->status = $this->status;
+    $newEvent->status = 1;
     $newEvent->admstatus = $this->admstatus;
     $newEvent->save();
 
@@ -92,9 +94,9 @@ class EventComponent extends Component
     $logino->phone = $this->phone;
     $logino->save();
 
+    $selectedEventDetails = Event::whereIn('id', $this->selectedEvents)->get();
     // Example: send email (you can implement Mail logic later)
-    $sendeaml = Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
-
+    $sendeaml = Mail::to($this->email)->send(new MonthlyEvent($selectedEventDetails));
 
     $this->showEmailModal = false;
     $this->email = '';
