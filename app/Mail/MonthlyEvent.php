@@ -12,18 +12,17 @@ use Illuminate\Queue\SerializesModels;
 class MonthlyEvent extends Mailable
 {
     use Queueable, SerializesModels;
-   
-   public $resulto;
-    
+
+    public $selectedEventDetails;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct( $resulto)
+    public function __construct($selectedEventDetails)
     {
-        $this->resulto = $resulto;
-      
+        $this->selectedEventDetails = $selectedEventDetails;
     }
 
     /**
@@ -33,8 +32,10 @@ class MonthlyEvent extends Mailable
      */
     public function build()
     {
-        
-        return $this->subject ('Upcoming events relevant to your Industry')
-        ->markdown('emails.monthlyevent');
+
+        // return $this->subject('Upcoming events relevant to your Industry')
+        //     ->markdown('emails.monthlyevent');
+
+        return $this->subject('Upcoming events relevant to your Industry')->view('emails.monthlyevent');
     }
 }
