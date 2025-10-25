@@ -90,21 +90,28 @@ class EventComponent extends Component
     $current = Carbon::today();
     $newcurrent = strtotime($current);
 
-    $query = Event::query();
 
-    // Search by name, month, or today’s date
-    if ($this->search) {
-      $query->where('eventname', 'like', '%' . $this->search . '%')
-        ->orWhereMonth('startdate', 'like', '%' . $this->search . '%')
-        ->orWhereDate('startdate', 'like', '%' . $this->search . '%');
+    $events = collect();
+    if ($this->search || $this->venue) {
+      $query = Event::query();
+
+      // Search by name, month, or today’s date
+      if ($this->search) {
+
+        $query->where(function ($q) {
+          $q->where('eventname', 'like', '%' . $this->search . '%')
+            ->orWhereMonth('startdate', 'like', '%' . $this->search . '%')
+            ->orWhereDate('startdate', 'like', '%' . $this->search . '%');
+        });
+      }
+
+      // Filter by venue/location
+      if ($this->venue) {
+        $query->where('venue', $this->venue);
+      }
+
+      $events = $query->get();
     }
-
-    // Filter by venue/location
-    if ($this->venue) {
-      $query->where('venue', $this->venue);
-    }
-
-    $events = $query->get();
 
     return view('livewire.event-component', ['events' =>  $events, 'newcurrent' =>  $newcurrent, 'evento' => $evento, 'getnamecategoryresult' => $getnamecategoryresult, 'eventD' => $eventD, 'finder' => $finder, 'newlead' => $newlead, 'industry' => $industry, 'evento' => $evento])->layout('layouts.eblog');
   }
