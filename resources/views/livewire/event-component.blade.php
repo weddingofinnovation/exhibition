@@ -1,33 +1,33 @@
 @section('page_title', 'Find Great Exhibition To Exhibit')
-@section('page_description', 'Discover India premier event publishing platform, showcasing the best upcoming exhibitions, conferences, trade shows, global seminars, networking meets and providing a platform for organizers to  exhibit their remarkable events.')
-@section('page_keyword', 'Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers.  Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
+@section('page_description', 'Discover India premier event publishing platform, showcasing the best upcoming exhibitions, conferences, trade shows, global seminars, networking meets and providing a platform for organizers to exhibit their remarkable events.')
+@section('page_keyword', 'Great Place to Exhibit, find right place, find right time, find right people, World largest business event platform, find all upcoming events, business conferences, exhibition 2024, trade shows, global seminars, networking meets and workshops. Browse and connect with visitors attending, participating exhibitors and view profiles of speakers and organizers. Manage, sell event tickets and promote your event on exhbition.org.in, exhibition')
 
-<main> 
-  
-    <section class="container py-5 d-sm-none">
-      <div class=" rounded-3" >
-        <div class="row align-items-center ">
-          <div class="col-md-4">
-            <div class="row">
-                <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
-                  
-                <!-- <span class="badge bg-danger">Free</span> -->
-                
-                {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
-                  <div class="mb-1 display-1"> Great starts here.</div>
-                  <p class=" fw-light lh-1 mt-5"></p> 
-                  <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
+<main>
 
-                </div>
+  <section class="container py-5 d-sm-none">
+    <div class=" rounded-3">
+      <div class="row align-items-center ">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="px-4 pe-sm-0 ps-sm-5 "><span class=" fs-xs text-primary">Right Place, Right Time, Right People</span>
 
-                <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+              <!-- <span class="badge bg-danger">Free</span> -->
+
+              {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
+              <div class="mb-1 display-1"> Great starts here.</div>
+              <p class=" fw-light lh-1 mt-5"></p>
+              <!-- <a class="btn btn-outline-primary mt-2" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Search Right Place<i class="bi bi-chevron-right fs-ms ms-1"></i></a> -->
+
+            </div>
+
+            <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
                   {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
                     <h1 class="mb-1 display-1"> Great starts here.</h1>
                   <p class=" fw-light lh-1">Introducing Great Place To Business India's First Ever Event Publishing Platform</p>
                   <a class="btn btn-accent mt-4" href="{{route('coievent.add',['board' => 'add-your-event'])}}">Expand your Business <i class="bi bi-chevron-right fs-ms ms-1"></i></a>
 
                 </div> -->
-                <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
+            <!-- <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Free</span>
                   {{--<h5 class="mt-4 mb-1 text-body fw-light">Free</h5>--}}
                   <h1 class="mb-1"> Add to calender <br> button</h1>
                   <p class=" fw-light lh-1">Share your events with the #1 add to calender button on the internet.</p>
@@ -35,7 +35,7 @@
 
                 </div> -->
 
-                {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
+            {{--<div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Get Certify</span>
                   <h5 class="mt-4 mb-1 text-body fw-light">Best Place to Exhbit</h5>
                   <h2 class="mb-1"> Brands More <br> Prospects & Leads</h2>
                   <p class=" fw-light">Share your unique business, vistors, experience <br> with your competitors</p>
@@ -48,423 +48,450 @@
                   <p class=" fw-light">Discover leads that have engaged<br> with your competitors</p>
                   <a class="btn btn-accent" href="">Get Free COI Page <i class="bi bi-arrow-right fs-ms ms-1"></i></a>
                 </div>--}}
-            </div>
-
-            <a href="{{route('search.events')}}">
-              <div class="widget">
-                <!-- <h3 class="widget-title">Generate QR</h3> -->
-                
-                  <form action="" class="subscription-form validate">
-                    <div class="input-group flex-nowrap">
-                      <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
-                      <input type="text" class="form-control rounded-start"  placeholder="Find your Right Place" >
-                      <button class="btn btn-primary" type="submit" name=""> Search</button>
-                    </div>
-
-                    <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
-                    <div class="subscription-status"></div>
-                  </form>
-                
-              </div>
-            </a>
-
           </div>
-          
-          <div class=" col-md-8 d-none d-sm-block pr-5">
-            
-            
-            <div class="d-flex my-Slider1">
-                  <!-- Product-->
-                @foreach ($evento as $franchise)
-                  <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1">
-                    <div class="card product-card">
-                      <div class="card-body py-1">
-                        <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                          <span class="text-bolder">
-                              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                              @else
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                              @endif 
-                          </span>
-                        </a>
-                        <div class="d-flex justify-content-between">
-                          <div class="product-price">
-                            <div class="product-title h3 fs-sm mb-0">
-                              <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">
-                                {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a> </div>
-                            </div>
-                        </div>
-                      </div>
 
-                    </div>
-                    <!--<hr class="d-sm-none">-->
-                  </div>
-                @endforeach
-            </div>
+          <a href="{{route('search.events')}}">
+            <div class="widget">
+              <!-- <h3 class="widget-title">Generate QR</h3> -->
 
-            <div class="d-flex my-Slider2">
-              <!-- Product-->
-              @foreach ($eventD as $franchise)
-                <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
-                  <div class="card product-card">
-                    <div class="card-body py-2">
-                      <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                        <span class="text-bolder">
-                            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                            @else
-                              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                            @endif 
-                        </span>
-                      </a>
-                      <div class="d-flex justify-content-between">
-                        <div class="product-price">
-                          <div class="product-title h3 fs-sm mb-0">
-                            <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
-                          </div>
-                          
-                          <!-- <div class=" fs-sm fw-light"><span class=" fs-sm fw-light">{{ucfirst(trans($franchise -> venue))}}</span>
-                          {{ucfirst(trans($franchise -> city))}}</div> -->
-                          </div>
-                      </div>
-                    </div>
-                    <div class="card-body card-body-hidden">
-                      <div class="mb-2">
-                        <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
-                      </div>
-                    </div>
-                  </div>
-                  <!--<hr class="d-sm-none">-->
+              <form action="" class="subscription-form validate">
+                <div class="input-group flex-nowrap">
+                  <i class="bi bi-search position-absolute top-50 translate-middle-y text-muted fs-base ms-3"></i>
+                  <input type="text" class="form-control rounded-start" placeholder="Find your Right Place">
+                  <button class="btn btn-primary" type="submit" name=""> Search</button>
                 </div>
-              @endforeach
+
+                <div class="fs-xs form-text">*Join our movement <br> Make India a Great Exhibition To Exhibit</div>
+                <div class="subscription-status"></div>
+              </form>
+
             </div>
+          </a>
+
+        </div>
+
+        <div class=" col-md-8 d-none d-sm-block pr-5">
+
+
+          <div class="d-flex my-Slider1">
+            <!-- Product-->
+            @foreach ($evento as $franchise)
+            <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1">
+              <div class="card product-card">
+                <div class="card-body py-1">
+                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                    <span class="text-bolder">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                      @else
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                      @endif
+                    </span>
+                  </a>
+                  <div class="d-flex justify-content-between">
+                    <div class="product-price">
+                      <div class="product-title h3 fs-sm mb-0">
+                        <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">
+                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!--<hr class="d-sm-none">-->
+            </div>
+            @endforeach
           </div>
 
+          <div class="d-flex my-Slider2">
+            <!-- Product-->
+            @foreach ($eventD as $franchise)
+            <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+              <div class="card product-card">
+                <div class="card-body py-2">
+                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                    <span class="text-bolder">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                      @else
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                      @endif
+                    </span>
+                  </a>
+                  <div class="d-flex justify-content-between">
+                    <div class="product-price">
+                      <div class="product-title h3 fs-sm mb-0">
+                        <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                      </div>
+
+                      <!-- <div class=" fs-sm fw-light"><span class=" fs-sm fw-light">{{ucfirst(trans($franchise -> venue))}}</span>
+                          {{ucfirst(trans($franchise -> city))}}</div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body card-body-hidden">
+                  <div class="mb-2">
+                    <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href="{{route('event.details',['slug' => $franchise->slug])}}"><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
+                  </div>
+                </div>
+              </div>
+              <!--<hr class="d-sm-none">-->
+            </div>
+            @endforeach
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  @php
+  $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+  $allcategory = DB::table('categories')->get();
+  @endphp
+  <style>
+    /* Custom Styling */
+    .search-section {
+      /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
+      background: #000;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .search-title {
+      /* font-size: 32px; */
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
+      display: flex;
+      background: white;
+      /* border-radius: 50px; */
+      padding: 2px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .search-box input,
+    .search-box select {
+      border: none;
+      outline: none;
+      padding: 12px;
+      flex: 1;
+    }
+
+    .search-box button {
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 12px 30px;
+      /* border-radius: 50px; */
+      font-weight: bold;
+    }
+
+    .search-box button:hover {
+      background: #fff;
+    }
+  </style>
+
+  <!-- bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
+  <section class="search-section d-none d-md-block">
+    <div class="container">
+      <span class=" fs-xs text-center fw-bold" style="color: #FF1628;">Right Place, Right Time, Right People</span>
+      <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="search-box d-flex">
+            <input type="text" class="form-control" placeholder="Search by event, month or today" wire:model.debounce.500ms="search">
+            <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
+            <select class="form-select" wire:model="venue">
+              <option>Venue</option>
+              @php
+              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+              @endphp
+
+              @foreach($venueoption as $franchise)
+              <option>{{ucwords($franchise->venue)}}</option>
+              @endforeach
+
+            </select>
+            <button type="submit" class="btn">Plan your Event</button>
+          </div>
         </div>
       </div>
-    </section>
-    @php 
-      $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
-      $allcategory = DB::table('categories')->get();
-    @endphp
-    <style>
-        /* Custom Styling */
-        .search-section {
-            /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
-            background:#000;
-            padding: 30px 0;
-            text-align: center;
-        }
+    </div>
+  </section>
 
-        .search-title {
-            /* font-size: 32px; */
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 10px;
-        }
+  <div class="mt-4">
+    @if($events->isEmpty())
+    <p>No events found.</p>
+    @else
+    <ul class="list-group"> {{$search}} {{$venue}}
+      @foreach($events as $event)
+      <li class="list-group-item">
+        <strong>{{ $event->name }}</strong> — {{ $event->venue }} — {{ $event->date }}
+      </li>
+      @endforeach
+    </ul>
+    @endif
+  </div>
+  <style>
+    /* Featured Companies - Auto Scrolling */
+    .scroll-container {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      gap: 10px;
+      padding: 5px 0;
+      /* reduced height */
+      position: relative;
+      width: 100%;
+    }
 
-        .search-box {
-            display: flex;
-            background: white;
-            /* border-radius: 50px; */
-            padding: 2px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    .scroll-content {
+      display: flex;
+      animation: scrollLeft 50s linear infinite;
+      gap: 10px;
+    }
 
-        .search-box input, .search-box select {
-            border: none;
-            outline: none;
-            padding: 12px;
-            flex: 1;
-        }
+    .scroll-content img {
+      max-height: 40px;
+      /* slightly smaller */
+      object-fit: contain;
+      padding: 5px;
+      background: #fff;
+    }
 
-        .search-box button {
-            background: #000;
-            color: #fff;
-            border: none;
-            padding: 12px 30px;
-            /* border-radius: 50px; */
-            font-weight: bold;
-        }
+    /* Keyframes for Auto Scroll */
+    @keyframes scrollLeft {
+      0% {
+        transform: translateX(0%);
+      }
 
-        .search-box button:hover {
-            background: #fff;
-        }
-    </style>
+      100% {
+        transform: translateX(-100%);
+      }
+    }
 
-        <!-- bg-faded-info World leading fastest Introducing Great Exhibition To Exhibit Business India First Ever Event Publishing Platform.-->
-        <section class="search-section d-none d-md-block">
-            <div class="container">
-            <span class=" fs-xs text-center fw-bold" style="color: #FF1628;">Right Place, Right Time, Right People</span>
-                <h2 class="search-title text-center">Over 500 events delivered perfectly</h2>
+    /* Pause on hover */
+    .scroll-content:hover {
+      animation-play-state: paused;
+    }
 
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="search-box d-flex">
-                            <input type="text" class="form-control" placeholder="Search by event, month or today">
-                            <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
-                            <select class="form-select">
-                                <option>Venue</option>
-                                @php 
-                                  $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
-                                @endphp
-                                @foreach($venueoption as $franchise)
-                                   <option>{{ucwords($franchise->venue)}}</option>
-                                @endforeach
-                            </select>
-                            <button type="submit" class="btn">Plan your Event</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-             
-        <style>
-                  /* Featured Companies - Auto Scrolling */
-                  .scroll-container {
-                      display: flex;
-                      overflow: hidden;
-                      white-space: nowrap;
-                      gap: 10px;
-                      padding: 5px 0; /* reduced height */
-                      position: relative;
-                      width: 100%;
-                  }
+    /* Stick to bottom only on desktop */
+    @media (min-width: 768px) {
+      .featured-companies-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        /* white background */
+        z-index: 999;
+        border-top: 1px solid #eee;
+        padding: 5px 10px;
+        /* reduced bar height */
+      }
 
-                  .scroll-content {
-                      display: flex;
-                      animation: scrollLeft 50s linear infinite;
-                      gap: 10px;
-                  }
+      .featured-companies-bar h5 {
+        font-size: 14px;
+        /* smaller heading */
+        margin: 0 10px 0 0;
+      }
+    }
+  </style>
 
-                  .scroll-content img {
-                      max-height: 40px; /* slightly smaller */
-                      object-fit: contain;
-                      padding: 5px;
-                      background: #fff;
-                  }
-
-                  /* Keyframes for Auto Scroll */
-                  @keyframes scrollLeft {
-                      0% { transform: translateX(0%); }
-                      100% { transform: translateX(-100%); }
-                  }
-
-                  /* Pause on hover */
-                  .scroll-content:hover {
-                      animation-play-state: paused;
-                  }
-
-                  /* Stick to bottom only on desktop */
-                  @media (min-width: 768px) {
-                      .featured-companies-bar {
-                          position: fixed;
-                          bottom: 0;
-                          left: 0;
-                          width: 100%;
-                          background: #fff; /* white background */
-                          z-index: 999;
-                          border-top: 1px solid #eee;
-                          padding: 5px 10px; /* reduced bar height */
-                      }
-
-                      .featured-companies-bar h5 {
-                          font-size: 14px; /* smaller heading */
-                          margin: 0 10px 0 0;
-                      }
-                  }
-        </style>
-
-        <div class="container-fluid featured-companies-bar d-none d-md-block">
-            <div class="d-flex align-items-center">
-                <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-                <h5 class="me-2 mb-0">Featured by:</h5>
-                  <div class="scroll-container">
-                      @php 
-                        $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
-                      @endphp
-                      <div class="scroll-content">
-                          @foreach($photos as $image)
-                            <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
-                          @endforeach
-                      </div>
-                  </div>
-                <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
-            </div>
+  <div class="container-fluid featured-companies-bar d-none d-md-block">
+    <div class="d-flex align-items-center">
+      <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
+      <h5 class="me-2 mb-0">Featured by:</h5>
+      <div class="scroll-container">
+        @php
+        $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+        @endphp
+        <div class="scroll-content">
+          @foreach($photos as $image)
+          <img src="{{url('public/assets/image/exhibition/'.$image->brand_logo)}}" alt="Company Logo">
+          @endforeach
         </div>
+      </div>
+      <a class="btn btn-sm btn-primary me-2 mb-0" href="">Become our Client</a>
+    </div>
+  </div>
 
-        <!--Trending Exhibition-->
-        @livewire('trending-exhibition-component')
-     
-        <style>
-            .featured-companies {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-                overflow-x: auto;
-                padding: 5px;
-                white-space: nowrap;
-                scrollbar-width: none;
-            }
-            .featured-companies img {
-                height: 90px;
-                object-fit: contain;
-            }
-            .popular-categories {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
-                padding: 20px;
-            }
+  <!--Trending Exhibition-->
+  @livewire('trending-exhibition-component')
 
-            .category-item {
-                display: flex;
-                align-items: center;
-                padding: 10px 15px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                /* background-color: #FCEAE4; */
-                font-size: 14px;
-                font-weight: 500;
-                white-space: nowrap;
-                cursor: pointer;
-                transition: background 0.3s ease-in-out;
-            }
-            .category-item:hover {
-                background-color:rgb(8, 8, 8);
-            }
+  <style>
+    .featured-companies {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      overflow-x: auto;
+      padding: 5px;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
 
-           
-            .category-item i {
-                margin-right: 8px;
-                color: #c47151;
-            }
+    .featured-companies img {
+      height: 90px;
+      object-fit: contain;
+    }
 
-            
-            
-        </style>
+    .popular-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px;
+    }
 
-        <div class="container mt-4 d-none d-md-block">
-            <!-- Popular Companies -->
-            <div class="d-flex align-items-center mb-3">
-                <h5 class="me-3">Popular Industries</h5>
-                <div class="featured-companies">
-                  @foreach ($getnamecategoryresult as $categ) 
-                    @php
-                      $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
-                    @endphp
-                    
-                    @foreach($findcountevent as $finderlo)
-                        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
-                    @endforeach
-                  @endforeach
-                </div>
-            </div>
+    .category-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      /* background-color: #FCEAE4; */
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
 
-              <div class="card shadow-sm rounded-4 p-3">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
-              <a href="#" class="text-primary small">View all</a>
-            </div>
+    .category-item:hover {
+      background-color: rgb(8, 8, 8);
+    }
 
-            <!-- Scrollable stats cards -->
-            <div class="d-flex gap-3 overflow-auto pb-2">
 
-            @foreach($allcategory as $category)
-              <!-- Card 1 -->
-              <a class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
-                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
-                  <i class="bi bi-key fs-4 text-primary"></i>
-                </div>
-                <h6 class="fw-bold small mb-1">{{ ucwords($category->industry) }}</h6>
-                <small class="text-muted">Planning, Budget...</small>
-                <div class="fw-bold mt-2">% match</div>
-              </a>   
-            @endforeach         
+    .category-item i {
+      margin-right: 8px;
+      color: #c47151;
+    }
+  </style>
 
-            </div>
+  <div class="container mt-4 d-none d-md-block">
+    <!-- Popular Companies -->
+    <div class="d-flex align-items-center mb-3">
+      <h5 class="me-3">Popular Industries</h5>
+      <div class="featured-companies">
+        @foreach ($getnamecategoryresult as $categ)
+        @php
+        $findcountevent = DB::table('expos')->where('id', $categ->Category)->where('admstatus',1)->get();
+        @endphp
+
+        @foreach($findcountevent as $finderlo)
+        <span class="category-badge" href="#" wire:click.prevent="insertEventToSess({{$finderlo->id}})">{{ucwords(trans($finderlo->tag))}}</span>
+        @endforeach
+        @endforeach
+      </div>
+    </div>
+
+    <div class="card shadow-sm rounded-4 p-3">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0">How your applies matched your profile in last 7 days?</h6>
+        <a href="#" class="text-primary small">View all</a>
+      </div>
+
+      <!-- Scrollable stats cards -->
+      <div class="d-flex gap-3 overflow-auto pb-2">
+
+        @foreach($allcategory as $category)
+        <!-- Card 1 -->
+        <a class="card flex-shrink-0 rounded-4 text-center p-3" style="width:150px;" href="{{route('coi.exhibitioncategory',['time' => 'upcoming', 'eventype' => 'exhibition', 'categry' => $category->slug])}}">
+          <div class="bg-light rounded-circle d-flex align-items-center justify-content-center mx-auto mb-2" style="width:50px; height:50px;">
+            <i class="bi bi-key fs-4 text-primary"></i>
           </div>
+          <h6 class="fw-bold small mb-1">{{ ucwords($category->industry) }}</h6>
+          <small class="text-muted">Planning, Budget...</small>
+          <div class="fw-bold mt-2">% match</div>
+        </a>
+        @endforeach
 
-            <!-- Popular City -->
-              <div class="border-bottom pt-2 mt-2">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
-                  <a href="#" class="text-primary small">View all</a>
-                </div>
-              </div>
+      </div>
+    </div>
 
-            <div class="d-flex align-items-center mb-3">
-                <h5 class="me-3">Popular City</h5>
-                <div class="featured-companies">
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
-                  </a>
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
-                  </a>
-                  <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
-                    <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
-                  </a>
+    <!-- Popular City -->
+    <div class="border-bottom pt-2 mt-2">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+        <a href="#" class="text-primary small">View all</a>
+      </div>
+    </div>
 
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
+    <div class="d-flex align-items-center mb-3">
+      <h5 class="me-3">Popular City</h5>
+      <div class="featured-companies">
+        <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'delhi', 'country' => 'india' ])}}" class="city-item">
+          <img src="{{url('public/assets/image/city/ncr.png')}}" alt="" class="city-icon">Delhi
+        </a>
+        <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'mumbai', 'country' => 'india' ])}}" class="city-item">
+          <img src="{{url('public/assets/image/city/mum.png')}}" alt="" class="city-icon">Mumbai
+        </a>
+        <a href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'hyderabad', 'country' => 'india' ])}}" class="city-item">
+          <img src="{{url('public/assets/image/city/hyd.png')}}" alt="" class="city-icon">Hyderabad
+        </a>
 
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
+        <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'bangalore', 'country' => 'india' ])}}">
+          <img src="{{url('public/assets/image/city/bang.png')}}" alt="" class="city-icon">Bangalore</a>
 
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
+        <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chennai', 'country' => 'india' ])}}">
+          <img src="{{url('public/assets/image/city/chen.png')}}" alt="" class="city-icon">Chennai</a>
 
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
+        <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'chandigarh', 'country' => 'india' ])}}">
+          <img src="{{url('public/assets/image/city/chd.png')}}" alt="" class="city-icon">Chandigarh</a>
 
-                  <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
-                    <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
-                </div>
-            </div>
+        <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'kolkata', 'country' => 'india' ])}}">
+          <img src="{{url('public/assets/image/city/kolk.png')}}" alt="" class="city-icon">Kolkata</a>
 
-                
-
-              <div class="border-bottom pt-2 my-2">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
-                  <a href="#" class="text-primary small">View all</a>
-                </div>
-              </div>
-
-            <div class="d-flex align-items-center mb-3">
-               <!-- Popular Venue -->
-              
-              <h5 class="me-0">Popular Venue</h5>
-              <div class="featured-companies">
-                  @foreach($venueoption as $franchise)
-                    <span class="category-badge" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
-                      {{$franchise->venue}}</span>
-                  @endforeach
-              </div>
-            </div>
-
-            <!-- Popular Categories -->
-              <div class="border-bottom pt-2 my-2">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
-                  <a href="#" class="text-primary small">View all</a>
-                </div>
-              </div>
-           
-
-        
-
-        </div>
-
-        
+        <a class="city-item" href="{{route('search.venue',['time' => 'upcoming', 'venue' => 'all' , 'city' => 'ahmdebad', 'country' => 'india' ])}}">
+          <img src="{{url('public/assets/image/city/ahd.png')}}" alt="" class="city-icon">ahmdebad</a>
+      </div>
+    </div>
 
 
-        
 
-        <!-- <section class="companies-section d-none d-md-block">
+    <div class="border-bottom pt-2 my-2">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+        <a href="#" class="text-primary small">View all</a>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center mb-3">
+      <!-- Popular Venue -->
+
+      <h5 class="me-0">Popular Venue</h5>
+      <div class="featured-companies">
+        @foreach($venueoption as $franchise)
+        <span class="category-badge" href="{{route('search.venue',['time' => 'upcoming', 'venue' =>$franchise->venue , 'city' => $franchise->city , 'country' => $franchise->country ?? 'null'])}}">
+          {{$franchise->venue}}</span>
+        @endforeach
+      </div>
+    </div>
+
+    <!-- Popular Categories -->
+    <div class="border-bottom pt-2 my-2">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0">Search your business event with right place people for your business</h6>
+        <a href="#" class="text-primary small">View all</a>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+
+
+
+
+  <!-- <section class="companies-section d-none d-md-block">
             <div class="container">
                 <h2 class="companies-title">Featured <span class="text-primary">Companies</span></h2>
                 <div class="row justify-content-center">
@@ -527,10 +554,10 @@
             </div>
         </section> -->
 
-        
 
-        <!--list-->
-        <!-- <section class="d-sm-none">
+
+  <!--list-->
+  <!-- <section class="d-sm-none">
           <div class="d-flex  align-items-center">
             <a class="d-flex align-items-center bg-faded-info rounded-3  ps-1 mb-1 me-xl-0" href="#" style="min-width: auto;">
               <img src="image/banner-sm01.png" width="200 rem" alt="Banner">
@@ -556,543 +583,563 @@
           </div>
         </section> -->
 
-        
-        <!--COI Awards-->
-        @livewire('trending-award-component')
 
-        
+  <!--COI Awards-->
+  @livewire('trending-award-component')
 
-        <!-- Promo banner-->
-        <section class="container mt-4 mb-grid-gutter">
-          <div class="bg-faded-info rounded-3 py-2">
-            <div class="row align-items-center">
-              <div class="col-md-4">
-                <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Limited Offer</span>
-                  <h3 class="mt-3 mb-1 text-body fw-light">All new</h3>
-                  <h2 class="mb-1">Turn your Ideas,<br> into a <span class="text-primary">Startup.</span> </h2>
-                  <p class="h5 text-body fw-light">at discounted price. Hurry up!</p>
-                  
-                  <div class="countdown py-2 h4" data-countdown="07/01/2021 07:00:00 PM">
-                    <div class="countdown-days"><span class="countdown-value">43</span><span class="countdown-label text-muted">d</span></div>
-                    <div class="countdown-hours"><span class="countdown-value">00</span><span class="countdown-label text-muted">h</span></div>
-                    <div class="countdown-minutes"><span class="countdown-value">19</span><span class="countdown-label text-muted">m</span></div>
-                    <div class="countdown-seconds"><span class="countdown-value">33</span><span class="countdown-label text-muted">s</span></div>
-                  </div>
-                  
-                  <a class="btn btn-accent mr-3" href="{{route('login')}}">Get Started </a> Learn More <i class=" bi bi-chevron-right fs-ms ms-1"></i>
-                </div>
-              </div>
-              
-              <!--<div class="col-md-7 d-none d-sm-block">
+
+
+  <!-- Promo banner-->
+  <section class="container mt-4 mb-grid-gutter">
+    <div class="bg-faded-info rounded-3 py-2">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <div class="px-4 pe-sm-0 ps-sm-5"><span class="badge bg-danger">Limited Offer</span>
+            <h3 class="mt-3 mb-1 text-body fw-light">All new</h3>
+            <h2 class="mb-1">Turn your Ideas,<br> into a <span class="text-primary">Startup.</span> </h2>
+            <p class="h5 text-body fw-light">at discounted price. Hurry up!</p>
+
+            <div class="countdown py-2 h4" data-countdown="07/01/2021 07:00:00 PM">
+              <div class="countdown-days"><span class="countdown-value">43</span><span class="countdown-label text-muted">d</span></div>
+              <div class="countdown-hours"><span class="countdown-value">00</span><span class="countdown-label text-muted">h</span></div>
+              <div class="countdown-minutes"><span class="countdown-value">19</span><span class="countdown-label text-muted">m</span></div>
+              <div class="countdown-seconds"><span class="countdown-value">33</span><span class="countdown-label text-muted">s</span></div>
+            </div>
+
+            <a class="btn btn-accent mr-3" href="{{route('login')}}">Get Started </a> Learn More <i class=" bi bi-chevron-right fs-ms ms-1"></i>
+          </div>
+        </div>
+
+        <!--<div class="col-md-7 d-none d-sm-block">
                 <img src="{{asset ('images/7.jpg')}}" alt="iPad Pro Offer"></div>-->
-              <div class="col-md-8 d-none d-sm-block">
-                <div class="d-flex">
-                    <!-- Product-->
-                    @foreach ($evento->take(4) as $franchise)
-                      <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                        <div class="card product-card">
-                          <div class="card-body py-2">
-                            <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                              <span class="text-bolder">
-                                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                  @else
-                                    {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                  @endif 
-                              </span>
-                            </a>
-                            <div class="d-flex justify-content-between">
-                              <div class="product-price">
-                                <div class="product-title h3 fs-sm mb-0">
-                                  <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                                  <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
-                                </div>
-                            </div>
-                          </div>
-
-                        </div>
-                        
+        <div class="col-md-8 d-none d-sm-block">
+          <div class="d-flex">
+            <!-- Product-->
+            @foreach ($evento->take(4) as $franchise)
+            <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+              <div class="card product-card">
+                <div class="card-body py-2">
+                  <a class="product-meta d-block fs-xs pb-1" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                    <span class="text-bolder">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                      @else
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                      @endif
+                    </span>
+                  </a>
+                  <div class="d-flex justify-content-between">
+                    <div class="product-price">
+                      <div class="product-title h3 fs-sm mb-0">
+                        <a href="{{route('event.details',['slug' => $franchise->slug])}}" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
                       </div>
-                    @endforeach
-                </div>
-
-                <div class="d-flex">
-                  <!-- Product-->
-                  @foreach ($evento->take(4) as $franchise)
-                    <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
-                      <div class="card product-card">
-                        <div class="card-body py-2">
-                          <a class="product-meta d-block fs-xs pb-1" href="#">
-                            <span class="text-bolder">
-                                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
-                                @else
-                                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                                @endif 
-                            </span>
-                          </a>
-                          <div class="d-flex justify-content-between">
-                            <div class="product-price">
-                              <div class="product-title h3 fs-sm mb-0">
-                                <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                              
-                              </div>
-                          </div>
-                        </div>
-                        <div class="card-body card-body-hidden">
-                          <div class="mb-2">
-                            <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
-                          </div>
-                        </div>
-                      </div>
-                    
-                    </div>
-                  @endforeach
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        </section>
-
-        <!--Trending conference-->
-        @livewire('conference-component')
-
-        @livewire('trending-dealer-distribution-component')
-          
-        <!--Trending Magazine-->
-        @livewire('trending-magazine-component')
-       
-        <!-- Creators-->
-         @livewire('trending-creator-component')
-        
-        <!--contact-->        
-        <div class="container-fluid px-0 d-none" id="listexpo">
-          <div class="row g-0">
-            <div class="col-lg-6 iframe-full-height-wrap">
-              <div class="mx-auto py-lg-5 my-5 text-dark text-center" style="max-width: 35rem;">
-                  <p>BE SEEN</p>
-                  <h2 class="display-5 text-dark mb-2 ">
-                Business profile
-                  </h2>
-                  <p class="fw-light  mx-auto lead text-dark pb-2">Create a business profile with helpful information for your business auidence like your Business Model, business description, email address, and website.
-                  </p>
-                  <a href="#opening" class="btn btn-lg  btn-outline-primary fw-bolder my-2">Learn more about</a>
-              </div>
-            </div>
-          
-            @livewire('event-form-component')
-          </div>
-        </div>
-
-        <style>
-          .job-section {
-              background-color: #f8f9fa;
-              padding: 60px 0;
-          }
-          .job-title {
-              font-size: 28px;
-              font-weight: bold;
-              text-align: center;
-              margin-bottom: 40px;
-          }
-          .job-card {
-              background: white;
-              padding: 20px;
-              border-radius: 10px;
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-              text-align: center;
-              transition: transform 0.3s;
-              display: flex;
-              flex-direction: column;
-              align-items: center; /* Centers horizontally */
-              justify-content: center; /* Centers vertically */
-              height: 100%; /* Ensures uniform height */
-          }
-          .job-card:hover {
-              transform: translateY(-5px);
-          }
-          .job-icon {
-              width: 60px;
-              height: 60px;
-              margin-bottom: 15px;
-          }
-          .job-heading {
-              font-size: 18px;
-              font-weight: bold;
-              margin-bottom: 5px;
-          }
-          .job-desc {
-              color: #6c757d;
-              font-size: 14px;
-          }
-          @media (max-width: 767px) {
-              .job-card {
-                  margin-bottom: 20px;
-              }
-          }
-        </style>
-
-        <style>
-            .event-row {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 8px 0;
-              color: #fff;
-              font-family: sans-serif;
-          }
-
-          .event-details {
-              display: flex;
-              align-items: center;
-              gap: 8px;
-          }
-
-          .event-logo {
-              width: 24px;
-              height: 24px;
-              object-fit: contain;
-          }
-
-          .event-title {
-              font-weight: bold;
-              font-size: 14px;
-          }
-
-          .event-date {
-              font-size: 12px;
-              color: #aaa;
-          }
-
-          .event-stats {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-end;
-          }
-
-          .event-viewers {
-              font-size: 12px;
-              font-weight: bold;
-              color: #f27da0; /* pink like in image */
-          }
-
-          .progress-line {
-              width: 40px;
-              height: 2px;
-              background-color: rgba(255, 255, 255, 0.2); /* faded base line */
-              margin-top: 2px;
-              position: relative;
-          }
-
-          .progress-fill {
-              height: 100%;
-              background-color: #f27da0; /* progress color */
-          }
-
-
-            .fs-xxs {
-            font-size: 0.65rem; /* adjust as needed */
-            }
-
-            .fs-xss {
-              font-size: 0.75rem; /* adjust as needed */
-              }
-
-          .match-card {
-            display: flex;
-            align-items: stretch;
-            height: 60px;
-            overflow: hidden;
-            border-radius: 6px;
-            background: #222;
-          }
-
-          /* LIVE strip */
-          .live-strip {
-            background: linear-gradient(to bottom, #ff2b2b, #a50000);
-            color: #fff;
-            font-weight: bold;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg); /* Makes text bottom-to-top */
-            text-align: center;
-            font-size: 12px;
-            padding: 5px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* width: 24px; */
-          }
-
-          /* Middle info section */
-          .match-info {
-            flex: 1;
-            padding: 8px 12px;
-            background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-          }
-
-          .match-info .title {
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-          }
-          .match-info .subtitle {
-            font-size: 12px;
-            color: #bbb;
-          }
-
-          /* Arrow section */
-          .arrow-btn {
-            width: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-            color: #fff;
-            font-size: 18px;
-          }
-
-        </style>
-        
-        @php 
-          $current = Carbon\Carbon::today()->format("Y-m-d");
-          $nextMonthDate = Carbon\Carbon::now()->addMonth();
-          $eventcurrentmonth = DB::table('events')->where('status', '1')
-                      ->where('admstatus', '1')
-                      ->whereMonth('startdate', $nextMonthDate->month)
-                      ->whereYear('startdate', $nextMonthDate->year)
-                      ->orderBy('startdate', 'asc')
-                      ->get();
-
-          
-
-          // Date after 3 months
-          $threeMonthsLater = Carbon\Carbon::today()->addMonths(3);
-
-          // Fetch exhibitions
-          $eventnewmonth = DB::table('events')
-              ->where('status', '1')
-              ->where('admstatus', '1')
-              ->whereIn('edition', [0, 1, 2, 3]) // editions filter
-              ->whereBetween('startdate', [$current, $threeMonthsLater]) // upcoming in next 3 months
-              ->orderBy('startdate', 'asc')
-              ->take('12')
-              ->get();
-
-        @endphp
-
-        <section class="container d-none d-sm-block">
-          <div class="rounded-3 py-2">
-            <div class="border-bottom pt-2 mt-2">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="fw-bold mb-0" style="max-width: 550px;">Search your business event at right time people for your business
-                <small>Call us to plan your upcoming month business event</small></h6>
-
-                <a href="#" class="text-primary small">View all</a>
-              </div>
-            </div>
-
-            <div class="col-md-12">
-              <div class="row">
-                @foreach ($eventcurrentmonth as $franchise)
-                  <div class="col-lg-3 col-md-4 col-sm-6 mb-3" style="background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);">
-                    <div class="card product-card h-100">
-                      <div class="card-body py-2">
-                        <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
-                          <span class="text-bolder">
-                            @if(Carbon\Carbon::parse($franchise->startdate)->format('M') != Carbon\Carbon::parse($franchise->enddate)->format('M'))
-                              {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d M') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
-                            @else
-                              {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
-                            @endif
-                          </span>
-                        </a>
-
-                        <div class="product-title h3 fs-sm mb-0">
-                          <a href="{{ route('event.details',['slug' => $franchise->slug]) }}" class="fw-normal">
-                            {{ ucwords(trans(Str::limit($franchise->eventname, 24))) }}
-                          </a>
-                        </div>
-                        <span class="fs-xs fw-light">
-                          {{ $franchise->venue }}, {{ $franchise->city }}
-                        </span>
-                      </div>
-
-                      <div class="card-body card-body-hidden">
-                        <div class="mb-2">
-                          <a class="btn btn-primary btn-sm d-block w-auto mx-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
-                            <i class="bi bi-brush fs-sm me-1"></i>Know More
-                          </a>
-                        </div>
-                      </div>
+                      <span class="fs-xs fw-light">{{$franchise -> venue}}, {{$franchise -> city}}</span>
                     </div>
                   </div>
-                @endforeach 
+                </div>
+
+              </div>
+
+            </div>
+            @endforeach
+          </div>
+
+          <div class="d-flex">
+            <!-- Product-->
+            @foreach ($evento->take(4) as $franchise)
+            <div class="col-lg-3 col-md-4 col-sm-6 pr-1 mb-4">
+              <div class="card product-card">
+                <div class="card-body py-2">
+                  <a class="product-meta d-block fs-xs pb-1" href="#">
+                    <span class="text-bolder">
+                      @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y ')}}
+                      @else
+                      {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                      @endif
+                    </span>
+                  </a>
+                  <div class="d-flex justify-content-between">
+                    <div class="product-price">
+                      <div class="product-title h3 fs-sm mb-0">
+                        <a href="#" class="fw-normal">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body card-body-hidden">
+                  <div class="mb-2">
+                    <a class="btn btn-primary btn-sm d-block w-auto mx-1" type="" href=""><i class=" bi bi-brush fs-sm me-1"></i>Know More</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            @endforeach
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--Trending conference-->
+  @livewire('conference-component')
+
+  @livewire('trending-dealer-distribution-component')
+
+  <!--Trending Magazine-->
+  @livewire('trending-magazine-component')
+
+  <!-- Creators-->
+  @livewire('trending-creator-component')
+
+  <!--contact-->
+  <div class="container-fluid px-0 d-none" id="listexpo">
+    <div class="row g-0">
+      <div class="col-lg-6 iframe-full-height-wrap">
+        <div class="mx-auto py-lg-5 my-5 text-dark text-center" style="max-width: 35rem;">
+          <p>BE SEEN</p>
+          <h2 class="display-5 text-dark mb-2 ">
+            Business profile
+          </h2>
+          <p class="fw-light  mx-auto lead text-dark pb-2">Create a business profile with helpful information for your business auidence like your Business Model, business description, email address, and website.
+          </p>
+          <a href="#opening" class="btn btn-lg  btn-outline-primary fw-bolder my-2">Learn more about</a>
+        </div>
+      </div>
+
+      @livewire('event-form-component')
+    </div>
+  </div>
+
+  <style>
+    .job-section {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+
+    .job-title {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .job-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Centers horizontally */
+      justify-content: center;
+      /* Centers vertically */
+      height: 100%;
+      /* Ensures uniform height */
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .job-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .job-heading {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .job-desc {
+      color: #6c757d;
+      font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      .job-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+  <style>
+    .event-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    .event-details {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .event-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+
+    .event-title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .event-date {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .event-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .event-viewers {
+      font-size: 12px;
+      font-weight: bold;
+      color: #f27da0;
+      /* pink like in image */
+    }
+
+    .progress-line {
+      width: 40px;
+      height: 2px;
+      background-color: rgba(255, 255, 255, 0.2);
+      /* faded base line */
+      margin-top: 2px;
+      position: relative;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #f27da0;
+      /* progress color */
+    }
+
+
+    .fs-xxs {
+      font-size: 0.65rem;
+      /* adjust as needed */
+    }
+
+    .fs-xss {
+      font-size: 0.75rem;
+      /* adjust as needed */
+    }
+
+    .match-card {
+      display: flex;
+      align-items: stretch;
+      height: 60px;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #222;
+    }
+
+    /* LIVE strip */
+    .live-strip {
+      background: linear-gradient(to bottom, #ff2b2b, #a50000);
+      color: #fff;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      /* Makes text bottom-to-top */
+      text-align: center;
+      font-size: 12px;
+      padding: 5px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* width: 24px; */
+    }
+
+    /* Middle info section */
+    .match-info {
+      flex: 1;
+      padding: 8px 12px;
+      background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .match-info .title {
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .match-info .subtitle {
+      font-size: 12px;
+      color: #bbb;
+    }
+
+    /* Arrow section */
+    .arrow-btn {
+      width: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: #fff;
+      font-size: 18px;
+    }
+  </style>
+
+  @php
+  $current = Carbon\Carbon::today()->format("Y-m-d");
+  $nextMonthDate = Carbon\Carbon::now()->addMonth();
+  $eventcurrentmonth = DB::table('events')->where('status', '1')
+  ->where('admstatus', '1')
+  ->whereMonth('startdate', $nextMonthDate->month)
+  ->whereYear('startdate', $nextMonthDate->year)
+  ->orderBy('startdate', 'asc')
+  ->get();
+
+
+
+  // Date after 3 months
+  $threeMonthsLater = Carbon\Carbon::today()->addMonths(3);
+
+  // Fetch exhibitions
+  $eventnewmonth = DB::table('events')
+  ->where('status', '1')
+  ->where('admstatus', '1')
+  ->whereIn('edition', [0, 1, 2, 3]) // editions filter
+  ->whereBetween('startdate', [$current, $threeMonthsLater]) // upcoming in next 3 months
+  ->orderBy('startdate', 'asc')
+  ->take('12')
+  ->get();
+
+  @endphp
+
+  <section class="container d-none d-sm-block">
+    <div class="rounded-3 py-2">
+      <div class="border-bottom pt-2 mt-2">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0" style="max-width: 550px;">Search your business event at right time people for your business
+            <small>Call us to plan your upcoming month business event</small>
+          </h6>
+
+          <a href="#" class="text-primary small">View all</a>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="row">
+          @foreach ($eventcurrentmonth as $franchise)
+          <div class="col-lg-3 col-md-4 col-sm-6 mb-3" style="background: linear-gradient(to right, rgba(255, 43, 43, 0.3), transparent);">
+            <div class="card product-card h-100">
+              <div class="card-body py-2">
+                <a class="product-meta d-block fs-xs pb-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                  <span class="text-bolder">
+                    @if(Carbon\Carbon::parse($franchise->startdate)->format('M') != Carbon\Carbon::parse($franchise->enddate)->format('M'))
+                    {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d M') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
+                    @else
+                    {{ Carbon\Carbon::parse($franchise->startdate)->format('D, d') }} - {{ Carbon\Carbon::parse($franchise->enddate)->format('D, d M y') }}
+                    @endif
+                  </span>
+                </a>
+
+                <div class="product-title h3 fs-sm mb-0">
+                  <a href="{{ route('event.details',['slug' => $franchise->slug]) }}" class="fw-normal">
+                    {{ ucwords(trans(Str::limit($franchise->eventname, 24))) }}
+                  </a>
+                </div>
+                <span class="fs-xs fw-light">
+                  {{ $franchise->venue }}, {{ $franchise->city }}
+                </span>
+              </div>
+
+              <div class="card-body card-body-hidden">
+                <div class="mb-2">
+                  <a class="btn btn-primary btn-sm d-block w-auto mx-1" href="{{ route('event.details',['slug' => $franchise->slug]) }}">
+                    <i class="bi bi-brush fs-sm me-1"></i>Know More
+                  </a>
+                </div>
               </div>
             </div>
-
           </div>
-        </section>
-
-
-   
-
-<section class="container-fluid d-none d-sm-block py-3" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
-    <div class="border-bottom pt-2 mt-2">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h6 class="fw-bold mb-0" style="max-width: 3 50px; color:#fff;">
-                New Business Events
-                <small>Call us to plan your upcoming month business event</small>
-            </h6>
-            <a href="#" class="text-primary small">View all</a>
+          @endforeach
         </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <section class="container-fluid d-none d-sm-block py-3" style="background-color: #0d0d0d;"> {{-- Smooth black background --}}
+    <div class="border-bottom pt-2 mt-2">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold mb-0" style="max-width: 3 50px; color:#fff;">
+          New Business Events
+          <small>Call us to plan your upcoming month business event</small>
+        </h6>
+        <a href="#" class="text-primary small">View all</a>
+      </div>
     </div>
 
     <div class="col-md-12">
-        <div class="row">
-                @foreach($eventnewmonth as $franchise)
-                  <div class="col-md-4 mb-2">
-                    <div class="match-card">
-                        
-                            <div class="live-strip">
-                                <span>LIVE</span>
-                            </div>
-                    
-                        <div class="match-info">
-                            <div class="title">{{ ucwords(Str::limit($franchise->eventname, 24)) }}</div>
-                            <div class="subtitle">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                              @else
-                                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-                              @endif</div>
-                            <div class="event-stats">
-                                <div class="event-viewers">{{ $franchise->view_count }}M</div>
-                                <div class="progress-line">
-                                    <div class="progress-fill" style="width: 80%;"></div>
-                                </div>
-                            </div>
-                        </div>
+      <div class="row">
+        @foreach($eventnewmonth as $franchise)
+        <div class="col-md-4 mb-2">
+          <div class="match-card">
 
-                        <div class="arrow-btn">➜</div>
+            <div class="live-strip">
+              <span>LIVE</span>
+            </div>
 
-                        
-                    </div>  
-                  </div>
-                @endforeach
+            <div class="match-info">
+              <div class="title">{{ ucwords(Str::limit($franchise->eventname, 24)) }}</div>
+              <div class="subtitle">@if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                @else
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+                @endif
+              </div>
+              <div class="event-stats">
+                <div class="event-viewers">{{ $franchise->view_count }}M</div>
+                <div class="progress-line">
+                  <div class="progress-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="arrow-btn">➜</div>
+
+
+          </div>
         </div>
+        @endforeach
+      </div>
     </div>
-</section>
+  </section>
 
 
 </main>
 
-      @push('scripts')
-          
-          <script>
-            var slider = tns({
-              "container": '.my-Slider1',            
-              "responsive": {
-                "300": {
-                  "items": 1,
-                  "controls": false,
-                  "mouseDrag": true,
-                  "autoplay": true,
-                  "autoplayButtonOutput":false,
-                  "autoplayHoverPause": true,
-                },
-                "500": {
-                  "items": 4,
-                  "nav": false,
-                  "controls": false,
-                  "autoplayHoverPause": true,
-                  "autoplay":true,
-                  "autoplayButtonOutput":false
-                },
-                
-              },
-              "autoplayButtonOutput":false
-            });
-          </script>
+@push('scripts')
 
-          <script>
-            var slider = tns({
-              "container": '.my-Slider2',            
-              "responsive": {
-                "300": {
-                  "items": 1,
-                  "controls": false,
-                  "mouseDrag": true,
-                  "autoplay": true,
-                  "autoplayButtonOutput":false,
-                  "autoplayHoverPause": true,
-                },
-                "500": {
-                  "items": 4,
-                  "nav": false,
-                  "controls": false,
-                  "autoplayHoverPause": true,
-                  "autoplay":true,
-                  "autoplayButtonOutput":false
-                },
-                
-              },
-              "autoplayButtonOutput":false
-            });
-          </script>
+<script>
+  var slider = tns({
+    "container": '.my-Slider1',
+    "responsive": {
+      "300": {
+        "items": 1,
+        "controls": false,
+        "mouseDrag": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false,
+        "autoplayHoverPause": true,
+      },
+      "500": {
+        "items": 4,
+        "nav": false,
+        "controls": false,
+        "autoplayHoverPause": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false
+      },
 
-          <script>
-            var slider = tns({
-              "container": '.my-Slider7',            
-              "responsive": {
-                "300": {
-                  "items": 1,
-                  "controls": false,
-                  "mouseDrag": true,
-                  "autoplay": true,
-                  "autoplayButtonOutput":false,
-                  "autoplayHoverPause": true,
-                },
-                "500": {
-                  "items": 4,
-                  "nav": false,
-                  "controls": false,
-                  "autoplayHoverPause": true,
-                  "autoplay":true,
-                  "autoplayButtonOutput":false
-                },
-                
-              },
-              "autoplayButtonOutput":false
-            });
-          </script>
+    },
+    "autoplayButtonOutput": false
+  });
+</script>
 
-          <script>
-            var slider = tns({
-              "container": '.my-Slider8',            
-              "responsive": {
-                "300": {
-                  "items": 1,
-                  "controls": false,
-                  "mouseDrag": true,
-                  "autoplay": true,
-                  "autoplayButtonOutput":false,
-                  "autoplayHoverPause": true,
-                },
-                "500": {
-                  "items": 4,
-                  "nav": false,
-                  "controls": false,
-                  "autoplayHoverPause": true,
-                  "autoplay":true,
-                  "autoplayButtonOutput":false
-                },
-                
-              },
-              "autoplayButtonOutput":false
-            });
-          </script>
+<script>
+  var slider = tns({
+    "container": '.my-Slider2',
+    "responsive": {
+      "300": {
+        "items": 1,
+        "controls": false,
+        "mouseDrag": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false,
+        "autoplayHoverPause": true,
+      },
+      "500": {
+        "items": 4,
+        "nav": false,
+        "controls": false,
+        "autoplayHoverPause": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false
+      },
 
-      @endpush
+    },
+    "autoplayButtonOutput": false
+  });
+</script>
+
+<script>
+  var slider = tns({
+    "container": '.my-Slider7',
+    "responsive": {
+      "300": {
+        "items": 1,
+        "controls": false,
+        "mouseDrag": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false,
+        "autoplayHoverPause": true,
+      },
+      "500": {
+        "items": 4,
+        "nav": false,
+        "controls": false,
+        "autoplayHoverPause": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false
+      },
+
+    },
+    "autoplayButtonOutput": false
+  });
+</script>
+
+<script>
+  var slider = tns({
+    "container": '.my-Slider8',
+    "responsive": {
+      "300": {
+        "items": 1,
+        "controls": false,
+        "mouseDrag": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false,
+        "autoplayHoverPause": true,
+      },
+      "500": {
+        "items": 4,
+        "nav": false,
+        "controls": false,
+        "autoplayHoverPause": true,
+        "autoplay": true,
+        "autoplayButtonOutput": false
+      },
+
+    },
+    "autoplayButtonOutput": false
+  });
+</script>
+
+@endpush
