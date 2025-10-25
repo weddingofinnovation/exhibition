@@ -55,7 +55,7 @@ class EventComponent extends Component
       return;
     }
 
-    dd($this->showEmailModal = true);
+    $this->showEmailModal = true;
   }
 
   public function sendSelectedEvents()
@@ -67,7 +67,7 @@ class EventComponent extends Component
     // Example: send email (you can implement Mail logic later)
     // Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
 
-    dd($this->selectedEvents);
+
     $this->showEmailModal = false;
     $this->email = '';
     $this->selectedEvents = [];
