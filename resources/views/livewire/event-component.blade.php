@@ -232,7 +232,7 @@
     <ul class="list-group"> {{$search}} {{$venue}}
       @foreach($events as $event)
       <li class="list-group-item">
-        <strong>{{ $event->name }}</strong> — {{ $event->venue }} — {{ $event->date }}
+        <strong>{{ $event->eventname }}</strong> — {{ $event->venue }} — {{ $event->startdate }}
       </li>
       @endforeach
     </ul>
