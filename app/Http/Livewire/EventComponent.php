@@ -95,8 +95,10 @@ class EventComponent extends Component
     $logino->save();
 
     $selectedEventDetails = Event::whereIn('id', $this->selectedEvents)->get();
+    $lname = $this->name;
+    $lemail = $this->email;
     // Example: send email (you can implement Mail logic later)
-    $sendeaml = Mail::to($this->email)->send(new MonthlyEvent($selectedEventDetails));
+    $sendeaml = Mail::to($this->email)->send(new MonthlyEvent($selectedEventDetails, $lname, $lemail));
 
     $this->showEmailModal = false;
     $this->email = '';

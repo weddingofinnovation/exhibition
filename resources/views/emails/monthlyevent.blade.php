@@ -15,7 +15,7 @@
                     <tr>
                         <td style="padding:20px 30px;border-bottom:1px solid #e5e7eb;">
                             <h1 style="margin:0;font-size:22px;color:#111827;">Your Selected Exhibitions</h1>
-                            <p style="margin:5px 0 0 0;color:#6b7280;">Dear {{ ucwords($name) }}, here’s a summary of your selected trade shows and expos.</p>
+                            <p style="margin:5px 0 0 0;color:#6b7280;">Dear {{ ucwords($lname) }}, here’s a summary of your selected trade shows and expos.</p>
                         </td>
                     </tr>
 
