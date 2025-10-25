@@ -28,7 +28,7 @@ class EventComponent extends Component
 
   public $showEmailModal = false;
   public $email = '';
-  
+
 
   public $selectedEvents = []; // store selected event IDs
 
@@ -49,30 +49,31 @@ class EventComponent extends Component
   }
 
   public function openEmailModal()
-    {
-        if (count($this->selectedEvents) === 0) {
-            session()->flash('message', 'Please select at least one event first.');
-            return;
-        }
-
-        $this->showEmailModal = true;
+  {
+    if (count($this->selectedEvents) === 0) {
+      session()->flash('message', 'Please select at least one event first.');
+      return;
     }
+
+    $this->showEmailModal = true;
+  }
 
   public function sendSelectedEvents()
-    {
-        $this->validate([
-            'email' => 'required|email',
-        ]);
+  {
+    $this->validate([
+      'email' => 'required|email',
+    ]);
 
-        // Example: send email (you can implement Mail logic later)
-        // Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
+    // Example: send email (you can implement Mail logic later)
+    // Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
 
-        $this->showEmailModal = false;
-        $this->email = '';
-        $this->selectedEvents = [];
+    dd($this->selectedEvents);
+    $this->showEmailModal = false;
+    $this->email = '';
+    $this->selectedEvents = [];
 
-        session()->flash('message', 'Your selected events list has been sent to your email!');
-    }
+    session()->flash('message', 'Your selected events list has been sent to your email!');
+  }
 
 
   public function store($event_id, $event_eventname, $event_eventype)
