@@ -234,7 +234,7 @@
       <ul class="list-group">
         @foreach($events as $event)
         <li class="list-group-item">
-          <strong>{{ $event->eventname }}</strong> — {{ $event->country}}-{{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }}
+          <strong>{{ $event->eventname }}</strong> — {{ $event->country}} {{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }} — {{$event->enddate}}
         </li>
         @endforeach
       </ul>

@@ -112,7 +112,7 @@
                 </div>
                 @elseif($board == 'speaker')
                 <h4 class="fw-bold mb-2">Speaker</h4>
-                
+
                 @else
                 <h4 class="fw-bold mb-2">Analytics</h4>
                 <div class="d-flex justify-content-between align-items-center">
@@ -741,6 +741,33 @@
             <div class="mt-4">
               <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
               <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+            </div>
+          </div>
+          @elseif($board == 'speaker')
+          @php
+          $network = DB::table('speakers')->where('admstatus', '1')->where('status', '1')->where('entity', 'network')->get();
+          @endphp
+          <div class="col-md-4 col-sm-6 mb-2 py-1">
+            <div class="widget">
+              <!--<h3 class="widget-title fw-bolder">Network</h3>-->
+              @foreach ($network as $franchise)
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                <div class="d-flex align-items-center position-relative">
+
+                  <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="{{route('blog.author', ['slug' => $franchise->slug] )}}">{{$franchise->name}}</a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a>
+                    </h5>
+                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
+              </div>
+              @endforeach
             </div>
           </div>
           @else
