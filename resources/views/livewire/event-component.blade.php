@@ -240,7 +240,7 @@
         </div>
 
         <div class="mt-2 mt-md-0">
-          <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="sendSelectedEvents">
+          <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="openEmailModal">
             Get Selected Events by Email
           </button>
         </div>
