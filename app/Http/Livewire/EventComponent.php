@@ -55,7 +55,7 @@ class EventComponent extends Component
       return;
     }
 
-    $this->showEmailModal = true;
+    dd($this->showEmailModal = true);
   }
 
   public function sendSelectedEvents()

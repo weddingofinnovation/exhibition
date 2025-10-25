@@ -236,7 +236,7 @@
         <div class="text-start">
           <strong>Select</strong> your yearly exhibitions and
           <strong>book premium space in advance!</strong><br>
-          <span class="small">Click the button below to get the list of your selected events by email.</span>
+          <span class="small text-dark">Click the button below to get the list of your selected events by email.</span>
         </div>
 
         <div class="mt-2 mt-md-0">
