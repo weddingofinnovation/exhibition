@@ -32,7 +32,9 @@ class EventComponent extends Component
 
   public $showEmailModal = false;
   public $email = '';
-
+  public $name;
+  public $phone;
+  public $co_name;
 
   public $selectedEvents = []; // store selected event IDs
 
@@ -61,6 +63,8 @@ class EventComponent extends Component
 
     $this->showEmailModal = true;
   }
+
+
 
   public function sendSelectedEvents()
   {

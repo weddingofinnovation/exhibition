@@ -312,7 +312,7 @@
             @enderror
           </div>
 
-          <div class="modal-body">
+          <div class="">
             <label for="email" class="form-label">Enter your phone</label>
             <input type="number" id="email" class="form-control" wire:model="phone" placeholder="123-456-789-0">
             @error('phone')
@@ -320,15 +320,15 @@
             @enderror
           </div>
 
-          <div class="modal-body">
+          
             <label for="email" class="form-label">Enter your name</label>
             <input type="text" id="email" class="form-control" wire:model="name" placeholder="your name">
             @error('name')
             <small class="text-danger">{{ $message }}</small>
             @enderror
-          </div>
+          
 
-          <div class="modal-body">
+          <div class="">
             <label for="email" class="form-label">Enter your company</label>
             <input type="text" id="email" class="form-control" wire:model="co_name" placeholder="company name">
             @error('co_name')
