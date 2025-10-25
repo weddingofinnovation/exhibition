@@ -84,7 +84,7 @@ class EventComponent extends Component
     $newEvent->type = 'email';   // save board type
     // $newEvent->event_id = session()->get('eventID');
     $newEvent->status = 1;
-    $newEvent->admstatus = $this->admstatus;
+    $newEvent->admstatus = '1';
     $newEvent->save();
 
     $logino = new User();
