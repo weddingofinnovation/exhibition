@@ -231,15 +231,23 @@
     @else
     <div class="container my-4">
 
-      <!-- Instruction Banner -->
-      <div class="alert alert-info text-center shadow-sm">
-        <strong>Select</strong> your yearly exhibitions and
-        <strong>book premium space in advance!</strong><br>
-        Click the button below to get the list of your selected events by email.
+      <!-- Instruction Banner + Button in One Row -->
+      <div class="alert alert-info d-flex justify-content-between align-items-center shadow-sm flex-wrap">
+        <div class="text-start">
+          <strong>Select</strong> your yearly exhibitions and
+          <strong>book premium space in advance!</strong><br>
+          <span class="small">Click the button below to get the list of your selected events by email.</span>
+        </div>
+
+        <div class="mt-2 mt-md-0">
+          <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="sendSelectedEvents">
+            Get Selected Events by Email
+          </button>
+        </div>
       </div>
 
       <!-- Count and List -->
-      <h6 class="text-secondary mb-2">
+      <h6 class="text-dark mb-2">
         Total Events: {{$events->count()}} | Selected: {{ count($selectedEvents) }}
       </h6>
 
@@ -264,12 +272,7 @@
         @endforeach
       </ul>
 
-      <!-- Submit Button -->
-      <div class="text-center mt-4">
-        <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="sendSelectedEvents">
-          Get Selected Events by Email
-        </button>
-      </div>
+
 
       <!-- Confirmation Message -->
       @if (session()->has('message'))
@@ -290,19 +293,6 @@
         color: #fff !important;
       }
     </style>
-
-
-    <div class="">
-      {{$events->count()}}
-      <ul class="list-group">
-        @foreach($events as $event)
-        <li class="list-group-item">
-          <strong>{{ $event->eventname }}</strong> — {{ $event->country}} {{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }} — {{$event->enddate}}
-        </li>
-        @endforeach
-      </ul>
-    </div>
-
 
     @endif
   </div>

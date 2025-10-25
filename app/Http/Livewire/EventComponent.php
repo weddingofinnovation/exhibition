@@ -25,6 +25,7 @@ class EventComponent extends Component
   public $search = '';
   public $venue = '';
   public $venues = [];
+  
 
   public $selectedEvents = []; // store selected event IDs
 
@@ -42,6 +43,11 @@ class EventComponent extends Component
       // Select
       $this->selectedEvents[] = $id;
     }
+  }
+
+  public function sendSelectedEvents()
+  {
+     
   }
 
   public function store($event_id, $event_eventname, $event_eventype)
