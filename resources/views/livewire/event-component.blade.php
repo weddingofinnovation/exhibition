@@ -229,13 +229,16 @@
     @if($events->isEmpty())
     <p>No events found.</p>
     @else
-    <ul class="list-group"> {{$search}} {{$venue}}
-      @foreach($events as $event)
-      <li class="list-group-item">
-        <strong>{{ $event->eventname }}</strong> — {{ $event->venue }} — {{ $event->startdate }}
-      </li>
-      @endforeach
-    </ul>
+      <div class="container">
+        {{$events->count()}}
+        <ul class="list-group">
+          @foreach($events as $event)
+          <li class="list-group-item">
+            <strong>{{ $event->eventname }}</strong> — {{ $event->country}}-{{ $event->city }}-{{ $event->venue }} — {{ $event->startdate }}
+          </li>
+          @endforeach
+        </ul>
+      </div>
     @endif
   </div>
   <style>

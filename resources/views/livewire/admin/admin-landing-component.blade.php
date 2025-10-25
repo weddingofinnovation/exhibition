@@ -1,521 +1,575 @@
 <main>
-    <style>
-        
-        * { box-sizing: border-box; }
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-          font-family: sans-serif;
-        }
+    body {
+      font-family: sans-serif;
+    }
 
-        /* ---- button ---- */
+    /* ---- button ---- */
 
-        .button {
-          display: inline-block;
-          padding: 0.5em 1.0em;
-          background: #EEE;
-          border: none;
-          border-radius: 7px;
-          background-image: linear-gradient( to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2) );
-          color: #222;
-          font-family: sans-serif;
-          font-size: 16px;
-          text-shadow: 0 1px white;
-          cursor: pointer;
-        }
+    .button {
+      display: inline-block;
+      padding: 0.5em 1.0em;
+      background: #EEE;
+      border: none;
+      border-radius: 7px;
+      background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2));
+      color: #222;
+      font-family: sans-serif;
+      font-size: 16px;
+      text-shadow: 0 1px white;
+      cursor: pointer;
+    }
 
-        .button:hover {
-          background-color: #8CF;
-          text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-          color: #222;
-        }
+    .button:hover {
+      background-color: #8CF;
+      text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+      color: #222;
+    }
 
-        .button:active,
-        .button.is-checked {
-          background-color: #28F;
-        }
+    .button:active,
+    .button.is-checked {
+      background-color: #28F;
+    }
 
-        .button.is-checked {
-          color: white;
-          text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
-        }
+    .button.is-checked {
+      color: white;
+      text-shadow: 0 -1px hsla(0, 0%, 0%, 0.8);
+    }
 
-        .button:active {
-          box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
-        }
+    .button:active {
+      box-shadow: inset 0 1px 10px hsla(0, 0%, 0%, 0.8);
+    }
 
-        /* ---- button-group ---- */
+    /* ---- button-group ---- */
 
-        .button-group {
-          margin-bottom: 20px;
-        }
+    .button-group {
+      margin-bottom: 20px;
+    }
 
-        .button-group:after {
-          content: '';
-          display: block;
-          clear: both;
-        }
+    .button-group:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
 
-        .button-group .button {
-          float: left;
-          border-radius: 0;
-          margin-left: 0;
-          margin-right: 1px;
-        }
+    .button-group .button {
+      float: left;
+      border-radius: 0;
+      margin-left: 0;
+      margin-right: 1px;
+    }
 
-        .button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
-        .button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+    .button-group .button:first-child {
+      border-radius: 0.5em 0 0 0.5em;
+    }
 
-        /* ---- isotope ---- */
+    .button-group .button:last-child {
+      border-radius: 0 0.5em 0.5em 0;
+    }
 
-        .grid {
-          border: 1px solid #333;
-        }
+    /* ---- isotope ---- */
 
-        /* clear fix */
-        .grid:after {
-          content: '';
-          display: block;
-          clear: both;
-        }
+    .grid {
+      border: 1px solid #333;
+    }
 
-        /* ---- .element-item ---- */
+    /* clear fix */
+    .grid:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
 
-        .element-item {
-          position: relative;
-          float: left;
-          width: 100px;
-          height: 100px;
-          margin: 5px;
-          padding: 10px;
-          background: #888;
-          color: #262524;
-        }
+    /* ---- .element-item ---- */
 
-        .element-item > * {
-          margin: 0;
-          padding: 0;
-        }
+    .element-item {
+      position: relative;
+      float: left;
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      padding: 10px;
+      background: #888;
+      color: #262524;
+    }
 
-        .element-item .name {
-          position: absolute;
+    .element-item>* {
+      margin: 0;
+      padding: 0;
+    }
 
-          left: 10px;
-          top: 60px;
-          text-transform: none;
-          letter-spacing: 0;
-          font-size: 12px;
-          font-weight: normal;
-        }
+    .element-item .name {
+      position: absolute;
 
-        .element-item .symbol {
-          position: absolute;
-          left: 10px;
-          top: 0px;
-          font-size: 42px;
-          font-weight: bold;
-          color: white;
-        }
+      left: 10px;
+      top: 60px;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 12px;
+      font-weight: normal;
+    }
 
-        .element-item .number {
-          position: absolute;
-          right: 8px;
-          top: 5px;
-        }
+    .element-item .symbol {
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      font-size: 42px;
+      font-weight: bold;
+      color: white;
+    }
 
-        .element-item .weight {
-          position: absolute;
-          left: 10px;
-          top: 76px;
-          font-size: 12px;
-        }
+    .element-item .number {
+      position: absolute;
+      right: 8px;
+      top: 5px;
+    }
 
-        .element-item.alkali          { background: #F00; background: hsl(   0, 100%, 50%); }
-        .element-item.alkaline-earth  { background: #F80; background: hsl(  36, 100%, 50%); }
-        .element-item.lanthanoid      { background: #FF0; background: hsl(  72, 100%, 50%); }
-        .element-item.actinoid        { background: #0F0; background: hsl( 108, 100%, 50%); }
-        .element-item.transition      { background: #0F8; background: hsl( 144, 100%, 50%); }
-        .element-item.post-transition { background: #0FF; background: hsl( 180, 100%, 50%); }
-        .element-item.metalloid       { background: #08F; background: hsl( 216, 100%, 50%); }
-        .element-item.diatomic        { background: #00F; background: hsl( 252, 100%, 50%); }
-        .element-item.halogen         { background: #F0F; background: hsl( 288, 100%, 50%); }
-        .element-item.noble-gas       { background: #F08; background: hsl( 324, 100%, 50%); }
+    .element-item .weight {
+      position: absolute;
+      left: 10px;
+      top: 76px;
+      font-size: 12px;
+    }
 
-    </style>
+    .element-item.alkali {
+      background: #F00;
+      background: hsl(0, 100%, 50%);
+    }
 
-        <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <div class="text-center mb-5">
-            <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with COI Marketing Solutions.</p>
-            <div class="">
-                <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
-                    <!-- <div class="col">
+    .element-item.alkaline-earth {
+      background: #F80;
+      background: hsl(36, 100%, 50%);
+    }
+
+    .element-item.lanthanoid {
+      background: #FF0;
+      background: hsl(72, 100%, 50%);
+    }
+
+    .element-item.actinoid {
+      background: #0F0;
+      background: hsl(108, 100%, 50%);
+    }
+
+    .element-item.transition {
+      background: #0F8;
+      background: hsl(144, 100%, 50%);
+    }
+
+    .element-item.post-transition {
+      background: #0FF;
+      background: hsl(180, 100%, 50%);
+    }
+
+    .element-item.metalloid {
+      background: #08F;
+      background: hsl(216, 100%, 50%);
+    }
+
+    .element-item.diatomic {
+      background: #00F;
+      background: hsl(252, 100%, 50%);
+    }
+
+    .element-item.halogen {
+      background: #F0F;
+      background: hsl(288, 100%, 50%);
+    }
+
+    .element-item.noble-gas {
+      background: #F08;
+      background: hsl(324, 100%, 50%);
+    }
+  </style>
+
+  <section class="container py-3 py-lg-5 mt-4 mb-3">
+    <div class="text-center mb-5">
+      <p class="col-md-10 col-lg-8 mx-auto fw-normal">Reach your business goals with COI Marketing Solutions.</p>
+      <div class="">
+        <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center"> {{$eventd->count()}} Event</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.panel', ['board' => 'upload-floor','floorPlanId' => 'null' ])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Panel</h3>
-                      <!-- </a>  -->
-                      <p class="symbol">{{$eventd->count()}}</p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.panel', ['board' => 'upload-floor','floorPlanId' => 'null' ])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Panel</h3>
+            <!-- </a>  -->
+            <p class="symbol">{{$eventd->count()}}</p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Event</h3>
-                      <!-- </a>  -->
-                      <p class="symbol">{{$eventd->count()}}</p>
-                      <!-- <p class="number">80</p>
+
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Event</h3>
+            <!-- </a>  -->
+            <p class="symbol">{{$eventd->count()}}</p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
-                    
-                    <!-- <div class="col">
+          </a>
+
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'order'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Order</div>
                         </a> 
                     </div> -->
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'order'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Order</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'order'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Order</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'floor'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Floor</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'floor'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Floor</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'badge'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Badge</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'speaker'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Speaker</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
-                    
+          </a>
 
-                    <!-- <div class="col">
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'badge'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Badge</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
+                      <p class="weight">200.59</p> -->
+          </a>
+
+
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Searched</div>
                         </a> 
                     </div> -->
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Searched</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'findSearch'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Searched</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'job'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Job</div>
                         </a> 
                     </div> -->
-                   
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'job'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">job</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'job'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">job</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
-                    <!-- <div class="col">
+          </a>
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'client'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Visitor</div>
                         </a> 
                     </div> -->
-                    
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Visitor</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
-                      <p class="weight">200.59</p> -->
-                    </a>
 
-                    <!-- <div class="col">
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Visitor</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
+                      <p class="weight">200.59</p> -->
+          </a>
+
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'blog'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Blog</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'blog'])}}">
-                        <h3 class="name">N Article</h3>
-                      <p class="symbol"></p>
-                    </a>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'blog'])}}">
+            <h3 class="name">N Article</h3>
+            <p class="symbol"></p>
+          </a>
 
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
-                        <h3 class="name">N Business</h3>
-                      <p class="symbol"></p>
-                    </a>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
+            <h3 class="name">N Business</h3>
+            <p class="symbol"></p>
+          </a>
 
-                    
-                    
-                    <!-- <div class="col">
+
+
+          <!-- <div class="col">
                         <a  href="{{route('all.category')}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Category</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('all.category')}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Category</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('all.category')}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Category</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Hashtag</div>
                         </a> 
                     </div> -->
 
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Hashtag</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'createhashtagss'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Hashtag</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'magazine'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Magazine</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'magazine'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Magazine</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'magazine'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Magazine</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'review'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Review</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'review'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Review</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'review'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Review</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'visitor'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">User</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'visitor'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">User</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'visitor'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">User</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'fabrication_multiple_images'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Fabri</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'fabrication_multiple_images'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Fabri</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    
 
-                    <!-- <div class="col">
+
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'viewso'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Views</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'viewso'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Views</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'viewso'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Views</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    {{-- <div class="col">
+          {{-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
-                           <div class="p-3 border rounded border-dark bg-light text-center"> bulk Reviews</div>
-                        </a> 
-                    </div> --}}
+          <div class="p-3 border rounded border-dark bg-light text-center"> bulk Reviews</div>
+          </a>
+        </div> --}}
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Bulk Reviews</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'bulkReview'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Bulk Reviews</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+        </a>
 
-                    <!-- <div class="col">
+        <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'organizer'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Organiser</div>
                         </a> 
                     </div> -->
-                    
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'organizer'])}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">Organiser</h3>
-                        <!-- </a>  -->
-                        <p class="symbol"></p>
-                        <!-- <p class="number">80</p>
-                        <p class="weight">200.59</p> -->
-                    </a>
 
-                    <!-- <div class="col">
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'organizer'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Organiser</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
+                        <p class="weight">200.59</p> -->
+        </a>
+
+        <!-- <div class="col">
                         <a href="{{route('admin.dashboard', ['board' => 'new-organiser'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Add Organiser</div>
                         </a> 
                     </div> -->
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'new-organiser'])}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">Add Organiser</h3>
-                        <!-- </a>  -->
-                        <p class="symbol"></p>
-                        <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'new-organiser'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Add Organiser</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
+        </a>
 
-                     <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'msme'])}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">MSME</h3>
-                        <!-- </a>  -->
-                        <p class="symbol"></p>
-                        <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'msme'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">MSME</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
-                    <!-- <div class="col">
+        </a>
+        <!-- <div class="col">
                         <a href="{{route('admin.dashboard', ['board' => 'venue'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Venue</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'venue'])}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">Venue</h3>
-                        <!-- </a>  -->
-                        <p class="symbol">0</p>
-                        <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'venue'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Venue</h3>
+          <!-- </a>  -->
+          <p class="symbol">0</p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
-                    
+        </a>
 
-                    <!-- <div class="col">
+
+        <!-- <div class="col">
                         <a  href="{{route('admin.questionadd')}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Question</div>
                         </a> 
                     </div> -->
-                    
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.questionadd')}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">Question</h3>
-                        <!-- </a>  -->
-                        <p class="symbol">0</p>
-                        <!-- <p class="number">80</p>
+
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.questionadd')}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Question</h3>
+          <!-- </a>  -->
+          <p class="symbol">0</p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
-                    <!-- <div class="col">
+        </a>
+        <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center">Plan</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
-                        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                          <h3 class="name">Plan</h3>
-                        <!-- </a>  -->
-                        <p class="symbol"></p>
-                        <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'ticketPlan'])}}">
+          <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+          <h3 class="name">Plan</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
+        </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'own-plan-add-ticket'])}}">
-                        {{-- <a  > --}}
-                          <h3 class="name">Add Ticket</h3>
-                        <!-- </a>  -->
-                        <p class="symbol"></p>
-                        <!-- <p class="number">80</p>
+        <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'own-plan-add-ticket'])}}">
+          {{-- <a  > --}}
+          <h3 class="name">Add Ticket</h3>
+          <!-- </a>  -->
+          <p class="symbol"></p>
+          <!-- <p class="number">80</p>
                         <p class="weight">200.59</p> -->
-                    </a>
-                    
-                    
-                    
-                </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="container py-3 py-lg-5 mt-4 mb-3">
-          <div class="text-center mb-5">
-          <p class="col-md-10 col-lg-8 mx-auto fw-normal">Status</p>
-            <div class="">
-                <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
+        </a>
 
-                <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
-                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                    <h3 class="name">Total Event</h3>
-                  <!-- </a>  -->
-                  <p class="symbol">{{$event->count()}}</p>
-                  <!-- <p class="number">80</p>
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="container py-3 py-lg-5 mt-4 mb-3">
+    <div class="text-center mb-5">
+      <p class="col-md-10 col-lg-8 mx-auto fw-normal">Status</p>
+      <div class="">
+        <div class="row row-cols-2 row-cols-lg-6 gy-2 gx-3 g-lg-3">
+
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Total Event</h3>
+            <!-- </a>  -->
+            <p class="symbol">{{$event->count()}}</p>
+            <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
-                </a>
+          </a>
 
-                <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'job'])}}">
-                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                    <h3 class="name">Expire Event</h3>
-                  <!-- </a>  -->
-                  <p class="symbol">{{$eventd->count()}}</p>
-                  <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'job'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Expire Event</h3>
+            <!-- </a>  -->
+            <p class="symbol">{{$eventd->count()}}</p>
+            <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
-                </a>
+          </a>
 
-                <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
-                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                    <h3 class="name">Active Event</h3>
-                  <!-- </a>  -->
-                  <p class="symbol">{{$evento->count()}}</p>
-                  <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'client'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Active Event</h3>
+            <!-- </a>  -->
+            <p class="symbol">{{$evento->count()}}</p>
+            <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
-                </a>
+          </a>
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                         <a  href="{{route('admin.dashboard', ['board' => 'event'])}}">
                            <div class="p-3 border rounded border-dark bg-light text-center"> <span class="small">total</span>
                            {{$event->count()}} Event</div>
@@ -524,56 +578,56 @@
 
 
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'job'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center"><span class="small">Expire</span>{{$eventd->count()}} Event</div>
                         </a> 
                     </div> -->
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'client'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center"><span class="small">Active</span>{{$evento->count()}} Event</div>
                         </a> 
                     </div> -->
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'createShtDesc'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Sht Desc</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'createShtDesc'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Sht Desc</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'multiple_images'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Poster</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'multiple_images'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Poster</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'upgradeContent'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Error free</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'upgradeContent'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Error free</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    <a class="element-item transition metal" data-category="transition" href="{{route('admin.blogpost', ['board' => 'openAI'])}}">
-                      <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                        <h3 class="name">Open AI</h3>
-                      <!-- </a>  -->
-                      <p class="symbol"></p>
-                      <!-- <p class="number">80</p>
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.blogpost', ['board' => 'openAI'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">Open AI</h3>
+            <!-- </a>  -->
+            <p class="symbol"></p>
+            <!-- <p class="number">80</p>
                       <p class="weight">200.59</p> -->
-                    </a>
+          </a>
 
-                    
-                    <!-- <div class="col">
+
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'createShtDesc'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Sht Desc</div>
                         </a> 
@@ -585,7 +639,7 @@
                         </a> 
                     </div> -->
 
-                    <!-- <div class="col">
+          <!-- <div class="col">
                          <a href="{{route('admin.dashboard', ['board' => 'upgradeContent'])}}">
                             <div class="p-3 border rounded border-dark bg-light text-center">Error free</div>
                         </a> 
@@ -593,39 +647,39 @@
 
 
 
-                </div>
-            </div>
-          </div>
-        </section>
-        
-        <section class="container">
-            <div class="text-center  fs-md fw-bold">Data Center</div>
-            <div class="grido">
-              <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'data'])}}">
+        </div>
+      </div>
+    </div>
+  </section>
 
-                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                    <h3 class="name">expo</h3>
-                  <!-- </a>  -->
-                  <p class="symbol">count</p>
-                  <!-- <p class="number">80</p>
+  <section class="container">
+    <div class="text-center  fs-md fw-bold">Data Center</div>
+    <div class="grido">
+      <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'data'])}}">
+
+        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+        <h3 class="name">expo</h3>
+        <!-- </a>  -->
+        <p class="symbol">count</p>
+        <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
-              </a>
+      </a>
 
-              <a class="element-item transition metal" data-category="transition" href="{{route('email.promo')}}">
+      <a class="element-item transition metal" data-category="transition" href="{{route('email.promo')}}">
 
-                  <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
-                    <h3 class="name">Email</h3>
-                  <!-- </a>  -->
-                  <p class="symbol">count</p>
-                  <!-- <p class="number">80</p>
+        <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+        <h3 class="name">Email</h3>
+        <!-- </a>  -->
+        <p class="symbol">count</p>
+        <!-- <p class="number">80</p>
                   <p class="weight">200.59</p> -->
-              </a>
+      </a>
 
-              <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'email'])}}">
-                    <h3 class="name">Email</h3>
-                  <p class="symbol">count</p>
-              </a>
-            </div>
-        </section>
+      <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'email'])}}">
+        <h3 class="name">Email</h3>
+        <p class="symbol">count</p>
+      </a>
+    </div>
+  </section>
 
 </main>

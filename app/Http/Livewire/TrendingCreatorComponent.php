@@ -16,7 +16,7 @@ class TrendingCreatorComponent extends Component
       $eid = $event->id;
       Session()->put ($poostKey , $eid);
       return redirect()->route('event.exhibit');
-    } 
+    } admin
 
 
     public function render()
