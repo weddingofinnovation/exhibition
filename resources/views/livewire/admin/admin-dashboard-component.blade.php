@@ -733,7 +733,7 @@
             @endif
           </div>
           @elseif($board == 'floor')
-          <div class="con">
+          <div class="">
             <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
 
             <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
@@ -770,6 +770,30 @@
             </div>
           </div>
           @endforeach
+
+          <div class="row">
+            @foreach ($network as $franchise)
+            <div class="col-md-4 col-sm-6 mb-3 py-2">
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2 border rounded p-2">
+                <div class="d-flex align-items-center position-relative">
+                  <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="{{route('blog.author', ['slug' => $franchise->slug])}}">
+                        {{$franchise->name}}
+                      </a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a>
+                    </h5>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
+              </div>
+            </div>
+            @endforeach
+          </div>
+
 
 
           @else
