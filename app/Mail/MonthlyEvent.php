@@ -46,6 +46,6 @@ class MonthlyEvent extends Mailable
             'selectedEventDetails' => $this->selectedEventDetails,
             'lname' => $this->lname,
             'lemail' => $this->lemail,
-        ]);
+        ])->view('emails.monthlyevent');;
     }
 }
