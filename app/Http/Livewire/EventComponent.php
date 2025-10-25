@@ -8,13 +8,17 @@ use App\Models\Denco;
 use App\Models\Event;
 use App\Models\Expo;
 use App\Models\Franchise;
+use App\Models\Lead;
 use App\Models\Mag;
 use App\Models\Speaker;
+use App\Models\User;
 use App\Models\Viewso;
 use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class EventComponent extends Component
@@ -62,10 +66,30 @@ class EventComponent extends Component
   {
     $this->validate([
       'email' => 'required|email',
+      'phone' => 'required',
+      'name' => 'required',
+      'co_name' => 'required',
     ]);
 
+    $newEvent = new Lead();
+    $newEvent->name = $this->name;
+    $newEvent->email = $this->email;
+    $newEvent->phone = $this->phone;
+    $newEvent->type = 'email';   // save board type
+    // $newEvent->event_id = session()->get('eventID');
+    $newEvent->status = $this->status;
+    $newEvent->admstatus = $this->admstatus;
+    $newEvent->save();
+
+    $logino = new User();
+    $logino->name = $this->name;
+    $logino->email = $this->email;
+    $logino->password = Hash::make($this->email);
+    $logino->phone = $this->phone;
+    $logino->save();
+
     // Example: send email (you can implement Mail logic later)
-    // Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
+    $sendeaml = Mail::to($this->email)->send(new SelectedEventsMail($this->selectedEvents));
 
 
     $this->showEmailModal = false;

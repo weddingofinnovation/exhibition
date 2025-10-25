@@ -303,6 +303,7 @@
             <h5 class="modal-title">Send Selected Events</h5>
             <button type="button" class="btn-close" wire:click="$set('showEmailModal', false)"></button>
           </div>
+
           <div class="modal-body">
             <label for="email" class="form-label">Enter your email address</label>
             <input type="email" id="email" class="form-control" wire:model="email" placeholder="you@example.com">
@@ -310,6 +311,31 @@
             <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
+
+          <div class="modal-body">
+            <label for="email" class="form-label">Enter your phone</label>
+            <input type="number" id="email" class="form-control" wire:model="phone" placeholder="123-456-789-0">
+            @error('phone')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+          </div>
+
+          <div class="modal-body">
+            <label for="email" class="form-label">Enter your name</label>
+            <input type="text" id="email" class="form-control" wire:model="name" placeholder="your name">
+            @error('name')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+          </div>
+
+          <div class="modal-body">
+            <label for="email" class="form-label">Enter your company</label>
+            <input type="text" id="email" class="form-control" wire:model="co_name" placeholder="company name">
+            @error('co_name')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+          </div>
+
           <div class="modal-footer">
             <button class="btn btn-secondary" wire:click="$set('showEmailModal', false)">Cancel</button>
             <button class="btn btn-primary" wire:click="sendSelectedEvents">Send</button>
