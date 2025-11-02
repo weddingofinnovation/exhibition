@@ -6,7 +6,7 @@
   <div class="container mt-2">
     <div class="row">
 
-      <div class="col-3">
+      <div class="col-3 d-none d-md-block bg-light border">
         <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
           <!-- Logo & Name -->
           <div class="d-flex align-items-center mb-3">
@@ -63,7 +63,7 @@
 
       </div>
 
-      <div class="col-9">
+      <div class="col-12 col-md-9">
         <div class="my-0">
 
           <div class="card shadow-sm border-0 mb-2">

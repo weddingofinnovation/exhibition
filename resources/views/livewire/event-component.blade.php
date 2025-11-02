@@ -298,6 +298,7 @@
     @if($showEmailModal)
     <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
       <div class="modal-dialog modal-dialog-centered">
+        
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Send Selected Events</h5>
