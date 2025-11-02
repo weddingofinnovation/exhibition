@@ -71,7 +71,7 @@
               <!-- Page Title -->
 
 
-              <div class=" d-none d-md-block d-flex justify-content-between align-items-center mb-2">
+              <div class="d-none d-md-flex justify-content-between align-items-center mb-2">
 
                 @if($board == 'order')
                 <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
