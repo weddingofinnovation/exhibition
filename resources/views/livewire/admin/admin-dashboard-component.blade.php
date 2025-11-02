@@ -66,12 +66,12 @@
       <div class="col-12 col-md-9">
         <div class="my-0">
 
-          <div class="card shadow-sm border-0 mb-2">
+          <div class="card shadow-sm border-0 mb-2 d-none d-md-block">
             <div class="card-body pb-1 pt-2">
               <!-- Page Title -->
 
 
-              <div class="d-none d-md-flex justify-content-between align-items-center mb-2">
+              <div class="d-flex justify-content-between align-items-center mb-2">
 
                 @if($board == 'order')
                 <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
