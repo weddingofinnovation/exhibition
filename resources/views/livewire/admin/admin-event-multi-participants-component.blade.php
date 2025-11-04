@@ -151,7 +151,7 @@
         <div class="container mt-2">
             <div class="row">
 
-                <div class="col-3 d-none d-md-block bg-light border">
+                <div class="col-3 d-none d-md-block bg-light">
                     <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
                         <!-- Logo & Name -->
                         <div class="d-flex align-items-center mb-3">
@@ -211,58 +211,60 @@
 
 
 
-                <div class="card shadow-sm border-0 mb-2 d-none d-md-block">
-                    <div class="card-body pb-1 pt-2">
-                        <!-- Page Title -->
 
-
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-
-                            <h4 class="fw-bold mb-2">Speaker<small>0</small></h4>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <input type="search" class="form-control w-auto" placeholder="Search...">
-
-                                <div class="d-flex justify-content-between align-items-center mb-3">
-                                    <div>
-                                        <button wire:click="deleteSelected" class="btn btn-danger btn-sm me-2">Delete Selected</button>
-                                        <button wire:click="addToEvent" class="btn btn-primary btn-sm">Add to Event</button>
-                                    </div>
-
-                                    <div>
-                                        <input type="checkbox" id="selectAll" wire:click="selectAll" class="form-check-input me-1">
-                                        <label for="selectAll" class="form-check-label">Select All</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <!-- Tabs -->
-                        <ul class="nav nav-tabs mb-2" id="analyticsTabs">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">New</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Visitors</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Followers</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Important</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Sale</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Email</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
 
                 <div class="container col-9"> <!--col-lg-8 pt-lg-4 pb-4 mb-3 -->
+                    <div class="card shadow-sm border-0 mb-2 d-none d-md-block">
+                        <div class="card-body pb-1 pt-2">
+                            <!-- Page Title -->
+
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+
+                                <h4 class="fw-bold mb-2">Speaker<small>0</small></h4>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <input type="search" class="form-control w-auto" placeholder="Search...">
+
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div>
+                                            <button wire:click="deleteSelected" class="btn btn-danger btn-sm me-2">Delete Selected</button>
+                                            <button wire:click="addToEvent" class="btn btn-primary btn-sm">Add to Event</button>
+                                        </div>
+
+                                        <div>
+                                            <input type="checkbox" id="selectAll" wire:click="selectAll" class="form-check-input me-1">
+                                            <label for="selectAll" class="form-check-label">Select All</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Tabs -->
+                            <ul class="nav nav-tabs mb-2" id="analyticsTabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">New</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Visitors</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Followers</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Important</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Sale</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Email</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class=" ps-lg-0 pe-xl-5">
 
                         @if($formm == 'addSpeaker')
