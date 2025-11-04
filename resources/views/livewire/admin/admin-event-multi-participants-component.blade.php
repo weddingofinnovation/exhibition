@@ -210,7 +210,7 @@
                         <div class="widget">
                             <div 
                                 class="card p-2 border rounded shadow-sm speaker-card {{ in_array($franchise->id, $selectedSpeakers) ? 'selected' : '' }}"
-                                wire:click="toggleSelect({{ $speaker->id }})"
+                                wire:click="toggleSelect({{ $franchise->id }})"
                                 style="cursor:pointer;"
                             >
                                 <div class="d-flex align-items-center justify-content-between w-100 mb-2">
