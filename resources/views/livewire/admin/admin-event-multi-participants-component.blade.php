@@ -247,13 +247,13 @@
                                     <a class="nav-link active" href="#">New</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Visitors</a>
+                                    <a class="nav-link" href="#">Add Speaker</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Followers</a>
+                                    <a class="nav-link" href="#">Suggested Speaker</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Important</a>
+                                    <a class="nav-link" href="#">Advertise</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Sale</a>
@@ -261,6 +261,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Email</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Mark Association</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">New Association</a>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -610,7 +617,7 @@
                     <h3>selected association, govt. association....</h3>
 
                     @php
-                    $getReference = DB::table('brands')->where('dtype','!=', 'organiser')->get();
+                      $getReference = DB::table('brands')->where('dtype','!=', 'organiser')->get();
                     @endphp
 
                     <style>
