@@ -155,68 +155,81 @@
             <div class=" ps-lg-0 pe-xl-5">
 
                 @if($formm == 'addSpeaker')
-                <form wire:submit.prevent="updateSpeaker">
-                    <input type="text" class="form-control" placeholder="Speaker" wire:model="name">
-                    <button class="btn btn-primary mt-2" class="form-control" type="submit">Submit</button>
-                </form>
+                    <div class="container my-4">
 
-                @foreach($speaker as $pav)
-                <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                        <div class="h4 fw-light mb-0">Pav</div>
+                        {{-- ================== Add / Update Speaker Form ================== --}}
+                        <div class="card shadow-sm border-0 mb-4">
+                            <div class="card-body">
+                                <h5 class="fw-semibold text-primary mb-3">Add / Update Speaker</h5>
 
-                        <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                    </div>
-
-                    <div class="col-7  p-0">
-                        @if(is_null($pav->desc))
-                        <div class="text-muted fs-sm text-start">{{$pav->name}} </div>
-                        @else
-                        <div class="fs-md fw-normal text-start">
-                            {{$evento->name}}<br>
-
-                            {{$evento->organisation}}
+                                <form wire:submit.prevent="updateSpeaker" class="row g-2 align-items-center">
+                                    <div class="col-12 col-md-8">
+                                        <input type="text" class="form-control" placeholder="Speaker Name" wire:model="name">
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <button class="btn btn-primary w-100" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-                        @endif
-                    </div>
 
-                    <div class="col-3 p-0">
-                        @if(is_null($pav->desc))
-                        <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Add</a>
-                        @else
-                        <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Edit</a>
-                        @endif
-                    </div>
-                </div>
-                @endforeach
+                        {{-- ================== Existing Speakers List ================== --}}
+                        <h5 class="fw-semibold text-dark mb-3">Speakers List</h5>
 
-                <h1>Suggested Speaker</h1>
-                <div class="row">
+                        @foreach($speaker as $pav)
+                        <div class="row align-items-center gx-2 gy-2 mb-2 shadow-sm border rounded p-2 bg-white">
+                            <div class="col-12 col-md-2 text-center">
+                                <div class="h5 fw-light mb-1 text-primary">Pav</div>
+                                <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center p-2">
+                                    <i class="bi bi-bookmark fs-5"></i>
+                                </div>
+                            </div>
 
-                    <!-- Bestsellers-->
-                    <div class="col-md-4 col-sm-6 mb-2 py-1">
-                        <div class="widget">
+                            <div class="col-12 col-md-7 text-start">
+                                @if(is_null($pav->desc))
+                                <div class="fw-normal text-muted">{{ $pav->name }}</div>
+                                @else
+                                <div class="fw-semibold">{{ $evento->name }}</div>
+                                <div class="text-muted small">{{ $evento->organisation }}</div>
+                                @endif
+                            </div>
+
+                            <div class="col-12 col-md-3 text-md-end text-center">
+                                @if(is_null($pav->desc))
+                                <a href="{{ route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker']) }}" class="btn btn-sm btn-outline-primary w-100 w-md-auto">Add</a>
+                                @else
+                                <a href="{{ route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker']) }}" class="btn btn-sm btn-primary w-100 w-md-auto">Edit</a>
+                                @endif
+                            </div>
+                        </div>
+                        @endforeach
+
+                        {{-- ================== Suggested Speakers ================== --}}
+                        <h5 class="fw-semibold text-dark mt-5 mb-3">Suggested Speakers</h5>
+
+                        <div class="row g-3">
                             @foreach ($suggestedSpeaker as $franchise)
-                            <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                                <div class="d-flex align-items-center position-relative">
-
-                                    <img class="rounded-circle ms-2" src="{{url('public/speaker/'.$franchise->image)}}" width="17%" alt="Avatar">
-                                    <div class="ms-2">
-                                        <h4 class="mb-1 fs-base text-body"><a class="nav-link-style stretched-link" href="#">{{$franchise->name}}</a></h4>
-                                        <h5 class="mb-1 fs-xs"><a class="nav-link-style stretched-link" href="#">{{$franchise->website}} {{$franchise->organisation}}</a></h5>
-                                        <!--<span class="fs-xs text-muted">730 followers</span>-->
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card border-0 shadow-sm h-100 p-3">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            <img class="rounded-circle border" src="{{ url('public/speaker/'.$franchise->image) }}" width="50" height="50" alt="Speaker">
+                                            <div class="ms-3">
+                                                <h6 class="mb-0 text-body fw-semibold">{{ $franchise->name }}</h6>
+                                                <small class="text-muted d-block">{{ $franchise->organisation }}</small>
+                                                <small class="text-muted">{{ $franchise->website }}</small>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
                                     </div>
                                 </div>
-                                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
                             </div>
                             @endforeach
                         </div>
+
                     </div>
-
-
-                </div>
                 @endif
+
 
                 @if($formm == 'facts')
 
@@ -228,37 +241,34 @@
                 </form>
 
                 @foreach($speaker as $pav)
+                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                        <div class="col  pr-0">
+                            <div class="h4 fw-light mb-0">Pav</div>
 
-
-                <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                        <div class="h4 fw-light mb-0">Pav</div>
-
-                        <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                    </div>
-
-                    <div class="col-7  p-0">
-                        @if(is_null($pav->desc))
-                        <div class="text-muted fs-sm text-start">{{$pav->name}} </div>
-                        @else
-                        <div class="fs-md fw-normal text-start">
-                            {{$evento->name}}<br>
-
-                            {{$evento->organisation}}
+                            <div class="round-circle"><i class="bi bi-bookmark"></i></div>
+                            {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
                         </div>
-                        @endif
-                    </div>
 
-                    <div class="col-3 p-0">
-                        @if(is_null($pav->desc))
-                        <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Add</a>
-                        @else
-                        <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Edit</a>
-                        @endif
-                    </div>
-                </div>
+                        <div class="col-7  p-0">
+                            @if(is_null($pav->desc))
+                            <div class="text-muted fs-sm text-start">{{$pav->name}} </div>
+                            @else
+                            <div class="fs-md fw-normal text-start">
+                                {{$evento->name}}<br>
 
+                                {{$evento->organisation}}
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="col-3 p-0">
+                            @if(is_null($pav->desc))
+                            <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Add</a>
+                            @else
+                            <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'detailSpeaker'])}}" class="btn btn-primary btn-sm">Edit</a>
+                            @endif
+                        </div>
+                    </div>
                 @endforeach
                 <h1>Suggested Speaker</h1>
                 <div class="row">
@@ -1159,7 +1169,6 @@
 
             </form>
         </div>
-
 
 
         <div class="handheld-toolbar">
