@@ -209,7 +209,7 @@
                     <div class="col-md-4 col-sm-6 mb-2 py-1">
                         <div class="widget">
                             <div 
-                                class="card p-2 border rounded shadow-sm speaker-card {{ in_array($speaker->id, $selectedSpeakers) ? 'selected' : '' }}"
+                                class="card p-2 border rounded shadow-sm speaker-card {{ in_array($franchise->id, $selectedSpeakers) ? 'selected' : '' }}"
                                 wire:click="toggleSelect({{ $speaker->id }})"
                                 style="cursor:pointer;"
                             >
