@@ -262,7 +262,7 @@
                     </div>
                 </div>
 
-                <section class="container"> <!--col-lg-8 pt-lg-4 pb-4 mb-3 -->
+                <div class="container col-9"> <!--col-lg-8 pt-lg-4 pb-4 mb-3 -->
                     <div class=" ps-lg-0 pe-xl-5">
 
                         @if($formm == 'addSpeaker')
@@ -1168,8 +1168,8 @@
                     @endif
 
 
+                </div>
             </div>
-            </section>
 
 
 
