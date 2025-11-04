@@ -43,7 +43,7 @@
               </li>
 
               <li class="nav-item mb-1">
-                <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Speaker</a>
+                <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addSpeaker' ])}}" class="nav-link text-dark" style="background-color: #fff;">Speaker</a>
               </li>
 
 
