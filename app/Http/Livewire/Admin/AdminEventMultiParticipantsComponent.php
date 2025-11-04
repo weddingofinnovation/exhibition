@@ -45,7 +45,7 @@ class AdminEventMultiParticipantsComponent extends Component
     public $name;
     public $searchTerm;
     public $checkvalue = [];
-    
+
     public $hastag;
     public $hasttag;
 
@@ -60,27 +60,27 @@ class AdminEventMultiParticipantsComponent extends Component
     public $lookingAddFromIMage;
 
     public $organisation;
-    
+
     public $assoname;
     public $assoimage;
     public $type;
 
-   public $findidvenue;
-   public $rate;
-   public $disrate;
-   public $stall_area;
-   public $expiredate;
+    public $findidvenue;
+    public $rate;
+    public $disrate;
+    public $stall_area;
+    public $expiredate;
 
-   public $approved_date;
-   public $reference_id;
+    public $approved_date;
+    public $reference_id;
+    public $speakers = [];
+    public $selectedSpeakers = [];
+
+    use WithFileUploads;
 
 
-   
-    Use WithFileUploads;
 
-
-
-    public function mount($event_id, $formm )
+    public function mount($event_id, $formm)
     {
         $fattribute = Event::find($event_id);
         $this->event_id = $fattribute->id;
@@ -90,48 +90,76 @@ class AdminEventMultiParticipantsComponent extends Component
         $this->formm = $formm;
         $this->status = '1';
         $this->admstatus = '0';
-       
+        $this->speakers = Speaker::all();
+    }
+
+    public function toggleSelect($id)
+    {
+        if (in_array($id, $this->selectedSpeakers)) {
+            $this->selectedSpeakers = array_diff($this->selectedSpeakers, [$id]);
+        } else {
+            $this->selectedSpeakers[] = $id;
+        }
+    }
+
+    public function deleteSelected()
+    {
+        if (!empty($this->selectedSpeakers)) {
+            Speaker::whereIn('id', $this->selectedSpeakers)->delete();
+            $this->mount(); // reload list
+            $this->selectedSpeakers = [];
+            session()->flash('message', 'Selected speakers deleted.');
+        }
+    }
+
+    public function addToEvent()
+    {
+        if (!empty($this->selectedSpeakers)) {
+            // Example logic — adjust as per your event system
+            // EventSpeaker::insert([...]);
+            session()->flash('message', 'Speakers added to event successfully.');
+        }
     }
 
     public function business()
     {
         //   ($this->checkvalue, $brandAtt;
-          $brandAttend = new Brand();
-          $brandAttend->brand_name = trim($this->brand_name);
-          $brandAttend->event_id = $this->event_id;
-          $brandAttend->official_website = $this->link;
-          $brandAttend->save();
+        $brandAttend = new Brand();
+        $brandAttend->brand_name = trim($this->brand_name);
+        $brandAttend->event_id = $this->event_id;
+        $brandAttend->official_website = $this->link;
+        $brandAttend->save();
     }
-    
+
     public function dateImage()
     {
         $fattribute = Event::find($this->event_id);
-       
-        $newimage = Carbon::now()->timestamp.'.'.$this->image->extension();
+
+        $newimage = Carbon::now()->timestamp . '.' . $this->image->extension();
         $this->image->storeAs('exhibition', $newimage);
         $fattribute->image = $newimage;
 
         $fattribute->save();
-        session()->flash('message','Event has been updated succesfully!!');
+        session()->flash('message', 'Event has been updated succesfully!!');
         return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
     }
 
 
     public function generateSlug()
     {
-        $this->slug = Str::slug($this->pavillion_name,'-');
+        $this->slug = Str::slug($this->pavillion_name, '-');
     }
 
     public function add()
     {
         $this->validate([
-            'pavillion_name'=>'required',
-            'business'=>'required',
-            'nostall'=>'required',
-            'desc'=>'required',
+            'pavillion_name' => 'required',
+            'business' => 'required',
+            'nostall' => 'required',
+            'desc' => 'required',
             //'image'=>'required',
-            'startdate'=>'required',
-            'lastdate'=>'required',
+            'startdate' => 'required',
+            'lastdate' => 'required',
         ]);
 
         $newEvent = new Pavillion();
@@ -140,7 +168,7 @@ class AdminEventMultiParticipantsComponent extends Component
         $newEvent->slug = $this->slug;
         $newEvent->nostall = $this->nostall;
         $newEvent->desc = $this->desc;
-        $newimage = Carbon::now()->timestamp.'.'.$this->image->extension();
+        $newimage = Carbon::now()->timestamp . '.' . $this->image->extension();
         $this->image->storeAs('exhibition', $newimage);
         $newEvent->image = $newimage;
         $newEvent->startdate = $this->startdate;
@@ -151,19 +179,18 @@ class AdminEventMultiParticipantsComponent extends Component
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
         //return redirect()->route('seller.dashboard');
-        session()->flash('message','Thanks for sharing your review.');
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     public function updateBrand()
     {
-        $rti = Str::replace('  ',' ',$this->brand_name);
+        $rti = Str::replace('  ', ' ', $this->brand_name);
         $ret = explode(",", $rti);
 
-        foreach($ret as $tre)
-        {
+        foreach ($ret as $tre) {
             $bran = Event::find($this->event_id);
             $brandname = trim($tre);
-            $slug = Str::slug($brandname,'-');
+            $slug = Str::slug($brandname, '-');
             $brand = Brand::firstOrCreate(['brand_name' => $brandname], ['slug' => $slug, 'status' => $this->status, 'admstatus' => $this->admstatus]);
 
             //$brand->slug = str::slug($tre,'-');
@@ -176,27 +203,23 @@ class AdminEventMultiParticipantsComponent extends Component
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function updateOrganisation()
     {
-        $rti = Str::replace('  ',' ',$this->organisation);
+        $rti = Str::replace('  ', ' ', $this->organisation);
         $ret = explode(",", $rti);
 
-        foreach($ret as $tre)
-        {
+        foreach ($ret as $tre) {
             $brand = new Brand();
             $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
             $brand->organisation = trim($tre);
-            $brand->slug = str::slug($tre,'-');
+            $brand->slug = str::slug($tre, '-');
             $brand->status = $this->status;
             $brand->user_id = Auth::user()->id;
             $brand->save();
-          
         }
-
     }
 
     public $brand_logo = [];
@@ -204,13 +227,12 @@ class AdminEventMultiParticipantsComponent extends Component
     {
         $multiimage = $this->brand_logo;
 
-        foreach($multiimage as $key => $imageso)
-        {
+        foreach ($multiimage as $key => $imageso) {
             $brand = new Brand();
-            $bran = Event::find($this ->event_id);
+            $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
 
-            $newimage = Carbon::now()->timestamp. $key. '.'. $multiimage[$key]->extension();
+            $newimage = Carbon::now()->timestamp . $key . '.' . $multiimage[$key]->extension();
             $multiimage[$key]->storeAs('exhibition', $newimage);
             $brand->brand_logo = $newimage;
 
@@ -218,22 +240,20 @@ class AdminEventMultiParticipantsComponent extends Component
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function updatePavillion()
     {
-        $rti = Str::replace('  ',' ',$this->pavillion_name);
+        $rti = Str::replace('  ', ' ', $this->pavillion_name);
         $ret = explode(",", $rti);
 
-        foreach($ret as $tre)
-        {
+        foreach ($ret as $tre) {
             $brand = new Pavillion();
             $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
             $brand->pavillion_name = trim($tre);
             $brand->business = $brand->pavillion_name;
-            $brand->slug = str::slug($tre,'-');
+            $brand->slug = str::slug($tre, '-');
             $brand->status = $this->status;
             $brand->admstatus = $this->admstatus;
             $brand->user_id = Auth::user()->id;
@@ -243,40 +263,36 @@ class AdminEventMultiParticipantsComponent extends Component
 
     public function updateSponsership()
     {
-        $rti = Str::replace('  ',' ',$this->plan);
+        $rti = Str::replace('  ', ' ', $this->plan);
         $ret = explode(",", $rti);
 
-        foreach($ret as $tre)
-        {
+        foreach ($ret as $tre) {
             $brand = new Sponsership();
             $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
             $brand->plan = trim($tre);
-            $brand->slug = str::slug($tre,'-');
+            $brand->slug = str::slug($tre, '-');
             $brand->status = $this->status;
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function updateSpeaker()
     {
-        $rti = Str::replace('  ',' ',$this->name);
+        $rti = Str::replace('  ', ' ', $this->name);
         $ret = explode(",", $rti);
 
-        foreach($ret as $tre)
-        {
+        foreach ($ret as $tre) {
             $brand = new Speaker();
             $bran = Event::find($this->event_id);
             $brand->event_id = $bran->id;
             $brand->name = $tre;
-            $brand->slug = str::slug($tre,'-');
+            $brand->slug = str::slug($tre, '-');
             $brand->status = $this->status;
             $brand->user_id = Auth::user()->id;
             $brand->save();
         }
-
     }
 
     public function updateEvent()
@@ -284,49 +300,47 @@ class AdminEventMultiParticipantsComponent extends Component
         $sectry = json_encode($this->checkvalue);
         $tryi = json_decode($sectry);
         //$expoo = explode("," , $sectry );
-        foreach($tryi as $trey)
-        {
+        foreach ($tryi as $trey) {
             $fattribute = new Denco();
             $fattribut = Event::find($this->event_id);
             $fattribute->expo_id = $trey;
             $fattribute->event_id = $fattribut->id;
             $fattribute->save();
         }
-        
+
         //dd($sectry, $expoo, $tryi);
-       
-        session()->flash('message','Event has been updated succesfully!!');
+
+        session()->flash('message', 'Event has been updated succesfully!!');
         return redirect()->route('adminevent.detail', ['slug' => $fattribute->event->slug]);
     }
 
     //$previous = url()->previous();
 
     public function updatetag()
-    {   $rti = Str::replace('  ',' ',$this->tag);
+    {
+        $rti = Str::replace('  ', ' ', $this->tag);
         $ret = explode(",", $rti);
-       
-        foreach($ret as $tre)
-        {
+
+        foreach ($ret as $tre) {
             $fattribute = new Expo();
             $fattribute->tag =    trim($tre);
-            $fattribute->slug =   Str::slug($tre,'-');
+            $fattribute->slug =   Str::slug($tre, '-');
             $fattribute->type =  $this->type;
             $fattribute->status =  $this->status;
             $fattribute->save();
         }
         //dd($fattribute);
-        session()->flash('message','Event has been updated succesfully!!');
+        session()->flash('message', 'Event has been updated succesfully!!');
         return redirect()->back();
     }
 
 
     public function addHastag()
     {
-        $rti = Str::replace(' ','', $this->hastag);
-        $rtoi = Str::replace('#',',',$rti);
-        $ret = explode("," , $rtoi);
-        foreach($ret as $tre)
-        {
+        $rti = Str::replace(' ', '', $this->hastag);
+        $rtoi = Str::replace('#', ',', $rti);
+        $ret = explode(",", $rtoi);
+        foreach ($ret as $tre) {
             $newEvent = new Hashtag();
             $newEvent->hastag = trim($tre);
             //doubt check again
@@ -336,12 +350,10 @@ class AdminEventMultiParticipantsComponent extends Component
             $newEvent->status = $this->status;
             $newEvent->admstatus = $this->admstatus;
             $newEvent->save();
-
         }
         $this->reset();
         return redirect()->back();
-        session()->flash('message','Thanks for sharing your review.');
-        
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
 
@@ -354,8 +366,7 @@ class AdminEventMultiParticipantsComponent extends Component
         $pavillo = $this->pavill_id;
         $partne = $this->partner_id;
 
-        foreach ($tryi as $trey)
-        {
+        foreach ($tryi as $trey) {
             $fattribute = new Participant();
 
             $fattribut = Event::find($this->event_id);
@@ -367,27 +378,30 @@ class AdminEventMultiParticipantsComponent extends Component
             $fattribute->partner_id = $partne;
             $fattribute->save();
         }
-        
-        session()->flash('message','Event has been updated succesfully!!');
+
+        session()->flash('message', 'Event has been updated succesfully!!');
         return redirect()->route('adminevent.detail', ['slug' => $fattribut->slug]);
     }
 
     public function Imagedelete($id)
-    {   $job = Brand::find($id);
+    {
+        $job = Brand::find($id);
         $job->delete();
-        session()->flash('message','info has been deleted Successfully');
+        session()->flash('message', 'info has been deleted Successfully');
     }
 
     public function SponserDelete($id)
-    {   $job = Sponsership::find($id);
+    {
+        $job = Sponsership::find($id);
         $job->delete();
-        session()->flash('message','info has been deleted Successfully');
+        session()->flash('message', 'info has been deleted Successfully');
     }
 
     public function Hashdelete($id)
-    {   $job = Hashtag::find($id);
+    {
+        $job = Hashtag::find($id);
         $job->delete();
-        session()->flash('message','info has been deleted Successfully');
+        session()->flash('message', 'info has been deleted Successfully');
     }
 
     //client
@@ -397,52 +411,49 @@ class AdminEventMultiParticipantsComponent extends Component
     public $email;
     public $designation;
     public $link;
-    
+
 
     public function AddBrandAttend()
     {
-       if(is_null($this->checkvalue))
-       {
-        $brandAttend = new Brand ();
-        $brandAttend->brand_name = trim($this->brand_name);
-        $brandAttend->event_id = $this->event_id;
-        $brandAttend->official_website = $this->link;
-        $brandAttend->save();
+        if (is_null($this->checkvalue)) {
+            $brandAttend = new Brand();
+            $brandAttend->brand_name = trim($this->brand_name);
+            $brandAttend->event_id = $this->event_id;
+            $brandAttend->official_website = $this->link;
+            $brandAttend->save();
 
-        $ContactDetail = new Contact();
-        $ContactDetail->brand_id = $brandAttend->id;
-        
-        $ContactDetail->email = $this->email;
-        $ContactDetail->name = trim($this->name); 
-        $ContactDetail->phone = $this->contact;
-        $ContactDetail->designation = trim($this->designation);
-        $ContactDetail->save();
-       }
-       else
-       {
-        $brandAtt = Brand::find($this->checkvalue)->first();
-        $brandAtt->brand_name = trim($this->brand_name);
-        $brandAtt->slug = Str::slug($this->brand_name,'-');
-        $brandAtt->official_website = $this->link;
-        $brandAtt->save();
+            $ContactDetail = new Contact();
+            $ContactDetail->brand_id = $brandAttend->id;
 
-        $ContactDetail = new Contact();
-        $ContactDetail->brand_id = $brandAtt->id;
-        
-        $ContactDetail->email = $this->email;
-        $ContactDetail->name = trim($this->name); 
-        $ContactDetail->phone = $this->contact;
-        $ContactDetail->designation = trim($this->designation);
-        $ContactDetail->save();
-       }
+            $ContactDetail->email = $this->email;
+            $ContactDetail->name = trim($this->name);
+            $ContactDetail->phone = $this->contact;
+            $ContactDetail->designation = trim($this->designation);
+            $ContactDetail->save();
+        } else {
+            $brandAtt = Brand::find($this->checkvalue)->first();
+            $brandAtt->brand_name = trim($this->brand_name);
+            $brandAtt->slug = Str::slug($this->brand_name, '-');
+            $brandAtt->official_website = $this->link;
+            $brandAtt->save();
 
-     
-       return redirect()->route('admin.dashboard', ['board' => 'client']);
+            $ContactDetail = new Contact();
+            $ContactDetail->brand_id = $brandAtt->id;
+
+            $ContactDetail->email = $this->email;
+            $ContactDetail->name = trim($this->name);
+            $ContactDetail->phone = $this->contact;
+            $ContactDetail->designation = trim($this->designation);
+            $ContactDetail->save();
+        }
+
+
+        return redirect()->route('admin.dashboard', ['board' => 'client']);
     }
 
 
     public function directbrandBcontact()
-        {
+    {
         $uptedetail = new Brand();
         $uptedetail->brand_name = $this->brand_name;
         $uptedetail->brand_logo = $this->brand_logo;
@@ -467,32 +478,32 @@ class AdminEventMultiParticipantsComponent extends Component
         $upted->status = $this->status;
         $upted->admstatus = $this->admstatus;
         $upted->save();
-            
+
         //return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
         // return redirect()->url()->previous();
 
-        }
-   
+    }
+
 
     public function asscoiationlist()
     {
-       $upted = new Association();
+        $upted = new Association();
 
-       $upted->reference_id =    $this->reference_id;
+        $upted->reference_id =    $this->reference_id;
 
-       $upted->rate =    $this->rate;
-       $upted->disrate =    $this->disrate;
-       
-       $upted->stall_area =    $this->stall_area;
+        $upted->rate =    $this->rate;
+        $upted->disrate =    $this->disrate;
 
-       $upted->expiredate =    $this->expiredate;
-       $upted->startdate =    $this->startdate;
+        $upted->stall_area =    $this->stall_area;
 
-       $upted->event_id = $this->event_id;
-       $upted->user_id = Auth::user()->id;
-       $upted->status = $this->status;
-       $upted->admstatus = "1";
-       $upted->save();
+        $upted->expiredate =    $this->expiredate;
+        $upted->startdate =    $this->startdate;
+
+        $upted->event_id = $this->event_id;
+        $upted->user_id = Auth::user()->id;
+        $upted->status = $this->status;
+        $upted->admstatus = "1";
+        $upted->save();
     }
 
 
@@ -526,9 +537,9 @@ class AdminEventMultiParticipantsComponent extends Component
     public function render()
     {
         $evento = Event::find($this->event_id);
-        $searchTerm = '%'.$this->searchTerm. '%';
-        $searchcat = Expo::where('tag','LIKE', $searchTerm)
-                    ->where('status','1')->where('type','tag')->orderBy('tag','ASC')->get();
+        $searchTerm = '%' . $this->searchTerm . '%';
+        $searchcat = Expo::where('tag', 'LIKE', $searchTerm)
+            ->where('status', '1')->where('type', 'tag')->orderBy('tag', 'ASC')->get();
 
         $pavillion = Pavillion::where('event_id', $evento->id)->get();
 
@@ -538,16 +549,16 @@ class AdminEventMultiParticipantsComponent extends Component
         $suggestedSpeaker = Speaker::get();
         $hastago = Hashtag::where('event_id', $evento->id)->get();
         $participants = Brand::where('event_id', $evento->id)->get();
-        
+
         $partners = Partner::where('event_id', $evento->id)->get();
 
         $findListedTag = Denco::where('event_id', $evento->id)->get();
         //dd($hastag);
 
-        $findreferenceBrand = Brand::where('event_id', $this->event_id )->get();
-       
+        $findreferenceBrand = Brand::where('event_id', $this->event_id)->get();
+
         //$getReferenceBrands = DB::table('participants')->where('event_id' , $this->event_id)->where('pavillion_id' , $pavillion->id)->get();
 
-        return view('livewire.admin.admin-event-multi-participants-component',['findreferenceBrand'=>$findreferenceBrand, 'suggestedSpeaker'=>$suggestedSpeaker,'partners'=>$partners,'findListedTag'=>$findListedTag, 'participants' => $participants,'hastago' => $hastago,'speaker' => $speaker,'sponser' => $sponser, 'searchcat' => $searchcat,'evento'=>$evento, 'pavillion'=>$pavillion])->layout('layouts.eblog');
+        return view('livewire.admin.admin-event-multi-participants-component', ['findreferenceBrand' => $findreferenceBrand, 'suggestedSpeaker' => $suggestedSpeaker, 'partners' => $partners, 'findListedTag' => $findListedTag, 'participants' => $participants, 'hastago' => $hastago, 'speaker' => $speaker, 'sponser' => $sponser, 'searchcat' => $searchcat, 'evento' => $evento, 'pavillion' => $pavillion])->layout('layouts.eblog');
     }
 }
