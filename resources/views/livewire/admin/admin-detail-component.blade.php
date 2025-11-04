@@ -39,8 +39,13 @@
                 <a href="{{route('admin.dashboard', ['board' => 'event'])}}" class="nav-link text-dark" style="background-color: #fff;">Events</a>
               </li>
               <li class="nav-item mb-1">
-                <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Conference</a>
+                <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addSpeaker' ])}}" class="nav-link text-dark" style="background-color: #fff;">Conference</a>
               </li>
+
+              <li class="nav-item mb-1">
+                <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Speaker</a>
+              </li>
+
 
               <li class="nav-item mb-1">
                 <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>

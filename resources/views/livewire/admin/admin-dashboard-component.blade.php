@@ -38,6 +38,7 @@
               <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor</a>
             </li>
 
+            
             <li class="nav-item mb-1">
               <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
             </li>
