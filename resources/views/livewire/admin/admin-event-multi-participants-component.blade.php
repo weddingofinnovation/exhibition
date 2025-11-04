@@ -148,8 +148,67 @@
         @endforeach
         @endif
 
+        <div class="card shadow-sm border-0 mb-2 d-none d-md-block">
+            <div class="card-body pb-1 pt-2">
+                <!-- Page Title -->
 
 
+                <div class="d-flex justify-content-between align-items-center mb-2">
+
+                    <h4 class="fw-bold mb-2">Leads<small>1113</small></h4>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <input type="search" class="form-control w-auto" placeholder="Search...">
+                        <button class="btn btn-primary ml-4">
+                            <i class="bi bi-download"></i> Export
+                        </button>
+
+
+                        <div class="d-flex justify-content-between mb-3">
+                            <button class="btn btn-warning" wire:click="toggleBulkMode">
+                                Activate Bulk Email
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-2" id="analyticsTabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Visitors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Followers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Important</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Email</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <button wire:click="deleteSelected" class="btn btn-danger btn-sm me-2">Delete Selected</button>
+                <button wire:click="addToEvent" class="btn btn-primary btn-sm">Add to Event</button>
+            </div>
+            <div>
+                <input type="checkbox" id="selectAll" wire:click="selectAll" class="form-check-input me-1">
+                <label for="selectAll" class="form-check-label">Select All</label>
+            </div>
+        </div>
 
         <section class="container"> <!--col-lg-8 pt-lg-4 pb-4 mb-3 -->
             <div class=" ps-lg-0 pe-xl-5">
@@ -192,14 +251,15 @@
                 @endforeach
 
                 <style>
-                .speaker-card {
-                    transition: 0.2s ease-in-out;
-                }
-                .speaker-card.selected {
-                    border: 2px solid #007bff;
-                    background-color: #e7f1ff;
-                    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
-                }
+                    .speaker-card {
+                        transition: 0.2s ease-in-out;
+                    }
+
+                    .speaker-card.selected {
+                        border: 2px solid #007bff;
+                        background-color: #e7f1ff;
+                        box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+                    }
                 </style>
                 <h1>Suggested Speaker</h1>
                 <div class="row">
@@ -208,11 +268,10 @@
                     @foreach ($suggestedSpeaker as $franchise)
                     <div class="col-md-4 col-sm-6 mb-2 py-1">
                         <div class="widget">
-                            <div 
+                            <div
                                 class="card p-2 border rounded shadow-sm speaker-card {{ in_array($franchise->id, $selectedSpeakers) ? 'selected' : '' }}"
                                 wire:click="toggleSelect({{ $franchise->id }})"
-                                style="cursor:pointer;"
-                            >
+                                style="cursor:pointer;">
                                 <div class="d-flex align-items-center justify-content-between w-100 mb-2">
                                     <div class="d-flex align-items-center position-relative">
 

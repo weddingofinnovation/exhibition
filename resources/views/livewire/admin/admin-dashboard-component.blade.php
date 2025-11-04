@@ -38,7 +38,7 @@
               <a href="{{route('admin.dashboard', ['board' => 'floor'])}}" class="nav-link text-dark" style="background-color: #fff;">Floor</a>
             </li>
 
-            
+
             <li class="nav-item mb-1">
               <a href="#" class="nav-link text-dark" style="background-color: #fff;">Page posts</a>
             </li>
@@ -734,16 +734,16 @@
             @endif
           </div>
           @elseif($board == 'floor')
-          <div class="">
-            <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+            <div class="">
+              <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
 
-            <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
+              <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
 
-            <div class="mt-4">
-              <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-              <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+              <div class="mt-4">
+                <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
+                <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
+              </div>
             </div>
-          </div>
           @elseif($board == 'speaker')
           @php
           $network = DB::table('speakers')->where('admstatus', '1')->where('status', '1')->get();
