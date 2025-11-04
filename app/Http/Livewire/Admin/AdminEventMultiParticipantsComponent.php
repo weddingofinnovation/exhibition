@@ -80,7 +80,7 @@ class AdminEventMultiParticipantsComponent extends Component
 
 
 
-    public function mount($event_id, $formm)
+    public function mount($event_id = null, $formm = null)
     {
         $fattribute = Event::find($event_id);
         $this->event_id = $fattribute->id;
