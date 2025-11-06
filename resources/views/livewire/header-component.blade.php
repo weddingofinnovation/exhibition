@@ -19,28 +19,53 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        <!-- Collapsible menu -->
-        <div class="collapse mt-2" id="mobileMenuLinks">
-          <ul class="list-group">
-            <li class="list-group-item bg-dark text-white border-0">
-              <a href="#" class="text-white text-decoration-none d-block">About</a>
-              <small class="text-secondary d-block" style="font-size: 12px;">Learn more about our event overview and purpose.</small>
-            </li>
+        <!-- Menu List -->
+        <ul class="list-group mt-2">
 
-            <li class="list-group-item bg-dark text-white border-0">
-              <a href="#" class="text-white text-decoration-none d-block">Exhibitors & Products</a>
-            </li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Themes & Events</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibitor Services</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Networking</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
-            <li class="list-group-item bg-dark text-white border-0 border-bottom"><a href="#" class="text-white text-decoration-none">Buy Your Ticket</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Get Involved</a></li>
-          </ul>
-        </div>
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">About</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Learn more about our event overview and purpose.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Exhibitors & Products</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Explore brands, products & manufacturers.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Themes & Events</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Discover sessions, showcases and highlights.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Planning & Preparation</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Guides for travel, stay, and visit planning.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Exhibitor Services</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Resources for exhibitors & booth setup.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Networking</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Connect with professionals & leaders.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0 border-bottom">
+            <a href="#" class="text-white text-decoration-none d-block">Buy Your Ticket</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Reserve your entry pass online.</small>
+          </li>
+
+          <li class="list-group-item bg-dark text-white border-0">
+            <a href="#" class="text-white text-decoration-none d-block">Get Involved</a>
+            <small class="text-secondary d-block" style="font-size: 12px;">Partner, volunteer or showcase with us.</small>
+          </li>
+
+        </ul>
 
       </div>
+
 
       <!-- </div> -->
     </header>
