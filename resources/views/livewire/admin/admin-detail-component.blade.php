@@ -1039,6 +1039,78 @@
                   </div>
                 </div>
 
+                <div class="card border-0 shadow-sm mb-2 rounded-3">
+                  <div class="card-body py-2">
+
+                    <div class="row align-items-start">
+                      <!-- Left Section -->
+                      <div class="col-8">
+
+                        <a class="text-dark fw-semibold" href="{{route('event.details',['slug' => $evento->slug])}}">
+                          Last update:
+                        </a>
+                        <div class="text-muted small">{{ $evento->updated_at }}</div>
+
+                        @if(empty($evento->created_at))
+                        <a href="#" wire:click.prevent="updateCreate({{$evento->id}})" class="btn btn-outline-primary btn-sm mt-2 rounded-pill px-3">Create</a>
+                        @else
+                        <div class="text-muted small mt-1">
+                          <span class="fw-semibold">Created:</span> {{ $evento->created_at }}
+                        </div>
+                        @endif
+
+                        <div class="mt-2">
+                          <span class="badge bg-light text-dark border fw-normal">Edition: {{$evento->edition}}</span>
+                          <span class="badge bg-light text-dark border fw-normal">Views: {{$evento->view_count}}</span>
+                          <span class="badge bg-light text-dark border fw-normal">Status: {{$evento->latestupdat}}</span>
+                        </div>
+
+                      </div>
+
+                      <!-- Right Section -->
+                      <div class="col-4 text-end">
+
+                        @if(is_null($evento->admstatus))
+                        <button wire:click.prevent="updateEventstatus({{$evento->id}},'1')" class="btn btn-warning btn-sm rounded-pill px-3">Awaiting</button>
+                        @elseif($evento->admstatus == 1)
+                        <button wire:click.prevent="updateEventstatus({{$evento->id}},'0')" class="btn btn-secondary btn-sm rounded-pill px-3">Deactivate</button>
+                        @else
+                        <button wire:click.prevent="updateEventstatus({{$evento->id}},'1')" class="btn btn-success btn-sm rounded-pill px-3">Activate</button>
+                        @endif
+
+                        <div class="mt-2">
+                          <button wire:click.prevent="updateEventPostpone({{$evento->id}},'postpone')" class="btn btn-outline-warning btn-sm rounded-pill px-3">Postpone</button>
+                          <button wire:click.prevent="updateEventPostpone({{$evento->id}},'1')" class="btn btn-outline-success btn-sm rounded-pill px-3">Resume</button>
+                        </div>
+
+                        <div class="mt-2">
+                          @if($evento->latestupdat == 'unverfied')
+                          <button wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm rounded-pill px-3">Verify</button>
+                          @elseif($evento->latestupdat == 'verfied')
+                          <button wire:click.prevent="updateEventPostpone({{$evento->id}},'unverfied')" class="btn btn-outline-secondary btn-sm rounded-pill px-3">Unverify</button>
+                          @else
+                          <button wire:click.prevent="updateEventPostpone({{$evento->id}},'verfied')" class="btn btn-primary btn-sm rounded-pill px-3">Verify</button>
+                          @endif
+                        </div>
+
+                        <button class="btn btn-info btn-sm mt-2 rounded-pill px-3" wire:click.prevent="Upgrade({{$evento->id}})">Upgrade</button>
+
+                        <div class="small text-muted mt-1">Business Model</div>
+
+                        @if(is_null($evento->businessrevenue))
+                        <button wire:click.prevent="updatebusinessrevenue({{$evento->id}},'exhibitor')}}" class="btn btn-outline-primary btn-sm rounded-pill px-3">Exhibitor</button>
+                        @elseif($evento->businessrevenue == 'exhibitor')
+                        <button wire:click.prevent="updatebusinessrevenue({{$evento->id}},'visitor')}}" class="btn btn-outline-primary btn-sm rounded-pill px-3">Visitor</button>
+                        @else
+                        <button wire:click.prevent="updatebusinessrevenue({{$evento->id}},'no-more')}}" class="btn btn-outline-danger btn-sm rounded-pill px-3">Close</button>
+                        @endif
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
                 <div class="">
                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                     <div class="col-8 p-0">
