@@ -19,13 +19,13 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
+        
         <!-- Menu List -->
         <ul class="list-group mt-2">
 
           <li class="list-group-item bg-dark text-white border-0">
             <a href="#" class="text-white text-decoration-none d-block">About</a>
-            <small class="text-secondary d-block" style="font-size: 12px;"> Facts & Figures
-              </small>
+            <small class="text-secondary d-block" style="font-size: 12px;"> Facts & Figures</small>
           </li>
 
           <li class="list-group-item bg-dark text-white border-0">

@@ -122,6 +122,48 @@
                   </div>
                 </div>
 
+                <div class="my-1">
+                  <div class="d-flex align-items-center p-2 border rounded shadow-sm event-card">
+
+                    <!-- Date + Edition -->
+                    <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}" class="text-dark text-center me-3 date-box">
+                      <div class="h4 fw-bold mb-0">{{ Carbon\Carbon::parse($evento->startdate)->format('d') }}</div>
+                      <div class="text-muted small">{{ Carbon\Carbon::parse($evento->startdate)->format('M') }}</div>
+                      <div class="small fw-medium">{{ $evento->edition }}</div>
+                      <div class="small fw-medium">{{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}</div>
+                    </a>
+
+                    <!-- Event Info -->
+                    <div class="flex-grow-1">
+                      <a href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}" class="text-dark fw-semibold text-decoration-none">
+                        {{ ucwords(Str::limit($evento->eventname, 28)) }}
+                      </a>
+                      <div class="text-muted small">
+                        @if(Carbon\Carbon::parse($evento->startdate)->format('M') != Carbon\Carbon::parse($evento->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                        @else
+                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                        @endif
+                      </div>
+                      <div class="text-muted small">
+                        {{ ucfirst($evento->venue) }}, {{ ucfirst($evento->city) }}
+                      </div>
+                    </div>
+
+                    <!-- Event Image -->
+                    <div class="ms-3 logo-box">
+                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image'])}}">
+                        @if(is_null($evento->image))
+                        <div class="text-primary small">Add Logo</div>
+                        @else
+                        <img src="{{ url('public/assets/image/exhibition/'.$evento->image) }}" class="event-logo" alt="">
+                        @endif
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
                 <div class=" my-1">
                   <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                     <div class="col  pr-0">
@@ -272,7 +314,7 @@
 
                 </div>
 
-                
+
                 <div class="">
                   <small>CSV upload exhibitor</small>
 
