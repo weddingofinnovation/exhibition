@@ -14,29 +14,34 @@
         </div>-->
 
       <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu" data-bs-backdrop="true" data-bs-scroll="false">
-        <div class="offcanvas-header border-bottom">
-          <!-- <h5 class="offcanvas-title">Menu</h5> -->
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
+        <div class="offcanvas-header border-bottom">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
         <!-- Collapsible menu -->
-        <div class="collapse mt-2" id="mobileMenu">
+        <div class="collapse mt-2" id="mobileMenuLinks">
           <ul class="list-group">
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">About</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibitors & Products</a></li>
+            <li class="list-group-item bg-dark text-white border-0">
+              <a href="#" class="text-white text-decoration-none d-block">About</a>
+              <small class="text-secondary d-block" style="font-size: 12px;">Learn more about our event overview and purpose.</small>
+            </li>
+
+            <li class="list-group-item bg-dark text-white border-0">
+              <a href="#" class="text-white text-decoration-none d-block">Exhibitors & Products</a>
+            </li>
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Themes & Events</a></li>
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibitor Services</a></li>
-
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Networking</a></li>
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
             <li class="list-group-item bg-dark text-white border-0 border-bottom"><a href="#" class="text-white text-decoration-none">Buy Your Ticket</a></li>
-
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">get involved</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Get Involved</a></li>
           </ul>
         </div>
+
       </div>
+
       <!-- </div> -->
     </header>
 
