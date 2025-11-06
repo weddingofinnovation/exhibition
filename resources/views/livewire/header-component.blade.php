@@ -1,7 +1,7 @@
   <main>
 
     @if(Route::currentRouteName() === 'event.details')
-    
+
 
     <!-- Mobile Header -->
     <header class="d-block d-md-none">
@@ -13,21 +13,26 @@
           </button> 
         </div>-->
 
-      <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu">
+      <div class="offcanvas offcanvas-end bg-dark text-white" tabindex="-1" id="mobileMenu" data-bs-backdrop="true" data-bs-scroll="false">
         <div class="offcanvas-header border-bottom">
           <!-- <h5 class="offcanvas-title">Menu</h5> -->
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          
+
         </div>
 
         <!-- Collapsible menu -->
         <div class="collapse mt-2" id="mobileMenu">
           <ul class="list-group">
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Topics</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Program</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibit</a></li>
-            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Visit</a></li>
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">About</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibitors & Products</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Themes & Events</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Exhibitor Services</a></li>
+
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Networking</a></li>
+            <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">Planning & Preparation</a></li>
+            <li class="list-group-item bg-dark text-white border-0 border-bottom"><a href="#" class="text-white text-decoration-none">Buy Your Ticket</a></li>
+
             <li class="list-group-item bg-dark text-white border-0"><a href="#" class="text-white text-decoration-none">get involved</a></li>
           </ul>
         </div>

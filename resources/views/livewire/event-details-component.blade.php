@@ -4920,7 +4920,7 @@
     <section class=" d-lg-none nav-tabs-wrapper ">
         <ul class="nav-tabs-scroll p-0 m-0" role="tablist">
 
-            @if($event->eventype == 'conference')
+          @if($event->eventype == 'conference')
             <li class="nav-tab">
                 <a class="nav-link px-1 {{$currentTab === 'tabA' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabA')">Overview</a>
             </li>
