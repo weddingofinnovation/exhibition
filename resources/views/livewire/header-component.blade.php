@@ -24,7 +24,8 @@
 
           <li class="list-group-item bg-dark text-white border-0">
             <a href="#" class="text-white text-decoration-none d-block">About</a>
-            <small class="text-secondary d-block" style="font-size: 12px;">Learn more about our event overview and purpose.</small>
+            <small class="text-secondary d-block" style="font-size: 12px;"> Facts & Figures
+              </small>
           </li>
 
           <li class="list-group-item bg-dark text-white border-0">
