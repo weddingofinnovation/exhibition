@@ -93,61 +93,70 @@ class AdminDetailComponent extends Component
 
   public function postToLinkedIn($id)
   {
-    $eVent = Event::find($id);
-    $this->eventTitle = $eVent->eventname;
-    $this->eventDescription = $eVent->desc;
-    $this->venue = $eVent->venue;
-    $this->city = $eVent->city;
-    $this->eventStartDate = strtotime($eVent->startdate);
-    $this->eventEndDate = strtotime($eVent->enddate);
-    $this->eventWebsite = route('event.details', ['slug' => $eVent->slug]);
-    $this->eventImage =  $eVent->image;
-    $this->country = $eVent->country;
+    $event = Event::findOrFail($id);
 
-    $accessToken = session('AQUK2cpsfBjwAWBzNTB-5t8IEipMDzuq5Uw9BBuUKLSX7T06yue6u0jg6e76sO-tDJqIwdpnzGXVdPkR1vi1TmXjvnC0JaFU0rXujPKanxXw0ie4FcAIzO49eZ7MeFaaiuDGILpof8fcrkf0qD2CKj--eiFho3m_b0D20PPSL_qL2cbMLXSvmV380LpAF03IeSsWT6h_kXFZkslAd7prXIVCTU_mRDVRiGAaAsXDWq-lXlZV7Kg1stKQi7OG7ijtZoFTALFFJ1ojtb4Fz2O9m9A2hSKYhQ6Llg2N3LWEfN-kitO935krkwb3Tgf6ESX9eDrmWCEEMWl-QATuFbbE1CtlKfHSrg');
-    $pageId = 'YOUR_LINKEDIN_PAGE_ID'; // Replace with your LinkedIn Page ID
+    $accessToken = auth()->user()->linkedin_token; // <-- FIXED
+    $pageId = 'YOUR_LINKEDIN_PAGE_ID'; // <-- PUT YOUR PAGE ID
 
-    $client = new Client();
+    if (!$accessToken) {
+      session()->flash('error', 'LinkedIn is not connected. Please connect your LinkedIn first.');
+      return;
+    }
 
-    $response = $client->post("https://api.linkedin.com/v2/shares", [
+    $text = "{$event->eventname}
+    
+    Date: " . date('d M Y', strtotime($event->startdate)) . " - " . date('d M Y', strtotime($event->enddate)) . "
+    Venue: {$event->venue}, {$event->city}, {$event->country}
+
+    More details & registration:
+    " . route('event.details', ['slug' => $event->slug]);
+
+    $imageUrl = url('path/to/uploaded/event/images/' . $event->image); // ensure full URL
+
+    $client = new \GuzzleHttp\Client();
+
+    $response = $client->post("https://api.linkedin.com/v2/ugcPosts", [
       'headers' => [
         'Authorization' => "Bearer $accessToken",
         'Content-Type' => 'application/json',
-        'x-li-format' => 'json',
+        'X-Restli-Protocol-Version' => '2.0.0',
       ],
       'json' => [
-        "owner" => "urn:li:organization:$pageId",
-        "subject" => $this->eventTitle,
-        "text" => [
-          "text" => $this->eventDescription . "\nEvent Date: " . $this->eventDate . "\nMore details: " . $this->eventWebsite . "\nMore details: " . $this->country . "\nMore details: " . $this->city . "\nMore details: " . $this->venue,
-        ],
-        "content" => [
-          "contentEntities" => [
-            [
-              "entityLocation" => $this->eventWebsite,
-              "thumbnails" => [
-                [
-                  "resolvedUrl" => $this->eventImage
+        "author" => "urn:li:organization:$pageId",
+        "lifecycleState" => "PUBLISHED",
+        "specificContent" => [
+          "com.linkedin.ugc.ShareContent" => [
+            "shareCommentary" => [
+              "text" => $text,
+            ],
+            "shareMediaCategory" => "IMAGE",
+            "media" => [
+              [
+                "status" => "READY",
+                "description" => [
+                  "text" => $event->eventname
+                ],
+                "media" => $imageUrl,
+                "title" => [
+                  "text" => $event->eventname
                 ]
               ]
             ]
-          ],
-          "title" => $this->eventTitle,
-        ],
-        "distribution" => [
-          "linkedInDistributionTarget" => [
-            "visibleToGuest" => true
           ]
+        ],
+        "visibility" => [
+          "com.linkedin.ugc.MemberNetworkVisibility" => "PUBLIC"
         ]
       ]
     ]);
 
     if ($response->getStatusCode() == 201) {
-      session()->flash('status', 'Event posted to LinkedIn successfully!');
+      session()->flash('success', 'Event posted to LinkedIn successfully!');
     } else {
-      session()->flash('error', 'Failed to post event to LinkedIn.');
+      session()->flash('error', 'Something went wrong while posting.');
     }
   }
+
 
 
   public function updatebusinessrevenue($id, $businessrevenue)
