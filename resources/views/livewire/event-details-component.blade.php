@@ -3991,6 +3991,15 @@
     $status = 'Ended';
     $badgeClass = 'bg-secondary';
     }
+
+        $startto = Carbon::parse ($event->startdate);
+        $endfrom = Carbon::parse ($event->enddate);
+        $now= carbon::now();
+        $name = $event->eventname;
+        $venue = $event->venue;
+        $city = $event->city;
+        $country = $event->country;
+        $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
     @endphp
 
 
