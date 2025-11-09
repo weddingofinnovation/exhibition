@@ -3992,14 +3992,14 @@
     $badgeClass = 'bg-secondary';
     }
 
-        $startto = Carbon::parse ($event->startdate);
-        $endfrom = Carbon::parse ($event->enddate);
-        $now= carbon::now();
-        $name = $event->eventname;
-        $venue = $event->venue;
-        $city = $event->city;
-        $country = $event->country;
-        $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
+    $startto = Carbon::parse ($event->startdate);
+    $endfrom = Carbon::parse ($event->enddate);
+    $now= carbon::now();
+    $name = $event->eventname;
+    $venue = $event->venue;
+    $city = $event->city;
+    $country = $event->country;
+    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
     @endphp
 
 
@@ -4776,99 +4776,64 @@
                         <div class="h5">Sorry, Event has been postponed</div>
                         @else
                         <!-- add condition from here if event is for one day or multiple day -->
-                        @if(Carbon::parse ($event->startdate)->format('d M Y') === Carbon::parse ($event->enddate)->format('d M Y'))
-                        {{ Carbon::parse($event->startdate)->format('D, d M Y') }}
+
+                        <span class="badge badge-primary bg-primary fs-xs mt-4">{{$status}}</span>
+                        <h5 class="text-dark fw-normal pt-2 pb-0"> {{$displayDate}} </h5>
+
+                        if ($current > $to && $current > $from)
+                        <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
+                        @endif
+
+                        @endif
+                        @endif
+
+
+
+                        <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
+                        @php
+                        $getLocationaddress = DB::table('locations')->find($event->location_id);
+                        @endphp
+
+                        @if(!$event->location_id || $event->location_id == 0 )
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
+                        @elseif(!$getLocationaddress->address || $getLocationaddress->address == 0)
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
                         @else
+                        <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
+                        @endif
 
-                        @if ($current < $to && $current < $from)
-                            <span class="badge badge-primary bg-primary fs-xs mt-4">Upcoming</span>
-                            <h5 class="text-dark fw-normal pt-2 pb-0">
-                                @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                @else
-                                {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+
+                        <h3 class="text-dark fw-normal">{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
+                        @if(count($sponserbrand) > 0)
+                        <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
+                        <div class="d-flex bg-transparent border-bottom">
+                            @foreach($sponserbrand as $franchise)
+                            <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}">
+                            @endforeach
+                        </div>
+                        @endif
+
+                        <h5 class="text-dark fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
+
+                        <ul class="list-unstyled text-light mb-0 mt-2">
+                            <li class="d-flex">
+                                @if( $event->businessrevenue == 'visitor' )
+                                @if( $ticketOrExhibit != 0 )
+                                <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
+                                    href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
+                                @else( $ticketOrExhibit == 0 )
+                                <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
+                                    href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
                                 @endif
-                            </h5>
-                            @elseif ($current == $to && $current < $from)
-                                <span class="badge badge-primary bg-primary fs-xs mt-4">First Day</span>
-                                <h5 class="text-dark fw-normal pt-2 pb-0">
-                                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                    @else
-                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                    @endif
-                                </h5>
-                                @elseif ($current > $to && $current < $from)
-                                    <span class="badge badge-primary bg-primary fs-xs mt-4">Ongoing</span>
-                                    <h5 class="text-dark fw-normal pt-2 pb-0">
-                                        @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                        {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                        @else
-                                        {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                        @endif
-                                    </h5>
-                                    @elseif ($current > $to && $current == $from)
-                                    <span class="badge badge-primary bg-primary fs-xs mt-4">Last Business Day</span>
-                                    <h5 class="text-dark fw-normal pt-2 pb-0">
-                                        @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                        {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                        @else
-                                        {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                        @endif
-                                    </h5>
-                                    @elseif ($current > $to && $current > $from)
-                                    <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
-                                    @endif
-                                    @endif
-                                    @endif
-
-
-
-                                    <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
-                                    @php
-                                    $getLocationaddress = DB::table('locations')->find($event->location_id);
-                                    @endphp
-
-                                    @if(!$event->location_id || $event->location_id == 0 )
-                                    <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
-                                    @elseif(!$getLocationaddress->address || $getLocationaddress->address == 0)
-                                    <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue ?? ''))}}</h5>
-                                    @else
-                                    <h5 class="text-dark fw-normal">{{ucwords(trans($getLocationaddress->address ?? ''))}}</h5>
-                                    @endif
-
-
-                                    <h3 class="text-dark fw-normal">{{ucwords(trans($event->city ?? ''))}}, {{ucwords(trans($event->country ?? ''))}}</h3>
-                                    @if(count($sponserbrand) > 0)
-                                    <span class="text-dark fs-sm fw-light"> <small>Powered by The Exhibtion Network</small></span>
-                                    <div class="d-flex bg-transparent border-bottom">
-                                        @foreach($sponserbrand as $franchise)
-                                        <img class="p-1" width="24%" src="{{url('public/assets/image/exhibition/'.$franchise->brand_logo)}}">
-                                        @endforeach
-                                    </div>
-                                    @endif
-
-                                    <h5 class="text-dark fw-light fs-xs mt-3">Book business Space with us. <br>Get pre-post business.</h5>
-
-                                    <ul class="list-unstyled text-light mb-0 mt-2">
-                                        <li class="d-flex">
-                                            @if( $event->businessrevenue == 'visitor' )
-                                            @if( $ticketOrExhibit != 0 )
-                                            <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
-                                                href="{{route('event.product',['slug' => $event->slug])}}">Book Tickets</a>
-                                            @else( $ticketOrExhibit == 0 )
-                                            <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
-                                                href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                            @endif
-                                            @else
-                                            <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
-                                                href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
-                                            @endif
-                                            <!-- calender -->
-                                            <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
-                                            <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
-                                        </li>
-                                    </ul>
+                                @else
+                                <a class="btn btn-primary btn-sm mx-2 d-none d-sm-block" type="button"
+                                    href="{{route('event.exhibit', ['board' => 'business'])}}">Exhibit</a>
+                                @endif
+                                <!-- calender -->
+                                <a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>
+                                <a href="#" id="shareBtn" class="btn btn-primary btn-sm mx-2"><i class="bi bi-share"></i></a>
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
