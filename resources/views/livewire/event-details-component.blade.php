@@ -4716,8 +4716,6 @@
         <div class="container  mb-lg-0 bg-primary">
             <div class="d-flex justify-content-between py-2">
 
-                <i class="bi bi-list text-color-light fs-lg"></i>
-
                 <a class="z-2 text-dark  pl-3 lh-1" href="{{route('design.strategy')}}">
                     <span class="fw-bold text-light fs-xs">Great Exhibition To Business</span>
                     <br>
@@ -4742,8 +4740,8 @@
                     <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-list"></i></div>
                 </a> -->
 
-                <button class="btn btn-outline-light btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
-                    Menu
+                <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu">
+                    <i class="bi bi-list text-color-light fs-lg"></i>
                 </button>
 
                 <!-- <a class="navbar-tool navbar-stuck-toggler" href=""><span class="navbar-tool-tooltip">Toggle menu</span>
