@@ -4128,6 +4128,12 @@
             <div class="row">
                 <div class="col-md-9">
 
+                    <span class="badge rounded-pill {{ $badgeClass }} fs-xs mt-4">{{ $status }}</span>
+                    <div class="">
+                        <h5 class="text-dark fw-normal pt-2 pb-0"> {{ $displayDate }}</h5>
+                    </div>
+
+
                     @php
                     $startto = Carbon::parse ($event->startdate);
                     $endfrom = Carbon::parse ($event->enddate);
