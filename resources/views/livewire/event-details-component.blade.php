@@ -4797,7 +4797,7 @@
                         <div class="h5">Sorry, Event has been postponed</div>
                         @else
                                 <!-- add condition from here if event is for one day or multiple day -->
-                                @if(Carbon\Carbon::parse($event->startdate)->isSameDay(Carbon\Carbon::parse($event->enddate)))
+                                @if(($to)->isSameDay($from))
                                     {{ Carbon\Carbon::parse($event->startdate)->format('D, d M Y') }}
                                 @else
 
