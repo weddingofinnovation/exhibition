@@ -4798,7 +4798,7 @@
                         @else
                                 <!-- add condition from here if event is for one day or multiple day -->
                                 @if(Carbon::parse($to)->isSameDay(Carbon::parse($from)))
-                                    {{ Carbon\Carbon::parse($event->startdate)->format('D, d M Y') }}
+                                    {{ Carbon::parse($event->startdate)->format('D, d M Y') }}
                                 @else
 
                                 
