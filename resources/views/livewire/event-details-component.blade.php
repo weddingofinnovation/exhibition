@@ -3960,6 +3960,40 @@
         }
     </style>
 
+
+    @php
+    use Carbon\Carbon;
+
+    $start = Carbon::parse($event->startdate);
+    $end = Carbon::parse($event->enddate);
+    $now = Carbon::now();
+
+    // Date Format Logic
+    if ($start->isSameDay($end)) {
+    // One-day event
+    $displayDate = $start->format('D, d M Y');
+    } elseif ($start->format('M Y') == $end->format('M Y')) {
+    // Same month & year
+    $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
+    } else {
+    // Different month OR year
+    $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
+    }
+
+    // Status Badge Logic
+    if ($now->lt($start)) {
+    $status = 'Upcoming';
+    $badgeClass = 'bg-primary';
+    } elseif ($now->between($start, $end)) {
+    $status = 'Ongoing';
+    $badgeClass = 'bg-success';
+    } else {
+    $status = 'Ended';
+    $badgeClass = 'bg-secondary';
+    }
+    @endphp
+
+
     <div class="_NavBar_1vqbc_76" id="main-header">
         <div class="_LogoDatePlaceWrapper_1vqbc_93">
             <img src="/assets/ifx-expo-6dde5c2a.svg" alt="iFX logo">
@@ -4062,11 +4096,22 @@
         </div>
     </div>
 
+
+
     <!-- Desktop Header -->
     <header class="d-none d-md-block bg-primary text-white">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- <h2 class="m-0">MySite (Desktop)</h2> -->
             <div class="">
+
+                <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
+                <div class="">
+                    <h5 class="text-dark fw-normal">
+                        {{ $displayDate }}
+                    </h5>
+                </div>
+
+
                 @php
                 use Carbon\Carbon;
                 $startto = Carbon::parse ($event->startdate);
@@ -4119,25 +4164,7 @@
     </header>
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
-        @php
-        use Carbon\Carbon;
 
-        $start = Carbon::parse($event->startdate);
-        $end = Carbon::parse($event->enddate);
-        $now = Carbon::now();
-
-        // Date Formatting Logic
-        if ($start->isSameDay($end)) {
-        // One-day event
-        $displayDate = $start->format('D, d M Y');
-        } elseif ($start->format('M Y') == $end->format('M Y')) {
-        // Same month & year
-        $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
-        } else {
-        // Different month or year
-        $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
-        }
-        @endphp
 
         @if ($now->lt($start))
         <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
