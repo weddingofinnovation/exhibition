@@ -4780,7 +4780,7 @@
                         <span class="badge badge-primary bg-primary fs-xs mt-4">{{$status}}</span>
                         <h5 class="text-dark fw-normal pt-2 pb-0"> {{$displayDate}} </h5>
 
-                        if ($current > $to && $current > $from)
+                        @if ($current > $to && $current > $from)
                         <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
                         @endif
 
