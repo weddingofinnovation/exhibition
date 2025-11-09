@@ -4091,18 +4091,18 @@
                     </h5>
                 </div>
                 @elseif($now->between($startto, $endfrom))
-                    <span class="badge rounded-pill bg-primary fs-xs">Ongoing</span>
-                    <div class="">
-                        <h5 class="text-dark fw-normal">
-                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @else
-                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @endif
-                        </h5>
-                    </div>
+                <span class="badge rounded-pill bg-primary fs-xs">Ongoing</span>
+                <div class="">
+                    <h5 class="text-dark fw-normal">
+                        @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                        {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                        @else
+                        {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                        @endif
+                    </h5>
+                </div>
                 @else
-                  <span class="badge rounded-pill bg-primary fs-xs">Ended</span>
+                <span class="badge rounded-pill bg-primary fs-xs">Ended</span>
                 @endif
             </div>
 
@@ -4119,326 +4119,38 @@
     </header>
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
+        @php
+        use Carbon\Carbon;
 
-                    @php
-                    $startto = Carbon::parse ($event->startdate);
-                    $endfrom = Carbon::parse ($event->enddate);
-                    $now= carbon::now();
-                    $name = $event->eventname;
-                    $venue = $event->venue;
-                    $city = $event->city;
-                    $country = $event->country;
-                    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
-                    @endphp
+        $start = Carbon::parse($event->startdate);
+        $end = Carbon::parse($event->enddate);
+        $now = Carbon::now();
 
-                    @if ($now ->lt($startto))
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
-                    <div class="">
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @else
-                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @endif
-                        </h5>
-                    </div>
-                    @elseif($now->between($startto, $endfrom))
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
-                    <div class="">
-                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @else
-                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                            @endif
-                        </h5>
-                    </div>
-                    @else
-                    <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
-                    @endif
+        // Date Formatting Logic
+        if ($start->isSameDay($end)) {
+        // One-day event
+        $displayDate = $start->format('D, d M Y');
+        } elseif ($start->format('M Y') == $end->format('M Y')) {
+        // Same month & year
+        $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
+        } else {
+        // Different month or year
+        $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
+        }
+        @endphp
 
+        @if ($now->lt($start))
+        <span class="badge rounded-pill bg-primary fs-xs mt-4">Upcoming</span>
+        <h5 class="text-dark fw-normal pt-2 pb-0">{{ $displayDate }}</h5>
 
+        @elseif ($now->between($start, $end))
+        <span class="badge rounded-pill bg-primary fs-xs mt-4">Ongoing</span>
+        <h5 class="text-dark fw-normal pt-2 pb-0">{{ $displayDate }}</h5>
 
-
-                    <div class="h1">{{ ucwords($event->eventname) }}</div>
-                    <div class="">
-                        <h5 class="text-dark fw-normal">{{ucwords(trans($event->venue))}}, {{ucwords(trans($event->city))}}, {{ucwords(trans($event->country))}} </h5>
-                    </div>
-
-                    <div class="my-2 py-2"></div>
-
-                    <div class="row">
-                        <style>
-                            .custom-icon {
-                                font-size: 1.1rem;
-                                vertical-align: middle;
-                                color: #3498db;
-                            }
-
-                            .stat-title {
-                                font-size: 0.85rem;
-                                color: #888;
-                            }
-
-                            .stat-value {
-                                font-weight: bold;
-                                font-size: 1.1rem;
-                            }
-
-                            .border-end:last-child {
-                                border-right: none !important;
-                            }
-                        </style>
-
-                        <!-- Stats Block -->
-                        <div class="col-12 col-md-6 mb-3">
-                            <div class="row g-0 text-center border rounded py-2">
-                                <!-- Reviews -->
-                                <div class="col-3 border-end">
-                                    <div class="stat-value">
-                                        {{ $commentedRates->count() }} <i class="bi bi-star-fill custom-icon"></i>
-                                    </div>
-                                    <div class="stat-title">Reviews</div>
-                                </div>
-
-                                <!-- Edition -->
-                                <div class="col-3 border-end">
-                                    <div class="stat-value">
-                                        {{ $event->edition }} <i class="bi bi-patch-check-fill custom-icon"></i>
-                                    </div>
-                                    <div class="stat-title">Edition</div>
-                                </div>
-
-                                <!-- Visitors -->
-                                @if(is_numeric($event->auidence) && $event->auidence > 0)
-                                <div class="col-3 border-end">
-                                    <div class="stat-value">
-                                        {{ number_format(((float)$event->auidence / 1000), 1) . 'k' }}+
-                                    </div>
-                                    <div class="stat-title">Visitors</div>
-                                </div>
-                                @endif
-
-
-                                <!-- Average Rating -->
-                                <div class="col-3">
-                                    <div class="stat-value">
-                                        {{ round($commentedRates->avg('rate'), 1) }}
-                                    </div>
-                                    <div class="stat-title">Rated 3+</div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="row">
-                        <ul class="list-unstyled text-light">
-                            <li class="d-flex">
-                                <!-- <a class="btn btn-sm btn-primary mx-1" href="{{route('event.exhibit', ['board' => 'business'])}}">Plan to Visit</a> -->
-                                <!-- updated calender -->
-
-                                <a class="btn btn-sm btn-primary mx-1" href="{{$link->google()}}">Add to Calender</a>
-                                <a class="btn btn-sm btn-light" href=""> <i class=" fs-md fw-dark bi bi-share"></i> Share it</a>
-                                <a class="btn btn-sm btn-light" href=""> <i class="bi bi-bookmark-plus-fill"></i>Add To whislist</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="col-md-3">
-                    <style>
-                        .card {
-                            --bs-card-spacer-y: 1.25rem;
-                            --bs-card-spacer-x: 1.25rem;
-                            --bs-card-title-spacer-y: 0.5rem;
-                            --bs-card-title-color: var(--bs-gray-900);
-                            --bs-card-subtitle-color: ;
-                            --bs-card-border-width: 0;
-                            --bs-card-border-color: var(--bs-border-color);
-                            --bs-card-border-radius: 0.4rem;
-                            --bs-card-box-shadow: ;
-                            --bs-card-inner-border-radius: 0.4rem;
-                            --bs-card-cap-padding-y: 1.25rem;
-                            --bs-card-cap-padding-x: 1.25rem;
-                            --bs-card-cap-bg: var(--bs-body-bg);
-                            --bs-card-cap-color: ;
-                            --bs-card-height: ;
-                            --bs-card-color: var(--bs-body-color);
-                            --bs-card-bg: var(--bs-body-bg);
-                            --bs-card-img-overlay-padding: 1.25rem;
-                            --bs-card-group-margin: 0.9375rem;
-                            position: relative;
-                            display: -webkit-box;
-                            display: -ms-flexbox;
-                            display: flex;
-                            -webkit-box-orient: vertical;
-                            -webkit-box-direction: normal;
-                            -ms-flex-direction: column;
-                            flex-direction: column;
-                            min-width: 0;
-                            height: var(--bs-card-height);
-                            color: var(--bs-body-color);
-                            word-wrap: break-word;
-                            background-color: var(--bs-card-bg);
-                            background-clip: border-box;
-                            border: var(--bs-card-border-width) solid var(--bs-card-border-color);
-                            border-radius: var(--bs-card-border-radius);
-                        }
-
-                        @media (min-width: 576px) {
-                            .d-sm-block {
-                                display: block !important;
-                            }
-                        }
-
-                        .shadow {
-                            --bs-box-shadow: 0px 0px 40px rgba(29, 58, 83, 0.1);
-                            -webkit-box-shadow: var(--bs-box-shadow) !important;
-                            box-shadow: var(--bs-box-shadow) !important;
-                        }
-
-                        .rounded-4 {
-                            --bs-border-radius-xl: 0.6rem;
-                            border-radius: var(--bs-border-radius-xl) !important;
-                        }
-
-                        .card-body {
-                            -webkit-box-flex: 1;
-                            -ms-flex: 1 1 auto;
-                            flex: 1 1 auto;
-                            padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-                            color: var(--bs-card-color);
-                        }
-
-                        .dark-mode-item {
-                            display: none !important;
-                        }
-
-                        .h-20px {
-                            height: 20px !important;
-                        }
-                    </style>
-                    <!-- new-top-additive -->
-                    <!-- <div class="d-inline-block card card-body shadow rounded-4 position-absolute end-0 top-0 p-3 me-lg-n3 me-xxl-n7 mt-n5 d-none d-sm-block">
-                    <img src="https://www.exhibition.org.in/public/image/trustpilot.svg" class="light-mode-item h-20px mb-2" alt="Client-img">
-                    <img src="https://www.exhibition.org.in/public/image/trustpilot-light.svg" class="dark-mode-item h-20px mb-2" alt="Client-img">
-                    <div class="d-flex align-items-center">
-                      <img src="https://www.exhibition.org.in/public/image/trustpilot-star.svg" class="h-30px" alt="rating-img">
-                      <h6 class="font-base fw-bold ms-1 mb-0">4.8/5.0</h6>
-                    </div>
-                    <p class="small mb-0 mt-2">Reviewed by 365 users</p>
-                  </div> -->
-
-
-                    <img class="p-1" width="230%" src="{{url('public/assets/image/exhibition/'.$event->image)}}" alt="{{Str::limit($event->image, 24)}}">
-
-                    @php
-                    $relativeevent = DB::table('events')->where('reference', $event->reference)->where('id', '!=', $event->id)->orderBy('startdate','desc')->limit(4)->get();
-                    $countEvent = $relativeevent->count();
-                    $pavillionmsmeactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'msme')->exists();
-                    $pavillionstartupactive = DB::table('pavillions')->where('event_id' , $event->id)->where('business', 'startup')->exists();
-                    @endphp
-
-                    @if($countEvent > 1)
-                    <div class="text-end">
-                        <span class="badge rounded-pill bg-primary">Concurrent</span>
-                        <p class="mb-1">Understanding Expo</p>
-                        <hr class="mt-md-2 mb-2">
-
-                        <div class="col text-end">
-                            <div class="stat-value d-flex flex-column align-items-end">
-                                <h6 class="text-dark mb-0">{{$event->view_count}}+</h6>
-                                <ul class="avatar-group mb-0 d-flex justify-content-end">
-
-
-                                    @foreach($relativeevent as $rel)
-                                    <a href="{{ route('event.details', ['slug' => $rel->slug]) }}" class="text-decoration-none">
-                                        <li class="avatar avatar-xs ms-1" style="cursor: pointer;">
-                                            <img
-                                                class="avatar-img rounded-circle"
-                                                src="{{ url('public/assets/image/exhibition/' . $rel->image) }}"
-                                                alt="{{ $rel->eventname ?? 'Event' }}">
-                                        </li>
-                                    </a>
-                                    @endforeach
-
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    @elseif($pavillionmsmeactive)
-                    msme
-                    <div class="text-end">
-                        <span class="badge rounded-pill bg-primary">Membership</span>
-                        <p class="mb-1">Register your Brand</p>
-                        <hr class="mt-md-2 mb-2">
-
-                        <div class="col text-end">
-                            <div class="stat-value d-flex flex-column align-items-end">
-                                <h6 class="text-dark mb-0">5K+</h6>
-                                <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                    <p>Access Right place to artisan serve approach right people at right time</p>
-                                    <a href="" class="btn btn-primary">Activate</a>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span class="badge rounded-pill bg-primary"></span>
-                    <p class="mb-1 text-right">See Who's Exhibit</p>
-
-                    @elseif($pavillionstartupactive)
-                    startup
-                    <div class="text-end">
-                        <span class="badge rounded-pill bg-primary">Membership</span>
-                        <p class="mb-1">Register your Brand</p>
-                        <hr class="mt-md-2 mb-2">
-
-                        <div class="col text-end">
-                            <div class="stat-value d-flex flex-column align-items-end">
-                                <h6 class="text-dark mb-0">5K+</h6>
-                                <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                    <p>Access Right place to artisan serve approach right people at right time</p>
-                                    <a href="" class="btn btn-primary">Activate</a>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <span class="badge rounded-pill bg-primary"></span>
-                    <p class="mb-1 text-right">See Who's Exhibit</p>
-
-
-                    @else
-                    <div class="text-end">
-                        <span class="badge rounded-pill bg-primary">Our Data, Your Customers</span>
-                        <p class="mb-1">See Who's Exhibit</p>
-                        <hr class="mt-md-2 mb-2">
-
-                        <div class="col text-end">
-                            <div class="stat-value d-flex flex-column align-items-end">
-                                <small class="fw-bold">Explore. Connect. Grow. Find Exhibitors!</small>
-                                <small class="fs-xs fw-light mt-3"> Access verified exhibitor profiles, explore their offerings, and connect directly to discuss collaborations, partnerships, or bulk business deals — all in one place.</small>
-                                <ul class="avatar-group mb-0 d-flex justify-content-end">
-                                    <a href="" class="btn btn-primary btn-sm">Download</a>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
+        @else
+        <span class="badge rounded-pill bg-primary fs-xs mt-4">Ended</span>
+        <h5 class="text-dark fw-normal pt-2 pb-0">{{ $displayDate }}</h5>
+        @endif
     </section>
 
     <!--participants-->
@@ -4796,54 +4508,54 @@
                         @if($event->latestupdat == 'postpone')
                         <div class="h5">Sorry, Event has been postponed</div>
                         @else
-                                <!-- add condition from here if event is for one day or multiple day -->
-                                @if(Carbon::parse ($event->startdate)->format('d M Y') === Carbon::parse ($event->enddate)->format('d M Y'))
-                                    {{ Carbon::parse($event->startdate)->format('D, d M Y') }}
+                        <!-- add condition from here if event is for one day or multiple day -->
+                        @if(Carbon::parse ($event->startdate)->format('d M Y') === Carbon::parse ($event->enddate)->format('d M Y'))
+                        {{ Carbon::parse($event->startdate)->format('D, d M Y') }}
+                        @else
+
+                        @if ($current < $to && $current < $from)
+                            <span class="badge badge-primary bg-primary fs-xs mt-4">Upcoming</span>
+                            <h5 class="text-dark fw-normal pt-2 pb-0">
+                                @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
                                 @else
-
-                                    @if ($current < $to && $current < $from)
-                                        <span class="badge badge-primary bg-primary fs-xs mt-4">Upcoming</span>
-                                        <h5 class="text-dark fw-normal pt-2 pb-0">
-                                            @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                            {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                            @else
-                                            {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                            @endif
-                                        </h5>
-                                        @elseif ($current == $to && $current < $from)
-                                            <span class="badge badge-primary bg-primary fs-xs mt-4">First Day</span>
-                                            <h5 class="text-dark fw-normal pt-2 pb-0">
-                                                @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                                {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                                @else
-                                                {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                                @endif
-                                            </h5>
-                                            @elseif ($current > $to && $current < $from)
-                                                <span class="badge badge-primary bg-primary fs-xs mt-4">Ongoing</span>
-                                                <h5 class="text-dark fw-normal pt-2 pb-0">
-                                                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
-                                                    @else
-                                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                                    @endif
-                                                </h5>
-                                                @elseif ($current > $to && $current == $from)
-                                                <span class="badge badge-primary bg-primary fs-xs mt-4">Last Business Day</span>
-                                                <h5 class="text-dark fw-normal pt-2 pb-0">
-                                                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
-                                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                                    @else
-                                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
-                                                    @endif
-                                                </h5>
-                                                @elseif ($current > $to && $current > $from)
-                                                <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
-                                                @endif
+                                {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
                                 @endif
-                        @endif
+                            </h5>
+                            @elseif ($current == $to && $current < $from)
+                                <span class="badge badge-primary bg-primary fs-xs mt-4">First Day</span>
+                                <h5 class="text-dark fw-normal pt-2 pb-0">
+                                    @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                    {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                                    @else
+                                    {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                                    @endif
+                                </h5>
+                                @elseif ($current > $to && $current < $from)
+                                    <span class="badge badge-primary bg-primary fs-xs mt-4">Ongoing</span>
+                                    <h5 class="text-dark fw-normal pt-2 pb-0">
+                                        @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                        {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y ')}}
+                                        @else
+                                        {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                                        @endif
+                                    </h5>
+                                    @elseif ($current > $to && $current == $from)
+                                    <span class="badge badge-primary bg-primary fs-xs mt-4">Last Business Day</span>
+                                    <h5 class="text-dark fw-normal pt-2 pb-0">
+                                        @if(Carbon::parse ($event->startdate)->format('M') != Carbon::parse ($event->enddate)->format('M'))
+                                        {{Carbon::parse ($event->startdate)->format('D, d M')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                                        @else
+                                        {{Carbon::parse ($event->startdate)->format('D, d ')}} - {{Carbon::parse ($event->enddate)->format('D, d M Y')}}
+                                        @endif
+                                    </h5>
+                                    @elseif ($current > $to && $current > $from)
+                                    <a class="badge badge-primary bg-primary fs-xs mt-4" href="{{route('event.exhibit', ['board' => 'business'])}}">want to participate!</a>
+                                    @endif
+                                    @endif
+                                    @endif
 
-                        
+
 
                                     <h1 class="text-dark mb-0">{{ucwords(trans($event->eventname))}}</h1>
                                     @php
@@ -4925,7 +4637,7 @@
     <section class=" d-lg-none nav-tabs-wrapper ">
         <ul class="nav-tabs-scroll p-0 m-0" role="tablist">
 
-          @if($event->eventype == 'conference')
+            @if($event->eventype == 'conference')
             <li class="nav-tab">
                 <a class="nav-link px-1 {{$currentTab === 'tabA' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tabA')">Overview</a>
             </li>
