@@ -4591,7 +4591,7 @@
 
             </div>
 
-
+ 
             <div class="col-lg-4 col-md-4 col-sm-4">
 
                 {{--<h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
@@ -4601,7 +4601,7 @@
                 <section class="container mb-5">
                     <div class="list-unstyled pt-2 pb-0 px-0 pl-0">
                         <div class="d-flex justify-content-between px-0 m-0 lh-1 ">
-                            <span class="fs-sm">Upcoming<br><span class="fw-medium h5">Event</span></span>
+                            <span class="fs-sm">Upcoming Event<br><span class="fw-medium h5">You may be interested in</span></span>
                             <a class="btn btn-outline-primary btn-sm" href="#">Submit event</a>
                             <!-- <a class="btn btn-outline-primary btn-sm dropdown-toggle" href="#">Submit event</a>
                             <ul class="dropdown-menu" width="auto">
