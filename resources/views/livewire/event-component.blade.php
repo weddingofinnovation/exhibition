@@ -225,9 +225,9 @@
     </div>
   </section>
 
-  <div class=" container mt-4">
+  <div class=" container mt-4 d-none d-md-block">
     @if($events->isEmpty())
-    <p>No events found.</p>
+    <p class="">No events found.</p>
     @else
     <div class="container my-4">
 
