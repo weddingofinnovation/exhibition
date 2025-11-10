@@ -206,7 +206,7 @@
             </a>
 
 
-            <div class="justify-content-end d-none d-md-block">
+            <div class="justify-content-start d-none d-md-block">
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <!-- <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a> -->
@@ -217,15 +217,15 @@
                   <a class="nav-link" href="{{route('expand.business')}}">Find Exhibitor</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{asset('/magazine')}}"></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
+                  <a class="nav-link" href="{{asset('/investment')}}"></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('buy.license')}}">Design & Fabrication</a>
-                </li> -->
+                  <a class="nav-link" href="{{route('buy.license')}}"></a>
+                </li>
 
               </ul>
             </div>
