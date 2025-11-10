@@ -4113,9 +4113,7 @@
             <!-- <h2 class="m-0">MySite (Desktop)</h2> -->
             <div class="">
                 <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
-                <div class="">
-                    <small class="ml-1 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
-                </div>
+                <small class="ml-1 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
             </div>
 
 
@@ -4487,12 +4485,9 @@
                 </style>
 
 
-
-
-
                 <div class="d-flex mb-3">
                     <div class="categories-list">
-                        <span>Industry</span>
+                        <span>Areas</span>
                         @foreach($category as $cat)
                         <a class="category-badge" href="{{route ('coi.exhibitioncategory',['time' => 'upcoming','eventype' => 'exhibition', 'categry' => $cat->expo->slug])}}">{{$cat->expo->tag}}</a>
                         @endforeach
