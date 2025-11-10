@@ -19,7 +19,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        
+
         <!-- Menu List -->
         <ul class="list-group mt-2">
 
@@ -217,7 +217,7 @@
                   <a class="nav-link" href="{{route('expand.business')}}">Find Exhibitor</a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
                 </li>
                 <li class="nav-item">
@@ -225,7 +225,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('buy.license')}}">Design & Fabrication</a>
-                </li>
+                </li> -->
 
               </ul>
             </div>
