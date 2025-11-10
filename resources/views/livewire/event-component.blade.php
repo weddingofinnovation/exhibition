@@ -210,7 +210,7 @@
             <select class="form-select" wire:model="venue">
               <option>Venue</option>
               @php
-              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+              $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->where('status','1')->where('admstatus','1')->limit(10)->get();
               @endphp
 
               @foreach($venueoption as $franchise)
@@ -258,11 +258,13 @@
           wire:click="toggleEvent({{ $event->id }})"
           style="cursor: pointer; user-select: none;">
 
-          <div>
+          <a href="{{ route('event.details', ['slug' => $event->slug]) }}"
+            onclick="event.stopPropagation();"
+            class="text-decoration-none {{ in_array($event->id, $selectedEvents) ? 'text-white' : 'text-dark' }}">
             <strong>{{ $event->eventname }}</strong> —
             {{ $event->country }} {{ $event->city }} - {{ $event->venue }} —
             {{ $event->startdate }} to {{ $event->enddate }}
-          </div>
+          </a>
 
           <!-- Checkmark Icon -->
           @if(in_array($event->id, $selectedEvents))
@@ -271,8 +273,6 @@
         </li>
         @endforeach
       </ul>
-
-
 
       <!-- Confirmation Message -->
       @if (session()->has('message'))
@@ -298,7 +298,7 @@
     @if($showEmailModal)
     <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
       <div class="modal-dialog modal-dialog-centered">
-        
+
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Send Selected Events</h5>
@@ -321,13 +321,13 @@
             @enderror
           </div>
 
-          
-            <label for="email" class="form-label">Enter your name</label>
-            <input type="text" id="email" class="form-control" wire:model="name" placeholder="your name">
-            @error('name')
-            <small class="text-danger">{{ $message }}</small>
-            @enderror
-          
+
+          <label for="email" class="form-label">Enter your name</label>
+          <input type="text" id="email" class="form-control" wire:model="name" placeholder="your name">
+          @error('name')
+          <small class="text-danger">{{ $message }}</small>
+          @enderror
+
 
           <div class="">
             <label for="email" class="form-label">Enter your company</label>
