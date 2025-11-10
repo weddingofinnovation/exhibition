@@ -19,7 +19,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-
+        
         <!-- Menu List -->
         <ul class="list-group mt-2">
 
@@ -197,16 +197,16 @@
       <div class="navbar-sticky bg-light">
         <div class="navbar navbar-expand-lg navbar-light py-0">
           <div class="container p-0">
-            <a class="navbar-brand justify-content-start d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
-            <a class="navbar-brand justify-content-start d-none d-sm-block me-3 flex-shrink-0 ml-1 py-0" href="{{asset('/')}}">
+            <a class="navbar-brand d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
+            <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1 py-0" href="{{asset('/')}}">
               <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
             </a>
-            <a class="navbar-brand justify-content-start d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}">
+            <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}">
               <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
             </a>
 
 
-            <div class="justify-content-start d-none d-md-block">
+            <div class="justify-content-end d-none d-md-block">
               <ul class="navbar-nav">
                 <li class="nav-item">
                   <!-- <a class="nav-link" href="{{asset('/exhibitions')}}">Great Exhibition To Exhibt</a> -->
@@ -218,13 +218,13 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/magazine')}}"></a>
+                  <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{asset('/investment')}}"></a>
+                  <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('buy.license')}}"></a>
+                  <a class="nav-link" href="{{route('buy.license')}}">Design & Fabrication</a>
                 </li>
 
               </ul>
@@ -232,7 +232,7 @@
 
 
             <!-- Toolbar-->
-            <div class="navbar-toolbar justify-content-end d-flex flex-shrink-0 align-items-center">
+            <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
               <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">-->
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <span class="navbar-toggler-icon"></span>
@@ -277,7 +277,6 @@
                 </div>
               </div>--}}
             </div>
-
           </div>
 
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
