@@ -208,30 +208,30 @@ use Carbon\Carbon;
 });*/
 
 Route::get('/email/verify', function () {
-    return view ('auth.verify-email');
+  return view('auth.verify-email');
 })->middleware('auth')->name('verification.notice');
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-    $request->fulfill();
-    return redirect('/user/dashboard');
+  $request->fulfill();
+  return redirect('/user/dashboard');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 //resend email
- Route::post('/email/verification-notification', function (Request $request) {
-    $request->user()->sendEmailVerificationNotification();
+Route::post('/email/verification-notification', function (Request $request) {
+  $request->user()->sendEmailVerificationNotification();
 
-    return back()->with('message', 'Verification link sent!');
- })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+  return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 
 
 //Route for Mailing
-    Route::get('/enco/emal', function() {
-    return new PostMail();
-    });
+Route::get('/enco/emal', function () {
+  return new PostMail();
+});
 
-    Route::get('/contact', [ContactusComponent::class,'sendEmail']);
-    Route::get('/promo-email', [EmailController::class,'sendpromoemail'])->name('email.promo');
+Route::get('/contact', [ContactusComponent::class, 'sendEmail']);
+Route::get('/promo-email', [EmailController::class, 'sendpromoemail'])->name('email.promo');
 
 //Start
 Route::get('/', EventComponent::class)->name('business.exhibition');
@@ -291,7 +291,8 @@ Route::get('/partner', MembershipComponent::class)->name('business.membership');
 
 //product
 Route::get('/sell-your-business', SellyourbusinessComponent::class)->name('sell.business');
-Route::get('/expand-your-business', ExpandyourbusinessComponent::class)->name('expand.business');
+//For exhibitor list by year wise
+Route::get('/exhibitor/{$board}', ExpandyourbusinessComponent::class)->name('expand.business');
 
 Route::get('/design_fabrication', BuyabrandlicenseComponent::class)->name('buy.license');
 
@@ -351,7 +352,7 @@ Route::post('/like-business/{franchise}', 'App\Http\Livewire\DetailsComponent@li
 //google login setup 
 //Route::get('/googlelogin', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
 //Route::any('/auth/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
-Route::get('/google/callback', [GoogleComponent::class,'loginwithGoogle'])->name('google.login');
+Route::get('/google/callback', [GoogleComponent::class, 'loginwithGoogle'])->name('google.login');
 Route::any('/auth/google/callback', [GoogleComponent::class, 'callbackFromGoogle'])->name('google.callback');
 
 
@@ -363,7 +364,7 @@ Route::get('/linkedinlogin', [GoogleComponent::class, 'handleLinkedInCallback'])
 //Route::get('login/linkedin', [GoogleComponent::class, 'redirectToLinkedIn'])->name('linkedin.login');
 //Route::get('loginlinkedin', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
 //Route::get('/linkedin/callback', [GoogleComponent::class, 'loginWithLinkedIn'])->name('linkedin.button');
- // web.php/linkedin/callback
+// web.php/linkedin/callback
 //Route::get('/linkedin/redirect', [GoogleComponent::class, 'redirectToLinkedIn']);
 //Route::get('/linkedin/callback', [GoogleComponent::class, 'handleLinkedInCallback']);
 
@@ -374,196 +375,195 @@ Route::get('/linkedinlogin', [GoogleComponent::class, 'handleLinkedInCallback'])
 
 Route::get('/directory-exhibitor/{directorydetails}/refer/add/{reference}', UserDirectoryComponent::class)->name('directory.dashboard');
 
-  //User
-  Route::middleware(['auth:sanctum', 'verified'])->group( function () {
-    Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
+//User
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+  Route::get('/user/dashboard/{board}', UserDashboardComponent::class)->name('user.dashboard');
 
-    Route::get('/user/badge/{board}/{badgeID?}', UserBadgeComponent::class)->name('user.badge');
+  Route::get('/user/badge/{board}/{badgeID?}', UserBadgeComponent::class)->name('user.badge');
 
-    Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
+  Route::get('/user/marketing-tool/{trends}', UserEventCategoryComponent::class)->name('user.category');
 
-    Route::get('/user/{trackcustomer}', UserLandingComponent::class)->name('partner.magazine');
+  Route::get('/user/{trackcustomer}', UserLandingComponent::class)->name('partner.magazine');
 
-    Route::get('/user/magazine/add-your-business', UserEventClaimComponent::class)->name('user.claim');
-    
-    Route::get('/user/business/details', UserEventDetailsComponent::class)->name('user.details');
+  Route::get('/user/magazine/add-your-business', UserEventClaimComponent::class)->name('user.claim');
 
-    Route::get('/online/contract_form', UserOrdersComponent::class)->name('user.Orders');
+  Route::get('/user/business/details', UserEventDetailsComponent::class)->name('user.details');
 
-    //Route::get('/user/orders/{order_id}', UserOrderDetailsComponent::class)->name('user.orderDetails');
-    Route::get('/user/profile', UserProfileComponent::class)->name('user.profile');
-    Route::get('/user/mybrand', MybrandComponent::class)->name('user.mybrand');
-    Route::get('/user/blog', UserBlogComponent::class)->name('user.blog');
-    Route::get('/user/account', UserAccountComponent::class)->name('user.account');
-    Route::get('/user/review/{order_item_id}', UserReviewComponent::class)->name('user.review');
+  Route::get('/online/contract_form', UserOrdersComponent::class)->name('user.Orders');
 
-    //latest link
-    Route::get('/user/{exhibitor}/{expo}', UserExhibitorVisitorComponent::class)->name('exhibitor.Visitor');
+  //Route::get('/user/orders/{order_id}', UserOrderDetailsComponent::class)->name('user.orderDetails');
+  Route::get('/user/profile', UserProfileComponent::class)->name('user.profile');
+  Route::get('/user/mybrand', MybrandComponent::class)->name('user.mybrand');
+  Route::get('/user/blog', UserBlogComponent::class)->name('user.blog');
+  Route::get('/user/account', UserAccountComponent::class)->name('user.account');
+  Route::get('/user/review/{order_item_id}', UserReviewComponent::class)->name('user.review');
 
-  });
-
-    
-  //Admin-ADM
-  Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group( function () {
-    Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
+  //latest link
+  Route::get('/user/{exhibitor}/{expo}', UserExhibitorVisitorComponent::class)->name('exhibitor.Visitor');
+});
 
 
-    Route::get('/admin/panel/{board}/floor/{floorPlanId}', AdminPanelComponent::class)->name('admin.panel');
-    Route::get('/admin/panel/view/{boardid}', AdminPanelViewComponent::class)->name('admin.panelview');
-
-    Route::get('/admin/dashboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
-
-    Route::get('/admin/event/add', AdminEventAddComponent::class)->name('admin.eventadd');
-    
-    Route::get('/admin/question/add/{eventid?}/{board?}', AdminQuestionComponent::class)->name('admin.questionadd');
-
-    Route::get('/admin/event/{event_id}/edit/{board}', AdminEventEditComponent::class)->name('admin.eventEdit');
-
-    Route::get('/admin/multi/{event_id?}/detail/{formm}/{location_id?}', AdminEventMultipleAddComponent::class)->name('admin.eventMultiEdit');
-
-    //Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazinedetails');
-    
-    //Brand
-    Route::get('/admin/contact/{brand_id}', AdminBrandComponent::class)->name('admin.brand');
-
-    Route::get('/admin/participants/{event_id}/add/{formm}', AdminEventMultiParticipantsComponent::class)->name('admin.multipartners');
-
-    Route::get('/admin/brand/{brand_id}', AdminEventBrandDetailComponent::class)->name('admin.brandDetail');
-    
-    //client-data-update
-    Route::get('/admin/sub-details/{event_id}/add/{did}/business/{formm}', AdminEventMultiDetailComponent::class)->name('admin.multiSubDetails');
-
-    //magazine
-    Route::get('/admin/magazine/{slug}/addon/{formm}', MagazineUpgradingComponent::class)->name('admin.magazine');
-
-    Route::get('/admin/event/{slug}', AdminDetailComponent::class)->name('adminevent.detail');
-
-    Route::get('/admin/edit/{event_id}', AdminCategoryEditComponent::class)->name('admin.editcategories');
-
-    Route::get('/admin/ticket/{event_id}/business/{board}', AdminTicketComponent::class)->name('admincheck.ticket');
-
-    Route::get('/admin/business-mail', AdminClientComponent::class, 'emailSend')->name('admin.clientmail');
-
-    //import/export
-    // Route::get('/importExportview', [AdminClientComponent::class,'importExportview'])->name('importExportview');
-    // Route::get('/export', [AdminClientComponent::class,'export'])->name('export');
-    // Route::post('/import', [AdminClientComponent::class,'import'])->name('import');
-    
-    //Route::get('/oemail', 'App\Http\Controllers\AdminDashboardComponent')->name('admin.email');
-    Route::get('/admin/account', AdminAccountComponent::class)->name('admin.account');
-    
-     ///reminder--check it--04-oct-2025- 2117 --/admin/franchises/edit/
-    //Route::get('/admin/anises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
+//Admin-ADM
+Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
+  Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
 
 
-    // sub categor
-    
-    Route::get('/admin/category', AdminCategoryAddComponent::class)->name('all.category');
-    Route::get('/admin/sub-category/{board?}/{category?}', AdminCategoryComponent::class)->name('admin.categories');
+  Route::get('/admin/panel/{board}/floor/{floorPlanId}', AdminPanelComponent::class)->name('admin.panel');
+  Route::get('/admin/panel/view/{boardid}', AdminPanelViewComponent::class)->name('admin.panelview');
 
-   
+  Route::get('/admin/dashboard/business/{board}', AdminDashboardComponent::class)->name('admin.dashboard');
 
-    
-    Route::get('/admin/users', AdminUserComponent::class)->name('admin.user');
+  Route::get('/admin/event/add', AdminEventAddComponent::class)->name('admin.eventadd');
 
-    //Route::get('/admin/franchises', AdminFranchiseComponent::class)->name('admin.franchise');
-    Route::get('/admin/lead/{board}/{lead_id}', AdminFranchiseAddComponent::class)->name('admin.addfranchise');
+  Route::get('/admin/question/add/{eventid?}/{board?}', AdminQuestionComponent::class)->name('admin.questionadd');
 
-    ///reminder--check it--04-oct-2025- 2117
-    //Route::get('/admin/franchises/edit', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
-    
-    
-    //Franchise Attributes
-    Route::get('/admin/attributes', AdminAttributesComponent::class)->name('admin.attributes');
-    Route::get('/admin/attributes/add', AdminAttributesAddComponent::class)->name('admin.addattributes');
-    Route::get('/admin/attributes/edit/{attribute_id}', AdminAttributesEditComponent::class)->name('admin.editattributes');
-    
-    //coupons
-    Route::get('/admin/coupons/add', AdminCouponAddComponent::class)->name('admin.addCoupons');
-    Route::get('/admin/coupons/edit/{coupon_id}', AdminCouponEditComponent::class)->name('admin.editCoupon');
+  Route::get('/admin/event/{event_id}/edit/{board}', AdminEventEditComponent::class)->name('admin.eventEdit');
 
-    //response
-    Route::get('/admin/optios/add', AdminOptioAddComponent::class)->name('admin.addoptios');
-    Route::get('/admin/optios/edit/{optio_id}', AdminOptioEditComponent::class)->name('admin.editoptio');
+  Route::get('/admin/multi/{event_id?}/detail/{formm}/{location_id?}', AdminEventMultipleAddComponent::class)->name('admin.eventMultiEdit');
 
-    Route::get('/admin/contacts', AdminContactComponent::class)->name('admin.contact');  
-    Route::get('/admin/entity', AdminInfoComponent::class)->name('admin.info');
-    Route::get('/admin/entity/add', AdminInfoAddComponent::class)->name('admin.infoadd');
-    
-    Route::get('/admin/The-Exhibition-Network/opportunity/{slug}', AdminCareerComponent::class)->name('admin.job');
-    Route::get('/admin/job/applicat', AdminJobApplicationComponent::class)->name('admin.resume');
-    Route::get('/admin/opportunity/add', AdminCareerAddComponent::class)->name('admin.jobCreate'); 
+  //Route::get('/admin/magazine/details/{magazine_id?}', AdminMagazineComponent::class)->name('admin.magazinedetails');
 
-    //Qrcode
-    Route::get('/admin/QrCode', GeneratorComponent::class)->name('admin.qrcode');
-  
+  //Brand
+  Route::get('/admin/contact/{brand_id}', AdminBrandComponent::class)->name('admin.brand');
 
-    
-    //blog-post all new  post
-    Route::get('/admin/blog/{blog_id}/update/{board}', BlogDashboardComponent::class)->name('admin.blogdashboard');
-    //using for Add
-    Route::get('/admin/blog/add/business/{board}', AdminBlogComponent::class)->name('admin.blogpost');
+  Route::get('/admin/participants/{event_id}/add/{formm}', AdminEventMultiParticipantsComponent::class)->name('admin.multipartners');
+
+  Route::get('/admin/brand/{brand_id}', AdminEventBrandDetailComponent::class)->name('admin.brandDetail');
+
+  //client-data-update
+  Route::get('/admin/sub-details/{event_id}/add/{did}/business/{formm}', AdminEventMultiDetailComponent::class)->name('admin.multiSubDetails');
+
+  //magazine
+  Route::get('/admin/magazine/{slug}/addon/{formm}', MagazineUpgradingComponent::class)->name('admin.magazine');
+
+  Route::get('/admin/event/{slug}', AdminDetailComponent::class)->name('adminevent.detail');
+
+  Route::get('/admin/edit/{event_id}', AdminCategoryEditComponent::class)->name('admin.editcategories');
+
+  Route::get('/admin/ticket/{event_id}/business/{board}', AdminTicketComponent::class)->name('admincheck.ticket');
+
+  Route::get('/admin/business-mail', AdminClientComponent::class, 'emailSend')->name('admin.clientmail');
+
+  //import/export
+  // Route::get('/importExportview', [AdminClientComponent::class,'importExportview'])->name('importExportview');
+  // Route::get('/export', [AdminClientComponent::class,'export'])->name('export');
+  // Route::post('/import', [AdminClientComponent::class,'import'])->name('import');
+
+  //Route::get('/oemail', 'App\Http\Controllers\AdminDashboardComponent')->name('admin.email');
+  Route::get('/admin/account', AdminAccountComponent::class)->name('admin.account');
+
+  ///reminder--check it--04-oct-2025- 2117 --/admin/franchises/edit/
+  //Route::get('/admin/anises/edit/{franchise_id}', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
+
+
+  // sub categor
+
+  Route::get('/admin/category', AdminCategoryAddComponent::class)->name('all.category');
+  Route::get('/admin/sub-category/{board?}/{category?}', AdminCategoryComponent::class)->name('admin.categories');
 
 
 
-   // Route::get('/admin/blog/category/add', BlogCategoryEditCompopnent::class)->name('admin.blogadd');
-   //event--add--status--list--edit
-   //Order_details
-   Route::get('/admin/order/{order_id}', AdminOrderDetailsComponent::class)->name('admin.orderdetails');
-  });
 
-   //Master-MSR
-  Route::middleware(['auth:sanctum', 'verified', 'authmaster'])->group( function () {
-    Route::get('/master/dashboard', MasterDashboardComponent::class)->name('master.dashboard');
-    Route::get('/master/blog', MasterBlogComponent::class)->name('master.blog');
-  });
+  Route::get('/admin/users', AdminUserComponent::class)->name('admin.user');
 
-  //Employee-EMP
-  Route::middleware(['auth:sanctum', 'verified', 'authemp'])->group( function () {
-    Route::get('/exhibitor/dashboard', EmployeeDashboardComponent::class)->name('employee.dashboard');
-    Route::get('/exhibitor/blog', EmployeeBlogComponent::class)->name('employee.blog');
-    Route::get('/exhibitor/add/partner' , EmployeeAddPartnerComponent::class)->name('employee.addPartner');
-    Route::get('/exhibitor/add/speaker' , EmployeeAddSpeakerComponent::class)->name('employee.addSpeaker');
-    Route::get('/exhibitor/add/exhibitor' , EmployeeAddExhibitorComponent::class)->name('employee.addExhibitor');
-    Route::get('/exhibitor/add/sponsership' , EmployeeAddSponsershipComponent::class)->name('employee.addSponsership');
-    //Route::get('/aside', EmployeeAsideComponent::class)->name('aside');
-  });
+  //Route::get('/admin/franchises', AdminFranchiseComponent::class)->name('admin.franchise');
+  Route::get('/admin/lead/{board}/{lead_id}', AdminFranchiseAddComponent::class)->name('admin.addfranchise');
 
-  //Seller-SLR
-  Route::middleware(['auth:sanctum', 'verified', 'authseller'])->group( function () {
-    Route::get('/partner/account', SellerAccountComponent::class)->name('seller.account');
-    
-    Route::get('/partner/dashboard', SellerDashboardComponent::class)->name('seller.dashboard');
-    Route::get('/partner/add', SellerEventComponent::class)->name('event.add');
-    Route::get('/partner/ticket/add', SellerEventTicketComponent::class)->name('ticket.add');
-    Route::get('/partner/sponser/add', SellerSponsershipComponent::class)->name('seller.sponser.add');
-    Route::get('/partner/hastag/add', HastagComponent::class)->name('seller.hastag.add');
-    Route::get('/partner/pavillion/add', PavillionComponent::class)->name('seller.pavillion.add');
-    Route::get('/partner/portfolio/{slug}', SellerEventIdeComponent::class)->name('seller.portfolio');
+  ///reminder--check it--04-oct-2025- 2117
+  //Route::get('/admin/franchises/edit', AdminFranchiseEditComponent::class)->name('admin.editfranchise');
 
-    Route::get('/partner/attribute', SellerEventAttributeComponent::class)->name('seller.event.attribute');
-    Route::get('/partner/attribute/{event_id}', SellerEventAttributeComponent::class)->name('seller.event');
-    
-    //lead
-    Route::get('/partner/business/pool', LeadPoolComponent::class)->name('seller.business.pool');
 
-    Route::get('/mybrand', SellerMybrandComponent::class)->name('seller.mybrand');
+  //Franchise Attributes
+  Route::get('/admin/attributes', AdminAttributesComponent::class)->name('admin.attributes');
+  Route::get('/admin/attributes/add', AdminAttributesAddComponent::class)->name('admin.addattributes');
+  Route::get('/admin/attributes/edit/{attribute_id}', AdminAttributesEditComponent::class)->name('admin.editattributes');
 
-    Route::get('/seller/profile', SellerProfileComponent::class)->name('seller.profile');
-    Route::get('/seller/brand', SellerBrandComponent::class)->name('seller.brand');
-    Route::get('/seller/franchise', SellerFranchiseComponent::class)->name('seller.franchise');
-    Route::get('/seller/contact', SellerContactComponent::class)->name('seller.contact');
-    Route::get('/seller/blog', SellerBlogComponent::class)->name('seller.blog');
+  //coupons
+  Route::get('/admin/coupons/add', AdminCouponAddComponent::class)->name('admin.addCoupons');
+  Route::get('/admin/coupons/edit/{coupon_id}', AdminCouponEditComponent::class)->name('admin.editCoupon');
 
-    Route::get('/seller/order', SellerOrderComponent::class)->name('seller.order');
-    Route::get('/seller/order/{order_id}', SellerOrderDetailsComponent::class)->name('seller.orderDetails');
+  //response
+  Route::get('/admin/optios/add', AdminOptioAddComponent::class)->name('admin.addoptios');
+  Route::get('/admin/optios/edit/{optio_id}', AdminOptioEditComponent::class)->name('admin.editoptio');
 
-    //trial
-    Route::get('/seller/opportunity', SellerPostOpportunityComponent::class)->name('seller.opportunity');
-  });
+  Route::get('/admin/contacts', AdminContactComponent::class)->name('admin.contact');
+  Route::get('/admin/entity', AdminInfoComponent::class)->name('admin.info');
+  Route::get('/admin/entity/add', AdminInfoAddComponent::class)->name('admin.infoadd');
 
-  //sitemap
-  Route::get('siteemap.xml', 'App\Http\Controllers\SitemapController@index');
+  Route::get('/admin/The-Exhibition-Network/opportunity/{slug}', AdminCareerComponent::class)->name('admin.job');
+  Route::get('/admin/job/applicat', AdminJobApplicationComponent::class)->name('admin.resume');
+  Route::get('/admin/opportunity/add', AdminCareerAddComponent::class)->name('admin.jobCreate');
+
+  //Qrcode
+  Route::get('/admin/QrCode', GeneratorComponent::class)->name('admin.qrcode');
+
+
+
+  //blog-post all new  post
+  Route::get('/admin/blog/{blog_id}/update/{board}', BlogDashboardComponent::class)->name('admin.blogdashboard');
+  //using for Add
+  Route::get('/admin/blog/add/business/{board}', AdminBlogComponent::class)->name('admin.blogpost');
+
+
+
+  // Route::get('/admin/blog/category/add', BlogCategoryEditCompopnent::class)->name('admin.blogadd');
+  //event--add--status--list--edit
+  //Order_details
+  Route::get('/admin/order/{order_id}', AdminOrderDetailsComponent::class)->name('admin.orderdetails');
+});
+
+//Master-MSR
+Route::middleware(['auth:sanctum', 'verified', 'authmaster'])->group(function () {
+  Route::get('/master/dashboard', MasterDashboardComponent::class)->name('master.dashboard');
+  Route::get('/master/blog', MasterBlogComponent::class)->name('master.blog');
+});
+
+//Employee-EMP
+Route::middleware(['auth:sanctum', 'verified', 'authemp'])->group(function () {
+  Route::get('/exhibitor/dashboard', EmployeeDashboardComponent::class)->name('employee.dashboard');
+  Route::get('/exhibitor/blog', EmployeeBlogComponent::class)->name('employee.blog');
+  Route::get('/exhibitor/add/partner', EmployeeAddPartnerComponent::class)->name('employee.addPartner');
+  Route::get('/exhibitor/add/speaker', EmployeeAddSpeakerComponent::class)->name('employee.addSpeaker');
+  Route::get('/exhibitor/add/exhibitor', EmployeeAddExhibitorComponent::class)->name('employee.addExhibitor');
+  Route::get('/exhibitor/add/sponsership', EmployeeAddSponsershipComponent::class)->name('employee.addSponsership');
+  //Route::get('/aside', EmployeeAsideComponent::class)->name('aside');
+});
+
+//Seller-SLR
+Route::middleware(['auth:sanctum', 'verified', 'authseller'])->group(function () {
+  Route::get('/partner/account', SellerAccountComponent::class)->name('seller.account');
+
+  Route::get('/partner/dashboard', SellerDashboardComponent::class)->name('seller.dashboard');
+  Route::get('/partner/add', SellerEventComponent::class)->name('event.add');
+  Route::get('/partner/ticket/add', SellerEventTicketComponent::class)->name('ticket.add');
+  Route::get('/partner/sponser/add', SellerSponsershipComponent::class)->name('seller.sponser.add');
+  Route::get('/partner/hastag/add', HastagComponent::class)->name('seller.hastag.add');
+  Route::get('/partner/pavillion/add', PavillionComponent::class)->name('seller.pavillion.add');
+  Route::get('/partner/portfolio/{slug}', SellerEventIdeComponent::class)->name('seller.portfolio');
+
+  Route::get('/partner/attribute', SellerEventAttributeComponent::class)->name('seller.event.attribute');
+  Route::get('/partner/attribute/{event_id}', SellerEventAttributeComponent::class)->name('seller.event');
+
+  //lead
+  Route::get('/partner/business/pool', LeadPoolComponent::class)->name('seller.business.pool');
+
+  Route::get('/mybrand', SellerMybrandComponent::class)->name('seller.mybrand');
+
+  Route::get('/seller/profile', SellerProfileComponent::class)->name('seller.profile');
+  Route::get('/seller/brand', SellerBrandComponent::class)->name('seller.brand');
+  Route::get('/seller/franchise', SellerFranchiseComponent::class)->name('seller.franchise');
+  Route::get('/seller/contact', SellerContactComponent::class)->name('seller.contact');
+  Route::get('/seller/blog', SellerBlogComponent::class)->name('seller.blog');
+
+  Route::get('/seller/order', SellerOrderComponent::class)->name('seller.order');
+  Route::get('/seller/order/{order_id}', SellerOrderDetailsComponent::class)->name('seller.orderDetails');
+
+  //trial
+  Route::get('/seller/opportunity', SellerPostOpportunityComponent::class)->name('seller.opportunity');
+});
+
+//sitemap
+Route::get('siteemap.xml', 'App\Http\Controllers\SitemapController@index');
 
 
 //pages Routes check and delete
@@ -589,5 +589,3 @@ Route::get('/downloadOpportunity', [UserOrderDetailsComponent::class, 'index'])-
 //Route::get('/cartzilla-cart', CartzillaCartComponent::class)->name('product.cart');
 //Route::get('/cartzilla-payment', CartzillaPaymentComponent::class)->name('payment');
 //Route::get('/cartzilla-transaction', CartzillaTransactionComponent::class)->name('transaction');
-  
-  

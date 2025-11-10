@@ -10,27 +10,33 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class ExpandyourbusinessComponent extends Component
 {
+    public $board;
+
+    public function mount($board = 'null')
+    {
+        $this->board = $board;
+    }
+
     public function index($visitorid)
     {
-        $visitor = Lead::find($visitorid); 
+        $visitor = Lead::find($visitorid);
         $data = [
             'title' => 'The Exhibition Network, India',
             'date' => date('m/d/Y'),
         ];
 
-        $qrCode = base64_encode(QrCode::format('png')->size(150)->generate(route('printpdf.badge',['visitorid' => $visitor->id])));
-           
+        $qrCode = base64_encode(QrCode::format('png')->size(150)->generate(route('printpdf.badge', ['visitorid' => $visitor->id])));
+
         $pdf = PDF::loadView('livewire.document.visitor-component', compact('data', 'visitor', 'qrCode'));
-        $pdf->setPaper([0,0,250,400]);
+        $pdf->setPaper([0, 0, 250, 400]);
         //$pdf->setPaper('A4','portrait');
-        $pdf->setOptions(['defaultFont' => 'san-serif' ]);
-        return $pdf-> download($visitor->name . '-expand_your_business.pdf');
+        $pdf->setOptions(['defaultFont' => 'san-serif']);
+        return $pdf->download($visitor->name . '-expand_your_business.pdf');
     }
 
     public function render()
     {
-        $cat = Category::orderBy('industry','DESC')->get();
+        $cat = Category::orderBy('industry', 'DESC')->get();
         return view('livewire.expandyourbusiness-component', ['cat'  => $cat]);
     }
 }
- 
