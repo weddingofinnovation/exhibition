@@ -4114,9 +4114,7 @@
             <div class="">
                 <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
                 <div class="">
-                    <h5 class="text-dark fw-normal">
-                        {{ $displayDate }}
-                    </h5>
+                    <small class="ml-1 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
                 </div>
             </div>
 
@@ -4591,7 +4589,7 @@
 
             </div>
 
- 
+
             <div class="col-lg-4 col-md-4 col-sm-4">
 
                 {{--<h5 class="m-3 fs-sm fw-light">Universal Register Now for a Seamless Expo Experience - Choose Your Event and Skip the Lines!      
@@ -5992,7 +5990,7 @@
 
 
                 <div class="cl">
-                    <div class="d-flex align-items-center justify-content-center mb-1">
+                    <div class="d-flex align-items-center justify-content-start mb-1">
                         <div class="text-center me-0">
                             <h2 class="mb-0 fw-bold" style="font-size: 2.2rem;">{{$event->edition}}<sup style="font-size: 1rem;">a</sup></h2>
                             <small class="text-uppercase">edition</small>
