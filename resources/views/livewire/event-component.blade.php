@@ -227,7 +227,7 @@
 
   <div class=" container mt-4 d-none d-md-block">
     @if($events->isEmpty())
-    <p class="">No events found.</p>
+    <p class="d-none d-md-block">No events found.</p>
     @else
     <div class="container my-4">
 
