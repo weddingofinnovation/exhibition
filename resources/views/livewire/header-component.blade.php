@@ -197,11 +197,11 @@
       <div class="navbar-sticky bg-light">
         <div class="navbar navbar-expand-lg navbar-light py-0">
           <div class="container p-0">
-            <a class="navbar-brand d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
-            <a class="navbar-brand d-none d-sm-block me-3 flex-shrink-0 ml-1 py-0" href="{{asset('/')}}">
+            <a class="navbar-brand justify-content-start d-none d-sm-block  flex-shrink-0 mx-0" href="{{asset('/')}}"></a>
+            <a class="navbar-brand justify-content-start d-none d-sm-block me-3 flex-shrink-0 ml-1 py-0" href="{{asset('/')}}">
               <img src="{{asset('image/Yoyo.png')}}" width="142" alt="COI">
             </a>
-            <a class="navbar-brand d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}">
+            <a class="navbar-brand justify-content-start d-sm-none me-0 py-0 mr-0" href="{{asset('/')}}">
               <img src="{{asset('image/Yoyo.png')}}" width="130" alt="COI">
             </a>
 
@@ -232,7 +232,7 @@
 
 
             <!-- Toolbar-->
-            <div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+            <div class="navbar-toolbar justify-content-end d-flex flex-shrink-0 align-items-center">
               <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">-->
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <span class="navbar-toggler-icon"></span>
@@ -277,6 +277,7 @@
                 </div>
               </div>--}}
             </div>
+
           </div>
 
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
