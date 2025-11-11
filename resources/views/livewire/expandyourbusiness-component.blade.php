@@ -179,8 +179,9 @@
    $ooo = DB::table('events')->where('id', $eo->id)->get();
 @endphp
 
-  {{$ooo->eventname}}
-
+@foreach ($ooo as $newo)
+  {{$newo->eventname}}
+@endforeach
 @endforeach
 
 <section class="container-fluid py-5 my-5 py-lg-5  ">
