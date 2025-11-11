@@ -224,7 +224,9 @@
                   <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('buy.license')}}">Design & Fabrication</a>
+                  <a class="nav-link" href="{{ route('buy.license', ['board' => 'normal']) }}">
+                      Design & Fabrication
+                  </a>
                 </li>
 
               </ul>
