@@ -167,9 +167,9 @@
 
 @php
 $getexhibitionexhibitor = DB::table('brands')
-->with('event')
-->distinct()
-->pluck('event_id');
+    ->select('event_id')
+    ->distinct()
+    ->get();
 @endphp
 
 {{$getexhibitionexhibitor->event->eventname}}
