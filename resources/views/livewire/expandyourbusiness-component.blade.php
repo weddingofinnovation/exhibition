@@ -155,10 +155,11 @@
       @foreach ($getexhibitionexhibitor as $eo)
         @php 
           $ooo = DB::table('events')->where('id', $eo->id)->get();
+          $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
         @endphp
 
         @foreach ($ooo as $newo)
-          <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} </a>
+          <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
         @endforeach
       @endforeach
 
