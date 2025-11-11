@@ -167,7 +167,7 @@
 
 @php
 $getexhibitionexhibitor = DB::table('brands')
-->with('event')->
+->with('event')
 ->distinct()
 ->pluck('event_id');
 
