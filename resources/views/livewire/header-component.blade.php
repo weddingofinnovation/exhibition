@@ -19,7 +19,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
-        
+
         <!-- Menu List -->
         <ul class="list-group mt-2">
 
@@ -224,8 +224,8 @@
                   <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('buy.license', ['board' => 'normal']) }}">
-                      Design & Fabrication
+                  <a class="nav-link" href="{{ route('expand.business', ['board' => 'normal']) }}">
+                    Design & Fabrication
                   </a>
                 </li>
 
