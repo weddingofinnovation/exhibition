@@ -139,7 +139,7 @@
 
   </div>
 </div>
-{{-- 
+
 
 <div class="container">
   @if($board == 'normal')
@@ -163,31 +163,31 @@
       @endforeach
 
   @elseif ($board == 'exhibitor')
-  {{$this->event_id}}
-  {{--@foreach($exhibitors as $exhibitor)
-        <div class="exhibitor-item border-bottom py-3">
-          <div class="row align-items-center g-2">
+    {{$this->event_id}}
+    {{--@foreach($exhibitors as $exhibitor)
+          <div class="exhibitor-item border-bottom py-3">
+            <div class="row align-items-center g-2">
 
-            <div class="col-12 col-md-4">
-              <a href="{{ route('event.details', $exhibitor->slug) }}"
-                class="fw-semibold text-decoration-none text-dark">
-                {{ $exhibitor->name }}
-              </a>
-              <span class="text-muted small d-block">{{ $exhibitor->country }}</span>
+              <div class="col-12 col-md-4">
+                <a href="{{ route('event.details', $exhibitor->slug) }}"
+                  class="fw-semibold text-decoration-none text-dark">
+                  {{ $exhibitor->name }}
+                </a>
+                <span class="text-muted small d-block">{{ $exhibitor->country }}</span>
+              </div>
+
+              <div class="col-12 col-md-4 d-flex justify-content-center">
+                <img src="{{ $exhibitor->logo }}" alt="{{ $exhibitor->name }}">
+              </div>
+
+              <div class="col-12 col-md-4 text-md-end">
+                <div class="small"><i class="bi bi-geo-alt"></i> {{ $exhibitor->hall }}</div>
+                <a href="#" class="small text-decoration-none"><i class="bi bi-star"></i> Favorites</a>
+              </div>
+
             </div>
-
-            <div class="col-12 col-md-4 d-flex justify-content-center">
-              <img src="{{ $exhibitor->logo }}" alt="{{ $exhibitor->name }}">
-            </div>
-
-            <div class="col-12 col-md-4 text-md-end">
-              <div class="small"><i class="bi bi-geo-alt"></i> {{ $exhibitor->hall }}</div>
-              <a href="#" class="small text-decoration-none"><i class="bi bi-star"></i> Favorites</a>
-            </div>
-
           </div>
-        </div>
-      @endforeach --}}
+        @endforeach --}}
   @endif
 </div>
 
