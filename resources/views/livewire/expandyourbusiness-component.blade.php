@@ -139,7 +139,7 @@
 
   </div>
 </div>
-
+<!-- 
 @foreach($exhibitors as $exhibitor)
 <div class="exhibitor-item border-bottom py-3">
   <div class="row align-items-center g-2">
@@ -163,7 +163,7 @@
 
   </div>
 </div>
-@endforeach
+@endforeach -->
 
 @php
 $getexhibitionexhibitor = DB::table('brands')
