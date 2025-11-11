@@ -176,9 +176,9 @@
               <div class="col-12 col-md-4">
                 <a href="#"
                   class="fw-semibold text-decoration-none text-dark">
-                  {{ $exhibitor->name ?? '' }}
+                  {{ $exhibitor->brand_name ?? '' }}
                 </a>
-                <span class="text-muted small d-block">{{ $exhibitor->country ?? '' }}</span>
+                <span class="text-muted small d-block">India</span>
               </div>
 
               <div class="col-12 col-md-4 d-flex justify-content-center">
