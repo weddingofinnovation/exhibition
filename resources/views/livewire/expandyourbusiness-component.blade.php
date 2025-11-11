@@ -167,11 +167,14 @@
 
 @php
 $getexhibitionexhibitor = DB::table('brands')
+->with('event')->
 ->distinct()
 ->pluck('event_id');
+
 @endphp
 
-{{$getexhibitionexhibitor}}
+{{$getexhibitionexhibitor->event->eventname}}
+
 
 <section class="container-fluid py-5 my-5 py-lg-5  ">
   <div class="text-center mt-4 mb-3">
