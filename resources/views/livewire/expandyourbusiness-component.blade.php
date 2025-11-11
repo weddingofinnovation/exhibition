@@ -163,12 +163,12 @@
       @endforeach
 
   @elseif ($board == 'exhibitor')
-    {{$this->event_id}}
+    
 
     @php 
-       $exhibitors = DB::table('brands')->get()
+       $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
     @endphp
-
+{{$this->event_id}} {{$exhibitors->count()}}
     @foreach($exhibitors as $exhibitor)
           <div class="exhibitor-item border-bottom py-3">
             <div class="row align-items-center g-2">
