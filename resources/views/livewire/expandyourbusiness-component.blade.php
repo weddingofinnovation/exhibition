@@ -174,7 +174,7 @@
             <div class="row align-items-center g-2">
 
               <div class="col-12 col-md-4">
-                <a href="{{ route('event.details', $exhibitor->slug) }}"
+                <a href="#"
                   class="fw-semibold text-decoration-none text-dark">
                   {{ $exhibitor->name ?? '' }}
                 </a>
