@@ -166,14 +166,15 @@
 @endforeach --}}
 
 @php
-$getexhibitionexhibitor = DB::table('brands')
-    ->select('event_id')
-    ->distinct()
-    ->with('event')   // Works because we are fetching Brand models
-    ->get();
+  $getexhibitionexhibitor = DB::table('brands')
+      ->join('events', 'brands.event_id', '=', 'events.id')
+      ->select('events.id', 'events.eventname')
+      ->distinct()
+      ->get();
 @endphp
 
-{{$getexhibitionexhibitor->event->eventname}}
+
+{{$getexhibitionexhibitor->eventname}}
 
 
 <section class="container-fluid py-5 my-5 py-lg-5  ">
