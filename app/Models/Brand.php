@@ -9,24 +9,26 @@ class Brand extends Model
 {
     use HasFactory;
 
-    protected $table="brands";
-    protected $fillable = ['brand_logo','brand_name','slug'];
+    protected $table = "brands";
+    protected $fillable = ['brand_logo', 'brand_name', 'slug'];
 
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function sprofile()
     {
-    return $this->belongsTo(Sprofile::class);
+        return $this->belongsTo(Sprofile::class);
     }
 
     public function category()
     {
-    return $this->hasMany(Category::class,'category_id');
+        return $this->hasMany(Category::class, 'category_id');
     }
 
-    
-    
+    public function event()
+    {
+        return $this->belongsTo(Event::class, 'event_id');
+    }
 }
