@@ -174,8 +174,9 @@
 @endphp
 
 
-{{$getexhibitionexhibitor->eventname}}
-
+@foreach ($getexhibitionexhibitor as $eo)
+ {{$getexhibitionexhibitor->eventname}}
+@endforeach
 
 <section class="container-fluid py-5 my-5 py-lg-5  ">
   <div class="text-center mt-4 mb-3">
