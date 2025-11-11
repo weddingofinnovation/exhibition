@@ -165,7 +165,13 @@
 </div>
 @endforeach
 
+@php
+$getexhibitionexhibitor = DB::table('brands')
+->distinct()
+->pluck('event_id');
+@endphp
 
+{{$getexhibitionexhibitor}}
 
 <section class="container-fluid py-5 my-5 py-lg-5  ">
   <div class="text-center mt-4 mb-3">
