@@ -169,6 +169,7 @@
 $getexhibitionexhibitor = DB::table('brands')
     ->select('event_id')
     ->distinct()
+    ->with('event')   // Works because we are fetching Brand models
     ->get();
 @endphp
 
