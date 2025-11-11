@@ -11,10 +11,12 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class ExpandyourbusinessComponent extends Component
 {
     public $board;
+    public $event_id;
 
-    public function mount($board = 'null')
+    public function mount($board = 'null', $event_id = 'null')
     {
         $this->board = $board;
+        $this->event_id = $event_id;
     }
 
     public function index($visitorid)
