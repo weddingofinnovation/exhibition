@@ -140,63 +140,60 @@
   </div>
 </div>
 
-
 <div class="container">
   @if($board == 'normal')
-      @php
-        $getexhibitionexhibitor = DB::table('brands')
-            ->join('events', 'brands.event_id', '=', 'events.id')
-            ->select('events.id', 'events.eventname')
-            ->distinct()
-            ->get();
-      @endphp
+  @php
+  $getexhibitionexhibitor = DB::table('brands')
+  ->join('events', 'brands.event_id', '=', 'events.id')
+  ->select('events.id', 'events.eventname')
+  ->distinct()
+  ->get();
+  @endphp
 
+  @foreach ($getexhibitionexhibitor as $eo)
+  @php
+  $ooo = DB::table('events')->where('id', $eo->id)->get();
+  $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
+  @endphp
 
-      @foreach ($getexhibitionexhibitor as $eo)
-        @php 
-          $ooo = DB::table('events')->where('id', $eo->id)->get();
-          $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
-        @endphp
-
-        @foreach ($ooo as $newo)
-          @php 
-            $exhibitors = DB::table('brands')->where('event_id', $eo->id)->get()
-          @endphp
-          <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
-        @endforeach
-      @endforeach
+  @foreach ($ooo as $newo)
+  @php
+  $exhibitors = DB::table('brands')->where('event_id', $eo->id)->get()
+  @endphp
+  <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
+  @endforeach
+  @endforeach
 
   @elseif ($board == 'exhibitor')
-    
+  @php
+  $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
+  @endphp
 
-    @php 
-       $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
-    @endphp
-{{$this->event_id}} {{$exhibitors->count()}}
-    @foreach($exhibitors as $exhibitor)
-          <div class="exhibitor-item border-bottom py-3">
-            <div class="row align-items-center g-2">
+  {{$this->event_id}} {{$exhibitors->count()}}
+  @foreach($exhibitors as $exhibitor)
+  <div class="exhibitor-item border-bottom py-3">
+    <div class="row align-items-center g-2">
 
-              <div class="col-12 col-md-4">
-                <a href="#"
-                  class="fw-semibold text-decoration-none text-dark">
-                  {{ $exhibitor->brand_name ?? '' }}
-                </a>
-                <span class="text-muted small d-block">India</span>
-              </div>
+      <div class="col-12 col-md-4">
+        <a href="#"
+          class="fw-semibold text-decoration-none text-dark">
+          {{ $exhibitor->brand_name ?? '' }}
+        </a>
+        <span class="text-muted small d-block">India</span>
+      </div>
 
-              <div class="col-12 col-md-4 d-flex justify-content-center">
-                <img src="{{ $exhibitor->logo ?? '' }}" alt="{{ $exhibitor->brand_name }}">
-              </div>
+      <div class="col-12 col-md-4 d-flex justify-content-center">
+        <img src="{{ $exhibitor->logo ?? '' }}" alt="{{ $exhibitor->brand_name }}">
+      </div>
 
-              <div class="col-12 col-md-4 text-md-end">
-                <div class="small"><i class="bi bi-geo-alt"></i> {{ $exhibitor->hall ?? '' }}</div>
-                <a href="#" class="small text-decoration-none"><i class="bi bi-star"></i> Favorites</a>
-              </div>
+      <div class="col-12 col-md-4 text-md-end">
+        <div class="small"><i class="bi bi-geo-alt"></i> {{ $exhibitor->hall ?? '' }}</div>
+        <a href="#" class="small text-decoration-none"><i class="bi bi-star"></i> Favorites</a>
+      </div>
 
-            </div>
-          </div>
-        @endforeach
+    </div>
+  </div>
+  @endforeach
   @endif
 </div>
 
@@ -212,7 +209,6 @@
 </section>
 
 <!--Our culture and values-->
-
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
   <h2 class="display-5 text-center my-2">Optimize Online Opportunities, Offering </h2>
   <p class="fs-sm  text-center">Powered by #COI</p>
@@ -263,7 +259,6 @@
 </section>
 
 <!--Our culture and values-->
-
 <section class="container py-3 py-lg-5 mt-4 mb-3">
   <div class="text-center mb-5">
     <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
@@ -283,7 +278,6 @@
 
 </section>
 <!--vacancies-->
-
 
 <!--jobs apply form-->
 <section class="row g-0" id="apply">
@@ -370,9 +364,7 @@
   </div>
 </section>
 
-
 <!-- Why join-->
-
 <section class="container py-3 py-lg-5 mt-5 my-3">
   <h2 class="h1 text-center mt-5">Promote your business with COI </h2>
   <p class="fs-lg lead text-center col-md-10 col-lg-8 mx-auto  ">At COI, we are constantly iterating, solving problems and working together to connect people all over the world.
@@ -463,7 +455,6 @@
   </div>
 </section>
 
-
 <section class="container-fluid  py-3 py-lg-5 mt-5 my-3">
   <h2 class="h1 text-center mt-5">Manage your business success with us</h2>
   <p class="fs-lg lead text-center col-md-10 col-lg-8 mx-auto">
@@ -535,7 +526,6 @@
   </div>
 </section>
 
-
 <!--Freelancers-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">
   <div class="text-center">
@@ -557,7 +547,6 @@
     </div>
   </div>
 </section>
-
 
 <section class="row g-0 mb-2">
   <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2"
