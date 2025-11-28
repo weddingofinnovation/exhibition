@@ -10,6 +10,7 @@
 
 
 <!-- membership -->
+
 <div class="container py-5">
     <div class="text-center mb-5">
         <h2>Membership Plans</h2>
@@ -94,7 +95,104 @@
         <div class="col-md-3">
             <div class="card h-100 border-success">
                 <div class="card-header text-center bg-success text-white">
+                    <h4 class="my-2">Unlimited Plan</h4>
+                    <h5>₹65,000 / year</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>• Unlimited Stall Bookings</li>
+                        <li>• ₹0 Booking Charge Always</li>
+                        <li>• Senior Account Manager</li>
+                        <li>• Annual Expo Calendar</li>
+                        <li>• Priority Bulk Space Access</li>
+                        <li>• 20% Fabrication Discount</li>
+                        <li>• Premium Directory Listing</li>
+                        <li>• 1 Premium Booth Design</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success w-100">Go Unlimited</button>
+                </div>
+            </div>
+        </div>
 
+    </div>
+</div>
+
+
+<div class="container py-5">
+    <h1 class="text-center mb-4">Membership Plans</h1>
+    <p class="text-center mb-5">Choose the best plan for your business growth</p>
+
+    <div class="row justify-content-center g-4">
+
+        <!-- Basic -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <div class="card-header bg-light">
+                    <h4>Basic Membership</h4>
+                </div>
+                <div class="card-body">
+                    <h2>₹999 <small class="text-muted fs-6">/year</small></h2>
+                    <ul class="list-group list-group-flush text-start mt-3">
+                        <li class="list-group-item">Access to standard listings</li>
+                        <li class="list-group-item">Monthly updates</li>
+                        <li class-group-item>Limited event access</li>
+                        <li class="list-group-item">No lead sharing</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary w-100">Choose Basic</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="col-md-4">
+            <div class="card h-100 border-warning text-center">
+                <div class="card-header bg-warning">
+                    <h4 class="text-dark">Premium Membership</h4>
+                </div>
+                <div class="card-body">
+                    <h2>₹4,999 <small class="text-muted fs-6">/year</small></h2>
+                    <ul class="list-group list-group-flush text-start mt-3">
+                        <li class="list-group-item">Priority listing</li>
+                        <li class="list-group-item">Verified badge</li>
+                        <li class="list-group-item">Event participation discounts</li>
+                        <li class="list-group-item">Lead sharing access</li>
+                        <li class="list-group-item">WhatsApp support</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-warning w-100">Choose Premium</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <div class="card-header bg-light">
+                    <h4>Business Membership</h4>
+                </div>
+                <div class="card-body">
+                    <h2>₹14,999 <small class="text-muted fs-6">/year</small></h2>
+                    <ul class="list-group list-group-flush text-start mt-3">
+                        <li class="list-group-item">Featured listing</li>
+                        <li class="list-group-item">Unlimited lead access</li>
+                        <li class="list-group-item">Expo co-branding</li>
+                        <li class="list-group-item">Dedicated manager</li>
+                        <li class="list-group-item">All premium features</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-primary w-100">Choose Business</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 
