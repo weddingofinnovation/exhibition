@@ -11,78 +11,90 @@
 
 <!-- membership -->
 <div class="container py-5">
-    <h1 class="text-center mb-4">Membership Plans</h1>
-    <p class="text-center mb-5">Choose the best plan for your business growth</p>
-
-    <div class="row justify-content-center g-4">
-
-        <!-- Basic -->
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-                <div class="card-header bg-light">
-                    <h4>Basic Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Access to standard listings</li>
-                        <li class="list-group-item">Monthly updates</li>
-                        <li class-group-item>Limited event access</li>
-                        <li class="list-group-item">No lead sharing</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary w-100">Choose Basic</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Premium -->
-        <div class="col-md-4">
-            <div class="card h-100 border-warning text-center">
-                <div class="card-header bg-warning">
-                    <h4 class="text-dark">Premium Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹4,999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Priority listing</li>
-                        <li class="list-group-item">Verified badge</li>
-                        <li class="list-group-item">Event participation discounts</li>
-                        <li class="list-group-item">Lead sharing access</li>
-                        <li class="list-group-item">WhatsApp support</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-warning w-100">Choose Premium</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Business -->
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-                <div class="card-header bg-light">
-                    <h4>Business Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹14,999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Featured listing</li>
-                        <li class="list-group-item">Unlimited lead access</li>
-                        <li class="list-group-item">Expo co-branding</li>
-                        <li class="list-group-item">Dedicated manager</li>
-                        <li class="list-group-item">All premium features</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary w-100">Choose Business</a>
-                </div>
-            </div>
-        </div>
-
+    <div class="text-center mb-5">
+        <h2>Membership Plans</h2>
+        <p>Select the plan that fits your business</p>
     </div>
-</div>
+
+    <div class="row g-4">
+
+        <!-- Free Plan -->
+        <div class="col-md-3">
+            <div class="card h-100">
+                <div class="card-header text-center">
+                    <h4 class="my-2">Free Membership</h4>
+                    <h5 class="text-success">₹0</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>• Expo Calendar Access</li>
+                        <li>• Exhibition Updates</li>
+                        <li>• Ticket Reminders</li>
+                        <li>• Basic Directory Listing</li>
+                        <li>• 1 Free Consultation</li>
+                        <li>• WhatsApp Community</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-primary w-100">Get Started</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="col-md-3">
+            <div class="card h-100 border-primary">
+                <div class="card-header text-center bg-primary text-white">
+                    <h4 class="my-2">Standard</h4>
+                    <h5>₹1,000 / year</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>• Priority Stall Booking</li>
+                        <li>• ₹5,000/Event Booking Charge</li>
+                        <li>• Exhibition Consultation</li>
+                        <li>• Basic Booth Layout</li>
+                        <li>• 5% Fabrication Discount</li>
+                        <li>• Early Hot Expo Alerts</li>
+                        <li>• Featured Directory Listing</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-primary w-100">Choose Standard</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="col-md-3">
+            <div class="card h-100 border-dark">
+                <div class="card-header text-center bg-dark text-white">
+                    <h4 class="my-2">Premium</h4>
+                    <h5>₹5,000 / year</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>• Guaranteed Stall Support</li>
+                        <li>• ₹3,000/Event Booking Charge</li>
+                        <li>• 15% Fabrication Discount</li>
+                        <li>• Dedicated Manager</li>
+                        <li>• Bulk Space Access</li>
+                        <li>• Unlimited Consultation</li>
+                        <li>• Free Product Listing</li>
+                        <li>• 1 Free Booth Design</li>
+                    </ul>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-dark w-100">Choose Premium</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unlimited Plan -->
+        <div class="col-md-3">
+            <div class="card h-100 border-success">
+                <div class="card-header text-center bg-success text-white">
+
 
 
 
