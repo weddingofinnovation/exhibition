@@ -1825,6 +1825,7 @@
   </div>
 
 
+  <p>Update conference agenda</p>
   <div class="container">
     <form wire:submit.prevent="addagenda">
       <input type="date" class="form-control" placeholder="date" wire:model.lazy="date">

@@ -31,7 +31,7 @@ class BrandsImport implements ToModel, WithHeadingRow
         $this->event_id = $event_id;
     }
 
-    public function model(array $row)
+    public function model(array $row) 
     {
         $brand = Brand::firstOrCreate(
             ['brand' => $row['brand']],
