@@ -11,20 +11,50 @@
 
 <!-- membership -->
 
+<style>
+.pricing-card {
+    background: #fff;
+    color: #000;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #000;
+}
+
+.pricing-card:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.pricing-card:hover .card-header {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.pricing-card .card-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #000;
+}
+
+.pricing-card:hover button {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #fff !important;
+}
+</style>
+
 <div class="container py-5">
     <div class="text-center mb-5">
         <h2>Membership Plans</h2>
-        <p>Select the plan that fits your business</p>
     </div>
 
     <div class="row g-4">
 
         <!-- Free Plan -->
         <div class="col-md-3">
-            <div class="card h-100">
+            <div class="card h-100 pricing-card">
                 <div class="card-header text-center">
                     <h4 class="my-2">Free Membership</h4>
-                    <h5 class="text-success">₹0</h5>
+                    <h5>₹0</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
@@ -37,87 +67,88 @@
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <button class="btn btn-outline-primary w-100">Get Started</button>
+                    <button class="btn btn-outline-dark w-100">Get Started</button>
                 </div>
             </div>
         </div>
 
         <!-- Standard Plan -->
         <div class="col-md-3">
-            <div class="card h-100 border-primary">
-                <div class="card-header text-center bg-primary text-white">
+            <div class="card h-100 pricing-card">
+                <div class="card-header text-center">
                     <h4 class="my-2">Standard</h4>
                     <h5>₹1,000 / year</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
                         <li>• Priority Stall Booking</li>
-                        <li>• ₹5,000/Event Booking Charge</li>
-                        <li>• Exhibition Consultation</li>
+                        <li>• ₹5,000/Event Booking</li>
+                        <li>• Consultation Support</li>
                         <li>• Basic Booth Layout</li>
                         <li>• 5% Fabrication Discount</li>
-                        <li>• Early Hot Expo Alerts</li>
+                        <li>• Hot Expo Alerts</li>
                         <li>• Featured Directory Listing</li>
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <button class="btn btn-primary w-100">Choose Standard</button>
+                    <button class="btn btn-outline-dark w-100">Choose Standard</button>
                 </div>
             </div>
         </div>
 
         <!-- Premium Plan -->
         <div class="col-md-3">
-            <div class="card h-100 border-dark">
-                <div class="card-header text-center bg-dark text-white">
+            <div class="card h-100 pricing-card">
+                <div class="card-header text-center">
                     <h4 class="my-2">Premium</h4>
                     <h5>₹5,000 / year</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
                         <li>• Guaranteed Stall Support</li>
-                        <li>• ₹3,000/Event Booking Charge</li>
+                        <li>• ₹3,000/Event Booking</li>
                         <li>• 15% Fabrication Discount</li>
                         <li>• Dedicated Manager</li>
                         <li>• Bulk Space Access</li>
                         <li>• Unlimited Consultation</li>
                         <li>• Free Product Listing</li>
-                        <li>• 1 Free Booth Design</li>
+                        <li>• Booth Design (1 Free)</li>
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <button class="btn btn-dark w-100">Choose Premium</button>
+                    <button class="btn btn-outline-dark w-100">Choose Premium</button>
                 </div>
             </div>
         </div>
 
         <!-- Unlimited Plan -->
         <div class="col-md-3">
-            <div class="card h-100 border-success">
-                <div class="card-header text-center bg-success text-white">
-                    <h4 class="my-2">Unlimited Plan</h4>
+            <div class="card h-100 pricing-card">
+                <div class="card-header text-center">
+                    <h4 class="my-2">Unlimited</h4>
                     <h5>₹65,000 / year</h5>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled">
-                        <li>• Unlimited Stall Bookings</li>
-                        <li>• ₹0 Booking Charge Always</li>
-                        <li>• Senior Account Manager</li>
+                        <li>• Unlimited Stall Booking</li>
+                        <li>• ₹0 Booking Fee</li>
+                        <li>• Senior Manager</li>
                         <li>• Annual Expo Calendar</li>
-                        <li>• Priority Bulk Space Access</li>
+                        <li>• Priority Bulk Space</li>
                         <li>• 20% Fabrication Discount</li>
-                        <li>• Premium Directory Listing</li>
-                        <li>• 1 Premium Booth Design</li>
+                        <li>• Premium Listing</li>
+                        <li>• Premium Booth Design</li>
                     </ul>
                 </div>
                 <div class="card-footer text-center">
-                    <button class="btn btn-success w-100">Go Unlimited</button>
+                    <button class="btn btn-outline-dark w-100">Go Unlimited</button>
                 </div>
             </div>
         </div>
 
     </div>
 </div>
+
 
 
 <div class="container py-5">
