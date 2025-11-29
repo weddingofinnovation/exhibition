@@ -56,7 +56,6 @@
               </div>
             </div>
           </div>
-
         @elseif($this->board == 'visit')
           <div class="container py-4 py-lg-5 my-4">
             <div class="row justify-content-center">
@@ -1153,10 +1152,6 @@
               <div class="container my-5">
                 <div class="card shadow rounded-4 p-4">
                     <div class="text-center">
-                      
-
-
-
                         <h2 class="mb-3 text-success">Thank You for Your Interest! <strong>We truly appreciate your enthusiasm in registering.</strong>!</h2>
                         <p class="lead">However, due to overwhelming response and limited capacity, visitor entry has been closed at this time.
                            This event is exclusively curated for business owners and trade professionals.<strong></strong>.</p>

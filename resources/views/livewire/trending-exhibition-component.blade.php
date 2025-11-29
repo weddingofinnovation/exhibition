@@ -275,36 +275,39 @@
           <div class="venues-list">
             @foreach($evento as $eventoi)
               <div class="venue-container">
-                <div class="venue-carde">
-                  <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
+                <a href="{{ route('event.details', ['slug' => $eventoi->slug]) }}" class="text-decoration-none">
+                  <div class="venue-carde">
+                    <img src="{{url('public/assets/image/exhibition/'.$eventoi->image)}}" alt="">
 
-                  <!-- <div class="event-status">
-                    @php
-                      $to = strtotime($eventoi->startdate);
-                      $from = strtotime($eventoi->enddate);
-                    @endphp
+                    <!-- <div class="event-status">
+                      @php
+                        $to = strtotime($eventoi->startdate);
+                        $from = strtotime($eventoi->enddate);
+                      @endphp
 
-                    @if ($current < $to && $current < $from)
-                      Upcoming
-                    @elseif ($current == $to && $current < $from) 
-                      First Day
-                    @elseif ($current > $to && $current < $from) 
-                      Ongoing
-                    @elseif ($current > $to && $current == $from) 
-                      Last Day
-                    @elseif ($current > $to && $current > $from)
-                      Ended
-                    @endif
-                  </div> -->
+                      @if ($current < $to && $current < $from)
+                        Upcoming
+                      @elseif ($current == $to && $current < $from) 
+                        First Day
+                      @elseif ($current > $to && $current < $from) 
+                        Ongoing
+                      @elseif ($current > $to && $current == $from) 
+                        Last Day
+                      @elseif ($current > $to && $current > $from)
+                        Ended
+                      @endif
+                    </div> -->
 
-                  <!-- Gradient overlay -->
-                  <!-- <div class="event-overlay"></div> -->
+                    <!-- Gradient overlay -->
+                    <!-- <div class="event-overlay"></div> -->
 
-                    <!-- <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{$eventoi->view_count}}+</a> -->
-                </div>
+                      <!-- <a class="event-name" href="{{route('event.details',['slug' => $eventoi->slug])}}">{{$eventoi->view_count}}+</a> -->
+                  </div>
+                </a>
 
                 <!-- Event Name (Separate from Image) -->
                 <div class="event-title">
+
                     <a href="{{route('event.details',['slug' => $eventoi->slug])}}" class="text-left fw-normal">{{ ucwords(trans($eventoi->eventname)) }}</a>
                     
                     <small class="text-left text-bolder d-none d-sm-block">
