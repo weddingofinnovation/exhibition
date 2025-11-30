@@ -99,7 +99,7 @@
 
 <!-- Body-->
 
-<body class="handheld-toolbar-enabled" style="padding-top: 80px;">
+<body class="handheld-toolbar-enabled" style="padding-top: 70px;">
   <!-- Sign in / sign up modal-->
   <main class="page-wrapper" style="flex: 0 0 auto;">
 
