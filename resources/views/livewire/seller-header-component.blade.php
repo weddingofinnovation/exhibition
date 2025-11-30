@@ -1,194 +1,195 @@
-<header class="bg-light shadow-sm navbar-fixed">
+<header class="bg-light shadow-sm navbar-fixed fixed-top">
   <div class="navbar navbar-expand-lg navbar-light py-0">
     <div class="container">
-      
+
 
       <!-- Toolbar-->
       <div class="navbar-toolbar d-flex align-items-center order-lg-3" style="padding-bottom: .25rem;">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span></button>
-          
-          <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox">
-            <span class="navbar-tool-tooltip">Search</span>
-            <div class="navbar-tool-icon-box">
-              <i class="navbar-tool-icon  bi bi-search"></i>
-            </div>
-          </a>
 
-          <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
-            <span class="navbar-tool-tooltip">Favorites</span>
-            <div class="navbar-tool-icon-box">
-              <i class="navbar-tool-icon  bi bi-heart"></i>
-            </div>
-          </a>
+        <a class="navbar-tool d-none d-lg-flex" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#searchBox" role="button" aria-expanded="false" aria-controls="searchBox">
+          <span class="navbar-tool-tooltip">Search</span>
+          <div class="navbar-tool-icon-box">
+            <i class="navbar-tool-icon  bi bi-search"></i>
+          </div>
+        </a>
 
-          <div class="navbar-tool dropdown ms-2"><a class="" href="#">
+        <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
+          <span class="navbar-tool-tooltip">Favorites</span>
+          <div class="navbar-tool-icon-box">
+            <i class="navbar-tool-icon  bi bi-heart"></i>
+          </div>
+        </a>
+
+        <div class="navbar-tool dropdown ms-2"><a class="" href="#">
             <!-- <img src="{{url('Storage/') }}/{{Auth::user()->profile_photo_path}}" width="32" alt="{{Auth::user()->name}}">
               <div class=" rounded-circle" style="width: 50%;">-->
-              <img  class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}"  alt="" style="max-width: 50%;">
-            </a>
-              <a class="navbar-tool-text ms-n1" href="#"><small>{{Auth::user()->name}}</small>$1,375.00</a>
-              
-            <div class="dropdown-menu dropdown-menu-end">
-              <div style="min-width: 14rem;">
-                <h6 class="dropdown-header">Business Account</h6>
-                <a class="dropdown-item d-flex align-items-center" href="{{route('seller.account')}}">
-                  <i class="ci-settings opacity-60 me-2"></i> Account<span class="fs-xs text-muted ms-auto">Set up</span></a>
+            <img class="rounded-circle" src="{{ Auth::user()->profile_photo_url }}" alt="" style="max-width: 50%;">
+          </a>
+          <a class="navbar-tool-text ms-n1" href="#"><small>{{Auth::user()->name}}</small>$1,375.00</a>
 
-                  <a class="dropdown-item d-flex align-items-center" href="{{route('seller.profile')}}">
-                    <i class="ci-basket opacity-60 me-2"></i>Business Portfolio<span class="fs-xs text-muted ms-auto">Set up</span></a>
+          <div class="dropdown-menu dropdown-menu-end">
+            <div style="min-width: 14rem;">
+              <h6 class="dropdown-header">Business Account</h6>
+              <a class="dropdown-item d-flex align-items-center" href="{{route('seller.account')}}">
+                <i class="ci-settings opacity-60 me-2"></i> Account<span class="fs-xs text-muted ms-auto">Set up</span></a>
 
-                    <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
-                      <i class="ci-heart opacity-60 me-2"></i>Business Brand<span class="fs-xs text-muted ms-auto"> List</span></a>
+              <a class="dropdown-item d-flex align-items-center" href="{{route('seller.profile')}}">
+                <i class="ci-basket opacity-60 me-2"></i>Business Portfolio<span class="fs-xs text-muted ms-auto">Set up</span></a>
 
-                      <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
-                      <i class="ci-heart opacity-60 me-2"></i>Opportunity<span class="fs-xs text-muted ms-auto">Publish </span></a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-xs text-muted ms-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html">
-                  <i class="ci-package opacity-60 me-2"></i>Products<span class="fs-xs text-muted ms-auto">5</span></a>
-                  <a class="dropdown-item d-flex align-items-center" href="dashboard-add-new-product.html">
-                    <i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a>
-                  
-                    <a class="dropdown-item d-flex align-items-center" href="dashboard-payouts.html">
-                      <i class="ci-currency-exchange opacity-60 me-2">
-                    </i>Payouts</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-              <i class="bi bi-box-arrow-right opacity-60 me-2"></i>Sign Out</a>
+              <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
+                <i class="ci-heart opacity-60 me-2"></i>Business Brand<span class="fs-xs text-muted ms-auto"> List</span></a>
+
+              <a class="dropdown-item d-flex align-items-center" href="{{route('seller.brand')}}">
+                <i class="ci-heart opacity-60 me-2"></i>Opportunity<span class="fs-xs text-muted ms-auto">Publish </span></a>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html"><i class="ci-dollar opacity-60 me-2"></i>Sales<span class="fs-xs text-muted ms-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html">
+                <i class="ci-package opacity-60 me-2"></i>Products<span class="fs-xs text-muted ms-auto">5</span></a>
+              <a class="dropdown-item d-flex align-items-center" href="dashboard-add-new-product.html">
+                <i class="ci-cloud-upload opacity-60 me-2"></i>Add New Product</a>
+
+              <a class="dropdown-item d-flex align-items-center" href="dashboard-payouts.html">
+                <i class="ci-currency-exchange opacity-60 me-2">
+                </i>Payouts</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item d-flex align-items-center" href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="bi bi-box-arrow-right opacity-60 me-2"></i>Sign Out</a>
               <form id="logout-form" action="{{route('logout')}}" method="POST">
                 @csrf
               </form>
-              
-              </div>
-            </div>
 
+            </div>
           </div>
 
-          <div class="navbar-tool ms-4">
-            <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        </div>
+
+        <div class="navbar-tool ms-4">
+          <a class="navbar-tool-icon-box bg-secondary dropdown-toggle" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
             <span class="navbar-tool-label">3</span><i class="navbar-tool-icon  bi bi-cart"></i></a>
-            @livewire('wishlist-component')
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
-                        
-              <div class="offcanvas-header">
-                <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
-                <span class="fs-xs fw-lighter">Got an event? Partner with us</span></div>
-                
-                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          @livewire('wishlist-component')
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 380px;">
+
+            <div class="offcanvas-header">
+              <div class="offcanvas-title h5" id="offcanvasExampleLabel">List your Show <br>
+                <span class="fs-xs fw-lighter">Got an event? Partner with us</span>
               </div>
-              
-              <div class="list-group list-group-flush border-bottom scrollarea">
 
-                  <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Notifications</normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
-                  </a>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
 
-                  <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Your Orders</normal>
-                      <small>
-                      @if (Auth::check()) 
-                        <i class="bi bi-chevron-right"></i>
-                        @else
-                        <i class="bi bi-lock-fill"></i>
-                        
-                        @endif
-                      </small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
-                  </a>
+            <div class="list-group list-group-flush border-bottom scrollarea">
 
-                  <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1"></normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter">Get COI business picked just for you</div>
-                  </a>
+              <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Notifications</normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <!--<div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>-->
+              </a>
 
-                  <a href="{{route('admin.global')}}" class=" border-0 list-group-item list-group-item-action {{'admin/global' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Global</normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter ">Satisfy your palates</div>
-                  </a>
+              <a href="{{route('user.Orders')}}" class=" border-0 list-group-item list-group-item-action {{'user/orders' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Your Orders</normal>
+                  <small>
+                    @if (Auth::check())
+                    <i class="bi bi-chevron-right"></i>
+                    @else
+                    <i class="bi bi-lock-fill"></i>
 
-                  
+                    @endif
+                  </small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter">View all your booking & purchases</div>
+              </a>
 
-                  <a href="{{route('user.profile')}}" class="list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Accounts & Settings</normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
-                  </a>
-                  
-                  <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Help & Support</normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                  </a>
-                
-                  <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <normal class="mb-1">Logout</normal>
-                      <small><i class="bi bi-chevron-right"></i></small>
-                    </div>
-                    <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
-                  </a>
-                  <form id="logout-form" action="{{route('logout')}}" method="POST">
-                    @csrf
-                  </form>
-                
+              <a href="#" class=" border-0 list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1"></normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter">Get COI business picked just for you</div>
+              </a>
 
-              </div>
-                    
-              <div class="handheld-toolbar">
-                <div class="d-table table-layout-fixed w-100">
+              <a href="{{route('admin.global')}}" class=" border-0 list-group-item list-group-item-action {{'admin/global' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Global</normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter ">Satisfy your palates</div>
+              </a>
+
+
+
+              <a href="{{route('user.profile')}}" class="list-group-item list-group-item-action {{'user/profile' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Accounts & Settings</normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter ">Location, Payments, permissions & More</div>
+              </a>
+
+              <a href="#" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Help & Support</normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+              </a>
+
+              <a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="list-group-item list-group-item-action {{'user/account' == request()->path() ? 'active' : '' }} py-1 lh-sm" aria-current="true">
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                  <normal class="mb-1">Logout</normal>
+                  <small><i class="bi bi-chevron-right"></i></small>
+                </div>
+                <div class="col-10 mb-1 small fw-lighter ">View commonly asked Queries Chat</div>
+              </a>
+              <form id="logout-form" action="{{route('logout')}}" method="POST">
+                @csrf
+              </form>
+
+
+            </div>
+
+            <div class="handheld-toolbar">
+              <div class="d-table table-layout-fixed w-100">
                 @if($board == 'job')
-                  <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'job'])}}">
-                    <span class="handheld-toolbar-icon">
+                <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'job'])}}">
+                  <span class="handheld-toolbar-icon">
                     <i class="ci-filter-alt"></i></span>
-                    <span class="handheld-toolbar-label">Admin</span>
-                  </a>
-                  
-                  <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.jobadd')}}">
-                    <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                    <span class="handheld-toolbar-label">Add</span>
-                  </a>
-              
+                  <span class="handheld-toolbar-label">Admin</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.jobadd')}}">
+                  <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+                  <span class="handheld-toolbar-label">Add</span>
+                </a>
+
                 @else
-                  <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
-                      <span class="handheld-toolbar-icon">
-                      <i class="ci-filter-alt"></i></span>
-                      <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Admin</span>
-                    </a>
-                    
-                    <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
-                      <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
-                      <span class="handheld-toolbar-label">Add</span>
-                    </a>
+                <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'event'])}}">
+                  <span class="handheld-toolbar-icon">
+                    <i class="ci-filter-alt"></i></span>
+                  <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Admin</span>
+                </a>
+
+                <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.eventadd')}}">
+                  <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+                  <span class="handheld-toolbar-label">Add</span>
+                </a>
                 @endif
 
-                  <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                    <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-                    <span class="handheld-toolbar-label">Menu</span>
-                  </a>
+                <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+                  <span class="handheld-toolbar-label">Menu</span>
+                </a>
 
-                </div>
               </div>
-
             </div>
+
           </div>
+        </div>
       </div>
-      
+
 
       <div class="collapse navbar-collapse me-auto order-lg-2" id="navbarCollapse">
         <!-- Search-->
@@ -309,45 +310,45 @@
           </li>
         </ul>
 
-        
+
         @if (url()->current() == url('admin/dashboard/order'))
-          @php
-            $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
-          @endphp  
-          
-          <!-- Primary menu-->
-          <div class="navbar-tool ">
-              @if($event->count()>0)
-                <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
-                  <span class="navbar-tool-label"> {{$businessOrder->count()}} </span>Event
-                </a>
-              @endif
-              
-              {{--<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+        @php
+        $businessOrder = DB::table('leads')->orderBy('updated_at','DESC')->get();
+        @endphp
+
+        <!-- Primary menu-->
+        <div class="navbar-tool ">
+          @if($event->count()>0)
+          <a class="navbar-tool-icon-box" style="max-width: 50%;" href="{{route('seller.dashboard')}}">
+            <span class="navbar-tool-label"> {{$businessOrder->count()}} </span>Event
+          </a>
+          @endif
+
+          {{--<a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
                     <span class="navbar-tool-label">@if($review->count()>0){{$review->count()}} @endif</span>
-                    <i class="navbar-tool-icon  bi bi-cart"></i>
-              </a>--}}
-              
-          </div>
+          <i class="navbar-tool-icon  bi bi-cart"></i>
+          </a>--}}
+
+        </div>
         @elseif (url()->current() == url('admin/dashboard/event'))
 
-          @php
-              $today = Carbon\Carbon::today();
+        @php
+        $today = Carbon\Carbon::today();
 
-              $upcoming = DB::table('events')->where('startdate', '>', $today)->count();
-              $running = DB::table('events')
-                  ->where('startdate', '<=', $today)
-                  ->where('enddate', '>=', $today)
-                  ->count();
-              $expired = \DB::table('events')->where('enddate', '<', $today)->count();
-              $first_day = DB::table('events')->whereDate('startdate', $today)->count();
-              $last_day = DB::table('events')->whereDate('enddate', $today)->count();
-              $postponed = DB::table('events')->where('status', 'postponed')->count();
-              $canceled = DB::table('events')->where('status', 'canceled')->count();
-          @endphp
+        $upcoming = DB::table('events')->where('startdate', '>', $today)->count();
+        $running = DB::table('events')
+        ->where('startdate', '<=', $today)
+          ->where('enddate', '>=', $today)
+          ->count();
+          $expired = \DB::table('events')->where('enddate', '<', $today)->count();
+            $first_day = DB::table('events')->whereDate('startdate', $today)->count();
+            $last_day = DB::table('events')->whereDate('enddate', $today)->count();
+            $postponed = DB::table('events')->where('status', 'postponed')->count();
+            $canceled = DB::table('events')->where('status', 'canceled')->count();
+            @endphp
 
-          <!-- Primary menu-->
-          <div class="navbar-tool ">
+            <!-- Primary menu-->
+            <div class="navbar-tool ">
 
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
                 <span class="navbar-tool-label"> $upcoming </span>
@@ -370,7 +371,7 @@
                   <i class="navbar-tool-icon  bi bi-heart"></i>
                 </div>
               </a>
-              
+
               <a class="navbar-tool d-none d-lg-flex" href="dashboard-favorites.html">
                 <span class="navbar-tool-tooltip">handpicked</span>
                 <div class="navbar-tool-icon-box">
@@ -380,42 +381,42 @@
 
 
               @php
-                $yearlyEvents = \DB::table('events')
-                    ->select(\DB::raw('YEAR(startdate) as year'), \DB::raw('COUNT(*) as total'))
-                    ->groupBy(\DB::raw('YEAR(startdate)'))
-                    ->orderBy('year', 'desc')
-                    ->get();
+              $yearlyEvents = \DB::table('events')
+              ->select(\DB::raw('YEAR(startdate) as year'), \DB::raw('COUNT(*) as total'))
+              ->groupBy(\DB::raw('YEAR(startdate)'))
+              ->orderBy('year', 'desc')
+              ->get();
 
-                $selectedYear = request()->get('year');
-                $eventsByYear = [];
-                if ($selectedYear) {
-                  $eventsByYear = \DB::table('events')
-                      ->whereYear('startdate', $selectedYear)
-                      ->orderBy('startdate')
-                      ->get();
-                    }
+              $selectedYear = request()->get('year');
+              $eventsByYear = [];
+              if ($selectedYear) {
+              $eventsByYear = \DB::table('events')
+              ->whereYear('startdate', $selectedYear)
+              ->orderBy('startdate')
+              ->get();
+              }
               @endphp
-              
 
-              
+
+
               @foreach($yearlyEvents as $item)
-                <a class="navbar-tool d-none d-lg-flex" href="{{ url()->current() . '?year=' . $item->year }}">
-                  <span class="navbar-tool-label">{{ $item->total }}</span>
-                  <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
-                  <div class="navbar-tool-icon-box">
-                    {{ $item->year }}
-                  </div>
-                </a>
+              <a class="navbar-tool d-none d-lg-flex" href="{{ url()->current() . '?year=' . $item->year }}">
+                <span class="navbar-tool-label">{{ $item->total }}</span>
+                <span class="navbar-tool-tooltip">{{ $item->year }}T</span>
+                <div class="navbar-tool-icon-box">
+                  {{ $item->year }}
+                </div>
+              </a>
               @endforeach
 
               @if($lead->count()>0)
-                <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
-                      <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
-                </a>
+              <a class="navbar-tool-icon-box  ms-1" style="max-width: 50%;" href="#">
+                <span class="navbar-tool-label"> {{$lead->count()}} </span>Lead
+              </a>
               @endif
- 
-          </div>
-        @endif
+
+            </div>
+            @endif
 
       </div>
     </div>
@@ -433,5 +434,3 @@
     </div>
   </div>
 </header>
-
-      
