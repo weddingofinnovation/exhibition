@@ -410,12 +410,10 @@ class AdminDetailComponent extends Component
   {
     $this->validate();
 
-    // Use Maatwebsite Excel to import the CSV file
-    Excel::import(new BrandsImport, $this->csvFile->getRealPath());
+    Excel::import(new BrandsImport($this->event_id), $this->csvFile->getRealPath());
 
     session()->flash('success', 'CSV file uploaded and data imported successfully.');
   }
-
 
   use WithPagination;
 
