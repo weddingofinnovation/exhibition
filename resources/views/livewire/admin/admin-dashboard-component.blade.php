@@ -26,10 +26,16 @@
           <!-- Navigation Menu -->
           <ul class="nav nav-pills flex-column">
             <li class="nav-item mb-1">
-              <a href="{{route('admin.global')}}" class="nav-link text-dark" style="background-color: #fff;">Dashboard</a>
+              <a href="{{route('admin.global')}}"
+                class="nav-link {{ Request::is('admin/global') ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">
+                Dashboard
+              </a>
             </li>
+
             <li class="nav-item mb-1">
-              <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link text-dark" style="background-color: #fff;">Leads</a>
+              <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link {{ Request::get('board') == 'order' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">
+                Leads
+              </a>
             </li>
             <li class="nav-item mb-1">
               <a href="{{route('admin.dashboard', ['board' => 'event'])}}" class="nav-link text-dark" style="background-color: #fff;">Events</a>
@@ -837,12 +843,6 @@
   </div>
 
 
-
-
-
-
-
-
   <!--Mobile event start View-->
   @if($board == 'event')
   <div class="container d-lg-none">
@@ -1290,7 +1290,6 @@
   @endif
 
   @if($board == 'visitcard')
-
   <div class=" container small">
     <input type="checkbox" value="1" wire:model="lookingAddFromIMage" name="" id=""> Search
   </div>
