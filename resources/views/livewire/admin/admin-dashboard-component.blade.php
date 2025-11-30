@@ -3,6 +3,110 @@
 <main>
 
 
+
+
+  <div class="container">
+    <div class="row">
+      <style>
+        /* Smooth animation */
+        #sidebar {
+          transition: width .3s;
+        }
+      </style>
+
+      <div id="sidebar"
+        class="d-flex flex-column flex-shrink-0 p-3 bg-light border-end"
+        style="width: 280px;">
+
+        <!-- Toggle for mobile -->
+        <button class="btn btn-light d-md-none mb-3" id="toggleSidebar">
+          <i class="bi bi-list fs-4"></i>
+        </button>
+
+        <!-- Logo -->
+        <a href="/" class="d-flex align-items-center mb-3 text-decoration-none">
+          <svg class="bi pe-none me-2" width="32" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <span class="fs-4 sidebar-text">Sidebar</span>
+        </a>
+
+        <hr>
+
+        <!-- Menu -->
+        <ul class="nav nav-pills flex-column mb-auto">
+
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <svg class="bi pe-none me-2" width="16">
+                <use xlink:href="#home" />
+              </svg>
+              <span class="sidebar-text">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link link-body-emphasis">
+              <svg class="bi pe-none me-2" width="16">
+                <use xlink:href="#speedometer2" />
+              </svg>
+              <span class="sidebar-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link link-body-emphasis">
+              <svg class="bi pe-none me-2" width="16">
+                <use xlink:href="#table" />
+              </svg>
+              <span class="sidebar-text">Orders</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link link-body-emphasis">
+              <svg class="bi pe-none me-2" width="16">
+                <use xlink:href="#grid" />
+              </svg>
+              <span class="sidebar-text">Products</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link link-body-emphasis">
+              <svg class="bi pe-none me-2" width="16">
+                <use xlink:href="#people-circle" />
+              </svg>
+              <span class="sidebar-text">Customers</span>
+            </a>
+          </li>
+        </ul>
+
+        <hr>
+
+        <!-- Profile -->
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown">
+            <img src="https://github.com/mdo.png" width="32" height="32" class="rounded-circle me-2">
+            <strong class="sidebar-text">mdo</strong>
+          </a>
+
+          <ul class="dropdown-menu text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
   <div class="container mt-2">
     <div class="row">
 
@@ -3411,3 +3515,37 @@
 
     </div>
   </div>
+
+
+@push('scripts')
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const texts = document.querySelectorAll(".sidebar-text");
+
+    // Start collapsed on mobile
+    function autoResponsiveSidebar() {
+        if (window.innerWidth < 768) { 
+            sidebar.style.width = "4.5rem";
+            texts.forEach(t => t.classList.add("d-none"));
+        } else {
+            sidebar.style.width = "280px";
+            texts.forEach(t => t.classList.remove("d-none"));
+        }
+    }
+
+    autoResponsiveSidebar();
+    window.onresize = autoResponsiveSidebar;
+
+    // Toggle on mobile
+    document.getElementById("toggleSidebar").onclick = function () {
+        if (sidebar.style.width === "280px") {
+            sidebar.style.width = "4.5rem";
+            texts.forEach(t => t.classList.add("d-none"));
+        } else {
+            sidebar.style.width = "280px";
+            texts.forEach(t => t.classList.remove("d-none"));
+        }
+    };
+</script>
+
+@endpush
