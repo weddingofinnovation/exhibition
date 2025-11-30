@@ -734,16 +734,16 @@
             @endif
           </div>
           @elseif($board == 'floor')
-            <div class="">
-              <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
+          <div class="">
+            <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
 
-              <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
+            <div id="container" class="border w-full max-w-4xl" style="height:600px;"></div>
 
-              <div class="mt-4">
-                <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
-                <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
-              </div>
+            <div class="mt-4">
+              <input type="text" id="spaceName" placeholder="Enter Space Name" class="border p-2 mr-2">
+              <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
             </div>
+          </div>
           @elseif($board == 'speaker')
           @php
           $network = DB::table('speakers')->where('admstatus', '1')->where('status', '1')->get();
@@ -852,17 +852,17 @@
           <!-- Nav tabs-->
 
           <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab4' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab4')" data-bs-toggle="tab" role="tab">ID </a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab5' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab5')" data-bs-toggle="tab" role="tab">2022 {{$year22ev->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab6' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab6')" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab7' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab7')" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab8' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab8')" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab2desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab3desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab4desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab4')" data-bs-toggle="tab" role="tab">ID </a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab5desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab5')" data-bs-toggle="tab" role="tab">2022 {{$year22ev->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab6desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab6')" data-bs-toggle="tab" role="tab">2023 {{$year23ev->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab7desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab7')" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab8desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab8')" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
           </ul>
           <div class="tab-content pt-1">
-            @if($currentTab === 'tab1')
+            @if($currentTab === 'tab1desk')
             <!-- Request tab-->
             <div class="tab-pane fade show active" id="requuest" role="tabpanel">
               <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
@@ -908,7 +908,7 @@
                 @endforeach
               </div>
             </div>
-            @elseif($currentTab === 'tab2')
+            @elseif($currentTab === 'tab2desk')
             <!-- Product details tab-->
             <div class="tab-pane fade show active" id="details" role="tabpanel">
               <!-- details test tickets-->
@@ -996,7 +996,7 @@
                 @endforeach
               </div>
             </div>
-            @elseif($currentTab === 'tab3')
+            @elseif($currentTab === 'tab3desk')
             <!-- Reviews tab-->
             <div class="tab-pane fade show active" id="reviews" role="tabpanel">
               <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
@@ -1049,7 +1049,7 @@
                 @endif
               </div>
             </div>
-            @elseif($currentTab === 'tab4')
+            @elseif($currentTab === 'tab4desk')
             <!--Id-->
             <div class="tab-pane fade show active" id="reviewID" role="tabpanel">
 
@@ -1094,7 +1094,7 @@
                 @endif
               </div>
             </div>
-            @elseif($currentTab === 'tab5')
+            @elseif($currentTab === 'tab5desk')
             <div class="tab-pane fade show active" id="year22find" role="tabpanel">
               <div class="row mb-5 pb-2">
                 @foreach ($year22ev as $franchise)
@@ -1138,7 +1138,7 @@
                 @endforeach
               </div>
             </div>
-            @elseif($currentTab === 'tab6')
+            @elseif($currentTab === 'tab6desk')
             <div class="tab-pane fade show active" id="year23find" role="tabpanel">
               <div class="row mb-5 pb-2">
                 @foreach ($year23ev as $franchise)
@@ -1182,7 +1182,7 @@
                 @endforeach
               </div>
             </div>
-            @elseif($currentTab === 'tab7')
+            @elseif($currentTab === 'tab7desk')
             <div class="tab-pane fade show active" id="year24find" role="tabpanel">
               <div class="row mb-5 pb-2">
                 @foreach ($year24ev as $franchise)
@@ -1226,7 +1226,7 @@
                 @endforeach
               </div>
             </div>
-            @elseif($currentTab === 'tab8')
+            @elseif($currentTab === 'tab8desk')
             <div class="tab-pane fade show active" id="year25find" role="tabpanel">
               <div class="row mb-5 pb-2">
                 @foreach ($year25ev as $franchise)

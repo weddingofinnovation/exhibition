@@ -433,13 +433,16 @@
     }
   </style>
 
+        @php
+          $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+        @endphp
   <div class="container-fluid featured-companies-bar d-none d-md-block">
     <div class="d-flex align-items-center">
       <!-- <h5 class="me-2 mb-0">Featured Companies</h5> -->
-      <h5 class="me-2 mb-0">Featured by:</h5>
+      <h5 class="me-2 mb-0">We are Official Partnered with: </h5>
       <div class="scroll-container">
         @php
-        $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
+          $photos = DB::table('brands')->whereNotNull('brand_logo')->paginate(50);
         @endphp
         <div class="scroll-content">
           @foreach($photos as $image)
