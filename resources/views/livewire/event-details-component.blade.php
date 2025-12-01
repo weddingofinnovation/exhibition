@@ -4128,7 +4128,6 @@
         </div>
     </header>
 
-    <!-- Bootstrap 5 CDN -->
     <style>
         .nav-link:hover {
             text-decoration: underline;
@@ -4140,15 +4139,24 @@
             right: 0;
         }
 
-        /* Smaller search box */
+        /* Small search bar */
         .search-sm {
-            width: 150px;
+            width: 140px;
         }
 
         @media (min-width: 992px) {
             .search-sm {
-                width: 220px;
+                width: 180px;
             }
+        }
+
+        .event-label {
+            font-size: 10px;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            color: #d5006d;
+            /* pink highlight like ISM */
+            text-transform: uppercase;
         }
     </style>
 
@@ -4159,14 +4167,22 @@
 
                 <!-- Brand Section -->
                 <a class="navbar-brand me-4 d-flex align-items-center" href="#">
+
                     @if(!empty($eventLogo) && Storage::exists($eventLogo))
+                    <!-- If logo available -->
                     <img src="{{ asset($eventLogo) }}" height="45">
+
                     @else
-                    <div class="d-flex align-items-center">
-                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
-                        <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
+                    <!-- If logo missing: Show "Upcoming" + Date -->
+                    <div class="d-flex flex-column">
+                        <span class="event-label">Upcoming</span> <!-- NEWLY ADDED -->
+                        <div class="d-flex align-items-center">
+                            <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
+                            <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
+                        </div>
                     </div>
                     @endif
+
                 </a>
 
                 <!-- Mobile Toggle -->
@@ -4233,26 +4249,14 @@
                         <li class="nav-item"><a class="nav-link" href="#">Exhibitors 2026</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">For Exhibitors</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Press</a></li>
+
                     </ul>
 
-                    <!-- Right Section: Search + Help Center -->
-                    <div class="d-flex align-items-center gap-3">
-
-                        <!-- Search -->
+                    <!-- Right Section: SHORT Search -->
+                    <div class="d-flex align-items-center">
                         <form class="d-flex">
                             <input class="form-control search-sm" type="search" placeholder="Search">
                         </form>
-
-                        <!-- Highlight Help Center -->
-                        <div class="text-end">
-                            <span class="badge bg-danger px-3 py-2">
-                                📞 Call Us: Exhibition Help Center
-                            </span>
-                            <div>
-                                <small class="text-muted">We will assist you to know your exhibition</small>
-                            </div>
-                        </div>
-
                     </div>
 
                 </div>
@@ -4260,6 +4264,7 @@
             </div>
         </nav>
     </header>
+
 
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
