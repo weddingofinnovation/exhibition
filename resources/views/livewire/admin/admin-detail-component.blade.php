@@ -85,6 +85,9 @@
               <li class="nav-item border-bottom">
                 <a class="nav-link px-1 fs-sm" href="#program" data-bs-toggle="tab" role="tab">Program</a>
               </li>
+              <li class="nav-item border-bottom">
+                <a class="nav-link px-1 fs-sm" href="#map" data-bs-toggle="tab" role="tab">Map</a>
+              </li>
             </ul>
 
             <div class="tab-content pt-1">
@@ -928,6 +931,9 @@
               </li>
               <li class="nav-item border-bottom">
                 <a class="nav-link px-1 fs-sm" href="#programs" data-bs-toggle="tab" role="tab">Program</a>
+              </li>
+              <li class="nav-item border-bottom">
+                <a class="nav-link px-1 fs-sm" href="#maps" data-bs-toggle="tab" role="tab">Map</a>
               </li>
             </ul>
 
