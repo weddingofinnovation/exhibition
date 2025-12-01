@@ -4139,6 +4139,17 @@
             left: 0;
             right: 0;
         }
+
+        /* Smaller search box */
+        .search-sm {
+            width: 150px;
+        }
+
+        @media (min-width: 992px) {
+            .search-sm {
+                width: 220px;
+            }
+        }
     </style>
 
     <header class="border-bottom bg-white">
@@ -4146,25 +4157,31 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container d-flex align-items-center">
 
-                <!-- Logo -->
-                <a class="navbar-brand me-4" href="#">
-                    <img src="your-logo.png" height="45">
+                <!-- Brand Section -->
+                <a class="navbar-brand me-4 d-flex align-items-center" href="#">
+                    @if(!empty($eventLogo) && Storage::exists($eventLogo))
+                    <img src="{{ asset($eventLogo) }}" height="45">
+                    @else
+                    <div class="d-flex align-items-center">
+                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
+                        <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
+                    </div>
+                    @endif
                 </a>
 
-                <!-- Mobile menu button -->
+                <!-- Mobile Toggle -->
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Menu -->
-                <div class="collapse navbar-collapse" id="mainNav">
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse justify-content-between" id="mainNav">
 
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- Left Menu -->
+                    <ul class="navbar-nav mb-2 mb-lg-0">
 
-                        <!-- Events (Mega Menu) -->
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
-
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row">
 
@@ -4212,33 +4229,38 @@
                             </div>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Trade Fair</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Exhibitors 2026</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">For Exhibitors</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Press</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#">Trade Fair</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Exhibitors 2026</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">For Exhibitors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Press</a></li>
                     </ul>
 
-                    <!-- Search -->
-                    <form class="d-flex my-2 my-lg-0">
-                        <input class="form-control" type="search" placeholder="Search">
-                    </form>
+                    <!-- Right Section: Search + Help Center -->
+                    <div class="d-flex align-items-center gap-3">
+
+                        <!-- Search -->
+                        <form class="d-flex">
+                            <input class="form-control search-sm" type="search" placeholder="Search">
+                        </form>
+
+                        <!-- Highlight Help Center -->
+                        <div class="text-end">
+                            <span class="badge bg-danger px-3 py-2">
+                                📞 Call Us: Exhibition Help Center
+                            </span>
+                            <div>
+                                <small class="text-muted">We will assist you to know your exhibition</small>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
 
             </div>
         </nav>
     </header>
+
 
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
         <div class="container">
