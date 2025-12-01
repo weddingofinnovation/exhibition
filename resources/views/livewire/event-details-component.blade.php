@@ -4128,14 +4128,12 @@
         </div>
     </header>
 
-
+    <!-- Bootstrap 5 CDN -->
     <style>
-        /* Simple underline hover effect */
         .nav-link:hover {
             text-decoration: underline;
         }
 
-        /* Mega dropdown area */
         .mega-menu {
             width: 100%;
             left: 0;
@@ -4143,46 +4141,33 @@
         }
     </style>
 
-    <header class="border-bottom">
-        <div class="container py-2 d-flex align-items-center justify-content-between">
+    <header class="border-bottom bg-white">
 
-            <!-- Logo -->
-            <a href="#" class="d-flex align-items-center">
-                <img src="your-logo.png" alt="logo" height="50">
-            </a>
-
-            <!-- Right icons (desktop only) -->
-            <div class="d-none d-lg-flex align-items-center gap-4">
-                <a href="#" class="text-dark small">Tickets</a>
-                <a href="#" class="text-dark small">Contact</a>
-                <a href="#" class="text-dark small">Login</a>
-            </div>
-
-            <!-- Mobile menu button -->
-            <button class="navbar-toggler d-lg-none border-0" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-
-        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="container">
+            <div class="container d-flex align-items-center">
 
-                <div class="collapse navbar-collapse" id="navMenu">
+                <!-- Logo -->
+                <a class="navbar-brand me-4" href="#">
+                    <img src="your-logo.png" height="45">
+                </a>
+
+                <!-- Mobile menu button -->
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu -->
+                <div class="collapse navbar-collapse" id="mainNav">
 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
+                        <!-- Events (Mega Menu) -->
                         <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                                Events
-                            </a>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
 
-                            <!-- Mega Menu -->
-                            <div class="dropdown-menu mega-menu p-4">
+                            <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row">
 
-                                    <!-- Live Programme -->
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Live Programme</h6>
                                         <ul class="list-unstyled">
@@ -4194,29 +4179,25 @@
                                         </ul>
                                     </div>
 
-                                    <!-- Awards -->
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Awards</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Start-Up Awards</a></li>
+                                            <li><a class="dropdown-item" href="#">Start-Up Pitch</a></li>
                                             <li><a class="dropdown-item" href="#">ISM Award</a></li>
                                             <li><a class="dropdown-item" href="#">Consumer Award</a></li>
                                             <li><a class="dropdown-item" href="#">New Product Showcase</a></li>
                                         </ul>
                                     </div>
 
-                                    <!-- Special Areas -->
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Special Areas</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Special Show Ingredients</a></li>
-                                            <li><a class="dropdown-item" href="#">New Product Showcase</a></li>
                                             <li><a class="dropdown-item" href="#">Lab5 by ISM</a></li>
-                                            <li><a class="dropdown-item" href="#">Networking Area</a></li>
+                                            <li><a class="dropdown-item" href="#">Networking</a></li>
                                         </ul>
                                     </div>
 
-                                    <!-- Side Events -->
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Side Events</h6>
                                         <ul class="list-unstyled">
@@ -4246,11 +4227,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Press</a>
                         </li>
-
                     </ul>
 
-                    <!-- Search box (desktop + mobile) -->
-                    <form class="d-flex">
+                    <!-- Search -->
+                    <form class="d-flex my-2 my-lg-0">
                         <input class="form-control" type="search" placeholder="Search">
                     </form>
 
