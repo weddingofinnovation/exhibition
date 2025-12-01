@@ -4128,6 +4128,141 @@
         </div>
     </header>
 
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* Simple underline hover effect */
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Mega dropdown area */
+        .mega-menu {
+            width: 100%;
+            left: 0;
+            right: 0;
+        }
+    </style>
+
+    <header class="border-bottom">
+        <div class="container py-2 d-flex align-items-center justify-content-between">
+
+            <!-- Logo -->
+            <a href="#" class="d-flex align-items-center">
+                <img src="your-logo.png" alt="logo" height="50">
+            </a>
+
+            <!-- Right icons (desktop only) -->
+            <div class="d-none d-lg-flex align-items-center gap-4">
+                <a href="#" class="text-dark small">Tickets</a>
+                <a href="#" class="text-dark small">Contact</a>
+                <a href="#" class="text-dark small">Login</a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler d-lg-none border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+
+                <div class="collapse navbar-collapse" id="navMenu">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Events
+                            </a>
+
+                            <!-- Mega Menu -->
+                            <div class="dropdown-menu mega-menu p-4">
+                                <div class="row">
+
+                                    <!-- Live Programme -->
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Live Programme</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Expert Stage</a></li>
+                                            <li><a class="dropdown-item" href="#">Talks & Tasting</a></li>
+                                            <li><a class="dropdown-item" href="#">Guided Tours</a></li>
+                                            <li><a class="dropdown-item" href="#">Opening Night</a></li>
+                                            <li><a class="dropdown-item" href="#">Digital Tours</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Awards -->
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Awards</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Start-Up Awards</a></li>
+                                            <li><a class="dropdown-item" href="#">ISM Award</a></li>
+                                            <li><a class="dropdown-item" href="#">Consumer Award</a></li>
+                                            <li><a class="dropdown-item" href="#">New Product Showcase</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Special Areas -->
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Special Areas</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Special Show Ingredients</a></li>
+                                            <li><a class="dropdown-item" href="#">New Product Showcase</a></li>
+                                            <li><a class="dropdown-item" href="#">Lab5 by ISM</a></li>
+                                            <li><a class="dropdown-item" href="#">Networking Area</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Side Events -->
+                                    <div class="col-md-3">
+                                        <h6 class="fw-bold">Side Events</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Living income in cocoa</a></li>
+                                            <li><a class="dropdown-item" href="#">DLG Careers Day</a></li>
+                                            <li><a class="dropdown-item" href="#">Sessions</a></li>
+                                            <li><a class="dropdown-item" href="#">Speakers</a></li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trade Fair</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Exhibitors 2026</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">For Exhibitors</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Press</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Search box (desktop + mobile) -->
+                    <form class="d-flex">
+                        <input class="form-control" type="search" placeholder="Search">
+                    </form>
+
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
     <section class="d-none d-sm-block position-relative bg-position-top-center bg-repeat-0 pt-5 pb-5 pt-md-7 pb-md-9">
         <div class="container">
             <div class="row">
