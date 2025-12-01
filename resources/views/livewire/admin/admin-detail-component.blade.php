@@ -83,10 +83,10 @@
                 <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
               </li>
               <li class="nav-item border-bottom">
-                <a class="nav-link px-1 fs-sm" href="#program" data-bs-toggle="tab" role="tab">Program</a>
+                <a class="nav-link px-1 fs-sm" href="#programs" data-bs-toggle="tab" role="tab">Program</a>
               </li>
               <li class="nav-item border-bottom">
-                <a class="nav-link px-1 fs-sm" href="#map" data-bs-toggle="tab" role="tab">Map</a>
+                <a class="nav-link px-1 fs-sm" href="#maps" data-bs-toggle="tab" role="tab">Map</a>
               </li>
             </ul>
 
@@ -869,7 +869,7 @@
                 @endforeach
               </div>
 
-              <div class="tab-pane fade" id="program" role="tabpanel">
+              <div class="tab-pane fade" id="programs" role="tabpanel">
 
                 {{--doubling--}}
 
@@ -905,7 +905,36 @@
 
               </div>
 
+              <div class="tab-pane fade" id="maps" role="tabpanel">
+
+                <div>
+                    <h3>Create Floor Plan</h3>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label>Event Name</label>
+                            <input type="text" wire:model.live="event_name" class="form-control">
+
+                            <label class="mt-3">Length (meters)</label>
+                            <input type="number" wire:model.live="length" class="form-control">
+
+                            <label class="mt-3">Width (meters)</label>
+                            <input type="number" wire:model.live="width" class="form-control">
+
+                            <p class="mt-3">Scale: <strong>20px = 1 meter</strong></p>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div id="floorCanvas"></div>
+                        </div>
+                    </div>
+                </div>
+
+              </div>
+
+
             </div>
+
           </div>
         </div>
 
@@ -1894,4 +1923,62 @@
   </div>
 
 
+@push('scripts')
+  <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
+
+  <script>
+    document.addEventListener('livewire:init', () => {
+        let stage;
+        let layer;
+
+        function drawFloorPlan(length, width, scale) {
+            let pxWidth  = width * scale;
+            let pxHeight = length * scale;
+
+            // Clear previous canvas
+            document.getElementById('floorCanvas').innerHTML = "";
+
+            stage = new Konva.Stage({
+                container: 'floorCanvas',
+                width: pxWidth,
+                height: pxHeight
+            });
+
+            layer = new Konva.Layer();
+            stage.add(layer);
+
+            // Outer boundary
+            let boundary = new Konva.Rect({
+                x: 0,
+                y: 0,
+                width: pxWidth,
+                height: pxHeight,
+                stroke: 'black',
+                strokeWidth: 2
+            });
+
+            layer.add(boundary);
+            layer.draw();
+        }
+
+        // Listen to Livewire updates
+        Livewire.on('update-floorplan', () => {
+            let length = @this.length;
+            let width = @this.width;
+            let scale = @this.scale;
+
+            drawFloorPlan(length, width, scale);
+        });
+
+        // Initial drawing
+        setTimeout(() => {
+            let length = @this.length;
+            let width = @this.width;
+            let scale = @this.scale;
+
+            drawFloorPlan(length, width, scale);
+        }, 300);
+    });
+  </script>
+@endpush
 </main>

@@ -439,6 +439,18 @@ class AdminDetailComponent extends Component
     $agenda->save();
   }
 
+  public $event_name;
+  public $length = 10; // meters
+  public $width = 10;  // meters
+
+  public $scale = 20; // 20px = 1 meter
+
+  public function updated($field)
+  {
+    $this->dispatch('update-floorplan')->to('#floorCanvas');
+  }
+
+
   public function render()
   {
     $evento = Event::where('slug', $this->slug)->first();
