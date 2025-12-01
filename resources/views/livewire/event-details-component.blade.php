@@ -4175,9 +4175,8 @@
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
                     <div class="d-flex flex-column">
-                        <span class="event-label">Upcoming</span> <!-- NEWLY ADDED -->
+                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
                         <div class="d-flex align-items-center">
-                            <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
                             <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
                         </div>
                     </div>
@@ -4191,7 +4190,7 @@
                 </button>
 
                 <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse justify-content-between" id="mainNav">
+                <div class="collapse navbar-collapse justify-content-end" id="mainNav">
 
                     <!-- Left Menu -->
                     <ul class="navbar-nav mb-2 mb-lg-0">
