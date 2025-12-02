@@ -4183,9 +4183,10 @@
         }
 
         /* Space between DEC and date cards */
-        /* .month-wrapper {
-            margin-right: 25px;
-        } */
+         .month-wrapper {
+            /* margin-right: 25px; */
+            font-family: "Instrument Sans", sans-serif;
+        } 
 
         .month-pill {
             display: flex;
@@ -4202,6 +4203,7 @@
             position: sticky;
             left: 0;
             z-index: 1;
+            font-family: "Instrument Sans", sans-serif;
         }
     </style>
 
