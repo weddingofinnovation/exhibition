@@ -4174,10 +4174,11 @@
 
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
-                    <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
+
                     <div class="d-flex flex-column">
+                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
                         <div class="d-flex align-items-center">
-                            <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
+                            <small class="ms-2 text-dark fw-normal fs-lg">{{ $displayDate }}</small>
                         </div>
                     </div>
                     @endif
