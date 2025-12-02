@@ -4206,32 +4206,41 @@
                                     <div class="col-md-2">
                                         <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>ISM</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Date and opening hours</a></li>
-                                            <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
-                                            <li><a class="dropdown-item" href="#">Segment</a></li>
-                                            <li><a class="dropdown-item" href="#">Good Reasons</a></li>
-                                            <li><a class="dropdown-item" href="#">ISM app</a></li>
-                                            <li><a class="dropdown-item" href="#">Sponsorship cologne zoo</a></li>
-                                            <li><a class="dropdown-item" href="#">ISM Worldwide</a></li>
-                                            <li><a class="dropdown-item" href="#">Organisers & Partners</a></li>
-                                            <li><a class="dropdown-item" href="#">Review</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Date and opening hours</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Facts and Figures</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Segment</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Good Reasons</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    ISM app</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Sponsorship cologne zoo</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    ISM Worldwide</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Organisers & Partners</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Review</a></li>
                                         </ul>
                                     </div>
 
                                     <!-- Column 2 -->
                                     <div class="col-md-2 border-start">
-                                        <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>Experience ISM</h6>
+                                        <h6 class="fw-bold"><i class="mr-1 bi bi-arrow-right"></i>Experience ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">
-                                                    <i class="bi bi-arrow-return-right"></i>Halal Showcase</a></li>
+                                                    <i class="mr-1 bi bi-arrow-return-right"></i>Halal Showcase</a></li>
                                             <li><a class="dropdown-item" href="#">
-                                                    <i class="bi bi-arrow-return-right"></i>Trend Snacks</a></li>
+                                                    <i class="mr-1 bi bi-arrow-return-right"></i>Trend Snacks</a></li>
                                             <li><a class="dropdown-item" href="#">
-                                                    <i class="bi bi-arrow-return-right"></i>Specialist retail area</a></li>
+                                                    <i class="mr-1 bi bi-arrow-return-right"></i>Specialist retail area</a></li>
                                             <li><a class="dropdown-item" href="#">
-                                                    <i class="bi bi-arrow-return-right"></i>Scale-up Area</a></li>
+                                                    <i class="mr-1 bi bi-arrow-return-right"></i>Scale-up Area</a></li>
                                             <li><a class="dropdown-item" href="#">
-                                                    <i class="bi bi-arrow-return-right"></i>Start-up Area</a></li>
+                                                    <i class="mr-1 bi bi-arrow-return-right"></i>Start-up Area</a></li>
                                         </ul>
                                     </div>
 
@@ -4239,11 +4248,16 @@
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">ISM Ingredients</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Exhibitor application</a></li>
-                                            <li><a class="dropdown-item" href="#">Stand cost Calculation</a></li>
-                                            <li><a class="dropdown-item" href="#">Sponsoring Solutions</a></li>
-                                            <li><a class="dropdown-item" href="#">Facts and figures</a></li>
-                                            <li><a class="dropdown-item" href="#">Welcome Speech</a></li>
+                                            <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Exhibitor application</a></li>
+                                            <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Stand cost Calculation</a></li>
+                                            <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Sponsoring Solutions</a></li>
+                                            <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Facts and figures</a></li>
+                                            <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Welcome Speech</a></li>
                                         </ul>
                                     </div>
 
@@ -4251,11 +4265,11 @@
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Tickets</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Buy Tickets</a></li>
-                                            <li><a class="dropdown-item" href="#">Redeem Ticket Code</a></li>
-                                            <li><a class="dropdown-item" href="#">VIP Buyer</a></li>
-                                            <li><a class="dropdown-item" href="#">Trade Visitors Definition</a></li>
-                                            <li><a class="dropdown-item" href="#">Delegations</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Buy Tickets</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Redeem Ticket Code</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>VIP Buyer</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Trade Visitors Definition</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Delegations</a></li>
                                         </ul>
                                     </div>
 
@@ -4263,12 +4277,18 @@
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Travel & Accommodation</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Arrival</a></li>
-                                            <li><a class="dropdown-item" href="#">VISA Support</a></li>
-                                            <li><a class="dropdown-item" href="#">Overnight stay</a></li>
-                                            <li><a class="dropdown-item" href="#">Trade fair City</a></li>
-                                            <li><a class="dropdown-item" href="#">Barrier-free visit</a></li>
-                                            <li><a class="dropdown-item" href="#">Delegations</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Arrival</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    VISA Support</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Overnight stay</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Trade fair City</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Barrier-free visit</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Delegations</a></li>
                                         </ul>
                                     </div>
 
@@ -4285,40 +4305,56 @@
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Live Programme</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Expert Stage</a></li>
-                                            <li><a class="dropdown-item" href="#">Talks & Tasting</a></li>
-                                            <li><a class="dropdown-item" href="#">Guided Tours</a></li>
-                                            <li><a class="dropdown-item" href="#">Opening Night</a></li>
-                                            <li><a class="dropdown-item" href="#">Digital Tours</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Expert Stage</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Talks & Tasting</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Guided Tours</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Opening Night</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Digital Tours</a></li>
                                         </ul>
                                     </div>
 
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Awards</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Start-Up Pitch</a></li>
-                                            <li><a class="dropdown-item" href="#">ISM Award</a></li>
-                                            <li><a class="dropdown-item" href="#">Consumer Award</a></li>
-                                            <li><a class="dropdown-item" href="#">New Product Showcase</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Start-Up Pitch</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    ISM Award</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Consumer Award</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    New Product Showcase</a></li>
                                         </ul>
                                     </div>
 
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Special Areas</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Special Show Ingredients</a></li>
-                                            <li><a class="dropdown-item" href="#">Lab5 by ISM</a></li>
-                                            <li><a class="dropdown-item" href="#">Networking</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Special Show Ingredients</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Lab5 by ISM</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Networking</a></li>
                                         </ul>
                                     </div>
 
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Side Events</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Living income in cocoa</a></li>
-                                            <li><a class="dropdown-item" href="#">DLG Careers Day</a></li>
-                                            <li><a class="dropdown-item" href="#">Sessions</a></li>
-                                            <li><a class="dropdown-item" href="#">Speakers</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Living income in cocoa</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    DLG Careers Day</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Sessions</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Speakers</a></li>
                                         </ul>
                                     </div>
 
@@ -4356,7 +4392,7 @@
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row">
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Benefits as an exhibitor</a></li>
@@ -4370,54 +4406,73 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Plan trade fari presence on site</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Stand construction</a></li>
-                                            <li><a class="dropdown-item" href="#">Order Deadlines</a></li>
-                                            <li><a class="dropdown-item" href="#">Your Advertising options</a></li>
-                                            <li><a class="dropdown-item" href="#">Service Partner</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand construction</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Order Deadlines</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Your Advertising options</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Service Partner</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Exhibitor passes</a></li>
-                                            <li><a class="dropdown-item" href="#">Construction and dismantling Passes</a></li>
-                                            <li><a class="dropdown-item" href="#">Visitor tickets</a></li>
-                                            <li><a class="dropdown-item" href="">Service shop</a></li>
-                                            <li><a class="dropdown-item" href="">media shop</a></li>
-                                            <li><a class="dropdown-item" href="">Free Advertising material</a></li>
-                                            <li><a class="dropdown-item" href="">Catering</a></li>
-                                            <li><a class="dropdown-item" href="">Lead Management</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Exhibitor passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Construction and dismantling Passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Visitor tickets</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Service shop</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    media shop</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Free Advertising material</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Catering</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Lead Management</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Tickets</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Buy Tickets</a></li>
-                                            <li><a class="dropdown-item" href="#">Redeem Ticket Code</a></li>
-                                            <li><a class="dropdown-item" href="#">VIP-Buyer</a></li>
-                                            <li><a class="dropdown-item" href="#">Trade Visitors Definition</a></li>
-                                            <li><a class="dropdown-item" href="">Delegations</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Buy Tickets</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Redeem Ticket Code</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    VIP-Buyer</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Trade Visitors Definition</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Delegations</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Booth Construction & Dsimantling</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">redeem Codes for construction and dismantling passes</a></li>
-                                            <li><a class="dropdown-item" href="#">set-up and dismantling times</a></li>
-                                            <li><a class="dropdown-item" href="#">Advanced setup</a></li>
-                                            <li><a class="dropdown-item" href="#">Approach for trucks</a></li>
-                                            <li><a class="dropdown-item" href="">Traffic Guidelines</a></li>
-                                            <li><a class="dropdown-item" href="">eSlot</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Redeem codes for construction and dismantling passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Set-up and dismantling times</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Advanced setup</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Approach for trucks</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Traffic Guidelines</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    eSlot</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Digital Features</h6>
                                     </div>
 
