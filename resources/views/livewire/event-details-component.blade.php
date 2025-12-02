@@ -4158,6 +4158,45 @@
             /* pink highlight like ISM */
             text-transform: uppercase;
         }
+
+        .month-pill {
+            background: #f5f5f5;
+            padding: 14px 16px;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .date-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 12px 20px;
+            border-radius: 14px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .date-card .day {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .date-card .week {
+            font-size: 13px;
+            color: #444;
+            margin-top: -3px;
+        }
+
+        .date-card:hover {
+            border-color: #000;
+        }
+
+        .date-card.active {
+            background: #0b1625;
+            border-color: #0b1625;
+            color: #fff;
+        }
     </style>
 
     <header class="border-bottom bg-white">
@@ -4174,6 +4213,20 @@
 
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
+                    <div class="d-flex align-items-center gap-2 date-selector-1">
+                        <div class="month-pill">DEC</div>
+
+                        <div class="date-card">
+                            <div class="day">06</div>
+                            <div class="week">Sat</div>
+                        </div>
+
+                        <div class="date-card active">
+                            <div class="day">07</div>
+                            <div class="week">Sun</div>
+                        </div>
+                    </div>
+
 
                     <div class="d-flex flex-column">
                         <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
