@@ -4198,10 +4198,10 @@
             color: #fff;
         }
 
-        .month-wrapper {
+        /* Space between DEC and date cards */
+        /* .month-wrapper {
             margin-right: 25px;
-            /* Space between DEC and date cards */
-        }
+        } */
 
         .month-pill {
             display: flex;
