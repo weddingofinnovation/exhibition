@@ -4223,7 +4223,7 @@
                                 flex-wrap: unset;
                                 background: rgb(243, 243, 245);
                                 color: rgb(61, 69, 89);
-                                font-size: 14px;
+                                font-size: 18px;
                                 font-style: normal;
                                 font-weight: 600;
                                 line-height: 133%;
@@ -4233,7 +4233,7 @@
                                 border-radius: 9px;
                                 padding: 13px 16px;
                                 z-index: 1;
-                                transform: rotate(-90deg);">{{$displayDate->M}}</div>
+                                transform: rotate(-90deg);">DEC</div>
 
                         <div class="date-card">
                             <div class="day">06</div>
