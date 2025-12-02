@@ -4183,10 +4183,10 @@
         }
 
         /* Space between DEC and date cards */
-         .month-wrapper {
+        .month-wrapper {
             /* margin-right: 25px; */
             font-family: "Instrument Sans", sans-serif;
-        } 
+        }
 
         .month-pill {
             display: flex;
@@ -4209,7 +4209,7 @@
 
     <header class="bg-white">
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
             <div class="container d-flex align-items-center">
 
                 <!-- Brand Section -->
@@ -4224,7 +4224,7 @@
                     <div class="d-flex align-items-center gap-1 date-selector-1">
 
                         <div class="month-wrapper">
-                            <div class="month-pill">{{$start->format('M')}}</div>
+                            <div class="month-pill" style="color: #0b1625;">{{$start->format('M')}}</div>
                         </div>
 
                         <div class="date-card">
