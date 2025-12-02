@@ -4388,105 +4388,91 @@
                         </li>
 
                         <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">For Exhibitors</a>
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                                For Exhibitors
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" class="ms-1">
+                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </a>
+
                             <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row justify-content-center">
+
+                                    <!-- Column 1 -->
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Benefits as an exhibitor</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Exhibitor Application 2026</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Stand Cost calculation 2026</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Individual Participation Opportunities</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Request free stand Areas</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Halal Showcase</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    New product showcase</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Manage your stand</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Benefits as an exhibitor</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Exhibitor Application 2026</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Stand Cost calculation 2026</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Individual Participation Opportunities</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Request free stand Areas</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Halal Showcase</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>New product showcase</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Manage your stand</a></li>
                                         </ul>
                                     </div>
 
+                                    <!-- Column 2 -->
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Plan trade fair presence on site</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand construction</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Order Deadlines</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Your Advertising options</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Service Partner</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Stand construction</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Order Deadlines</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Your Advertising options</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Service Partner</a></li>
                                         </ul>
                                     </div>
 
+                                    <!-- Column 3 -->
                                     <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Exhibitor passes</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Construction and dismantling Passes</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Visitor tickets</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Service shop</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    media shop</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Free Advertising material</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Catering</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Lead Management</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Exhibitor passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Construction & dismantling Passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Visitor tickets</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Service shop</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Media shop</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Free Advertising material</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Catering</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Lead Management</a></li>
                                         </ul>
                                     </div>
 
+                                    <!-- Column 4 -->
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Tickets</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Buy Tickets</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Redeem Ticket Code</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    VIP-Buyer</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Trade Visitors Definition</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Delegations</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Buy Tickets</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Redeem Ticket Code</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>VIP-Buyer</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Trade Visitors Definition</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Delegations</a></li>
                                         </ul>
                                     </div>
 
+                                    <!-- Column 5 -->
                                     <div class="col-md-3 border-start">
-                                        <h6 class="fw-bold">Booth Construction & Dsimantling</h6>
+                                        <h6 class="fw-bold">Booth Construction & Dismantling</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Redeem codes for construction and dismantling passes</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Set-up and dismantling times</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Advanced setup</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Approach for trucks</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Traffic Guidelines</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    eSlot</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Redeem codes for construction passes</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Set-up & dismantling times</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Advanced setup</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Approach for trucks</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Traffic Guidelines</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>eSlot</a></li>
                                         </ul>
                                     </div>
 
+                                    <!-- Column 6 -->
                                     <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Digital Features</h6>
                                     </div>
 
-
                                 </div>
                             </div>
                         </li>
+
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Press</a>
