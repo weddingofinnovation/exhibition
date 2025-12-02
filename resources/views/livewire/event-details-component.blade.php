@@ -4214,6 +4214,7 @@
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
                     <div class="d-flex align-items-center gap-2 date-selector-1">
+                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
                         <div class="month-pill">DEC</div>
 
                         <div class="date-card">
@@ -4228,12 +4229,12 @@
                     </div>
 
 
-                    <div class="d-flex flex-column">
-                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
+                    <!-- <div class="d-flex flex-column">
+                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> 
                         <div class="d-flex align-items-center">
                             <small class="ms-2 text-dark fw-normal fs-lg">{{ $displayDate }}</small>
                         </div>
-                    </div>
+                    </div> -->
                     @endif
 
                 </a>
