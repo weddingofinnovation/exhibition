@@ -4203,7 +4203,7 @@
 
                                     <!-- Column 1 -->
                                     <div class="col-md-2">
-                                        <h6 class="fw-bold">ISM</h6>
+                                        <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Date and opening hours</a></li>
                                             <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
@@ -4219,13 +4219,18 @@
 
                                     <!-- Column 2 -->
                                     <div class="col-md-2 border-start">
-                                        <h6 class="fw-bold">Experience ISM</h6>
+                                        <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>Experience ISM</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Halal Showcase</a></li>
-                                            <li><a class="dropdown-item" href="#">Trend Snacks</a></li>
-                                            <li><a class="dropdown-item" href="#">Specialist retail area</a></li>
-                                            <li><a class="dropdown-item" href="#">Scale-up Area</a></li>
-                                            <li><a class="dropdown-item" href="#">Start-up Area</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                    <i class="bi bi-arrow-return-right"></i>Halal Showcase</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                    <i class="bi bi-arrow-return-right"></i>Trend Snacks</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                    <i class="bi bi-arrow-return-right"></i>Specialist retail area</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                    <i class="bi bi-arrow-return-right"></i>Scale-up Area</a></li>
+                                            <li><a class="dropdown-item" href="#">
+                                                    <i class="bi bi-arrow-return-right"></i>Start-up Area</a></li>
                                         </ul>
                                     </div>
 
