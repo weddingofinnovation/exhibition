@@ -4391,7 +4391,7 @@
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">For Exhibitors</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row justify-content-center">
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4423,7 +4423,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2 border-start">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4461,7 +4461,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2 border-start">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Booth Construction & Dsimantling</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
