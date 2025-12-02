@@ -4222,17 +4222,17 @@
                     <div class="d-flex align-items-center gap-1 date-selector-1">
 
                         <div class="month-wrapper">
-                            <div class="month-pill">DEC</div>
+                            <div class="month-pill">{{$start->format('M')}}</div>
                         </div>
 
                         <div class="date-card">
-                            <div class="day">06</div>
-                            <div class="week fw-bold">Sat</div>
+                            <div class="day">{{$start->format('d')}}</div>
+                            <div class="week fw-bold">{{$start->format('D')}}</div>
                         </div>
 
                         <div class="date-card active">
-                            <div class="day">07</div>
-                            <div class="week fw-bold text-white">Sun</div>
+                            <div class="day">{{$end->format('d')}}</div>
+                            <div class="week fw-bold text-white">{{$end->format('D')}}</div>
                         </div>
 
                     </div>
