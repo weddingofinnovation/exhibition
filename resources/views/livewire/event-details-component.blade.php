@@ -4216,24 +4216,24 @@
                     <div class="d-flex align-items-center gap-2 date-selector-1">
                         <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
                         <div class="month-pill" style="display: flex;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-wrap: unset;
-    background: rgb(243, 243, 245);
-    color: rgb(61, 69, 89);
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 133%;
-    text-transform: uppercase;
-    position: sticky;
-    left: 0px;
-    border-radius: 9px;
-    padding: 13px 16px;
-    z-index: 1;
-    transform: rotate(-90deg);">DEC</div>
+                                -webkit-box-pack: center;
+                                justify-content: center;
+                                -webkit-box-align: center;
+                                align-items: center;
+                                flex-wrap: unset;
+                                background: rgb(243, 243, 245);
+                                color: rgb(61, 69, 89);
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 133%;
+                                text-transform: uppercase;
+                                position: sticky;
+                                left: 0px;
+                                border-radius: 9px;
+                                padding: 13px 16px;
+                                z-index: 1;
+                                transform: rotate(-90deg);">{{$displayDate->M}}</div>
 
                         <div class="date-card">
                             <div class="day">06</div>
