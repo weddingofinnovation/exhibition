@@ -4235,7 +4235,7 @@
 
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
-                    <div class="d-flex align-items-center gap-3 date-selector-1">
+                    <div class="d-flex align-items-center gap-1 date-selector-1">
 
                         <div class="month-wrapper">
                             <div class="month-pill">DEC</div>
