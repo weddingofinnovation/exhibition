@@ -4490,7 +4490,7 @@
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Press</a>
-                            <div class="dropdown-menu mega-menu p-4 border-top-0">
+                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row">
 
                                     <div class="col-md-3">
