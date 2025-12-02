@@ -4243,12 +4243,12 @@
 
                         <div class="date-card">
                             <div class="day">06</div>
-                            <div class="week">Sat</div>
+                            <div class="week fw-bold">Sat</div>
                         </div>
 
                         <div class="date-card active">
                             <div class="day">07</div>
-                            <div class="week">Sun</div>
+                            <div class="week fw-bold text-white">Sun</div>
                         </div>
 
                     </div>
