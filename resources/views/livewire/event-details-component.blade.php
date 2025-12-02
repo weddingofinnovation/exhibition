@@ -4170,7 +4170,7 @@
         .date-card {
             background: #fff;
             border: 1px solid #ddd;
-            padding: 12px 20px;
+            padding: 10px 12px;
             border-radius: 14px;
             text-align: center;
             transition: 0.3s;
@@ -4199,7 +4199,8 @@
         }
 
         .month-wrapper {
-            margin-right: 25px; /* Space between DEC and date cards */
+            margin-right: 25px;
+            /* Space between DEC and date cards */
         }
 
         .month-pill {
@@ -4218,7 +4219,6 @@
             left: 0;
             z-index: 1;
         }
-
     </style>
 
     <header class="bg-white">
@@ -4246,7 +4246,7 @@
                             <div class="week">Sat</div>
                         </div>
 
-                        <div class="date-card">
+                        <div class="date-card active">
                             <div class="day">07</div>
                             <div class="week">Sun</div>
                         </div>
