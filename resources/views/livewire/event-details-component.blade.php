@@ -4174,8 +4174,8 @@
 
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
+                    <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
                     <div class="d-flex flex-column">
-                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> <!-- NEWLY ADDED -->
                         <div class="d-flex align-items-center">
                             <small class="ms-2 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
                         </div>
@@ -4200,7 +4200,7 @@
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row">
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-right">
                                         <h6 class="fw-bold">ISM </h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Date and opening hours</a></li>
@@ -4215,7 +4215,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-left">
                                         <h6 class="fw-bold">Experience ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Halal Showcase</a></li>
@@ -4226,7 +4226,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-left">
                                         <h6 class="fw-bold">ISM Ingredients</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Exhibitor application</a></li>
