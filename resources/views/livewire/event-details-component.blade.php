@@ -4108,8 +4108,9 @@
 
 
     <!-- Desktop Header -->
-        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
-        <small class="ml-1 text-dark fw-bold fs-lg">{{ $displayDate }}</small>
+
+    <!-- <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
+                <small class="ml-1 text-dark fw-bold fs-lg">{{ $displayDate }}</small> -->
 
     <style>
         .nav-link:hover {
