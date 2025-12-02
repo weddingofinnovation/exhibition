@@ -4444,16 +4444,13 @@
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                                 For Exhibitors
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" class="ms-1">
-                                    <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                </svg>
                             </a>
 
-                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
+                            <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row justify-content-center">
 
                                     <!-- Column 1 -->
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Benefits as an exhibitor</a></li>
@@ -4479,7 +4476,7 @@
                                     </div>
 
                                     <!-- Column 3 -->
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Exhibitor passes</a></li>
@@ -4506,7 +4503,7 @@
                                     </div>
 
                                     <!-- Column 5 -->
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Booth Construction & Dismantling</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="bi bi-chevron-right me-2"></i>Redeem codes for construction passes</a></li>
@@ -4519,7 +4516,7 @@
                                     </div>
 
                                     <!-- Column 6 -->
-                                    <div class="col-md-2 border-start">
+                                    <div class="col-md-1 border-start">
                                         <h6 class="fw-bold">Digital Features</h6>
                                     </div>
 
