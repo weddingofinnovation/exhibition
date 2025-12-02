@@ -4197,9 +4197,31 @@
             border-color: #0b1625;
             color: #fff;
         }
+
+        .month-wrapper {
+            margin-right: 25px; /* Space between DEC and date cards */
+        }
+
+        .month-pill {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgb(243, 243, 245);
+            color: rgb(61, 69, 89);
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 9px;
+            padding: 13px 16px;
+            transform: rotate(-90deg);
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
     </style>
 
-    <header class="border-bottom bg-white">
+    <header class="bg-white">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container d-flex align-items-center">
@@ -4213,38 +4235,24 @@
 
                     @else
                     <!-- If logo missing: Show "Upcoming" + Date -->
-                    <div class="d-flex align-items-center gap-2 date-selector-1">
-                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
-                        <div class="month-pill" style="display: flex;
-                                -webkit-box-pack: center;
-                                justify-content: center;
-                                -webkit-box-align: center;
-                                align-items: center;
-                                flex-wrap: unset;
-                                background: rgb(243, 243, 245);
-                                color: rgb(61, 69, 89);
-                                font-size: 18px;
-                                font-style: normal;
-                                font-weight: 600;
-                                line-height: 133%;
-                                text-transform: uppercase;
-                                position: sticky;
-                                left: 0px;
-                                border-radius: 9px;
-                                padding: 13px 16px;
-                                z-index: 1;
-                                transform: rotate(-90deg);">DEC</div>
+                    <div class="d-flex align-items-center gap-3 date-selector-1">
+
+                        <div class="month-wrapper">
+                            <div class="month-pill">DEC</div>
+                        </div>
 
                         <div class="date-card">
                             <div class="day">06</div>
                             <div class="week">Sat</div>
                         </div>
 
-                        <div class="date-card active">
+                        <div class="date-card">
                             <div class="day">07</div>
                             <div class="week">Sun</div>
                         </div>
+
                     </div>
+
 
 
                     <!-- <div class="d-flex flex-column">
