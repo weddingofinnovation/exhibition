@@ -4203,7 +4203,7 @@
                                 <div class="row justify-content-center">
 
                                     <!-- Column 1 -->
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4274,7 +4274,7 @@
                                     </div>
 
                                     <!-- Column 5 -->
-                                    <div class="col-md-2 border-start">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Travel & Accommodation</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4300,7 +4300,7 @@
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
-                                <div class="row">
+                                <div class="row justify-content-center">
 
                                     <div class="col-md-3">
                                         <h6 class="fw-bold">Live Programme</h6>
@@ -4318,7 +4318,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Awards</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4332,7 +4332,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Special Areas</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4365,21 +4365,21 @@
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
-                                <div class="row">
+                                <div class="row justify-content-center">
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Exhibitor Search</h6>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Product Groups</h6>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Product Index</h6>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Hall Plan</h6>
                                     </div>
 
@@ -4389,8 +4389,8 @@
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">For Exhibitors</a>
-                            <div class="dropdown-menu mega-menu p-4 border-top-0">
-                                <div class="row">
+                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
+                                <div class="row justify-content-center">
 
                                     <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
@@ -4438,7 +4438,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Tickets</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4454,7 +4454,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Booth Construction & Dsimantling</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4472,7 +4472,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Digital Features</h6>
                                     </div>
 
@@ -4496,7 +4496,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Participation for media representatives</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Journalists and creators</a></li>
@@ -4504,7 +4504,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Press Services on site</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Press Centre</a></li>
