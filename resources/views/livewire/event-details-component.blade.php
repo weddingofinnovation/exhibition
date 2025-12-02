@@ -4344,7 +4344,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Side Events</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4364,22 +4364,22 @@
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a>
-                            <div class="dropdown-menu mega-menu p-4 border-top-0">
+                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row justify-content-center">
 
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2">
                                         <h6 class="fw-bold">Exhibitor Search</h6>
                                     </div>
 
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Product Groups</h6>
                                     </div>
 
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Product Index</h6>
                                     </div>
 
-                                    <div class="col-md-3 border-start">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Hall Plan</h6>
                                     </div>
 
@@ -4391,23 +4391,30 @@
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">For Exhibitors</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row justify-content-center">
-
                                     <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Benefits as an exhibitor</a></li>
-                                            <li><a class="dropdown-item" href="#">Exhibitor Application 2026</a></li>
-                                            <li><a class="dropdown-item" href="#">Stand Cost calculation 2026</a></li>
-                                            <li><a class="dropdown-item" href="#">Individual Participation Opportunities</a></li>
-                                            <li><a class="dropdown-item" href="#">Request free stand Areas</a></li>
-                                            <li><a class="dropdown-item" href="#">halal Showcase</a></li>
-                                            <li><a class="dropdown-item" href="#">new product showcase</a></li>
-                                            <li><a class="dropdown-item" href="#">Manage your stand</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Benefits as an exhibitor</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Exhibitor Application 2026</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Stand Cost calculation 2026</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Individual Participation Opportunities</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Request free stand Areas</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Halal Showcase</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    New product showcase</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Manage your stand</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2">
-                                        <h6 class="fw-bold">Plan trade fari presence on site</h6>
+                                    <div class="col-md-2 border-start">
+                                        <h6 class="fw-bold">Plan trade fair presence on site</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand construction</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Order Deadlines</a></li>
@@ -4416,7 +4423,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4512,7 +4519,7 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 border-start">
                                         <h6 class="fw-bold">Multimedia</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Image database</a></li>
