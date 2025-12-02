@@ -4197,11 +4197,13 @@
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Trade Fair</a>
-                            <div class="dropdown-menu mega-menu p-4 border-top-0">
-                                <div class="row">
 
-                                    <div class="col-md-3 border-right">
-                                        <h6 class="fw-bold">ISM </h6>
+                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
+                                <div class="row justify-content-center">
+
+                                    <!-- Column 1 -->
+                                    <div class="col-md-2">
+                                        <h6 class="fw-bold">ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Date and opening hours</a></li>
                                             <li><a class="dropdown-item" href="#">Facts and Figures</a></li>
@@ -4215,7 +4217,8 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3 border-left">
+                                    <!-- Column 2 -->
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Experience ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Halal Showcase</a></li>
@@ -4226,46 +4229,47 @@
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3 border-left">
+                                    <!-- Column 3 -->
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">ISM Ingredients</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Exhibitor application</a></li>
                                             <li><a class="dropdown-item" href="#">Stand cost Calculation</a></li>
-                                            <li><a class="dropdown-item" href="#">Sponsoring Solutions ISM Ingredients</a></li>
-                                            <li><a class="dropdown-item" href="">Facts and figures</a></li>
-                                            <li><a class="dropdown-item" href="">Welcome Speech press breakfast</a></li>
+                                            <li><a class="dropdown-item" href="#">Sponsoring Solutions</a></li>
+                                            <li><a class="dropdown-item" href="#">Facts and figures</a></li>
+                                            <li><a class="dropdown-item" href="#">Welcome Speech</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
+                                    <!-- Column 4 -->
+                                    <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Tickets</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Buy Tickets</a></li>
                                             <li><a class="dropdown-item" href="#">Redeem Ticket Code</a></li>
-                                            <li><a class="dropdown-item" href="#">VIP-Buyer</a></li>
+                                            <li><a class="dropdown-item" href="#">VIP Buyer</a></li>
                                             <li><a class="dropdown-item" href="#">Trade Visitors Definition</a></li>
-                                            <li><a class="dropdown-item" href="">Delegations</a></li>
+                                            <li><a class="dropdown-item" href="#">Delegations</a></li>
                                         </ul>
                                     </div>
 
-                                    <div class="col-md-3">
-                                        <h6 class="fw-bold">Travel and accommodation</h6>
+                                    <!-- Column 5 -->
+                                    <div class="col-md-2 border-start">
+                                        <h6 class="fw-bold">Travel & Accommodation</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">Arrival</a></li>
                                             <li><a class="dropdown-item" href="#">VISA Support</a></li>
                                             <li><a class="dropdown-item" href="#">Overnight stay</a></li>
-                                            <li><a class="dropdown-item" href="#">Trade fair City of</a></li>
-                                            <li><a class="dropdown-item" href="">Barrier-free trade fair visit</a></li>
-                                            <li><a class="dropdown-item" href="">Delegations</a></li>
-
+                                            <li><a class="dropdown-item" href="#">Trade fair City</a></li>
+                                            <li><a class="dropdown-item" href="#">Barrier-free visit</a></li>
+                                            <li><a class="dropdown-item" href="#">Delegations</a></li>
                                         </ul>
                                     </div>
-
-
 
                                 </div>
                             </div>
                         </li>
+
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
