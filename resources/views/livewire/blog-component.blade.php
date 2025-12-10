@@ -319,7 +319,7 @@
 				@foreach($updateQuestion as $questions)
 
 				@php
-				$answero = DB::table('answers') - > where('question_id', $questions - > id) - > where('status', '1') - > get();
+				$answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
 				@endphp
 
 				{
