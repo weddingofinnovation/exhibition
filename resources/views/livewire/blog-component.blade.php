@@ -36,6 +36,8 @@
 			$updateQuestion = DB::table('questions')
 							->whereNull('event_id')
 							->orderBy('updated_at', 'desc')  // ✅ Correct way to sort by latest update
+							->where('status', '1')
+							->where('admstatus', '1')
 							->get();
 
 		@endphp
