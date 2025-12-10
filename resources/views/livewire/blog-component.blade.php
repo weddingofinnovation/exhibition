@@ -308,6 +308,36 @@
 
 
     @push('scripts')
+
+	
+	 <script type="application/ld+json">
+        {
+            "@context": "https:schema.org"
+            "@type": "FAQPage",
+            "mainEntity": [
+
+
+                @foreach($updateQuestion as $questions) 
+
+				@php
+					$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+				@endphp
+
+				{
+                    "@type": "Question",
+                    "name": "{{$questions->question}}",
+                    "acceptedAnswer": {
+						@foreach($answero as $ans)
+							"@type": "Answer", 
+							"text": "<p>{{ $ans->answer }}</p>"
+						@endforeach
+                    }
+                },
+                @endforeach
+            ]
+        }
+    </script>
+
 		<script>
 			var slider = tns({
 				"container": '.my-Slider1',            
