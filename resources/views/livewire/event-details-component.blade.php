@@ -6517,99 +6517,108 @@
 
     @push('scripts')
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (localStorage.getItem('currentTab')) {
-                this.call('switchTab', localStorage.getItem('currentTab'));
-            }
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (localStorage.getItem('currentTab')) {
+                    this.call('switchTab', localStorage.getItem('currentTab'));
+                }
 
-            document.querySelectorAll('.nav-link').forEach(function(element) {
-                element.addEventListener('click', function() {
-                    localStorage.setItem('currentTab', this.getAttribute('wire:click.prevent').replace('switchTab(', '').replace(')', ''));
+                document.querySelectorAll('.nav-link').forEach(function(element) {
+                    element.addEventListener('click', function() {
+                        localStorage.setItem('currentTab', this.getAttribute('wire:click.prevent').replace('switchTab(', '').replace(')', ''));
+                    });
                 });
             });
-        });
-    </script>
+        </script>
 
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Event",
-            "name": "{{$event->eventname}}",
-            "startDate": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-            "endDate": "{{Carbon::parse ($event->enddate)->format('Y-m-d')}}",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "eventStatus": "https://schema.org/EventScheduled",
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": "{{$event->eventname}}",
+                "startDate": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+                "endDate": "{{Carbon::parse ($event->enddate)->format('Y-m-d')}}",
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                "eventStatus": "https://schema.org/EventScheduled",
 
-            "location": {
-                "@type": "Place",
-                "name": "{{$event->venue}}",
+                "location": {
+                    "@type": "Place",
+                    "name": "{{$event->venue}}",
 
-                "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "{{$event->venue}}",
-                    "addressLocality": "{{$event->venue}}",
-                    "postalCode": "110011",
-                    "addressRegion": "{{$event->city}}",
-                    "addressCountry": "IN"
-                }
-            },
-
-            "image": [
-                "{{url('assets/image/exhibition/'.$event->image)}}"
-            ],
-
-            "description": "{{$event->shtdesc}}",
-            "offers": {
-                "@type": "Offer",
-                "url": "{{route('event.product',['slug' => $event->slug])}}",
-                "price": "{{$productPrice}}",
-                "priceCurrency": "INR",
-                "availability": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-                "validFrom": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}"
-            },
-
-
-            "performer": {
-                "@type": "PerformingGroup",
-                "name": "The Exhibition Network"
-            },
-
-            "organizer": {
-                "@type": "Organization",
-                "name": "The Exhibition Network",
-                "url": "https://exhibition.org.in"
-            },
-
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "{{round($commentedRates->avg('rate') , 1)}}",
-                "ratingCount": "{{$commentedRates->count()}}",
-                "bestRating": "10"
-            }
-
-        }
-    </script>
-
-    <script type="application/ld+json">
-        {
-            "@context": "https:schema.org"
-            "@type": "FAQPage",
-            "mainEntity": [
-
-
-                @foreach($updateQuestion as $questions) {
-                    "@type": "Question",
-                    "name": "",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "<p></p>"
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "{{$event->venue}}",
+                        "addressLocality": "{{$event->venue}}",
+                        "postalCode": "110011",
+                        "addressRegion": "{{$event->city}}",
+                        "addressCountry": "IN"
                     }
                 },
-                @endforeach
-            ]
-        }
-    </script>
+
+                "image": [
+                    "{{url('assets/image/exhibition/'.$event->image)}}"
+                ],
+
+                "description": "{{$event->shtdesc}}",
+                "offers": {
+                    "@type": "Offer",
+                    "url": "{{route('event.product',['slug' => $event->slug])}}",
+                    "price": "{{$productPrice}}",
+                    "priceCurrency": "INR",
+                    "availability": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+                    "validFrom": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}"
+                },
+
+
+                "performer": {
+                    "@type": "PerformingGroup",
+                    "name": "The Exhibition Network"
+                },
+
+                "organizer": {
+                    "@type": "Organization",
+                    "name": "The Exhibition Network",
+                    "url": "https://exhibition.org.in"
+                },
+
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "{{round($commentedRates->avg('rate') , 1)}}",
+                    "ratingCount": "{{$commentedRates->count()}}",
+                    "bestRating": "10"
+                }
+
+            }
+        </script>
+
+    <script type="application/ld+json">
+		{
+			"@context": "https:schema.org"
+			"@type": "FAQPage",
+			"mainEntity": [
+
+
+				@foreach($updateQuestion as $questions)
+					@php
+					  $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
+					@endphp
+
+					{
+						"@type": "Question",
+						"name": "{{$questions->question}}",
+						"acceptedAnswer": 
+						{
+							@foreach($answero as $ans)
+							"@type": "Answer",
+							"text": "<p>{{ $ans->answer }}</p>"
+							@endforeach
+						}
+					},
+				@endforeach
+			]
+		}
+	</script>
+    
 
     <script type="text/javascript">
         const gmailbtn = document.getElementById('gmail-btn');

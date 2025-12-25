@@ -317,21 +317,21 @@
 
 
 				@foreach($updateQuestion as $questions)
+					@php
+					  $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
+					@endphp
 
-				@php
-				$answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
-				@endphp
-
-				{
-					"@type": "Question",
-					"name": "{{$questions->question}}",
-					"acceptedAnswer": {
-						@foreach($answero as $ans)
-						"@type": "Answer",
-						"text": "<p>{{ $ans->answer }}</p>"
-						@endforeach
-					}
-				},
+					{
+						"@type": "Question",
+						"name": "{{$questions->question}}",
+						"acceptedAnswer": 
+						{
+							@foreach($answero as $ans)
+							"@type": "Answer",
+							"text": "<p>{{ $ans->answer }}</p>"
+							@endforeach
+						}
+					},
 				@endforeach
 			]
 		}
