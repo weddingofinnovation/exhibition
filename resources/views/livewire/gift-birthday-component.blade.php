@@ -99,7 +99,7 @@
 
       <!-- Custom Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', , ['partytype' => 'customparty'] ) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'customparty']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-stars fs-1 text-primary"></i>
