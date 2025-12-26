@@ -1,7 +1,6 @@
 <main>
 
-
-
+  @if(empty($partytype))
   <div class="container py-5">
     <div class="row g-4 text-center">
 
@@ -99,7 +98,7 @@
 
       <!-- Custom Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'customparty']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'customparty'] ) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-stars fs-1 text-primary"></i>
@@ -113,7 +112,124 @@
     </div>
   </div>
 
+  @elseif($partytype == 'birthday')
+  {{-- BIRTHDAY FORM --}}
+  <div class="container py-5">
+    <h3 class="text-center mb-4">🎂 Birthday Party Details</h3>
 
+    <div class="card shadow-sm p-4">
+      <div class="mb-3">
+        <label>Birthday Person Name</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Age</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Theme Preference</label>
+        <select class="form-select">
+          <option>Cartoon</option>
+          <option>Bollywood</option>
+          <option>Kids</option>
+          <option>Luxury</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  @elseif($partytype == 'anniversary')
+  {{-- ANNIVERSARY FORM --}}
+  <div class="container py-5">
+    <h3 class="text-center mb-4">❤️ Anniversary Celebration</h3>
+
+    <div class="card shadow-sm p-4">
+      <div class="mb-3">
+        <label>Couple Name</label>
+        <input type="text" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Years Completed</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Celebration Type</label>
+        <select class="form-select">
+          <option>Candle Light</option>
+          <option>Private Theatre</option>
+          <option>House Party</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  @elseif($partytype == 'proposal')
+
+  {{-- PROPOSAL FORM --}}
+  <div class="container py-5">
+    <h3 class="text-center mb-4">💍 Proposal Planning</h3>
+
+    <div class="card shadow-sm p-4">
+      <div class="mb-3">
+        <label>Proposal Location</label>
+        <select class="form-select">
+          <option>Private Theatre</option>
+          <option>Rooftop</option>
+          <option>Home</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Ring Arrangement</label>
+        <select class="form-select">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  @elseif($partytype == 'customparty')
+
+  {{-- CUSTOM PARTY FORM --}}
+  <div class="container py-5">
+    <h3 class="text-center mb-4">✨ Custom Party Request</h3>
+
+    <div class="card shadow-sm p-4">
+      <div class="mb-3">
+        <label>Occasion Description</label>
+        <textarea class="form-control"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label>Expected Guests</label>
+        <input type="number" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Budget Range</label>
+        <select class="form-select">
+          <option>₹10,000 – ₹25,000</option>
+          <option>₹25,000 – ₹50,000</option>
+          <option>₹50,000+</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  @else
+
+  {{-- FALLBACK --}}
+  <div class="container py-5 text-center">
+    <div class="alert alert-warning">
+      Invalid party type selected.
+    </div>
+  </div>
+  @endif
 
   <!-- Hero Section -->
   <section class="bg-cover bg-center text-white py-20 px-6" style="background-image: url('/images/party-hero.jpg')">
