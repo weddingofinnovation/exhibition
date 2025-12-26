@@ -158,6 +158,22 @@
                         @enderror
                     </div>
 
+                    {{-- email --}}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            e-mail <span class="text-danger">*</span>
+                        </label>
+                        <input type="email"
+                               class="form-control form-control-lg"
+                               placeholder="Enter email"
+                               wire:model.lazy="email"
+                               required>
+
+                        @error('email')
+                            <div class="text-danger small mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+
                     {{-- Submit --}}
                     <button class="btn btn-primary btn-lg w-100">
                         Your Day 🎉
@@ -169,7 +185,6 @@
 
     </div>
   </div>
-
 
 
   @elseif($partytype == 'birthday')
