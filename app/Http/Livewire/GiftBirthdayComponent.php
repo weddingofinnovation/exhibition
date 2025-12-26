@@ -9,6 +9,7 @@ class GiftBirthdayComponent extends Component
 {
     public $name;
     public $phone;
+    public $email;
     public $status;
     public $Atype;
     public $Adate;
