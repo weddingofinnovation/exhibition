@@ -114,56 +114,62 @@
 
   @elseif(!empty($partytype) && $contactdetails == 'fill')
 
-  <div class="col-12 col-md-5 mt-3 mt-md-0 d-flex justify-content-center">
-    <div class="w-100 p-3 p-md-4 rounded-3 shadow-sm bg-white">
+  <div class="container py-4">
+    <div class="row justify-content-center">
 
-        {{-- Heading optional --}}
-        <h5 class="mb-3 text-center d-md-none">Contact Details</h5>
+        <div class="col-12 col-md-5 mx-auto">
+            <div class="p-3 p-md-4 rounded-3 shadow-sm bg-white">
 
-        <form class="needs-validation"
-              wire:submit.prevent="jollyknotes"
-              enctype="multipart/form-data">
+                <h5 class="text-center mb-3">Contact Details</h5>
 
-            {{-- Name --}}
-            <div class="mb-3">
-                <label class="form-label fw-semibold">
-                    Your Name <span class="text-danger">*</span>
-                </label>
-                <input type="text"
-                       class="form-control form-control-lg form-control-md"
-                       placeholder="Enter your name"
-                       wire:model.lazy="name"
-                       required>
+                <form class="needs-validation"
+                      wire:submit.prevent="jollyknotes"
+                      enctype="multipart/form-data">
 
-                @error('name')
-                    <div class="text-danger small mt-1">{{ $message }}</div>
-                @enderror
+                    {{-- Name --}}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            Your Name <span class="text-danger">*</span>
+                        </label>
+                        <input type="text"
+                               class="form-control form-control-lg"
+                               placeholder="Enter your name"
+                               wire:model.lazy="name"
+                               required>
+
+                        @error('name')
+                            <div class="text-danger small mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- Phone --}}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            Phone <span class="text-danger">*</span>
+                        </label>
+                        <input type="tel"
+                               class="form-control form-control-lg"
+                               placeholder="Enter phone number"
+                               wire:model.lazy="phone"
+                               required>
+
+                        @error('phone')
+                            <div class="text-danger small mt-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    {{-- Submit --}}
+                    <button class="btn btn-primary btn-lg w-100">
+                        Your Day 🎉
+                    </button>
+
+                </form>
             </div>
+        </div>
 
-            {{-- Phone --}}
-            <div class="mb-3">
-                <label class="form-label fw-semibold">
-                    Phone <span class="text-danger">*</span>
-                </label>
-                <input type="tel"
-                       class="form-control form-control-lg form-control-md"
-                       placeholder="Enter phone number"
-                       wire:model.lazy="phone"
-                       required>
-
-                @error('phone')
-                    <div class="text-danger small mt-1">{{ $message }}</div>
-                @enderror
-            </div>
-
-            {{-- Submit --}}
-            <button class="btn btn-primary btn-lg w-100 mt-2">
-                Your Day 🎉
-            </button>
-
-        </form>
     </div>
   </div>
+
 
 
   @elseif($partytype == 'birthday')
