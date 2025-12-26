@@ -111,9 +111,7 @@
 
     </div>
   </div>
-
   @elseif(!empty($partytype) && $contactdetails == 'fill')
-
   <div class="container py-4">
     <div class="row justify-content-center">
 
@@ -185,8 +183,6 @@
 
     </div>
   </div>
-
-
   @elseif($partytype == 'birthday')
   {{-- BIRTHDAY FORM --}}
   <div class="container py-5">
@@ -214,7 +210,6 @@
       </div>
     </div>
   </div>
-
   @elseif($partytype == 'anniversary')
   {{-- ANNIVERSARY FORM --}}
   <div class="container py-5">
@@ -241,9 +236,7 @@
       </div>
     </div>
   </div>
-
   @elseif($partytype == 'proposal')
-
   {{-- PROPOSAL FORM --}}
   <div class="container py-5">
     <h3 class="text-center mb-4">💍 Proposal Planning</h3>
@@ -267,9 +260,7 @@
       </div>
     </div>
   </div>
-
   @elseif($partytype == 'customparty')
-
   {{-- CUSTOM PARTY FORM --}}
   <div class="container py-5">
     <h3 class="text-center mb-4">✨ Custom Party Request</h3>
@@ -295,7 +286,6 @@
       </div>
     </div>
   </div>
-
   @else
   {{-- FALLBACK --}}
   <div class="container py-5 text-center">

@@ -31,13 +31,14 @@ class GiftBirthdayComponent extends Component
         $jollyknot = new Knotes();
         $jollyknot->name = $this->name;
         $jollyknot->phone = $this->phone;
+        $jollyknot->email = $this->email;
         $jollyknot->save();
 
         //dd($jollyknot, $jollyknot->id );
-        return redirect()->route('date.business', ['ido' => $jollyknot->id, 'board' => 'birthday']);
+        //return redirect()->route('date.business', ['ido' => $jollyknot->id, 'board' => 'birthday']);
+        return redirect()->route('gift.business', ['partytype' =>  $this->partytype, 'contactdetails' => 'null']);
+        // partytype?}/{contactdetails
     }
-
-
 
     public function render()
     {
