@@ -29,6 +29,8 @@ class GiftBirthdayComponent extends Component
 
     }
 
+
+    
     public function render()
     {
         return view('livewire.gift-birthday-component');

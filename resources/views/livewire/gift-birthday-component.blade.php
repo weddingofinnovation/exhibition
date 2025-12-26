@@ -1,94 +1,113 @@
 <main>
 
+
+
   <div class="container py-5">
     <div class="row g-4 text-center">
 
       <!-- Birthday -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-balloon-fill fs-1 text-primary"></i>
-            <h5 class="mt-3">Birthday</h5>
-            <p class="text-muted">Celebrate birthdays with themes & fun.</p>
+        <a href="{{ route('party.booking', 'birthday') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-balloon-fill fs-1 text-primary"></i>
+
+              <h5 class="mt-3">Birthday</h5>
+              <p class="text-muted">Celebrate birthdays with themes & fun.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Anniversary -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-heart-fill fs-1 text-danger"></i>
-            <h5 class="mt-3">Anniversary</h5>
-            <p class="text-muted">Romantic & elegant celebrations.</p>
+        <a href="{{ route('party.booking', 'anniversary') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-heart-fill fs-1 text-danger"></i>
+              <h5 class="mt-3">Anniversary</h5>
+              <p class="text-muted">Romantic & elegant celebrations.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Proposal -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-gem fs-1 text-warning"></i>
-            <h5 class="mt-3">Proposal</h5>
-            <p class="text-muted">Make your proposal unforgettable.</p>
+        <a href="{{ route('party.booking', 'proposal') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-gem fs-1 text-warning"></i>
+              <h5 class="mt-3">Proposal</h5>
+              <p class="text-muted">Make your proposal unforgettable.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Baby Shower -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-emoji-smile-fill fs-1 text-info"></i>
-            <h5 class="mt-3">Baby Shower</h5>
-            <p class="text-muted">Warm & joyful baby celebrations.</p>
+        <a href="{{ route('party.booking', 'babyshower') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-emoji-smile-fill fs-1 text-info"></i>
+              <h5 class="mt-3">Baby Shower</h5>
+              <p class="text-muted">Warm & joyful baby celebrations.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Private Theatre -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-film fs-1 text-secondary"></i>
-            <h5 class="mt-3">Private Theatre</h5>
-            <p class="text-muted">Movie + celebration experience.</p>
+        <a href="{{ route('party.booking', 'private-theatre') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-film fs-1 text-secondary"></i>
+              <h5 class="mt-3">Private Theatre</h5>
+              <p class="text-muted">Movie + celebration experience.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- House Party -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-house-fill fs-1 text-success"></i>
-            <h5 class="mt-3">House Party</h5>
-            <p class="text-muted">Celebrate at home with style.</p>
+        <a href="{{ route('party.booking', 'houseparty') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-house-fill fs-1 text-success"></i>
+              <h5 class="mt-3">House Party</h5>
+              <p class="text-muted">Celebrate at home with style.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Office Party -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-briefcase-fill fs-1 text-dark"></i>
-            <h5 class="mt-3">Office Party</h5>
-            <p class="text-muted">Corporate & team celebrations.</p>
+        <a href="{{ route('party.booking', 'officeparty') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-briefcase-fill fs-1 text-dark"></i>
+              <h5 class="mt-3">Office Party</h5>
+              <p class="text-muted">Corporate & team celebrations.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <!-- Custom Party -->
       <div class="col-md-3 col-sm-6">
-        <div class="card h-100 shadow-sm party-card">
-          <div class="card-body">
-            <i class="bi bi-stars fs-1 text-primary"></i>
-            <h5 class="mt-3">Custom Party</h5>
-            <p class="text-muted">Plan your own unique party.</p>
+        <a href="{{ route('party.booking', 'customparty') }}" class="text-decoration-none text-dark">
+          <div class="card h-100 shadow-sm party-card">
+            <div class="card-body">
+              <i class="bi bi-stars fs-1 text-primary"></i>
+              <h5 class="mt-3">Custom Party</h5>
+              <p class="text-muted">Plan your own unique party.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
     </div>
