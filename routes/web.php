@@ -324,7 +324,7 @@ Route::get('/registration-pass/{visitorid?}', [BuyabrandlicenseComponent::class,
 
 
 //trying//promotion
-Route::get('/birthday/{partytype?}', GiftBirthdayComponent::class)->name('gift.business');
+Route::get('/birthday/{partytype?}/{contactdetails?}', GiftBirthdayComponent::class)->name('gift.business');
 Route::get('/birthday/{board}/tie/{ido}', GiftDateComponent::class)->name('date.business');
 
 

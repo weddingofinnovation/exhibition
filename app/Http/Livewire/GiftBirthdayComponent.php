@@ -17,11 +17,13 @@ class GiftBirthdayComponent extends Component
     public $board;
 
     public $partytype;
+    public $contactdetails;
 
-    public function mount($board, $partytype = null)
+    public function mount($board, $partytype = null, $contactdetails =  null)
     {
         $this->board = $board;
         $this->partytype = $partytype;
+        $this->contactdetails = $contactdetails;
     }
 
     public function jollyknotes()

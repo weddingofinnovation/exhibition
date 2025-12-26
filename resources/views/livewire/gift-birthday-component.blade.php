@@ -1,12 +1,12 @@
 <main>
 
-  @if(empty($partytype))
+@if(empty($partytype))
   <div class="container py-5">
     <div class="row g-4 text-center">
 
       <!-- Birthday -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'birthday']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'birthday' , 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-balloon-fill fs-1 text-primary"></i>
@@ -20,7 +20,7 @@
 
       <!-- Anniversary -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'anniversary']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'anniversary' , 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-heart-fill fs-1 text-danger"></i>
@@ -33,7 +33,7 @@
 
       <!-- Proposal -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'proposal']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'proposal', 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-gem fs-1 text-warning"></i>
@@ -46,7 +46,7 @@
 
       <!-- Baby Shower -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'babyshower']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'babyshower', 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-emoji-smile-fill fs-1 text-info"></i>
@@ -59,7 +59,7 @@
 
       <!-- Private Theatre -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'private-theatre']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'private-theatre', 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-film fs-1 text-secondary"></i>
@@ -72,7 +72,7 @@
 
       <!-- House Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'houseparty']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'houseparty', 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-house-fill fs-1 text-success"></i>
@@ -85,7 +85,7 @@
 
       <!-- Office Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'officeparty']) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'officeparty', 'contactdetails' => 'fill']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-briefcase-fill fs-1 text-dark"></i>
@@ -98,7 +98,7 @@
 
       <!-- Custom Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('gift.business', ['partytype' => 'customparty'] ) }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'customparty', 'contactdetails' => 'fill'] ) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-stars fs-1 text-primary"></i>
@@ -109,6 +109,37 @@
         </a>
       </div>
 
+    </div>
+  </div>
+
+  @elseif(!empty($partytype) && $contactdetails == 'fill')
+
+  <div class="col-md-5 mt-2 pt-4 mt-md-0 pt-md-0 align-center">
+    <div class="bg-secondary py-grid-gutter px-grid-gutter rounded-3">
+      {{--<h3 class="h4 pb-2">Write a review</h3>--}}
+      <form class="needs-validation" wire:submit.prevent="jollyknotes" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label class="form-label" for="review-name">Your name<span class="text-danger">*</span></label>
+          <input class="form-control" type="text" required="" wire:model.lazy="name">
+          @error('name')
+          <div class="invalid-feedback">{{$message}}</div>
+          @enderror
+
+        </div>
+
+
+        <div class="mb-3">
+          <label class="form-label" for="review-pros">Phone<span class="text-danger">*</span></label>
+          <input class="form-control" type="phone" required="" wire:model.lazy="phone">
+          @error('phone')
+          <div class="invalid-feedback">{{$message}}</div>
+          @enderror
+        </div>
+
+
+
+        <button class="btn btn-primary btn-shadow d-block w-100" type="submit">Your Day</button>
+      </form>
     </div>
   </div>
 
@@ -222,14 +253,13 @@
   </div>
 
   @else
-
-  {{-- FALLBACK --}}
-  <div class="container py-5 text-center">
-    <div class="alert alert-warning">
-      Invalid party type selected.
+    {{-- FALLBACK --}}
+    <div class="container py-5 text-center">
+      <div class="alert alert-warning">
+        Invalid party type selected.
+      </div>
     </div>
-  </div>
-  @endif
+@endif
 
   <!-- Hero Section -->
   <section class="bg-cover bg-center text-white py-20 px-6" style="background-image: url('/images/party-hero.jpg')">
@@ -272,36 +302,5 @@
       </form>
     </div>
   </section>
-
-  <div class="col-md-5 mt-2 pt-4 mt-md-0 pt-md-0 align-center">
-    <div class="bg-secondary py-grid-gutter px-grid-gutter rounded-3">
-      {{--<h3 class="h4 pb-2">Write a review</h3>--}}
-      <form class="needs-validation" wire:submit.prevent="jollyknotes" enctype="multipart/form-data">
-        <div class="mb-3">
-          <label class="form-label" for="review-name">Your name<span class="text-danger">*</span></label>
-          <input class="form-control" type="text" required="" wire:model.lazy="name">
-          @error('name')
-          <div class="invalid-feedback">{{$message}}</div>
-          @enderror
-
-        </div>
-
-
-        <div class="mb-3">
-          <label class="form-label" for="review-pros">Phone<span class="text-danger">*</span></label>
-          <input class="form-control" type="phone" required="" wire:model.lazy="phone">
-          @error('phone')
-          <div class="invalid-feedback">{{$message}}</div>
-          @enderror
-        </div>
-
-
-
-        <button class="btn btn-primary btn-shadow d-block w-100" type="submit">Your Day</button>
-      </form>
-    </div>
-  </div>
-
-
 
 </main>
