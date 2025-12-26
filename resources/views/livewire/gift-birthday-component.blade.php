@@ -117,71 +117,71 @@
   <div class="container py-4">
     <div class="row justify-content-center">
 
-        <div class="col-12 col-md-5 mx-auto">
-            <div class="p-3 p-md-4 rounded-3 shadow-sm bg-white">
+      <div class="col-12 col-md-5 mx-auto">
+        <div class="p-3 p-md-4 rounded-0 bg-white">
 
-                <h5 class="text-center mb-3">Contact Details</h5>
+          <h5 class="text-center mb-3">Contact Details</h5>
 
-                <form class="needs-validation"
-                      wire:submit.prevent="jollyknotes"
-                      enctype="multipart/form-data">
+          <form class="needs-validation"
+            wire:submit.prevent="jollyknotes"
+            enctype="multipart/form-data">
 
-                    {{-- Name --}}
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">
-                            Your Name <span class="text-danger">*</span>
-                        </label>
-                        <input type="text"
-                               class="form-control form-control-lg"
-                               placeholder="Enter your name"
-                               wire:model.lazy="name"
-                               required>
+            {{-- Name --}}
+            <div class="mb-3">
+              <label class="form-label fw-semibold">
+                Your Name <span class="text-danger">*</span>
+              </label>
+              <input type="text"
+                class="form-control form-control-lg"
+                placeholder="Enter your name"
+                wire:model.lazy="name"
+                required>
 
-                        @error('name')
-                            <div class="text-danger small mt-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- Phone --}}
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">
-                            Phone <span class="text-danger">*</span>
-                        </label>
-                        <input type="tel"
-                               class="form-control form-control-lg"
-                               placeholder="Enter phone number"
-                               wire:model.lazy="phone"
-                               required>
-
-                        @error('phone')
-                            <div class="text-danger small mt-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- email --}}
-                    <div class="mb-3">
-                        <label class="form-label fw-semibold">
-                            e-mail <span class="text-danger">*</span>
-                        </label>
-                        <input type="email"
-                               class="form-control form-control-lg"
-                               placeholder="Enter your email"
-                               wire:model.lazy="email"
-                               required>
-
-                        @error('email')
-                            <div class="text-danger small mt-1">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    {{-- Submit --}}
-                    <button class="btn btn-primary btn-lg w-100">
-                        Your Day 🎉
-                    </button>
-
-                </form>
+              @error('name')
+              <div class="text-danger small mt-1">{{ $message }}</div>
+              @enderror
             </div>
+
+            {{-- Phone --}}
+            <div class="mb-3">
+              <label class="form-label fw-semibold">
+                Phone <span class="text-danger">*</span>
+              </label>
+              <input type="tel"
+                class="form-control form-control-lg"
+                placeholder="Enter phone number"
+                wire:model.lazy="phone"
+                required>
+
+              @error('phone')
+              <div class="text-danger small mt-1">{{ $message }}</div>
+              @enderror
+            </div>
+
+            {{-- email --}}
+            <div class="mb-3">
+              <label class="form-label fw-semibold">
+                e-mail <span class="text-danger">*</span>
+              </label>
+              <input type="email"
+                class="form-control form-control-lg"
+                placeholder="Enter your email"
+                wire:model.lazy="email"
+                required>
+
+              @error('email')
+              <div class="text-danger small mt-1">{{ $message }}</div>
+              @enderror
+            </div>
+
+            {{-- Submit --}}
+            <button class="btn btn-primary btn-lg w-100">
+              Your Day 🎉
+            </button>
+
+          </form>
         </div>
+      </div>
 
     </div>
   </div>
