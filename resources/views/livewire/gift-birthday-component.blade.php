@@ -1,6 +1,6 @@
 <main>
 
-@if(empty($partytype))
+  @if(empty($partytype))
   <div class="container py-5">
     <div class="row g-4 text-center">
 
@@ -114,34 +114,57 @@
 
   @elseif(!empty($partytype) && $contactdetails == 'fill')
 
-  <div class="col-md-5 mt-2 pt-4 mt-md-0 pt-md-0 align-center">
-    <div class="bg-secondary py-grid-gutter px-grid-gutter rounded-3">
-      {{--<h3 class="h4 pb-2">Write a review</h3>--}}
-      <form class="needs-validation" wire:submit.prevent="jollyknotes" enctype="multipart/form-data">
-        <div class="mb-3">
-          <label class="form-label" for="review-name">Your name<span class="text-danger">*</span></label>
-          <input class="form-control" type="text" required="" wire:model.lazy="name">
-          @error('name')
-          <div class="invalid-feedback">{{$message}}</div>
-          @enderror
+  <div class="col-12 col-md-5 mt-3 mt-md-0 d-flex justify-content-center">
+    <div class="w-100 p-3 p-md-4 rounded-3 shadow-sm bg-white">
 
-        </div>
+        {{-- Heading optional --}}
+        <h5 class="mb-3 text-center d-md-none">Contact Details</h5>
 
+        <form class="needs-validation"
+              wire:submit.prevent="jollyknotes"
+              enctype="multipart/form-data">
 
-        <div class="mb-3">
-          <label class="form-label" for="review-pros">Phone<span class="text-danger">*</span></label>
-          <input class="form-control" type="phone" required="" wire:model.lazy="phone">
-          @error('phone')
-          <div class="invalid-feedback">{{$message}}</div>
-          @enderror
-        </div>
+            {{-- Name --}}
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Your Name <span class="text-danger">*</span>
+                </label>
+                <input type="text"
+                       class="form-control form-control-lg form-control-md"
+                       placeholder="Enter your name"
+                       wire:model.lazy="name"
+                       required>
 
+                @error('name')
+                    <div class="text-danger small mt-1">{{ $message }}</div>
+                @enderror
+            </div>
 
+            {{-- Phone --}}
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Phone <span class="text-danger">*</span>
+                </label>
+                <input type="tel"
+                       class="form-control form-control-lg form-control-md"
+                       placeholder="Enter phone number"
+                       wire:model.lazy="phone"
+                       required>
 
-        <button class="btn btn-primary btn-shadow d-block w-100" type="submit">Your Day</button>
-      </form>
+                @error('phone')
+                    <div class="text-danger small mt-1">{{ $message }}</div>
+                @enderror
+            </div>
+
+            {{-- Submit --}}
+            <button class="btn btn-primary btn-lg w-100 mt-2">
+                Your Day 🎉
+            </button>
+
+        </form>
     </div>
   </div>
+
 
   @elseif($partytype == 'birthday')
   {{-- BIRTHDAY FORM --}}
@@ -253,13 +276,13 @@
   </div>
 
   @else
-    {{-- FALLBACK --}}
-    <div class="container py-5 text-center">
-      <div class="alert alert-warning">
-        Invalid party type selected.
-      </div>
+  {{-- FALLBACK --}}
+  <div class="container py-5 text-center">
+    <div class="alert alert-warning">
+      Invalid party type selected.
     </div>
-@endif
+  </div>
+  @endif
 
   <!-- Hero Section -->
   <section class="bg-cover bg-center text-white py-20 px-6" style="background-image: url('/images/party-hero.jpg')">
