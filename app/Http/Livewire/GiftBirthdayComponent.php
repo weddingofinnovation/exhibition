@@ -16,6 +16,13 @@ class GiftBirthdayComponent extends Component
     public $Bdate;
     public $board;
 
+    public $partytype;
+
+    public function mount($board, $partytype = null)
+    {
+        $this->board = $board;
+        $this->partytype = $partytype;
+    }
 
     public function jollyknotes()
     {
@@ -25,12 +32,11 @@ class GiftBirthdayComponent extends Component
         $jollyknot->save();
 
         //dd($jollyknot, $jollyknot->id );
-        return redirect()->route('date.business', ['ido' => $jollyknot->id,'board' => 'birthday']);
-
+        return redirect()->route('date.business', ['ido' => $jollyknot->id, 'board' => 'birthday']);
     }
 
 
-    
+
     public function render()
     {
         return view('livewire.gift-birthday-component');

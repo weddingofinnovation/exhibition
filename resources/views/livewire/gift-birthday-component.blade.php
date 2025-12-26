@@ -7,7 +7,7 @@
 
       <!-- Birthday -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'birthday') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'birthday']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-balloon-fill fs-1 text-primary"></i>
@@ -21,7 +21,7 @@
 
       <!-- Anniversary -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'anniversary') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'anniversary']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-heart-fill fs-1 text-danger"></i>
@@ -34,7 +34,7 @@
 
       <!-- Proposal -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'proposal') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'proposal']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-gem fs-1 text-warning"></i>
@@ -47,7 +47,7 @@
 
       <!-- Baby Shower -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'babyshower') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'babyshower']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-emoji-smile-fill fs-1 text-info"></i>
@@ -60,7 +60,7 @@
 
       <!-- Private Theatre -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'private-theatre') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'private-theatre']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-film fs-1 text-secondary"></i>
@@ -73,7 +73,7 @@
 
       <!-- House Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'houseparty') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'houseparty']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-house-fill fs-1 text-success"></i>
@@ -86,7 +86,7 @@
 
       <!-- Office Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'officeparty') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', ['partytype' => 'officeparty']) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-briefcase-fill fs-1 text-dark"></i>
@@ -99,7 +99,7 @@
 
       <!-- Custom Party -->
       <div class="col-md-3 col-sm-6">
-        <a href="{{ route('party.booking', 'customparty') }}" class="text-decoration-none text-dark">
+        <a href="{{ route('gift.business', , ['partytype' => 'customparty'] ) }}" class="text-decoration-none text-dark">
           <div class="card h-100 shadow-sm party-card">
             <div class="card-body">
               <i class="bi bi-stars fs-1 text-primary"></i>
