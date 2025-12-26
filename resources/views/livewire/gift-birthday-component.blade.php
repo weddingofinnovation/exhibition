@@ -165,7 +165,7 @@
                         </label>
                         <input type="email"
                                class="form-control form-control-lg"
-                               placeholder="Enter email"
+                               placeholder="Enter your email"
                                wire:model.lazy="email"
                                required>
 
