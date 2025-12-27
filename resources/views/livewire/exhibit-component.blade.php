@@ -1433,10 +1433,10 @@
                     AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
                   </div>
 
-                  <div class="row" style="margin-bottom:10px;">
+                  <div class="row" style="margin-bottom:20px;">
 
                     <!-- LEFT : CHANNEL INFO -->
-                    <div class="col-md-6" style="display:flex;align-items:center;">
+                    <div class="col-md-5" style="display:flex;align-items:center;">
 
                       <div style="
                         width:40px;
@@ -1463,7 +1463,7 @@
                     </div>
 
                     <!-- RIGHT : ACTION BUTTONS -->
-                    <div class="col-md-6 text-right">
+                    <div class="col-md-7 text-right">
 
                       <button class="btn btn-default">
                         👍 <span style="margin-left:4px;">474K</span>
