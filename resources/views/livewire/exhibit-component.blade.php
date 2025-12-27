@@ -1482,13 +1482,13 @@
                   👎
                 </button>
 
-                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">ASK</button>
+                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">ASK</button>
 
-                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">Share</button>
+                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Share</button>
 
-                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">Save</button>
+                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Save</button>
 
-                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">⋯</button>
+                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">⋯</button>
 
               </div>
 
