@@ -1433,38 +1433,53 @@
                     AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
                   </div>
 
-                  <!-- CHANNEL INFO -->
-                  <div class="col-md-6" style="display:flex;align-items:center;margin-bottom:10px;">
-                    <div style="
-                      width:40px;
-                      height:40px;
-                      background:#d32f2f;
-                      color:#fff;
-                      font-weight:bold;
-                      text-align:center;
-                      line-height:40px;
-                      border-radius:3px;
-                      margin-right:10px;">
-                      T
-                    </div>
+                  <div class="row" style="margin-bottom:10px;">
 
-                      <div style="font-weight:bold;">T-Series ✔</div>
-                      <div style="font-size:12px;color:#666;">308M subscribers</div>
-                    
-                      <button class="btn btn-danger" style="margin-left:auto;">
+                    <!-- LEFT : CHANNEL INFO -->
+                    <div class="col-md-6" style="display:flex;align-items:center;">
+
+                      <div style="
+                        width:40px;
+                        height:40px;
+                        background:#d32f2f;
+                        color:#fff;
+                        font-weight:bold;
+                        text-align:center;
+                        line-height:40px;
+                        border-radius:3px;
+                        margin-right:10px;">
+                        T
+                      </div>
+
+                      <div>
+                        <div style="font-weight:bold;">T-Series ✔</div>
+                        <div style="font-size:12px;color:#666;">308M subscribers</div>
+                      </div>
+
+                      <button class="btn btn-danger" style="margin-left:15px;">
                         Subscribe
                       </button>
-                  </div>
 
-                  <!-- ACTION BUTTONS -->
-                  <div class="col-md-6" style="margin-bottom:10px;">
-                    <button class="btn btn-default">👍 474K</button>
-                    <button class="btn btn-default">👎</button>
-                    <button class="btn btn-default">Share</button>
-                    <button class="btn btn-default">Save</button>
-                    <button class="btn btn-default">⋯</button>
-                  </div>
+                    </div>
 
+                    <!-- RIGHT : ACTION BUTTONS -->
+                    <div class="col-md-6 text-right">
+
+                      <button class="btn btn-default">
+                        👍 <span style="margin-left:4px;">474K</span>
+                      </button>
+
+                      <button class="btn btn-default">👎</button>
+
+                      <button class="btn btn-default">Share</button>
+
+                      <button class="btn btn-default">Save</button>
+
+                      <button class="btn btn-default">⋯</button>
+
+                    </div>
+
+                  </div>
 
                   <div class="row">
 
