@@ -1420,7 +1420,7 @@
     <div class="row">
 
       <!-- LEFT MAIN CONTENT -->
-      <div class="col-md-8">
+      <div class="col-md-9">
 
         <!-- TITLE -->
         <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
@@ -1431,7 +1431,7 @@
         <div class="row" style="margin-bottom:18px;">
 
           <!-- CHANNEL INFO -->
-          <div class="col-md-6" style="display:flex;align-items:center;">
+          <div class="col-md-5" style="display:flex;align-items:center;">
             <div style="
               width:40px;
               height:40px;
@@ -1463,7 +1463,7 @@
           </div>
 
           <!-- ACTION BUTTONS -->
-          <div class="col-md-6 text-right">
+          <div class="col-md-7 text-right">
 
             <!-- LIKE / DISLIKE CAPSULE -->
             <button class="btn btn-default" style="
@@ -1539,7 +1539,7 @@
       </div>
 
       <!-- RIGHT PANEL (EMPTY / FUTURE USE) -->
-      <div class="col-md-4">
+      <div class="col-md-3">
         <!-- Add suggested videos / forms here -->
       </div>
 
