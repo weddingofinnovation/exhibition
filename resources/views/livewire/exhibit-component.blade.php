@@ -1434,7 +1434,7 @@
                   </div>
 
                   <!-- CHANNEL INFO -->
-                  <div style="display:flex;align-items:center;margin-bottom:10px;">
+                  <div class="col-md-6" style="display:flex;align-items:center;margin-bottom:10px;">
                     <div style="
                       width:40px;
                       height:40px;
@@ -1459,16 +1459,13 @@
                   </div>
 
                   <!-- ACTION BUTTONS -->
-                  <div style="margin-bottom:10px;">
+                  <div class="col-md-6" style="margin-bottom:10px;">
                     <button class="btn btn-default">👍 474K</button>
                     <button class="btn btn-default">👎</button>
                     <button class="btn btn-default">Share</button>
                     <button class="btn btn-default">Save</button>
                     <button class="btn btn-default">⋯</button>
                   </div>
-
-
-                  
 
 
                   <div class="row">
