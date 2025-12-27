@@ -1482,12 +1482,10 @@
                   👎
                 </button>
 
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">ASK</button>
 
                 <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Share</button>
-
+                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">ASK</button>
                 <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Save</button>
-
                 <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">⋯</button>
 
               </div>
@@ -1496,7 +1494,7 @@
 
             <div class="row">
 
-              <div class="col-md-5 p-3" style="background:#fafafa;">
+              <div class="col-md-6 p-3" style="background:#fafafa;">
                 <!-- META INFO -->
                 <div style="font-size:13px;color:#666;margin-bottom:8px;">
                   <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
@@ -1509,9 +1507,7 @@
                 </div>
               </div>
 
-              <div class="col-md-5" style="
-                      padding:15px;
-                      background:#fafafa;">
+              <div class="col-md-6" style="background:#fafafa;">
                 <div style="margin-top:0; font-size:13px;"> <strong>Live chat replay</strong></div>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
 
