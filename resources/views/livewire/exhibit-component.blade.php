@@ -1473,19 +1473,19 @@
               👍 474K &nbsp;|&nbsp; 👎
             </button>
 
-            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;padding:6px 14px;">
               Share
             </button>
 
-            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;padding:6px 14px;">
               Ask
             </button>
 
-            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;padding:6px 14px;">
               Save
             </button>
 
-            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;padding:6px 14px;">
               ⋯
             </button>
 
