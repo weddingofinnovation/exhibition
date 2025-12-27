@@ -1448,14 +1448,12 @@
                       T
                     </div>
 
-                    <div>
                       <div style="font-weight:bold;">T-Series ✔</div>
                       <div style="font-size:12px;color:#666;">308M subscribers</div>
-                    </div>
-
-                    <button class="btn btn-danger" style="margin-left:auto;">
-                      Subscribe
-                    </button>
+                    
+                      <button class="btn btn-danger" style="margin-left:auto;">
+                        Subscribe
+                      </button>
                   </div>
 
                   <!-- ACTION BUTTONS -->
