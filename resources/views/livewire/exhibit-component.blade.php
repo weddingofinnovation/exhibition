@@ -51,7 +51,8 @@
                     <button class="btn btn-primary form-control" type="submit">Submit</button>
                   </form>
 
-                  <small class="mb-2">If you have any questions or would like more information, please feel free to contact the Exhitbion Network team at +91-999-185-6776</small>
+                  <small class="mb-2">If you have any questions or would like more information, please feel free to contact <strong>The Exhitbion Network team</strong> at <strong>+91-999-185-6776</strong>
+                   </small>
               
               </div>
             </div>
@@ -1410,5 +1411,154 @@
 
        
 
+        @if($board == 'business-thankyou')
+         <div class="container py-4 py-lg-5 my-4">
+            <div class="row justify-content-center">
+
+
+            <div class="pricing-header p-3 pb-md-4 mx-auto text-center"> 
+              <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1> 
+              <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p> 
+            </div>
+
+            <!-- YouTube Style Header Section -->
+            <div class="container">
+              <div class="row">
+
+                <!-- LEFT CONTENT -->
+                <div class="col-md-8">
+
+                  <!-- TITLE -->
+                  <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
+                    AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
+                  </div>
+
+                  <!-- CHANNEL INFO -->
+                  <div style="display:flex;align-items:center;margin-bottom:10px;">
+                    <div style="
+                      width:40px;
+                      height:40px;
+                      background:#d32f2f;
+                      color:#fff;
+                      font-weight:bold;
+                      text-align:center;
+                      line-height:40px;
+                      border-radius:3px;
+                      margin-right:10px;">
+                      T
+                    </div>
+
+                    <div>
+                      <div style="font-weight:bold;">T-Series ✔</div>
+                      <div style="font-size:12px;color:#666;">308M subscribers</div>
+                    </div>
+
+                    <button class="btn btn-danger" style="margin-left:auto;">
+                      Subscribe
+                    </button>
+                  </div>
+
+                  <!-- ACTION BUTTONS -->
+                  <div style="margin-bottom:10px;">
+                    <button class="btn btn-default">👍 474K</button>
+                    <button class="btn btn-default">👎</button>
+                    <button class="btn btn-default">Share</button>
+                    <button class="btn btn-default">Save</button>
+                    <button class="btn btn-default">⋯</button>
+                  </div>
+
+                  <!-- META INFO -->
+                  <div style="font-size:13px;color:#666;margin-bottom:8px;">
+                    <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
+                  </div>
+
+                  <!-- DESCRIPTION -->
+                  <div style="font-size:14px;">
+                    Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
+                    “51 Glorious Days”, by T-Series.
+                  </div>
+
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="col-md-4">
+                  <div style="
+                    border:1px solid #e0e0e0;
+                    padding:15px;
+                    border-radius:8px;
+                    background:#fafafa;">
+                    <h4 style="margin-top:0;">Live chat replay</h4>
+                    <p style="font-size:13px;color:#555;">
+                      See what others said about this video while it was live.
+                    </p>
+                    <button class="btn btn-default btn-block">Open panel</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+            <div class="row">
+              <div class="col-3 border-end border-1">
+
+                yes
+              </div>
+
+
+              <div class="col-9">
+                  <div class="col-lg-8 col-md-10">
+                <h2 class="h3 mb-2">Contact Details</h2>
+                <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                {{--<ol class="list-unstyled fs-md">
+                  <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                  <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                  <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                </ol>--}} -->
+
+                
+                  <form  wire:submit.prevent="addTicket" >
+                    <div class="mb-1">
+                      <label class="form-label fs-xs " for="recover-email">Your Name</label>
+                      <input class="form-control" type="name"  wire:model.lazy="name" required="" placeholder="Enter your name">
+                      <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
+                      <div class="invalid-feedback">Please provide name.</div>
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label fs-xs " for="recover-email">Your email</label>
+                      <input class="form-control" type="email"  wire:model.lazy="email" required="" placeholder="Enter your email address">
+                      <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
+                      <div class="invalid-feedback">Please provide valid email address.</div>
+                    </div>
+                    <div class="mb-1">
+                      <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
+                      <input class="form-control" type="number"  wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                      <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
+                      <div class="invalid-feedback">Please provide valid phone.</div>
+                    </div>
+
+
+                    <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+
+                    <div class="handheld-toolbar bg-secondary">
+                      <div class="py-2 px-2">
+                     
+                        <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
+                     
+                      </div>
+                    </div>
+                  </form>
+              
+              </div>
+            
+              </div>
+            </div>
+
+            
+            
+
+            </div>
+          </div>
+        @endif
         
       </main>
