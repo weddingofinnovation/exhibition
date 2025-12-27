@@ -1419,12 +1419,6 @@
   <div class="container py-4 py-lg-5 my-4">
     <div class="row justify-content-center">
 
-
-      <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h1 class="display-4 fw-normal text-body-emphasis">Pricing</h1>
-        <p class="fs-5 text-body-secondary">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
-      </div>
-
       <!-- YouTube Style Header Section -->
       <div class="container">
         <div class="row">
@@ -1540,13 +1534,13 @@
 
 
       <div class="row">
-        <div class="col-3 border-end">
+        <div class="col-5 border-end">
 
           yes
         </div>
 
 
-        <div class="col-9">
+        <div class="col-7">
           <div class="col-lg-8 col-md-10">
             <h2 class="h3 mb-2">Contact Details</h2>
             <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
