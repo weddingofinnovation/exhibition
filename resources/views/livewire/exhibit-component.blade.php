@@ -1523,11 +1523,12 @@
               </div>
 
               <div style="display:flex;align-items:center;justify-content:space-between;">
-                <p style="font-size:13px;color:#555;margin:0;max-width:75%;">
+                <i class="bi bi-chat-right-quote"></i>
+                <p style="font-size:13px;color:#555;margin:0;max-width:75%;margin-left:15px;">
                   See what others said about this video while it was live.
                 </p>
 
-                <button class="btn btn-default btn-sm">
+                <button class="btn btn-default btn-sm bg-light" style="margin-left:20px;"">
                   Open panel
                 </button>
               </div>
