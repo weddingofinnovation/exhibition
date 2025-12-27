@@ -1501,18 +1501,19 @@
                       padding:15px;
                       background:#fafafa;">
                       <div style="margin-top:0; font-size:13px;"> <strong>Live chat replay</strong></div>
-                      <div style="display:flex;align-items:center;justify-content:space-between;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;">
 
-                        <p style="font-size:13px;color:#555;margin:0;">
-                          See what others said about this video while it was live.
-                        </p>
+                          <i class="bi bi-chat-right-quote"></i>
 
-                        <button class="btn btn-default btn-sm" style="margin-left:10px;">
-                          Open panel
-                        </button>
+                          <p style="font-size:13px;color:#555;margin:0;">
+                            See what others said about this video while it was live.
+                          </p>
 
-                      </div>
+                          <button class="btn btn-default btn-sm background-light" style="margin-left:10px;">
+                            Open panel
+                          </button>
 
+                        </div>
                     </div>
                     
                   </div>
