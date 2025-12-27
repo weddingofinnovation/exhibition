@@ -1473,22 +1473,25 @@
                     <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
                   </div>
 
-                  <!-- DESCRIPTION -->
-                  <div style="font-size:14px;">
-                    Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
-                    “51 Glorious Days”, by T-Series.
-                  </div>
 
-                   <div style="
-                    border:1px solid #e0e0e0;
-                    padding:15px;
-                    border-radius:8px;
-                    background:#fafafa;">
-                    <h4 style="margin-top:0;">Live chat replay</h4>
-                    <p style="font-size:13px;color:#555;">
-                      See what others said about this video while it was live.
-                    </p>
-                    <button class="btn btn-default btn-block">Open panel</button>
+                  <div class="row">
+                    <!-- DESCRIPTION -->
+                    <div class="col-md-4" style="font-size:14px;">
+                      Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
+                      “51 Glorious Days”, by T-Series.
+                    </div>
+
+                    <div class="col-md-4" style="
+                      border:1px solid #e0e0e0;
+                      padding:15px;
+                      border-radius:8px;
+                      background:#fafafa;">
+                      <h4 style="margin-top:0;">Live chat replay</h4>
+                      <p style="font-size:13px;color:#555;">
+                        See what others said about this video while it was live.
+                      </p>
+                      <button class="btn btn-default btn-block">Open panel</button>
+                    </div>
                   </div>
 
                 </div>
