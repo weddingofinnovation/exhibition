@@ -1538,7 +1538,7 @@
 
 
             <div class="row">
-              <div class="col-3 border-end border-1">
+              <div class="col-3 border-end">
 
                 yes
               </div>
