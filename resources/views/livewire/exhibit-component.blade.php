@@ -1510,7 +1510,7 @@
               </div>
 
               <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
-                <div style="margin-top:0; font-size:13px;"> <strong>Live chat replay</strong></div>
+                <div style="margin-bottom:4px; font-size:13px;"> <strong>Live chat replay</strong></div>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
 
                   <i class="bi bi-chat-right-quote"></i>
