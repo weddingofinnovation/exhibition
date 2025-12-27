@@ -1457,12 +1457,13 @@
                       </div>
 
                       <button class="btn btn-danger" style="
-                                      background:#000;
-                                      color:#fff;
-                                      border-radius:20px;
-                                      padding:6px 16px;
-                                      font-weight:600;
-                                      border:none;">
+                                                            background:#000;
+                                                            color:#fff;
+                                                            border-radius:20px;
+                                                            padding:6px 16px;
+                                                            font-weight:600;
+                                                            border:none;
+                                                            margin-left:15px;">
                         Subscribe
                       </button>
 
@@ -1490,7 +1491,7 @@
 
                   <div class="row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="background:#fafafa;">
                       <!-- META INFO -->
                       <div style="font-size:13px;color:#666;margin-bottom:8px;">
                         <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
