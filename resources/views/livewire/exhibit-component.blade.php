@@ -1398,8 +1398,7 @@
 
       <a class="d-table-cell handheld-toolbar-item" href="#">
         <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
-        <span class="handheld-toolbar-label">List Your iNvitee</span>
-      </a>
+        <span class="handheld-toolbar-label">List Your iNvitee</span></a>
 
       <a class="d-table-cell handheld-toolbar-item" href="#">
         <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
@@ -1410,12 +1409,13 @@
         <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
         <span class="handheld-toolbar-label">Menu</span>
       </a>
-
     </div>
   </div>
   @endif
 
-@if($board == 'business-thankyou')
+
+
+  @if($board == 'business-thankyou')
   <div class="container" style="margin-top:30px;">
     <div class="row">
 
@@ -1546,6 +1546,65 @@
 
     </div>
   </div>
-@endif
+
+
+  <div class="container py-4 py-lg-5 my-4">
+    <div class="row justify-content-center">
+
+      <div class="row">
+        <div class="col-5 border-end">yes</div>
+
+
+        <div class="col-7">
+          <div class="col-lg-8 col-md-10">
+            <h2 class="h3 mb-2">Contact Details</h2>
+            <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                  {{--<ol class="list-unstyled fs-md">
+                    <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                    <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                    <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                  </ol>--}} -->
+
+
+            <form wire:submit.prevent="addTicket">
+              <div class="mb-1">
+                <label class="form-label fs-xs " for="recover-email">Your Name</label>
+                <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+                <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
+                <div class="invalid-feedback">Please provide name.</div>
+              </div>
+              <div class="mb-1">
+                <label class="form-label fs-xs " for="recover-email">Your email</label>
+                <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+                <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
+                <div class="invalid-feedback">Please provide valid email address.</div>
+              </div>
+              <div class="mb-1">
+                <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
+                <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
+                <div class="invalid-feedback">Please provide valid phone.</div>
+              </div>
+
+
+              <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+
+              <div class="handheld-toolbar bg-secondary">
+                <div class="py-2 px-2">
+
+                  <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
+
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  @endif
 
 </main>
