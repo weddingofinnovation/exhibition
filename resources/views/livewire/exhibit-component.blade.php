@@ -1467,6 +1467,7 @@
                     <button class="btn btn-default">⋯</button>
                   </div>
 
+
                   <!-- META INFO -->
                   <div style="font-size:13px;color:#666;margin-bottom:8px;">
                     <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
@@ -1478,11 +1479,7 @@
                     “51 Glorious Days”, by T-Series.
                   </div>
 
-                </div>
-
-                <!-- RIGHT PANEL -->
-                <div class="col-md-4">
-                  <div style="
+                   <div style="
                     border:1px solid #e0e0e0;
                     padding:15px;
                     border-radius:8px;
@@ -1493,6 +1490,12 @@
                     </p>
                     <button class="btn btn-default btn-block">Open panel</button>
                   </div>
+
+                </div>
+
+                <!-- RIGHT PANEL -->
+                <div class="col-md-4">
+                 
                 </div>
 
               </div>
