@@ -1490,7 +1490,7 @@
                       </div>
 
                       <!-- DESCRIPTION -->
-                      <div style="font-size:14px;">
+                      <div style="font-size:14px; background:#fafafa;">
                         Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
                         “51 Glorious Days”, by T-Series.
                       </div>
@@ -1499,13 +1499,20 @@
                     <div class="col-md-6" style="
                       border:1px solid #e0e0e0;
                       padding:15px;
-                      border-radius:8px;
                       background:#fafafa;">
-                      <h4 style="margin-top:0;">Live chat replay</h4>
-                      <p style="font-size:13px;color:#555;">
-                        See what others said about this video while it was live.
-                      </p>
-                      <button class="btn btn-default btn-block">Open panel</button>
+                      <div style="margin-top:0; font-size:13px;"> <strong>Live chat replay</strong></div>
+                      <div style="display:flex;align-items:center;justify-content:space-between;">
+
+                        <p style="font-size:13px;color:#555;margin:0;">
+                          See what others said about this video while it was live.
+                        </p>
+
+                        <button class="btn btn-default btn-sm" style="margin-left:10px;">
+                          Open panel
+                        </button>
+
+                      </div>
+
                     </div>
                     
                   </div>
