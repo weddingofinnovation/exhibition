@@ -1476,8 +1476,8 @@
               <!-- RIGHT : ACTION BUTTONS -->
               <div class="col-md-7 text-right">
 
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">
-                  👍 <span class="border-primary border-end" style="margin-left:4px;">474K</span>
+                <button class="btn btn-default border-dark border-end" style="background:#fafafa; border-radius:20px;">
+                  👍 <span style="margin-left:4px;">474K</span>
 
                   👎
                 </button>
