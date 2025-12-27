@@ -1477,18 +1477,18 @@
               <div class="col-md-7 text-right">
 
                 <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">
-                  👍 <span style="margin-left:4px; border-right:1px;">474K</span>
+                  👍 <span class="border-primary border-end" style="margin-left:4px;">474K</span>
 
                   👎
                 </button>
 
-                <button class="btn btn-default bg-dark" style="background:#fafafa; border-radius:20px;">ASK</button>
+                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">ASK</button>
 
-                <button class="btn btn-default bg-dark" style="background:#fafafa; border-radius:20px;">Share</button>
+                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">Share</button>
 
-                <button class="btn btn-default bg-dark" style="background:#fafafa; border-radius:20px;">Save</button>
+                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">Save</button>
 
-                <button class="btn btn-default bg-dark" style="background:#fafafa; border-radius:20px;">⋯</button>
+                <button class="btn btn-default text-light" style="background:#fafafa; border-radius:20px;">⋯</button>
 
               </div>
 
@@ -1496,7 +1496,7 @@
 
             <div class="row">
 
-              <div class="col-md-5 p-3 ml-2" style="background:#fafafa;">
+              <div class="col-md-5 p-3" style="background:#fafafa;">
                 <!-- META INFO -->
                 <div style="font-size:13px;color:#666;margin-bottom:8px;">
                   <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
