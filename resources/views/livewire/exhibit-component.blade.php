@@ -1515,7 +1515,7 @@
 
                   <i class="bi bi-chat-right-quote"></i>
 
-                  <p style="font-size:13px;color:#555; margin:2px;">
+                  <p style="font-size:13px;color:#555; margin-left:15px;">
                     See what others said about this video while it was live.
                   </p>
 
