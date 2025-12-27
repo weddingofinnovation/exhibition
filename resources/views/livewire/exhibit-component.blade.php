@@ -1496,7 +1496,7 @@
 
             <div class="row">
 
-              <div class="col-md-6 p-3" style="background:#fafafa; border-radius:15px;">
+              <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
                 <!-- META INFO -->
                 <div style="font-size:13px;color:#666;margin-bottom:8px;">
                   <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
@@ -1509,13 +1509,13 @@
                 </div>
               </div>
 
-              <div class="col-md-6 p-3" style="background:#fafafa; border-radius:15px;">
+              <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
                 <div style="margin-top:0; font-size:13px;"> <strong>Live chat replay</strong></div>
                 <div style="display:flex;align-items:center;justify-content:space-between;">
 
                   <i class="bi bi-chat-right-quote"></i>
 
-                  <p style="font-size:13px;color:#555;margin:0;">
+                  <p style="font-size:13px;color:#555; margin:2px;">
                     See what others said about this video while it was live.
                   </p>
 
