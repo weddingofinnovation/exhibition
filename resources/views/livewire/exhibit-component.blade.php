@@ -1416,183 +1416,308 @@
 
 
   @if($board == 'business-thankyou')
-  <div class="container py-4 py-lg-5 my-4">
-    <div class="row justify-content-center">
+  <div class="container" style="margin-top:30px;">
+  <div class="row">
 
-      <!-- YouTube Style Header Section -->
-      <div class="container">
-        <div class="row">
+    <!-- LEFT MAIN CONTENT -->
+    <div class="col-md-8">
 
-          <!-- LEFT CONTENT -->
-          <div class="col-md-8">
+      <!-- TITLE -->
+      <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
+        AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
+      </div>
 
-            <!-- TITLE -->
-            <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
-              AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
+      <!-- CHANNEL + ACTION ROW -->
+      <div class="row" style="margin-bottom:18px;">
+
+        <!-- CHANNEL INFO -->
+        <div class="col-md-6" style="display:flex;align-items:center;">
+          <div style="
+            width:40px;
+            height:40px;
+            background:#d32f2f;
+            color:#fff;
+            font-weight:bold;
+            text-align:center;
+            line-height:40px;
+            border-radius:4px;
+            margin-right:10px;">
+            T
+          </div>
+
+          <div>
+            <div style="font-weight:bold;">T-Series ✔</div>
+            <div style="font-size:12px;color:#666;">308M subscribers</div>
+          </div>
+
+          <button class="btn" style="
+            background:#000;
+            color:#fff;
+            border-radius:20px;
+            padding:6px 16px;
+            font-weight:600;
+            border:none;
+            margin-left:15px;">
+            Subscribe
+          </button>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="col-md-6 text-right">
+
+          <!-- LIKE / DISLIKE CAPSULE -->
+          <button class="btn btn-default" style="
+            background:#f5f5f5;
+            border-radius:20px;
+            padding:6px 14px;">
+            👍 474K &nbsp;|&nbsp; 👎
+          </button>
+
+          <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            Share
+          </button>
+
+          <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            Ask
+          </button>
+
+          <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            Save
+          </button>
+
+          <button class="btn btn-default" style="background:#f5f5f5;border-radius:20px;">
+            ⋯
+          </button>
+
+        </div>
+      </div>
+
+      <!-- META + DESCRIPTION + LIVE CHAT -->
+      <div class="row">
+
+        <!-- META + DESCRIPTION -->
+        <div class="col-md-6">
+          <div style="
+            background:#fafafa;
+            padding:12px;
+            border-radius:12px;">
+            <div style="font-size:13px;color:#666;margin-bottom:6px;">
+              <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
             </div>
 
-            <div class="row" style="margin-bottom:20px;">
+            <div style="font-size:14px;">
+              Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
+              “51 Glorious Days”, by T-Series.
+            </div>
+          </div>
+        </div>
 
-              <!-- LEFT : CHANNEL INFO -->
-              <div class="col-md-5" style="display:flex;align-items:center;">
-
-                <div style="
-                        width:40px;
-                        height:40px;
-                        background:#d32f2f;
-                        color:#fff;
-                        font-weight:bold;
-                        text-align:center;
-                        line-height:40px;
-                        border-radius:3px;
-                        margin-right:10px;">
-                  T
-                </div>
-
-                <div>
-                  <div style="font-weight:bold;">T-Series ✔</div>
-                  <div style="font-size:12px;color:#666;">308M subscribers</div>
-                </div>
-
-                <button class="btn btn-danger" style="
-                                                            background:#000;
-                                                            color:#fff;
-                                                            border-radius:20px;
-                                                            padding:6px 16px;
-                                                            font-weight:600;
-                                                            border:none;
-                                                            margin-left:15px;">
-                  Subscribe
-                </button>
-
-              </div>
-
-              <!-- RIGHT : ACTION BUTTONS -->
-              <div class="col-md-7 text-right">
-
-                <button class="btn btn-default border-dark border-end" style="background:#fafafa; border-radius:20px;">
-                  👍 <span style="margin-left:4px;">474K</span>
-
-                  👎
-                </button>
-
-
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Share</button>
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">ASK</button>
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Save</button>
-                <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">⋯</button>
-
-              </div>
-
+        <!-- LIVE CHAT REPLAY -->
+        <div class="col-md-6">
+          <div style="
+            background:#fafafa;
+            padding:12px;
+            border-radius:12px;">
+            <div style="font-size:13px;font-weight:bold;margin-bottom:6px;">
+              Live chat replay
             </div>
 
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <p style="font-size:13px;color:#555;margin:0;max-width:75%;">
+                See what others said about this video while it was live.
+              </p>
+
+              <button class="btn btn-default btn-sm">
+                Open panel
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL (EMPTY / FUTURE USE) -->
+    <div class="col-md-4">
+      <!-- Add suggested videos / forms here -->
+    </div>
+
+  </div>
+</div>
 
 
-            <div class="row">
+    <div class="container py-4 py-lg-5 my-4">
+      <div class="row justify-content-center">
 
-              <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
-                <!-- META INFO -->
-                <div style="font-size:13px;color:#666;margin-bottom:8px;">
-                  <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
-                </div>
+        <!-- YouTube Style Header Section -->
+        <div class="container">
+          <div class="row">
 
-                <!-- DESCRIPTION -->
-                <div style="font-size:14px; background:#fafafa;">
-                  Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
-                  “51 Glorious Days”, by T-Series.
-                </div>
+            <!-- LEFT CONTENT -->
+            <div class="col-md-8">
+
+              <!-- TITLE -->
+              <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
+                AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
               </div>
 
-              <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
-                <div style="margin-bottom:4px; font-size:13px;"> <strong>Live chat replay</strong></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div class="row" style="margin-bottom:20px;">
 
-                  <i class="bi bi-chat-right-quote"></i>
+                <!-- LEFT : CHANNEL INFO -->
+                <div class="col-md-5" style="display:flex;align-items:center;">
 
-                  <p style="font-size:13px;color:#555; margin-left:15px;">
-                    See what others said about this video while it was live.
-                  </p>
+                  <div style="
+                          width:40px;
+                          height:40px;
+                          background:#d32f2f;
+                          color:#fff;
+                          font-weight:bold;
+                          text-align:center;
+                          line-height:40px;
+                          border-radius:3px;
+                          margin-right:10px;">
+                    T
+                  </div>
 
-                  <button class="btn btn-default btn-sm bg-light" style="margin-left:20px;">
-                    Open panel
+                  <div>
+                    <div style="font-weight:bold;">T-Series ✔</div>
+                    <div style="font-size:12px;color:#666;">308M subscribers</div>
+                  </div>
+
+                  <button class="btn btn-danger" style="
+                                                              background:#000;
+                                                              color:#fff;
+                                                              border-radius:20px;
+                                                              padding:6px 16px;
+                                                              font-weight:600;
+                                                              border:none;
+                                                              margin-left:15px;">
+                    Subscribe
                   </button>
 
                 </div>
+
+                <!-- RIGHT : ACTION BUTTONS -->
+                <div class="col-md-7 text-right">
+
+                  <button class="btn btn-default border-dark border-end" style="background:#fafafa; border-radius:20px;">
+                    👍 <span style="margin-left:4px;">474K</span>
+
+                    👎
+                  </button>
+
+
+                  <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Share</button>
+                  <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">ASK</button>
+                  <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">Save</button>
+                  <button class="btn btn-default" style="background:#fafafa; border-radius:20px;">⋯</button>
+
+                </div>
+
               </div>
+
+
+
+              <div class="row">
+
+                <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
+                  <!-- META INFO -->
+                  <div style="font-size:13px;color:#666;margin-bottom:8px;">
+                    <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
+                  </div>
+
+                  <!-- DESCRIPTION -->
+                  <div style="font-size:14px; background:#fafafa;">
+                    Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
+                    “51 Glorious Days”, by T-Series.
+                  </div>
+                </div>
+
+                <div class="col-md-6 p-2" style="background:#fafafa; border-radius:15px;">
+                  <div style="margin-bottom:4px; font-size:13px;"> <strong>Live chat replay</strong></div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;">
+
+                    <i class="bi bi-chat-right-quote"></i>
+
+                    <p style="font-size:13px;color:#555; margin-left:15px;">
+                      See what others said about this video while it was live.
+                    </p>
+
+                    <button class="btn btn-default btn-sm bg-light" style="margin-left:20px;">
+                      Open panel
+                    </button>
+
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="col-md-4">
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-5 border-end">yes</div>
+
+
+          <div class="col-7">
+            <div class="col-lg-8 col-md-10">
+              <h2 class="h3 mb-2">Contact Details</h2>
+              <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                  {{--<ol class="list-unstyled fs-md">
+                    <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
+                    <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
+                    <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
+                  </ol>--}} -->
+
+
+              <form wire:submit.prevent="addTicket">
+                <div class="mb-1">
+                  <label class="form-label fs-xs " for="recover-email">Your Name</label>
+                  <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+                  <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
+                  <div class="invalid-feedback">Please provide name.</div>
+                </div>
+                <div class="mb-1">
+                  <label class="form-label fs-xs " for="recover-email">Your email</label>
+                  <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+                  <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
+                  <div class="invalid-feedback">Please provide valid email address.</div>
+                </div>
+                <div class="mb-1">
+                  <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
+                  <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                  <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
+                  <div class="invalid-feedback">Please provide valid phone.</div>
+                </div>
+
+
+                <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+
+                <div class="handheld-toolbar bg-secondary">
+                  <div class="py-2 px-2">
+
+                    <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
+
+                  </div>
+                </div>
+              </form>
 
             </div>
 
           </div>
 
-          <!-- RIGHT PANEL -->
-          <div class="col-md-4">
-
-          </div>
-
         </div>
+
       </div>
-
-
-      <div class="row">
-        <div class="col-5 border-end">
-
-          yes
-        </div>
-
-
-        <div class="col-7">
-          <div class="col-lg-8 col-md-10">
-            <h2 class="h3 mb-2">Contact Details</h2>
-            <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
-                {{--<ol class="list-unstyled fs-md">
-                  <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
-                  <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
-                  <li><span class="text-primary me-2">3.</span>Use the code to change your password on our secure website.</li>
-                </ol>--}} -->
-
-
-            <form wire:submit.prevent="addTicket">
-              <div class="mb-1">
-                <label class="form-label fs-xs " for="recover-email">Your Name</label>
-                <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
-                <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
-                <div class="invalid-feedback">Please provide name.</div>
-              </div>
-              <div class="mb-1">
-                <label class="form-label fs-xs " for="recover-email">Your email</label>
-                <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
-                <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
-                <div class="invalid-feedback">Please provide valid email address.</div>
-              </div>
-              <div class="mb-1">
-                <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
-                <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
-                <div class="invalid-feedback">Please provide valid phone.</div>
-              </div>
-
-
-              <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
-
-              <div class="handheld-toolbar bg-secondary">
-                <div class="py-2 px-2">
-
-                  <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
-
-                </div>
-              </div>
-            </form>
-
-          </div>
-
-        </div>
-      </div>
-
-
-
-
     </div>
-  </div>
   @endif
 
 </main>
