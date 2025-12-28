@@ -1424,7 +1424,15 @@
 
         <!-- TITLE -->
         <div style="font-size:20px;font-weight:600;margin-bottom:12px;">
-          AADAT (Official Video): YO YO HONEY SINGH | AP DHILLON | VAANI KAPOOR | 51 GLORIOUS DAYS | BHUSHAN K
+          {{$findevent->eventname}} : Start date | end date | location
+         
+
+        <p>Thank you for your interest in exhibiting with us!</p>
+        <p>Your details have been successfully received.</p>
+        <p>Our team will review your submission and share your confirmation and next steps via email shortly.</p>
+
+        <small>If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
+        
         </div>
 
         <!-- CHANNEL + ACTION ROW -->
