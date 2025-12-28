@@ -1432,7 +1432,7 @@
         <p>Our team will review your submission and share your confirmation and next steps via email shortly.</p>
 
         <small>If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
-        
+
         </div>
 
         <!-- CHANNEL + ACTION ROW -->
@@ -1549,7 +1549,110 @@
 
       <!-- RIGHT PANEL (EMPTY / FUTURE USE) -->
       <div class="col-md-3">
-        <!-- Add suggested videos / forms here -->
+        <div style="
+            border:1px solid #e5e5e5;
+            border-radius:14px;
+            overflow:hidden;
+            background:#fff;
+          ">
+
+          <!-- TOP BANNER -->
+          <div style="
+            background:#ffd6f2;
+            padding:12px;
+            text-align:center;">
+            <img src="https://via.placeholder.com/280x60"
+                class="img-responsive center-block"
+                alt="Banner">
+          </div>
+
+          <!-- HEADER -->
+          <div style="padding:12px 15px 8px 15px;">
+
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div style="display:flex;align-items:center;">
+                <div style="
+                  width:36px;
+                  height:36px;
+                  background:#9b1c6e;
+                  color:#fff;
+                  font-weight:bold;
+                  text-align:center;
+                  line-height:36px;
+                  border-radius:50%;
+                  margin-right:10px;">
+                  E
+                </div>
+
+                <div>
+                  <div style="font-weight:600;font-size:14px;">
+                    18M+ websites built with Elementor
+                  </div>
+                  <div style="font-size:12px;color:#777;">
+                    Sponsored · elementor.com
+                  </div>
+                </div>
+              </div>
+
+              <span style="font-size:18px;cursor:pointer;">⋮</span>
+            </div>
+
+          </div>
+
+          <!-- FEATURE LIST -->
+          <div style="padding:0 15px 10px 15px;">
+
+            <div style="
+              background:#f5f5f5;
+              padding:10px;
+              border-radius:10px;
+              font-size:13px;
+              margin-bottom:8px;">
+              <strong>Elementor Theme Builder</strong><br>
+              Design your site from head to toe. Maximum control.
+            </div>
+
+            <div style="
+              background:#f5f5f5;
+              padding:10px;
+              border-radius:10px;
+              font-size:13px;
+              margin-bottom:8px;">
+              <strong>Elementor Pro Pricing</strong><br>
+              Design anything you can imagine. Create stunning websites.
+            </div>
+
+            <div style="
+              background:#f5f5f5;
+              padding:10px;
+              border-radius:10px;
+              font-size:13px;
+              margin-bottom:8px;">
+              <strong>Elementor Popup Builder</strong><br>
+              Easy to build. No coding required.
+            </div>
+
+            <div style="
+              background:#f5f5f5;
+              padding:10px;
+              border-radius:10px;
+              font-size:13px;">
+              <strong>Elementor Pro</strong><br>
+              You can do it all yourself. Do more, earn more.
+            </div>
+
+          </div>
+
+          <!-- CTA -->
+          <div style="padding:12px 15px;">
+            <button class="btn btn-default btn-block" style="
+              border-radius:20px;
+              font-weight:600;">
+              Learn more
+            </button>
+          </div>
+
+        </div>
       </div>
 
     </div>
