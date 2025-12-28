@@ -1420,7 +1420,7 @@
     <div class="row">
 
       <!-- LEFT MAIN CONTENT -->
-      <div class="col-md-9">
+      <div class="col-md-8">
 
         <!-- TITLE -->
         <div>
@@ -1545,7 +1545,7 @@
       </div>
 
       <!-- RIGHT PANEL (EMPTY / FUTURE USE) -->
-      <div class="col-md-3">
+      <div class="col-md-4">
         <div style="
             border:1px solid #e5e5e5;
             border-radius:14px;
