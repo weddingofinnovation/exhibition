@@ -1424,7 +1424,7 @@
 
         <!-- TITLE -->
         <div>
-          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : {{$findevent->startdate}} | {{$findevent->enddate}} | {{$findevent->city}} | {{$findevent->venue}} | {{$findevent->country}} </p>
+          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : {{$findevent->startdate}} | {{$findevent->enddate}} | {{$findevent->venue}}, {{$findevent->city}} | {{$findevent->country}} </p>
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">
             Thank you for your interest in exhibiting with us!</p>
           <p class="mb-1">Your details have been successfully received.</p>
