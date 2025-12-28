@@ -1426,7 +1426,7 @@
         <div>
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : Start date | end date | location</p>
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">
-              Thank you for your interest in exhibiting with us!</p>
+            Thank you for your interest in exhibiting with us!</p>
           <p>Your details have been successfully received.</p>
           <p>Our team will review your submission and share your confirmation and next steps via email shortly.</p>
           <small>If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
@@ -1510,7 +1510,7 @@
                 <strong>32,448,385 views</strong> • 5 days ago • #7 on music Trending chart
               </div>
 
-              <div style="font-size:14px;">
+              <div style="font-size:12px;">
                 Presenting The Official Video Song “Aadat” From The Year’s Biggest Musical Phenomenon –
                 “51 Glorious Days”, by T-Series.
               </div>
@@ -1545,30 +1545,30 @@
       </div>
 
       <!-- RIGHT PANEL (EMPTY / FUTURE USE) -->
-      <div class="col-md-4">
-        <div style="
+      <div class=" col-md-4">
+                  <div style="
             border:1px solid #e5e5e5;
             border-radius:14px;
             overflow:hidden;
             background:#fff;
           ">
 
-          <!-- TOP BANNER -->
-          <div style="
+                    <!-- TOP BANNER -->
+                    <div style="
             background:#ffd6f2;
             padding:12px;
             text-align:center;">
-            <img src="https://via.placeholder.com/280x60"
-                class="img-responsive center-block"
-                alt="Banner">
-          </div>
+                      <img src="https://via.placeholder.com/280x60"
+                        class="img-responsive center-block"
+                        alt="Banner">
+                    </div>
 
-          <!-- HEADER -->
-          <div style="padding:12px 15px 8px 15px;">
+                    <!-- HEADER -->
+                    <div style="padding:12px 15px 8px 15px;">
 
-            <div style="display:flex;align-items:center;justify-content:space-between;">
-              <div style="display:flex;align-items:center;">
-                <div style="
+                      <div style="display:flex;align-items:center;justify-content:space-between;">
+                        <div style="display:flex;align-items:center;">
+                          <div style="
                   width:36px;
                   height:36px;
                   background:#9b1c6e;
@@ -1578,95 +1578,95 @@
                   line-height:36px;
                   border-radius:50%;
                   margin-right:10px;">
-                  E
-                </div>
+                            E
+                          </div>
 
-                <div>
-                  <div style="font-weight:600;font-size:14px;">
-                    18M+ websites built with Elementor
-                  </div>
-                  <div style="font-size:12px;color:#777;">
-                    Sponsored · elementor.com
-                  </div>
-                </div>
-              </div>
+                          <div>
+                            <div style="font-weight:600;font-size:14px;">
+                              18M+ websites built with Elementor
+                            </div>
+                            <div style="font-size:12px;color:#777;">
+                              Sponsored · elementor.com
+                            </div>
+                          </div>
+                        </div>
 
-              <span style="font-size:18px;cursor:pointer;">⋮</span>
-            </div>
+                        <span style="font-size:18px;cursor:pointer;">⋮</span>
+                      </div>
 
-          </div>
+                    </div>
 
-          <!-- FEATURE LIST -->
-          <div style="padding:0 15px 10px 15px;">
+                    <!-- FEATURE LIST -->
+                    <div style="padding:0 15px 10px 15px;">
 
-            <div style="
+                      <div style="
               background:#f5f5f5;
               padding:10px;
               border-radius:10px;
               font-size:13px;
               margin-bottom:8px;">
-              <strong>Elementor Theme Builder</strong><br>
-              Design your site from head to toe. Maximum control.
-            </div>
+                        <strong>Elementor Theme Builder</strong><br>
+                        Design your site from head to toe. Maximum control.
+                      </div>
 
-            <div style="
+                      <div style="
               background:#f5f5f5;
               padding:10px;
               border-radius:10px;
               font-size:13px;
               margin-bottom:8px;">
-              <strong>Elementor Pro Pricing</strong><br>
-              Design anything you can imagine. Create stunning websites.
-            </div>
+                        <strong>Elementor Pro Pricing</strong><br>
+                        Design anything you can imagine. Create stunning websites.
+                      </div>
 
-            <div style="
+                      <div style="
               background:#f5f5f5;
               padding:10px;
               border-radius:10px;
               font-size:13px;
               margin-bottom:8px;">
-              <strong>Elementor Popup Builder</strong><br>
-              Easy to build. No coding required.
-            </div>
+                        <strong>Elementor Popup Builder</strong><br>
+                        Easy to build. No coding required.
+                      </div>
 
-            <div style="
+                      <div style="
               background:#f5f5f5;
               padding:10px;
               border-radius:10px;
               font-size:13px;">
-              <strong>Elementor Pro</strong><br>
-              You can do it all yourself. Do more, earn more.
-            </div>
+                        <strong>Elementor Pro</strong><br>
+                        You can do it all yourself. Do more, earn more.
+                      </div>
 
-          </div>
+                    </div>
 
-          <!-- CTA -->
-          <div style="padding:12px 15px;">
-            <button class="btn btn-default btn-block" style="
+                    <!-- CTA -->
+                    <div style="padding:12px 15px;">
+                      <button class="btn btn-default btn-block" style="
               border-radius:20px;
               font-weight:600;">
-              Learn more
-            </button>
+                        Learn more
+                      </button>
+                    </div>
+
+                  </div>
+              </div>
+
+            </div>
           </div>
 
-        </div>
-      </div>
 
-    </div>
-  </div>
+          <div class="container py-4 py-lg-5 my-4">
+            <div class="row justify-content-center">
 
-
-  <div class="container py-4 py-lg-5 my-4">
-    <div class="row justify-content-center">
-
-      <div class="row">
-        <div class="col-5 border-end">yes</div>
+              <div class="row">
+                <div class="col-5 border-end">yes</div>
 
 
-        <div class="col-7">
-          <div class="col-lg-8 col-md-10">
-            <h2 class="h3 mb-2">Contact Details</h2>
-            <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
+                <div class="col-7">
+                  <div class="col-lg-8 col-md-10">
+                    <h2 class="h3 mb-2">Contact Details</h2>
+                    <!-- <p class="fs-md">Join the ranks of top industry leaders and connect with your target audience. <br> Share your details and let's make it happen </p>
                   {{--<ol class="list-unstyled fs-md">
                     <li><span class="text-primary me-2">1.</span>Fill in your email address below.</li>
                     <li><span class="text-primary me-2">2.</span>We'll email you a temporary code.</li>
@@ -1674,45 +1674,45 @@
                   </ol>--}} -->
 
 
-            <form wire:submit.prevent="addTicket">
-              <div class="mb-1">
-                <label class="form-label fs-xs " for="recover-email">Your Name</label>
-                <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
-                <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
-                <div class="invalid-feedback">Please provide name.</div>
-              </div>
-              <div class="mb-1">
-                <label class="form-label fs-xs " for="recover-email">Your email</label>
-                <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
-                <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
-                <div class="invalid-feedback">Please provide valid email address.</div>
-              </div>
-              <div class="mb-1">
-                <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
-                <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
-                <div class="invalid-feedback">Please provide valid phone.</div>
-              </div>
+                    <form wire:submit.prevent="addTicket">
+                      <div class="mb-1">
+                        <label class="form-label fs-xs " for="recover-email">Your Name</label>
+                        <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+                        <label class="fs-xs fw-light text-muted" for="recover-email">Easy to Approach</label>
+                        <div class="invalid-feedback">Please provide name.</div>
+                      </div>
+                      <div class="mb-1">
+                        <label class="form-label fs-xs " for="recover-email">Your email</label>
+                        <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+                        <label class="fs-xs fw-light text-muted" for="recover-email">To access the ticket(s) on other devices, Login with this E-mail</label>
+                        <div class="invalid-feedback">Please provide valid email address.</div>
+                      </div>
+                      <div class="mb-1">
+                        <label class="form-label fs-xs" for="recover-email">* Mobile Number</label>
+                        <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                        <label class="text-muted fw-light fs-xs" for="recover-email">Your Number will only be used for sending Details.</label>
+                        <div class="invalid-feedback">Please provide valid phone.</div>
+                      </div>
 
 
-              <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
+                      <!-- <button class="btn btn-primary" type="submit">Submit</button> -->
 
-              <div class="handheld-toolbar bg-secondary">
-                <div class="py-2 px-2">
+                      <div class="handheld-toolbar bg-secondary">
+                        <div class="py-2 px-2">
 
-                  <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
+                          <button class="btn btn-primary btn-shadow d-block w-100 " type="submit">Submit</button>
 
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
                 </div>
+
               </div>
-            </form>
 
+            </div>
           </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-  @endif
+          @endif
 
 </main>
