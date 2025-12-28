@@ -1424,12 +1424,12 @@
 
         <!-- TITLE -->
         <div>
-          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : Start date | end date | location</p>
+          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : {{$findevent->startdate}} | {{$findevent->enddate}} | location</p>
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">
             Thank you for your interest in exhibiting with us!</p>
-          <p>Your details have been successfully received.</p>
-          <p>Our team will review your submission and share your confirmation and next steps via email shortly.</p>
-          <small>If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
+          <p class="mb-1">Your details have been successfully received.</p>
+          <p class="mb-1">Our team will review your submission and share your confirmation and next steps via email shortly.</p>
+          <small class="" style="margin-bottom:12px;">If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
         </div>
 
         <!-- CHANNEL + ACTION ROW -->
