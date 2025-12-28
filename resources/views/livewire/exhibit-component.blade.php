@@ -1214,9 +1214,9 @@
             {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
         <div class="text-muted fs-sm text-start">
           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
           @else
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
           @endif
         </div>
         <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue))}}, {{ucfirst(trans($franchise->city))}}</div>
@@ -1423,13 +1423,23 @@
       <div class="col-md-8">
 
         <!-- TITLE -->
-        <div>
-          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{$findevent->eventname}} : {{$findevent->startdate}} | {{$findevent->enddate}} | {{$findevent->venue}}, {{$findevent->city}} | {{$findevent->country}} </p>
-          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">
-            Thank you for your interest in exhibiting with us!</p>
-          <p class="mb-1">Your details have been successfully received.</p>
-          <p class="mb-1">Our team will review your submission and share your confirmation and next steps via email shortly.</p>
-          <small class="mb-1">If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
+        <div class="mb-1">
+
+          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}} :
+             
+              @if(Carbon\Carbon::parse ($findevent->startdate)->format('M') != Carbon\Carbon::parse ($findevent->enddate)->format('M'))
+                {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+              @else
+                {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+              @endif
+
+             
+             | {{ucfirst(trans($findevent->venue))}}, {{ucfirst(trans($findevent->city))}} | {{$findevent->country}} </p>
+          <p style="font-size:20px;font-weight:600;margin-bottom:12px;">Thank you for your interest in exhibiting with us!</p>
+
+          <p class="mb-1">Your details have been successfully received. Our team will review your submission and share your confirmation and next steps via email shortly.</p>
+          <small>If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
+
         </div>
 
         <!-- CHANNEL + ACTION ROW -->
