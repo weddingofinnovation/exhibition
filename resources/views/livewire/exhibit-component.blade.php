@@ -1429,7 +1429,7 @@
             Thank you for your interest in exhibiting with us!</p>
           <p class="mb-1">Your details have been successfully received.</p>
           <p class="mb-1">Our team will review your submission and share your confirmation and next steps via email shortly.</p>
-          <small class="" style="margin-bottom:12px;">If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
+          <small class="mb-1">If you need any immediate assistance, our Exhibition Help Desk will be happy to support you.</small>
         </div>
 
         <!-- CHANNEL + ACTION ROW -->
