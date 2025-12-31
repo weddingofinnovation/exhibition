@@ -202,6 +202,7 @@
               border: 2px solid #28a745 !important;
             }
           </style>
+          mobile
           @foreach ($businessOrder as $evento)
           <div
             class="my-1 {{ in_array($evento->id, $selectedLeads) ? 'border-3 border-success' : '' }}"
@@ -2679,7 +2680,8 @@
       </div>
 
       <!-- RIGHT SCREEN (List) -->
-      <div class="col-12 col-md-6 bg-white p-3 overflow-auto">
+      <div class="col-12 col-md-6 bg-white p-3 overflow-auto ">
+        laptop
         @foreach ($businessOrder as $evento)
         <div class="container my-1">
           <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1">

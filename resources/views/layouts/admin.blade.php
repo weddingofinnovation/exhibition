@@ -98,29 +98,8 @@
 </head>
 
 <!-- Body-->
-<style>
-  /* Default (Laptop / Desktop) */
-  .handheld-toolbar-enabled {
-    padding-top: 70px;
-    /* header height */
-  }
 
-  /* Tablets */
-  @media (max-width: 991px) {
-    .handheld-toolbar-enabled {
-      padding-top: 60px;
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 767px) {
-    .handheld-toolbar-enabled {
-      padding-top: 50px;
-    }
-  }
-</style>
-
-<body class="handheld-toolbar-enabled">
+<body class="handheld-toolbar-enabled" style="padding-top: 70px;">
   <!-- Sign in / sign up modal-->
   <main class="page-wrapper" style="flex: 0 0 auto;">
 
