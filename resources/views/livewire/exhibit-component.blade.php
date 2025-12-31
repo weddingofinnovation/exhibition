@@ -1428,11 +1428,10 @@
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}} :
 
             @if(Carbon\Carbon::parse ($findevent->startdate)->format('M') != Carbon\Carbon::parse ($findevent->enddate)->format('M'))
-            {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+             {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
             @else
-            {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+              {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
             @endif
-
 
             | {{ucfirst(trans($findevent->venue))}}, {{ucfirst(trans($findevent->city))}} | {{$findevent->country}}
           </p>
