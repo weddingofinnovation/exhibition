@@ -844,7 +844,7 @@
 
   <!--Mobile event start View-->
   @if($board == 'event')
-  <div class="container d-lg-none">
+  <div class="container d-lg-none mt-5 pt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <div class="mb-4 mb-lg-5">
