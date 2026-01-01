@@ -335,14 +335,14 @@
 
             <li class="nav-item border-bottom">
               <a class="nav-link px-3 fs-sm {{$currentTab === 'tab8' ? 'active' : ''}}"
-                href="#" wire:click.prevent="switchTab('tab8')">
+                href="#" wire:click.prevent="switchTab('tab9')">
                 2026 {{$year26ev->count()}}
               </a>
             </li>
 
             <li class="nav-item border-bottom">
               <a class="nav-link px-3 fs-sm {{$currentTab === 'tab8' ? 'active' : ''}}"
-                href="#" wire:click.prevent="switchTab('tab8')">
+                href="#" wire:click.prevent="switchTab('tab10')">
                 2027 {{$year27ev->count()}}
               </a>
             </li>
