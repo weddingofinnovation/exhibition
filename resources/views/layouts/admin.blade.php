@@ -101,7 +101,16 @@
 
 <body class="handheld-toolbar-enabled">
   <!-- Sign in / sign up modal-->
+   <style>
+     /* Mobile only */
+      @media (max-width: 768px) {
+          .top-tabs {
+              margin-top: 70px; /* adjust based on header height */
+          }
+      }
+   </style>
   <main class="page-wrapper" style="flex: 0 0 auto;">
+
 
     @livewire('seller-header-component')
 
@@ -126,7 +135,7 @@
       </div>-->
 
 
-  <div class=" pb-5 mb-2 mb-md-4">{{$slot}}</div>
+  <div class="pb-5 mb-2 mb-md-4">{{$slot}}</div>
 
 
 

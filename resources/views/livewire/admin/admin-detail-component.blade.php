@@ -2,7 +2,7 @@
 
 <main>
   @php
-  $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+   $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
   @endphp
 
   <div class="d-none d-lg-block">
