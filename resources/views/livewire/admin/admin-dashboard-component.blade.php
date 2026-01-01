@@ -273,7 +273,7 @@
           @endforeach
           @elseif($board == 'event')
 
-          <ul class="nav nav-tabs nav-fill mb-1 flex-nowrap overflow-auto"
+          <ul class="nav nav-tabs nav-fill mb-1 mt-5 flex-nowrap overflow-auto"
             role="tablist"
             style="white-space: nowrap;">
 
