@@ -272,7 +272,7 @@
           </div>
           @endforeach
           @elseif($board == 'event')
-          <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+          <ul class="nav nav-tabs nav-fill mb-5" role="tablist">
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab2' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab3' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
@@ -282,6 +282,68 @@
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab7' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab7')" data-bs-toggle="tab" role="tab">2024 {{$year24ev->count()}}</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab8' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab8')" data-bs-toggle="tab" role="tab">2025 {{$year25ev->count()}}</a></li>
           </ul>
+
+          <ul class="nav nav-tabs nav-fill mb-5 flex-nowrap overflow-auto"
+            role="tablist"
+            style="white-space: nowrap;">
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab1' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab1')">
+                Request {{$expoaward->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab2' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab2')">
+                Monthly {{$monthwise->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab3' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab3')">
+                Search {{$searchCat->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab4' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab4')">
+                ID
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab5' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab5')">
+                2022 {{$year22ev->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab6' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab6')">
+                2023 {{$year23ev->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab7' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab7')">
+                2024 {{$year24ev->count()}}
+              </a>
+            </li>
+
+            <li class="nav-item border-bottom">
+              <a class="nav-link px-3 fs-sm {{$currentTab === 'tab8' ? 'active' : ''}}"
+                href="#" wire:click.prevent="switchTab('tab8')">
+                2025 {{$year25ev->count()}}
+              </a>
+            </li>
+          </ul>
+
           <div class="tab-content pt-1">
             @if($currentTab === 'tab1')
             <!-- Request tab-->
