@@ -1102,6 +1102,8 @@ public $selectedYear;
       $year23ev = Event::where('status','1')->whereYear('startdate', 2023)->orderBy('startdate','ASC')->get();
       $year24ev = Event::where('status','1')->whereYear('startdate', 2024)->orderBy('startdate','ASC')->get();
       $year25ev = Event::where('status','1')->whereYear('startdate', 2025)->orderBy('startdate','ASC')->get();
+      $year26ev = Event::where('status','1')->whereYear('startdate', 2026)->orderBy('startdate','ASC')->get();
+      $year27ev = Event::where('status','1')->whereYear('startdate', 2027)->orderBy('startdate','ASC')->get();
 
       $expireplan = Event::whereDate('enddate','<=',  $mytime)->where('status','1')->where('admstatus','1')->orderBy('enddate','DESC')->get();
       
@@ -1158,6 +1160,10 @@ public $selectedYear;
       
       $eventShtdesc = Event::where('status','1')->where('shtdesc', '=', NULL)->orWhere(DB::raw('CHAR_LENGTH(shtdesc)'), '<', '10')->orderBy('startdate','asc')->get();
       
+      $eventShtdesc2027Year = Event::where('status','1')->whereYear('startdate', '=', '2027')->orderBy('startdate','asc')->get();
+
+      $eventShtdesc2026Year = Event::where('status','1')->whereYear('startdate', '=', '2026')->orderBy('startdate','asc')->get();
+
       $eventShtdesc2025Year = Event::where('status','1')->whereYear('startdate', '=', '2025')->orderBy('startdate','asc')->get();
       $eventShtdesc2024Year = Event::where('status','1')->whereYear('startdate', '=', '2024')->orderBy('startdate','asc')->get();
       $eventShtdesc2023Year = Event::where('status','1')->whereYear('startdate', '=', '2023')->orderBy('startdate','asc')->get();
@@ -1194,6 +1200,8 @@ public $selectedYear;
         'eventShtdesc2025Year' => $eventShtdesc2025Year,
         'eventShtdesc2024Year' => $eventShtdesc2024Year,
         'eventShtdesc2023Year' => $eventShtdesc2023Year,
+        'year26ev' => $year26ev, 
+        'year27ev' => $year27ev,
         ])->layout('layouts.admin');
         
     }
