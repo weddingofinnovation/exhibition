@@ -83,7 +83,7 @@
                 <a class="nav-link px-1 fs-sm active" href="#reviews" data-bs-toggle="tab" role="tab">Plan your Event</a>
               </li>
               <li class="nav-item border-bottom">
-                <a class="nav-link px-1 fs-sm" href="#programs" data-bs-toggle="tab" role="tab">Program</a>
+                <a class="nav-link px-1 fs-sm" href="#pprograms" data-bs-toggle="tab" role="tab">Program</a>
               </li>
               <li class="nav-item border-bottom">
                 <a class="nav-link px-1 fs-sm" href="#maps" data-bs-toggle="tab" role="tab">Map</a>
@@ -869,7 +869,7 @@
                 @endforeach
               </div>
 
-              <div class="tab-pane fade" id="programs" role="tabpanel">
+              <div class="tab-pane fade" id="pprograms" role="tabpanel">
 
                 {{--doubling--}}
 

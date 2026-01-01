@@ -3962,44 +3962,44 @@
 
 
     @php
-    use Carbon\Carbon;
+        use Carbon\Carbon;
 
-    $start = Carbon::parse($event->startdate);
-    $end = Carbon::parse($event->enddate);
-    $now = Carbon::now();
+        $start = Carbon::parse($event->startdate);
+        $end = Carbon::parse($event->enddate);
+        $now = Carbon::now();
 
-    // Date Format Logic
-    if ($start->isSameDay($end)) {
-    // One-day event
-    $displayDate = $start->format('D, d M Y');
-    } elseif ($start->format('M Y') == $end->format('M Y')) {
-    // Same month & year
-    $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
-    } else {
-    // Different month OR year
-    $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
-    }
+        // Date Format Logic
+        if ($start->isSameDay($end)) {
+        // One-day event
+        $displayDate = $start->format('D, d M Y');
+        } elseif ($start->format('M Y') == $end->format('M Y')) {
+        // Same month & year
+        $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
+        } else {
+        // Different month OR year
+        $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
+        }
 
-    // Status Badge Logic
-    if ($now->lt($start)) {
-    $status = 'Upcoming';
-    $badgeClass = 'bg-primary';
-    } elseif ($now->between($start, $end)) {
-    $status = 'Ongoing';
-    $badgeClass = 'bg-success';
-    } else {
-    $status = 'Ended';
-    $badgeClass = 'bg-secondary';
-    }
+        // Status Badge Logic
+        if ($now->lt($start)) {
+        $status = 'Upcoming';
+        $badgeClass = 'bg-primary';
+        } elseif ($now->between($start, $end)) {
+        $status = 'Ongoing';
+        $badgeClass = 'bg-success';
+        } else {
+        $status = 'Ended';
+        $badgeClass = 'bg-secondary';
+        }
 
-    $startto = Carbon::parse ($event->startdate);
-    $endfrom = Carbon::parse ($event->enddate);
-    $now= carbon::now();
-    $name = $event->eventname;
-    $venue = $event->venue;
-    $city = $event->city;
-    $country = $event->country;
-    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
+        $startto = Carbon::parse ($event->startdate);
+        $endfrom = Carbon::parse ($event->enddate);
+        $now= carbon::now();
+        $name = $event->eventname;
+        $venue = $event->venue;
+        $city = $event->city;
+        $country = $event->country;
+        $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
     @endphp
 
 
