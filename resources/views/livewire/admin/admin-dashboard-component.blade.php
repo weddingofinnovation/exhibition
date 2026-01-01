@@ -844,13 +844,13 @@
 
   <!--Mobile event start View-->
   @if($board == 'event')
-  <div class="container d-lg-none mt-5 pt-5">
+  <div class="container d-lg-none">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-        <div class="mb-4 mb-lg-5">
+        <div class="mb-5 mb-lg-5">
           <!-- Nav tabs-->
 
-          <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+          <ul class="nav nav-tabs nav-fill mt-5" role="tablist">
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab1desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab1')" data-bs-toggle="tab" role="tab">Request {{$expoaward->count()}}</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab2desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab2')" data-bs-toggle="tab" role="tab">Monthly {{$monthwise->count()}}</a></li>
             <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm {{$currentTab === 'tab3desk' ? 'active' : ''}}" href="#" wire:click.prevent="switchTab('tab3')" data-bs-toggle="tab" role="tab">Search {{$searchCat->count()}}</a></li>
