@@ -202,7 +202,7 @@
               border: 2px solid #28a745 !important;
             }
           </style>
-          <div class="mt-sm-5">mobile</div>
+
           @foreach ($businessOrder as $evento)
           <div
             class="my-1 {{ in_array($evento->id, $selectedLeads) ? 'border-3 border-success' : '' }}"
