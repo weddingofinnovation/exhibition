@@ -36,15 +36,18 @@ class ExhibitComponent extends Component
     public $visitorid;
     public $image;
 
-    public function mount($board , $visitorid = null)
+    public $grade;
+    public $comment;
+
+    public function mount($board, $visitorid = null)
     {
-        $this->admstatus= '0';  
-        $this->status = '1'; 
-        $this->user_id = NULL; 
+        $this->admstatus = '0';
+        $this->status = '1';
+        $this->user_id = NULL;
         //$this->type = 'exhibit';
-        $this->visitorid = $visitorid;  
+        $this->visitorid = $visitorid;
         $this->board = $board;
-       
+
         //$findevent = DB::table('events')->where('id', $data)->first();
     }
 
@@ -114,9 +117,9 @@ class ExhibitComponent extends Component
     public function multiadd()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -127,7 +130,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = session()->get('eventID');
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -140,18 +143,17 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
-        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id]);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
-        
+        session()->flash('message', 'Thanks for sharing your review.');
     }
-    
+
     public function hostessadd()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -162,7 +164,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = session()->get('hostessID');
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -170,7 +172,7 @@ class ExhibitComponent extends Component
         //return redirect()->route('coicart');thankyou
         return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     use WithFileUploads;
@@ -178,55 +180,51 @@ class ExhibitComponent extends Component
     public function vipentryadd()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
         $newEvent->name = Str::lower(trim($this->name));
         $newEvent->email = $this->email;
-        
+
 
         $newEvent->type = Str::lower(trim($this->type));
         //$newEvent->event_id = session()->get('hostessID');
 
         //$newEvent->user_id = Auth::user()->id;
-        if($this->type == 'company')
-        { 
-            $newEvent->phone = $this->phone; 
+        if ($this->type == 'company') {
+            $newEvent->phone = $this->phone;
+            $newEvent->company = Str::lower(trim($this->company));
+        } elseif ($this->type == 'embassy') {
+
             $newEvent->company = Str::lower(trim($this->company));
         }
 
-        elseif($this->type == 'embassy')
-        {
-            
-            $newEvent->company = Str::lower(trim($this->company));
-        }
-        
         $newEvent->designation = Str::lower(trim($this->designation));
 
-        $newimage = Carbon::now()->timestamp.'.'.$this->image->extension();
+        $newimage = Carbon::now()->timestamp . '.' . $this->image->extension();
         $this->image->storeAs('exhibition', $newimage);
         $newEvent->image = $newimage;
 
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
- 
-        
+
+
         //return redirect()->route('coicart');thankyou
         return redirect()->route('event.exhibit', ['board' => 'thankyou-for-request']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     public function otheradd()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -237,7 +235,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = session()->get('eventID');
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -250,19 +248,18 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
-        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id]);
         //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
-        
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     public function fabrication()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -273,7 +270,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = session()->get('eventID');
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -286,19 +283,19 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
-        return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id]);
         //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');        
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
 
     public function exhibitorrequestedvisitorforpass()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -309,7 +306,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = '1239';
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->comment = $this->comment;
@@ -325,10 +322,10 @@ class ExhibitComponent extends Component
         $logino->save();
 
         //return redirect()->route('coicart');thankyou
-        return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id ]);
+        return redirect()->route('event.exhibit', ['board' => 'fabrication-details', 'visitorid' => $newEvent->id]);
         //return redirect()->route('event.exhibit', ['board' => 'thankyou']);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');  
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     use WithFileUploads;
@@ -339,7 +336,7 @@ class ExhibitComponent extends Component
     public $openside;
 
     public function boothdetails()
-    {   
+    {
         $boothDetailsCustomer = new Boothdetail();
         $boothDetailsCustomer->stallsize = $this->stallsize;
         $boothDetailsCustomer->boothnumber = $this->boothnumber;
@@ -348,9 +345,9 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer->openside = $this->openside;
         $boothDetailsCustomer->save();
 
-        return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $this->visitorid ]); 
+        return redirect()->route('event.exhibit', ['board' => 'askAboutWhatTheyWantDo', 'visitorid' => $this->visitorid]);
     }
-    
+
     public $serviceType;
     public $estimatebudget;
     public $brandingdesigntheme;
@@ -369,7 +366,7 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer = new Boothdetail();
         $boothDetailsCustomer->serviceType = $this->serviceType;
         $boothDetailsCustomer->save();
-        return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $this->visitorid ]);
+        return redirect()->route('event.exhibit', ['board' => 'wantBrief', 'visitorid' => $this->visitorid]);
     }
 
     public function wantBrief()
@@ -387,15 +384,15 @@ class ExhibitComponent extends Component
         $boothDetailsCustomer->additionalstaffing = $this->additionalstaffing;
         $boothDetailsCustomer->requirements = $this->requirements;
         $boothDetailsCustomer->save();
-        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $this->visitorid ]);
+        return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $this->visitorid]);
     }
 
     public function addregistration()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
             'city' => 'required|alpha:ascii',
             'industry' => 'required|alpha:ascii',
             'company' => 'required|alpha-num:ascii',
@@ -417,7 +414,7 @@ class ExhibitComponent extends Component
         $newEvent->event_id = session()->get('eventID');
 
         //$newEvent->user_id = Auth::user()->id;
-        
+
         $newEvent->status = $this->status;
         $newEvent->admstatus = $this->admstatus;
         $newEvent->save();
@@ -433,7 +430,7 @@ class ExhibitComponent extends Component
         //return redirect()->route('event.exhibit', ['type' => 'visitor', 'visitorid' => $newEvent->id]);
         return redirect()->route('event.exhibit', ['board' => 'thankyou', 'visitorid' => $newEvent->id]);
         //{{route('event.exhibit', ['board' => 'business'])}}
-        session()->flash('message','Thanks for sharing your review.');
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
     //{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}
@@ -454,28 +451,25 @@ class ExhibitComponent extends Component
         $savecnt->event_id = session()->get('eventID');
         $savecnt->contactid = $visitorid;
 
-          if (Auth::check()) 
-          {
-              $savecnt->user_id = Auth::user()->id;
-          }   
-              else
-          {
-              $savecnt->user_id = $this->user_id;
-          }
+        if (Auth::check()) {
+            $savecnt->user_id = Auth::user()->id;
+        } else {
+            $savecnt->user_id = $this->user_id;
+        }
 
         $savecnt->status = $this->status;
         $savecnt->admstatus = $this->admstatus;
         $savecnt->save();
         return redirect()->route('event.exhibit', ['board' => 'connect-business-partner']);
     }
-    
+
     //for visitor
     public function addTicket()
     {
         $this->validate([
-            'email'=>'required|email:rfc,dns',
-            'phone'=>'required|max:12|min:10',
-            'name'=>'required|alpha:ascii', 
+            'email' => 'required|email:rfc,dns',
+            'phone' => 'required|max:12|min:10',
+            'name' => 'required|alpha:ascii',
         ]);
 
         $newEvent = new Lead();
@@ -499,21 +493,20 @@ class ExhibitComponent extends Component
         $logino->save();
 
         return redirect()->route('coicart');
-        session()->flash('message','Thanks for sharing your review.');
-        
+        session()->flash('message', 'Thanks for sharing your review.');
     }
 
 
     public function render()
     {
-    //  $data = session()->all();
-    //  dd($data);
+        //  $data = session()->all();
+        //  dd($data);
 
-   
 
-       $findID = session()->get('eventID');
-       $findevent = Event::where('id', $findID)->first();
-       
+
+        $findID = session()->get('eventID');
+        $findevent = Event::where('id', $findID)->first();
+
         $event = Event::where('id', $findID)->first();
         //$findEvent = $event->id;
         // $from = DateTime::createFromFormat('Y-m-d', ($event->startdate));
@@ -526,9 +519,9 @@ class ExhibitComponent extends Component
 
         //dd($from, $to);
         //$link = Link::create($name, $from , $to)->description($name)->address($venue, $city, $country);
-              
-       $franchise = $findevent; 
-       
+
+        $franchise = $findevent;
+
         return view('livewire.exhibit-component', ['findevent' => $findevent, 'franchise' => $franchise]);
     }
 }
