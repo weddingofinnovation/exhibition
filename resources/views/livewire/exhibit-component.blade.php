@@ -833,23 +833,35 @@
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
           </section>
 
-          <section class="container">
-            <h2 class="text-center">Live Event Stats</h2>
-            <div class="stats-grid">
-              <div class="stat-box">
-                <h3>1,250+</h3>
-                <p>Invites Sent</p>
+          <section class="container my-4">
+            <h2 class="text-center mb-4">Live Event Stats</h2>
+
+            <div class="row text-center g-3">
+
+              <div class="col-md-4 col-12">
+                <div class="p-4 border rounded shadow-sm h-100">
+                  <h3 class="fw-bold text-primary">1,250+</h3>
+                  <p class="mb-0">Invites Sent</p>
+                </div>
               </div>
-              <div class="stat-box">
-                <h3>800+</h3>
-                <p>Meeting Scheduled</p>
+
+              <div class="col-md-4 col-12">
+                <div class="p-4 border rounded shadow-sm h-100">
+                  <h3 class="fw-bold text-primary">800+</h3>
+                  <p class="mb-0">Meeting Scheduled</p>
+                </div>
               </div>
-              <div class="stat-box">
-                <h3>Top 5</h3>
-                <p>Most Requested Brands</p>
+
+              <div class="col-md-4 col-12">
+                <div class="p-4 border rounded shadow-sm h-100">
+                  <h3 class="fw-bold text-primary">Top 5</h3>
+                  <p class="mb-0">Most Requested Brands</p>
+                </div>
               </div>
+
             </div>
           </section>
+
 
           <section class="container">
             <p class="fw-bold">invitee Help You Achieve Your Goals</p>
@@ -970,9 +982,6 @@
       </div>
     </div>
   </div>
-
-
-
 
   @elseif($this->board == 'know_more')
   <style>
