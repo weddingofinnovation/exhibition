@@ -71,7 +71,7 @@
 
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div class="text-center flex-grow-1 fs-md">
-            Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>{{$findevent->eventname}}</strong>. Your registration details have been received.
+            Thank you <strong> {{$findvisitor->name}}</strong> for registering for <strong>Nakshatra & Arogyam Fair 2026 </strong>. Your registration details have been received.
           </div>
 
           <div class="">
@@ -79,28 +79,17 @@
           </div>
         </div>
 
-        <p class="fs-sm">We are excited to welcome you to {{$findevent->country}}'s flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
+        <p class="fs-sm">We are excited to welcome you to India's flagship Category Of Event, where innovation and collaboration shape the future of the global -- ecosystem.
           Your badge will be sent to you 4 weeks prior to the event. In the meantime, please find some information on your visitor pass benefits and conference upgrade options.</p>
 
         <div class=" mb-4 text-center">
-          <a href="{{$link->google()}}" class="btn btn-sm btn-primary align-center">Add to Calender</a>
+          <a href="#" class="btn btn-sm btn-primary align-center">Add to Calender</a>
           <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}"><i class="bi bi-arrow-up"></i></a>
         </div>
 
-        <div class="mt-1">
-          <strong>Travel Made Easy</strong>
-          <p class="fs-xs">Our Official Travel Partner, to arrange all your travel and accommodation needs.
-            Enjoy exclusive benefits like <a href="">preferential hotal rates and seamless travel arrangements</a> as you plan your visit to
-            <Strong>{{$findevent->eventname}}</Strong> in <strong>{{$findevent->city}}</strong>
-          </p>
-        </div>
+        
 
-        @if(Auth::check())
-        <a class="btn btn-primary btn-sm" href="{{route('user.dashboard',['board' => 'dashboard'])}}">Add your profile</a>
-        @else
-        <a class="btn btn-primary btn-sm" href="{{route('login')}}">Add your profile</a>
-        @endif
-
+       
         <div class="fs-xs mt-2">
           Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at
           <a href="">team@exhibition.org.in</a> for any registration related queries.
