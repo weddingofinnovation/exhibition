@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Livewire;
+namespace App\Http\Livewire;
 
 use App\Models\Lead;
 use App\Models\User;
@@ -42,7 +42,7 @@ class ExhibitorInviteComponent extends Component
         //$findevent = DB::table('events')->where('id', $data)->first();
     }
 
-     public function exhibitorrequestedvisitorforpass()
+    public function exhibitorrequestedvisitorforpass()
     {
         $this->validate([
             'email' => 'required|email:rfc,dns',
