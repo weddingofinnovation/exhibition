@@ -874,27 +874,6 @@
                 <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
                   <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
                 </a>
-                @if(in_array($franchise->id, $selectedImages))
-                  <!-- <div class="overlay position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-50 d-flex justify-content-center align-items-center">
-                    <span class="text-white">Selected</span>
-                  </div> -->
-                  <!-- <span class="badge bg-success position-absolute top-0 end-0 m-2">Selected</span> -->
-                  <!-- Checkmark Icon -->
-                  <!-- <span class="position-absolute top-0 start-0 m-2 text-success">
-                    <i class="fas fa-check-circle fa-2x"></i>
-                  </span> -->
-                  
-                  <!-- Mobile view: icon notification -->
-                  <!-- <span class="position-absolute top-0 start-0 m-2 text-success d-md-none">
-                    m<i class="fas fa-check-circle fa-2x"></i> 
-                  </span> -->
-                  <span class="position-absolute delete-notification"></span>
-
-                  <!-- Desktop view: "Selected" text -->
-                  <span class="badge bg-success position-absolute top-0 end-0 m-2 d-none d-md-inline">
-                    Selected <!-- Desktop text -->
-                  </span>
-                @endif
             </div>
           </div>  
       </div>
