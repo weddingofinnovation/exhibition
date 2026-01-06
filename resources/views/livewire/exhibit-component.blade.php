@@ -833,7 +833,7 @@
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
           </section>
 
-          <section class="container my-4">
+          <section class="container my-4 d-none d-md-block">
             <h2 class="text-center mb-4">Live Event Stats</h2>
 
             <div class="row text-center g-3">
@@ -863,7 +863,7 @@
           </section>
 
 
-          <section class="container my-4">
+          <section class="container my-4 d-none d-md-block">
             <p class="fw-bold text-center mb-4">
               Invitee Helps You Achieve Your Goals
             </p>
