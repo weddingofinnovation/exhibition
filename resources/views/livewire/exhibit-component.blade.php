@@ -828,6 +828,51 @@
       <!-- Column 1 -->
       <div class="col-md-5 col-12 my-5 border-end">
         <div class="p-0">
+          <section class="container my-4">
+  <div class="border rounded p-4 shadow-sm bg-light">
+
+    <h5 class="fw-bold mb-3 text-center">
+      Exhibitor Details for Visitors
+    </h5>
+
+    <div class="row g-3">
+
+      <!-- Event Info -->
+      <div class="col-md-6 col-12">
+        <p class="mb-1"><strong>Event:</strong> India Business Expo 2026</p>
+        <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
+        <p class="mb-1"><strong>Location:</strong> Pragati Maidan, Delhi</p>
+      </div>
+
+      <!-- Stall Info -->
+      <div class="col-md-6 col-12">
+        <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
+        <p class="mb-1"><strong>Stall No:</strong> B-24</p>
+        <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Business Representative -->
+    <div class="text-center">
+      <p class="mb-1"><strong>Business Representative</strong></p>
+      <p class="mb-1">Mr. Rahul Sharma</p>
+      <small class="text-muted">Sales Manager – B2B Partnerships</small>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-3">
+      <button class="btn btn-primary btn-sm">
+        Request Meeting at Stall
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
           <section class="hero">
             <h1>Connect. Collaborate. Grow.</h1>
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
