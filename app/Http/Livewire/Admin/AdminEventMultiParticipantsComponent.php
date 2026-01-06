@@ -182,29 +182,79 @@ class AdminEventMultiParticipantsComponent extends Component
         session()->flash('message', 'Thanks for sharing your review.');
     }
 
-    public function updateBrand()
-    {
-        $rti = Str::replace('  ', ' ', $this->brand_name);
-        $ret = explode(",", $rti);
+    // public function updateBrand()
+    // {
+    //     $rti = Str::replace('  ', ' ', $this->brand_name);
+    //     $ret = explode(",", $rti);
 
-        foreach ($ret as $tre) {
-            $bran = Event::find($this->event_id);
-            $brandname = trim($tre);
-            $slug = Str::slug($brandname, '-');
-            $brand = Brand::firstOrCreate(['brand_name' => $brandname], ['slug' => $slug, 'status' => $this->status, 'admstatus' => $this->admstatus]);
+    //     foreach ($ret as $tre) {
+    //         $bran = Event::find($this->event_id);
+    //         $brandname = trim($tre);
+    //         $slug = Str::slug($brandname, '-');
+    //         $brand = Brand::firstOrCreate(['brand_name' => $brandname], ['slug' => $slug, 'status' => $this->status, 'admstatus' => $this->admstatus]);
 
-            //$brand->slug = str::slug($tre,'-');
+    //         //$brand->slug = str::slug($tre,'-');
 
-            $brand = new Participant();
-            $brand->brand_id = $brand->id;
-            $brand->event_id = $bran->id;
-            $brand->status = $this->status;
-            $brand->admstatus = $this->admstatus;
-            $brand->user_id = Auth::user()->id;
-            dd($brand);
-            $brand->save();
-        }
+    //         $brand = new Participant();
+    //         $brand->brand_id = $brand->id;
+    //         $brand->event_id = $bran->id;
+    //         $brand->status = $this->status;
+    //         $brand->admstatus = $this->admstatus;
+    //         $brand->user_id = Auth::user()->id;
+    //         dd($brand);
+    //         $brand->save();
+    //     }
+    // }
+
+   
+
+public function updateBrand()
+{
+    // ✅ Validate input (Livewire-friendly)
+    $this->validate([
+        'brand_name' => 'required|string',
+        'event_id'   => 'required|exists:events,id',
+    ]);
+
+    // ✅ Normalize brand names (comma-separated)
+    $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
+    $brandList  = array_filter(array_map('trim', explode(',', $normalized)));
+
+    // ✅ Fetch event once
+    $event = Event::findOrFail($this->event_id);
+
+    foreach ($brandList as $brandName) {
+
+        // ✅ Create or fetch Brand
+        $brand = Brand::firstOrCreate(
+            ['brand_name' => $brandName],
+            [
+                'slug'      => Str::slug($brandName),
+                'status'    => $this->status,
+                'admstatus' => $this->admstatus,
+            ]
+        );
+
+        // ✅ Create participant safely (avoid duplicates)
+        Participant::firstOrCreate(
+            [
+                'brand_id' => $brand->id,
+                'event_id' => $event->id,
+            ],
+            [
+                'status'    => $this->status,
+                'admstatus' => $this->admstatus,
+                'user_id'   => Auth::id(),
+            ]
+        );
     }
+
+    // ✅ Success feedback
+    session()->flash('success', 'Brand(s) added to event successfully.');
+}
+
+
+
 
     public function updateOrganisation()
     {
