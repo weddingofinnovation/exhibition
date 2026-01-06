@@ -826,7 +826,7 @@
   <div class="container">
     <div class="row">
       <!-- Column 1 -->
-      <div class="col-md-6 col-12">
+      <div class="col-md-6 col-12 mb-5">
         <div class="p-3">
           <section class="hero">
             <h1>Connect. Collaborate. Grow.</h1>
