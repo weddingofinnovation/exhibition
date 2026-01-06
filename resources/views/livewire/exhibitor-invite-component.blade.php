@@ -39,7 +39,7 @@
 
       <div class="text-center mt-4">
 
-        <a href="{{$link->google()}}" class="btn btn-outline-primary px-4 me-2"><i class="bi bi-calendar-event"></i>Add to Calender</a>
+        {{-- <a href="#" class="btn btn-outline-primary px-4 me-2"><i class="bi bi-calendar-event"></i>Add to Calender</a> --}}
 
         @if(Auth::check())
         <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
