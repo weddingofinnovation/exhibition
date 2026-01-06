@@ -827,7 +827,7 @@
     <div class="row">
       <!-- Column 1 -->
       <div class="col-md-3 col-12 my-5 border-end">
-        <div class="p-3">
+        <div class="p-0">
           <section class="hero">
             <h1>Connect. Collaborate. Grow.</h1>
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
