@@ -906,7 +906,7 @@
       <!-- Column 2 -->
       <div class="col-md-6 col-12">
         <div class="">
-          <div class="">
+          <div class="mb-sm-5">
             <form wire:submit.prevent="fabrication">
               <div class="mb-1">
                 <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
@@ -1468,11 +1468,11 @@
 
       <a class="d-table-cell handheld-toolbar-item" href="#">
         <span class="handheld-toolbar-icon"><i class="bi bi-compass"></i></span>
-        <span class="handheld-toolbar-label">List Your iNvitee</span></a>
+        <span class="handheld-toolbar-label">iNvitee</span></a>
 
       <a class="d-table-cell handheld-toolbar-item" href="#">
         <span class="handheld-toolbar-icon"><i class="bi bi-people"></i></span>
-        <span class="handheld-toolbar-label">Request a Meeting</span>
+        <span class="handheld-toolbar-label">Request Meetup</span>
       </a>
 
       <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
