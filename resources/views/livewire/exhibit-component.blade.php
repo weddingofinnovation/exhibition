@@ -828,257 +828,259 @@
       <!-- Column 1 -->
       <div class="col-md-5 col-12 my-5 border-end">
         <div class="p-0">
-          <section class="container my-4">
+          <div class="">
             @php
-       $event_id = session()->get('eventID');
-       $eventdetils = DB::table('events')->where('id', $event_id)->get();
-    @endphp
+            $event_id = session()->get('eventID');
+            $eventdetils = DB::table('events')->where('id', $event_id)->get();
+            @endphp
 
-    @foreach($eventdetils as $franchise)
-      <div class="container">
-          <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-            <div class="col  pr-0">
-                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                    {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div> --}}
-                    <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div> 
-                    <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                  @else
-                    {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>--}}
+            @foreach($eventdetils as $franchise)
+              <div class="">
+                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col  pr-0">
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                        {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
+                      </div> --}}
+                      <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
+                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                      @else
+                      {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
+                    </div>--}}
                     <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
                     <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                @endif
-
-                
-            </div>
-
-            <div class="col-7  p-0">
-              <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-              <div class="text-muted fs-sm text-start">
-                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                @else
-                  {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                @endif 
-              </div>  
-              <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
-            </div>
-
-            <div class="col-3  p-0">
-                <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent = "selectImage('{{$franchise->id}}')">
-                  <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
-                </a>
-            </div>
-          </div>  
-      </div>
-    @endforeach
-    
-  <div class="border rounded p-4 shadow-sm bg-light">
-
-    <h5 class="fw-bold mb-3 text-center">
-      Exhibitor Details for Visitors
-    </h5>
-
-    
+                    @endif
 
 
-    <div class="row g-3">
+                    </div>
 
-      <!-- Event Info -->
-      <div class="col-md-6 col-12">
-        <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
-        <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
-      </div>
+                    <div class="col-7  p-0">
+                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+                      <div class="text-muted fs-sm text-start">
+                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                        @else
+                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                        @endif
+                      </div>
+                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
+                    </div>
 
-      <!-- Stall Info -->
-      <div class="col-md-6 col-12">
-        <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
-        <p class="mb-1"><strong>Stall No:</strong> B-24</p>
-      </div>
+                    <div class="col-3  p-0">
+                      <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent="selectImage('{{$franchise->id}}')">
+                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                      </a>
+                    </div>
+                </div>
+              </div>
+            @endforeach
 
-    </div>
+            <div class="border rounded p-4 shadow-sm bg-light">
 
-    <hr>
-
-    <!-- Business Representatives -->
-<div class="text-center mt-4">
-  <p class="fw-bold mb-3">Business Representatives</p>
-
-  <div class="row g-3 justify-content-center">
-
-    <div class="col-md-4 col-6">
-      <div class="border rounded p-3 h-100 shadow-sm">
-        <p class="mb-1 fw-semibold">Mr. Rahul Sharma</p>
-        <small class="text-muted">Sales Manager</small>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-6">
-      <div class="border rounded p-3 h-100 shadow-sm">
-        <p class="mb-1 fw-semibold">Ms. Anjali Verma</p>
-        <small class="text-muted">Business Development</small>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-6">
-      <div class="border rounded p-3 h-100 shadow-sm">
-        <p class="mb-1 fw-semibold">Mr. Amit Patel</p>
-        <small class="text-muted">Channel Partner</small>
-      </div>
-    </div>
-
-  </div>
-</div>
+              <h5 class="fw-bold mb-3 text-center">
+                Exhibitor Details for Visitors
+              </h5>
 
 
-    <!-- CTA -->
-    <div class="text-center mt-3">
-      <button class="btn btn-primary btn-sm">
-        Request Meeting at Stall
-      </button>
-    </div>
-
-  </div>
-</section>
 
 
-          <section class="hero">
-            <h1>Connect. Collaborate. Grow.</h1>
-            <p>Invite business representatives or schedule meetings with top brands at the event.</p>
-          </section>
+              <div class="row g-3">
 
-          <section class="container d-none d-md-block">
-            <!-- <h2 class="text-center">Live Event Stats</h2> -->
+                <!-- Event Info -->
+                <div class="col-md-6 col-12">
+                  <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
+                  <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
+                </div>
 
-            <div class="row text-center g-3">
+                <!-- Stall Info -->
+                <div class="col-md-6 col-12">
+                  <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
+                  <p class="mb-1"><strong>Stall No:</strong> B-24</p>
+                </div>
 
-              <div class="col-md-4 col-12">
-                <div class="p-4 border rounded shadow-sm h-100">
-                  <h3 class="fw-bold text-primary">1,250+</h3>
-                  <p class="mb-0">Invites Sent</p>
+              </div>
+
+              <hr>
+
+              <!-- Business Representatives -->
+              <div class="text-center mt-4">
+                <p class="fw-bold mb-3">Business Representatives</p>
+
+                <div class="row g-3 justify-content-center">
+
+                  <div class="col-md-4 col-6">
+                    <div class="border rounded p-3 h-100 shadow-sm">
+                      <p class="mb-1 fw-semibold">Mr. Rahul Sharma</p>
+                      <small class="text-muted">Sales Manager</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-6">
+                    <div class="border rounded p-3 h-100 shadow-sm">
+                      <p class="mb-1 fw-semibold">Ms. Anjali Verma</p>
+                      <small class="text-muted">Business Development</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 col-6">
+                    <div class="border rounded p-3 h-100 shadow-sm">
+                      <p class="mb-1 fw-semibold">Mr. Amit Patel</p>
+                      <small class="text-muted">Channel Partner</small>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              <div class="col-md-4 col-12">
-                <div class="p-4 border rounded shadow-sm h-100">
-                  <h3 class="fw-bold text-primary">800+</h3>
-                  <p class="mb-0">Meeting Scheduled</p>
-                </div>
-              </div>
 
-              <div class="col-md-4 col-12">
-                <div class="p-4 border rounded shadow-sm h-100">
-                  <h3 class="fw-bold text-primary">Top 5</h3>
-                  <p class="mb-0">Most Requested Brands</p>
-                </div>
+              <!-- CTA -->
+              <div class="text-center mt-3">
+                <button class="btn btn-primary btn-sm">
+                  Request Meeting at Stall
+                </button>
               </div>
 
             </div>
-          </section>
+          </div>
 
-          <section class="container my-4 d-none">
-            <p class="fw-bold text-center mb-4">
-              Invitee Helps You Achieve Your Goals
-            </p>
 
-            <div class="row g-3">
+      <section class="hero">
+        <h1>Connect. Collaborate. Grow.</h1>
+        <p>Invite business representatives or schedule meetings with top brands at the event.</p>
+      </section>
 
-              <div class="col-md-4 col-12">
-                <div class="border rounded p-4 h-100 shadow-sm">
-                  <h3 class="fw-bold text-primary">1,250+</h3>
-                  <p class="fw-semibold mb-2">Market Your Business to New Users</p>
-                  <strong>Effortless Scheduling</strong> –
-                  Plan your meetings in advance for a seamless event experience.
-                </div>
-              </div>
+      <section class="container d-none d-md-block">
+        <!-- <h2 class="text-center">Live Event Stats</h2> -->
 
-              <div class="col-md-4 col-12">
-                <div class="border rounded p-4 h-100 shadow-sm">
-                  <h3 class="fw-bold text-primary">800+</h3>
-                  <p class="fw-semibold mb-2">Grow Your Revenue</p>
-                  <strong>Meaningful Interactions</strong> –
-                  Connect with the right people who matter to your business.
-                </div>
-              </div>
+        <div class="row text-center g-3">
 
-              <div class="col-md-4 col-12">
-                <div class="border rounded p-4 h-100 shadow-sm">
-                  <h3 class="fw-bold text-primary">Top 5</h3>
-                  <p class="fw-semibold mb-2">Get More Walk-in Customers</p>
-                  <strong>Time-Saving</strong> –
-                  Avoid last-minute scheduling and maximize your event productivity.
-                </div>
-              </div>
-
+          <div class="col-md-4 col-12">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <h3 class="fw-bold text-primary">1,250+</h3>
+              <p class="mb-0">Invites Sent</p>
             </div>
-          </section>
+          </div>
 
-        </div>
-      </div>
+          <div class="col-md-4 col-12">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <h3 class="fw-bold text-primary">800+</h3>
+              <p class="mb-0">Meeting Scheduled</p>
+            </div>
+          </div>
 
-      <!-- Column 2 -->
-      <div class="col-md-7 col-12 my-5">
-        <div class="">
-          <div class="mb-4">
-            <form wire:submit.prevent="fabrication">
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
-                @error('name')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-                <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
-                @error('email')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <div class="mb-1">
-                <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-                <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
-                @error('phone')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <div class="mb-1">
-                <input type="text" class="form-control" wire:model.lazy="company" required="" placeholder="Enter your company">
-                @error('company')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <div class="mb-1">
-                <select class="form-control" wire:model.lazy="interest" required="" placeholder="Enter your phone">
-                  <option value="">Select</option>
-                  <option value="product">Product Info</option>
-                  <option value="pricing">Pricing</option>
-                  <option value="dealership">Dealership</option>
-                  <option value="bulk">Bulk Order</option>
-                </select>
-                @error('interest')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <div class="mb-1">
-                <textarea name="notes" class="form-control" placeholder="Enter your notes"></textarea>
-                @error('notes')
-                <div class="form-text text-primary">{{$message}}</div>
-                @enderror
-              </div>
-
-              <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
-            </form>
+          <div class="col-md-4 col-12">
+            <div class="p-4 border rounded shadow-sm h-100">
+              <h3 class="fw-bold text-primary">Top 5</h3>
+              <p class="mb-0">Most Requested Brands</p>
+            </div>
           </div>
 
         </div>
-      </div>
+      </section>
+
+      <section class="container my-4 d-none">
+        <p class="fw-bold text-center mb-4">
+          Invitee Helps You Achieve Your Goals
+        </p>
+
+        <div class="row g-3">
+
+          <div class="col-md-4 col-12">
+            <div class="border rounded p-4 h-100 shadow-sm">
+              <h3 class="fw-bold text-primary">1,250+</h3>
+              <p class="fw-semibold mb-2">Market Your Business to New Users</p>
+              <strong>Effortless Scheduling</strong> –
+              Plan your meetings in advance for a seamless event experience.
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="border rounded p-4 h-100 shadow-sm">
+              <h3 class="fw-bold text-primary">800+</h3>
+              <p class="fw-semibold mb-2">Grow Your Revenue</p>
+              <strong>Meaningful Interactions</strong> –
+              Connect with the right people who matter to your business.
+            </div>
+          </div>
+
+          <div class="col-md-4 col-12">
+            <div class="border rounded p-4 h-100 shadow-sm">
+              <h3 class="fw-bold text-primary">Top 5</h3>
+              <p class="fw-semibold mb-2">Get More Walk-in Customers</p>
+              <strong>Time-Saving</strong> –
+              Avoid last-minute scheduling and maximize your event productivity.
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
+  </div>
+
+  <!-- Column 2 -->
+  <div class="col-md-7 col-12 my-5">
+    <div class="">
+      <div class="mb-4">
+        <form wire:submit.prevent="fabrication">
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+            <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+            @error('name')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+            <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+            @error('email')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+            <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+            @error('phone')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <input type="text" class="form-control" wire:model.lazy="company" required="" placeholder="Enter your company">
+            @error('company')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <select class="form-control" wire:model.lazy="interest" required="" placeholder="Enter your phone">
+              <option value="">Select</option>
+              <option value="product">Product Info</option>
+              <option value="pricing">Pricing</option>
+              <option value="dealership">Dealership</option>
+              <option value="bulk">Bulk Order</option>
+            </select>
+            @error('interest')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <textarea name="notes" class="form-control" placeholder="Enter your notes"></textarea>
+            @error('notes')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  </div>
   </div>
 
   <!-- <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
