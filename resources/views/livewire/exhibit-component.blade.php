@@ -945,21 +945,6 @@
       </div>
     </div>
 
-    <!-- Optional -->
-    <div class="col-md-4 col-6">
-      <div class="border rounded p-3 h-100 shadow-sm">
-        <p class="mb-1 fw-semibold">Ms. Neha Singh</p>
-        <small class="text-muted">Product Consultant</small>
-      </div>
-    </div>
-
-    <div class="col-md-4 col-6">
-      <div class="border rounded p-3 h-100 shadow-sm">
-        <p class="mb-1 fw-semibold">Mr. Suresh Kumar</p>
-        <small class="text-muted">Operations Lead</small>
-      </div>
-    </div>
-
   </div>
 </div>
 
