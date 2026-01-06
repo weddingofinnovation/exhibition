@@ -829,13 +829,7 @@
       <div class="col-md-5 col-12 my-5 border-end">
         <div class="p-0">
           <section class="container my-4">
-  <div class="border rounded p-4 shadow-sm bg-light">
-
-    <h5 class="fw-bold mb-3 text-center">
-      Exhibitor Details for Visitors
-    </h5>
-
-    @php
+            @php
        $event_id = session()->get('eventID');
        $eventdetils = DB::table('events')->where('id', $event_id)->get();
     @endphp
@@ -878,6 +872,14 @@
           </div>  
       </div>
     @endforeach
+    
+  <div class="border rounded p-4 shadow-sm bg-light">
+
+    <h5 class="fw-bold mb-3 text-center">
+      Exhibitor Details for Visitors
+    </h5>
+
+    
 
 
     <div class="row g-3">
