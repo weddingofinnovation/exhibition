@@ -939,7 +939,7 @@
                 @enderror
               </div>
 
-              <div class="mb-3">
+              <div class="mb-1">
                 <select class="form-control" wire:model.lazy="interest" required="" placeholder="Enter your phone">
                   <option value="">Select</option>
                   <option value="product">Product Info</option>
@@ -952,7 +952,7 @@
                 @enderror
               </div>
 
-              <div class="mb-3">
+              <div class="mb-1">
                 <textarea name="notes" class="form-control" placeholder="Enter your notes"></textarea>
                 @error('notes')
                 <div class="form-text text-primary">{{$message}}</div>
