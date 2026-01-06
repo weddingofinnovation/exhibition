@@ -883,16 +883,16 @@
 
           <div class="row g-3">
 
-            <!-- Event Info -->
+            <!-- Stall Info -->
             <div class="col-md-6 col-12">
+              <p class="mb-1"><strong>Hall:</strong> Hall 7 <strong>Stall No:</strong> B-24</p>
               <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
               <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
             </div>
 
-            <!-- Stall Info -->
+             <!-- Event Info -->
             <div class="col-md-6 col-12">
-              <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
-              <p class="mb-1"><strong>Stall No:</strong> B-24</p>
+              <p class="mb-1"> QR code</p>
             </div>
 
           </div>
