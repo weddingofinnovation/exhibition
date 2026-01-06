@@ -47,7 +47,7 @@ class ExhibitorInviteComponent extends Component
         $this->validate([
             'email' => 'required|email:rfc,dns',
             'phone' => 'required|max:12|min:10',
-            'name' => 'required|alpha:ascii',
+            'name' => 'required',
         ]);
 
         $newEvent = new Lead();
