@@ -906,7 +906,7 @@
       <!-- Column 2 -->
       <div class="col-md-6 col-12">
         <div class="">
-          <div class="mb-sm-5">
+          <div class="mb-4">
             <form wire:submit.prevent="fabrication">
               <div class="mb-1">
                 <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
@@ -959,7 +959,7 @@
                 @enderror
               </div>
 
-              <button class="btn btn-primary form-control" type="submit">Submit</button>
+              <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
             </form>
           </div>
 
