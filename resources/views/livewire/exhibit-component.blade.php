@@ -835,113 +835,157 @@
             @endphp
 
             @foreach($eventdetils as $franchise)
-              <div class="">
-                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                      <div class="col  pr-0">
-                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                        {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
-                      </div> --}}
-                      <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
-                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                      @else
-                      {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
-                    </div>--}}
-                    <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
-                    <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
-                    @endif
+            <div class="">
+              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                <div class="col  pr-0">
+                  @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                  {{-- <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
+                </div> --}}
+                <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
+                <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+                @else
+                {{--<div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}
+              </div>--}}
+              <div class="small fw-light">{{Carbon\Carbon::parse ($franchise->startdate)->format('Y')}} </div>
+              <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M')}} </div>
+              @endif
 
 
-                    </div>
+            </div>
 
-                    <div class="col-7  p-0">
-                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                          {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-                      <div class="text-muted fs-sm text-start">
-                        @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                        @else
-                        {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                        @endif
-                      </div>
-                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
-                    </div>
-
-                    <div class="col-3  p-0">
-                      <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent="selectImage('{{$franchise->id}}')">
-                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" style="max-width: 50%;">
-                      </a>
-                    </div>
-                </div>
+            <div class="col-7  p-0">
+              <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('event.details',['slug' => $franchise->slug])}}">
+                  {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+              <div class="text-muted fs-sm text-start">
+                @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                @else
+                {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                @endif
               </div>
-            @endforeach
+              <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise->venue ?? 'null'))}}, {{ucfirst(trans($franchise->city ?? 'null'))}}</div>
+            </div>
 
-            <div class="border rounded p-4 shadow-sm bg-light">
+            <div class="col-3  p-0">
+              <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent="selectImage('{{$franchise->id}}')">
+                <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" style="max-width: 50%;">
+              </a>
+            </div>
+          </div>
+        </div>
+        @endforeach
 
-              <h5 class="fw-bold mb-3 text-center">
-                Exhibitor Details for Visitors
-              </h5>
+        <div class="border rounded p-4 shadow-sm bg-light">
 
+          <h5 class="fw-bold mb-3 text-center">
+            Exhibitor Details for Visitors
+          </h5>
 
+          <div class="row g-3">
 
+            <!-- Event Info -->
+            <div class="col-md-6 col-12">
+              <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
+              <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
+            </div>
 
-              <div class="row g-3">
+            <!-- Stall Info -->
+            <div class="col-md-6 col-12">
+              <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
+              <p class="mb-1"><strong>Stall No:</strong> B-24</p>
+            </div>
 
-                <!-- Event Info -->
-                <div class="col-md-6 col-12">
-                  <p class="mb-1"><strong>Industry:</strong> Manufacturing & B2B</p>
-                  <p class="mb-1"><strong>Product Category:</strong> Industrial Machinery</p>
-                </div>
+          </div>
 
-                <!-- Stall Info -->
-                <div class="col-md-6 col-12">
-                  <p class="mb-1"><strong>Hall:</strong> Hall 7</p>
-                  <p class="mb-1"><strong>Stall No:</strong> B-24</p>
-                </div>
+          <hr>
 
-              </div>
+          <!-- Business Representatives -->
+          <div class="text-center mt-4">
+            <p class="fw-bold mb-3">Business Representatives</p>
 
-              <hr>
+            <div class="widget">
+              <!--<h3 class="widget-title fw-bolder">Network</h3>-->
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                <div class="d-flex align-items-center position-relative">
 
-              <!-- Business Representatives -->
-              <div class="text-center mt-4">
-                <p class="fw-bold mb-3">Business Representatives</p>
-
-                <div class="row g-3 justify-content-center">
-
-                  <div class="col-md-4 col-6">
-                    <div class="border rounded p-3 h-100 shadow-sm">
-                      <p class="mb-1 fw-semibold">Mr. Rahul Sharma</p>
-                      <small class="text-muted">Sales Manager</small>
-                    </div>
+                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/indraneel.jpg" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Indraneel%20Majumdar">Indraneel Majumdar</a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">Head of Mall Sarath City Mall</a>
+                    </h5>
+                    <!--<span class="fs-xs text-muted">730 followers</span>-->
                   </div>
-
-                  <div class="col-md-4 col-6">
-                    <div class="border rounded p-3 h-100 shadow-sm">
-                      <p class="mb-1 fw-semibold">Ms. Anjali Verma</p>
-                      <small class="text-muted">Business Development</small>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 col-6">
-                    <div class="border rounded p-3 h-100 shadow-sm">
-                      <p class="mb-1 fw-semibold">Mr. Amit Patel</p>
-                      <small class="text-muted">Channel Partner</small>
-                    </div>
-                  </div>
-
                 </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
               </div>
 
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                <div class="d-flex align-items-center position-relative">
 
-              <!-- CTA -->
-              <div class="text-center mt-3">
-                <button class="btn btn-primary btn-sm">
-                  Request Meeting at Stall
-                </button>
+                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/karthick.jpg" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Dr.Karthick">Dr.Karthick kumar Chinnaraj </a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">Founder &amp; Managing Director 5K Car Care Pvt Ltd</a>
+                    </h5>
+                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                <div class="d-flex align-items-center position-relative">
+
+                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/shashank.jpg" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Shashank%20Singh">Shashank Singh</a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">CEO &amp; Director Capsicum Kitchens &amp; Wardrobes</a>
+                    </h5>
+                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
+                <div class="d-flex align-items-center position-relative">
+
+                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/ankur.jpg" width="17%" alt="Avatar">
+                  <div class="ms-2">
+                    <h4 class="mb-1 fs-base text-body">
+                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Ankur%20Khaitan">Ankur Khaitan</a>
+                    </h4>
+                    <h5 class="mb-1 fs-xs">
+                      <a class="nav-link-style stretched-link" href="#">Senior Director KPMG</a>
+                    </h5>
+                    <!--<span class="fs-xs text-muted">730 followers</span>-->
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
               </div>
 
             </div>
           </div>
+
+
+          <!-- CTA -->
+          <div class="text-center mt-3">
+            <button class="btn btn-primary btn-sm">
+              Request Meeting at Stall
+            </button>
+          </div>
+
+        </div>
+      </div>
 
 
       <section class="hero">
