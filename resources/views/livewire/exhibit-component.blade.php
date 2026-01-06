@@ -826,7 +826,7 @@
   <div class="container">
     <div class="row">
       <!-- Column 1 -->
-      <div class="col-md-6 col-12 mb-5">
+      <div class="col-md-6 col-12 my-5">
         <div class="p-3">
           <section class="hero">
             <h1>Connect. Collaborate. Grow.</h1>
@@ -834,7 +834,7 @@
           </section>
 
           <section class="container d-none d-md-block">
-            <h2 class="text-center">Live Event Stats</h2>
+            <!-- <h2 class="text-center">Live Event Stats</h2> -->
 
             <div class="row text-center g-3">
 
@@ -903,7 +903,7 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="col-md-6 col-12">
+      <div class="col-md-6 col-12 my-5">
         <div class="">
           <div class="mb-4">
             <form wire:submit.prevent="fabrication">
