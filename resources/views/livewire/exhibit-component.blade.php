@@ -883,38 +883,38 @@
 
           <div class="row g-3 align-items-center">
 
-  <!-- Stall & Industry Info -->
-  <div class="col-md-6 col-12">
-    <p class="mb-1">
-      <strong>Hall:</strong> Hall 7 &nbsp;
-      <strong>Stall No:</strong> B-24
-    </p>
+            <!-- Stall & Industry Info -->
+            <div class="col-md-6 col-12">
+              <p class="mb-1">
+                <strong>Hall:</strong> Hall 7 &nbsp;
+                <strong>Stall No:</strong> B-24
+              </p>
 
-    <p class="mb-1">
-      <strong>Industry:</strong><br>
-      Manufacturing &amp; B2B
-    </p>
+              <p class="mb-1">
+                <strong>Industry:</strong><br>
+                Manufacturing &amp; B2B
+              </p>
 
-    <p class="mb-1">
-      <strong>Product Category:</strong><br>
-      Industrial Machinery
-    </p>
-  </div>
+              <p class="mb-1">
+                <strong>Product Category:</strong><br>
+                Industrial Machinery
+              </p>
+            </div>
 
-  <!-- QR Code (Laptop/Desktop Only) -->
-  <div class="col-md-6 col-12 text-md-end text-center d-none d-md-block">
-    <img
-      src="qr-code.png"
-      alt="Exhibitor QR Code"
-      class="img-fluid border rounded p-1 shadow-sm"
-      style="max-width:120px;"
-    >
-    <small class="d-block text-muted mt-1">
-      Scan for exhibitor details
-    </small>
-  </div>
+            <!-- QR Code (Laptop/Desktop Only) -->
+            <div class="col-md-6 col-12 text-md-end text-center d-none d-md-block">
+              <img
+                src="qr-code.png"
+                alt="Exhibitor QR Code"
+                class="img-fluid border rounded p-1 shadow-sm"
+                style="max-width:120px;"
+              >
+              <small class="d-block text-muted mt-1">
+                Scan for exhibitor details
+              </small>
+            </div>
 
-</div>
+          </div>
 
 
           <hr>
