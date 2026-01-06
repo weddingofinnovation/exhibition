@@ -855,12 +855,51 @@
 
     <hr>
 
-    <!-- Business Representative -->
-    <div class="text-center">
-      <p class="mb-1"><strong>Business Representative</strong></p>
-      <p class="mb-1">Mr. Rahul Sharma</p>
-      <small class="text-muted">Sales Manager – B2B Partnerships</small>
+    <!-- Business Representatives -->
+<div class="text-center mt-4">
+  <p class="fw-bold mb-3">Business Representatives</p>
+
+  <div class="row g-3 justify-content-center">
+
+    <div class="col-md-4 col-6">
+      <div class="border rounded p-3 h-100 shadow-sm">
+        <p class="mb-1 fw-semibold">Mr. Rahul Sharma</p>
+        <small class="text-muted">Sales Manager</small>
+      </div>
     </div>
+
+    <div class="col-md-4 col-6">
+      <div class="border rounded p-3 h-100 shadow-sm">
+        <p class="mb-1 fw-semibold">Ms. Anjali Verma</p>
+        <small class="text-muted">Business Development</small>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-6">
+      <div class="border rounded p-3 h-100 shadow-sm">
+        <p class="mb-1 fw-semibold">Mr. Amit Patel</p>
+        <small class="text-muted">Channel Partner</small>
+      </div>
+    </div>
+
+    <!-- Optional -->
+    <div class="col-md-4 col-6">
+      <div class="border rounded p-3 h-100 shadow-sm">
+        <p class="mb-1 fw-semibold">Ms. Neha Singh</p>
+        <small class="text-muted">Product Consultant</small>
+      </div>
+    </div>
+
+    <div class="col-md-4 col-6">
+      <div class="border rounded p-3 h-100 shadow-sm">
+        <p class="mb-1 fw-semibold">Mr. Suresh Kumar</p>
+        <small class="text-muted">Operations Lead</small>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
     <!-- CTA -->
     <div class="text-center mt-3">
