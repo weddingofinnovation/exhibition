@@ -18,52 +18,7 @@
   @php
   $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
   @endphp
-  <div class="container my-5">
-    <div class="card shadow rounded-4 p-4">
-      <div class="text-center">
-        <h2 class="mb-3 text-success">Thank You, <strong>Mayank</strong>!</h2>
-        <p class="lead">You've successfully registered for <strong>Surface & Coating Expo</strong>.</p>
-      </div>
 
-      <hr class="my-4">
-
-      <p class="text-muted text-center">
-        We're excited to welcome you to India’s flagship event category!
-        Your badge will be sent <strong>4 weeks prior</strong> to the event.
-      </p>
-
-      <div class="">
-        <a href="#" id="shareBtn" class="mx-2 text-dark"><i class="bi bi-share fs-4"></i></a>
-        <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}"><i class="bi bi-arrow-up"></i></a>
-      </div>
-
-      <div class="text-center mt-4">
-
-        {{-- <a href="#" class="btn btn-outline-primary px-4 me-2"><i class="bi bi-calendar-event"></i>Add to Calender</a> --}}
-
-        @if(Auth::check())
-        <a href="{{route('user.dashboard',['board' => 'dashboard'])}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
-        @else
-        <a href="{{route('login')}}" class="btn btn-primary px-4"><i class="bi bi-person-circle"></i>Add Your Profile</a>
-        @endif
-      </div>
-
-      <div class="mt-5">
-        <h5 class="mb-3">Travel Made Easy</h5>
-        <p>
-          Our official travel partner can help arrange accommodation and travel.
-          Enjoy <strong>preferential hotel rates</strong> and <strong>seamless planning</strong>
-          to <em>Surface & Coating Expo, Chennai</em>.
-        </p>
-      </div>
-
-      <div class="text-muted small mt-4">
-        <strong>Disclaimer:</strong> Registration cancellations are not permitted.
-        For queries, contact:
-        <a href="mailto:team@exhibition.org.in" class="text-danger">team@exhibition.org.in</a>
-      </div>
-    </div>
-  </div>
 
   <div class="container py-4 py-lg-5 my-4">
     <div class="row justify-content-center">
