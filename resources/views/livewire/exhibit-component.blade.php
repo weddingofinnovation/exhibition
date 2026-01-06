@@ -814,7 +814,7 @@
       font-family: Arial, sans-serif;
       background: url('event-banner.jpg') center/cover no-repeat;
       text-align: center;
-      padding: 60px;
+      /* padding: 60px; */
       color: white;
     }
 
@@ -833,7 +833,7 @@
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
           </section>
 
-          <section class="container my-4 d-none d-md-block">
+          <section class="container d-none d-md-block">
             <h2 class="text-center">Live Event Stats</h2>
 
             <div class="row text-center g-3">
