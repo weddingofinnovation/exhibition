@@ -869,7 +869,7 @@
             </p>
 
             <div class="row g-3">
-              
+
               <div class="col-md-4 col-12">
                 <div class="border rounded p-4 h-100 shadow-sm">
                   <h3 class="fw-bold text-primary">1,250+</h3>
@@ -907,35 +907,6 @@
       <div class="col-md-6 col-12">
         <div class="p-3">
           <div class="container">
-
-            <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
-            <small>Connect with the Right Business Representatives</small>
-            <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
-
-            <h4>For Brands: Invite Business Representatives</h4>
-            <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
-
-            <ul>
-              <strong>How It Works:</strong>
-              <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
-              <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
-              <li>3. Manage & Track - View response and schedule meetings before the event.</li>
-            </ul>
-
-            <h1>For visitors: Request a Meeting with Brands</h1>
-            <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
-
-            <ul>
-              <strong>How It Works:</strong>
-              <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
-              <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
-              <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
-            </ul>
-
-            <p>Don't miss the opportunity to create valueable business relationships!</p>
-            <p>For any queries, contact us at</p>
-
-
             <form wire:submit.prevent="fabrication">
               <div class="mb-1">
                 <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
@@ -999,6 +970,33 @@
       </div>
     </div>
   </div>
+
+  <!-- <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
+            <small>Connect with the Right Business Representatives</small>
+            <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+
+            <h4>For Brands: Invite Business Representatives</h4>
+            <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
+
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
+              <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
+              <li>3. Manage & Track - View response and schedule meetings before the event.</li>
+            </ul>
+
+            <h1>For visitors: Request a Meeting with Brands</h1>
+            <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
+
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
+              <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
+              <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
+            </ul>
+
+            <p>Don't miss the opportunity to create valueable business relationships!</p>
+            <p>For any queries, contact us at</p> -->
 
   @elseif($this->board == 'know_more')
   <style>
