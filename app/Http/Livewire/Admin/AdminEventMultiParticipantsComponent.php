@@ -201,6 +201,7 @@ class AdminEventMultiParticipantsComponent extends Component
             $brand->status = $this->status;
             $brand->admstatus = $this->admstatus;
             $brand->user_id = Auth::user()->id;
+            dd($brand);
             $brand->save();
         }
     }

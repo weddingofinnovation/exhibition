@@ -828,14 +828,17 @@
       <!-- Column 1 -->
       <div class="col-md-5 col-12 my-5 border-end">
         <div class="p-0">
-          <div class="">
-            @php
-            $event_id = session()->get('eventID');
-            $eventdetils = DB::table('events')->where('id', $event_id)->get();
-            @endphp
+          
 
-            @foreach($eventdetils as $franchise)
-            <div class="">
+
+      <div class="">
+        @php
+          $event_id = session()->get('eventID');
+          $eventdetils = DB::table('events')->where('id', $event_id)->get();
+        @endphp
+
+        @foreach($eventdetils as $franchise)
+          <div class="">
               <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                 <div class="col  pr-0">
                   @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -871,6 +874,7 @@
                 <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" style="max-width: 50%;">
               </a>
             </div>
+            
           </div>
         </div>
         @endforeach
@@ -907,15 +911,13 @@
                 src="qr-code.png"
                 alt="Exhibitor QR Code"
                 class="img-fluid border rounded p-1 shadow-sm"
-                style="max-width:120px;"
-              >
+                style="max-width:120px;">
               <small class="d-block text-muted mt-1">
                 Scan for exhibitor details
               </small>
             </div>
 
           </div>
-
 
           <hr>
 
@@ -935,40 +937,6 @@
                     </h4>
                     <h5 class="mb-1 fs-xs">
                       <a class="nav-link-style stretched-link" href="#">Head of Mall Sarath City Mall</a>
-                    </h5>
-                    <!--<span class="fs-xs text-muted">730 followers</span>-->
-                  </div>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
-              </div>
-
-              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                <div class="d-flex align-items-center position-relative">
-
-                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/karthick.jpg" width="17%" alt="Avatar">
-                  <div class="ms-2">
-                    <h4 class="mb-1 fs-base text-body">
-                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Dr.Karthick">Dr.Karthick kumar Chinnaraj </a>
-                    </h4>
-                    <h5 class="mb-1 fs-xs">
-                      <a class="nav-link-style stretched-link" href="#">Founder &amp; Managing Director 5K Car Care Pvt Ltd</a>
-                    </h5>
-                    <!--<span class="fs-xs text-muted">730 followers</span>-->
-                  </div>
-                </div>
-                <button class="btn btn-sm btn-outline-secondary ms-2">Follow</button>
-              </div>
-
-              <div class="d-flex align-items-center justify-content-between w-100 mb-2">
-                <div class="d-flex align-items-center position-relative">
-
-                  <img class="rounded-circle ms-2" src="https://exhibition.org.in/public/speaker/shashank.jpg" width="17%" alt="Avatar">
-                  <div class="ms-2">
-                    <h4 class="mb-1 fs-base text-body">
-                      <a class="nav-link-style stretched-link" href="https://exhibition.org.in/author/Shashank%20Singh">Shashank Singh</a>
-                    </h4>
-                    <h5 class="mb-1 fs-xs">
-                      <a class="nav-link-style stretched-link" href="#">CEO &amp; Director Capsicum Kitchens &amp; Wardrobes</a>
                     </h5>
                     <!--<span class="fs-xs text-muted">730 followers</span>-->
                   </div>
@@ -1006,7 +974,6 @@
 
         </div>
       </div>
-
 
       <section class="hero">
         <h1>Connect. Collaborate. Grow.</h1>
