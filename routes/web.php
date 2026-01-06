@@ -164,7 +164,7 @@ use App\Http\Livewire\GiftBirthdayComponent;
 use App\Http\Livewire\GiftDateComponent;
 use App\Http\Livewire\GoogleComponent;
 use App\Http\Livewire\Admin\AdminScraperComponent;
-
+use App\Http\Livewire\Livewire\ExhibitorInviteComponent;
 //use App\Http\Livewire\Livewire\AdminMagazineComponent;
 
 use App\Http\Livewire\PrivacyComponent;
@@ -313,6 +313,8 @@ Route::get('/terms', TermsComponent::class)->name('terms.condition');
 Route::get('/privacy-policy', PrivacyComponent::class)->name('privacy.condition');
 
 
+//ExhibitorInvitee
+Route::get('/invitee/{event_id}', ExhibitorInviteComponent::class)->name('invitee.add');
 
 //catch exhibition data
 Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.add');
