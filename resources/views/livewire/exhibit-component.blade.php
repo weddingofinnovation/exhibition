@@ -868,7 +868,7 @@
 
                     <div class="col-3  p-0">
                       <a class="card-img-top d-block overflow-hidden" href="#" wire:click.prevent="selectImage('{{$franchise->id}}')">
-                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}">
+                        <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}" style="max-width: 50%;">
                       </a>
                     </div>
                 </div>
