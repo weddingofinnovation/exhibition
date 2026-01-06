@@ -933,16 +933,14 @@
               </div>
 
               <div class="mb-3">
-                <label>Company</label>
-                <input type="text" class="form-control" wire:model.lazy="company" required="">
+                <input type="text" class="form-control" wire:model.lazy="company" required="" placeholder="Enter your company">
                 @error('company')
                 <div class="form-text text-primary">{{$message}}</div>
                 @enderror
               </div>
 
               <div class="mb-3">
-                <label>Interested In</label>
-                <select class="form-control" wire:model.lazy="interest" required="">
+                <select class="form-control" wire:model.lazy="interest" required="" placeholder="Enter your phone">
                   <option value="">Select</option>
                   <option value="product">Product Info</option>
                   <option value="pricing">Pricing</option>
@@ -955,8 +953,7 @@
               </div>
 
               <div class="mb-3">
-                <label>Notes</label>
-                <textarea name="notes" class="form-control"></textarea>
+                <textarea name="notes" class="form-control" placeholder="Enter your notes"></textarea>
                 @error('notes')
                 <div class="form-text text-primary">{{$message}}</div>
                 @enderror
