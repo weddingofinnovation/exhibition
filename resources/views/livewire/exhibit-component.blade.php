@@ -932,7 +932,7 @@
                 @enderror
               </div>
 
-              <div class="mb-3">
+              <div class="mb-1">
                 <input type="text" class="form-control" wire:model.lazy="company" required="" placeholder="Enter your company">
                 @error('company')
                 <div class="form-text text-primary">{{$message}}</div>
