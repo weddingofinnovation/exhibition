@@ -836,6 +836,7 @@
     </h5>
 
     @php
+       $event_id = session()->get('eventID');
        $eventdetils = DB::table('events')->where('id', $event_id)->get();
     @endphp
 
