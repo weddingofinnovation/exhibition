@@ -42,9 +42,9 @@
           <a class="btn btn-sm btn-outline-dark text-dark" href="{{route('printpdf.badge',['visitorid' => $visitorid])}}"><i class="bi bi-arrow-up"></i></a>
         </div>
 
-        
 
-       
+
+
         <div class="fs-xs mt-2">
           Disclaimer : Please note that cancellations are not permitted once the registration process is complete. Kindly reach out to us at
           <a href="">team@exhibition.org.in</a> for any registration related queries.
@@ -64,7 +64,7 @@
 
           <!-- data -->
 
-          <section class="hero">
+          <section class="hero d-none d-md-block">
             <h1>Connect. Collaborate. Grow.</h1>
             <p>Invite business representatives or schedule meetings with top brands at the event.</p>
           </section>
