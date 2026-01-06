@@ -808,7 +808,7 @@
     </form>
   </div>
   @elseif($this->board == 'invite')
-
+  
   <style>
     .hero {
       font-family: Arial, sans-serif;
@@ -823,7 +823,12 @@
     }
   </style>
 
-  <section class="hero">
+  <div class="container">
+  <div class="row">
+    <!-- Column 1 -->
+    <div class="col-md-6 col-12">
+      <div class="p-3 border">
+        <section class="hero">
     <h1>Connect. Collaborate. Grow.</h1>
     <p>Invite business representatives or schedule meetings with top brands at the event.</p>
   </section>
@@ -866,10 +871,13 @@
       </div>
     </div>
   </section>
+      </div>
+    </div>
 
-
-
-  <div class="container">
+    <!-- Column 2 -->
+    <div class="col-md-6 col-12">
+      <div class="p-3 border">
+       <div class="container">
 
     <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
     <small>Connect with the Right Business Representatives</small>
@@ -900,30 +908,70 @@
 
 
     <form wire:submit.prevent="fabrication">
-      <div class="mb-1">
-        <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-        <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
-        @error('name')
-        <div class="form-text text-primary">{{$message}}</div>
-        @enderror
-      </div>
-      <div class="mb-1">
-        <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-        <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
-        @error('email')
-        <div class="form-text text-primary">{{$message}}</div>
-        @enderror
-      </div>
-      <div class="mb-1">
-        <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-        <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
-        @error('phone')
-        <div class="form-text text-primary">{{$message}}</div>
-        @enderror
-      </div>
-      <button class="btn btn-primary form-control" type="submit">Submit</button>
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+            <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+            @error('name')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+            <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+            @error('email')
+            <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-1">
+            <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+            <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+            @error('phone')
+              <div class="form-text text-primary">{{$message}}</div>
+            @enderror
+          </div>
+
+          <div class="mb-3">
+              <label>Company</label>
+              <input type="text" class="form-control" wire:model.lazy="company" required="">
+              @error('company')
+                <div class="form-text text-primary">{{$message}}</div>
+              @enderror
+          </div>
+
+          <div class="mb-3">
+              <label>Interested In</label>
+              <select class="form-control" wire:model.lazy="interest" required="">
+                  <option value="">Select</option>
+                  <option value="product">Product Info</option>
+                  <option value="pricing">Pricing</option>
+                  <option value="dealership">Dealership</option>
+                  <option value="bulk">Bulk Order</option>
+              </select>
+              @error('interest')
+                <div class="form-text text-primary">{{$message}}</div>
+              @enderror
+          </div>
+
+          <div class="mb-3">
+              <label>Notes</label>
+              <textarea name="notes" class="form-control"></textarea>
+              @error('notes')
+                <div class="form-text text-primary">{{$message}}</div>
+              @enderror
+          </div>
+
+          <button class="btn btn-primary form-control" type="submit">Submit</button>
     </form>
   </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
 
   @elseif($this->board == 'know_more')
   <style>
