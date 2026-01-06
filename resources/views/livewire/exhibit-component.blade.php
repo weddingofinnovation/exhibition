@@ -834,7 +834,7 @@
           </section>
 
           <section class="container my-4 d-none d-md-block">
-            <h2 class="text-center mb-4">Live Event Stats</h2>
+            <h2 class="text-center">Live Event Stats</h2>
 
             <div class="row text-center g-3">
 
@@ -862,8 +862,7 @@
             </div>
           </section>
 
-
-          <section class="container my-4 d-none d-md-block">
+          <section class="container my-4 d-none">
             <p class="fw-bold text-center mb-4">
               Invitee Helps You Achieve Your Goals
             </p>
