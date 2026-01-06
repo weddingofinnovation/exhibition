@@ -905,8 +905,8 @@
 
       <!-- Column 2 -->
       <div class="col-md-6 col-12">
-        <div class="p-3">
-          <div class="container">
+        <div class="">
+          <div class="">
             <form wire:submit.prevent="fabrication">
               <div class="mb-1">
                 <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
