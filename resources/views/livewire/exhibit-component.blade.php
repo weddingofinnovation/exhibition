@@ -808,7 +808,7 @@
     </form>
   </div>
   @elseif($this->board == 'invite')
-  
+
   <style>
     .hero {
       font-family: Arial, sans-serif;
@@ -824,154 +824,155 @@
   </style>
 
   <div class="container">
-  <div class="row">
-    <!-- Column 1 -->
-    <div class="col-md-6 col-12">
-      <div class="p-3 border">
-        <section class="hero">
-    <h1>Connect. Collaborate. Grow.</h1>
-    <p>Invite business representatives or schedule meetings with top brands at the event.</p>
-  </section>
+    <div class="row">
+      <!-- Column 1 -->
+      <div class="col-md-6 col-12">
+        <div class="p-3">
+          <section class="hero">
+            <h1>Connect. Collaborate. Grow.</h1>
+            <p>Invite business representatives or schedule meetings with top brands at the event.</p>
+          </section>
 
-  <section class="container">
-    <h2 class="text-center">Live Event Stats</h2>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <h3>1,250+</h3>
-        <p>Invites Sent</p>
+          <section class="container">
+            <h2 class="text-center">Live Event Stats</h2>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <h3>1,250+</h3>
+                <p>Invites Sent</p>
+              </div>
+              <div class="stat-box">
+                <h3>800+</h3>
+                <p>Meeting Scheduled</p>
+              </div>
+              <div class="stat-box">
+                <h3>Top 5</h3>
+                <p>Most Requested Brands</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="container">
+            <p class="fw-bold">invitee Help You Achieve Your Goals</p>
+            <div class="stats-grid">
+              <div class="stat-box">
+                <h3>1,250+</h3>
+                <p>Market Your Business to New Users</p>
+                <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
+              </div>
+              <div class="stat-box">
+                <h3>800+</h3>
+                <p>Grow Your Revenue</p>
+                <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
+              </div>
+              <div class="stat-box">
+                <h3>Top 5</h3>
+                <p>Get More Walk-in Customers</p>
+                <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
-      <div class="stat-box">
-        <h3>800+</h3>
-        <p>Meeting Scheduled</p>
-      </div>
-      <div class="stat-box">
-        <h3>Top 5</h3>
-        <p>Most Requested Brands</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="container">
-    <p class="fw-bold">invitee Help You Achieve Your Goals</p>
-    <div class="stats-grid">
-      <div class="stat-box">
-        <h3>1,250+</h3>
-        <p>Market Your Business to New Users</p>
-        <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
-      </div>
-      <div class="stat-box">
-        <h3>800+</h3>
-        <p>Grow Your Revenue</p>
-        <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
-      </div>
-      <div class="stat-box">
-        <h3>Top 5</h3>
-        <p>Get More Walk-in Customers</p>
-        <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
-      </div>
-    </div>
-  </section>
-      </div>
-    </div>
+      <!-- Column 2 -->
+      <div class="col-md-6 col-12">
+        <div class="p-3">
+          <div class="container">
 
-    <!-- Column 2 -->
-    <div class="col-md-6 col-12">
-      <div class="p-3 border">
-       <div class="container">
+            <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
+            <small>Connect with the Right Business Representatives</small>
+            <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
 
-    <h4 class="mt-5">Exclusive Business Networking - Invite & Meet Brands</h4>
-    <small>Connect with the Right Business Representatives</small>
-    <p class="fs-ms">The Exhibtion Network introduces a seamless <strong> Invite & Meet </strong> feature, allowing brands and business representatives to connect efficiently at trade shows, exhibitions, and corporate events. Whether you're a brand looking to invite industry professionals or a visitor eager to schedule a meeting with top exhibitors, this platform makes it simple and effective.</p>
+            <h4>For Brands: Invite Business Representatives</h4>
+            <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
 
-    <h4>For Brands: Invite Business Representatives</h4>
-    <p>Maximize your brand's reach by inviting potential clients, partners, and industry leaders to meet you at your booth. Build valuable connections, discuss business oppoortunities, and make he most of your event participation.</p>
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
+              <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
+              <li>3. Manage & Track - View response and schedule meetings before the event.</li>
+            </ul>
 
-    <ul>
-      <strong>How It Works:</strong>
-      <li>1. Submit your Invitation - Fill in the form with your, <strong>brand name, stall number, and event details.</strong></li>
-      <li>2. Send personalized Invites - Reach out to business representatives who match your target audience.</li>
-      <li>3. Manage & Track - View response and schedule meetings before the event.</li>
-    </ul>
+            <h1>For visitors: Request a Meeting with Brands</h1>
+            <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
 
-    <h1>For visitors: Request a Meeting with Brands</h1>
-    <p>Looking to connect with leading brands at the event? Schedule a meeting in advance to ensure a productive interaction.</p>
+            <ul>
+              <strong>How It Works:</strong>
+              <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
+              <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
+              <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
+            </ul>
 
-    <ul>
-      <strong>How It Works:</strong>
-      <li>1. choose a Brand - Select from the list of participating exhibitors.</li>
-      <li>2. Submit Your Meeting Request - Provide your details and preferred time.</li>
-      <li>3. Receive Confirmation - The brand will confirm the appointment, making your visit more effective.</li>
-    </ul>
-
-    <p>Don't miss the opportunity to create valueable business relationships!</p>
-    <p>For any queries, contact us at</p>
+            <p>Don't miss the opportunity to create valueable business relationships!</p>
+            <p>For any queries, contact us at</p>
 
 
-    <form wire:submit.prevent="fabrication">
-          <div class="mb-1">
-            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-            <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
-            @error('name')
-            <div class="form-text text-primary">{{$message}}</div>
-            @enderror
-          </div>
-
-          <div class="mb-1">
-            <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
-            <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
-            @error('email')
-            <div class="form-text text-primary">{{$message}}</div>
-            @enderror
-          </div>
-
-          <div class="mb-1">
-            <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
-            <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
-            @error('phone')
-              <div class="form-text text-primary">{{$message}}</div>
-            @enderror
-          </div>
-
-          <div class="mb-3">
-              <label>Company</label>
-              <input type="text" class="form-control" wire:model.lazy="company" required="">
-              @error('company')
+            <form wire:submit.prevent="fabrication">
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="name" wire:model.lazy="name" required="" placeholder="Enter your name">
+                @error('name')
                 <div class="form-text text-primary">{{$message}}</div>
-              @enderror
-          </div>
+                @enderror
+              </div>
 
-          <div class="mb-3">
-              <label>Interested In</label>
-              <select class="form-control" wire:model.lazy="interest" required="">
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
+                <input class="form-control" type="email" wire:model.lazy="email" required="" placeholder="Enter your email address">
+                @error('email')
+                <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+
+              <div class="mb-1">
+                <!-- <label class="form-label" for="recover-email">Enter your phone</label> -->
+                <input class="form-control" type="number" wire:model.lazy="phone" required="" placeholder="Enter your phone">
+                @error('phone')
+                <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Company</label>
+                <input type="text" class="form-control" wire:model.lazy="company" required="">
+                @error('company')
+                <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Interested In</label>
+                <select class="form-control" wire:model.lazy="interest" required="">
                   <option value="">Select</option>
                   <option value="product">Product Info</option>
                   <option value="pricing">Pricing</option>
                   <option value="dealership">Dealership</option>
                   <option value="bulk">Bulk Order</option>
-              </select>
-              @error('interest')
+                </select>
+                @error('interest')
                 <div class="form-text text-primary">{{$message}}</div>
-              @enderror
+                @enderror
+              </div>
+
+              <div class="mb-3">
+                <label>Notes</label>
+                <textarea name="notes" class="form-control"></textarea>
+                @error('notes')
+                <div class="form-text text-primary">{{$message}}</div>
+                @enderror
+              </div>
+
+              <button class="btn btn-primary form-control" type="submit">Submit</button>
+            </form>
           </div>
 
-          <div class="mb-3">
-              <label>Notes</label>
-              <textarea name="notes" class="form-control"></textarea>
-              @error('notes')
-                <div class="form-text text-primary">{{$message}}</div>
-              @enderror
-          </div>
-
-          <button class="btn btn-primary form-control" type="submit">Submit</button>
-    </form>
-  </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
-  
+
 
   @elseif($this->board == 'know_more')
   <style>
@@ -1476,9 +1477,9 @@
           <p style="font-size:20px;font-weight:600;margin-bottom:12px;">{{ucwords(trans(Str::limit($franchise->eventname, 24)))}} :
 
             @if(Carbon\Carbon::parse ($findevent->startdate)->format('M') != Carbon\Carbon::parse ($findevent->enddate)->format('M'))
-             {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+            {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
             @else
-              {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
+            {{Carbon\Carbon::parse ($findevent->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($findevent->enddate)->format('D, d M')}}
             @endif
 
             | {{ucfirst(trans($findevent->venue))}}, {{ucfirst(trans($findevent->city))}} | {{$findevent->country}}
