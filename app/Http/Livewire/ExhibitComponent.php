@@ -303,7 +303,7 @@ class ExhibitComponent extends Component
         $newEvent->email = $this->email;
         $newEvent->phone = $this->phone;
         $newEvent->type = 'invitee';
-        $newEvent->event_id = '1239';
+        $newEvent->event_id = '1209';
 
         //$newEvent->user_id = Auth::user()->id;
 
