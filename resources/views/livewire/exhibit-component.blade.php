@@ -863,26 +863,43 @@
           </section>
 
 
-          <section class="container">
-            <p class="fw-bold">invitee Help You Achieve Your Goals</p>
-            <div class="stats-grid">
-              <div class="stat-box">
-                <h3>1,250+</h3>
-                <p>Market Your Business to New Users</p>
-                <strong>Effortless Scheduling</strong> - Plan your meetings in advance for a seamless event experience.
+          <section class="container my-4">
+            <p class="fw-bold text-center mb-4">
+              Invitee Helps You Achieve Your Goals
+            </p>
+
+            <div class="row g-3">
+              
+              <div class="col-md-4 col-12">
+                <div class="border rounded p-4 h-100 shadow-sm">
+                  <h3 class="fw-bold text-primary">1,250+</h3>
+                  <p class="fw-semibold mb-2">Market Your Business to New Users</p>
+                  <strong>Effortless Scheduling</strong> –
+                  Plan your meetings in advance for a seamless event experience.
+                </div>
               </div>
-              <div class="stat-box">
-                <h3>800+</h3>
-                <p>Grow Your Revenue</p>
-                <strong>Meaningful Interactions</strong> - Connect with the right people who matter to your business.
+
+              <div class="col-md-4 col-12">
+                <div class="border rounded p-4 h-100 shadow-sm">
+                  <h3 class="fw-bold text-primary">800+</h3>
+                  <p class="fw-semibold mb-2">Grow Your Revenue</p>
+                  <strong>Meaningful Interactions</strong> –
+                  Connect with the right people who matter to your business.
+                </div>
               </div>
-              <div class="stat-box">
-                <h3>Top 5</h3>
-                <p>Get More Walk-in Customers</p>
-                <strong>Time-Saving</strong> - Avoid last-minute scheduling and maximize your event productivity.
+
+              <div class="col-md-4 col-12">
+                <div class="border rounded p-4 h-100 shadow-sm">
+                  <h3 class="fw-bold text-primary">Top 5</h3>
+                  <p class="fw-semibold mb-2">Get More Walk-in Customers</p>
+                  <strong>Time-Saving</strong> –
+                  Avoid last-minute scheduling and maximize your event productivity.
+                </div>
               </div>
+
             </div>
           </section>
+
         </div>
       </div>
 
