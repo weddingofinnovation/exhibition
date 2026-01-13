@@ -940,7 +940,6 @@
 
           @php 
              $events = DB::table('events')->get();
-             $getparticipatednumber = DB::table('participants')->where()->get(); 
           @endphp
 
             <div class="container">
