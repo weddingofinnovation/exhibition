@@ -950,9 +950,7 @@
                       @php 
                         $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
                       @endphp
-
-                        <option value="{{ $event->id }}">{{ $event->eventname }}-{{$event->id}}</option>
-                        <button>{{$getparticipatednumber->count()}}</button>
+                        <option value="{{ $event->id }}">{{ $event->eventname }}-{{$event->id}}-{{$getparticipatednumber->count()}}</option>
                     @endforeach
                 </select>
 
