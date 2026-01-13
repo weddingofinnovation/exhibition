@@ -209,34 +209,37 @@ class AdminEventMultiParticipantsComponent extends Component
    
     public function updateBrand()
     {
-        // ✅ Validate input (Livewire-friendly)
+        // 1️⃣ Validate input
         $this->validate([
             'brand_name' => 'required|string',
             'event_id'   => 'required|exists:events,id',
         ]);
 
-        // ✅ Normalize brand names (comma-separated)
+        // 2️⃣ Normalize comma-separated brand names
         $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
-        $brandList  = array_filter(array_map('trim', explode(',', $normalized)));
+        $brandList  = array_unique(array_filter(array_map('trim', explode(',', $normalized))));
 
-        // ✅ Fetch event once
+        $addedBrands     = [];
+        $duplicateBrands = [];
+
+        // 3️⃣ Fetch event once
         $event = Event::findOrFail($this->event_id);
-        $participants = [];
+
         foreach ($brandList as $brandName) {
 
-            // ✅ Create or fetch Brand
+            // 4️⃣ Create or get Brand
             $brand = Brand::firstOrCreate(
                 ['brand_name' => $brandName],
                 [
                     'slug'      => Str::slug($brandName),
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
-                    'user_id'   => Auth::user()->id,
+                    'user_id'   => Auth::id(),
                 ]
             );
-            
-            // ✅ Create participant safely (avoid duplicates)
-            $participants[] = Participant::firstOrCreate(
+
+            // 5️⃣ Create participant (no duplicates)
+            $participant = Participant::firstOrCreate(
                 [
                     'brand_id' => $brand->id,
                     'event_id' => $event->id,
@@ -244,17 +247,33 @@ class AdminEventMultiParticipantsComponent extends Component
                 [
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
-                    'user_id'   => Auth::user()->id,
+                    'user_id'   => Auth::id(),
                 ]
             );
-        
+
+            // 6️⃣ Track added vs duplicate brands
+            if ($participant->wasRecentlyCreated) {
+                $addedBrands[] = $brandName;
+            } else {
+                $duplicateBrands[] = $brandName;
+            }
         }
 
-        // ✅ Success feedback
-        session()->flash('success', 'Brand(s) added to event successfully.');
+        // 7️⃣ Flash messages
+        if (!empty($addedBrands)) {
+            session()->flash(
+                'success',
+                'Added successfully: ' . implode(', ', $addedBrands)
+            );
+        }
+
+        if (!empty($duplicateBrands)) {
+            session()->flash(
+                'warning',
+                'Already exists in this event: ' . implode(', ', array_unique($duplicateBrands))
+            );
+        }
     }
-
-
 
     public function updateOrganisation()
     {
