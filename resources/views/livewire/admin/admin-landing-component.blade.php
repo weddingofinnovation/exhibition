@@ -206,6 +206,15 @@
                       <p class="weight">200.59</p> -->
           </a>
 
+          <a class="element-item transition metal" data-category="transition" href="{{route('admin.panel', ['board' => 'exhbitor-database'])}}">
+            <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
+            <h3 class="name">database</h3>
+            <!-- </a>  -->
+            <p class="symbol">update</p>
+            <!-- <p class="number">80</p>
+                      <p class="weight">200.59</p> -->
+          </a>
+
 
           <a class="element-item transition metal" data-category="transition" href="{{route('admin.dashboard', ['board' => 'event'])}}">
             <!-- <a  href="{{route('admin.dashboard', ['board' => 'event'])}}"> -->
