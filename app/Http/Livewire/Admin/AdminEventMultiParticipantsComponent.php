@@ -207,52 +207,52 @@ class AdminEventMultiParticipantsComponent extends Component
     // }
 
    
+    public function updateBrand()
+    {
+        // ✅ Validate input (Livewire-friendly)
+        $this->validate([
+            'brand_name' => 'required|string',
+            'event_id'   => 'required|exists:events,id',
+        ]);
 
-public function updateBrand()
-{
-    // ✅ Validate input (Livewire-friendly)
-    $this->validate([
-        'brand_name' => 'required|string',
-        'event_id'   => 'required|exists:events,id',
-    ]);
+        // ✅ Normalize brand names (comma-separated)
+        $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
+        $brandList  = array_filter(array_map('trim', explode(',', $normalized)));
 
-    // ✅ Normalize brand names (comma-separated)
-    $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
-    $brandList  = array_filter(array_map('trim', explode(',', $normalized)));
+        // ✅ Fetch event once
+        $event = Event::findOrFail($this->event_id);
+        $participants = [];
+        foreach ($brandList as $brandName) {
 
-    // ✅ Fetch event once
-    $event = Event::findOrFail($this->event_id);
+            // ✅ Create or fetch Brand
+            $brand = Brand::firstOrCreate(
+                ['brand_name' => $brandName],
+                [
+                    'slug'      => Str::slug($brandName),
+                    'status'    => $this->status,
+                    'admstatus' => $this->admstatus,
+                    'user_id'   => Auth::user()->id,
+                ]
+            );
+            
+            // ✅ Create participant safely (avoid duplicates)
+            $participants[] = Participant::firstOrCreate(
+                [
+                    'brand_id' => $brand->id,
+                    'event_id' => $event->id,
+                ],
+                [
+                    'status'    => $this->status,
+                    'admstatus' => $this->admstatus,
+                    'user_id'   => Auth::user()->id,
+                ]
+            );
+        
+        }
 
-    foreach ($brandList as $brandName) {
-
-        // ✅ Create or fetch Brand
-        $brand = Brand::firstOrCreate(
-            ['brand_name' => $brandName],
-            [
-                'slug'      => Str::slug($brandName),
-                'status'    => $this->status,
-                'admstatus' => $this->admstatus,
-            ]
-        );
-
-        // ✅ Create participant safely (avoid duplicates)
-        Participant::firstOrCreate(
-            [
-                'brand_id' => $brand->id,
-                'event_id' => $event->id,
-            ],
-            [
-                'status'    => $this->status,
-                'admstatus' => $this->admstatus,
-                'user_id'   => Auth::id(),
-            ]
-        );
+        // ✅ Success feedback
+        session()->flash('success', 'Brand(s) added to event successfully.');
     }
-
-    // ✅ Success feedback
-    session()->flash('success', 'Brand(s) added to event successfully.');
-}
-
 
 
 
