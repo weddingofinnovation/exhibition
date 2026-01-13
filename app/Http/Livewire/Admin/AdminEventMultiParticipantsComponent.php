@@ -234,7 +234,7 @@ class AdminEventMultiParticipantsComponent extends Component
                     'slug'      => Str::slug($brandName),
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
-                    'user_id'   => Auth::id(),
+                    'user_id'   => Auth::user()->id,
                 ]
             );
 
@@ -247,7 +247,7 @@ class AdminEventMultiParticipantsComponent extends Component
                 [
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
-                    'user_id'   => Auth::id(),
+                    'user_id'   => Auth::user()->id,
                 ]
             );
 
