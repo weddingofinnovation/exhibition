@@ -260,6 +260,7 @@ class AdminEventMultiParticipantsComponent extends Component
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
                     'user_id'   => Auth::user()->id,
+                    
                 ]
             );
 
