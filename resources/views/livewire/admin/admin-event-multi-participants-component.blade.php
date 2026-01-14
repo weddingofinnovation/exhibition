@@ -445,7 +445,7 @@
                                             wire:model.defer="year"
                                             placeholder="e.g. 2025">
                                         @error('year') 
-                                        <small class="text-danger">{{ $message }}</small>
+                                          <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
 
