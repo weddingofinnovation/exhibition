@@ -982,9 +982,13 @@
                           <select wire:model="oldevent_id" class="form-select" required>
                               <option value="">Select Old Event</option>
                               @foreach($events as $event)
+                                @php 
+                                  $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
+                                @endphp
+                                
                                   <option value="{{ $event->id }}">
                                       {{ $event->id }} - {{ $event->eventname }}
-                                      ({{ $event->participants_count ?? '' }})
+                                       - {{$getparticipatednumber->count() ?? ''}}
                                   </option>
                               @endforeach
                           </select>
@@ -1008,7 +1012,7 @@
                               @foreach($events as $event)
                                   <option value="{{ $event->id }}">
                                       {{ $event->id }} - {{ $event->eventname }}
-                                      ({{ $event->participants_count ?? '' }})
+                                      - {{$getparticipatednumber->count() ?? ''}}
                                   </option>
                               @endforeach
                           </select>
