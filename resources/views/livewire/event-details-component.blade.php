@@ -6089,7 +6089,7 @@
                 @foreach ($getExhibitor as $franchise)
 
                 @php 
-                    $branddetails = DB::table('brands')->where('id', $franchise->brand_id)->get();
+                    $branddetails = DB::table('brands')->where('id', $franchise->brand_id)->first();
                 @endphp
 
                 <div class=" ">
