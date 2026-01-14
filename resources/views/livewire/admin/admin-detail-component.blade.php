@@ -278,7 +278,6 @@
 
                 </div>
 
-
                 <div class="">
                   <small>CSV upload exhibitor</small>
 
@@ -511,8 +510,6 @@
 
                   </div>
                 </div>
-
-
 
                 {{--participants--}}
                 <div class=" my-3">

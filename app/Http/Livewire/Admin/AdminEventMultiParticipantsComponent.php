@@ -206,6 +206,7 @@ class AdminEventMultiParticipantsComponent extends Component
     //     }
     // }
 
+    public $year;
    
     public function updateBrand()
     {
@@ -213,6 +214,7 @@ class AdminEventMultiParticipantsComponent extends Component
         $this->validate([
             'brand_name' => 'required|string',
             'event_id'   => 'required|exists:events,id',
+            'year'       => 'required|digits:4|integer|min:2000|max:' . date('Y'),
         ]);
 
         // 2️⃣ Normalize comma-separated brand names
@@ -250,7 +252,8 @@ class AdminEventMultiParticipantsComponent extends Component
             $participant = Participant::firstOrCreate(
                 [
                     'brand_id' => $brand->id,
-                     'event_id' => $event->id,
+                    'event_id' => $event->id,
+                    'year'     => $this->year, // 🔑 year added
                 ],
                 [
                     'status'    => $this->status,

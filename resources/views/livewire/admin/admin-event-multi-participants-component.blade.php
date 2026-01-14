@@ -436,6 +436,19 @@
                                 <form wire:submit.prevent="updateBrand">
                                     <label class="form-label">Add Participants<span class="text-danger">*</span></label>
                                     <textarea type="text" placeholder="participants" class="form-control" wire:model="brand_name" rows="7"></textarea>
+                                    <!-- <input type="text" class="form-control" wire:model="yearofdata" placeholder="year of data"> -->
+
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold">Year</label>
+                                        <input type="number"
+                                            class="form-control"
+                                            wire:model.defer="year"
+                                            placeholder="e.g. 2025">
+                                        @error('year')
+                                            <small class="text-danger">{{ $message }}</small>
+                                        @enderror
+                                    </div>
+
                                     <button class="btn btn-primary btn-shadow d-block w-100 mt-2" type="submit">Submit</button>
                                 </form>
                                 @endif
