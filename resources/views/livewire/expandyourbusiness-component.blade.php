@@ -168,18 +168,16 @@
 
     @php
       $geteventexhibitors = DB::table('participants')->where('event_id', $this->event_id)->get();
-
-      
     @endphp
 
-    {{$this->event_id}} {{$exhibitors->count()}} {{$geteventexhibitors->count()}}
+    {{$this->event_id}} {{$geteventexhibitors->count()}}
 
     @foreach($geteventexhibitors as $exhibitor)
 
-    @php
-      $exhibitors = DB::table('brands')->where('id', $exhibitor->brand_id)->get();
-    @endphp
-    
+      @php
+        $exhibitors = DB::table('brands')->where('id', $exhibitor->brand_id)->get();
+      @endphp
+
       <div class="exhibitor-item border-bottom py-3">
         <div class="row align-items-center g-2">
 
