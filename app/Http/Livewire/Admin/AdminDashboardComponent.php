@@ -45,6 +45,7 @@ use App\Models\Bcontact;
 use App\Models\Brandemograhic;
 use App\Models\Floorplan;
 use App\Models\Location;
+use App\Models\Participant;
 use App\Models\Photo;
 use App\Models\Space;
 use App\Models\Ticket;
@@ -1047,6 +1048,12 @@ public $selectedYear;
       $ticketDel->save();
     }
 
+    public function changeeventid($event_id)
+    {
+      $ticketDel = Participant::find($event_id);
+      $ticketDel->event_id = trim($status);
+      $ticketDel->save();
+    }
 
     public function approveApplication($id, $status)
     {

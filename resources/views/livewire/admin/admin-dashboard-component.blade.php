@@ -943,7 +943,7 @@
           @endphp
 
             <div class="container">
-              <form >
+              <form wire:submit.prevent="changeeventid">
                 <select wire:model="event_id" required>
                     <option value="">Select Event</option>
                     @foreach($events as $event)
@@ -954,7 +954,7 @@
                     @endforeach
                 </select>
 
-                <button type="submit">Submit</button>
+                <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
               </form>
             </div>
 
