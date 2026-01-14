@@ -1010,6 +1010,10 @@
                           <select wire:model="newevent_id" class="form-select" required>
                               <option value="">Select New Event</option>
                               @foreach($events as $event)
+                                @php 
+                                  $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
+                                @endphp
+                                
                                   <option value="{{ $event->id }}">
                                       {{ $event->id }} - {{ $event->eventname }}
                                       - {{$getparticipatednumber->count() ?? ''}}
@@ -1026,9 +1030,7 @@
                   <!-- SUBMIT -->
                   <div class="row mt-4">
                       <div class="col-12 col-md-4 mx-auto">
-                          <button type="submit" class="btn btn-primary w-100">
-                              Change Event
-                          </button>
+                          <button class="btn btn-primary form-control mb-5" type="submit">Change Event</button>
                       </div>
                   </div>
 
