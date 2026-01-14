@@ -217,7 +217,7 @@ class AdminEventMultiParticipantsComponent extends Component
             'year'       => 'required|digits:4|integer|min:2000|max:' . date('Y'),
         ]);
 
-        dd($this->year);
+        //dd($this->year);
         // 2️⃣ Normalize comma-separated brand names
         $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
         //$brandList  = array_unique(array_filter(array_map('trim', explode(',', $normalized))));
