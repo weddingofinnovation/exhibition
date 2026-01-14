@@ -512,10 +512,12 @@
                 <div class=" my-3">
                   <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
                     @php
-                    $eventparticipants = DB::table('participants')->where('event_id', $evento->id)->get();
+                    $eventparticipantsCount = DB::table('participants')
+                    ->where('event_id', $evento->id)
+                    ->count();
                     @endphp
                     <div class="col  pr-0">
-                      <div class="h4 fw-light mb-0">{{$eventparticipants->count()}}</div>
+                      <div class="h4 fw-light mb-0">{{$eventparticipantsCount}}</div>
                       <div class="round-circle">EXHI</div>
                     </div>
 
