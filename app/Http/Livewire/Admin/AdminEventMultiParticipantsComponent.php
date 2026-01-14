@@ -207,7 +207,7 @@ class AdminEventMultiParticipantsComponent extends Component
     // }
 
     public $year;
-   
+
     public function updateBrand()
     {
         // 1️⃣ Validate input
@@ -217,16 +217,17 @@ class AdminEventMultiParticipantsComponent extends Component
             'year'       => 'required|digits:4|integer|min:2000|max:' . date('Y'),
         ]);
 
+        dd($this->year);
         // 2️⃣ Normalize comma-separated brand names
         $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
         //$brandList  = array_unique(array_filter(array_map('trim', explode(',', $normalized))));
         $brandList = array_unique(
-                        array_filter(
-                            array_map(function ($item) {
-                                return strtolower(trim($item));
-                            }, explode(',', $normalized))
-                        )
-                    );
+            array_filter(
+                array_map(function ($item) {
+                    return strtolower(trim($item));
+                }, explode(',', $normalized))
+            )
+        );
 
 
         $addedBrands     = [];
@@ -253,14 +254,14 @@ class AdminEventMultiParticipantsComponent extends Component
                 [
                     'brand_id' => $brand->id,
                     'event_id' => $event->id,
-                    
+
                 ],
                 [
                     'year'     => $this->year, // 🔑 year added
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
                     'user_id'   => Auth::user()->id,
-                    
+
                 ]
             );
 
