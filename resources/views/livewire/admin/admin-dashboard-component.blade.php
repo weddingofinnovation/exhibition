@@ -942,33 +942,6 @@
              $events = DB::table('events')->get();
           @endphp
 
-            <div class="container">
-              <form wire:submit.prevent="changeeventid">
-                old id 
-                <select wire:model="oldevent_id" required>
-                    <option value="">Select Event</option>
-                    @foreach($events as $event)
-                      @php 
-                        $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
-                      @endphp
-                        <option value="{{ $event->id }}">{{$event->id}}-{{ $event->eventname }}-{{$getparticipatednumber->count()}}</option>
-                    @endforeach
-                </select>
-                new id
-                <select wire:model="oldevent_id" required>
-                    <option value="">Select Event</option>
-                    @foreach($events as $event)
-                      @php 
-                        $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
-                      @endphp
-                        <option value="{{ $event->id }}">{{$event->id}}-{{ $event->eventname }}-{{$getparticipatednumber->count()}}</option>
-                    @endforeach
-                </select>
-
-                <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
-              </form>
-            </div>
-
           <div class="container my-4">
               <form wire:submit.prevent="changeeventid">
 
