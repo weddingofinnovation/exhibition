@@ -253,9 +253,10 @@ class AdminEventMultiParticipantsComponent extends Component
                 [
                     'brand_id' => $brand->id,
                     'event_id' => $event->id,
-                    'year'     => $this->year, // 🔑 year added
+                    
                 ],
                 [
+                    'year'     => $this->year, // 🔑 year added
                     'status'    => $this->status,
                     'admstatus' => $this->admstatus,
                     'user_id'   => Auth::user()->id,
