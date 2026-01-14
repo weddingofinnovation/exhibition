@@ -6072,6 +6072,10 @@
             @elseif($currentTab === 'tab3')
             <!-- exhibitor tab-->
 
+            @php
+              $getExhibitor = DB::table('participants')->where('event_id', $event->id)->get();
+            @endphp
+
             <div class="d-flex badgese pb-2">
                 <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2022 </a></span>
                 <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2023 </a></span>
@@ -6082,7 +6086,12 @@
             <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
 
             <div class="row mb-5 pb-2">
-                @foreach ($exhibitor as $franchise)
+                @foreach ($getExhibitor as $franchise)
+
+                @php 
+                    $branddetails = DB::table('brands')->where('id', $franchise->brand_id)->get();
+                @endphp
+
                 <div class=" ">
                     <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
 
@@ -6097,7 +6106,7 @@
 
                         <div class="col-7  p-0">
                             <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                    {{ucwords(Str::limit($franchise->brand_name, 24))}}</a></div>
+                                    {{ucwords(Str::limit($branddetails->brand_name, 24))}}</a></div>
 
                             <div class="text-muted fs-sm text-start">category</div>
                         </div>
