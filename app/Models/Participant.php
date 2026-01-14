@@ -9,8 +9,8 @@ class Participant extends Model
 {
     use HasFactory;
     protected $table = "participants";
-    protected $fillable = ['brand_logo','brand_name','slug', 'brand_id','event_id'];
-    
+    protected $fillable = ['brand_logo', 'brand_name', 'slug', 'brand_id', 'event_id', 'year'];
+
     // public function Sponser()
     // {
     //     return $this->belongsTo(Participant::class);
@@ -18,6 +18,6 @@ class Participant extends Model
 
     public function sponser()
     {
-    return $this->belongsTo(Sponsership::class,'sponsership_id');
+        return $this->belongsTo(Sponsership::class, 'sponsership_id');
     }
 }
