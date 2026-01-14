@@ -217,7 +217,15 @@ class AdminEventMultiParticipantsComponent extends Component
 
         // 2️⃣ Normalize comma-separated brand names
         $normalized = preg_replace('/\s+/', ' ', $this->brand_name);
-        $brandList  = array_unique(array_filter(array_map('trim', explode(',', $normalized))));
+        //$brandList  = array_unique(array_filter(array_map('trim', explode(',', $normalized))));
+        $brandList = array_unique(
+                        array_filter(
+                            array_map(function ($item) {
+                                return strtolower(trim($item));
+                            }, explode(',', $normalized))
+                        )
+                    );
+
 
         $addedBrands     = [];
         $duplicateBrands = [];
@@ -242,7 +250,7 @@ class AdminEventMultiParticipantsComponent extends Component
             $participant = Participant::firstOrCreate(
                 [
                     'brand_id' => $brand->id,
-                    'event_id' => $event->id,
+                     'event_id' => $event->id,
                 ],
                 [
                     'status'    => $this->status,

@@ -173,9 +173,10 @@
     {{$this->event_id}} {{$geteventexhibitors->count()}}
 
     @foreach($geteventexhibitors as $exhibitor)
-
+          
+     
       @php
-        $exhibitors = DB::table('brands')->where('id', $exhibitor->brand_id)->get();
+        $exhibitors = DB::table('brands')->where('id', $exhibitor->brand_id)->first();
       @endphp
 
       <div class="exhibitor-item border-bottom py-3">
@@ -184,7 +185,7 @@
           <div class="col-12 col-md-4">
             <a href="#"
               class="fw-semibold text-decoration-none text-dark">
-              {{ $exhibitor->brand_id ?? '' }}
+              {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name}}
             </a>
             <span class="text-muted small d-block">India</span>
           </div>

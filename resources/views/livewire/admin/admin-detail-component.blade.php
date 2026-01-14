@@ -2,7 +2,7 @@
 
 <main>
   @php
-   $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+  $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
   @endphp
 
   <div class="d-none d-lg-block">
@@ -440,16 +440,83 @@
 
                     </div>
                   </div>
-
-
                 </div>
+
+                <!-- new version-->
+                <div class="my-3">
+                  <div class="row align-items-center gx-2 gy-2 shadow-sm border rounded p-2">
+
+                    <!-- LEFT -->
+                    <div class="col-4 col-md-2 text-center">
+                      <div class="h5 fw-light mb-0">Web</div>
+                      <div class="round-circle"></div>
+                    </div>
+
+                    <!-- CENTER -->
+                    <div class="col-8 col-md-7">
+                      @if(is_null($evento->link))
+                      <div class="text-muted fs-sm">Website</div>
+                      @else
+                      <a class="btn btn-outline-primary btn-sm"
+                        href="{{ $evento->link }}" target="_blank">
+                        Visit Website
+                      </a>
+                      @endif
+                    </div>
+
+                    <!-- RIGHT -->
+                    <div class="col-12 col-md-3 text-md-end">
+                      <a href="{{ route('admin.eventMultiEdit',['event_id'=>$evento->id,'formm'=>'webo']) }}"
+                        class="btn btn-primary btn-sm w-100 w-md-auto">
+                        {{ is_null($evento->link) ? 'Add' : 'Edit' }}
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="my-3">
+                  <div class="row align-items-center gx-2 gy-2 shadow-sm border rounded p-2">
+
+                    <!-- COUNT -->
+                    <div class="col-4 col-md-2 text-center">
+                      <div class="h5 fw-light mb-0">{{ $eventparticipants->count() }}</div>
+                      <div class="round-circle">EXHI</div>
+                    </div>
+
+                    <!-- CLICKABLE CENTER -->
+                    <div class="col-8 col-md-7">
+                      <a href="{{ route('admin.multipartners',['event_id'=>$evento->id,'formm'=>'addParticipants']) }}"
+                        class="stretched-link text-decoration-none text-dark">
+                        <span class="fw-normal">Manage Participants</span>
+                      </a>
+                    </div>
+
+                    <!-- ACTION -->
+                    <div class="col-12 col-md-3 text-md-end">
+                      <a href="{{ route('admin.multipartners',[
+                            'event_id'=>$evento->id,
+                            'formm'=> is_null($evento->organiser) ? 'addParticipants' : 'participantsdashboard'
+                        ]) }}"
+                        class="btn btn-primary btn-sm w-100 w-md-auto">
+                        {{ is_null($evento->organiser) ? 'Add' : 'Edit' }}
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+
 
                 {{--participants--}}
                 <div class=" my-3">
                   <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                    @php
+                    $eventparticipants = DB::table('participants')->where('event_id', $evento->id)->get();
+                    @endphp
                     <div class="col  pr-0">
-                      <div class="h4 fw-light mb-0">{{$participants->count()}}</div>
-                      <div class="round-circle">Ptr</div>
+                      <div class="h4 fw-light mb-0">{{$eventparticipants->count()}}</div>
+                      <div class="round-circle">EXHI</div>
                     </div>
 
                     <a class="col-7 p-0" href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}"></a>
@@ -908,26 +975,26 @@
               <div class="tab-pane fade" id="maps" role="tabpanel">
 
                 <div>
-                    <h3>Create Floor Plan</h3>
+                  <h3>Create Floor Plan</h3>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label>Event Name</label>
-                            <input type="text" wire:model.live="event_name" class="form-control">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label>Event Name</label>
+                      <input type="text" wire:model.live="event_name" class="form-control">
 
-                            <label class="mt-3">Length (meters)</label>
-                            <input type="number" wire:model.live="length" class="form-control">
+                      <label class="mt-3">Length (meters)</label>
+                      <input type="number" wire:model.live="length" class="form-control">
 
-                            <label class="mt-3">Width (meters)</label>
-                            <input type="number" wire:model.live="width" class="form-control">
+                      <label class="mt-3">Width (meters)</label>
+                      <input type="number" wire:model.live="width" class="form-control">
 
-                            <p class="mt-3">Scale: <strong>20px = 1 meter</strong></p>
-                        </div>
-
-                        <div class="col-md-8">
-                            <div id="floorCanvas"></div>
-                        </div>
+                      <p class="mt-3">Scale: <strong>20px = 1 meter</strong></p>
                     </div>
+
+                    <div class="col-md-8">
+                      <div id="floorCanvas"></div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -1923,62 +1990,62 @@
   </div>
 
 
-@push('scripts')
+  @push('scripts')
   <script src="https://cdn.jsdelivr.net/npm/konva@9/konva.min.js"></script>
 
   <script>
     document.addEventListener('livewire:init', () => {
-        let stage;
-        let layer;
+      let stage;
+      let layer;
 
-        function drawFloorPlan(length, width, scale) {
-            let pxWidth  = width * scale;
-            let pxHeight = length * scale;
+      function drawFloorPlan(length, width, scale) {
+        let pxWidth = width * scale;
+        let pxHeight = length * scale;
 
-            // Clear previous canvas
-            document.getElementById('floorCanvas').innerHTML = "";
+        // Clear previous canvas
+        document.getElementById('floorCanvas').innerHTML = "";
 
-            stage = new Konva.Stage({
-                container: 'floorCanvas',
-                width: pxWidth,
-                height: pxHeight
-            });
-
-            layer = new Konva.Layer();
-            stage.add(layer);
-
-            // Outer boundary
-            let boundary = new Konva.Rect({
-                x: 0,
-                y: 0,
-                width: pxWidth,
-                height: pxHeight,
-                stroke: 'black',
-                strokeWidth: 2
-            });
-
-            layer.add(boundary);
-            layer.draw();
-        }
-
-        // Listen to Livewire updates
-        Livewire.on('update-floorplan', () => {
-            let length = @this.length;
-            let width = @this.width;
-            let scale = @this.scale;
-
-            drawFloorPlan(length, width, scale);
+        stage = new Konva.Stage({
+          container: 'floorCanvas',
+          width: pxWidth,
+          height: pxHeight
         });
 
-        // Initial drawing
-        setTimeout(() => {
-            let length = @this.length;
-            let width = @this.width;
-            let scale = @this.scale;
+        layer = new Konva.Layer();
+        stage.add(layer);
 
-            drawFloorPlan(length, width, scale);
-        }, 300);
+        // Outer boundary
+        let boundary = new Konva.Rect({
+          x: 0,
+          y: 0,
+          width: pxWidth,
+          height: pxHeight,
+          stroke: 'black',
+          strokeWidth: 2
+        });
+
+        layer.add(boundary);
+        layer.draw();
+      }
+
+      // Listen to Livewire updates
+      Livewire.on('update-floorplan', () => {
+        let length = @this.length;
+        let width = @this.width;
+        let scale = @this.scale;
+
+        drawFloorPlan(length, width, scale);
+      });
+
+      // Initial drawing
+      setTimeout(() => {
+        let length = @this.length;
+        let width = @this.width;
+        let scale = @this.scale;
+
+        drawFloorPlan(length, width, scale);
+      }, 300);
     });
   </script>
-@endpush
+  @endpush
 </main>
