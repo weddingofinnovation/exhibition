@@ -6082,7 +6082,7 @@
                 <span class="badge border border-1 text-right border-dark text-dark mr-1"> <a href="" class="text-dark"> 2024 </a></span>
             </div>
 
-            <h3 class="h5 pt-2">The Exhibition Network: Our Data, Your Customer.</h3>
+            <h3 class="h5 pt-2">The Exhibition Network <br> Our Data, Your Customer.</h3>
             <p class="fs-xs">Find right customers you need - <span class="text-primary">select, plan your visit, business meet, get gifts products,</span> and much more...</p>
 
             <div class="row mb-5 pb-2">

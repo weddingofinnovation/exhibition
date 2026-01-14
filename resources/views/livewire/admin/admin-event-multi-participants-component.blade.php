@@ -442,10 +442,10 @@
                                         <label class="form-label fw-bold">Year</label>
                                         <input type="number"
                                             class="form-control"
-                                            wire:model.defer="year"
+                                            wire:model="year"
                                             placeholder="e.g. 2025">
                                         @error('year')
-                                            <small class="text-danger">{{ $message }}</small>
+                                        <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
 
