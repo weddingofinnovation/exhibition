@@ -475,12 +475,18 @@
                   </div>
                 </div>
 
+                @php
+                  $eventparticipantsCount = DB::table('participants')
+                  ->where('event_id', $evento->id)
+                  ->count();
+                @endphp
+
                 <div class="my-3">
                   <div class="row align-items-center gx-2 gy-2 shadow-sm border rounded p-2">
 
                     <!-- COUNT -->
                     <div class="col-4 col-md-2 text-center">
-                      <div class="h5 fw-light mb-0">{{ $eventparticipants->count() }}</div>
+                      <div class="h5 fw-light mb-0">{{ $eventparticipantsCount}}</div>
                       <div class="round-circle">EXHI</div>
                     </div>
 
@@ -511,11 +517,7 @@
                 {{--participants--}}
                 <div class=" my-3">
                   <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                    @php
-                    $eventparticipantsCount = DB::table('participants')
-                    ->where('event_id', $evento->id)
-                    ->count();
-                    @endphp
+                  
                     <div class="col  pr-0">
                       <div class="h4 fw-light mb-0">{{$eventparticipantsCount}}</div>
                       <div class="round-circle">EXHI</div>
