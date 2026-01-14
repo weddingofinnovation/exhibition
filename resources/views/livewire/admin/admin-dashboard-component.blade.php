@@ -944,7 +944,18 @@
 
             <div class="container">
               <form wire:submit.prevent="changeeventid">
-                <select wire:model="event_id" required>
+                old id 
+                <select wire:model="oldevent_id" required>
+                    <option value="">Select Event</option>
+                    @foreach($events as $event)
+                      @php 
+                        $getparticipatednumber = DB::table('participants')->where('event_id', $event->id)->get(); 
+                      @endphp
+                        <option value="{{ $event->id }}">{{$event->id}}-{{ $event->eventname }}-{{$getparticipatednumber->count()}}</option>
+                    @endforeach
+                </select>
+                new id
+                <select wire:model="oldevent_id" required>
                     <option value="">Select Event</option>
                     @foreach($events as $event)
                       @php 
@@ -957,6 +968,69 @@
                 <button class="btn btn-primary form-control mb-5" type="submit">Submit</button>
               </form>
             </div>
+
+          <div class="container my-4">
+              <form wire:submit.prevent="changeeventid">
+
+                  <div class="row g-3">
+
+                      <!-- OLD EVENT -->
+                      <div class="col-12 col-md-5">
+                          <label class="form-label fw-bold">
+                              Old Event
+                          </label>
+                          <select wire:model="oldevent_id" class="form-select" required>
+                              <option value="">Select Old Event</option>
+                              @foreach($events as $event)
+                                  <option value="{{ $event->id }}">
+                                      {{ $event->id }} - {{ $event->eventname }}
+                                      ({{ $event->participants_count ?? '' }})
+                                  </option>
+                              @endforeach
+                          </select>
+                          @error('oldevent_id')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- ARROW (Desktop only) -->
+                      <div class="col-md-2 d-none d-md-flex align-items-end justify-content-center">
+                          <span class="fs-3">➡️</span>
+                      </div>
+
+                      <!-- NEW EVENT -->
+                      <div class="col-12 col-md-5">
+                          <label class="form-label fw-bold">
+                              New Event
+                          </label>
+                          <select wire:model="newevent_id" class="form-select" required>
+                              <option value="">Select New Event</option>
+                              @foreach($events as $event)
+                                  <option value="{{ $event->id }}">
+                                      {{ $event->id }} - {{ $event->eventname }}
+                                      ({{ $event->participants_count ?? '' }})
+                                  </option>
+                              @endforeach
+                          </select>
+                          @error('newevent_id')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                  </div>
+
+                  <!-- SUBMIT -->
+                  <div class="row mt-4">
+                      <div class="col-12 col-md-4 mx-auto">
+                          <button type="submit" class="btn btn-primary w-100">
+                              Change Event
+                          </button>
+                      </div>
+                  </div>
+
+              </form>
+          </div>
+
 
           @else
             <!-- Date Filter + Export -->

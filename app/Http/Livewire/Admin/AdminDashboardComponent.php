@@ -1048,11 +1048,47 @@ public $selectedYear;
       $ticketDel->save();
     }
 
-    public function changeeventid($event_id)
+    public $oldevent_id;
+    public $newevent_id;
+
+    public function changeeventid()
     {
-      $ticketDel = Participant::find($event_id);
-      $ticketDel->event_id = trim($status);
-      $ticketDel->save();
+        $this->validate([
+            'oldevent_id' => 'required|exists:events,id',
+            'newevent_id' => 'required|exists:events,id|different:oldevent_id',
+        ]);
+
+        // Fetch participants of old event
+        $participants = Participant::where('event_id', $this->oldevent_id)->get();
+
+        $updated = 0;
+        $skipped = 0;
+
+        foreach ($participants as $participant) {
+
+            // Prevent duplicate brand + event
+            $exists = Participant::where('brand_id', $participant->brand_id)
+                ->where('event_id', $this->newevent_id)
+                ->exists();
+
+            if ($exists) {
+                $skipped++;
+                continue;
+            }
+
+            // Update directly (no extra find)
+            $participant->event_id = $this->newevent_id;
+            $participant->status  = $this->status;
+            $participant->user_id = Auth::id();
+            $participant->save();
+
+            $updated++;
+        }
+
+        session()->flash(
+            'success',
+            "Event updated successfully. Updated: {$updated}, Skipped: {$skipped}"
+        );
     }
 
     public function approveApplication($id, $status)
