@@ -432,7 +432,7 @@
                                     <div class="row">
 
                                         <!-- LEFT SIDE : FORM -->
-                                        <div class="col-md-5 col-12">
+                                        <div class="col-md-8 col-12 border-end">
 
                                             <!-- Toasts -->
                                             <div class="toast-container position-fixed top-0 end-0 p-3">
@@ -467,7 +467,7 @@
                                                     wire:model="brand_name"
                                                     rows="7"
                                                     placeholder="Enter comma separated brand names">
-                                            </textarea>
+                                                </textarea>
 
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Year</label>
@@ -487,7 +487,7 @@
                                         </div>
 
                                         <!-- RIGHT SIDE : PARTICIPANTS LIST -->
-                                        <div class="col-md-7 col-12">
+                                        <div class="col-md-4 col-12">
 
                                             <h4 class="mb-3">Participants</h4>
 
