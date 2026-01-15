@@ -483,31 +483,40 @@
                                 <!-- RIGHT SIDE : PARTICIPANTS LIST -->
                                 <div class="col-md-4 col-12">
 
-                                    <h4 class="mb-3">Participants {{$getparticipant->count()}}</h4>
+                                    <p class="mb-3">Participants {{$getparticipant->count()}}</p>
 
-                                    @foreach ($getparticipant as $participant)
-                                    <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
+                                    @php
+                                      $yearWiseCount = Participant::select('year', DB::raw('count(*) as total'))
+                                                        ->where('event_id', $eventId)
+                                                        ->groupBy('year')
+                                                        ->orderBy('year', 'desc')
+                                                        ->get();
 
-                                        <div class="col-2 text-center">
-                                            <i class="bi bi-bookmark fs-4"></i>
-                                        </div>
+                                    @endphp
 
-                                        <div class="col-7">
-                                            <div class="fw-semibold">
-                                                {{ $participant->brand_id }}
+                                    @foreach @foreach ($yearWiseCount as $row)
+                                        <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
+
+                                            <div class="col-2 text-center">
+                                                <i class="bi bi-bookmark fs-4"></i>
                                             </div>
-                                            <div class="small text-muted">
-                                                {{ $participant->organisation ?? 'no' }}
+
+                                            <div class="col-7">
+                                                <div class="fw-semibold">
+                                                    {{ $row->total }}
+                                                </div>
+                                                <div class="small text-muted">
+                                                    {{$row->year}}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div class="col-3">
-                                            {{-- <img class="img-fluid rounded"
-                                                src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
-                                                alt="{{ Str::limit($participant->brand_name, 24) }}"> --}} <i class="bi bi-info"></i>
-                                        </div>
+                                            <div class="col-3">
+                                                {{-- <img class="img-fluid rounded"
+                                                    src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
+                                                    alt="{{ Str::limit($participant->brand_name, 24) }}"> --}} <i class="bi bi-info fs-md"></i>
+                                            </div>
 
-                                    </div>
+                                        </div>
                                     @endforeach
 
                                     <div class="mt-3">
