@@ -502,9 +502,9 @@
                                         </div>
 
                                         <div class="col-3">
-                                            <!-- <img class="img-fluid rounded"
+                                            {{-- <img class="img-fluid rounded"
                                                 src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
-                                                alt="{{ Str::limit($participant->brand_name, 24) }}"> --> <i class="bi bi-info"></i>
+                                                alt="{{ Str::limit($participant->brand_name, 24) }}"> --}} <i class="bi bi-info"></i>
                                         </div>
 
                                     </div>
