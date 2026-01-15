@@ -461,7 +461,6 @@
                                         <h4 class="mb-2">Add Participants / Exhibitors</h4>
 
                                         <form wire:submit.prevent="updateBrand">
-                                            <label class="form-label">Add Participants <span class="text-danger">*</span></label>
                                             <textarea class="form-control mb-1"
                                                 wire:model="brand_name"
                                                 rows="7"
