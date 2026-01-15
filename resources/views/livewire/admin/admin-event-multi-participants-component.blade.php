@@ -428,102 +428,100 @@
                                 @endif
 
 
-                                <div class="container-fluid">
-                                    <div class="row">
+                                
+                                <div class="row">
 
-                                        <!-- LEFT SIDE : FORM -->
-                                        <div class="col-md-8 col-12 border-end">
+                                    <!-- LEFT SIDE : FORM -->
+                                    <div class="col-md-8 col-12 border-end">
 
-                                            <!-- Toasts -->
-                                            <div class="toast-container position-fixed top-0 end-0 p-3">
-                                                @if (session()->has('success'))
-                                                <div class="toast align-items-center text-bg-success border-0 show">
-                                                    <div class="d-flex">
-                                                        <div class="toast-body">
-                                                            ✅ {{ session('success') }}
-                                                        </div>
-                                                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                                        <!-- Toasts -->
+                                        <div class="toast-container position-fixed top-0 end-0 p-3">
+                                            @if (session()->has('success'))
+                                            <div class="toast align-items-center text-bg-success border-0 show">
+                                                <div class="d-flex">
+                                                    <div class="toast-body">
+                                                        ✅ {{ session('success') }}
                                                     </div>
+                                                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
                                                 </div>
-                                                @endif
-
-                                                @if (session()->has('warning'))
-                                                <div class="toast align-items-center text-bg-warning border-0 show">
-                                                    <div class="d-flex">
-                                                        <div class="toast-body">
-                                                            ⚠️ {{ session('warning') }}
-                                                        </div>
-                                                        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
-                                                    </div>
-                                                </div>
-                                                @endif
                                             </div>
+                                            @endif
 
-                                            <h4 class="mb-3">Add Participants / Exhibitors</h4>
-
-                                            <form wire:submit.prevent="updateBrand">
-                                                <label class="form-label">Add Participants <span class="text-danger">*</span></label>
-                                                <textarea class="form-control mb-3"
-                                                    wire:model="brand_name"
-                                                    rows="7"
-                                                    placeholder="Enter comma separated brand names">
-                                                </textarea>
-
-                                                <div class="mb-3">
-                                                    <label class="form-label fw-bold">Year</label>
-                                                    <input type="number"
-                                                        class="form-control"
-                                                        wire:model.defer="year"
-                                                        placeholder="e.g. 2025">
-                                                    @error('year')
-                                                    <small class="text-danger">{{ $message }}</small>
-                                                    @enderror
+                                            @if (session()->has('warning'))
+                                            <div class="toast align-items-center text-bg-warning border-0 show">
+                                                <div class="d-flex">
+                                                    <div class="toast-body">
+                                                        ⚠️ {{ session('warning') }}
+                                                    </div>
+                                                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
                                                 </div>
-
-                                                <button class="btn btn-primary w-100" type="submit">
-                                                    Submit
-                                                </button>
-                                            </form>
+                                            </div>
+                                            @endif
                                         </div>
 
-                                        <!-- RIGHT SIDE : PARTICIPANTS LIST -->
-                                        <div class="col-md-4 col-12">
+                                        <h4 class="mb-3">Add Participants / Exhibitors</h4>
 
-                                            <h4 class="mb-3">Participants</h4>
+                                        <form wire:submit.prevent="updateBrand">
+                                            <label class="form-label">Add Participants <span class="text-danger">*</span></label>
+                                            <textarea class="form-control mb-1"
+                                                wire:model="brand_name"
+                                                rows="7"
+                                                placeholder="Enter comma separated brand names">
+                                            </textarea>
 
-                                            @foreach ($participants as $participant)
-                                            <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
-
-                                                <div class="col-2 text-center">
-                                                    <i class="bi bi-bookmark fs-4"></i>
-                                                </div>
-
-                                                <div class="col-7">
-                                                    <div class="fw-semibold">
-                                                        {{ $participant->brand_name }}
-                                                    </div>
-                                                    <div class="small text-muted">
-                                                        {{ $participant->organisation }}
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-3">
-                                                    <img class="img-fluid rounded"
-                                                        src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
-                                                        alt="{{ Str::limit($participant->brand_name, 24) }}">
-                                                </div>
-
+                                            <div class="mb-2">
+                                                <input type="number"
+                                                    class="form-control"
+                                                    wire:model.defer="year"
+                                                    placeholder="year e.g. 2025">
+                                                @error('year')
+                                                <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
-                                            @endforeach
 
-                                            <div class="mt-3">
-                                                @json($checkvalue)
-                                            </div>
-                                        </div>
-
+                                            <button class="btn btn-primary w-100" type="submit">
+                                                Submit
+                                            </button>
+                                        </form>
                                     </div>
-                                </div>
 
+                                    <!-- RIGHT SIDE : PARTICIPANTS LIST -->
+                                    <div class="col-md-4 col-12">
+
+                                        <h4 class="mb-3">Participants</h4>
+
+                                        @foreach ($participants as $participant)
+                                        <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
+
+                                            <div class="col-2 text-center">
+                                                <i class="bi bi-bookmark fs-4"></i>
+                                            </div>
+
+                                            <div class="col-7">
+                                                <div class="fw-semibold">
+                                                    {{ $participant->brand_name }}
+                                                </div>
+                                                <div class="small text-muted">
+                                                    {{ $participant->organisation }}
+                                                </div>
+                                            </div>
+
+                                            <div class="col-3">
+                                                <img class="img-fluid rounded"
+                                                    src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
+                                                    alt="{{ Str::limit($participant->brand_name, 24) }}">
+                                            </div>
+
+                                        </div>
+                                        @endforeach
+
+                                        <div class="mt-3">
+                                            @json($checkvalue)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
 
 
 
