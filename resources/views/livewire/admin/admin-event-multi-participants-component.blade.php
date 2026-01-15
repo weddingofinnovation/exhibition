@@ -213,6 +213,9 @@
                     @if($formm == 'addParticipants')
                         <div class="card-body pb-1 pt-2">
                             <!-- Page Title -->
+                                @php 
+                                    $getparticipant = DB::table('participants')->where('event_id', $this->event_id)->get();
+                                @endphp
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
@@ -452,9 +455,7 @@
                                         @endif
                                     </div>
 
-                                    @php 
-                                        $getparticipant = DB::table('participants')->where('event_id', $this->event_id)->get();
-                                    @endphp
+                                  
 
                                     <h4 class="mb-2">Add Participants / Exhibitors {{$getparticipant->count()}} </h4>
 
