@@ -428,7 +428,6 @@
                                 @endif
 
 
-                                
                                 <div class="row">
 
                                     <!-- LEFT SIDE : FORM -->
@@ -459,7 +458,7 @@
                                             @endif
                                         </div>
 
-                                        <h4 class="mb-3">Add Participants / Exhibitors</h4>
+                                        <h4 class="mb-2">Add Participants / Exhibitors</h4>
 
                                         <form wire:submit.prevent="updateBrand">
                                             <label class="form-label">Add Participants <span class="text-danger">*</span></label>
@@ -524,7 +523,7 @@
                                 
 
 
-
+                              {{-- 
                                 <div class="toast-container position-fixed top-0 end-0 p-3">
 
                                     @if (session()->has('success'))
@@ -602,7 +601,9 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <div>@json($checkvalue)</div>
+                                <div>@json($checkvalue)</div> --}}
+
+
 
 
 
