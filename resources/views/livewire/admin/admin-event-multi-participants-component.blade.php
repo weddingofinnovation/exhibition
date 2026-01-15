@@ -494,7 +494,7 @@
 
                                     @endphp
 
-                                    @foreach @foreach ($yearWiseCount as $row)
+                                    @foreach ($yearWiseCount as $row)
                                         <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
 
                                             <div class="col-2 text-center">
