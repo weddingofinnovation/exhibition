@@ -494,7 +494,7 @@
 
                                         <div class="col-7">
                                             <div class="fw-semibold">
-                                                {{ $participant->brand_name }}
+                                                {{ $participant->brand_id }}
                                             </div>
                                             <div class="small text-muted">
                                                 {{ $participant->organisation ?? 'no' }}
