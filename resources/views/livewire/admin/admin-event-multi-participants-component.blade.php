@@ -428,7 +428,104 @@
                                 @endif
 
 
-                               
+                               <div class="container-fluid">
+    <div class="row">
+
+        <!-- LEFT SIDE : FORM -->
+        <div class="col-md-5 col-12">
+
+            <!-- Toasts -->
+            <div class="toast-container position-fixed top-0 end-0 p-3">
+                @if (session()->has('success'))
+                    <div class="toast align-items-center text-bg-success border-0 show">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                ✅ {{ session('success') }}
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                        </div>
+                    </div>
+                @endif
+
+                @if (session()->has('warning'))
+                    <div class="toast align-items-center text-bg-warning border-0 show">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                ⚠️ {{ session('warning') }}
+                            </div>
+                            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"></button>
+                        </div>
+                    </div>
+                @endif
+            </div>
+
+            <h4 class="mb-3">Add Participants / Exhibitors</h4>
+
+            <form wire:submit.prevent="updateBrand">
+                <label class="form-label">Add Participants <span class="text-danger">*</span></label>
+                <textarea class="form-control mb-3"
+                          wire:model="brand_name"
+                          rows="7"
+                          placeholder="Enter comma separated brand names">
+                </textarea>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Year</label>
+                    <input type="number"
+                           class="form-control"
+                           wire:model.defer="year"
+                           placeholder="e.g. 2025">
+                    @error('year')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <button class="btn btn-primary w-100" type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <!-- RIGHT SIDE : PARTICIPANTS LIST -->
+        <div class="col-md-7 col-12">
+
+            <h4 class="mb-3">Participants</h4>
+
+            @foreach ($participants as $participant)
+                <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
+
+                    <div class="col-2 text-center">
+                        <i class="bi bi-bookmark fs-4"></i>
+                    </div>
+
+                    <div class="col-7">
+                        <div class="fw-semibold">
+                            {{ $participant->brand_name }}
+                        </div>
+                        <div class="small text-muted">
+                            {{ $participant->organisation }}
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <img class="img-fluid rounded"
+                             src="{{ url('public/assets/image/exhibition/'.$participant->image) }}"
+                             alt="{{ Str::limit($participant->brand_name, 24) }}">
+                    </div>
+
+                </div>
+            @endforeach
+
+            <div class="mt-3">
+                @json($checkvalue)
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
 
                                 <div class="toast-container position-fixed top-0 end-0 p-3">
 
@@ -476,6 +573,41 @@
                                     <button class="btn btn-primary btn-shadow d-block w-100 mt-2" type="submit">Submit</button>
                                 </form>
                                 
+                                <div class="small">Participants</div>
+                                    @foreach ($participants as $participant)
+                                        <div class="container">
+                                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                                <div class="col  pr-0">
+
+                                                    <div class="h4 fw-light mb-0"></div>
+                                                    <div class="small text-muted"></div>
+
+
+                                                    <a href="#">
+                                                        <div class=" round-circle"><i class="bi bi-bookmark"></i></div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="col-7  p-0">
+                                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                                                            {{$participant->brand_name}}</a></div>
+                                                    <div class="text-muted fs-sm text-start">
+                                                        {{$participant->organisation}}
+                                                    </div>
+                                                    <div class="text-muted fs-sm text-start"></div>
+                                                </div>
+
+                                                <div class="col-3  p-0">
+                                                    <a class="card-img-top d-block overflow-hidden" href="#">
+                                                        <img src="{{url('public/assets/image/exhibition/'.$participant->image)}}" alt="{{Str::limit($participant->brand_name, 24)}}"></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                <div>@json($checkvalue)</div>
+
+
+
 
                                 <div class="small">
                                     <input type="checkbox" value="1" wire:model="lookingAddorganisation" name="" id=""> Add Organisation
@@ -513,41 +645,6 @@
                                             <img src="{{url('public/assets/image/exhibition/'.$participant->brand_logo)}}" alt="#" width="50px">{{$participant->brand_name}}
                                         </div>
                                         @endforeach
-
-
-
-                                        <div class="small">Participants</div>
-                                        @foreach ($participants as $participant)
-                                        <div class="container">
-                                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                                                <div class="col  pr-0">
-
-                                                    <div class="h4 fw-light mb-0"></div>
-                                                    <div class="small text-muted"></div>
-
-
-                                                    <a href="#">
-                                                        <div class=" round-circle"><i class="bi bi-bookmark"></i></div>
-                                                    </a>
-                                                </div>
-
-                                                <div class="col-7  p-0">
-                                                    <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                                                            {{$participant->brand_name}}</a></div>
-                                                    <div class="text-muted fs-sm text-start">
-                                                        {{$participant->organisation}}
-                                                    </div>
-                                                    <div class="text-muted fs-sm text-start"></div>
-                                                </div>
-
-                                                <div class="col-3  p-0">
-                                                    <a class="card-img-top d-block overflow-hidden" href="#">
-                                                        <img src="{{url('public/assets/image/exhibition/'.$participant->image)}}" alt="{{Str::limit($participant->brand_name, 24)}}"></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                        <div>@json($checkvalue)</div>
 
                                     </div>
 
