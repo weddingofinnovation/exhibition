@@ -219,7 +219,7 @@
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
 
-                                <h4 class="fw-bold mb-2"><small>Add Participants / Exhibitors</small> {{$getparticipant->count()}}</h4>
+                                <h4 class="fw-bold mb-2"><small>Add Participants / Exhibitors</small></h4>
                                
                                 <!-- <div class="d-flex justify-content-between align-items-center">
                                     <input type="search" class="form-control w-auto" placeholder="Search...">
@@ -455,9 +455,7 @@
                                         @endif
                                     </div>
 
-                                  
-
-                                    <h4 class="mb-2">Add Participants / Exhibitors </h4>
+                                    <!-- <h4 class="mb-2">Add Participants / Exhibitors </h4> -->
 
                                     <form wire:submit.prevent="updateBrand">
                                         <textarea class="form-control mb-1"
@@ -485,9 +483,9 @@
                                 <!-- RIGHT SIDE : PARTICIPANTS LIST -->
                                 <div class="col-md-4 col-12">
 
-                                    <h4 class="mb-3">Participants</h4>
+                                    <h4 class="mb-3">Participants {{$getparticipant->count()}}</h4>
 
-                                    @foreach ($participants as $participant)
+                                    @foreach ($getparticipant as $participant)
                                     <div class="row gx-0 mb-2 shadow-sm border rounded align-items-center">
 
                                         <div class="col-2 text-center">
@@ -499,7 +497,7 @@
                                                 {{ $participant->brand_name }}
                                             </div>
                                             <div class="small text-muted">
-                                                {{ $participant->organisation }}
+                                                {{ $participant->organisation ?? 'no' }}
                                             </div>
                                         </div>
 
