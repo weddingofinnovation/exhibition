@@ -486,7 +486,7 @@
                                     <p class="mb-3">Participants {{$getparticipant->count()}}</p>
 
                                     @php
-                                      $yearWiseCount = Participant::select('year', DB::raw('count(*) as total'))
+                                      $yearWiseCount = DB::table('participants')->select('year', DB::raw('count(*) as total'))
                                                         ->where('event_id', $eventId)
                                                         ->groupBy('year')
                                                         ->orderBy('year', 'desc')
@@ -519,9 +519,6 @@
                                         </div>
                                     @endforeach
 
-                                    <div class="mt-3">
-                                        @json($checkvalue)
-                                    </div>
                                 </div>
 
                             </div>
