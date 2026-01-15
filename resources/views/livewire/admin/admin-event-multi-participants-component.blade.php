@@ -1,40 +1,40 @@
     <main>
 
         @if($formm == 'pavilliondashboard')
-        @foreach($pavillion as $pav)
-        <div class="container my-3">
+            @foreach($pavillion as $pav)
+                <div class="container my-3">
 
-            <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                <div class="col  pr-0">
-                    <div class="h4 fw-light mb-0">Pav</div>
+                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                        <div class="col  pr-0">
+                            <div class="h4 fw-light mb-0">Pav</div>
 
-                    <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                    {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                </div>
+                            <div class="round-circle"><i class="bi bi-bookmark"></i></div>
+                            {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
+                        </div>
 
-                <div class="col-7  p-0">
-                    @if(is_null($pav->desc))
-                    <div class="text-muted fs-sm text-start">{{$evento->pavillion_name}} </div>
-                    @else
-                    <div class="fs-md fw-normal text-start">
-                        {{$evento->business}}<br>
+                        <div class="col-7  p-0">
+                            @if(is_null($pav->desc))
+                            <div class="text-muted fs-sm text-start">{{$evento->pavillion_name}} </div>
+                            @else
+                            <div class="fs-md fw-normal text-start">
+                                {{$evento->business}}<br>
 
-                        {{$evento->startdate}}
+                                {{$evento->startdate}}
+                            </div>
+                            @endif
+                        </div>
+
+                        <div class="col-3 p-0">
+                            @if(is_null($pav->desc))
+                            <a href="{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}" class="btn btn-primary btn-sm">Add</a>
+                            @else
+                            <a href="{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}" class="btn btn-primary btn-sm">Edit</a>
+                            @endif
+                        </div>
                     </div>
-                    @endif
-                </div>
 
-                <div class="col-3 p-0">
-                    @if(is_null($pav->desc))
-                    <a href="{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}" class="btn btn-primary btn-sm">Add</a>
-                    @else
-                    <a href="{{route('admin.multipartners',['event_id' => $pav->id, 'formm' => 'addPavillion'])}}" class="btn btn-primary btn-sm">Edit</a>
-                    @endif
                 </div>
-            </div>
-
-        </div>
-        @endforeach
+            @endforeach
         @endif
 
         @if($formm == 'sponsershipdashboard')
@@ -427,10 +427,8 @@
 
                                 @endif
 
-                                @if($formm == 'addParticipants')
-                                <div class="small">
-                                    <input type="checkbox" value="1" wire:model="lookingAddParticipants" name="" id=""> Add Participants
-                                </div>
+
+                               
 
                                 <div class="toast-container position-fixed top-0 end-0 p-3">
 
@@ -458,7 +456,7 @@
 
                                 </div>
 
-                                @if($lookingAddParticipants == 1)
+                                <h1>Add Participants/Exhibitors</h1> 
                                 <form wire:submit.prevent="updateBrand">
                                     <label class="form-label">Add Participants<span class="text-danger">*</span></label>
                                     <textarea type="text" placeholder="participants" class="form-control" wire:model="brand_name" rows="7"></textarea>
@@ -477,7 +475,7 @@
 
                                     <button class="btn btn-primary btn-shadow d-block w-100 mt-2" type="submit">Submit</button>
                                 </form>
-                                @endif
+                                
 
                                 <div class="small">
                                     <input type="checkbox" value="1" wire:model="lookingAddorganisation" name="" id=""> Add Organisation
