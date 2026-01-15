@@ -457,7 +457,7 @@
 
                                   
 
-                                    <h4 class="mb-2">Add Participants / Exhibitors {{$getparticipant->count()}} </h4>
+                                    <h4 class="mb-2">Add Participants / Exhibitors </h4>
 
                                     <form wire:submit.prevent="updateBrand">
                                         <textarea class="form-control mb-1"
