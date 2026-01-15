@@ -487,7 +487,7 @@
 
                                     @php
                                       $yearWiseCount = DB::table('participants')->select('year', DB::raw('count(*) as total'))
-                                                        ->where('event_id', $eventId)
+                                                        ->where('event_id', $this->event_id)
                                                         ->groupBy('year')
                                                         ->orderBy('year', 'desc')
                                                         ->get();
