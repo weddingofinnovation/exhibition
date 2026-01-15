@@ -207,6 +207,8 @@ class AdminEventMultiParticipantsComponent extends Component
     // }
 
     public $year;
+    public $eventId;
+    
 
     public function updateBrand()
     {
