@@ -52,6 +52,7 @@ use App\Models\Space;
 use App\Models\Ticket;
 use App\Models\Viewso;
 use App\Notifications\BadgeApproved;
+use Google\Service\CloudSearch\Reference;
 //use Illuminate\Contracts\Notifications\Notification;
 use Illuminate\Support\Facades\Notification;
 use Livewire\WithFileUploads;
@@ -1095,11 +1096,15 @@ public $selectedYear;
     public function newMSMEstatus($event_id, $status)
     {
       $ticketDel =  new association();
+      $ticketDel->reference_id = '1';
       $ticketDel->assoname = 'msme';
       $ticketDel->type = 'partner';
       $ticketDel->event_id = $event_id;
+      $findevent = Event::find($event_id);
+      $ticketDel->startdate =  $findevent->startdate;
+      $ticketDel->expiredate = $findevent->enddate;
       $ticketDel->user_id = Auth::user()->id;
-      $ticketDel->admstatus = $this->admstatus;
+      $ticketDel->admstatus = '1';
       $ticketDel->status = $status;
       $ticketDel->save();
     }
