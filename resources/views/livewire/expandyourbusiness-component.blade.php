@@ -173,10 +173,10 @@
     @foreach($exhibitordata as $eventId => $participants)
 
       @php
-        @exhibitionname = DB::table('events')->where('id', $eventID)->first(); 
+        @exhibitionname = DB::table('events')->where('id', $eventID)->get(); 
       @endphp
 
-        <h4>Event ID: {{ $exhibitionname->eventname }}</h4> 
+        <h4>Event ID: {{ $eventId }}</h4> 
         <p>Total Exhibitors: {{ $participants->count() }}</p>
     @endforeach
 
