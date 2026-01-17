@@ -150,8 +150,12 @@
       ->get();
 
       $exhibitordata = DB::table('participants')
-        ->get()
-        ->groupBy('event_id');
+      ->get()
+      ->groupBy('event_id');
+
+      $events = DB::table('events')
+          ->pluck('event_name', 'id'); // id => name
+
 
     @endphp
 
@@ -171,14 +175,14 @@
     @endforeach
 
     @foreach($exhibitordata as $eventId => $participants)
+      <h4>
+          Event: {{ $events[$eventId] ?? 'Unknown Event' }}
+      </h4>
 
-      @php
-        @exhibitionname = DB::table('events')->where('id', $eventID)->get(); 
-      @endphp
+      <p>Total Exhibitors: {{ $participants->count() }}</p>
 
-        <h4>Event ID: {{ $eventId }}</h4> 
-        <p>Total Exhibitors: {{ $participants->count() }}</p>
     @endforeach
+
 
 
   @elseif ($board == 'exhibitor')
