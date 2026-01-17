@@ -175,14 +175,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="#">Email</a>
                     </li>
-                  @elseif($board == 'msme')
-                  <li class="nav-item">
-                    <a class="nav-link active" href="searchtab">Search</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link" href="msmetab">Msme</a>
-                  </li>
+                 
                 @endif
               </ul>
             </div>
