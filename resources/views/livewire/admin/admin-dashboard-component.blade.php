@@ -1050,7 +1050,7 @@
                                       <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="eventdelete({{$franchise->id}})">
                                         <i class="bi bi-x me-2"></i></a>
 
-                                      <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateMSMEstatus({{$franchise->id}}, '1')">MSME</a>
+                                      <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="newMSMEstatus({{$franchise->id}}, '1')">MSME</a>
                                     </div>
                                   </div>
                                 </div>
