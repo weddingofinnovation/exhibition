@@ -156,7 +156,6 @@
       $events = DB::table('events')
           ->pluck('eventname', 'id'); // id => name
 
-
     @endphp
 
 

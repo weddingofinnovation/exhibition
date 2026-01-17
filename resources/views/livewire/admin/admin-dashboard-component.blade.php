@@ -119,7 +119,7 @@
                 <h4 class="fw-bold mb-2">Speaker</h4>
 
                 @else
-                <h4 class="fw-bold mb-2">Analytics</h4>
+                <h4 class="fw-bold mb-2">{{$board}}</h4>
                 <div class="d-flex justify-content-between align-items-center">
                   <input type="date" class="form-control w-auto">
                   <button class="btn btn-primary ml-4">
@@ -134,62 +134,62 @@
               <!-- Tabs -->
               <ul class="nav nav-tabs mb-2" id="analyticsTabs">
                 @if($board == 'order')
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">New</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Visitors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Followers</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Important</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Sale</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Email</a>
-                </li>
-                @elseif($board == 'event')
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">New</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Finish</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">upcoming</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Featured</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Today</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Email</a>
-                </li>
-                @else
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Content</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Visitors</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Followers</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Search appearances</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Leads</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Competitors</a>
-                </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">New</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visitors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Followers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Important</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sale</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Email</a>
+                  </li>
+                  @elseif($board == 'event')
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">New</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Finish</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">upcoming</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Featured</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Today</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Email</a>
+                    </li>
+                  @elseif($board == 'msme')
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Content</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Visitors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Followers</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Search appearances</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Leads</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Competitors</a>
+                  </li>
                 @endif
               </ul>
             </div>
@@ -1010,7 +1010,8 @@
               </form>
           </div>
 
-
+          @elseif($board == 'msme')
+            business
           @else
             <!-- Date Filter + Export -->
             <div class="card shadow-sm border-0 mb-2">
@@ -1676,38 +1677,38 @@
 
         <a href="{{route('admin.brandDetail',['brand_id' => $franchiseo->id])}}" class="btn btn-primary btn-sm">Add</a>
         @foreach($findBcontact as $franchise)
-        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-          <div class="col  pr-0">
+          <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+            <div class="col  pr-0">
 
-            <div class="h4 fw-light mb-0"> 1 </div>
-            <div class="small text-muted">chk</div>
+              <div class="h4 fw-light mb-0"> 1 </div>
+              <div class="small text-muted">chk</div>
 
-            <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-          </div>
-
-          <div class="col-7  p-0">
-            <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                {{$franchise->name}} <span class="badge badge-primary">{{$franchise->designation}}</span> </a></div>
-            <div class="text-muted fs-sm text-start">
-              {{$franchise->email}}
+              <div class="round-circle"><i class="bi bi-bookmark"></i></div>
             </div>
-            <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+
+            <div class="col-7  p-0">
+              <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                  {{$franchise->name}} <span class="badge badge-primary">{{$franchise->designation}}</span> </a></div>
+              <div class="text-muted fs-sm text-start">
+                {{$franchise->email}}
+              </div>
+              <div class="text-muted fs-sm text-start">{{$franchise->phone}}</div>
+            </div>
+
+            <div class="col-3  p-0">
+              {{--<a class="card-img-top d-block overflow-hidden" href="#">
+                                              <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+
+              {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
+              <i class="bi bi-chevron-double-right"></i></a>
+              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})">Claim</a> --}}
+
+              <a class="btn btn-primary btn-sm" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="del({{$franchise->id}})"> <i class="bi bi-x"></i>
+              </a>
+              <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="detecto({{$franchiseo->id}},'update')">
+                <i class="bi bi-plus"></i></a>
+            </div>
           </div>
-
-          <div class="col-3  p-0">
-            {{--<a class="card-img-top d-block overflow-hidden" href="#">
-                                            <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
-
-            {{-- <a class="round-circle" href="{{route('event.details',['slug' => $franchise->slug])}}">
-            <i class="bi bi-chevron-double-right"></i></a>
-            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="claimer({{$franchise->id}})">Claim</a> --}}
-
-            <a class="btn btn-primary btn-sm" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="del({{$franchise->id}})"> <i class="bi bi-x"></i>
-            </a>
-            <a class="btn btn-primary btn-sm" href="#" wire:click.prevent="detecto({{$franchiseo->id}},'update')">
-              <i class="bi bi-plus"></i></a>
-          </div>
-        </div>
         @endforeach
         @endif
       </div>
@@ -1989,69 +1990,6 @@
   </div>
   @endif
   <!--Stop Client-->
-
-  @if($board == "msme")
-  @php
-
-  $findmsme = DB::table('associations')
-  ->where('reference_id', 1)
-  ->pluck('event_id'); // just association IDs
-
-  $events = DB::table('events')
-  ->whereIn('id', $findmsme)
-  ->get();
-
-  @endphp
-
-
-
-  <div class="container">
-
-    <div class="row mb-5 pb-2">
-      @foreach ($events as $franchise)
-      <div class="container  ">
-        <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-          <div class="col  pr-0">
-            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>
-            <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-            @else
-            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->startdate)->format('d')}}</div>
-            <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($franchise->startdate)->format('M y')}} </div>
-            @endif
-            <div class="round-circle">{{$franchise -> id}}</div>
-          </div>
-
-          <div class="col-7  p-0">
-            <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-                {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-            <div class="text-muted fs-sm text-start">
-              @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @else
-              {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
-              @endif
-            </div>
-            <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> venue ?? 'not found'))}}, {{ucfirst(trans($franchise -> city ?? 'not found'))}}</div>
-          </div>
-
-          <div class="col-3  p-0">
-            @if(is_null($franchise->image))
-            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
-              Add</a>
-            @else
-            <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-              <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-            @endif
-          </div>
-        </div>
-      </div>
-      @endforeach
-    </div>
-  </div>
-  @endif
-
-
 
   @if($board == 'magazine')
   <div class="container">
