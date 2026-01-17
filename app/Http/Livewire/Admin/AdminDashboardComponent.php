@@ -1093,10 +1093,10 @@ public $selectedYear;
         );
     }
 
-    public function newMSMEstatus($event_id, $status)
+    public function newMSMEstatus($event_id, $id)
     {
       $ticketDel =  new association();
-      $ticketDel->reference_id = '1';
+      $ticketDel->reference_id = $id;
       $ticketDel->assoname = 'msme';
       $ticketDel->type = 'partner';
       $ticketDel->event_id = $event_id;
@@ -1105,7 +1105,16 @@ public $selectedYear;
       $ticketDel->expiredate = $findevent->enddate;
       $ticketDel->user_id = Auth::user()->id;
       $ticketDel->admstatus = '1';
-      $ticketDel->status = $status;
+      $ticketDel->status = '1';
+      $ticketDel->save();
+    }
+
+
+    public function removefrommmselist($event_id, $id)
+    {
+     
+      $ticketDel = association::where('event_id', $event_id )->first();
+      $ticketDel->reference_id = '0';
       $ticketDel->save();
     }
 
