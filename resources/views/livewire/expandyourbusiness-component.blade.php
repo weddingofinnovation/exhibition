@@ -154,7 +154,7 @@
       ->groupBy('event_id');
 
       $events = DB::table('events')
-          ->pluck('event_name', 'id'); // id => name
+          ->pluck('eventname', 'id'); // id => name
 
 
     @endphp
