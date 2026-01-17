@@ -1095,7 +1095,8 @@ public $selectedYear;
     public function newMSMEstatus($event_id, $status)
     {
       $ticketDel =  new association();
-      $ticketDel->partner = 'msme';
+      $ticketDel->assoname = 'msme';
+      $ticketDel->type = 'partner';
       $ticketDel->event_id = $event_id;
       $ticketDel->user_id = Auth::user()->id;
       $ticketDel->admstatus = $this->admstatus;
