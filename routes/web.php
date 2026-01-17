@@ -291,6 +291,7 @@ Route::get('/partner', MembershipComponent::class)->name('business.membership');
 
 //product
 Route::get('/sell-your-business', SellyourbusinessComponent::class)->name('sell.business');
+
 //For exhibitor list by year wise
 Route::get('/exhibitor/{board?}/business/{event_id?}', ExpandyourbusinessComponent::class)->name('expand.business');
 

@@ -506,7 +506,7 @@
                                                     {{ $row->total }}
                                                 </div>
                                                 <div class="small text-muted">
-                                                    {{$row->year}}
+                                                    {{ $row->year ?? 'update'}}
                                                 </div>
                                             </div>
 

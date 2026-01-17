@@ -142,27 +142,39 @@
 
 <div class="container">
   @if($board == 'normal')
-  @php
-  $getexhibitionexhibitor = DB::table('brands')
-  ->join('events', 'brands.event_id', '=', 'events.id')
-  ->select('events.id', 'events.eventname')
-  ->distinct()
-  ->get();
-  @endphp
+    @php
+      $getexhibitionexhibitor = DB::table('brands')
+      ->join('events', 'brands.event_id', '=', 'events.id')
+      ->select('events.id', 'events.eventname')
+      ->distinct()
+      ->get();
 
-  @foreach ($getexhibitionexhibitor as $eo)
-  @php
-  $ooo = DB::table('events')->where('id', $eo->id)->get();
-  $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get()
-  @endphp
+      $exhibitordata = DB::table('participants')
+        ->get()
+        ->groupBy('event_id');
 
-  @foreach ($ooo as $newo)
-  @php
-  $exhibitors = DB::table('brands')->where('event_id', $eo->id)->get()
-  @endphp
-  <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
-  @endforeach
-  @endforeach
+    @endphp
+
+    
+    @foreach ($getexhibitionexhibitor as $eo)
+      @php
+        $ooo = DB::table('events')->where('id', $eo->id)->get();
+        $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get();
+      @endphp
+
+      @foreach ($ooo as $newo)
+        @php
+          $exhibitors = DB::table('brands')->where('event_id', $eo->id)->get()
+        @endphp
+        <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
+      @endforeach
+    @endforeach
+
+    @foreach($exhibitordata as $eventId => $participants)
+        <h4>Event ID: {{ $eventId }}</h4>
+        <p>Total Exhibitors: {{ $participants->count() }}</p>
+    @endforeach
+
 
   @elseif ($board == 'exhibitor')
 
@@ -174,7 +186,6 @@
 
     @foreach($geteventexhibitors as $exhibitor)
           
-     
       @php
         $exhibitors = DB::table('brands')->where('id', $exhibitor->brand_id)->first();
       @endphp
