@@ -1024,8 +1024,7 @@
 
             @endphp
 
-            <div class="container">
-
+            
               <div class="row mb-5 pb-2">
                 @foreach ($events as $franchise)
                 <div class="container  ">
@@ -1070,8 +1069,7 @@
                 </div>
                 @endforeach
               </div>
-            </div>
-           
+            
           @else
             <!-- Date Filter + Export -->
             <div class="card shadow-sm border-0 mb-2">
