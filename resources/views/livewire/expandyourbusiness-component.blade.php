@@ -155,7 +155,7 @@
 
     @endphp
 
-    
+
     @foreach ($getexhibitionexhibitor as $eo)
       @php
         $ooo = DB::table('events')->where('id', $eo->id)->get();
@@ -171,7 +171,12 @@
     @endforeach
 
     @foreach($exhibitordata as $eventId => $participants)
-        <h4>Event ID: {{ $eventId }}</h4>
+
+      @php
+        @exhibitionname = DB::table('events')->where('id', $eventID)->first(); 
+      @endphp
+
+        <h4>Event ID: {{ $exhibitionname->eventname }}</h4> 
         <p>Total Exhibitors: {{ $participants->count() }}</p>
     @endforeach
 
