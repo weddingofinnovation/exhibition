@@ -7,6 +7,7 @@ use App\Mail\EventToClient;
 use App\Mail\MonthlyEvent;
 use App\Mail\promoemail;
 use App\Models\Appliedjob;
+use App\Models\association;
 use App\Models\BadgeApplication;
 use App\Models\BadgeCode;
 use App\Models\Brand;
@@ -1089,6 +1090,17 @@ public $selectedYear;
             'success',
             "Event updated successfully. Updated: {$updated}, Skipped: {$skipped}"
         );
+    }
+
+    public function newMSMEstatus($event_id, $status)
+    {
+      $ticketDel =  new association();
+      $ticketDel->partner = 'msme';
+      $ticketDel->event_id = $event_id;
+      $ticketDel->user_id = Auth::user()->id;
+      $ticketDel->admstatus = $this->admstatus;
+      $ticketDel->status = $status;
+      $ticketDel->save();
     }
 
     public function approveApplication($id, $status)

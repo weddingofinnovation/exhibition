@@ -284,13 +284,13 @@
           <button class="btn btn-secondary btn-sm">More</button>
         </div>
         @php
-        $findmsme = DB::table('associations')
-        ->where('reference_id', 1)
-        ->pluck('event_id'); // just association IDs
+          $findmsme = DB::table('associations')
+          ->where('reference_id', 1)
+          ->pluck('event_id'); // just association IDs
 
-        $events = DB::table('events')
-        ->whereIn('id', $findmsme)
-        ->get();
+          $events = DB::table('events')
+          ->whereIn('id', $findmsme)
+          ->get();
         @endphp
 
         @foreach($events as $franchise)
