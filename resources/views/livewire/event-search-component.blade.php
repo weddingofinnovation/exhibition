@@ -269,7 +269,7 @@
             <!-- Left side: 70% -->
             <div class="col-12 col-md-8 d-flex align-items-center gap-3">
               <div class="h4 fw-bold text-white mb-0">
-                Exhibitor and product search <span class="small fw-normal" style="color: #FF1628;">Business Events</span>
+                Upcoming Exhibition, Conference, Awards <span class="small fw-normal" style="color: #FF1628;">Business Events</span>
               </div>
 
               <div class="search-bar w-100">
