@@ -18,10 +18,8 @@
                             {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
                     </div> --}}
 
-                    <h1 class="text-center  fs-sm py-2">
 
-                    {{$this->pageTitle ?? 'testfail'}}
-                    {{$this->pageDescription ?? 'desc no'}}
+                    <h1 class="text-center fs-sm-md py-2">
                           exhibition in {{$this->city ?? ' no city'}},{{$this->country ?? ' no country'}} | {{$searchVenue->count()}}</h1>
 
 
