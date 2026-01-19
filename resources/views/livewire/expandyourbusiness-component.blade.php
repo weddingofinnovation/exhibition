@@ -142,6 +142,55 @@
 
 <div class="container">
   @if($board == 'normal')
+
+  <style>
+    .masonry-grid {
+    column-count: 6;
+    column-gap: 12px;
+      }
+
+      .masonry-item {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 12px;
+
+          padding: 10px 14px;
+          border: 1px solid #0d6efd;
+          border-radius: 6px;
+          background-color: #f8f9fa;
+
+          color: #0d6efd;
+          font-size: 14px;
+          text-decoration: none;
+          line-height: 1.4;
+
+          transition: all 0.2s ease;
+      }
+
+      .masonry-item:hover {
+          background-color: #0d6efd;
+          color: #ffffff;
+      }
+
+      .masonry-item .count {
+          font-weight: 600;
+      }
+
+      /* Responsive */
+      @media (max-width: 1200px) {
+          .masonry-grid { column-count: 4; }
+      }
+      @media (max-width: 992px) {
+          .masonry-grid { column-count: 3; }
+      }
+      @media (max-width: 768px) {
+          .masonry-grid { column-count: 2; }
+      }
+      @media (max-width: 576px) {
+          .masonry-grid { column-count: 1; }
+      }
+
+  </style>
     @php
       $exhibitordata = DB::table('participants')
       ->get()
@@ -159,7 +208,7 @@
             @foreach($exhibitordata as $eventId => $participants)
                 <a
                     href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}"
-                    class="masonry-item p-3 border rounded border-primary bg-light"
+                    class="masonry-item"
                 >
                     {{ $events[$eventId] ?? 'Unknown Event' }}
                     <span class="count">| {{ $participants->count() }}</span>
