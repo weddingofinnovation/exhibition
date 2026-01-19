@@ -1128,7 +1128,118 @@
               </div>
             </div>
            
+          @elseif($board == 'job')
+ <!--Start job -->
+  @if($board == 'job')
+  <div class="container d-lg-none">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+
+        <div class="mb-4 mb-lg-5">
+          <!-- Nav tabs-->
+          <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#jobrequuest" data-bs-toggle="tab" role="tab">Job</a></li>
+            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm " href="#Appletdetails" data-bs-toggle="tab" role="tab">Applet</a></li>
+          </ul>
+
+
+          <div class="tab-content pt-1">
+            <!-- Request tab-->
+            <div class="tab-pane fade show active" id="jobrequuest" role="tabpanel">
+              <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
+              <div class="row mb-5 pb-2">
+                @foreach ($jobs as $franchise)
+                <div class="container  ">
+                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                    <div class="col  pr-0">
+
+                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->updated_at)->format('d')}}</div>
+                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->updated_at)->format('M')}} </div>
+
+                      <div class="round-circle"><i class="bi bi-bookmark"></i></div>
+                    </div>
+
+                    <div class="col-7  p-0">
+                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
+                          {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a></div>
+                      <div class="text-muted fs-sm text-start">
+
+                        {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
+
+                      </div>
+                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state))}}, {{ucfirst(trans($franchise -> location_country))}}</div>
+                    </div>
+
+                    <div class="col-3  p-0">
+                      {{-- <a class="card-img-top d-block overflow-hidden" href="{{route('admin.job',['slug' => $franchise->slug])}}">
+                      <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                    </div>
+                  </div>
+                </div>
+                @endforeach
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--desktop version-->
+  <div class="continer d-none d-sm-block">
+    <div class="table-responsive fs-md mb-4">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>title:slug:type</th>
+            <th>skills:level</th>
+            <th>desc:req</th>
+            <th>qual:exp.</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--<tr>
+                        <td class="py-3"><a class="nav-link-style fw-medium" href="account-single-ticket.html">My new ticket</a></td>
+                        <td class="py-3">09/27/2019 | 09/30/2019</td>
+                        <td class="py-3">Website problem</td>
+                        <td class="py-3"><span class="badge bg-warning m-0">High</span></td>
+                        <td class="py-3"><span class="badge bg-success m-0">Open</span></td>
+                      </tr>-->
+
+          @foreach ($jobs as $info)
+          <tr>
+            <td class="py-3 align-middle">{{$info->id}}</td>
+            <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
+            <td class="py-3 align-middle fw-sm">{{Str::limit($info->skills, 25)}}<br>{{$info->level}}</td>
+            <td class="py-3 align-middle fw-sm">{{Str::limit($info->description, 25)}}<br>{{Str::limit($info->requirement, 25)}}</td>
+            <td class="py-3 align-middle fw-sm"><span class="align-middle badge  bg-info ms-2">{{$info->qualification}}<br></span></td>
+            <td class="py-3 align-middle">
+              @if($info->status == 'active')
+              <span class="badge bg-success m-0">Active</span>
+              @else
+              <span class="badge bg-danger m-0">Deactive</span>
+              @endif
+            </td>
+            <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
+                <div class=" bi bi-x"></div>
+              </a> </td>
+          </tr>
+          @endforeach
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  @endif
+  <!--Stop job -->
           @else
+
             <!-- Date Filter + Export -->
             <div class="card shadow-sm border-0 mb-2">
               <div class="card-body">
@@ -1840,115 +1951,7 @@
   @endif
   @endif
 
-  <!--Start job -->
-  @if($board == 'job')
-  <div class="container d-lg-none">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-
-        <div class="mb-4 mb-lg-5">
-          <!-- Nav tabs-->
-          <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#jobrequuest" data-bs-toggle="tab" role="tab">Job</a></li>
-            <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm " href="#Appletdetails" data-bs-toggle="tab" role="tab">Applet</a></li>
-          </ul>
-
-
-          <div class="tab-content pt-1">
-            <!-- Request tab-->
-            <div class="tab-pane fade show active" id="jobrequuest" role="tabpanel">
-              <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
-              <div class="row mb-5 pb-2">
-                @foreach ($jobs as $franchise)
-                <div class="container  ">
-                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-
-                      <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->updated_at)->format('d')}}</div>
-                      <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->updated_at)->format('M')}} </div>
-
-                      <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                    </div>
-
-                    <div class="col-7  p-0">
-                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
-                          {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a></div>
-                      <div class="text-muted fs-sm text-start">
-
-                        {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
-
-                      </div>
-                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state))}}, {{ucfirst(trans($franchise -> location_country))}}</div>
-                    </div>
-
-                    <div class="col-3  p-0">
-                      {{-- <a class="card-img-top d-block overflow-hidden" href="{{route('admin.job',['slug' => $franchise->slug])}}">
-                      <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </div>
-            </div>
-
-
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--desktop version-->
-  <div class="continer d-none d-sm-block">
-    <div class="table-responsive fs-md mb-4">
-      <table class="table table-hover mb-0">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>title:slug:type</th>
-            <th>skills:level</th>
-            <th>desc:req</th>
-            <th>qual:exp.</th>
-            <th>Status</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!--<tr>
-                        <td class="py-3"><a class="nav-link-style fw-medium" href="account-single-ticket.html">My new ticket</a></td>
-                        <td class="py-3">09/27/2019 | 09/30/2019</td>
-                        <td class="py-3">Website problem</td>
-                        <td class="py-3"><span class="badge bg-warning m-0">High</span></td>
-                        <td class="py-3"><span class="badge bg-success m-0">Open</span></td>
-                      </tr>-->
-
-          @foreach ($jobs as $info)
-          <tr>
-            <td class="py-3 align-middle">{{$info->id}}</td>
-            <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
-            <td class="py-3 align-middle fw-sm">{{Str::limit($info->skills, 25)}}<br>{{$info->level}}</td>
-            <td class="py-3 align-middle fw-sm">{{Str::limit($info->description, 25)}}<br>{{Str::limit($info->requirement, 25)}}</td>
-            <td class="py-3 align-middle fw-sm"><span class="align-middle badge  bg-info ms-2">{{$info->qualification}}<br></span></td>
-            <td class="py-3 align-middle">
-              @if($info->status == 'active')
-              <span class="badge bg-success m-0">Active</span>
-              @else
-              <span class="badge bg-danger m-0">Deactive</span>
-              @endif
-            </td>
-            <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
-                <div class=" bi bi-x"></div>
-              </a> </td>
-          </tr>
-          @endforeach
-
-        </tbody>
-      </table>
-    </div>
-  </div>
-  @endif
-  <!--Stop job -->
+ 
 
   <!--Stop blog -->
   @if($board == 'blog')
