@@ -143,12 +143,6 @@
 <div class="container">
   @if($board == 'normal')
     @php
-      $getexhibitionexhibitor = DB::table('brands')
-        ->join('events', 'brands.event_id', '=', 'events.id')
-        ->select('events.id', 'events.eventname')
-        ->distinct()
-        ->get();
-
       $exhibitordata = DB::table('participants')
       ->get()
       ->groupBy('event_id');
@@ -158,27 +152,10 @@
 
     @endphp
 
-
-    @foreach ($getexhibitionexhibitor as $eo)
-      @php
-        $ooo = DB::table('events')->where('id', $eo->id)->get();
-        $exhibitors = DB::table('brands')->where('event_id', $this->event_id)->get();
-      @endphp
-
-      @foreach ($ooo as $newo)
-        @php
-          $exhibitors = DB::table('brands')->where('event_id', $eo->id)->get()
-        @endphp
-        <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eo->id]) }}">{{$newo->eventname}} {{$exhibitors->count()}} </a>
-      @endforeach
-    @endforeach
-
     @foreach($exhibitordata as $eventId => $participants)
       <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">
         {{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
     @endforeach
-
-
 
   @elseif ($board == 'exhibitor')
 
