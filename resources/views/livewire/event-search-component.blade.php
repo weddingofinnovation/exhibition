@@ -384,44 +384,7 @@
           <!-- Content  -->
           <section class="col-lg-8">
             <!-- Toolbar-->
-            <div class="d-flex justify-content-center justify-content-sm-between align-items-center pt-2 pb-4 pb-sm-5">
-              <div class="d-flex flex-wrap">
-                <div class="d-flex align-items-center flex-nowrap me-3 me-sm-4 pb-3">
-                  <label class="text-light fs-sm opacity-75 text-nowrap me-2 d-none d-sm-block" for="sorting">Sort by:</label>
-                  <select class="form-select"  wire:model="sorting">
-                    <option value="today" selected="selected">Today</option>
-                    <option value="tomorrow"  >Tomorrow</option>
-                    <option value="weekend">This weekend</option>
-                  </select>
-                  <span class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block">of  </span>
-                </div>
-
-                <div class="d-flex pb-3">
-                  <select class="form-select"  wire:model="pagesize">
-                    <!--<option value="12" selected="selected">12 per page</option>-->
-                              <option value="12">12 per page</option>
-                              <option value="16">16 per page</option>
-                              <option value="18">18 per page</option>
-                              <option value="21">21 per page</option>
-                              <option value="24">24 per page</option>
-                              <option value="30">30 per page</option>
-                              <option value="32">32 per page</option>
-                  </select>
-                </div>
-              </div>
-              <div class="d-flex pb-3">
-                    <a class="nav-link-style nav-link-light me-3" href="#"><i class="bi bi-chevron-left"></i></a>
-                    <span class="fs-md text-light">1 / 5</span>
-                    <a class="nav-link-style nav-link-light ms-3" href="#"><i class="bi bi-chevron-right"></i></a></div>
-
-                    <div class="d-none d-sm-flex pb-3">
-                    <a class="btn btn-icon nav-link-style bg-light text-dark disabled opacity-100 me-2" href="#">
-                      <i class=" bi bi-view-grid"></i></a><a class="btn btn-icon nav-link-style nav-link-light" href="shop-list-rs.html">
-                        <i class="ci-view-list"></i></a>
-                  </div>
-
-            </div>
-
+         
             <!-- Item -->
             <div class="row mx-n2">
               @php $witems = Cart::instance('wishlist')->content()->pluck('id');  @endphp
