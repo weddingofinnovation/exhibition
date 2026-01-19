@@ -270,7 +270,7 @@ Route::get('/space/{time?}/{eventype?}/{state?}/{venue?}/{category?}', Exhibitio
 Route::get('/find/{time}/{eventype}/{categry}', ExhibitionCategoryComponent::class)->name('coi.exhibitioncategory');
 
 //as per upcoming venue 
-Route::get('great-exhibition-to-exhibit/{time?}/{venue?}/{city?}/{country?}', EventSearchComponent::class)->name('search.venue');
+Route::get('exhibition-in-{city?}/{time?}/{venue?}/{country?}', EventSearchComponent::class)->name('search.venue');
 
 
 Route::get('/pass/{slug}', ProductComponent::class)->name('event.product');
