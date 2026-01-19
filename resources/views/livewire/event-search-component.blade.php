@@ -226,7 +226,141 @@
           </div>
         </div>
     <!--end Google-->
-    <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
+
+     <!-- Custom CSS -->
+      <style>
+        .custom-select {
+          background-color: #1a1a1a;
+          color: #fff;
+          border: 1px solid #333;
+        }
+
+        .custom-select:focus {
+          border-color: #00ff99;
+          box-shadow: 0 0 5px rgba(0, 255, 153, 0.5);
+        }
+
+        .tag-btn {
+          background-color: #1a1a1a;
+          color: #fff;
+          border: 1px solid #333;
+          padding: 3px 7px;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          transition: 0.3s;
+        }
+
+        .tag-btn:hover {
+          background-color: #00ff99;
+          color: #000;
+          border-color: #00ff99;
+        }
+
+        .search-bar input::placeholder {
+          color: #aaa;
+        }
+      </style>
+
+      <div class="py-4 d-none d-sm-block" style="background-color: #000;">
+        <div class="container">
+
+          <div class="row align-items-center mt-2">
+
+            <!-- Left side: 70% -->
+            <div class="col-12 col-md-8 d-flex align-items-center gap-3">
+              <div class="h4 fw-bold text-white mb-0">
+                Exhibitor and product search <span class="small fw-normal" style="color: #FF1628;">Business Events</span>
+              </div>
+
+              <div class="search-bar w-100">
+                <input type="text" class="form-control bg-dark text-white border-0" placeholder="Search tournament by name">
+              </div>
+            </div>
+
+            <!-- Right side: 30% -->
+            <div class="col-12 col-md-4 d-flex justify-content-end gap-2 align-items-center">
+              <select class="form-select custom-select w-auto">
+                <option selected>Sort by: Event Date</option>
+                <option>Most Viewed</option>
+                <option>Top Teams</option>
+              </select>
+              <button class="btn btn-sm fw-bold px-4" style="color:#FF1628;">
+                LIVE Business Events
+              </button>
+            </div>
+
+          </div>
+
+
+          @php
+          $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->limit(10)->get();
+          $allcategory = DB::table('categories')->get();
+          @endphp
+
+          <!-- Filter Section -->
+          <div class="filter-box mt-2">
+            <div class="row g-3">
+              <div class="col-md-3">
+
+                <select class="form-select custom-select">
+                  <option selected>All Industries</option>
+                  @foreach($allcategory as $category)
+                  <option>{{ ucwords($category->industry) }}</option>
+                  @endforeach
+                </select>
+              </div>
+
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Cities</option>
+                  <option>Riot</option>
+                  <option>Valve</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Venues</option>
+
+                  @foreach($venueoption as $franchise)
+                  <option>{{ucwords($franchise->venue)}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="col-md-3">
+                <select class="form-select custom-select">
+                  <option selected>All Types</option>
+                  <option>Entry Free</option>
+                  <option>Rating</option>
+                  <option>Popular</option>
+                  <option>Trending</option>
+                  <option>Featured</option>
+                  <option>Industry Leader</option>
+                  <option>B2B focus</option>
+                  <option>Registration open</option>
+                  <option>Early Bird</option>
+                  <option>Upcoming</option>
+                  <option>New Event</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-2 d-flex flex-wrap gap-1">
+              <button class="tag-btn">Trending</button>
+              <button class="tag-btn">International Trade</button>
+              <button class="tag-btn">Business Supplies</button>
+              <button class="tag-btn">Battle Royale</button>
+              <button class="tag-btn">Collegiate</button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+     {{-- 
+      <div class="page-title-overlap bg-accent pt-4 d-none d-sm-block">
         <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
           <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
             <nav aria-label="breadcrumb">
@@ -243,7 +377,7 @@
             {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
           </div>
         </div>
-      </div>
+      </div> --}}
   
       <div class="container pb-5 mb-2 mb-md-4 d-none d-sm-block">
         <div class="row">
