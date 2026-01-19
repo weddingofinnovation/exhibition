@@ -155,11 +155,11 @@
           margin-bottom: 12px;
 
           padding: 10px 14px;
-          border: 1px solid #0d6efd;
+          border: 1px solid #000;
           border-radius: 6px;
           background-color: #f8f9fa;
 
-          color: #0d6efd;
+          color: #000;
           font-size: 14px;
           text-decoration: none;
           line-height: 1.4;
@@ -168,7 +168,7 @@
       }
 
       .masonry-item:hover {
-          background-color: #0d6efd;
+          background-color: #000;
           color: #ffffff;
       }
 
@@ -191,6 +191,7 @@
       }
 
   </style>
+
     @php
       $exhibitordata = DB::table('participants')
       ->get()
