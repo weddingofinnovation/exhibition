@@ -19,6 +19,9 @@
                     </div> --}}
 
                     <h1 class="text-center  fs-sm py-2">
+
+                    {{$this->pageTitle}}
+                    {{$this->pageDescription}}
                           exhibition in {{$this->city ?? ' no city'}},{{$this->country ?? ' no country'}} | {{$searchVenue->count()}}</h1>
 
 
