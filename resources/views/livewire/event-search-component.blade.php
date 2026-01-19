@@ -1,3 +1,8 @@
+@section('page_title', $pageTitle)
+@section('page_description', $pageDescription)
+
+@section('page_keywords', 'Council, Innovation, sell your business, market, expand your franchise, buy a brand licenese, business_design, business_strategy, business_design_sprint, innovation_accelerator, product_service, go_to_market, entrepreneur_residence, strategy_sprint, creative')
+
 <main>
     <!--google-->
         <div class="bg-secondary d-lg-none">
@@ -9,10 +14,15 @@
                     <a href="#"><i class="bi bi-chevron-left"></i></a>  
                     </div>
               
-                    <div class="text-center  fs-sm py-2">
+                    {{-- <div class="text-center  fs-sm py-2">
                           <div>Upcoming {{$this->venue ?? ' no venue'}}</div> 
-            {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
-                    </div>
+                            {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
+                    </div> --}}
+
+                    <h1 class="text-center  fs-sm py-2">
+                          exhibition in {{$this->city ?? ' no city'}},{{$this->country ?? ' no country'}} | {{$searchVenue->count()}}</h1>
+
+
 
                     <div class="align-content-center py-2">
                     <a href=""><i class="bi bi-filter"></i></a>    
@@ -95,7 +105,7 @@
 
                                       <div class="col-3  p-0">
                                         <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $franchise->slug])}}">
-                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
+                                            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="exhibition in {{Str::limit($franchise->city, 24)}}"></a>
                                       </div>
                                     </div>
                                   </div>
