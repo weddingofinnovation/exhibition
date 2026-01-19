@@ -152,9 +152,7 @@
 
     @endphp
 
-    <div class="col-md-4 col-sm-">
-          <a class="p-3 border rounded border-primary bg-light" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">{{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
-        </div>
+   
 
     <div class="container my-3">
         <div class="masonry-grid">
