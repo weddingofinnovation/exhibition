@@ -13,14 +13,14 @@
                     <a href="#"><i class="bi bi-chevron-left"></i></a>  
                     </div>
               
-                    {{-- <div class="text-center  fs-sm py-2">
+                    {{-- <div class="text-center fs-sm py-1">
                           <div>Upcoming {{$this->venue ?? ' no venue'}}</div> 
                             {{$this->city ?? ' no city'}} {{$this->country ?? ' no country'}}{{$searchVenue->count()}}
                     </div> --}}
 
 
-                    <h1 class="text-center fs-sm-sm py-2">
-                          exhibition in {{$this->city ?? ' no city'}},{{$this->country ?? ' no country'}}</h1>
+                    <div class="text-center fs-sm py-2">
+                          exhibition in {{$this->city ?? ' no city'}},{{$this->country ?? ' no country'}}</div>
 
 
 
@@ -114,7 +114,8 @@
                           @endforeach
                         @endforeach
 
-                        @foreach($searchVenue  as $franchise)test2
+                        @foreach($searchVenue  as $franchise)
+                        test2
                           <div class="container">
                             <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
                               <div class="col  pr-0">
