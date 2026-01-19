@@ -152,10 +152,14 @@
 
     @endphp
 
-    @foreach($exhibitordata as $eventId => $participants)
-      <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">
-        {{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
-    @endforeach
+    
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+      @foreach($exhibitordata as $eventId => $participants)
+        <div class="col">
+          <a class="p-3 border rounded border-primary bg-light" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">{{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
+        </div>
+      @endforeach
+    </div>
 
   @elseif ($board == 'exhibitor')
 
