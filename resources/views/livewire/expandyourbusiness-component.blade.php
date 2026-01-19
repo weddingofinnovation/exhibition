@@ -152,13 +152,18 @@
 
     @endphp
 
-    
-    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-      @foreach($exhibitordata as $eventId => $participants)
-        <div class="col-md-4 col-sm-6">
-          <a class="p-3 border rounded border-primary bg-light" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">{{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
+    <div class="container my-3">
+        <div class="masonry-grid">
+            @foreach($exhibitordata as $eventId => $participants)
+                <a
+                    href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}"
+                    class="masonry-item"
+                >
+                    {{ $events[$eventId] ?? 'Unknown Event' }}
+                    <span class="count">| {{ $participants->count() }}</span>
+                </a>
+            @endforeach
         </div>
-      @endforeach
     </div>
 
   @elseif ($board == 'exhibitor')
