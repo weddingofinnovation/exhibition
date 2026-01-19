@@ -35,7 +35,9 @@ class EventSearchComponent extends Component
     //     $searchVenue = Event::where('city', $searchTermCity )->where('status', '1')->where('admstatus', '1')->orderBy('startdate','desc')->get();
     //     return view('livewire.event-search-component',['searchVenue' => $searchVenue])->layout('layouts.eblog');
     // }
-
+    
+    public $pageTitle;
+    public $pageDescription;
 
     public function index($city)
         {
