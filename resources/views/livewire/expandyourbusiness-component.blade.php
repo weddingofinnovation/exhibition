@@ -144,10 +144,10 @@
   @if($board == 'normal')
     @php
       $getexhibitionexhibitor = DB::table('brands')
-      ->join('events', 'brands.event_id', '=', 'events.id')
-      ->select('events.id', 'events.eventname')
-      ->distinct()
-      ->get();
+        ->join('events', 'brands.event_id', '=', 'events.id')
+        ->select('events.id', 'events.eventname')
+        ->distinct()
+        ->get();
 
       $exhibitordata = DB::table('participants')
       ->get()
@@ -174,12 +174,8 @@
     @endforeach
 
     @foreach($exhibitordata as $eventId => $participants)
-      <h4>
-          Event: {{ $events[$eventId] ?? 'Unknown Event' }}
-      </h4>
-
-      <p>Total Exhibitors: {{ $participants->count() }}</p>
-
+      <a href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $eventId]) }}">
+        {{ $events[$eventId] ?? 'Unknown Event' }} | {{ $participants->count() }}</a>
     @endforeach
 
 
