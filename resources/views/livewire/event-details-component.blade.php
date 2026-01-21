@@ -4479,7 +4479,6 @@
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation 2026</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation Opportunities</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Halal Showcase</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
                                         </ul>
@@ -4991,6 +4990,80 @@
                     @endforeach
                 </div>
 
+
+
+                <section class="py-5 bg-light">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="fw-bold">Exhibitor Services</h2>
+        <p class="text-muted">
+          Designed to simplify participation, maximize visibility, and deliver measurable value.
+        </p>
+      </div>
+    </div>
+
+    <!-- Service Card -->
+    <div class="card border-0 shadow-sm mb-5">
+      <div class="card-body p-4 p-lg-5">
+
+        <!-- Service Title -->
+        <div class="row align-items-center mb-4">
+          <div class="col-md-1 text-center">
+            <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
+          </div>
+          <div class="col-md-11">
+            <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
+            <p class="text-muted mb-0">
+              Decisions backed by data, not assumptions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Description -->
+        <p class="mb-4">
+          We provide transparent and verified event data including exhibitor mix, visitor profiles,
+          exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
+        </p>
+
+        <!-- Problem / Solution / Advantage -->
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="border rounded h-100 p-3">
+              <h6 class="fw-semibold text-danger">The Problem</h6>
+              <p class="small text-muted mb-0">
+                Exhibitors often participate without reliable data, leading to poor ROI.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="border rounded h-100 p-3">
+              <h6 class="fw-semibold text-primary">Our Solution</h6>
+              <p class="small text-muted mb-0">
+                Accurate, standardized event statistics verified by The Exhibition Network.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="border rounded h-100 p-3">
+              <h6 class="fw-semibold text-success">Your Advantage</h6>
+              <p class="small text-muted mb-0">
+                Confident decision-making and higher return on investment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Duplicate card for other services -->
+  </div>
+</section>
 
 
                 <div class="row">
