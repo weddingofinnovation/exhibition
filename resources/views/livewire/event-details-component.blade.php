@@ -4428,8 +4428,16 @@
                             </div>
                         </li>
 
+
+                        @php 
+                          $getexhibitor = DB::table('participants')->where('event_id', $event->id)->get();
+                        @endphp
+
+                        @if($getexhibitor->count() > '0')
                         <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a>
+                            <a class="nav-link dropdown-toggle" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $event->id]) }}">Exhibitors 2026</a>
+
+                            <!-- <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a> -->
                             <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row justify-content-center">
 
@@ -4451,7 +4459,8 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> 
+                        @endif
 
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" data-bs-toggle="dropdown">
