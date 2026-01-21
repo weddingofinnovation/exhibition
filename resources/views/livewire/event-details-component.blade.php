@@ -4990,80 +4990,132 @@
                     @endforeach
                 </div>
 
+<section class="py-5">
+  <div class="container">
+
+    <div class="row g-4 align-items-stretch">
+
+      <!-- Feature 1 (Highlighted) -->
+      <div class="col-md-4">
+        <div class="feature-box bg-light h-100 p-4 rounded-4">
+          <h4 class="fw-bold mb-3">AI tools built for your business</h4>
+          <p class="text-muted mb-0">
+            Our suite of AI tools can help save you time and money, enabling you
+            to customize and scale your site with ease. Create content, product
+            descriptions, FAQs, and more to bring your brand to life.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 2 -->
+      <div class="col-md-4">
+        <div class="feature-box h-100 p-4 rounded-4 border">
+          <h4 class="fw-bold mb-3">Point, click, and launch</h4>
+          <p class="text-muted mb-0">
+            With our robust website builder, no coding or design experience is
+            required. Add or delete sections with drag and drop functionality
+            to create and publish your site with ease and speed.
+          </p>
+        </div>
+      </div>
+
+      <!-- Feature 3 -->
+      <div class="col-md-4">
+        <div class="feature-box h-100 p-4 rounded-4 border">
+          <h4 class="fw-bold mb-3">Templates that fit your vision</h4>
+          <p class="text-muted mb-0">
+            Our professionally designed layouts offer options for any industry,
+            and they’re customizable—empowering you to build a brand that’s
+            uniquely yours. Change the look and feel with a single click.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-dark px-5 py-3 rounded-3 fw-semibold">
+        Start for Free
+      </a>
+    </div>
+
+  </div>
+</section>
 
 
                 <section class="py-5 bg-light">
-  <div class="container">
+                <div class="">
 
-    <!-- Section Header -->
-    <div class="row mb-5">
-      <div class="col-lg-8 mx-auto text-center">
-        <h2 class="fw-bold">Exhibitor Services</h2>
-        <p class="text-muted">
-          Designed to simplify participation, maximize visibility, and deliver measurable value.
-        </p>
-      </div>
-    </div>
+                    <!-- Section Header -->
+                    <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="fw-bold">Exhibitor Services</h2>
+                        <p class="text-muted">
+                        Designed to simplify participation, maximize visibility, and deliver measurable value.
+                        </p>
+                    </div>
+                    </div>
 
-    <!-- Service Card -->
-    <div class="card border-0 shadow-sm mb-5">
-      <div class="card-body p-4 p-lg-5">
+                    <!-- Service Card -->
+                    <div class="card border-0 shadow-sm mb-5">
+                    <div class="card-body p-4 p-lg-5">
 
-        <!-- Service Title -->
-        <div class="row align-items-center mb-4">
-          <div class="col-md-1 text-center">
-            <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
-          </div>
-          <div class="col-md-11">
-            <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
-            <p class="text-muted mb-0">
-              Decisions backed by data, not assumptions.
-            </p>
-          </div>
-        </div>
+                        <!-- Service Title -->
+                        <div class="row align-items-center mb-4">
+                        <div class="col-md-1 text-center">
+                            <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
+                        </div>
+                        <div class="col-md-11">
+                            <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
+                            <p class="text-muted mb-0">
+                            Decisions backed by data, not assumptions.
+                            </p>
+                        </div>
+                        </div>
 
-        <!-- Description -->
-        <p class="mb-4">
-          We provide transparent and verified event data including exhibitor mix, visitor profiles,
-          exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
-        </p>
+                        <!-- Description -->
+                        <p class="mb-4">
+                        We provide transparent and verified event data including exhibitor mix, visitor profiles,
+                        exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
+                        </p>
 
-        <!-- Problem / Solution / Advantage -->
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="border rounded h-100 p-3">
-              <h6 class="fw-semibold text-danger">The Problem</h6>
-              <p class="small text-muted mb-0">
-                Exhibitors often participate without reliable data, leading to poor ROI.
-              </p>
-            </div>
-          </div>
+                        <!-- Problem / Solution / Advantage -->
+                        <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="border rounded h-100 p-3">
+                            <h6 class="fw-semibold text-danger">The Problem</h6>
+                            <p class="small text-muted mb-0">
+                                Exhibitors often participate without reliable data, leading to poor ROI.
+                            </p>
+                            </div>
+                        </div>
 
-          <div class="col-md-4">
-            <div class="border rounded h-100 p-3">
-              <h6 class="fw-semibold text-primary">Our Solution</h6>
-              <p class="small text-muted mb-0">
-                Accurate, standardized event statistics verified by The Exhibition Network.
-              </p>
-            </div>
-          </div>
+                        <div class="col-md-4">
+                            <div class="border rounded h-100 p-3">
+                            <h6 class="fw-semibold text-primary">Our Solution</h6>
+                            <p class="small text-muted mb-0">
+                                Accurate, standardized event statistics verified by The Exhibition Network.
+                            </p>
+                            </div>
+                        </div>
 
-          <div class="col-md-4">
-            <div class="border rounded h-100 p-3">
-              <h6 class="fw-semibold text-success">Your Advantage</h6>
-              <p class="small text-muted mb-0">
-                Confident decision-making and higher return on investment.
-              </p>
-            </div>
-          </div>
-        </div>
+                        <div class="col-md-4">
+                            <div class="border rounded h-100 p-3">
+                            <h6 class="fw-semibold text-success">Your Advantage</h6>
+                            <p class="small text-muted mb-0">
+                                Confident decision-making and higher return on investment.
+                            </p>
+                            </div>
+                        </div>
+                        </div>
 
-      </div>
-    </div>
+                    </div>
+                    </div>
 
-    <!-- Duplicate card for other services -->
-  </div>
-</section>
+                    <!-- Duplicate card for other services -->
+                </div>
+                </section>
 
 
                 <div class="row">
