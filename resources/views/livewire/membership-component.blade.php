@@ -131,10 +131,11 @@
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
-    <small style="color:#ff0440;">Smart Participation | Managed Visibility | Growth-Focused</small>
+    <small class="text-center" style="color:#ff0440;">Smart Participation | Managed Visibility | Growth-Focused</small>
   <h2 class="display-5 text-center my-2">Strategize Market Expansion</h2>
   <p class="fs-sm  text-center">This works perfectly as a value-driven membership for startups, MSMEs, individual founders, and emerging brands.</p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
+
     <div class="col col-md-3">
       <div class="card h-100  border-0">
 
@@ -153,7 +154,7 @@
 
         <div class="card-body">
           <h5 class="card-title">Free Stand Access</h5>
-          <p class="card-text" style="color:#ff0440;"Subsidized or sponsored exhibition space</p>
+          <p class="card-text" style="color:#ff0440;">Subsidized or sponsored exhibition space</p>
           <p class="card-text">Free Stand Access gives eligible members the opportunity to secure fully or partially sponsored exhibition space, usually supported by government bodies, partners, or organizers.</p>
           <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
         </div>
