@@ -179,6 +179,37 @@
 </section>
 
 <!-- secondary try -->
+    <style>
+        .feature-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        }
+
+        .feature-box .icon {
+        height: 40px;               /* FIXED icon height */
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        color: #000;
+        }
+
+        .feature-box .title {
+        min-height: 44px;           /* FIX title height */
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #000;
+        }
+
+        .feature-box .desc {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #000;
+        margin-top: 1rem;
+        }
+
+    </style>
+
     <section class="py-5">
         <div class="container">
             <div class="marketing-card p-4 p-lg-5">
