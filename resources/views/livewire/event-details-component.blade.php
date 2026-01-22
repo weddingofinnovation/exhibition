@@ -5548,6 +5548,7 @@
         </div>
     </section>
 
+
     <style>
         .feature-box {
         display: flex;
@@ -5576,34 +5577,62 @@
 
     </style>
 
-    <div class="container py-5">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-            <!-- Item -->
-            <div class="col">
-            <div class="feature-box h-100">
-                <div class="icon">
-                <!-- SVG ICON -->
+    <!-- secondary try -->
+     <section class="py-5">
+        <div class="container">
+            <div class="marketing-card p-4 p-lg-5">
+                <div class="row g-4 align-items-start">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-3">
+                    <span class="badge plus-badge mb-3">PLUS</span>
+                        <h3 class="fw-bold display-6" style="color: #000;">
+                            Every Digital<br>Marketing<br>plan includes:
+                        </h3>
+                    </div>
+
+                    <!-- RIGHT FEATURES -->
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                            <!-- Item -->
+                            <div class="col">
+                            <div class="feature-box h-100">
+                                <div class="icon">
+                                <!-- SVG ICON -->
+                                </div>
+                                <h6 class="title">AI-generated content</h6>
+                                <p class="desc">
+                                Take advantage of GoDaddy Airo™ to create customizable content.
+                                </p>
+                            </div>
+                            </div>
+
+                            <!-- Repeat -->
+                            <div class="col">
+                            <div class="feature-box h-100">
+                                <div class="icon"></div>
+                                <h6 class="title">Email marketing campaigns</h6>
+                                <p class="desc">
+                                Reach out to customers to always be relevant and top of mind.
+                                </p>
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
-                <h6 class="title">AI-generated content</h6>
-                <p class="desc">
-                Take advantage of GoDaddy Airo™ to create customizable content.
-                </p>
             </div>
-            </div>
-
-            <!-- Repeat -->
-            <div class="col">
-            <div class="feature-box h-100">
-                <div class="icon"></div>
-                <h6 class="title">Email marketing campaigns</h6>
-                <p class="desc">
-                Reach out to customers to always be relevant and top of mind.
-                </p>
-            </div>
-            </div>
-
         </div>
+    </section>
+
+
+
+    
+    <div class="container py-5">
+        
     </div>
 
 
