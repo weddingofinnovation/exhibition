@@ -1,5 +1,133 @@
 <main>
 
+
+<!-- new -->
+Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.
+
+<!-- new -->
+    <section class="container-fluid py-5 my-5 py-lg-5  ">
+        <div class="text-center mt-4 mb-3">
+            <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
+            </div>
+            <h2 class="display-5 fw-normal">Expand your Business</h2>
+            <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
+            <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
+            <small class=""></small>
+            
+            <a href="" class="btn btn-sm">Get Started</a>
+        </div>
+    </section>
+
+ <!-- new-try -->
+    <section class="pt-4 sticky-section">
+        <div class="container">
+            <!-- Trust / Rating Bar -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
+
+            <span class="text-muted">Our customers say</span>
+
+            <strong class="fs-6">Excellent</strong>
+
+            <!-- Stars -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success">★★★★★</span>
+            </div>
+
+            <span class="text-muted">
+                4.5 out of 5 stars based on <strong>129,972</strong> reviews
+            </span>
+
+            <!-- Trustpilot -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success fs-5">★</span>
+                <strong>Great Exhibition To Exhibit</strong>
+            </div>
+
+            </div>
+        </div>
+
+        <style>
+            /* Pills container */
+            .custom-pills {
+                background: #f5f5f5;
+                border-radius: 50px;
+                padding: 6px;
+                display: flex;
+                gap: 6px;
+            }
+
+            /* Pills */
+            .custom-pills .nav-link {
+                border-radius: 50px;
+                padding: 8px 18px;
+                color: #000;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+
+            /* Active pill */
+            .custom-pills .nav-link.active {
+                background: #dcdcdc;
+                color: #000;
+            }
+
+            /* Arrow icon */
+            .icon-circle {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #f5f5f5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        </style>
+
+        <div class="pt-3  pb-2">
+            <div class="container">
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Pills -->
+                    <ul class="nav custom-pills">
+
+                       <!-- Arrow Item -->
+                        <li class="nav-item">
+                            <a class="nav-link arrow-pill" href="#event-header">
+                                ↑
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Marketing Planner</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Social and Email</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Search Engine Optimization
+                        </a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- new-end -->
+
+
+
     <!-- Workplace Finder Section -->
     <section class="workplace-section py-5" style="background-color:#f3f9f6;">
       <div class="container">

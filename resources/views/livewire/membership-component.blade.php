@@ -10,16 +10,16 @@
 
 <!-- new -->
     <section class="container-fluid py-5 my-5 py-lg-5  ">
-    <div class="text-center mt-4 mb-3">
-        <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
+        <div class="text-center mt-4 mb-3">
+            <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
+            </div>
+            <h2 class="display-5 fw-normal">Expand your Business</h2>
+            <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
+            <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
+            <small class=""></small>
+            
+            <a href="" class="btn btn-sm">Get Started</a>
         </div>
-        <h2 class="display-5 fw-normal">Expand your Business</h2>
-        <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
-        <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
-        <small class="">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</small>
-        
-        <a href="" class="btn btn-sm">Get Started</a>
-    </div>
     </section>
 
  <!-- new-try -->
@@ -131,7 +131,7 @@
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
-  <h2 class="display-5 text-center my-2">Boost your brand with The Exhibition Network Studio.</h2>
+  <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
   <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col col-md-3">
