@@ -5568,12 +5568,13 @@
         min-height: 44px;           /* FIX title height */
         font-weight: 600;
         margin-bottom: 8px;
+        color: #000;
         }
 
         .feature-box .desc {
         font-size: 14px;
         line-height: 1.5;
-        color: #333;
+        color: #000;
         }
 
     </style>
@@ -5603,6 +5604,7 @@
                                     <div class="icon">
                                     <!-- SVG ICON -->
                                     </div>
+
                                     <h6 class="title">AI-generated content</h6>
                                     <p class="desc">
                                     Take advantage of GoDaddy Airo™ to create customizable content.
@@ -5629,8 +5631,9 @@
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
                                 <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
                                 </svg>
-                                <h6>Scheduled social media posts</h6>
-                                <p>Post consistently to improve reach and engagement.</p>
+
+                                <h6 class="title">Scheduled social media posts</h6>
+                                <p class="desc">Post consistently to improve reach and engagement.</p>
                             </div>
                         </div>
 
@@ -5643,8 +5646,8 @@
                                 <path d="M21 17l-5-5-4 4-2-2-5 5"
                                         stroke="currentColor" stroke-width="1.5" fill="none"/>
                                 </svg>
-                                <h6>Branded images and videos</h6>
-                                <p>Create visual content with photos and videos.</p>
+                                <h6 class="title">Branded images and videos</h6>
+                                <p class="desc">Create visual content with photos and videos.</p>
                             </div>
                         </div>
 
@@ -5654,8 +5657,8 @@
                                 <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
                                 </svg>
-                                <h6>Design Studio</h6>
-                                <p>Create logos, websites, and ads with ease.</p>
+                                <h6 class="title">Design Studio</h6>
+                                <p class="desc">Create logos, websites, and ads with ease.</p>
                             </div>
                         </div>
 
