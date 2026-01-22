@@ -214,7 +214,7 @@
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link" href="{{route('expand.business')}}">Find Exhibitor</a>
+                  <a class="nav-link" href="{{route('expand.business', ['board' => 'normal'])}}">Find Exhibitor</a>
                 </li>
 
                 {{-- <li class="nav-item">
@@ -225,7 +225,7 @@
                 </li> --}}
                 
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ route('expand.business', ['board' => 'normal']) }}">
+                  <a class="nav-link" href="{{ route('buy.license')}}">
                     Design & Fabrication
                   </a>
                 </li>
