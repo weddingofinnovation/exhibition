@@ -143,7 +143,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="col col-md-3">
       <div class="card h-100 border-0">
 
@@ -169,57 +169,6 @@
         <div class="card-body text-center">
           <h5 class="card-title" style="color:#ff0440;">Manage Your Stand</h5>
           <p class="card-text">End-to-end stand coordination & support</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  </div>
-</section>
-
-
-<!--Our culture and values-->
-<section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
-  <h2 class="display-5 text-center my-2">Optimize Online Opportunities, Offering </h2>
-  <p class="fs-sm  text-center">Powered by #COI</p>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col col-md-3">
-      <div class="card h-100  border-0">
-
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">Reaching more people</h5>
-          <p class="card-text">
-
-            Market to the world, share business to customers ready to do business.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col col-md-3">
-      <div class="card h-100 border-0">
-
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">Listen to your customers</h5>
-          <p class="card-text">Power-up your selling efforts with us.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col col-md-3">
-      <div class="card h-100 border-0">
-
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">Build on market trends</h5>
-          <p class="card-text">Develop talent and keep skill-up.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col col-md-3 ">
-      <div class="card h-100 border-0">
-
-        <div class="card-body text-center">
-          <h5 class="card-title" style="color:#ff0440;">Go into new places</h5>
-          <p class="card-text">Get social, starts with making the right connections.</p>
         </div>
       </div>
     </div>
