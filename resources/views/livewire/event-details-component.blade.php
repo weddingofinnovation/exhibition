@@ -5606,9 +5606,7 @@
                                     </div>
 
                                     <h6 class="title">AI-generated content</h6>
-                                    <p class="desc">
-                                    Take advantage of GoDaddy Airo™ to create customizable content.
-                                    </p>
+                                    <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
                                 </div>
                             </div>
 
