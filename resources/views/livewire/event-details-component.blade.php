@@ -4891,172 +4891,110 @@
         </div>
     </section>
 
-
-
-
    <!-- new-try -->
-
-   <section class="py-4 border-bottom">
-  <div class="container">
-
-    <!-- Trust / Rating Bar -->
-    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
-
-      <span class="text-muted">Our customers say</span>
-
-      <strong class="fs-6">Excellent</strong>
-
-      <!-- Stars -->
-      <div class="d-flex align-items-center gap-1">
-        <span class="text-success">★★★★★</span>
-      </div>
-
-      <span class="text-muted">
-        4.5 out of 5 stars based on <strong>129,972</strong> reviews
-      </span>
-
-      <!-- Trustpilot -->
-      <div class="d-flex align-items-center gap-1">
-        <span class="text-success fs-5">★</span>
-        <strong>Trustpilot</strong>
-      </div>
-
-    </div>
-
-    <style>
-        .nav-pills .nav-link.active {
-            background-color: #fff;
-            color: #000;
-            border: 2px solid #0d6efd;
-            font-weight: 600;
-        }
-
-        .nav-pills .nav-link {
-            transition: all 0.2s ease;
-        }
-
-        .nav-pills .nav-link:hover {
-            background-color: #fff;
-        }
-    </style>
-
-
-    <!-- Navigation Tabs -->
-    <div class="d-flex justify-content-center">
-      <ul class="nav nav-pills bg-light rounded-pill p-1">
-
-        <li class="nav-item">
-          <a class="nav-link active rounded-pill px-4" href="#">
-            Marketing Planner
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link rounded-pill px-4 text-dark" href="#">
-            Social and Email
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link rounded-pill px-4 text-dark" href="#">
-            Search Engine Optimization
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link rounded-pill px-4 text-dark" href="#">
-            FAQ
-          </a>
-        </li>
-
-      </ul>
-    </div>
-
-
-    <style>
-  /* Pills container */
-  .custom-pills {
-    background: #f5f5f5;
-    border-radius: 50px;
-    padding: 6px;
-    display: flex;
-    gap: 6px;
-  }
-
-  /* Pills */
-  .custom-pills .nav-link {
-    border-radius: 50px;
-    padding: 8px 18px;
-    color: #000;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  /* Active pill */
-  .custom-pills .nav-link.active {
-    background: #dcdcdc;
-    color: #000;
-  }
-
-  /* Arrow icon */
-  .icon-circle {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: #f5f5f5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    cursor: pointer;
-  }
-</style>
-
-    <section class="py-3">
+    <section class="py-4 border-bottom">
         <div class="container">
+            <!-- Trust / Rating Bar -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
 
-            <div class="d-flex align-items-center gap-3">
+            <span class="text-muted">Our customers say</span>
 
-            <!-- Arrow Icon -->
-            <div class="icon-circle">
-                ↑
+            <strong class="fs-6">Excellent</strong>
+
+            <!-- Stars -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success">★★★★★</span>
             </div>
 
-            <!-- Pills -->
-            <ul class="nav custom-pills">
+            <span class="text-muted">
+                4.5 out of 5 stars based on <strong>129,972</strong> reviews
+            </span>
 
-                <li class="nav-item">
-                <a class="nav-link" href="#">Marketing Planner</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">Social and Email</a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link active" href="#">
-                    Search Engine Optimization
-                </a>
-                </li>
-
-                <li class="nav-item">
-                <a class="nav-link" href="#">FAQ</a>
-                </li>
-
-            </ul>
+            <!-- Trustpilot -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success fs-5">★</span>
+                <strong>Trustpilot</strong>
             </div>
 
+            </div>
+        </div>
+
+        <style>
+            /* Pills container */
+            .custom-pills {
+                background: #f5f5f5;
+                border-radius: 50px;
+                padding: 6px;
+                display: flex;
+                gap: 6px;
+            }
+
+            /* Pills */
+            .custom-pills .nav-link {
+                border-radius: 50px;
+                padding: 8px 18px;
+                color: #000;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+
+            /* Active pill */
+            .custom-pills .nav-link.active {
+                background: #dcdcdc;
+                color: #000;
+            }
+
+            /* Arrow icon */
+            .icon-circle {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #f5f5f5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        </style>
+
+        <div class="py-3">
+            <div class="container">
+
+                <div class="d-flex align-items-center gap-3">
+
+                <!-- Arrow Icon -->
+                <div class="icon-circle">
+                    ↑
+                </div>
+
+                <!-- Pills -->
+                <ul class="nav custom-pills">
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Marketing Planner</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">Social and Email</a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Search Engine Optimization
+                    </a>
+                    </li>
+
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                    </li>
+
+                </ul>
+                </div>
+
+            </div>
         </div>
     </section>
-
-
-  </div>
-</section>
-
-
-
-
-
 
     <!--participants-->
     <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
