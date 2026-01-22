@@ -217,12 +217,13 @@
                   <a class="nav-link" href="{{route('expand.business')}}">Find Exhibitor</a>
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                   <a class="nav-link" href="{{asset('/magazine')}}">List your Event</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{{asset('/investment')}}">Plan your Event</a>
-                </li>
+                </li> --}}
+                
                 <li class="nav-item">
                   <a class="nav-link" href="{{ route('expand.business', ['board' => 'normal']) }}">
                     Design & Fabrication
