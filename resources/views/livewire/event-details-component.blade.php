@@ -4205,10 +4205,21 @@
             z-index: 1;
             font-family: "Instrument Sans", sans-serif;
         }
+
+        .header-fixed {
+            z-index: 1050; /* higher than dropdowns */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Prevent mega menu from being cut */
+        .navbar,
+        .dropdown-menu {
+            position: relative;
+            z-index: 1050;
+        }
     </style>
 
-    <header class="bg-white">
-
+    <header class="bg-white sticky-top header-fixed">
         <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
             <div class="container d-flex align-items-center">
 
@@ -4913,7 +4924,7 @@
             <!-- Trustpilot -->
             <div class="d-flex align-items-center gap-1">
                 <span class="text-success fs-5">★</span>
-                <strong>Trustpilot</strong>
+                <strong>Great Exhibition To Exhibit</strong>
             </div>
 
             </div>
@@ -4962,34 +4973,35 @@
             <div class="container">
 
                 <div class="d-flex align-items-center gap-3">
+                    <!-- Pills -->
+                    <ul class="nav custom-pills">
 
-                <!-- Arrow Icon -->
-                <div class="icon-circle">
-                    ↑
-                </div>
+                       <!-- Arrow Item -->
+                        <li class="nav-item">
+                            <a class="nav-link arrow-pill" href="#">
+                                ↑
+                            </a>
+                        </li>
 
-                <!-- Pills -->
-                <ul class="nav custom-pills">
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Marketing Planner</a>
+                        </li>
 
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Marketing Planner</a>
-                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Social and Email</a>
+                        </li>
 
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Social and Email</a>
-                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Search Engine Optimization
+                        </a>
+                        </li>
 
-                    <li class="nav-item">
-                    <a class="nav-link active" href="#">
-                        Search Engine Optimization
-                    </a>
-                    </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                        </li>
 
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">FAQ</a>
-                    </li>
-
-                </ul>
+                    </ul>
                 </div>
 
             </div>
