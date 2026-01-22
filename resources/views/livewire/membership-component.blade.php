@@ -8,19 +8,125 @@
 @section('page_list',' addJob')
 @section('page_name',' All Job')
 
-
-
 <!-- new -->
-<section class="container-fluid py-5 my-5 py-lg-5  ">
-  <div class="text-center mt-4 mb-3">
-    <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
+    <section class="container-fluid py-5 my-5 py-lg-5  ">
+    <div class="text-center mt-4 mb-3">
+        <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
+        </div>
+        <h2 class="display-5 fw-normal">Expand your Business</h2>
+        <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
+        <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
+        <a class="btn btn-lg btn-outline-primary mb-3" href="{{url('/downloadExpand')}}"><i class="bi bi-arrow-up"></i></a>
     </div>
-    <h2 class="display-5 fw-normal">Expand your Business</h2>
-    <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
-    <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
-    <a class="btn btn-lg btn-outline-primary mb-3" href="{{url('/downloadExpand')}}"><i class="bi bi-arrow-up"></i></a>
-  </div>
-</section>
+    </section>
+
+ <!-- new-try -->
+    <section class="pt-4 sticky-section">
+        <div class="container">
+            <!-- Trust / Rating Bar -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
+
+            <span class="text-muted">Our customers say</span>
+
+            <strong class="fs-6">Excellent</strong>
+
+            <!-- Stars -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success">★★★★★</span>
+            </div>
+
+            <span class="text-muted">
+                4.5 out of 5 stars based on <strong>129,972</strong> reviews
+            </span>
+
+            <!-- Trustpilot -->
+            <div class="d-flex align-items-center gap-1">
+                <span class="text-success fs-5">★</span>
+                <strong>Great Exhibition To Exhibit</strong>
+            </div>
+
+            </div>
+        </div>
+
+        <style>
+            /* Pills container */
+            .custom-pills {
+                background: #f5f5f5;
+                border-radius: 50px;
+                padding: 6px;
+                display: flex;
+                gap: 6px;
+            }
+
+            /* Pills */
+            .custom-pills .nav-link {
+                border-radius: 50px;
+                padding: 8px 18px;
+                color: #000;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+
+            /* Active pill */
+            .custom-pills .nav-link.active {
+                background: #dcdcdc;
+                color: #000;
+            }
+
+            /* Arrow icon */
+            .icon-circle {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #f5f5f5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        </style>
+
+        <div class="pt-3  pb-2">
+            <div class="container">
+
+                <div class="d-flex align-items-center gap-3">
+                    <!-- Pills -->
+                    <ul class="nav custom-pills">
+
+                       <!-- Arrow Item -->
+                        <li class="nav-item">
+                            <a class="nav-link arrow-pill" href="#event-header">
+                                ↑
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Marketing Planner</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Social and Email</a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            Search Engine Optimization
+                        </a>
+                        </li>
+
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">FAQ</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
@@ -71,6 +177,109 @@
   </div>
   </div>
 </section>
+
+<!-- secondary try -->
+    <section class="py-5">
+        <div class="container">
+            <div class="marketing-card p-4 p-lg-5">
+                <div class="row g-4 align-items-start">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-3">
+                    <span class="badge plus-badge mb-3">PLUS</span>
+                        <h3 class="fw-bold display-6" style="color: #000;">
+                            Every Digital<br>Marketing<br>plan includes:
+                        </h3>
+                    </div>
+
+                    <!-- RIGHT FEATURES -->
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                            <!-- Item -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">AI-generated content</h6>
+                                    <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
+                                </div>
+                            </div>
+
+                            <!-- Repeat -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Email marketing campaigns</h6>
+                                    <p class="desc">
+                                    Reach out to customers to always be relevant and top of mind.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                        <div class="col">
+                            <div class="feature-box h-100">
+                                <div class="icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <h6 class="title">Scheduled social media posts</h6>
+                                <p class="desc">Post consistently to improve reach and engagement.</p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="feature-box h-100">
+                                <div class="icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                    <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                            stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                    </svg>
+                                </div>
+                                
+                                <h6 class="title">Branded images and videos</h6>
+                                <p class="desc">Create visual content with photos and videos.</p>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="feature-box h-100">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                <h6 class="title">Design Studio</h6>
+                                <p class="desc">Create logos, websites, and ads with ease.</p>
+                            </div>
+                        </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">

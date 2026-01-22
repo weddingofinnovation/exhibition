@@ -5116,58 +5116,59 @@
                     @endforeach
                 </div>
 
-<section class="py-5">
-  <div class="container">
+    
+                <section class="py-5">
+        <div class="container">
 
-    <div class="row g-4 align-items-stretch">
+            <div class="row g-4 align-items-stretch">
 
-      <!-- Feature 1 (Highlighted) -->
-      <div class="col-md-4">
-        <div class="feature-box bg-light h-100 p-4 rounded-4">
-          <h4 class="fw-bold mb-3">AI tools built for your business</h4>
-          <p class="text-muted mb-0">
-            Our suite of AI tools can help save you time and money, enabling you
-            to customize and scale your site with ease. Create content, product
-            descriptions, FAQs, and more to bring your brand to life.
-          </p>
+            <!-- Feature 1 (Highlighted) -->
+            <div class="col-md-4">
+                <div class="feature-box bg-light h-100 p-4 rounded-4">
+                <h4 class="fw-bold mb-3">AI tools built for your business</h4>
+                <p class="text-muted mb-0">
+                    Our suite of AI tools can help save you time and money, enabling you
+                    to customize and scale your site with ease. Create content, product
+                    descriptions, FAQs, and more to bring your brand to life.
+                </p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4">
+                <div class="feature-box h-100 p-4 rounded-4 border">
+                <h4 class="fw-bold mb-3">Point, click, and launch</h4>
+                <p class="text-muted mb-0">
+                    With our robust website builder, no coding or design experience is
+                    required. Add or delete sections with drag and drop functionality
+                    to create and publish your site with ease and speed.
+                </p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4">
+                <div class="feature-box h-100 p-4 rounded-4 border">
+                <h4 class="fw-bold mb-3">Templates that fit your vision</h4>
+                <p class="text-muted mb-0">
+                    Our professionally designed layouts offer options for any industry,
+                    and they’re customizable—empowering you to build a brand that’s
+                    uniquely yours. Change the look and feel with a single click.
+                </p>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-5">
+            <a href="#" class="btn btn-dark px-5 py-3 rounded-3 fw-semibold">
+                Start for Free
+            </a>
+            </div>
+
         </div>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="col-md-4">
-        <div class="feature-box h-100 p-4 rounded-4 border">
-          <h4 class="fw-bold mb-3">Point, click, and launch</h4>
-          <p class="text-muted mb-0">
-            With our robust website builder, no coding or design experience is
-            required. Add or delete sections with drag and drop functionality
-            to create and publish your site with ease and speed.
-          </p>
-        </div>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="col-md-4">
-        <div class="feature-box h-100 p-4 rounded-4 border">
-          <h4 class="fw-bold mb-3">Templates that fit your vision</h4>
-          <p class="text-muted mb-0">
-            Our professionally designed layouts offer options for any industry,
-            and they’re customizable—empowering you to build a brand that’s
-            uniquely yours. Change the look and feel with a single click.
-          </p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA Button -->
-    <div class="text-center mt-5">
-      <a href="#" class="btn btn-dark px-5 py-3 rounded-3 fw-semibold">
-        Start for Free
-      </a>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
                 <section class="py-5 bg-light">
@@ -5497,105 +5498,105 @@
 
     <!-- secondary try -->
     <section class="py-5">
-    <div class="container">
-        <div class="marketing-card p-4 p-lg-5">
-            <div class="row g-4 align-items-start">
+        <div class="container">
+            <div class="marketing-card p-4 p-lg-5">
+                <div class="row g-4 align-items-start">
 
-                <!-- LEFT CONTENT -->
-                <div class="col-lg-3">
-                <span class="badge plus-badge mb-3">PLUS</span>
-                    <h3 class="fw-bold display-6" style="color: #000;">
-                        Every Digital<br>Marketing<br>plan includes:
-                    </h3>
-                </div>
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-3">
+                    <span class="badge plus-badge mb-3">PLUS</span>
+                        <h3 class="fw-bold display-6" style="color: #000;">
+                            Every Digital<br>Marketing<br>plan includes:
+                        </h3>
+                    </div>
 
-                <!-- RIGHT FEATURES -->
-                <div class="col-lg-9">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                    <!-- RIGHT FEATURES -->
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-                        <!-- Item -->
+                            <!-- Item -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">AI-generated content</h6>
+                                    <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
+                                </div>
+                            </div>
+
+                            <!-- Repeat -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Email marketing campaigns</h6>
+                                    <p class="desc">
+                                    Reach out to customers to always be relevant and top of mind.
+                                    </p>
+                                </div>
+                            </div>
+
+
                         <div class="col">
                             <div class="feature-box h-100">
                                 <div class="icon">
-                                    <!-- SVG ICON -->
-                                    <svg class="icon fs-md" viewBox="0 0 24 24">
-                                        <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                        <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
                                     </svg>
                                 </div>
-
-                                <h6 class="title">AI-generated content</h6>
-                                <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
+                                <h6 class="title">Scheduled social media posts</h6>
+                                <p class="desc">Post consistently to improve reach and engagement.</p>
                             </div>
                         </div>
 
-                        <!-- Repeat -->
                         <div class="col">
                             <div class="feature-box h-100">
                                 <div class="icon">
-                                    <!-- SVG ICON -->
-                                    <svg class="icon fs-md" viewBox="0 0 24 24">
-                                        <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                        <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                    <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                            stroke="currentColor" stroke-width="1.5" fill="none"/>
                                     </svg>
                                 </div>
-                                <h6 class="title">Email marketing campaigns</h6>
-                                <p class="desc">
-                                Reach out to customers to always be relevant and top of mind.
-                                </p>
+                                
+                                <h6 class="title">Branded images and videos</h6>
+                                <p class="desc">Create visual content with photos and videos.</p>
                             </div>
                         </div>
 
-
-                    <div class="col">
-                        <div class="feature-box h-100">
-                            <div class="icon">
+                        <div class="col">
+                            <div class="feature-box h-100">
                                 <svg class="icon" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="16" rx="2"
+                                <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
                                 </svg>
+                                <h6 class="title">Design Studio</h6>
+                                <p class="desc">Create logos, websites, and ads with ease.</p>
                             </div>
-                            <h6 class="title">Scheduled social media posts</h6>
-                            <p class="desc">Post consistently to improve reach and engagement.</p>
+                        </div>
+
+
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="feature-box h-100">
-                            <div class="icon">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                <rect x="3" y="5" width="18" height="14" rx="2"
-                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                        stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                </svg>
-                            </div>
-                            
-                            <h6 class="title">Branded images and videos</h6>
-                            <p class="desc">Create visual content with photos and videos.</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="feature-box h-100">
-                            <svg class="icon" viewBox="0 0 24 24">
-                            <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                    fill="none" stroke="currentColor" stroke-width="1.5"/>
-                            </svg>
-                            <h6 class="title">Design Studio</h6>
-                            <p class="desc">Create logos, websites, and ads with ease.</p>
-                        </div>
-                    </div>
-
-
-                    </div>
                 </div>
-
             </div>
         </div>
-    </div>
     </section>
 
 
