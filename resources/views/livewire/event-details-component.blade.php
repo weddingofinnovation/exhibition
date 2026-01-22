@@ -4220,7 +4220,7 @@
     </style>
 
     <header class="bg-white sticky-top header-fixed">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white pt-0 pb-0">
             <div class="container d-flex align-items-center">
 
                 <!-- Brand Section -->
