@@ -422,65 +422,94 @@
 </section>
 
 
-<section class="row g-0" id="apply">
+ <style>
+        .pricing-card {
+        max-width: 520px;
+    }
+    .price {
+        font-size: 48px;
+        font-weight: 700;
+    }
+    .price small {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .feature-list i {
+        color: #000;
+        font-size: 20px;
+    }
+    .cta-btn {
+        background: #000;
+        color: #fff;
+        padding: 14px;
+        font-weight: 600;
+    }
+    .cta-btn:hover {
+        background: #222;
+    }
+    .rating span {
+        color: #22c55e;
+    }
+ </style>
+<section class="row g-0">
     <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2"
         style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);">
     </div>
     <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">
-        <div class="mx-auto py-lg-5 text-center" style="max-width: 35rem;">
+        <div class="mx-auto py-lg-5" style="max-width: 35rem;">
 
 
             <h2 class="display-5 text-center mb-2 head">Individual Opportunity</h2>
 
             <p class="fs-sm  text-center pb-2">
-                 <strong>What it is</strong> 
+                <strong>What it is</strong>
                 <br>Individual Opportunity allows brands, entrepreneurs, and service providers to participate in exhibitions <strong>without taking a full-sized booth.</strong> You get a <strong>dedicated display or participation slot</strong> within a shared or curated zone.
             </p>
 
-             <div class="pricing-card">
+            <div class="pricing-card">
 
-        <p class="text-muted mb-2">
-            Get a unified inbox to simplify communication with your customers.
-        </p>
+                <p class="text-muted mb-2">
+                    Get a unified inbox to simplify communication with your customers.
+                </p>
 
-        <div class="price mb-1">
-            ₹ 249.00 <small class="text-muted">/mo</small>
-        </div>
+                <div class="price mb-1">
+                    ₹ 249.00 <small class="text-muted">/mo</small>
+                </div>
 
-        <p class="text-muted mb-4">30-day free trial</p>
+                <p class="text-muted mb-4">30-day free trial</p>
 
-        <ul class="list-unstyled feature-list mb-4">
-            <li class="d-flex align-items-start mb-3">
-                <i class="bi bi-chat-dots me-3"></i>
-                <span>Streamline communications across channels.</span>
-            </li>
-            <li class="d-flex align-items-start mb-3">
-                <i class="bi bi-magic me-3"></i>
-                <span>AI-suggested content boosts consistency.</span>
-            </li>
-            <li class="d-flex align-items-start">
-                <i class="bi bi-chat-left-text me-3"></i>
-                <span>Respond faster to customers with chat widgets.</span>
-            </li>
-        </ul>
+                <ul class="list-unstyled feature-list mb-4">
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="bi bi-chat-dots me-3"></i>
+                        <span>Streamline communications across channels.</span>
+                    </li>
+                    <li class="d-flex align-items-start mb-3">
+                        <i class="bi bi-magic me-3"></i>
+                        <span>AI-suggested content boosts consistency.</span>
+                    </li>
+                    <li class="d-flex align-items-start">
+                        <i class="bi bi-chat-left-text me-3"></i>
+                        <span>Respond faster to customers with chat widgets.</span>
+                    </li>
+                </ul>
 
-        <button class="btn cta-btn w-100 mb-3">
-            Start for Free
-        </button>
+                <button class="btn cta-btn w-100 mb-3">
+                    Start for Free
+                </button>
 
-        <p class="text-muted small mb-3">
-            Credit card required. Subscription will auto-renew.
-        </p>
+                <p class="text-muted small mb-3">
+                    Credit card required. Subscription will auto-renew.
+                </p>
 
-        <div class="rating d-flex align-items-center gap-2 small">
-            <span>★★★★★</span>
-            <strong>4.5</strong>
-            <span class="text-muted">out of 5 stars based on 130,029 reviews</span>
-            <a href="#" class="fw-semibold text-decoration-none">View All</a>
-        </div>
+                <div class="rating d-flex align-items-center gap-2 small">
+                    <span>★★★★★</span>
+                    <strong>4.5</strong>
+                    <span class="text-muted">out of 5 stars based on 130,029 reviews</span>
+                    <a href="#" class="fw-semibold text-decoration-none">View All</a>
+                </div>
 
-    </div>
-    
+            </div>
+
             <a href="#opening" class="btn btn-lg btn-outline-primary my-2">Let's connect!!</a>
         </div>
     </div>
