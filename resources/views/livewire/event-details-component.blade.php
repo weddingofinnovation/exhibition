@@ -4475,9 +4475,9 @@
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Benefits as an exhibitor</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application 2026</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation 2026</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation Opportunities</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
@@ -4890,6 +4890,77 @@
             </div>
         </div>
     </section>
+
+
+
+
+   <!-- new-try -->
+
+   <section class="py-4 border-bottom">
+  <div class="container">
+
+    <!-- Trust / Rating Bar -->
+    <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
+
+      <span class="text-muted">Our customers say</span>
+
+      <strong class="fs-6">Excellent</strong>
+
+      <!-- Stars -->
+      <div class="d-flex align-items-center gap-1">
+        <span class="text-success">★★★★★</span>
+      </div>
+
+      <span class="text-muted">
+        4.5 out of 5 stars based on <strong>129,972</strong> reviews
+      </span>
+
+      <!-- Trustpilot -->
+      <div class="d-flex align-items-center gap-1">
+        <span class="text-success fs-5">★</span>
+        <strong>Trustpilot</strong>
+      </div>
+
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="d-flex justify-content-center">
+      <ul class="nav nav-pills bg-light rounded-pill p-1">
+
+        <li class="nav-item">
+          <a class="nav-link active rounded-pill px-4" href="#">
+            Marketing Planner
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link rounded-pill px-4 text-dark" href="#">
+            Social and Email
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link rounded-pill px-4 text-dark" href="#">
+            Search Engine Optimization
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link rounded-pill px-4 text-dark" href="#">
+            FAQ
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 
     <!--participants-->
     <section class="container py-4 py-md-5 my-2 d-none d-sm-block">
