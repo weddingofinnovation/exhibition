@@ -180,6 +180,41 @@
 
 <!-- secondary try -->
     <style>
+        .marketing-card {
+            background: #f7f8f8;
+            border-radius: 18px;
+        }
+
+        .plus-badge {
+            background: #00e3c8;
+            color: #000;
+            font-weight: 700;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .feature-item h6 {
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .feature-item .icon {
+            width: 26px;
+            height: 26px;
+            color: #000;
+        }
+
+    </style>
+
+
+    <style>
         .feature-box {
         display: flex;
         flex-direction: column;
@@ -294,10 +329,12 @@
 
                         <div class="col">
                             <div class="feature-box h-100">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                </svg>
+                                <div class="icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
                                 <h6 class="title">Design Studio</h6>
                                 <p class="desc">Create logos, websites, and ads with ease.</p>
                             </div>
