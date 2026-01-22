@@ -2,7 +2,6 @@
 
 
 <!-- new -->
-Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.
 
 <!-- new -->
     <section class="container-fluid py-5 my-5 py-lg-5  ">
@@ -10,11 +9,9 @@ Smart exhibition solutions that reduce cost, simplify participation, and maximiz
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
             </div>
             <h2 class="display-5 fw-normal">Expand your Business</h2>
-            <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
+            <p class="col-md-6 col-lg-8  mx-auto lead">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</p>
             <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
-            <small class=""></small>
-            
-            <a href="" class="btn btn-sm">Get Started</a>
+            <a href="" class="btn btn-sm" style="color:#000">Get Started</a>
         </div>
     </section>
 
@@ -128,43 +125,10 @@ Smart exhibition solutions that reduce cost, simplify participation, and maximiz
 
 
 
-    <!-- Workplace Finder Section -->
-    <section class="workplace-section py-5" style="background-color:#f3f9f6;">
-      <div class="container">
-        <div class="row align-items-center">
-          
-          <!-- Illustration Image -->
-          <div class="col-md-6 mb-4 mb-md-0 text-center">
-            <img src="{{url('public/assets/image/exhibition/hero-reviews.webp')}}" alt="Workplace Illustration" class="img-fluid" style="max-width:100%; height:auto;">
-          </div>
-
-          
-          <!-- Content -->
-          <div class="col-md-6">
-            <h4 class="fw-bold" style="color: #000; max-width:500px;">
-              Find a business events that works for you 
-              <!-- <span class="badge bg-success ms-0 fs-ms" style="color: #000;">New</span> -->
-            </h4>
-
-            <div class="mt-3 text-dark" style="max-width:500px; color:#000;">
-             Discover what an exhibition audience is really like before you make your next move. Search reviews and ratings, and filter Business events based on the qualities that matter most to your business search.
-            </div>
-
-            <div class="mt-4">
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Our Data Your Customers</a>
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Great Place to Exhibit</a>
-              <br>
-              <a href="#" class="btn btn-sm btn-dark me-2 mb-2">Design & Fabrication</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
     <div class="container pb-5 mb-2 mb-md-4">
         <div class="row">
-          <section class="col-lg-8">
+    <section class="col-lg-8">
 
               <!-- Order details-->
       <h2 class="h6 pt-1 pb-3 mb-3 border-bottom">Review your order</h2>
@@ -229,7 +193,7 @@ Smart exhibition solutions that reduce cost, simplify participation, and maximiz
         </div>
       </div>
       
-      </section>
+    </section>
      </div>
     </div>
 
@@ -335,48 +299,6 @@ Smart exhibition solutions that reduce cost, simplify participation, and maximiz
         
         </section>
 
-        <section  class="container py-3 py-lg-5  ">
-          <div class="d-flex justify-content-center   my-4 text-dark " >
-          
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3 mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Gain insights on Industry Trends<i class="fs-sm  bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3 mx-2 fw-light">mayank years
-          <div class="fs-sm text-primary">Leverage Growth opportunities for your Business<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3 mx-2 fw-light">mayank years
-          <div class="fs-sm text-primary">Opportunity to network, build and share best practices<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Engage in Policy Advocacy<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Collaborate for Innovation - Engage with Startups<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-          <br>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Enhance your Brand - Be Visible<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Set the agenda through Industry Forums & Councils<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-          
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Leverage Global Trade Development<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-
-          <h2 class="fs-5 text-center border-1 border-dark rounded p-3  mx-2 fw-light">mayank
-          <div class="fs-sm text-primary">Enable Skill Development<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-          </h2>
-          
-
-          </div>
-        </section>
 
         <section class="container py-3 py-lg-5 mt-4 mb-3">
           <h2 class="h1 my-2" style="color: #ff0440;">Our core team</h2>
