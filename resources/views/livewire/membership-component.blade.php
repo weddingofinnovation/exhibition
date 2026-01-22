@@ -353,7 +353,7 @@
     <div class="container py-5 ">
       <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
         @php 
-           $cat = DB::table('categories')::orderBy('industry', 'DESC')->get();
+           $cat = DB::table('categories')->orderBy('industry', 'DESC')->get();
         @endphp
 
         @foreach($cat as $type)
