@@ -5617,7 +5617,13 @@
                             <!-- Repeat -->
                             <div class="col">
                                 <div class="feature-box h-100">
-                                    <div class="icon"></div>
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
+                                    </div>
                                     <h6 class="title">Email marketing campaigns</h6>
                                     <p class="desc">
                                     Reach out to customers to always be relevant and top of mind.
@@ -5628,12 +5634,13 @@
 
                         <div class="col">
                             <div class="feature-box h-100">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                <rect x="3" y="4" width="18" height="16" rx="2"
-                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
-                                </svg>
-
+                                <div class="icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="16" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
                                 <h6 class="title">Scheduled social media posts</h6>
                                 <p class="desc">Post consistently to improve reach and engagement.</p>
                             </div>
@@ -5641,13 +5648,16 @@
 
                         <div class="col">
                             <div class="feature-box h-100">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                <rect x="3" y="5" width="18" height="14" rx="2"
-                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                        stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                </svg>
+                                <div class="icon">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                    <rect x="3" y="5" width="18" height="14" rx="2"
+                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                    <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                    <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                            stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                    </svg>
+                                </div>
+                                
                                 <h6 class="title">Branded images and videos</h6>
                                 <p class="desc">Create visual content with photos and videos.</p>
                             </div>
