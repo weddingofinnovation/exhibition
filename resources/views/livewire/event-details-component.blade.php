@@ -5548,6 +5548,63 @@
         </div>
     </section>
 
+    <style>
+        .feature-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        }
+
+        .feature-box .icon {
+        height: 40px;               /* FIXED icon height */
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        }
+
+        .feature-box .title {
+        min-height: 44px;           /* FIX title height */
+        font-weight: 600;
+        margin-bottom: 8px;
+        }
+
+        .feature-box .desc {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #333;
+        }
+
+    </style>
+
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+            <!-- Item -->
+            <div class="col">
+            <div class="feature-box h-100">
+                <div class="icon">
+                <!-- SVG ICON -->
+                </div>
+                <h6 class="title">AI-generated content</h6>
+                <p class="desc">
+                Take advantage of GoDaddy Airo™ to create customizable content.
+                </p>
+            </div>
+            </div>
+
+            <!-- Repeat -->
+            <div class="col">
+            <div class="feature-box h-100">
+                <div class="icon"></div>
+                <h6 class="title">Email marketing campaigns</h6>
+                <p class="desc">
+                Reach out to customers to always be relevant and top of mind.
+                </p>
+            </div>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- mobile -->
