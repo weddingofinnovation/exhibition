@@ -5602,7 +5602,11 @@
                             <div class="col">
                                 <div class="feature-box h-100">
                                     <div class="icon">
-                                    <!-- SVG ICON -->
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                        </svg>
                                     </div>
 
                                     <h6 class="title">AI-generated content</h6>
@@ -5623,7 +5627,7 @@
 
 
                         <div class="col">
-                            <div class="feature-item">
+                            <div class="feature-box h-100">
                                 <svg class="icon" viewBox="0 0 24 24">
                                 <rect x="3" y="4" width="18" height="16" rx="2"
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
@@ -5636,7 +5640,7 @@
                         </div>
 
                         <div class="col">
-                            <div class="feature-item">
+                            <div class="feature-box h-100">
                                 <svg class="icon" viewBox="0 0 24 24">
                                 <rect x="3" y="5" width="18" height="14" rx="2"
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
@@ -5650,7 +5654,7 @@
                         </div>
 
                         <div class="col">
-                            <div class="feature-item">
+                            <div class="feature-box h-100">
                                 <svg class="icon" viewBox="0 0 24 24">
                                 <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
                                         fill="none" stroke="currentColor" stroke-width="1.5"/>
