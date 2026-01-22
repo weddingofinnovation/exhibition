@@ -4904,15 +4904,15 @@
 
     <style>
         .sticky-section {
-        position: sticky;
-        top: 80px; /* SAME height as header */
-        z-index: 1020;
-        background: #fff;
+            position: sticky;
+            top: 5px; /* SAME height as header */
+            z-index: 1020;
+            background: #fff;
         }
     </style>
     
     <!-- new-try -->
-    <section class="py-4 border-bottom sticky-section">
+    <section class="pt-4 sticky-section">
         <div class="container">
             <!-- Trust / Rating Bar -->
             <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
