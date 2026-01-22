@@ -16,7 +16,9 @@
         <h2 class="display-5 fw-normal">Expand your Business</h2>
         <p class="col-md-6 col-lg-8  mx-auto lead">How to Transform Your Small Business Into a Big Business?</p>
         <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
-        <a class="btn btn-lg btn-outline-primary mb-3" href="{{url('/downloadExpand')}}"><i class="bi bi-arrow-up"></i></a>
+        <small class="">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</small>
+        
+        <a href="" class="btn btn-sm">Get Started</a>
     </div>
     </section>
 
@@ -127,6 +129,53 @@
     </section>
 
 
+<!--Our culture and values-->
+<section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
+  <h2 class="display-5 text-center my-2">Boost your brand with The Exhibition Network Studio.</h2>
+  <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col col-md-3">
+      <div class="card h-100  border-0">
+
+        <div class="card-body text-center">
+          <h5 class="card-title " style="color:#ff0440;">Individual Opportunity</h5>
+          <p class="card-text">Exhibit without booking a full stall</p>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-3">
+      <div class="card h-100 border-0">
+
+        <div class="card-body text-center">
+          <h5 class="card-title " style="color:#ff0440;">Free Stand Access</h5>
+          <p class="card-text">Subsidized or sponsored exhibition space</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-3">
+      <div class="card h-100 border-0">
+
+        <div class="card-body text-center">
+          <h5 class="card-title " style="color:#ff0440;">New Product Showcase</h5>
+          <p class="card-text">Launch, display, and validate your product</p>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-3 ">
+      <div class="card h-100 border-0">
+
+        <div class="card-body text-center">
+          <h5 class="card-title" style="color:#ff0440;">Manage Your Stand</h5>
+          <p class="card-text">End-to-end stand coordination & support</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
@@ -177,6 +226,7 @@
   </div>
   </div>
 </section>
+
 
 <!-- secondary try -->
     <style>
