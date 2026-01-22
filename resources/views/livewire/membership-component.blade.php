@@ -137,9 +137,12 @@
     <div class="col col-md-3">
       <div class="card h-100  border-0">
 
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">Individual Opportunity</h5>
-          <p class="card-text">Exhibit without booking a full stall</p>
+        <div class="card-body">
+          <h5 class="card-title">Individual Opportunity</h5>
+          <p class="card-text" style="color:#ff0440;">Exhibit without booking a full stall</p>
+
+          <p class="card-text">Individual Opportunity allows brands, entrepreneurs, and service providers to participate in exhibitions without taking a full-sized booth. You get a dedicated display or participation slot within a shared or curated zone.</p>
+          <a href="" class="btn btn-online-primary"> Get Started</a>
         </div>
       </div>
     </div>
@@ -147,9 +150,11 @@
     <div class="col col-md-3">
       <div class="card h-100 border-0">
 
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">Free Stand Access</h5>
-          <p class="card-text">Subsidized or sponsored exhibition space</p>
+        <div class="card-body">
+          <h5 class="card-title">Free Stand Access</h5>
+          <p class="card-text" style="color:#ff0440;"Subsidized or sponsored exhibition space</p>
+          <p class="card-text">Free Stand Access gives eligible members the opportunity to secure fully or partially sponsored exhibition space, usually supported by government bodies, partners, or organizers.</p>
+          <a href="" class="btn btn-online-primary"> Get Started</a>
         </div>
       </div>
     </div>
@@ -157,18 +162,23 @@
     <div class="col col-md-3">
       <div class="card h-100 border-0">
 
-        <div class="card-body text-center">
-          <h5 class="card-title " style="color:#ff0440;">New Product Showcase</h5>
-          <p class="card-text">Launch, display, and validate your product</p>
+        <div class="card-body">
+          <h5 class="card-title">New Product Showcase</h5>
+          <p class="card-text" style="color:#ff0440;" >Launch, display, and validate your product</p>
+
+          <p class="card-text">New Product Showcase allows exhibitors to present newly launched or innovative products in a dedicated showcase or innovation zone at exhibitions.</p>
+          <a href="" class="btn btn-online-primary"> Get Started</a>
         </div>
       </div>
     </div>
     <div class="col col-md-3 ">
       <div class="card h-100 border-0">
 
-        <div class="card-body text-center">
-          <h5 class="card-title" style="color:#ff0440;">Manage Your Stand</h5>
-          <p class="card-text">End-to-end stand coordination & support</p>
+        <div class="card-body">
+          <h5 class="card-title" >Manage Your Stand</h5>
+          <p class="card-text" style="color:#ff0440;">End-to-end stand coordination & support</p>
+          <p class="card-text">Manage Your Stand is a done-for-you operational service where we handle all coordination and logistics related to your exhibition stand.</p>
+          <a href="" class="btn btn-online-primary"> Get Started</a>
         </div>
       </div>
     </div>
