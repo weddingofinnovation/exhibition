@@ -128,7 +128,7 @@
 
 <style>
     .head {
-        min-height: 44px;
+        /* min-height: 44px; */
         /* FIX title height */
         font-weight: 600;
         margin-bottom: 8px;
@@ -598,8 +598,8 @@
         <div class="col col-md-3">
             <div class="card h-100 border-0">
                 <div class="card-body">
-                    <h5 class="card-title">Build Connection and Community</h5>
-                    <p class="card-text">
+                    <h5 class="card-title head">Build Connection and Community</h5>
+                    <p class="card-text sub-head">
                         Our services help people connect, and when they’re at their best, they bring Community closer together.
                     </p>
                 </div>
@@ -609,8 +609,8 @@
         <div class="col col-md-3">
             <div class="card h-100 border-0">
                 <div class="card-body">
-                    <h5 class="card-title">Serve Everyone</h5>
-                    <p class="card-text">
+                    <h5 class="card-title sub">Serve Everyone</h5>
+                    <p class="card-text sub-head">
                         We work to make technology accessible to everyone, and our business model is advertise business so our services can be free.</p>
                 </div>
             </div>
@@ -620,8 +620,8 @@
             <div class="card h-100 border-0">
 
                 <div class="card-body">
-                    <h5 class="card-title">Keep Innovative Idea's Safe and Protect Privacy</h5>
-                    <p class="card-text">
+                    <h5 class="card-title head">Keep Innovative Idea's Safe and Protect Privacy</h5>
+                    <p class="card-text sub-head">
                         We have a responsibility to promote the best of what people can do together by keeping Innovation safe and preventing harm.</p>
                 </div>
             </div>
@@ -631,10 +631,8 @@
             <div class="card h-100 border-0">
 
                 <div class="card-body">
-                    <h5 class="card-title">Promote Economic Opportunity</h5>
-                    <p class="card-text">
-
-
+                    <h5 class="card-title head">Promote Economic Opportunity</h5>
+                    <p class="card-text sub-head">
                         Our tools level the playing field so businesses grow, create jobs and strengthen the economy.
                     </p>
                 </div>
