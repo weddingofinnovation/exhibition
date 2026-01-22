@@ -127,7 +127,7 @@
 
 
 <style>
-   .head {
+    .head {
         min-height: 44px;
         /* FIX title height */
         font-weight: 600;
@@ -141,8 +141,6 @@
         color: #000;
         margin-top: 1rem;
     }
-
-        
 </style>
 
 <!--Our culture and values-->
@@ -173,7 +171,7 @@
                 <div class="card-body">
                     <h5 class="card-title head">Free Stand Access</h5>
                     <p class="card-text" style="color:#ff0440;">Subsidized or sponsored exhibition space</p>
-                    <p class="card-text">Free Stand Access gives eligible members the opportunity to secure fully or partially sponsored exhibition space, usually supported by government bodies, partners, or organizers.</p>
+                    <p class="card-text sub-head">Free Stand Access gives eligible members the opportunity to secure fully or partially sponsored exhibition space, usually supported by government bodies, partners, or organizers.</p>
                     <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
                 </div>
             </div>
@@ -183,21 +181,22 @@
             <div class="card h-100 border-0">
 
                 <div class="card-body">
-                    <h5 class="card-title">New Product Showcase</h5>
+                    <h5 class="card-title head">New Product Showcase</h5>
                     <p class="card-text" style="color:#ff0440;">Launch, display, and validate your product</p>
 
-                    <p class="card-text">New Product Showcase allows exhibitors to present newly launched or innovative products in a dedicated showcase or innovation zone at exhibitions.</p>
+                    <p class="card-text sub-head">New Product Showcase allows exhibitors to present newly launched or innovative products in a dedicated showcase or innovation zone at exhibitions.</p>
                     <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
                 </div>
             </div>
         </div>
+
         <div class="col col-md-3 ">
             <div class="card h-100 border-0">
 
                 <div class="card-body">
-                    <h5 class="card-title">Manage Your Stand</h5>
+                    <h5 class="card-title head">Manage Your Stand</h5>
                     <p class="card-text" style="color:#ff0440;">End-to-end stand coordination & support</p>
-                    <p class="card-text">Manage Your Stand is a done-for-you operational service where we handle all coordination and logistics related to your exhibition stand.</p>
+                    <p class="card-text sub-head">Manage Your Stand is a done-for-you operational service where we handle all coordination and logistics related to your exhibition stand.</p>
                     <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
                 </div>
             </div>
