@@ -4972,6 +4972,84 @@
       </ul>
     </div>
 
+
+    <style>
+  /* Pills container */
+  .custom-pills {
+    background: #f5f5f5;
+    border-radius: 50px;
+    padding: 6px;
+    display: flex;
+    gap: 6px;
+  }
+
+  /* Pills */
+  .custom-pills .nav-link {
+    border-radius: 50px;
+    padding: 8px 18px;
+    color: #000;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* Active pill */
+  .custom-pills .nav-link.active {
+    background: #dcdcdc;
+    color: #000;
+  }
+
+  /* Arrow icon */
+  .icon-circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    cursor: pointer;
+  }
+</style>
+
+    <section class="py-3">
+        <div class="container">
+
+            <div class="d-flex align-items-center gap-3">
+
+            <!-- Arrow Icon -->
+            <div class="icon-circle">
+                ↑
+            </div>
+
+            <!-- Pills -->
+            <ul class="nav custom-pills">
+
+                <li class="nav-item">
+                <a class="nav-link" href="#">Marketing Planner</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="#">Social and Email</a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link active" href="#">
+                    Search Engine Optimization
+                </a>
+                </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="#">FAQ</a>
+                </li>
+
+            </ul>
+            </div>
+
+        </div>
+    </section>
+
+
   </div>
 </section>
 
