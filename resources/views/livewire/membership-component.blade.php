@@ -576,24 +576,9 @@
 <section class="container-fluid  py-3 py-lg-5 mt-5 my-3">
     <h2 class="h1 text-center mt-5">Manage your business success with us</h2>
     <p class="fs-lg lead text-center col-md-10 col-lg-8 mx-auto">
-        Create, measure and optimize your business success. COI is the business advertising platform that streamlines all marketing efforts.
+        Create, measure and optimize your business success. The exhbition Network is the business advertising platform that streamlines all marketing efforts.
     </p>
     <div class="row row-cols-1 row-cols-md-3  pt-5 g-4">
-
-        <!--<div class="col col-md-3 ">
-                  <div class="card h-100 border-0">    
-                    <div class="card-body">
-                      <h5 class="card-title">Give People a Voice</h5>
-                      <p class="card-text">
-                             People deserve to be heard and to have a voice — even when that means defending the right of people we disagree with.
-                            <br>
-                            we a voice of entrpreneur — to advertise business thoughts with the best presentible way to explore new bright light to way up.
-                            <br>
-                            COI is a entrpreneur voice, be bold and strong to represent  business with confidence to  connect  right peaple to exapnd more. 
-                          </p>
-                      </div>
-                      </div>
-                      </div>-->
 
         <div class="col col-md-3">
             <div class="card h-100 border-0">
@@ -642,31 +627,6 @@
     </div>
 </section>
 
-<!--Freelancers-->
-<section class="container py-3 py-lg-5 mt-4 mb-3">
-    <div class="text-center">
-        <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
-        </div>
-        <h2 class="display-6 fw-normal">Trending Industry</h2>
-        <p class="col-md-10 col-lg-8 mx-auto lead">
-            We occasionally work with freelancers on projects. If you would be interested, please
-            <a href="">official Bootstrap Themes marketplace</a>.
-        </p>
-        <div class="container py-5 ">
-            <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-                @php
-                $cat = DB::table('categories')->orderBy('industry', 'DESC')->get();
-                @endphp
-
-                @foreach($cat as $type)
-                <div class="col">
-                    <div class="p-3 border rounded border-primary bg-light">{{$type->industry}}</div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="row g-0 mb-2">
     <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2"
@@ -678,7 +638,7 @@
                 </div>
                 <h2 class="display-6 fw-normal">Share your company story and attract your target auidence</h2>
                 <p class="col-md-10 pb-2 col-lg-8 mx-auto ">
-                    Council of Innovation recognises the positive value of diversity, promotes equality and challenges discrimination. We welcome and encourage people of all backgrounds to apply. Our common trademark is our passion for innovation. </p>
+                    recognises the positive value of diversity, promotes equality and challenges discrimination. We welcome and encourage people of all backgrounds to apply. Our common trademark is our passion for innovation. </p>
                 <a href="{{asset('/contact-us#contact')}}" class="btn btn-lg btn-outline-primary mb-3">Connect with us.</a>
             </div>
 
@@ -689,225 +649,6 @@
     </div>
 </section>
 <!-- new-end -->
-
-
-
-<!-- membership -->
-
-<style>
-    .pricing-card {
-        background: #fff;
-        color: #000;
-        transition: all 0.3s ease-in-out;
-        border: 1px solid #000;
-    }
-
-    .pricing-card:hover {
-        background: #000;
-        color: #fff;
-        transform: translateY(-5px);
-    }
-
-    .pricing-card:hover .card-header {
-        background: #000 !important;
-        color: #fff !important;
-    }
-
-    .pricing-card .card-header {
-        background: #f8f9fa;
-        border-bottom: 1px solid #000;
-    }
-
-    .pricing-card:hover button {
-        background: #fff !important;
-        color: #000 !important;
-        border-color: #fff !important;
-    }
-</style>
-
-<div class="container py-5">
-    <div class="text-center mb-5">
-        <h2>Membership Plans</h2>
-    </div>
-
-    <div class="row g-4">
-
-        <!-- Free Plan -->
-        <div class="col-md-3">
-            <div class="card h-100 pricing-card">
-                <div class="card-header text-center">
-                    <h4 class="my-2">Free Membership</h4>
-                    <h5>₹0</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li>• Expo Calendar Access</li>
-                        <li>• Exhibition Updates</li>
-                        <li>• Ticket Reminders</li>
-                        <li>• Basic Directory Listing</li>
-                        <li>• 1 Free Consultation</li>
-                        <li>• WhatsApp Community</li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-outline-dark w-100">Get Started</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Standard Plan -->
-        <div class="col-md-3">
-            <div class="card h-100 pricing-card">
-                <div class="card-header text-center">
-                    <h4 class="my-2">Standard</h4>
-                    <h5>₹1,000 / year</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li>• Priority Stall Booking</li>
-                        <li>• ₹5,000/Event Booking</li>
-                        <li>• Consultation Support</li>
-                        <li>• Basic Booth Layout</li>
-                        <li>• 5% Fabrication Discount</li>
-                        <li>• Hot Expo Alerts</li>
-                        <li>• Featured Directory Listing</li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-outline-dark w-100">Choose Standard</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Premium Plan -->
-        <div class="col-md-3">
-            <div class="card h-100 pricing-card">
-                <div class="card-header text-center">
-                    <h4 class="my-2">Premium</h4>
-                    <h5>₹5,000 / year</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li>• Guaranteed Stall Support</li>
-                        <li>• ₹3,000/Event Booking</li>
-                        <li>• 15% Fabrication Discount</li>
-                        <li>• Dedicated Manager</li>
-                        <li>• Bulk Space Access</li>
-                        <li>• Unlimited Consultation</li>
-                        <li>• Free Product Listing</li>
-                        <li>• Booth Design (1 Free)</li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-outline-dark w-100">Choose Premium</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Unlimited Plan -->
-        <div class="col-md-3">
-            <div class="card h-100 pricing-card">
-                <div class="card-header text-center">
-                    <h4 class="my-2">Unlimited</h4>
-                    <h5>₹65,000 / year</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-unstyled">
-                        <li>• Unlimited Stall Booking</li>
-                        <li>• ₹0 Booking Fee</li>
-                        <li>• Senior Manager</li>
-                        <li>• Annual Expo Calendar</li>
-                        <li>• Priority Bulk Space</li>
-                        <li>• 20% Fabrication Discount</li>
-                        <li>• Premium Listing</li>
-                        <li>• Premium Booth Design</li>
-                    </ul>
-                </div>
-                <div class="card-footer text-center">
-                    <button class="btn btn-outline-dark w-100">Go Unlimited</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-
-<div class="container py-5">
-    <h1 class="text-center mb-4">Membership Plans</h1>
-    <p class="text-center mb-5">Choose the best plan for your business growth</p>
-
-    <div class="row justify-content-center g-4">
-
-        <!-- Basic -->
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-                <div class="card-header bg-light">
-                    <h4>Basic Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Access to standard listings</li>
-                        <li class="list-group-item">Monthly updates</li>
-                        <li class-group-item>Limited event access</li>
-                        <li class="list-group-item">No lead sharing</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary w-100">Choose Basic</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Premium -->
-        <div class="col-md-4">
-            <div class="card h-100 border-warning text-center">
-                <div class="card-header bg-warning">
-                    <h4 class="text-dark">Premium Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹4,999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Priority listing</li>
-                        <li class="list-group-item">Verified badge</li>
-                        <li class="list-group-item">Event participation discounts</li>
-                        <li class="list-group-item">Lead sharing access</li>
-                        <li class="list-group-item">WhatsApp support</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-warning w-100">Choose Premium</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Business -->
-        <div class="col-md-4">
-            <div class="card h-100 text-center">
-                <div class="card-header bg-light">
-                    <h4>Business Membership</h4>
-                </div>
-                <div class="card-body">
-                    <h2>₹14,999 <small class="text-muted fs-6">/year</small></h2>
-                    <ul class="list-group list-group-flush text-start mt-3">
-                        <li class="list-group-item">Featured listing</li>
-                        <li class="list-group-item">Unlimited lead access</li>
-                        <li class="list-group-item">Expo co-branding</li>
-                        <li class="list-group-item">Dedicated manager</li>
-                        <li class="list-group-item">All premium features</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="btn btn-primary w-100">Choose Business</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 
 
 <style>
