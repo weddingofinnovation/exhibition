@@ -8,12 +8,14 @@
         <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
             </div>
-            <h2 class="display-5 fw-normal">Expand your Business</h2>
+            <h2 class="display-5 fw-normal">Boost your Brand</h2>
             <p class="col-md-6 col-lg-8  mx-auto lead">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</p>
             <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
             <a href="" class="btn btn-sm" style="color:#000">Get Started</a>
         </div>
     </section>
+
+    
 
  <!-- new-try -->
     <section class="pt-4 sticky-section">
@@ -128,8 +130,65 @@
  
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
-  <h2 class="display-5 text-center my-2">Optimize Online Opportunities, Offering </h2>
-  <p class="fs-sm  text-center">Powered by #COI</p>
+  <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
+  <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col col-md-3">
+      <div class="card h-100  border-0">
+
+        <div class="card-body">
+          <h5 class="card-title">Individual Opportunity</h5>
+          <p class="card-text" style="color:#ff0440;">Exhibit without booking a full stall</p>
+
+          <p class="card-text">Individual Opportunity allows brands, entrepreneurs, and service providers to participate in exhibitions without taking a full-sized booth. You get a dedicated display or participation slot within a shared or curated zone.</p>
+          <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-3">
+      <div class="card h-100 border-0">
+
+        <div class="card-body">
+          <h5 class="card-title">Free Stand Access</h5>
+          <p class="card-text" style="color:#ff0440;"Subsidized or sponsored exhibition space</p>
+          <p class="card-text">Free Stand Access gives eligible members the opportunity to secure fully or partially sponsored exhibition space, usually supported by government bodies, partners, or organizers.</p>
+          <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col col-md-3">
+      <div class="card h-100 border-0">
+
+        <div class="card-body">
+          <h5 class="card-title">New Product Showcase</h5>
+          <p class="card-text" style="color:#ff0440;" >Launch, display, and validate your product</p>
+
+          <p class="card-text">New Product Showcase allows exhibitors to present newly launched or innovative products in a dedicated showcase or innovation zone at exhibitions.</p>
+          <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div class="col col-md-3 ">
+      <div class="card h-100 border-0">
+
+        <div class="card-body">
+          <h5 class="card-title" >Manage Your Stand</h5>
+          <p class="card-text" style="color:#ff0440;">End-to-end stand coordination & support</p>
+          <p class="card-text">Manage Your Stand is a done-for-you operational service where we handle all coordination and logistics related to your exhibition stand.</p>
+          <a href="" class="btn btn-lg btn-outline-primary mb-3"> Get Started</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+<!--Our culture and values-->
+<section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
+  <h2 class="display-5 text-center my-2">Optimize Offline Opportunities, Offering </h2>
+  <p class="fs-sm  text-center">Powered by #ol'ero</p>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col col-md-3">
       <div class="card h-100  border-0">
