@@ -4923,6 +4923,24 @@
 
     </div>
 
+    <style>
+        .nav-pills .nav-link.active {
+            background-color: #fff;
+            color: #000;
+            border: 2px solid #0d6efd;
+            font-weight: 600;
+        }
+
+        .nav-pills .nav-link {
+            transition: all 0.2s ease;
+        }
+
+        .nav-pills .nav-link:hover {
+            background-color: #fff;
+        }
+    </style>
+
+
     <!-- Navigation Tabs -->
     <div class="d-flex justify-content-center">
       <ul class="nav nav-pills bg-light rounded-pill p-1">
