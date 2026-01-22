@@ -5562,6 +5562,7 @@
         margin-bottom: 12px;
         display: flex;
         align-items: center;
+        color: #000;
         }
 
         .feature-box .title {
