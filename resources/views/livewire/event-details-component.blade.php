@@ -5469,78 +5469,78 @@
             <div class="row g-4 align-items-start">
 
                 <!-- LEFT CONTENT -->
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                 <span class="badge plus-badge mb-3">PLUS</span>
-                <h2 class="fw-bold display-6">
-                    Every Digital<br>Marketing<br>plan includes:
-                </h2>
+                    <h3 class="fw-bold display-6" style="color: #000;">
+                        Every Digital<br>Marketing<br>plan includes:
+                    </h3>
                 </div>
 
                 <!-- RIGHT FEATURES -->
-                <div class="col-lg-8">
-                <div class="row g-4">
+                <div class="col-lg-9">
+                    <div class="row g-4">
 
-                    <!-- ITEM -->
-                    <div class="col-md-4">
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <h6>AI-generated content</h6>
-                        <p>Create customizable content using smart AI tools.</p>
-                    </div>
-                    </div>
+                        <!-- ITEM -->
+                        <div class="col">
+                            <div class="feature-item">
+                                <svg class="icon fs-md" viewBox="0 0 24 24">
+                                <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                <h6 style="color: #000;">AI-generated content</h6>
+                                <p class="pt-3" style="color: #000;">Create customizable content using smart AI tools.</p>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <h6>Email marketing campaigns</h6>
-                        <p>Stay relevant and top of mind with targeted emails.</p>
-                    </div>
-                    </div>
+                        <div class="col">
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M4 6l8 6 8-6" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                <h6>Email marketing campaigns</h6>
+                                <p>Stay relevant and top of mind with targeted emails.</p>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24">
-                        <rect x="3" y="4" width="18" height="16" rx="2"
-                                fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <h6>Scheduled social media posts</h6>
-                        <p>Post consistently to improve reach and engagement.</p>
-                    </div>
-                    </div>
+                        <div class="col">
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="16" rx="2"
+                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                <h6>Scheduled social media posts</h6>
+                                <p>Post consistently to improve reach and engagement.</p>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24">
-                        <rect x="3" y="5" width="18" height="14" rx="2"
-                                fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                stroke="currentColor" stroke-width="1.5" fill="none"/>
-                        </svg>
-                        <h6>Branded images and videos</h6>
-                        <p>Create visual content with photos and videos.</p>
-                    </div>
-                    </div>
+                        <div class="col">
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="14" rx="2"
+                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                        stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                </svg>
+                                <h6>Branded images and videos</h6>
+                                <p>Create visual content with photos and videos.</p>
+                            </div>
+                        </div>
 
-                    <div class="col-md-4">
-                    <div class="feature-item">
-                        <svg class="icon" viewBox="0 0 24 24">
-                        <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        <h6>Design Studio</h6>
-                        <p>Create logos, websites, and ads with ease.</p>
-                    </div>
-                    </div>
+                        <div class="col">
+                            <div class="feature-item">
+                                <svg class="icon" viewBox="0 0 24 24">
+                                <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
+                                </svg>
+                                <h6>Design Studio</h6>
+                                <p>Create logos, websites, and ads with ease.</p>
+                            </div>
+                        </div>
 
-                </div>
+                    </div>
                 </div>
 
             </div>
