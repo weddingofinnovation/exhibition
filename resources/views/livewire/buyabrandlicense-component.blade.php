@@ -35,7 +35,6 @@
 
     </section>
 
-    
 
  <!-- new-try -->
     <section class="pt-4 sticky-section">
@@ -145,6 +144,28 @@
 
 <!-- new-end -->
 
+    <div class="columns-1 sm:columns-2 md:columns-3 gap-6 px-4">
+        @foreach($photos as $imgo)
+            <div class="mb-6 break-inside-avoid rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
+                
+                <img 
+                    src="{{ url('public/assets/image/exhibition/'.$imgo->brand_lgo) }}" 
+                    class="w-full"
+                    alt="Exhibition Stall"
+                >
+
+                <div class="p-3">
+                    <h4 class="text-sm font-semibold text-gray-800">
+                        {{ $imgo->brand_name ?? 'Stall Design' }}
+                    </h4>
+                    <p class="text-xs text-gray-500">
+                        9 sqm | Modular Booth
+                    </p>
+                </div>
+
+            </div>
+        @endforeach
+    </div>
 
 <!-- optimize -->
  
@@ -205,6 +226,7 @@
   </div>
   </div>
 </section>
+
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
   <h2 class="display-5 text-center my-2">Optimize Offline Opportunities, Offering </h2>
@@ -254,7 +276,6 @@
   </div>
   </div>
 </section>
-
 <!-- end optimize -->
 
 

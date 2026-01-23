@@ -1746,7 +1746,7 @@
 		<!-- resources/views/livewire/masonry-gallery.blade.php -->
 		<div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 px-4">
 			@php 
-			$photos = DB::table('photos')->where('usago', 'fabric')->get();
+			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
 
 			@foreach($photos as $imgo)
@@ -1754,15 +1754,7 @@
 					<img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" width="50%" alt="">
 					<a href="" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
 				</div>
-			@endforeach 
-
-			{{-- @foreach($photos as $item)
-				<div class="break-inside-avoid bg-white rounded-xl shadow-md p-4" style="height: {{ $item['height'] }}px;">
-					<h2 class="text-lg font-bold mb-2">{{ $item['title'] }}</h2>
-					<p class="text-sm text-gray-600">Random content with fixed height.</p>
-				</div>
-			@endforeach --}}
-
+			@endforeach
 		</div>
 
 	@elseif( $this->productservice == 'exhibition-navigator')

@@ -299,9 +299,12 @@ Route::get('/design_fabrication', BuyabrandlicenseComponent::class)->name('buy.l
 
 Route::get('/great_exhibition_to_exhibit', BusinessDesignStrategyComponent::class)->name('design.strategy');
 
+
+// design-fabircation 
 Route::get('/product/{productservice}', OnlineContractFormComponent::class)->name('service.product');
 
 Route::get('/exhibitor/{formm}/{user_id?}/{contractioid?}', ContractFromComponent::class)->name('space.booking');
+
 
 //company details
 Route::get('/career', CareerComponent::class)->name('career');
