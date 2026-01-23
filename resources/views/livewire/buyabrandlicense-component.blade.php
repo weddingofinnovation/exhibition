@@ -246,6 +246,12 @@
         </div>
     </section>
 
+
+    <!-- heading to boost up -->
+
+    <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
+    <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
+              
     <!-- secondary try -->
     <style>
         .marketing-card {
@@ -314,10 +320,7 @@
 
     <section class="py-5">
         <div class="container">
-            <div class="marketing-card p-4 p-lg-5">
-              <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
-              <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
-                  
+            <div class="marketing-card p-4 p-lg-5">    
                   <div class="row g-4 align-items-start">
 
                       <!-- LEFT CONTENT -->
