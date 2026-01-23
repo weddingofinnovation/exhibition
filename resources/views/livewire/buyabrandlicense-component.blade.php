@@ -170,7 +170,7 @@
           padding: 0.425rem 0;
       }
 
-      bg-colo {
+      .bg-colo {
           background-color: #09B850 !important;
       }
     </style>
