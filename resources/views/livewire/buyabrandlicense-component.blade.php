@@ -19,6 +19,11 @@
             color: #000;
           }
 
+          .sectionlevel { 
+              padding-bottom: 7.5rem;
+              padding-top: 7.5rem;
+            }
+
     :root [data-bs-theme=light] {
           --bs-blue: #1d3b53;
           --bs-indigo: #6610f2;
