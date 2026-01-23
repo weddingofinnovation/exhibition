@@ -419,23 +419,31 @@
         }
 
     
-  [data-bs-theme="emotional"] .nav {
-    --bs-nav-link-padding-x: 0.75rem;
-    --bs-nav-link-padding-y: 1rem;
-    --bs-nav-link-font-size: 0.938rem;
-    --bs-nav-link-font-weight: 500;
-    --bs-nav-link-color: #606261;
-    --bs-nav-link-hover-color: var(--bs-primary);
-    --bs-nav-link-disabled-color: var(--bs-gray-500) !important;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
+      [data-bs-theme="emotional"] .nav {
+          --bs-nav-link-padding-x: 0.75rem;
+          --bs-nav-link-padding-y: 1rem;
+          --bs-nav-link-font-size: 0.938rem;
+          --bs-nav-link-font-weight: 500;
+          --bs-nav-link-color: #606261;
+          --bs-nav-link-hover-color: var(--bs-primary);
+          --bs-nav-link-disabled-color: var(--bs-gray-500) !important;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+      }
+
+      [data-bs-theme="emotional"] .nav-pills-primary .nav-item {
+            padding: 0 !important;
+            margin-right: 2px;
+            margin-left: 2px;
+            border-bottom: 0 !important;
+        }
+        
     </style>
 
     <!-- new -->
