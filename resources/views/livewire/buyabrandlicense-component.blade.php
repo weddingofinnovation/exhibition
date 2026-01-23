@@ -239,44 +239,41 @@
     </style>
 
     <style>
-      :root[data-bs-theme=emotional]{
+     /* Emotional theme */
+      [data-bs-theme="emotional"] {
+        --bs-body-bg: #fff7f4;
+        --bs-body-color: #2b2b2b;
+        --bs-heading-color: #1a1a1a;
+      }
 
-      body {
-            margin: 0;
-            font-family: var(--bs-body-font-family);
-            font-size: var(--bs-body-font-size);
-            font-weight: var(--bs-body-font-weight);
-            line-height: var(--bs-body-line-height);
-            color: var(--bs-body-color);
-            text-align: var(--bs-body-text-align);
-            background-color: var(--bs-body-bg);
-            -webkit-text-size-adjust: 100%;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
+      /* Apply styles INSIDE the themed section */
+      [data-bs-theme="emotional"] {
+        font-family: var(--bs-body-font-family);
+      }
 
-      .inner-container {
-            max-width: 900px;
-            margin-right: auto;
-            margin-left: auto;
-        }
+      [data-bs-theme="emotional"] .inner-container {
+        max-width: 900px;
+        margin-inline: auto;
+      }
+
+      [data-bs-theme="emotional"] h1,
+      [data-bs-theme="emotional"] h2,
+      [data-bs-theme="emotional"] h3,
+      [data-bs-theme="emotional"] h4,
+      [data-bs-theme="emotional"] h5,
+      [data-bs-theme="emotional"] h6 {
+        font-family: "Instrument Sans", sans-serif;
+        font-weight: 700;
+        line-height: 1.25;
+        color: var(--bs-heading-color);
+      }
 
       @media (min-width: 576px) {
-        .mb-sm-6 {
-            margin-bottom: 3.5rem !important;
+        [data-bs-theme="emotional"] .mb-sm-6 {
+          margin-bottom: 3.5rem !important;
         }
       }
 
-      h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-            margin-top: 0;
-            margin-bottom: 0.5rem;
-            font-family: "Instrument Sans", sans-serif;
-            font-weight: 700;
-            line-height: 1.25;
-            color: var(--bs-heading-color);
-        }
-
-
-      }
     </style>
 
     <!-- new -->
