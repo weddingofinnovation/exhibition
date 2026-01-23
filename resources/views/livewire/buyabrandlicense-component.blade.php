@@ -1,111 +1,109 @@
 <main>
 
-<style>
-      .plus-badge {
-            background: #00e3c8;
+    <style>
+          .plus-badge {
+                background: #00e3c8;
+                color: #000;
+                font-weight: 700;
+                padding: 6px 10px;
+                font-size: 12px;
+                border-radius: 4px;
+            }
+
+          .btn-outline-primary{
+            border-color: #000;
             color: #000;
-            font-weight: 700;
-            padding: 6px 10px;
-            font-size: 12px;
-            border-radius: 4px;
-        }
+          }
 
-      .btn-outline-primary{
-        border-color: #000;
-        color: #000;
-      }
+          .text-muted {
+            color: #000;
+          }
+    </style>
 
-      .text-muted {
-        color: #000;
-      }
-</style>
-<!-- new -->
+    <!-- new -->
+    <section class="container-fluid py-0 my-3 bg-light">
+      <div class="container">
+        <div class="row align-items-center g-5">
 
-<!-- new -->
- <section class="container-fluid py-0 my-3 bg-light">
-  <div class="container">
-    <div class="row align-items-center g-5">
+          <!-- LEFT CONTENT -->
+          <div class="col-lg-7">
+            <span class="badge bg-danger mb-3">Exhibition Stall Design</span>
 
-      <!-- LEFT CONTENT -->
-      <div class="col-lg-7">
-        <span class="badge bg-danger mb-3">Exhibition Stall Design</span>
+            <h4 class="display-5 fw-semibold mb-3">
+              Your Stall Has <span class="text-primary">Just 3 Seconds</span> to Get Noticed.
+            </h4>
 
-        <h4 class="display-5 fw-semibold mb-3">
-          <small>Your Stall Has</small> <span class="text-primary">Just 3 Seconds</span> <small>to Get Noticed</small>
-        </h4>
-
-        <p class="lead text-muted mb-3">
-          We design & fabricate exhibition stalls that attract attention, engage visitors,
-          and help your brand stand out on the show floor.
-        </p>
-
-        <p class="text-muted mb-4" style="color: #000;">
-          From concept to on-site installation — <strong>we handle everything.</strong>
-        </p>
-
-        <div class="d-flex flex-wrap gap-3">
-          <a href="#opening" class="btn btn-primary btn-lg">
-            Get Free Stall Consultation
-          </a>
-          <a href="#work" class="btn btn-outline-primary btn-lg">
-            View Our Work
-          </a>
-        </div>
-
-        <a href="#start" class="d-inline-block mt-3 text-decoration-none">
-          <small class="text-dark fw-semibold">Get Started →</small>
-        </a>
-      </div>
-
-      <!-- RIGHT OPTIONS -->
-      <div class="col-lg-5">
-        <div class="card shadow-sm border-0">
-          <div class="card-body p-4">
-
-            <h5 class="fw-semibold mb-2">Planning to Exhibit Soon?</h5>
-            <p class="text-muted mb-4">
-              Let’s design a stall that works as hard as you do.
+            <p class="lead text-muted mb-3">
+              We design & fabricate exhibition stalls that attract attention, engage visitors,
+              and help your brand stand out on the show floor.
             </p>
 
-            <div class="d-grid gap-3">
+            <p class="text-muted mb-4" style="color: #000;">
+              From concept to on-site installation — <strong>we handle everything.</strong>
+            </p>
 
-              <a href="#" class="btn btn-outline-primary text-start p-3">
-                <strong>Premium Design</strong><br>
-                <small class="text-muted">
-                  Custom-built, high-impact, luxury finishes for strong brand presence.
-                </small>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#opening" class="btn btn-primary btn-lg">
+                Get Free Stall Consultation
               </a>
-
-              <a href="#" class="btn btn-outline-primary text-start p-3">
-                <strong>Economic Design</strong><br>
-                <small class="text-muted">
-                  Smart layouts, optimized materials, maximum value.
-                </small>
+              <a href="#work" class="btn btn-outline-primary btn-lg">
+                View Our Work
               </a>
-
-              <a href="#" class="btn btn-outline-primary text-start p-3">
-                <strong>Individual / Free Design</strong><br>
-                <small class="text-muted">
-                  Exhibit without booking a full stall — ideal for first-time participants.
-                </small>
-              </a>
-
             </div>
 
-            <small class="text-muted d-block mt-3">
-              No matter the size or budget, your stall will look professional and purposeful.
-            </small>
-
+            <a href="#start" class="d-inline-block mt-3 text-decoration-none">
+              <small class="text-dark fw-semibold">Get Started →</small>
+            </a>
           </div>
+
+          <!-- RIGHT OPTIONS -->
+          <div class="col-lg-5">
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+
+                <h5 class="fw-semibold mb-2">Planning to Exhibit Soon?</h5>
+                <p class="text-muted mb-4">
+                  Let’s design a stall that works as hard as you do.
+                </p>
+
+                <div class="d-grid gap-3">
+
+                  <a href="#" class="btn btn-outline-primary text-start p-3">
+                    <strong>Premium Design</strong><br>
+                    <small class="text-muted">
+                      Custom-built, high-impact, luxury finishes for strong brand presence.
+                    </small>
+                  </a>
+
+                  <a href="#" class="btn btn-outline-primary text-start p-3">
+                    <strong>Economic Design</strong><br>
+                    <small class="text-muted">
+                      Smart layouts, optimized materials, maximum value.
+                    </small>
+                  </a>
+
+                  <a href="#" class="btn btn-outline-primary text-start p-3">
+                    <strong>Individual / Free Design</strong><br>
+                    <small class="text-muted">
+                      Exhibit without booking a full stall — ideal for first-time participants.
+                    </small>
+                  </a>
+
+                </div>
+
+                <small class="text-muted d-block mt-3">
+                  No matter the size or budget, your stall will look professional and purposeful.
+                </small>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-
-    <section class="container-fluid py-5 my-5 py-lg-5">
+    {{-- <section class="container-fluid py-5 my-5 py-lg-5">
       <div class="row">
         <div class="col-md-6">
           <div class="text-center mt-4 mb-3">
@@ -140,10 +138,9 @@
         
 
 
-    </section>
+    </section>--}}
 
-
- <!-- new-try -->
+    <!-- new-try -->
     <section class="pt-4 sticky-section">
         <div class="container">
             <!-- Trust / Rating Bar -->
@@ -249,7 +246,7 @@
         </div>
     </section>
 
-<!-- secondary try -->
+    <!-- secondary try -->
     <style>
         .marketing-card {
             background: #f7f8f8;
@@ -282,7 +279,6 @@
             color: #000;
         }
     </style>
-
 
     <style>
         .feature-box {
@@ -422,8 +418,7 @@
     </section>
 
 
-<!-- new-end -->
-
+    <!-- new-end -->
       <style>
         .masonry-grid {
         display: grid;
@@ -441,6 +436,7 @@
         }
 
       </style>
+      
       @php 
 			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
