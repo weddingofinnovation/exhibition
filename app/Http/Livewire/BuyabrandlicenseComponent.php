@@ -28,6 +28,13 @@ class BuyabrandlicenseComponent extends Component
       return $pdf-> download('Buy_a_Brand_License.pdf');
     }
 
+    public bool $isActive = false;
+
+    public function toggle()
+    {
+        $this->isActive = ! $this->isActive;
+    }
+
     
     public function genratepdf($visitorid)
     {

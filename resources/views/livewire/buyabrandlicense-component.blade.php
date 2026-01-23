@@ -1111,23 +1111,27 @@
               <!-- Tab item START -->
               <div class="grid-menu mb-4" data-target=".filter-container">
                 <ul class="nav flex-md-column gap-1 nav-pills nav-pills-primary">
+
+                  
+
                   <li class="nav-item">
-                    <a class="nav-link active" data-filter="*">All work</a>
+                    <a class="nav-link {{ $isActive ? 'active' : '' }}"
+       wire:click.prevent="toggle" data-filter=".marketing">Stopping at your stall</a>          
                   </li>
+
                   <li class="nav-item">
-                    <a class="nav-link" data-filter=".marketing">stopping at your stall</a>          
+                    <a class="nav-link {{ $isActive ? 'active' : '' }}"
+       wire:click.prevent="toggle" data-filter=".design">Taking photos.</a>        
                   </li>
+
                   <li class="nav-item">
-                    <a class="nav-link" data-filter=".design">Taking photos.</a>        
+                      <a class="nav-link {{ $isActive ? 'active' : '' }}"
+       wire:click.prevent="toggle" data-filter=".business">Asking questions.</a>        
                   </li>
+
                   <li class="nav-item">
-                      <a class="nav-link" data-filter=".business">Asking questions.</a>        
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-filter=".brand">Remembering your brand</a>        
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" data-filter=".ui">UI/UX design</a>        
+                    <a class="nav-link {{ $isActive ? 'active' : '' }}"
+       wire:click.prevent="toggle" data-filter=".brand">Remembering your brand</a>        
                   </li>
                 </ul>
 
