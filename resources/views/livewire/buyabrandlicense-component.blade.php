@@ -248,10 +248,11 @@
 
 
     <!-- heading to boost up -->
+    <div class="pt-5 mt-5">
+        <h2 class="display-5 text-center my-5">Boost your brand with O'lero Studio.</h2>
+        <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
+    </div>
 
-    <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
-    <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
-              
     <!-- secondary try -->
     <style>
         .marketing-card {
