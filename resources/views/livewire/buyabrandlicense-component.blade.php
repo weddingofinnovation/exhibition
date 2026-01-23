@@ -160,6 +160,17 @@
           /* --bs-gray-900: #202124; */
           color: var(--bs-gray-900) !important;
       }
+
+      .rounded-3 {
+          border-radius: .4375rem !important;
+      }
+      
+
+      .bg-light {
+          --bs-bg-opacity: 1;
+          /* --bs-light-rgb: 248, 248, 248; */
+          background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+      }
       
       h2, .h2 {
           font-size: calc(1.4rem + 1.8vw);
