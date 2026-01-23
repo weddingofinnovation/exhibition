@@ -760,7 +760,7 @@
         @endforeach
       </div>
 
-    <div class="container">
+    <div class="container py-5">
       <!-- optimize -->
       <hr class="border-primary opacity-2 mt-sm-7 my-5">
       
@@ -841,7 +841,7 @@
     
 
     <!-- start-6-emotional-payoff -->
-    <section>
+    <section class="my-5 py-5">
       <div class="container">
         <!-- Title -->
         <div class="inner-container text-center mb-4 mb-sm-6">
