@@ -451,19 +451,16 @@
         color: #22c55e;
     }
  </style>
+
 <section class="row g-0">
     <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2"
         style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);">
     </div>
     <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">
         <div class="mx-auto py-lg-5" style="max-width: 35rem;">
-
-
-            <h2 class="display-5 text-center mb-2 head">Individual Opportunity</h2>
-
-            <p class="fs-sm  text-center pb-2">
-                <strong>What it is</strong>
-                <br>Individual Opportunity allows brands, entrepreneurs, and service providers to participate in exhibitions <strong>without taking a full-sized booth.</strong> You get a <strong>dedicated display or participation slot</strong> within a shared or curated zone.
+            <h2 class="display-5 mb-2 head">Individual Opportunity</h2>
+            <p class="fs-sm pb-2">
+                <strong>What it is</strong>Individual Opportunity allows brands, entrepreneurs, and service providers to participate in exhibitions <strong>without taking a full-sized booth.</strong> You get a <strong>dedicated display or participation slot</strong> within a shared or curated zone.
             </p>
 
             <div class="pricing-card">

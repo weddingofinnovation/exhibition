@@ -4,15 +4,31 @@
 <!-- new -->
 
 <!-- new -->
-    <section class="container-fluid py-5 my-5 py-lg-5  ">
-        <div class="text-center mt-4 mb-3">
+    <section class="container-fluid py-5 my-5 py-lg-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
             </div>
             <h2 class="display-5 fw-normal">Boost your Brand</h2>
             <p class="col-md-6 col-lg-8  mx-auto lead">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</p>
             <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
             <a href="" class="btn btn-sm" style="color:#000">Get Started</a>
+          </div>
         </div>
+
+        <div class="col-md-6">
+          <a href="" class="btn btn-lg btn-dark">Premium Design <span>20,000 per sqm</span></a>
+          <a href="" class="btn btn-lg btn-dark">Economic Design <span>15,000 per sqm</span></a>
+          <a href="" class="btn btn-lg btn-dark">Free Design <span>3,000 per sqm</span></a>
+        </div>
+
+      </div>
+        
+
+        
+
+
     </section>
 
     
