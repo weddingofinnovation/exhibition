@@ -145,22 +145,34 @@
           --bs-form-valid-border-color: rgba(12, 188, 135, 0.8);
           --bs-form-invalid-color: #dc3545;
           --bs-form-invalid-border-color: rgba(214, 41, 62, 0.5);
-
-          h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
-              margin-top: 0;
-              margin-bottom: 0.5rem;
-              font-family: "Instrument Sans", sans-serif;
-              font-weight: 700;
-              line-height: 1.25;
-              color: var(--bs-heading-color);
-          }
-          
-          h2, .h2 {
-              font-size: calc(1.4rem + 1.8vw);
-          }
-
 			}
 
+      h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+          font-family: "Instrument Sans", sans-serif;
+          font-weight: 700;
+          line-height: 1.25;
+          color: var(--bs-heading-color);
+      }
+      
+      h2, .h2 {
+          font-size: calc(1.4rem + 1.8vw);
+      }
+
+      .list-group-item:first-child {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+      }
+
+      .list-group-borderless .list-group-item {
+          border: none !important;
+          padding: 0.425rem 0;
+      }
+
+      bg-colo {
+          background-color: #09B850 !important;
+      }
     </style>
 
     <!-- new -->
