@@ -4,7 +4,7 @@
 <!-- new -->
 
 <!-- new -->
- <section class="container-fluid py-5 my-5 bg-light">
+ <section class="container-fluid py-0 my-3 bg-light">
   <div class="container">
     <div class="row align-items-center g-5">
 
@@ -12,9 +12,9 @@
       <div class="col-lg-6">
         <span class="badge bg-danger mb-3">Exhibition Stall Design</span>
 
-        <h2 class="display-5 fw-semibold mb-3">
-          Your Stall Has Just <span class="text-primary">3 Seconds</span> to Get Noticed
-        </h2>
+        <h4 class="display-5 fw-semibold mb-3">
+          <small>Your Stall Has</small> <span class="text-primary">Just 3 Seconds</span> <small>to Get Noticed</small>
+        </h4>
 
         <p class="lead text-muted mb-3">
           We design & fabricate exhibition stalls that attract attention, engage visitors,
