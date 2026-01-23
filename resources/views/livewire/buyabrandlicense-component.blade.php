@@ -758,79 +758,83 @@
         @endforeach
       </div>
 
-    <!-- optimize -->
-    <div class="row">
-			<!-- Client -->
-			<div class="col-md-6 col-xl-7 mb-5 mb-md-0">
-				<p class="mb-0"><i class="bi bi-shield-check"></i> | We believe in going above and beyond to exceed. We reached <b class="text-primary fs-6">19k</b></p>
-				
-				<!-- Slider START -->
-				<div class="swiper mt-2 mt-md-4 swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
-						&quot;loop&quot;: true, 
-						&quot;slidesPerView&quot;: 2, 
-						&quot;spaceBetween&quot;: 30, 
-						&quot;autoplay&quot;:{
-							&quot;delay&quot;: 2000, 
-							&quot;disableOnInteraction&quot;: false
-						},
-						&quot;breakpoints&quot;: { 
-							&quot;576&quot;: {&quot;slidesPerView&quot;: 3}, 
-							&quot;768&quot;: {&quot;slidesPerView&quot;: 2}, 
-							&quot;992&quot;: {&quot;slidesPerView&quot;: 3}, 
-							&quot;1200&quot;: {&quot;slidesPerView&quot;: 4}
-						}}">
+    <div class="container">
+      <!-- optimize -->
+      <hr class="border-primary opacity-2 mt-sm-7 my-5">
+      
+      <div class="row">
+        <!-- Client -->
+        <div class="col-md-6 col-xl-7 mb-5 mb-md-0">
+          <p class="mb-0"><i class="bi bi-shield-check"></i> | We believe in going above and beyond to exceed. We reached <b class="text-primary fs-6">19k</b></p>
+          
+          <!-- Slider START -->
+          <div class="swiper mt-2 mt-md-4 swiper-initialized swiper-horizontal swiper-backface-hidden" data-swiper-options="{
+              &quot;loop&quot;: true, 
+              &quot;slidesPerView&quot;: 2, 
+              &quot;spaceBetween&quot;: 30, 
+              &quot;autoplay&quot;:{
+                &quot;delay&quot;: 2000, 
+                &quot;disableOnInteraction&quot;: false
+              },
+              &quot;breakpoints&quot;: { 
+                &quot;576&quot;: {&quot;slidesPerView&quot;: 3}, 
+                &quot;768&quot;: {&quot;slidesPerView&quot;: 2}, 
+                &quot;992&quot;: {&quot;slidesPerView&quot;: 3}, 
+                &quot;1200&quot;: {&quot;slidesPerView&quot;: 4}
+              }}">
 
-						<!-- Slider items -->
-						<div class="swiper-wrapper align-items-center" id="swiper-wrapper-7d7e92960c217792" aria-live="off">
-							<!-- Image -->
-							<div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" data-swiper-slide-index="0" style="width: 136.25px; margin-right: 30px;">
-								<img src="assets/images/client/01.svg" class="px-3 ps-0" alt="client-img">
-							</div>
-							<!-- Image -->
-							<div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" data-swiper-slide-index="1" style="width: 136.25px; margin-right: 30px;">
-								<img src="assets/images/client/02.svg" class="px-3" alt="client-img">
-							</div>
-							<!-- Image -->
-							<div class="swiper-slide" role="group" aria-label="3 / 4" data-swiper-slide-index="2" style="width: 136.25px; margin-right: 30px;">
-								<img src="assets/images/client/03.svg" class="px-3" alt="client-img">
-							</div>
-							<!-- Image -->
-							<div class="swiper-slide" role="group" aria-label="4 / 4" data-swiper-slide-index="3" style="width: 136.25px; margin-right: 30px;">
-								<img src="assets/images/client/04.svg" class="px-3" alt="client-img">
-							</div>
-						</div>
-				<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-			</div>
-	
-			<!-- Skill sets -->
-			<div class="col-md-6 col-lg-5 col-xl-3 ms-auto text-md-end">
-				<!-- Title -->
-				<p class="mb-0 me-2">Trusted by Customers <span class="badge bg-dark">Active</span></p>
+              <!-- Slider items -->
+              <div class="swiper-wrapper align-items-center" id="swiper-wrapper-7d7e92960c217792" aria-live="off">
+                <!-- Image -->
+                <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" data-swiper-slide-index="0" style="width: 136.25px; margin-right: 30px;">
+                  <img src="assets/images/client/01.svg" class="px-3 ps-0" alt="client-img">
+                </div>
+                <!-- Image -->
+                <div class="swiper-slide swiper-slide-next" role="group" aria-label="2 / 4" data-swiper-slide-index="1" style="width: 136.25px; margin-right: 30px;">
+                  <img src="assets/images/client/02.svg" class="px-3" alt="client-img">
+                </div>
+                <!-- Image -->
+                <div class="swiper-slide" role="group" aria-label="3 / 4" data-swiper-slide-index="2" style="width: 136.25px; margin-right: 30px;">
+                  <img src="assets/images/client/03.svg" class="px-3" alt="client-img">
+                </div>
+                <!-- Image -->
+                <div class="swiper-slide" role="group" aria-label="4 / 4" data-swiper-slide-index="3" style="width: 136.25px; margin-right: 30px;">
+                  <img src="assets/images/client/04.svg" class="px-3" alt="client-img">
+                </div>
+              </div>
+          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+    
+        <!-- Skill sets -->
+        <div class="col-md-6 col-lg-5 col-xl-3 ms-auto text-md-end">
+          <!-- Title -->
+          <p class="mb-0 me-2">Trusted by Customers <span class="badge bg-dark">Active</span></p>
 
-				<!-- Counter -->
-				<div class="d-flex justify-content-md-end mt-2 mt-md-4">
-					<!-- Counter item -->
-					<div>
-						<div class="d-flex justify-content-md-end">
-							<h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-delay="300" data-purecounter-duration="0">15</h4>
-							<span class="h4 mb-0">k+</span>
-						</div>
-						<p class="mb-0">Active users</p>
-					</div>
+          <!-- Counter -->
+          <div class="d-flex justify-content-md-end mt-2 mt-md-4">
+            <!-- Counter item -->
+            <div>
+              <div class="d-flex justify-content-md-end">
+                <h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="15" data-purecounter-delay="300" data-purecounter-duration="0">15</h4>
+                <span class="h4 mb-0">k+</span>
+              </div>
+              <p class="mb-0">Active users</p>
+            </div>
 
-					<div class="vr mx-3 mx-sm-4"></div> <!-- Divider -->
+            <div class="vr mx-3 mx-sm-4"></div> <!-- Divider -->
 
-					<!-- Counter item -->
-					<div>
-						<div class="d-flex justify-content-md-end">
-							<h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="56" data-purecounter-delay="300" data-purecounter-duration="0">56</h4>
-							<span class="h4 mb-0">+</span>
-						</div>
-						<p class="mb-0">Completed projects</p>
-					</div>
-				</div>
-			</div>
-		</div>
+            <!-- Counter item -->
+            <div>
+              <div class="d-flex justify-content-md-end">
+                <h4 class="purecounter mb-0" data-purecounter-start="0" data-purecounter-end="56" data-purecounter-delay="300" data-purecounter-duration="0">56</h4>
+                <span class="h4 mb-0">+</span>
+              </div>
+              <p class="mb-0">Completed projects</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
  
     <!--Our culture and values-->
     <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
