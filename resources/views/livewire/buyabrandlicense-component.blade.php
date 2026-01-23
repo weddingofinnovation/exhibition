@@ -274,6 +274,18 @@
         }
       }
 
+      [data-bs-theme="emotional"] .row {
+            --bs-gutter-x: 1.875rem;
+            --bs-gutter-y: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-top: calc(-1 * var(--bs-gutter-y));
+            margin-right: calc(-0.5 * var(--bs-gutter-x));
+            margin-left: calc(-0.5 * var(--bs-gutter-x));
+        }
     </style>
 
     <!-- new -->
@@ -389,11 +401,6 @@
         </div>
 
       </div>
-        
-
-        
-
-
     </section>--}}
 
     <!-- new-try -->
