@@ -247,6 +247,12 @@
             margin-left: auto;
         }
 
+      @media (min-width: 576px) {
+        .mb-sm-6 {
+            margin-bottom: 3.5rem !important;
+        }
+      }
+
       h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
             margin-top: 0;
             margin-bottom: 0.5rem;
@@ -255,7 +261,7 @@
             line-height: 1.25;
             color: var(--bs-heading-color);
         }
-        
+
 
       }
     </style>
