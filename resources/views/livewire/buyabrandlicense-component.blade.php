@@ -29,7 +29,7 @@
           /* --bs-light-rgb: 248, 248, 248; */
           background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
       }
-      
+
     :root [data-bs-theme=light] {
           --bs-blue: #1d3b53;
           --bs-indigo: #6610f2;
@@ -245,7 +245,7 @@
 
           <!-- LEFT CONTENT -->
           <div class="col-lg-7">
-            <span class="badge bg-danger mb-3">Exhibition Stall Design</span>
+            <span class="heading-color text-dark bg-light small rounded-3 px-3 py-2">Exhibition Stall Design</span>
 
             <h4 class="display-5 fw-semibold mb-3" style="font-family: Instrument Sans, sans-serif; font-weight: 700; color:#000;">
               Your Stall Has <span class="text-primary">Just 3 Seconds</span> to Get Noticed.
