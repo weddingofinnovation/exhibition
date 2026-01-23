@@ -1099,15 +1099,15 @@
       <div class="container">
         <!-- Title -->
         <div class="inner-container text-center mb-4 mb-sm-6">
-          <h2 class="mb-4">Showcasing Recent Projects</h2>
-          <p class="mb-0">Discover a selection of our most recent client projects, showcasing our expertise, creativity, and commitment to delivering outstanding results.</p>
+          <h2 class="mb-4">We Are More Than Stall Fabricators</h2>
+          <p class="mb-0">With in-house designers, skilled fabricators, and on-ground execution teams, we ensure your stall looks impressive, gets delivered on time, and reflects your brand perfectly — without stress or surprises.</p>
         </div>
 
         <div class="row g-4">
           <!-- Tabs -->
           <div class="col-md-4 col-lg-3">
             <div class="d-flex flex-column h-100">
-              <h6 class="mb-sm-3">Browse by:</h6>
+              <h6 class="mb-sm-3">Imagine visitors:</h6>
               <!-- Tab item START -->
               <div class="grid-menu mb-4" data-target=".filter-container">
                 <ul class="nav flex-md-column gap-1 nav-pills nav-pills-primary">
@@ -1115,16 +1115,16 @@
                     <a class="nav-link active" data-filter="*">All work</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-filter=".marketing">Digital Marketing</a>          
+                    <a class="nav-link" data-filter=".marketing">stopping at your stall</a>          
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-filter=".design">Web design</a>        
+                    <a class="nav-link" data-filter=".design">Taking photos.</a>        
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" data-filter=".business">Business development</a>        
+                      <a class="nav-link" data-filter=".business">Asking questions.</a>        
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-filter=".brand">Brand design</a>        
+                    <a class="nav-link" data-filter=".brand">Remembering your brand</a>        
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" data-filter=".ui">UI/UX design</a>        
@@ -1135,7 +1135,8 @@
               </div>
               
               <!-- Button -->
-              <a href="portfolio-showcase.html" class="btn btn-light mt-auto mb-5">View all projects<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+              <a href="#" class="btn btn-light mt-auto mb-5">
+                even after the exhibition ends.<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
             </div>
           </div>
 
@@ -1156,7 +1157,7 @@
                   <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
                       <h6 class="mb-0">
-                        <a href="portfolio-case-studies-v1.html"
+                        <a href="#"
                           class="text-white stretched-link">
                           Dynamic Workflows Website
                         </a>
