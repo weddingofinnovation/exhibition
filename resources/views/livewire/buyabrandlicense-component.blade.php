@@ -443,7 +443,18 @@
             margin-left: 2px;
             border-bottom: 0 !important;
         }
-        
+
+      [data-bs-theme="emotional"] .nav-pills-primary .nav-link.active, .nav-pills-primary .nav-link:hover {
+          color: var(--bs-white);
+          background-color: var(--bs-primary);
+      }
+
+      [data-bs-theme="emotional"] .nav-pills-primary .nav-link {
+          padding: 0.5rem 0.8rem !important;
+          color: var(--bs-gray-800);
+          font-weight: 500;
+          border-radius: 0.313rem;
+      }
     </style>
 
     <!-- new -->
