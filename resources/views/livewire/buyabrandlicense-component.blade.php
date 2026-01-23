@@ -18,9 +18,13 @@
         </div>
 
         <div class="col-md-6">
-          <a href="" class="btn btn-lg btn-dark">Premium Design <span>20,000 per sqm</span></a>
-          <a href="" class="btn btn-lg btn-dark">Economic Design <span>15,000 per sqm</span></a>
-          <a href="" class="btn btn-lg btn-dark">Free Design <span>3,000 per sqm</span></a>
+          <ul>
+          <li><a href="" class="btn btn-lg btn-primary">Premium Design <span>20,000 per sqm</span></a></li>
+          <li><a href="" class="btn btn-lg btn-primary">Economic Design <span>15,000 per sqm</span></a></li>
+          <li><a href="" class="btn btn-lg btn-primary">Free Design <span>3,000 per sqm</span></a></li>
+            
+          </ul>
+          
         </div>
 
       </div>
