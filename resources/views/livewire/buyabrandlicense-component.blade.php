@@ -22,10 +22,13 @@
 
         <div class="col-md-6">
           <ul>
-          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Premium Design <span>20,000 per sqm</span></a></li>
-          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Economic Design <span>15,000 per sqm</span></a></li>
-          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Free Design <span>3,000 per sqm</span></a></li>
-            
+            <p>Planning to Exhibit Soon?
+            <small>Let’s design a stall that works as hard as you do.</small>
+            </p>
+          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Premium Design <span>Custom-built, high-impact, luxury finishes for strong brand presence.</span></a></li>
+          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Economic Design <span>Smart layouts, optimized materials, maximum value.</span></a></li>
+          <li><a href="" class="btn btn-lg btn-outline-primary mb-2">Free Design <span>Exhibit without booking a full stall — ideal for first-time participants.</span></a></li>
+             <small>No matter the size or budget, your stall will look professional and purposeful.</small>
           </ul>
           
         </div>
