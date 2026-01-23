@@ -465,6 +465,8 @@
     </section>
 
 
+
+
     <!-- heading to boost up -->
     <div class="pt-5 mt-5">
         <h2 class="display-5 text-center my-5">Boost your brand with O'lero Airo™ Studio.</h2>
@@ -836,6 +838,165 @@
       </div>
     </div>
  
+    
+
+    <!-- start-6-emotional-payoff -->
+    <section>
+      <div class="container">
+        <!-- Title -->
+        <div class="inner-container text-center mb-4 mb-sm-6">
+          <h2 class="mb-4">Showcasing Recent Projects</h2>
+          <p class="mb-0">Discover a selection of our most recent client projects, showcasing our expertise, creativity, and commitment to delivering outstanding results.</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Tabs -->
+          <div class="col-md-4 col-lg-3">
+            <div class="d-flex flex-column h-100">
+              <h6 class="mb-sm-3">Browse by:</h6>
+              <!-- Tab item START -->
+              <div class="grid-menu mb-4" data-target=".filter-container">
+                <ul class="nav flex-md-column gap-1 nav-pills nav-pills-primary">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-filter="*">All work</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-filter=".marketing">Digital Marketing</a>          
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-filter=".design">Web design</a>        
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" data-filter=".business">Business development</a>        
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-filter=".brand">Brand design</a>        
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-filter=".ui">UI/UX design</a>        
+                  </li>
+                </ul>
+
+                <!--Tab item END  -->
+              </div>
+              
+              <!-- Button -->
+              <a href="portfolio-showcase.html" class="btn btn-light mt-auto mb-5">View all projects<i class="fa-solid fa-arrow-right-long ms-2"></i></a>
+            </div>
+          </div>
+
+          <!-- Tab content START -->
+          <div class="col-md-8 col-lg-9">
+            <div class="row g-4 filter-container" data-isotope="{&quot;layoutMode&quot;: &quot;masonry&quot;}" style="position: relative; height: 636.653px;">
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item marketing business brand" style="position: absolute; left: 0px; top: 0px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/01.jpg" alt="portfolio-image">  
+
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Dynamic Workflows Website</a></h6>
+                      <small class="text-white">UI/UX design</small>
+                    </div>
+                  </div>						
+                </div>
+              </div>
+
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item brand ui" style="position: absolute; left: 283.891px; top: 0px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/04.jpg" alt="portfolio-image">  
+                    
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">ElevateTech Redesign</a></h6>
+                      <small class="text-white">Brand design</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item business design brand" style="position: absolute; left: 567.782px; top: 0px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/02.jpg" alt="portfolio-image">  	
+                  
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">User-Centric Redesign</a></h6>
+                      <small class="text-white">Web design</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item design marketing" style="position: absolute; left: 283.891px; top: 266.662px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/05.jpg" alt="portfolio-image">
+                  
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Sustainability Initiative</a></h6>
+                      <small class="text-white">Business dev</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item business design" style="position: absolute; left: 567.782px; top: 266.662px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/06.jpg" alt="portfolio-image"> 
+                  
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">E-commerce Expansion</a></h6>
+                      <small class="text-white">Digital Marketing</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item ui" style="position: absolute; left: 0px; top: 370.162px;">
+                <div class="card card-element-hover card-metro-hover">
+                  <!-- Card Image -->              
+                  <img src="assets/images/portfolio/masonry/03.jpg" alt="portfolio-image"> 
+                  
+                  <!-- Card elements -->
+                  <div class="card-img-overlay hover-element d-flex"> 
+                    <!-- Info -->
+                    <div class="card-text mt-auto">
+                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Social Media Engagement</a></h6>
+                      <small class="text-white">UI/UX design</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tab content END -->
+        </div> <!-- Row END -->
+      </div>	
+    </section>
+    <!-- end-6-emotional-payoff -->
+
     <!--Our culture and values-->
     <section class="container py-3 py-lg-5 pt-5 mt-5 mb-3">
       <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
