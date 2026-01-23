@@ -171,6 +171,46 @@
       background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
       }
 
+      p{
+				--bs-body-font-family: "Inter", sans-serif;
+				--bs-body-font-size: 1rem;
+				--bs-body-font-weight: 400;
+				--bs-body-line-height: 1.5;
+				
+				font-family: var(--bs-body-font-family);
+				font-size: var(--bs-body-font-size);
+				font-weight: var(--bs-body-font-weight);
+				line-height: var(--bs-body-line-height);
+				
+			}
+			
+			.bi-quote::before {
+				content: "\f6b0";
+			}
+			
+			.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
+				display: inline-block;
+				font-family: bootstrap-icons !important;
+				font-style: normal;
+				font-weight: normal !important;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				vertical-align: -.125em;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			.nav-pills .nav-link {
+				cursor: pointer;
+				padding: 0.5rem 1rem;
+				color: var(--bs-primary);
+				white-space: nowrap;
+			}
+			.nav-pills .nav-link {
+				border-radius: var(--bs-nav-pills-border-radius);
+			}
+
       .bg-light {
           --bs-bg-opacity: 1;
           /* --bs-light-rgb: 248, 248, 248; */

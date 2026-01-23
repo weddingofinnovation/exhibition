@@ -876,6 +876,7 @@
 			.bi-quote::before {
 				content: "\f6b0";
 			}
+			
 			.bi::before, [class^="bi-"]::before, [class*=" bi-"]::before {
 				display: inline-block;
 				font-family: bootstrap-icons !important;
