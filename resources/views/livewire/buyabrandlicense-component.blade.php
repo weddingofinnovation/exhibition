@@ -1,6 +1,24 @@
 <main>
 
+<style>
+      .plus-badge {
+            background: #00e3c8;
+            color: #000;
+            font-weight: 700;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
 
+      .btn-outline-primary{
+        border-color: #000;
+        color: #000;
+      }
+
+      .text-muted {
+        color: #000;
+      }
+</style>
 <!-- new -->
 
 <!-- new -->
@@ -9,7 +27,7 @@
     <div class="row align-items-center g-5">
 
       <!-- LEFT CONTENT -->
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <span class="badge bg-danger mb-3">Exhibition Stall Design</span>
 
         <h4 class="display-5 fw-semibold mb-3">
@@ -21,7 +39,7 @@
           and help your brand stand out on the show floor.
         </p>
 
-        <p class="text-muted mb-4">
+        <p class="text-muted mb-4" style="color: #000;">
           From concept to on-site installation — <strong>we handle everything.</strong>
         </p>
 
@@ -40,7 +58,7 @@
       </div>
 
       <!-- RIGHT OPTIONS -->
-      <div class="col-lg-6">
+      <div class="col-lg-5">
         <div class="card shadow-sm border-0">
           <div class="card-body p-4">
 
@@ -93,7 +111,7 @@
           <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
             </div>
-            <h2 class="display-5 fw-normal">Your Stall Has Just 3 Seconds to Get Noticed</h2>
+            <h2 class="display-5 fw-normal">Your Stall Has <br> Just 3 Seconds <br>to Get Noticed</h2>
             <p class="col-md-6 col-lg-8  mx-auto lead">We design & fabricate exhibition stalls that attract attention, engage visitors, and help your brand stand out on the show floor.</p>
              <small>From concept to on-site installation — we handle everything.</small>
             <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Get Free Stall Consultation</a>
