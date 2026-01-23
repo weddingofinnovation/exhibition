@@ -144,6 +144,24 @@
 
 <!-- new-end -->
 
+
+<style>
+  .masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: 8px;
+  gap: 16px;
+}
+
+.masonry-item {
+  grid-row: span var(--rows);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+
+</style>
       @php 
 			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
