@@ -481,6 +481,20 @@
           outline: 0;
           margin-bottom: 6px;
       }
+
+      [data-bs-theme="emotional"] .fa-classic, .fa-regular, .fa-solid, .far, .fas {
+       font-family: "Font Awesome 6 Free";
+      }
+
+      [data-bs-theme="emotional"] .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          display: var(--fa-display, inline-block);
+          font-style: normal;
+          font-variant: normal;
+          line-height: 1;
+          text-rendering: auto;
+      }
     </style>
 
     <!-- new -->
