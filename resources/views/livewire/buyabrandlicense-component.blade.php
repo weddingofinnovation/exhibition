@@ -164,7 +164,12 @@
       .rounded-3 {
           border-radius: .4375rem !important;
       }
-      
+
+      .bg-dark {
+      --bs-bg-opacity: 1;
+      --bs-dark-rgb: 32, 33, 36;
+      background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+      }
 
       .bg-light {
           --bs-bg-opacity: 1;
