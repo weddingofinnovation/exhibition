@@ -144,32 +144,29 @@
 
 <!-- new-end -->
 
-    <div class="columns-1 sm:columns-2 md:columns-3 gap-6 px-4">
       @php 
 			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
+
       
-        @foreach($photos as $imgo)
-            <div class="mb-6 break-inside-avoid rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
-                
-                <img 
-                    src="{{ url('public/assets/image/exhibition/'.$imgo->brand_lgo) }}" 
-                    class="w-full"
-                    alt="Exhibition Stall"
-                >
+    <div class="masonry-grid">
+      @foreach($photos as $imgo)
+        <div class="masonry-item" style="--rows: {{ rand(18, 40) }}">
+          
+          <img 
+            src="{{ url('public/assets/image/exhibition/'.$imgo->brand_lgo) }}"
+            class="w-full h-full object-cover"
+          >
 
-                <div class="p-3">
-                    <h4 class="text-sm font-semibold text-gray-800">
-                        {{ $imgo->brand_name ?? 'Stall Design' }}
-                    </h4>
-                    <p class="text-xs text-gray-500">
-                        9 sqm | Modular Booth
-                    </p>
-                </div>
+          <!-- Hover Overlay -->
+          <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+            <span class="text-white text-sm font-semibold">View Stall</span>
+          </div>
 
-            </div>
-        @endforeach
+        </div>
+      @endforeach
     </div>
+
 
 <!-- optimize -->
  
