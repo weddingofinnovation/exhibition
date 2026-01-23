@@ -315,104 +315,107 @@
     <section class="py-5">
         <div class="container">
             <div class="marketing-card p-4 p-lg-5">
-                <div class="row g-4 align-items-start">
+              <h2 class="display-5 text-center my-2">Boost your brand with O'lero Studio.</h2>
+              <p class="fs-sm  text-center">No design experience needed. Easily create content that elevates your brand everywhere, from your website to social posts and advertising.</p>
+                  
+                  <div class="row g-4 align-items-start">
 
-                    <!-- LEFT CONTENT -->
-                    <div class="col-lg-3">
-                        <span class="badge plus-badge mb-3">PLUS</span>
-                        <h3 class="fw-bold display-6" style="color: #000;">
-                            A Simple,<br>Stress-Free Journey<br>includes:
-                        </h3>
-                    </div>
+                      <!-- LEFT CONTENT -->
+                      <div class="col-lg-3">
+                          <span class="badge plus-badge mb-3">PLUS</span>
+                          <h3 class="fw-bold display-6" style="color: #000;">
+                              A Simple,<br>Stress-Free Journey<br>includes:
+                          </h3>
+                      </div>
 
-                    <!-- RIGHT FEATURES -->
-                    <div class="col-lg-9">
-                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+                      <!-- RIGHT FEATURES -->
+                      <div class="col-lg-9">
+                          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-                            <!-- Item -->
-                            <div class="col">
-                                <div class="feature-box h-100">
-                                    <div class="icon">
-                                        <!-- SVG ICON -->
-                                        <svg class="icon fs-md" viewBox="0 0 24 24">
-                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
-                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
-                                        </svg>
-                                    </div>
+                              <!-- Item -->
+                              <div class="col">
+                                  <div class="feature-box h-100">
+                                      <div class="icon">
+                                          <!-- SVG ICON -->
+                                          <svg class="icon fs-md" viewBox="0 0 24 24">
+                                              <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                              <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                          </svg>
+                                      </div>
 
-                                    <h6 class="title">Understand Your Brand</h6>
-                                    <p class="desc">We learn about your goals, space size, audience, and budget.
-                                      Take advantage of Ol'ero Airo™ to create customizable busienss design.</p>
-                                </div>
-                            </div>
+                                      <h6 class="title">Understand Your Brand</h6>
+                                      <p class="desc">We learn about your goals, space size, audience, and budget.
+                                        Take advantage of Ol'ero Airo™ to create customizable busienss design.</p>
+                                  </div>
+                              </div>
 
-                            <!-- Repeat -->
-                            <div class="col">
-                                <div class="feature-box h-100">
-                                    <div class="icon">
-                                        <!-- SVG ICON -->
-                                        <svg class="icon fs-md" viewBox="0 0 24 24">
-                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
-                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
-                                        </svg>
-                                    </div>
-                                    <h6 class="title">Design the Stall</h6>
-                                    <p class="desc">
-                                        3D designs that show exactly how your stall will look.
-                                    </p>
-                                </div>
-                            </div>
-
-
-                            <div class="col">
-                                <div class="feature-box h-100">
-                                    <div class="icon">
-                                        <svg class="icon" viewBox="0 0 24 24">
-                                            <rect x="3" y="4" width="18" height="16" rx="2"
-                                                fill="none" stroke="currentColor" stroke-width="1.5" />
-                                            <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
-                                        </svg>
-                                    </div>
-                                    <h6 class="title">Finalize & Fabricate</h6>
-                                    <p class="desc">Clear pricing. Quality materials. No middlemen. Create visual content with photos and videos.</p>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="feature-box h-100">
-                                    <div class="icon">
-                                        <svg class="icon" viewBox="0 0 24 24">
-                                            <rect x="3" y="5" width="18" height="14" rx="2"
-                                                fill="none" stroke="currentColor" stroke-width="1.5" />
-                                            <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                                            <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                                stroke="currentColor" stroke-width="1.5" fill="none" />
-                                        </svg>
-                                    </div>
-
-                                    <h6 class="title">On-Site Installation</h6>
-                                    <p class="desc">Timely setup, clean finish, exhibition-ready delivery.</p>
-                                </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="feature-box h-100">
-                                    <div class="icon">
-                                        <svg class="icon" viewBox="0 0 24 24">
-                                            <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                                fill="none" stroke="currentColor" stroke-width="1.5" />
-                                        </svg>
-                                    </div>
-                                    <h6 class="title">You focus on visitors. We handle everything else.</h6>
-                                    <p class="desc">your stall will look professional and purposeful.</p>
-                                </div>
-                            </div>
+                              <!-- Repeat -->
+                              <div class="col">
+                                  <div class="feature-box h-100">
+                                      <div class="icon">
+                                          <!-- SVG ICON -->
+                                          <svg class="icon fs-md" viewBox="0 0 24 24">
+                                              <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                              <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                          </svg>
+                                      </div>
+                                      <h6 class="title">Design the Stall</h6>
+                                      <p class="desc">
+                                          3D designs that show exactly how your stall will look.
+                                      </p>
+                                  </div>
+                              </div>
 
 
-                        </div>
-                    </div>
+                              <div class="col">
+                                  <div class="feature-box h-100">
+                                      <div class="icon">
+                                          <svg class="icon" viewBox="0 0 24 24">
+                                              <rect x="3" y="4" width="18" height="16" rx="2"
+                                                  fill="none" stroke="currentColor" stroke-width="1.5" />
+                                              <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
+                                          </svg>
+                                      </div>
+                                      <h6 class="title">Finalize & Fabricate</h6>
+                                      <p class="desc">Clear pricing. Quality materials. No middlemen. Create visual content with photos and videos.</p>
+                                  </div>
+                              </div>
 
-                </div>
+                              <div class="col">
+                                  <div class="feature-box h-100">
+                                      <div class="icon">
+                                          <svg class="icon" viewBox="0 0 24 24">
+                                              <rect x="3" y="5" width="18" height="14" rx="2"
+                                                  fill="none" stroke="currentColor" stroke-width="1.5" />
+                                              <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
+                                              <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                                  stroke="currentColor" stroke-width="1.5" fill="none" />
+                                          </svg>
+                                      </div>
+
+                                      <h6 class="title">On-Site Installation</h6>
+                                      <p class="desc">Timely setup, clean finish, exhibition-ready delivery.</p>
+                                  </div>
+                              </div>
+
+                              <div class="col">
+                                  <div class="feature-box h-100">
+                                      <div class="icon">
+                                          <svg class="icon" viewBox="0 0 24 24">
+                                              <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                                  fill="none" stroke="currentColor" stroke-width="1.5" />
+                                          </svg>
+                                      </div>
+                                      <h6 class="title">You focus on visitors. We handle everything else.</h6>
+                                      <p class="desc">your stall will look professional and purposeful.</p>
+                                  </div>
+                              </div>
+
+
+                          </div>
+                      </div>
+
+                  </div>
             </div>
         </div>
     </section>
@@ -436,7 +439,7 @@
         }
 
       </style>
-      
+
       @php 
 			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
