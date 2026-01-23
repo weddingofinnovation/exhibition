@@ -155,6 +155,11 @@
           line-height: 1.25;
           color: var(--bs-heading-color);
       }
+
+      .heading-color {
+          /* --bs-gray-900: #202124; */
+          color: var(--bs-gray-900) !important;
+      }
       
       h2, .h2 {
           font-size: calc(1.4rem + 1.8vw);
