@@ -1741,23 +1741,9 @@
 			</section>
 	@endif
 
-	@if( $this->productservice == 'stall-fabrication')
-
-		<!-- resources/views/livewire/masonry-gallery.blade.php -->
-		<div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 px-4">
-			@php 
-			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
-			@endphp
-
-			@foreach($photos as $imgo)
-				<div class="container">
-					<img src="{{url('public/assets/image/exhibition/'.$imgo->brand_lgo)}}" width="50%" alt="">
-					<a href="" wire:click.prevent="delphoto({{$imgo->id}})"><i class="bi bi-x"></i> </a>
-				</div>
-			@endforeach
-		</div>
-
-	@elseif( $this->productservice == 'exhibition-navigator')
+	
+		
+	@if( $this->productservice == 'exhibition-navigator')
 
 			<section class="position-relative overflow-hidden pb-0 pt-xl-9" data-bs-theme="light">
 				<!-- SVG decoration -->
