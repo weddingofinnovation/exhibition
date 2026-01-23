@@ -208,175 +208,175 @@
 
 
 <!-- secondary try -->
-<style>
-    .marketing-card {
-        background: #f7f8f8;
-        border-radius: 18px;
-    }
+    <style>
+        .marketing-card {
+            background: #f7f8f8;
+            border-radius: 18px;
+        }
 
-    .plus-badge {
-        background: #00e3c8;
-        color: #000;
-        font-weight: 700;
-        padding: 6px 10px;
-        font-size: 12px;
-        border-radius: 4px;
-    }
+        .plus-badge {
+            background: #00e3c8;
+            color: #000;
+            font-weight: 700;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
 
-    .feature-item h6 {
-        font-weight: 600;
-        margin-top: 12px;
-    }
+        .feature-item h6 {
+            font-weight: 600;
+            margin-top: 12px;
+        }
 
-    .feature-item p {
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 0;
-    }
+        .feature-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 0;
+        }
 
-    .feature-item .icon {
-        width: 26px;
-        height: 26px;
-        color: #000;
-    }
-</style>
-
-
-<style>
-    .feature-box {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .feature-box .icon {
-        height: 40px;
-        /* FIXED icon height */
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        color: #000;
-    }
-
-    .feature-box .title {
-        min-height: 44px;
-        /* FIX title height */
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #000;
-    }
-
-    .feature-box .desc {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #000;
-        margin-top: 1rem;
-    }
-</style>
-
-<section class="py-5">
-    <div class="container">
-        <div class="marketing-card p-4 p-lg-5">
-            <div class="row g-4 align-items-start">
-
-                <!-- LEFT CONTENT -->
-                <div class="col-lg-3">
-                    <span class="badge plus-badge mb-3">PLUS</span>
-                    <h3 class="fw-bold display-6" style="color: #000;">
-                        Every Digital<br>Marketing<br>plan includes:
-                    </h3>
-                </div>
-
-                <!-- RIGHT FEATURES -->
-                <div class="col-lg-9">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-
-                        <!-- Item -->
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <!-- SVG ICON -->
-                                    <svg class="icon fs-md" viewBox="0 0 24 24">
-                                        <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
-                                        <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
-                                </div>
-
-                                <h6 class="title">AI-generated content</h6>
-                                <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
-                            </div>
-                        </div>
-
-                        <!-- Repeat -->
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <!-- SVG ICON -->
-                                    <svg class="icon fs-md" viewBox="0 0 24 24">
-                                        <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
-                                        <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
-                                </div>
-                                <h6 class="title">Email marketing campaigns</h6>
-                                <p class="desc">
-                                    Reach out to customers to always be relevant and top of mind.
-                                </p>
-                            </div>
-                        </div>
+        .feature-item .icon {
+            width: 26px;
+            height: 26px;
+            color: #000;
+        }
+    </style>
 
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                        <rect x="3" y="4" width="18" height="16" rx="2"
-                                            fill="none" stroke="currentColor" stroke-width="1.5" />
-                                        <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
-                                </div>
-                                <h6 class="title">Scheduled social media posts</h6>
-                                <p class="desc">Post consistently to improve reach and engagement.</p>
-                            </div>
-                        </div>
+    <style>
+        .feature-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                        <rect x="3" y="5" width="18" height="14" rx="2"
-                                            fill="none" stroke="currentColor" stroke-width="1.5" />
-                                        <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
-                                        <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                            stroke="currentColor" stroke-width="1.5" fill="none" />
-                                    </svg>
-                                </div>
+        .feature-box .icon {
+            height: 40px;
+            /* FIXED icon height */
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #000;
+        }
 
-                                <h6 class="title">Branded images and videos</h6>
-                                <p class="desc">Create visual content with photos and videos.</p>
-                            </div>
-                        </div>
+        .feature-box .title {
+            min-height: 44px;
+            /* FIX title height */
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000;
+        }
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                        <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                            fill="none" stroke="currentColor" stroke-width="1.5" />
-                                    </svg>
-                                </div>
-                                <h6 class="title">Design Studio</h6>
-                                <p class="desc">Create logos, websites, and ads with ease.</p>
-                            </div>
-                        </div>
+        .feature-box .desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #000;
+            margin-top: 1rem;
+        }
+    </style>
 
+    <section class="py-5">
+        <div class="container">
+            <div class="marketing-card p-4 p-lg-5">
+                <div class="row g-4 align-items-start">
 
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-3">
+                        <span class="badge plus-badge mb-3">PLUS</span>
+                        <h3 class="fw-bold display-6" style="color: #000;">
+                            Every Digital<br>Marketing<br>plan includes:
+                        </h3>
                     </div>
-                </div>
 
+                    <!-- RIGHT FEATURES -->
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                            <!-- Item -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">AI-generated content</h6>
+                                    <p class="desc">Take advantage of GoDaddy Airo™ to create customizable content.</p>
+                                </div>
+                            </div>
+
+                            <!-- Repeat -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Email marketing campaigns</h6>
+                                    <p class="desc">
+                                        Reach out to customers to always be relevant and top of mind.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Scheduled social media posts</h6>
+                                    <p class="desc">Post consistently to improve reach and engagement.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
+                                            <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                                stroke="currentColor" stroke-width="1.5" fill="none" />
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">Branded images and videos</h6>
+                                    <p class="desc">Create visual content with photos and videos.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Design Studio</h6>
+                                    <p class="desc">Create logos, websites, and ads with ease.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">

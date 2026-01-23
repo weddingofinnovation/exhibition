@@ -10,9 +10,12 @@
           <div class="text-center mt-4 mb-3">
             <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger">
             </div>
-            <h2 class="display-5 fw-normal">Boost your Brand</h2>
-            <p class="col-md-6 col-lg-8  mx-auto lead">Smart exhibition solutions that reduce cost, simplify participation, and maximize visibility for growing brands.</p>
-            <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Strategize Market Expansion to your Business</a>
+            <h2 class="display-5 fw-normal">Your Stall Has Just 3 Seconds to Get Noticed</h2>
+            <p class="col-md-6 col-lg-8  mx-auto lead">We design & fabricate exhibition stalls that attract attention, engage visitors, and help your brand stand out on the show floor.</p>
+             <small>From concept to on-site installation — we handle everything.</small>
+            <a href="#opening" class="btn btn-lg btn-outline-primary mb-3">Get Free Stall Consultation</a>
+            <a href="#opening" class="btn btn-lg btn-outline-primary mb-3"> View Our Work</a>
+           
             <a href="" class="btn btn-sm" style="color:#000">Get Started</a>
           </div>
         </div>
@@ -142,48 +145,219 @@
         </div>
     </section>
 
+<!-- secondary try -->
+    <style>
+        .marketing-card {
+            background: #f7f8f8;
+            border-radius: 18px;
+        }
+
+        .plus-badge {
+            background: #00e3c8;
+            color: #000;
+            font-weight: 700;
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .feature-item h6 {
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        .feature-item .icon {
+            width: 26px;
+            height: 26px;
+            color: #000;
+        }
+    </style>
+
+
+    <style>
+        .feature-box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .feature-box .icon {
+            height: 40px;
+            /* FIXED icon height */
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #000;
+        }
+
+        .feature-box .title {
+            min-height: 44px;
+            /* FIX title height */
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .feature-box .desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #000;
+            margin-top: 1rem;
+        }
+    </style>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="marketing-card p-4 p-lg-5">
+                <div class="row g-4 align-items-start">
+
+                    <!-- LEFT CONTENT -->
+                    <div class="col-lg-3">
+                        <span class="badge plus-badge mb-3">PLUS</span>
+                        <h3 class="fw-bold display-6" style="color: #000;">
+                            A Simple,<br>Stress-Free Journey<br>includes:
+                        </h3>
+                    </div>
+
+                    <!-- RIGHT FEATURES -->
+                    <div class="col-lg-9">
+                        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
+
+                            <!-- Item -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">Understand Your Brand</h6>
+                                    <p class="desc">We learn about your goals, space size, audience, and budget.
+                                      Take advantage of Ol'ero Airo™ to create customizable busienss design.</p>
+                                </div>
+                            </div>
+
+                            <!-- Repeat -->
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <!-- SVG ICON -->
+                                        <svg class="icon fs-md" viewBox="0 0 24 24">
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Design the Stall</h6>
+                                    <p class="desc">
+                                        3D designs that show exactly how your stall will look.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Finalize & Fabricate</h6>
+                                    <p class="desc">Clear pricing. Quality materials. No middlemen. Create visual content with photos and videos.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
+                                            <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                                stroke="currentColor" stroke-width="1.5" fill="none" />
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">On-Site Installation</h6>
+                                    <p class="desc">Timely setup, clean finish, exhibition-ready delivery.</p>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">You focus on visitors. We handle everything else.</h6>
+                                    <p class="desc">your stall will look professional and purposeful.</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 <!-- new-end -->
 
+      <style>
+        .masonry-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        grid-auto-rows: 8px;
+        gap: 16px;
+        }
 
-<style>
-  .masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  grid-auto-rows: 8px;
-  gap: 16px;
-}
+        .masonry-item {
+          grid-row: span var(--rows);
+          border-radius: 14px;
+          overflow: hidden;
+          position: relative;
+          background: #fff;
+        }
 
-.masonry-item {
-  grid-row: span var(--rows);
-  border-radius: 14px;
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-}
-
-</style>
+      </style>
       @php 
 			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
 			@endphp
-
       
-    <div class="masonry-grid">
-      @foreach($photos as $imgo)
-        <div class="masonry-item" style="--rows: {{ rand(18, 40) }}">
-          
-          <img 
-            src="{{ url('public/assets/image/exhibition/'.$imgo->brand_lgo) }}"
-            class="w-full h-full object-cover"
-          >
+      <div class="masonry-grid">
+        @foreach($photos as $imgo)
+          <div class="masonry-item" style="--rows: {{ rand(18, 40) }}">
+            
+            <img 
+              src="{{ url('public/assets/image/exhibition/'.$imgo->brand_lgo) }}"
+              class="w-full h-full object-cover"
+            >
 
-          <!-- Hover Overlay -->
-          <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 hover:opacity-100 transition">
-            <span class="text-white text-sm font-semibold">View Stall</span>
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 hover:opacity-100 transition">
+              <span class="text-white text-sm font-semibold">View Stall</span>
+            </div>
+
           </div>
-
-        </div>
-      @endforeach
-    </div>
+        @endforeach
+      </div>
 
 
 <!-- optimize -->
