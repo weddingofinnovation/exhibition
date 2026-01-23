@@ -238,6 +238,28 @@
       }
     </style>
 
+    <style>
+      :root[data-bs-theme=emotional]{
+
+      .inner-container {
+            max-width: 900px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+      h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-family: "Instrument Sans", sans-serif;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--bs-heading-color);
+        }
+        
+
+      }
+    </style>
+
     <!-- new -->
     <section class="container-fluid py-0 my-3 bg-light">
       <div class="container">
@@ -841,7 +863,7 @@
     
 
     <!-- start-6-emotional-payoff -->
-    <section class="my-5 py-5">
+    <section class="my-5 py-5" data-bs-theme="emotional">
       <div class="container">
         <!-- Title -->
         <div class="inner-container text-center mb-4 mb-sm-6">
@@ -887,110 +909,152 @@
 
           <!-- Tab content START -->
           <div class="col-md-8 col-lg-9">
-            <div class="row g-4 filter-container" data-isotope="{&quot;layoutMode&quot;: &quot;masonry&quot;}" style="position: relative; height: 636.653px;">
-              <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item marketing business brand" style="position: absolute; left: 0px; top: 0px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/01.jpg" alt="portfolio-image">  
+            <div class="row g-4 filter-container" data-isotope='{"layoutMode":"masonry"}'>
 
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <!-- Work item -->
+              <div class="col-sm-6 col-lg-4 grid-item marketing business brand">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+                  
+                  <!-- Card Image -->
+                  <img src="assets/images/portfolio/masonry/01.jpg"
+                      class="card-img"
+                      alt="Dynamic Workflows Website">
+
+                  <!-- Overlay -->
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Dynamic Workflows Website</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          Dynamic Workflows Website
+                        </a>
+                      </h6>
                       <small class="text-white">UI/UX design</small>
                     </div>
-                  </div>						
+                  </div>
+
                 </div>
               </div>
 
               <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item brand ui" style="position: absolute; left: 283.891px; top: 0px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/04.jpg" alt="portfolio-image">  
-                    
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <div class="col-sm-6 col-lg-4 grid-item brand ui">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+
+                  <img src="assets/images/portfolio/masonry/04.jpg"
+                      class="card-img"
+                      alt="ElevateTech Redesign">
+
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">ElevateTech Redesign</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          ElevateTech Redesign
+                        </a>
+                      </h6>
                       <small class="text-white">Brand design</small>
                     </div>
                   </div>
+
                 </div>
               </div>
 
               <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item business design brand" style="position: absolute; left: 567.782px; top: 0px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/02.jpg" alt="portfolio-image">  	
-                  
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <div class="col-sm-6 col-lg-4 grid-item business design brand">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+
+                  <img src="assets/images/portfolio/masonry/02.jpg"
+                      class="card-img"
+                      alt="User-Centric Redesign">
+
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">User-Centric Redesign</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          User-Centric Redesign
+                        </a>
+                      </h6>
                       <small class="text-white">Web design</small>
                     </div>
                   </div>
+
                 </div>
               </div>
 
               <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item design marketing" style="position: absolute; left: 283.891px; top: 266.662px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/05.jpg" alt="portfolio-image">
-                  
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <div class="col-sm-6 col-lg-4 grid-item design marketing">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+
+                  <img src="assets/images/portfolio/masonry/05.jpg"
+                      class="card-img"
+                      alt="Sustainability Initiative">
+
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Sustainability Initiative</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          Sustainability Initiative
+                        </a>
+                      </h6>
                       <small class="text-white">Business dev</small>
                     </div>
                   </div>
+
                 </div>
               </div>
 
               <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item business design" style="position: absolute; left: 567.782px; top: 266.662px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/06.jpg" alt="portfolio-image"> 
-                  
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <div class="col-sm-6 col-lg-4 grid-item business design">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+
+                  <img src="assets/images/portfolio/masonry/06.jpg"
+                      class="card-img"
+                      alt="E-commerce Expansion">
+
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">E-commerce Expansion</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          E-commerce Expansion
+                        </a>
+                      </h6>
                       <small class="text-white">Digital Marketing</small>
                     </div>
                   </div>
+
                 </div>
               </div>
 
               <!-- Work item -->
-              <div class="col-sm-6 col-lg-4 grid-item ui" style="position: absolute; left: 0px; top: 370.162px;">
-                <div class="card card-element-hover card-metro-hover">
-                  <!-- Card Image -->              
-                  <img src="assets/images/portfolio/masonry/03.jpg" alt="portfolio-image"> 
-                  
-                  <!-- Card elements -->
-                  <div class="card-img-overlay hover-element d-flex"> 
-                    <!-- Info -->
+              <div class="col-sm-6 col-lg-4 grid-item ui">
+                <div class="card card-element-hover card-metro-hover overflow-hidden">
+
+                  <img src="assets/images/portfolio/masonry/03.jpg"
+                      class="card-img"
+                      alt="Social Media Engagement">
+
+                  <div class="card-img-overlay hover-element d-flex">
                     <div class="card-text mt-auto">
-                      <h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">Social Media Engagement</a></h6>
+                      <h6 class="mb-0">
+                        <a href="portfolio-case-studies-v1.html"
+                          class="text-white stretched-link">
+                          Social Media Engagement
+                        </a>
+                      </h6>
                       <small class="text-white">UI/UX design</small>
                     </div>
                   </div>
+
                 </div>
               </div>
+
             </div>
           </div>
+
+
           <!-- Tab content END -->
         </div> <!-- Row END -->
       </div>	
