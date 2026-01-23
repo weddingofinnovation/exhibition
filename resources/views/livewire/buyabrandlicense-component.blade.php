@@ -286,6 +286,35 @@
             margin-right: calc(-0.5 * var(--bs-gutter-x));
             margin-left: calc(-0.5 * var(--bs-gutter-x));
         }
+
+      [data-bs-theme="emotional"] .gap-1 {
+              gap: 0.25rem !important;
+          }
+
+      [data-bs-theme="emotional"] .nav-pills {
+            --bs-nav-pills-border-radius: 0.313rem;
+            --bs-nav-pills-link-active-color: #fff;
+            --bs-nav-pills-link-active-bg: #09B850;
+        }
+
+    
+  [data-bs-theme="emotional"] .nav {
+    --bs-nav-link-padding-x: 0.75rem;
+    --bs-nav-link-padding-y: 1rem;
+    --bs-nav-link-font-size: 0.938rem;
+    --bs-nav-link-font-weight: 500;
+    --bs-nav-link-color: #606261;
+    --bs-nav-link-hover-color: var(--bs-primary);
+    --bs-nav-link-disabled-color: var(--bs-gray-500) !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
     </style>
 
     <!-- new -->
