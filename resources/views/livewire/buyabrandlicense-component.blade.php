@@ -455,6 +455,18 @@
           font-weight: 500;
           border-radius: 0.313rem;
       }
+
+      [data-bs-theme="emotional"] .nav-link {
+          display: block;
+          padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+          font-size: var(--bs-nav-link-font-size);
+          font-weight: var(--bs-nav-link-font-weight);
+          color: var(--bs-nav-link-color);
+          background: none;
+          border: 0;
+          -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+          transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      }
     </style>
 
     <!-- new -->
