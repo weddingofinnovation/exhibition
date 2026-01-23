@@ -145,6 +145,10 @@
 <!-- new-end -->
 
     <div class="columns-1 sm:columns-2 md:columns-3 gap-6 px-4">
+      @php 
+			  $photos = DB::table('photos')->where('usago', 'fabric')->get();
+			@endphp
+      
         @foreach($photos as $imgo)
             <div class="mb-6 break-inside-avoid rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition">
                 
