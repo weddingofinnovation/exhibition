@@ -467,6 +467,20 @@
           -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
           transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
       }
+
+      [data-bs-theme="emotional"] .btn-light {
+      background: var(--bs-light);
+      border-color: var(--bs-light);
+      color: var(--bs-gray-900);
+      }
+
+      [data-bs-theme="emotional"] .btn {
+          letter-spacing: 0.5px;
+          position: relative;
+          overflow: hidden;
+          outline: 0;
+          margin-bottom: 6px;
+      }
     </style>
 
     <!-- new -->
