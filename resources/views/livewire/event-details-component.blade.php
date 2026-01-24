@@ -4912,7 +4912,7 @@
     </style>
     
     <!-- new-try -->
-    <section class="pt-4 sticky-section">
+    <section class="pt-4 sticky-section d-none d-md-block">
         <div class="container">
             <!-- Trust / Rating Bar -->
             <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
@@ -5497,7 +5497,7 @@
     </style>
 
     <!-- secondary try -->
-    <section class="py-5">
+    <section class="py-5 d-none d-md-block">
         <div class="container">
             <div class="marketing-card p-4 p-lg-5">
                 <div class="row g-4 align-items-start">
