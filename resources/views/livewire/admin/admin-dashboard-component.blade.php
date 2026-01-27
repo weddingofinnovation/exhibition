@@ -23,6 +23,7 @@
 
           <!-- Navigation Menu -->
           <ul class="nav nav-pills flex-column">
+
             <li class="nav-item mb-1">
               <a href="{{route('admin.global')}}"
                 class="nav-link {{ Request::is('admin/global') ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">
@@ -31,7 +32,8 @@
             </li>
 
             <li class="nav-item mb-1">
-              <a href="{{route('admin.dashboard', ['board' => 'order'])}}" class="nav-link {{ Request::get('board') == 'order' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">
+              <a href="{{route('admin.dashboard', ['board' => 'order'])}}" 
+              class="nav-link {{ Request::get('board') == 'order' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">
                 Leads
               </a>
             </li>
@@ -48,8 +50,9 @@
 
 
             <li class="nav-item mb-1">
-              <a href="#" class="nav-link {{ request('board') == 'analytics' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}"">Analytics</a>
+              <a href="#" class="nav-link {{ request('board') == 'analytics' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}">Analytics</a>
             </li>
+
             <li class="nav-item mb-1">
               <a href="#" class="nav-link text-dark" style="background-color: #fff;">Feed</a>
             </li>
@@ -57,6 +60,7 @@
               <a href="{{route('admin.dashboard', ['board' => 'speaker'])}}" class="nav-link {{ request('board') == 'speaker' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}" style="background-color: #fff;">Speaker</a>
               <span class="badge bg-danger rounded-pill">2</span>
             </li>
+
             <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
               <a href="#" class="nav-link text-dark" style="background-color: #fff;">Activity</a>
               <span class="badge bg-danger rounded-pill">2</span>
@@ -1210,13 +1214,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!--<tr>
+                            <tr>
                                   <td class="py-3"><a class="nav-link-style fw-medium" href="account-single-ticket.html">My new ticket</a></td>
                                   <td class="py-3">09/27/2019 | 09/30/2019</td>
                                   <td class="py-3">Website problem</td>
                                   <td class="py-3"><span class="badge bg-warning m-0">High</span></td>
                                   <td class="py-3"><span class="badge bg-success m-0">Open</span></td>
-                                </tr>-->
+                                </tr>
 
                     @foreach ($jobs as $info)
                     <tr>
@@ -1234,7 +1238,8 @@
                       </td>
                       <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
                           <div class=" bi bi-x"></div>
-                        </a> </td>
+                        </a> 
+                      </td>
                     </tr>
                     @endforeach
 
