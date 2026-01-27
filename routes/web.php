@@ -495,6 +495,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
   Route::get('/admin/contacts', AdminContactComponent::class)->name('admin.contact');
   Route::get('/admin/entity', AdminInfoComponent::class)->name('admin.info');
   Route::get('/admin/entity/add', AdminInfoAddComponent::class)->name('admin.infoadd');
+  
 
   Route::get('/admin/The-Exhibition-Network/opportunity/{slug}', AdminCareerComponent::class)->name('admin.job');
   Route::get('/admin/job/applicat', AdminJobApplicationComponent::class)->name('admin.resume');

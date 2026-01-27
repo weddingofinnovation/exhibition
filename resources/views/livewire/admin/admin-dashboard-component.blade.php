@@ -123,6 +123,11 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
                     </div>
+                @elseif($board == 'job')
+                  <h4 class="fw-bold mb-2">{{$board}}</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <a href="route('admin.jobCreate')" class="btn btn-primary">Add Job</a>
+                  </div>
                 @else
                 <h4 class="fw-bold mb-2">{{$board}}</h4>
                 <div class="d-flex justify-content-between align-items-center">
