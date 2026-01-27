@@ -32,7 +32,7 @@ class AdminCareerAddComponent extends Component
     
         $jobs = new Job() ;
         
-          $jobs->title = $this->title;
+          $jobs->title = trim($this->title);
           $jobs->slug = str::slug($jobs->title,'-');
           
           $blogdesc = explode(",,", $this->description);

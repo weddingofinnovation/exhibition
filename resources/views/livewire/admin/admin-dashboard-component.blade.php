@@ -1177,7 +1177,7 @@
                                   {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
 
                                 </div>
-                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state))}}, {{ucfirst(trans($franchise -> location_country))}}</div>
+                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state ?? 'null'))}}, {{ucfirst(trans($franchise -> location_country ?? ''))}}</div>
                               </div>
 
                               <div class="col-3  p-0">
