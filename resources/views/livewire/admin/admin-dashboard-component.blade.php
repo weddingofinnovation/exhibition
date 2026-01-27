@@ -1170,8 +1170,11 @@
                               </div>
 
                               <div class="col-7  p-0">
-                                <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
-                                    {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a></div>
+                                <div class="fs-md fw-normal text-start">
+                                  <a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
+                                    {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a>
+                                </div>
+                                
                                 <div class="text-muted fs-sm text-start">
 
                                   {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
