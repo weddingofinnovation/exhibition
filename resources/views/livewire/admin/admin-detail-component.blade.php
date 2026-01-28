@@ -482,7 +482,6 @@
 
                 <div class="my-3">
                   <div class="row align-items-center gx-2 gy-2 shadow-sm border rounded p-2">
-
                     <!-- COUNT -->
                     <div class="col-4 col-md-2 text-center">
                       <div class="h5 fw-light mb-0">{{ $eventparticipantsCount}}</div>
@@ -492,7 +491,7 @@
                     <!-- CLICKABLE CENTER -->
                     <div class="col-8 col-md-7">
                       <a href="{{ route('admin.multipartners',['event_id'=>$evento->id,'formm'=>'addParticipants']) }}"
-                        class="stretched-link text-decoration-none text-dark">
+                        class="">
                         <span class="fw-normal">Manage Participants</span>
                       </a>
                     </div>
