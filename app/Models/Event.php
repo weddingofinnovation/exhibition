@@ -10,6 +10,18 @@ class Event extends Model
     use HasFactory;
     protected $table = "events";
 
+     public function durationDays()
+    {
+        return Carbon::parse($this->start_date)
+            ->diffInDays(Carbon::parse($this->end_date)) + 1;
+    }
+
+    public function dayToDate($day)
+    {
+        return Carbon::parse($this->start_date)
+            ->addDays($day - 1);
+    }
+    
     public function category()
     {
     return $this->belongsTo(Category::class,'category_id');
