@@ -4281,9 +4281,9 @@
                                     <div class="col-md-3">
                                         <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>{{ucwords($event->eventname) }}</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug, 'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Date and opening hours</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'facts-&-figure'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug, 'optional' => 'facts-&-figure'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Facts and Figures</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Segment</a></li>
@@ -4483,13 +4483,13 @@
                                     <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'benefits-as-an-exhibitor'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Benefits as an exhibitor</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
-                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'benefits-as-an-exhibitor'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Benefits as an exhibitor</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug,'optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
                                         </ul>
                                     </div>
 
