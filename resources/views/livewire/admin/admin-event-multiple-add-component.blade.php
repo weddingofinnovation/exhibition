@@ -253,13 +253,13 @@
 
         @if($formm == 'desc')
         <form wire:submit.prevent="updateEventField">
-            <div class="col-sm-2">
+            <div class="col-sm-2 col">
                 <label class="form-label" for="cf-name">Desc</label>
                 <textarea class="form-control" type="text" placeholder="Your Desc" rows="5" wire:model.lazy="desc" required=""></textarea>
                 @error('desc'){{ $message}}@enderror
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-3 col">
                 <label class="form-label" for="seniority">Text Type</label>
 
                 <select class="form-control" type="text" wire:model.lazy="field_type" placeholder="Provide short title of your request">
