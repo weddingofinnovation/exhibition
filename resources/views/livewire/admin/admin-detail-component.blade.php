@@ -270,11 +270,15 @@
                 </div>
 
                 <div class="">
-                  <small>Post on Linkedin</small>
+                  <small>Post on Linkedin test</small>
 
                   <div class="input-group my-2">
                     <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="postToLinkedIn({{$evento->id}})">Post to LinkedIn</a>
                   </div>
+
+                </div>
+
+                <div class="">
 
                 </div>
 
@@ -1290,7 +1294,14 @@
 
                 </div>
 
-               
+                <div class="col">
+                  <a href="#" class="text-decoration-none">
+                    <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+                      <span class="fw-semibold text-dark">Jobs</span>
+                      <i class="bi bi-arrow-right text-primary"></i>
+                    </div>
+                  </a>
+                </div>
 
 
                 <div class="">
