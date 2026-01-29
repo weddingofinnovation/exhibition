@@ -56,6 +56,13 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
             <li>Market research & expansion planning</li>
           </ul>
 
+          @php
+            $getjobdetails->description = is_string($getjobdetails->description)
+                ? json_decode($getjobdetails->description, true)
+                : $getjobdetails->description;
+          @endphp
+
+
           {{-- Job Description --}}
           @if(!empty($getjobdetails->description))
           <h5 class="fw-semibold">Job Description</h5>
