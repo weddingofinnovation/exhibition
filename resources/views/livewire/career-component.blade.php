@@ -8,114 +8,117 @@
 $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 @endphp
 
-<div class="row">
-<div class="col-8">
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
+<div class="container">
+  <div class="row">
 
-      <!-- Job Header -->
-      <div class="card shadow-sm mb-4">
-        <div class="card-body">
-          <h2 class="fw-bold mb-2">{{$getjobdetails->title}}</h2>
-          <p class="text-muted mb-3">
-            Lead growth, partnerships & revenue for premium exhibitions and trade shows.
-          </p>
+    <div class="col-8">
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
 
-          <div class="row g-3">
-            <div class="col-md-4">
-              <strong>Level:</strong>
-              <p class="mb-0">{{$getjobdetails->level}}</p>
+            <!-- Job Header -->
+            <div class="card shadow-sm mb-4">
+              <div class="card-body">
+                <h2 class="fw-bold mb-2">{{$getjobdetails->title}}</h2>
+                <p class="text-muted mb-3">
+                  Lead growth, partnerships & revenue for premium exhibitions and trade shows.
+                </p>
+
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <strong>Level:</strong>
+                    <p class="mb-0">{{$getjobdetails->level}}</p>
+                  </div>
+                  <div class="col-md-4">
+                    <strong>Location:</strong>
+                    <p class="mb-0">{{$getjobdetails->location_state}} / {{$getjobdetails->location_country}}</p>
+                  </div>
+                  <div class="col-md-4">
+                    <strong>Salary:</strong>
+                    <p class="mb-0">₹6 – ₹12 LPA + Incentives</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="col-md-4">
-              <strong>Location:</strong>
-              <p class="mb-0">{{$getjobdetails->location_state}} / {{$getjobdetails->location_country}}</p>
+
+            <!-- Job Details -->
+            <div class="card shadow-sm">
+              
+              <div class="card-body">
+
+                @php
+                  $descriptions = json_decode($getjobdetails->description, true);
+                  $sklls = json_decode($getjobdetails->skills, true);
+                  $requirements = json_decode($getjobdetails->requirement, true);
+                @endphp
+
+                <h5 class="fw-semibold">Must-Have Skills</h5>
+                <ul>
+                  @foreach($sklls as $skill)
+                  <li>{{$skill}}</li>
+                  @endforeach
+                </ul>
+
+                <h5 class="fw-semibold mt-4">Good-to-Have Skills</h5>
+                <ul>
+                  <li>Exhibition & event industry exposure</li>
+                  <li>Sponsorship & large account handling</li>
+                  <li>Market research & expansion planning</li>
+                </ul>
+
+                
+
+                <h5 class="fw-semibold mt-4">Job Description</h5>
+                <ul>
+                  @foreach($descriptions as $description)
+                    <li>{{ $description }}</li>
+                  @endforeach
+                </ul>
+
+                <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
+                <ul>
+                  @foreach($requirements as $requirement)
+                    <li>{{$requirement}}</li>
+                  @endforeach
+                </ul>
+
+                <hr>
+
+                <div class="row mt-4">
+                  <div class="col-md-6">
+                    <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
+                    <p><strong>Department:</strong> {{$getjobdetails -> department}}</p>
+                  </div>
+
+                  <div class="col-md-6">
+                    <p><strong>Employment Type:</strong> {{$getjobdetails->type}}</p>
+                    <p><strong>Education:</strong> {{$getjobdetails -> qualification}}</p>
+                  </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-4">
+                  <a href="#apply-now" class="btn btn-primary btn-lg">
+                    Apply Now
+                  </a>
+                </div>
+
+              </div>
             </div>
-            <div class="col-md-4">
-              <strong>Salary:</strong>
-              <p class="mb-0">₹6 – ₹12 LPA + Incentives</p>
-            </div>
+
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Job Details -->
-      <div class="card shadow-sm">
-        
-        <div class="card-body">
-
-          @php
-            $descriptions = json_decode($getjobdetails->description, true);
-            $sklls = json_decode($getjobdetails->skills, true);
-            $requirements = json_decode($getjobdetails->requirement, true);
-          @endphp
-
-          <h5 class="fw-semibold">Must-Have Skills</h5>
-          <ul>
-            @foreach($sklls as $skill)
-            <li>{{$skill}}</li>
-            @endforeach
-          </ul>
-
-          <h5 class="fw-semibold mt-4">Good-to-Have Skills</h5>
-          <ul>
-            <li>Exhibition & event industry exposure</li>
-            <li>Sponsorship & large account handling</li>
-            <li>Market research & expansion planning</li>
-          </ul>
-
-          
-
-          <h5 class="fw-semibold mt-4">Job Description</h5>
-          <ul>
-            @foreach($descriptions as $description)
-              <li>{{ $description }}</li>
-            @endforeach
-          </ul>
-
-          <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
-          <ul>
-            @foreach($requirements as $requirement)
-              <li>{{$requirement}}</li>
-            @endforeach
-          </ul>
-
-          <hr>
-
-          <div class="row mt-4">
-            <div class="col-md-6">
-              <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
-              <p><strong>Department:</strong> {{$getjobdetails -> department}}</p>
-            </div>
-
-            <div class="col-md-6">
-              <p><strong>Employment Type:</strong> {{$getjobdetails->type}}</p>
-              <p><strong>Education:</strong> {{$getjobdetails -> qualification}}</p>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="text-center mt-4">
-            <a href="#apply-now" class="btn btn-primary btn-lg">
-              Apply Now
-            </a>
-          </div>
-
-        </div>
+    <div class="col-4">
+      <!--jobs apply form-->
+      <div class="row g-0" id="apply">
+        <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2" style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);"></div>
+        <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
       </div>
-
     </div>
   </div>
-</section>
-</div>
-
-<div class="col-4">
-  <!--jobs apply form-->
-<section class="row g-0" id="apply">
-  <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2" style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);"></div>
-  <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
-</section>
-</div>
 </div>
 
 
