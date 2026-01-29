@@ -307,7 +307,8 @@ Route::get('/exhibitor/{formm}/{user_id?}/{contractioid?}', ContractFromComponen
 
 
 //company details
-Route::get('/career', CareerComponent::class)->name('career');
+Route::get('/career/{slug?}', CareerComponent::class)->name('career');
+
 Route::get('/contact/{board}', ContactComponent::class)->name('contact');
 Route::get('/about-us', AboutComponent::class)->name('about');
 

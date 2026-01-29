@@ -7,8 +7,15 @@ use Livewire\Component;
 
 class CareerComponent extends Component
 {
+
+    public $slug;
+
+    public function mount ($slug = null)
+    {
+       $this->slug = $slug;
+    }
+
     public function render()
-    
     {
         $jobs = Job::orderBy('created_at', 'desc')->paginate(10);
         return view('livewire.career-component',['jobs'=> $jobs])->layout('layouts.eblog');
