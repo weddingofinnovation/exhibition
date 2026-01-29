@@ -1208,10 +1208,7 @@
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>title:slug:type</th>
-                      <th>skills:level</th>
-                      <th>desc:req</th>
-                      <th>qual:exp.</th>
+                      <th>title</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
@@ -1229,9 +1226,6 @@
                     <tr>
                       <td class="py-3 align-middle">{{$info->id}}</td>
                       <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
-                      <td class="py-3 align-middle fw-sm">{{Str::limit($info->skills, 25)}}<br>{{$info->level}}</td>
-                      <td class="py-3 align-middle fw-sm">{{Str::limit($info->description, 25)}}<br>{{Str::limit($info->requirement, 25)}}</td>
-                      <td class="py-3 align-middle fw-sm"><span class="align-middle badge  bg-info ms-2">{{$info->qualification}}<br></span></td>
                       <td class="py-3 align-middle">
                         @if($info->status == 'active')
                         <span class="badge bg-success m-0">Active</span>
