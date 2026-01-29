@@ -42,12 +42,17 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
         
         <div class="card-body">
 
+          @php
+            $descriptions = json_decode($getjobdetails->description, true);
+            $sklls = json_decode($getjobdetails->skill, true);
+            $requirements = json_decode($getjobdetails->requirement, true);
+          @endphp
+
           <h5 class="fw-semibold">Must-Have Skills</h5>
           <ul>
-            <li>Business development & B2B sales</li>
-            <li>Client acquisition & partnerships</li>
-            <li>Strategic planning & negotiation</li>
-            <li>Team & revenue management</li>
+            @foreach($sklls as $skill)
+            <li>{{$skill}}</li>
+            @endforeach
           </ul>
 
           <h5 class="fw-semibold mt-4">Good-to-Have Skills</h5>
@@ -57,9 +62,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
             <li>Market research & expansion planning</li>
           </ul>
 
-          @php
-            $descriptions = json_decode($getjobdetails->description, true);
-          @endphp
+          
 
           <h5 class="fw-semibold mt-4">Job Description</h5>
           <ul>
@@ -70,10 +73,9 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 
           <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
           <ul>
-            <li>Strong business and revenue-driven mindset</li>
-            <li>Excellent leadership & client-handling skills</li>
-            <li>Proven track record of revenue growth</li>
-            <li>Industry network is a strong advantage</li>
+            @foreach($requirements as $requirement)
+              <li>{{$requirement}}</li>
+            @endforeach
           </ul>
 
           <hr>
