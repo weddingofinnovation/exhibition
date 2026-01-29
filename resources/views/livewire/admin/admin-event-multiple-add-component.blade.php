@@ -296,7 +296,7 @@
                     </div>
 
                     <!-- Submit -->
-                    <div class="col-12 col-md-2 col-lg-3">
+                    <div class="col-12 mt-1">
                         <button class="btn btn-primary w-100"
                                 type="submit">
                             Update
