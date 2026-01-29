@@ -291,7 +291,7 @@
       @if($board == 'timming')
 
       <div class="container">
-        <form wire:submit.prevent="save" class="row g-3">
+        <form wire:submit.prevent="save">
 
             <!-- From Day -->
             <div class="col-6 col-md-2">
