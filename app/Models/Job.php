@@ -9,5 +9,11 @@ class Job extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'description' => 'array',
+        'requirement' => 'array',
+        'skills' => 'array',
+    ];
+
     protected $table="jobs";
 }
