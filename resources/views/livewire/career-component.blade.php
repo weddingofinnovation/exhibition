@@ -403,7 +403,7 @@ $schemajobdetails = DB::table('jobs')->where('slug', $this->slug)->get();
           }
         }
       }
-      @if(!$loop - > last), @endif
+      @if(!$loop -> last), @endif
       @endforeach
     ]
   }
