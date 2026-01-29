@@ -158,21 +158,6 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
   </a>
   @endforeach
 
-  @foreach ($jobs as $job)
-  <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom" id="opening">
-    <h2 class="fs-5 text-center  fw-light">{{$job->title}}
-      <div class="fs-xs text-primary">{{$job->level}}, {{$job->type}}<i class="fs-sm  bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-    <h2 class="fs-5 text-center fw-light">{{$job->experience}} years<div class="fs-xs text-primary">Click to see requirement<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-
-    <h2 class="fs-5 text-center fw-light">{{$job->location_state}}
-      <div class="fs-xs text-primary">{{$job->location_country}}<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-
-    <h2 class="fs-5 text-center fw-light"><a href="#apply"><i class="bi bi-chevron-right"></i> </a></h2>
-  </div>
-  @endforeach
 
   <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom">
     <h2 class="fs-5 fw-light">Andorid Developer
@@ -182,21 +167,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
     <div class="fs-5 fw-light"><i class=" bi bi-geo-alt h3 mt-2 mb-4 text-primary"></i>Delhi <i class=" bi bi-chevron-right align-middle ms-1"></i></div>
   </div>
 
-  <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom">
-    <h2 class="fs-5 fw-light">Andorid Developer</h2>
-    <div class="fs-5 fw-light">5-7 year</div>
-    <h2 class="fs-5 fw-light">Genva
-      <div class="fs-sm text-primary">Singapore<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-  </div>
-
-  <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom">
-    <h2 class="fs-5 fw-light">Andorid Developer</h2>
-    <h2 class="fs-5 fw-light">5-7 year
-      <div class="fs-sm text-primary">Click to see map<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-    <div class="fs-5 fw-light">Delhi</div>
-  </div>
+  
 </section>
 <!--vacancies-->
 
