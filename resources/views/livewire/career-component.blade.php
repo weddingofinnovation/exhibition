@@ -117,7 +117,7 @@
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">
   @foreach ($jobs as $job)
-    <a href="{{ route('career.show', $job->slug) }}"
+    <a href="{{ route('career', $job->slug) }}"
       class="text-decoration-none text-dark">
 
       <div class="d-flex justify-content-evenly align-items-center my-4 border-bottom py-3 job-row">
