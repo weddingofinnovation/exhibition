@@ -8,6 +8,9 @@
 $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 @endphp
 
+
+{{$getjobdetails}}
+
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
@@ -38,7 +41,9 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
       </div>
 
       <!-- Job Details -->
-      <div class="card shadow-sm">
+      <div class="card shadow-sm">@foreach($descriptions as $description)
+            <li>{{ $description }}</li>
+          @endforeach
         <div class="card-body">
 
           <h5 class="fw-semibold">Must-Have Skills</h5>
@@ -57,26 +62,14 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
           </ul>
 
           @php
-            
             $descriptions = json_decode($getjobdetails->description, true);
           @endphp
 
-        <ul>
-          @foreach($descriptions as $description)
-            <li>{{ $description }}</li>
-          @endforeach
-        </ul>
-
-          
-
           <h5 class="fw-semibold mt-4">Job Description</h5>
           <ul>
-            <li></li>
-            <li>Develop new exhibition business opportunities</li>
-            <li>Acquire sponsors, partners & key clients</li>
-            <li>Build and maintain long-term client relationships</li>
-            <li>Plan pricing, packages & growth strategies</li>
-            <li>Lead sales initiatives and cross-functional coordination</li>
+            @foreach($descriptions as $description)
+              <li>{{ $description }}</li>
+            @endforeach
           </ul>
 
           <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
