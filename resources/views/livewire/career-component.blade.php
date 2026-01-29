@@ -107,12 +107,45 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 </section>
 
 @else
+<section class="container-fluid py-4 py-lg-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+
+      <div class="d-inline-flex align-items-center justify-content-center mb-3 rounded-circle bg-danger text-white"
+           style="width:48px;height:48px;">
+        <i class="bi bi-briefcase"></i>
+      </div>
+
+      <h2 class="display-5 fw-semibold mb-3">
+        Do the Most Meaningful Work
+      </h2>
+
+      <p class="lead col-md-10 col-lg-8 mx-auto mb-2">
+        <a href="{{ asset('/') }}" class="text-decoration-none fw-semibold">
+          The Exhibition Network
+        </a>
+        is building a team with superpowers.
+      </p>
+
+      <p class="col-md-10 col-lg-6 mx-auto text-muted mb-4">
+        By hiring top talent and creating a unique work environment, built as an extended career framework—rich with new skills, components, and plugins.
+      </p>
+
+      <a href="#opening" class="btn btn-lg btn-outline-primary px-4">
+        Browse Open Positions
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
 <section class="container-fluid py-3 py-lg-5  ">
   <div class="text-center mt-4 mb-3">
     <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger"></div>
-    <h2 class="display-4 fw-normal">Do the Most Meaningful Work <br> of Your Career</h2>
+    <h2 class="display-4 fw-normal">Do the Most Meaningful Work </h2>
 
-    <p class="col-md-10 col-lg-8 mx-auto lead"><a href="{{asset('/')}}">The Exhibition Network</a> is building a team with superpowers. <br><strong>How are we doing it? </strong>
+    <p class="col-md-10 col-lg-8 mx-auto lead"><a href="{{asset('/')}}">The Exhibition Network</a> is building a team with superpowers.
     <div class="col-md-10 pb-2 col-lg-4 mx-auto"> By hiring top talent and creating a unique work environment, built as their own extended career frameworks, rich with new skills as components and plugins.</div>
     </p>
 
