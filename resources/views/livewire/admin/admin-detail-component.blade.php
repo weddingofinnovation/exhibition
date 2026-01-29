@@ -1290,7 +1290,7 @@
 
                 </div>
 
-                <div class="">
+                <div class="new">
                   <div class="row g-3">
 
                     <div class="col">
