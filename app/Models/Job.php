@@ -15,5 +15,5 @@ class Job extends Model
         'skills' => 'array',
     ];
 
-    protected $table="jobs";
+    protected $table = "jobs";
 }
