@@ -10,7 +10,6 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 
 
 {{$getjobdetails}}
-
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
@@ -41,9 +40,8 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
       </div>
 
       <!-- Job Details -->
-      <div class="card shadow-sm">@foreach($descriptions as $description)
-            <li>{{ $description }}</li>
-          @endforeach
+      <div class="card shadow-sm">
+        
         <div class="card-body">
 
           <h5 class="fw-semibold">Must-Have Skills</h5>
