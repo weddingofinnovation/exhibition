@@ -6868,7 +6868,7 @@
 
     <!-- left: 0; -->
     <style>
-        .fixed-bottom-div {
+        .bottom-header {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -6880,10 +6880,14 @@
             z-index: 9999;
             /* Ensures it stays on top */
         }
+
+        .bottom-header.hide {
+                transform: translateY(-100%);
+            }
     </style>
 
     <!-- fixedthis -->
-    <div class="d-none d-sm-block fixed-bottom-div shadow-lg" id="bottomHeader">
+    <div class="d-none d-sm-block bottom-header fixed-bottom-div shadow-lg" id="bottomHeader">
         <ul class="container list-unstyled fs-sm py-2">
             <li class="d-flex justify-content-between p-0 m-0">
 
