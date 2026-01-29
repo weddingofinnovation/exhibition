@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +22,7 @@ class Event extends Model
         return Carbon::parse($this->start_date)
             ->addDays($day - 1);
     }
-    
+
     public function category()
     {
     return $this->belongsTo(Category::class,'category_id');
