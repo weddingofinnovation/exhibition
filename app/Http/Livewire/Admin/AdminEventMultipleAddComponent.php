@@ -181,45 +181,82 @@ class AdminEventMultipleAddComponent extends Component
         return redirect()->route('adminevent.detail', ['slug' => $updatephoto->slug]);
     }
 
-    public function updateWeb()
+
+
+    public function updateEventField()
     {
-        $fattribute = Event::find($this->event_id);
-        $fattribute->link =  $this->link;
-        $fattribute->save();
-        session()->flash('message','Event has been updated succesfully!!');
-        return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+        $event = Event::findOrFail($this->event_id);
+
+        switch ($this->field_type) {
+
+            case 'link':
+                $event->link = $this->link;
+                break;
+            
+            case 'tagline':
+                $event->tagline = $this->tagline;
+                break;
+            
+            case 'shtdesc':
+                $event->shtdesc = $this->shtdesc;
+                break;
+
+            case 'facts':  
+                $event->facts = $this->facts;
+                break;
+
+            case 'desc':
+                $event->desc = $this->desc;
+                break;
+        }
+
+        $event->save();
+
+        session()->flash('message', 'Event has been updated successfully!');
+        return redirect()->route('adminevent.detail', ['slug' => $event->slug]);
     }
 
-    public function updateDesc()
-    {
-        $fattribute = Event::find($this->event_id);
+
+
+    // public function updateWeb()
+    // {
+    //     $fattribute = Event::find($this->event_id);
+    //     $fattribute->link =  $this->link;
+    //     $fattribute->save();
+    //     session()->flash('message','Event has been updated succesfully!!');
+    //     return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+    // }
+
+    // public function updateDesc()
+    // {
+    //     $fattribute = Event::find($this->event_id);
        
-        $fattribute->desc =  $this->desc;
+    //     $fattribute->desc =  $this->desc;
 
-        $fattribute->save();
-        session()->flash('message','Event has been updated succesfully!!');
-        return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
-    }
+    //     $fattribute->save();
+    //     session()->flash('message','Event has been updated succesfully!!');
+    //     return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+    // }
 
-    public function updateTagline()
-    {
-        $fattribute = Event::find($this->event_id);
+    // public function updateTagline()
+    // {
+    //     $fattribute = Event::find($this->event_id);
        
-        $fattribute->tagline =  $this->tagline;
+    //     $fattribute->tagline =  $this->tagline;
 
-        $fattribute->save();
-        session()->flash('message','Event has been updated succesfully!!');
-        return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
-    }
+    //     $fattribute->save();
+    //     session()->flash('message','Event has been updated succesfully!!');
+    //     return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+    // }
 
-    public function updateShtdesc()
-    {
-        $fattribute = Event::find($this->event_id);
-        $fattribute->shtdesc =  $this->shtdesc;
-        $fattribute->save();
-        session()->flash('message','Event has been updated succesfully!!');
-        return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
-    }
+    // public function updateShtdesc()
+    // {
+    //     $fattribute = Event::find($this->event_id);
+    //     $fattribute->shtdesc =  $this->shtdesc;
+    //     $fattribute->save();
+    //     session()->flash('message','Event has been updated succesfully!!');
+    //     return redirect()->route('adminevent.detail', ['slug' => $fattribute->slug]);
+    // }
 
     public function updateOrganiser()
     {

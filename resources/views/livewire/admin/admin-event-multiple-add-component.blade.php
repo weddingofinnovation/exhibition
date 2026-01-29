@@ -235,7 +235,11 @@
         </div>
         @endif
 
+
+
+
         @if($formm == 'tag')
+
         <form wire:submit.prevent="updateEvent">
             <div class="col-sm-2">
                 <label class="form-label" for="cf-name">Tag Line</label>
@@ -244,15 +248,33 @@
             </div>
             <button class="btn btn-primary mt-2" type="submit">Submit</button>
         </form>
+
         @endif
 
         @if($formm == 'desc')
-        <form wire:submit.prevent="updateEvent">
+        <form wire:submit.prevent="updateEventField">
             <div class="col-sm-2">
                 <label class="form-label" for="cf-name">Desc</label>
                 <textarea class="form-control" type="text" placeholder="Your Desc" rows="5" wire:model.lazy="desc" required=""></textarea>
                 @error('desc'){{ $message}}@enderror
             </div>
+
+            <div class="col-sm-3">
+                <label class="form-label" for="seniority">Text Type</label>
+
+                <select class="form-control" type="text" wire:model.lazy="field_type" placeholder="Provide short title of your request">
+                    <option>Choose</option>
+                    
+                    <option value="tagline">Tag Line</option>
+                    <option value="desc">Desc</option>
+                    <option value="shtdesc">Short Desc</option>
+                    <option value="facts">Facts</option>
+                    <option value="link">web</option>
+
+                </select>
+                @error('field_type') <div class="invalid-feedback"> {{$message}} </div> @enderror
+            </div>
+
             <button class="btn btn-primary mt-2" type="submit">Submit</button>
         </form>
         @endif

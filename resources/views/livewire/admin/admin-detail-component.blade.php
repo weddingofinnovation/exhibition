@@ -303,6 +303,157 @@
                   </form>
                 </div>
 
+                {{--participants--}}
+                <div class=" my-3">
+                  <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                  
+                    <div class="col  pr-0">
+                      <div class="h4 fw-light mb-0">{{$eventparticipantsCount}}</div>
+                      <div class="round-circle">EXHI</div>
+                    </div>
+
+                    <a class="col-7 p-0" href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}"></a>
+
+                    <div class="col-3 p-0">
+                      @if(is_null($evento->organiser))
+                      <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants'])}}" class="btn btn-primary btn-sm">Add</a>
+                      @else
+                      <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'participantsdashboard'])}}" class="btn btn-primary btn-sm">Edit</a>
+                      @endif
+                    </div>
+                  </div>
+                </div>
+
+                @if(is_null($evento->edition))
+                {{--ticket--}}
+                <div class=" my-3">
+                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col  pr-0">
+                        <div class="h4 fw-light mb-0"></div>
+
+                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Ticket</a>
+
+                      </div>
+
+                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                        @if(is_null($evento->edition))
+                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                        @else
+                        <div class="fs-md fw-normal text-start">
+
+                        </div>
+                        @endif
+                      </a>
+
+                      <div class="col-3 p-0">
+                        @if(is_null($evento->edition))
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Add</a>
+                        @else
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Edit</a>
+                        @endif
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                @elseif($evento->eventype == 'award')
+                {{--ticket--}}
+                <div class=" my-3">
+                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col  pr-0">
+                        <div class="h4 fw-light mb-0"></div>
+
+                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Nomination Category</a>
+
+                      </div>
+
+                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                        @if(is_null($evento->edition))
+                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                        @else
+                        <div class="fs-md fw-normal text-start">
+
+                        </div>
+                        @endif
+                      </a>
+
+                      <div class="col-3 p-0">
+                        @if(is_null($evento->edition))
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Add</a>
+                        @else
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Edit</a>
+                        @endif
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                @else
+                <div class=" my-3">
+                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col  pr-0">
+                        <div class="h4 fw-light mb-0"></div>
+
+                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Ticket</a>
+
+                      </div>
+
+                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
+                        @if(is_null($evento->edition))
+                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                        @else
+                        <div class="fs-md fw-normal text-start">
+
+                        </div>
+                        @endif
+                      </a>
+
+                      <div class="col-3 p-0">
+                        @if(is_null($evento->edition))
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Add</a>
+                        @else
+                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Edit</a>
+                        @endif
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                @endif
+
+                 {{--Long--}}
+                <div class=" my-3">
+                  <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                    <div class="col  pr-0">
+                      <div class="h4 fw-light mb-0">Lng</div>
+
+                      <div class="round-circle"><i class="bi bi-bookmark"></i></div>
+                      {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
+                    </div>
+
+                    <div class="col-7  p-0">
+                      @if(is_null($evento->desc))
+                      <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                      @else
+                      <div class="fs-md fw-normal text-start">{{Str::limit($evento->desc,170)}}</div>
+                      @endif
+                    </div>
+
+                    <div class="col-3 p-0">
+                      @if(is_null($evento->desc))
+                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'desc' ])}}" class="btn btn-primary btn-sm">Add</a>
+                      @else
+                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'desc'])}}" class="btn btn-primary btn-sm">Edit</a>
+                      @endif
+                    </div>
+                  </div>
+
+                </div>
+
+
+
+                dead
+
                 {{--tag--}}
                 <div class=" my-3">
                   <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
@@ -386,34 +537,7 @@
                   </div>
                 </div>
 
-                {{--Long--}}
-                <div class=" my-3">
-                  <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                      <div class="h4 fw-light mb-0">Lng</div>
-
-                      <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                      {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                    </div>
-
-                    <div class="col-7  p-0">
-                      @if(is_null($evento->desc))
-                      <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                      @else
-                      <div class="fs-md fw-normal text-start">{{Str::limit($evento->desc,170)}}</div>
-                      @endif
-                    </div>
-
-                    <div class="col-3 p-0">
-                      @if(is_null($evento->desc))
-                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'desc' ])}}" class="btn btn-primary btn-sm">Add</a>
-                      @else
-                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'desc'])}}" class="btn btn-primary btn-sm">Edit</a>
-                      @endif
-                    </div>
-                  </div>
-
-                </div>
+               
 
                 {{--webo--}}
                 <div class=" my-3">
@@ -513,26 +637,7 @@
                   </div>
                 </div>
 
-                {{--participants--}}
-                <div class=" my-3">
-                  <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                  
-                    <div class="col  pr-0">
-                      <div class="h4 fw-light mb-0">{{$eventparticipantsCount}}</div>
-                      <div class="round-circle">EXHI</div>
-                    </div>
-
-                    <a class="col-7 p-0" href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants' ])}}"></a>
-
-                    <div class="col-3 p-0">
-                      @if(is_null($evento->organiser))
-                      <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'addParticipants'])}}" class="btn btn-primary btn-sm">Add</a>
-                      @else
-                      <a href="{{route('admin.multipartners',['event_id' => $evento->id, 'formm' => 'participantsdashboard'])}}" class="btn btn-primary btn-sm">Edit</a>
-                      @endif
-                    </div>
-                  </div>
-                </div>
+                
 
                 {{--speaker--}}
                 <div class=" my-3">
@@ -722,102 +827,7 @@
                   </div>
                 </div>
 
-                @if(is_null($evento->edition))
-                {{--ticket--}}
-                <div class=" my-3">
-                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                      <div class="col  pr-0">
-                        <div class="h4 fw-light mb-0"></div>
-
-                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Ticket</a>
-
-                      </div>
-
-                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                        @if(is_null($evento->edition))
-                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                        @else
-                        <div class="fs-md fw-normal text-start">
-
-                        </div>
-                        @endif
-                      </a>
-
-                      <div class="col-3 p-0">
-                        @if(is_null($evento->edition))
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Add</a>
-                        @else
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Edit</a>
-                        @endif
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                @elseif($evento->eventype == 'award')
-                {{--ticket--}}
-                <div class=" my-3">
-                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                      <div class="col  pr-0">
-                        <div class="h4 fw-light mb-0"></div>
-
-                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Nomination Category</a>
-
-                      </div>
-
-                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                        @if(is_null($evento->edition))
-                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                        @else
-                        <div class="fs-md fw-normal text-start">
-
-                        </div>
-                        @endif
-                      </a>
-
-                      <div class="col-3 p-0">
-                        @if(is_null($evento->edition))
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Add</a>
-                        @else
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-nomination'])}}" class="btn btn-primary btn-sm">Edit</a>
-                        @endif
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                @else
-                <div class=" my-3">
-                  <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                    <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
-                      <div class="col  pr-0">
-                        <div class="h4 fw-light mb-0"></div>
-
-                        <a class="round-circle" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">Ticket</a>
-
-                      </div>
-
-                      <a class="col-7  p-0" href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'dashboard'])}}">
-                        @if(is_null($evento->edition))
-                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                        @else
-                        <div class="fs-md fw-normal text-start">
-
-                        </div>
-                        @endif
-                      </a>
-
-                      <div class="col-3 p-0">
-                        @if(is_null($evento->edition))
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Add</a>
-                        @else
-                        <a href="{{route('admincheck.ticket',['event_id' => $evento->id, 'board' => 'add-ticket'])}}" class="btn btn-primary btn-sm">Edit</a>
-                        @endif
-                      </div>
-                    </div>
-                  </a>
-                </div>
-                @endif
+               
 
                 <div class="">
                   <div class="input-group my-2">
