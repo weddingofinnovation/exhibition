@@ -1207,30 +1207,25 @@
                 <table class="table table-hover mb-0">
                   <thead>
                     <tr>
-                      <th>#</th>
+                      
                       <th>title</th>
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                            <tr>
-                                  <td class="py-3"><a class="nav-link-style fw-medium" href="account-single-ticket.html">My new ticket</a></td>
-                                  <td class="py-3">09/27/2019 | 09/30/2019</td>
-                                  <td class="py-3">Website problem</td>
-                                  <td class="py-3"><span class="badge bg-warning m-0">High</span></td>
-                                  <td class="py-3"><span class="badge bg-success m-0">Open</span></td>
-                                </tr>
+                            
+                                 
 
                     @foreach ($jobs as $info)
                     <tr>
-                      <td class="py-3 align-middle">{{$info->id}}</td>
+                      
                       <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
                       <td class="py-3 align-middle">
                         @if($info->status == 'active')
                         <span class="badge bg-success m-0">Active</span>
                         @else
-                        <span class="badge bg-danger m-0">Deactive</span>
+                        <span class="badge bg-warning m-0">Deactive</span>
                         @endif
                       </td>
                       <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
