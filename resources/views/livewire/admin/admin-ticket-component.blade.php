@@ -278,7 +278,6 @@
       @endif
 
       @if($board == 'add-nomination')
-
        <form action="">
         <input type="text" placeholder="type" class="form-control" wire:model.lazy="type">
         <input type="text" placeholder="desc" class="form-control" wire:model.lazy="desc">
@@ -287,6 +286,80 @@
         <input type="text" placeholder="awardname" class="form-control" wire:model.lazy="awardname">
         <button class="btn btn-primary d-block w-100" type="submit"><i class="ci-cloud-upload fs-lg me-2"></i>Submit</button>
        </form>
+      @endif
+
+      @if($board == 'timming')
+      
+        <form wire:submit.prevent="save" class="row g-3">
+
+            <!-- From Day -->
+            <div class="col-6 col-md-2">
+                <label class="form-label fw-semibold">From Day</label>
+                <select wire:model="day_start" class="form-select" required>
+                    @for($i = 1; $i <= $event->durationDays(); $i++)
+                        <option value="{{ $i }}">
+                            Day {{ $i }} ({{ $event->dayToDate($i)->format('d M') }})
+                        </option>
+                    @endfor
+                </select>
+                @error('day_start') <small class="text-danger">{{ $message }}</small> @enderror
+            </div>
+
+            <!-- To Day -->
+            <div class="col-6 col-md-2">
+                <label class="form-label fw-semibold">To Day</label>
+                <select wire:model="day_end" class="form-select" required>
+                    @for($i = $day_start; $i <= $event->durationDays(); $i++)
+                        <option value="{{ $i }}">
+                            Day {{ $i }} ({{ $event->dayToDate($i)->format('d M') }})
+                        </option>
+                    @endfor
+                </select>
+                @error('day_end') <small class="text-danger">{{ $message }}</small> @enderror
+            </div>
+
+            <!-- Entry Type -->
+            <div class="col-12 col-md-3">
+                <label class="form-label fw-semibold">Entry Type</label>
+                <select wire:model="entry_type" class="form-select" required>
+                    <option value="">Choose</option>
+                    <option value="business_only">Business Only</option>
+                    <option value="general_free">General – Free</option>
+                    <option value="general_paid">General – Paid</option>
+                    <option value="closed_door">Closed Door</option>
+                </select>
+                @error('entry_type') <small class="text-danger">{{ $message }}</small> @enderror
+            </div>
+
+            <!-- Price -->
+            <div class="col-12 col-md-2">
+                <label class="form-label fw-semibold">Price (₹)</label>
+                <input type="number"
+                    wire:model="price"
+                    class="form-control"
+                    placeholder="Optional"
+                    @if($entry_type !== 'general_paid') disabled @endif>
+                @error('price') <small class="text-danger">{{ $message }}</small> @enderror
+            </div>
+
+            <!-- Notes -->
+            <div class="col-12 col-md-3">
+                <label class="form-label fw-semibold">Notes</label>
+                <input type="text"
+                    wire:model.lazy="notes"
+                    class="form-control"
+                    placeholder="e.g. Registration mandatory">
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12 text-end">
+                <button class="btn btn-primary px-4">
+                    Save Entry Rule
+                </button>
+            </div>
+
+        </form>
+
       @endif
       
 </main>

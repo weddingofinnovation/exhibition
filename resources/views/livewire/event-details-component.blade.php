@@ -4225,37 +4225,37 @@
                 <a class="navbar-brand me-4 d-flex align-items-center" href="#">
 
                     @if(!empty($eventLogo) && Storage::exists($eventLogo))
-                    <!-- If logo available -->
-                    <img src="{{ asset($eventLogo) }}" height="45">
+                        <!-- If logo available -->
+                        <img src="{{ asset($eventLogo) }}" height="45">
 
                     @else
-                    <!-- If logo missing: Show "Upcoming" + Date -->
-                    <div class="d-flex align-items-center gap-1 date-selector-1">
+                        <!-- If logo missing: Show "Upcoming" + Date -->
+                        <div class="d-flex align-items-center gap-1 date-selector-1">
 
-                        <div class="month-wrapper">
-                            <div class="month-pill" style="color: #0b1625;">{{$start->format('M')}}</div>
+                            <div class="month-wrapper">
+                                <div class="month-pill" style="color: #0b1625;">{{$start->format('M')}}</div>
+                            </div>
+
+                            <div class="date-card">
+                                <div class="day">{{$start->format('d')}}</div>
+                                <div class="week fw-bold">{{$start->format('D')}}</div>
+                            </div>
+
+                            <div class="date-card active">
+                                <div class="day">{{$end->format('d')}}</div>
+                                <div class="week fw-bold text-white">{{$end->format('D')}}</div>
+                            </div>
+
                         </div>
 
-                        <div class="date-card">
-                            <div class="day">{{$start->format('d')}}</div>
-                            <div class="week fw-bold">{{$start->format('D')}}</div>
-                        </div>
-
-                        <div class="date-card active">
-                            <div class="day">{{$end->format('d')}}</div>
-                            <div class="week fw-bold text-white">{{$end->format('D')}}</div>
-                        </div>
-
-                    </div>
 
 
-
-                    <!-- <div class="d-flex flex-column">
-                        <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> 
-                        <div class="d-flex align-items-center">
-                            <small class="ms-2 text-dark fw-normal fs-lg">{{ $displayDate }}</small>
-                        </div>
-                    </div> -->
+                        <!-- <div class="d-flex flex-column">
+                            <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> 
+                            <div class="d-flex align-items-center">
+                                <small class="ms-2 text-dark fw-normal fs-lg">{{ $displayDate }}</small>
+                            </div>
+                        </div> -->
                     @endif
 
                 </a>
