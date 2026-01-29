@@ -4105,8 +4105,6 @@
         </div>
     </div>
 
-
-
     <!-- Desktop Header -->
 
     <!-- <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span>
@@ -4283,9 +4281,9 @@
                                     <div class="col-md-3">
                                         <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>{{ucwords($event->eventname) }}</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Date and opening hours</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'facts-&-figure'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Facts and Figures</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Segment</a></li>
@@ -4485,13 +4483,13 @@
                                     <div class="col-md-2">
                                         <h6 class="fw-bold">Become an Exhibitor</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Benefits as an exhibitor</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'benefits-as-an-exhibitor'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Benefits as an exhibitor</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor Application</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Stand Cost calculation</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Individual Participation</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Request free stand Areas</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>New product showcase</a></li>
+                                            <li><a class="dropdown-item" href="{{route('event.details', ['optional' => 'date-opening-hours'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>Manage your stand</a></li>
                                         </ul>
                                     </div>
 
@@ -5171,146 +5169,146 @@
     </section>
 
 
-                <section class="py-5 bg-light">
-                <div class="">
+    <section class="py-5 bg-light">
+        <div class="">
 
-                    <!-- Section Header -->
-                    <div class="row mb-5">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="fw-bold">Exhibitor Services</h2>
-                        <p class="text-muted">
-                        Designed to simplify participation, maximize visibility, and deliver measurable value.
-                        </p>
-                    </div>
-                    </div>
+            <!-- Section Header -->
+            <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="fw-bold">Exhibitor Services</h2>
+                <p class="text-muted">
+                Designed to simplify participation, maximize visibility, and deliver measurable value.
+                </p>
+            </div>
+            </div>
 
-                    <!-- Service Card -->
-                    <div class="card border-0 shadow-sm mb-5">
-                    <div class="card-body p-4 p-lg-5">
+            <!-- Service Card -->
+            <div class="card border-0 shadow-sm mb-5">
+            <div class="card-body p-4 p-lg-5">
 
-                        <!-- Service Title -->
-                        <div class="row align-items-center mb-4">
-                        <div class="col-md-1 text-center">
-                            <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
-                        </div>
-                        <div class="col-md-11">
-                            <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
-                            <p class="text-muted mb-0">
-                            Decisions backed by data, not assumptions.
-                            </p>
-                        </div>
-                        </div>
-
-                        <!-- Description -->
-                        <p class="mb-4">
-                        We provide transparent and verified event data including exhibitor mix, visitor profiles,
-                        exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
-                        </p>
-
-                        <!-- Problem / Solution / Advantage -->
-                        <div class="row g-4">
-                        <div class="col-md-4">
-                            <div class="border rounded h-100 p-3">
-                            <h6 class="fw-semibold text-danger">The Problem</h6>
-                            <p class="small text-muted mb-0">
-                                Exhibitors often participate without reliable data, leading to poor ROI.
-                            </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="border rounded h-100 p-3">
-                            <h6 class="fw-semibold text-primary">Our Solution</h6>
-                            <p class="small text-muted mb-0">
-                                Accurate, standardized event statistics verified by The Exhibition Network.
-                            </p>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="border rounded h-100 p-3">
-                            <h6 class="fw-semibold text-success">Your Advantage</h6>
-                            <p class="small text-muted mb-0">
-                                Confident decision-making and higher return on investment.
-                            </p>
-                            </div>
-                        </div>
-                        </div>
-
-                    </div>
-                    </div>
-
-                    <!-- Duplicate card for other services -->
+                <!-- Service Title -->
+                <div class="row align-items-center mb-4">
+                <div class="col-md-1 text-center">
+                    <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
                 </div>
-                </section>
+                <div class="col-md-11">
+                    <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
+                    <p class="text-muted mb-0">
+                    Decisions backed by data, not assumptions.
+                    </p>
+                </div>
+                </div>
 
+                <!-- Description -->
+                <p class="mb-4">
+                We provide transparent and verified event data including exhibitor mix, visitor profiles,
+                exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
+                </p>
 
-                <div class="row">
-                    <div class="col-6">
-                        <h5 class="mb-3">Pre-request for space booking</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li class="my-3 fs-sm fw-light">Update with your required space, budget before 3 months of exhibition start date, get special free and discounted deals</li>
-                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
-                        </ul>
-
-                        <h5 class="mb-3">Our Data, Your Customers.</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li class="my-3 fs-sm fw-light">Download the exhibitor, share your email to find exhibitor</li>
-                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
-                        </ul>
-
-                        <h5 class="mb-3">Advertise</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li class="my-3 fs-sm fw-light">Promote your product with your magazine The Exhibition Network distribute at airport, exhibition centre, goverment office and associations offices.</li>
-                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Advertise</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-6">
-                        <h5 class="mb-3">Expo Initiatives</h5>
-                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                            <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
-                            <li><!-- No image -->
-                                <div class="card ">
-                                    <div class="expo_Initiatives">
-
-                                        <!-- <div class="card-body ">
-                                  <h5 class="card-title">Expo live</h5>
-                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                </div>
-
-                                <div class="card-body">
-                                  <h5 class="card-title">Global Best Practice Programme</h5>
-                                  <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                  <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-                                </div> -->
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">Start-up Program</h5>
-                                            <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
-                                            <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
-                                            <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
-                                        </div>
-
-                                        <div class="card-body">
-                                            <h5 class="card-title">MSME Program</h5>
-                                            <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
-                                            <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
-                                            <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-
+                <!-- Problem / Solution / Advantage -->
+                <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="border rounded h-100 p-3">
+                    <h6 class="fw-semibold text-danger">The Problem</h6>
+                    <p class="small text-muted mb-0">
+                        Exhibitors often participate without reliable data, leading to poor ROI.
+                    </p>
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="border rounded h-100 p-3">
+                    <h6 class="fw-semibold text-primary">Our Solution</h6>
+                    <p class="small text-muted mb-0">
+                        Accurate, standardized event statistics verified by The Exhibition Network.
+                    </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="border rounded h-100 p-3">
+                    <h6 class="fw-semibold text-success">Your Advantage</h6>
+                    <p class="small text-muted mb-0">
+                        Confident decision-making and higher return on investment.
+                    </p>
+                    </div>
+                </div>
+                </div>
 
             </div>
+            </div>
+
+            <!-- Duplicate card for other services -->
+        </div>
+    </section>
+
+
+    <div class="row">
+        <div class="col-6">
+            <h5 class="mb-3">Pre-request for space booking</h5>
+            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                <li class="my-3 fs-sm fw-light">Update with your required space, budget before 3 months of exhibition start date, get special free and discounted deals</li>
+                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+            </ul>
+
+            <h5 class="mb-3">Our Data, Your Customers.</h5>
+            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                <li class="my-3 fs-sm fw-light">Download the exhibitor, share your email to find exhibitor</li>
+                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+            </ul>
+
+            <h5 class="mb-3">Advertise</h5>
+            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                <li class="my-3 fs-sm fw-light">Promote your product with your magazine The Exhibition Network distribute at airport, exhibition centre, goverment office and associations offices.</li>
+                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Advertise</a></li>
+            </ul>
+        </div>
+
+        <div class="col-6">
+            <h5 class="mb-3">Expo Initiatives</h5>
+            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
+                <li><!-- No image -->
+                    <div class="card ">
+                        <div class="expo_Initiatives">
+
+                            <!-- <div class="card-body ">
+                        <h5 class="card-title">Expo live</h5>
+                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Global Best Practice Programme</h5>
+                        <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
+                    </div> -->
+
+                            <div class="card-body">
+                                <h5 class="card-title">Start-up Program</h5>
+                                <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
+                                <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
+                            </div>
+
+                            <div class="card-body">
+                                <h5 class="card-title">MSME Program</h5>
+                                <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
+                                <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
+                                <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+      </div>
 
 
             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -6885,7 +6883,7 @@
     </style>
 
     <!-- fixedthis -->
-    <div class="d-none d-sm-block fixed-bottom-div shadow-lg">
+    <div class="d-none d-sm-block fixed-bottom-div shadow-lg" id="bottomHeader">
         <ul class="container list-unstyled fs-sm py-2">
             <li class="d-flex justify-content-between p-0 m-0">
 
@@ -6945,8 +6943,6 @@
             </li>
         </ul>
     </div>
-
-
 
 
     @php
@@ -7112,6 +7108,26 @@
 
         });
     </script>
+
+    <script>
+        let lastScrollTop = 0;
+        const bottomHeader = document.getElementById('bottomHeader');
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop && scrollTop > 80) {
+            // scrolling down
+            bottomHeader.classList.add('hide');
+            } else {
+            // scrolling up
+            bottomHeader.classList.remove('hide');
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+
 
     @endpush
 
