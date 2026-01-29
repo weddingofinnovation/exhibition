@@ -76,6 +76,30 @@ class AdminTicketComponent extends Component
     ];
 
 
+     public function updatedEntryType()
+    {
+        if ($this->entry_type !== 'general_paid') {
+            $this->price = null;
+        }
+    }
+
+    public function save()
+    {
+        $this->validate();
+
+        Event::create([
+            'event_id'   => $this->event->id,
+            'day_start'  => $this->day_start,
+            'day_end'    => $this->day_end,
+            'entry_type' => $this->entry_type,
+            'price'      => $this->entry_type === 'general_paid' ? $this->price : null,
+            'notes'      => $this->notes,
+        ]);
+
+        $this->reset(['entry_type', 'price', 'notes']);
+        $this->dispatchBrowserEvent('rule-added');
+    }
+
     public function ticketAdd()
     {
         $newTicket = new Ticket();

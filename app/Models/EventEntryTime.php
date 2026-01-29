@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class EventEntryTime extends Model
 {
     use HasFactory;
+
+    protected $table = "event_entry_times";
 }
