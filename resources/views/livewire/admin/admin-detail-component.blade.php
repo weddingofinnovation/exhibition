@@ -292,6 +292,11 @@
                   </form>
 
                 </div>
+                 @php
+                  $eventparticipantsCount = DB::table('participants')
+                  ->where('event_id', $evento->id)
+                  ->count();
+                @endphp
 
                 <div class="">
                   <div class="fs-md fw-light mb-0"> {{$EventCountRate->count()}} <small> Reviews</small></div>
@@ -601,11 +606,7 @@
                   </div>
                 </div>
 
-                @php
-                  $eventparticipantsCount = DB::table('participants')
-                  ->where('event_id', $evento->id)
-                  ->count();
-                @endphp
+               
 
                 <div class="my-3">
                   <div class="row align-items-center gx-2 gy-2 shadow-sm border rounded p-2">
