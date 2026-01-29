@@ -113,9 +113,8 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 
     <div class="col-4">
       <!--jobs apply form-->
-      <div class="row g-0" id="apply">
-        <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2" style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);"></div>
-        <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
+      <div class="g-0" id="apply">
+        <div class="px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
       </div>
     </div>
   </div>
