@@ -252,32 +252,42 @@
         @endif
 
         @if($formm == 'desc')
-        <form wire:submit.prevent="updateEventField">
-            <div class="col-sm-2 col">
-                <label class="form-label" for="cf-name">Desc</label>
-                <textarea class="form-control" type="text" placeholder="Your Desc" rows="5" wire:model.lazy="desc" required=""></textarea>
-                @error('desc'){{ $message}}@enderror
-            </div>
+            <form wire:submit.prevent="updateEventField">
+                <div class="row g-3">
 
-            <div class="col-sm-3 col">
-                <label class="form-label" for="seniority">Text Type</label>
+                    <!-- Text Type -->
+                    <div class="col-12 col-md-4 col-lg-3">
+                    <label class="form-label">Text Type</label>
+                    <select class="form-select" wire:model="field_type">
+                        <option value="">Choose</option>
+                        <option value="tagline">Tag Line</option>
+                        <option value="desc">Description</option>
+                        <option value="shtdesc">Short Desc</option>
+                        <option value="facts">Facts</option>
+                        <option value="link">Website</option>
+                    </select>
+                    </div>
 
-                <select class="form-control" type="text" wire:model.lazy="field_type" placeholder="Provide short title of your request">
-                    <option>Choose</option>
-                    
-                    <option value="tagline">Tag Line</option>
-                    <option value="desc">Desc</option>
-                    <option value="shtdesc">Short Desc</option>
-                    <option value="facts">Facts</option>
-                    <option value="link">web</option>
+                    <!-- Content -->
+                    <div class="col-12 col-md-6 col-lg-6">
+                    <label class="form-label">Content</label>
+                    <textarea class="form-control" rows="5"
+                                wire:model.lazy="content"
+                                placeholder="Enter content"></textarea>
+                    </div>
 
-                </select>
-                @error('field_type') <div class="invalid-feedback"> {{$message}} </div> @enderror
-            </div>
+                    <!-- Button -->
+                    <div class="col-12 col-md-2 col-lg-3 d-flex align-items-end">
+                    <button class="btn btn-primary w-100" type="submit">
+                        Update
+                    </button>
+                    </div>
 
-            <button class="btn btn-primary mt-2" type="submit">Submit</button>
-        </form>
+                </div>
+            </form>
         @endif
+
+        
 
         @if($formm == 'short')
         <form wire:submit.prevent="updateEvent">
