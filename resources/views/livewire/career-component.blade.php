@@ -57,25 +57,21 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
           </ul>
 
           @php
-            $getjobdetails->description = is_string($getjobdetails->description)
-                ? json_decode($getjobdetails->description, true)
-                : $getjobdetails->description;
+            $skills = json_decode($getjobdetails->skill, true);
+            $descriptions = json_decode($getjobdetails->description, true);
           @endphp
 
+        <ul>
+          @foreach($descriptions as $description)
+            <li>{{ $description }}</li>
+          @endforeach
+        </ul>
 
-          {{-- Job Description --}}
-          @if(!empty($getjobdetails->description))
-          <h5 class="fw-semibold">Job Description</h5>
-          <ul>
-            @foreach($getjobdetails->description as $desc)
-            <li>{{ $desc []}}</li>
-            @endforeach
-          </ul>
-          @endif
+          
 
           <h5 class="fw-semibold mt-4">Job Description</h5>
           <ul>
-            <li> {{$jobs->description}}</li>
+            <li></li>
             <li>Develop new exhibition business opportunities</li>
             <li>Acquire sponsors, partners & key clients</li>
             <li>Build and maintain long-term client relationships</li>
