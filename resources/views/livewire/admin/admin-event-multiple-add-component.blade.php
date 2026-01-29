@@ -252,42 +252,63 @@
         @endif
 
         @if($formm == 'desc')
-            <form wire:submit.prevent="updateEventField">
-                <div class="row g-3">
+            <form wire:submit.prevent="updateEventField" class="card p-3 p-lg-4 shadow-sm">
 
-                    <!-- Text Type -->
+                <div class="row g-3 align-items-end">
+
+                    <!-- Update Type -->
                     <div class="col-12 col-md-4 col-lg-3">
-                    <label class="form-label">Text Type</label>
-                    <select class="form-select" wire:model="field_type">
+                    <label class="form-label fw-semibold">
+                        Update Type <span class="text-danger">*</span>
+                    </label>
+
+                    <select class="form-select @error('field_type') is-invalid @enderror"
+                            wire:model="field_type"
+                            required>
                         <option value="">Choose</option>
                         <option value="tagline">Tag Line</option>
                         <option value="desc">Description</option>
-                        <option value="shtdesc">Short Desc</option>
+                        <option value="shtdesc">Short Description</option>
                         <option value="facts">Facts</option>
                         <option value="link">Website</option>
                     </select>
+
+                    @error('field_type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                     </div>
 
                     <!-- Content -->
                     <div class="col-12 col-md-6 col-lg-6">
-                    <label class="form-label">Content</label>
-                    <textarea class="form-control" rows="5"
+                    <label class="form-label fw-semibold">
+                        Content <span class="text-danger">*</span>
+                    </label>
+
+                    <textarea class="form-control @error('content') is-invalid @enderror"
+                                rows="4"
                                 wire:model.lazy="content"
-                                placeholder="Enter content"></textarea>
+                                placeholder="Enter content here"
+                                required></textarea>
+
+                    @error('content')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                     </div>
 
-                    <!-- Button -->
-                    <div class="col-12 col-md-2 col-lg-3 d-flex align-items-end">
-                    <button class="btn btn-primary w-100" type="submit">
+                    <!-- Submit -->
+                    <div class="col-12 col-md-2 col-lg-3">
+                    <button class="btn btn-primary w-100"
+                            type="submit">
                         Update
                     </button>
                     </div>
 
                 </div>
+
             </form>
         @endif
 
-        
+
 
         @if($formm == 'short')
         <form wire:submit.prevent="updateEvent">
