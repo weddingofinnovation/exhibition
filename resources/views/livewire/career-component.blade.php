@@ -85,7 +85,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
               <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
               <p><strong>Department:</strong> {{$getjobdetails -> department}}</p>
             </div>
-            
+
             <div class="col-md-6">
               <p><strong>Employment Type:</strong> {{$getjobdetails->type}}</p>
               <p><strong>Education:</strong> {{$getjobdetails -> qualification}}</p>
@@ -143,6 +143,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
       </div>
 
       <div class="text-center">
+        <i class=" bi bi-geo-alt h3 mt-2 mb-4 text-primary"></i>
         <h2 class="fs-5 fw-light mb-0">{{ $job->location_state }}</h2>
         <div class="fs-xs text-primary">
           {{ $job->location_country }}
@@ -164,9 +165,11 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
     </h2>
     <h2 class="fs-5 text-center fw-light">{{$job->experience}} years<div class="fs-xs text-primary">Click to see requirement<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
     </h2>
+
     <h2 class="fs-5 text-center fw-light">{{$job->location_state}}
       <div class="fs-xs text-primary">{{$job->location_country}}<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
     </h2>
+
     <h2 class="fs-5 text-center fw-light"><a href="#apply"><i class="bi bi-chevron-right"></i> </a></h2>
   </div>
   @endforeach
