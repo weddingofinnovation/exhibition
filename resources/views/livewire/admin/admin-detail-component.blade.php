@@ -1941,6 +1941,59 @@
     </form>
   </div>
 
+  <div class="container my-4">
+    <div class="row g-3">
+
+      <div class="col">
+        <a href="#" class="text-decoration-none">
+          <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+            <span class="fw-semibold text-dark">Jobs</span>
+            <i class="bi bi-arrow-right text-primary"></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="text-decoration-none">
+          <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+            <span class="fw-semibold text-dark">Analytics</span>
+            <i class="bi bi-arrow-right text-primary"></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="text-decoration-none">
+          <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+            <span class="fw-semibold text-dark">Reports</span>
+            <i class="bi bi-arrow-right text-primary"></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="text-decoration-none">
+          <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+            <span class="fw-semibold text-dark">Users</span>
+            <i class="bi bi-arrow-right text-primary"></i>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="#" class="text-decoration-none">
+          <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
+            <span class="fw-semibold text-dark">Settings</span>
+            <i class="bi bi-arrow-right text-primary"></i>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
   {{--<div class="handheld-toolbar">
           <div class="d-table table-layout-fixed w-100">
             <a class="d-table-cell handheld-toolbar-item" href="#shop-sidebar" data-bs-toggle="offcanvas" data-bs-target="#shop-sidebar">
