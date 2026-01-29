@@ -8,13 +8,16 @@
 $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 @endphp
 
+
+
+
 <div class="container">
   <div class="row">
 
     <div class="col-8">
       <div class="container my-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
+        <div class="row">
+          <div class="">
 
             <!-- Job Header -->
             <div class="card shadow-sm mb-4">
@@ -114,11 +117,13 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
     <div class="col-4">
       <!--jobs apply form-->
       <div class="g-0" id="apply">
-        <div class="px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
+        <div class="px-0 px-md-0 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
       </div>
     </div>
   </div>
 </div>
+
+
 
 
 @else
