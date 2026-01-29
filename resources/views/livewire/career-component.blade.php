@@ -100,7 +100,7 @@
     </div>
   </section>
 
-@elseif
+@else
 <section class="container-fluid py-3 py-lg-5  ">
   <div class="text-center mt-4 mb-3">
     <div class="masthead-followup-icon d-inline-block mb-2 text-white bg-danger"></div>
