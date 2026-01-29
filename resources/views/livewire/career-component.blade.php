@@ -23,11 +23,11 @@
               <div class="row g-3">
                 <div class="col-md-4">
                   <strong>Level:</strong>
-                  <p class="mb-0">Manager / Senior Manager</p>
+                  <p class="mb-0">{{$getjobdetails->level}}</p>
                 </div>
                 <div class="col-md-4">
                   <strong>Location:</strong>
-                  <p class="mb-0">Delhi / NCR</p>
+                  <p class="mb-0">{{$getjobdetails->location_state}} / {{$getjobdetails->location_country}}</p>
                 </div>
                 <div class="col-md-4">
                   <strong>Salary:</strong>
@@ -58,6 +58,7 @@
 
               <h5 class="fw-semibold mt-4">Job Description</h5>
               <ul>
+                <li> {{$jobs->description}}</li>
                 <li>Develop new exhibition business opportunities</li>
                 <li>Acquire sponsors, partners & key clients</li>
                 <li>Build and maintain long-term client relationships</li>
@@ -75,7 +76,7 @@
 
               <hr>
 
-              <div class="row">
+              <div class="row mt-4">
                 <div class="col-md-6">
                   <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
                   <p><strong>Department:</strong> Business Development</p>
@@ -369,32 +370,32 @@
   @endphp
 
 @push('scripts')
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    @foreach($schemajobdetails as $job)
-    {
-      "@type": "JobPosting",
-      "title": "{{ addslashes($job->title) }}",
-      "description": "{{ strip_tags(addslashes($job->description)) }}",
-      "datePosted": "{{ \Carbon\Carbon::parse($job->created_at)->toDateString() }}",
-      "employmentType": "FULL_TIME",
-      "hiringOrganization": {
-        "@type": "Organization",
-        "name": "The Exhibition Network"
-      },
-      "jobLocation": {
-        "@type": "Place",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "{{ $job->location_state }}",
-          "addressCountry": "{{ $job->location_country }}"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      @foreach($schemajobdetails as $job)
+      {
+        "@type": "JobPosting",
+        "title": "{{ addslashes($job->title) }}",
+        "description": "{{ strip_tags(addslashes($job->description)) }}",
+        "datePosted": "{{ \Carbon\Carbon::parse($job->created_at)->toDateString() }}",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "The Exhibition Network"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "{{ $job->location_state }}",
+            "addressCountry": "{{ $job->location_country }}"
+          }
         }
-      }
-    }@if(!$loop->last),@endif
-    @endforeach
-  ]
-}
-</script>
+      }@if(!$loop->last),@endif
+      @endforeach
+    ]
+  }
+  </script>
 @endpush
