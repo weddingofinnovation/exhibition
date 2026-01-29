@@ -57,7 +57,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
           </ul>
 
           @php
-            $skills = json_decode($getjobdetails->skill, true);
+            
             $descriptions = json_decode($getjobdetails->description, true);
           @endphp
 
