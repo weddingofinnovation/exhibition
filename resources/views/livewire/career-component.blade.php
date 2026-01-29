@@ -83,11 +83,12 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
           <div class="row mt-4">
             <div class="col-md-6">
               <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
-              <p><strong>Department:</strong> Business Development</p>
+              <p><strong>Department:</strong> {{$getjobdetails -> department}}</p>
             </div>
+            
             <div class="col-md-6">
-              <p><strong>Employment Type:</strong> Full-Time</p>
-              <p><strong>Education:</strong> MBA / Graduate (Business, Marketing preferred)</p>
+              <p><strong>Employment Type:</strong> {{$getjobdetails->type}}</p>
+              <p><strong>Education:</strong> {{$getjobdetails -> qualification}}</p>
             </div>
           </div>
 
