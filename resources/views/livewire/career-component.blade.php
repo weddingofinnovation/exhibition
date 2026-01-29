@@ -5,7 +5,7 @@
   @if($this->slug)
 
     @php
-    $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
+    $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->firstOrFail();
     @endphp
 
     <section class="container my-5">
