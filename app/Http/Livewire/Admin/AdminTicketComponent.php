@@ -35,8 +35,15 @@ class AdminTicketComponent extends Component
     public $admstatus;
     public $slug;
 
+    public Event $event;
+
+    public $day_start;
+    public $day_end;
+    public $entry_type;
+    public $notes;
+
     
-    public function mount($event_id, $board )
+    public function mount($event_id, $board , Event $event)
     {
         $fattribute = Event::find($event_id);
         $this->event_id = $fattribute->id;
@@ -48,6 +55,10 @@ class AdminTicketComponent extends Component
         $this->cart_value = '100';
         $this->code = Str::random(12);
 
+        $this->event = $event;
+        $this->day_start = 1;
+        $this->day_end = 1;
+
         //$this->expiry_date = $fattribute->enddate;
         //$this->expiry_time = $fattribute->enddate;
     } 
@@ -55,6 +66,14 @@ class AdminTicketComponent extends Component
     public function generateSlug(){
         $this->slug = Str::slug($this->package,'-');
     }
+
+    protected $rules = [
+        'day_start' => 'required|integer|min:1',
+        'day_end'   => 'required|integer|gte:day_start',
+        'entry_type'=> 'required|string',
+        'price'     => 'nullable|numeric|min:0',
+        'notes'     => 'nullable|string|max:255',
+    ];
 
 
     public function ticketAdd()
