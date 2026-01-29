@@ -8,6 +8,8 @@
 $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 @endphp
 
+<div class="row">
+<div class="col-8">
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
@@ -105,6 +107,17 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
     </div>
   </div>
 </section>
+</div>
+
+<div class="col-4">
+  <!--jobs apply form-->
+<section class="row g-0" id="apply">
+  <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2" style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);"></div>
+  <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
+</section>
+</div>
+</div>
+
 
 @else
 <section class="container-fluid py-4 py-lg-5 bg-light">
@@ -186,12 +199,6 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
   
 </section>
 <!--vacancies-->
-
-<!--jobs apply form-->
-<section class="row g-0" id="apply">
-  <div class="col-md-6 bg-position-center bg-size-cover bg-secondary order-md-2" style="min-height: 15rem; background-image: url(https://source.unsplash.com/535x535/?job,interview);"></div>
-  <div class="col-md-6 px-3 px-md-5 py-5 order-md-1" id="jobapplication">@livewire('job-application-component')</div>
-</section>
 
 <!-- Why join-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">
