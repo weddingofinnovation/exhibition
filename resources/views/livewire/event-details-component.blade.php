@@ -6868,22 +6868,21 @@
 
     <!-- left: 0; -->
     <style>
-        .bottom-header {
+       .bottom-header {
             position: fixed;
             bottom: 0;
             width: 100%;
             background-color: #fff;
-            /* Light background color */
             border-top: 1px solid #dee2e6;
-            /* Optional border */
             padding: 4px;
             z-index: 9999;
-            /* Ensures it stays on top */
+            transition: transform 0.3s ease;
         }
 
         .bottom-header.hide {
-                transform: translateY(-100%);
-            }
+            transform: translateY(100%);
+        }
+
     </style>
 
     <!-- fixedthis -->
