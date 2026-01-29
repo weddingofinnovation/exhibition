@@ -56,6 +56,16 @@
                 <li>Market research & expansion planning</li>
               </ul>
 
+              {{-- Job Description --}}
+                @if(!empty($getjobdetails->description))
+                <h5 class="fw-semibold">Job Description</h5>
+                <ul>
+                  @foreach($getjobdetails->description as $desc)
+                    <li>{{ $desc }}</li>
+                  @endforeach
+                </ul>
+                @endif
+
               <h5 class="fw-semibold mt-4">Job Description</h5>
               <ul>
                 <li> {{$jobs->description}}</li>
