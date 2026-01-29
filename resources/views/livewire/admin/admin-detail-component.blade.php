@@ -10,8 +10,8 @@
     <div class="container mt-2">
       <div class="row">
 
-        <div class="col-3">
-          <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
+        <div class="col-2 border-end">
+          <div class="d-flex flex-column bg-white" style=" border-radius: 8px;">
             <!-- Logo & Name -->
             <div class="d-flex align-items-center mb-3">
               <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
@@ -66,11 +66,10 @@
             </ul>
 
           </div>
-
         </div>
 
 
-        <div class="col-9">
+        <div class="col-10">
 
           <div class="mb-4 mb-lg-5">
             <!-- Nav tabs-->
@@ -1294,15 +1293,7 @@
 
                 </div>
 
-                <div class="col">
-                  <a href="#" class="text-decoration-none">
-                    <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                      <span class="fw-semibold text-dark">Jobs</span>
-                      <i class="bi bi-arrow-right text-primary"></i>
-                    </div>
-                  </a>
-                </div>
-
+                
 
                 <div class="">
                   <small>CSV upload exhibitor</small>
@@ -1831,68 +1822,67 @@
               <!-- Product details tab-->
               <div class="tab-pane fade" id="detailss" role="tabpanel">
 
-
                 @foreach ($businessOrder as $eventol)
-                <div class="my-1">
-                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col-2  p-0">
-                      @if($eventol->event_id == 'null' )
-                      {{$eventol->type}}
-                      @else
-                      @php
-                      $eventdetails = DB::table('events')->where('id', $eventol->event_id)->get();
-                      @endphp
-
-                      @foreach($eventdetails as $evet)
-                      <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
-                        <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
-                      </a>
-                      @endforeach
-                      @endif
-                    </div>
-
-                    <div class="col-7  p-0">
-                      <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$eventol->name}}</a><span class="fs-xs bg-success">{{ Carbon\Carbon::parse($eventol->created_at)->format('D d M  H:m')}}</span></div>
-                      <div class="fs-sm fw-normal text-start">
-                        <a class="text-dark" href="" onclick="makeCall('{{$eventol->phone}}')">{{$eventol->phone}}</a> <span class="fs-xs bg-danger text-light">{{$eventol->type}}</span>
-                        <a class="text-dark" href="" onclick="copyToclipboard('{{$eventol->phone}}')"><i class="bi bi-plus"></i></a>
-                      </div>
-                      <div class="text-muted fs-xs text-start">{{$eventol->email}}</div>
-                    </div>
-
-                    <div class="col-3  p-0">
-                      {{--@if(is_null($eventol->image))
-                                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $eventol->slug, 'formm' => 'image' ])}}">Add</a>
-                      @else
-                      <a class="card-img-top d-block overflow-hidden" href="">
-                        <img src="{{url('public/assets/image/exhibition/'.$eventol->image)}}" alt="{{Str::limit($eventol->name, 24)}}"></a>
-                      @endif--}}
-
-                      @php
-                      $businesslead = DB::table('business_calledos')->where('lead_id', $eventol->id)->latest()->get();
-                      $resulto = $businesslead->pluck('response')->first();
-                      @endphp
-
-
-                      @if(($businesslead->count()) < '1' )
-                        <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">New</a>
+                  <div class="my-1">
+                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                      <div class="col-2  p-0">
+                        @if($eventol->event_id == 'null' )
+                        {{$eventol->type}}
                         @else
-                        <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{$resulto}}</a>
+                        @php
+                        $eventdetails = DB::table('events')->where('id', $eventol->event_id)->get();
+                        @endphp
+
+                        @foreach($eventdetails as $evet)
+                        <a class="card-img-top d-block overflow-hidden" href="{{route('event.details',['slug' => $evet->slug])}}">
+                          <img src="{{url('public/assets/image/exhibition/'.$evet->image)}}" alt="{{Str::limit($evet->eventname, 24)}}">
+                        </a>
+                        @endforeach
                         @endif
+                      </div>
 
-                        <ul class="dropdown-menu" width="auto">
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Email</a></li>
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Interest</a></li>
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'check')">Check</a></li>
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'callback')">callback</a></li>
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'ringing')">Ringing</a></li>
-                          <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'Not')">Not</a></li>
-                          <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$eventol->id}})">Delete</a></li>
-                        </ul>
+                      <div class="col-7  p-0">
+                        <div class="fs-sm fw-normal text-start"><a class="text-dark" href="">{{$eventol->name}}</a><span class="fs-xs bg-success">{{ Carbon\Carbon::parse($eventol->created_at)->format('D d M  H:m')}}</span></div>
+                        <div class="fs-sm fw-normal text-start">
+                          <a class="text-dark" href="" onclick="makeCall('{{$eventol->phone}}')">{{$eventol->phone}}</a> <span class="fs-xs bg-danger text-light">{{$eventol->type}}</span>
+                          <a class="text-dark" href="" onclick="copyToclipboard('{{$eventol->phone}}')"><i class="bi bi-plus"></i></a>
+                        </div>
+                        <div class="text-muted fs-xs text-start">{{$eventol->email}}</div>
+                      </div>
 
+                      <div class="col-3  p-0">
+                        {{--@if(is_null($eventol->image))
+                                              <a class="card-img-top d-block overflow-hidden" href="{{route('admin.magazine',['slug' => $eventol->slug, 'formm' => 'image' ])}}">Add</a>
+                        @else
+                        <a class="card-img-top d-block overflow-hidden" href="">
+                          <img src="{{url('public/assets/image/exhibition/'.$eventol->image)}}" alt="{{Str::limit($eventol->name, 24)}}"></a>
+                        @endif--}}
+
+                        @php
+                        $businesslead = DB::table('business_calledos')->where('lead_id', $eventol->id)->latest()->get();
+                        $resulto = $businesslead->pluck('response')->first();
+                        @endphp
+
+
+                        @if(($businesslead->count()) < '1' )
+                          <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">New</a>
+                          @else
+                          <a href="" class="btn btn-outline-primary btn-sm dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{$resulto}}</a>
+                          @endif
+
+                          <ul class="dropdown-menu" width="auto">
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Email</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'interest')">Interest</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'check')">Check</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'callback')">callback</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'ringing')">Ringing</a></li>
+                            <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$eventol->id}}, 'Not')">Not</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="DeleteCallingStatus({{$eventol->id}})">Delete</a></li>
+                          </ul>
+
+                      </div>
                     </div>
                   </div>
-                </div>
                 @endforeach
               </div>
 
@@ -1941,57 +1931,7 @@
   </div>
 
 
-                <div class="new">
-                  testo
-                  <div class="row g-3">
-
-                    <div class="col">
-                      <a href="#" class="text-decoration-none">
-                        <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                          <span class="fw-semibold text-dark">Jobs</span>
-                          <i class="bi bi-arrow-right text-primary"></i>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col">
-                      <a href="#" class="text-decoration-none">
-                        <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                          <span class="fw-semibold text-dark">Analytics</span>
-                          <i class="bi bi-arrow-right text-primary"></i>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col">
-                      <a href="#" class="text-decoration-none">
-                        <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                          <span class="fw-semibold text-dark">Reports</span>
-                          <i class="bi bi-arrow-right text-primary"></i>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col">
-                      <a href="#" class="text-decoration-none">
-                        <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                          <span class="fw-semibold text-dark">Users</span>
-                          <i class="bi bi-arrow-right text-primary"></i>
-                        </div>
-                      </a>
-                    </div>
-
-                    <div class="col">
-                      <a href="#" class="text-decoration-none">
-                        <div class="border rounded-3 p-3 h-100 d-flex justify-content-between align-items-center hover-box">
-                          <span class="fw-semibold text-dark">Settings</span>
-                          <i class="bi bi-arrow-right text-primary"></i>
-                        </div>
-                      </a>
-                    </div>
-
-                  </div>
-                </div>
+          
 
   <p>Update conference agenda</p>
   <div class="container">
