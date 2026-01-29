@@ -68,7 +68,7 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
           <h5 class="fw-semibold">Job Description</h5>
           <ul>
             @foreach($getjobdetails->description as $desc)
-            <li>{{ $desc }}</li>
+            <li>{{ $desc []}}</li>
             @endforeach
           </ul>
           @endif
