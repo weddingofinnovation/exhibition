@@ -8,8 +8,6 @@
 $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 @endphp
 
-
-{{$getjobdetails}}
 <section class="container my-5">
   <div class="row justify-content-center">
     <div class="col-lg-10">
