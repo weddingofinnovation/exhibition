@@ -4,101 +4,101 @@
 
 @if($this->slug)
 
-@php
-$getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
-@endphp
+  @php
+  $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
+  @endphp
 
-<section class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
+  <section class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
 
-      <!-- Job Header -->
-      <div class="card shadow-sm mb-4">
-        <div class="card-body">
-          <h2 class="fw-bold mb-2">{{$getjobdetails->title}}</h2>
-          <p class="text-muted mb-3">
-            Lead growth, partnerships & revenue for premium exhibitions and trade shows.
-          </p>
+        <!-- Job Header -->
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+            <h2 class="fw-bold mb-2">{{$getjobdetails->title}}</h2>
+            <p class="text-muted mb-3">
+              Lead growth, partnerships & revenue for premium exhibitions and trade shows.
+            </p>
 
-          <div class="row g-3">
-            <div class="col-md-4">
-              <strong>Level:</strong>
-              <p class="mb-0">Manager / Senior Manager</p>
-            </div>
-            <div class="col-md-4">
-              <strong>Location:</strong>
-              <p class="mb-0">Delhi / NCR</p>
-            </div>
-            <div class="col-md-4">
-              <strong>Salary:</strong>
-              <p class="mb-0">₹6 – ₹12 LPA + Incentives</p>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <strong>Level:</strong>
+                <p class="mb-0">Manager / Senior Manager</p>
+              </div>
+              <div class="col-md-4">
+                <strong>Location:</strong>
+                <p class="mb-0">Delhi / NCR</p>
+              </div>
+              <div class="col-md-4">
+                <strong>Salary:</strong>
+                <p class="mb-0">₹6 – ₹12 LPA + Incentives</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Job Details -->
-      <div class="card shadow-sm">
-        <div class="card-body">
+        <!-- Job Details -->
+        <div class="card shadow-sm">
+          <div class="card-body">
 
-          <h5 class="fw-semibold">Must-Have Skills</h5>
-          <ul>
-            <li>Business development & B2B sales</li>
-            <li>Client acquisition & partnerships</li>
-            <li>Strategic planning & negotiation</li>
-            <li>Team & revenue management</li>
-          </ul>
+            <h5 class="fw-semibold">Must-Have Skills</h5>
+            <ul>
+              <li>Business development & B2B sales</li>
+              <li>Client acquisition & partnerships</li>
+              <li>Strategic planning & negotiation</li>
+              <li>Team & revenue management</li>
+            </ul>
 
-          <h5 class="fw-semibold mt-4">Good-to-Have Skills</h5>
-          <ul>
-            <li>Exhibition & event industry exposure</li>
-            <li>Sponsorship & large account handling</li>
-            <li>Market research & expansion planning</li>
-          </ul>
+            <h5 class="fw-semibold mt-4">Good-to-Have Skills</h5>
+            <ul>
+              <li>Exhibition & event industry exposure</li>
+              <li>Sponsorship & large account handling</li>
+              <li>Market research & expansion planning</li>
+            </ul>
 
-          <h5 class="fw-semibold mt-4">Job Description</h5>
-          <ul>
-            <li>Develop new exhibition business opportunities</li>
-            <li>Acquire sponsors, partners & key clients</li>
-            <li>Build and maintain long-term client relationships</li>
-            <li>Plan pricing, packages & growth strategies</li>
-            <li>Lead sales initiatives and cross-functional coordination</li>
-          </ul>
+            <h5 class="fw-semibold mt-4">Job Description</h5>
+            <ul>
+              <li>Develop new exhibition business opportunities</li>
+              <li>Acquire sponsors, partners & key clients</li>
+              <li>Build and maintain long-term client relationships</li>
+              <li>Plan pricing, packages & growth strategies</li>
+              <li>Lead sales initiatives and cross-functional coordination</li>
+            </ul>
 
-          <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
-          <ul>
-            <li>Strong business and revenue-driven mindset</li>
-            <li>Excellent leadership & client-handling skills</li>
-            <li>Proven track record of revenue growth</li>
-            <li>Industry network is a strong advantage</li>
-          </ul>
+            <h5 class="fw-semibold mt-4">Required Candidate Profile</h5>
+            <ul>
+              <li>Strong business and revenue-driven mindset</li>
+              <li>Excellent leadership & client-handling skills</li>
+              <li>Proven track record of revenue growth</li>
+              <li>Industry network is a strong advantage</li>
+            </ul>
 
-          <hr>
+            <hr>
 
-          <div class="row">
-            <div class="col-md-6">
-              <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
-              <p><strong>Department:</strong> Business Development</p>
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>Industry Type:</strong> Exhibitions / Events / B2B Trade Shows</p>
+                <p><strong>Department:</strong> Business Development</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Employment Type:</strong> Full-Time</p>
+                <p><strong>Education:</strong> MBA / Graduate (Business, Marketing preferred)</p>
+              </div>
             </div>
-            <div class="col-md-6">
-              <p><strong>Employment Type:</strong> Full-Time</p>
-              <p><strong>Education:</strong> MBA / Graduate (Business, Marketing preferred)</p>
+
+            <!-- CTA -->
+            <div class="text-center mt-4">
+              <a href="#apply-now" class="btn btn-primary btn-lg">
+                Apply Now
+              </a>
             </div>
-          </div>
 
-          <!-- CTA -->
-          <div class="text-center mt-4">
-            <a href="#apply-now" class="btn btn-primary btn-lg">
-              Apply Now
-            </a>
           </div>
-
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 @elseif
 <section class="container-fluid py-3 py-lg-5  ">
@@ -117,17 +117,52 @@ $getjobdetails = DB::table('jobs')->where('slug', $this->slug)->first();
 <!--Our culture and values-->
 <section class="container py-3 py-lg-5 mt-4 mb-3">
   @foreach ($jobs as $job)
-  <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom" id="opening">
-    <h2 class="fs-5 text-center  fw-light">{{$job->title}}
-      <div class="fs-xs text-primary">{{$job->level}}, {{$job->type}}<i class="fs-sm  bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-    <h2 class="fs-5 text-center fw-light">{{$job->experience}} years<div class="fs-xs text-primary">Click to see requirement<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-    <h2 class="fs-5 text-center fw-light">{{$job->location_state}}
-      <div class="fs-xs text-primary">{{$job->location_country}}<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
-    </h2>
-    <h2 class="fs-5 text-center fw-light"><a href="#apply"><i class="bi bi-chevron-right"></i> </a></h2>
-  </div>
+    <a href="{{ route('career.show', $job->slug) }}"
+      class="text-decoration-none text-dark">
+
+      <div class="d-flex justify-content-evenly align-items-center my-4 border-bottom py-3 job-row">
+
+        <div class="text-center">
+          <h2 class="fs-5 fw-light mb-0">{{ $job->title }}</h2>
+          <div class="fs-xs text-primary">
+            {{ $job->level }}, {{ $job->type }}
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h2 class="fs-5 fw-light mb-0">{{ $job->experience }} years</h2>
+          <div class="fs-xs text-primary">
+            Click to see requirement
+          </div>
+        </div>
+
+        <div class="text-center">
+          <h2 class="fs-5 fw-light mb-0">{{ $job->location_state }}</h2>
+          <div class="fs-xs text-primary">
+            {{ $job->location_country }}
+          </div>
+        </div>
+
+        <div class="text-center">
+          <i class="bi bi-chevron-right fs-4 text-primary"></i>
+        </div>
+
+      </div>
+    </a>
+  @endforeach
+
+  @foreach ($jobs as $job)
+    <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom" id="opening">
+      <h2 class="fs-5 text-center  fw-light">{{$job->title}}
+        <div class="fs-xs text-primary">{{$job->level}}, {{$job->type}}<i class="fs-sm  bi bi-chevron-right align-middle ms-1"></i></div>
+      </h2>
+      <h2 class="fs-5 text-center fw-light">{{$job->experience}} years<div class="fs-xs text-primary">Click to see requirement<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
+      </h2>
+      <h2 class="fs-5 text-center fw-light">{{$job->location_state}}
+        <div class="fs-xs text-primary">{{$job->location_country}}<i class=" bi bi-chevron-right align-middle ms-1"></i></div>
+      </h2>
+      <h2 class="fs-5 text-center fw-light"><a href="#apply"><i class="bi bi-chevron-right"></i> </a></h2>
+    </div>
   @endforeach
 
   <div class="d-flex justify-content-evenly  my-4 text-dark border-bottom">
