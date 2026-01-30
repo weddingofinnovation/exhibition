@@ -5429,6 +5429,86 @@
     </section>
      
 
+    <!-- start-opening timings -->
+    <div class="container my-5">
+        <div class="row g-4">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-8">
+
+                <h6 class="text-muted mb-1">ISM 2026</h6>
+                <h2 class="fw-bold mb-4">Date and opening hours</h2>
+
+                <div class="card border-0 shadow-sm">
+
+                    <!-- Pink Header -->
+                    <div class="card-header text-white fw-semibold"
+                        style="background:#e6007e;">
+                        Opening hours ISM
+                    </div>
+
+                    <div class="card-body p-0">
+
+                        <!-- Visitors -->
+                        <div class="p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 fw-semibold text-danger">
+                                    For visitors:
+                                </div>
+                                <div class="col-md-8">
+                                    <div><strong>01–03.02.2026:</strong> 9:00 a.m. – 6:00 p.m.</div>
+                                    <div><strong>04.02.2026:</strong> 9:00 a.m. – 4:00 p.m.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exhibitors -->
+                        <div class="p-4 bg-light">
+                            <div class="row">
+                                <div class="col-md-4 fw-semibold text-danger">
+                                    For exhibitors:
+                                </div>
+                                <div class="col-md-8">
+                                    <div><strong>01–03.02.2026:</strong> 8:00 a.m. – 7:00 p.m.</div>
+                                    <div><strong>04.02.2026:</strong> 8:00 a.m. – 5:00 p.m.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT CTA -->
+            <div class="col-lg-4">
+                <div class="card border-0 text-center h-100"
+                    style="background:#c7df1e;">
+                    <div class="card-body d-flex flex-column justify-content-center">
+
+                        <small class="fw-semibold">Don't miss anything</small>
+                        <h3 class="fw-bold my-3">Stay up to date!</h3>
+
+                        <div class="my-4">
+                            <div class="rounded-circle d-inline-flex align-items-center justify-content-center"
+                                style="width:80px;height:80px;background:#e6007e;">
+                                <i class="bi bi-bell-fill text-white fs-2"></i>
+                            </div>
+                        </div>
+
+                        <p class="mb-3">Subscribe now for the ISM newsletter!</p>
+
+                        <a href="#" class="btn btn-dark px-4">
+                            Subscribe
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- end-opening timings -->
+
     <style>
         .marketing-card {
             background: #f7f8f8;
