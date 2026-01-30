@@ -94,8 +94,8 @@ class AdminTicketComponent extends Component
         $newtimmingEvent->day_to = $this->day_end;
         $newtimmingEvent->entry_type = $this->entry_type;
         $price = ($this->entry_type === 'general_paid' || $this->entry_type === 'business_paid')? $this->price : null;
-        $newtimmingEvent->price      = $price;
-        $newtimmingEvent->notes      = $this->notes;
+        $newtimmingEvent->price      =  $price;
+        $newtimmingEvent->notes      =  $this->notes;
         $newtimmingEvent->save();
         
         $this->reset(['entry_type', 'price', 'notes']);

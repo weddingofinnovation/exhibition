@@ -313,7 +313,7 @@
                             <label class="form-label fw-semibold">From Day</label>
                             <select wire:model="day_start" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
-                                    <option value="{{ $i + 1 }}">
+                                    <option value="{{ $start->copy()->addDays($i)->format('d M Y (D)') }}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
@@ -326,7 +326,7 @@
                             <label class="form-label fw-semibold">To Day</label>
                             <select wire:model="day_end" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
-                                    <option value="{{ $i + 1 }}">
+                                    <option value="{{ $start->copy()->addDays($i)->format('d M Y (D)') }}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
