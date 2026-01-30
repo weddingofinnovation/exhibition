@@ -290,7 +290,7 @@
 
       @if($board == 'timming')
 
-      <div class="container">
+      <div class="container my-3">
         <div class="row">
             <div class="col-8 border-end">
                
@@ -304,8 +304,6 @@
                 @endphp
 
             </div>
-
-                
 
                 <form wire:submit.prevent="save">
 
@@ -372,7 +370,7 @@
                     </div>
 
                     <!-- Submit -->
-                    <div class="col text-center">
+                    <div class="text-center mt-2">
                         <button class="btn btn-primary px-4">
                             Save Entry Rule
                         </button>
@@ -386,7 +384,7 @@
                 {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
         
                 <hr>
-                
+
                 @for($i = 0; $i < $totalDays; $i++)
                     <div>
                         Day {{ $i + 1 }} :
