@@ -387,6 +387,14 @@
         
                 <hr>
 
+                @foreach($calendar as $day)
+                    <div class="badge 
+                        {{ $day['entry_type'] === 'business_only' ? 'bg-danger' : 'bg-success' }}">
+                        {{ \Carbon\Carbon::parse($day['date'])->format('d M Y') }}
+                        – {{ ucfirst(str_replace('_',' ', $day['entry_type'])) }}
+                    </div>
+                @endforeach
+
                 @for($i = 0; $i < $totalDays; $i++)
                     <div>
                         Day {{ $i + 1 }} :
@@ -410,7 +418,7 @@
                 @endfor
 
                 ------------
-                
+
             @php
                 $overlap = DB::table('event_entry_times')->where('event_id', $this->event_id)
                     ->where(function ($q) {

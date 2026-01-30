@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Illuminate\Support\Str;
+use Carbon\CarbonPeriod;
 
 class AdminTicketComponent extends Component
 {
@@ -96,6 +97,12 @@ class AdminTicketComponent extends Component
         $this->reset(['entry_type', 'price', 'notes']);
         $this->dispatchBrowserEvent('rule-added');
     }
+
+
+    
+
+
+
 
     public function ticketAdd()
     {
@@ -211,6 +218,31 @@ class AdminTicketComponent extends Component
         
         //dd($string, $testing ,$erto, $ret);
 
+        $rules = EventEntryTime::where('event_id', $eventId)
+        ->orderBy('day_from')
+        ->get();
+
+
+        $calendar = [];
+
+        foreach ($rules as $rule) {
+            $period = CarbonPeriod::create(
+                $rule->day_from,
+                $rule->day_to
+            );
+
+            foreach ($period as $date) {
+                $dateKey = $date->format('Y-m-d');
+
+                // If multiple rules exist, latest one wins
+                $calendar[$dateKey] = [
+                    'date'       => $dateKey,
+                    'entry_type' => $rule->entry_type,
+                    'price'      => $rule->price,
+                    'notes'      => $rule->notes,
+                ];
+            }
+        }
 
 
         $evento = Event::where('id', $this->event_id)->first();
