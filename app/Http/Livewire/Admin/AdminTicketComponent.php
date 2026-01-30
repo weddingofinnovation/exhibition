@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Event;
+use App\Models\EventEntryTime;
 use App\Models\Ticket;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -87,14 +88,12 @@ class AdminTicketComponent extends Component
     {
         $this->validate();
 
-        $newtimmingEvent = new Ticket();
+        $newtimmingEvent = new EventEntryTime ();
         $newtimmingEvent->event_id   = $this->event_id;
         $newtimmingEvent->day_from = $this->day_start;
         $newtimmingEvent->day_to = $this->day_end;
         $newtimmingEvent->entry_type = $this->entry_type;
-        $price = ($this->entry_type === 'general_paid' || $this->entry_type === 'business_paid')
-    ? $this->price
-    : null;
+        $price = ($this->entry_type === 'general_paid' || $this->entry_type === 'business_paid')? $this->price : null;
         $newtimmingEvent->price      = $price;
         $newtimmingEvent->notes      = $this->notes;
         $newtimmingEvent->save();
