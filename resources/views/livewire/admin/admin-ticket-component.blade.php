@@ -297,11 +297,26 @@
             <div class="container">
                 
                 @php 
-                  $getEventDetails = DB::table('events')->where('id', $this->event_id)->first();
+                    $getEventDetails = DB::table('events')->where('id', $this->event_id)->first();
+                    $start = Carbon::parse($getEventDetails->startdate);
+                    $end   = Carbon::parse($getEventDetails->enddate);
+                    $totalDays = $start->diffInDays($end) + 1; // inclusive
                 @endphp
-                
-                {{$this->event_id}}
+
+            <p >{{$this->event_id}} |
                 {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
+            
+
+                @for($i = 0; $i < $totalDays; $i++)
+                    <div>
+                        Day {{ $i + 1 }} :
+                        {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
+                    </div>
+                @endfor
+
+            </p>
+               
+
 
             </div>
 
