@@ -311,7 +311,7 @@
                         <!-- From Day -->
                         <div class="col-6">
                             <label class="form-label fw-semibold">From Day</label>
-                            <select wire:model="day_from" class="form-select" required>
+                            <select wire:model.lazy="day_from" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
                                     <option value="{{$start->copy()->addDays($i)->format('Y-m-d')}}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
@@ -324,7 +324,7 @@
                         <!-- To Day -->
                         <div class="col-6">
                             <label class="form-label fw-semibold">To Day</label>
-                            <select wire:model="day_to" class="form-select" required>
+                            <select wire:model.lazy="day_to" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
                                     <option value="{{$start->copy()->addDays($i)->format('Y-m-d')}}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
@@ -338,7 +338,7 @@
                     <!-- Entry Type -->
                     <div class="">
                         <label class="form-label fw-semibold">Entry Type</label>
-                        <select wire:model="entry_type" class="form-select" required>
+                        <select wire:model.lazy="entry_type" class="form-select" required>
                             <option value="">Choose</option>
                             <option value="business_paid">Business Paid</option>
                             <option value="business_only">Business Only</option>
