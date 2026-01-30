@@ -297,7 +297,7 @@
 
                 <div class="row">
                    <!-- From Day -->
-                    <div class="">
+                    <div class="col-6">
                         <label class="form-label fw-semibold">From Day</label>
                         <select wire:model="day_start" class="form-select" required>
                             @for($i = 1; $i <= $event->durationDays(); $i++)
@@ -310,7 +310,7 @@
                     </div>
 
                     <!-- To Day -->
-                    <div class="">
+                    <div class="col-6">
                         <label class="form-label fw-semibold">To Day</label>
                         <select wire:model="day_end" class="form-select" required>
                             @for($i = $day_start; $i <= $event->durationDays(); $i++)
