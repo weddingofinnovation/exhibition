@@ -69,9 +69,6 @@ class AdminTicketComponent extends Component
         $this->slug = Str::slug($this->package,'-');
     }
 
-   
-
-
     public function save()
     {
         dd($this->day_start, $this->day_end);

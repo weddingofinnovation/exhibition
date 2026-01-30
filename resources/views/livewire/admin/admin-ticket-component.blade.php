@@ -311,27 +311,27 @@
                         <!-- From Day -->
                         <div class="col-6">
                             <label class="form-label fw-semibold">From Day</label>
-                            <select wire:model="day_start" class="form-select" required>
+                            <select wire:model="day_from" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
                                     <option value="{{$start->copy()->addDays($i)->format('Y-m-d')}}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
                             </select>
-                            @error('day_start') <small class="text-danger">{{ $message }}</small> @enderror
+                            @error('day_from') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
 
                         <!-- To Day -->
                         <div class="col-6">
                             <label class="form-label fw-semibold">To Day</label>
-                            <select wire:model="day_end" class="form-select" required>
+                            <select wire:model="day_to" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
                                     <option value="{{$start->copy()->addDays($i)->format('Y-m-d')}}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
                             </select>
-                            @error('day_end') <small class="text-danger">{{ $message }}</small> @enderror
+                            @error('day_to') <small class="text-danger">{{ $message }}</small> @enderror
                         </div>
                     </div>
 
