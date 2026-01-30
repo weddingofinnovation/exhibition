@@ -298,8 +298,8 @@
                 
                 @php 
                     $getEventDetails = DB::table('events')->where('id', $this->event_id)->first();
-                    $start = Carbon/Carbon::parse($getEventDetails->startdate);
-                    $end   = Carbon/Carbon::parse($getEventDetails->enddate);
+                    $start = Carbon\Carbon::parse($getEventDetails->startdate);
+                    $end   = Carbon\Carbon::parse($getEventDetails->enddate);
                     $totalDays = $start->diffInDays($end) + 1; // inclusive
                 @endphp
 
