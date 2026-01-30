@@ -397,7 +397,7 @@
 
 
                @php
-                 $geteventtime = DB::('event_entry_times')->where('event_id', $this->event_id)->get();
+                 $geteventtime = DB::table('event_entry_times')->where('event_id', $this->event_id)->get();
                @endphp
 
                {{$geteventtime}}
