@@ -76,19 +76,19 @@ class AdminTicketComponent extends Component
     ];
 
 
-     public function updatedEntryType()
-    {
-        if ($this->entry_type !== 'general_paid') {
-            $this->price = null;
-        }
-    }
+    //  public function updatedEntryType()
+    // {
+    //     if ($this->entry_type !== 'general_paid') {
+    //         $this->price = null;
+    //     }
+    // }
 
     public function save()
     {
         $this->validate();
 
         Event::create([
-            'event_id'   => $this->event->id,
+            'event_id'   => $this->event_id,
             'day_start'  => $this->day_start,
             'day_end'    => $this->day_end,
             'entry_type' => $this->entry_type,
