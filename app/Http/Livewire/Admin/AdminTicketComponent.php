@@ -218,7 +218,7 @@ class AdminTicketComponent extends Component
         
         //dd($string, $testing ,$erto, $ret);
 
-        $rules = EventEntryTime::where('event_id', $eventId)
+        $rules = EventEntryTime::where('event_id', $this->event_id)
         ->orderBy('day_from')
         ->get();
 
