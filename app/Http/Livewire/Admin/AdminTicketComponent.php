@@ -69,8 +69,8 @@ class AdminTicketComponent extends Component
     }
 
     protected $rules = [
-        'day_start' => 'required|integer|min:1',
-        'day_end'   => 'required|integer|gte:day_start',
+        'day_start' => 'required|date',
+        'day_end'   => 'required|date|after_or_equal:day_start',
         'entry_type'=> 'required|string',
         'price'     => 'nullable|numeric|min:0',
         'notes'     => 'nullable|string|max:255',
