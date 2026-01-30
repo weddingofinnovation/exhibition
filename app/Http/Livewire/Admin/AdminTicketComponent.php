@@ -258,6 +258,6 @@ class AdminTicketComponent extends Component
         $ticketsDeactive = Ticket::where('admstatus','1')->where('status','1')->where('event_id', $evento->id)->where('expiry_date', $todaydate)->where('expiry_time', $timerty)->get();
 
         
-        return view('livewire.admin.admin-ticket-component',['ticketsfeatured' => $ticketsfeatured, 'ticketssponsored'=>$ticketssponsored, 'ticketsBasic'=>$ticketsBasic, 'ticketsActive'=>$ticketsActive, 'ticketsDeactive'=>$ticketsDeactive, 'evento'=>$evento])->layout('layouts.eblog');
+        return view('livewire.admin.admin-ticket-component',['calendar' => $calendar, 'ticketsfeatured' => $ticketsfeatured, 'ticketssponsored'=>$ticketssponsored, 'ticketsBasic'=>$ticketsBasic, 'ticketsActive'=>$ticketsActive, 'ticketsDeactive'=>$ticketsDeactive, 'evento'=>$evento])->layout('layouts.eblog');
     }
 }
