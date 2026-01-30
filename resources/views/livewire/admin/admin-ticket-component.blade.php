@@ -305,12 +305,7 @@
 
             </div>
 
-                @for($i = 0; $i < $totalDays; $i++)
-                    <div>
-                        Day {{ $i + 1 }} :
-                        {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
-                    </div>
-                @endfor
+                
 
                 <form wire:submit.prevent="save">
 
@@ -320,7 +315,7 @@
                             <label class="form-label fw-semibold">From Day</label>
                             <select wire:model="day_start" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
-                                    <option value="{{ $i }}">
+                                    <option value="{{ $i + 1 }}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
@@ -333,7 +328,7 @@
                             <label class="form-label fw-semibold">To Day</label>
                             <select wire:model="day_end" class="form-select" required>
                                 @for($i = 0; $i < $totalDays; $i++)
-                                    <option value="{{ $i }}">
+                                    <option value="{{ $i + 1 }}">
                                         Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
                                     </option>
                                 @endfor
@@ -347,6 +342,7 @@
                         <label class="form-label fw-semibold">Entry Type</label>
                         <select wire:model="entry_type" class="form-select" required>
                             <option value="">Choose</option>
+                            <option value="business_paid">Business Only</option>
                             <option value="business_only">Business Only</option>
                             <option value="general_free">General – Free</option>
                             <option value="general_paid">General – Paid</option>
@@ -389,7 +385,14 @@
               <p >{{$this->event_id}} |
                 {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
         
+                <hr>
                 
+                @for($i = 0; $i < $totalDays; $i++)
+                    <div>
+                        Day {{ $i + 1 }} :
+                        {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
+                    </div>
+                @endfor
                </p>
 
             </div>
