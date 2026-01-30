@@ -73,6 +73,7 @@ class AdminTicketComponent extends Component
 
     public function save()
     {
+        dd($this->day_from, $this->day_to);
         $this->validate([
             'day_from' => 'required|date_format:Y-m-d',
             'day_to'   => 'required|date_format:Y-m-d|after_or_equal:day_start',
