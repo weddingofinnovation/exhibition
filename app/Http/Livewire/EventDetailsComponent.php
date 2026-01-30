@@ -22,6 +22,7 @@ use DateTime;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Carbon\CarbonPeriod;
 
 class EventDetailsComponent extends Component
 {
@@ -211,7 +212,33 @@ class EventDetailsComponent extends Component
          //$testi = strtotime($checkCommentop);
 
          //dd($fromdate, $todate, $checkCommentop );
-        return view('livewire.event-details-component',['exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand,
+          $rules = EventEntryTime::where('event_id', $this->event_id)
+        ->orderBy('day_from')
+        ->get();
+
+
+        $calendar = [];
+
+        foreach ($rules as $rule) {
+            $period = CarbonPeriod::create(
+                $rule->day_from,
+                $rule->day_to
+            );
+
+            foreach ($period as $date) {
+                $dateKey = $date->format('Y-m-d');
+
+                // If multiple rules exist, latest one wins
+                $calendar[$dateKey] = [
+                    'date'       => $dateKey,
+                    'entry_type' => $rule->entry_type,
+                    'price'      => $rule->price,
+                    'notes'      => $rule->notes,
+                ];
+            }
+        }
+
+        return view('livewire.event-details-component',['calendar' => $calendar, 'exhibitor'=> $exhibitor, 'sponserbrand'=> $sponserbrand,
          'to'=> $to, 'from'=> $from,'current'=> $current, 'eventbrand'=>$eventbrand, 'findEvent'=>$findEvent,'rateRating' => $rateRating,
                                                         'commentedRates' => $commentedRates,
                                                         'detailProductprice' => $detailProductprice,

@@ -3962,44 +3962,44 @@
 
 
     @php
-        use Carbon\Carbon;
+    use Carbon\Carbon;
 
-        $start = Carbon::parse($event->startdate);
-        $end = Carbon::parse($event->enddate);
-        $now = Carbon::now();
+    $start = Carbon::parse($event->startdate);
+    $end = Carbon::parse($event->enddate);
+    $now = Carbon::now();
 
-        // Date Format Logic
-        if ($start->isSameDay($end)) {
-        // One-day event
-        $displayDate = $start->format('D, d M Y');
-        } elseif ($start->format('M Y') == $end->format('M Y')) {
-        // Same month & year
-        $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
-        } else {
-        // Different month OR year
-        $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
-        }
+    // Date Format Logic
+    if ($start->isSameDay($end)) {
+    // One-day event
+    $displayDate = $start->format('D, d M Y');
+    } elseif ($start->format('M Y') == $end->format('M Y')) {
+    // Same month & year
+    $displayDate = $start->format('D, d') . ' - ' . $end->format('D, d M Y');
+    } else {
+    // Different month OR year
+    $displayDate = $start->format('D, d M Y') . ' - ' . $end->format('D, d M Y');
+    }
 
-        // Status Badge Logic
-        if ($now->lt($start)) {
-        $status = 'Upcoming';
-        $badgeClass = 'bg-primary';
-        } elseif ($now->between($start, $end)) {
-        $status = 'Ongoing';
-        $badgeClass = 'bg-success';
-        } else {
-        $status = 'Ended';
-        $badgeClass = 'bg-secondary';
-        }
+    // Status Badge Logic
+    if ($now->lt($start)) {
+    $status = 'Upcoming';
+    $badgeClass = 'bg-primary';
+    } elseif ($now->between($start, $end)) {
+    $status = 'Ongoing';
+    $badgeClass = 'bg-success';
+    } else {
+    $status = 'Ended';
+    $badgeClass = 'bg-secondary';
+    }
 
-        $startto = Carbon::parse ($event->startdate);
-        $endfrom = Carbon::parse ($event->enddate);
-        $now= carbon::now();
-        $name = $event->eventname;
-        $venue = $event->venue;
-        $city = $event->city;
-        $country = $event->country;
-        $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
+    $startto = Carbon::parse ($event->startdate);
+    $endfrom = Carbon::parse ($event->enddate);
+    $now= carbon::now();
+    $name = $event->eventname;
+    $venue = $event->venue;
+    $city = $event->city;
+    $country = $event->country;
+    $link = Link::create($name, $startto , $endfrom)->description($name)->address($venue . ', ' . $city . ', ' . $country);
     @endphp
 
 
@@ -4205,8 +4205,9 @@
         }
 
         .header-fixed {
-            z-index: 1050; /* higher than dropdowns */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1050;
+            /* higher than dropdowns */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         /* Prevent mega menu from being cut */
@@ -4225,32 +4226,32 @@
                 <a class="navbar-brand me-4 d-flex align-items-center" href="#">
 
                     @if(!empty($eventLogo) && Storage::exists($eventLogo))
-                        <!-- If logo available -->
-                        <img src="{{ asset($eventLogo) }}" height="45">
+                    <!-- If logo available -->
+                    <img src="{{ asset($eventLogo) }}" height="45">
 
                     @else
-                        <!-- If logo missing: Show "Upcoming" + Date -->
-                        <div class="d-flex align-items-center gap-1 date-selector-1">
+                    <!-- If logo missing: Show "Upcoming" + Date -->
+                    <div class="d-flex align-items-center gap-1 date-selector-1">
 
-                            <div class="month-wrapper">
-                                <div class="month-pill" style="color: #0b1625;">{{$start->format('M')}}</div>
-                            </div>
-
-                            <div class="date-card">
-                                <div class="day">{{$start->format('d')}}</div>
-                                <div class="week fw-bold">{{$start->format('D')}}</div>
-                            </div>
-
-                            <div class="date-card active">
-                                <div class="day">{{$end->format('d')}}</div>
-                                <div class="week fw-bold text-white">{{$end->format('D')}}</div>
-                            </div>
-
+                        <div class="month-wrapper">
+                            <div class="month-pill" style="color: #0b1625;">{{$start->format('M')}}</div>
                         </div>
 
+                        <div class="date-card">
+                            <div class="day">{{$start->format('d')}}</div>
+                            <div class="week fw-bold">{{$start->format('D')}}</div>
+                        </div>
+
+                        <div class="date-card active">
+                            <div class="day">{{$end->format('d')}}</div>
+                            <div class="week fw-bold text-white">{{$end->format('D')}}</div>
+                        </div>
+
+                    </div>
 
 
-                        <!-- <div class="d-flex flex-column">
+
+                    <!-- <div class="d-flex flex-column">
                             <span class="badge rounded-pill {{ $badgeClass }} fs-xs">{{ $status }}</span> 
                             <div class="d-flex align-items-center">
                                 <small class="ms-2 text-dark fw-normal fs-lg">{{ $displayDate }}</small>
@@ -4438,8 +4439,8 @@
                         </li>
 
 
-                        @php 
-                          $getexhibitor = DB::table('participants')->where('event_id', $event->id)->get();
+                        @php
+                        $getexhibitor = DB::table('participants')->where('event_id', $event->id)->get();
                         @endphp
 
                         @if($getexhibitor->count() > '0')
@@ -4468,7 +4469,7 @@
 
                                 </div>
                             </div>
-                        </li> 
+                        </li>
                         @endif
 
                         <li class="nav-item dropdown position-static">
@@ -4903,36 +4904,37 @@
     <style>
         .sticky-section {
             position: sticky;
-            top: 5px; /* SAME height as header */
+            top: 5px;
+            /* SAME height as header */
             z-index: 1020;
             background: #fff;
         }
     </style>
-    
+
     <!-- new-try -->
     <section class="pt-4 sticky-section d-none d-md-block">
         <div class="container">
             <!-- Trust / Rating Bar -->
             <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mb-4 small">
 
-            <span class="text-muted">Our customers say</span>
+                <span class="text-muted">Our customers say</span>
 
-            <strong class="fs-6">Excellent</strong>
+                <strong class="fs-6">Excellent</strong>
 
-            <!-- Stars -->
-            <div class="d-flex align-items-center gap-1">
-                <span class="text-success">★★★★★</span>
-            </div>
+                <!-- Stars -->
+                <div class="d-flex align-items-center gap-1">
+                    <span class="text-success">★★★★★</span>
+                </div>
 
-            <span class="text-muted">
-                4.5 out of 5 stars based on <strong>129,972</strong> reviews
-            </span>
+                <span class="text-muted">
+                    4.5 out of 5 stars based on <strong>129,972</strong> reviews
+                </span>
 
-            <!-- Trustpilot -->
-            <div class="d-flex align-items-center gap-1">
-                <span class="text-success fs-5">★</span>
-                <strong>Great Exhibition To Exhibit</strong>
-            </div>
+                <!-- Trustpilot -->
+                <div class="d-flex align-items-center gap-1">
+                    <span class="text-success fs-5">★</span>
+                    <strong>Great Exhibition To Exhibit</strong>
+                </div>
 
             </div>
         </div>
@@ -4983,7 +4985,7 @@
                     <!-- Pills -->
                     <ul class="nav custom-pills">
 
-                       <!-- Arrow Item -->
+                        <!-- Arrow Item -->
                         <li class="nav-item">
                             <a class="nav-link arrow-pill" href="#event-header">
                                 ↑
@@ -4991,21 +4993,21 @@
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Marketing Planner</a>
+                            <a class="nav-link" href="#">Marketing Planner</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Social and Email</a>
+                            <a class="nav-link" href="#">Social and Email</a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link active" href="#">
-                            Search Engine Optimization
-                        </a>
+                            <a class="nav-link active" href="#">
+                                Search Engine Optimization
+                            </a>
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="#">FAQ</a>
+                            <a class="nav-link" href="#">FAQ</a>
                         </li>
 
                     </ul>
@@ -5114,165 +5116,165 @@
                     @endforeach
                 </div>
 
-    
+
                 <section class="py-5">
-        <div class="container">
+                    <div class="container">
 
-            <div class="row g-4 align-items-stretch">
+                        <div class="row g-4 align-items-stretch">
 
-            <!-- Feature 1 (Highlighted) -->
-            <div class="col-md-4">
-                <div class="feature-box bg-light h-100 p-4 rounded-4">
-                <h4 class="fw-bold mb-3">AI tools built for your business</h4>
-                <p class="text-muted mb-0">
-                    Our suite of AI tools can help save you time and money, enabling you
-                    to customize and scale your site with ease. Create content, product
-                    descriptions, FAQs, and more to bring your brand to life.
-                </p>
-                </div>
-            </div>
+                            <!-- Feature 1 (Highlighted) -->
+                            <div class="col-md-4">
+                                <div class="feature-box bg-light h-100 p-4 rounded-4">
+                                    <h4 class="fw-bold mb-3">AI tools built for your business</h4>
+                                    <p class="text-muted mb-0">
+                                        Our suite of AI tools can help save you time and money, enabling you
+                                        to customize and scale your site with ease. Create content, product
+                                        descriptions, FAQs, and more to bring your brand to life.
+                                    </p>
+                                </div>
+                            </div>
 
-            <!-- Feature 2 -->
-            <div class="col-md-4">
-                <div class="feature-box h-100 p-4 rounded-4 border">
-                <h4 class="fw-bold mb-3">Point, click, and launch</h4>
-                <p class="text-muted mb-0">
-                    With our robust website builder, no coding or design experience is
-                    required. Add or delete sections with drag and drop functionality
-                    to create and publish your site with ease and speed.
-                </p>
-                </div>
-            </div>
+                            <!-- Feature 2 -->
+                            <div class="col-md-4">
+                                <div class="feature-box h-100 p-4 rounded-4 border">
+                                    <h4 class="fw-bold mb-3">Point, click, and launch</h4>
+                                    <p class="text-muted mb-0">
+                                        With our robust website builder, no coding or design experience is
+                                        required. Add or delete sections with drag and drop functionality
+                                        to create and publish your site with ease and speed.
+                                    </p>
+                                </div>
+                            </div>
 
-            <!-- Feature 3 -->
-            <div class="col-md-4">
-                <div class="feature-box h-100 p-4 rounded-4 border">
-                <h4 class="fw-bold mb-3">Templates that fit your vision</h4>
-                <p class="text-muted mb-0">
-                    Our professionally designed layouts offer options for any industry,
-                    and they’re customizable—empowering you to build a brand that’s
-                    uniquely yours. Change the look and feel with a single click.
-                </p>
-                </div>
-            </div>
+                            <!-- Feature 3 -->
+                            <div class="col-md-4">
+                                <div class="feature-box h-100 p-4 rounded-4 border">
+                                    <h4 class="fw-bold mb-3">Templates that fit your vision</h4>
+                                    <p class="text-muted mb-0">
+                                        Our professionally designed layouts offer options for any industry,
+                                        and they’re customizable—empowering you to build a brand that’s
+                                        uniquely yours. Change the look and feel with a single click.
+                                    </p>
+                                </div>
+                            </div>
 
-            </div>
+                        </div>
 
-            <!-- CTA Button -->
-            <div class="text-center mt-5">
-            <a href="#" class="btn btn-dark px-5 py-3 rounded-3 fw-semibold">
-                Start for Free
-            </a>
-            </div>
+                        <!-- CTA Button -->
+                        <div class="text-center mt-5">
+                            <a href="#" class="btn btn-dark px-5 py-3 rounded-3 fw-semibold">
+                                Start for Free
+                            </a>
+                        </div>
 
-        </div>
-    </section>
-
-
-    <section class="py-5 bg-light">
-        <div class="">
-
-            <!-- Section Header -->
-            <div class="row mb-5">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="fw-bold">Exhibitor Services</h2>
-                <p class="text-muted">
-                Designed to simplify participation, maximize visibility, and deliver measurable value.
-                </p>
-            </div>
-            </div>
-
-            <!-- Service Card -->
-            <div class="card border-0 shadow-sm mb-5">
-            <div class="card-body p-4 p-lg-5">
-
-                <!-- Service Title -->
-                <div class="row align-items-center mb-4">
-                <div class="col-md-1 text-center">
-                    <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
-                </div>
-                <div class="col-md-11">
-                    <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
-                    <p class="text-muted mb-0">
-                    Decisions backed by data, not assumptions.
-                    </p>
-                </div>
-                </div>
-
-                <!-- Description -->
-                <p class="mb-4">
-                We provide transparent and verified event data including exhibitor mix, visitor profiles,
-                exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
-                </p>
-
-                <!-- Problem / Solution / Advantage -->
-                <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="border rounded h-100 p-3">
-                    <h6 class="fw-semibold text-danger">The Problem</h6>
-                    <p class="small text-muted mb-0">
-                        Exhibitors often participate without reliable data, leading to poor ROI.
-                    </p>
                     </div>
-                </div>
+                </section>
 
-                <div class="col-md-4">
-                    <div class="border rounded h-100 p-3">
-                    <h6 class="fw-semibold text-primary">Our Solution</h6>
-                    <p class="small text-muted mb-0">
-                        Accurate, standardized event statistics verified by The Exhibition Network.
-                    </p>
+
+                <section class="py-5 bg-light">
+                    <div class="">
+
+                        <!-- Section Header -->
+                        <div class="row mb-5">
+                            <div class="col-lg-8 mx-auto text-center">
+                                <h2 class="fw-bold">Exhibitor Services</h2>
+                                <p class="text-muted">
+                                    Designed to simplify participation, maximize visibility, and deliver measurable value.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Service Card -->
+                        <div class="card border-0 shadow-sm mb-5">
+                            <div class="card-body p-4 p-lg-5">
+
+                                <!-- Service Title -->
+                                <div class="row align-items-center mb-4">
+                                    <div class="col-md-1 text-center">
+                                        <span class="badge bg-primary rounded-circle fs-5 p-3">01</span>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <h3 class="fw-bold mb-1">Facts & Figures of the Show</h3>
+                                        <p class="text-muted mb-0">
+                                            Decisions backed by data, not assumptions.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Description -->
+                                <p class="mb-4">
+                                    We provide transparent and verified event data including exhibitor mix, visitor profiles,
+                                    exhibition size, and industry reach—helping exhibitors evaluate the true potential of the show.
+                                </p>
+
+                                <!-- Problem / Solution / Advantage -->
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <div class="border rounded h-100 p-3">
+                                            <h6 class="fw-semibold text-danger">The Problem</h6>
+                                            <p class="small text-muted mb-0">
+                                                Exhibitors often participate without reliable data, leading to poor ROI.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="border rounded h-100 p-3">
+                                            <h6 class="fw-semibold text-primary">Our Solution</h6>
+                                            <p class="small text-muted mb-0">
+                                                Accurate, standardized event statistics verified by The Exhibition Network.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="border rounded h-100 p-3">
+                                            <h6 class="fw-semibold text-success">Your Advantage</h6>
+                                            <p class="small text-muted mb-0">
+                                                Confident decision-making and higher return on investment.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Duplicate card for other services -->
                     </div>
-                </div>
+                </section>
 
-                <div class="col-md-4">
-                    <div class="border rounded h-100 p-3">
-                    <h6 class="fw-semibold text-success">Your Advantage</h6>
-                    <p class="small text-muted mb-0">
-                        Confident decision-making and higher return on investment.
-                    </p>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5 class="mb-3">Pre-request for space booking</h5>
+                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                            <li class="my-3 fs-sm fw-light">Update with your required space, budget before 3 months of exhibition start date, get special free and discounted deals</li>
+                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+                        </ul>
+
+                        <h5 class="mb-3">Our Data, Your Customers.</h5>
+                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                            <li class="my-3 fs-sm fw-light">Download the exhibitor, share your email to find exhibitor</li>
+                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
+                        </ul>
+
+                        <h5 class="mb-3">Advertise</h5>
+                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                            <li class="my-3 fs-sm fw-light">Promote your product with your magazine The Exhibition Network distribute at airport, exhibition centre, goverment office and associations offices.</li>
+                            <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Advertise</a></li>
+                        </ul>
                     </div>
-                </div>
-                </div>
 
-            </div>
-            </div>
+                    <div class="col-6">
+                        <h5 class="mb-3">Expo Initiatives</h5>
+                        <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
+                            <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
+                            <li><!-- No image -->
+                                <div class="card ">
+                                    <div class="expo_Initiatives">
 
-            <!-- Duplicate card for other services -->
-        </div>
-    </section>
-
-
-    <div class="row">
-        <div class="col-6">
-            <h5 class="mb-3">Pre-request for space booking</h5>
-            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                <li class="my-3 fs-sm fw-light">Update with your required space, budget before 3 months of exhibition start date, get special free and discounted deals</li>
-                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
-            </ul>
-
-            <h5 class="mb-3">Our Data, Your Customers.</h5>
-            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                <li class="my-3 fs-sm fw-light">Download the exhibitor, share your email to find exhibitor</li>
-                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Partner with Space</a></li>
-            </ul>
-
-            <h5 class="mb-3">Advertise</h5>
-            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                <li class="my-3 fs-sm fw-light">Promote your product with your magazine The Exhibition Network distribute at airport, exhibition centre, goverment office and associations offices.</li>
-                <li><a href="{{route('event.exhibit', ['board'=> 'partner' ])}}" class="btn btn-sm btn-outline-primary">Advertise</a></li>
-            </ul>
-        </div>
-
-        <div class="col-6">
-            <h5 class="mb-3">Expo Initiatives</h5>
-            <ul class="list-unstyled fs-sm mb-3 mb-lg-4 pb-1">
-                <li class="my-3 fs-sm fw-light">Togethor with people from across the world, we are creating meaningful impact through a range of Expo programmes and initiatives. </li>
-                <li><!-- No image -->
-                    <div class="card ">
-                        <div class="expo_Initiatives">
-
-                            <!-- <div class="card-body ">
+                                        <!-- <div class="card-body ">
                         <h5 class="card-title">Expo live</h5>
                         <p class="card-text fs-sm text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
@@ -5284,31 +5286,31 @@
                         <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
                     </div> -->
 
-                            <div class="card-body">
-                                <h5 class="card-title">Start-up Program</h5>
-                                <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
-                                <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
-                            </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Start-up Program</h5>
+                                            <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
+                                            <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
+                                            <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
+                                        </div>
 
-                            <div class="card-body">
-                                <h5 class="card-title">MSME Program</h5>
-                                <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
-                                <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
-                                <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
-                            </div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">MSME Program</h5>
+                                            <p class="card-text fs-sm text-muted">This unique program for small, emerging companies allows you the opportunity to introduce your new products, tools, and services to a large audience.</p>
+                                            <p class="card-text fs-sm text-muted">The Start-up Program gives you exposure for all three days of the expo floor with a dedicated booth space, including four (4) registrations for your personnel, giving you a home base to conduct meetings with an extensive network of clean energy professionals.</p>
+                                            <a href="#" class="btn btn-sm btn-primary">Register with us.</a>
+                                        </div>
 
 
-                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
                     </div>
-                </li>
-            </ul>
-
-        </div>
-    </div>
+                </div>
 
 
-      </div>
+            </div>
 
 
             <div class="col-lg-4 col-md-4 col-sm-4">
@@ -5427,7 +5429,7 @@
 
         </div>
     </section>
-     
+
 
     <!-- start-opening timings -->
     <div class="container my-5">
@@ -5436,7 +5438,7 @@
             <!-- LEFT CONTENT -->
             <div class="col-lg-8">
 
-                <h6 class="text-muted mb-1">ISM 2026</h6>
+                <h6 class="text-muted mb-1">{{ ucwords($event->eventname) }} 2026</h6>
                 <h2 class="fw-bold mb-4">Date and opening hours</h2>
 
                 <div class="card border-0 shadow-sm">
@@ -5444,29 +5446,30 @@
                     <!-- Pink Header -->
                     <div class="card-header text-white fw-semibold"
                         style="background:#e6007e;">
-                        Opening hours ISM
+                        Opening hours {{ ucwords($event->eventname) }}
                     </div>
 
                     <div class="card-body p-0">
 
-                        <!-- Visitors -->
+                        <!-- Business Visitors -->
                         <div class="p-4 border-bottom">
                             <div class="row">
                                 <div class="col-md-4 fw-semibold text-danger">
-                                    For visitors:
+                                    For Business Visitors:
                                 </div>
                                 <div class="col-md-8">
-                                    <div><strong>01–03.02.2026:</strong> 9:00 a.m. – 6:00 p.m.</div>
-                                    <div><strong>04.02.2026:</strong> 9:00 a.m. – 4:00 p.m.</div>
+                                    <div><strong>01–03.02.2026:</strong> 10:00 a.m. – 6:00 p.m.</div>
+                                    <div><strong>04.02.2026:</strong> 10:00 a.m. – 4:00 p.m.</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Exhibitors -->
+
+                        <!-- General Visitors -->
                         <div class="p-4 bg-light">
                             <div class="row">
                                 <div class="col-md-4 fw-semibold text-danger">
-                                    For exhibitors:
+                                    For General Visitors:
                                 </div>
                                 <div class="col-md-8">
                                     <div><strong>01–03.02.2026:</strong> 8:00 a.m. – 7:00 p.m.</div>
@@ -5495,7 +5498,7 @@
                             </div>
                         </div>
 
-                        <p class="mb-3">Subscribe now for the ISM newsletter!</p>
+                        <p class="mb-3">Subscribe now for The Exhibition Network newsletter!</p>
 
                         <a href="#" class="btn btn-dark px-4">
                             Subscribe
@@ -5540,38 +5543,38 @@
             height: 26px;
             color: #000;
         }
-
     </style>
 
     <style>
         .feature-box {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .feature-box .icon {
-        height: 40px;               /* FIXED icon height */
-        margin-bottom: 12px;
-        display: flex;
-        align-items: center;
-        color: #000;
+            height: 40px;
+            /* FIXED icon height */
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: #000;
         }
 
         .feature-box .title {
-        min-height: 44px;           /* FIX title height */
-        font-weight: 600;
-        margin-bottom: 8px;
-        color: #000;
+            min-height: 44px;
+            /* FIX title height */
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #000;
         }
 
         .feature-box .desc {
-        font-size: 14px;
-        line-height: 1.5;
-        color: #000;
-        margin-top: 1rem;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #000;
+            margin-top: 1rem;
         }
-
     </style>
 
     <!-- secondary try -->
@@ -5582,7 +5585,7 @@
 
                     <!-- LEFT CONTENT -->
                     <div class="col-lg-3">
-                    <span class="badge plus-badge mb-3">PLUS</span>
+                        <span class="badge plus-badge mb-3">PLUS</span>
                         <h3 class="fw-bold display-6" style="color: #000;">
                             Every Digital<br>Marketing<br>plan includes:
                         </h3>
@@ -5598,8 +5601,8 @@
                                     <div class="icon">
                                         <!-- SVG ICON -->
                                         <svg class="icon fs-md" viewBox="0 0 24 24">
-                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
                                         </svg>
                                     </div>
 
@@ -5614,59 +5617,59 @@
                                     <div class="icon">
                                         <!-- SVG ICON -->
                                         <svg class="icon fs-md" viewBox="0 0 24 24">
-                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M4 4h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M8 20h8" stroke="currentColor" stroke-width="1.5" />
                                         </svg>
                                     </div>
                                     <h6 class="title">Email marketing campaigns</h6>
                                     <p class="desc">
-                                    Reach out to customers to always be relevant and top of mind.
+                                        Reach out to customers to always be relevant and top of mind.
                                     </p>
                                 </div>
                             </div>
 
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                    <rect x="3" y="4" width="18" height="16" rx="2"
-                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                    <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5"/>
-                                    </svg>
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="16" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="1.5" />
+                                        </svg>
+                                    </div>
+                                    <h6 class="title">Scheduled social media posts</h6>
+                                    <p class="desc">Post consistently to improve reach and engagement.</p>
                                 </div>
-                                <h6 class="title">Scheduled social media posts</h6>
-                                <p class="desc">Post consistently to improve reach and engagement.</p>
                             </div>
-                        </div>
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <div class="icon">
-                                    <svg class="icon" viewBox="0 0 24 24">
-                                    <rect x="3" y="5" width="18" height="14" rx="2"
-                                            fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                    <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                    <path d="M21 17l-5-5-4 4-2-2-5 5"
-                                            stroke="currentColor" stroke-width="1.5" fill="none"/>
-                                    </svg>
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <div class="icon">
+                                        <svg class="icon" viewBox="0 0 24 24">
+                                            <rect x="3" y="5" width="18" height="14" rx="2"
+                                                fill="none" stroke="currentColor" stroke-width="1.5" />
+                                            <circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.5" fill="none" />
+                                            <path d="M21 17l-5-5-4 4-2-2-5 5"
+                                                stroke="currentColor" stroke-width="1.5" fill="none" />
+                                        </svg>
+                                    </div>
+
+                                    <h6 class="title">Branded images and videos</h6>
+                                    <p class="desc">Create visual content with photos and videos.</p>
                                 </div>
-                                
-                                <h6 class="title">Branded images and videos</h6>
-                                <p class="desc">Create visual content with photos and videos.</p>
                             </div>
-                        </div>
 
-                        <div class="col">
-                            <div class="feature-box h-100">
-                                <svg class="icon" viewBox="0 0 24 24">
-                                <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
-                                        fill="none" stroke="currentColor" stroke-width="1.5"/>
-                                </svg>
-                                <h6 class="title">Design Studio</h6>
-                                <p class="desc">Create logos, websites, and ads with ease.</p>
+                            <div class="col">
+                                <div class="feature-box h-100">
+                                    <svg class="icon" viewBox="0 0 24 24">
+                                        <path d="M12 3l3 6 6 3-6 3-3 6-3-6-6-3 6-3z"
+                                            fill="none" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                    <h6 class="title">Design Studio</h6>
+                                    <p class="desc">Create logos, websites, and ads with ease.</p>
+                                </div>
                             </div>
-                        </div>
 
 
                         </div>
@@ -6582,7 +6585,7 @@
             <!-- exhibitor tab-->
 
             @php
-              $getExhibitor = DB::table('participants')->where('event_id', $event->id)->get();
+            $getExhibitor = DB::table('participants')->where('event_id', $event->id)->get();
             @endphp
 
             <div class="d-flex badgese pb-2">
@@ -6597,8 +6600,8 @@
             <div class="row mb-5 pb-2">
                 @foreach ($getExhibitor as $franchise)
 
-                @php 
-                    $branddetails = DB::table('brands')->where('id', $franchise->brand_id)->first();
+                @php
+                $branddetails = DB::table('brands')->where('id', $franchise->brand_id)->first();
                 @endphp
 
                 <div class=" ">
@@ -6948,7 +6951,7 @@
 
     <!-- left: 0; -->
     <style>
-       .bottom-header {
+        .bottom-header {
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -6962,7 +6965,6 @@
         .bottom-header.hide {
             transform: translateY(100%);
         }
-
     </style>
 
     <!-- fixedthis -->
@@ -7035,108 +7037,107 @@
 
     @push('scripts')
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                if (localStorage.getItem('currentTab')) {
-                    this.call('switchTab', localStorage.getItem('currentTab'));
-                }
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('currentTab')) {
+                this.call('switchTab', localStorage.getItem('currentTab'));
+            }
 
-                document.querySelectorAll('.nav-link').forEach(function(element) {
-                    element.addEventListener('click', function() {
-                        localStorage.setItem('currentTab', this.getAttribute('wire:click.prevent').replace('switchTab(', '').replace(')', ''));
-                    });
+            document.querySelectorAll('.nav-link').forEach(function(element) {
+                element.addEventListener('click', function() {
+                    localStorage.setItem('currentTab', this.getAttribute('wire:click.prevent').replace('switchTab(', '').replace(')', ''));
                 });
             });
-        </script>
-
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Event",
-                "name": "{{$event->eventname}}",
-                "startDate": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-                "endDate": "{{Carbon::parse ($event->enddate)->format('Y-m-d')}}",
-                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-                "eventStatus": "https://schema.org/EventScheduled",
-
-                "location": {
-                    "@type": "Place",
-                    "name": "{{$event->venue}}",
-
-                    "address": {
-                        "@type": "PostalAddress",
-                        "streetAddress": "{{$event->venue}}",
-                        "addressLocality": "{{$event->venue}}",
-                        "postalCode": "110011",
-                        "addressRegion": "{{$event->city}}",
-                        "addressCountry": "IN"
-                    }
-                },
-
-                "image": [
-                    "{{url('assets/image/exhibition/'.$event->image)}}"
-                ],
-
-                "description": "{{$event->shtdesc}}",
-                "offers": {
-                    "@type": "Offer",
-                    "url": "{{route('event.product',['slug' => $event->slug])}}",
-                    "price": "{{$productPrice}}",
-                    "priceCurrency": "INR",
-                    "availability": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
-                    "validFrom": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}"
-                },
-
-
-                "performer": {
-                    "@type": "PerformingGroup",
-                    "name": "The Exhibition Network"
-                },
-
-                "organizer": {
-                    "@type": "Organization",
-                    "name": "The Exhibition Network",
-                    "url": "https://exhibition.org.in"
-                },
-
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": "{{round($commentedRates->avg('rate') , 1)}}",
-                    "ratingCount": "{{$commentedRates->count()}}",
-                    "bestRating": "10"
-                }
-
-            }
-        </script>
+        });
+    </script>
 
     <script type="application/ld+json">
-		{
-			"@context": "https:schema.org"
-			"@type": "FAQPage",
-			"mainEntity": [
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "{{$event->eventname}}",
+            "startDate": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+            "endDate": "{{Carbon::parse ($event->enddate)->format('Y-m-d')}}",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+
+            "location": {
+                "@type": "Place",
+                "name": "{{$event->venue}}",
+
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "{{$event->venue}}",
+                    "addressLocality": "{{$event->venue}}",
+                    "postalCode": "110011",
+                    "addressRegion": "{{$event->city}}",
+                    "addressCountry": "IN"
+                }
+            },
+
+            "image": [
+                "{{url('assets/image/exhibition/'.$event->image)}}"
+            ],
+
+            "description": "{{$event->shtdesc}}",
+            "offers": {
+                "@type": "Offer",
+                "url": "{{route('event.product',['slug' => $event->slug])}}",
+                "price": "{{$productPrice}}",
+                "priceCurrency": "INR",
+                "availability": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}",
+                "validFrom": "{{Carbon::parse ($event->startdate)->format('Y-m-d')}}"
+            },
 
 
-				@foreach($updateQuestion as $questions)
-					@php
-					  $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
-					@endphp
+            "performer": {
+                "@type": "PerformingGroup",
+                "name": "The Exhibition Network"
+            },
 
-					{
-						"@type": "Question",
-						"name": "{{$questions->question}}",
-						"acceptedAnswer": 
-						{
-							@foreach($answero as $ans)
-							"@type": "Answer",
-							"text": "<p>{{ $ans->answer }}</p>"
-							@endforeach
-						}
-					},
-				@endforeach
-			]
-		}
-	</script>
-    
+            "organizer": {
+                "@type": "Organization",
+                "name": "The Exhibition Network",
+                "url": "https://exhibition.org.in"
+            },
+
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "{{round($commentedRates->avg('rate') , 1)}}",
+                "ratingCount": "{{$commentedRates->count()}}",
+                "bestRating": "10"
+            }
+
+        }
+    </script>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https:schema.org"
+            "@type": "FAQPage",
+            "mainEntity": [
+
+
+                @foreach($updateQuestion as $questions)
+                @php
+                $answero = DB::table('answers') - > where('question_id', $questions - > id) - > where('status', '1') - > get();
+                @endphp
+
+                {
+                    "@type": "Question",
+                    "name": "{{$questions->question}}",
+                    "acceptedAnswer": {
+                        @foreach($answero as $ans)
+                        "@type": "Answer",
+                        "text": "<p>{{ $ans->answer }}</p>"
+                        @endforeach
+                    }
+                },
+                @endforeach
+            ]
+        }
+    </script>
+
 
     <script type="text/javascript">
         const gmailbtn = document.getElementById('gmail-btn');
@@ -7196,15 +7197,15 @@
         let lastScrollTop = 0;
         const bottomHeader = document.getElementById('bottomHeader');
 
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > lastScrollTop && scrollTop > 80) {
-            // scrolling down
-            bottomHeader.classList.add('hide');
+                // scrolling down
+                bottomHeader.classList.add('hide');
             } else {
-            // scrolling up
-            bottomHeader.classList.remove('hide');
+                // scrolling up
+                bottomHeader.classList.remove('hide');
             }
 
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
