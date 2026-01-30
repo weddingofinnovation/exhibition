@@ -89,8 +89,8 @@ class AdminTicketComponent extends Component
 
         $newtimmingEvent = new Ticket();
         $newtimmingEvent->event_id   = $this->event_id;
-        $newtimmingEvent->day_start  = $this->day_start;
-        $newtimmingEvent->day_end   = $this->day_end;
+        $newtimmingEvent->day_from = $this->day_start;
+        $newtimmingEvent->day_to = $this->day_end;
         $newtimmingEvent->entry_type = $this->entry_type;
         $price = ($this->entry_type === 'general_paid' || $this->entry_type === 'business_paid')
     ? $this->price
