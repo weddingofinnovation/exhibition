@@ -43,8 +43,8 @@ class AdminTicketComponent extends Component
     public $entry_type;
     public $notes;
 
-    public $day_from;
-    public $day_to;
+    public $day_from = null;
+    public $day_to = null;
     
     public function mount($event_id, $board , Event $event)
     {
