@@ -293,6 +293,18 @@
       <div class="container">
         <div class="row">
             <div class="col-8 border-end">
+               
+            <div class="container">
+                
+                @php 
+                  $getEventDetails = DB::table('events')->where('id', $this->event_id)->first();
+                @endphp
+                
+                {{$this->event_id}}
+                {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
+
+            </div>
+
                 <form wire:submit.prevent="save">
 
                 <div class="row">
@@ -372,7 +384,6 @@
 
             </div>
         </div>
-        
       </div>
         
 
