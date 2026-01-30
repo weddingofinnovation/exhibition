@@ -410,8 +410,9 @@
                 @endfor
 
                 ------------
+                
             @php
-                $overlap = EventEntryTime::where('event_id', $this->event_id)
+                $overlap = DB::table('event_entry_times')->where('event_id', $this->event_id)
                     ->where(function ($q) {
                         $q->whereBetween('day_from', [$this->day_start, $this->day_end])
                         ->orWhereBetween('day_to', [$this->day_start, $this->day_end]);
