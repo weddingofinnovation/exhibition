@@ -43,6 +43,8 @@ class AdminTicketComponent extends Component
     public $entry_type;
     public $notes;
 
+    public $day_from;
+    public $day_to;
     
     public function mount($event_id, $board , Event $event)
     {
@@ -71,7 +73,6 @@ class AdminTicketComponent extends Component
 
     public function save()
     {
-        dd($this->day_start, $this->day_end);
         $this->validate([
             'day_from' => 'required|date_format:Y-m-d',
             'day_to'   => 'required|date_format:Y-m-d|after_or_equal:day_start',
