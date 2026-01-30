@@ -303,9 +303,7 @@
                     $totalDays = $start->diffInDays($end) + 1; // inclusive
                 @endphp
 
-            <p >{{$this->event_id}} |
-                {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
-            
+            </div>
 
                 @for($i = 0; $i < $totalDays; $i++)
                     <div>
@@ -314,42 +312,35 @@
                     </div>
                 @endfor
 
-            </p>
-               
-
-
-            </div>
-
                 <form wire:submit.prevent="save">
 
-                <div class="row">
-                   <!-- From Day -->
-                    <div class="col-6">
-                        <label class="form-label fw-semibold">From Day</label>
-                        <select wire:model="day_start" class="form-select" required>
-                            @for($i = 1; $i <= $event->durationDays(); $i++)
-                                <option value="{{ $i }}">
-                                    Day {{ $i }} ({{ $event->dayToDate($i)->format('d M') }})
-                                </option>
-                            @endfor
-                        </select>
-                        @error('day_start') <small class="text-danger">{{ $message }}</small> @enderror
-                    </div>
+                    <div class="row">
+                    <!-- From Day -->
+                        <div class="col-6">
+                            <label class="form-label fw-semibold">From Day</label>
+                            <select wire:model="day_start" class="form-select" required>
+                                @for($i = 0; $i < $totalDays; $i++)
+                                    <option value="{{ $i }}">
+                                        Day {{ $i + 1 }} : {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
+                                    </option>
+                                @endfor
+                            </select>
+                            @error('day_start') <small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
 
-                    <!-- To Day -->
-                    <div class="col-6">
-                        <label class="form-label fw-semibold">To Day</label>
-                        <select wire:model="day_end" class="form-select" required>
-                            @for($i = $day_start; $i <= $event->durationDays(); $i++)
-                                <option value="{{ $i }}">
-                                    Day {{ $i }} ({{ $event->dayToDate($i)->format('d M') }})
-                                </option>
-                            @endfor
-                        </select>
-                        @error('day_end') <small class="text-danger">{{ $message }}</small> @enderror
+                        <!-- To Day -->
+                        <div class="col-6">
+                            <label class="form-label fw-semibold">To Day</label>
+                            <select wire:model="day_end" class="form-select" required>
+                                @for($i = $day_start; $i <= $event->durationDays(); $i++)
+                                    <option value="{{ $i }}">
+                                        Day {{ $i }} ({{ $event->dayToDate($i)->format('d M') }})
+                                    </option>
+                                @endfor
+                            </select>
+                            @error('day_end') <small class="text-danger">{{ $message }}</small> @enderror
+                        </div>
                     </div>
-                </div>
-                    
 
                     <!-- Entry Type -->
                     <div class="">
@@ -395,7 +386,11 @@
             </div>
 
             <div class="col-4">
-                <h1>result</h1>
+              <p >{{$this->event_id}} |
+                {{$getEventDetails->eventname}} | {{$getEventDetails->startdate}}  | {{$getEventDetails->enddate}} | {{$getEventDetails->venue}}
+        
+                
+               </p>
 
             </div>
         </div>
