@@ -392,6 +392,15 @@
                         {{ $day['entry_type'] === 'business_only' ? 'bg-danger' : 'bg-success' }}">
                         {{ \Carbon\Carbon::parse($day['date'])->format('d M Y') }}
                         – {{ ucfirst(str_replace('_',' ', $day['entry_type'])) }}
+                        @if(!empty($day['price']))
+                            | ₹{{ number_format($day['price']) }}
+                        @endif
+
+                        @if(!empty($day['notes']))
+                            <div class="small text-white-50">
+                                {{ $day['notes'] }}
+                            </div>
+                        @endif
                     </div>
                 @endforeach
                </p>
