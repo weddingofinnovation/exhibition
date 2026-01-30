@@ -6,6 +6,7 @@ use App\Models\Award;
 use App\Models\Brand;
 use App\Models\Denco;
 use App\Models\Event;
+use App\Models\EventEntryTime;
 use App\Models\Expo;
 use App\Models\Franchise;
 use App\Models\Pavillion;
@@ -212,9 +213,7 @@ class EventDetailsComponent extends Component
          //$testi = strtotime($checkCommentop);
 
          //dd($fromdate, $todate, $checkCommentop );
-          $rules = EventEntryTime::where('event_id', $this->event_id)
-        ->orderBy('day_from')
-        ->get();
+          $rules = EventEntryTime::where('event_id', $this->event_id)->orderBy('day_from')->get();
 
 
         $calendar = [];
