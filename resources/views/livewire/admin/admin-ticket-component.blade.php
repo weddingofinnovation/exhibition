@@ -394,54 +394,8 @@
                         – {{ ucfirst(str_replace('_',' ', $day['entry_type'])) }}
                     </div>
                 @endforeach
-
-                @for($i = 0; $i < $totalDays; $i++)
-                    <div>
-                        Day {{ $i + 1 }} :
-                        {{ $start->copy()->addDays($i)->format('d M Y (D)') }}
-
-                        <div class="">
-                            <label class="form-label fw-semibold">Entry Type</label>
-                            <select wire:model.lazy="entry_type" class="form-select" required>
-                                <option value="selected">Choose</option>
-                                <option value="business_paid">Business Paid</option>
-                                <option value="business_only">Business Only</option>
-                                <option value="general_free">General – Free</option>
-                                <option value="general_paid">General – Paid</option>
-                                <option value="closed_door">Closed Door</option>
-                            </select>
-                            @error('entry_type') <small class="text-danger">{{ $message }}</small> @enderror
-                        </div>
-                         
-                        <button>Save</button>
-                    </div>
-                @endfor
-
-                ------------
-
-            @php
-                $overlap = DB::table('event_entry_times')->where('event_id', $this->event_id)
-                    ->where(function ($q) {
-                        $q->whereBetween('day_from', [$this->day_start, $this->day_end])
-                        ->orWhereBetween('day_to', [$this->day_start, $this->day_end]);
-                    })
-                    ->exists();
-
-                if ($overlap) {
-                    $this->addError('day_start', 'Entry rules overlap with existing dates.');
-                    return;
-                }
-            @endphp
-
-            {{$overlap}}
                </p>
 
-
-               @php
-                 $geteventtime = DB::table('event_entry_times')->where('event_id', $this->event_id)->get();
-               @endphp
-
-               {{$geteventtime}}
             </div>
         </div>
       </div>
