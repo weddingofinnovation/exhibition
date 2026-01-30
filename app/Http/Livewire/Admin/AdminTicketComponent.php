@@ -59,6 +59,7 @@ class AdminTicketComponent extends Component
         $this->event = $event;
         $this->day_start = 1;
         $this->day_end = 1;
+        
 
         //$this->expiry_date = $fattribute->enddate;
         //$this->expiry_time = $fattribute->enddate;
@@ -70,12 +71,13 @@ class AdminTicketComponent extends Component
 
    
 
+
     public function save()
     {
         dd($this->day_start, $this->day_end);
         $this->validate([
-            'day_start' => 'required|date_format:Y-m-d',
-            'day_end'   => 'required|date_format:Y-m-d|after_or_equal:day_start',
+            'day_from' => 'required|date_format:Y-m-d',
+            'day_to'   => 'required|date_format:Y-m-d|after_or_equal:day_start',
             'entry_type'=> 'required|string',
             'price'     => 'nullable|numeric|min:0',
             'notes'     => 'nullable|string|max:255',
@@ -84,8 +86,8 @@ class AdminTicketComponent extends Component
 
         $newtimmingEvent = new EventEntryTime ();
         $newtimmingEvent->event_id   = $this->event_id;
-        $newtimmingEvent->day_from = $this->day_start;
-        $newtimmingEvent->day_to = $this->day_end;
+        $newtimmingEvent->day_from = $this->day_from;
+        $newtimmingEvent->day_to = $this->day_to;
         $newtimmingEvent->entry_type = $this->entry_type;
         $price = ($this->entry_type === 'general_paid' || $this->entry_type === 'business_paid')? $this->price : null;
         $newtimmingEvent->price      =  $price;
