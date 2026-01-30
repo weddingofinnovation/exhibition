@@ -305,7 +305,7 @@
 
             </div>
 
-                <form wire:submit.prevent="save">
+                <form wire:submit.prevent="save"> 
 
                     <div class="row">
                         <!-- From Day -->
@@ -395,6 +395,12 @@
                 @endfor
                </p>
 
+
+               @php
+                 $geteventtime = DB::('event_entry_times')->where('event_id', $this->event_id)->get();
+               @endphp
+
+               {{$geteventtime}}
             </div>
         </div>
       </div>
