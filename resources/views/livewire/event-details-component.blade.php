@@ -5458,6 +5458,22 @@
                                     For Business Visitors:
                                 </div>
                                 <div class="col-md-8">
+                @foreach($calendar as $day)
+                    <div class="">
+                        <strong>{{ \Carbon\Carbon::parse($day['date'])->format('d M Y') }}
+                        – {{ ucfirst(str_replace('_',' ', $day['entry_type'])) }}</strong>
+                         10:00 a.m. – 6:00 p.m.
+                        @if(!empty($day['price']))
+                            | ₹{{ number_format($day['price']) }}
+                        @endif
+
+                        @if(!empty($day['notes']))
+                            <div class="small text-white-50">
+                                {{ $day['notes'] }}
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
                                     <div><strong>01–03.02.2026:</strong> 10:00 a.m. – 6:00 p.m.</div>
                                     <div><strong>04.02.2026:</strong> 10:00 a.m. – 4:00 p.m.</div>
                                 </div>
