@@ -308,7 +308,7 @@
                 <form wire:submit.prevent="save">
 
                     <div class="row">
-                    <!-- From Day -->
+                        <!-- From Day -->
                         <div class="col-6">
                             <label class="form-label fw-semibold">From Day</label>
                             <select wire:model="day_start" class="form-select" required>

@@ -68,25 +68,18 @@ class AdminTicketComponent extends Component
         $this->slug = Str::slug($this->package,'-');
     }
 
-    protected $rules = [
-        'day_start' => 'required|date',
-        'day_end'   => 'required|date|after_or_equal:day_start',
-        'entry_type'=> 'required|string',
-        'price'     => 'nullable|numeric|min:0',
-        'notes'     => 'nullable|string|max:255',
-    ];
-
-
-    //  public function updatedEntryType()
-    // {
-    //     if ($this->entry_type !== 'general_paid') {
-    //         $this->price = null;
-    //     }
-    // }
+   
 
     public function save()
     {
-        $this->validate();
+        $this->validate([
+            'day_start' => 'required|date_format:Y-m-d',
+            'day_end'   => 'required|date_format:Y-m-d|after_or_equal:day_start',
+            'entry_type'=> 'required|string',
+            'price'     => 'nullable|numeric|min:0',
+            'notes'     => 'nullable|string|max:255',
+        ]);
+
 
         $newtimmingEvent = new EventEntryTime ();
         $newtimmingEvent->event_id   = $this->event_id;
