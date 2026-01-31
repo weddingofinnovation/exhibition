@@ -5610,7 +5610,7 @@
                         </div>
 
                         <!-- Venue -->
-                        <div class="info-row py-4 border-bottom">
+                        <div class="info-row p-4 border-bottom">
                             <div class="row">
                                 <div class="col-md-4 info-title">Venue</div>
                                 <div class="col-md-8">
@@ -5620,7 +5620,7 @@
                         </div>
 
                         <!-- Opening Hours -->
-                        <div class="info-row bg-light py-4 border-bottom">
+                        <div class="info-row bg-light p-4 border-bottom">
                             <div class="row">
                                 <div class="col-md-4 info-title">Opening hours</div>
                                 <div class="col-md-8">
@@ -5636,7 +5636,7 @@
                         </div>
 
                         <!-- Admission Fees -->
-                        <div class="info-row py-4 border-bottom">
+                        <div class="info-row p-4 border-bottom">
                             <div class="row">
                                 <div class="col-md-4 info-title">Admission fees 2026</div>
                                 <div class="col-md-8">
@@ -5648,7 +5648,7 @@
                         </div>
 
                         <!-- Space Rate -->
-                        <div class="info-row bg-light py-4">
+                        <div class="info-row bg-light p-4">
                             <div class="row">
                                 <div class="col-md-4 info-title">
                                     Space rate/m²<br>
@@ -5888,7 +5888,7 @@
                     </div>
 
                     <!-- Online application for exhibitors -->
-                    <div class="info-row row-gray py-4 border-bottom">
+                    <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Online application for exhibitors</div>
                             <div class="col-md-8">
