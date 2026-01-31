@@ -5432,7 +5432,7 @@
 
 
     <!-- start-opening timings -->
-    <div class="container my-5">
+    <div class="container my-5 d-none">
         <div class="row g-4">
 
             <!-- LEFT CONTENT -->
@@ -7135,9 +7135,9 @@
 
 
                 @foreach($updateQuestion as $questions)
-                @php
-                  $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
-                @endphp
+                    @php
+                    $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
+                    @endphp 
 
                 {
                     "@type": "Question",
