@@ -5898,7 +5898,7 @@
                     </div>
 
                     <!-- Hall occupancy -->
-                    <div class="info-row row-gray py-4 border-bottom">
+                    <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Hall occupancy</div>
                             <div class="col-md-8">
@@ -5909,7 +5909,7 @@
 
 
                     <!-- Access authorisation -->
-                    <div class="info-row row-gray py-4 border-bottom">
+                    <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Access authorisation</div>
                             <div class="col-md-8">
@@ -5921,7 +5921,7 @@
                 
 
                     <!-- Target Groups Exhibitors (WHITE) -->
-                    <div class="info-row">
+                    <div class="info-row p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Target groups exhibitors
@@ -5948,7 +5948,7 @@
                     </div>
 
                     <!-- Target Groups Visitors (GRAY) -->
-                    <div class="info-row row-gray">
+                    <div class="info-row row-gray p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Target groups visitors
@@ -5965,7 +5965,7 @@
                     </div>
 
                     <!-- Target Groups Exhibitors (WHITE) -->
-                    <div class="info-row">
+                    <div class="info-row p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Target groups exhibitors
@@ -5992,7 +5992,7 @@
                     </div>
 
                     <!-- Target Groups Visitors (GRAY) -->
-                    <div class="info-row row-gray">
+                    <div class="info-row row-gray p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Target groups visitors
@@ -6008,7 +6008,7 @@
                         </div>
                     </div>
 
-                    <div class="info-row">
+                    <div class="info-row p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Figures for the previous event (2025):
@@ -6021,7 +6021,7 @@
                         </div>
                     </div>
 
-                    <div class="info-row row-gray">
+                    <div class="info-row row-gray p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Project management
