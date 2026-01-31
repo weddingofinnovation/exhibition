@@ -5975,7 +5975,7 @@
                                 Project management
                             </div>
                             <div class="col-md-8">
-                                Rishab<br>
+                                Exhibition Help center <br>
                                 e-mail:
                                 <a href="mailto:team@exhibition.org.in">
                                     team@exhibition.org.in
