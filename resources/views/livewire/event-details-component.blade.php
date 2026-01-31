@@ -4290,21 +4290,16 @@
                                                     Segment</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Good Reasons</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    ISM app</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Sponsorship cologne zoo</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    ISM Worldwide</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
-                                                    Organisers & Partners</a></li>
+                                            <!-- <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                                    Organisers & Partners</a></li> -->
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Review</a></li>
                                         </ul>
                                     </div>
 
-                                    <!-- Column 2 -->
-                                    <div class="col-md-2 border-start">
+                                    <!-- it will get show when pavillion get active or our own show or special shows as we do officially  or service provider -->
+                                    <!-- Column 2 --> 
+                                    <!-- <div class="col-md-2 border-start">
                                         <h6 class="fw-bold"><i class="mr-1 bi bi-arrow-right"></i>Experience ISM</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#">
@@ -4318,10 +4313,10 @@
                                             <li><a class="dropdown-item" href="#">
                                                     <i class="mr-1 bi bi-arrow-return-right"></i>Start-up Area</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Column 3 -->
-                                    <div class="col-md-2 border-start">
+                                    <!-- <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">ISM Ingredients</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
@@ -4335,7 +4330,7 @@
                                             <li><a class="dropdown-item" href="#"> <i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Welcome Speech</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Column 4 -->
                                     <div class="col-md-2 border-start">
@@ -4373,7 +4368,8 @@
                         </li>
 
 
-                        <li class="nav-item dropdown position-static">
+                        <!-- event section will active when any event organiser amny sub event like awards, conference along with it -->
+                        <!-- <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Events</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0">
                                 <div class="row justify-content-center">
@@ -4436,7 +4432,7 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
 
 
                         @php
@@ -4444,32 +4440,32 @@
                         @endphp
 
                         @if($getexhibitor->count() > '0')
-                        <li class="nav-item dropdown position-static">
-                            <a class="nav-link dropdown-toggle" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $event->id]) }}">Exhibitors 2026</a>
+                            <li class="nav-item dropdown position-static">
+                                <a class="nav-link dropdown-toggle" href="{{ route('expand.business', ['board' => 'exhibitor', 'event_id' => $event->id]) }}">Exhibitors 2026</a>
 
-                            <!-- <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a> -->
-                            <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
-                                <div class="row justify-content-center">
+                                <!-- <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Exhibitors 2026</a> -->
+                                <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
+                                    <div class="row justify-content-center">
 
-                                    <div class="col-md-2">
-                                        <h6 class="fw-bold">Exhibitor Search</h6>
+                                        <div class="col-md-2">
+                                            <h6 class="fw-bold">Exhibitor Search</h6>
+                                        </div>
+
+                                        <div class="col-md-2 border-start">
+                                            <h6 class="fw-bold">Product Groups</h6>
+                                        </div>
+
+                                        <div class="col-md-2 border-start">
+                                            <h6 class="fw-bold">Product Index</h6>
+                                        </div>
+
+                                        <div class="col-md-2 border-start">
+                                            <h6 class="fw-bold">Hall Plan</h6>
+                                        </div>
+
                                     </div>
-
-                                    <div class="col-md-2 border-start">
-                                        <h6 class="fw-bold">Product Groups</h6>
-                                    </div>
-
-                                    <div class="col-md-2 border-start">
-                                        <h6 class="fw-bold">Product Index</h6>
-                                    </div>
-
-                                    <div class="col-md-2 border-start">
-                                        <h6 class="fw-bold">Hall Plan</h6>
-                                    </div>
-
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         @endif
 
                         <li class="nav-item dropdown position-static">
@@ -4554,8 +4550,8 @@
                             </div>
                         </li>
 
-
-                        <li class="nav-item dropdown position-static">
+                        <!-- create a service package to organiser  -->
+                        <!-- <li class="nav-item dropdown position-static">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Press</a>
                             <div class="dropdown-menu mega-menu p-4 border-top-0 w-100">
                                 <div class="row">
@@ -4596,7 +4592,7 @@
 
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
 
                     </ul>
 
