@@ -5526,7 +5526,46 @@
     <!-- end-opening timings -->
 
     <!-- start-facts-figure -->
-    
+    <style>
+        .event-info-box {
+          background-color: #e4007f;
+        }
+
+        .subscribe-box {
+            background-color: #c6db1f;
+            padding: 30px;
+        }
+
+        .bell-icon {
+            font-size: 48px;
+            background: #e4007f;
+            color: #fff;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .download-box {
+            background: #f2f2f2;
+            border-top: 6px solid #e4007f;
+        }
+
+        .btn-pink {
+            background-color: #e4007f;
+            color: #fff;
+            border-radius: 30px;
+        }
+
+        .btn-pink:hover {
+            background-color: #c8006f;
+            color: #fff;
+        }
+
+    </style>
     <div class="container my-5" id="facts-figure">
         <div class="row g-4">
 
