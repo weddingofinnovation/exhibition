@@ -5717,6 +5717,42 @@
                 text-decoration: underline;
             }
 
+            /* add-second-part */
+        
+    .info-title {
+        font-weight: 600;
+        color: #e4007f;
+    }
+
+    .info-row {
+        padding: 30px 0;
+    }
+
+    .row-gray {
+        background: #f2f2f2;
+    }
+
+    .segment-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    .segment-list li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 22px;
+    }
+
+    .segment-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #000;
+        font-weight: 600;
+    }
+
+
         </style>
 
         <div class="container my-5">
