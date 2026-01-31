@@ -5614,7 +5614,7 @@
                 </div>
 
                 <!-- RIGHT : Sidebar -->
-                <div class="col-lg-4">
+                <div class="col-lg-4 d-none d-md-block">
 
                     <!-- Stay Updated -->
                     <div class="subscribe-box text-center mb-4">
@@ -5776,8 +5776,8 @@
                         <div class="row">
                             <div class="col-md-4 info-title">Admission fees 2026</div>
                             <div class="col-md-8">
-                                <strong>Dayticket</strong> EUR 89.00<br>
-                                <strong>Seasonticket</strong> EUR 110.00<br><br>
+                                <strong>Day ticket</strong> EUR 89.00<br>
+                                <strong>Season ticket</strong> EUR 110.00<br><br>
                                 <small>All ticket prices include VAT.</small>
                             </div>
                         </div>
@@ -5987,7 +5987,7 @@
                 </div>
 
                 <!-- RIGHT SIDEBAR -->
-                <div class="col-lg-4">
+                <div class="col-lg-4 d-none d-md-block">
                     <div class="contact-box p-4">
                         <div class="top-line mb-3"></div>
 
@@ -6070,7 +6070,7 @@
 
         </style>
 
-        <div class="container my-5 media-shop-wrapper">
+        <div class="container my-5 media-shop-wrapper d-none d-md-block">
 
             <!-- HEADER -->
             <div class="d-flex justify-content-between align-items-start mb-4">
