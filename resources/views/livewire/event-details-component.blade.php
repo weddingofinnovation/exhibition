@@ -5609,57 +5609,6 @@
                             </div>
                         </div>
 
-                        <!-- Venue -->
-                        <div class="info-row p-4 border-bottom">
-                            <div class="row">
-                                <div class="col-md-4 info-title">Venue</div>
-                                <div class="col-md-8">
-                                    Koelnmesse, Fair Grounds, Köln-Deutz
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Opening Hours -->
-                        <div class="info-row bg-light p-4 border-bottom">
-                            <div class="row">
-                                <div class="col-md-4 info-title">Opening hours</div>
-                                <div class="col-md-8">
-                                    <strong>For exhibitors:</strong><br>
-                                    01–03.02.2026 8:00 a.m. – 7:00 p.m.<br>
-                                    04.02.2026 8:00 a.m. – 5:00 p.m.<br><br>
-
-                                    <strong>For visitors:</strong><br>
-                                    01–03.02.2026 9:00 a.m. – 6:00 p.m.<br>
-                                    04.02.2026 9:00 a.m. – 4:00 p.m.
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Admission Fees -->
-                        <div class="info-row p-4 border-bottom">
-                            <div class="row">
-                                <div class="col-md-4 info-title">new Admission fees 2026</div>
-                                <div class="col-md-8">
-                                    <strong>Dayticket</strong> EUR 89.00<br>
-                                    <strong>Seasonticket</strong> EUR 110.00<br><br>
-                                    <small>All ticket prices include VAT.</small>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Space Rate -->
-                        <div class="info-row bg-light p-4">
-                            <div class="row">
-                                <div class="col-md-4 info-title">
-                                    Space rate/m²<br>
-                                    <small class="text-muted">for bookings until 07.03.2025</small>
-                                </div>
-                                <div class="col-md-8">
-                                    241.00 EUR / m²
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
