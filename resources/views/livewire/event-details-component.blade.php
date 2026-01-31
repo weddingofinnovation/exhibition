@@ -5752,6 +5752,40 @@
                     font-weight: 600;
                 }
 
+                /* third-level */
+
+                .info-title {
+                    font-weight: 600;
+                    color: #e4007f;
+                }
+
+                .info-row {
+                    padding: 30px 0;
+                }
+
+                .row-gray {
+                    background: #f2f2f2;
+                }
+
+                .arrow-list {
+                    list-style: none;
+                    padding-left: 0;
+                    margin-top: 10px;
+                }
+
+                .arrow-list li {
+                    position: relative;
+                    padding-left: 22px;
+                    margin-bottom: 8px;
+                }
+
+                .arrow-list li::before {
+                    content: "→";
+                    position: absolute;
+                    left: 0;
+                    color: #000;
+                    font-weight: 600;
+                }
 
         </style>
 
