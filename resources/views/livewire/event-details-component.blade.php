@@ -6008,6 +6008,34 @@
                         </div>
                     </div>
 
+                    <div class="info-row">
+                        <div class="row">
+                            <div class="col-md-4 pink-text">
+                                Figures for the previous event (2025):
+                            </div>
+                            <div class="col-md-8">
+                                <p><strong>Exhibitors</strong> &nbsp;&nbsp; 1,513</p>
+                                <p><strong>Gross exhibition space</strong> &nbsp;&nbsp; 100,000 m²</p>
+                                <p><strong>Visitors</strong> &nbsp;&nbsp; 32,000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-row row-gray">
+                        <div class="row">
+                            <div class="col-md-4 pink-text">
+                                Project management
+                            </div>
+                            <div class="col-md-8">
+                                Sabine Schommer<br>
+                                e-mail:
+                                <a href="mailto:s.schommer@koelnmesse.de">
+                                    s.schommer@koelnmesse.de
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- RIGHT SIDEBAR -->
