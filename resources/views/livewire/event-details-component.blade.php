@@ -5429,7 +5429,7 @@
 
 
     <!-- start-opening timings -->
-    <div class="container my-5 d-none">
+    <div class="container my-5 d-none d-sm-block">
         <div class="row g-4">
 
             <!-- LEFT CONTENT -->
