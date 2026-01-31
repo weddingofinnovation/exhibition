@@ -5525,6 +5525,84 @@
     </div>
     <!-- end-opening timings -->
 
+    <!-- start-facts-figure -->
+    
+    <div class="container my-5" id="facts-figure">
+        <div class="row g-4">
+
+            <!-- LEFT : Event Info -->
+            <div class="col-lg-8">
+                <div class="event-info-box p-4 text-white">
+
+                    <div class="row border-bottom py-3">
+                        <div class="col-md-4 fw-bold">Fair</div>
+                        <div class="col-md-8">
+                            <h5 class="mb-1">ISM</h5>
+                            <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+                        </div>
+                    </div>
+
+                    <div class="row border-bottom py-3">
+                        <div class="col-md-4 fw-bold">Date of the event</div>
+                        <div class="col-md-8">1–4 February 2026</div>
+                    </div>
+
+                    <div class="row border-bottom py-3">
+                        <div class="col-md-4 fw-bold">Organiser of the trade fair</div>
+                        <div class="col-md-8">
+                            Koelnmesse GmbH<br>
+                            Messeplatz 1<br>
+                            50679 Köln<br>
+                            Germany
+                        </div>
+                    </div>
+
+                    <div class="row border-bottom py-3">
+                        <div class="col-md-4 fw-bold">Event frequency</div>
+                        <div class="col-md-8">Annual</div>
+                    </div>
+
+                    <div class="row pt-3">
+                        <div class="col-md-4 fw-bold">Conceptual sponsor</div>
+                        <div class="col-md-8">
+                            Committee for the world’s largest trade fair for sweets and snacks (AISM)
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT : Sidebar -->
+            <div class="col-lg-4">
+
+                <!-- Stay Updated -->
+                <div class="subscribe-box text-center mb-4">
+                    <h5 class="mb-2">Don’t miss anything</h5>
+                    <h3 class="fw-bold">Stay up to date!</h3>
+
+                    <div class="bell-icon my-3">
+                        🔔
+                    </div>
+
+                    <p class="mb-0">Subscribe now for the ISM newsletter!</p>
+                </div>
+
+                <!-- Download -->
+                <div class="download-box p-4">
+                    <h5 class="fw-bold">Download</h5>
+                    <p>Our facts and figures for ISM is available for you to download here.</p>
+
+                    <a href="#" class="btn btn-pink w-100">
+                        ➜ Download facts and figures (.pdf)
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- end-facts-figure -->
+
     <style>
         .marketing-card {
             background: #f7f8f8;
