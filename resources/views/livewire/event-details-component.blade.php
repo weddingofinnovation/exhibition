@@ -5526,119 +5526,233 @@
     <!-- end-opening timings -->
 
     <!-- start-facts-figure -->
-    <style>
-        .event-info-box {
-          background-color: #e4007f;
-        }
-
-        .subscribe-box {
-            background-color: #c6db1f;
-            padding: 30px;
-        }
-
-        .bell-icon {
-            font-size: 48px;
-            background: #e4007f;
-            color: #fff;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto;
-        }
-
-        .download-box {
-            background: #f2f2f2;
-            border-top: 6px solid #e4007f;
-        }
-
-        .btn-pink {
+        <style>
+            .event-info-box {
             background-color: #e4007f;
-            color: #fff;
-            border-radius: 30px;
-        }
+            }
 
-        .btn-pink:hover {
-            background-color: #c8006f;
-            color: #fff;
-        }
+            .subscribe-box {
+                background-color: #c6db1f;
+                padding: 30px;
+            }
 
-    </style>
-    <div class="container my-5" id="facts-figure">
-        <div class="row g-4">
+            .bell-icon {
+                font-size: 48px;
+                background: #e4007f;
+                color: #fff;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: auto;
+            }
 
-            <!-- LEFT : Event Info -->
-            <div class="col-lg-8">
-                <div class="event-info-box p-4 text-white">
+            .download-box {
+                background: #f2f2f2;
+                border-top: 6px solid #e4007f;
+            }
 
-                    <div class="row border-bottom py-3">
-                        <div class="col-md-4 fw-bold">Fair</div>
-                        <div class="col-md-8">
-                            <h5 class="mb-1">ISM</h5>
-                            <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+            .btn-pink {
+                background-color: #e4007f;
+                color: #fff;
+                border-radius: 30px;
+            }
+
+            .btn-pink:hover {
+                background-color: #c8006f;
+                color: #fff;
+            }
+
+        </style>
+
+        <div class="container my-5" id="facts-figure">
+            <div class="row g-4">
+
+                <!-- LEFT : Event Info -->
+                <div class="col-lg-8">
+                    <div class="event-info-box p-4 text-white">
+
+                        <div class="row border-bottom py-3">
+                            <div class="col-md-4 fw-bold">Fair</div>
+                            <div class="col-md-8">
+                                <h5 class="mb-1">ISM</h5>
+                                <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row border-bottom py-3">
-                        <div class="col-md-4 fw-bold">Date of the event</div>
-                        <div class="col-md-8">1–4 February 2026</div>
-                    </div>
-
-                    <div class="row border-bottom py-3">
-                        <div class="col-md-4 fw-bold">Organiser of the trade fair</div>
-                        <div class="col-md-8">
-                            Koelnmesse GmbH<br>
-                            Messeplatz 1<br>
-                            50679 Köln<br>
-                            Germany
+                        <div class="row border-bottom py-3">
+                            <div class="col-md-4 fw-bold">Date of the event</div>
+                            <div class="col-md-8">1–4 February 2026</div>
                         </div>
-                    </div>
 
-                    <div class="row border-bottom py-3">
-                        <div class="col-md-4 fw-bold">Event frequency</div>
-                        <div class="col-md-8">Annual</div>
-                    </div>
-
-                    <div class="row pt-3">
-                        <div class="col-md-4 fw-bold">Conceptual sponsor</div>
-                        <div class="col-md-8">
-                            Committee for the world’s largest trade fair for sweets and snacks (AISM)
+                        <div class="row border-bottom py-3">
+                            <div class="col-md-4 fw-bold">Organiser of the trade fair</div>
+                            <div class="col-md-8">
+                                Koelnmesse GmbH<br>
+                                Messeplatz 1<br>
+                                50679 Köln<br>
+                                Germany
+                            </div>
                         </div>
+
+                        <div class="row border-bottom py-3">
+                            <div class="col-md-4 fw-bold">Event frequency</div>
+                            <div class="col-md-8">Annual</div>
+                        </div>
+
+                        <div class="row pt-3">
+                            <div class="col-md-4 fw-bold">Conceptual sponsor</div>
+                            <div class="col-md-8">
+                                Committee for the world’s largest trade fair for sweets and snacks (AISM)
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- RIGHT : Sidebar -->
+                <div class="col-lg-4">
+
+                    <!-- Stay Updated -->
+                    <div class="subscribe-box text-center mb-4">
+                        <h5 class="mb-2">Don’t miss anything</h5>
+                        <h3 class="fw-bold">Stay up to date!</h3>
+
+                        <div class="bell-icon my-3">
+                            🔔
+                        </div>
+
+                        <p class="mb-0">Subscribe now for the ISM newsletter!</p>
+                    </div>
+
+                    <!-- Download -->
+                    <div class="download-box p-4">
+                        <h5 class="fw-bold">Download</h5>
+                        <p>Our facts and figures for ISM is available for you to download here.</p>
+
+                        <a href="#" class="btn btn-pink w-100">
+                            ➜ Download facts and figures (.pdf)
+                        </a>
                     </div>
 
                 </div>
             </div>
+        </div>
 
-            <!-- RIGHT : Sidebar -->
-            <div class="col-lg-4">
+        <style>
+            .info-title {
+                font-weight: 600;
+                color: #e4007f;
+            }
 
-                <!-- Stay Updated -->
-                <div class="subscribe-box text-center mb-4">
-                    <h5 class="mb-2">Don’t miss anything</h5>
-                    <h3 class="fw-bold">Stay up to date!</h3>
+            .contact-box {
+                background: #f2f2f2;
+            }
 
-                    <div class="bell-icon my-3">
-                        🔔
+            .top-line {
+                height: 6px;
+                background: #e4007f;
+                width: 100%;
+            }
+
+            .contact-box a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .contact-box a:hover {
+                text-decoration: underline;
+            }
+
+        </style>
+
+        <div class="container my-5">
+            <div class="row g-4">
+
+                <!-- LEFT CONTENT -->
+                <div class="col-lg-8">
+
+                    <!-- Venue -->
+                    <div class="info-row py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Venue</div>
+                            <div class="col-md-8">
+                                Koelnmesse, Fair Grounds, Köln-Deutz
+                            </div>
+                        </div>
                     </div>
 
-                    <p class="mb-0">Subscribe now for the ISM newsletter!</p>
+                    <!-- Opening Hours -->
+                    <div class="info-row bg-light py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Opening hours</div>
+                            <div class="col-md-8">
+                                <strong>For exhibitors:</strong><br>
+                                01–03.02.2026 8:00 a.m. – 7:00 p.m.<br>
+                                04.02.2026 8:00 a.m. – 5:00 p.m.<br><br>
+
+                                <strong>For visitors:</strong><br>
+                                01–03.02.2026 9:00 a.m. – 6:00 p.m.<br>
+                                04.02.2026 9:00 a.m. – 4:00 p.m.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Admission Fees -->
+                    <div class="info-row py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Admission fees 2026</div>
+                            <div class="col-md-8">
+                                <strong>Dayticket</strong> EUR 89.00<br>
+                                <strong>Seasonticket</strong> EUR 110.00<br><br>
+                                <small>All ticket prices include VAT.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Space Rate -->
+                    <div class="info-row bg-light py-4">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Space rate/m²<br>
+                                <small class="text-muted">for bookings until 07.03.2025</small>
+                            </div>
+                            <div class="col-md-8">
+                                241.00 EUR / m²
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <!-- Download -->
-                <div class="download-box p-4">
-                    <h5 class="fw-bold">Download</h5>
-                    <p>Our facts and figures for ISM is available for you to download here.</p>
+                <!-- RIGHT SIDEBAR -->
+                <div class="col-lg-4">
+                    <div class="contact-box p-4">
+                        <div class="top-line mb-3"></div>
 
-                    <a href="#" class="btn btn-pink w-100">
-                        ➜ Download facts and figures (.pdf)
-                    </a>
+                        <h5 class="fw-bold mb-3">ISM-Hotline for visitors</h5>
+
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-person-lines-fill fs-1"></i>
+
+                            <div>
+                                <p class="mb-2">
+                                    <strong>Tel.</strong> +49 221 821-2020
+                                </p>
+                                <p class="mb-0">
+                                    <i class="bi bi-envelope"></i>
+                                    <a href="mailto:info@ism.com">Write an e-mail</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
-    </div>
+
 
     <!-- end-facts-figure -->
 
