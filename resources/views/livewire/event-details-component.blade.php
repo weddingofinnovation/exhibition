@@ -5776,6 +5776,47 @@
                         </div>
                     </div>
 
+                    <!-- Product Segments (GRAY) -->
+                    <div class="info-row row-gray">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Product segments
+                            </div>
+                            <div class="col-md-8">
+                                <ul class="segment-list">
+                                    <li>Chocolate and chocolate products</li>
+                                    <li>Sugar confectionery</li>
+                                    <li>Biscuits</li>
+                                    <li>Snack foods</li>
+                                    <li>Trend Snacks</li>
+                                    <li>Natural Sweets</li>
+                                    <li>Breakfast Snacks</li>
+                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                    <li>Trade magazines, associations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fair Profile (WHITE) -->
+                    <div class="info-row">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Fair profile
+                            </div>
+                            <div class="col-md-8">
+                                <p class="mb-0">
+                                    The world's leading trade fair for sweets and snacks bids you a warm welcome!
+                                    A successful combination between impulses and innovations, exciting networking,
+                                    first-class exhibitors and competent visitors forms an offer that is unique around
+                                    the globe. Heart and soul. In conjunction with ProSweets Cologne, the international
+                                    supplier trade fair for the sweets and snacks industry, ISM represents the entire
+                                    industrial value chain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- RIGHT SIDEBAR -->
@@ -5803,8 +5844,6 @@
 
             </div>
         </div>
-
-
     <!-- end-facts-figure -->
 
     <style>
