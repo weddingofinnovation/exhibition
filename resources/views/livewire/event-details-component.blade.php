@@ -5568,48 +5568,292 @@
         </style>
 
         <div class="container my-5" id="facts-figure">
-            <div class="row g-4">
+                <div class="row g-4">
 
-                <!-- LEFT : Event Info -->
-                <div class="col-lg-8">
-                    <div class="event-info-box p-4 text-white">
+                    <!-- LEFT : Event Info -->
+                    <div class="col-lg-8">
+                        <div class="event-info-box p-4 text-white">
 
-                        <div class="row border-bottom py-3">
-                            <div class="col-md-4 fw-bold">Fair</div>
-                            <div class="col-md-8">
-                                <h5 class="mb-1">ISM</h5>
-                                <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+                            <div class="row border-bottom py-3">
+                                <div class="col-md-4 fw-bold">Fair</div>
+                                <div class="col-md-8">
+                                    <h5 class="mb-1">ISM</h5>
+                                    <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+                                </div>
+                            </div>
+
+                            <div class="row border-bottom py-3">
+                                <div class="col-md-4 fw-bold">Date of the event</div>
+                                <div class="col-md-8">1–4 February 2026</div>
+                            </div>
+
+                            <div class="row border-bottom py-3">
+                                <div class="col-md-4 fw-bold">Organiser of the trade fair</div>
+                                <div class="col-md-8">
+                                    Koelnmesse GmbH<br>
+                                    Messeplatz 1<br>
+                                    50679 Köln<br>
+                                    Germany
+                                </div>
+                            </div>
+
+                            <div class="row border-bottom py-3">
+                                <div class="col-md-4 fw-bold">Event frequency</div>
+                                <div class="col-md-8">Annual</div>
+                            </div>
+
+                            <div class="row pt-3">
+                                <div class="col-md-4 fw-bold">Conceptual sponsor</div>
+                                <div class="col-md-8">
+                                    Committee for the world’s largest trade fair for sweets and snacks (AISM)
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- LEFT CONTENT -->
+                    
+
+                        <!-- Venue -->
+                        <div class="info-row row-gray p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Venue</div>
+                                <div class="col-md-8">
+                                    Koelnmesse, Fair Grounds, Köln-Deutz
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row border-bottom py-3">
-                            <div class="col-md-4 fw-bold">Date of the event</div>
-                            <div class="col-md-8">1–4 February 2026</div>
-                        </div>
+                        <!-- Opening Hours -->
+                        <div class="info-row bg-light p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Opening hours</div>
+                                <div class="col-md-8">
+                                    <strong>For exhibitors:</strong><br>
+                                    01–03.02.2026 8:00 a.m. – 7:00 p.m.<br>
+                                    04.02.2026 8:00 a.m. – 5:00 p.m.<br><br>
 
-                        <div class="row border-bottom py-3">
-                            <div class="col-md-4 fw-bold">Organiser of the trade fair</div>
-                            <div class="col-md-8">
-                                Koelnmesse GmbH<br>
-                                Messeplatz 1<br>
-                                50679 Köln<br>
-                                Germany
+                                    <strong>For visitors:</strong><br>
+                                    01–03.02.2026 9:00 a.m. – 6:00 p.m.<br>
+                                    04.02.2026 9:00 a.m. – 4:00 p.m.
+                                </div>
                             </div>
                         </div>
 
-                        <div class="row border-bottom py-3">
-                            <div class="col-md-4 fw-bold">Event frequency</div>
-                            <div class="col-md-8">Annual</div>
+                        <!-- Admission Fees -->
+                        <div class="info-row row-gray p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Admission fees 2026</div>
+                                <div class="col-md-8">
+                                    <strong>Dayticket</strong> EUR 89.00<br>
+                                    <strong>Seasonticket</strong> EUR 110.00<br><br>
+                                    <small>All ticket prices include VAT.</small>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="row pt-3">
-                            <div class="col-md-4 fw-bold">Conceptual sponsor</div>
-                            <div class="col-md-8">
-                                Committee for the world’s largest trade fair for sweets and snacks (AISM)
+                        <!-- Space Rate -->
+                        <div class="info-row bg-light p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Space rate/m²<br>
+                                    <small class="text-muted">for bookings until 07.03.2025</small>
+                                </div>
+                                <div class="col-md-8">
+                                    241.00 EUR / m²
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product Segments (GRAY) -->
+                        <div class="info-row row-gray p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Product segments
+                                </div>
+                                <div class="col-md-8">
+                                    <ul class="segment-list">
+                                        <li>Chocolate and chocolate products</li>
+                                        <li>Sugar confectionery</li>
+                                        <li>Biscuits</li>
+                                        <li>Snack foods</li>
+                                        <li>Trend Snacks</li>
+                                        <li>Natural Sweets</li>
+                                        <li>Breakfast Snacks</li>
+                                        <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                        <li>Trade magazines, associations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fair Profile (WHITE) -->
+                        <div class="info-row p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Fair profile
+                                </div>
+                                <div class="col-md-8">
+                                    <p class="mb-0">
+                                        The world's leading trade fair for sweets and snacks bids you a warm welcome!
+                                        A successful combination between impulses and innovations, exciting networking,
+                                        first-class exhibitors and competent visitors forms an offer that is unique around
+                                        the globe. Heart and soul. In conjunction with ProSweets Cologne, the international
+                                        supplier trade fair for the sweets and snacks industry, ISM represents the entire
+                                        industrial value chain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Online application for exhibitors -->
+                        <div class="info-row row-gray p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Online application for exhibitors</div>
+                                <div class="col-md-8">
+                                    Since December 2024
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hall occupancy -->
+                        <div class="info-row row-gray p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Hall occupancy</div>
+                                <div class="col-md-8">
+                                    3.2, 4.2, 10.1, 10.2, 11.1, 11.2, CC East, Passage 3/11, 10/11 and Boulevard
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Access authorisation -->
+                        <div class="info-row row-gray p-4 border-bottom">
+                            <div class="row">
+                                <div class="col-md-4 info-title">Access authorisation</div>
+                                <div class="col-md-8">
+                                    Trade visitors only
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Groups Exhibitors (WHITE) -->
+                        <div class="info-row p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Target groups exhibitors
+                                </div>
+                                <div class="col-md-8">
+                                    <p>
+                                        Manufacturers and Distributors of sweets and snacks ready packed
+                                        for retail sale under the following headings:
+                                    </p>
+
+                                    <ul class="arrow-list">
+                                        <li>Chocolate and chocolate products</li>
+                                        <li>Sugar confectionery</li>
+                                        <li>Biscuits</li>
+                                        <li>Snack foods</li>
+                                        <li>Trend Snacks</li>
+                                        <li>Natural Sweets</li>
+                                        <li>Breakfast Snacks</li>
+                                        <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                        <li>Trade magazines, associations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Groups Visitors (GRAY) -->
+                        <div class="info-row row-gray p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Target groups visitors
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Buyers of the following retail and wholesale will be admitted:</p>
+
+                                    <ul class="arrow-list">
+                                        <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
+                                        <li>Trade chains and their regional branches</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Groups Exhibitors (WHITE) -->
+                        <div class="info-row p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Target groups exhibitors
+                                </div>
+                                <div class="col-md-8">
+                                    <p>
+                                        Manufacturers and Distributors of sweets and snacks ready packed
+                                        for retail sale under the following headings:
+                                    </p>
+
+                                    <ul class="arrow-list">
+                                        <li>Chocolate and chocolate products</li>
+                                        <li>Sugar confectionery</li>
+                                        <li>Biscuits</li>
+                                        <li>Snack foods</li>
+                                        <li>Trend Snacks</li>
+                                        <li>Natural Sweets</li>
+                                        <li>Breakfast Snacks</li>
+                                        <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                        <li>Trade magazines, associations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Target Groups Visitors (GRAY) -->
+                        <div class="info-row row-gray p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Target groups visitors
+                                </div>
+                                <div class="col-md-8">
+                                    <p>Buyers of the following retail and wholesale will be admitted:</p>
+
+                                    <ul class="arrow-list">
+                                        <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
+                                        <li>Trade chains and their regional branches</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-row p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Figures for the previous event (2025):
+                                </div>
+                                <div class="col-md-8">
+                                    <p><strong>Exhibitors</strong> &nbsp;&nbsp; 1,513</p>
+                                    <p><strong>Gross exhibition space</strong> &nbsp;&nbsp; 100,000 m²</p>
+                                    <p><strong>Visitors</strong> &nbsp;&nbsp; 32,000</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-row row-gray p-4">
+                            <div class="row">
+                                <div class="col-md-4 info-title">
+                                    Project management
+                                </div>
+                                <div class="col-md-8">
+                                    Sabine Schommer<br>
+                                    e-mail:
+                                    <a href="mailto:s.schommer@koelnmesse.de">
+                                        s.schommer@koelnmesse.de
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
                     </div>
+
                 </div>
 
                 <!-- RIGHT : Sidebar -->
@@ -5741,249 +5985,7 @@
         <div class="container my-5">
             <div class="row g-4">
 
-                <!-- LEFT CONTENT -->
-                <div class="col-lg-8">
-
-                    <!-- Venue -->
-                    <div class="info-row row-gray p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Venue</div>
-                            <div class="col-md-8">
-                                Koelnmesse, Fair Grounds, Köln-Deutz
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Opening Hours -->
-                    <div class="info-row bg-light p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Opening hours</div>
-                            <div class="col-md-8">
-                                <strong>For exhibitors:</strong><br>
-                                01–03.02.2026 8:00 a.m. – 7:00 p.m.<br>
-                                04.02.2026 8:00 a.m. – 5:00 p.m.<br><br>
-
-                                <strong>For visitors:</strong><br>
-                                01–03.02.2026 9:00 a.m. – 6:00 p.m.<br>
-                                04.02.2026 9:00 a.m. – 4:00 p.m.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Admission Fees -->
-                    <div class="info-row row-gray p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Admission fees 2026</div>
-                            <div class="col-md-8">
-                                <strong>Dayticket</strong> EUR 89.00<br>
-                                <strong>Seasonticket</strong> EUR 110.00<br><br>
-                                <small>All ticket prices include VAT.</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Space Rate -->
-                    <div class="info-row bg-light p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Space rate/m²<br>
-                                <small class="text-muted">for bookings until 07.03.2025</small>
-                            </div>
-                            <div class="col-md-8">
-                                241.00 EUR / m²
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product Segments (GRAY) -->
-                    <div class="info-row row-gray p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Product segments
-                            </div>
-                            <div class="col-md-8">
-                                <ul class="segment-list">
-                                    <li>Chocolate and chocolate products</li>
-                                    <li>Sugar confectionery</li>
-                                    <li>Biscuits</li>
-                                    <li>Snack foods</li>
-                                    <li>Trend Snacks</li>
-                                    <li>Natural Sweets</li>
-                                    <li>Breakfast Snacks</li>
-                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
-                                    <li>Trade magazines, associations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Fair Profile (WHITE) -->
-                    <div class="info-row p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Fair profile
-                            </div>
-                            <div class="col-md-8">
-                                <p class="mb-0">
-                                    The world's leading trade fair for sweets and snacks bids you a warm welcome!
-                                    A successful combination between impulses and innovations, exciting networking,
-                                    first-class exhibitors and competent visitors forms an offer that is unique around
-                                    the globe. Heart and soul. In conjunction with ProSweets Cologne, the international
-                                    supplier trade fair for the sweets and snacks industry, ISM represents the entire
-                                    industrial value chain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Online application for exhibitors -->
-                    <div class="info-row row-gray p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Online application for exhibitors</div>
-                            <div class="col-md-8">
-                                Since December 2024
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Hall occupancy -->
-                    <div class="info-row row-gray p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Hall occupancy</div>
-                            <div class="col-md-8">
-                                3.2, 4.2, 10.1, 10.2, 11.1, 11.2, CC East, Passage 3/11, 10/11 and Boulevard
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- Access authorisation -->
-                    <div class="info-row row-gray p-4 border-bottom">
-                        <div class="row">
-                            <div class="col-md-4 info-title">Access authorisation</div>
-                            <div class="col-md-8">
-                                Trade visitors only
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Target Groups Exhibitors (WHITE) -->
-                    <div class="info-row p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Target groups exhibitors
-                            </div>
-                            <div class="col-md-8">
-                                <p>
-                                    Manufacturers and Distributors of sweets and snacks ready packed
-                                    for retail sale under the following headings:
-                                </p>
-
-                                <ul class="arrow-list">
-                                    <li>Chocolate and chocolate products</li>
-                                    <li>Sugar confectionery</li>
-                                    <li>Biscuits</li>
-                                    <li>Snack foods</li>
-                                    <li>Trend Snacks</li>
-                                    <li>Natural Sweets</li>
-                                    <li>Breakfast Snacks</li>
-                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
-                                    <li>Trade magazines, associations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Target Groups Visitors (GRAY) -->
-                    <div class="info-row row-gray p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Target groups visitors
-                            </div>
-                            <div class="col-md-8">
-                                <p>Buyers of the following retail and wholesale will be admitted:</p>
-
-                                <ul class="arrow-list">
-                                    <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
-                                    <li>Trade chains and their regional branches</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Target Groups Exhibitors (WHITE) -->
-                    <div class="info-row p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Target groups exhibitors
-                            </div>
-                            <div class="col-md-8">
-                                <p>
-                                    Manufacturers and Distributors of sweets and snacks ready packed
-                                    for retail sale under the following headings:
-                                </p>
-
-                                <ul class="arrow-list">
-                                    <li>Chocolate and chocolate products</li>
-                                    <li>Sugar confectionery</li>
-                                    <li>Biscuits</li>
-                                    <li>Snack foods</li>
-                                    <li>Trend Snacks</li>
-                                    <li>Natural Sweets</li>
-                                    <li>Breakfast Snacks</li>
-                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
-                                    <li>Trade magazines, associations</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Target Groups Visitors (GRAY) -->
-                    <div class="info-row row-gray p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Target groups visitors
-                            </div>
-                            <div class="col-md-8">
-                                <p>Buyers of the following retail and wholesale will be admitted:</p>
-
-                                <ul class="arrow-list">
-                                    <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
-                                    <li>Trade chains and their regional branches</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="info-row p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Figures for the previous event (2025):
-                            </div>
-                            <div class="col-md-8">
-                                <p><strong>Exhibitors</strong> &nbsp;&nbsp; 1,513</p>
-                                <p><strong>Gross exhibition space</strong> &nbsp;&nbsp; 100,000 m²</p>
-                                <p><strong>Visitors</strong> &nbsp;&nbsp; 32,000</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="info-row row-gray p-4">
-                        <div class="row">
-                            <div class="col-md-4 info-title">
-                                Project management
-                            </div>
-                            <div class="col-md-8">
-                                Sabine Schommer<br>
-                                e-mail:
-                                <a href="mailto:s.schommer@koelnmesse.de">
-                                    s.schommer@koelnmesse.de
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                
 
                 <!-- RIGHT SIDEBAR -->
                 <div class="col-lg-4">
