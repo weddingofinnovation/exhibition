@@ -4506,12 +4506,12 @@
                                         <h6 class="fw-bold">Order Services</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Exhibitor passes</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Construction & dismantling Passes</a></li>
+                                            <!-- <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Construction & dismantling Passes</a></li> -->
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Visitor tickets</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Service shop</a></li>
+                                            <!-- <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Service shop</a></li> -->
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Media shop</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Free Advertising material</a></li>
-                                            <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Catering</a></li>
+                                            <!-- <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Catering</a></li> -->
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Lead Management</a></li>
                                         </ul>
                                     </div>
@@ -4529,7 +4529,8 @@
                                     </div>
 
                                     <!-- Column 5 -->
-                                    <div class="col-md-2 border-start">
+                                     <!-- notes:it will get active when any organiser or services for activite -->
+                                    <!-- <div class="col-md-2 border-start">
                                         <h6 class="fw-bold">Booth Construction & Dismantling</h6>
                                         <ul class="list-unstyled">
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Redeem codes for construction passes</a></li>
@@ -4539,7 +4540,7 @@
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>Traffic Guidelines</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>eSlot</a></li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Column 6 -->
                                     <div class="col-md-1 border-start">
