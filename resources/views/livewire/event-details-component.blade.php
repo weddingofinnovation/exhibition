@@ -5929,7 +5929,51 @@
                             </div>
                         </div>
                     </div>
-                    
+
+                    <!-- Target Groups Exhibitors (WHITE) -->
+                    <div class="info-row">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Target groups exhibitors
+                            </div>
+                            <div class="col-md-8">
+                                <p>
+                                    Manufacturers and Distributors of sweets and snacks ready packed
+                                    for retail sale under the following headings:
+                                </p>
+
+                                <ul class="arrow-list">
+                                    <li>Chocolate and chocolate products</li>
+                                    <li>Sugar confectionery</li>
+                                    <li>Biscuits</li>
+                                    <li>Snack foods</li>
+                                    <li>Trend Snacks</li>
+                                    <li>Natural Sweets</li>
+                                    <li>Breakfast Snacks</li>
+                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                    <li>Trade magazines, associations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target Groups Visitors (GRAY) -->
+                    <div class="info-row row-gray">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Target groups visitors
+                            </div>
+                            <div class="col-md-8">
+                                <p>Buyers of the following retail and wholesale will be admitted:</p>
+
+                                <ul class="arrow-list">
+                                    <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
+                                    <li>Trade chains and their regional branches</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- RIGHT SIDEBAR -->
