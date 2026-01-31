@@ -5577,14 +5577,19 @@
                         <div class="row border-bottom py-3">
                             <div class="col-md-4 fw-bold">Fair</div>
                             <div class="col-md-8">
-                                <h5 class="mb-1">ISM</h5>
-                                <p class="mb-0">The world’s largest trade fair for sweets and snacks</p>
+                                <h5 class="mb-1">{{$event->eventname}}</h5>
+                              <p class="mb-0">The india’s largest trade fair</p>   <!-- for sweets and snacks -->
                             </div>
                         </div>
 
                         <div class="row border-bottom py-3">
                             <div class="col-md-4 fw-bold">Date of the event</div>
-                            <div class="col-md-8">1–4 February 2026</div>
+                            <div class="col-md-8">
+                                @if(Carbon::parse ($franchise->startdate)->format('M') != Carbon::parse ($franchise->enddate)->format('M'))
+                                        {{Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                        @else
+                                        {{Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
+                                @endif</div>
                         </div>
 
                         <div class="row border-bottom py-3">
