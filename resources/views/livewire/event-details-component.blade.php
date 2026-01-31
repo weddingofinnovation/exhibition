@@ -5584,12 +5584,7 @@
 
                         <div class="row border-bottom py-3">
                             <div class="col-md-4 fw-bold">Date of the event</div>
-                            <div class="col-md-8">
-                                @if(Carbon::parse ($franchise->startdate)->format('M') != Carbon::parse ($franchise->enddate)->format('M'))
-                                        {{Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                        @else
-                                        {{Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon::parse ($franchise->enddate)->format('D, d M')}}
-                                @endif</div>
+                            <div class="col-md-8">{{$displayDate}}</div>
                         </div>
 
                         <div class="row border-bottom py-3">
@@ -5793,10 +5788,10 @@
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Space rate/m²<br>
-                                <small class="text-muted">for bookings until 07.03.2025</small>
+                                <!-- <small class="text-muted">for bookings until 07.03.2025</small> -->
                             </div>
                             <div class="col-md-8">
-                                241.00 EUR / m²
+                                10,000 INR / m² approx
                             </div>
                         </div>
                     </div>
@@ -5846,9 +5841,9 @@
                     <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Online application for exhibitors</div>
-                            <div class="col-md-8">
+                            <!-- <div class="col-md-8">
                                 Since December 2024
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -5857,7 +5852,7 @@
                         <div class="row">
                             <div class="col-md-4 info-title">Hall occupancy</div>
                             <div class="col-md-8">
-                                3.2, 4.2, 10.1, 10.2, 11.1, 11.2, CC East, Passage 3/11, 10/11 and Boulevard
+                                <!-- 3.2, 4.2, 10.1, 10.2, 11.1, 11.2, CC East, Passage 3/11, 10/11 and Boulevard -->
                             </div>
                         </div>
                     </div>
@@ -5980,10 +5975,10 @@
                                 Project management
                             </div>
                             <div class="col-md-8">
-                                Sabine Schommer<br>
+                                Rishab<br>
                                 e-mail:
-                                <a href="mailto:s.schommer@koelnmesse.de">
-                                    s.schommer@koelnmesse.de
+                                <a href="mailto:team@exhibition.org.in">
+                                    team@exhibition.org.in
                                 </a>
                             </div>
                         </div>
@@ -5996,18 +5991,18 @@
                     <div class="contact-box p-4">
                         <div class="top-line mb-3"></div>
 
-                        <h5 class="fw-bold mb-3">ISM-Hotline for visitors</h5>
+                        <h5 class="fw-bold mb-3">Exhibition help center - Hotline for visitors</h5>
 
                         <div class="d-flex align-items-start gap-3">
                             <i class="bi bi-person-lines-fill fs-1"></i>
 
                             <div>
                                 <p class="mb-2">
-                                    <strong>Tel.</strong> +49 221 821-2020
+                                    <strong>Tel.</strong> +91 999-185-6776
                                 </p>
                                 <p class="mb-0">
                                     <i class="bi bi-envelope"></i>
-                                    <a href="mailto:info@ism.com">Write an e-mail</a>
+                                    <a href="mailto:team@exhibition.org.in">Write an e-mail</a>
                                 </p>
                             </div>
                         </div>
@@ -7490,9 +7485,9 @@
 
                         <div class="h1 fw-bold">
                             @if(Carbon::parse($event->startdate)->format('M') != Carbon::parse($event->enddate)->format('M'))
-                            {{Carbon::parse($event->enddate)->format('y')}}
+                              {{Carbon::parse($event->enddate)->format('y')}}
                             @else
-                            {{Carbon::parse($event->enddate)->format('Y')}}
+                              {{Carbon::parse($event->enddate)->format('Y')}}
                             @endif
                         </div>
                     </div>
