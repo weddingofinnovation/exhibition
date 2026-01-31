@@ -5567,7 +5567,7 @@
 
         </style>
 
-        <div class="container my-5" id="facts-figure">
+        <div class="container my-5 d-none d-sm-block" id="facts-figure">
             <div class="row g-4">
 
                 <!-- LEFT : Event Info -->
@@ -5739,7 +5739,7 @@
 
         </style>
 
-        <div class="container my-5">
+        <div class="container my-5 d-none d-sm-block">
             <div class="row g-4">
 
                 <!-- LEFT CONTENT -->
@@ -5848,7 +5848,7 @@
                     </div>
 
                     <!-- Hall occupancy -->
-                    <div class="info-row row-gray p-4 border-bottom">
+                    <div class="info-row p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Hall occupancy</div>
                             <div class="col-md-8">
@@ -6012,6 +6012,118 @@
             </div>
         </div>
     <!-- end-facts-figure -->
+
+    <!-- start-media-shop -->
+        <style>
+            .media-shop-wrapper {
+                border-top: 6px solid #e4007f;
+                padding-top: 24px;
+            }
+
+            .media-shop-title {
+                color: #e4007f;
+                font-weight: 700;
+            }
+
+            .lang-switch a {
+                color: #000;
+                text-decoration: none;
+                font-weight: 600;
+                margin-left: 8px;
+            }
+
+            .lang-switch a.active {
+                color: #e4007f;
+            }
+
+            .media-card {
+                border: 1px solid #eee;
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+
+            .media-card:hover {
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+                transform: translateY(-3px);
+            }
+
+            .media-card img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+
+            .media-card h5 {
+                color: #e4007f;
+                font-weight: 600;
+            }
+        </style>
+
+        <div class="container my-5 media-shop-wrapper">
+
+            <!-- HEADER -->
+            <div class="d-flex justify-content-between align-items-start mb-4">
+                <div>
+                    <h2 class="media-shop-title">Welcome to the ISM 2026 Media Shop!</h2>
+                </div>
+
+                <div class="lang-switch">
+                    🌐 <a href="#" class="active">EN</a> |
+                    <a href="#">DE</a>
+                </div>
+            </div>
+
+            <!-- INTRO TEXT -->
+            <div class="mb-5">
+                <p>
+                    Optimise your fair presentation through your presence in our central media and thus ensure
+                    that people not only see you at your stand.
+                    Use our numerous opportunities and create focused attention precisely where your target
+                    groups get informed – in the print, online and mobile media.
+                </p>
+
+                <p>
+                    Reasonably priced packages and customised offers ensure maximum success for your fair presentation.
+                </p>
+
+                <strong>Choose from among the following options:</strong>
+            </div>
+
+            <!-- OPTIONS -->
+            <div class="row g-4">
+
+                <!-- CARD 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="media-card">
+                        <img src="https://via.placeholder.com/600x400?text=Media+Entries" alt="Media Entries">
+
+                        <div class="p-3">
+                            <h5>Media Entries & Packages</h5>
+                            <p class="mb-0">
+                                A strong presentation: your presence in the official fair media
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="media-card">
+                        <img src="https://via.placeholder.com/600x400?text=Advertising+Materials" alt="Advertising Materials">
+
+                        <div class="p-3">
+                            <h5>Advertising Materials</h5>
+                            <p class="mb-0">
+                                Lasting impression: awareness through promotional media
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+     <!-- end-media-shop -->
 
     <style>
         .marketing-card {
