@@ -252,6 +252,7 @@ Route::get('/award/{slug}', AwardDetailsComponent::class)->name('award.details')
 //reviews 
 Route::get('/rating/{slug}', EventRateNowComponent::class)->name('coi.ratenow');
 
+
 Route::get('/{slug}/reviews', AwardComponent::class)->name('business.award');
 
 
