@@ -4282,9 +4282,9 @@
                                     <div class="col-md-3">
                                         <h6 class="fw-bold"><i class="bi bi-arrow-right"></i>{{ucwords($event->eventname) }}</h6>
                                         <ul class="list-unstyled">
-                                            <li id="date-opening-hours"><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li><a class="dropdown-item" href="#date-opening-hours"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Date and opening hours</a></li>
-                                            <li id="facts-figure"><a class="dropdown-item" href="{{route('event.details', ['slug' => $event->slug, 'optional' => 'facts-&-figure'])}}"><i class="mr-1 bi bi-arrow-return-right"></i>
+                                            <li ><a class="dropdown-item" href="#facts-figure"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Facts and Figures</a></li>
                                             <li><a class="dropdown-item" href="#"><i class="mr-1 bi bi-arrow-return-right"></i>
                                                     Segment</a></li>
