@@ -6057,6 +6057,17 @@
                 color: #e4007f;
                 font-weight: 600;
             }
+
+            .media-card h5 {
+                color: #e4007f;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+
+            .media-card:hover h5 {
+                font-size: 1.35rem;   /* bigger on hover */
+            }
+
         </style>
 
         <div class="container my-5 media-shop-wrapper">
