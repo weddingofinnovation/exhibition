@@ -6010,7 +6010,7 @@
 
                     <div class="info-row">
                         <div class="row">
-                            <div class="col-md-4 pink-text">
+                            <div class="col-md-4 info-title">
                                 Figures for the previous event (2025):
                             </div>
                             <div class="col-md-8">
@@ -6023,7 +6023,7 @@
 
                     <div class="info-row row-gray">
                         <div class="row">
-                            <div class="col-md-4 pink-text">
+                            <div class="col-md-4 info-title">
                                 Project management
                             </div>
                             <div class="col-md-8">
