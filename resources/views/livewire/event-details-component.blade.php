@@ -5719,38 +5719,38 @@
 
             /* add-second-part */
         
-    .info-title {
-        font-weight: 600;
-        color: #e4007f;
-    }
+                .info-title {
+                    font-weight: 600;
+                    color: #e4007f;
+                }
 
-    .info-row {
-        padding: 30px 0;
-    }
+                .info-row {
+                    padding: 30px 0;
+                }
 
-    .row-gray {
-        background: #f2f2f2;
-    }
+                .row-gray {
+                    background: #f2f2f2;
+                }
 
-    .segment-list {
-        list-style: none;
-        padding-left: 0;
-        margin-bottom: 0;
-    }
+                .segment-list {
+                    list-style: none;
+                    padding-left: 0;
+                    margin-bottom: 0;
+                }
 
-    .segment-list li {
-        margin-bottom: 8px;
-        position: relative;
-        padding-left: 22px;
-    }
+                .segment-list li {
+                    margin-bottom: 8px;
+                    position: relative;
+                    padding-left: 22px;
+                }
 
-    .segment-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        color: #000;
-        font-weight: 600;
-    }
+                .segment-list li::before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    color: #000;
+                    font-weight: 600;
+                }
 
 
         </style>
@@ -5762,7 +5762,7 @@
                 <div class="col-lg-8">
 
                     <!-- Venue -->
-                    <div class="info-row py-4 border-bottom">
+                    <div class="info-row row-gray py-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Venue</div>
                             <div class="col-md-8">
@@ -5788,7 +5788,7 @@
                     </div>
 
                     <!-- Admission Fees -->
-                    <div class="info-row py-4 border-bottom">
+                    <div class="info-row row-gray py-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Admission fees 2026</div>
                             <div class="col-md-8">
@@ -5813,7 +5813,7 @@
                     </div>
 
                     <!-- Product Segments (GRAY) -->
-                    <div class="info-row row-gray">
+                    <div class="info-row row-gray p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Product segments
@@ -5835,7 +5835,7 @@
                     </div>
 
                     <!-- Fair Profile (WHITE) -->
-                    <div class="info-row">
+                    <div class="info-row p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Fair profile
@@ -5853,6 +5853,83 @@
                         </div>
                     </div>
 
+                    <!-- Online application for exhibitors -->
+                    <div class="info-row row-gray py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Online application for exhibitors</div>
+                            <div class="col-md-8">
+                                Since December 2024
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hall occupancy -->
+                    <div class="info-row row-gray py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Hall occupancy</div>
+                            <div class="col-md-8">
+                                3.2, 4.2, 10.1, 10.2, 11.1, 11.2, CC East, Passage 3/11, 10/11 and Boulevard
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Access authorisation -->
+                    <div class="info-row row-gray py-4 border-bottom">
+                        <div class="row">
+                            <div class="col-md-4 info-title">Access authorisation</div>
+                            <div class="col-md-8">
+                                Trade visitors only
+                            </div>
+                        </div>
+                    </div>
+
+                
+
+                    <!-- Target Groups Exhibitors (WHITE) -->
+                    <div class="info-row">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Target groups exhibitors
+                            </div>
+                            <div class="col-md-8">
+                                <p>
+                                    Manufacturers and Distributors of sweets and snacks ready packed
+                                    for retail sale under the following headings:
+                                </p>
+
+                                <ul class="arrow-list">
+                                    <li>Chocolate and chocolate products</li>
+                                    <li>Sugar confectionery</li>
+                                    <li>Biscuits</li>
+                                    <li>Snack foods</li>
+                                    <li>Trend Snacks</li>
+                                    <li>Natural Sweets</li>
+                                    <li>Breakfast Snacks</li>
+                                    <li>Ice cream, deep-frozen confectionery / raw pastes</li>
+                                    <li>Trade magazines, associations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Target Groups Visitors (GRAY) -->
+                    <div class="info-row row-gray">
+                        <div class="row">
+                            <div class="col-md-4 info-title">
+                                Target groups visitors
+                            </div>
+                            <div class="col-md-8">
+                                <p>Buyers of the following retail and wholesale will be admitted:</p>
+
+                                <ul class="arrow-list">
+                                    <li>Confectionery, food and beverage wholesale, import and purchasing associations</li>
+                                    <li>Trade chains and their regional branches</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <!-- RIGHT SIDEBAR -->
