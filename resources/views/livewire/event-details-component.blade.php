@@ -5429,7 +5429,7 @@
 
 
     <!-- start-opening timings -->
-    <div class="container my-5 d-none d-sm-block">
+    <div class="container my-5 d-none d-sm-block" id="date-opening-hours">
         <div class="row g-4">
 
             <!-- LEFT CONTENT -->
