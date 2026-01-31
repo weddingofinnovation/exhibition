@@ -5638,7 +5638,7 @@
                         <!-- Admission Fees -->
                         <div class="info-row p-4 border-bottom">
                             <div class="row">
-                                <div class="col-md-4 info-title">Admission fees 2026</div>
+                                <div class="col-md-4 info-title">new Admission fees 2026</div>
                                 <div class="col-md-8">
                                     <strong>Dayticket</strong> EUR 89.00<br>
                                     <strong>Seasonticket</strong> EUR 110.00<br><br>
@@ -5796,7 +5796,7 @@
                 <div class="col-lg-8">
 
                     <!-- Venue -->
-                    <div class="info-row row-gray py-4 border-bottom">
+                    <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Venue</div>
                             <div class="col-md-8">
@@ -5806,7 +5806,7 @@
                     </div>
 
                     <!-- Opening Hours -->
-                    <div class="info-row bg-light py-4 border-bottom">
+                    <div class="info-row bg-light p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Opening hours</div>
                             <div class="col-md-8">
@@ -5822,7 +5822,7 @@
                     </div>
 
                     <!-- Admission Fees -->
-                    <div class="info-row row-gray py-4 border-bottom">
+                    <div class="info-row row-gray p-4 border-bottom">
                         <div class="row">
                             <div class="col-md-4 info-title">Admission fees 2026</div>
                             <div class="col-md-8">
@@ -5834,7 +5834,7 @@
                     </div>
 
                     <!-- Space Rate -->
-                    <div class="info-row bg-light py-4">
+                    <div class="info-row bg-light p-4">
                         <div class="row">
                             <div class="col-md-4 info-title">
                                 Space rate/m²<br>
@@ -5917,8 +5917,6 @@
                             </div>
                         </div>
                     </div>
-
-                
 
                     <!-- Target Groups Exhibitors (WHITE) -->
                     <div class="info-row p-4">
