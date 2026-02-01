@@ -16,8 +16,10 @@ class CreatePlanTypeCustomersTable extends Migration
         Schema::create('plan_type_customers', function (Blueprint $table) {
             $table->id();
             $table->string('cxtype')->nullable();
+            $table->string('pxtype')->nullable();
             $table->string('status')->nullable();
             $table->string('admstatus')->nullable();
+
             
             $table->bigInteger('event_id')->unsigned()->nullable();
             $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');

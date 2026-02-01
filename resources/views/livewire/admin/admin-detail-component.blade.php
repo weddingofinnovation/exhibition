@@ -143,7 +143,7 @@
 
                         {{-- Event Type Dropdown --}}
                         @php 
-                          $getstatusforevent = DB::table('plan_type_customers')->where('event_id', $eventId)->latest()->value('event_type');
+                          $getstatusforevent = DB::table('plan_type_customers')->where('event_id', $evento->id)->latest()->value('event_type');
                         @endphp
 
                         <div class="col-md-3 d-flex align-items-center">
@@ -170,21 +170,21 @@
                                     <li>
                                         <a class="dropdown-item"
                                           href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
+                                          wire:click.prevent="updatestatus({{ $evento->id }}, 'official')">
                                             Official
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
                                           href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
+                                          wire:click.prevent="updatestatus({{ $evento->id }}, 'own')">
                                             Own
                                         </a>
                                     </li>
                                     <li>
                                         <a class="dropdown-item"
                                           href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
+                                          wire:click.prevent="updatestatus({{ $evento->id }}, 'paid')">
                                             Paid
                                         </a>
                                     </li>
