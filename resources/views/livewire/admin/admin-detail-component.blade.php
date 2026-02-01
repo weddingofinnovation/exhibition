@@ -142,10 +142,14 @@
                         </div>
 
                         {{-- Event Type Dropdown --}}
+                        @php 
+                          $getstatusforevent = DB::table('plan_type_customers')->where('event_id', $eventId)->latest()->value('event_type');
+                        @endphp
+
                         <div class="col-md-3 d-flex align-items-center">
                             <div class="btn-group w-100" wire:ignore>
                                 <button type="button" class="btn btn-outline-dark btn-sm text-start w-100">
-                                    Event Type
+                                    {{$getstatusforevent}}
                                 </button>
 
                                 <button type="button"
@@ -159,7 +163,7 @@
                                     <li>
                                         <a class="dropdown-item"
                                           href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
+                                          wire:click.prevent="updatestatus({{ $evento->id }}, 'general')">
                                             General
                                         </a>
                                     </li>

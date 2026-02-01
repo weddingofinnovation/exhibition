@@ -27,6 +27,7 @@ use App\Imports\BrandsImport;
 use App\Mail\EventToClient;
 use App\Models\Agenda;
 use App\Models\Lead;
+use App\Models\PlanTypeCustomers;
 use Illuminate\Support\Facades\Mail;
 
 class AdminDetailComponent extends Component
@@ -371,8 +372,6 @@ class AdminDetailComponent extends Component
 
   public function updateCallingStatus($id)
   {
-
-
     $user = Lead::find($id);
 
     if (!$user) {
@@ -397,8 +396,6 @@ class AdminDetailComponent extends Component
     session()->flash('success', 'Email sent to ' . $user->name);
   }
 
-
-  
 
   public $csvFile;
   use WithFileUploads;
@@ -451,6 +448,21 @@ class AdminDetailComponent extends Component
     $this->dispatch('update-floorplan')->to('#floorCanvas');
   }
 
+
+  public $event_type;
+  public $user_id;
+
+  public function updatestatus($id, $event_type)
+  {
+    $planTypeCustomer = new PlanTypeCustomers();
+    $planTypeCustomer->event_id = $id;
+    $planTypeCustomer->event_type = $event_type; 
+    $planTypeCustomer->status = '1';
+    $planTypeCustomer->admstatus = '1';
+    $planTypeCustomer->user_id = Auth::user()->id;
+    $planTypeCustomer->save();
+  }
+  
 
   public function render()
   {
