@@ -143,7 +143,7 @@
 
                         {{-- Event Type Dropdown --}}
                         @php 
-                          $getstatusforevent = DB::table('plan_type_customers')->where('event_id', $evento->id)->latest()->value('event_type');
+                          $getstatusforevent = DB::table('plan_type_customers')->where('event_id', $evento->id)->latest()->value('cxtype');
                         @endphp
 
                         <div class="col-md-3 d-flex align-items-center">
