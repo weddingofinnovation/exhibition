@@ -1222,56 +1222,6 @@
   });
 </script>
 
-<script>
-  var slider = tns({
-    "container": '.my-Slider7',
-    "responsive": {
-      "300": {
-        "items": 1,
-        "controls": false,
-        "mouseDrag": true,
-        "autoplay": true,
-        "autoplayButtonOutput": false,
-        "autoplayHoverPause": true,
-      },
-      "500": {
-        "items": 4,
-        "nav": false,
-        "controls": false,
-        "autoplayHoverPause": true,
-        "autoplay": true,
-        "autoplayButtonOutput": false
-      },
 
-    },
-    "autoplayButtonOutput": false
-  });
-</script>
-
-<script>
-  var slider = tns({
-    "container": '.my-Slider8',
-    "responsive": {
-      "300": {
-        "items": 1,
-        "controls": false,
-        "mouseDrag": true,
-        "autoplay": true,
-        "autoplayButtonOutput": false,
-        "autoplayHoverPause": true,
-      },
-      "500": {
-        "items": 4,
-        "nav": false,
-        "controls": false,
-        "autoplayHoverPause": true,
-        "autoplay": true,
-        "autoplayButtonOutput": false
-      },
-
-    },
-    "autoplayButtonOutput": false
-  });
-</script>
 
 @endpush
