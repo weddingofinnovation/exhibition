@@ -449,20 +449,20 @@ class AdminDetailComponent extends Component
   }
 
 
-  public $event_type;
+  public $cxtype;
   public $user_id;
 
   public function updatestatus($id, $event_type)
   {
     $planTypeCustomer = new PlanTypeCustomers();
     $planTypeCustomer->event_id = $id;
-    $planTypeCustomer->event_type = $event_type; 
+    $planTypeCustomer->cxtype = $event_type; 
     $planTypeCustomer->status = '1';
     $planTypeCustomer->admstatus = '1';
     $planTypeCustomer->user_id = Auth::user()->id;
     $planTypeCustomer->save();
   }
-  
+
 
   public function render()
   {
