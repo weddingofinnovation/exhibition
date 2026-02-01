@@ -96,96 +96,96 @@
 
                 {{--organiser--}}
                 <div class="my-1">
-    <div class="row gx-2 align-items-stretch">
+                    <div class="row gx-2 align-items-stretch">
 
-        {{-- Organizer Card --}}
-        <div class="col-md-9">
-            <div class="row text-center p-1 gx-0 gy-1 mb-1 shadow-sm border rounded border-1 align-items-center">
+                        {{-- Organizer Card --}}
+                        <div class="col-md-9">
+                            <div class="row text-center p-1 gx-0 gy-1 mb-1 shadow-sm border rounded border-1 align-items-center">
 
-                {{-- Icon / Title --}}
-                <div class="col-2">
-                    <div class="h4 fw-light mb-0">Org</div>
-                    <div class="round-circle">
-                        <i class="bi bi-bookmark"></i>
+                                {{-- Icon / Title --}}
+                                <div class="col-2">
+                                    <div class="h4 fw-light mb-0">Org</div>
+                                    <div class="round-circle">
+                                        <i class="bi bi-bookmark"></i>
+                                    </div>
+                                </div>
+
+                                {{-- Organizer Text --}}
+                                <div class="col-7 text-start">
+                                    @if(is_null($evento->organizer))
+                                        <div class="text-muted fs-sm">
+                                            Short Story should be more convincing
+                                        </div>
+                                    @else
+                                        <div class="fs-md fw-normal">
+                                            {{ $evento->organizer }}
+                                        </div>
+                                    @endif
+                                </div>
+
+                                {{-- Edit Button --}}
+                                <div class="col-3 text-end">
+                                    @if(is_null($evento->organizer))
+                                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'organiser']) }}"
+                                          class="btn btn-primary btn-sm">
+                                            <i class="bi bi-plus"></i>
+                                        </a>
+                                    @else
+                                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'organiser']) }}"
+                                          class="btn btn-primary btn-sm">
+                                            Edit
+                                        </a>
+                                    @endif
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- Event Type Dropdown --}}
+                        <div class="col-md-3 d-flex align-items-center">
+                            <div class="dropdown w-100" wire:ignore>
+                                <button class="btn btn-outline-primary btn-sm dropdown-toggle w-100"
+                                        type="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Event Type
+                                </button>
+
+                                <ul class="dropdown-menu w-100">
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
+                                            General
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
+                                            Official
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
+                                            Own
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
+                                            Paid
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-                {{-- Organizer Text --}}
-                <div class="col-7 text-start">
-                    @if(is_null($evento->organizer))
-                        <div class="text-muted fs-sm">
-                            Short Story should be more convincing
-                        </div>
-                    @else
-                        <div class="fs-md fw-normal">
-                            {{ $evento->organizer }}
-                        </div>
-                    @endif
-                </div>
-
-                {{-- Edit Button --}}
-                <div class="col-3 text-end">
-                    @if(is_null($evento->organizer))
-                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'organiser']) }}"
-                           class="btn btn-primary btn-sm">
-                            <i class="bi bi-plus"></i>
-                        </a>
-                    @else
-                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'organiser']) }}"
-                           class="btn btn-primary btn-sm">
-                            Edit
-                        </a>
-                    @endif
-                </div>
-
-            </div>
-        </div>
-
-        {{-- Event Type Dropdown --}}
-        <div class="col-md-3 d-flex align-items-center">
-            <div class="dropdown w-100" wire:ignore>
-                <button class="btn btn-outline-primary btn-sm dropdown-toggle w-100"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                    Event Type
-                </button>
-
-                <ul class="dropdown-menu w-100">
-                    <li>
-                        <a class="dropdown-item"
-                           href="#"
-                           wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
-                            General
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item"
-                           href="#"
-                           wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
-                            Official
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item"
-                           href="#"
-                           wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
-                            Own
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item"
-                           href="#"
-                           wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
-                            Paid
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
 
 
 
