@@ -183,6 +183,8 @@ class AdminEventMultipleAddComponent extends Component
 
 
 
+    public $field_type;
+    
     public function updateEventField()
     {
         $event = Event::findOrFail($this->event_id);

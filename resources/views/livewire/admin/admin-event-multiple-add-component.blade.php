@@ -263,7 +263,7 @@
                         </label>
 
                         <select class="form-select @error('field_type') is-invalid @enderror"
-                                wire:model="field_type"
+                                wire:model="field_type" 
                                 required>
                             <option value="">Choose</option>
                             <option value="tagline">Tag Line</option>
