@@ -144,49 +144,48 @@
                         {{-- Event Type Dropdown --}}
                         <div class="col-md-3 d-flex align-items-center">
                             <div class="btn-group w-100" wire:ignore>
-    <button type="button" class="btn btn-outline-primary btn-sm text-start w-100">
-        Event Type
-    </button>
+                                <button type="button" class="btn btn-outline-dark btn-sm text-start w-100">
+                                    Event Type
+                                </button>
 
-    <button type="button"
-            class="btn btn-outline-primary btn-sm dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-        <span class="visually-hidden">Toggle Dropdown</span>
-    </button>
+                                <button type="button"
+                                        class="btn btn-outline-primary btn-sm dropdown-toggle dropdown-toggle-split"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
 
-    <ul class="dropdown-menu dropdown-menu-end w-100">
-        <li>
-            <a class="dropdown-item"
-               href="#"
-               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
-                General
-            </a>
-        </li>
-        <li>
-            <a class="dropdown-item"
-               href="#"
-               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
-                Official
-            </a>
-        </li>
-        <li>
-            <a class="dropdown-item"
-               href="#"
-               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
-                Own
-            </a>
-        </li>
-        <li>
-            <a class="dropdown-item"
-               href="#"
-               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
-                Paid
-            </a>
-        </li>
-    </ul>
-</div>
-
+                                <ul class="dropdown-menu dropdown-menu-end w-100">
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
+                                            General
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
+                                            Official
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
+                                            Own
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                          href="#"
+                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
+                                            Paid
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
