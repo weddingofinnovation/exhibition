@@ -371,7 +371,7 @@
                     {{-- CENTER (STOP SELECTION) --}}
                     <div class="col-7 p-0" wire:click.stop>
                         <a class="text-dark"
-                        href="{{ route('admin.eventEdit', ['event_id' => $evento->id, 'board' => 'basic']) }}">
+                        href="#">
                             <div class="fs-md fw-normal text-start">
                                 {{ ucwords(Str::limit($evento->eventname, 24)) }}
                             </div>
