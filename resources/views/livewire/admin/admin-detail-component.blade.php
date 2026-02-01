@@ -143,45 +143,50 @@
 
                         {{-- Event Type Dropdown --}}
                         <div class="col-md-3 d-flex align-items-center">
-                            <div class="dropdown w-100" wire:ignore>
-                                <button class="btn btn-outline-primary btn-sm dropdown-toggle w-100"
-                                        type="button"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                    Event Type
-                                </button>
+                            <div class="btn-group w-100" wire:ignore>
+    <button type="button" class="btn btn-outline-primary btn-sm text-start w-100">
+        Event Type
+    </button>
 
-                                <ul class="dropdown-menu w-100">
-                                    <li>
-                                        <a class="dropdown-item"
-                                          href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
-                                            General
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                          href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
-                                            Official
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                          href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
-                                            Own
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item"
-                                          href="#"
-                                          wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
-                                            Paid
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+    <button type="button"
+            class="btn btn-outline-primary btn-sm dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end w-100">
+        <li>
+            <a class="dropdown-item"
+               href="#"
+               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
+                General
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item"
+               href="#"
+               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
+                Official
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item"
+               href="#"
+               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
+                Own
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item"
+               href="#"
+               wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
+                Paid
+            </a>
+        </li>
+    </ul>
+</div>
+
                         </div>
 
                     </div>
