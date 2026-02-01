@@ -97,48 +97,76 @@
                 {{--organiser--}}
                 <div class=" my-1">
 
-                <div class="row">
+                  <div class="row">
 
-                  <div class="col row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+                    <div class="col row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
 
-                    <div class="col  pr-0">
-                      <div class="h4 fw-light mb-0">Org</div>
+                      <div class="col  pr-0">
+                        <div class="h4 fw-light mb-0">Org</div>
 
-                      <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                      {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                    </div>
-
-                    <div class="col-7  p-0">
-                      @if(is_null($evento->organizer))
-                      <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
-                      @else
-                      <div class="fs-md fw-normal text-start">
-                        {{$evento->organizer}}
+                        <div class="round-circle"><i class="bi bi-bookmark"></i></div>
+                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
                       </div>
-                      @endif
+
+                      <div class="col-7  p-0">
+                        @if(is_null($evento->organizer))
+                        <div class="text-muted fs-sm text-start">Short Story should be more convincing </div>
+                        @else
+                        <div class="fs-md fw-normal text-start">
+                          {{$evento->organizer}}
+                        </div>
+                        @endif
+                      </div>
+
+                      <div class="col-3 p-0">
+                        @if(is_null($evento->organizer))
+                        <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser' ])}}" class="btn btn-primary btn-sm"> <i class="bi bi-plus"></i></a>
+                        @else
+                        <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser'])}}" class="btn btn-primary btn-sm">Edit</a>
+                        @endif
+                      </div>
                     </div>
 
-                    <div class="col-3 p-0">
-                      @if(is_null($evento->organizer))
-                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser' ])}}" class="btn btn-primary btn-sm"> <i class="bi bi-plus"></i></a>
-                      @else
-                      <a href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'organiser'])}}" class="btn btn-primary btn-sm">Edit</a>
-                      @endif
-                    </div>
-                  </div>
+                    <div class="col">
+    <div class="dropdown" wire:ignore>
+        <button class="btn btn-outline-primary btn-sm dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown">
+            Event Type
+        </button>
 
-                  <div class="col">
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'general')">General</a></li>
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'official')">Official</a></li>
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'own')">Own</a></li>
-                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'paid')">Paid</a></li>
-                      </ul>
-                  </div>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#"
+                   wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'general')">
+                    General
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#"
+                   wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'official')">
+                    Official
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#"
+                   wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'own')">
+                    Own
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#"
+                   wire:click.prevent="updateCallingStatus({{ $evento->id }}, 'paid')">
+                    Paid
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
-                </div>
+
+                  </div>
                   
-
                 </div>
 
 
