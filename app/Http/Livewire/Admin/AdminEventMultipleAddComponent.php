@@ -184,7 +184,8 @@ class AdminEventMultipleAddComponent extends Component
 
 
     public $field_type;
-    
+    public $content;
+
     public function updateEventField()
     {
         $event = Event::findOrFail($this->event_id);
@@ -192,23 +193,23 @@ class AdminEventMultipleAddComponent extends Component
         switch ($this->field_type) {
 
             case 'link':
-                $event->link = $this->link;
+                $event->link = $this->content;
                 break;
             
             case 'tagline':
-                $event->tagline = $this->tagline;
+                $event->tagline = $this->content;
                 break;
             
             case 'shtdesc':
-                $event->shtdesc = $this->shtdesc;
+                $event->shtdesc = $this->content;
                 break;
 
             case 'facts':  
-                $event->facts = $this->facts;
+                $event->facts = $this->content;
                 break;
 
             case 'desc':
-                $event->desc = $this->desc;
+                $event->desc = $this->content;
                 break;
         }
 
