@@ -452,6 +452,22 @@ class AdminDetailComponent extends Component
   public $cxtype;
   public $user_id;
 
+
+
+  public function updatealleventinyear()
+  {
+      $events = Event::whereYear('startdate', 2026)
+                      ->orWhereYear('startdate', 2027)
+                      ->get();
+
+      foreach ($events as $event) {
+          $this->updatestatus($event->id, 'general');
+      }
+
+      session()->flash('success', 'All 2026–2027 events updated successfully');
+  }
+
+
   public function updatestatus($id, $event_type)
   {
     $planTypeCustomer = new PlanTypeCustomers();
