@@ -1055,22 +1055,22 @@
                   </div>
                 </div>
 
-                <button class="btn btn-danger"
-                        wire:click="updatealleventinyear"
-                        wire:loading.attr="disabled">
+                  <button class="btn btn-danger"
+                          wire:click="updatealleventinyear"
+                          wire:loading.attr="disabled">
 
-                    Update All 2026–2027 Events
-                </button>
+                      Update All 2026–2027 Events
+                  </button>
 
-                <span wire:loading>
-                    Updating...
-                </span>
+                  <span wire:loading>
+                      Updating...
+                  </span>
 
-                @if (session()->has('success'))
-                    <div class="alert alert-success mt-2">
-                        {{ session('success') }}
-                    </div>
-                @endif
+                  @if (session()->has('success'))
+                      <div class="alert alert-success mt-2">
+                          {{ session('success') }}
+                      </div>
+                  @endif
 
               </div>
 

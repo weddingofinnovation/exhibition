@@ -97,6 +97,21 @@ class AdminEventEditComponent extends Component
         $this->status = '1';     
     }
 
+    public $selectedEvents = [];
+
+    public function toggleEvent($eventId)
+    {
+        if (in_array($eventId, $this->selectedEvents)) {
+            // unselect
+            $this->selectedEvents = array_values(
+                array_diff($this->selectedEvents, [$eventId])
+            );
+        } else {
+            // select
+            $this->selectedEvents[] = $eventId;
+        }
+    }
+
     public function updateEvent()
     {
         $fattribute = Event::find($this->event_id);
