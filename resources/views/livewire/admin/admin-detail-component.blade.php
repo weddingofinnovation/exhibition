@@ -96,7 +96,11 @@
 
                 {{--organiser--}}
                 <div class=" my-1">
+
+                <div class="row">
+
                   <div class="row text-center p-1 gx-0 gy-1 mb-1  shadow-sm  border rounded border-1">
+
                     <div class="col  pr-0">
                       <div class="h4 fw-light mb-0">Org</div>
 
@@ -122,6 +126,19 @@
                       @endif
                     </div>
                   </div>
+
+                  <div class="col">
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'general')">General</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'official')">Official</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'own')">Own</a></li>
+                        <li><a class="dropdown-item" href="#" wire:click.prevent="updateCallingStatus({{$evento->id}}, 'paid')">Paid</a></li>
+                      </ul>
+                  </div>
+
+                </div>
+                  
+
                 </div>
 
 
@@ -1017,6 +1034,7 @@
             </div>
 
           </div>
+
         </div>
 
 
