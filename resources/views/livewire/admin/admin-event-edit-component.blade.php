@@ -5,414 +5,401 @@
 
 <main>
     <div class="container mb-5 pb-5">
-        <div class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
-            <div class="text-sm-end">
-                <a class="btn btn-primary" href="{{route('admin.dashboard', ['board' => 'event'])}}" data-bs-toggle="modal"> All Event </a>
-            </div>
-            @if (Session::has('message'))<h6 class="fs-base text-light mb-0">{{Session::get('message')}}</h6>@endif
-            <a class="btn btn-primary btn-sm" href="#"><i class="ci-sign-out me-2"></i>Sign out</a>
-        </div>
-
         @if($board == 'basic')
-        <form wire:submit.prevent="updateBasicEvent">
-            {{$evento->slug}}
-            <div class="row g-1">
+            <form wire:submit.prevent="updateBasicEvent">
+                {{$evento->slug}}
+                <div class="row g-1">
 
-                <div class="col-sm-3">
-                    <label class="form-label" for="seniority">Type</label>
-                    <select class="form-control" type="text" wire:model.lazy="eventype" placeholder="Provide short title of your request">
-                        <option>Choose</option>
-                        <option value="award">Award</option>
-                        <option value="conference">Conference</option>
-                        <option value="expo">Exhibition</option>
-                        <option value="festival">Festival</option>
-                        <option value="network">Network</option>
-                        <option value="embassy">Embassy</option>
-                    </select>
-                    @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
-                </div>
+                    <div class="col-sm-3">
+                        <label class="form-label" for="seniority">Type</label>
+                        <select class="form-control" type="text" wire:model.lazy="eventype" placeholder="Provide short title of your request">
+                            <option>Choose</option>
+                            <option value="award">Award</option>
+                            <option value="conference">Conference</option>
+                            <option value="expo">Exhibition</option>
+                            <option value="festival">Festival</option>
+                            <option value="network">Network</option>
+                            <option value="embassy">Embassy</option>
+                        </select>
+                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                    </div>
 
-                <div class="col-sm-4">
-                    <label class="form-label" for="cf-name">Event Name</label>
-                    <input class="form-control" type="text" placeholder="Your Event" wire:model="eventname" wire:keyup="generateSlug" required="">
-                    @error( 'eventname' ){{ $message}}@enderror
-                </div>
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Event Name</label>
+                        <input class="form-control" type="text" placeholder="Your Event" wire:model="eventname" wire:keyup="generateSlug" required="">
+                        @error( 'eventname' ){{ $message}}@enderror
+                    </div>
 
-                <div class="col-sm-1">
-                    <label class="form-label" for="cf-name">Edition</label>
-                    <input class="form-control" type="number" placeholder="Your Edition" wire:model.lazy="edition" required="">
-                    @error( 'edition' ){{ $message}}@enderror
+                    <div class="col-sm-1">
+                        <label class="form-label" for="cf-name">Edition</label>
+                        <input class="form-control" type="number" placeholder="Your Edition" wire:model.lazy="edition" required="">
+                        @error( 'edition' ){{ $message}}@enderror
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="cf-name">Start Date</label>
+                        <input class="form-control" type="date" wire:model.lazy="startdate" required="">
+                        @error('startdate' ){{ $message}}@enderror
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="cf-name">End Date</label>
+                        <input class="form-control" type="date" wire:model.lazy="enddate" required="">
+                        @error( 'enddate' ){{ $message}}@enderror
+                    </div>
+
+                    @php
+                    $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('venue','desc')->get();
+                    @endphp
+
+                    <div class="col-sm-1">
+                        <label class="form-label" for="seniority">Venue</label>
+                        <select class="form-control" type="text" wire:model.lazy="findidvenue" id="seniority" placeholder="Provide short title of your request">
+                            <option selected>Choose</option>
+                            @foreach($venueoption as $venueo)
+                            <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}}</span></option>
+                            @endforeach
+                        </select>
+                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                    </div>
+
+
+                    {{-- <div class="col-sm-3">
+                                <label class="form-label" for="cf-name">Venue</label>
+                                <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
+                                @error( 'venue' ){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-2">
-                    <label class="form-label" for="cf-name">Start Date</label>
-                    <input class="form-control" type="date" wire:model.lazy="startdate" required="">
-                    @error('startdate' ){{ $message}}@enderror
+                    <label class="form-label" for="cf-name">City</label>
+                    <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
+                    @error('city'){{ $message}}@enderror
                 </div>
 
                 <div class="col-sm-2">
-                    <label class="form-label" for="cf-name">End Date</label>
-                    <input class="form-control" type="date" wire:model.lazy="enddate" required="">
-                    @error( 'enddate' ){{ $message}}@enderror
+                    <label class="form-label" for="cf-name">country</label>
+                    <input class="form-control" type="text" placeholder="country" wire:model.lazy="country" required="">
+                    @error('country'){{ $message}}@enderror
+                </div> --}}
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Visitor</label>
+                    <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
+                    @error('auidence'){{ $message}}@enderror
                 </div>
 
-                @php
-                $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->orderBy('venue','desc')->get();
-                @endphp
-
-                <div class="col-sm-1">
-                    <label class="form-label" for="seniority">Venue</label>
-                    <select class="form-control" type="text" wire:model.lazy="findidvenue" id="seniority" placeholder="Provide short title of your request">
-                        <option selected>Choose</option>
-                        @foreach($venueoption as $venueo)
-                        <option value="{{$venueo->id}}">{{$venueo->venue}} <span class="fs-xs">{{$venueo->city}}</span></option>
-                        @endforeach
-                    </select>
-                    @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Exhibitor</label>
+                    <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
+                    @error('exhibitors'){{ $message}}@enderror
                 </div>
 
-
-                {{-- <div class="col-sm-3">
-                            <label class="form-label" for="cf-name">Venue</label>
-                            <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
-                            @error( 'venue' ){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">City</label>
-                <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
-                @error('city'){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">country</label>
-                <input class="form-control" type="text" placeholder="country" wire:model.lazy="country" required="">
-                @error('country'){{ $message}}@enderror
-            </div> --}}
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">Visitor</label>
-                <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
-                @error('auidence'){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">Exhibitor</label>
-                <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
-                @error('exhibitors'){{ $message}}@enderror
-            </div>
-
-    </div>
-
-
-
-    <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
-    </form>
-    @endif
-
-    @if($board == 'edit')
-    <form wire:submit.prevent="updateEvent">
-        <div class="row g-1">
-
-            <div class="col-sm-3">
-                <label class="form-label" for="seniority">Type</label>
-                <select class="form-control" type="text" wire:model.lazy="eventype" placeholder="Provide short title of your request">
-                    <option>Choose</option>
-                    <option value="award">Award</option>
-                    <option value="conference">Conference</option>
-                    <option value="expo">Exhibition</option>
-                    <option value="festival">Festival</option>
-                    <option value="network">Network</option>
-                </select>
-                @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
-            </div>
-
-            <div class="col-sm-4">
-                <label class="form-label" for="cf-name">Event Name</label>
-                <input class="form-control" type="text" placeholder="Your Event" wire:model="eventname" wire:keyup="generateSlug" required="">
-                @error( 'eventname' ){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-1">
-                <label class="form-label" for="cf-name">Edition</label>
-                <input class="form-control" type="text" placeholder="Your Edition" wire:model.lazy="edition" required="">
-                <a href="" clas="btn btn-primary btn-sm">Verify</a>
-                @error( 'edition' ){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">Start Date</label>
-                <input class="form-control" type="date" wire:model.lazy="startdate" required="">
-                @error('startdate' ){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-2">
-                <label class="form-label" for="cf-name">End Date</label>
-                <input class="form-control" type="date" wire:model.lazy="enddate" required="">
-                @error( 'enddate' ){{ $message}}@enderror
-            </div>
-
-
-            {{$this->venue}}
-            @php
-            $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
-            @endphp
-
-            <div class="col-sm-1">
-                <label class="form-label" for="seniority">Venue</label>
-                <select class="form-control" type="text" wire:model.lazy="findidvenue" id="seniority" placeholder="Provide short title of your request">
-                    <option selected>Choose</option>
-                    @foreach($venueoption as $venueo)
-                    <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
-                    @endforeach
-                </select>
-                @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
-            </div>
-
-            {{-- <div class="col-sm-3">
-                            <label class="form-label" for="cf-name">Venue</label>
-                            <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
-                            @error( 'venue' ){{ $message}}@enderror
-        </div>
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">City</label>
-            <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
-            @error('city'){{ $message}}@enderror
-        </div> --}}
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Visitor</label>
-            <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
-            @error('auidence'){{ $message}}@enderror
-        </div>
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Exhibitor</label>
-            <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
-            @error('exhibitors'){{ $message}}@enderror
-        </div>
-
-
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Tag Line</label>
-            <textarea class="form-control" type="text" row="2" placeholder="Your Tagline" wire:model.lazy="tagline" required=""></textarea>
-            @error('tagline'){{ $message}}@enderror
-        </div>
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Desc</label>
-            <textarea class="form-control" type="text" placeholder="Your Desc" rows="2" wire:model.lazy="desc" required=""></textarea>
-            @error('desc'){{ $message}}@enderror
-        </div>
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Short Description</label>
-            <textarea class="form-control" type="text" placeholder="Your Short desc" rows="2" wire:model.lazy="shtdesc" required=""></textarea>
-            @error('shtdesc'){{ $message}}@enderror
-        </div>
-
-        <div class="col-sm-2">
-            <label class="form-label" for="cf-name">Web Link</label>
-            <input class="form-control" type="text" wire:model.lazy="link" required=""></input>
-            @error('link'){{ $message}}@enderror
-        </div>
-
-        </div>
-
-        <hr class="my-2">
-        <div class="row">
-            <div class="col-sm-4">
-                <label class="form-label" for="cf-name">Organizer</label>
-                <input class="form-control" type="text" placeholder="Your email" wire:model.lazy="organizer" required="">
-                @error( 'organizer' ){{ $message}}@enderror
-            </div>
-            <div class="col-sm-4">
-                <label class="form-label" for="cf-name">Email</label>
-                <input class="form-control" type="email" placeholder="Your email" wire:model.lazy="email" required="">
-                @error( 'email' ){{ $message}}@enderror
-            </div>
-
-            <div class="col-sm-4">
-                <label class="form-label" for="cf-name">Phone</label>
-                <input class="form-control" type="number" placeholder="Your Phone" wire:model.lazy="phone" required="">
-                @error( 'phone' ){{ $message}}@enderror
-            </div>
-        </div>
-
-        <button class="btn btn-primary mt-2" type="submit">Submit</button>
-    </form>
-    @endif
-
-    @if($board == "doubling")
-
-    <small class="fw-bold">{{$evento->eventname}} </small>
-
-    <form wire:submit.prevent="doubleing">
-        <div class="input-group my-1">
-            <input type="text" wire:model.lazy="eventkhaname" class="form-control" placeholder="Add Relative Event">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-
-    <form wire:submit.prevent="locationdoubleing">
-        <div class="input-group my-1">
-            <input type="text" wire:model.lazy="eventkhaname" class="form-control" placeholder="Different location">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-
-    <form wire:submit.prevent="editReference">
-        <div class="input-group my-1">
-            <input type="text" wire:model.lazy="reference" class="form-control" placeholder="add reference">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-
-    <!-- @if($evento->reference == "null")
-                 {{$evento->reference}}
-                @else
-                {{$evento->reference}}{{!empty($evento -> reference) ? ($evento -> reference) : 'NO venue'}} -->
-        @foreach($relativeevent as $evento)
-            <div class=" my-3">
-                <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                        @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
-                            <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
-                        @else
-                            <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
-                            <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
-                        @endif
-                        
-                        <div class="round-circle">{{$evento->edition}}</div>
-                        <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
-                        <div class="round-circle">{{$evento->id}}</div>
-                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
-                    </div>
-
-                    <div class="col-7  p-0">
-                        <a class="text-dark" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}">
-                            <div class="fs-md fw-normal text-start">
-                                {{ucwords(trans(Str::limit($evento->eventname, 24)))}}
-                            </div>
-                            <div class="text-muted fs-sm text-start">
-                                @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                                {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
-                                @else
-                                {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
-                                @endif
-                            </div>
-                            <div class="text-muted fs-sm text-start">{{ucfirst(trans(!empty($evento -> venue) ? ($evento -> venue) : 'NO venue'))}}, {{ucfirst(trans(!empty($evento -> city) ? ($evento -> city) : 'nocity'))}}</div>
-                        </a>
-                    </div>
-
-                    <div class="col-3  p-0">
-                        @if(is_null($evento->image))
-                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">Add</a>
-                        @else
-                        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">
-                            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}" class="img-fluid rounded"
-                                style="height: 80px; width: auto; object-fit: contain;"></a>
-                        @endif
-                        <a href="" class="">Del</a>
-                    </div>
                 </div>
-            </div>
-        @endforeach
-
-        @if(count($selectedEvents))
-            <div class="alert alert-info">
-                {{ count($selectedEvents) }} events selected
-            </div>
-
-            <button class="btn btn-primary"
-                    wire:click="updateSelectedEvents">
-                Bulk Update Selected Events
-            </button>
+            <button class="btn btn-primary mt-2 form-control" type="submit">Submit</button>
+            </form>
         @endif
 
-        @foreach($relativeevent as $evento)
+        @if($board == 'edit')
+            <form wire:submit.prevent="updateEvent">
+                <div class="row g-1">
 
-            @php
-                $isSelected = in_array($evento->id, $selectedEvents ?? []);
-            @endphp
-
-            <div class="my-3">
-                <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1
-                            {{ $isSelected ? 'border-primary bg-light' : '' }}"
-                    style="cursor:pointer"
-                    wire:click="toggleEvent({{ $evento->id }})">
-
-                    {{-- LEFT --}}
-                    <div class="col pr-0">
-                        @if(Carbon\Carbon::parse($evento->startdate)->format('M') != Carbon\Carbon::parse($evento->enddate)->format('M'))
-                            <div class="h4 fw-light mb-0">
-                                {{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}
-                            </div>
-                            <div class="small text-muted">
-                                {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
-                            </div>
-                        @else
-                            <div class="h4 fw-light mb-0">
-                                {{ Carbon\Carbon::parse($evento->startdate)->format('d') }}
-                            </div>
-                            <div class="small text-muted text-capitalize">
-                                {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
-                            </div>
-                        @endif
-
-                        <div class="round-circle">{{ $evento->edition }}</div>
-                        <div class="round-circle">{{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}</div>
-                        <div class="round-circle">{{ $evento->id }}</div>
+                    <div class="col-sm-3">
+                        <label class="form-label" for="seniority">Type</label>
+                        <select class="form-control" type="text" wire:model.lazy="eventype" placeholder="Provide short title of your request">
+                            <option>Choose</option>
+                            <option value="award">Award</option>
+                            <option value="conference">Conference</option>
+                            <option value="expo">Exhibition</option>
+                            <option value="festival">Festival</option>
+                            <option value="network">Network</option>
+                        </select>
+                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
                     </div>
 
-                    {{-- CENTER (STOP SELECTION) --}}
-                    <div class="col-7 p-0" wire:click.stop>
-                        <a class="text-dark"
-                        href="#">
-                            <div class="fs-md fw-normal text-start">
-                                {{ ucwords(Str::limit($evento->eventname, 24)) }}
-                            </div>
-
-                            <div class="text-muted fs-sm text-start">
-                                {{ Carbon\Carbon::parse($evento->startdate)->format('D, d M') }}
-                                -
-                                {{ Carbon\Carbon::parse($evento->enddate)->format('D, d M') }}
-                            </div>
-
-                            <div class="text-muted fs-sm text-start">
-                                {{ ucfirst($evento->venue ?? 'No venue') }},
-                                {{ ucfirst($evento->city ?? 'No city') }}
-                            </div>
-                        </a>
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Event Name</label>
+                        <input class="form-control" type="text" placeholder="Your Event" wire:model="eventname" wire:keyup="generateSlug" required="">
+                        @error( 'eventname' ){{ $message}}@enderror
                     </div>
 
-                    {{-- RIGHT (STOP SELECTION) --}}
-                    <div class="col-3 p-0" wire:click.stop>
-                        @if(is_null($evento->image))
-                            <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
-                                Add
-                            </a>
-                        @else
-                            <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
-                                <img src="{{ url('public/assets/image/exhibition/'.$evento->image) }}"
-                                    alt="{{ Str::limit($evento->eventname, 24) }}"
-                                    class="img-fluid rounded"
-                                    style="height:80px;object-fit:contain;">
-                            </a>
-                        @endif
-                        <a href="" class="">Del</a>
+                    <div class="col-sm-1">
+                        <label class="form-label" for="cf-name">Edition</label>
+                        <input class="form-control" type="text" placeholder="Your Edition" wire:model.lazy="edition" required="">
+                        <a href="" clas="btn btn-primary btn-sm">Verify</a>
+                        @error( 'edition' ){{ $message}}@enderror
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="cf-name">Start Date</label>
+                        <input class="form-control" type="date" wire:model.lazy="startdate" required="">
+                        @error('startdate' ){{ $message}}@enderror
+                    </div>
+
+                    <div class="col-sm-2">
+                        <label class="form-label" for="cf-name">End Date</label>
+                        <input class="form-control" type="date" wire:model.lazy="enddate" required="">
+                        @error( 'enddate' ){{ $message}}@enderror
+                    </div>
+
+
+                    {{$this->venue}}
+                    @php
+                    $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+                    @endphp
+
+                    <div class="col-sm-1">
+                        <label class="form-label" for="seniority">Venue</label>
+                        <select class="form-control" type="text" wire:model.lazy="findidvenue" id="seniority" placeholder="Provide short title of your request">
+                            <option selected>Choose</option>
+                            @foreach($venueoption as $venueo)
+                            <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
+                            @endforeach
+                        </select>
+                        @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                    </div>
+
+                    {{-- <div class="col-sm-3">
+                                    <label class="form-label" for="cf-name">Venue</label>
+                                    <input class="form-control" type="text" placeholder="venue" wire:model.lazy="venue" required="">
+                                    @error( 'venue' ){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">City</label>
+                    <input class="form-control" type="text" placeholder="city" wire:model.lazy="city" required="">
+                    @error('city'){{ $message}}@enderror
+                </div> --}}
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Visitor</label>
+                    <input class="form-control" type="number" placeholder="Your Visitor" wire:model.lazy="auidence" required="">
+                    @error('auidence'){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Exhibitor</label>
+                    <input class="form-control" type="number" placeholder="Your Exhibitor" wire:model.lazy="exhibitors" required="">
+                    @error('exhibitors'){{ $message}}@enderror
+                </div>
+
+
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Tag Line</label>
+                    <textarea class="form-control" type="text" row="2" placeholder="Your Tagline" wire:model.lazy="tagline" required=""></textarea>
+                    @error('tagline'){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Desc</label>
+                    <textarea class="form-control" type="text" placeholder="Your Desc" rows="2" wire:model.lazy="desc" required=""></textarea>
+                    @error('desc'){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Short Description</label>
+                    <textarea class="form-control" type="text" placeholder="Your Short desc" rows="2" wire:model.lazy="shtdesc" required=""></textarea>
+                    @error('shtdesc'){{ $message}}@enderror
+                </div>
+
+                <div class="col-sm-2">
+                    <label class="form-label" for="cf-name">Web Link</label>
+                    <input class="form-control" type="text" wire:model.lazy="link" required=""></input>
+                    @error('link'){{ $message}}@enderror
+                </div>
+
+                </div>
+
+                <hr class="my-2">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Organizer</label>
+                        <input class="form-control" type="text" placeholder="Your email" wire:model.lazy="organizer" required="">
+                        @error( 'organizer' ){{ $message}}@enderror
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Email</label>
+                        <input class="form-control" type="email" placeholder="Your email" wire:model.lazy="email" required="">
+                        @error( 'email' ){{ $message}}@enderror
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="form-label" for="cf-name">Phone</label>
+                        <input class="form-control" type="number" placeholder="Your Phone" wire:model.lazy="phone" required="">
+                        @error( 'phone' ){{ $message}}@enderror
                     </div>
                 </div>
-            </div>
-        @endforeach
 
-        
+                <button class="btn btn-primary mt-2" type="submit">Submit</button>
+            </form>
+        @endif
 
-    <!-- @endif -->
-    @endif
+        @if($board == "doubling")
+
+            <small class="fw-bold">{{$evento->eventname}} </small>
+
+            <form wire:submit.prevent="doubleing">
+                <div class="input-group my-1">
+                    <input type="text" wire:model.lazy="eventkhaname" class="form-control" placeholder="Add Relative Event">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+            <form wire:submit.prevent="locationdoubleing">
+                <div class="input-group my-1">
+                    <input type="text" wire:model.lazy="eventkhaname" class="form-control" placeholder="Different location">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+            <form wire:submit.prevent="editReference">
+                <div class="input-group my-1">
+                    <input type="text" wire:model.lazy="reference" class="form-control" placeholder="add reference">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+
+            <!-- @if($evento->reference == "null")
+                    {{$evento->reference}}
+                    @else
+                    {{$evento->reference}}{{!empty($evento -> reference) ? ($evento -> reference) : 'NO venue'}} -->
+            @foreach($relativeevent as $evento)
+                <div class=" my-3">
+                    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                        <div class="col  pr-0">
+                            @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
+                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
+                                <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+                            @else
+                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
+                                <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+                            @endif
+                            
+                            <div class="round-circle">{{$evento->edition}}</div>
+                            <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
+                            <div class="round-circle">{{$evento->id}}</div>
+                            {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender</a>--}}
+                        </div>
+
+                        <div class="col-7  p-0">
+                            <a class="text-dark" href="{{route('admin.eventEdit',['event_id' => $evento->id, 'board' => 'basic'])}}">
+                                <div class="fs-md fw-normal text-start">
+                                    {{ucwords(trans(Str::limit($evento->eventname, 24)))}}
+                                </div>
+                                <div class="text-muted fs-sm text-start">
+                                    @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
+                                    {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                                    @else
+                                    {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                                    @endif
+                                </div>
+                                <div class="text-muted fs-sm text-start">{{ucfirst(trans(!empty($evento -> venue) ? ($evento -> venue) : 'NO venue'))}}, {{ucfirst(trans(!empty($evento -> city) ? ($evento -> city) : 'nocity'))}}</div>
+                            </a>
+                        </div>
+
+                        <div class="col-3  p-0">
+                            @if(is_null($evento->image))
+                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">Add</a>
+                            @else
+                            <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $evento->id, 'formm' => 'image' ])}}">
+                                <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}" class="img-fluid rounded"
+                                    style="height: 80px; width: auto; object-fit: contain;"></a>
+                            @endif
+                            <a href="" class="">Del</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            @if(count($selectedEvents))
+                <div class="alert alert-info">
+                    {{ count($selectedEvents) }} events selected
+                </div>
+
+                <button class="btn btn-primary"
+                        wire:click="updateSelectedEvents">
+                    Bulk Update Selected Events
+                </button>
+            @endif
+
+            @foreach($relativeevent as $evento)
+
+                @php
+                    $isSelected = in_array($evento->id, $selectedEvents ?? []);
+                @endphp
+
+                <div class="my-3">
+                    <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1
+                                {{ $isSelected ? 'border-primary bg-light' : '' }}"
+                        style="cursor:pointer"
+                        wire:click="toggleEvent({{ $evento->id }})">
+
+                        {{-- LEFT --}}
+                        <div class="col pr-0">
+                            @if(Carbon\Carbon::parse($evento->startdate)->format('M') != Carbon\Carbon::parse($evento->enddate)->format('M'))
+                                <div class="h4 fw-light mb-0">
+                                    {{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}
+                                </div>
+                                <div class="small text-muted">
+                                    {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
+                                </div>
+                            @else
+                                <div class="h4 fw-light mb-0">
+                                    {{ Carbon\Carbon::parse($evento->startdate)->format('d') }}
+                                </div>
+                                <div class="small text-muted text-capitalize">
+                                    {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
+                                </div>
+                            @endif
+
+                            <div class="round-circle">{{ $evento->edition }}</div>
+                            <div class="round-circle">{{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}</div>
+                            <div class="round-circle">{{ $evento->id }}</div>
+                        </div>
+
+                        {{-- CENTER (STOP SELECTION) --}}
+                        <div class="col-7 p-0" wire:click.stop>
+                            <a class="text-dark"
+                            href="#">
+                                <div class="fs-md fw-normal text-start">
+                                    {{ ucwords(Str::limit($evento->eventname, 24)) }}
+                                </div>
+
+                                <div class="text-muted fs-sm text-start">
+                                    {{ Carbon\Carbon::parse($evento->startdate)->format('D, d M') }}
+                                    -
+                                    {{ Carbon\Carbon::parse($evento->enddate)->format('D, d M') }}
+                                </div>
+
+                                <div class="text-muted fs-sm text-start">
+                                    {{ ucfirst($evento->venue ?? 'No venue') }},
+                                    {{ ucfirst($evento->city ?? 'No city') }}
+                                </div>
+                            </a>
+                        </div>
+
+                        {{-- RIGHT (STOP SELECTION) --}}
+                        <div class="col-3 p-0" wire:click.stop>
+                            @if(is_null($evento->image))
+                                <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
+                                    Add
+                                </a>
+                            @else
+                                <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
+                                    <img src="{{ url('public/assets/image/exhibition/'.$evento->image) }}"
+                                        alt="{{ Str::limit($evento->eventname, 24) }}"
+                                        class="img-fluid rounded"
+                                        style="height:80px;object-fit:contain;">
+                                </a>
+                            @endif
+                            <a href="" class="">Del</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+            <!-- @endif -->
+        @endif
     </div>
 
     <div class="handheld-toolbar">

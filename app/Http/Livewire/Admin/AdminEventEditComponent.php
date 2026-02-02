@@ -112,6 +112,41 @@ class AdminEventEditComponent extends Component
         }
     }
 
+
+    
+        // ✅ ADD THIS METHOD
+    public function updateSelectedEvents()
+    {
+        if (empty($this->selectedEvents)) {
+            session()->flash('error', 'No events selected');
+            return;
+        }
+
+        $data = [];
+
+        if ($this->start_date) {
+            $data['startdate'] = $this->start_date;
+        }
+
+        if ($this->end_date) {
+            $data['enddate'] = $this->end_date;
+        }
+
+        if ($this->venue) {
+            $data['venue'] = $this->venue;
+        }
+
+        if (empty($data)) {
+            session()->flash('error', 'Nothing to update');
+            return;
+        }
+
+        Event::whereIn('id', $this->selectedEvents)->update($data);
+
+        session()->flash('success', 'Selected events updated successfully');
+    }
+  
+
     public function updateEvent()
     {
         $fattribute = Event::find($this->event_id);
