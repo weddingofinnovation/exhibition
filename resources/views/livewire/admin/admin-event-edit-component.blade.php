@@ -236,6 +236,7 @@
 
         @if($board == "doubling")
 
+            
             <small class="fw-bold">{{$evento->eventname}} </small>
 
             <form wire:submit.prevent="doubleing">
@@ -311,92 +312,98 @@
                 </div>
             @endforeach
 
-            @if(count($selectedEvents))
-                <div class="alert alert-info">
-                    {{ count($selectedEvents) }} events selected
+
+            <div class="row">
+                <div class="col-9">
+                    @foreach($relativeevent as $evento)
+                        @php
+                            $isSelected = in_array($evento->id, $selectedEvents ?? []);
+                        @endphp
+
+                        <div class="my-3">
+                            <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1
+                                        {{ $isSelected ? 'border-primary bg-light' : '' }}"
+                                style="cursor:pointer"
+                                wire:click="toggleEvent({{ $evento->id }})">
+
+                                {{-- LEFT --}}
+                                <div class="col pr-0">
+                                    @if(Carbon\Carbon::parse($evento->startdate)->format('M') != Carbon\Carbon::parse($evento->enddate)->format('M'))
+                                        <div class="h4 fw-light mb-0">
+                                            {{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}
+                                        </div>
+                                        <div class="small text-muted">
+                                            {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
+                                        </div>
+                                    @else
+                                        <div class="h4 fw-light mb-0">
+                                            {{ Carbon\Carbon::parse($evento->startdate)->format('d') }}
+                                        </div>
+                                        <div class="small text-muted text-capitalize">
+                                            {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
+                                        </div>
+                                    @endif
+
+                                    <div class="round-circle">{{ $evento->edition }}</div>
+                                    <div class="round-circle">{{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}</div>
+                                    <div class="round-circle">{{ $evento->id }}</div>
+                                </div>
+
+                                {{-- CENTER (STOP SELECTION) --}}
+                                <div class="col-7 p-0" wire:click.stop>
+                                    <a class="text-dark"
+                                    href="#">
+                                        <div class="fs-md fw-normal text-start">
+                                            {{ ucwords(Str::limit($evento->eventname, 24)) }}
+                                        </div>
+
+                                        <div class="text-muted fs-sm text-start">
+                                            {{ Carbon\Carbon::parse($evento->startdate)->format('D, d M') }}
+                                            -
+                                            {{ Carbon\Carbon::parse($evento->enddate)->format('D, d M') }}
+                                        </div>
+
+                                        <div class="text-muted fs-sm text-start">
+                                            {{ ucfirst($evento->venue ?? 'No venue') }},
+                                            {{ ucfirst($evento->city ?? 'No city') }}
+                                        </div>
+                                    </a>
+                                </div>
+
+                                {{-- RIGHT (STOP SELECTION) --}}
+                                <div class="col-3 p-0" wire:click.stop>
+                                    @if(is_null($evento->image))
+                                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
+                                            Add
+                                        </a>
+                                    @else
+                                        <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
+                                            <img src="{{ url('public/assets/image/exhibition/'.$evento->image) }}"
+                                                alt="{{ Str::limit($evento->eventname, 24) }}"
+                                                class="img-fluid rounded"
+                                                style="height:80px;object-fit:contain;">
+                                        </a>
+                                    @endif
+                                    <a href="" class="">Del</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
 
-                <button class="btn btn-primary"
-                        wire:click="updateSelectedEvents">
-                    Bulk Update Selected Events
-                </button>
-            @endif
-
-            @foreach($relativeevent as $evento)
-
-                @php
-                    $isSelected = in_array($evento->id, $selectedEvents ?? []);
-                @endphp
-
-                <div class="my-3">
-                    <div class="row text-center p-1 gx-0 mb-1 shadow-sm border rounded border-1
-                                {{ $isSelected ? 'border-primary bg-light' : '' }}"
-                        style="cursor:pointer"
-                        wire:click="toggleEvent({{ $evento->id }})">
-
-                        {{-- LEFT --}}
-                        <div class="col pr-0">
-                            @if(Carbon\Carbon::parse($evento->startdate)->format('M') != Carbon\Carbon::parse($evento->enddate)->format('M'))
-                                <div class="h4 fw-light mb-0">
-                                    {{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}
-                                </div>
-                                <div class="small text-muted">
-                                    {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
-                                </div>
-                            @else
-                                <div class="h4 fw-light mb-0">
-                                    {{ Carbon\Carbon::parse($evento->startdate)->format('d') }}
-                                </div>
-                                <div class="small text-muted text-capitalize">
-                                    {{ Carbon\Carbon::parse($evento->startdate)->format('M') }}
-                                </div>
-                            @endif
-
-                            <div class="round-circle">{{ $evento->edition }}</div>
-                            <div class="round-circle">{{ Carbon\Carbon::parse($evento->startdate)->format('Y') }}</div>
-                            <div class="round-circle">{{ $evento->id }}</div>
+                <div class="col-3">
+                    @if(count($selectedEvents))
+                        <div class="alert alert-info">
+                            {{ count($selectedEvents) }} events selected
                         </div>
 
-                        {{-- CENTER (STOP SELECTION) --}}
-                        <div class="col-7 p-0" wire:click.stop>
-                            <a class="text-dark"
-                            href="#">
-                                <div class="fs-md fw-normal text-start">
-                                    {{ ucwords(Str::limit($evento->eventname, 24)) }}
-                                </div>
-
-                                <div class="text-muted fs-sm text-start">
-                                    {{ Carbon\Carbon::parse($evento->startdate)->format('D, d M') }}
-                                    -
-                                    {{ Carbon\Carbon::parse($evento->enddate)->format('D, d M') }}
-                                </div>
-
-                                <div class="text-muted fs-sm text-start">
-                                    {{ ucfirst($evento->venue ?? 'No venue') }},
-                                    {{ ucfirst($evento->city ?? 'No city') }}
-                                </div>
-                            </a>
-                        </div>
-
-                        {{-- RIGHT (STOP SELECTION) --}}
-                        <div class="col-3 p-0" wire:click.stop>
-                            @if(is_null($evento->image))
-                                <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
-                                    Add
-                                </a>
-                            @else
-                                <a href="{{ route('admin.eventMultiEdit', ['event_id' => $evento->id, 'formm' => 'image']) }}">
-                                    <img src="{{ url('public/assets/image/exhibition/'.$evento->image) }}"
-                                        alt="{{ Str::limit($evento->eventname, 24) }}"
-                                        class="img-fluid rounded"
-                                        style="height:80px;object-fit:contain;">
-                                </a>
-                            @endif
-                            <a href="" class="">Del</a>
-                        </div>
-                    </div>
+                        <button class="btn btn-primary"
+                                wire:click="updateSelectedEvents">
+                            Bulk Update Selected Events
+                        </button>
+                    @endif
                 </div>
-            @endforeach
+            </div>
 
             <!-- @endif -->
         @endif
