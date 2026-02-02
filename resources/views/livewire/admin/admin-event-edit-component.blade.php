@@ -364,7 +364,7 @@
                                         </div>
 
                                         @php 
-                                           $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->where('id', $this->location_id)->first();
+                                           $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->where('id', $evento->location_id)->first();
                                         @endphp
 
                                         <div class="text-muted fs-sm text-start">
