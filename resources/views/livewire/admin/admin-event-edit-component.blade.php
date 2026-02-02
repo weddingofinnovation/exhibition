@@ -363,8 +363,12 @@
                                             {{ Carbon\Carbon::parse($evento->enddate)->format('D, d M') }}
                                         </div>
 
+                                        @php 
+                                           $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->where('id', $this->location_id)->get();
+                                        @endphp
+
                                         <div class="text-muted fs-sm text-start">
-                                            {{ ucfirst($evento->venue ?? 'No venue') }},
+                                            {{ ucfirst($venueoption->venue ?? 'No venue') }},
                                             {{ ucfirst($evento->city ?? 'No city') }}
                                         </div>
                                     </a>
