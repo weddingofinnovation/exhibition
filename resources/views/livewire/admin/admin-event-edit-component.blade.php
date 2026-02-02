@@ -404,13 +404,13 @@
 
                         <form wire:submit.prevent="updateSelectedEvents" class="">
 
-                            <div class="col-sm-2">
+                            <div class="col">
                                 <label class="form-label" for="cf-name">From</label>
                                 <input class="form-control" type="date" placeholder="Start date"   wire:model.lazy="startdate" >
                                 @error('startdate' ){{ $message}}@enderror
                             </div>
 
-                            <div class="col-sm-2">
+                            <div class="col">
                                 <label class="form-label" for="cf-name">To</label>
                                 <input class="form-control" type="date" placeholder="End Date"   wire:model.lazy="enddate" >
                                 @error( 'enddate' ){{ $message}}@enderror
@@ -420,7 +420,7 @@
                               $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
                             @endphp
 
-                            <div class="col-sm-1">
+                            <div class="col">
                                 <label class="form-label" for="seniority">Venue</label>
                                 <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
                                     <option selected>Choose</option>
