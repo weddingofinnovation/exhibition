@@ -428,7 +428,7 @@
                                     <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
                                     @endforeach
                                 </select>
-                                    @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                                    @error('findidvenue') <div class="invalid-feedback"> {{$message}} </div> @enderror
                             </div>
 
                             <button class="btn btn-primary mt-2" type="submit">Submit</button>

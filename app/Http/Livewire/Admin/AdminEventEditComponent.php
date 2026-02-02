@@ -126,7 +126,7 @@ class AdminEventEditComponent extends Component
         $this->validate([
             'startdate' => 'nullable|date',
             'enddate'   => 'nullable|date|after_or_equal:startdate',
-            'venue_id'  => 'nullable|exists:locations,id',
+            'findidvenue'  => 'nullable|exists:locations,id',
         ]);
 
         if (empty($this->selectedEvents)) {
@@ -136,16 +136,16 @@ class AdminEventEditComponent extends Component
 
         $data = [];
 
-        if ($this->start_date) {
-            $data['startdate'] = $this->start_date;
+        if ($this->startdate) {
+            $data['startdate'] = $this->startdate;
         }
 
-        if ($this->end_date) {
-            $data['enddate'] = $this->end_date;
+        if ($this->enddate) {
+            $data['enddate'] = $this->enddate;
         }
 
-        if ($this->venue) {
-            $data['$location_id'] = $this->venue;
+        if ($this->findidvenue) {
+            $data['location_id'] = $this->findidvenue;
         }
 
         if (empty($data)) {
