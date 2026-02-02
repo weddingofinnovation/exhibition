@@ -314,7 +314,7 @@
 
 
             <div class="row">
-                <div class="col-9">
+                <div class="col-9 border-end">
                     @foreach($relativeevent as $evento)
                         @php
                             $isSelected = in_array($evento->id, $selectedEvents ?? []);
@@ -401,6 +401,39 @@
                                 wire:click="updateSelectedEvents">
                             Bulk Update Selected Events
                         </button>
+
+                        <form wire:submit.prevent="updateSelectedEvents" class="">
+
+                            <div class="col-sm-2">
+                                <label class="form-label" for="cf-name">From</label>
+                                <input class="form-control" type="date" placeholder="Start date"   wire:model.lazy="startdate" >
+                                @error('startdate' ){{ $message}}@enderror
+                            </div>
+
+                            <div class="col-sm-2">
+                                <label class="form-label" for="cf-name">To</label>
+                                <input class="form-control" type="date" placeholder="End Date"   wire:model.lazy="enddate" >
+                                @error( 'enddate' ){{ $message}}@enderror
+                            </div>
+
+                            @php 
+                              $venueoption = DB::table('locations')->where('status', 1)->whereNotNull('venue')->get();
+                            @endphp
+
+                            <div class="col-sm-1">
+                                <label class="form-label" for="seniority">Venue</label>
+                                <select class="form-control" type="text"   wire:model.lazy="findidvenue"  id="seniority"  placeholder="Provide short title of your request">
+                                    <option selected>Choose</option>
+                                    @foreach($venueoption as $venueo)
+                                    <option value="{{$venueo->id}}">{{$venueo->venue}}</option>
+                                    @endforeach
+                                </select>
+                                    @error('eventype') <div class="invalid-feedback"> {{$message}} </div> @enderror
+                            </div>
+
+                            <button class="btn btn-primary mt-2" type="submit">Submit</button>
+
+                        </form>
                     @endif
                 </div>
             </div>

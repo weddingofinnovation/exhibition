@@ -112,11 +112,20 @@ class AdminEventEditComponent extends Component
         }
     }
 
+  
+    public $venue_id;
 
     
         // ✅ ADD THIS METHOD
     public function updateSelectedEvents()
     {
+
+        $this->validate([
+            'startdate' => 'nullable|date',
+            'enddate'   => 'nullable|date|after_or_equal:startdate',
+            'venue_id'  => 'nullable|exists:locations,id',
+        ]);
+
         if (empty($this->selectedEvents)) {
             session()->flash('error', 'No events selected');
             return;
