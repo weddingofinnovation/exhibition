@@ -116,7 +116,7 @@ class AdminEventEditComponent extends Component
     }
 
   
-    public $venue_id;
+    public $location_id;
 
     
         // ✅ ADD THIS METHOD
