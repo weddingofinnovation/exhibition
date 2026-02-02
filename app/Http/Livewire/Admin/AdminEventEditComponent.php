@@ -58,6 +58,9 @@ class AdminEventEditComponent extends Component
     public $findidvenue;
     public $eventkhaname;
     public $organiser_id;
+    public $start_date;
+    public $end_date;
+
 
     public function generateSlug()
     {
@@ -142,7 +145,7 @@ class AdminEventEditComponent extends Component
         }
 
         if ($this->venue) {
-            $data['venue'] = $this->venue;
+            $data['$location_id'] = $this->venue;
         }
 
         if (empty($data)) {
