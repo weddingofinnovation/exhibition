@@ -200,7 +200,7 @@
 								<h6><a href="#" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
 							</div>
 							@endforeach
-						</div>
+
 
 					</div>
 				</div>
@@ -319,7 +319,7 @@
 
 				@foreach($updateQuestion as $questions)
 				@php
-				$answero = DB::table('answers') - > where('question_id', $questions - > id) - > where('status', '1') - > get();
+				$answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
 				@endphp
 
 				{
