@@ -7,6 +7,17 @@
 @section('content')
 
 <main>
+	<style>
+		.blog-content ul {
+			padding-left: 20px;
+		}
+		.blog-content li {
+			margin-bottom: 8px;
+		}
+		.blog-content div {
+			margin-bottom: 15px;
+		}
+	</style>
 
 <!-- HERO SECTION -->
 <section class="bg-dark-overlay-4"
