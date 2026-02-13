@@ -4,17 +4,38 @@
 
 
   <main> 
+
+   <div class="container">
+    <form wire:submit.prevent="add">
+        <div class="row">
+            
+            <div class="col-lg-8 col-sm-4" wire:ignore>
+                <label class="form-label">Desc</label>
+
+                <input id="desc"
+                      type="hidden"
+                      wire:model.defer="desc">
+
+                <trix-editor input="desc"></trix-editor>
+
+                <div class="form-text">
+                    @error('desc') {{ $message }} @enderror
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-sm-4">
+                <button class="btn btn-primary form-control" type="submit">
+                    Post
+                </button>
+            </div>
+        </div>
+    </form>
+
+   </div>
+
+
+
     <div class="container">
-      <div class="d-none d-lg-flex justify-content-between align-items-center pt-lg-3 pb-4 pb-lg-5 mb-lg-3">
-        <div class="text-sm-end">
-          <a class="btn btn-primary" href="{{route ('admin.info')}}" data-bs-toggle="modal">  All Brand </a></div>
-          @if (Session::has('message'))
-          <h6 class="fs-base text-light mb-0">
-          {{Session::get('message')}}
-          </h6>
-          @endif
-          <a class="btn btn-primary btn-sm" href="#"><i class="ci-sign-out me-2"></i>Sign out</a>
-      </div>
 
       <form wire:submit.prevent = "add">    
         <div class="row">
@@ -33,6 +54,7 @@
                   </div>
         </div>
       </form>
+
     </div>
 
     <div class="container py-4">
@@ -87,28 +109,27 @@
     </div>
 
     
-
     @if($board == 'openAI')
-    <div class="container">
-      
-        <select wire:model="selectedEvents" multiple>
-            @foreach($events as $event)
-                <option value="{{ $event->id }}">{{ $event->eventname }}</option>
-            @endforeach
-        </select>
-        <button wire:click="generateArticle" class="form-control btn btn-sm btn-primary">Generate Article</button>
+      <div class="container">
+        
+          <select wire:model="selectedEvents" multiple>
+              @foreach($events as $event)
+                  <option value="{{ $event->id }}">{{ $event->eventname }}</option>
+              @endforeach
+          </select>
+          <button wire:click="generateArticle" class="form-control btn btn-sm btn-primary">Generate Article</button>
 
-        @if ($article)
-            <div>
-                <h3>Generated Article:</h3>
-                <p>{{ $article }}</p>
-            </div>
-        @endif
+          @if ($article)
+              <div>
+                  <h3>Generated Article:</h3>
+                  <p>{{ $article }}</p>
+              </div>
+          @endif
 
-        @if (session()->has('message'))
-            <div>{{ session('message') }}</div>
-        @endif
-    </div>
+          @if (session()->has('message'))
+              <div>{{ session('message') }}</div>
+          @endif
+      </div>
     @endif
 
     <div class="handheld-toolbar">
@@ -137,12 +158,11 @@
   </main>
 
   @push('scripts')
+  
     <script>
-      document.addEventListener('trix-change', function(event) {
-        let content = event.target.value;
-        Livewire.emit('longDescriptionUpdated', content);
-      });
-
-      
+        document.addEventListener('trix-change', function (event) {
+            @this.set('desc', event.target.value);
+        });
     </script>
+
   @endpush
