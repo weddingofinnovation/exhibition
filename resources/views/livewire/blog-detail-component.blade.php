@@ -17,7 +17,7 @@ Inner intro START -->
         
 				<h1 class="text-white">{{$mag->tittle}}</h1>
 				<div class="blog-content">
-					{!! $blog->description !!}
+					{!! $blog->desc !!}
 				</div>
 
         {{--<p class="lead text-white">{{Str::limit($mag->s_desc,263)}} </p>--}}
