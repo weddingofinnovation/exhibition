@@ -102,9 +102,7 @@ Main START -->
 				</p>
 			
 				
-					@foreach(json_decode ($mag->desc) as $graph)
-						<p>{{$graph}}</p>
-					@endforeach
+			
 				
 			</div>
 
