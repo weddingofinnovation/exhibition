@@ -16,9 +16,7 @@ Inner intro START -->
 			<i class="fas fa-circle me-2 small fw-bold"></i>{{$mag->tag}}</a>
         
 				<h1 class="text-white">{{$mag->tittle}}</h1>
-				<div class="blog-content">
-					{!! $mag->desc !!}
-				</div>
+				
 
         {{--<p class="lead text-white">{{Str::limit($mag->s_desc,263)}} </p>--}}
         <!-- Info -->
@@ -98,11 +96,10 @@ Main START -->
 			<div class="col-lg-9 mb-5">
 				<p>
 					<span class="dropcap">A</span>
-					{{$mag -> s_desc}}
+					{!! $mag->desc !!}
 				</p>
-			
-				
-			
+
+		
 				
 			</div>
 
