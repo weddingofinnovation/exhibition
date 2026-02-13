@@ -16,6 +16,10 @@ Inner intro START -->
 			<i class="fas fa-circle me-2 small fw-bold"></i>{{$mag->tag}}</a>
         
 				<h1 class="text-white">{{$mag->tittle}}</h1>
+				<div class="blog-content">
+					{!! $blog->description !!}
+				</div>
+
         {{--<p class="lead text-white">{{Str::limit($mag->s_desc,263)}} </p>--}}
         <!-- Info -->
         <ul class="nav nav-divider text-white-force align-items-center">
