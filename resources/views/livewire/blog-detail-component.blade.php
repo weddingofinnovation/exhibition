@@ -6,6 +6,20 @@
 
 <main>
 
+
+<style>
+	.blog-content ul {
+		padding-left: 20px;
+	}
+	.blog-content li {
+		margin-bottom: 8px;
+	}
+	.blog-content div {
+		margin-bottom: 15px;
+	}
+</style>
+
+
 <!-- =======================
 Inner intro START -->
 <section class="bg-dark-overlay-4" style="background-image:url({{asset('public/assets/image/exhibition/'.$mag->image)}}); background-position: center left; background-size: cover;">
@@ -170,67 +184,10 @@ Main START -->
 
 			</div>
 			<!-- Main Content END -->
-			<!-- Right sidebar START -->
-			<div class="col-lg-3">
-				<div data-sticky="" data-margin-top="80" data-sticky-for="991">
-	      	<!-- Most read -->
-					<div>
-						<h5 class="mb-3">Related post </h5>
-							@foreach($relatedpost as $post)
-									<div class="position-relative">
-										<img class="card-img" href="{{route('blog.details',['slug' => $post->slug])}}" src="{{url('Storage/mags/'.$post->image)}}" alt="{{Str::limit($post->tittle, 24)}}">
-										<div class="card-img-overlay d-flex align-items-start flex-column p-3">
-											<!-- Card overlay Top -->
-											<div class="w-100 mb-auto d-flex justify-content-end">
-												<div class="text-end ms-auto">
-													<!-- Card format icon -->
-													<div class="icon-md bg-white-soft bg-blur text-white fw-bold rounded-circle" title="8.5 rating">8.5</div>
-												</div>
-											</div>
-											<!-- Card overlay bottom -->
-											<div class="w-100 mt-auto">
-												<a href="{{route('blog.category',['category_slug'=> $post->slug])}}" class="badge bg-info mb-2"><i class="fas fa-circle me-2 small fw-bold"></i>{{$post->tag}}</a>
-											</div>
-										</div>
-									</div>
-									<div class="card-body p-0 pt-3">
-										<h5 class="card-title"><a href="{{route('blog.details',['slug' => $post->slug])}}" class="btn-link text-reset fw-bold">{{Str::limit($post->tittle,48)}}</a></h5>
-									</div>
-								</div>
-								<!-- Card item END -->
-                                @endforeach
 
-													
-							
-							</div></div></div>
-							
-						</div>
-						</div>
-					</div>
-					
-					
 
-					<div class="row g-2 mt-5">
-						<h5>Categories</h5>
-						@foreach($cagg as $post)
-						<div class="d-flex justify-content-between align-items-center bg-warning-soft rounded p-2 position-relative">
-							<h6 class="m-0 text-warning">{{$post->tag}}</h6>
-							<a href="{{route('blog.category',['category_slug'=> $post->slug])}}" class="badge badgecolor text-dark stretched-link">{{$post->mag->count()}}</a>
-						</div>
-						@endforeach
-						
-					</div>
 
-					<!-- Advertisement -->
-					<div class="mt-4">
-						<a href="#" class="d-block card-img-flash">
-							<img src="{{asset('mag/adv.png')}}" alt="">
-						</a>
-					</div>
-
-				</div>
-			</div>
-			<!-- Right sidebar END -->
+			
 		</div>
 	</div>
 </section>
