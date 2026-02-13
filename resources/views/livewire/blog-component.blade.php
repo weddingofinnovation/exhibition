@@ -197,10 +197,10 @@
 							@foreach ($tittlemostread as $post)
 							<div class="d-flex position-relative mb-3">
 								<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
-								<h6><a href="#" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
+								<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
 							</div>
 							@endforeach
-
+						</div>
 
 					</div>
 				</div>
@@ -318,20 +318,21 @@
 
 
 				@foreach($updateQuestion as $questions)
-				@php
-				$answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
-				@endphp
+					@php
+					  $answero = DB::table('answers') -> where('question_id', $questions -> id) -> where('status', '1') -> get();
+					@endphp
 
-				{
-					"@type": "Question",
-					"name": "{{$questions->question}}",
-					"acceptedAnswer": {
-						@foreach($answero as $ans)
-						"@type": "Answer",
-						"text": "<p>{{ $ans->answer }}</p>"
-						@endforeach
-					}
-				},
+					{
+						"@type": "Question",
+						"name": "{{$questions->question}}",
+						"acceptedAnswer": 
+						{
+							@foreach($answero as $ans)
+							"@type": "Answer",
+							"text": "<p>{{ $ans->answer }}</p>"
+							@endforeach
+						}
+					},
 				@endforeach
 			]
 		}
