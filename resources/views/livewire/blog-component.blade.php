@@ -190,6 +190,7 @@
 							</div>
 							@endforeach
 						</div>
+						
 						<!-- Most read -->
 						<div class="row g-2 mt-5">
 							<h5 class="mt-5 mb-3">Most read</h5>

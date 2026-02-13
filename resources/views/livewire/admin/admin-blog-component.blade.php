@@ -5,34 +5,46 @@
 
   <main> 
 
-   <div class="container">
-    <form wire:submit.prevent="add">
-        <div class="row">
-            
-            <div class="col-lg-8 col-sm-4" wire:ignore>
-                <label class="form-label">Desc</label>
+  <form wire:submit.prevent="add">
+    <div class="row">
 
-                <input id="desc"
-                      type="hidden"
-                      wire:model.defer="desc">
+        <!-- Title Field -->
+        <div class="col-lg-8 col-sm-4">
+            <label class="form-label">Title</label>
+            <input type="text"
+                   class="form-control"
+                   wire:model.defer="tittle"
+                   placeholder="Enter blog title">
 
-                <trix-editor input="desc"></trix-editor>
-
-                <div class="form-text">
-                    @error('desc') {{ $message }} @enderror
-                </div>
-            </div>
-
-            <div class="col-lg-8 col-sm-4">
-                <button class="btn btn-primary form-control" type="submit">
-                    Post
-                </button>
+            <div class="form-text text-danger">
+                @error('tittle') {{ $message }} @enderror
             </div>
         </div>
-    </form>
 
-   </div>
+        <!-- Description Field -->
+        <div class="col-lg-8 col-sm-4" wire:ignore>
+            <label class="form-label">Desc</label>
 
+            <input id="desc"
+                   type="hidden"
+                   wire:model.defer="desc">
+
+            <trix-editor input="desc"></trix-editor>
+
+            <div class="form-text text-danger">
+                @error('desc') {{ $message }} @enderror
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-lg-8 col-sm-4 mt-3">
+            <button class="btn btn-primary form-control" type="submit">
+                Post
+            </button>
+        </div>
+
+    </div>
+  </form>
 
 
     <div class="container">
