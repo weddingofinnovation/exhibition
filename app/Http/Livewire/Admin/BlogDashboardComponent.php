@@ -58,6 +58,9 @@ class BlogDashboardComponent extends Component
         $blog->tittle = $this->tittle;
         $blog->slug = $this->slug;
         $blogdesc = explode(",,",$this->desc);
+        $this->dispatchBrowserEvent('setTrixContent', [
+        'content' => $this->desc
+        ]);
         $blog->desc = json_encode($blogdesc);
         $blog->s_desc = $this->s_desc;
         $blog->user_id = Auth::user()->id;
@@ -68,6 +71,8 @@ class BlogDashboardComponent extends Component
         session()->flash('message',' Congrats, Blog has been posted Successfully. we are reviewing, it will flash on the platform very soon.'); 
         return redirect()->route('admin.dashboard',['board' => 'blog']);
     }
+
+
 
     public function dateImage()
     {

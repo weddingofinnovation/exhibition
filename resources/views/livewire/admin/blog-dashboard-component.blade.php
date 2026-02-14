@@ -2,6 +2,9 @@
   <div class="container">
     @if($board == 'edit')
       <form wire:submit.prevent="edit">
+
+    
+
         {{-- Blog Title --}}
         <div class="col-12">
             <label class="form-label">Blog Title</label>
@@ -34,7 +37,9 @@
                 Post
             </button>
         </div>
+
       </form>
+
     @endif
 
     @if($board == 'tag')
@@ -173,6 +178,13 @@
       </div>
     @endif
   
+    @push('scripts')
+      <script>
+          window.addEventListener('setTrixContent', event => {
+              document.querySelector("trix-editor").editor.loadHTML(event.detail.content);
+          });
+      </script>
+    @endpush
 
 
 </main>
