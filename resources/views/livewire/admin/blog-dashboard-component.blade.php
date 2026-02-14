@@ -1,35 +1,24 @@
 <main>
   <div class="container">
     @if($board == 'edit')
-          <form wire:submit.prevent="edit" >
-                <div class="row">
-                  <div class="col-sm-4 ">
-                    <label class="form-label" >Blog tittle</label>
-                    <textarea class="form-control" type="text" rows="3" wire:model="tittle"  wire:keyup="generateSlug"> </textarea>
-                  </div>
+      <form wire:submit.prevent="edit">
+              <div class="col-sm-4 ">
+                <label class="form-label" >Blog tittle</label>
+                <textarea class="form-control" type="text" rows="3" wire:model="tittle"  wire:keyup="generateSlug"> </textarea>
+              </div>
 
-                  <div class="col-sm-4">
-                    <label class="form-label" >Short Desc</label>
-                      <textarea class="form-control" type="text"  rows="7" wire:model.lazy="s_desc"></textarea>
-                      <div class="form-text"></div>
-                  </div>
-              
-                  
-                  <div class="col-sm-4">
-                    <label class="form-label" >Desc</label>
-                    
-                    <input id="body" type="hidden" name="content" wire:model.defer="desc">
-                    <trix-editor input="desc"></trix-editor>
-                    <div class="form-text"></div>
-                  </div>
+              <div class="col-sm-4">
+                <label class="form-label" >Desc</label>
+                
+                <input id="body" type="hidden" name="content" wire:model.defer="desc">
+                <trix-editor input="desc"></trix-editor>
+                <div class="form-text"></div>
+              </div>
 
-                  <div class="col-sm-4">
-                  <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>
-                  Post</button>
-                  </div>
-              
-                </div>
-          </form>
+              <div class="col-sm-4">
+                  <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
+              </div>
+      </form>
     @endif
 
     @if($board == 'tag')
