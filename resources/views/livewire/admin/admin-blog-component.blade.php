@@ -4,8 +4,8 @@
 
 
   <main> 
-
-  <form wire:submit.prevent="add">
+<div class="container">
+<form wire:submit.prevent="add">
     <div class="row">
 
         <!-- Title Field -->
@@ -45,29 +45,11 @@
 
     </div>
   </form>
+</div>
+  
 
 
-    <div class="container">
-
-      <form wire:submit.prevent = "add">    
-        <div class="row">
-                  
-                  <div class="col-lg-8  col-sm-4">
-                    <label class="form-label" >Desc</label>
-                    <input id="desc" type="hidden" name="content" wire:model.defer="desc">
-                    <trix-editor input="desc"></trix-editor>
-                    <div class="form-text">
-                    @error('desc'){{ $message}}@enderror
-                    </div>
-                  </div>
-                  
-                  <div class="col-lg-8  col-sm-4">
-                    <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
-                  </div>
-        </div>
-      </form>
-
-    </div>
+   
 
     <div class="container py-4">
     
@@ -154,7 +136,7 @@
           </a>
           
           <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',['board' => 'addBlog'])}}">
-            <span class="handheld-toolbar-icon"><i class="ci-cart"></i></span>
+            <span class="handheld-toolbar-icon"><i class="bi bi-cart"></i></span>
             <span class="handheld-toolbar-label">Add</span>
           </a>
     
