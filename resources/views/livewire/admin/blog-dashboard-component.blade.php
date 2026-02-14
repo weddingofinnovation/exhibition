@@ -1,7 +1,7 @@
 <main>
   <div class="container">
     @if($board == 'edit')
-      <form wire:submit.prevent="edit">
+      <form wire:submit.prevent="updateBlog">
 
     
 
@@ -39,7 +39,6 @@
         </div>
 
       </form>
-
     @endif
 
     @if($board == 'tag')
