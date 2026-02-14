@@ -2,9 +2,6 @@
   <div class="container">
     @if($board == 'edit')
       <form wire:submit.prevent="edit">
-
-    
-
         {{-- Blog Title --}}
         <div class="col-12">
             <label class="form-label">Blog Title</label>
@@ -37,9 +34,7 @@
                 Post
             </button>
         </div>
-
-</form>
-
+      </form>
     @endif
 
     @if($board == 'tag')
