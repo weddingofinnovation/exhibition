@@ -2,22 +2,42 @@
   <div class="container">
     @if($board == 'edit')
       <form wire:submit.prevent="edit">
-              <div class="col-sm-4 ">
-                <label class="form-label" >Blog tittle</label>
-                <textarea class="form-control" type="text" rows="3" wire:model="tittle"  wire:keyup="generateSlug"> </textarea>
+
+          <div class="row g-3">
+
+              {{-- Blog Title --}}
+              <div class="col-12 col-lg-4">
+                  <label class="form-label">Blog Title</label>
+
+                  <textarea class="form-control"
+                            rows="3"
+                            wire:model="tittle"
+                            wire:keyup="generateSlug">
+                  </textarea>
               </div>
 
-              <div class="col-sm-4">
-                <label class="form-label" >Desc</label>
-                
-                <input id="body" type="hidden" name="content" wire:model.defer="desc">
-                <trix-editor input="desc"></trix-editor>
-                <div class="form-text"></div>
+              {{-- Description --}}
+              <div class="col-12 col-lg-4">
+                  <label class="form-label">Description</label>
+
+                  <input id="desc"
+                        type="hidden"
+                        wire:model.defer="desc">
+
+                  <trix-editor input="desc"
+                              class="bg-white"></trix-editor>
               </div>
 
-              <div class="col-sm-4">
-                  <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
+              {{-- Submit Button --}}
+              <div class="col-12 col-lg-4 d-flex align-items-end">
+                  <button class="btn btn-primary w-100" type="submit">
+                      <i class="bi bi-cloud-upload fs-lg me-2"></i>
+                      Post
+                  </button>
               </div>
+
+          </div>
+
       </form>
     @endif
 
