@@ -1,6 +1,6 @@
 <main>
   <div class="container">
-    @if($board =='edit')
+    @if($board == 'edit')
           <form wire:submit.prevent="edit" >
                 <div class="row">
                   <div class="col-sm-4 ">

@@ -2,112 +2,112 @@
 @section('page_description','')
 @section('page_keywords', '')
 
-  <main> 
-  
-    <div class="container py-4">
-      @if($board == 'addblog')
-          <form wire:submit.prevent="add">
-            <div class="row">
+<main>
 
-                <!-- Title Field -->
-                <div class="col-lg-8 col-sm-4">
-                    <label class="form-label">Title</label>
-                    <input type="text"
-                          class="form-control"
-                          wire:model.defer="tittle"
-                          placeholder="Enter blog title">
+  <div class="container py-4">
+    @if($board == 'addblog')
+      <form wire:submit.prevent="add">
+        <div class="row">
 
-                    <div class="form-text text-danger">
-                        @error('tittle') {{ $message }} @enderror
-                    </div>
-                </div>
+          <!-- Title Field -->
+          <div class="col-lg-8 col-sm-4">
+            <label class="form-label">Title</label>
+            <input type="text"
+              class="form-control"
+              wire:model.defer="tittle"
+              placeholder="Enter blog title">
 
-                <!-- Description Field -->
-                <div class="col-lg-8 col-sm-4" wire:ignore>
-                    <label class="form-label">Desc</label>
-
-                    <input id="desc"
-                          type="hidden"
-                          wire:model.defer="desc">
-
-                    <trix-editor input="desc"></trix-editor>
-
-                    <div class="form-text text-danger">
-                        @error('desc') {{ $message }} @enderror
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="col-lg-8 col-sm-4 mt-3">
-                    <button class="btn btn-primary form-control" type="submit">
-                        Post
-                    </button>
-                </div>
-
+            <div class="form-text text-danger">
+              @error('tittle') {{ $message }} @enderror
             </div>
-          </form>
-      @elseif($board == 'image')
-          <form  wire:submit.prevent="dateImage">
-                  <div class="col-sm-2">
-                      <label class="form-label" for="cf-name">Image</label>
-                      <input class="form-control" type="file"   wire:model="image" required=""></textarea>
-                      @error('image'){{ $message}}@enderror
-                  </div>
-                  <button class="btn btn-primary mt-2" type="submit">Submit</button>
-          </form>  
-      @elseif($board == 'openAI')
-    
-          <select wire:model="selectedEvents" multiple>
-              @foreach($events as $event)
-                  <option value="{{ $event->id }}">{{ $event->eventname }}</option>
-              @endforeach
-          </select>
-          <button wire:click="generateArticle" class="form-control btn btn-sm btn-primary">Generate Article</button>
+          </div>
 
-          @if ($article)
-              <div>
-                  <h3>Generated Article:</h3>
-                  <p>{{ $article }}</p>
-              </div>
-          @endif
+          <!-- Description Field -->
+          <div class="col-lg-8 col-sm-4" wire:ignore>
+            <label class="form-label">Desc</label>
 
-          @if (session()->has('message'))
-              <div>{{ session('message') }}</div>
-          @endif
-      @endif
-    </div>
+            <input id="desc"
+              type="hidden"
+              wire:model.defer="desc">
 
-    <div class="handheld-toolbar">
-      <div class="d-table table-layout-fixed w-100">
-      
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
-            <span class="handheld-toolbar-icon">
-            <i class="ci-filter-alt"></i></span>
-            <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Blog</span>
-          </a>
-          
-          <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',['board' => 'addBlog'])}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-cart"></i></span>
-            <span class="handheld-toolbar-label">Add</span>
-          </a>
-    
+            <trix-editor input="desc"></trix-editor>
 
-        <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-          <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
-          <span class="handheld-toolbar-label">Menu</span>
-        </a>
+            <div class="form-text text-danger">
+              @error('desc') {{ $message }} @enderror
+            </div>
+          </div>
 
+          <!-- Submit Button -->
+          <div class="col-lg-8 col-sm-4 mt-3">
+            <button class="btn btn-primary form-control" type="submit">
+              Post
+            </button>
+          </div>
+
+        </div>
+      </form>
+    @elseif($board == 'image')
+    <form wire:submit.prevent="dateImage">
+      <div class="col-sm-2">
+        <label class="form-label" for="cf-name">Image</label>
+        <input class="form-control" type="file" wire:model="image" required=""></textarea>
+        @error('image'){{ $message}}@enderror
       </div>
+      <button class="btn btn-primary mt-2" type="submit">Submit</button>
+    </form>
+    @elseif($board == 'openAI')
+
+    <select wire:model="selectedEvents" multiple>
+      @foreach($events as $event)
+      <option value="{{ $event->id }}">{{ $event->eventname }}</option>
+      @endforeach
+    </select>
+    <button wire:click="generateArticle" class="form-control btn btn-sm btn-primary">Generate Article</button>
+
+    @if ($article)
+    <div>
+      <h3>Generated Article:</h3>
+      <p>{{ $article }}</p>
     </div>
-          
-  </main>
+    @endif
 
-  @push('scripts')
-  
-    <script>
-        document.addEventListener('trix-change', function (event) {
-            @this.set('desc', event.target.value);
-        });
-    </script>
+    @if (session()->has('message'))
+    <div>{{ session('message') }}</div>
+    @endif
+    @endif
+  </div>
 
-  @endpush
+  <div class="handheld-toolbar">
+    <div class="d-table table-layout-fixed w-100">
+
+      <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'blog'])}}">
+        <span class="handheld-toolbar-icon">
+          <i class="ci-filter-alt"></i></span>
+        <span class="handheld-toolbar-label {{'admin/dashboard/event' == request()->path() ? 'active' : '' }}">Blog</span>
+      </a>
+
+      <a class="d-table-cell handheld-toolbar-item" href="{{route('admin.blogpost',['board' => 'addBlog'])}}">
+        <span class="handheld-toolbar-icon"><i class="bi bi-cart"></i></span>
+        <span class="handheld-toolbar-label">Add</span>
+      </a>
+
+
+      <a class="d-table-cell handheld-toolbar-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        <span class="handheld-toolbar-icon"><i class="ci-heart"></i></span>
+        <span class="handheld-toolbar-label">Menu</span>
+      </a>
+
+    </div>
+  </div>
+
+</main>
+
+@push('scripts')
+
+<script>
+  document.addEventListener('trix-change', function(event) {
+    @this.set('desc', event.target.value);
+  });
+</script>
+
+@endpush
