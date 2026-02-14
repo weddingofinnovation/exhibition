@@ -75,10 +75,10 @@ class BlogDashboardComponent extends Component
             $blog = Mag::findOrFail($this->blog_id);
 
             $blog->tittle = $this->tittle;
-            $blog->slug   = $this->slug;
+            $blog->slug   = Str::slug($blog->tittle,'-');
             $blog->desc = $this->desc;
-            $blog->s_desc = $this->s_desc;
-            $blog->type   = $this->type;
+            //$blog->s_desc = $this->s_desc;
+            //$blog->type   = $this->type;
             $blog->status = $this->status;
 
             $blog->save();

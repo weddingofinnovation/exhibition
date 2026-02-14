@@ -3,8 +3,6 @@
     @if($board == 'edit')
       <form wire:submit.prevent="updateBlog">
 
-    
-
         {{-- Blog Title --}}
         <div class="col-12">
             <label class="form-label">Blog Title</label>
@@ -191,6 +189,12 @@
 
         });
     </script>
+
+    <script>
+    document.addEventListener("trix-change", function(event) {
+        @this.set('desc', event.target.value);
+    });
+</script>
     @endpush
 
 
