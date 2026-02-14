@@ -16,6 +16,13 @@
                   </textarea>
               </div>
 
+              <label class="form-label">Blog Title</label>
+              <input type="text"
+                    class="form-control mb-2"
+                    wire:model="tittle"
+                    wire:keyup="generateSlug"
+                    placeholder="Title">
+                    
               {{-- Description --}}
               <div class="col-12 col-lg-12">
                   <label class="form-label">Description</label>
@@ -42,40 +49,34 @@
 
       
 
-    <div class="card mb-4">
-        <div class="card-body">
+      <div class="card mb-4">
+          <div class="card-body">
 
-            <h5>Edit Blog</h5>
+              <h5>Edit Blog</h5>
 
-            <input type="text"
-                  class="form-control mb-2"
-                  wire:model="tittle"
-                  placeholder="Title">
+              <input type="text"
+                    class="form-control mb-2"
+                    wire:model="tittle"
+                    placeholder="Title">
 
-            <textarea class="form-control mb-2"
-                      wire:model="desc"
-                      placeholder="Description"></textarea>
+              <textarea class="form-control mb-2"
+                        wire:model="desc"
+                        placeholder="Description"></textarea>
+              
+              <trix-editor input="desc" class="bg-white"></trix-editor>
+        
+              <button class="btn btn-success"
+                      wire:click="updateBlog">
+                  Update
+              </button>
 
-            <textarea class="form-control mb-2"
-                      wire:model="s_desc"
-                      placeholder="Short Description"></textarea>
+              <button class="btn btn-secondary"
+                      wire:click="$set('isEditing', false)">
+                  Cancel
+              </button>
 
-            <input type="date"
-                  class="form-control mb-3"
-                  wire:model="startdate">
-
-            <button class="btn btn-success"
-                    wire:click="updateBlog">
-                Update
-            </button>
-
-            <button class="btn btn-secondary"
-                    wire:click="$set('isEditing', false)">
-                Cancel
-            </button>
-
-        </div>
-    </div>
+          </div>
+      </div>
 
 
 
