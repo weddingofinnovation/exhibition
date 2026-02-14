@@ -1139,109 +1139,192 @@
             </div>
            
           @elseif($board == 'job')
-          <!--Start job -->
+            <!--Start job -->
             @if($board == 'job')
-            <div class="container d-lg-none">
-              <div class="row">
-                <div class="col-md-6 offset-md-3">
+              <div class="container d-lg-none">
+                <div class="row">
+                  <div class="col-md-6 offset-md-3">
 
-                  <div class="mb-4 mb-lg-5">
-                    <!-- Nav tabs-->
-                    <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
-                      <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#jobrequuest" data-bs-toggle="tab" role="tab">Job</a></li>
-                      <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm " href="#Appletdetails" data-bs-toggle="tab" role="tab">Applet</a></li>
-                    </ul>
+                    <div class="mb-4 mb-lg-5">
+                      <!-- Nav tabs-->
+                      <ul class="nav nav-tabs nav-fill mb-1" role="tablist">
+                        <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm active" href="#jobrequuest" data-bs-toggle="tab" role="tab">Job</a></li>
+                        <li class="nav-item border-bottom"><a class="nav-link px-1 fs-sm " href="#Appletdetails" data-bs-toggle="tab" role="tab">Applet</a></li>
+                      </ul>
 
 
-                    <div class="tab-content pt-1">
-                      <!-- Request tab-->
-                      <div class="tab-pane fade show active" id="jobrequuest" role="tabpanel">
-                        <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
-                        <div class="row mb-5 pb-2">
-                          @foreach ($jobs as $franchise)
-                          <div class="container  ">
-                            <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                              <div class="col  pr-0">
+                      <div class="tab-content pt-1">
+                        <!-- Request tab-->
+                        <div class="tab-pane fade show active" id="jobrequuest" role="tabpanel">
+                          <input type="text" class="form-control" placeholder="search with ID" wire:model.lazy="searchTerm">
+                          <div class="row mb-5 pb-2">
+                            @foreach ($jobs as $franchise)
+                            <div class="container  ">
+                              <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                                <div class="col  pr-0">
 
-                                <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->updated_at)->format('d')}}</div>
-                                <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->updated_at)->format('M')}} </div>
+                                  <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($franchise->updated_at)->format('d')}}</div>
+                                  <div class="small text-muted">{{Carbon\Carbon::parse ($franchise->updated_at)->format('M')}} </div>
 
-                                <div class="round-circle"><i class="bi bi-bookmark"></i></div>
-                              </div>
-
-                              <div class="col-7  p-0">
-                                <div class="fs-md fw-normal text-start">
-                                  <a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
-                                    {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a>
+                                  <div class="round-circle"><i class="bi bi-bookmark"></i></div>
                                 </div>
-                                
-                                <div class="text-muted fs-sm text-start">
 
-                                  {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
+                                <div class="col-7  p-0">
+                                  <div class="fs-md fw-normal text-start">
+                                    <a class="text-dark" href="{{route('admin.job',['slug' => $franchise->slug])}}">
+                                      {{ucwords(trans(Str::limit($franchise->title, 24)))}}</a>
+                                  </div>
+                                  
+                                  <div class="text-muted fs-sm text-start">
 
+                                    {{Carbon\Carbon::parse ($franchise->updated_at)->format('D, d M')}}
+
+                                  </div>
+                                  <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state ?? 'null'))}}, {{ucfirst(trans($franchise -> location_country ?? ''))}}</div>
                                 </div>
-                                <div class="text-muted fs-sm text-start">{{ucfirst(trans($franchise -> location_state ?? 'null'))}}, {{ucfirst(trans($franchise -> location_country ?? ''))}}</div>
-                              </div>
 
-                              <div class="col-3  p-0">
-                                {{-- <a class="card-img-top d-block overflow-hidden" href="{{route('admin.job',['slug' => $franchise->slug])}}">
-                                <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                <div class="col-3  p-0">
+                                  {{-- <a class="card-img-top d-block overflow-hidden" href="{{route('admin.job',['slug' => $franchise->slug])}}">
+                                  <img src="{{url('exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>--}}
+                                </div>
                               </div>
                             </div>
+                            @endforeach
                           </div>
-                          @endforeach
                         </div>
+
+
                       </div>
 
-
                     </div>
-
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!--desktop version-->
-            <div class="continer d-none d-sm-block">
-              <div class="table-responsive fs-md mb-4">
-                <table class="table table-hover mb-0">
-                  <thead>
-                    <tr>
-                      
-                      <th>title</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                            
-                                 
+              <!--desktop version-->
+              <div class="continer d-none d-sm-block">
+                <div class="table-responsive fs-md mb-4">
+                  <table class="table table-hover mb-0">
+                    <thead>
+                      <tr>
+                        
+                        <th>title</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                              
+                                  
 
-                    @foreach ($jobs as $info)
-                    <tr>
-                      
-                      <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
-                      <td class="py-3 align-middle">
-                        @if($info->status == 'active')
-                        <span class="badge bg-success m-0">Active</span>
-                        @else
-                        <span class="badge bg-warning m-0">Deactive</span>
-                        @endif
-                      </td>
-                      <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
-                          <div class=" bi bi-x"></div>
-                        </a> 
-                      </td>
-                    </tr>
-                    @endforeach
+                      @foreach ($jobs as $info)
+                      <tr>
+                        
+                        <td class="py-3 align-middle"><span class="align-middle badge bg-info ms-2">{{$info->title}},{{$info->department}}<br>{{$info->experience}},{{$info->type}}<br>{{$info->location_state}},{{$info->location_country}}</span></td>
+                        <td class="py-3 align-middle">
+                          @if($info->status == 'active')
+                          <span class="badge bg-success m-0">Active</span>
+                          @else
+                          <span class="badge bg-warning m-0">Deactive</span>
+                          @endif
+                        </td>
+                        <td class="py-3 align-middle"><a class=" nav-link-style me-2" data-bs-toggle="tooltip" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil"></i></a><a class="nav-link-style  me-2 text-danger" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="delete({{$info->id}})" data-bs-toggle="tooltip" title="" data-bs-original-title="Remove">
+                            <div class=" bi bi-x"></div>
+                          </a> 
+                        </td>
+                      </tr>
+                      @endforeach
 
-                  </tbody>
-                </table>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
             @endif
             <!--Stop job -->
-  
+          @elseif($board == 'blog')
+            <div class="container">
+
+        {{-- Search --}}
+        <div class="row mb-3">
+            <div class="col-12 col-lg-4">
+                <input type="text"
+                      class="form-control"
+                      placeholder="Search with ID"
+                      wire:model.lazy="searchTerm">
+            </div>
+        </div>
+
+        {{-- Blog List --}}
+        @foreach ($blogfindo as $franchise)
+
+        <div class="row align-items-center p-3 mb-2 shadow-sm border rounded bg-white">
+
+            {{-- DATE --}}
+            <div class="col-3 col-lg-2 text-center border-end">
+                <div class="h5 mb-0 fw-semibold">
+                    {{ \Carbon\Carbon::parse($franchise->startdate)->format('d') }}
+                </div>
+                <div class="small text-muted">
+                    {{ \Carbon\Carbon::parse($franchise->startdate)->format('M') }}
+                </div>
+                <div class="mt-1">
+                    <i class="bi bi-bookmark text-primary"></i>
+                </div>
+            </div>
+
+            {{-- CONTENT --}}
+            <div class="col-6 col-lg-7">
+                <div class="fw-semibold">
+                    <a class="text-dark text-decoration-none"
+                      href="{{route('admin.blogdashboard',['blog_id'=>$franchise->id,'board'=>'all'])}}">
+                        {{ ucwords(Str::limit($franchise->tittle ?? '', 40)) }}
+                    </a>
+                </div>
+
+                <div class="text-muted small">
+                    {{ ucwords(Str::limit($franchise->desc ?? '', 60)) }}
+                </div>
+
+                <div class="text-muted small">
+                    {{ ucwords(Str::limit($franchise->s_desc ?? '', 40)) }}
+                </div>
+
+                {{-- Categories --}}
+                <div class="mt-2">
+                    @foreach($category as $cat)
+                        <span class="badge bg-primary">{{$cat->tag ?? ''}}</span>
+                    @endforeach
+                </div>
+            </div>
+
+            {{-- IMAGE + ACTION --}}
+            <div class="col-3 col-lg-3 text-end">
+
+                {{-- Delete --}}
+                <a href="#"
+                  onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
+                  wire:click.prevent="bloGdelete({{$franchise->id}})">
+                    <i class="bi bi-x text-danger fs-5"></i>
+                </a>
+
+                {{-- Image --}}
+                @if(!is_null($franchise->image))
+                    <div class="mt-2">
+                        <a href="{{route('adminevent.detail',['slug'=>$franchise->slug])}}">
+                            <img src="{{url('exhibition/'.$franchise->image)}}"
+                                class="img-fluid rounded"
+                                style="max-height:70px;">
+                        </a>
+                    </div>
+                @endif
+
+            </div>
+
+        </div>
+
+        @endforeach
+
+    </div>
           @else
 
             <!-- Date Filter + Export -->
@@ -1958,91 +2041,9 @@
  
 
   <!--Stop blog -->
- @if($board == 'blog')
+  @if($board == 'blog')
 
-    <div class="container">
-
-        {{-- Search --}}
-        <div class="row mb-3">
-            <div class="col-12 col-lg-4">
-                <input type="text"
-                      class="form-control"
-                      placeholder="Search with ID"
-                      wire:model.lazy="searchTerm">
-            </div>
-        </div>
-
-        {{-- Blog List --}}
-        @foreach ($blogfindo as $franchise)
-
-        <div class="row align-items-center p-3 mb-2 shadow-sm border rounded bg-white">
-
-            {{-- DATE --}}
-            <div class="col-3 col-lg-2 text-center border-end">
-                <div class="h5 mb-0 fw-semibold">
-                    {{ \Carbon\Carbon::parse($franchise->startdate)->format('d') }}
-                </div>
-                <div class="small text-muted">
-                    {{ \Carbon\Carbon::parse($franchise->startdate)->format('M') }}
-                </div>
-                <div class="mt-1">
-                    <i class="bi bi-bookmark text-primary"></i>
-                </div>
-            </div>
-
-            {{-- CONTENT --}}
-            <div class="col-6 col-lg-7">
-                <div class="fw-semibold">
-                    <a class="text-dark text-decoration-none"
-                      href="{{route('admin.blogdashboard',['blog_id'=>$franchise->id,'board'=>'all'])}}">
-                        {{ ucwords(Str::limit($franchise->tittle ?? '', 40)) }}
-                    </a>
-                </div>
-
-                <div class="text-muted small">
-                    {{ ucwords(Str::limit($franchise->desc ?? '', 60)) }}
-                </div>
-
-                <div class="text-muted small">
-                    {{ ucwords(Str::limit($franchise->s_desc ?? '', 40)) }}
-                </div>
-
-                {{-- Categories --}}
-                <div class="mt-2">
-                    @foreach($category as $cat)
-                        <span class="badge bg-primary">{{$cat->tag ?? ''}}</span>
-                    @endforeach
-                </div>
-            </div>
-
-            {{-- IMAGE + ACTION --}}
-            <div class="col-3 col-lg-3 text-end">
-
-                {{-- Delete --}}
-                <a href="#"
-                  onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
-                  wire:click.prevent="bloGdelete({{$franchise->id}})">
-                    <i class="bi bi-x text-danger fs-5"></i>
-                </a>
-
-                {{-- Image --}}
-                @if(!is_null($franchise->image))
-                    <div class="mt-2">
-                        <a href="{{route('adminevent.detail',['slug'=>$franchise->slug])}}">
-                            <img src="{{url('exhibition/'.$franchise->image)}}"
-                                class="img-fluid rounded"
-                                style="max-height:70px;">
-                        </a>
-                    </div>
-                @endif
-
-            </div>
-
-        </div>
-
-        @endforeach
-
-    </div>
+    check
 
   @endif
 
