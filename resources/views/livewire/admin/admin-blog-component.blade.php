@@ -2,94 +2,51 @@
 @section('page_description','')
 @section('page_keywords', '')
 
-
   <main> 
-<div class="container">
-<form wire:submit.prevent="add">
-    <div class="row">
-
-        <!-- Title Field -->
-        <div class="col-lg-8 col-sm-4">
-            <label class="form-label">Title</label>
-            <input type="text"
-                   class="form-control"
-                   wire:model.defer="tittle"
-                   placeholder="Enter blog title">
-
-            <div class="form-text text-danger">
-                @error('tittle') {{ $message }} @enderror
-            </div>
-        </div>
-
-        <!-- Description Field -->
-        <div class="col-lg-8 col-sm-4" wire:ignore>
-            <label class="form-label">Desc</label>
-
-            <input id="desc"
-                   type="hidden"
-                   wire:model.defer="desc">
-
-            <trix-editor input="desc"></trix-editor>
-
-            <div class="form-text text-danger">
-                @error('desc') {{ $message }} @enderror
-            </div>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="col-lg-8 col-sm-4 mt-3">
-            <button class="btn btn-primary form-control" type="submit">
-                Post
-            </button>
-        </div>
-
-    </div>
-  </form>
-</div>
   
-
-
-   
-
     <div class="container py-4">
-    
-      @if($board == 'addBlog')
-        <form wire:submit.prevent="add" >
-          
-              <div class="row">
-                <div class="col-lg-8  col-sm-4 ">
-                  <label class="form-label" >Blog tittle</label>
-                  <textarea class="form-control" type="text" row="2" wire:model.lazy="tittle"> </textarea>
-                  <div class="form-text">@error('tittle'){{ $message}}@enderror</div>
-                </div>
+      @if($board == 'addblog')
+          <form wire:submit.prevent="add">
+            <div class="row">
 
-                <div class="col-lg-8  col-sm-4">
-                  <label class="form-label" >Short Desc</label>
-                    <textarea class="form-control" type="text"  row="3" wire:model.lazy="s_desc"></textarea>
-                    <div class="form-text">
-                    @error('s_desc'){{ $message}}@enderror
+                <!-- Title Field -->
+                <div class="col-lg-8 col-sm-4">
+                    <label class="form-label">Title</label>
+                    <input type="text"
+                          class="form-control"
+                          wire:model.defer="tittle"
+                          placeholder="Enter blog title">
+
+                    <div class="form-text text-danger">
+                        @error('tittle') {{ $message }} @enderror
                     </div>
                 </div>
-            
-                <div class="col-lg-8  col-sm-4">
-                  <label class="form-label" >Desc</label>
-                  <input id="desc" type="text" name="content" wire:model.lazy="desc">
-                  <!-- <trix-editor input="desc"></trix-editor> -->
-                  <div class="form-text">
-                  @error('desc'){{ $message}}@enderror
-                  </div>
-                </div>
-                
-                <div class="col-lg-8  col-sm-4">
-                <button class="btn btn-primary form-control" type="submit" ><i class=" bi bi-cloud-upload fs-lg me-2"></i>Post</button>
-                </div>
-            
-              </div>
-        </form>
-      @endif
 
+                <!-- Description Field -->
+                <div class="col-lg-8 col-sm-4" wire:ignore>
+                    <label class="form-label">Desc</label>
 
-      @if($board == 'image')
+                    <input id="desc"
+                          type="hidden"
+                          wire:model.defer="desc">
+
+                    <trix-editor input="desc"></trix-editor>
+
+                    <div class="form-text text-danger">
+                        @error('desc') {{ $message }} @enderror
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-lg-8 col-sm-4 mt-3">
+                    <button class="btn btn-primary form-control" type="submit">
+                        Post
+                    </button>
+                </div>
+
+            </div>
+          </form>
+      @elseif($board == 'image')
           <form  wire:submit.prevent="dateImage">
                   <div class="col-sm-2">
                       <label class="form-label" for="cf-name">Image</label>
@@ -98,14 +55,8 @@
                   </div>
                   <button class="btn btn-primary mt-2" type="submit">Submit</button>
           </form>  
-      @endif
-      
-    </div>
-
+      @elseif($board == 'openAI')
     
-    @if($board == 'openAI')
-      <div class="container">
-        
           <select wire:model="selectedEvents" multiple>
               @foreach($events as $event)
                   <option value="{{ $event->id }}">{{ $event->eventname }}</option>
@@ -123,8 +74,8 @@
           @if (session()->has('message'))
               <div>{{ session('message') }}</div>
           @endif
-      </div>
-    @endif
+      @endif
+    </div>
 
     <div class="handheld-toolbar">
       <div class="d-table table-layout-fixed w-100">

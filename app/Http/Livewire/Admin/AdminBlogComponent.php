@@ -106,15 +106,29 @@ class AdminBlogComponent extends Component
     ];
 
     public function generateArticle()
-    {
-        $this->validate();
+{
+    $this->validate([
+        'selectedEvents' => 'required|array|min:1'
+    ]);
+
+    try {
 
         $aiService = new OpenAIService();
+
         $eventDetails = $this->createPrompt($this->selectedEvents);
+
         $this->article = $aiService->generateArticle($eventDetails);
 
         session()->flash('message', 'Article generated successfully!');
+
+    } catch (\Exception $e) {
+
+        session()->flash('error', 'Something went wrong while generating article.');
+
+        \Log::error('AI Article Error: ' . $e->getMessage());
     }
+}
+
 
     private function createPrompt($events)
     {

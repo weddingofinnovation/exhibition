@@ -133,6 +133,20 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <a href="{{ route('admin.jobCreate') }}" class="btn btn-primary">Add Job</a>
                   </div>
+                @elseif($board == 'blog')
+                  <h4 class="fw-bold mb-2">{{$board}}</h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    {{-- Search --}}
+                    <div class="row mb-3">
+                        <div class="col-12 col-lg-4">
+                            <input type="text"
+                                  class="form-control"
+                                  placeholder="Search with ID"
+                                  wire:model.lazy="searchTerm">
+                        </div>
+                    </div>
+                    <a href="{{ route('admin.blogpost', ['board' => 'addblog']) }}" class="btn btn-primary">Add New Blog</a>
+                  </div>
                 @else
                 <h4 class="fw-bold mb-2">{{$board}}</h4>
                 <div class="d-flex justify-content-between align-items-center">
@@ -1245,16 +1259,7 @@
           @elseif($board == 'blog')
             <div class="container">
 
-                {{-- Search --}}
-                <div class="row mb-3">
-                    <div class="col-12 col-lg-4">
-                        <input type="text"
-                              class="form-control"
-                              placeholder="Search with ID"
-                              wire:model.lazy="searchTerm">
-                    </div>
-                </div>
-
+              
                 {{-- Blog List --}}
                 @foreach ($blogfindo as $franchise)
                   <div class="row align-items-center p-3 mb-2 shadow-sm border rounded bg-white">
