@@ -1998,7 +1998,10 @@
                       <div class="text-muted fs-sm text-start">
                         {{ucwords(trans(Str::limit($franchise->desc, 24)))}}
                       </div>
-                      <div class="text-muted fs-sm text-start">{{ucwords(trans(Str::limit($franchise->s_desc, 24)))}}</div>
+                      <div class="text-muted fs-sm text-start">{{ Str::endsWith(ucwords(trans(Str::limit($franchise->s_desc, 24))), '??') 
+    ? ucwords(trans(Str::limit($franchise->s_desc, 24))) 
+    : ucwords(trans(Str::limit($franchise->s_desc, 24))) . ' ??' }}
+</div>
                       @if($category->count() == 0)
 
                       <a href="{{route('admin.editcategories',['event_id' => $franchise->id])}}" class="badge bg-primary mt-0">
