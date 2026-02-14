@@ -346,7 +346,6 @@ Route::get('/wishlist', WishlistDetailsComponent::class)->name('franchise.wishli
 Route::get('/blog', BlogComponent::class)->name('blog.Coi');
 Route::get('/blog/{slug}', BlogDetailComponent::class)->name('blog.details');
 Route::get('/blog-category/{category_slug}', BlogCategoryComponent::class)->name('blog.category');
-
 Route::get('/author/{slug}', BlogAuthorComponent::class)->name('blog.author');
 
 //likesor dislikes
@@ -518,6 +517,7 @@ Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () 
   // Route::get('/admin/blog/category/add', BlogCategoryEditCompopnent::class)->name('admin.blogadd');
   //event--add--status--list--edit
   //Order_details
+
   Route::get('/admin/order/{order_id}', AdminOrderDetailsComponent::class)->name('admin.orderdetails');
 });
 

@@ -54,8 +54,9 @@
             </li>
 
             <li class="nav-item mb-1">
-              <a href="#" class="nav-link text-dark" style="background-color: #fff;">Feed</a>
+              <a href="{{route('admin.dashboard', ['board' => 'blog'])}}" class="nav-link text-dark" style="background-color: #fff;">Blog</a>
             </li>
+
             <li class="nav-item mb-1 d-flex justify-content-between align-items-center">
               <a href="{{route('admin.dashboard', ['board' => 'speaker'])}}" class="nav-link {{ request('board') == 'speaker' ? 'active bg-light text-success border-start border-3 border-success' : 'text-dark' }}" style="background-color: #fff;">Speaker</a>
               <span class="badge bg-danger rounded-pill">2</span>
