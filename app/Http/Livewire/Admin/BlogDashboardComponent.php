@@ -53,51 +53,40 @@ class BlogDashboardComponent extends Component
 
     Use WithFileUploads;
 
-    public function loadBlog($id)
-{
-    $blog = Mag::findOrFail($id);
+   public function loadBlog($id)
+    {
+        $blog = Mag::findOrFail($id);
 
-    $this->blog_id = $blog->id;
-    $this->tittle  = $blog->tittle;
-    $this->slug    = $blog->slug;
+        $this->blog_id = $blog->id;
+        $this->tittle  = $blog->tittle;
+        $this->desc    = $blog->desc; // direct HTML
 
-    // If desc stored as JSON
-    $this->desc = is_array(json_decode($blog->desc))
-        ? implode(",,", json_decode($blog->desc))
-        : $blog->desc;
+        $this->board = 'edit';
 
-    $this->s_desc = $blog->s_desc;
-    $this->type   = $blog->type;
-    $this->status = $blog->status;
-
-    $this->board = 'edit';
-
-    $this->dispatchBrowserEvent('setTrixContent', [
-        'content' => $this->desc
-    ]);
-}
+        $this->dispatchBrowserEvent('setTrixContent', [
+            'content' => $this->desc
+        ]);
+    }
 
 
-public function updateBlog()
-{
-    $blog = Mag::findOrFail($this->blog_id);
 
-    $blog->tittle = $this->tittle;
-    $blog->slug   = $this->slug;
+        public function updateBlog()
+        {
+            $blog = Mag::findOrFail($this->blog_id);
 
-    $blogdesc = explode(",,", $this->desc);
-    $blog->desc = json_encode($blogdesc);
+            $blog->tittle = $this->tittle;
+            $blog->slug   = $this->slug;
+            $blog->desc = $this->desc;
+            $blog->s_desc = $this->s_desc;
+            $blog->type   = $this->type;
+            $blog->status = $this->status;
 
-    $blog->s_desc = $this->s_desc;
-    $blog->type   = $this->type;
-    $blog->status = $this->status;
+            $blog->save();
 
-    $blog->save();
+            session()->flash('message', 'Blog Updated Successfully');
 
-    session()->flash('message', 'Blog Updated Successfully');
-
-    return redirect()->route('admin.dashboard', ['board' => 'blog']);
-}
+            return redirect()->route('admin.dashboard', ['board' => 'blog']);
+        }
 
 
     public function edit() {

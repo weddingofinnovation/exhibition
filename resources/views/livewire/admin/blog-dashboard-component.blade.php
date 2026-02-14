@@ -22,13 +22,15 @@
 
             <div wire:ignore>
                 <input id="desc"
-                       type="hidden"
-                       wire:model.defer="desc">
+                      type="hidden"
+                      value="{{ $desc }}"
+                      wire:model="desc">
 
                 <trix-editor input="desc"
-                             class="bg-white"></trix-editor>
+                            class="bg-white"></trix-editor>
             </div>
         </div>
+
 
         {{-- Submit Button --}}
         <div class="col-12">
@@ -178,11 +180,17 @@
     @endif
   
     @push('scripts')
-      <script>
-          window.addEventListener('setTrixContent', event => {
-              document.querySelector("trix-editor").editor.loadHTML(event.detail.content);
-          });
-      </script>
+    <script>
+        window.addEventListener('setTrixContent', function(event) {
+
+            let editor = document.querySelector("trix-editor");
+
+            if (editor && editor.editor) {
+                editor.editor.loadHTML(event.detail.content);
+            }
+
+        });
+    </script>
     @endpush
 
 
