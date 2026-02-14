@@ -3,7 +3,7 @@
     @if($board == 'edit')
       <form wire:submit.prevent="edit">
 
-          <div class="row g-3">
+          
 
               {{-- Blog Title --}}
               <div class="col-12 col-lg-4">
@@ -36,7 +36,7 @@
                   </button>
               </div>
 
-          </div>
+      
 
       </form>
     @endif
