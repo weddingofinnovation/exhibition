@@ -29,7 +29,8 @@
 
                   <input id="desc"
                         type="hidden"
-                        wire:model.defer="desc">
+                        rows="3"
+                        wire:model="desc">
 
                   <trix-editor input="desc"
                               class="bg-white"></trix-editor>
