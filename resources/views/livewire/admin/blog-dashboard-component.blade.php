@@ -3,83 +3,42 @@
     @if($board == 'edit')
       <form wire:submit.prevent="edit">
 
-          
+    
 
-              {{-- Blog Title --}}
-              <div class="col-12 col-lg-12">
-                  <label class="form-label">Blog Title</label>
+        {{-- Blog Title --}}
+        <div class="col-12">
+            <label class="form-label">Blog Title</label>
 
-                  <textarea class="form-control"
-                            rows="3"
-                            wire:model="tittle"
-                            wire:keyup="generateSlug">
-                  </textarea>
-              </div>
+            <textarea class="form-control"
+                      rows="3"
+                      wire:model="tittle"
+                      wire:keyup="generateSlug">
+            </textarea>
+        </div>
 
-              <label class="form-label">Blog Title</label>
-              <input type="text"
-                    class="form-control mb-2"
-                    wire:model="tittle"
-                    wire:keyup="generateSlug"
-                    placeholder="Title">
-                    
-              {{-- Description --}}
-              <div class="col-12 col-lg-12">
-                  <label class="form-label">Description</label>
+        {{-- Description --}}
+        <div class="col-12">
+            <label class="form-label">Description</label>
 
-                  <input id="desc"
-                        type="hidden"
-                        rows="3"
-                        wire:model="desc">
+            <div wire:ignore>
+                <input id="desc"
+                       type="hidden"
+                       wire:model.defer="desc">
 
-                  <trix-editor input="desc"
-                              class="bg-white"></trix-editor>
-              </div>
+                <trix-editor input="desc"
+                             class="bg-white"></trix-editor>
+            </div>
+        </div>
 
-              {{-- Submit Button --}}
-              <div class="col-12 col-lg-12 d-flex align-items-end">
-                  <button class="btn btn-primary w-100" type="submit">
-                      <i class="bi bi-cloud-upload fs-lg me-2"></i>
-                      Post
-                  </button>
-              </div>
+        {{-- Submit Button --}}
+        <div class="col-12">
+            <button class="btn btn-primary w-100" type="submit">
+                <i class="bi bi-cloud-upload fs-lg me-2"></i>
+                Post
+            </button>
+        </div>
 
-      
-
-      </form>
-
-      
-
-      <div class="card mb-4">
-          <div class="card-body">
-
-              <h5>Edit Blog</h5>
-
-              <input type="text"
-                    class="form-control mb-2"
-                    wire:model="tittle"
-                    placeholder="Title">
-
-              <textarea class="form-control mb-2"
-                        wire:model="desc"
-                        placeholder="Description"></textarea>
-              
-              <trix-editor input="desc" class="bg-white"></trix-editor>
-        
-              <button class="btn btn-success"
-                      wire:click="updateBlog">
-                  Update
-              </button>
-
-              <button class="btn btn-secondary"
-                      wire:click="$set('isEditing', false)">
-                  Cancel
-              </button>
-
-          </div>
-      </div>
-
-
+</form>
 
     @endif
 
