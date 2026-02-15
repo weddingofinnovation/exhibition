@@ -33,12 +33,12 @@
 	</section>
 
 	@php
-	$updateQuestion = DB::table('questions')
-	->whereNull('event_id')
-	->orderBy('updated_at', 'desc') // ✅ Correct way to sort by latest update
-	->where('status', '1')
-	->where('admstatus', '1')
-	->get();
+		$updateQuestion = DB::table('questions')
+		->whereNull('event_id')
+		->orderBy('updated_at', 'desc') // ✅ Correct way to sort by latest update
+		->where('status', '1')
+		->where('admstatus', '1')
+		->get();
 
 	@endphp
 
@@ -67,75 +67,75 @@
 
 							<div class="accordion" id="faqAccordion">
 								@foreach($updateQuestion as $key => $evento)
-								<div class="accordion-item">
-									<h2 class="accordion-header" id="heading{{$key}}">
-										<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
-											data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
-											aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
-											aria-controls="collapse{{$key}}">
-											{{ $evento->question }}
-										</button>
-									</h2>
-
-									@php
-									$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
-									@endphp
-
-									<!-- <div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-													aria-labelledby="heading{{$key}}"> -->
-
-									<div id="collapse{{$key}}"
-										class="accordion-collapse collapse {{ $openAccordion == $evento->id ? 'show' : '' }}"
-										aria-labelledby="heading{{$key}}">
-
-
-										<div class="accordion-body">
-
-											@if($answero->count())
-											@foreach($answero as $ans)
-											<p class="mb-2">{{ $ans->answer }}</p>
-											@endforeach
-											@else
-											<p class="text-muted">
-												Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
-											</p>
-											@endif
-
-
-											@auth
-											<!-- Show reply button only if user is logged in -->
-											<button
-												wire:click="showReplyBox({{ $evento->id }})"
-												class="btn btn-sm btn-outline-primary">
-												{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+									<div class="accordion-item">
+										<h2 class="accordion-header" id="heading{{$key}}">
+											<button class="accordion-button {{ $key != 0 ? 'collapsed' : '' }}" type="button"
+												data-bs-toggle="collapse" data-bs-target="#collapse{{$key}}"
+												aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+												aria-controls="collapse{{$key}}">
+												{{ $evento->question }}
 											</button>
-											@endauth
+										</h2>
 
-											@guest
-											<!-- Optional: message or login button -->
-											<a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary">
-												Login to reply
-											</a>
-											@endguest
+										@php
+										$answero = DB::table('answers')->where('question_id', $evento->id)->where('status', '1')->get();
+										@endphp
+
+										<!-- <div id="collapse{{$key}}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+														aria-labelledby="heading{{$key}}"> -->
+
+										<div id="collapse{{$key}}"
+											class="accordion-collapse collapse {{ $openAccordion == $evento->id ? 'show' : '' }}"
+											aria-labelledby="heading{{$key}}">
 
 
-											<!-- Conditional reply box -->
-											@if($replyingTo === $evento->id)
-											<div class="mt-3">
-												<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
-												<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
+											<div class="accordion-body">
+
+												@if($answero->count())
+												@foreach($answero as $ans)
+												<p class="mb-2">{{ $ans->answer }}</p>
+												@endforeach
+												@else
+												<p class="text-muted">
+													Start by building a strong landing page, promote on social media, send email invites, and use platforms like The Exhibition Network to increase your reach.
+												</p>
+												@endif
+
+
+												@auth
+												<!-- Show reply button only if user is logged in -->
+												<button
+													wire:click="showReplyBox({{ $evento->id }})"
+													class="btn btn-sm btn-outline-primary">
+													{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+												</button>
+												@endauth
+
+												@guest
+												<!-- Optional: message or login button -->
+												<a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary">
+													Login to reply
+												</a>
+												@endguest
+
+
+												<!-- Conditional reply box -->
+												@if($replyingTo === $evento->id)
+												<div class="mt-3">
+													<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2" placeholder="Write your answer here..."></textarea>
+													<button wire:click="submitReply({{ $evento->id }})" class="btn btn-success btn-sm">Submit Answer</button>
+												</div>
+												@endif
+
 											</div>
-											@endif
-
 										</div>
 									</div>
-								</div>
 								@endforeach
 
 								@if (session()->has('message'))
-								<div class="alert alert-success mt-4">
-									{{ session('message') }}
-								</div>
+									<div class="alert alert-success mt-4">
+										{{ session('message') }}
+									</div>
 								@endif
 							</div>
 							<!-- </div> -->
@@ -149,6 +149,102 @@
 							<img src="{{asset('mag/adv-3.png')}}" alt="adv">
 						</a>
 					</div>
+
+					<div>
+						<!-- Search and Filter Section -->
+						<div class="row mb-4">
+							<div class="col-md-5">
+								<input type="text" wire:model.debounce.500ms="search" class="form-control"
+									placeholder="Search questions or topics...">
+							</div>
+							<div class="col-md-3">
+								<select wire:model="category" class="form-select">
+									<option value="">All Categories</option>
+									<option value="exhibitor">Exhibitor Queries</option>
+									<option value="visitor">Visitor Queries</option>
+									<option value="sponsorship">Sponsorship</option>
+									<option value="payment">Payment & Billing</option>
+									<option value="logistics">Logistics</option>
+								</select>
+							</div>
+							<div class="col-md-3">
+								<select wire:model="sortBy" class="form-select">
+									<option value="latest">Latest</option>
+									<option value="popular">Most Popular</option>
+									<option value="answered">Answered</option>
+									<option value="unanswered">Unanswered</option>
+								</select>
+							</div>
+						</div>
+
+						<!-- Accordion Section -->
+						<div class="accordion" id="faqAccordion">
+							@forelse($updateQuestion as $key => $evento)
+							<div class="accordion-item">
+								<h2 class="accordion-header" id="heading{{$key}}">
+									<button class="accordion-button {{ $openAccordion != $evento->id ? 'collapsed' : '' }}"
+										type="button" data-bs-toggle="collapse"
+										data-bs-target="#collapse{{$key}}"
+										aria-expanded="{{ $openAccordion == $evento->id ? 'true' : 'false' }}"
+										aria-controls="collapse{{$key}}">
+										{{ $evento->question }}
+									</button>
+								</h2>
+
+								<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $openAccordion == $evento->id ? 'show' : '' }}">
+									<div class="accordion-body">
+
+										@php
+										$answers = \App\Models\Answer::where('question_id', $evento->id)
+										->where('status', '1')->get();
+										@endphp
+
+										@if($answers->count())
+										@foreach($answers as $ans)
+										<p class="mb-2">{{ $ans->answer }}</p>
+										@endforeach
+										@else
+										<p class="text-muted">No answers yet. Be the first to reply!</p>
+										@endif
+
+										@auth
+										<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
+											{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
+										</button>
+										@endauth
+
+										@guest
+										<a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary">Login to reply</a>
+										@endguest
+
+										@if($replyingTo === $evento->id)
+										<div class="mt-3">
+											<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2"
+												placeholder="Write your answer here..."></textarea>
+											<button wire:click="submitReply({{ $evento->id }})"
+												class="btn btn-success btn-sm">Submit Answer</button>
+										</div>
+										@endif
+									</div>
+								</div>
+							</div>
+							@empty
+							<p class="text-muted">No questions found for your search.</p>
+							@endforelse
+						</div>
+
+						@if (session()->has('message'))
+							<div class="alert alert-success mt-4">
+								{{ session('message') }}
+							</div>
+						@endif
+
+						<div class="mt-4 text-center">
+							<a href="#" class="btn btn-outline-dark">Didn’t find what you’re looking for? Ask a Question</a>
+						</div>
+					</div>
+
+
 
 				</div>
 				<!-- Main Post END -->
@@ -212,99 +308,7 @@
 
 
 
-	<div>
-		<!-- Search and Filter Section -->
-		<div class="row mb-4">
-			<div class="col-md-5">
-				<input type="text" wire:model.debounce.500ms="search" class="form-control"
-					placeholder="Search questions or topics...">
-			</div>
-			<div class="col-md-3">
-				<select wire:model="category" class="form-select">
-					<option value="">All Categories</option>
-					<option value="exhibitor">Exhibitor Queries</option>
-					<option value="visitor">Visitor Queries</option>
-					<option value="sponsorship">Sponsorship</option>
-					<option value="payment">Payment & Billing</option>
-					<option value="logistics">Logistics</option>
-				</select>
-			</div>
-			<div class="col-md-3">
-				<select wire:model="sortBy" class="form-select">
-					<option value="latest">Latest</option>
-					<option value="popular">Most Popular</option>
-					<option value="answered">Answered</option>
-					<option value="unanswered">Unanswered</option>
-				</select>
-			</div>
-		</div>
-
-		<!-- Accordion Section -->
-		<div class="accordion" id="faqAccordion">
-			@forelse($updateQuestion as $key => $evento)
-			<div class="accordion-item">
-				<h2 class="accordion-header" id="heading{{$key}}">
-					<button class="accordion-button {{ $openAccordion != $evento->id ? 'collapsed' : '' }}"
-						type="button" data-bs-toggle="collapse"
-						data-bs-target="#collapse{{$key}}"
-						aria-expanded="{{ $openAccordion == $evento->id ? 'true' : 'false' }}"
-						aria-controls="collapse{{$key}}">
-						{{ $evento->question }}
-					</button>
-				</h2>
-
-				<div id="collapse{{$key}}" class="accordion-collapse collapse {{ $openAccordion == $evento->id ? 'show' : '' }}">
-					<div class="accordion-body">
-
-						@php
-						$answers = \App\Models\Answer::where('question_id', $evento->id)
-						->where('status', '1')->get();
-						@endphp
-
-						@if($answers->count())
-						@foreach($answers as $ans)
-						<p class="mb-2">{{ $ans->answer }}</p>
-						@endforeach
-						@else
-						<p class="text-muted">No answers yet. Be the first to reply!</p>
-						@endif
-
-						@auth
-						<button wire:click="showReplyBox({{ $evento->id }})" class="btn btn-sm btn-outline-primary">
-							{{ $replyingTo === $evento->id ? 'Cancel' : 'Give Reply' }}
-						</button>
-						@endauth
-
-						@guest
-						<a href="{{ route('login') }}" class="btn btn-sm btn-outline-secondary">Login to reply</a>
-						@endguest
-
-						@if($replyingTo === $evento->id)
-						<div class="mt-3">
-							<textarea wire:model.defer="replyText" rows="3" class="form-control mb-2"
-								placeholder="Write your answer here..."></textarea>
-							<button wire:click="submitReply({{ $evento->id }})"
-								class="btn btn-success btn-sm">Submit Answer</button>
-						</div>
-						@endif
-					</div>
-				</div>
-			</div>
-			@empty
-			<p class="text-muted">No questions found for your search.</p>
-			@endforelse
-		</div>
-
-		@if (session()->has('message'))
-		<div class="alert alert-success mt-4">
-			{{ session('message') }}
-		</div>
-		@endif
-
-		<div class="mt-4 text-center">
-			<a href="#" class="btn btn-outline-dark">Didn’t find what you’re looking for? Ask a Question</a>
-		</div>
-	</div>
+	
 
 
 	@push('scripts')
