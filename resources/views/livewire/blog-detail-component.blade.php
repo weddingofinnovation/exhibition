@@ -8,15 +8,48 @@
 
 
 <style>
-	.blog-content ul {
-		padding-left: 20px;
-	}
-	.blog-content li {
-		margin-bottom: 8px;
-	}
-	.blog-content div {
-		margin-bottom: 15px;
-	}
+	.blog-article {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #333;
+}
+
+.blog-article p {
+    margin-bottom: 1.5rem;
+}
+
+.blog-article h1,
+.blog-article h2,
+.blog-article h3,
+.blog-article h4 {
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.blog-article ul,
+.blog-article ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.blog-article li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-article strong {
+    font-weight: 600;
+}
+
+.blog-article blockquote {
+    border-left: 4px solid #0d6efd;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #555;
+    margin: 2rem 0;
+}
+
 </style>
 
 
