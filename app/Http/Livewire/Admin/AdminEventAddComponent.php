@@ -47,9 +47,9 @@ class AdminEventAddComponent extends Component
     public $shtdesc;
     public $tagline;
     public $findidvenue;
-    
 
-    Use WithFileUploads;
+
+    use WithFileUploads;
     public function mount()
     {
         $this->level = 4;
@@ -59,23 +59,23 @@ class AdminEventAddComponent extends Component
 
     public function generateSlug()
     {
-        $this->slug = Str::slug($this->eventname,'-');
+        $this->slug = Str::slug($this->eventname, '-');
     }
 
-     public function newlist()
+    public function newlist()
     {
-         $event = new Event();
+        $event = new Event();
         $event->eventname = Str::lower(trim($this->eventname));
-        
-        
+
+
         $event->startdate = $this->startdate;
         $event->enddate = $this->enddate;
 
-        $loc = Location:: where('id', $this->findidvenue)->first();
+        $loc = Location::where('id', $this->findidvenue)->first();
         $this->venue = $loc->venue;
         $this->city = $loc->city;
         $this->country = $loc->country;
-       
+
 
         $event->venue = trim($this->venue);
         $event->city = trim($this->city);
@@ -84,10 +84,10 @@ class AdminEventAddComponent extends Component
 
         // $event->city = trim($this->city);
         $double = Str::lower(trim($event->eventname . ' ' . $event->city));
-        $event->slug = Str::slug ($double,'-');
+        $event->slug = Str::slug($double, '-');
         $event->organizer = Str::lower(trim($this->organizer));
-         $event->auidence = trim($this->auidence);
-        $event->exhibitors = trim($this->exhibitors); 
+        $event->auidence = trim($this->auidence);
+        $event->exhibitors = trim($this->exhibitors);
 
         $event->tagline = trim($this->tagline);
         $event->shtdesc = trim($this->shtdesc);
@@ -104,67 +104,66 @@ class AdminEventAddComponent extends Component
         $event->save();
 
         //$this->sendEmail($event);
-       // $this->reset();
-        session()->flash('message','Thanks, Your details has been uploaded.'); 
+        // $this->reset();
+        session()->flash('message', 'Thanks, Your details has been uploaded.');
         $this->withoutHashtag($event->id);
-        return redirect()->route('admin.dashboard', ['board' => 'event']);   
+        return redirect()->route('admin.dashboard', ['board' => 'event']);
     }
-    
 
-    public function sendEmail($contact){
+
+    public function sendEmail($contact)
+    {
         $details = [
             'title' => 'contact us ',
             'body' => 'thanks for doing'
         ];
         Mail::to($contact->email)
-             ->cc('laravel8coi@gmail.com')
-             ->bcc('laravel8coi@gmail.com')
-             ->send(new ContactMail($contact, $details));
-        }
+            ->cc('laravel8coi@gmail.com')
+            ->bcc('laravel8coi@gmail.com')
+            ->send(new ContactMail($contact, $details));
+    }
 
 
     public function withoutHashtag($evento)
     {
         //$findComment = Comment::where('admstatus','1')->where('status','1')->get();
-        
+
         //$usero->opinion =  $findComment->random();
-        
-        for($i = 0; $i < 7; $i++)
-        {
-        $indoyui = Event::where('id', $evento)->value('id');
 
-        $usero =  new Rate ();
-        $trynigtocreate = collect([4,5,6,7,8,9]);
-        $usero->rate = $trynigtocreate->random();
+        for ($i = 0; $i < 7; $i++) {
+            $indoyui = Event::where('id', $evento)->value('id');
 
-        // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
-        // $findhastagID = $findhastag->random();
-        // $usero->hasttag = $findhastagID->hastag; 
-        
-        $findComment = Comment::where('admstatus','1')->where('status','1')->get();
-        $findCommentID = $findComment->random();
-        $usero->opinion =  $findCommentID->statement;
-        
-        $usero->event_id = $indoyui;
+            $usero =  new Rate();
+            $trynigtocreate = collect([4, 5, 6, 7, 8, 9]);
+            $usero->rate = $trynigtocreate->random();
 
-        $uertyui = User::where('utype', 'USR')->get();
-        $useroID = $uertyui->random();
-        $usero->user_id = $useroID->id;
+            // $findhastag = Hashtag::where('admstatus','0')->where('status','1')->where('event_id', $indoyui->id)->get();
+            // $findhastagID = $findhastag->random();
+            // $usero->hasttag = $findhastagID->hastag; 
 
-        $usero->status = '1'; 
-        $usero->admstatus = '1';
+            $findComment = Comment::where('admstatus', '1')->where('status', '1')->get();
+            $findCommentID = $findComment->random();
+            $usero->opinion =  $findCommentID->statement;
 
-        $currenttime = Carbon::now();
-        $currento =  strtotime($currenttime);
-        $Subtracttime =  Carbon::now()->subHours(24);
-        $Subtracttimeo = strtotime($Subtracttime);
-        $getmid = rand($currento, $Subtracttimeo);
-        $finall = date('Y/m/d h:i:s', $getmid);
+            $usero->event_id = $indoyui;
 
-        $usero->created_at = $finall;
-        $usero->updated_at = $finall;
-        $usero->save();
-        
+            $uertyui = User::where('utype', 'USR')->get();
+            $useroID = $uertyui->random();
+            $usero->user_id = $useroID->id;
+
+            $usero->status = '1';
+            $usero->admstatus = '1';
+
+            $currenttime = Carbon::now();
+            $currento =  strtotime($currenttime);
+            $Subtracttime =  Carbon::now()->subHours(24);
+            $Subtracttimeo = strtotime($Subtracttime);
+            $getmid = rand($currento, $Subtracttimeo);
+            $finall = date('Y/m/d h:i:s', $getmid);
+
+            $usero->created_at = $finall;
+            $usero->updated_at = $finall;
+            $usero->save();
         }
 
         return redirect()->back();
@@ -175,56 +174,56 @@ class AdminEventAddComponent extends Component
     {
         $edition = Str::lower(trim($edition));
 
-    // Find existing edition for the event
-    $existing = Eventedition::where('event_id', $eventid)
-        ->where('edition', $edition)
-        ->first();
+        // Find existing edition for the event
+        $existing = Eventedition::where('event_id', $eventid)
+            ->where('edition', $edition)
+            ->first();
 
-    if ($existing) {
-        // Check if dates changed but edition is the same → postpone
-        if (
-            $existing->start_date != $startDate ||
-            $existing->end_date != $endDate
-        ) {
-            $existing->start_date = $startDate;
-            $existing->end_date   = $endDate;
-            $existing->status     = 'postponed'; // custom label if needed
-            $existing->save();
+        if ($existing) {
+            // Check if dates changed but edition is the same → postpone
+            if (
+                $existing->start_date != $startDate ||
+                $existing->end_date != $endDate
+            ) {
+                $existing->start_date = $startDate;
+                $existing->end_date   = $endDate;
+                $existing->status     = 'postponed'; // custom label if needed
+                $existing->save();
 
-            return 'updated_postponed';
+                return 'updated_postponed';
+            }
+
+            return 'no_change';
         }
 
-        return 'no_change';
-    }
+        // If no existing edition → create new
+        $event = new Eventedition();
+        $event->edition    = $edition;
+        $event->status     = '1';
+        $event->admstatus  = '1';
+        $event->event_id   = $eventid;
+        $event->user_id    = Auth::id();
+        $event->start_date = $startDate;
+        $event->end_date   = $endDate;
+        $event->save();
 
-    // If no existing edition → create new
-    $event = new Eventedition();
-    $event->edition    = $edition;
-    $event->status     = '1';
-    $event->admstatus  = '1';
-    $event->event_id   = $eventid;
-    $event->user_id    = Auth::id();
-    $event->start_date = $startDate;
-    $event->end_date   = $endDate;
-    $event->save();
+        return 'created_new';
 
-    return 'created_new';
-    
         $event = new Eventedition();
         $event->edition = Str::lower(trim($edition));
-        $event->status = '1'; 
+        $event->status = '1';
         $event->admstatus = '1';
         $event->event_id = $eventid;
         $event->user_id = Auth::user()->id;
         $event->save();
     }
-        
+
     public function render()
     {
         $cat = Category::get();
         $sec = Sector::get();
-        $pavillion = Expo::where('type','expo')->get();
-        $searchtag = Expo::where('type','tag')->get();
-        return view('livewire.admin.admin-event-add-component',['searchtag'=>$searchtag,'pavillion'=>$pavillion,'cat'=>$cat,'sec'=>$sec])->layout('layouts.admin');
+        $pavillion = Expo::where('type', 'expo')->get();
+        $searchtag = Expo::where('type', 'tag')->get();
+        return view('livewire.admin.admin-event-add-component', ['searchtag' => $searchtag, 'pavillion' => $pavillion, 'cat' => $cat, 'sec' => $sec])->layout('layouts.admin');
     }
 }
