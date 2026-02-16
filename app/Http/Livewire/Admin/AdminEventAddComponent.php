@@ -62,7 +62,53 @@ class AdminEventAddComponent extends Component
         $this->slug = Str::slug($this->eventname,'-');
     }
 
-    
+     public function newlist()
+    {
+         $event = new Event();
+        $event->eventname = Str::lower(trim($this->eventname));
+        
+        
+        $event->startdate = $this->startdate;
+        $event->enddate = $this->enddate;
+
+        $loc = Location:: where('id', $this->findidvenue)->first();
+        $this->venue = $loc->venue;
+        $this->city = $loc->city;
+        $this->country = $loc->country;
+       
+
+        $event->venue = trim($this->venue);
+        $event->city = trim($this->city);
+        $event->country = trim($this->country);
+        $event->location_id = $this->findidvenue;
+
+        // $event->city = trim($this->city);
+        $double = Str::lower(trim($event->eventname . ' ' . $event->city));
+        $event->slug = Str::slug ($double,'-');
+        $event->organizer = Str::lower(trim($this->organizer));
+         $event->auidence = trim($this->auidence);
+        $event->exhibitors = trim($this->exhibitors); 
+
+        $event->tagline = trim($this->tagline);
+        $event->shtdesc = trim($this->shtdesc);
+        $event->desc = trim($this->desc);
+
+        $event->edition  = trim($this->edition);
+        $event->eventype = $this->eventype;
+        $event->user_id = Auth::user()->id;
+        $event->level  = $this->level;
+        $event->status  = $this->status;
+        $event->link  = $this->link;
+        $event->admstatus  =  $this->admstatus;
+        $event->reference = Str::uuid()->toString();
+        $event->save();
+
+        //$this->sendEmail($event);
+       // $this->reset();
+        session()->flash('message','Thanks, Your details has been uploaded.'); 
+        $this->withoutHashtag($event->id);
+        return redirect()->route('admin.dashboard', ['board' => 'event']);   
+    }
     
 
     public function sendEmail($contact){
