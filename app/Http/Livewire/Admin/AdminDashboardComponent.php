@@ -106,11 +106,12 @@ public $start;
 
 public $dtype;
 public $selectedYear;
+
+public $length = 20; // meters
+public $width  = 10; // meters
+
     //career
-    use WithPagination;
-
-
-   
+    use WithPagination;   
     public function mount($board)
     {
         $this->board = $board;
@@ -121,7 +122,11 @@ public $selectedYear;
     }
     
     
-
+    public function getTotalAreaProperty()
+    {
+        return $this->length * $this->width;
+    }
+    
     public function bulkReview()
     {
       

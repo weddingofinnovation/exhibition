@@ -906,6 +906,59 @@
               @endif
             </div>
           @elseif($board == 'floor')
+
+          <style>
+          .floor-container {
+              border: 2px solid #333;
+              width: fit-content;
+          }
+
+          .grid-box {
+              width: 25px;
+              height: 25px;
+              border: 1px solid #eee;
+          }
+        </style>
+
+
+          <div class="row">
+
+            <!-- LEFT SIDE FORM -->
+            <div class="col-md-3">
+                <h4>Simple Floor Plan</h4>
+
+                <label>Length (meters)</label>
+                <input type="number" wire:model.live="length" class="form-control">
+
+                <label>Width (meters)</label>
+                <input type="number" wire:model.live="width" class="form-control">
+
+                <hr>
+
+                <strong>Total Area:</strong>
+                {{ $this->totalArea }} sqm
+            </div>
+
+            <!-- RIGHT SIDE FLOOR -->
+            <div class="col-md-9">
+                <div class="floor-container"
+                    style="
+                        display:grid;
+                        grid-template-columns: repeat({{ $length }}, 25px);
+                        grid-template-rows: repeat({{ $width }}, 25px);
+                    ">
+
+                    @for($i = 0; $i < $length * $width; $i++)
+                        <div class="grid-box"></div>
+                    @endfor
+
+                </div>
+            </div>
+
+        </div>
+
+        
+
             <div class="">
               <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
 
@@ -916,6 +969,8 @@
                 <button id="saveSpaceBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Save Space</button>
               </div>
             </div>
+
+
           @elseif($board == 'speaker')
             @php
             $network = DB::table('speakers')->where('admstatus', '1')->where('status', '1')->get();
