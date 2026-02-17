@@ -126,7 +126,7 @@ public $selectedYear;
         $this->monthly = Carbon::today()->format("m");
         $this->visited = '1';
         $this->currentTab = session()->get('currentTab','tab1');
-        $this->booths = Space::where('floorplan_id', $this->floorId)->get()->toArray();
+        $this->booths = Space::where('floorplan_id', '1')->get()->toArray();
     }
     
     
