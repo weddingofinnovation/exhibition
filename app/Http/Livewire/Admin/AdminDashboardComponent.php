@@ -115,7 +115,8 @@ public $selectedYear;
 
     public $x;
     public $y;
-    public $booths;
+    public $booths = [];
+
     //career
     use WithPagination;   
     public function mount($board)
@@ -125,6 +126,7 @@ public $selectedYear;
         $this->monthly = Carbon::today()->format("m");
         $this->visited = '1';
         $this->currentTab = session()->get('currentTab','tab1');
+        $this->booths = Booth::where('floor_id', $this->floorId)->get()->toArray();
     }
     
     
