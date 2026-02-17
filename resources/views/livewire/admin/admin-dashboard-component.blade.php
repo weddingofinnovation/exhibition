@@ -934,6 +934,23 @@
             Zoom Out -
         </button>
 
+        @php
+            $booth = $this->getBoothAt($x, $y);
+        @endphp
+
+        <div
+            wire:click="selectBooth('{{ $booth['id'] ?? '' }}')"
+
+            style="
+                background:
+                {{ $booth ? (
+                    $booth['status'] == 'booked'
+                        ? '#dc3545'
+                        : '#28a745'
+                  ) : 'white' }};
+            ">
+        </div>
+
         <hr>
 
         <strong>Mouse Position:</strong><br>

@@ -142,6 +142,76 @@ public $selectedYear;
         }
     }
 
+
+    public function finishSelection($x, $y)
+    {
+        if (!$this->isDragging) return;
+
+        $this->isDragging = false;
+
+        $minX = min($this->startX, $x);
+        $maxX = max($this->startX, $x);
+        $minY = min($this->startY, $y);
+        $maxY = max($this->startY, $y);
+
+        $length = ($maxX - $minX) + 1;
+        $width  = ($maxY - $minY) + 1;
+
+        $boothNumber = $this->generateBoothNumber($minY);
+
+        $this->booths[] = [
+            'id' => uniqid(),
+            'x' => $minX,
+            'y' => $minY,
+            'length' => $length,
+            'width' => $width,
+            'area' => $length * $width,
+            'booth_number' => $boothNumber,
+            'status' => 'available',
+            'price' => 0
+        ];
+
+        $this->selectedCells = [];
+    }
+
+    public function generateBoothNumber($rowY)
+    {
+        $rowLetter = chr(64 + $rowY); // 1=A, 2=B
+
+        $countInRow = collect($this->booths)
+            ->filter(fn($b) => $b['y'] == $rowY)
+            ->count();
+
+        return $rowLetter . ($countInRow + 1);
+    }
+
+
+    public function getBoothAt($x, $y)
+    {
+        foreach ($this->booths as $booth) {
+            if (
+                $x >= $booth['x'] &&
+                $x < $booth['x'] + $booth['length'] &&
+                $y >= $booth['y'] &&
+                $y < $booth['y'] + $booth['width']
+            ) {
+                return $booth;
+            }
+        }
+
+        return null;
+    }
+
+    public function markBooked()
+    {
+        foreach ($this->booths as &$booth) {
+            if ($booth['id'] == $this->selectedBooth['id']) {
+                $booth['status'] = 'booked';
+            }
+        }
+    }
+
+    
     public function setHover($x, $y)
     {
         $this->hoverX = $x;
