@@ -113,6 +113,7 @@ public $selectedYear;
     public $hoverX = 0;
     public $hoverY = 0;
 
+    public $x;
     //career
     use WithPagination;   
     public function mount($board)
