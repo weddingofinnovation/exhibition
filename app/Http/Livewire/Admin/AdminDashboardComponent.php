@@ -115,6 +115,7 @@ public $selectedYear;
 
     public $x;
     public $y;
+    public $booths;
     //career
     use WithPagination;   
     public function mount($board)
