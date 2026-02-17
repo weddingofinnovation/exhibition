@@ -107,8 +107,11 @@ public $start;
 public $dtype;
 public $selectedYear;
 
-public $length = 20; // meters
-public $width  = 10; // meters
+    public $length = 20; // meters
+    public $width  = 10; // meters
+    public $scale = 12; // px per sqm (zoom level)
+    public $hoverX = 0;
+    public $hoverY = 0;
 
     //career
     use WithPagination;   
@@ -126,7 +129,26 @@ public $width  = 10; // meters
     {
         return $this->length * $this->width;
     }
-    
+
+    public function zoomIn()
+    {
+        $this->scale += 2;
+    }
+
+    public function zoomOut()
+    {
+        if ($this->scale > 6) {
+            $this->scale -= 2;
+        }
+    }
+
+    public function setHover($x, $y)
+    {
+        $this->hoverX = $x;
+        $this->hoverY = $y;
+    }
+
+   
     public function bulkReview()
     {
       

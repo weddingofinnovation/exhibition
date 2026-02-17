@@ -907,55 +907,74 @@
             </div>
           @elseif($board == 'floor')
 
-          <style>
-          .floor-container {
-              border: 2px solid #333;
-              width: fit-content;
-          }
+        <div class="row">
 
-          .grid-box {
-              width: 25px;
-              height: 25px;
-              border: 1px solid #eee;
-          }
-        </style>
+    <!-- LEFT PANEL -->
+    <div class="col-md-3">
 
+        <h4>Hall Setup</h4>
 
-          <div class="row">
+        <label>Length</label>
+        <input type="number" wire:model.live="length" class="form-control">
 
-            <!-- LEFT SIDE FORM -->
-            <div class="col-md-3">
-                <h4>Simple Floor Plan</h4>
+        <label>Width</label>
+        <input type="number" wire:model.live="width" class="form-control">
 
-                <label>Length (meters)</label>
-                <input type="number" wire:model.live="length" class="form-control">
+        <hr>
 
-                <label>Width (meters)</label>
-                <input type="number" wire:model.live="width" class="form-control">
+        <strong>Total Area:</strong> {{ $this->totalArea }} sqm
 
-                <hr>
+        <hr>
 
-                <strong>Total Area:</strong>
-                {{ $this->totalArea }} sqm
-            </div>
+        <button wire:click="zoomIn" class="btn btn-sm btn-success">
+            Zoom In +
+        </button>
 
-            <!-- RIGHT SIDE FLOOR -->
-            <div class="col-md-9">
-                <div class="floor-container"
-                    style="
-                        display:grid;
-                        grid-template-columns: repeat({{ $length }}, 25px);
-                        grid-template-rows: repeat({{ $width }}, 25px);
-                    ">
+        <button wire:click="zoomOut" class="btn btn-sm btn-danger">
+            Zoom Out -
+        </button>
 
-                    @for($i = 0; $i < $length * $width; $i++)
-                        <div class="grid-box"></div>
+        <hr>
+
+        <strong>Mouse Position:</strong><br>
+        X: {{ $hoverX }} m<br>
+        Y: {{ $hoverY }} m
+
+    </div>
+
+    <!-- RIGHT PANEL FLOOR -->
+    <div class="col-md-9">
+
+        <div style="overflow:auto; border:2px solid #444; max-height:600px;">
+
+            <div class="floor-container"
+                style="
+                    display:grid;
+                    grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
+                    grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                ">
+
+                @for($y = 0; $y < $width; $y++)
+                    @for($x = 0; $x < $length; $x++)
+                        <div class="grid-box"
+                             wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
+                        </div>
                     @endfor
+                @endfor
 
-                </div>
             </div>
 
         </div>
+
+    </div>
+
+</div>
+
+<style>
+.grid-box {
+    border: 1px solid #eee;
+}
+</style>
 
         
 
