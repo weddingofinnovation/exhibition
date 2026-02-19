@@ -42,6 +42,13 @@ class ExhibitorInviteComponent extends Component
         //$findevent = DB::table('events')->where('id', $data)->first();
     }
 
+    public function createalinkforparticularexhibition()
+    {
+        $meetleadgen = new Lead();
+        $meetleadgen->eventname = $this->eventname;
+        $meetleadgen->save();
+    }
+
     public function exhibitorrequestedvisitorforpass()
     {
         $this->validate([
