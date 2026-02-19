@@ -53,7 +53,9 @@
         </div>
       </div>
     @elseif($board == 'exhibitor')
-      <div class="container">
+      
+    @else
+     <div class="container">
         <div class="row">
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">
@@ -200,8 +202,6 @@
           </div>
         </div>
       </div>
-    @else()
-     <div>testing</div>
   @endif
 
 </main>
