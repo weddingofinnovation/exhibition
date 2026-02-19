@@ -90,6 +90,7 @@ class ExhibitorInviteComponent extends Component
 
     public function render()
     {
-        return view('livewire.exhibitor-invite-component');
+        return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
+    };
     }
 }
