@@ -86,11 +86,9 @@ class ExhibitorInviteComponent extends Component
         //{{route('event.exhibit', ['board' => 'business'])}}
         session()->flash('message', 'Thanks for sharing your review.');
     }
-
-
+    
     public function render()
     {
         return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
-    };
     }
 }
