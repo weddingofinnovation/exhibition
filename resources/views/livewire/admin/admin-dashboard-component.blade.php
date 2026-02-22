@@ -960,66 +960,45 @@
             </div>
 
             <div class="col-md-9">
+              <div 
+                      x-data="drawBooth()"
+                      @mousedown="start($event)"
+                      @mousemove="move($event)"
+                      @mouseup="end()"
+                      style="
+                          position:relative;
+                          width:800px;
+                          height:500px;
+                          border:1px solid #ccc;
+                          background:#fff;
+                      "
+                  >
 
-                <div style="overflow:auto; max-height:600px;">
+                  <!-- Existing Booths -->
+                  @foreach($booths as $booth)
+                      <div style="
+                          position:absolute;
+                          left:{{ $booth->coordinates['x'] }}px;
+                          top:{{ $booth->coordinates['y'] }}px;
+                          width:{{ $booth->coordinates['width'] }}px;
+                          height:{{ $booth->coordinates['height'] }}px;
+                          background:#28a745;
+                          opacity:0.8;
+                      ">
+                      </div>
+                  @endforeach
 
-                    <div style="display:inline-block;">
+                  <!-- Drawing Preview -->
+                  <div x-show="drawing"
+                      :style="boxStyle"
+                      style="
+                          position:absolute;
+                          border:2px dashed #007bff;
+                          background:rgba(0,123,255,0.2);
+                      ">
+                  </div>
 
-                        <!-- TOP SCALE (X axis) -->
-                        <div style="display:flex; margin-left:40px;">
-                            @for($i = 1; $i <= $length; $i++)
-                                <div style="
-                                    width:{{ $scale }}px;
-                                    text-align:center;
-                                    font-size:11px;
-                                    color:#555;
-                                ">
-                                    {{ $i }}
-                                </div>
-                            @endfor
-                        </div>
-
-                        <div style="display:flex;">
-
-                            <!-- LEFT SCALE (Y axis) -->
-                            <div style="width:40px;">
-                                @for($i = 1; $i <= $width; $i++)
-                                    <div style="
-                                        height:{{ $scale }}px;
-                                        font-size:11px;
-                                        text-align:center;
-                                        color:#555;
-                                    ">
-                                        {{ $i }}
-                                    </div>
-                                @endfor
-                            </div>
-
-                            <!-- FLOOR GRID -->
-                            <div 
-                                style="
-                                    display:grid;
-                                    grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
-                                    grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
-                                    background:#fff;
-                                    box-shadow:0 5px 15px rgba(0,0,0,0.05);
-                                "
-                            >
-                                @for($y = 0; $y < $width; $y++)
-                                    @for($x = 0; $x < $length; $x++)
-                                        <div class="grid-box"
-                                            wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
-                                        </div>
-                                    @endfor
-                                @endfor
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+              </div>
             </div>
 
           </div>
@@ -3864,3 +3843,63 @@
 
     </div>
   </div>
+
+  @push('scripts')
+  <script>
+    function drawBooth() {
+        return {
+
+            startX: 0,
+            startY: 0,
+            endX: 0,
+            endY: 0,
+            drawing: false,
+
+            start(e) {
+                this.drawing = true;
+                this.startX = e.offsetX;
+                this.startY = e.offsetY;
+            },
+
+            move(e) {
+                if (!this.drawing) return;
+
+                this.endX = e.offsetX;
+                this.endY = e.offsetY;
+            },
+
+            end() {
+                if (!this.drawing) return;
+
+                this.drawing = false;
+
+                let x = Math.min(this.startX, this.endX);
+                let y = Math.min(this.startY, this.endY);
+                let width = Math.abs(this.endX - this.startX);
+                let height = Math.abs(this.endY - this.startY);
+
+                Livewire.emit('saveBooth', {
+                    x: x,
+                    y: y,
+                    width: width,
+                    height: height
+                });
+            },
+
+            get boxStyle() {
+                let x = Math.min(this.startX, this.endX);
+                let y = Math.min(this.startY, this.endY);
+                let width = Math.abs(this.endX - this.startX);
+                let height = Math.abs(this.endY - this.startY);
+
+                return `
+                    left:${x}px;
+                    top:${y}px;
+                    width:${width}px;
+                    height:${height}px;
+                `;
+            }
+        }
+    }
+  </script>
+  @endpush
