@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Lead;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Livewire\Component;
 
 class ExhibitorInviteComponent extends Component
@@ -48,6 +49,52 @@ class ExhibitorInviteComponent extends Component
         $meetleadgen->eventname = $this->eventname;
         $meetleadgen->save();
     }
+
+
+    public function submitForm()
+    {
+        $this->validate();
+
+        $logoPath = null;
+
+        if ($this->logo) {
+            $logoPath = $this->logo->store('exhibitor-logos', 'public');
+        }
+
+        // Generate company slug
+        $companySlug = Str::slug($this->company);
+
+        // Clean stall number (remove spaces/special characters)
+        $stallClean = strtoupper(preg_replace('/[^A-Za-z0-9]/', '', $this->stallno));
+
+        // Generate random string
+        $randomCode = strtoupper(Str::random(5));
+
+        // Final referral code
+        $referralCode = $companySlug . '-' . $stallClean . '-' . $randomCode;
+
+        // Make sure it's unique
+        while (Exhibitor ::where('referral_code', $referralCode)->exists()) {
+            $randomCode = strtoupper(Str::random(5));
+            $referralCode = $companySlug . '-' . $stallClean . '-' . $randomCode;
+        }
+
+        $exhibitor = Exhibitor::create([
+            'stallno'        => $this->stallno,
+            'company'        => $this->company,
+            'contact_person' => $this->contact_person,
+            'designation'    => $this->designation,
+            'email'          => $this->email,
+            'number'         => $this->number,
+            'logo'           => $logoPath,
+            'referral_code'  => $referralCode,
+        ]);
+
+        session()->flash('success', 'Registration Successful!');
+
+        $this->reset();
+    }
+
 
     public function exhibitorrequestedvisitorforpass()
     {

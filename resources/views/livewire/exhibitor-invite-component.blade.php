@@ -53,9 +53,108 @@
         </div>
       </div>
     @elseif($board == 'exhibitor')
+
+      <div class="container mt-4">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Exhibitor Registration</h5>
+            </div>
+
+            <div class="card-body">
+
+                <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+
+                    <div class="row">
+
+                        <!-- Stall Number -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Stall Number</label>
+                            <input type="text" class="form-control" 
+                                  wire:model.defer="stallno" placeholder="Enter Stall Number">
+                            @error('stallno') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Company Name -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-control" 
+                                  wire:model.defer="company" placeholder="Enter Company Name">
+                            @error('company') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Concern Person</label>
+                            <input type="email" class="form-control" 
+                                  wire:model.defer="email" placeholder="Enter Email">
+                            @error('email') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Designation</label>
+                            <input type="email" class="form-control" 
+                                  wire:model.defer="email" placeholder="Enter Email">
+                            @error('email') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Email -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" 
+                                  wire:model.defer="email" placeholder="Enter Email">
+                            @error('email') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" 
+                                  wire:model.defer="number" placeholder="Enter Mobile Number">
+                            @error('number') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+                        </div>
+
+                        <!-- Logo Upload -->
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Company Logo</label>
+                            <input type="file" class="form-control" 
+                                  wire:model="logo">
+                            @error('logo') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+
+                            <div wire:loading wire:target="logo" class="text-info mt-2">
+                                Uploading...
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Submit Registration
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+      </div>
+
       
     @else
-     <div class="container">
+      <div class="container">
         <div class="row">
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">

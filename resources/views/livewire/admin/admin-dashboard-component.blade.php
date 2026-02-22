@@ -4,8 +4,8 @@
   <div class="container mt-2">
     <div class="row">
 
-      <div class="col-3 d-none d-md-block bg-light border">
-        <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
+      <div class="col-2 border-end">
+        <div class="d-flex flex-column bg-white" style=" border-radius: 8px;">
           <!-- Logo & Name -->
           <div class="d-flex align-items-center mb-3">
             <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
@@ -907,85 +907,85 @@
             </div>
           @elseif($board == 'floor')
 
-        <div class="row">
+            <div class="row">
 
-    <!-- LEFT PANEL -->
-    <div class="col-md-3">
+            <!-- LEFT PANEL -->
+            <div class="col-md-3">
 
-        <h4>Hall Setup</h4>
+                <h4>Hall Setup</h4>
 
-        <label>Length</label>
-        <input type="number" wire:model.live="length" class="form-control">
+                <label>Length</label>
+                <input type="number" wire:model.live="length" class="form-control">
 
-        <label>Width</label>
-        <input type="number" wire:model.live="width" class="form-control">
+                <label>Width</label>
+                <input type="number" wire:model.live="width" class="form-control">
 
-        <hr>
+                <hr>
 
-        <strong>Total Area:</strong> {{ $this->totalArea }} sqm
+                <strong>Total Area:</strong> {{ $this->totalArea }} sqm
 
-        <hr>
+                <hr>
 
-        <button wire:click="zoomIn" class="btn btn-sm btn-success">
-            Zoom In +
-        </button>
+                <button wire:click="zoomIn" class="btn btn-sm btn-success">
+                    Zoom In +
+                </button>
 
-        <button wire:click="zoomOut" class="btn btn-sm btn-danger">
-            Zoom Out -
-        </button>
+                <button wire:click="zoomOut" class="btn btn-sm btn-danger">
+                    Zoom Out -
+                </button>
 
-        @php
-            $booth = $this->getBoothAt($x, $y);
-        @endphp
+                @php
+                    $booth = $this->getBoothAt($x, $y);
+                @endphp
 
-        <div
-            wire:click="selectBooth('{{ $booth['id'] ?? '' }}')"
+                <div
+                    wire:click="selectBooth('{{ $booth['id'] ?? '' }}')"
 
-            style="
-                background:
-                {{ $booth ? (
-                    $booth['status'] == 'booked'
-                        ? '#dc3545'
-                        : '#28a745'
-                  ) : 'white' }};
-            ">
-        </div>
+                    style="
+                        background:
+                        {{ $booth ? (
+                            $booth['status'] == 'booked'
+                                ? '#dc3545'
+                                : '#28a745'
+                          ) : 'white' }};
+                    ">
+                </div>
 
-        <hr>
+                <hr>
 
-        <strong>Mouse Position:</strong><br>
-        X: {{ $hoverX }} m<br>
-        Y: {{ $hoverY }} m
+                <strong>Mouse Position:</strong><br>
+                X: {{ $hoverX }} m<br>
+                Y: {{ $hoverY }} m
 
-    </div>
+            </div>
 
-    <!-- RIGHT PANEL FLOOR -->
-    <div class="col-md-9">
+            <!-- RIGHT PANEL FLOOR -->
+            <div class="col-md-9">
 
-        <div style="overflow:auto; border:2px solid #444; max-height:600px;">
+                <div style="overflow:auto; border:2px solid #444; max-height:600px;">
 
-            <div class="floor-container"
-                style="
-                    display:grid;
-                    grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
-                    grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
-                ">
+                    <div class="floor-container"
+                        style="
+                            display:grid;
+                            grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
+                            grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                        ">
 
-                @for($y = 0; $y < $width; $y++)
-                    @for($x = 0; $x < $length; $x++)
-                        <div class="grid-box"
-                             wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
-                        </div>
-                    @endfor
-                @endfor
+                        @for($y = 0; $y < $width; $y++)
+                            @for($x = 0; $x < $length; $x++)
+                                <div class="grid-box"
+                                    wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
+                                </div>
+                            @endfor
+                        @endfor
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
-
-    </div>
-
-</div>
 
 <style>
 .grid-box {
