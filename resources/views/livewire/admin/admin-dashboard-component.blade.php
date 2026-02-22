@@ -1,7 +1,7 @@
 @section('page_description','Dashboard')
 @section('page_keywords', 'Council, Innovation, sell your business, market, expand your franchise, buy a brand licenese, business_design, business_strategy, business_design_sprint, innovation_accelerator, product_service, go_to_market, entrepreneur_residence, strategy_sprint, creative')
 <main>
-  <div class="container mt-2">
+  <div class="container-fluid mt-2">
     <div class="row">
 
       <div class="col-2 border-end">
