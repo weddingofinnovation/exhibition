@@ -71,6 +71,7 @@
     
     @livewire('footer-component') 
     <!-- Vendor scrits: js libraries and plugins-->
+      @livewireScripts
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/simplebar.min.js')}}"></script>
     
@@ -125,7 +126,7 @@
     }
     </script>
 
-   @livewireScripts
+  
    @stack('scripts')
 
 </body>
