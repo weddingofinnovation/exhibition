@@ -414,7 +414,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->group(function () {
   Route::get('/admin/global', AdminLandingComponent::class)->name('admin.global');
 
-
+  // design-floor-plan
   Route::get('/admin/panel/{board}/floor/{floorPlanId}', AdminPanelComponent::class)->name('admin.panel');
   Route::get('/admin/panel/view/{boardid}', AdminPanelViewComponent::class)->name('admin.panelview');
 

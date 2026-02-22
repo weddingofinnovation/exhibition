@@ -1,8 +1,8 @@
 <main>
-    <div class="container mt-2">
+    <div class="container-fluid mt-2">
       <div class="row">
         <div class="col-3">
-          <div class="d-flex flex-column p-3 bg-white shadow-sm" style="width: 250px; border-radius: 8px;">
+          <div class="d-flex flex-column p-0 bg-white shadow-sm" style="border-radius: 8px;">
               <!-- Logo & Name -->
               <div class="d-flex align-items-center mb-3">
                   <img src="/your-logo.png" alt="Logo" class="rounded-circle me-2" width="40" height="40">
@@ -51,6 +51,7 @@
         </div>
 
         <div class="col-9">
+            
           <div class="my-0">
 
 
@@ -310,6 +311,7 @@
                  @endif
               
           </div>
+
         </div>
       </div>
      </div>
