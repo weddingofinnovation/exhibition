@@ -960,62 +960,66 @@
             </div>
 
             <div class="col-md-9">
+
                 <div style="overflow:auto; max-height:600px;">
 
-                    <div class="floor-wrapper"
-                        style="
-                            width: {{ $length * $scale }} px;
-                            height: {{ $width * $scale }} px;
-                            border: 1px solid #ccc;
-                            background: #f9f9f9; 
-                        ">
+                    <div style="display:inline-block;">
 
-                        <div class="floor-container"
-                            style="
-                                display:grid;
-                                grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
-                                grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
-                            ">
-
-                            @for($y = 0; $y < $width; $y++)
-                                @for($x = 0; $x < $length; $x++)
-                                    <div class="grid-box"
-                                        wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
-                                    </div>
-                                @endfor
+                        <!-- TOP SCALE (X axis) -->
+                        <div style="display:flex; margin-left:40px;">
+                            @for($i = 1; $i <= $length; $i++)
+                                <div style="
+                                    width:{{ $scale }}px;
+                                    text-align:center;
+                                    font-size:11px;
+                                    color:#555;
+                                ">
+                                    {{ $i }}
+                                </div>
                             @endfor
-
                         </div>
 
                         <div style="display:flex;">
 
-                            <!-- Vertical Scale -->
+                            <!-- LEFT SCALE (Y axis) -->
                             <div style="width:40px;">
                                 @for($i = 1; $i <= $width; $i++)
-                                    <div style="height:{{ $scale }}px; font-size:10px;">
+                                    <div style="
+                                        height:{{ $scale }}px;
+                                        font-size:11px;
+                                        text-align:center;
+                                        color:#555;
+                                    ">
                                         {{ $i }}
                                     </div>
                                 @endfor
                             </div>
 
-                            <!-- Grid -->
-                            <div>
-                                <div style="display:flex;">
-                                    @for($i = 1; $i <= $length; $i++)
-                                        <div style="width:{{ $scale }}px; font-size:10px; text-align:center;">
-                                            {{ $i }}
+                            <!-- FLOOR GRID -->
+                            <div 
+                                style="
+                                    display:grid;
+                                    grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
+                                    grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                                    background:#fff;
+                                    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+                                "
+                            >
+                                @for($y = 0; $y < $width; $y++)
+                                    @for($x = 0; $x < $length; $x++)
+                                        <div class="grid-box"
+                                            wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
                                         </div>
                                     @endfor
-                                </div>
-
-                                <!-- Your grid here -->
-
+                                @endfor
                             </div>
+
                         </div>
 
                     </div>
 
                 </div>
+
             </div>
 
           </div>
