@@ -133,29 +133,37 @@
 
 
   <!-- Footer-->
+<!-- jQuery FIRST -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <!-- Vendor scrits: js libraries and plugins-->
-  <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('js/simplebar.min.js')}}"></script>
-  <script src="{{asset('js/tiny-slider.js')}}"></script>
-  <script src="{{asset('js/app.js')}}"></script>
-  <script src="{{asset('js/smooth-scroll.polyfills.min.js')}}"></script>
-  <script src="{{asset('js/Drift.min.js')}}"></script>
-  <script src="{{asset('js/lightgallery.min.js')}}"></script>
-  <script src="{{asset('js/lg-video.min.js')}}"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+<!-- Select2 AFTER jQuery -->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  <script type="text/javascript" src="https://unpkg.com/konva@9/konva.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/konva@8/konva.min.js"></script>
+<!-- Remove duplicate Konva (Keep only ONE if needed) -->
+<script src="https://unpkg.com/konva@9/konva.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+
+<!-- Other vendor scripts -->
+<script src="{{asset('js/simplebar.min.js')}}"></script>
+<script src="{{asset('js/tiny-slider.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/smooth-scroll.polyfills.min.js')}}"></script>
+<script src="{{asset('js/Drift.min.js')}}"></script>
+<script src="{{asset('js/lightgallery.min.js')}}"></script>
+<script src="{{asset('js/lg-video.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+
+<!-- Theme -->
+<script src="{{asset('js/theme.min.js')}}"></script>
+
+<!-- Livewire (includes Alpine automatically in v3) -->
+@livewireScripts
+
+@stack('scripts')
 
 
-  <!-- Main theme script-->
-  <script src="{{asset('js/theme.min.js')}}"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  @livewireScripts
-  @stack('scripts')
 
 </body>
 
