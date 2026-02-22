@@ -907,7 +907,7 @@
             </div>
           @elseif($board == 'floor')
 
-            <div class="row">
+          <div class="row">
 
             <!-- LEFT PANEL -->
             <div class="col-md-3">
@@ -959,41 +959,46 @@
 
             </div>
 
-            <!-- RIGHT PANEL FLOOR -->
             <div class="col-md-9">
+                <div style="overflow:auto; max-height:600px;">
 
-                <div style="overflow:auto; border:2px solid #444; max-height:600px;">
-
-                    <div class="floor-container"
+                    <div class="floor-wrapper"
                         style="
-                            display:grid;
-                            grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
-                            grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                            width: {{ $length * $scale }}px;
+                            height: {{ $width * $scale }}px;
+                            border: 1px solid #ccc;
+                            background:#f9f9f9;
                         ">
 
-                        @for($y = 0; $y < $width; $y++)
-                            @for($x = 0; $x < $length; $x++)
-                                <div class="grid-box"
-                                    wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
-                                </div>
+                        <div class="floor-container"
+                            style="
+                                display:grid;
+                                grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
+                                grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                            ">
+
+                            @for($y = 0; $y < $width; $y++)
+                                @for($x = 0; $x < $length; $x++)
+                                    <div class="grid-box"
+                                        wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
+                                    </div>
+                                @endfor
                             @endfor
-                        @endfor
+
+                        </div>
 
                     </div>
 
                 </div>
-
             </div>
+            
+          </div>
 
-        </div>
-
-<style>
-.grid-box {
-    border: 1px solid #eee;
-}
-</style>
-
-        
+            <style>
+                .grid-box {
+                    border: 1px solid #eee;
+                }
+            </style>
 
             <div class="">
               <h2 class="text-xl font-bold mb-4">Draw Spaces on Floor Plan (Konva.js)</h2>
