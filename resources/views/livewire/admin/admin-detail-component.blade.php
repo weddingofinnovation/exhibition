@@ -2,7 +2,7 @@
 
 <main>
   @php
-  $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
+    $businessOrder = DB::table('leads')->where('event_id', $evento->id)->orderBy('updated_at','DESC')->get();
   @endphp
 
   <div class="d-none d-lg-block">
@@ -2030,9 +2030,7 @@
     </div>
   </div>
 
-
-          
-
+  
   <p>Update conference agenda</p>
   <div class="container">
     <form wire:submit.prevent="addagenda">
@@ -2046,8 +2044,6 @@
       <button class="form-control  btn btn-primary" type="submit">Submit</button>
     </form>
   </div>
-
-  
 
 
   {{--<div class="handheld-toolbar">
