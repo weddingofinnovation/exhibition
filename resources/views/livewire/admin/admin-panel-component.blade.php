@@ -52,6 +52,7 @@
 
         <div class="col-9">
             
+
           <div class="my-0">
 
 
@@ -308,9 +309,69 @@
                     </div>
 
                     <div id="loadkonvaContainer" style="width: 800px; height: 400px; border:1px solid #ccc;"></div>
+                 @elseif($board == 'newplan')
+                    <div style="overflow:auto; max-height:600px;">
+
+                        <div style="display:inline-block;">
+
+                            <!-- TOP SCALE (X axis) -->
+                            <div style="display:flex; margin-left:40px;">
+                                @for($i = 1; $i <= $length; $i++)
+                                    <div style="
+                                        width:{{ $scale }}px;
+                                        text-align:center;
+                                        font-size:11px;
+                                        color:#555;
+                                    ">
+                                        {{ $i }}
+                                    </div>
+                                @endfor
+                            </div>
+
+                            <div style="display:flex;">
+
+                                <!-- LEFT SCALE (Y axis) -->
+                                <div style="width:40px;">
+                                    @for($i = 1; $i <= $width; $i++)
+                                        <div style="
+                                            height:{{ $scale }}px;
+                                            font-size:11px;
+                                            text-align:center;
+                                            color:#555;
+                                        ">
+                                            {{ $i }}
+                                        </div>
+                                    @endfor
+                                </div>
+
+                                <!-- FLOOR GRID -->
+                                <div 
+                                    style="
+                                        display:grid;
+                                        grid-template-columns: repeat({{ $length }}, {{ $scale }}px);
+                                        grid-template-rows: repeat({{ $width }}, {{ $scale }}px);
+                                        background:#fff;
+                                        box-shadow:0 5px 15px rgba(0,0,0,0.05);
+                                    "
+                                >
+                                    @for($y = 0; $y < $width; $y++)
+                                        @for($x = 0; $x < $length; $x++)
+                                            <div class="grid-box"
+                                                wire:mouseenter="setHover({{ $x+1 }}, {{ $y+1 }})">
+                                            </div>
+                                        @endfor
+                                    @endfor
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
                  @endif
               
           </div>
+
 
         </div>
       </div>
