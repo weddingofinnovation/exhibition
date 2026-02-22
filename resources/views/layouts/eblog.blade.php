@@ -73,7 +73,9 @@
     <!-- Vendor scrits: js libraries and plugins-->
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/simplebar.min.js')}}"></script>
-    <script src="{{asset('js/tiny-slider.js')}}"></script>
+    
+    
+
     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/smooth-scroll.polyfills.min.js')}}"></script>
     <script src="{{asset('js/Drift.min.js')}}"></script>
@@ -84,9 +86,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>  
     
     <script src="{{asset('js/isotope.pkgd.min.js')}}"></script> 
-    <script src="{{asset('js/isotope.pkgd.js')}}"></script> 
+    
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.js"></script>
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
