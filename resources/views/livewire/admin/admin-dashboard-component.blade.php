@@ -964,10 +964,10 @@
 
                     <div class="floor-wrapper"
                         style="
-                            width: {{ $length * $scale }}px;
-                            height: {{ $width * $scale }}px;
+                            width: {{ $length * $scale }} px;
+                            height: {{ $width * $scale }} px;
                             border: 1px solid #ccc;
-                            background:#f9f9f9;
+                            background: #f9f9f9; 
                         ">
 
                         <div class="floor-container"
@@ -987,11 +987,37 @@
 
                         </div>
 
+                        <div style="display:flex;">
+
+                            <!-- Vertical Scale -->
+                            <div style="width:40px;">
+                                @for($i = 1; $i <= $width; $i++)
+                                    <div style="height:{{ $scale }}px; font-size:10px;">
+                                        {{ $i }}
+                                    </div>
+                                @endfor
+                            </div>
+
+                            <!-- Grid -->
+                            <div>
+                                <div style="display:flex;">
+                                    @for($i = 1; $i <= $length; $i++)
+                                        <div style="width:{{ $scale }}px; font-size:10px; text-align:center;">
+                                            {{ $i }}
+                                        </div>
+                                    @endfor
+                                </div>
+
+                                <!-- Your grid here -->
+
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
             </div>
-            
+
           </div>
 
             <style>
