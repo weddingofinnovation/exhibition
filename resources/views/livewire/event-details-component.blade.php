@@ -7664,7 +7664,7 @@
                               @else
                                     <span class="d-block fw-medium fs-sm">testoo
                                         📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
-                                    </span>
+                                    </span> {{$getperosnalinfo}}
                             @endif
                         
                         <span class="d-block fw-normal fs-xs text-muted">Get extra ad-ons</span>
