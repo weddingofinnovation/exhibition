@@ -7549,11 +7549,20 @@
                $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->first();
             @endphp
 
-                @if($getperosnalinfo->cxtype === 'official')
+                @php 
+        $getperosnalinfo = DB::table('plan_type_customers')
+            ->where('event_id', $event->id)
+            ->first();
+    @endphp
 
-                @else
-                  <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
-                @endif
+    @if(
+        $getperosnalinfo && 
+        strtolower(trim($getperosnalinfo->cxtype)) !== 'official'
+    )
+        <span class="fw-medium fs-sm">
+            Call us +91-999-185-6776
+        </span>
+    @endif
                 <br>
                 <span class=" fw-normal fs-xs">Get extra ad-ons</span>
             </div>
@@ -7656,7 +7665,7 @@
                             @if($getperosnalinfo->cxtype === 'official')
 
                               @else
-                                    <span class="d-block fw-medium fs-sm">
+                                    <span class="d-block fw-medium fs-sm">test
                                         📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
                                     </span>
                             @endif
