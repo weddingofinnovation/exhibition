@@ -7655,6 +7655,10 @@
 
                     {{-- Call Info Below Buttons --}}
                     <div class="mt-2">
+                        @php 
+                          $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->first();
+                        @endphp
+                        
                             @if($getperosnalinfo->cxtype == 'official')
 
                               @else
