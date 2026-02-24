@@ -7545,7 +7545,7 @@
         <div class="d-flex justify-content-between py-2 px-2">
             <div class="text-dark  pl-3 lh-1">
 
-           @php 
+            @php 
                 $getperosnalinfo = DB::table('plan_type_customers')
                 ->where('event_id', $event->id)->latest()->value('cxtype');
             @endphp
@@ -7657,7 +7657,10 @@
 
                     {{-- Call Info Below Buttons --}}
                     <div class="mt-2">
-                        
+                            @php 
+                                $getperosnalinfo = DB::table('plan_type_customers')
+                                ->where('event_id', $event->id)->latest()->value('cxtype');
+                            @endphp
                         
                             @if($getperosnalinfo == 'official')
 
