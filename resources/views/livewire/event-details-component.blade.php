@@ -7546,7 +7546,7 @@
             <div class="text-dark  pl-3 lh-1">
 
             @php 
-               $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->get();
+               $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->first();
             @endphp
 
                 @if($getperosnalinfo->cxtype === 'official')
