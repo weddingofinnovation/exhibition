@@ -7552,7 +7552,7 @@
         
 
     {{$getperosnalinfo}}
-        @if($getperosnalinfo->cxtype === 'official')
+        @if($getperosnalinfo->cxtype === official)
             <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
         @endif
 
