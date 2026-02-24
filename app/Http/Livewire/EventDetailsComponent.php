@@ -98,7 +98,7 @@ class EventDetailsComponent extends Component
     public function render()
     {   
        //$check = Cart::get();
-        $event = Event::where('slug', $this->slug)->first();
+        $event = Event::where('slug', $this->slug)->where('status','1')->where('admstatus','1')->first();
         $mytime = Carbon::today()->format ("Y-m-d");
         $poostKey = 'eventID';
         $eid = $event->id;
@@ -167,10 +167,7 @@ class EventDetailsComponent extends Component
         $premium = Franchise::where('status', 'active')->where('featured','premium')->limit(1);
         $pavillion = Pavillion::where('event_id',$event->id)->get();
 
-        
-
-
-          if (Auth::check()) 
+        if (Auth::check()) 
         {
             $rating = Rate::where('user_id', Auth::user()->id)->value('rate');
             $rate = Rate::where('user_id', Auth::user()->id)->value('event_id');
