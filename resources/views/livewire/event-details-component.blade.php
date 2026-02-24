@@ -7555,6 +7555,7 @@
             ->first();
     @endphp
 
+    {{$getperosnalinfo->cxtype}}
     @if(
         $getperosnalinfo && 
         strtolower(trim($getperosnalinfo->cxtype)) !== 'official'
