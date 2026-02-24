@@ -7665,7 +7665,7 @@
                             @if($getperosnalinfo == 'official')
 
                               @else
-                                    <span class="d-block fw-medium fs-sm">testoo
+                                    <span class="d-block fw-medium fs-sm">
                                         📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
                                     </span> 
                             @endif
