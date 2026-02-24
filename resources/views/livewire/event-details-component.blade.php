@@ -7554,7 +7554,7 @@
             <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
         @endif
 
-        
+
 
                 <br>
                 <span class=" fw-normal fs-xs">Get extra ad-ons</span>
@@ -7655,7 +7655,7 @@
 
                     {{-- Call Info Below Buttons --}}
                     <div class="mt-2">
-                            @if($getperosnalinfo->cxtype === 'official')
+                            @if($getperosnalinfo->cxtype == 'official')
 
                               @else
                                     <span class="d-block fw-medium fs-sm">test
