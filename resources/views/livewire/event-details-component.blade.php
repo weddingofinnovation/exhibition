@@ -7545,12 +7545,14 @@
         <div class="d-flex justify-content-between py-2 px-2">
             <div class="text-dark  pl-3 lh-1">
 
-            @php 
-               $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->first();
+           @php 
+                $getperosnalinfo = DB::table('plan_type_customers')
+                ->where('event_id', $evento->id)->latest()->value('cxtype');
             @endphp
 
+
         
-        @if($getperosnalinfo->cxtype == 'official')
+        @if($getperosnalinfo == 'official')
             <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
         @endif
 
@@ -7655,13 +7657,15 @@
 
                     {{-- Call Info Below Buttons --}}
                     <div class="mt-2">
-                        @php 
-                          $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->first();
-                        @endphp
-
-                        {{ dd($getperosnalinfo->cxtype) }}
                         
-                          
+                        
+                            @if($getperosnalinfo == 'official')
+
+                              @else
+                                    <span class="d-block fw-medium fs-sm">testoo
+                                        📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
+                                    </span> 
+                            @endif
                         
                         <span class="d-block fw-normal fs-xs text-muted">Get extra ad-ons</span>
                     </div>
