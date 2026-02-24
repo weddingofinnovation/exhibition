@@ -7544,7 +7544,17 @@
     <div class="handheld-toolbar bg-secondary">
         <div class="d-flex justify-content-between py-2 px-2">
             <div class="text-dark  pl-3 lh-1">
-                <span class="fw-medium fs-sm">Call us +91-999-185-6776</span><br>
+
+            @php 
+               $getperosnalinfo = DB::table('PlanTypeCustomers')->get();
+            @endphp
+
+                @if($getperosnalinfo->cxtype === 'official')
+
+                @else
+                  <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
+                @endif
+                <br>
                 <span class=" fw-normal fs-xs">Get extra ad-ons</span>
             </div>
             @if( $event->businessrevenue == 'visitor' )
@@ -7643,9 +7653,14 @@
 
                     {{-- Call Info Below Buttons --}}
                     <div class="mt-2">
-                        <span class="d-block fw-medium fs-sm">
-                            📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
-                        </span>
+                            @if($getperosnalinfo->cxtype === 'official')
+
+                              @else
+                                    <span class="d-block fw-medium fs-sm">
+                                        📞 Call us <a href="tel:+919991856776" class="text-decoration-none text-dark">+91-999-185-6776</a>
+                                    </span>
+                            @endif
+                        
                         <span class="d-block fw-normal fs-xs text-muted">Get extra ad-ons</span>
                     </div>
                 </span>
