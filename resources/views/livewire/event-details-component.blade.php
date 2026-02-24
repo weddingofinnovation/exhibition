@@ -7546,7 +7546,7 @@
             <div class="text-dark  pl-3 lh-1">
 
             @php 
-               $getperosnalinfo = DB::table('PlanTypeCustomers')->get();
+               $getperosnalinfo = DB::table('plan_type_customers')->get();
             @endphp
 
                 @if($getperosnalinfo->cxtype === 'official')
