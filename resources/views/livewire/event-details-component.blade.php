@@ -7547,7 +7547,7 @@
 
            @php 
                 $getperosnalinfo = DB::table('plan_type_customers')
-                ->where('event_id', $evento->id)->latest()->value('cxtype');
+                ->where('event_id', $event->id)->latest()->value('cxtype');
             @endphp
 
 
