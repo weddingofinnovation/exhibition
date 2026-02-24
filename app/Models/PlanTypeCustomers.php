@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class PlanTypeCustomers extends Model
 {
     use HasFactory;
+    protected $table = "plan_type_customers";
 }
