@@ -13,7 +13,6 @@
     }
   </style>
 
-
   @if($board == 'thankyou')
       @php
         $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
@@ -151,8 +150,6 @@
             </div>
         </div>
       </div>
-
-      
     @else
       <div class="container">
         <div class="row">
