@@ -66,21 +66,26 @@
                     <div class="row">
 
                         <!-- Stall Number -->
-                        <div class="col-md-6 mb-3">
+                         <div class="row">
+                          <div class="col-md-6 mb-3">
                             <label class="form-label">Stall Number</label>
                             <input type="text" class="form-control" 
                                   wire:model.defer="stallno" placeholder="Enter Stall Number">
                             @error('stallno') 
                                 <small class="text-danger">{{ $message }}</small> 
                             @enderror
-
+                          </div>
+                          
+                          <div class="col-md-6 mb-3">
                             <label class="form-label">hall</label>
                             <input type="text" class="form-control" 
                                   wire:model.defer="hall" placeholder="Enter hall number">
                             @error('hall') 
                                 <small class="text-danger">{{ $message }}</small> 
                             @enderror
-                        </div>
+                          </div>
+                         </div>
+                        
 
                         <!-- Company Name -->
                         <div class="col-md-6 mb-3">
