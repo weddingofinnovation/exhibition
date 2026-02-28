@@ -134,7 +134,7 @@
                         <div class="row">
 
                             <!-- Stall Details -->
-                            <div class="col-md-3 mb-3">
+                            <div class="col-md-3 mb-2">
                                 <label class="form-label">Stall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="stallno"
@@ -144,7 +144,7 @@
                                 @enderror
                             </div>
 
-                            <div class="col-md-3 mb-3">
+                            <div class="col-md-3 mb-2">
                                 <label class="form-label">Hall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="hall"
@@ -155,7 +155,7 @@
                             </div>
 
                             <!-- Company Name -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Company Name</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="company"
@@ -166,7 +166,7 @@
                             </div>
 
                             <!-- Concern Person -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Concern Person</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="contact_person"
@@ -177,7 +177,7 @@
                             </div>
 
                             <!-- Designation -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Designation</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="designation"
@@ -188,7 +188,7 @@
                             </div>
 
                             <!-- Email -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Email Address</label>
                                 <input type="email" class="form-control"
                                       wire:model.defer="email"
@@ -199,7 +199,7 @@
                             </div>
 
                             <!-- Phone -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Mobile Number</label>
                                 <input type="tel" class="form-control"
                                       wire:model.defer="number"
@@ -210,7 +210,7 @@
                             </div>
 
                           <!-- Logo Upload -->
-                          <div class="col-md-6 mb-3">
+                          <div class="col-md-6 mb-2">
                               <label class="form-label">Company Logo (PDF Only)</label>
                               <input type="file" class="form-control"
                                     wire:model="logo"
