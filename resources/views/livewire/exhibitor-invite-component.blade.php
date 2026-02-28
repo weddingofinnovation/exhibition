@@ -238,8 +238,7 @@
                                     accept=".jpg,.jpeg,.png,.pdf">
 
                               <small class="text-muted">
-                                  If you have created any promotional poster for this exhibition,
-                                  JPG, PNG or PDF – Max 5MB
+                                  Upload promotional poster (JPG, PNG or PDF – Max 5MB)
                               </small>
 
                               @error('poster')
