@@ -66,14 +66,6 @@
                       Maximize your exhibition ROI with our structured meeting support.
                   </p>
 
-                  <ul class="small ps-3">
-                      <li class="mb-2">Verified Buyer Registrations</li>
-                      <li class="mb-2">Exhibitor Approved Entry Pass</li>
-                      <li class="mb-2">Scheduled Meeting Slots</li>
-                      <li class="mb-2">Brand Promotion Support</li>
-                      <li class="mb-2">Post-Event Lead Data</li>
-                  </ul>
-
                   <style>
                     .benefit-list {
                         position: relative;
@@ -109,7 +101,7 @@
                         top: 6px;
                         width: 8px;
                         height: 8px;
-                        background-color: #e91e63;
+                        background-color: #000;
                         border-radius: 50%;
                     }
                   </style>
@@ -122,7 +114,7 @@
                       <div class="benefit-item">Post-Event Lead Data</div>
                   </div>
 
-                  <div class="mt-3 p-2 bg-warning text-dark rounded small">
+                  <div class="mt-3 p-2 bg-dark text-light rounded small">
                       📈 Convert Visitors into Business Deals
                   </div>
 
