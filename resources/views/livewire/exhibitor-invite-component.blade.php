@@ -141,33 +141,47 @@
                           @enderror
                       </div>
 
-                      <!-- Logo Upload -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Company Logo</label>
-                          <input type="file" class="form-control"
-                                wire:model="logo">
-                          @error('logo')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
+                     <!-- Logo Upload -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Company Logo (PDF Only)</label>
+                        <input type="file" class="form-control"
+                              wire:model="logo"
+                              accept=".pdf">
 
-                          <div wire:loading wire:target="logo" class="text-info mt-2">
-                              Uploading...
-                          </div>
-                      </div>
+                        <small class="text-muted">
+                            Upload company logo in PDF format only. Max size 2MB.
+                        </small>
 
-                      <!-- Poster Upload -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Poster</label>
-                          <input type="file" class="form-control"
-                                wire:model="poster">
-                          @error('poster')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
+                        @error('logo')
+                            <small class="text-danger d-block">{{ $message }}</small>
+                        @enderror
 
-                          <div wire:loading wire:target="poster" class="text-info mt-2">
-                              Uploading...
-                          </div>
-                      </div>
+                        <div wire:loading wire:target="logo" class="text-info mt-1">
+                            Uploading...
+                        </div>
+                    </div>
+
+
+                    <!-- Poster Upload -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Promotional Poster</label>
+                        <input type="file" class="form-control"
+                              wire:model="poster"
+                              accept=".jpg,.jpeg,.png,.pdf">
+
+                        <small class="text-muted">
+                            If you have created any promotional poster for this exhibition,
+                            kindly upload it here. (JPG, PNG or PDF – Max 5MB)
+                        </small>
+
+                        @error('poster')
+                            <small class="text-danger d-block">{{ $message }}</small>
+                        @enderror
+
+                        <div wire:loading wire:target="poster" class="text-info mt-1">
+                            Uploading...
+                        </div>
+                    </div>
 
                   </div>
 
