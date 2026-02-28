@@ -76,41 +76,42 @@
 
                   <style>
                     .benefit-list {
-    position: relative;
-    padding-left: 25px;
-    margin-top: 15px;
-}
+                        position: relative;
+                        padding-left: 25px;
+                        margin-top: 15px;
+                    }
 
-/* Vertical Line */
-.benefit-list::before {
-    content: "";
-    position: absolute;
-    left: 8px;
-    top: 5px;
-    bottom: 5px;
-    width: 3px;
-    background-color: #e91e63; /* Pink line */
-    border-radius: 5px;
-}
+                    /* Vertical Line */
+                    .benefit-list::before {
+                        content: "";
+                        position: absolute;
+                        left: 8px;
+                        top: 5px;
+                        bottom: 5px;
+                        width: 3px;
+                        background-color: #000; /* Pink line */
+                        border-radius: 5px;
+                    }
 
-/* Each Item */
-.benefit-item {
-    position: relative;
-    margin-bottom: 14px;
-    font-size: 14px;
-    color: #333;
-}
+                    /* Each Item */
+                    .benefit-item {
+                        position: relative;
+                        margin-bottom: 14px;
+                        font-size: 14px;
+                        color: #333;
+                    }
 
-/* Small horizontal connector line */
-.benefit-item::before {
-    content: "";
-    position: absolute;
-    left: -17px;
-    top: 8px;
-    width: 12px;
-    height: 2px;
-    background-color: #e91e63;
-}
+                    /* Small horizontal connector line */
+                    .benefit-item::before {
+                        content: "";
+                        position: absolute;
+                        left: -20px;
+                        top: 6px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: #e91e63;
+                        border-radius: 50%;
+                    }
                   </style>
 
                   <div class="benefit-list">
