@@ -57,8 +57,8 @@
 
         <div class="row">
 
-          <div class="col-3">
-              <div class="p-3 bg-dark text-white rounded h-100">
+          <div class="col-3 border-end">
+              <div class="p-3 text-dark rounded h-100">
 
                   <h5 class="fw-bold mb-3">Business Connect Benefits</h5>
 
@@ -82,7 +82,7 @@
           </div>
 
           <div class="col-9">
-              <div class="card shadow-sm border-0 rounded-0">
+              <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
                       <h5 class="mb-0 text-light">Exhibitor Registration</h5>
                   </div>
