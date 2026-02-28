@@ -54,145 +54,177 @@
     @elseif($board == 'exhibitor')
 
       <div class="container mt-4">
-        <div class="card shadow-sm">
-            <div class="card-header bg-dark text-white">
-                <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-            </div>
 
-            <div class="card-body">
+        <div class="row">
 
-               <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+          <div class="col-3">
+              <div class="p-3 bg-dark text-white rounded h-100">
 
-                  <div class="row">
+                  <h5 class="fw-bold mb-3">Business Connect Benefits</h5>
 
-                      <!-- Stall Details -->
-                      <div class="col-md-3 mb-3">
-                          <label class="form-label">Stall Number</label>
-                          <input type="text" class="form-control"
-                                wire:model.defer="stallno"
-                                placeholder="Enter Stall Number">
-                          @error('stallno')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
+                  <p class="small">
+                      Maximize your exhibition ROI with our structured meeting support.
+                  </p>
 
-                      <div class="col-md-3 mb-3">
-                          <label class="form-label">Hall Number</label>
-                          <input type="text" class="form-control"
-                                wire:model.defer="hall"
-                                placeholder="Enter Hall Number">
-                          @error('hall')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
+                  <ul class="small ps-3">
+                      <li class="mb-2">Verified Buyer Registrations</li>
+                      <li class="mb-2">Exhibitor Approved Entry Pass</li>
+                      <li class="mb-2">Scheduled Meeting Slots</li>
+                      <li class="mb-2">Brand Promotion Support</li>
+                      <li class="mb-2">Post-Event Lead Data</li>
+                  </ul>
 
-                      <!-- Company Name -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Company Name</label>
-                          <input type="text" class="form-control"
-                                wire:model.defer="company"
-                                placeholder="Enter Company Name">
-                          @error('company')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
-
-                      <!-- Concern Person -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Concern Person</label>
-                          <input type="text" class="form-control"
-                                wire:model.defer="contact_person"
-                                placeholder="Enter Concern Person Name">
-                          @error('contact_person')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
-
-                      <!-- Designation -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Designation</label>
-                          <input type="text" class="form-control"
-                                wire:model.defer="designation"
-                                placeholder="Enter Designation">
-                          @error('designation')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
-
-                      <!-- Email -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Email Address</label>
-                          <input type="email" class="form-control"
-                                wire:model.defer="email"
-                                placeholder="Enter Email">
-                          @error('email')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
-
-                      <!-- Phone -->
-                      <div class="col-md-6 mb-3">
-                          <label class="form-label">Mobile Number</label>
-                          <input type="tel" class="form-control"
-                                wire:model.defer="number"
-                                placeholder="Enter Mobile Number">
-                          @error('number')
-                              <small class="text-danger">{{ $message }}</small>
-                          @enderror
-                      </div>
-
-                     <!-- Logo Upload -->
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Company Logo (PDF Only)</label>
-                        <input type="file" class="form-control"
-                              wire:model="logo"
-                              accept=".pdf">
-
-                        <small class="text-muted">
-                            Upload company logo in PDF format only. Max size 2MB.
-                        </small>
-
-                        @error('logo')
-                            <small class="text-danger d-block">{{ $message }}</small>
-                        @enderror
-
-                        <div wire:loading wire:target="logo" class="text-info mt-1">
-                            Uploading...
-                        </div>
-                    </div>
-
-
-                    <!-- Poster Upload -->
-                    <div class="col-md-6 mb-3">
-                        <label class="form-label">Promotional Poster</label>
-                        <input type="file" class="form-control"
-                              wire:model="poster"
-                              accept=".jpg,.jpeg,.png,.pdf">
-
-                        <small class="text-muted">
-                            If you have created any promotional poster for this exhibition,
-                            JPG, PNG or PDF – Max 5MB
-                        </small>
-
-                        @error('poster')
-                            <small class="text-danger d-block">{{ $message }}</small>
-                        @enderror
-
-                        <div wire:loading wire:target="poster" class="text-info mt-1">
-                            Uploading...
-                        </div>
-                    </div>
-
+                  <div class="mt-3 p-2 bg-warning text-dark rounded small">
+                      📈 Convert Visitors into Business Deals
                   </div>
 
-                  <button type="submit" class="btn btn-primary w-100">
-                      Submit
-                  </button>
+              </div>
+          </div>
 
-              </form>
+          <div class="col-9">
+              <div class="card shadow-sm">
+                  <div class="card-header bg-dark text-white">
+                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
+                  </div>
 
-            </div>
+                  <div class="card-body">
+
+                    <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+
+                        <div class="row">
+
+                            <!-- Stall Details -->
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label">Stall Number</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="stallno"
+                                      placeholder="Enter Stall Number">
+                                @error('stallno')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-3 mb-3">
+                                <label class="form-label">Hall Number</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="hall"
+                                      placeholder="Enter Hall Number">
+                                @error('hall')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Company Name -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Company Name</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="company"
+                                      placeholder="Enter Company Name">
+                                @error('company')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Concern Person -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Concern Person</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="contact_person"
+                                      placeholder="Enter Concern Person Name">
+                                @error('contact_person')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Designation -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Designation</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="designation"
+                                      placeholder="Enter Designation">
+                                @error('designation')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control"
+                                      wire:model.defer="email"
+                                      placeholder="Enter Email">
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Mobile Number</label>
+                                <input type="tel" class="form-control"
+                                      wire:model.defer="number"
+                                      placeholder="Enter Mobile Number">
+                                @error('number')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                          <!-- Logo Upload -->
+                          <div class="col-md-6 mb-3">
+                              <label class="form-label">Company Logo (PDF Only)</label>
+                              <input type="file" class="form-control"
+                                    wire:model="logo"
+                                    accept=".pdf">
+
+                              <small class="text-muted">
+                                  Upload company logo in PDF format only. Max size 2MB.
+                              </small>
+
+                              @error('logo')
+                                  <small class="text-danger d-block">{{ $message }}</small>
+                              @enderror
+
+                              <div wire:loading wire:target="logo" class="text-info mt-1">
+                                  Uploading...
+                              </div>
+                          </div>
+
+
+                          <!-- Poster Upload -->
+                          <div class="col-md-6 mb-3">
+                              <label class="form-label">Promotional Poster</label>
+                              <input type="file" class="form-control"
+                                    wire:model="poster"
+                                    accept=".jpg,.jpeg,.png,.pdf">
+
+                              <small class="text-muted">
+                                  If you have created any promotional poster for this exhibition,
+                                  JPG, PNG or PDF – Max 5MB
+                              </small>
+
+                              @error('poster')
+                                  <small class="text-danger d-block">{{ $message }}</small>
+                              @enderror
+
+                              <div wire:loading wire:target="poster" class="text-info mt-1">
+                                  Uploading...
+                              </div>
+                          </div>
+
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Submit
+                        </button>
+
+                    </form>
+
+                  </div>
+              </div>
+          </div>
+          
         </div>
+        
       </div>
 
     @else
