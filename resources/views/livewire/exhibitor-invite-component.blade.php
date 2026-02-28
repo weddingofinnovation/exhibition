@@ -258,6 +258,73 @@
 
                     </form>
 
+                    <form action="">
+                        <hr>
+                        <h6 class="fw-bold mt-3 mb-3">Business Details</h6>
+
+                        <div class="row">
+
+                            <!-- Product Category -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Product Category</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="product_category"
+                                      placeholder="e.g. Food Processing Machinery">
+                            </div>
+
+                            <!-- Industry -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Industry</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="industry"
+                                      placeholder="e.g. Hospitality / FMCG / Export">
+                            </div>
+
+                            <!-- Type of Deals -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Type of Deals Interested In</label>
+                                <select class="form-control" wire:model.defer="deal_type">
+                                    <option value="">Select Deal Type</option>
+                                    <option>Dealer / Distributor</option>
+                                    <option>Franchise</option>
+                                    <option>Marketing Partner</option>
+                                    <option>Export Buyer</option>
+                                    <option>Bulk Purchase</option>
+                                </select>
+                            </div>
+
+                            <!-- Contact For -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Contact Person For Business Meetings</label>
+                                <input type="text" class="form-control"
+                                      wire:model.defer="meeting_contact"
+                                      placeholder="Name of Meeting Representative">
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <div class="alert alert-success mt-4">
+                        <strong>Your Business Invite Link:</strong><br>
+                        <input type="text" class="form-control mt-2"
+                              value="https://yourdomain.com/meet/{{ $slug }}"
+                              readonly>
+                    </div>
+
+                    <div class="mt-3">
+                        <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet/{{ $slug }}"
+                          target="_blank"
+                          class="btn btn-success btn-sm">
+                          Share on WhatsApp
+                        </a>
+
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://yourdomain.com/meet/{{ $slug }}"
+                          target="_blank"
+                          class="btn btn-primary btn-sm">
+                          Share on LinkedIn
+                        </a>
+                    </div>
+
                   </div>
               </div>
           </div>
