@@ -66,7 +66,7 @@
                   <div class="row">
 
                       <!-- Stall Details -->
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-3 mb-3">
                           <label class="form-label">Stall Number</label>
                           <input type="text" class="form-control"
                                 wire:model.defer="stallno"
@@ -76,7 +76,7 @@
                           @enderror
                       </div>
 
-                      <div class="col-md-6 mb-3">
+                      <div class="col-md-3 mb-3">
                           <label class="form-label">Hall Number</label>
                           <input type="text" class="form-control"
                                 wire:model.defer="hall"
