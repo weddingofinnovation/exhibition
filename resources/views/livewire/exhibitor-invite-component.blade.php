@@ -61,116 +61,121 @@
 
             <div class="card-body">
 
-                <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+               <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
 
-                    <div class="row">
+                  <div class="row">
 
-                        <!-- Stall Number -->
-                         <div class="row">
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label">Stall Number</label>
-                            <input type="text" class="form-control" 
-                                  wire:model.defer="stallno" placeholder="Enter Stall Number">
-                            @error('stallno') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
+                      <!-- Stall Details -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Stall Number</label>
+                          <input type="text" class="form-control"
+                                wire:model.defer="stallno"
+                                placeholder="Enter Stall Number">
+                          @error('stallno')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Hall Number</label>
+                          <input type="text" class="form-control"
+                                wire:model.defer="hall"
+                                placeholder="Enter Hall Number">
+                          @error('hall')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Company Name -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Company Name</label>
+                          <input type="text" class="form-control"
+                                wire:model.defer="company"
+                                placeholder="Enter Company Name">
+                          @error('company')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Concern Person -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Concern Person</label>
+                          <input type="text" class="form-control"
+                                wire:model.defer="contact_person"
+                                placeholder="Enter Concern Person Name">
+                          @error('contact_person')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Designation -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Designation</label>
+                          <input type="text" class="form-control"
+                                wire:model.defer="designation"
+                                placeholder="Enter Designation">
+                          @error('designation')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Email -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Email Address</label>
+                          <input type="email" class="form-control"
+                                wire:model.defer="email"
+                                placeholder="Enter Email">
+                          @error('email')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Phone -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Mobile Number</label>
+                          <input type="tel" class="form-control"
+                                wire:model.defer="number"
+                                placeholder="Enter Mobile Number">
+                          @error('number')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+                      </div>
+
+                      <!-- Logo Upload -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Company Logo</label>
+                          <input type="file" class="form-control"
+                                wire:model="logo">
+                          @error('logo')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+
+                          <div wire:loading wire:target="logo" class="text-info mt-2">
+                              Uploading...
                           </div>
-                          
-                          <div class="col-md-6 mb-3">
-                            <label class="form-label">hall</label>
-                            <input type="text" class="form-control" 
-                                  wire:model.defer="hall" placeholder="Enter hall number">
-                            @error('hall') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
+                      </div>
+
+                      <!-- Poster Upload -->
+                      <div class="col-md-6 mb-3">
+                          <label class="form-label">Poster</label>
+                          <input type="file" class="form-control"
+                                wire:model="poster">
+                          @error('poster')
+                              <small class="text-danger">{{ $message }}</small>
+                          @enderror
+
+                          <div wire:loading wire:target="poster" class="text-info mt-2">
+                              Uploading...
                           </div>
-                         </div>
-                        
+                      </div>
 
-                        <!-- Company Name -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Company Name</label>
-                            <input type="text" class="form-control" 
-                                  wire:model.defer="company" placeholder="Enter Company Name">
-                            @error('company') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
+                  </div>
 
-                        <!-- Email -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Concern Person</label>
-                            <input type="email" class="form-control" 
-                                  wire:model.defer="email" placeholder="Enter Email">
-                            @error('email') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
+                  <button type="submit" class="btn btn-primary w-100">
+                      Submit
+                  </button>
 
-                        <!-- Email -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Designation</label>
-                            <input type="email" class="form-control" 
-                                  wire:model.defer="email" placeholder="Enter Email">
-                            @error('email') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
-
-                        <!-- Email -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" 
-                                  wire:model.defer="email" placeholder="Enter Email">
-                            @error('email') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
-
-                        <!-- Phone -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Mobile Number</label>
-                            <input type="tel" class="form-control" 
-                                  wire:model.defer="number" placeholder="Enter Mobile Number">
-                            @error('number') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-                        </div>
-
-                        <!-- Logo Upload -->
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Company Logo</label>
-                            <input type="file" class="form-control" 
-                                  wire:model="logo">
-                            @error('logo') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-
-                            <div wire:loading wire:target="logo" class="text-info mt-2">
-                                Uploading...
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">Poser</label>
-                            <input type="file" class="form-control" 
-                                  wire:model="poster">
-                            @error('poster') 
-                                <small class="text-danger">{{ $message }}</small> 
-                            @enderror
-
-                            <div wire:loading wire:target="poster" class="text-info mt-2">
-                                Uploading...
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <button type="submit" class="btn btn-primary w-100">
-                        Submit
-                    </button>
-
-                </form>
+              </form>
 
             </div>
         </div>
