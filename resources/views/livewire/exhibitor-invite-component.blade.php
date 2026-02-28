@@ -171,7 +171,7 @@
 
                         <small class="text-muted">
                             If you have created any promotional poster for this exhibition,
-                            kindly upload it here. (JPG, PNG or PDF – Max 5MB)
+                            JPG, PNG or PDF – Max 5MB
                         </small>
 
                         @error('poster')
