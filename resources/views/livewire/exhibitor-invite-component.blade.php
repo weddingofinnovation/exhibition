@@ -56,7 +56,7 @@
       <div class="container mt-4">
         <div class="card shadow-sm">
             <div class="card-header bg-dark text-white">
-                <h5 class="mb-0">Exhibitor Registration</h5>
+                <h5 class="mb-0 text-light">Exhibitor Registration</h5>
             </div>
 
             <div class="card-body">
@@ -71,6 +71,13 @@
                             <input type="text" class="form-control" 
                                   wire:model.defer="stallno" placeholder="Enter Stall Number">
                             @error('stallno') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+
+                            <label class="form-label">hall</label>
+                            <input type="text" class="form-control" 
+                                  wire:model.defer="hall" placeholder="Enter hall number">
+                            @error('hall') 
                                 <small class="text-danger">{{ $message }}</small> 
                             @enderror
                         </div>
@@ -126,7 +133,7 @@
                         </div>
 
                         <!-- Logo Upload -->
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-6 mb-3">
                             <label class="form-label">Company Logo</label>
                             <input type="file" class="form-control" 
                                   wire:model="logo">
@@ -139,10 +146,23 @@
                             </div>
                         </div>
 
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Poster</label>
+                            <input type="file" class="form-control" 
+                                  wire:model="poster">
+                            @error('poster') 
+                                <small class="text-danger">{{ $message }}</small> 
+                            @enderror
+
+                            <div wire:loading wire:target="poster" class="text-info mt-2">
+                                Uploading...
+                            </div>
+                        </div>
+
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">
-                        Submit Registration
+                        Submit
                     </button>
 
                 </form>
@@ -150,6 +170,7 @@
             </div>
         </div>
       </div>
+
     @else
       <div class="container">
         <div class="row">
