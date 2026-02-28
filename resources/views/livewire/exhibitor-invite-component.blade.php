@@ -74,6 +74,53 @@
                       <li class="mb-2">Post-Event Lead Data</li>
                   </ul>
 
+                  <style>
+                    .benefit-list {
+    position: relative;
+    padding-left: 25px;
+    margin-top: 15px;
+}
+
+/* Vertical Line */
+.benefit-list::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 5px;
+    bottom: 5px;
+    width: 3px;
+    background-color: #e91e63; /* Pink line */
+    border-radius: 5px;
+}
+
+/* Each Item */
+.benefit-item {
+    position: relative;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Small horizontal connector line */
+.benefit-item::before {
+    content: "";
+    position: absolute;
+    left: -17px;
+    top: 8px;
+    width: 12px;
+    height: 2px;
+    background-color: #e91e63;
+}
+                  </style>
+
+                  <div class="benefit-list">
+                      <div class="benefit-item">Verified Buyer Registrations</div>
+                      <div class="benefit-item">Exhibitor Approved Entry Pass</div>
+                      <div class="benefit-item">Scheduled Meeting Slots</div>
+                      <div class="benefit-item">Brand Promotion Support</div>
+                      <div class="benefit-item">Post-Event Lead Data</div>
+                  </div>
+
                   <div class="mt-3 p-2 bg-warning text-dark rounded small">
                       📈 Convert Visitors into Business Deals
                   </div>
