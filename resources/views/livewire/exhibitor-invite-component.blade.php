@@ -82,7 +82,7 @@
           </div>
 
           <div class="col-9">
-              <div class="card shadow-sm">
+              <div class="card shadow-sm border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
                       <h5 class="mb-0 text-light">Exhibitor Registration</h5>
                   </div>
@@ -222,7 +222,7 @@
                   </div>
               </div>
           </div>
-          
+
         </div>
         
       </div>
