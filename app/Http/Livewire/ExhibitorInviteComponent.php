@@ -125,7 +125,7 @@ class ExhibitorInviteComponent extends Component
 
     public $stallno;
     public $hall;
-    
+
     public function exhibitorreferral()
     {
         $firstlevel = new user();
@@ -137,6 +137,8 @@ class ExhibitorInviteComponent extends Component
         $firstlevel->password = Hash::make($firstlevel->email);
         $firstlevel->utype = 'USR';
         $firstlevel->save();
+
+        dd($firstlevel);
 
         
         $brandupdate = New Brand();
