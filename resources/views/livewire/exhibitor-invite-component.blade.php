@@ -143,7 +143,7 @@
                             <div class="col-md-3 mb-2">
                                 <label class="form-label">Stall Number</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="stallno"
+                                      wire:model.lazy="stallno"
                                       placeholder="Enter Stall Number" required>
                                 @error('stallno')
                                     <small class="text-danger">{{ $message }}</small>
@@ -153,7 +153,7 @@
                             <div class="col-md-3 mb-2">
                                 <label class="form-label">Hall Number</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="hall"
+                                      wire:model.lazy="hall"
                                       placeholder="Enter Hall Number" required>
                                 @error('hall')
                                     <small class="text-danger">{{ $message }}</small>
@@ -164,7 +164,7 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Company Name</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="company"
+                                      wire:model.lazy="company"
                                       placeholder="Enter Company Name" required>
                                 @error('company')
                                     <small class="text-danger">{{ $message }}</small>
@@ -175,7 +175,7 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Concern Person</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="name"
+                                      wire:model.lazy="name"
                                       placeholder="Enter Concern Person Name" required>
                                 @error('name')
                                     <small class="text-danger">{{ $message }}</small>
@@ -186,7 +186,7 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Designation</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="designation"
+                                      wire:model.lazy="designation"
                                       placeholder="Enter Designation" required>
                                 @error('designation')
                                     <small class="text-danger">{{ $message }}</small>
@@ -197,7 +197,7 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Email Address</label>
                                 <input type="email" class="form-control"
-                                      wire:model.defer="email"
+                                      wire:model.lazy="email"
                                       placeholder="Enter Email" required>
                                 @error('email')
                                     <small class="text-danger">{{ $message }}</small>
