@@ -136,7 +136,7 @@
                   <div class="card-body">
 
                   @if($board == 'exhibitor')
-                    <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
+                    <form wire:submit.prevent="exhibitorreferral" enctype="multipart/form-data">
 
                         <div class="row">
                             <!-- Stall Details -->
