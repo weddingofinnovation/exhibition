@@ -208,9 +208,9 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Mobile Number</label>
                                 <input type="tel" class="form-control"
-                                      wire:model.defer="number"
+                                      wire:model.defer="phone"
                                       placeholder="Enter Mobile Number" required>
-                                @error('number')
+                                @error('phone')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
