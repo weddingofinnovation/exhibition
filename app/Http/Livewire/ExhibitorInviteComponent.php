@@ -123,6 +123,9 @@ class ExhibitorInviteComponent extends Component
        $upted->save();
     }
 
+    public $stallno;
+    public $hall;
+    
     public function exhibitorreferral()
     {
         $firstlevel = new user();
