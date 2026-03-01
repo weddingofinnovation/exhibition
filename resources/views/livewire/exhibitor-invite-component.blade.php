@@ -124,11 +124,18 @@
           <div class="col-9">
               <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
+                    @if($board == 'exhibitor')
                       <h5 class="mb-0 text-light">Exhibitor Registration</h5>
+                    @elseif($board == 'details')
+                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
+                    @elseif($board == 'thankyou')
+                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
+                    @endif
                   </div>
 
                   <div class="card-body">
 
+                  @if($board == 'exhibitor')
                     <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
 
                         <div class="row">
@@ -257,7 +264,7 @@
                         </button>
 
                     </form>
-
+                  @elseif($board == 'details')
                     <form action="">
                         <hr>
                         <h6 class="fw-bold mt-3 mb-3">Business Details</h6>
@@ -302,15 +309,23 @@
                             </div>
 
                         </div>
-                    </form>
 
+                        <button type="submit" class="btn btn-primary w-100">
+                            back
+                        </button>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Submit
+                        </button>
+                    </form>
+                  @elseif($board == 'thankyou')
                     <div class="alert alert-success mt-4">
                         <strong>Your Business Invite Link:</strong><br>
                         <input type="text" class="form-control mt-2"
                               value="https://exhibition.org.in/business/exhibitor/invitee/1209"
                               readonly>
-                    </div>
-
+                     </div>
+                  @endif
                     <div class="mt-3">
                         <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
                           target="_blank"
