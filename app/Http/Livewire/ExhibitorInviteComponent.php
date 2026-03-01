@@ -2,8 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\bcontact;
+use App\Models\Brand;
 use App\Models\Lead;
+use App\Models\Participant;
 use App\Models\User;
+use FontLib\Table\Type\name;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -79,34 +84,34 @@ class ExhibitorInviteComponent extends Component
             $referralCode = $companySlug . '-' . $stallClean . '-' . $randomCode;
         }
 
-        $exhibitor = Exhibitor::create([
-            'stallno'        => $this->stallno,
-            'company'        => $this->company,
-            'contact_person' => $this->contact_person,
-            'designation'    => $this->designation,
-            'email'          => $this->email,
-            'number'         => $this->number,
-            'logo'           => $logoPath,
-            'referral_code'  => $referralCode,
-        ]);
+        $exhibitor = new Exhibitor();
+        $exhibitor->stallno = $this->stallno;
+        $exhibitor->company = $this->company;
+        $exhibitor->contact_person = $this->contact_person;
+        $exhibitor->designation = $this->designation;
+        $exhibitor->email = $this->email;
+        $exhibitor->number = $this->number;
+        $exhibitor->logo = $logoPath;
+        $exhibitor->referral_code = $referralCode;
+        $exhibitor->save();
 
         session()->flash('success', 'Registration Successful!');
 
         $this->reset();
 
         $uptedetail = new Brand();
-       $uptedetail->brand_name = trim($this->brand_name);
-       $uptedetail->brand_logo = $this->brand_logo;
+        $uptedetail->brand_name = trim($this->brand_name);
+        $uptedetail->brand_logo = $this->brand_logo;
 
-       $uptedetail->organisation = trim($this->organisation);
+        $uptedetail->organisation = trim($this->organisation);
 
-       $uptedetail->industry = trim($this->industry);
-       $uptedetail->user_id = Auth::user()->id;
-       $uptedetail->status = '1';
-       $uptedetail->save();
+        $uptedetail->industry = trim($this->industry);
+        $uptedetail->user_id = Auth::user()->id;
+        $uptedetail->status = '1';
+        $uptedetail->save();
 
 
-       $upted = new Bcontact();
+       $upted = new bcontact();
        $upted->brand_id = $uptedetail->id ;
        $upted->name = trim($this->name);
        $upted->designation = trim($this->designation);
@@ -118,6 +123,70 @@ class ExhibitorInviteComponent extends Component
        $upted->save();
     }
 
+    public function exhibitorreferral()
+    {
+        $firstlevel = new user();
+        $firstlevel->name = $this->name;
+        $firstlevel->slug = Str::slug($this->name);
+        
+        $firstlevel->phone = $this->phone;
+        $firstlevel->email = $this->email;
+        $firstlevel->password = Hash::make($firstlevel->email);
+        $firstlevel->utype = 'USR';
+        $firstlevel->save();
+
+        
+        $brandupdate = New Brand();
+
+        $brandupdate->organisation = $this->organisation;
+        $brandupdate->brand_name = $this->brand_name; 
+        $brandupdate->event_id = $this->event_id;
+        $brandupdate->slug = Str::slug($this->brand_name); 
+        $brandupdate->brand_logo = $this->brand_logo; 
+
+
+        $brandupdate->industry = $this->industry; 
+        $brandupdate->sector = $this->sector; 
+        $brandupdate->category_id = $this->category_id; 
+        
+         $brandupdate->long_desc = $this->long_desc; 
+         $brandupdate->short_desc = $this->short_desc;
+         $brandupdate->about = $this->about;
+         
+         $brandupdate->official_website = $this->official_website; 
+         $brandupdate->business_model = $this->business_model; 
+         $brandupdate->type_business_model = $this->type_business_model; 
+
+         $brandupdate->twitter = $this->twitter; 
+         $brandupdate->facebook = $this->facebook;
+         $brandupdate->instagram = $this->instagram;
+         $brandupdate->youtube = $this->youtube;
+
+         $brandupdate->status = $this->status;
+         $brandupdate->save();
+
+            $createbrandcontact = new bcontact();
+            $createbrandcontact->name = $this->name;
+            $createbrandcontact->designation = $this->designation;
+            $createbrandcontact->email = $this->email;
+            $createbrandcontact->phone = $this->phone; 
+            $createbrandcontact->brand_id = $brandupdate->id;
+            $createbrandcontact->user_id = $firstlevel->id;
+            $createbrandcontact->status = $this->status;
+            $createbrandcontact->admstatus = $this->admstatus; 
+            $createbrandcontact->save();
+
+        $createexhibitionstall = new Participant();
+        $createexhibitionstall->brand_id = $brandupdate->id; 
+        $createexhibitionstall->user_id = $firstlevel->id;
+        $createexhibitionstall->status = $this->status;
+        $createexhibitionstall->admstatus = $this->admstatus; 
+        $createexhibitionstall->event_id = $this->event_id;
+        $createexhibitionstall->year = $this->year;
+        $createexhibitionstall->save();
+
+    }
+    
 
     public function exhibitorrequestedvisitorforpass()
     {
