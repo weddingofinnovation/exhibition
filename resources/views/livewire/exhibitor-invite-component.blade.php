@@ -216,10 +216,10 @@
                             </div>
 
                             <!-- Phone -->
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-4 mb-2">
                                 <label class="form-label">Mobile Number</label>
                                 <input type="tel" class="form-control"
-                                      wire:model.defer="phone"
+                                      wire:model.lazy="phone"
                                       placeholder="Enter Mobile Number" required>
                                 @error('phone')
                                     <small class="text-danger">{{ $message }}</small>
