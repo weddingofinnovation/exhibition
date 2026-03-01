@@ -139,13 +139,12 @@
                     <form wire:submit.prevent="submitForm" enctype="multipart/form-data">
 
                         <div class="row">
-
                             <!-- Stall Details -->
                             <div class="col-md-3 mb-2">
                                 <label class="form-label">Stall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="stallno"
-                                      placeholder="Enter Stall Number">
+                                      placeholder="Enter Stall Number" required>
                                 @error('stallno')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -155,7 +154,7 @@
                                 <label class="form-label">Hall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="hall"
-                                      placeholder="Enter Hall Number">
+                                      placeholder="Enter Hall Number" required>
                                 @error('hall')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -166,7 +165,7 @@
                                 <label class="form-label">Company Name</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="company"
-                                      placeholder="Enter Company Name">
+                                      placeholder="Enter Company Name" required>
                                 @error('company')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -177,7 +176,7 @@
                                 <label class="form-label">Concern Person</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="contact_person"
-                                      placeholder="Enter Concern Person Name">
+                                      placeholder="Enter Concern Person Name" required>
                                 @error('contact_person')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -188,7 +187,7 @@
                                 <label class="form-label">Designation</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="designation"
-                                      placeholder="Enter Designation">
+                                      placeholder="Enter Designation" required>
                                 @error('designation')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -199,7 +198,7 @@
                                 <label class="form-label">Email Address</label>
                                 <input type="email" class="form-control"
                                       wire:model.defer="email"
-                                      placeholder="Enter Email">
+                                      placeholder="Enter Email" required>
                                 @error('email')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -210,7 +209,7 @@
                                 <label class="form-label">Mobile Number</label>
                                 <input type="tel" class="form-control"
                                       wire:model.defer="number"
-                                      placeholder="Enter Mobile Number">
+                                      placeholder="Enter Mobile Number" required>
                                 @error('number')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
@@ -276,7 +275,7 @@
                                 <label class="form-label">Product Category</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="product_category"
-                                      placeholder="e.g. Food Processing Machinery">
+                                      placeholder="e.g. Food Processing Machinery" required>
                             </div>
 
                             <!-- Industry -->
@@ -284,13 +283,13 @@
                                 <label class="form-label">Industry</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="industry"
-                                      placeholder="e.g. Hospitality / FMCG / Export">
+                                      placeholder="e.g. Hospitality / FMCG / Export" required>
                             </div>
 
                             <!-- Type of Deals -->
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Type of Deals Interested In</label>
-                                <select class="form-control" wire:model.defer="deal_type">
+                                <select class="form-control" wire:model.defer="deal_type" required>
                                     <option value="">Select Deal Type</option>
                                     <option>Dealer / Distributor</option>
                                     <option>Franchise</option>
@@ -305,26 +304,24 @@
                                 <label class="form-label">Contact Person For Business Meetings</label>
                                 <input type="text" class="form-control"
                                       wire:model.defer="meeting_contact"
-                                      placeholder="Name of Meeting Representative">
+                                      placeholder="Name of Meeting Representative" required>
                             </div>
 
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100">
-                            back
-                        </button>
+                        <div class="col-md-6 mb-3">
+                          <button type="submit" class="btn btn-primary w-20">Back</button>
 
-                        <button type="submit" class="btn btn-primary w-100">
-                            Submit
-                        </button>
+                          <button type="submit" class="btn btn-primary w-80">Submit</button>
+                        </div>
                     </form>
                   @elseif($board == 'thankyou')
-                    <div class="alert alert-success mt-4">
+                      <div class="alert alert-success mt-4">
                         <strong>Your Business Invite Link:</strong><br>
                         <input type="text" class="form-control mt-2"
                               value="https://exhibition.org.in/business/exhibitor/invitee/1209"
                               readonly>
-                     </div>
+                      </div>
                   
                     <div class="mt-3">
                         <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"

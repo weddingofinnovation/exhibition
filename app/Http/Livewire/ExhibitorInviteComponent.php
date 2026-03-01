@@ -93,6 +93,29 @@ class ExhibitorInviteComponent extends Component
         session()->flash('success', 'Registration Successful!');
 
         $this->reset();
+
+        $uptedetail = new Brand();
+       $uptedetail->brand_name = trim($this->brand_name);
+       $uptedetail->brand_logo = $this->brand_logo;
+
+       $uptedetail->organisation = trim($this->organisation);
+
+       $uptedetail->industry = trim($this->industry);
+       $uptedetail->user_id = Auth::user()->id;
+       $uptedetail->status = '1';
+       $uptedetail->save();
+
+
+       $upted = new Bcontact();
+       $upted->brand_id = $uptedetail->id ;
+       $upted->name = trim($this->name);
+       $upted->designation = trim($this->designation);
+       $upted->email = trim($this->email);
+       $upted->phone = $this->phone;
+       $upted->user_id = Auth::user()->id;
+       $upted->status ='1';
+       $upted->admstatus = '1';
+       $upted->save();
     }
 
 
