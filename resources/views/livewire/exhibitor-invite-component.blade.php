@@ -171,8 +171,30 @@
                                 @enderror
                             </div>
 
-                            <!-- Concern Person -->
+                            <!-- Email -->
                             <div class="col-md-6 mb-2">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control"
+                                      wire:model.lazy="email"
+                                      placeholder="Enter Email" required>
+                                @error('email')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-2">
+                                <label class="form-label">Brand Name</label>
+                                <input type="email" class="form-control"
+                                      wire:model.lazy="brand_name"
+                                      placeholder="Enter Brand name" required>
+                                @error('brand_name')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <!-- Concern Person -->
+                            <div class="col-md-4 mb-2">
                                 <label class="form-label">Concern Person</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="name"
@@ -183,23 +205,12 @@
                             </div>
 
                             <!-- Designation -->
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-4 mb-2">
                                 <label class="form-label">Designation</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="designation"
                                       placeholder="Enter Designation" required>
                                 @error('designation')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <!-- Email -->
-                            <div class="col-md-6 mb-2">
-                                <label class="form-label">Email Address</label>
-                                <input type="email" class="form-control"
-                                      wire:model.lazy="email"
-                                      placeholder="Enter Email" required>
-                                @error('email')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
@@ -214,6 +225,10 @@
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
+
+                            
+
+                            
 
                           <!-- Logo Upload -->
                           <div class="col-md-6 mb-2">
