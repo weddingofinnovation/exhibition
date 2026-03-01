@@ -175,9 +175,9 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Concern Person</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="contact_person"
+                                      wire:model.defer="name"
                                       placeholder="Enter Concern Person Name" required>
-                                @error('contact_person')
+                                @error('name')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
