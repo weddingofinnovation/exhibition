@@ -325,7 +325,7 @@
                               value="https://exhibition.org.in/business/exhibitor/invitee/1209"
                               readonly>
                      </div>
-                  @endif
+                  
                     <div class="mt-3">
                         <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
                           target="_blank"
@@ -339,7 +339,7 @@
                           Share on LinkedIn
                         </a>
                     </div>
-
+                  @endif
                   </div>
               </div>
           </div>
