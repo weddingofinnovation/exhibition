@@ -161,7 +161,7 @@ class ExhibitorInviteComponent extends Component
 
         $newimage = Carbon::now()->timestamp.'.'.$this->poster->extension();
         $this->poster->storeAs('exhibition', $newimage);
-        $brandupdate->brand_poster = $newimage;
+        $brandupdate->product_video = $newimage;
 
         $brandupdate->save();
 
