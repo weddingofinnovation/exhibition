@@ -8,6 +8,7 @@
 @section('page_list',' addJob')
 @section('page_name',' All Job')
 
+<main>
 <!-- Custom CSS -->
 <style>
   .custom-select {
@@ -248,10 +249,9 @@
 
           @auth
               @if(auth()->user()->utype === 'ADM')
-                  <a href="#" wire:click.prevent="delete({{ $exhibitor->id }})" onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
-                          class="btn btn-danger btn-sm">
-                      Delete - {{$exhibitor->id}}
-                  </a> 
+                  
+                  <a class="btn btn-primary btn-sm" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" 
+                  wire:click.prevent="delete({{$exhibitor->id}})"> <i class="bi bi-x"></i> {{$exhibitor->id}} </a>
               @endif
           @endauth
 
@@ -265,3 +265,4 @@
     @endforeach
   @endif
 </div>
+</main>
