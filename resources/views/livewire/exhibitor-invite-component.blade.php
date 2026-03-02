@@ -541,7 +541,25 @@
                                 @enderror
                              </div>
 
-                             <div class="col-md-12 mb-3">
+                              <div class="col-md-12 mb-2">
+                                  <label class="form-label">Short Introduction</label>
+
+                                  <!-- Hidden Input For Livewire -->
+                                  <input id="short_desc"
+                                        type="hidden"
+                                        wire:model="short_desc">
+
+                                  <!-- Trix Editor -->
+                                  <trix-editor input="short_desc"
+                                              class="form-control"
+                                              wire:ignore></trix-editor>
+
+                                  @error('short_desc')
+                                      <small class="text-danger">{{ $message }}</small>
+                                  @enderror
+                              </div>
+
+                             <div class="col-md-12 mb-2">
                                 <label class="form-label">Short Introduction</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="short_desc"
@@ -739,4 +757,11 @@
       </div>
   @endif
 
+  @push(scripts)
+    <script>
+    document.addEventListener("trix-change", function(event) {
+        @this.set('short_desc', event.target.value);
+    });
+    </script>
+  @endpush
 </main>
