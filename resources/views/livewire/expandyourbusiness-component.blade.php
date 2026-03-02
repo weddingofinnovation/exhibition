@@ -248,10 +248,10 @@
 
           @auth
               @if(auth()->user()->utype === 'ADM')
-                  <button wire:click="delete({{ $exhibitor->id }})"
+                  <button href="#" wire:click.prevent="delete({{ $exhibitor->id }})" onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
                           class="btn btn-danger btn-sm">
                       Delete - {{$exhibitor->id}}
-                  </button>
+                  </button> 
               @endif
           @endauth
 
