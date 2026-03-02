@@ -558,16 +558,16 @@
                              </div>
 
                               <div class="col-md-12 mb-2">
-                                  <label class="form-label">Short Introduction</label>
+                                  <!-- <label class="form-label">Short Introduction</label> -->
 
                                   <!-- Hidden Input For Livewire -->
                                   <input id="short_desc"
                                         type="hidden"
-                                        wire:model="short_desc" placeholder="short Description">
+                                        wire:model="short_desc" >
 
                                   <!-- Trix Editor -->
                                   <trix-editor input="short_desc"
-                                              class="form-control"
+                                              class="form-control" placeholder="short Description"
                                               wire:ignore></trix-editor>
 
                                   @error('short_desc')
