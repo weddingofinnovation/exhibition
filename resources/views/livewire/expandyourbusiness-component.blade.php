@@ -237,14 +237,23 @@
           <div class="col-12 col-md-4">
             <a href="#" 
               class="fw-semibold text-decoration-none text-dark">
-              {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name ?? ''}} {{$exhibitor->id}}
+              {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name ?? ''}} 
             </a>
-            <span class="text-muted small d-block" >India</span>
+            <span class="text-muted small d-block" >India</span> 
           </div>
 
           <div class="col-12 col-md-4 d-flex justify-content-center">
             <img src="{{ $exhibitors->logo ?? '' }}" alt="{{ $exhibitors->brand_name ?? ''}}">
           </div>
+
+          @auth
+              @if(auth()->user()->utype === 'ADM')
+                  <button wire:click="delete({{ $exhibitor->id }})"
+                          class="btn btn-danger btn-sm">
+                      Delete - {{$exhibitor->id}}
+                  </button>
+              @endif
+          @endauth
 
           <div class="col-12 col-md-4 text-md-end">
             <div class="small"><i class="bi bi-geo-alt"></i> {{ $exhibitors->hall ?? '' }}</div>

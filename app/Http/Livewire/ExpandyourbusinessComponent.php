@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Lead;
+use App\Models\Participant;
 use Livewire\Component;
 use PDF;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -34,6 +35,21 @@ class ExpandyourbusinessComponent extends Component
         //$pdf->setPaper('A4','portrait');
         $pdf->setOptions(['defaultFont' => 'san-serif']);
         return $pdf->download($visitor->name . '-expand_your_business.pdf');
+    }
+
+    public function delete($id)
+    {
+        if (auth()->user()->utype !== 'ADM') {
+            abort(403);
+        }
+
+        $participant = Participant::find($id);
+
+        if ($participant) {
+            $participant->delete();
+        }
+
+        session()->flash('message', 'Deleted successfully.');
     }
 
     public function render()
