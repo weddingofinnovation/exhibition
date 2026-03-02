@@ -464,10 +464,10 @@
           <div class="col-9">
               <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
-                      <div class="d-flex justify-content-center align-items-center text-center">
+                      <div class="d-flex justify-content-start align-items-center text-center">
 
                           <!-- Step 1 -->
-                          <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
+                          <div class="{{ $board == 'exhibitor' ? 'fw-bold text-light' : ($board != 'exhibitor' ? 'text-light' : '') }}">
                               Exhibitor Registration
                               @if($board != 'exhibitor')
                                   ✔
@@ -477,7 +477,7 @@
                           <div class="mx-2">-</div>
 
                           <!-- Step 2 -->
-                          <div class="{{ $board == 'details' ? 'fw-bold text-warning' : ($board == 'thankyou' ? 'text-success' : 'text-muted') }}">
+                          <div class="{{ $board == 'details' ? 'fw-bold text-light' : ($board == 'thankyou' ? 'text-light' : 'text-muted') }}">
                               Business Details
                               @if($board == 'thankyou')
                                   ✔
@@ -588,10 +588,23 @@
 
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                          <button type="submit" class="btn btn-primary w-20">Back</button>
+                        <div class="row mt-3">
+    
+                            <div class="col-md-3">
+                                <button type="button" 
+                                        class="btn btn-outline-secondary w-100"
+                                        wire:click="goBack">
+                                    Back
+                                </button>
+                            </div>
 
-                          <button type="submit" class="btn btn-primary w-80">Submit</button>
+                            <div class="col-md-9">
+                                <button type="submit" 
+                                        class="btn btn-primary w-100">
+                                    Submit
+                                </button>
+                            </div>
+
                         </div>
                     </form>
                   
