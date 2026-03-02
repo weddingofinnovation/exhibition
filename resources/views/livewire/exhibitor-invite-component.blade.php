@@ -463,7 +463,8 @@
 
           <div class="col-9">
               <div class="card border-0 rounded-0">
-                  <div class="d-flex justify-content-center align-items-center text-center">
+                  <div class="card-header bg-dark text-white">
+                      <div class="d-flex justify-content-center align-items-center text-center">
 
                           <!-- Step 1 -->
                           <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
@@ -483,14 +484,10 @@
                               @endif
                           </div>
 
-                          <div class="mx-2">-</div>
-
-                          <!-- Step 3 -->
-                          <div class="{{ $board == 'thankyou' ? 'fw-bold text-warning' : 'text-muted' }}">
-                              Thanks
-                          </div>
+                          
 
                       </div>
+                  </div>
 
                   <div class="card-body">
 
