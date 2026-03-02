@@ -391,7 +391,8 @@ public $selectedYear;
 
 
     public function optioDelete($id)
-    {   $opTio = Optio::find($id);
+    {   
+        $opTio = Optio::find($id);
         $opTio->delete();
         session()->flash('message','Response has been deleted Successfully');
     }

@@ -43,6 +43,7 @@ class ExpandyourbusinessComponent extends Component
             abort(403);
         }
 
+        dd($id);
         $participant = Participant::find($id);
 
         if ($participant) {
