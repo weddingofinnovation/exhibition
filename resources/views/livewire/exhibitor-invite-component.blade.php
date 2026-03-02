@@ -757,7 +757,7 @@
       </div>
   @endif
 
-  @push(scripts)
+  @push('scripts')
     <script>
     document.addEventListener("trix-change", function(event) {
         @this.set('short_desc', event.target.value);
