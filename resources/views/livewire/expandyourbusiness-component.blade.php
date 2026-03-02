@@ -263,6 +263,74 @@
         </div>
       </div>
     @endforeach
+
+    @foreach($geteventexhibitors as $exhibitor)
+
+@php
+    $brand = DB::table('brands')->where('id', $exhibitor->brand_id)->first();
+@endphp
+
+<div class="card shadow-sm border-0 mb-3">
+    <div class="card-body">
+        <div class="row align-items-center">
+
+            {{-- Logo --}}
+            <div class="col-4 col-md-2 text-center mb-3 mb-md-0">
+                <img src="{{ $brand->logo ?? asset('no-image.png') }}"
+                     alt="{{ $brand->brand_name ?? '' }}"
+                     class="img-fluid rounded"
+                     style="max-height:80px; object-fit:contain;">
+            </div>
+
+            {{-- Brand Info --}}
+            <div class="col-8 col-md-4">
+                <h6 class="mb-1 fw-bold">
+                    {{ $brand->brand_name ?? '' }}
+                </h6>
+                <small class="text-muted d-block">
+                    <i class="bi bi-geo-alt"></i> India
+                </small>
+                <small class="text-muted">
+                    Hall: {{ $exhibitor->hall ?? '' }}
+                </small>
+            </div>
+
+            {{-- Stall Info --}}
+            <div class="col-12 col-md-3 mt-3 mt-md-0">
+                <span class="badge bg-light text-dark border">
+                    Stall: {{ $exhibitor->stallno ?? '' }}
+                </span>
+                <br>
+                <small class="text-muted">
+                    Ref: {{ $exhibitor->referencecode ?? '' }}
+                </small>
+            </div>
+
+            {{-- Action Buttons --}}
+            <div class="col-12 col-md-3 text-md-end mt-3 mt-md-0">
+
+                <a href="#" class="btn btn-outline-secondary btn-sm me-2">
+                    <i class="bi bi-star"></i>
+                </a>
+
+                @auth
+                @if(auth()->user()->utype === 'ADM')
+                    <button type="button"
+                            wire:click="delete({{ $exhibitor->id }})"
+                            onclick="confirm('Delete this exhibitor?') || event.stopImmediatePropagation()"
+                            class="btn btn-danger btn-sm">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                @endif
+                @endauth
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@endforeach
   @endif
 </div>
 </main>
