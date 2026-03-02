@@ -7,6 +7,7 @@ use App\Models\Brand;
 use App\Models\Lead;
 use App\Models\Participant;
 use App\Models\User;
+use Carbon\Carbon;
 use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -128,6 +129,7 @@ class ExhibitorInviteComponent extends Component
     public $organisation;
     public $brand_name;
     public $brand_logo;
+    public $short_desc;
 
     public function exhibitorreferral()
     {
@@ -150,7 +152,15 @@ class ExhibitorInviteComponent extends Component
         $brandupdate->event_id = $this->event_id;
         $brandupdate->slug = Str::slug($this->brand_name); 
 
-        $brandupdate->brand_logo = $this->brand_logo; 
+        $newimage = Carbon::now()->timestamp.'.'.$this->logo->extension();
+        $this->logo->storeAs('exhibition', $newimage);
+        $brandupdate->brand_logo = $newimage;
+
+
+        $newimage = Carbon::now()->timestamp.'.'.$this->poster->extension();
+        $this->poster->storeAs('exhibition', $newimage);
+        $brandupdate->brand_poster = $newimage;
+
 
         // $brandupdate->industry = $this->industry; 
         // $brandupdate->sector = $this->sector; 
@@ -185,6 +195,13 @@ class ExhibitorInviteComponent extends Component
 
         $createexhibitionstall = new Participant();
         $createexhibitionstall->brand_id = $brandupdate->id; 
+
+        $stallNumber = 'TEN-' . $this->year 
+             . '-H' . $this->hall 
+             . '-' . str_pad($this->stallno, 3, '0', STR_PAD_LEFT);
+
+        $createexhibitionstall->brand_id = $stallNumber;
+
         $createexhibitionstall->user_id = $firstlevel->id;
         $createexhibitionstall->status = $this->status;
         $createexhibitionstall->admstatus = $this->admstatus; 
