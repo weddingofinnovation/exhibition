@@ -258,6 +258,7 @@ class ExhibitorInviteComponent extends Component
 
         $createexhibitionstall->save();
 
+        return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id]);
     }
     
    
