@@ -164,9 +164,9 @@
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Company Name</label>
                                 <input type="text" class="form-control"
-                                      wire:model.lazy="company"
+                                      wire:model.lazy="organisation"
                                       placeholder="Enter Company Name" required>
-                                @error('company')
+                                @error('organisation')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
@@ -226,9 +226,6 @@
                                 @enderror
                             </div>
 
-                            
-
-                            
 
                           <!-- Logo Upload -->
                           <div class="col-md-6 mb-2">
@@ -291,6 +288,10 @@
                                 <input type="text" class="form-control"
                                       wire:model.defer="product_category"
                                       placeholder="e.g. Food Processing Machinery" required>
+
+                                @error('product_category')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <!-- Industry -->
@@ -299,6 +300,10 @@
                                 <input type="text" class="form-control"
                                       wire:model.defer="industry"
                                       placeholder="e.g. Hospitality / FMCG / Export" required>
+
+                                @error('industry')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <!-- Type of Deals -->
@@ -312,15 +317,43 @@
                                     <option>Export Buyer</option>
                                     <option>Bulk Purchase</option>
                                 </select>
+                                @error('deal_type')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
 
                             <!-- Contact For -->
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Contact Person For Business Meetings</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="meeting_contact"
+                                      wire:model.lazy="meeting_contact"
                                       placeholder="Name of Meeting Representative" required>
+                                @error('meeting_contact')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
+
+                             <div class="col-md-6 mb-3">
+                                <label class="form-label">Business Website</label>
+                                <input type="text" class="form-control"
+                                      wire:model.lazy="official_website"
+                                      placeholder="official Website" required>
+
+                                @error('official_website')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                             </div>
+
+                             <div class="col-md-12 mb-3">
+                                <label class="form-label">Short Introduction</label>
+                                <input type="text" class="form-control"
+                                      wire:model.lazy="short_desc"
+                                      placeholder="short Description" required>
+                                      
+                                @error('short_desc')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                             </div>
 
                         </div>
 

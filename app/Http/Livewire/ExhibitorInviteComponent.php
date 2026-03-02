@@ -137,9 +137,8 @@ class ExhibitorInviteComponent extends Component
         $firstlevel->password = Hash::make($firstlevel->email);
         $firstlevel->utype = 'USR';
         $firstlevel->save();
-
-        dd($firstlevel);
-
+        
+        $this->board = 'details';
         
         $brandupdate = New Brand();
 
@@ -147,20 +146,20 @@ class ExhibitorInviteComponent extends Component
         $brandupdate->brand_name = $this->brand_name; 
         $brandupdate->event_id = $this->event_id;
         $brandupdate->slug = Str::slug($this->brand_name); 
+
         $brandupdate->brand_logo = $this->brand_logo; 
 
-
-        $brandupdate->industry = $this->industry; 
-        $brandupdate->sector = $this->sector; 
-        $brandupdate->category_id = $this->category_id; 
+        // $brandupdate->industry = $this->industry; 
+        // $brandupdate->sector = $this->sector; 
+        // $brandupdate->category_id = $this->category_id; 
         
-         $brandupdate->long_desc = $this->long_desc; 
+        //  $brandupdate->long_desc = $this->long_desc; 
          $brandupdate->short_desc = $this->short_desc;
-         $brandupdate->about = $this->about;
+        //  $brandupdate->about = $this->about;
          
          $brandupdate->official_website = $this->official_website; 
-         $brandupdate->business_model = $this->business_model; 
-         $brandupdate->type_business_model = $this->type_business_model; 
+        //  $brandupdate->business_model = $this->business_model; 
+        //  $brandupdate->type_business_model = $this->type_business_model; 
 
          $brandupdate->twitter = $this->twitter; 
          $brandupdate->facebook = $this->facebook;
