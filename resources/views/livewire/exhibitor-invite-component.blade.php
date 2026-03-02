@@ -466,35 +466,24 @@
               <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
                       <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-                      <h5 class="mb-0 text-light">Details</h5>
+                      <h5 class="mb-0 text-light">Business Details</h5>
                   </div>
 
                   <div class="card-body">
 
                   
                     <form action="">
-                        <hr>
-                        <h6 class="fw-bold mt-3 mb-3">Business Details</h6>
+                      
+                        <small class="fw-bold mt-3 mb-3">Share your business details,</small>
 
                         <div class="row">
 
-                            <!-- Product Category -->
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Product Category</label>
-                                <input type="text" class="form-control"
-                                      wire:model.defer="product_category"
-                                      placeholder="e.g. Food Processing Machinery" required>
-
-                                @error('product_category')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
+                          
                             <!-- Industry -->
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-6 mb-2">
                                 <label class="form-label">Industry</label>
                                 <input type="text" class="form-control"
-                                      wire:model.defer="industry"
+                                      wire:model.lazy="industry"
                                       placeholder="e.g. Hospitality / FMCG / Export" required>
 
                                 @error('industry')
@@ -502,8 +491,20 @@
                                 @enderror
                             </div>
 
+                            <!-- Product Category -->
+                            <div class="col-md-6 mb-2">
+                                <label class="form-label">Sector</label>
+                                <input type="text" class="form-control"
+                                      wire:model.lazy="sector"
+                                      placeholder="e.g. Food Processing Machinery" required>
+
+                                @error('sector')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
                             <!-- Type of Deals -->
-                            <div class="col-md-6 mb-3">
+                            <!-- <div class="col-md-6 mb-3">
                                 <label class="form-label">Type of Deals Interested In</label>
                                 <select class="form-control" wire:model.defer="deal_type" required>
                                     <option value="">Select Deal Type</option>
@@ -516,7 +517,7 @@
                                 @error('deal_type')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                            </div>
+                            </div> -->
 
                             <!-- Contact For -->
                             <div class="col-md-6 mb-3">
@@ -553,7 +554,7 @@
 
                         </div>
 
-                        <div class="col-md-6 mb-3">
+                        <div class="col-md-12 mb-3">
                           <button type="submit" class="btn btn-primary w-20">Back</button>
 
                           <button type="submit" class="btn btn-primary w-80">Submit</button>
