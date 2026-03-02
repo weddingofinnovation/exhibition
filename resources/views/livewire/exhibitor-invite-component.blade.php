@@ -463,10 +463,34 @@
 
           <div class="col-9">
               <div class="card border-0 rounded-0">
-                  <div class="card-header bg-dark text-white">
-                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-                      <h5 class="mb-0 text-light">Business Details</h5>
-                  </div>
+                  <div class="d-flex justify-content-center align-items-center text-center">
+
+                          <!-- Step 1 -->
+                          <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
+                              Exhibitor Registration
+                              @if($board != 'exhibitor')
+                                  ✔
+                              @endif
+                          </div>
+
+                          <div class="mx-2">-</div>
+
+                          <!-- Step 2 -->
+                          <div class="{{ $board == 'details' ? 'fw-bold text-warning' : ($board == 'thankyou' ? 'text-success' : 'text-muted') }}">
+                              Business Details
+                              @if($board == 'thankyou')
+                                  ✔
+                              @endif
+                          </div>
+
+                          <div class="mx-2">-</div>
+
+                          <!-- Step 3 -->
+                          <div class="{{ $board == 'thankyou' ? 'fw-bold text-warning' : 'text-muted' }}">
+                              Thanks
+                          </div>
+
+                      </div>
 
                   <div class="card-body">
 
@@ -673,36 +697,36 @@
               <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
 
-    <div class="d-flex justify-content-center align-items-center text-center">
+                      <div class="d-flex justify-content-center align-items-center text-center">
 
-        <!-- Step 1 -->
-        <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
-            Exhibitor Registration
-            @if($board != 'exhibitor')
-                ✔
-            @endif
-        </div>
+                          <!-- Step 1 -->
+                          <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
+                              Exhibitor Registration
+                              @if($board != 'exhibitor')
+                                  ✔
+                              @endif
+                          </div>
 
-        <div class="mx-2">-</div>
+                          <div class="mx-2">-</div>
 
-        <!-- Step 2 -->
-        <div class="{{ $board == 'details' ? 'fw-bold text-warning' : ($board == 'thankyou' ? 'text-success' : 'text-muted') }}">
-            Business Details
-            @if($board == 'thankyou')
-                ✔
-            @endif
-        </div>
+                          <!-- Step 2 -->
+                          <div class="{{ $board == 'details' ? 'fw-bold text-warning' : ($board == 'thankyou' ? 'text-success' : 'text-muted') }}">
+                              Business Details
+                              @if($board == 'thankyou')
+                                  ✔
+                              @endif
+                          </div>
 
-        <div class="mx-2">-</div>
+                          <div class="mx-2">-</div>
 
-        <!-- Step 3 -->
-        <div class="{{ $board == 'thankyou' ? 'fw-bold text-warning' : 'text-muted' }}">
-            Thanks
-        </div>
+                          <!-- Step 3 -->
+                          <div class="{{ $board == 'thankyou' ? 'fw-bold text-warning' : 'text-muted' }}">
+                              Thanks
+                          </div>
 
-    </div>
+                      </div>
 
-</div>
+                  </div>
 
                   <div class="card-body">
  
