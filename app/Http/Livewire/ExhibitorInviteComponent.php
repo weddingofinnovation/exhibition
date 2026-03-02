@@ -132,7 +132,7 @@ class ExhibitorInviteComponent extends Component
     public $brand_logo;
     public $short_desc;
     public $logo;
-    public $poster , $official_website;
+    public $poster , $official_website, $sector;
 
     use WithFileUploads;
 
@@ -169,8 +169,8 @@ class ExhibitorInviteComponent extends Component
         $brandupdate->brand_poster = $newimage;
 
 
-        // $brandupdate->industry = $this->industry; 
-        // $brandupdate->sector = $this->sector; 
+         $brandupdate->industry = $this->industry; 
+         $brandupdate->sector = $this->sector; 
         // $brandupdate->category_id = $this->category_id; 
         
         //  $brandupdate->long_desc = $this->long_desc; 

@@ -590,19 +590,19 @@
 
                         <div class="row mt-3">
     
-                            <div class="col-md-3">
-                                <button type="button" 
-                                        class="btn btn-outline-secondary w-100"
+                            <div class="d-flex gap-3 mt-4">
+                                
+                                <button type="button"
+                                        class="btn btn-outline-secondary px-4"
                                         wire:click="goBack">
-                                    Back
+                                    ← Back
                                 </button>
-                            </div>
 
-                            <div class="col-md-9">
-                                <button type="submit" 
-                                        class="btn btn-primary w-100">
-                                    Submit
+                                <button type="submit"
+                                        class="btn btn-danger flex-fill">
+                                    Submit Business Details →
                                 </button>
+
                             </div>
 
                         </div>
