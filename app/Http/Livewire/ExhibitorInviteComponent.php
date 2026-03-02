@@ -132,7 +132,7 @@ class ExhibitorInviteComponent extends Component
     public $brand_logo;
     public $short_desc;
     public $logo;
-    public $poster;
+    public $poster , $official_website;
 
     use WithFileUploads;
 
@@ -148,7 +148,9 @@ class ExhibitorInviteComponent extends Component
         $firstlevel->utype = 'USR';
         $firstlevel->save();
         
-        $this->board = 'details';
+        //$this->board = 'details'; /business/{board}/invitee/{event_id?}/{visitorid?}
+
+        return redirect()->route('invitee.add', ['board' => 'details', 'event_id => $this->event_id']);
         
         $brandupdate = New Brand();
 
