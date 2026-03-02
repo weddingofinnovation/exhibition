@@ -176,7 +176,8 @@ class ExhibitorInviteComponent extends Component
 
     public function branddetailsformeeting()
     {
-       
+
+       dd(session()->all());
         $brandupdate = Brand::find(session('brand_id'));
         if ($brandupdate) {
             
