@@ -212,6 +212,7 @@ class ExhibitorInviteComponent extends Component
         //  $brandupdate->youtube = $this->youtube;
 
          $brandupdate->status = $this->status;
+         $brandupdate->user_id = session('user_id');
          $brandupdate->save();
 
         };
@@ -255,7 +256,7 @@ class ExhibitorInviteComponent extends Component
         $createexhibitionstall->admstatus = $this->admstatus; 
         $createexhibitionstall->event_id = $this->event_id;
         $createexhibitionstall->year = session('year');
-
+        dd($createexhibitionstall);
         $createexhibitionstall->save();
 
         return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id]);
