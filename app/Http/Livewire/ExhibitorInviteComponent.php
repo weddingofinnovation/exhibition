@@ -132,7 +132,7 @@ class ExhibitorInviteComponent extends Component
     public $brand_logo;
     public $short_desc;
     public $logo;
-    public $poster , $official_website, $sector, $meeting_person;
+    public $poster , $official_website, $sector, $meeting_person, $year;
 
     use WithFileUploads;
 
