@@ -394,8 +394,7 @@
       </div>
 
     @elseif($board == 'details')
-    <div class="container mt-4">
-
+      <div class="container mt-4">
         <div class="row">
 
           <div class="col-3 border-end">
@@ -473,11 +472,7 @@
 
                   
                     <form action="">
-                      
-                        <small class="fw-bold mt-3 mb-3">Share your business details,</small>
-
                         <div class="row">
-
                           
                             <!-- Industry -->
                             <div class="col-md-6 mb-2">
@@ -579,12 +574,12 @@
                         </div>
                     </form>
                   
-                      <div class="alert alert-success mt-4">
-                        <strong>Your Business Invite Link:</strong><br>
-                        <input type="text" class="form-control mt-2"
-                              value="https://exhibition.org.in/business/exhibitor/invitee/1209"
-                              readonly>
-                      </div>
+                    <div class="alert alert-success mt-4">
+                      <strong>Your Business Invite Link:</strong><br>
+                      <input type="text" class="form-control mt-2"
+                            value="https://exhibition.org.in/business/exhibitor/invitee/1209"
+                            readonly>
+                    </div>
                   
                     <div class="mt-3">
                         <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
@@ -605,7 +600,138 @@
           </div>
 
         </div>
-        
+      </div>
+    @elseif($board == 'thanks')
+    <div class="container mt-4">
+        <div class="row">
+
+          <div class="col-3 border-end">
+              <div class="p-3 text-dark rounded h-100">
+
+                  <h5 class="fw-bold mb-3">Business Connect Benefits</h5>
+
+                  <p class="small">
+                      Maximize your exhibition ROI with our structured meeting support.
+                  </p>
+
+                  <style>
+                    .benefit-list {
+                        position: relative;
+                        padding-left: 25px;
+                        margin-top: 15px;
+                    }
+
+                    /* Vertical Line */
+                    .benefit-list::before {
+                        content: "";
+                        position: absolute;
+                        left: 8px;
+                        top: 5px;
+                        bottom: 5px;
+                        width: 3px;
+                        background-color: #000; /* Pink line */
+                        border-radius: 5px;
+                    }
+
+                    /* Each Item */
+                    .benefit-item {
+                        position: relative;
+                        margin-bottom: 14px;
+                        font-size: 14px;
+                        color: #333;
+                    }
+
+                    /* Small horizontal connector line */
+                    .benefit-item::before {
+                        content: "";
+                        position: absolute;
+                        left: -20px;
+                        top: 6px;
+                        width: 8px;
+                        height: 8px;
+                        background-color: #000;
+                        border-radius: 50%;
+                    }
+                  </style>
+
+                  <div class="benefit-list">
+                      <div class="benefit-item">Verified Buyer Registrations</div>
+                      <div class="benefit-item">Exhibitor Approved Entry Pass</div>
+                      <div class="benefit-item">Scheduled Meeting Slots</div>
+                      <div class="benefit-item">Brand Promotion Support</div>
+                      <div class="benefit-item">Post-Event Lead Data</div>
+                  </div>
+
+                  <div class="mt-3 p-2 bg-dark text-light rounded small">
+                      📈 Convert Visitors into Business Deals
+                  </div>
+
+              </div>
+          </div>
+
+          <div class="col-9">
+              <div class="card border-0 rounded-0">
+                  <div class="card-header bg-dark text-white">
+
+    <div class="d-flex justify-content-center align-items-center text-center">
+
+        <!-- Step 1 -->
+        <div class="{{ $board == 'exhibitor' ? 'fw-bold text-warning' : ($board != 'exhibitor' ? 'text-success' : '') }}">
+            Exhibitor Registration
+            @if($board != 'exhibitor')
+                ✔
+            @endif
+        </div>
+
+        <div class="mx-2">-</div>
+
+        <!-- Step 2 -->
+        <div class="{{ $board == 'details' ? 'fw-bold text-warning' : ($board == 'thankyou' ? 'text-success' : 'text-muted') }}">
+            Business Details
+            @if($board == 'thankyou')
+                ✔
+            @endif
+        </div>
+
+        <div class="mx-2">-</div>
+
+        <!-- Step 3 -->
+        <div class="{{ $board == 'thankyou' ? 'fw-bold text-warning' : 'text-muted' }}">
+            Thanks
+        </div>
+
+    </div>
+
+</div>
+
+                  <div class="card-body">
+ 
+                    <div class="alert alert-success mt-4">
+                      <strong>Your Business Invite Link:</strong><br>
+                      <input type="text" class="form-control mt-2"
+                            value="https://exhibition.org.in/business/exhibitor/invitee/1209"
+                            readonly>
+                    </div>
+                  
+                    <div class="mt-3">
+                        <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
+                          target="_blank"
+                          class="btn btn-success btn-sm">
+                          Share on WhatsApp
+                        </a>
+
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://exhibition.org.in/business/exhibitor/invitee/1209"
+                          target="_blank"
+                          class="btn btn-primary btn-sm">
+                          Share on LinkedIn
+                        </a>
+                    </div>
+                  
+                  </div>
+              </div>
+          </div>
+
+        </div>
       </div>
     @else
       <div class="container">
