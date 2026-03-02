@@ -547,7 +547,7 @@
                                   <!-- Hidden Input For Livewire -->
                                   <input id="short_desc"
                                         type="hidden"
-                                        wire:model="short_desc">
+                                        wire:model="short_desc" placeholder="short Description">
 
                                   <!-- Trix Editor -->
                                   <trix-editor input="short_desc"
@@ -559,7 +559,7 @@
                                   @enderror
                               </div>
 
-                             <div class="col-md-12 mb-2">
+                             <!-- <div class="col-md-12 mb-2">
                                 <label class="form-label">Short Introduction</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="short_desc"
@@ -568,7 +568,7 @@
                                 @error('short_desc')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
-                             </div>
+                             </div> -->
 
                         </div>
 
