@@ -126,6 +126,7 @@ class ExhibitorInviteComponent extends Component
     public $stallno;
     public $hall;
     public $organisation;
+    public $brand_name;
 
     public function exhibitorreferral()
     {
