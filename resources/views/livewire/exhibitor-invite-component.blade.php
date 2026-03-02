@@ -185,7 +185,7 @@
                             <!-- Email -->
                             <div class="col-md-6 mb-2">
                                 <label class="form-label">Brand Name</label>
-                                <input type="email" class="form-control"
+                                <input type="text" class="form-control"
                                       wire:model.lazy="brand_name"
                                       placeholder="Enter Brand name" required>
                                 @error('brand_name')
@@ -349,7 +349,7 @@
                                 <input type="text" class="form-control"
                                       wire:model.lazy="short_desc"
                                       placeholder="short Description" required>
-                                      
+
                                 @error('short_desc')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
