@@ -140,7 +140,7 @@
 
                         <div class="row">
                             <!-- Stall Details -->
-                            <div class="col-md-3 mb-2">
+                            <div class="col-md-2 mb-2">
                                 <label class="form-label">Stall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="stallno"
@@ -150,12 +150,22 @@
                                 @enderror
                             </div>
 
-                            <div class="col-md-3 mb-2">
+                            <div class="col-md-2 mb-2">
                                 <label class="form-label">Hall Number</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="hall"
                                       placeholder="Enter Hall Number" required>
                                 @error('hall')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-2 mb-2">
+                                <label class="form-label">Stall Number</label>
+                                <input type="text" class="form-control"
+                                      wire:model.lazy="year"
+                                      placeholder="Enter Stall Number" required>
+                                @error('year')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
