@@ -132,7 +132,7 @@ class ExhibitorInviteComponent extends Component
     public $brand_logo;
     public $short_desc;
     public $logo;
-    public $poster , $official_website, $sector;
+    public $poster , $official_website, $sector, $meeting_person;
 
     use WithFileUploads;
 
@@ -190,7 +190,8 @@ class ExhibitorInviteComponent extends Component
          $brandupdate->save();
 
             $createbrandcontact = new bcontact();
-            $createbrandcontact->name = $this->name;
+            
+            $createbrandcontact->name = $this->meeting_person;
             $createbrandcontact->designation = $this->designation;
             $createbrandcontact->email = $this->email;
             $createbrandcontact->phone = $this->phone; 

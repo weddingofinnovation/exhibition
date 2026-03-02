@@ -539,9 +539,9 @@
                             <div class="col-md-6 mb-3">
                                 <label class="form-label">Contact Person For Business Meetings</label>
                                 <input type="text" class="form-control"
-                                      wire:model.lazy="meeting_contact"
+                                      wire:model.lazy="meeting_person"
                                       placeholder="Name of Meeting Representative" required>
-                                @error('meeting_contact')
+                                @error('meeting_person')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
@@ -590,7 +590,7 @@
 
                         <div class="row mt-3">
     
-                            <div class="d-flex gap-3 mt-4">
+                            <div class="d-flex mt-4">
                                 
                                 <button type="button"
                                         class="btn btn-outline-secondary px-4"
