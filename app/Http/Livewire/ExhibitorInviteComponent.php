@@ -131,9 +131,11 @@ class ExhibitorInviteComponent extends Component
     public $brand_name;
     public $brand_logo;
     public $short_desc;
+    public $logo;
+    public $poster;
 
     use WithFileUploads;
-    
+
     public function exhibitorreferral()
     {
         $firstlevel = new user();
