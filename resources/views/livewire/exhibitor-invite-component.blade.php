@@ -595,27 +595,6 @@
                         </div>
                     </form>
                   
-                    <div class="alert alert-success mt-4">
-                      <strong>Your Business Invite Link:</strong><br>
-                      <input type="text" class="form-control mt-2"
-                            value="https://exhibition.org.in/business/exhibitor/invitee/1209"
-                            readonly>
-                    </div>
-                  
-                    <div class="mt-3">
-                        <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
-                          target="_blank"
-                          class="btn btn-success btn-sm">
-                          Share on WhatsApp
-                        </a>
-
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://exhibition.org.in/business/exhibitor/invitee/1209"
-                          target="_blank"
-                          class="btn btn-primary btn-sm">
-                          Share on LinkedIn
-                        </a>
-                    </div>
-                  
                   </div>
               </div>
           </div>
