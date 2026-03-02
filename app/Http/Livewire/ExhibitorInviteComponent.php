@@ -147,11 +147,7 @@ class ExhibitorInviteComponent extends Component
         $firstlevel->password = Hash::make($firstlevel->email);
         $firstlevel->utype = 'USR';
         $firstlevel->save();
-        
-        //$this->board = 'details'; /business/{board}/invitee/{event_id?}/{visitorid?}
 
-        return redirect()->route('invitee.add', ['board' => 'details', 'event_id' => $this->event_id]);
-        
         $brandupdate = New Brand();
 
         $brandupdate->organisation = $this->organisation;
@@ -163,11 +159,40 @@ class ExhibitorInviteComponent extends Component
         $this->logo->storeAs('exhibition', $newimage);
         $brandupdate->brand_logo = $newimage;
 
-
         $newimage = Carbon::now()->timestamp.'.'.$this->poster->extension();
         $this->poster->storeAs('exhibition', $newimage);
         $brandupdate->brand_poster = $newimage;
 
+        $brandupdate->save();
+
+         // Store user id in session
+         session(['user_id' => $firstlevel->id, 'brand_id' => $brandupdate->id, 'stallno' => $this->stallno, 'hall' => $this->hall, 'year' => $this->year ]);
+
+        //$this->board = 'details'; /business/{board}/invitee/{event_id?}/{visitorid?}
+
+        return redirect()->route('invitee.add', ['board' => 'details', 'event_id' => $this->event_id]);
+        
+    }
+
+    public function branddetailsformeeting()
+    {
+       
+        $brandupdate = Brand::find(session('brand_id'));
+        if ($brandupdate) {
+            
+                 // $brandupdate->organisation = $this->organisation;
+        // $brandupdate->brand_name = $this->brand_name; 
+        // $brandupdate->event_id = $this->event_id;
+        // $brandupdate->slug = Str::slug($this->brand_name); 
+
+        // $newimage = Carbon::now()->timestamp.'.'.$this->logo->extension();
+        // $this->logo->storeAs('exhibition', $newimage);
+        // $brandupdate->brand_logo = $newimage;
+
+
+        // $newimage = Carbon::now()->timestamp.'.'.$this->poster->extension();
+        // $this->poster->storeAs('exhibition', $newimage);
+        // $brandupdate->brand_poster = $newimage;
 
          $brandupdate->industry = $this->industry; 
          $brandupdate->sector = $this->sector; 
@@ -181,44 +206,61 @@ class ExhibitorInviteComponent extends Component
         //  $brandupdate->business_model = $this->business_model; 
         //  $brandupdate->type_business_model = $this->type_business_model; 
 
-         $brandupdate->twitter = $this->twitter; 
-         $brandupdate->facebook = $this->facebook;
-         $brandupdate->instagram = $this->instagram;
-         $brandupdate->youtube = $this->youtube;
+        //  $brandupdate->twitter = $this->twitter; 
+        //  $brandupdate->facebook = $this->facebook;
+        //  $brandupdate->instagram = $this->instagram;
+        //  $brandupdate->youtube = $this->youtube;
 
          $brandupdate->status = $this->status;
          $brandupdate->save();
 
-            $createbrandcontact = new bcontact();
-            
-            $createbrandcontact->name = $this->meeting_person;
-            $createbrandcontact->designation = $this->designation;
-            $createbrandcontact->email = $this->email;
-            $createbrandcontact->phone = $this->phone; 
-            $createbrandcontact->brand_id = $brandupdate->id;
-            $createbrandcontact->user_id = $firstlevel->id;
-            $createbrandcontact->status = $this->status;
-            $createbrandcontact->admstatus = $this->admstatus; 
-            $createbrandcontact->save();
+        };
+
+        // $brandupdate = New Brand();
+
+        $getexhibitorcontact = User::find(session('user_id'));
+
+        $createbrandcontact = new bcontact();        
+        $createbrandcontact->name = $this->meeting_person;
+
+        $createbrandcontact->designation = $getexhibitorcontact->designation;
+        $createbrandcontact->email = $getexhibitorcontact->email;
+        $createbrandcontact->phone = $getexhibitorcontact->phone; 
+
+        $createbrandcontact->brand_id = session('brand_id');
+        $createbrandcontact->user_id = session('user_id');
+        $createbrandcontact->status = $this->status;
+        $createbrandcontact->admstatus = $this->admstatus; 
+        $createbrandcontact->save();
 
         $createexhibitionstall = new Participant();
-        $createexhibitionstall->brand_id = $brandupdate->id; 
+        // $createexhibitionstall->brand_id = $brandupdate->id; 
 
-        $stallNumber = 'TEN-' . $this->year 
+        $stallNumber = 'TEN-' . session('year') 
              . '-H' . $this->hall 
              . '-' . str_pad($this->stallno, 3, '0', STR_PAD_LEFT);
+        
+        $createexhibitionstall->stallno = session('stallno');
+        $createexhibitionstall->hall = session('hall');
 
-        $createexhibitionstall->brand_id = $stallNumber;
+        // Unique random 4 character code
+        $uniqueCode = strtoupper(Str::random(4));
 
-        $createexhibitionstall->user_id = $firstlevel->id;
+        $referenceCode = $stallNumber . '-' . $uniqueCode;
+        $createexhibitionstall->referencecode = $referenceCode;
+        $createexhibitionstall->brand_id = session('brand_id');
+
+        $createexhibitionstall->user_id = session('user_id');
         $createexhibitionstall->status = $this->status;
         $createexhibitionstall->admstatus = $this->admstatus; 
         $createexhibitionstall->event_id = $this->event_id;
-        $createexhibitionstall->year = $this->year;
+        $createexhibitionstall->year = session('year');
+
         $createexhibitionstall->save();
 
     }
     
+   
 
     public function exhibitorrequestedvisitorforpass()
     {
