@@ -236,7 +236,7 @@
 
           <div class="col-12 col-md-4">
             <a href="#" 
-              class="fw-semibold text-decoration-none text-dark"> {{}}
+              class="fw-semibold text-decoration-none text-dark">
               {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name ?? ''}} {{$exhibitor->id}}
             </a>
             <span class="text-muted small d-block" >India</span>
