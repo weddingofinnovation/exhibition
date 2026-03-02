@@ -237,13 +237,13 @@
           <div class="col-12 col-md-4">
             <a href="#"
               class="fw-semibold text-decoration-none text-dark">
-              {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name}}
+              {{ $exhibitor->brand_id ?? '' }} {{$exhibitors->brand_name ?? ''}}
             </a>
             <span class="text-muted small d-block">India</span>
           </div>
 
           <div class="col-12 col-md-4 d-flex justify-content-center">
-            <img src="{{ $exhibitors->logo ?? '' }}" alt="{{ $exhibitors->brand_name }}">
+            <img src="{{ $exhibitors->logo ?? '' }}" alt="{{ $exhibitors->brand_name ?? ''}}">
           </div>
 
           <div class="col-12 col-md-4 text-md-end">
