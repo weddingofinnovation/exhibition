@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ExhibitorInviteComponent extends Component
 {
@@ -131,6 +132,8 @@ class ExhibitorInviteComponent extends Component
     public $brand_logo;
     public $short_desc;
 
+    use WithFileUploads;
+    
     public function exhibitorreferral()
     {
         $firstlevel = new user();
