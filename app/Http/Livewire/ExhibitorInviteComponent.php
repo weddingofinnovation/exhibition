@@ -155,11 +155,11 @@ class ExhibitorInviteComponent extends Component
         $brandupdate->event_id = $this->event_id;
         $brandupdate->slug = Str::slug($this->brand_name); 
 
-        $newimage = Carbon::now()->timestamp.'.'.$this->logo->extension();
+        $newimage = 'logo-'.Carbon::now()->timestamp.'.'.$this->logo->extension();
         $this->logo->storeAs('exhibition', $newimage);
         $brandupdate->brand_logo = $newimage;
 
-        $newimage = Carbon::now()->timestamp.'.'.$this->poster->extension();
+        $newimage = 'poster-'.Carbon::now()->timestamp.'.'.$this->poster->extension();
         $this->poster->storeAs('exhibition', $newimage);
         $brandupdate->product_video = $newimage;
 
