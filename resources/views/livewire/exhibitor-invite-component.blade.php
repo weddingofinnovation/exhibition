@@ -124,21 +124,17 @@
           <div class="col-9">
               <div class="card border-0 rounded-0">
                   <div class="card-header bg-dark text-white">
-                    @if($board == 'exhibitor')
+                    
                       <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-                    @elseif($board == 'details')
-                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-                    @elseif($board == 'thankyou')
-                      <h5 class="mb-0 text-light">Exhibitor Registration</h5>
-                    @endif
+                   
                   </div>
 
                   <div class="card-body">
 
-                  @if($board == 'exhibitor')
+                 
                     <form wire:submit.prevent="exhibitorreferral" enctype="multipart/form-data">
 
-                        <div class="row">
+                        <div class="row pr-0">
                             <!-- Stall Details -->
                             <div class="col-md-2 mb-2">
                                 <label class="form-label">Stall Number</label>
@@ -285,116 +281,6 @@
                         </button>
 
                     </form>
-                  @elseif($board == 'details')
-                    <form action="">
-                        <hr>
-                        <h6 class="fw-bold mt-3 mb-3">Business Details</h6>
-
-                        <div class="row">
-
-                            <!-- Product Category -->
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Product Category</label>
-                                <input type="text" class="form-control"
-                                      wire:model.defer="product_category"
-                                      placeholder="e.g. Food Processing Machinery" required>
-
-                                @error('product_category')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <!-- Industry -->
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Industry</label>
-                                <input type="text" class="form-control"
-                                      wire:model.defer="industry"
-                                      placeholder="e.g. Hospitality / FMCG / Export" required>
-
-                                @error('industry')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <!-- Type of Deals -->
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Type of Deals Interested In</label>
-                                <select class="form-control" wire:model.defer="deal_type" required>
-                                    <option value="">Select Deal Type</option>
-                                    <option>Dealer / Distributor</option>
-                                    <option>Franchise</option>
-                                    <option>Marketing Partner</option>
-                                    <option>Export Buyer</option>
-                                    <option>Bulk Purchase</option>
-                                </select>
-                                @error('deal_type')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                            <!-- Contact For -->
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Contact Person For Business Meetings</label>
-                                <input type="text" class="form-control"
-                                      wire:model.lazy="meeting_contact"
-                                      placeholder="Name of Meeting Representative" required>
-                                @error('meeting_contact')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
-
-                             <div class="col-md-6 mb-3">
-                                <label class="form-label">Business Website</label>
-                                <input type="text" class="form-control"
-                                      wire:model.lazy="official_website"
-                                      placeholder="official Website" required>
-
-                                @error('official_website')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                             </div>
-
-                             <div class="col-md-12 mb-3">
-                                <label class="form-label">Short Introduction</label>
-                                <input type="text" class="form-control"
-                                      wire:model.lazy="short_desc"
-                                      placeholder="short Description" required>
-
-                                @error('short_desc')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                             </div>
-
-                        </div>
-
-                        <div class="col-md-6 mb-3">
-                          <button type="submit" class="btn btn-primary w-20">Back</button>
-
-                          <button type="submit" class="btn btn-primary w-80">Submit</button>
-                        </div>
-                    </form>
-                  @elseif($board == 'thankyou')
-                      <div class="alert alert-success mt-4">
-                        <strong>Your Business Invite Link:</strong><br>
-                        <input type="text" class="form-control mt-2"
-                              value="https://exhibition.org.in/business/exhibitor/invitee/1209"
-                              readonly>
-                      </div>
-                  
-                    <div class="mt-3">
-                        <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
-                          target="_blank"
-                          class="btn btn-success btn-sm">
-                          Share on WhatsApp
-                        </a>
-
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://exhibition.org.in/business/exhibitor/invitee/1209"
-                          target="_blank"
-                          class="btn btn-primary btn-sm">
-                          Share on LinkedIn
-                        </a>
-                    </div>
-                  @endif
                   </div>
               </div>
           </div>
@@ -500,9 +386,7 @@
                   </div>
 
                   <div class="card-body">
-
-                  
-                    <form action="">
+                    <form wire:submit.prevent="branddetailsformeeting" enctype="multipart/form-data">
                         <div class="row">
                           
                             <!-- Industry -->
@@ -617,7 +501,6 @@
 
                         </div>
                     </form>
-                  
                   </div>
               </div>
           </div>
