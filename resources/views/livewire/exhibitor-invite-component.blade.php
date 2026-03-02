@@ -160,18 +160,18 @@
                                 @enderror
                             </div>
 
-                            <div class="col-md-2 mb-2">
-                                <label class="form-label">Stall Number</label>
+                            <div class="col-md-3 mb-2">
+                                <label class="form-label">Year</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="year"
-                                      placeholder="Enter Stall Number" required>
+                                      placeholder="Enter Year" required>
                                 @error('year')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
 
                             <!-- Company Name -->
-                            <div class="col-md-6 mb-2">
+                            <div class="col-md-5 mb-2">
                                 <label class="form-label">Company Name</label>
                                 <input type="text" class="form-control"
                                       wire:model.lazy="organisation"
