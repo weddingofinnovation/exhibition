@@ -96,12 +96,9 @@
                       </div>
 
                       <div class="col-3  p-0">
-
-                        <a class="card-img-top d-block overflow-hidden" href="#" onclick="confirm('Are you sure, You want to delete this Entity?') || event.stopImmediatePropagation()" wire:click.prevent="eventdelete({{$franchise->id}})">
-                          <i class="bi bi-x me-2"></i></a>
-
-                        <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updateInspectionStatus({{$franchise->id}}, '1')">Visit</a>
+                        <a class="btn btn-sm btn-primary" href="#" wire:click.prevent="updatecreatelink({{$franchise->id}})">Link</a>
                       </div>
+
                     </div>
                   </div>
                   @endforeach
@@ -109,6 +106,15 @@
               </div>
             </div>
     
+            @if($generatedLink)
+                <div class="alert alert-success mt-3">
+                    <strong>Generated Link:</strong><br>
+                    <a href="{{ $generatedLink }}" target="_blank">
+                        {{ $generatedLink }}
+                    </a>
+                </div>
+            @endif
+            
     @elseif($board == 'exhibitor')
       <div class="container mt-4">
 

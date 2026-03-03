@@ -40,6 +40,8 @@ class ExhibitorInviteComponent extends Component
     public $comment;
     public $referencecode;
 
+    public $generatedLink = '';
+
     public $searchTerm;
     public $events = [];
     public $search = '';
@@ -310,8 +312,14 @@ class ExhibitorInviteComponent extends Component
         session()->flash('message', 'Thanks for sharing your review.');
     }
     
-    
+    public function updatecreatelink($eventid)
+    {
+        $event = Event::where('id', $eventid)->first();
 
+        if ($event) {
+            $this->generatedLink = route('invitee.page', ['board' => 'exhibitor', 'event_id' => $event->id]);
+        }
+    }
     
     public function render()
     {
