@@ -55,6 +55,54 @@
       </div>
 
     @elseif($board == 'linkcreate')
+
+      <style>
+        /* Custom Styling */
+        .search-section {
+          /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
+          background: #000;
+          padding: 30px 0;
+          text-align: center;
+        }
+
+        .search-title {
+          /* font-size: 32px; */
+          font-weight: bold;
+          color: #fff;
+          margin-bottom: 10px;
+        }
+
+        .search-box {
+          display: flex;
+          background: white;
+          /* border-radius: 50px; */
+          padding: 2px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+        }
+
+        .search-box input,
+        .search-box select {
+          border: none;
+          outline: none;
+          padding: 12px;
+          flex: 1;
+        }
+
+        .search-box button {
+          background: #000;
+          color: #fff;
+          border: none;
+          padding: 12px 30px;
+          /* border-radius: 50px; */
+          font-weight: bold;
+        }
+
+        .search-box button:hover {
+          background: #fff;
+        }
+      </style>
+
       <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="search-box d-flex">
@@ -127,7 +175,6 @@
 
           </div>
         @endif
-
       </div>
 
     @elseif($board == 'exhibitor')
