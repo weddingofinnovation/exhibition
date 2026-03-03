@@ -713,121 +713,121 @@
             <div class="p-0">
 
               <style>
-.screen-fit-wrapper{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:20px 0;
-    background: linear-gradient(135deg,#0f1f3d,#1b2c4a);
-}
+        .screen-fit-wrapper{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            padding:20px 0;
+            background: linear-gradient(135deg,#0f1f3d,#1b2c4a);
+        }
 
-.compact-card{
-    background:#142544;
-    border-radius:22px;
-    padding:28px 25px;
-    color:#fff;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
-    max-height:90vh;
-    overflow:hidden;
-}
+        .compact-card{
+            background:#142544;
+            border-radius:22px;
+            padding:28px 25px;
+            color:#fff;
+            box-shadow:0 15px 40px rgba(0,0,0,0.4);
+            max-height:90vh;
+            overflow:hidden;
+        }
 
-.premium-card{
-    background: #142544;
-    border-radius:24px;
-    padding:40px 35px;
-    color:#fff;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
-    position:relative;
-    overflow:hidden;
-}
+        .premium-card{
+            background: #142544;
+            border-radius:24px;
+            padding:40px 35px;
+            color:#fff;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            position:relative;
+            overflow:hidden;
+        }
 
-/* Golden Border Glow */
-.premium-card::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    border-radius:24px;
-    padding:1px;
-    background:linear-gradient(45deg,#d4af37,#f8e29c,#d4af37);
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-}
+        /* Golden Border Glow */
+        .premium-card::before{
+            content:'';
+            position:absolute;
+            inset:0;
+            border-radius:24px;
+            padding:1px;
+            background:linear-gradient(45deg,#d4af37,#f8e29c,#d4af37);
+            -webkit-mask:
+            linear-gradient(#fff 0 0) content-box,
+            linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
 
-.invite-heading{
-    text-align:center;
-    font-size:13px;
-    letter-spacing:3px;
-    color:#d4af37;
-    margin-bottom:25px;
-}
+        .invite-heading{
+            text-align:center;
+            font-size:13px;
+            letter-spacing:3px;
+            color:#d4af37;
+            margin-bottom:25px;
+        }
 
-.company-title{
-    font-size:26px;
-    font-weight:700;
-    text-align:center;
-    margin-top:20px;
-}
+        .company-title{
+            font-size:26px;
+            font-weight:700;
+            text-align:center;
+            margin-top:20px;
+        }
 
-.stall-highlight{
-    text-align:center;
-    margin-top:10px;
-    font-size:15px;
-}
+        .stall-highlight{
+            text-align:center;
+            margin-top:10px;
+            font-size:15px;
+        }
 
-.stall-highlight span{
-    color:#f8e29c;
-    font-weight:600;
-}
+        .stall-highlight span{
+            color:#f8e29c;
+            font-weight:600;
+        }
 
-.event-section{
-    background:#0e1b33;
-    border-radius:16px;
-    padding:20px;
-    margin-top:30px;
-}
+        .event-section{
+            background:#0e1b33;
+            border-radius:16px;
+            padding:20px;
+            margin-top:30px;
+        }
 
-.event-name{
-    font-size:20px;
-    font-weight:600;
-    color:#f8e29c;
-}
+        .event-name{
+            font-size:20px;
+            font-weight:600;
+            color:#f8e29c;
+        }
 
-.event-details{
-    font-size:14px;
-    color:#cbd5e1;
-}
+        .event-details{
+            font-size:14px;
+            color:#cbd5e1;
+        }
 
-.btn-premium{
-    background: linear-gradient(45deg,#d4af37,#f8e29c);
-    color:#000;
-    border:none;
-    padding:12px 28px;
-    border-radius:40px;
-    font-weight:600;
-    margin-top:25px;
-    transition:0.3s;
-}
+        .btn-premium{
+            background: linear-gradient(45deg,#d4af37,#f8e29c);
+            color:#000;
+            border:none;
+            padding:12px 28px;
+            border-radius:40px;
+            font-weight:600;
+            margin-top:25px;
+            transition:0.3s;
+        }
 
-.btn-premium:hover{
-    transform:scale(1.05);
-}
+        .btn-premium:hover{
+            transform:scale(1.05);
+        }
 
-.footer-brand{
-    margin-top:35px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,0.1);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:13px;
-}
+        .footer-brand{
+            margin-top:35px;
+            padding-top:20px;
+            border-top:1px solid rgba(255,255,255,0.1);
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-size:13px;
+        }
 
-.footer-brand strong{
-    color:#f8e29c;
-}
+        .footer-brand strong{
+            color:#f8e29c;
+        }
 </style>
               
               @php 
@@ -836,75 +836,95 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
               @endphp
              
-              <div class="invite-heading">
-                        CORDIALLY INVITES YOU TO VISIT US AT
-              </div>
+              <div class="invite-heading">CORDIALLY INVITES YOU TO VISIT US AT</div>
 
 
-              <div class="premium-wrapper">
-                <div class="premium-card">
+              <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center bg-dark py-4">
 
-                    
-                    <div class="text-center">
-                        <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" 
-                            style="max-height:80px;" 
-                            class="img-fluid">
-                    </div>
+    <div class="card shadow-lg border-0 text-white w-100" 
+         style="max-width:520px; background:linear-gradient(135deg,#0f1f3d,#1b2c4a); border-radius:20px;">
 
-                    <div class="company-title">
-                        {{$geteventbrandsdetails->brand_name}}
-                    </div>
+        <div class="card-body p-4">
 
-                    <div class="stall-highlight">
-                        Stall No: <span>{{$getexhibitordetails->stallno}}</span> 
-                        | Hall: <span>{{$getexhibitordetails->hall}}</span>
-                    </div>
+            <!-- Brand Logo -->
+            <div class="text-center mb-3">
+                <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}"
+                     class="img-fluid"
+                     style="max-height:70px;">
+            </div>
 
-                    <div class="event-section mt-4">
+            <!-- Company Name -->
+            <h5 class="text-center fw-bold mb-1">
+                {{$geteventbrandsdetails->brand_name}}
+            </h5>
 
-                        <div class="row align-items-center">
+            <!-- Stall Info -->
+            <p class="text-center small mb-3">
+                Stall No: <span class="fw-bold text-warning">{{$getexhibitordetails->stallno}}</span> 
+                | Hall: <span class="fw-bold text-warning">{{$getexhibitordetails->hall}}</span>
+            </p>
 
-                            <div class="col-md-8">
-                                <div class="event-name">
-                                    {{ucwords($evento->eventname)}}
-                                </div>
+            <!-- Event Section -->
+            <div class="bg-dark bg-opacity-50 rounded p-3">
 
-                                <div class="event-details mt-2">
-                                    {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
-                                    {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
-                                </div>
+                <div class="row align-items-center">
 
-                                <div class="event-details">
-                                    {{$evento->venue}}, {{$evento->city}}
-                                </div>
-                            </div>
+                    <div class="col-8">
 
-                            <div class="col-md-4 text-center">
-                                <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" 
-                                    class="img-fluid rounded"
-                                    style="max-height:110px;">
-                            </div>
+                        <h6 class="fw-bold text-warning mb-1">
+                            {{ucwords($evento->eventname)}}
+                        </h6>
 
-                        </div>
+                        <p class="small mb-1">
+                            {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
+                            {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
+                        </p>
 
-                       
+                        <p class="small text-light mb-0">
+                            {{$evento->venue}}, {{$evento->city}}
+                        </p>
 
                     </div>
 
-                    <div class="footer-brand">
-                        <div>
-                            <strong>The Exhibition Network</strong><br>
-                            Exhibition Help Center
-                        </div>
-
-                        <div class="text-end">
-                            📞 +91 98765 43210 <br>
-                            ✉ support@exhibition.org.in
-                        </div>
+                    <div class="col-4 text-end">
+                        <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}"
+                             class="img-fluid rounded"
+                             style="max-height:80px; object-fit:cover;">
                     </div>
 
                 </div>
-              </div>
+
+            </div>
+
+            <!-- Direction Button -->
+            <div class="text-center mt-3">
+                <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
+                   target="_blank"
+                   class="btn btn-warning rounded-pill px-4">
+                    Get Directions
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3 small">
+
+                <div>
+                    <strong class="text-warning">The Exhibition Network</strong><br>
+                    Exhibition Help Center
+                </div>
+
+                <div class="text-end">
+                    📞 +91 98765 43210<br>
+                    ✉ support@exhibition.org.in
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
             </div>
           </div>
