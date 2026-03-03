@@ -739,8 +739,8 @@
                 @endphp
 
                 {{$getexhibitordetails->brand_id }}
-                {{$getexhibitordetails->organisation }}
-                {{$getexhibitordetails->brand_name }}
+                {{$geteventbrandsdetails->organisation }}
+                {{$geteventbrandsdetails->brand_name }}
                 ABC Industries Pvt. Ltd.
             </div>
 
