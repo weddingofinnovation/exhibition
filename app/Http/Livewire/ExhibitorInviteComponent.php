@@ -40,6 +40,7 @@ class ExhibitorInviteComponent extends Component
     public $comment;
     public $referencecode;
 
+    public $searchTerm;
     public $events = [];
     public $search = '';
     public $venue = '';
