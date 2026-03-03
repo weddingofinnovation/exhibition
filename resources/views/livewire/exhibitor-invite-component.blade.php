@@ -52,7 +52,6 @@
         </div>
       </div>
     @elseif($board == 'exhibitor')
-
       <div class="container mt-4">
 
         <div class="row">
@@ -288,7 +287,6 @@
         </div>
         
       </div>
-
     @elseif($board == 'details')
       <div class="container mt-4">
         <div class="row">
@@ -720,8 +718,116 @@
                 </div>
               </section>
 
+
+
+
+
             </div>
           </div>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .invite-card {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 40px;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+
+    .company-logo {
+        max-height: 80px;
+        margin-bottom: 20px;
+    }
+
+    .event-logo {
+        max-height: 100px;
+        margin: 20px 0;
+    }
+
+    .invite-text {
+        font-size: 20px;
+        font-weight: 500;
+        color: #6c757d;
+        margin-bottom: 15px;
+    }
+
+    .company-name {
+        font-size: 28px;
+        font-weight: 700;
+        color: #212529;
+    }
+
+    .stall-info {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .highlight {
+        color: #0d6efd;
+        font-weight: 600;
+    }
+
+    .event-date {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #495057;
+    }
+
+    .btn-visit {
+        margin-top: 30px;
+        padding: 10px 30px;
+        font-size: 16px;
+        border-radius: 30px;
+    }
+</style>
+
+
+
+<div class="container">
+    <div class="invite-card">
+
+        <!-- Company Logo -->
+        <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
+
+        <!-- Invite Text -->
+        <div class="invite-text">
+            Cordially Invites You To Visit Us At
+        </div>
+
+        <!-- Event Logo -->
+        <img src="event-logo.png" class="event-logo img-fluid" alt="Event Logo">
+
+        <!-- Company Name -->
+        <div class="company-name">
+            ABC Industries Pvt. Ltd.
+        </div>
+
+        <!-- Stall Information -->
+        <div class="stall-info">
+            Stall No: <span class="highlight">A12</span> |
+            Booth No: <span class="highlight">B45</span> |
+            Hall No: <span class="highlight">3</span>
+        </div>
+
+        <!-- Event Dates -->
+        <div class="event-date">
+            15 – 18 October 2026
+        </div>
+
+        <!-- Button -->
+        <a href="#" class="btn btn-primary btn-visit">
+            Get Directions
+        </a>
+
+    </div>
+</div>
 
           <!-- Column 2 -->
           <div class="col-md-7 col-12 my-5">

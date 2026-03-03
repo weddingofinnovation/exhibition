@@ -263,6 +263,8 @@ class ExhibitorInviteComponent extends Component
         return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id]);
     }
     
+
+    
    
 
     public function exhibitorrequestedvisitorforpass()
