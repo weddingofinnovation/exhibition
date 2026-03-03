@@ -73,30 +73,9 @@
       {{-- Debug --}}
       {{$search}}
 
-      {{-- Show Message When Empty --}}
-      @if(empty($search))
-          <div class="text-muted mt-3">
-              🔎 Start typing to search events
-          </div>
-
-      {{-- No Results --}}
-      @elseif(count($events) == 0)
-          <div class="text-danger mt-3">
-              No events found.
-          </div>
-
-      {{-- Show Results --}}
-      @else
-          <ul class="list-group mt-3">
-              @foreach($events as $event)
-                  <li class="list-group-item">
-                      <strong>{{ $event->eventname }}</strong><br>
-                      {{ $event->city }} | {{ $event->venue }}<br>
-                      {{ $event->startdate }} to {{ $event->enddate }}
-                  </li>
-              @endforeach
-          </ul>
-      @endif
+      @foreach($events as $event)
+          {{ $event->eventname ?? 'no'}}
+      @endforeach
 
     </div>
 
