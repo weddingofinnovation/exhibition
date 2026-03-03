@@ -56,7 +56,7 @@ class ExhibitorInviteComponent extends Component
         $this->event_id = $event_id;
         $this->referencecode = $referencecode;
         //$findevent = DB::table('events')->where('id', $data)->first();
-        $this->events = Event::where('id', $event_id)->get();
+       
     }
 
     public function createalinkforparticularexhibition()
