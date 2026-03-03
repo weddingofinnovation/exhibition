@@ -721,92 +721,88 @@
              
               <div class="invite-heading">CORDIALLY INVITES YOU TO VISIT US AT</div>
 
+                <div class="card shadow-lg border-0 text-white w-100" 
+                    style="max-width:520px; background:linear-gradient(135deg,#0f1f3d,#1b2c4a); border-radius:20px;">
 
+                    <div class="card-body p-4">
 
-                    <div class="card shadow-lg border-0 text-white w-100" 
-                        style="max-width:520px; background:linear-gradient(135deg,#0f1f3d,#1b2c4a); border-radius:20px;">
+                        <!-- Brand Logo -->
+                        <div class="text-center mb-3">
+                            <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}"
+                                class="img-fluid"
+                                style="max-height:70px;">
+                        </div>
 
-                        <div class="card-body p-4">
+                        <!-- Company Name -->
+                        <h5 class="text-center fw-bold mb-1">
+                            {{$geteventbrandsdetails->brand_name}}
+                        </h5>
 
-                            <!-- Brand Logo -->
-                            <div class="text-center mb-3">
-                                <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}"
-                                    class="img-fluid"
-                                    style="max-height:70px;">
-                            </div>
+                        <!-- Stall Info -->
+                        <p class="text-center small mb-3">
+                            Stall No: <span class="fw-bold text-warning">{{$getexhibitordetails->stallno}}</span> 
+                            | Hall: <span class="fw-bold text-warning">{{$getexhibitordetails->hall}}</span>
+                        </p>
 
-                            <!-- Company Name -->
-                            <h5 class="text-center fw-bold mb-1">
-                                {{$geteventbrandsdetails->brand_name}}
-                            </h5>
+                        <!-- Event Section -->
+                        <div class="bg-dark bg-opacity-50 rounded p-3">
 
-                            <!-- Stall Info -->
-                            <p class="text-center small mb-3">
-                                Stall No: <span class="fw-bold text-warning">{{$getexhibitordetails->stallno}}</span> 
-                                | Hall: <span class="fw-bold text-warning">{{$getexhibitordetails->hall}}</span>
-                            </p>
+                            <div class="row align-items-center">
 
-                            <!-- Event Section -->
-                            <div class="bg-dark bg-opacity-50 rounded p-3">
+                                <div class="col-8">
 
-                                <div class="row align-items-center">
+                                    <h6 class="fw-bold text-warning mb-1">
+                                        {{ucwords($evento->eventname)}}
+                                    </h6>
 
-                                    <div class="col-8">
+                                    <p class="small mb-1">
+                                        {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
+                                        {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
+                                    </p>
 
-                                        <h6 class="fw-bold text-warning mb-1">
-                                            {{ucwords($evento->eventname)}}
-                                        </h6>
-
-                                        <p class="small mb-1">
-                                            {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
-                                            {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
-                                        </p>
-
-                                        <p class="small text-light mb-0">
-                                            {{$evento->venue}}, {{$evento->city}}
-                                        </p>
-
-                                    </div>
-
-                                    <div class="col-4 text-end">
-                                        <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}"
-                                            class="img-fluid rounded"
-                                            style="max-height:80px; object-fit:cover;">
-                                    </div>
+                                    <p class="small text-light mb-0">
+                                        {{$evento->venue}}, {{$evento->city}}
+                                    </p>
 
                                 </div>
 
-                            </div>
-
-                            <!-- Direction Button -->
-                            <div class="text-center mt-3">
-                                <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
-                                target="_blank"
-                                class="btn btn-warning rounded-pill px-4">
-                                    Get Directions
-                                </a>
-                            </div>
-
-                            <!-- Footer -->
-                            <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3 small">
-
-                                <div>
-                                    <strong class="text-warning">The Exhibition Network</strong><br>
-                                    Exhibition Help Center
-                                </div>
-
-                                <div class="text-end">
-                                    📞 +91 98765 43210<br>
-                                    ✉ support@exhibition.org.in
+                                <div class="col-4 text-end">
+                                    <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}"
+                                        class="img-fluid rounded"
+                                        style="max-height:80px; object-fit:cover;">
                                 </div>
 
                             </div>
 
                         </div>
 
+                        <!-- Direction Button -->
+                        <div class="text-center mt-3">
+                            <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
+                            target="_blank"
+                            class="btn btn-warning rounded-pill px-4">
+                                Get Directions
+                            </a>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3 small">
+
+                            <div>
+                                <strong class="text-warning">The Exhibition Network</strong><br>
+                                Exhibition Help Center
+                            </div>
+
+                            <div class="text-end">
+                                📞 +91 98765 43210<br>
+                                ✉ support@exhibition.org.in
+                            </div>
+
+                        </div>
+
                     </div>
 
-             
+                </div>
 
             </div>
           </div>
