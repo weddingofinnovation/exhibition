@@ -738,7 +738,10 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();
                 @endphp
 
-                {{$geteventbrandsdetails, $getexhibitordetails->brand_id }}ABC Industries Pvt. Ltd.
+                {{$getexhibitordetails->brand_id }}
+                {{$getexhibitordetails->organisation }}
+                {{$getexhibitordetails->brand_name }}
+                ABC Industries Pvt. Ltd.
             </div>
 
             <!-- Stall Information -->
