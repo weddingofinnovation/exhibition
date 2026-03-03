@@ -36,8 +36,9 @@ class ExhibitorInviteComponent extends Component
 
     public $grade;
     public $comment;
+    public $referencecode;
 
-    public function mount($board, $visitorid = null, $event_id = null)
+    public function mount($board, $visitorid = null, $event_id = null, $referencecode = null)
     {
         $this->admstatus = '0';
         $this->status = '1';
@@ -46,7 +47,7 @@ class ExhibitorInviteComponent extends Component
         $this->visitorid = $visitorid;
         $this->board = $board;
         $this->event_id = $event_id;
-
+        $this->referencecode = $referencecode;
         //$findevent = DB::table('events')->where('id', $data)->first();
     }
 
@@ -176,8 +177,7 @@ class ExhibitorInviteComponent extends Component
 
     public function branddetailsformeeting()
     {
-
-      
+ 
         $brandupdate = Brand::find(session('brand_id'));
         if ($brandupdate) {
             
@@ -251,20 +251,20 @@ class ExhibitorInviteComponent extends Component
         $referenceCode = $stallNumber . '-' . $uniqueCode;
         $createexhibitionstall->referencecode = $referenceCode;
         $createexhibitionstall->brand_id = session('brand_id');
-
+        $createexhibitionstall->event_id = $this->event_id;
         $createexhibitionstall->user_id = session('user_id');
         $createexhibitionstall->status = $this->status;
         $createexhibitionstall->admstatus = $this->admstatus; 
-        $createexhibitionstall->event_id = $this->event_id;
+       
         $createexhibitionstall->year = session('year');
         
         $createexhibitionstall->save();
 
-        return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id]);
+        return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id])->with('reference_code', $createexhibitionstall->referencecode);;
     }
     
 
-    
+
    
 
     public function exhibitorrequestedvisitorforpass()

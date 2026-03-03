@@ -612,10 +612,16 @@
  
                     <div class="alert alert-success mt-4">
                       <strong>Your Business Invite Link:</strong><br>
+
+                      href="{{route('printpdf.badge', ['visitorid' => $visitorid])}}"
+
                       <input type="text" class="form-control mt-2"
-                            value="https://exhibition.org.in/business/exhibitor/invitee/1209"
-                            readonly>
+                            value="https://exhibition.org.in/business/normal/invitee/{$event_id}/{}"
+                            readonly> 
                     </div>
+
+                    
+                    {{route('invitee.add',['event_id' => $this->event_id, 'referencecode' => session('reference_code' ])}}
                   
                     <div class="mt-3">
                         <a href="https://wa.me/?text=Join%20our%20business%20meeting%20at%20AAHAR%20Register%20here:%20https://yourdomain.com/meet"
@@ -644,7 +650,12 @@
           <div class="col-md-5 col-12 my-5 border-end">
             <div class="p-0">
 
-          <div class="invite-card">
+          <div class="invite-card ">
+
+          @php 
+             $getexhibitordetails = DB::table('participants')->('event_id', $this->event_id)->get();
+
+          @endphp
 
             <!-- Company Logo -->
             <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
@@ -679,6 +690,9 @@
                 Get Directions
             </a>
 
+            <div class="mt-3 p-2 bg-dark text-light rounded small">
+                📈 Convert Visitors into Business Deals
+            </div>
           </div>
 
             </div>

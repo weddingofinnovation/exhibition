@@ -320,7 +320,7 @@ Route::get('/privacy-policy', PrivacyComponent::class)->name('privacy.condition'
 
 
 //ExhibitorInvitee
-Route::get('/business/{board}/invitee/{event_id?}/{visitorid?}', ExhibitorInviteComponent::class)->name('invitee.add');
+Route::get('/business/{board}/invitee/{event_id?}/{visitorid?}/{referencecode?}', ExhibitorInviteComponent::class)->name('invitee.add');
 
 //catch exhibition data
 Route::get('/add-your-event/{board}', AwardsComponent::class)->name('coievent.add');
