@@ -176,9 +176,9 @@
             </ul>
 
           </div>
-        @elseif($events->count() == 0)
+        @else($events->count() == 0)
             <p>No events found.</p>
-        @else
+        @endif
 
 
         @if(empty($events) || $events->count() == 0)
