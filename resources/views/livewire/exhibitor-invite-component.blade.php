@@ -80,7 +80,7 @@
           </div>
 
       {{-- No Results --}}
-      @elseif($events->count() == 0)
+      @elseif(count($events) == 0)
           <div class="text-danger mt-3">
               No events found.
           </div>
