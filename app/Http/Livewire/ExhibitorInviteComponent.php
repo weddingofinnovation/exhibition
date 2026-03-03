@@ -37,7 +37,7 @@ class ExhibitorInviteComponent extends Component
 
     public $grade;
     public $comment;
-    public $referencecode, $search, $venue;
+    public $referencecode, $search, $venue, $events;
 
     public function mount($board, $visitorid = null, $event_id = null, $referencecode = null)
     {
@@ -50,6 +50,7 @@ class ExhibitorInviteComponent extends Component
         $this->event_id = $event_id;
         $this->referencecode = $referencecode;
         //$findevent = DB::table('events')->where('id', $data)->first();
+        $this->events = Event::where('id', $event_id)->get();
     }
 
     public function createalinkforparticularexhibition()
