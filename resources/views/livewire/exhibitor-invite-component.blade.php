@@ -114,7 +114,7 @@
                     </a>
                 </div>
             @endif
-            
+
     @elseif($board == 'exhibitor')
       <div class="container mt-4">
 
@@ -733,19 +733,19 @@
 
             <!-- Company Name -->
             <div class="company-name">
-                ABC Industries Pvt. Ltd.
+                {{$getexhibitordetails->brand_id}}ABC Industries Pvt. Ltd.
             </div>
 
             <!-- Stall Information -->
             <div class="stall-info">
-                Stall No: <span class="highlight">A12</span> |
-                Booth No: <span class="highlight">B45</span> |
+                Stall No: <span class="highlight">{{$getexhibitordetails->stall}}</span> |
+                Booth No: <span class="highlight">{{$getexhibitordetails->hallno}}</span> |
                 Hall No: <span class="highlight">3</span>
             </div>
 
             <!-- Event Dates -->
             <div class="event-date">
-                15 – 18 October 2026
+                15 – 18 October 2026 {{$getexhibitordetails->event_id}}
             </div>
 
             <!-- Button -->
