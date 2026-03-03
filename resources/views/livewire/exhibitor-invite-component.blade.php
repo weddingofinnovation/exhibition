@@ -16,6 +16,7 @@
   @if($board == 'thankyou')
       @php
         $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
+        $events = DB::table('events')->where('id', $visitorid)->first();
       @endphp
 
       <div class="container py-4 py-lg-5 my-4">
@@ -100,6 +101,7 @@
               Total Events: {{$events->count()}} | Selected: {{ count($selectedEvents) }}
             </h6>
 
+
             <ul class="list-group">
               @foreach($events as $event)
                 <li class="list-group-item d-flex justify-content-between align-items-center
@@ -126,7 +128,7 @@
         @endif
 
       </div>
-      
+
     @elseif($board == 'exhibitor')
       <div class="container mt-4">
 

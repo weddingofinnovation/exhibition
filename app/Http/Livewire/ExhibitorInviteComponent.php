@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\bcontact;
 use App\Models\Brand;
+use App\Models\Event;
 use App\Models\Lead;
 use App\Models\Participant;
 use App\Models\User;
@@ -301,8 +302,34 @@ class ExhibitorInviteComponent extends Component
         session()->flash('message', 'Thanks for sharing your review.');
     }
     
+    
+
+    
     public function render()
     {
+        $events = collect();
+    if ($this->search || $this->venue) 
+    {
+      $query = Event::query();
+
+      // Search by name, month, or today’s date
+      if ($this->search) {
+
+        $query->where(function ($q) {
+          $q->where('eventname', 'like', '%' . $this->search . '%')
+            ->orWhereMonth('startdate', 'like', '%' . $this->search . '%')
+            ->orWhereDate('startdate', 'like', '%' . $this->search . '%');
+        });
+      }
+
+      // Filter by venue/location
+      if ($this->venue) {
+        $query->where('venue', $this->venue);
+      }
+
+      $events = $query->get();
+    }
+
         return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
     }
 }
