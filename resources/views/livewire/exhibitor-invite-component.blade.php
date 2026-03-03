@@ -63,7 +63,7 @@
           <input type="text"
                 class="form-control"
                 placeholder="Search by event name..."
-                wire:model.debounce.500ms="search">
+                wire:model.lazy="search">
 
           <button type="button" class="btn btn-dark">
               Select your Event
