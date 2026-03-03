@@ -733,7 +733,12 @@
 
             <!-- Company Name -->
             <div class="company-name">
-                {{$getexhibitordetails->brand_id}}ABC Industries Pvt. Ltd.
+                @php 
+                  $geteventdetails = DB::table('events')->where('id', $getexhibitordetails->event_id)->first();
+                  $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();
+                @endphp
+
+                {{$geteventbrandsdetails, $getexhibitordetails->brand_id }}ABC Industries Pvt. Ltd.
             </div>
 
             <!-- Stall Information -->
@@ -746,6 +751,9 @@
             <!-- Event Dates -->
             <div class="event-date">
                 15 – 18 October 2026 {{$getexhibitordetails->event_id}}
+              
+                {{$geteventdetails}}
+
             </div>
 
             <!-- Button -->
