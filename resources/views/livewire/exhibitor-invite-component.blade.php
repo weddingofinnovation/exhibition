@@ -102,8 +102,7 @@
       <ul class="list-group">
         @foreach($events as $event)
         <li class="list-group-item d-flex justify-content-between align-items-center
-                 {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}"
-          wire:click="toggleEvent({{ $event->id }})"
+                 {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}" wire:click="toggleEvent({{ $event->id }})"
           style="cursor: pointer; user-select: none;">
 
           <a href="{{ route('event.details', ['slug' => $event->slug]) }}"
@@ -122,77 +121,8 @@
         @endforeach
       </ul>
 
-      <!-- Confirmation Message -->
-      @if (session()->has('message'))
-      <div class="alert alert-success mt-3 text-center">
-        {{ session('message') }}
-      </div>
-      @endif
     </div>
 
-    <!-- Mobile-Friendly Touch Effect -->
-    <style>
-      .list-group-item {
-        transition: background-color 0.2s ease;
-      }
-
-      .list-group-item:active {
-        background-color: #0d6efd !important;
-        color: #fff !important;
-      }
-    </style>
-
-    <!-- Email Modal -->
-    @if($showEmailModal)
-      <div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.6);">
-        <div class="modal-dialog modal-dialog-centered">
-
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Send Selected Events</h5>
-              <button type="button" class="btn-close" wire:click="$set('showEmailModal', false)"></button>
-            </div>
-
-            <div class="modal-body">
-              <label for="email" class="form-label">Enter your email address</label>
-              <input type="email" id="email" class="form-control" wire:model="email" placeholder="you@example.com">
-              @error('email')
-              <small class="text-danger">{{ $message }}</small>
-              @enderror
-            </div>
-
-            <div class="">
-              <label for="email" class="form-label">Enter your phone</label>
-              <input type="number" id="email" class="form-control" wire:model="phone" placeholder="123-456-789-0">
-              @error('phone')
-              <small class="text-danger">{{ $message }}</small>
-              @enderror
-            </div>
-
-
-            <label for="email" class="form-label">Enter your name</label>
-            <input type="text" id="email" class="form-control" wire:model="name" placeholder="your name">
-            @error('name')
-            <small class="text-danger">{{ $message }}</small>
-            @enderror
-
-
-            <div class="">
-              <label for="email" class="form-label">Enter your company</label>
-              <input type="text" id="email" class="form-control" wire:model="co_name" placeholder="company name">
-              @error('co_name')
-              <small class="text-danger">{{ $message }}</small>
-              @enderror
-            </div>
-
-            <div class="modal-footer">
-              <button class="btn btn-secondary" wire:click="$set('showEmailModal', false)">Cancel</button>
-              <button class="btn btn-primary" wire:click="sendSelectedEvents">Send</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    @endif
   </div>
 
     @elseif($board == 'exhibitor')
