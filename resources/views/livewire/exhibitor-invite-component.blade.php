@@ -713,78 +713,86 @@
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">
             <div class="p-0">
-<style>
-.luxury-invite-wrapper{
-    background: linear-gradient(135deg,#0a192f,#112240);
-    padding:40px 20px;
-}
 
-.invite-card{
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    border:1px solid rgba(255,215,0,0.3);
-    border-radius:20px;
-    padding:30px;
-    color:#fff;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
-    position:relative;
-}
+              <style>
+                  .luxury-invite-wrapper{
+                      background: linear-gradient(135deg,#0a192f,#112240);
+                      padding:40px 20px;
+                  }
 
-.invite-text{
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:14px;
-    color:#c9a227;
-}
+                  .invite-card{
+                      background: rgba(255,255,255,0.05);
+                      backdrop-filter: blur(12px);
+                      border:1px solid rgba(255,215,0,0.3);
+                      border-radius:20px;
+                      padding:30px;
+                      color:#fff;
+                      box-shadow:0 15px 40px rgba(0,0,0,0.4);
+                      position:relative;
+                  }
 
-.company-logo{
-    max-height:90px;
-    margin:20px 0;
-}
+                  .invite-text{
+                      text-transform:uppercase;
+                      letter-spacing:2px;
+                      font-size:14px;
+                      color:#c9a227;
+                  }
 
-.company-name{
-    font-size:22px;
-    font-weight:600;
-    color:#fff;
-}
+                  .company-logo{
+                      max-height:90px;
+                      margin:20px 0;
+                  }
 
-.highlight{
-    color:#ffd700;
-    font-weight:bold;
-}
+                  .company-name{
+                      font-size:22px;
+                      font-weight:600;
+                      color:#fff;
+                  }
 
-.btn-visit{
-    background:linear-gradient(45deg,#ffd700,#c9a227);
-    border:none;
-    color:#000;
-    font-weight:600;
-    padding:10px 25px;
-    border-radius:50px;
-    transition:0.3s;
-}
+                  .highlight{
+                      color:#ffd700;
+                      font-weight:bold;
+                  }
 
-.btn-visit:hover{
-    transform:scale(1.05);
-}
+                  .btn-visit{
+                      background:linear-gradient(45deg,#ffd700,#c9a227);
+                      border:none;
+                      color:#000;
+                      font-weight:600;
+                      padding:10px 25px;
+                      border-radius:50px;
+                      transition:0.3s;
+                  }
 
-.premium-footer{
-    margin-top:30px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,0.1);
-}
+                  .btn-visit:hover{
+                      transform:scale(1.05);
+                  }
 
-.branding-title{
-    font-size:20px;
-    font-weight:700;
-    color:#ffd700;
-}
+                  .premium-footer{
+                      margin-top:30px;
+                      padding-top:20px;
+                      border-top:1px solid rgba(255,255,255,0.1);
+                  }
 
-.help-center{
-    font-size:14px;
-    color:#ccc;
-}
-</style>
-             <div class="luxury-invite-wrapper">
+                  .branding-title{
+                      font-size:20px;
+                      font-weight:700;
+                      color:#ffd700;
+                  }
+
+                  .help-center{
+                      font-size:14px;
+                      color:#ccc;
+                  }
+              </style>
+              
+              @php 
+                  $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();   
+                  $evento = DB::table('events')->where('id', $getexhibitordetails->event_id)->first();
+                  $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
+              @endphp
+             
+              <div class="luxury-invite-wrapper">
 <div class="container">
 <div class="invite-card">
 
