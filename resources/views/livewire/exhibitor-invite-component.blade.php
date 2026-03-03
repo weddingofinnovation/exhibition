@@ -103,7 +103,7 @@
         }
       </style>
 
-      <div class="row justify-content-center">
+      <div class="row justify-content-center mt-3">
         <div class="col-md-8">
           <div class="search-box d-flex">
             <input type="text" class="form-control" placeholder="Search by event, month or today" wire:model.debounce.500ms="search">
