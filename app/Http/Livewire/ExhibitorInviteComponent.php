@@ -37,7 +37,7 @@ class ExhibitorInviteComponent extends Component
 
     public $grade;
     public $comment;
-    public $referencecode;
+    public $referencecode, $search;
 
     public function mount($board, $visitorid = null, $event_id = null, $referencecode = null)
     {
