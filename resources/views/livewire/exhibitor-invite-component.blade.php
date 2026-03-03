@@ -55,9 +55,7 @@
       </div>
 
     @elseif($board == 'linkcreate')
-      
-    
-    <div class="container">
+            <div class="container">
               <input type="text" class="form-control" placeholder="search" wire:model.lazy="searchTerm">
               <div class="row mb-5 pb-2">
                 @if(is_null($searchTerm))
@@ -715,9 +713,22 @@
             <div class="p-0">
 
               <style>
-.premium-wrapper{
+.screen-fit-wrapper{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:20px 0;
     background: linear-gradient(135deg,#0f1f3d,#1b2c4a);
-    padding:50px 20px;
+}
+
+.compact-card{
+    background:#142544;
+    border-radius:22px;
+    padding:28px 25px;
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    max-height:90vh;
+    overflow:hidden;
 }
 
 .premium-card{
@@ -874,13 +885,7 @@
 
                         </div>
 
-                        <div class="text-center">
-                            <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
-                              target="_blank"
-                              class="btn btn-premium">
-                              Get Directions
-                            </a>
-                        </div>
+                       
 
                     </div>
 
@@ -906,7 +911,11 @@
           <!-- Column 2 -->
           <div class="col-md-7 col-12 my-5">
             <div class="">
+                  <div class="card-header bg-dark text-white">
+                      <h5 class="mb-0 text-light">Request to Exhibitor about your business Requirements</h5>
+                  </div>
               <div class="mb-4">
+
                 <form wire:submit.prevent="exhibitorrequestedvisitorforpass">
                   <div class="mb-1">
                     <!-- <label class="form-label" for="recover-email">Enter your email address</label> -->
