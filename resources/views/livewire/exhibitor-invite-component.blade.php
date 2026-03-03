@@ -717,7 +717,7 @@
           <div class="invite-card ">
 
           @php 
-             $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->get();
+             $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();
           @endphp
 
             <!-- Company Logo -->
