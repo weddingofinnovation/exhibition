@@ -315,15 +315,12 @@ class ExhibitorInviteComponent extends Component
     public function render()
     {
 
-    $events = collect(); // empty by default
+    $events = collect();
 
     if (!empty($this->search)) {
 
         $events = DB::table('events')
-                    ->where('status', 1)
-                    ->where('admstatus', 1)
                     ->where('eventname', 'like', '%' . $this->search . '%')
-                    ->orderBy('startdate', 'asc')
                     ->get();
     }
    

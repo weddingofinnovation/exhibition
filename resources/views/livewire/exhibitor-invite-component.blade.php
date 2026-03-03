@@ -71,7 +71,7 @@
       </div>
 
       {{-- Debug --}}
-      {{-- {{$search}} --}}
+      {{$search}}
 
       {{-- Show Message When Empty --}}
       @if(empty($search))
