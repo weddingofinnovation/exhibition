@@ -15,7 +15,7 @@
 
       @php
         $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
-        $events = DB::table('events')->where('id', $visitorid)->first();
+       
       @endphp
 
   @if($board == 'thankyou')
@@ -77,7 +77,7 @@
       </div>
 
       <div class=" container mt-4 d-none d-md-block">
-        @if($events->isEmpty())
+        @if(empty($events) || $events->count() == 0)
           <p class="d-none d-md-block">No events found.</p>
         @else
           <div class="container my-4">

@@ -37,7 +37,12 @@ class ExhibitorInviteComponent extends Component
 
     public $grade;
     public $comment;
-    public $referencecode, $search, $venue, $events = null;
+    public $referencecode;
+
+    public $events = [];
+    public $search = '';
+    public $venue = '';
+    public $selectedEvents = [];
 
     public function mount($board, $visitorid = null, $event_id = null, $referencecode = null)
     {
@@ -308,28 +313,23 @@ class ExhibitorInviteComponent extends Component
     
     public function render()
     {
-        $events = collect();
-    if ($this->search || $this->venue) 
-    {
-      $query = Event::query();
+     $query = Event::where('status', 1)
+                ->where('admstatus', 1);
 
-      // Search by name, month, or today’s date
-      if ($this->search) {
-
+    if ($this->search) {
         $query->where(function ($q) {
-          $q->where('eventname', 'like', '%' . $this->search . '%')
-            ->orWhereMonth('startdate', 'like', '%' . $this->search . '%')
-            ->orWhereDate('startdate', 'like', '%' . $this->search . '%');
+            $q->where('eventname', 'like', '%' . $this->search . '%')
+              ->orWhere('city', 'like', '%' . $this->search . '%')
+              ->orWhere('startdate', 'like', '%' . $this->search . '%');
         });
-      }
-
-      // Filter by venue/location
-      if ($this->venue) {
-        $query->where('venue', $this->venue);
-      }
-
-      $events = $query->get();
     }
+
+    if ($this->venue && $this->venue != 'Venue') {
+        $query->where('venue', $this->venue);
+    }
+
+    $this->events = $query->get();   // ✅ ALWAYS collection
+
 
         return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
     }

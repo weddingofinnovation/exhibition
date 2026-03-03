@@ -169,8 +169,7 @@ class EventComponent extends Component
 
 
     $events = collect();
-    if ($this->search || $this->venue) 
-    {
+    if ($this->search || $this->venue) {
       $query = Event::query();
 
       // Search by name, month, or today’s date
