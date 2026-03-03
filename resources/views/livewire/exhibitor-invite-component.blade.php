@@ -713,101 +713,174 @@
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">
             <div class="p-0">
+<style>
+.luxury-invite-wrapper{
+    background: linear-gradient(135deg,#0a192f,#112240);
+    padding:40px 20px;
+}
 
-          <div class="invite-card ">
+.invite-card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border:1px solid rgba(255,215,0,0.3);
+    border-radius:20px;
+    padding:30px;
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    position:relative;
+}
 
-          @php 
-              $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();   
-              $evento = DB::table('events')->where('id', $getexhibitordetails->event_id)->first();
-              $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
-          @endphp
+.invite-text{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    color:#c9a227;
+}
 
-            <!-- Company Logo -->
-            <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" class="company-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
+.company-logo{
+    max-height:90px;
+    margin:20px 0;
+}
 
+.company-name{
+    font-size:22px;
+    font-weight:600;
+    color:#fff;
+}
 
-            <!-- Invite Text -->
-            <div class="invite-text">
-                Cordially Invites You To Visit Us At
+.highlight{
+    color:#ffd700;
+    font-weight:bold;
+}
+
+.btn-visit{
+    background:linear-gradient(45deg,#ffd700,#c9a227);
+    border:none;
+    color:#000;
+    font-weight:600;
+    padding:10px 25px;
+    border-radius:50px;
+    transition:0.3s;
+}
+
+.btn-visit:hover{
+    transform:scale(1.05);
+}
+
+.premium-footer{
+    margin-top:30px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+.branding-title{
+    font-size:20px;
+    font-weight:700;
+    color:#ffd700;
+}
+
+.help-center{
+    font-size:14px;
+    color:#ccc;
+}
+</style>
+             <div class="luxury-invite-wrapper">
+<div class="container">
+<div class="invite-card">
+
+    <div class="invite-text text-center">
+        Cordially Invites You To Visit Us At
+    </div>
+
+    <div class="text-center">
+        <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" 
+             class="company-logo img-fluid"
+             alt="{{Str::limit($evento->eventname, 24)}}">
+    </div>
+
+    <div class="company-name text-center">
+        {{$geteventbrandsdetails->brand_name}}
+        {{$geteventbrandsdetails->organisation}}
+    </div>
+
+    <div class="text-center mt-3">
+        Stall No: <span class="highlight">{{$getexhibitordetails->stallno}}</span> |
+        Hall: <span class="highlight">{{$getexhibitordetails->hall}}</span>
+    </div>
+
+    <!-- EVENT BLOCK -->
+    <div class="row align-items-center mt-4">
+
+        <div class="col-md-8">
+            <h5 class="fw-bold text-warning">
+                {{ucwords($evento->eventname)}}
+            </h5>
+
+            <p class="mb-1">
+                {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} 
+                -
+                {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
+            </p>
+
+            <p class="mb-0 text-light">
+                {{$evento->venue}}, {{$evento->city}}
+            </p>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" 
+                 class="img-fluid rounded shadow"
+                 style="max-height:120px;">
+        </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}" 
+           target="_blank" 
+           class="btn btn-visit">
+            Get Directions
+        </a>
+    </div>
+
+    <!-- QR + SHARE -->
+    <div class="row mt-4 text-center">
+        <div class="col-md-6">
+            <button class="btn btn-outline-light"
+                onclick="navigator.share ? navigator.share({title: 'Exhibition Invite', url: window.location.href}) : alert('Copy link to share');">
+                🔗 Share Invitation
+            </button>
+        </div>
+
+        <div class="col-md-6">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={{ urlencode(url()->current()) }}"
+                 style="background:#fff; padding:8px; border-radius:10px;">
+        </div>
+    </div>
+
+    <!-- PREMIUM FOOTER -->
+    <div class="premium-footer row align-items-center mt-4">
+
+        <div class="col-md-6 text-start">
+            <div class="branding-title">
+                The Exhibition Network
             </div>
-
-            <!-- Event Logo -->
-            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" class="event-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
-
-
-            <!-- Company Name -->
-            <div class="company-name">
-               
-
-                {{$getexhibitordetails->brand_id }}
-                |
-                
-                {{$geteventbrandsdetails->brand_name }}
-                {{$geteventbrandsdetails->organisation }}
+            <div class="help-center">
+                Exhibition Help Center
             </div>
+        </div>
 
-            <!-- Stall Information -->
-            <div class="stall-info">
-                Stall No: <span class="highlight">{{$getexhibitordetails->stallno}}</span> |
-                Booth No: <span class="highlight">{{$getexhibitordetails->hall}}</span> |
-                Hall No: <span class="highlight">3</span>
-            </div>
+        <div class="col-md-6 text-md-end help-center">
+            📞 +91 98765 43210 <br>
+            ✉ support@exhibition.org.in <br>
+            🌐 www.exhibition.org.in
+        </div>
 
-            <!-- Event Dates -->
-            <div class="event-date">
-                15 – 18 October 2026 {{$getexhibitordetails->event_id}}
-                
-                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-                    <div class="col  pr-0">
-                      <a class="text-dark" href="#">
-                        @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
-                        <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
-                        @else
-                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
-                        <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+    </div>
 
-                        @endif
-                        <div class="round-circle">{{$evento->edition}}</div>
-                        <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
-                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender
-                      </a>--}}
-                      </a>
-                    </div>
-
-                    <div class="col-7  p-0">
-                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
-                          {{ucwords(trans(Str::limit($evento->eventname, 24)))}}</a></div>
-                      <div class="text-muted fs-sm text-start">
-                        @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
-                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
-                        @else
-                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
-                        @endif
-                      </div>
-                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($evento -> venue))}}, {{ucfirst(trans($evento -> city))}}</div>
-                    </div>
-
-                    <div class="col-3  p-0">
-                     
-                      <a class="card-img-top d-block overflow-hidden" href="#">
-                        <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}"></a>
-                    
-                    </div>
-                  </div>
-             
-
-            </div>
-
-            <!-- Button -->
-            <a href="#" class="btn btn-primary btn-visit">
-                Get Directions
-            </a>
-
-            <div class="mt-3 p-2 bg-dark text-light rounded small">
-                📈 Convert Visitors into Business Deals
-            </div>
-          </div>
+</div>
+</div>
+</div>
 
             </div>
           </div>
