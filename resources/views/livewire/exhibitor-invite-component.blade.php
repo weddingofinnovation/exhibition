@@ -13,12 +13,13 @@
     }
   </style>
 
-  @if($board == 'thankyou')
       @php
         $findvisitor = DB::table('leads')->where('id', $visitorid)->first();
         $events = DB::table('events')->where('id', $visitorid)->first();
       @endphp
 
+  @if($board == 'thankyou')
+  
       <div class="container py-4 py-lg-5 my-4">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10">
