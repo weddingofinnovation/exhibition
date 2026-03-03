@@ -723,7 +723,7 @@
           @endphp
 
             <!-- Company Logo -->
-            <img src="{{url('public/assets/image/exhibition/'.$evento->brand_logo)}}" class="company-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
+            <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" class="company-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
 
 
             <!-- Invite Text -->
