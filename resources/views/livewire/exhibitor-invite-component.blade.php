@@ -73,7 +73,6 @@
       {{-- Debug --}}
       {{$search}}
 
-      {{$events}}
       {{-- Show Message When Empty --}}
       @if(empty($search))
           <div class="text-muted mt-3">
