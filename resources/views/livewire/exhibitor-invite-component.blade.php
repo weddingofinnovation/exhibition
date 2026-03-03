@@ -836,13 +836,15 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
               @endphp
              
+              <div class="invite-heading">
+                        CORDIALLY INVITES YOU TO VISIT US AT
+              </div>
+
+
               <div class="premium-wrapper">
                 <div class="premium-card">
 
-                    <div class="invite-heading">
-                        CORDIALLY INVITES YOU TO VISIT US AT
-                    </div>
-
+                    
                     <div class="text-center">
                         <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" 
                             style="max-height:80px;" 
