@@ -738,8 +738,8 @@
 
             <!-- Stall Information -->
             <div class="stall-info">
-                Stall No: <span class="highlight">{{$getexhibitordetails->stall}}</span> |
-                Booth No: <span class="highlight">{{$getexhibitordetails->hallno}}</span> |
+                Stall No: <span class="highlight">{{$getexhibitordetails->stallno}}</span> |
+                Booth No: <span class="highlight">{{$getexhibitordetails->hall}}</span> |
                 Hall No: <span class="highlight">3</span>
             </div>
 
