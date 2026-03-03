@@ -755,7 +755,7 @@
             <div class="event-date">
                 15 – 18 October 2026 {{$getexhibitordetails->event_id}}
               
-                {{$geteventdetails}}
+             
 
             </div>
 
