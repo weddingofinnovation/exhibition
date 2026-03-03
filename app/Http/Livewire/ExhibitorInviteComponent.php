@@ -11,6 +11,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -313,31 +314,20 @@ class ExhibitorInviteComponent extends Component
     
     public function render()
     {
-     $events = collect(); // empty by default
 
-     if(!empty($this->search) || !empty($this->venue)) {
+    $events = collect(); // empty by default
 
-        $query = Event::where('status', 1)
-                    ->where('admstatus', 1);
+    if (!empty($this->search)) {
 
-        if ($this->search) {
-            $query->where(function ($q) {
-                $q->where('eventname', 'like', '%' . $this->search . '%')
-                  ->orWhere('city', 'like', '%' . $this->search . '%');
-            });
-        }
-
-        if ($this->venue && $this->venue != 'Venue') {
-            $query->where('venue', $this->venue);
-        }
-
-        $events = $query->get();
+        $events = DB::table('events')
+                    ->where('status', 1)
+                    ->where('admstatus', 1)
+                    ->where('eventname', 'like', '%' . $this->search . '%')
+                    ->orderBy('startdate', 'asc')
+                    ->get();
     }
+   
 
-    return view('livewire.exhibitor-invite-component', [
-        'events' => $events
-    ]);
-
-        return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
+        return view('livewire.exhibitor-invite-component', ['events' => $events])->layout('layouts.eblog');
     }
 }

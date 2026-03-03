@@ -55,107 +55,50 @@
       </div>
 
     @elseif($board == 'linkcreate')
+       
+    <div class="container mt-4">
 
-      <style>
-        /* Custom Styling */
-        .search-section {
-          /* background: linear-gradient(to right, #f8f3ff, #f0e6ff); */
-          background: #000;
-          padding: 30px 0;
-          text-align: center;
-        }
+      {{-- Search Box --}}
+      <div class="search-box d-flex">
+          <input type="text"
+                class="form-control"
+                placeholder="Search by event name..."
+                wire:model.debounce.500ms="search">
 
-        .search-title {
-          /* font-size: 32px; */
-          font-weight: bold;
-          color: #fff;
-          margin-bottom: 10px;
-        }
-
-        .search-box {
-          display: flex;
-          background: white;
-          /* border-radius: 50px; */
-          padding: 2px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          overflow: hidden;
-        }
-
-        .search-box input,
-        .search-box select {
-          border: none;
-          outline: none;
-          padding: 12px;
-          flex: 1;
-        }
-
-        .search-box button {
-          background: #000;
-          color: #fff;
-          border: none;
-          padding: 12px 30px;
-          /* border-radius: 50px; */
-          font-weight: bold;
-        }
-
-        .search-box button:hover {
-          background: #fff;
-        }
-      </style>
-
-      <div class="row justify-content-center mt-3">
-        <div class="col-md-8">
-          <div class="search-box d-flex">
-            <input type="text" class="form-control" placeholder="Search by event, month or today" wire:model.debounce.500ms="search">
-
-            <!-- <input type="text" class="form-control" placeholder="Venue ...i.e. pragati maidian"> -->
-            <select class="form-select" wire:model="venue">
-              
-                @php
-                  $venueoption = DB::table('locations')->whereNotNull('venue')->orderBy('created_at','asc')->where('status','1')->where('admstatus','1')->limit(10)->get();
-                @endphp
-                <option>Venue</option>
-                @foreach($venueoption as $franchise)
-                  <option>{{ucwords($franchise->venue)}}</option>
-                @endforeach
-
-            </select>
-
-            <button type="submit" class="btn">Plan your Event</button>
-          </div>
-        </div>
+          <button type="button" class="btn btn-dark">
+              Select your Event
+          </button>
       </div>
 
+      {{-- Debug --}}
+      {{-- {{$search}} --}}
 
+      {{-- Show Message When Empty --}}
+      @if(empty($search))
+          <div class="text-muted mt-3">
+              🔎 Start typing to search events
+          </div>
 
-          <div class=" container mt-4 d-none d-md-block">
+      {{-- No Results --}}
+      @elseif($events->count() == 0)
+          <div class="text-danger mt-3">
+              No events found.
+          </div>
 
-            <ul class="list-group">
+      {{-- Show Results --}}
+      @else
+          <ul class="list-group mt-3">
               @foreach($events as $event)
-                <li class="list-group-item d-flex justify-content-between align-items-center
-                        {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}" wire:click="toggleEvent({{ $event->id }})"
-                  style="cursor: pointer; user-select: none;">
-
-                  <a href="{{ route('event.details', ['slug' => $event->slug]) }}"
-                    onclick="event.stopPropagation();"
-                    class="text-decoration-none {{ in_array($event->id, $selectedEvents) ? 'text-white' : 'text-dark' }}">
-                    <strong>{{ $event->eventname }}</strong> —
-                    {{ $event->country }} {{ $event->city }} - {{ $event->venue }} —
-                    {{ $event->startdate }} to {{ $event->enddate }}
-                  </a>
-
-                  <!-- Checkmark Icon -->
-                  @if(in_array($event->id, $selectedEvents))
-                  <span class="badge bg-light text-dark">✓</span>
-                  @endif
-                </li>
+                  <li class="list-group-item">
+                      <strong>{{ $event->eventname }}</strong><br>
+                      {{ $event->city }} | {{ $event->venue }}<br>
+                      {{ $event->startdate }} to {{ $event->enddate }}
+                  </li>
               @endforeach
-            </ul>
+          </ul>
+      @endif
 
-          </div>
-        
-
-      </div>
+    </div>
 
     @elseif($board == 'exhibitor')
       <div class="container mt-4">
