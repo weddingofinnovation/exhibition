@@ -214,7 +214,7 @@
               @endphp
 
               @foreach($venueoption as $franchise)
-              <option>{{ucwords($franchise->venue)}}</option>
+                <option>{{ucwords($franchise->venue)}}</option>
               @endforeach
 
             </select>
@@ -222,6 +222,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </section>
 
