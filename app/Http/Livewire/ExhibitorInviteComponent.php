@@ -313,23 +313,30 @@ class ExhibitorInviteComponent extends Component
     
     public function render()
     {
-     $query = Event::where('status', 1)
-                ->where('admstatus', 1);
+     $events = collect(); // empty by default
 
-    if ($this->search) {
-        $query->where(function ($q) {
-            $q->where('eventname', 'like', '%' . $this->search . '%')
-              ->orWhere('city', 'like', '%' . $this->search . '%')
-              ->orWhere('startdate', 'like', '%' . $this->search . '%');
-        });
+     if(!empty($this->search) || !empty($this->venue)) {
+
+        $query = Event::where('status', 1)
+                    ->where('admstatus', 1);
+
+        if ($this->search) {
+            $query->where(function ($q) {
+                $q->where('eventname', 'like', '%' . $this->search . '%')
+                  ->orWhere('city', 'like', '%' . $this->search . '%');
+            });
+        }
+
+        if ($this->venue && $this->venue != 'Venue') {
+            $query->where('venue', $this->venue);
+        }
+
+        $events = $query->get();
     }
 
-    if ($this->venue && $this->venue != 'Venue') {
-        $query->where('venue', $this->venue);
-    }
-
-    $this->events = $query->get();   // ✅ ALWAYS collection
-
+    return view('livewire.exhibitor-invite-component', [
+        'events' => $events
+    ]);
 
         return view('livewire.exhibitor-invite-component')->layout('layouts.eblog');
     }
