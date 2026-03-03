@@ -83,7 +83,7 @@
                       </div>
 
                       <div class="col-7  p-0">
-                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+                        <div class="fs-md fw-normal text-start"><a class="text-dark" href="">
                             {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
                         <div class="text-muted fs-sm text-start">
                           @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
@@ -717,11 +717,14 @@
           <div class="invite-card ">
 
           @php 
-             $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();
+              $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();   
+              $evento = DB::table('events')->where('id', $getexhibitordetails->event_id)->first();
+              $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
           @endphp
 
             <!-- Company Logo -->
-            <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
+            <img src="{{url('public/assets/image/exhibition/'.$evento->brand_logo)}}" class="company-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
+
 
             <!-- Invite Text -->
             <div class="invite-text">
@@ -729,19 +732,18 @@
             </div>
 
             <!-- Event Logo -->
-            <img src="event-logo.png" class="event-logo img-fluid" alt="Event Logo">
+            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" class="event-logo img-fluid" alt="{{Str::limit($evento->eventname, 24)}}">
+
 
             <!-- Company Name -->
             <div class="company-name">
-                @php 
-                  $geteventdetails = DB::table('events')->where('id', $getexhibitordetails->event_id)->first();
-                  $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();
-                @endphp
+               
 
                 {{$getexhibitordetails->brand_id }}
-                {{$geteventbrandsdetails->organisation }}
+                |
+                
                 {{$geteventbrandsdetails->brand_name }}
-                ABC Industries Pvt. Ltd.
+                {{$geteventbrandsdetails->organisation }}
             </div>
 
             <!-- Stall Information -->
@@ -754,7 +756,45 @@
             <!-- Event Dates -->
             <div class="event-date">
                 15 – 18 October 2026 {{$getexhibitordetails->event_id}}
-              
+                
+                  <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+                    <div class="col  pr-0">
+                      <a class="text-dark" href="#">
+                        @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
+                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
+                        <div class="small text-muted">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+                        @else
+                        <div class="h4 fw-light mb-0"> {{Carbon\Carbon::parse ($evento->startdate)->format('d')}}</div>
+                        <div class="small text-muted text-capitalize">{{Carbon\Carbon::parse ($evento->startdate)->format('M')}} </div>
+
+                        @endif
+                        <div class="round-circle">{{$evento->edition}}</div>
+                        <div class="round-circle">{{Carbon\Carbon::parse ($evento->startdate)->format('Y')}}</div>
+                        {{--<a class="btn btn-primary btn-sm" href="{{$link->google()}}">Add to Calender
+                      </a>--}}
+                      </a>
+                    </div>
+
+                    <div class="col-7  p-0">
+                      <div class="fs-md fw-normal text-start"><a class="text-dark" href="#">
+                          {{ucwords(trans(Str::limit($evento->eventname, 24)))}}</a></div>
+                      <div class="text-muted fs-sm text-start">
+                        @if(Carbon\Carbon::parse ($evento->startdate)->format('M') != Carbon\Carbon::parse ($evento->enddate)->format('M'))
+                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                        @else
+                        {{Carbon\Carbon::parse ($evento->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($evento->enddate)->format('D, d M')}}
+                        @endif
+                      </div>
+                      <div class="text-muted fs-sm text-start">{{ucfirst(trans($evento -> venue))}}, {{ucfirst(trans($evento -> city))}}</div>
+                    </div>
+
+                    <div class="col-3  p-0">
+                     
+                      <a class="card-img-top d-block overflow-hidden" href="#">
+                        <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" alt="{{Str::limit($evento->eventname, 24)}}"></a>
+                    
+                    </div>
+                  </div>
              
 
             </div>
