@@ -319,9 +319,7 @@ class ExhibitorInviteComponent extends Component
 
     if (!empty($this->search)) {
 
-        $events = DB::table('events')
-                    ->where('eventname', 'like', '%' . $this->search . '%')
-                    ->get();
+        $events = Event::where('eventname', 'like', '%' . $this->search . '%')->get();
     }
    
 
