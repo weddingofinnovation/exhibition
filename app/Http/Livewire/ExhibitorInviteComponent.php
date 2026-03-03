@@ -315,14 +315,10 @@ class ExhibitorInviteComponent extends Component
     public function render()
     {
 
-    $events = collect();
-
-    if (!empty($this->search)) {
-
-        $events = Event::where('eventname', 'like', '%' . $this->search . '%')->get();
-    }
+    $searchTerm = '%'.$this->searchTerm. '%';
+    $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
    
 
-        return view('livewire.exhibitor-invite-component', ['events' => $events])->layout('layouts.eblog');
+        return view('livewire.exhibitor-invite-component', ['searchCat' => $searchCat])->layout('layouts.eblog');
     }
 }

@@ -73,7 +73,7 @@
       {{-- Debug --}}
       {{$search}}
 
-      @foreach($events as $event)
+      @foreach($searchCat as $event)
           {{ $event->eventname ?? 'no'}}
       @endforeach
 
