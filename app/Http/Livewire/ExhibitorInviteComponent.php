@@ -317,7 +317,7 @@ class ExhibitorInviteComponent extends Component
         $event = Event::where('id', $eventid)->first();
 
         if ($event) {
-            $this->generatedLink = route('invitee.page', ['board' => 'exhibitor', 'event_id' => $event->id]);
+            $this->generatedLink = route('invitee.add', ['board' => 'exhibitor', 'event_id' => $event->id]);
         }
     }
     
