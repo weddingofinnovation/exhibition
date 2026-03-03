@@ -262,10 +262,6 @@ class ExhibitorInviteComponent extends Component
 
         return redirect()->route('invitee.add', ['board' => 'thanks', 'event_id' => $this->event_id])->with('reference_code', $createexhibitionstall->referencecode);;
     }
-    
-
-
-   
 
     public function exhibitorrequestedvisitorforpass()
     {
