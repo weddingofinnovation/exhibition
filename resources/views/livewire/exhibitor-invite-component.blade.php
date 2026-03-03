@@ -642,156 +642,8 @@
         <div class="row">
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">
-            <div class="p-0">
-
-
-              <!-- data -->
-
-              <section class="hero d-none d-md-block">
-                <h1>Connect. Collaborate. Grow.</h1>
-                <p>Invite business representatives or schedule meetings with top brands at the event.</p>
-              </section>
-
-              <section class="container d-none d-md-block">
-                <!-- <h2 class="text-center">Live Event Stats</h2> -->
-
-                <div class="row text-center g-3">
-
-                  <div class="col-md-4 col-12">
-                    <div class="p-4 border rounded shadow-sm h-100">
-                      <h3 class="fw-bold text-primary">1,250+</h3>
-                      <p class="mb-0">Invites Sent</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 col-12">
-                    <div class="p-4 border rounded shadow-sm h-100">
-                      <h3 class="fw-bold text-primary">800+</h3>
-                      <p class="mb-0">Meeting Scheduled</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 col-12">
-                    <div class="p-4 border rounded shadow-sm h-100">
-                      <h3 class="fw-bold text-primary">Top 5</h3>
-                      <p class="mb-0">Most Requested Brands</p>
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-              <section class="container my-4 d-none">
-                <p class="fw-bold text-center mb-4">
-                  Invitee Helps You Achieve Your Goals
-                </p>
-
-                <div class="row g-3">
-
-                  <div class="col-md-4 col-12">
-                    <div class="border rounded p-4 h-100 shadow-sm">
-                      <h3 class="fw-bold text-primary">1,250+</h3>
-                      <p class="fw-semibold mb-2">Market Your Business to New Users</p>
-                      <strong>Effortless Scheduling</strong> –
-                      Plan your meetings in advance for a seamless event experience.
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 col-12">
-                    <div class="border rounded p-4 h-100 shadow-sm">
-                      <h3 class="fw-bold text-primary">800+</h3>
-                      <p class="fw-semibold mb-2">Grow Your Revenue</p>
-                      <strong>Meaningful Interactions</strong> –
-                      Connect with the right people who matter to your business.
-                    </div>
-                  </div>
-
-                  <div class="col-md-4 col-12">
-                    <div class="border rounded p-4 h-100 shadow-sm">
-                      <h3 class="fw-bold text-primary">Top 5</h3>
-                      <p class="fw-semibold mb-2">Get More Walk-in Customers</p>
-                      <strong>Time-Saving</strong> –
-                      Avoid last-minute scheduling and maximize your event productivity.
-                    </div>
-                  </div>
-
-                </div>
-              </section>
-
-
-
-
-
-            </div>
-          </div>
-
-<style>
-    body {
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        font-family: 'Segoe UI', sans-serif;
-    }
-
-    .invite-card {
-        max-width: 700px;
-        margin: 50px auto;
-        padding: 40px;
-        background: #ffffff;
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        text-align: center;
-    }
-
-    .company-logo {
-        max-height: 80px;
-        margin-bottom: 20px;
-    }
-
-    .event-logo {
-        max-height: 100px;
-        margin: 20px 0;
-    }
-
-    .invite-text {
-        font-size: 20px;
-        font-weight: 500;
-        color: #6c757d;
-        margin-bottom: 15px;
-    }
-
-    .company-name {
-        font-size: 28px;
-        font-weight: 700;
-        color: #212529;
-    }
-
-    .stall-info {
-        font-size: 18px;
-        margin-top: 20px;
-    }
-
-    .highlight {
-        color: #0d6efd;
-        font-weight: 600;
-    }
-
-    .event-date {
-        margin-top: 15px;
-        font-size: 16px;
-        color: #495057;
-    }
-
-    .btn-visit {
-        margin-top: 30px;
-        padding: 10px 30px;
-        font-size: 16px;
-        border-radius: 30px;
-    }
-</style>
-
-
-
-<div class="container">
-    <div class="invite-card">
+            {{$this->event_id}}
+            <div class="invite-card">
 
         <!-- Company Logo -->
         <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
@@ -829,6 +681,11 @@
     </div>
 </div>
 
+</body>
+</html>
+          </div>
+
+          
           <!-- Column 2 -->
           <div class="col-md-7 col-12 my-5">
             <div class="">
