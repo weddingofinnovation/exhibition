@@ -642,47 +642,46 @@
         <div class="row">
           <!-- Column 1 -->
           <div class="col-md-5 col-12 my-5 border-end">
-            {{$this->event_id}}
-            <div class="invite-card">
+            <div class="p-0">
 
-        <!-- Company Logo -->
-        <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
+          <div class="invite-card">
 
-        <!-- Invite Text -->
-        <div class="invite-text">
-            Cordially Invites You To Visit Us At
-        </div>
+            <!-- Company Logo -->
+            <img src="company-logo.png" class="company-logo img-fluid" alt="Company Logo">
 
-        <!-- Event Logo -->
-        <img src="event-logo.png" class="event-logo img-fluid" alt="Event Logo">
+            <!-- Invite Text -->
+            <div class="invite-text">
+                Cordially Invites You To Visit Us At
+            </div>
 
-        <!-- Company Name -->
-        <div class="company-name">
-            ABC Industries Pvt. Ltd.
-        </div>
+            <!-- Event Logo -->
+            <img src="event-logo.png" class="event-logo img-fluid" alt="Event Logo">
 
-        <!-- Stall Information -->
-        <div class="stall-info">
-            Stall No: <span class="highlight">A12</span> |
-            Booth No: <span class="highlight">B45</span> |
-            Hall No: <span class="highlight">3</span>
-        </div>
+            <!-- Company Name -->
+            <div class="company-name">
+                ABC Industries Pvt. Ltd.
+            </div>
 
-        <!-- Event Dates -->
-        <div class="event-date">
-            15 – 18 October 2026
-        </div>
+            <!-- Stall Information -->
+            <div class="stall-info">
+                Stall No: <span class="highlight">A12</span> |
+                Booth No: <span class="highlight">B45</span> |
+                Hall No: <span class="highlight">3</span>
+            </div>
 
-        <!-- Button -->
-        <a href="#" class="btn btn-primary btn-visit">
-            Get Directions
-        </a>
+            <!-- Event Dates -->
+            <div class="event-date">
+                15 – 18 October 2026
+            </div>
 
-    </div>
-</div>
+            <!-- Button -->
+            <a href="#" class="btn btn-primary btn-visit">
+                Get Directions
+            </a>
 
-</body>
-</html>
+          </div>
+
+            </div>
           </div>
 
           
