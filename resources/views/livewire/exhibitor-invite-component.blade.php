@@ -53,7 +53,7 @@
       </div>
 
     @elseif($board == 'linkcreate')
-       <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="search-box d-flex">
             <input type="text" class="form-control" placeholder="Search by event, month or today" wire:model.debounce.500ms="search">
@@ -73,58 +73,60 @@
           </div>
         </div>
       </div>
+
       <div class=" container mt-4 d-none d-md-block">
-    @if($events->isEmpty())
-    <p class="d-none d-md-block">No events found.</p>
-    @else
-    <div class="container my-4">
+        @if($events->isEmpty())
+          <p class="d-none d-md-block">No events found.</p>
+        @else
+          <div class="container my-4">
 
-      <!-- Instruction Banner + Button in One Row -->
-      <div class="alert alert-info d-flex justify-content-between align-items-center shadow-sm flex-wrap">
-        <div class="text-start">
-          <strong>Select</strong> your yearly exhibitions and
-          <strong>book premium space in advance!</strong><br>
-          <span class="small text-dark">Click the button below to get the list of your selected events by email.</span>
-        </div>
+            <!-- Instruction Banner + Button in One Row -->
+            <div class="alert alert-info d-flex justify-content-between align-items-center shadow-sm flex-wrap">
+              <div class="text-start">
+                <strong>Select</strong> your yearly exhibitions and
+                <strong>book premium space in advance!</strong><br>
+                <span class="small text-dark">Click the button below to get the list of your selected events by email.</span>
+              </div>
 
-        <div class="mt-2 mt-md-0">
-          <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="openEmailModal">
-            Get Selected Events by Email
-          </button>
-        </div>
+              <div class="mt-2 mt-md-0">
+                <button class="btn btn-primary px-4 py-2 fw-bold" wire:click="openEmailModal">
+                  Get Selected Events by Email
+                </button>
+              </div>
+            </div>
+
+            <!-- Count and List -->
+            <h6 class="text-dark mb-2">
+              Total Events: {{$events->count()}} | Selected: {{ count($selectedEvents) }}
+            </h6>
+
+            <ul class="list-group">
+              @foreach($events as $event)
+                <li class="list-group-item d-flex justify-content-between align-items-center
+                        {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}" wire:click="toggleEvent({{ $event->id }})"
+                  style="cursor: pointer; user-select: none;">
+
+                  <a href="{{ route('event.details', ['slug' => $event->slug]) }}"
+                    onclick="event.stopPropagation();"
+                    class="text-decoration-none {{ in_array($event->id, $selectedEvents) ? 'text-white' : 'text-dark' }}">
+                    <strong>{{ $event->eventname }}</strong> —
+                    {{ $event->country }} {{ $event->city }} - {{ $event->venue }} —
+                    {{ $event->startdate }} to {{ $event->enddate }}
+                  </a>
+
+                  <!-- Checkmark Icon -->
+                  @if(in_array($event->id, $selectedEvents))
+                  <span class="badge bg-light text-dark">✓</span>
+                  @endif
+                </li>
+              @endforeach
+            </ul>
+
+          </div>
+        @endif
+
       </div>
-
-      <!-- Count and List -->
-      <h6 class="text-dark mb-2">
-        Total Events: {{$events->count()}} | Selected: {{ count($selectedEvents) }}
-      </h6>
-
-      <ul class="list-group">
-        @foreach($events as $event)
-        <li class="list-group-item d-flex justify-content-between align-items-center
-                 {{ in_array($event->id, $selectedEvents) ? 'active text-white' : '' }}" wire:click="toggleEvent({{ $event->id }})"
-          style="cursor: pointer; user-select: none;">
-
-          <a href="{{ route('event.details', ['slug' => $event->slug]) }}"
-            onclick="event.stopPropagation();"
-            class="text-decoration-none {{ in_array($event->id, $selectedEvents) ? 'text-white' : 'text-dark' }}">
-            <strong>{{ $event->eventname }}</strong> —
-            {{ $event->country }} {{ $event->city }} - {{ $event->venue }} —
-            {{ $event->startdate }} to {{ $event->enddate }}
-          </a>
-
-          <!-- Checkmark Icon -->
-          @if(in_array($event->id, $selectedEvents))
-          <span class="badge bg-light text-dark">✓</span>
-          @endif
-        </li>
-        @endforeach
-      </ul>
-
-    </div>
-
-  </div>
-
+      
     @elseif($board == 'exhibitor')
       <div class="container mt-4">
 
@@ -580,7 +582,7 @@
         </div>
       </div>
     @elseif($board == 'thanks')
-    <div class="container mt-4">
+      <div class="container mt-4">
         <div class="row">
 
           <div class="col-3 border-end">
