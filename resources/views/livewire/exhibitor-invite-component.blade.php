@@ -715,76 +715,109 @@
             <div class="p-0">
 
               <style>
-                  .luxury-invite-wrapper{
-                      background: linear-gradient(135deg,#0a192f,#112240);
-                      padding:40px 20px;
-                  }
+.premium-wrapper{
+    background: linear-gradient(135deg,#0f1f3d,#1b2c4a);
+    padding:50px 20px;
+}
 
-                  .invite-card{
-                      background: rgba(255,255,255,0.05);
-                      backdrop-filter: blur(12px);
-                      border:1px solid rgba(255,215,0,0.3);
-                      border-radius:20px;
-                      padding:30px;
-                      color:#fff;
-                      box-shadow:0 15px 40px rgba(0,0,0,0.4);
-                      position:relative;
-                  }
+.premium-card{
+    background: #142544;
+    border-radius:24px;
+    padding:40px 35px;
+    color:#fff;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    position:relative;
+    overflow:hidden;
+}
 
-                  .invite-text{
-                      text-transform:uppercase;
-                      letter-spacing:2px;
-                      font-size:14px;
-                      color:#c9a227;
-                  }
+/* Golden Border Glow */
+.premium-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:24px;
+    padding:1px;
+    background:linear-gradient(45deg,#d4af37,#f8e29c,#d4af37);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
 
-                  .company-logo{
-                      max-height:90px;
-                      margin:20px 0;
-                  }
+.invite-heading{
+    text-align:center;
+    font-size:13px;
+    letter-spacing:3px;
+    color:#d4af37;
+    margin-bottom:25px;
+}
 
-                  .company-name{
-                      font-size:22px;
-                      font-weight:600;
-                      color:#fff;
-                  }
+.company-title{
+    font-size:26px;
+    font-weight:700;
+    text-align:center;
+    margin-top:20px;
+}
 
-                  .highlight{
-                      color:#ffd700;
-                      font-weight:bold;
-                  }
+.stall-highlight{
+    text-align:center;
+    margin-top:10px;
+    font-size:15px;
+}
 
-                  .btn-visit{
-                      background:linear-gradient(45deg,#ffd700,#c9a227);
-                      border:none;
-                      color:#000;
-                      font-weight:600;
-                      padding:10px 25px;
-                      border-radius:50px;
-                      transition:0.3s;
-                  }
+.stall-highlight span{
+    color:#f8e29c;
+    font-weight:600;
+}
 
-                  .btn-visit:hover{
-                      transform:scale(1.05);
-                  }
+.event-section{
+    background:#0e1b33;
+    border-radius:16px;
+    padding:20px;
+    margin-top:30px;
+}
 
-                  .premium-footer{
-                      margin-top:30px;
-                      padding-top:20px;
-                      border-top:1px solid rgba(255,255,255,0.1);
-                  }
+.event-name{
+    font-size:20px;
+    font-weight:600;
+    color:#f8e29c;
+}
 
-                  .branding-title{
-                      font-size:20px;
-                      font-weight:700;
-                      color:#ffd700;
-                  }
+.event-details{
+    font-size:14px;
+    color:#cbd5e1;
+}
 
-                  .help-center{
-                      font-size:14px;
-                      color:#ccc;
-                  }
-              </style>
+.btn-premium{
+    background: linear-gradient(45deg,#d4af37,#f8e29c);
+    color:#000;
+    border:none;
+    padding:12px 28px;
+    border-radius:40px;
+    font-weight:600;
+    margin-top:25px;
+    transition:0.3s;
+}
+
+.btn-premium:hover{
+    transform:scale(1.05);
+}
+
+.footer-brand{
+    margin-top:35px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+}
+
+.footer-brand strong{
+    color:#f8e29c;
+}
+</style>
               
               @php 
                   $getexhibitordetails = DB::table('participants')->where('event_id', $this->event_id)->first();   
@@ -792,103 +825,79 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
               @endphp
              
-              <div class="luxury-invite-wrapper">
-<div class="container">
-<div class="invite-card">
+              <div class="premium-wrapper">
+                <div class="premium-card">
 
-    <div class="invite-text text-center">
-        Cordially Invites You To Visit Us At
-    </div>
+                    <div class="invite-heading">
+                        CORDIALLY INVITES YOU TO VISIT US AT
+                    </div>
 
-    <div class="text-center">
-        <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" 
-             class="company-logo img-fluid"
-             alt="{{Str::limit($evento->eventname, 24)}}">
-    </div>
+                    <div class="text-center">
+                        <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}" 
+                            style="max-height:80px;" 
+                            class="img-fluid">
+                    </div>
 
-    <div class="company-name text-center">
-        {{$geteventbrandsdetails->brand_name}}
-        {{$geteventbrandsdetails->organisation}}
-    </div>
+                    <div class="company-title">
+                        {{$geteventbrandsdetails->brand_name}}
+                    </div>
 
-    <div class="text-center mt-3">
-        Stall No: <span class="highlight">{{$getexhibitordetails->stallno}}</span> |
-        Hall: <span class="highlight">{{$getexhibitordetails->hall}}</span>
-    </div>
+                    <div class="stall-highlight">
+                        Stall No: <span>{{$getexhibitordetails->stallno}}</span> 
+                        | Hall: <span>{{$getexhibitordetails->hall}}</span>
+                    </div>
 
-    <!-- EVENT BLOCK -->
-    <div class="row align-items-center mt-4">
+                    <div class="event-section mt-4">
 
-        <div class="col-md-8">
-            <h5 class="fw-bold text-warning">
-                {{ucwords($evento->eventname)}}
-            </h5>
+                        <div class="row align-items-center">
 
-            <p class="mb-1">
-                {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} 
-                -
-                {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
-            </p>
+                            <div class="col-md-8">
+                                <div class="event-name">
+                                    {{ucwords($evento->eventname)}}
+                                </div>
 
-            <p class="mb-0 text-light">
-                {{$evento->venue}}, {{$evento->city}}
-            </p>
-        </div>
+                                <div class="event-details mt-2">
+                                    {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
+                                    {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
+                                </div>
 
-        <div class="col-md-4 text-center">
-            <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" 
-                 class="img-fluid rounded shadow"
-                 style="max-height:120px;">
-        </div>
+                                <div class="event-details">
+                                    {{$evento->venue}}, {{$evento->city}}
+                                </div>
+                            </div>
 
-    </div>
+                            <div class="col-md-4 text-center">
+                                <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}" 
+                                    class="img-fluid rounded"
+                                    style="max-height:110px;">
+                            </div>
 
-    <div class="text-center mt-4">
-        <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}" 
-           target="_blank" 
-           class="btn btn-visit">
-            Get Directions
-        </a>
-    </div>
+                        </div>
 
-    <!-- QR + SHARE -->
-    <div class="row mt-4 text-center">
-        <div class="col-md-6">
-            <button class="btn btn-outline-light"
-                onclick="navigator.share ? navigator.share({title: 'Exhibition Invite', url: window.location.href}) : alert('Copy link to share');">
-                🔗 Share Invitation
-            </button>
-        </div>
+                        <div class="text-center">
+                            <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
+                              target="_blank"
+                              class="btn btn-premium">
+                              Get Directions
+                            </a>
+                        </div>
 
-        <div class="col-md-6">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data={{ urlencode(url()->current()) }}"
-                 style="background:#fff; padding:8px; border-radius:10px;">
-        </div>
-    </div>
+                    </div>
 
-    <!-- PREMIUM FOOTER -->
-    <div class="premium-footer row align-items-center mt-4">
+                    <div class="footer-brand">
+                        <div>
+                            <strong>The Exhibition Network</strong><br>
+                            Exhibition Help Center
+                        </div>
 
-        <div class="col-md-6 text-start">
-            <div class="branding-title">
-                The Exhibition Network
-            </div>
-            <div class="help-center">
-                Exhibition Help Center
-            </div>
-        </div>
+                        <div class="text-end">
+                            📞 +91 98765 43210 <br>
+                            ✉ support@exhibition.org.in
+                        </div>
+                    </div>
 
-        <div class="col-md-6 text-md-end help-center">
-            📞 +91 98765 43210 <br>
-            ✉ support@exhibition.org.in <br>
-            🌐 www.exhibition.org.in
-        </div>
-
-    </div>
-
-</div>
-</div>
-</div>
+                </div>
+              </div>
 
             </div>
           </div>
