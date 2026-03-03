@@ -316,7 +316,7 @@ class ExhibitorInviteComponent extends Component
     public function render()
     {
 
-    $searchTerm = '%'.$this->search. '%';
+    $searchTerm = '%'.$this->searchTerm. '%';
     $searchCat = Event::Where('eventname','LIKE', $searchTerm)->where('status','1')->orderBy('eventname','ASC')->get();
    
 
