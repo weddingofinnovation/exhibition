@@ -719,18 +719,18 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
               @endphp
              
-              <div class="invite-heading text-center small">CORDIALLY INVITES YOU TO VISIT US AT</div>
+                <div class="invite-heading text-center small text-uppercase text-muted mb-3">Cordially Invites You To Visit Us At</div>
 
-                <div class="card shadow-lg border-0 text-white w-100" 
-                    style="max-width:520px; background:linear-gradient(135deg,#0f1f3d,#1b2c4a); border-radius:20px;">
+                <div class="card shadow-sm border w-100 bg-white" 
+                    style="max-width:520px; border-radius:16px;">
 
-                    <div class="card-body p-4">
+                    <div class="card-body p-4 text-dark">
 
                         <!-- Brand Logo -->
                         <div class="text-center mb-3">
                             <img src="{{url('public/assets/image/exhibition/'.$geteventbrandsdetails->brand_logo)}}"
                                 class="img-fluid"
-                                style="max-height:70px;">
+                                style="max-height:65px;">
                         </div>
 
                         <!-- Company Name -->
@@ -739,28 +739,29 @@
                         </h5>
 
                         <!-- Stall Info -->
-                        <p class="text-center small mb-3">
-                            Stall No: <span class="fw-bold text-warning">{{$getexhibitordetails->stallno}}</span> 
-                            | Hall: <span class="fw-bold text-warning">{{$getexhibitordetails->hall}}</span>
+                        <p class="text-center small text-muted mb-3">
+                            Stall No: <span class="fw-semibold text-dark">{{$getexhibitordetails->stallno}}</span> 
+                            |
+                            Hall: <span class="fw-semibold text-dark">{{$getexhibitordetails->hall}}</span>
                         </p>
 
                         <!-- Event Section -->
-                        <div class="bg-dark bg-opacity-50 rounded p-3">
+                        <div class="border rounded p-3 bg-light">
 
                             <div class="row align-items-center">
 
                                 <div class="col-8">
 
-                                    <h6 class="fw-bold text-warning mb-1">
+                                    <h6 class="fw-bold mb-1">
                                         {{ucwords($evento->eventname)}}
                                     </h6>
 
-                                    <p class="small mb-1">
+                                    <p class="small mb-1 text-muted">
                                         {{Carbon\Carbon::parse($evento->startdate)->format('D, d M Y')}} -
                                         {{Carbon\Carbon::parse($evento->enddate)->format('D, d M Y')}}
                                     </p>
 
-                                    <p class="small text-light mb-0">
+                                    <p class="small text-muted mb-0">
                                         {{$evento->venue}}, {{$evento->city}}
                                     </p>
 
@@ -769,7 +770,7 @@
                                 <div class="col-4 text-end">
                                     <img src="{{url('public/assets/image/exhibition/'.$evento->image)}}"
                                         class="img-fluid rounded"
-                                        style="max-height:80px; object-fit:cover;">
+                                        style="max-height:75px; object-fit:cover;">
                                 </div>
 
                             </div>
@@ -780,7 +781,7 @@
                         <div class="text-center mt-3">
                             <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
                             target="_blank"
-                            class="btn btn-warning rounded-pill px-4">
+                            class="btn btn-dark rounded-pill px-4">
                                 Get Directions
                             </a>
                         </div>
@@ -789,11 +790,11 @@
                         <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3 small">
 
                             <div>
-                                <strong class="text-warning">The Exhibition Network</strong><br>
-                                Exhibition Help Center
+                                <strong>The Exhibition Network</strong><br>
+                                <span class="text-muted">Exhibition Help Center</span>
                             </div>
 
-                            <div class="text-end">
+                            <div class="text-end text-muted">
                                 📞 +91 98765 43210<br>
                                 ✉ support@exhibition.org.in
                             </div>
@@ -801,7 +802,6 @@
                         </div>
 
                     </div>
-
                 </div>
 
             </div>
