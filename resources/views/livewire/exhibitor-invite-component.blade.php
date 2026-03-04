@@ -777,14 +777,7 @@
 
                         </div>
 
-                        <!-- Direction Button -->
-                        <div class="text-center mt-3">
-                            <a href="https://www.google.com/maps/search/?api=1&query={{ urlencode($evento->venue.' '.$evento->city) }}"
-                            target="_blank"
-                            class="btn btn-dark rounded-pill px-4">
-                                Get Directions
-                            </a>
-                        </div>
+                        
 
                         <!-- Footer -->
                         <div class="d-flex justify-content-between align-items-center border-top mt-4 pt-3 small">
