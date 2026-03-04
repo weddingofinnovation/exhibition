@@ -719,7 +719,7 @@
                   $geteventbrandsdetails = DB::table('brands')->where('id', $getexhibitordetails->brand_id)->first();  
               @endphp
              
-              <div class="invite-heading">CORDIALLY INVITES YOU TO VISIT US AT</div>
+              <div class="invite-heading text-center small">CORDIALLY INVITES YOU TO VISIT US AT</div>
 
                 <div class="card shadow-lg border-0 text-white w-100" 
                     style="max-width:520px; background:linear-gradient(135deg,#0f1f3d,#1b2c4a); border-radius:20px;">
