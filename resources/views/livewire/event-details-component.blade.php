@@ -7552,10 +7552,9 @@
 
 
         
-        @if($getperosnalinfo == 'official')
+       
             <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
-        @endif
-
+       
 
 
                 <br>
