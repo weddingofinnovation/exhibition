@@ -252,6 +252,29 @@
 				<!-- Sidebar START -->
 				<div class="col-lg-3 mt-5 mt-lg-0">
 					<div data-sticky="" data-margin-top="80" data-sticky-for="767">
+						
+						<!-- Most read -->
+						<div class="row g-2 mt-5">
+							<h5 class="mt-5 mb-3">Most read</h5>
+							@foreach ($tittlemostread as $post)
+								<div class="d-flex position-relative mb-3">
+									<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
+									<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
+								</div>
+							@endforeach
+						</div>
+
+						<!-- Categories -->
+						<div class="row g-2 mt-5">
+							<h5>Categories</h5>
+							@foreach($cag as $post)
+							<div class="d-flex justify-content-between align-items-center bg-warning-soft rounded p-2 position-relative">
+								<h6 class="m-0 text-warning">{{$post->tag}}</h6>
+								<a href="{{--route('blog.category', ['category_slug'=> $post->tag])--}}" class="badge badgecolor text-dark stretched-link">{{$post->mag->count()}}</a>
+							</div>
+							@endforeach
+						</div>
+
 						<!-- Social links -->
 						<div class="row g-2">
 							<a href="https://blogzine.webestica.com/index-3.html#" class="d-flex justify-content-between align-items-center bg-facebook text-white-force rounded p-2 position-relative">
@@ -276,31 +299,11 @@
 								</div>
 							</a>
 						</div>
-						<!-- Categories -->
-						<div class="row g-2 mt-5">
-							<h5>Categories</h5>
-							@foreach($cag as $post)
-							<div class="d-flex justify-content-between align-items-center bg-warning-soft rounded p-2 position-relative">
-								<h6 class="m-0 text-warning">{{$post->tag}}</h6>
-								<a href="{{--route('blog.category', ['category_slug'=> $post->tag])--}}" class="badge badgecolor text-dark stretched-link">{{$post->mag->count()}}</a>
-							</div>
-							@endforeach
-						</div>
-
-						<!-- Most read -->
-						<div class="row g-2 mt-5">
-							<h5 class="mt-5 mb-3">Most read</h5>
-							@foreach ($tittlemostread as $post)
-								<div class="d-flex position-relative mb-3">
-									<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
-									<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
-								</div>
-							@endforeach
-						</div>
 
 					</div>
 				</div>
 				<!-- Sidebar END -->
+
 			</div> <!-- Row end -->
 		</div>
 	</section>
@@ -312,7 +315,6 @@
 
 
 	@push('scripts')
-
 
 	<script type="application/ld+json">
 		{
