@@ -291,10 +291,10 @@
 						<div class="row g-2 mt-5">
 							<h5 class="mt-5 mb-3">Most read</h5>
 							@foreach ($tittlemostread as $post)
-							<div class="d-flex position-relative mb-3">
-								<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
-								<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
-							</div>
+								<div class="d-flex position-relative mb-3">
+									<span class="me-3 mt-n1 fa-fw fw-bold fs-3 opacity-5">{{$post->count()}}</span>
+									<h6><a href="{{route('blog.details',['slug' => $post->slug])}}" class="stretched-link text-reset btn-link">{{Str::limit($post->tittle,65)}}</a></h6>
+								</div>
 							@endforeach
 						</div>
 
@@ -341,6 +341,30 @@
 			]
 		}
 	</script>
+
+	<script type="application/ld+json">
+		{
+			@foreach ($tittlemostread as $post)
+				"@context": "https://schema.org",
+				"@type": "NewsArticle",
+				"headline": "{{Str::limit($post->tittle,65)}}",
+				"image": [
+					"https://example.com/photos/1x1/photo.jpg",
+				],
+				"datePublished": "2024-01-05T08:00:00+08:00",
+				"dateModified": "2024-02-05T09:20:00+08:00",
+				"author": [{
+					"@type": "Person",
+					"name": "Mayank",
+					"url": "https://example.com/profile/janedoe123"
+					},{
+					"@type": "Person",
+					"name": "John Doe",
+					"url": "https://example.com/profile/johndoe123"
+				}]
+			@endforeach
+		}
+    </script>
 
 	<script>
 		var slider = tns({

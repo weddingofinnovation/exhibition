@@ -152,7 +152,13 @@ class BlogComponent extends Component
         $latest = Mag::where('image','digital_4.jpg')->orderBy('created_at','DESC')->paginate(6);
         $slider = Mag::where('status','1')->paginate(4);
         $mostread = Mag::where('status','1')->paginate(4);
-        $tittlemostread = Mag::where('status','1')->paginate(12);
+
+        //$tittlemostread = Mag::where('status','1')->orderBy('created_at','DESC')->paginate(12);
+
+        $titleMostRead = Mag::where('status', 1)
+        ->latest() // same as orderBy('created_at', 'DESC')
+        ->paginate(12);
+
         $oddsmall = Mag::where('status','1')->whereIn('id',[1,3,5,7,9,11])->paginate(4);
         $evensmall = Mag::where('status','1')->whereIn('id',[2,4,6,8,10,12])->paginate(4);
         //video section

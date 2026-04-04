@@ -7545,20 +7545,13 @@
         <div class="d-flex justify-content-between py-2 px-2">
             <div class="text-dark  pl-3 lh-1">
 
-            @php 
-                $getperosnalinfo = DB::table('plan_type_customers')
-                ->where('event_id', $event->id)->latest()->value('cxtype');
-            @endphp
+                    @php 
+                        $getperosnalinfo = DB::table('plan_type_customers')->where('event_id', $event->id)->latest()->value('cxtype');
+                    @endphp
 
-
-        
-       
-            <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
-       
-
-
-                <br>
-                <span class=" fw-normal fs-xs">Get extra ad-ons</span>
+                    <span class="fw-medium fs-sm">Call us +91-999-185-6776</span>
+                    <br>
+                    <span class=" fw-normal fs-xs">Get extra ad-ons</span>
             </div>
             @if( $event->businessrevenue == 'visitor' )
             @if( $ticketOrExhibit != 0 )
