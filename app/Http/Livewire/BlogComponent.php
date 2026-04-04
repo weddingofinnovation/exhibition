@@ -155,7 +155,7 @@ class BlogComponent extends Component
 
         //$tittlemostread = Mag::where('status','1')->orderBy('created_at','DESC')->paginate(12);
 
-        $titleMostRead = Mag::where('status', 1)
+        $tittlemostread = Mag::where('status', 1)
         ->latest() // same as orderBy('created_at', 'DESC')
         ->paginate(12);
 
