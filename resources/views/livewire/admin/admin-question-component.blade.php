@@ -127,26 +127,33 @@
     </div>
 
     <div class="handheld-toolbar">
-      <div class="d-table table-layout-fixed w-100">
-      
-      
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.questionadd',['eventid' => $this->eventid ,'board' => 'question'])}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-book"></i></span>
-            <span class="handheld-toolbar-label">Event</span>
-        </a>
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.questionadd',['eventid' => $this->eventid ,'board' => 'selected'])}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
-            <span class="handheld-toolbar-label">selected</span>
-        </a>
-        <a class="d-table-cell handheld-toolbar-item {{'admin/dashboard/job' == request()->path() ? 'active' : '' }}" href="{{route('admin.dashboard',['board' => 'add-magazine'])}}">
-            <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
-            <span class="handheld-toolbar-label">Add</span>
-        </a>
-        <a class="d-table-cell handheld-toolbar-item " data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-            <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
-            <span class="handheld-toolbar-label">Menu</span>
-        </a>
+        <div class="d-table table-layout-fixed w-100">
 
-      </div>
+            <a class="d-table-cell handheld-toolbar-item {{ request()->get('board') == 'question' ? 'active' : '' }}"
+            href="{{route('admin.questionadd',['eventid' => $this->eventid ,'board' => 'question'])}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-book"></i></span>
+                <span class="handheld-toolbar-label">Event</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item {{ request()->get('board') == 'selected' ? 'active' : '' }}"
+            href="{{route('admin.questionadd',['eventid' => $this->eventid ,'board' => 'selected'])}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-building"></i></span>
+                <span class="handheld-toolbar-label">Selected</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item {{ request()->get('board') == 'add-magazine' ? 'active' : '' }}"
+            href="{{route('admin.dashboard',['board' => 'add-magazine'])}}">
+                <span class="handheld-toolbar-icon"><i class="bi bi-plus"></i></span>
+                <span class="handheld-toolbar-label">Add</span>
+            </a>
+
+            <a class="d-table-cell handheld-toolbar-item"
+            data-bs-toggle="offcanvas"
+            href="#offcanvasExample">
+                <span class="handheld-toolbar-icon"><i class="bi bi-list"></i></span>
+                <span class="handheld-toolbar-label">Menu</span>
+            </a>
+
+        </div>
     </div>
 </main>
