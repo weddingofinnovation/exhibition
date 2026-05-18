@@ -87,10 +87,10 @@
                 @if($board == 'order')
                 <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
                 <div class="d-flex justify-content-between align-items-center">
+
                   <input type="search" class="form-control w-auto" placeholder="Search...">
-                  <button class="btn btn-primary ml-4">
-                    <i class="bi bi-download"></i> Export
-                  </button>
+                  
+                  <button class="btn btn-primary ml-4"><i class="bi bi-download"></i> Export</button>
 
 
                   <div class="d-flex justify-content-between mb-3">
