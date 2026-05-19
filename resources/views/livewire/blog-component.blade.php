@@ -322,7 +322,7 @@
           <div class="social-stat">
             <div class="val num">930</div>
             <div class="lbl">Community</div>
-          </div>
+</div>
         </div>
         <div class="p-4 grid grid-cols-2 gap-2">
           <a href="#" class="flex items-center justify-center gap-2 h-9 rounded-full border hairline text-[12.5px] font-medium hover:border-ink hover:bg-bone transition">
