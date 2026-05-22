@@ -22,8 +22,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/image/favicons/favicon-16x16.png')}}">
     <link rel="manifest" href="{{asset('/image/favicons/site.webmanifest')}}">
 
-
-
 	<!-- Favicon 
 	<link rel="shortcut icon" href="https://blogzine.webestica.com/assets/images/favicon.ico">-->
 
