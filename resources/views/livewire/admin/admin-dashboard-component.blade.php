@@ -85,34 +85,34 @@
               <div class="d-flex justify-content-between align-items-center mb-2">
 
                 @if($board == 'order')
-                <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
-                <div class="d-flex justify-content-between align-items-center">
+                  <h4 class="fw-bold mb-2">Leads<small>{{$businessOrder->count()}}</small></h4>
+                  <div class="d-flex justify-content-between align-items-center">
 
-                  <input type="search" class="form-control w-auto" placeholder="Search...">
-                  
-                  <button class="btn btn-primary ml-4"><i class="bi bi-download"></i> Export</button>
+                    <input type="search" class="form-control w-auto" placeholder="Search...">
+                    
+                    <button class="btn btn-primary ml-4"><i class="bi bi-download"></i> Export</button>
 
 
-                  <div class="d-flex justify-content-between mb-3">
-                    <button class="btn btn-warning" wire:click="toggleBulkMode">
-                      {{ $bulkMode ? 'Cancel Bulk Mode' : 'Activate Bulk Email' }}
-                    </button>
+                    <div class="d-flex justify-content-between mb-3">
+                      <button class="btn btn-warning" wire:click="toggleBulkMode">
+                        {{ $bulkMode ? 'Cancel Bulk Mode' : 'Activate Bulk Email' }}
+                      </button>
 
-                    @if($bulkMode && count($selectedLeads) > 0)
-                    <button class="btn btn-success" wire:click="sendBulkEmails">
-                      Send Bulk Email ({{ count($selectedLeads) }})
-                    </button>
-                    @endif
+                      @if($bulkMode && count($selectedLeads) > 0)
+                      <button class="btn btn-success" wire:click="sendBulkEmails">
+                        Send Bulk Email ({{ count($selectedLeads) }})
+                      </button>
+                      @endif
+                    </div>
                   </div>
-                </div>
                 @elseif($board == 'event')
-                <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4>
-                <div class="d-flex justify-content-between align-items-center">
-                  <input type="search" class="form-control w-auto" placeholder="Search...">
-                  <button class="btn btn-primary ml-4">
-                    <i class="bi bi-download"></i> Export
-                  </button>
-                </div>
+                  <h4 class="fw-bold mb-2">Events<small>{{$businessOrder->count()}}</small></h4>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <input type="search" class="form-control w-auto" placeholder="Search...">
+                    <button class="btn btn-primary ml-4">
+                      <i class="bi bi-download"></i> Export
+                    </button>
+                  </div>
                 @elseif($board == 'floor')
                   <h4 class="fw-bold mb-2">Floor</h4>
                   <div class="d-flex justify-content-between align-items-center">
@@ -1475,7 +1475,7 @@
             </div>
 
             <!-- Highlights Card -->
-            <div class="card shadow-sm border-0 mb-4">
+            <!-- <div class="card shadow-sm border-0 mb-4">
               <div class="card-body">
                 <h6 class="fw-bold mb-3">Highlights</h6>
                 <div class="row text-center">
@@ -1497,10 +1497,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <!-- Metrics Card -->
-            <div class="card shadow-sm border-0">
+            <!-- <div class="card shadow-sm border-0">
               <div class="card-body">
                 <h6 class="fw-bold mb-3">Metrics</h6>
                 <select class="form-select w-auto mb-3">
@@ -1508,12 +1508,13 @@
                   <option>Reactions</option>
                   <option>Comments</option>
                 </select>
-                <!-- Graph Placeholder -->
+                
                 <div class="bg-light rounded p-5 text-center text-muted">
                   Graph / Chart Area
                 </div>
               </div>
-            </div>
+            </div> -->
+
           @endif
         </div>
       </div>
@@ -2807,123 +2808,123 @@
 
 
     @if($franchise->updated_at->format("Y-m-d") == $mytime)
-    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-      <div class="col bg-dark pr-0">
-        <div class="fs-xs  fw-light mb-0">
+      <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+        <div class="col bg-dark pr-0">
+          <div class="fs-xs  fw-light mb-0">
 
 
-          @php
-          $to = strtotime($franchise->startdate);
-          $from= strtotime($franchise->enddate);
-          @endphp
+            @php
+            $to = strtotime($franchise->startdate);
+            $from= strtotime($franchise->enddate);
+            @endphp
 
 
-          @if ($current < $to && $current < $from)
-            upcom
-            @elseif ($current==$to && $current < $from)
-            first
-            @elseif ($current> $to && $current < $from)
-              ongoi
-              @elseif ($current> $to && $current == $from)
-              last
-              @elseif ($current > $to && $current > $from)
-              ended
-              @endif
+            @if ($current < $to && $current < $from)
+              upcom
+              @elseif ($current==$to && $current < $from)
+              first
+              @elseif ($current> $to && $current < $from)
+                ongoi
+                @elseif ($current> $to && $current == $from)
+                last
+                @elseif ($current > $to && $current > $from)
+                ended
+                @endif
+          </div>
+          <div class="small text-muted">{{$franchise->id}}</div>
+          <div class="text-primary fs-xs">{{$franchise->view_count}}</div>
         </div>
-        <div class="small text-muted">{{$franchise->id}}</div>
-        <div class="text-primary fs-xs">{{$franchise->view_count}}</div>
-      </div>
 
-      <div class="col-7  p-0">
-        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-            {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+        <div class="col-7  p-0">
+          <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a>
+          </div>
+          <div class="text-muted fs-sm text-start">
+            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+            @else
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+            @endif
+          </div>
+          <div class="text-muted fs-sm text-start">
+            @if($category->count() == 0)
+
+            <a href="{{route('admin.editcategories',['event_id' => $franchise->id])}}" class="badge bg-primary mt-0">
+              no category</a>
+
+            @else
+            @foreach($category as $cat)
+
+            @php
+            $categ = DB::table('expos')->where('id', $cat->expo_id)->get();
+            @endphp
+            @foreach($categ as $ficateg)
+            <span class="badge bg-primary mt-0">{{$ficateg->tag}}</span>
+            @endforeach
+            @endforeach
+            @endif
+          </div>
         </div>
-        <div class="text-muted fs-sm text-start">
-          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+
+        <div class="col-3  p-0">
+          @if(is_null($franchise->image))
+          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+            Add</a>
           @else
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+          <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
           @endif
         </div>
-        <div class="text-muted fs-sm text-start">
-          @if($category->count() == 0)
-
-          <a href="{{route('admin.editcategories',['event_id' => $franchise->id])}}" class="badge bg-primary mt-0">
-            no category</a>
-
-          @else
-          @foreach($category as $cat)
-
-          @php
-          $categ = DB::table('expos')->where('id', $cat->expo_id)->get();
-          @endphp
-          @foreach($categ as $ficateg)
-          <span class="badge bg-primary mt-0">{{$ficateg->tag}}</span>
-          @endforeach
-          @endforeach
-          @endif
-        </div>
       </div>
-
-      <div class="col-3  p-0">
-        @if(is_null($franchise->image))
-        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
-          Add</a>
-        @else
-        <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-        @endif
-      </div>
-    </div>
     @else
-    <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
-      <div class="col  pr-0">
-        <div class="fs-xs fw-light mb-0">
-          @php
-          $to = strtotime($franchise->startdate);
-          $from= strtotime($franchise->enddate);
-          @endphp
+      <div class="row text-center p-1 gx-0 mb-1  shadow-sm  border rounded border-1">
+        <div class="col  pr-0">
+          <div class="fs-xs fw-light mb-0">
+            @php
+            $to = strtotime($franchise->startdate);
+            $from= strtotime($franchise->enddate);
+            @endphp
 
 
-          @if ($current < $to && $current < $from)
-            upcom
-            @elseif ($current==$to && $current < $from)
-            first
-            @elseif ($current> $to && $current < $from)
-              ongoi
-              @elseif ($current> $to && $current == $from)
-              last
-              @elseif ($current > $to && $current > $from)
-              ended
-              @endif
+            @if ($current < $to && $current < $from)
+              upcom
+              @elseif ($current==$to && $current < $from)
+              first
+              @elseif ($current> $to && $current < $from)
+                ongoi
+                @elseif ($current> $to && $current == $from)
+                last
+                @elseif ($current > $to && $current > $from)
+                ended
+                @endif
+          </div>
+          <div class="small text-muted">{{$franchise->id}}</div>
+          <div class="text-primary fs-xs">{{$franchise->view_count}}</div>
         </div>
-        <div class="small text-muted">{{$franchise->id}}</div>
-        <div class="text-primary fs-xs">{{$franchise->view_count}}</div>
-      </div>
 
-      <div class="col-7  p-0">
-        <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-            {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
-        <div class="text-muted fs-sm text-start">
-          @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+        <div class="col-7  p-0">
+          <div class="fs-md fw-normal text-start"><a class="text-dark" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+              {{ucwords(trans(Str::limit($franchise->eventname, 24)))}}</a></div>
+          <div class="text-muted fs-sm text-start">
+            @if(Carbon\Carbon::parse ($franchise->startdate)->format('M') != Carbon\Carbon::parse ($franchise->enddate)->format('M'))
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d M')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+            @else
+            {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+            @endif
+          </div>
+
+        </div>
+
+        <div class="col-3  p-0">
+          @if(is_null($franchise->image))
+          <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
+            Add</a>
           @else
-          {{Carbon\Carbon::parse ($franchise->startdate)->format('D, d ')}} - {{Carbon\Carbon::parse ($franchise->enddate)->format('D, d M y')}}
+          <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
+            <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
           @endif
         </div>
-
       </div>
-
-      <div class="col-3  p-0">
-        @if(is_null($franchise->image))
-        <a class="card-img-top d-block overflow-hidden" href="{{route('admin.eventMultiEdit',['event_id' => $franchise->id, 'formm' => 'image' ])}}">
-          Add</a>
-        @else
-        <a class="card-img-top d-block overflow-hidden" href="{{route('adminevent.detail',['slug' => $franchise->slug])}}">
-          <img src="{{url('public/assets/image/exhibition/'.$franchise->image)}}" alt="{{Str::limit($franchise->eventname, 24)}}"></a>
-        @endif
-      </div>
-    </div>
     @endif
 
   </div>
