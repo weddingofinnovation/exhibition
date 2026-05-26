@@ -83,172 +83,30 @@
       <div class="results-grid grid grid-cols-2 gap-6">
 
         <!-- Article 1 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#E8F3ED; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Stall Design</span>
+         @foreach ($tittlemostread as $post)
+          <article class="card group">
+            <div class="article-img ph-img" style="aspect-ratio:16/10; background:#E8F3ED; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
+              <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
             </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">10 stall design trends dominating Indian trade shows in 2026</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">From biophilic installations to immersive LED tunnels — the formats that win footfall at India's top B2B events.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">PV</div>
-                <span>Priya Varma · 12 May</span>
+            <div class="p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <span class="tag-cat">Stall Design</span>
               </div>
-              <span class="text-[12.5px] text-muted">6 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 2 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#F7F5EC; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Market Reports</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">Q2 2026 trade show attendance: which sectors are surging</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">Pharma, renewables and logistics led Q2 in visitor numbers. City-wise data and full breakdown inside.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">AS</div>
-                <span>Anika Sharma · 10 May</span>
+              <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="{{route('blog.details',['slug' => $post->slug])}}" class="hover:text-green">{{Str::limit($post->tittle,65)}}</a></h3>
+              <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">From biophilic installations to immersive LED tunnels — the formats that win footfall at India's top B2B events.</p>
+              <div class="mt-4 pt-4 rule-t flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[12.5px] text-muted">
+                  <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">PV</div>
+                  <span>Priya Varma · 12 May</span>
+                </div>
+                <span class="text-[12.5px] text-muted">6 min</span>
               </div>
-              <span class="text-[12.5px] text-muted">11 min</span>
             </div>
-          </div>
-        </article>
-
-        <!-- Article 3 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#FDF3E4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Event Planning</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">The 90-day pre-show checklist every exhibitor needs</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">From stall booking to post-show follow-up — a step-by-step timeline so nothing falls through the cracks.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">DM</div>
-                <span>Dev Mehta · 8 May</span>
-              </div>
-              <span class="text-[12.5px] text-muted">9 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 4 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#E8F3ED; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Case Studies</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">How Tata Consumer Products tripled leads at Annapoorna 2025</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">A 54-sqm island stall with live sampling zones generated 3.2× the leads of their previous inline booth.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">NK</div>
-                <span>Nandita Krishnan · 5 May</span>
-              </div>
-              <span class="text-[12.5px] text-muted">14 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 5 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#F1EEDE; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Sustainability</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">Going green: modular stall systems that cut cost by 40%</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">Sustainable fabrication is increasingly demanded by venue operators and clients — here's how to make it work.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">SP</div>
-                <span>Sonal Patel · 3 May</span>
-              </div>
-              <span class="text-[12.5px] text-muted">7 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 6 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#F7F5EC; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Industry Trends</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">Tier-2 city trade shows: the untapped B2B opportunity in 2026</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">Coimbatore, Surat, Indore and Jaipur are seeing 28% YoY growth in exhibition footfall. Here's why you should be there.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">RK</div>
-                <span>Rohit Kapoor · 1 May</span>
-              </div>
-              <span class="text-[12.5px] text-muted">10 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 7 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#E8F3ED; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Event Planning</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">Staffing your trade show stall: roles, briefing and incentives</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">The difference between a stall that generates leads and one that doesn't is almost always the team on the floor.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">PV</div>
-                <span>Priya Varma · 28 Apr</span>
-              </div>
-              <span class="text-[12.5px] text-muted">8 min</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- Article 8 -->
-        <article class="card group">
-          <div class="article-img ph-img" style="aspect-ratio:16/10; background:#FDF3E4; overflow:hidden; display:flex; align-items:center; justify-content:center; position:relative;">
-            <img src="Imageframe.png" alt="" style="height:52px; width:auto; opacity:.28;"/>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="tag-cat">Market Reports</span>
-            </div>
-            <h3 class="text-[17.5px] font-semibold leading-snug tracking-tight"><a href="#" class="hover:text-green">India's top 20 B2B trade shows by ROI for exhibitors — 2026 ranking</a></h3>
-            <p class="mt-2 text-[13.5px] text-muted leading-relaxed line-clamp-2">Our annual ranking of India's highest-ROI exhibitions, based on data from 3,400+ exhibitor surveys across 80 shows.</p>
-            <div class="mt-4 pt-4 rule-t flex items-center justify-between">
-              <div class="flex items-center gap-2 text-[12.5px] text-muted">
-                <div class="h-6 w-6 rounded-full bg-bone flex items-center justify-center text-[9px] font-bold flex-shrink-0">AS</div>
-                <span>Anika Sharma · 25 Apr</span>
-              </div>
-              <span class="text-[12.5px] text-muted">16 min</span>
-            </div>
-          </div>
-        </article>
+          </article>
+         @endforeach
+        
+								
+							
 
       </div><!-- /results-grid -->
 
@@ -340,41 +198,18 @@
         <div class="px-5 py-4 rule-b bg-bone">
           <div class="small-caps">Most Read</div>
         </div>
-        <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group rule-b">
-          <span class="mr-num num">01</span>
-          <div>
-            <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">The 90-day pre-show checklist every exhibitor needs</div>
-            <div class="text-[12px] text-muted mt-1.5">9 min · Event Planning</div>
-          </div>
-        </a>
-        <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group rule-b">
-          <span class="mr-num num">02</span>
-          <div>
-            <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">10 stall design trends dominating trade shows in 2026</div>
-            <div class="text-[12px] text-muted mt-1.5">6 min · Stall Design</div>
-          </div>
-        </a>
-        <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group rule-b">
-          <span class="mr-num num">03</span>
-          <div>
-            <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">Tier-2 city trade shows: the untapped B2B opportunity</div>
-            <div class="text-[12px] text-muted mt-1.5">10 min · Industry Trends</div>
-          </div>
-        </a>
-        <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group rule-b">
-          <span class="mr-num num">04</span>
-          <div>
-            <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">How to calculate true ROI from trade show participation</div>
-            <div class="text-[12px] text-muted mt-1.5">12 min · Market Reports</div>
-          </div>
-        </a>
-        <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group">
-          <span class="mr-num num">05</span>
-          <div>
-            <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">Modular stall systems: reusable, on-brand, cost-effective</div>
-            <div class="text-[12px] text-muted mt-1.5">7 min · Sustainability</div>
-          </div>
-        </a>
+
+        @foreach ($tittlemostread as $post)
+          <a href="#" class="flex items-start gap-3 px-5 py-4 hover:bg-bone transition group rule-b">
+            <span class="mr-num num">01</span>
+            <div>
+              <div class="text-[13.5px] font-medium leading-snug group-hover:text-green transition">{{Str::limit($post->tittle,65)}}</div>
+              <div class="text-[12px] text-muted mt-1.5">9 min · Event Planning</div>
+            </div>
+          </a>
+        @endforeach
+        
+       
       </div>
 
       <!-- Newsletter -->
@@ -461,59 +296,21 @@
     </div>
     <div class="most-read-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">01</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Event Planning</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">The 90-day pre-show checklist every exhibitor needs</div>
-          <div class="mt-2 text-[12.5px] text-muted">Dev Mehta · 9 min read</div>
-        </div>
-      </a>
 
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">02</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Stall Design</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">10 stall design trends dominating Indian trade shows in 2026</div>
-          <div class="mt-2 text-[12.5px] text-muted">Priya Varma · 6 min read</div>
-        </div>
-      </a>
+        
 
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">03</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Industry Trends</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">Tier-2 city trade shows: the untapped B2B opportunity in 2026</div>
-          <div class="mt-2 text-[12.5px] text-muted">Rohit Kapoor · 10 min read</div>
-        </div>
-      </a>
+        @foreach ($tittlemostread as $post)
+        <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
+          <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">01</span>
+          <div>
+            <span class="tag-cat mb-2.5 inline-block">Event Planning</span>
+            <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">{{Str::limit($post->tittle,65)}}</div>
+            <div class="mt-2 text-[12.5px] text-muted">Dev Mehta · 9 min read</div>
+          </div>
+        </a>
+        @endforeach
 
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">04</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Market Reports</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">India's top 20 B2B trade shows by ROI for exhibitors — 2026</div>
-          <div class="mt-2 text-[12.5px] text-muted">Anika Sharma · 16 min read</div>
-        </div>
-      </a>
-
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">05</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Sustainability</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">Modular stall systems: reusable, on-brand, and cost-effective</div>
-          <div class="mt-2 text-[12.5px] text-muted">Sonal Patel · 7 min read</div>
-        </div>
-      </a>
-
-      <a href="#" class="flex items-start gap-4 group p-4 rounded-2xl hover:bg-bone transition">
-        <span class="text-[44px] font-bold num leading-none pt-0.5 flex-shrink-0" style="color:#E6E4DC;">06</span>
-        <div>
-          <span class="tag-cat mb-2.5 inline-block">Case Studies</span>
-          <div class="text-[15.5px] font-semibold leading-snug group-hover:text-green transition tracking-tight">How Tata Consumer Products tripled leads at Annapoorna 2025</div>
-          <div class="mt-2 text-[12.5px] text-muted">Nandita Krishnan · 14 min read</div>
-        </div>
-      </a>
+    
 
     </div>
   </div>

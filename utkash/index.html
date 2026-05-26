@@ -1,0 +1,1196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>COIS — Book stalls at India's top trade shows. Live availability. Instant confirmation.</title>
+  <meta name="description" content="Book stall space at 500+ verified B2B trade shows across India. Live availability, organiser-direct pricing, instant confirmation. Stall design & fabrication on demand." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink:     '#0A0E0C',
+            char:    '#1C211F',
+            slate:   '#343B37',
+            muted:   '#60655F',
+            mutedL:  '#8A8F87',
+            line:    '#E6E4DC',
+            hair:    '#EFEDE4',
+            paper:   '#FFFFFF',
+            bone:    '#F7F5EC',
+            cream:   '#F1EEDE',
+            mint:    '#E8F3ED',
+            green:   '#0B7A36',
+            greenL:  '#10973F',
+            greenD:  '#064D22',
+            amber:   '#C97B1F',
+          },
+          fontFamily: {
+            sans:    ['Onest', 'ui-sans-serif', 'system-ui'],
+            mono:    ['JetBrains Mono', 'ui-monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html,body{ background:#FFFFFF; color:#0A0E0C; }
+    body{ font-family:'Onest',sans-serif; font-weight:400; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01"; }
+    .mono{ font-family:'JetBrains Mono',monospace; }
+
+    .hairline{ border-color:#E6E4DC; }
+    .rule-t{ border-top:1px solid #E6E4DC; }
+    .rule-b{ border-bottom:1px solid #E6E4DC; }
+
+    input:focus, select:focus{ outline:none; }
+
+    /* buttons */
+    .btn-primary{ background:#0A0E0C; color:#fff; transition:background .25s, transform .2s; }
+    .btn-primary:hover{ background:#0B7A36; }
+    .btn-primary:active{ transform:translateY(1px); }
+    .btn-green{ background:#0B7A36; color:#fff; transition:background .25s; }
+    .btn-green:hover{ background:#064D22; }
+    .btn-ghost{ background:transparent; color:#0A0E0C; transition:background .2s; }
+    .btn-ghost:hover{ background:#F7F5EC; }
+    .btn-outline{ border:1px solid #0A0E0C; color:#0A0E0C; transition:all .25s; }
+    .btn-outline:hover{ background:#0A0E0C; color:#fff; }
+
+    .chip{ border:1px solid #E6E4DC; background:#fff; padding:.45rem .95rem; font-size:13px; border-radius:999px; transition:all .25s; color:#1C211F; display:inline-flex; align-items:center; gap:.4rem; }
+    .chip:hover{ border-color:#0A0E0C; background:#F7F5EC; }
+    .chip.active{ background:#0A0E0C; color:#fff; border-color:#0A0E0C; }
+
+    .card{ border:1px solid #E6E4DC; background:#fff; border-radius:18px; overflow:hidden; transition:border-color .25s, transform .35s, box-shadow .35s; }
+    .card:hover{ border-color:#0A0E0C; transform: translateY(-2px); box-shadow: 0 16px 40px -24px rgba(10,14,12,.18); }
+
+    .arrow{ display:inline-block; transition: transform .3s ease; }
+    a:hover .arrow, button:hover .arrow, .group:hover .arrow{ transform: translateX(4px); }
+
+    .pulse-dot{ width:8px; height:8px; border-radius:999px; background:#10973F; box-shadow:0 0 0 0 rgba(16,151,63,.6); animation: pulse 2s infinite; }
+    @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(16,151,63,.5)} 70%{box-shadow:0 0 0 10px rgba(16,151,63,0)} 100%{box-shadow:0 0 0 0 rgba(16,151,63,0)} }
+
+    .badge-live{ display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .55rem; border-radius:999px; background:#E8F3ED; color:#064D22; font-size:11.5px; font-weight:500; }
+    .badge-left{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#FDF3E4; color:#8E5A12; font-size:11.5px; font-weight:500; }
+    .badge-verified{ display:inline-flex; align-items:center; gap:.3rem; font-size:12px; color:#0B7A36; font-weight:500; }
+    .badge-scheduled{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#EFEFEB; color:#60655F; font-size:11.5px; font-weight:500; }
+    .badge-confirmed{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#E8F3ED; color:#064D22; font-size:11.5px; font-weight:500; }
+    .badge-pending{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#FDF3E4; color:#8E5A12; font-size:11.5px; font-weight:500; }
+    .badge-approved{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#E6EFF8; color:#0A4A75; font-size:11.5px; font-weight:500; }
+    .badge-in-progress{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#F0EDED; color:#7A3030; font-size:11.5px; font-weight:500; }
+
+    .tag-cat{ display:inline-block; padding:.2rem .55rem; border-radius:6px; background:#F1EEDE; color:#343B37; font-size:11.5px; font-weight:500; }
+
+    /* slider track */
+    .slider{ overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+    .slider::-webkit-scrollbar{ display:none; }
+    .slider > *{ scroll-snap-align:start; }
+
+    /* marquee */
+    @keyframes marq { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .marq{ animation: marq 60s linear infinite; }
+
+    /* availability bar */
+    .availability-bar{ height:4px; background:#EFEDE4; border-radius:999px; overflow:hidden; }
+    .availability-bar > span{ display:block; height:100%; background:linear-gradient(90deg,#10973F,#0B7A36); border-radius:999px; }
+    .availability-bar.low > span{ background:linear-gradient(90deg,#E08A2A,#C97B1F); }
+
+    /* hero search */
+    .hero-search{ border:1px solid #E6E4DC; background:#fff; border-radius:14px; box-shadow: 0 2px 0 #E6E4DC, 0 28px 60px -20px rgba(10,14,12,.15); overflow:hidden; }
+    .field{ padding:16px 22px; position:relative; transition:background .18s; }
+    .field:hover{ background:#FAFAF8; }
+    .field:focus-within{ background:#F5F4EE; }
+    .field + .field{ border-left:1px solid #EFEDE4; }
+    .field label{ display:flex; align-items:center; gap:5px; font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:#60655F; margin-bottom:5px; }
+    .field select, .field input{ width:100%; border:0; background:transparent; font-size:15px; font-weight:500; color:#0A0E0C; cursor:pointer; }
+    .field select:focus, .field input:focus{ outline:none; }
+    .field input::placeholder{ color:#0A0E0C; font-weight:400; }
+
+    /* category scroller tabs */
+    .cat-tabs{ display:flex; align-items:center; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+    .cat-tabs::-webkit-scrollbar{ display:none; }
+    .cat-tab{ flex-shrink:0; display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; font-size:13.5px; font-weight:500; color:#343B37; transition:all .25s; cursor:pointer; white-space:nowrap; border:1px solid transparent; }
+    .cat-tab:hover{ background:#F7F5EC; }
+    .cat-tab.on{ background:#0A0E0C; color:#fff; }
+    .cat-tab .dot{ width:6px; height:6px; border-radius:999px; background:currentColor; opacity:.4; }
+
+    /* sticky bottom CTA mobile */
+    .sticky-mobile{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:#fff; border-top:1px solid #E6E4DC; padding:10px 14px; display:flex; gap:8px; align-items:center; justify-content:space-between; box-shadow:0 -10px 30px -10px rgba(10,14,12,.15); }
+    @media(min-width:768px){ .sticky-mobile{ display:none; } }
+
+    .small-caps{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:#60655F; }
+
+    @keyframes rise{ from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
+    .rise{ opacity:0; animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+
+    /* subtle bg decor for hero */
+    .hero-bg{
+      background:
+        radial-gradient(60% 50% at 85% 15%, rgba(11,122,54,.06), transparent 60%),
+        radial-gradient(60% 50% at 10% 90%, rgba(10,14,12,.04), transparent 60%),
+        #fff;
+    }
+
+    /* event card image placeholder */
+    .ph-img{ position:relative; overflow:hidden; }
+    .ph-img .overlay-grad{ position:absolute; inset:0; background:linear-gradient(180deg, transparent 40%, rgba(10,14,12,.45)); }
+    .ph-img .dates-tag{ position:absolute; top:14px; left:14px; background:#fff; color:#0A0E0C; font-weight:600; font-size:12px; padding:6px 10px; border-radius:8px; display:flex; align-items:center; gap:6px; box-shadow:0 1px 3px rgba(10,14,12,.12); }
+    .ph-img .save{ position:absolute; top:12px; right:12px; height:34px; width:34px; border-radius:999px; background:rgba(255,255,255,.95); display:flex; align-items:center; justify-content:center; transition:background .2s; }
+    .ph-img .save:hover{ background:#fff; }
+
+    /* trust tick */
+    .tick{ display:inline-flex; align-items:center; gap:.5rem; font-size:14px; color:#1C211F; }
+    .tick svg{ flex-shrink:0; }
+
+    .price{ font-weight:600; }
+    .price sup{ font-weight:400; color:#60655F; font-size:.7em; margin-right:2px; }
+
+    /* city card */
+    .city-card{ position:relative; overflow:hidden; border-radius:18px; border:1px solid #E6E4DC; transition:border-color .25s, transform .35s; cursor:pointer; background:#F7F5EC; }
+    .city-card:hover{ border-color:#0A0E0C; transform:translateY(-2px); }
+    .city-card .meta{ position:absolute; inset:auto 0 0 0; padding:16px 18px; color:#fff; }
+    .city-card .meta::before{ content:""; position:absolute; inset:-60% 0 0 0; background:linear-gradient(180deg, transparent, rgba(10,14,12,.82)); z-index:0; }
+    .city-card .meta > *{ position:relative; z-index:1; }
+
+    details > summary::-webkit-details-marker{ display:none; }
+    details > summary{ list-style:none; }
+
+    .num{ font-variant-numeric: tabular-nums lining-nums; }
+
+    /* topbar text swap (desktop default) */
+    .topbar-long{ display:inline; }
+    .topbar-short{ display:none; }
+
+    /* ============ MOBILE OPTIMIZATIONS (<= 767px) — desktop untouched ============ */
+    @media (max-width: 767px){
+
+      /* ---- top bar ---- */
+      .topbar-long{ display:none; }
+      .topbar-short{ display:inline; }
+
+      /* ---- nav ---- */
+      header.sticky{ height:auto; }
+      header.sticky > div{ height:60px; padding-left:14px; padding-right:14px; }
+      header.sticky img[alt^="COIS"]{ height:30px; }
+      header.sticky a.btn-primary{ height:40px; padding:0 16px; font-size:13px; }
+      header.sticky a.btn-primary .arrow{ display:none; }
+
+      /* ---- hero ---- */
+      section.hero-bg > div.mx-auto{ padding-top:2rem; padding-bottom:2rem; }
+      section.hero-bg h1{ font-size:34px !important; line-height:1.08 !important; letter-spacing:-0.02em; }
+      section.hero-bg > div > div.max-w-\[860px\] > p{ font-size:15.5px !important; margin-top:14px !important; line-height:1.55 !important; }
+      section.hero-bg > div > div.max-w-\[860px\] > .mt-6{ gap:6px 14px !important; margin-top:16px !important; }
+      section.hero-bg > div > div.max-w-\[860px\] > .mt-6 .tick{ font-size:12.5px; }
+      section.hero-bg > div > div.max-w-\[860px\] > .mt-6 .tick svg{ width:14px; height:14px; }
+
+      /* ---- hero search widget: stack to 1 column, horizontal separators ---- */
+      .hero-search{ grid-template-columns: 1fr !important; border-radius:8px !important; margin-top:28px !important; }
+      .hero-search .field{ padding:12px 18px !important; border-left:0 !important; }
+      .hero-search .field + .field{ border-top:1px solid #EFEDE4; border-left:0 !important; }
+      .hero-search .field label{ font-size:10px; margin-bottom:2px; }
+      .hero-search .field select, .hero-search .field input{ font-size:14.5px; }
+      .hero-search > div:last-child{ padding:8px !important; }
+      .hero-search button[type="submit"]{ width:100%; height:50px; min-height:50px; border-radius:6px; font-size:14px; }
+
+      /* ---- trending chip row: horizontal scroll ---- */
+      section.hero-bg > div > div.mt-5.flex.flex-wrap{ flex-wrap:nowrap !important; overflow-x:auto; padding-bottom:4px; scrollbar-width:none; }
+      section.hero-bg > div > div.mt-5.flex.flex-wrap::-webkit-scrollbar{ display:none; }
+      section.hero-bg > div > div.mt-5.flex.flex-wrap .chip{ flex-shrink:0; font-size:12.5px; padding:.38rem .75rem; }
+      section.hero-bg > div > div.mt-5.flex.flex-wrap .small-caps{ flex-shrink:0; }
+
+      /* ---- hero stats ---- */
+      section.hero-bg > div > div.mt-12.grid{ margin-top:36px !important; gap:16px !important; }
+      section.hero-bg > div > div.mt-12.grid > div{ gap:10px !important; align-items:baseline; }
+      section.hero-bg > div > div.mt-12.grid > div > div:first-child{ font-size:26px !important; }
+      section.hero-bg > div > div.mt-12.grid > div > div:last-child{ font-size:11.5px !important; }
+
+      /* ---- logo marquee ---- */
+      .marq{ animation-duration: 40s; }
+      section.rule-t.rule-b.bg-bone .marq span{ font-size:16px !important; }
+
+      /* ---- generic section padding ---- */
+      section > div.mx-auto.max-w-\[1320px\]{ padding-top:2.75rem !important; padding-bottom:2.75rem !important; }
+
+      /* ---- section H2s ---- */
+      section h2{ font-size:26px !important; line-height:1.15 !important; letter-spacing:-0.015em; }
+
+      /* ---- category tabs ---- */
+      .cat-tab{ padding:8px 12px; font-size:12.5px; }
+      .cat-tab .mono{ font-size:10px; }
+
+      /* ---- filters chip row ---- */
+      section#events > div > div.mt-5.flex.flex-wrap{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+      section#events > div > div.mt-5.flex.flex-wrap::-webkit-scrollbar{ display:none; }
+      section#events > div > div.mt-5.flex.flex-wrap > *{ flex-shrink:0; }
+      section#events > div > div.mt-5.flex.flex-wrap .ml-auto{ margin-left:8px; }
+
+      /* ---- event cards ---- */
+      section#events .grid.gap-6{ gap:16px !important; }
+      article.card .p-5{ padding:16px !important; }
+      article.card h3.text-\[19px\]{ font-size:17px !important; }
+      article.card .price{ font-size:19px !important; }
+      article.card .btn-primary{ padding:0 14px !important; height:38px !important; font-size:12.5px !important; }
+      article.card .badge-live, article.card .badge-left, article.card .tag-cat{ font-size:11px; padding:.2rem .45rem; }
+      article.card .dates-tag{ font-size:11px; padding:5px 8px; }
+      article.card .save{ height:30px; width:30px; top:10px; right:10px; }
+      article.card .ph-img svg{ width:100%; height:100%; }
+
+      /* ---- booking steps ---- */
+      section.rule-t.rule-b.bg-bone > div{ padding-top:3rem !important; padding-bottom:3rem !important; }
+      section.rule-t.rule-b.bg-bone ol{ gap:12px !important; }
+      section.rule-t.rule-b.bg-bone ol li{ padding:20px !important; min-height:auto; }
+      section.rule-t.rule-b.bg-bone ol li h3{ font-size:16px !important; margin-top:14px !important; }
+      section.rule-t.rule-b.bg-bone ol li p{ font-size:13.5px !important; }
+      section.rule-t.rule-b.bg-bone ol li .h-10.w-10{ height:36px; width:36px; font-size:13px; }
+
+      /* ---- city explorer ---- */
+      .city-card{ aspect-ratio: 1 / 1.1 !important; border-radius:14px; }
+      .city-card .meta{ padding:12px 14px; }
+      .city-card .meta > div:first-child{ font-size:17px !important; }
+      .city-card .meta > div:last-child{ font-size:11.5px; }
+
+      /* ---- why COIS ---- */
+      section.bg-ink.text-white h2{ font-size:28px !important; }
+      section.bg-ink.text-white p.mt-5{ font-size:14.5px !important; }
+      section.bg-ink.text-white .border.border-white\/12{ padding:18px !important; border-radius:16px !important; }
+      section.bg-ink.text-white .border.border-white\/12 h3{ font-size:16px !important; }
+      section.bg-ink.text-white .border.border-white\/12 p{ font-size:13.5px !important; }
+      section.bg-ink.text-white .h-11.w-11{ height:40px; width:40px; }
+
+      /* ---- reviews ---- */
+      section.bg-white figure.card{ padding:20px !important; }
+      section.bg-white figure.card blockquote{ font-size:15px !important; line-height:1.55; margin-top:14px !important; }
+      section.bg-white figure.card figcaption{ padding-top:14px !important; margin-top:18px !important; }
+      section.bg-white figure.card figcaption .badge-verified{ font-size:10.5px !important; }
+      section.bg-white .flex.items-center.gap-4.text-\[13px\]{ flex-wrap:wrap; gap:12px; font-size:12px; }
+
+      /* ---- FAQ ---- */
+      section.rule-t.bg-bone .col-span-12.lg\:col-span-5 .mt-6.flex{ flex-wrap:wrap; gap:10px; }
+      section.rule-t.bg-bone .col-span-12.lg\:col-span-5 .mt-6.flex a{ height:44px; padding:0 18px; font-size:13px; flex:1 1 auto; justify-content:center; }
+      details summary{ padding:16px !important; }
+      details summary span:first-child{ font-size:15px !important; padding-right:12px; }
+      details summary span:last-child{ font-size:22px; }
+      details p{ font-size:13.5px !important; padding:0 16px 16px !important; }
+
+      /* ---- Big CTA ---- */
+      section.bg-ink.text-white:last-of-type h2{ font-size:36px !important; line-height:1.05 !important; }
+      section.bg-ink.text-white:last-of-type p{ font-size:14.5px !important; }
+      section.bg-ink.text-white:last-of-type form{ padding:5px !important; }
+      section.bg-ink.text-white:last-of-type form > div:first-child{ display:none; }
+      section.bg-ink.text-white:last-of-type form input{ height:44px; font-size:14px; padding-left:12px !important; }
+      section.bg-ink.text-white:last-of-type form button{ height:44px !important; padding:0 14px !important; font-size:13px; white-space:nowrap; }
+      section.bg-ink.text-white:last-of-type form button .arrow{ display:none; }
+      section.bg-ink.text-white:last-of-type .mt-5.flex{ gap:10px 16px !important; font-size:12px !important; }
+
+      /* ---- Footer ---- */
+      footer.rule-t > div{ padding-top:2.5rem !important; padding-bottom:2rem !important; }
+      footer .grid.gap-10{ gap:28px !important; }
+      footer img[alt^="COIS"]{ height:38px; }
+      footer .col-span-12.lg\:col-span-4 p{ font-size:14px; }
+      footer .col-span-12.lg\:col-span-4 .mt-6.flex{ gap:6px; }
+      footer .col-span-12.lg\:col-span-4 .mt-6.flex .chip{ font-size:11px !important; padding:.3rem .55rem; }
+      footer ul li{ font-size:13.5px !important; }
+      footer .mt-12{ margin-top:28px !important; padding-top:16px !important; }
+      footer .mt-12.pt-6{ flex-direction:column; align-items:flex-start; gap:10px; font-size:11.5px; }
+      footer .mt-12.pt-6 > div:first-child{ font-size:11px; line-height:1.5; }
+
+      /* ---- sticky mobile CTA (bottom) ---- */
+      body{ padding-bottom:74px !important; }
+      .sticky-mobile{ padding:9px 12px !important; }
+      .sticky-mobile > div{ font-size:11.5px !important; line-height:1.3; }
+      .sticky-mobile > div > div:first-child{ font-size:12.5px !important; }
+      .sticky-mobile .btn-primary{ height:42px; padding:0 16px; font-size:13px; border-radius:999px; }
+
+      /* ---- mobile menu button show ---- */
+      .mnav-btn{ display:inline-flex !important; }
+
+      /* ---- disable heavy radial glow on mobile (perf) ---- */
+      .hero-bg{ background: #fff; }
+
+      /* ---- smooth horizontal scroll rows ---- */
+      .cat-tabs{ padding-left:4px; padding-right:4px; }
+    }
+
+    /* ---- very small phones ---- */
+    @media (max-width: 374px){
+      section.hero-bg h1{ font-size:30px !important; }
+      section h2{ font-size:22px !important; }
+      .hero-stats > div > div:first-child{ font-size:22px !important; }
+      article.card .btn-primary{ padding:0 12px !important; font-size:12px !important; }
+      article.card .price{ font-size:17px !important; }
+    }
+
+    .mnav-btn{ display:none; }
+    .mnav-panel{ display:none; }
+    .mnav-toggle:checked ~ .mnav-panel{ display:block; }
+    .mnav-toggle:checked ~ header .mnav-open{ display:none !important; }
+    .mnav-toggle:checked ~ header .mnav-close{ display:inline !important; }
+
+    /* on desktop hide Book-a-stall-in-mobile-menu duplication unneeded; desktop hides .mnav-panel already */
+    @media (max-width: 767px){
+      .mnav-panel{ position:sticky; top:60px; z-index:39; }
+
+      /* ===== FIX: logo strip over-padded by broad rule ===== */
+      section.rule-t.rule-b.bg-bone > div.py-6{ padding-top:12px !important; padding-bottom:12px !important; gap:12px !important; }
+      section.rule-t.rule-b.bg-bone > div.py-6 > .small-caps{ font-size:10px; letter-spacing:.08em; }
+      section.rule-t.rule-b.bg-bone .marq span{ font-size:15px !important; }
+
+      /* ===== FIX: hero stats — stack number + label vertically, clearer ===== */
+      section.hero-bg > div > div.mt-12.grid > div{ flex-direction:column !important; align-items:flex-start !important; gap:4px !important; }
+      section.hero-bg > div > div.mt-12.grid > div > div:first-child{ font-size:28px !important; line-height:1 !important; }
+      section.hero-bg > div > div.mt-12.grid > div > div:last-child{ font-size:11.5px !important; white-space:normal; color:#60655F; }
+
+      /* ===== FIX: event card image height ===== */
+      article.card .ph-img{ aspect-ratio: 16 / 10 !important; }
+      article.card .ph-img.aspect-\[4\/3\]{ aspect-ratio: 16 / 10 !important; }
+
+      /* ===== FIX: event section header gap (title + "View full calendar") ===== */
+      section#events > div > .flex.flex-wrap.items-end.justify-between{ gap:12px; }
+      section#events > div > .flex.flex-wrap.items-end.justify-between > a{ font-size:13px; }
+      section#events h2{ font-size:24px !important; }
+      section#events .small-caps + h2{ margin-top:6px; }
+
+      /* ===== FIX: booking-steps section inherits logo-strip override; re-apply correct padding ===== */
+      section.rule-t.rule-b.bg-bone > div:not(.py-6){ padding-top:2.5rem !important; padding-bottom:2.5rem !important; }
+      section.rule-t.rule-b.bg-bone > div:not(.py-6) > .flex.flex-wrap.items-end.justify-between{ gap:10px; }
+      section.rule-t.rule-b.bg-bone > div:not(.py-6) > .flex.flex-wrap.items-end.justify-between > a{ font-size:13px; }
+      section.rule-t.rule-b.bg-bone > div:not(.py-6) h2{ font-size:24px !important; }
+
+      /* ===== FIX: city explorer heading + grid ===== */
+      section.bg-white > div > .flex.flex-wrap.items-end.justify-between{ gap:10px; }
+      section.bg-white > div > .flex.flex-wrap.items-end.justify-between > a{ font-size:13px; }
+      section.bg-white .grid.grid-cols-2.md\:grid-cols-3.lg\:grid-cols-6{ gap:12px !important; }
+
+      /* ===== FIX: why COIS ===== */
+      section#services > div{ padding-top:2.75rem !important; padding-bottom:2.75rem !important; }
+      section#services .grid.grid-cols-1.sm\:grid-cols-2{ gap:10px !important; }
+      section#services h2{ font-size:26px !important; }
+      section#services .mt-7.inline-flex{ height:44px; padding:0 20px; font-size:13px; margin-top:20px; }
+
+      /* ===== FIX: reviews — source ratings row ===== */
+      section.bg-white .flex.flex-wrap.items-end.justify-between.gap-4 + .mt-10{ margin-top:22px !important; gap:14px !important; }
+
+      /* ===== FIX: FAQ right column card ===== */
+      section.rule-t.bg-bone .col-span-12.lg\:col-span-7{ border-radius:16px; }
+
+      /* ===== FIX: big CTA ===== */
+      section.bg-ink.text-white:last-of-type > div{ padding-top:2.75rem !important; padding-bottom:2.75rem !important; }
+      section.bg-ink.text-white:last-of-type h2{ font-size:34px !important; margin-top:10px !important; }
+      section.bg-ink.text-white:last-of-type .grid.grid-cols-12{ gap:20px !important; }
+
+      /* ===== FIX: footer ===== */
+      footer .col-span-6{ width:50%; }
+      footer ul li{ line-height:1.55; }
+
+      /* ===== FIX: hero CTA search button full width label clean ===== */
+      .hero-search button[type="submit"] svg{ width:16px; height:16px; }
+      .hero-search button[type="submit"]{ font-size:14px !important; font-weight:600; }
+
+      /* ===== FIX: category tabs first-item spacing ===== */
+      .cat-tabs{ padding-left:2px; padding-right:2px; margin-left:-2px; margin-right:-2px; }
+
+      /* ===== FIX: trust tick row on hero — 2 per line ===== */
+      section.hero-bg > div > div.max-w-\[860px\] > .mt-6{ display:grid !important; grid-template-columns:1fr 1fr; row-gap:8px !important; column-gap:14px !important; }
+      section.hero-bg > div > div.max-w-\[860px\] > .mt-6 > .tick{ font-size:12.5px; }
+
+      /* ===== FIX: events "Show all 512" button tight width ===== */
+      section#events .btn-outline.rounded-full{ width:100%; justify-content:center; }
+
+      /* ===== FIX: booking-step step-4 (dark card) spacing ===== */
+      ol li.bg-ink{ padding:20px !important; }
+
+      /* ===== FIX: reviews verified chip wrap ===== */
+      figure.card figcaption{ flex-wrap:wrap; row-gap:8px; }
+      figure.card figcaption .badge-verified{ margin-left:0 !important; }
+
+      /* =========================================================
+        FIX: WHY COIS section ("The easiest way to show up…")
+        ========================================================= */
+      section#services{ padding:0 !important; }
+      section#services > div{ padding-top:2.5rem !important; padding-bottom:2.5rem !important; padding-left:16px !important; padding-right:16px !important; }
+      section#services .grid.grid-cols-12{ gap:18px !important; }
+      section#services .col-span-12.lg\:col-span-5 .small-caps{ font-size:10px !important; letter-spacing:.12em !important; }
+      section#services .col-span-12.lg\:col-span-5 h2{ font-size:26px !important; line-height:1.12 !important; margin-top:10px !important; letter-spacing:-0.015em !important; }
+      section#services .col-span-12.lg\:col-span-5 > p{ font-size:14.5px !important; margin-top:14px !important; line-height:1.55 !important; max-width:none !important; }
+      section#services .col-span-12.lg\:col-span-5 > a.btn-green{ height:44px !important; padding:0 22px !important; font-size:13.5px !important; margin-top:18px !important; }
+      section#services .col-span-12.lg\:col-span-7.grid{ grid-template-columns: 1fr !important; gap:10px !important; }
+      section#services .col-span-12.lg\:col-span-7 > div{ padding:16px 18px !important; border-radius:14px !important; }
+      section#services .col-span-12.lg\:col-span-7 > div h3{ font-size:15.5px !important; margin-top:12px !important; }
+      section#services .col-span-12.lg\:col-span-7 > div p{ font-size:13px !important; margin-top:4px !important; line-height:1.55 !important; }
+      section#services .col-span-12.lg\:col-span-7 > div .h-11.w-11{ height:36px !important; width:36px !important; border-radius:10px !important; }
+      section#services .col-span-12.lg\:col-span-7 > div .h-11.w-11 svg{ width:18px !important; height:18px !important; }
+
+      /* =========================================================
+        FIX: FAQ section ("Answers, fast.")  — exclude logo strip & booking steps
+        ========================================================= */
+      section.rule-t.bg-bone:not(.rule-b){ padding:0 !important; }
+      section.rule-t.bg-bone:not(.rule-b) > div.grid{ padding-top:2.5rem !important; padding-bottom:2.5rem !important; padding-left:16px !important; padding-right:16px !important; gap:20px !important; }
+      section.rule-t.bg-bone:not(.rule-b) .small-caps{ font-size:10px !important; letter-spacing:.12em !important; }
+      section.rule-t.bg-bone:not(.rule-b) h2{ font-size:26px !important; line-height:1.12 !important; margin-top:8px !important; letter-spacing:-0.015em !important; }
+      section.rule-t.bg-bone:not(.rule-b) .col-span-12.lg\:col-span-5 > p{ font-size:14px !important; margin-top:12px !important; line-height:1.55 !important; max-width:none !important; }
+      section.rule-t.bg-bone:not(.rule-b) .col-span-12.lg\:col-span-5 .mt-6.flex{ margin-top:14px !important; gap:8px !important; flex-wrap:wrap !important; }
+      section.rule-t.bg-bone:not(.rule-b) .col-span-12.lg\:col-span-5 .mt-6.flex > a{ height:42px !important; padding:0 14px !important; font-size:12.5px !important; flex:1 1 calc(50% - 4px) !important; justify-content:center !important; }
+      section.rule-t.bg-bone:not(.rule-b) .col-span-12.lg\:col-span-5 .mt-6.flex > a svg{ width:14px; height:14px; }
+      section.rule-t.bg-bone:not(.rule-b) .col-span-12.lg\:col-span-7{ border-radius:14px !important; }
+      section.rule-t.bg-bone:not(.rule-b) details summary{ padding:14px 16px !important; }
+      section.rule-t.bg-bone:not(.rule-b) details summary > span:first-child{ font-size:14.5px !important; font-weight:600 !important; line-height:1.35 !important; padding-right:8px !important; }
+      section.rule-t.bg-bone:not(.rule-b) details summary > span:last-child{ font-size:20px !important; flex-shrink:0; }
+      section.rule-t.bg-bone:not(.rule-b) details p{ padding:0 16px 14px !important; font-size:13px !important; line-height:1.6 !important; }
+    }
+
+  </style>
+
+
+
+</head>
+
+<body class="pb-20 md:pb-0" data-page="home">
+
+<div id="site-header"></div>
+
+<!-- ============ HERO + SEARCH ============ -->
+<section class="hero-bg">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 pt-12 lg:pt-16 pb-10 lg:pb-14">
+    <div class="max-w-[860px] rise">
+      <div class="inline-flex items-center gap-2 badge-live">
+        <span class="pulse-dot"></span> 500+ verified trade shows · India's largest network
+      </div>
+      <h1 class="mt-5 text-[40px] md:text-[58px] lg:text-[72px] leading-[1.02] font-semibold tracking-[-0.025em]">
+        Over <span class="text-green">500+</span> events delivered perfectly
+      </h1>
+      <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2">
+        <div class="tick">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>
+          No broker fees
+        </div>
+        <div class="tick">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>
+          Free cancellation on most shows
+        </div>
+        <div class="tick">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>
+          Secure payments · UPI, card, NEFT
+        </div>
+      </div>
+    </div>
+
+    <!-- SEARCH WIDGET -->
+    <form id="booking" class="hero-search mt-10 grid grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_auto] rise" style="animation-delay:.1s">
+      <div class="field col-span-2 lg:col-span-1">
+        <label>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Industry
+        </label>
+        <select>
+          <option>All 40 industries</option>
+          <option>Automotive &amp; Components</option>
+          <option>Pharma &amp; Healthcare</option>
+          <option>Food &amp; Beverage</option>
+          <option>Electronics &amp; Semiconductors</option>
+          <option>Textiles &amp; Apparel</option>
+          <option>Logistics &amp; Warehousing</option>
+          <option>Renewables &amp; Energy</option>
+          <option>Construction &amp; Infrastructure</option>
+        </select>
+      </div>
+      <div class="field col-span-1">
+        <label>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          City
+        </label>
+        <select>
+          <option>Any city</option>
+          <option>New Delhi / NCR</option>
+          <option>Mumbai</option>
+          <option>Bengaluru</option>
+          <option>Hyderabad</option>
+          <option>Chennai</option>
+          <option>Ahmedabad</option>
+          <option>Pune</option>
+        </select>
+      </div>
+      <div class="field col-span-1">
+        <label>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Dates
+        </label>
+        <input type="text" placeholder="Apr – Dec 2026"/>
+      </div>
+      <div class="field col-span-2 lg:col-span-1">
+        <label>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Stall size
+        </label>
+        <select>
+          <option>Any size</option>
+          <option>Shell scheme · up to 9 sqm</option>
+          <option>9 – 18 sqm</option>
+          <option>18 – 36 sqm</option>
+          <option>36 – 72 sqm</option>
+          <option>72 sqm + (Pavilion)</option>
+        </select>
+      </div>
+      <div class="p-2 col-span-2 lg:col-span-1 flex">
+        <button type="submit" class="btn-primary w-full rounded-lg px-6 h-full min-h-[52px] inline-flex items-center justify-center gap-2 text-[14.5px] font-semibold group">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          Search stalls
+        </button>
+      </div>
+    </form>
+
+    <!-- trending search -->
+    <div class="mt-5 flex flex-wrap items-center gap-2 rise" style="animation-delay:.15s">
+      <span class="small-caps mr-1">Trending:</span>
+      <a class="chip" href="events.html">Auto Expo Components</a>
+      <a class="chip" href="events.html">CPHI India</a>
+      <a class="chip" href="events.html">India Warehousing</a>
+      <a class="chip" href="events.html">Textiles India</a>
+      <a class="chip" href="events.html">AAHAR Delhi</a>
+      <a class="chip" href="events.html">Re-Invest</a>
+    </div>
+
+    <!-- trust stats -->
+
+  </div>
+</section>
+
+<!-- ============ LOGO STRIP ============ -->
+<section class="rule-t rule-b bg-bone">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-6 flex flex-wrap items-center gap-8">
+    <div class="small-caps shrink-0">Trusted by 1,000+ exhibitors</div>
+    <div class="overflow-hidden flex-1">
+      <div class="marq inline-flex items-center gap-12 whitespace-nowrap text-slate">
+        <span class="text-lg font-semibold">Tata Motors</span>
+        <span class="text-lg font-semibold tracking-tight">Reliance</span>
+        <span class="text-lg font-semibold">Mahindra</span>
+        <span class="text-lg font-semibold">ITC</span>
+        <span class="text-lg font-semibold">Godrej</span>
+        <span class="text-lg font-semibold">L&amp;T</span>
+        <span class="text-lg font-semibold">Asian Paints</span>
+        <span class="text-lg font-semibold">Dr. Reddy's</span>
+        <span class="text-lg font-semibold">Bajaj Auto</span>
+        <span class="text-lg font-semibold">Havells</span>
+        <span class="text-lg font-semibold">Amul</span>
+        <span class="text-lg font-semibold">Hero</span>
+        <span class="text-lg font-semibold">Wipro</span>
+        <!-- dup -->
+        <span class="text-lg font-semibold">Tata Motors</span>
+        <span class="text-lg font-semibold tracking-tight">Reliance</span>
+        <span class="text-lg font-semibold">Mahindra</span>
+        <span class="text-lg font-semibold">ITC</span>
+        <span class="text-lg font-semibold">Godrej</span>
+        <span class="text-lg font-semibold">L&amp;T</span>
+        <span class="text-lg font-semibold">Asian Paints</span>
+        <span class="text-lg font-semibold">Dr. Reddy's</span>
+        <span class="text-lg font-semibold">Bajaj Auto</span>
+        <span class="text-lg font-semibold">Havells</span>
+        <span class="text-lg font-semibold">Amul</span>
+        <span class="text-lg font-semibold">Hero</span>
+        <span class="text-lg font-semibold">Wipro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY TABS + EVENTS GRID ============ -->
+<section id="events" class="bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 pt-14 lg:pt-20 pb-12">
+    <div class="flex flex-wrap items-end justify-between gap-5">
+      <div>
+        <div class="small-caps">Browse by industry</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Upcoming trade shows <span class="italic font-normal text-green">you can book today</span></h2>
+      </div>
+      <a href="events.html" class="inline-flex items-center gap-2 text-[14px] font-medium group hover:text-green">View full calendar <span class="arrow">→</span></a>
+    </div>
+
+    <!-- Category tabs scrollable -->
+    <div class="mt-6 cat-tabs">
+      <button class="cat-tab on">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>
+        All shows <span class="mono text-[11px] opacity-60">512</span>
+      </button>
+      <button class="cat-tab">🚗 Automotive <span class="mono text-[11px] opacity-60">68</span></button>
+      <button class="cat-tab">💊 Pharma <span class="mono text-[11px] opacity-60">54</span></button>
+      <button class="cat-tab">🍱 Food &amp; Bev <span class="mono text-[11px] opacity-60">71</span></button>
+      <button class="cat-tab">⚡ Electronics <span class="mono text-[11px] opacity-60">44</span></button>
+      <button class="cat-tab">🧵 Textiles <span class="mono text-[11px] opacity-60">52</span></button>
+      <button class="cat-tab">📦 Logistics <span class="mono text-[11px] opacity-60">33</span></button>
+      <button class="cat-tab">🌱 Renewables <span class="mono text-[11px] opacity-60">28</span></button>
+      <button class="cat-tab">🏗️ Construction <span class="mono text-[11px] opacity-60">39</span></button>
+      <button class="cat-tab">💎 Jewellery <span class="mono text-[11px] opacity-60">24</span></button>
+      <button class="cat-tab">✈️ Travel &amp; Hosp. <span class="mono text-[11px] opacity-60">19</span></button>
+    </div>
+
+    <!-- filters row -->
+    <div class="mt-5 flex flex-wrap items-center gap-2">
+      <button class="chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+        All filters
+      </button>
+      <button class="chip">City: Any</button>
+      <button class="chip">Price: Any</button>
+      <button class="chip">Stall: Any size</button>
+      <button class="chip">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l3 3 5-6"/></svg>
+        Instant confirmation
+      </button>
+      <button class="chip">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l3 3 5-6"/></svg>
+        Free cancellation
+      </button>
+      <span class="ml-auto text-[13px] text-muted">Sorted by <span class="text-ink font-medium">Relevance</span> ↓</span>
+    </div>
+
+    <!-- EVENT GRID -->
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- CARD 1 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>12–15 October '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Real Estate</span>
+              <span class="badge-scheduled">Scheduled</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Property Expo 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>Dubai, UAE</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="Property Expo 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Get tickets <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>22–25 July '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Healthcare</span>
+              <span class="badge-confirmed">Confirmed</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Global Health Conference 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>Berlin, Germany</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="Global Health Conference 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Reserve now <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>15–18 June '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Technology</span>
+              <span class="badge-pending">Pending</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Tech Innovations Summit 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>Silicon Valley, USA</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="Tech Innovations Summit 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Register now <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="Auto Expo Components 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+
+      <!-- CARD 5 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>04–07 Sep '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Education</span>
+              <span class="badge-approved">Approved</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Education Forum 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>Tokyo, Japan</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="Education Forum 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Join now <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+
+      <!-- CARD 6 -->
+      <article class="card group">
+          <div class="ph-img aspect-[4/3]" style="background:#f1eede;">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            </div>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>10–13 August '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Finance</span>
+              <span class="badge-in-progress">In Progress</span>
+            </div>
+            <h3 class="mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">FinTech Expo 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>London, UK</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" data-event="FinTech Expo 2026" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Sign up <span class="arrow">→</span></button>
+            </div>
+          </div>
+      </article>
+    </div>
+
+    <div class="mt-10 flex justify-center">
+      <a href="events.html" class="btn-outline rounded-full h-12 px-7 inline-flex items-center gap-2 text-[14px] font-medium group">
+        Show all 512 events <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING STEPS ============ -->
+<section class="bg-bone rule-t rule-b">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div class="small-caps">How booking works</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Pick your stall in <span class="italic text-green font-normal">four minutes</span>.</h2>
+      </div>
+      <a href="contact.html" class="inline-flex items-center gap-2 text-[14px] font-medium group hover:text-green">Watch 60-sec demo <span class="arrow">→</span></a>
+    </div>
+
+    <ol class="mt-10 grid grid-cols-1 md:grid-cols-4 gap-5">
+      <li class="card p-6 bg-white">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 01</div>
+          <div class="h-10 w-10 rounded-full bg-ink text-white flex items-center justify-center text-[15px] font-semibold">1</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold leading-snug">Search &amp; filter</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Find shows by industry, city, date or stall size. See live availability on every listing.</p>
+        <div class="mt-4 text-[12px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M2 6l3 3 5-6"/></svg>~60 seconds</div>
+      </li>
+      <li class="card p-6 bg-white">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 02</div>
+          <div class="h-10 w-10 rounded-full bg-ink text-white flex items-center justify-center text-[15px] font-semibold">2</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold leading-snug">Pick your position</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Open the live floorplan, pin the booth position you want. See who's booked around it.</p>
+        <div class="mt-4 text-[12px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M2 6l3 3 5-6"/></svg>~90 seconds</div>
+      </li>
+      <li class="card p-6 bg-white">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 03</div>
+          <div class="h-10 w-10 rounded-full bg-ink text-white flex items-center justify-center text-[15px] font-semibold">3</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold leading-snug">Pay 10% to hold</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Refundable deposit locks your slot. Or pay in full for immediate allocation. UPI, card, NEFT.</p>
+        <div class="mt-4 text-[12px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M2 6l3 3 5-6"/></svg>~60 seconds</div>
+      </li>
+      <li class="card p-6 bg-ink text-white border-ink">
+        <div class="flex items-center justify-between">
+          <div class="small-caps" style="color:#8A8F87">Step 04</div>
+          <div class="h-10 w-10 rounded-full bg-green text-white flex items-center justify-center text-[15px] font-semibold">4</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold leading-snug">Instant confirmation</h3>
+        <p class="mt-2 text-[14px] text-white/75 leading-relaxed">e-Signed contract in inbox. Optional: add stall design &amp; build by our in-house studio.</p>
+        <div class="mt-4 text-[12px] text-white/60 flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#10973F" stroke-width="1.6"><path d="M2 6l3 3 5-6"/></svg>Confirmed in 30 sec</div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CITY EXPLORER ============ -->
+<section class="bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div class="small-caps">Explore by city</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Trade shows happening <span class="italic text-green font-normal">near you</span>.</h2>
+      </div>
+      <a href="events.html" class="inline-flex items-center gap-2 text-[14px] font-medium group hover:text-green">All 20+ cities <span class="arrow">→</span></a>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/newdelhi,india,city" alt="New Delhi — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">New Delhi</div>
+          <div class="text-[13px] opacity-80 mt-0.5">142 shows · this year</div>
+        </div>
+      </a>
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/mumbai,skyline,marinedrive" alt="Mumbai — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">Mumbai</div>
+          <div class="text-[13px] opacity-80 mt-0.5">118 shows · this year</div>
+        </div>
+      </a>
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/bengaluru,bangalore,city" alt="Bengaluru — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">Bengaluru</div>
+          <div class="text-[13px] opacity-80 mt-0.5">96 shows · this year</div>
+        </div>
+      </a>
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/hyderabad,charminar,city" alt="Hyderabad — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">Hyderabad</div>
+          <div class="text-[13px] opacity-80 mt-0.5">64 shows · this year</div>
+        </div>
+      </a>
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/chennai,india,city" alt="Chennai — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">Chennai</div>
+          <div class="text-[13px] opacity-80 mt-0.5">48 shows · this year</div>
+        </div>
+      </a>
+      <a class="city-card aspect-[3/4]" href="events.html">
+        <img src="https://loremflickr.com/600/800/ahmedabad,gujarat,city" alt="Ahmedabad — business district" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[22px] font-semibold leading-tight">Ahmedabad</div>
+          <div class="text-[13px] opacity-80 mt-0.5">32 shows · this year</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY COIS ============ -->
+<section id="services" class="bg-ink text-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-20 lg:py-28">
+    <div class="grid grid-cols-12 gap-10">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="small-caps" style="color:#8A8F87">Why 1,000+ brands pick COIS</div>
+        <h2 class="mt-3 text-[32px] md:text-[48px] font-semibold leading-[1.08] tracking-[-0.02em]">
+          The easiest way to <span class="italic text-greenL font-normal">show up</span> at India's trade shows.
+        </h2>
+        <p class="mt-5 text-[16px] text-white/70 max-w-[46ch] leading-relaxed">
+          Every piece of the exhibition workflow — discovery, booking, stall design, build, logistics, leads — handled on one platform, by one producer, on one invoice.
+        </p>
+        <a href="contact.html" class="mt-7 inline-flex items-center gap-2 btn-green rounded-full h-12 px-7 text-[14px] font-semibold group">
+          Talk to a producer <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="col-span-12 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">Live availability</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">Real-time floorplans synced with each organiser. No email back-and-forth.</p>
+        </div>
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><path d="M3 9l9-6 9 6-9 6z"/><path d="M3 15l9 6 9-6"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">Organiser-direct pricing</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">Zero broker fees. The price you see is the price the organiser quotes.</p>
+        </div>
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">Secure 10% holds</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">Lock your slot with a refundable deposit. UPI, card, NEFT — all audit-logged.</p>
+        </div>
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><path d="M4 20V8l8-5 8 5v12"/><path d="M10 20v-6h4v6"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">Design &amp; build on demand</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">Optional in-house stall studio. 120+ stalls shipped in 2025, 14 design awards.</p>
+        </div>
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">Exhibitor directory</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">1,000+ verified profiles with decision-maker intent. DPDP-compliant access.</p>
+        </div>
+        <div class="border border-white/12 rounded-2xl p-6">
+          <div class="h-11 w-11 rounded-xl bg-greenD flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3 class="mt-4 text-[18px] font-semibold">15 years on the floor</h3>
+          <p class="mt-2 text-[14px] text-white/70 leading-relaxed">UFI &amp; IEIA member. ISO 9001:2015 certified. FICCI &amp; CII affiliate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-20 lg:py-28">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div class="small-caps">What exhibitors say</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">
+          <span class="italic text-green font-normal">4.9 / 5</span> from 320+ verified bookings.
+        </h2>
+      </div>
+      <div class="flex items-center gap-4 text-[13px] text-muted">
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#10973F" d="M12 2l2.9 6 6.6.6-5 4.5 1.5 6.4L12 16.8 5.9 19.5l1.5-6.4-5-4.5 6.6-.6z"/></svg> Google · 4.9</span>
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#10973F" d="M12 2l2.9 6 6.6.6-5 4.5 1.5 6.4L12 16.8 5.9 19.5l1.5-6.4-5-4.5 6.6-.6z"/></svg> Trustpilot · 4.8</span>
+        <span class="inline-flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="#10973F" d="M12 2l2.9 6 6.6.6-5 4.5 1.5 6.4L12 16.8 5.9 19.5l1.5-6.4-5-4.5 6.6-.6z"/></svg> Clutch · 5.0</span>
+      </div>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <figure class="card p-7">
+        <div class="flex items-center gap-1 text-green text-[15px]">★★★★★</div>
+        <blockquote class="mt-4 text-[16px] leading-[1.55] text-ink">"Booked a 72-sqm stall at AAHAR in under 6 minutes. The producer handled design, build &amp; dismantle — we just showed up."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3 pt-5 border-t hairline">
+          <div class="h-10 w-10 rounded-full bg-green text-white flex items-center justify-center text-[13px] font-semibold">NP</div>
+          <div>
+            <div class="text-[14px] font-semibold">Nandita Pande</div>
+            <div class="text-[12px] text-muted">VP Marketing · Godrej</div>
+          </div>
+          <span class="ml-auto badge-verified text-[11px]"><svg width="12" height="12" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+        </figcaption>
+      </figure>
+      <figure class="card p-7">
+        <div class="flex items-center gap-1 text-green text-[15px]">★★★★★</div>
+        <blockquote class="mt-4 text-[16px] leading-[1.55] text-ink">"We ran six global CPHI shows with one point of contact. Zero snags, 232% more qualified leads than last year."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3 pt-5 border-t hairline">
+          <div class="h-10 w-10 rounded-full bg-ink text-white flex items-center justify-center text-[13px] font-semibold">AR</div>
+          <div>
+            <div class="text-[14px] font-semibold">Aditya Rao</div>
+            <div class="text-[12px] text-muted">Head of BD · Dr. Reddy's</div>
+          </div>
+          <span class="ml-auto badge-verified text-[11px]"><svg width="12" height="12" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+        </figcaption>
+      </figure>
+      <figure class="card p-7">
+        <div class="flex items-center gap-1 text-green text-[15px]">★★★★★</div>
+        <blockquote class="mt-4 text-[16px] leading-[1.55] text-ink">"Saw 34 stalls left on Auto Expo, locked one on my phone during a cab ride. Confirmation before I reached office."</blockquote>
+        <figcaption class="mt-6 flex items-center gap-3 pt-5 border-t hairline">
+          <div class="h-10 w-10 rounded-full bg-amber text-white flex items-center justify-center text-[13px] font-semibold">RK</div>
+          <div>
+            <div class="text-[14px] font-semibold">Rakesh Kulkarni</div>
+            <div class="text-[12px] text-muted">Marketing Director · Ashok Leyland</div>
+          </div>
+          <span class="ml-auto badge-verified text-[11px]"><svg width="12" height="12" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ + CTA ============ -->
+<section class="rule-t bg-bone">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-20 lg:py-28 grid grid-cols-12 gap-12">
+    <div class="col-span-12 lg:col-span-5">
+      <div class="small-caps">FAQ</div>
+      <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Answers, fast.</h2>
+      <p class="mt-5 text-[15px] text-slate leading-relaxed max-w-[42ch]">Didn't find what you need? Our concierge answers in under 15 minutes during IST work hours.</p>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <a href="contact.html" class="btn-primary rounded-full h-12 px-6 inline-flex items-center gap-2 text-[14px] font-semibold group">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12c0 5-4.5 9-10 9-1.5 0-3-.3-4.3-1L3 21l1-3.7C3.3 16 3 14.5 3 12c0-5 4.5-9 9-9s9 4 9 9z"/></svg>
+          Chat with concierge
+        </a>
+        <a href="tel:+911140000000" class="btn-outline rounded-full h-12 px-6 inline-flex items-center gap-2 text-[14px] font-medium">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16v3a2 2 0 01-2 2A19 19 0 013 5a2 2 0 012-2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.5 2.1L8.9 11a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.5c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+          +91 11 4000 0000
+        </a>
+      </div>
+    </div>
+    <div class="col-span-12 lg:col-span-7 bg-white border hairline rounded-2xl overflow-hidden">
+      <details class="group border-b hairline">
+        <summary class="flex items-center justify-between cursor-pointer p-6">
+          <span class="text-[16px] md:text-[17px] font-semibold">How does instant stall confirmation work?</span>
+          <span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-[14.5px] text-slate leading-relaxed">Our floorplans sync live with each organiser. Pick a position, e-sign in-platform, pay a 10% refundable deposit to hold — or pay in full for immediate allocation. Confirmation e-mail + calendar invite arrive in under 30 seconds.</p>
+      </details>
+      <details class="group border-b hairline">
+        <summary class="flex items-center justify-between cursor-pointer p-6">
+          <span class="text-[16px] md:text-[17px] font-semibold">Can I cancel or change my stall?</span>
+          <span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-[14.5px] text-slate leading-relaxed">Most shows offer free cancellation up to 30 days before doors open. Stall swaps are free within the same hall subject to availability. Cancellation rules are shown on every booking before payment.</p>
+      </details>
+      <details class="group border-b hairline">
+        <summary class="flex items-center justify-between cursor-pointer p-6">
+          <span class="text-[16px] md:text-[17px] font-semibold">What payment methods do you accept?</span>
+          <span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-[14.5px] text-slate leading-relaxed">UPI, credit/debit cards, NEFT/RTGS, and corporate wire for stalls above ₹10L. All transactions pass through PCI-DSS compliant gateways with TLS 1.3 encryption.</p>
+      </details>
+      <details class="group border-b hairline">
+        <summary class="flex items-center justify-between cursor-pointer p-6">
+          <span class="text-[16px] md:text-[17px] font-semibold">Do I have to use your design studio?</span>
+          <span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-[14.5px] text-slate leading-relaxed">No. Directory, booking and contract tools work on their own. Design &amp; fabrication are opt-in services, billed separately — but available if you want a single invoice.</p>
+      </details>
+      <details class="group">
+        <summary class="flex items-center justify-between cursor-pointer p-6">
+          <span class="text-[16px] md:text-[17px] font-semibold">What does a custom stall cost?</span>
+          <span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <p class="px-6 pb-6 text-[14.5px] text-slate leading-relaxed">From ₹ 2,400/sqm for a modular build, up to ₹ 6,200/sqm for fully custom fabrication — all-inclusive of engineering, logistics, setup, dismantle. Line-item quote within 48 hours of brief.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-mobile">
+  <div class="text-[12px] text-muted leading-tight">
+    <div class="text-ink font-semibold text-[13px]">500+ verified shows</div>
+    <div>Instant confirmation · 10% holds</div>
+  </div>
+  <button type="button" class="open-contact btn-primary rounded-full h-11 px-5 inline-flex items-center gap-2 text-[13.5px] font-semibold">Contact us →</button>
+</div>
+
+<!-- ============ CONTACT MODAL ============ -->
+<div id="contact-modal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+  <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm contact-close cursor-pointer"></div>
+  <div class="relative bg-white w-full max-w-[520px] rounded-2xl shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto">
+    <button type="button" class="contact-close absolute top-3.5 right-3.5 h-9 w-9 rounded-full hover:bg-bone flex items-center justify-center transition" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="p-7 lg:p-9">
+      <div class="small-caps">Talk to a producer</div>
+      <h3 id="contact-modal-title" class="mt-2 text-[24px] md:text-[28px] font-semibold leading-tight tracking-[-0.015em]">Reserve your stall</h3>
+      <p class="mt-2 text-[14px] text-slate leading-relaxed">Share a few details. Our concierge calls back within 15 minutes (IST work hours) with availability, pricing &amp; floor plan.</p>
+
+      <form id="contact-form" class="mt-6 space-y-4" novalidate>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Full name</label>
+          <input name="name" type="text" required placeholder="Your name" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Email</label>
+          <input name="email" type="email" required placeholder="you@company.com" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Phone</label>
+          <input name="phone" type="tel" required placeholder="+91 ..." class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <button type="submit" class="btn-primary rounded-full w-full h-12 inline-flex items-center justify-center gap-2 text-[14px] font-semibold group mt-2">
+          Request callback <span class="arrow">→</span>
+        </button>
+        <p class="text-[11.5px] text-muted text-center leading-relaxed">By submitting you agree to our <a href="privacy.html" class="underline hover:text-ink">privacy notice</a>. No spam.</p>
+      </form>
+
+      <div id="contact-success" class="hidden text-center py-6">
+        <div class="h-14 w-14 rounded-full bg-mint mx-auto flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+        </div>
+        <h4 class="mt-4 text-[20px] font-semibold">Request received.</h4>
+        <p class="mt-2 text-[14px] text-slate">A producer will call you back within 15 minutes during IST work hours.</p>
+        <button type="button" class="contact-close mt-5 btn-outline rounded-full h-11 px-6 inline-flex items-center gap-2 text-[13.5px] font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal   = document.getElementById('contact-modal');
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  let lastFocus = null;
+
+  function open(){
+    lastFocus = document.activeElement;
+    form.classList.remove('hidden');
+    success.classList.add('hidden');
+    form.reset();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    setTimeout(()=>{ form.querySelector('input[name="name"]').focus(); }, 30);
+  }
+  function close(){
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', function(e){
+    const trigger = e.target.closest('.open-contact');
+    if(trigger){ e.preventDefault(); open(); return; }
+    if(e.target.closest('.contact-close')){ close(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+})();
+</script>
+
+<script src="components.js"></script>
+<script>
+document.querySelectorAll('article.card').forEach(function(card) {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(e) {
+    if (!e.target.closest('button, a')) {
+      window.location.href = 'event-detail.html';
+    }
+  });
+});
+</script>
+</body>
+</html>

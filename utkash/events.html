@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Browse events — COIS · 517 verified trade shows across India</title>
+<meta name="description" content="Browse 500+ verified B2B trade shows across India. Filter by industry, city, date, stall size. Live availability, instant confirmation." />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink:'#0A0E0C', char:'#1C211F', slate:'#343B37', muted:'#60655F', mutedL:'#8A8F87',
+        line:'#E6E4DC', hair:'#EFEDE4', paper:'#FFFFFF', bone:'#F7F5EC', cream:'#F1EEDE',
+        mint:'#E8F3ED', green:'#0B7A36', greenL:'#10973F', greenD:'#064D22', amber:'#C97B1F',
+      },
+      fontFamily:{ sans:['Onest','ui-sans-serif','system-ui'], serif:['Instrument Serif','serif'], mono:['JetBrains Mono','ui-monospace'] },
+    }
+  }
+}
+</script>
+<style>
+  html,body{ background:#FFFFFF; color:#0A0E0C; }
+  body{ font-family:'Onest',sans-serif; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01"; }
+  .serif{ font-family:'Instrument Serif',serif; font-weight:400; }
+  .mono{ font-family:'JetBrains Mono',monospace; }
+
+  .hairline{ border-color:#E6E4DC; }
+  .rule-t{ border-top:1px solid #E6E4DC; }
+  .rule-b{ border-bottom:1px solid #E6E4DC; }
+  input:focus, select:focus{ outline:none; }
+
+  .btn-primary{ background:#0A0E0C; color:#fff; transition:background .25s, transform .2s; }
+  .btn-primary:hover{ background:#0B7A36; }
+  .btn-green{ background:#0B7A36; color:#fff; transition:background .25s; }
+  .btn-green:hover{ background:#064D22; }
+  .btn-ghost{ background:transparent; color:#0A0E0C; transition:background .2s; }
+  .btn-ghost:hover{ background:#F7F5EC; }
+  .btn-outline{ border:1px solid #0A0E0C; color:#0A0E0C; transition:all .25s; }
+  .btn-outline:hover{ background:#0A0E0C; color:#fff; }
+
+  .chip{ border:1px solid #E6E4DC; background:#fff; padding:.45rem .95rem; font-size:13px; border-radius:999px; transition:all .25s; color:#1C211F; display:inline-flex; align-items:center; gap:.4rem; }
+  .chip:hover{ border-color:#0A0E0C; background:#F7F5EC; }
+  .chip.active{ background:#0A0E0C; color:#fff; border-color:#0A0E0C; }
+
+  .card{ border:1px solid #E6E4DC; background:#fff; border-radius:18px; overflow:hidden; transition:border-color .25s, transform .35s, box-shadow .35s; }
+  .card:hover{ border-color:#0A0E0C; transform:translateY(-2px); box-shadow:0 16px 40px -24px rgba(10,14,12,.18); }
+
+  .arrow{ display:inline-block; transition: transform .3s ease; }
+  a:hover .arrow, button:hover .arrow, .group:hover .arrow{ transform: translateX(4px); }
+
+  .pulse-dot{ width:8px; height:8px; border-radius:999px; background:#10973F; box-shadow:0 0 0 0 rgba(16,151,63,.6); animation: pulse 2s infinite; }
+  @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(16,151,63,.5)} 70%{box-shadow:0 0 0 10px rgba(16,151,63,0)} 100%{box-shadow:0 0 0 0 rgba(16,151,63,0)} }
+
+  .badge-live{ display:inline-flex; align-items:center; gap:.4rem; padding:.25rem .55rem; border-radius:999px; background:#E8F3ED; color:#064D22; font-size:11.5px; font-weight:500; }
+  .badge-left{ display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem; border-radius:999px; background:#FDF3E4; color:#8E5A12; font-size:11.5px; font-weight:500; }
+  .badge-verified{ display:inline-flex; align-items:center; gap:.3rem; font-size:12px; color:#0B7A36; font-weight:500; }
+  .tag-cat{ display:inline-block; padding:.2rem .55rem; border-radius:6px; background:#F1EEDE; color:#343B37; font-size:11.5px; font-weight:500; }
+
+  .cat-tabs{ display:flex; align-items:center; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px; }
+  .cat-tabs::-webkit-scrollbar{ display:none; }
+  .cat-tab{ flex-shrink:0; display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; font-size:13.5px; font-weight:500; color:#343B37; transition:all .25s; cursor:pointer; white-space:nowrap; border:1px solid transparent; }
+  .cat-tab:hover{ background:#F7F5EC; }
+  .cat-tab.on{ background:#0A0E0C; color:#fff; }
+
+  .availability-bar{ height:4px; background:#EFEDE4; border-radius:999px; overflow:hidden; }
+  .availability-bar > span{ display:block; height:100%; background:linear-gradient(90deg,#10973F,#0B7A36); border-radius:999px; }
+  .availability-bar.low > span{ background:linear-gradient(90deg,#E08A2A,#C97B1F); }
+
+  .ph-img{ position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .ph-img .dates-tag{ position:absolute; top:14px; left:14px; background:#fff; color:#0A0E0C; font-weight:600; font-size:12px; padding:6px 10px; border-radius:8px; display:flex; align-items:center; gap:6px; box-shadow:0 1px 3px rgba(10,14,12,.12); }
+  .ph-img .save{ position:absolute; top:12px; right:12px; height:34px; width:34px; border-radius:999px; background:rgba(255,255,255,.95); display:flex; align-items:center; justify-content:center; transition:background .2s; }
+  .ph-img .save:hover{ background:#fff; }
+
+  .small-caps{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; font-weight:600; color:#60655F; }
+
+  .price{ font-weight:600; }
+  .price sup{ font-weight:400; color:#60655F; font-size:.7em; margin-right:2px; }
+
+  .sidebar{ position:sticky; top:136px; align-self:start; }
+  .filter-group + .filter-group{ border-top:1px solid #EFEDE4; padding-top:16px; margin-top:16px; }
+  .filter-label{ font-size:13.5px; font-weight:600; color:#0A0E0C; margin-bottom:10px; display:block; }
+  .check-row{ display:flex; align-items:center; justify-content:space-between; padding:7px 0; cursor:pointer; font-size:13.5px; color:#343B37; }
+  .check-row input{ accent-color:#0B7A36; }
+  .check-row .count{ color:#8A8F87; font-size:12px; font-variant-numeric:tabular-nums; }
+
+  .price-slider{ appearance:none; -webkit-appearance:none; height:3px; background:#E6E4DC; border-radius:999px; width:100%; outline:none; }
+  .price-slider::-webkit-slider-thumb{ appearance:none; height:16px; width:16px; background:#0B7A36; border-radius:999px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 0 1px #0B7A36; }
+
+  .sort-dropdown{ border:1px solid #E6E4DC; border-radius:999px; padding:8px 14px; background:#fff; font-size:13.5px; color:#0A0E0C; }
+
+  /* subsearch field enhancements */
+  .subsearch{ border-radius:14px !important; overflow:hidden; }
+  .subsearch .field{ transition:background .18s; }
+  .subsearch .field:hover{ background:#FAFAF8; }
+  .subsearch .field:focus-within{ background:#F5F4EE; }
+  .subsearch .field .small-caps{ display:flex; align-items:center; gap:5px; }
+  .subsearch select, .subsearch input{ color:#0A0E0C !important; }
+  .subsearch input::placeholder{ color:#0A0E0C !important; font-weight:400; }
+
+  details > summary::-webkit-details-marker{ display:none; }
+  details > summary{ list-style:none; }
+
+  .num{ font-variant-numeric: tabular-nums lining-nums; }
+
+  .topbar-long{ display:inline; }
+  .topbar-short{ display:none; }
+
+  .mnav-btn{ display:none; }
+  .mnav-panel{ display:none; }
+  .mnav-toggle:checked ~ .mnav-panel{ display:block; }
+  .mnav-toggle:checked ~ header .mnav-open{ display:none !important; }
+  .mnav-toggle:checked ~ header .mnav-close{ display:inline !important; }
+
+  .sticky-mobile{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:#fff; border-top:1px solid #E6E4DC; padding:10px 14px; display:none; gap:8px; align-items:center; justify-content:space-between; box-shadow:0 -10px 30px -10px rgba(10,14,12,.15); }
+
+  /* =========== MOBILE =========== */
+  @media (max-width:767px){
+    .topbar-long{ display:none; } .topbar-short{ display:inline; }
+    .mnav-btn{ display:inline-flex !important; }
+    .mnav-panel{ position:sticky; top:60px; z-index:39; }
+    .sticky-mobile{ display:flex; }
+    body{ padding-bottom:74px; }
+
+    header.sticky > div{ height:60px; padding-left:14px; padding-right:14px; }
+    header.sticky img[alt^="COIS"]{ height:30px; }
+    header.sticky a.btn-primary{ height:40px; padding:0 16px; font-size:13px; }
+    header.sticky a.btn-primary .arrow{ display:none; }
+
+    /* search widget */
+    .subsearch{ grid-template-columns:1fr !important; border-radius:8px !important; }
+    .subsearch .field{ padding:10px 16px !important; border-left:0 !important; }
+    .subsearch .field + .field{ border-top:1px solid #EFEDE4; border-left:0 !important; }
+    .subsearch > div:last-child{ padding:6px !important; }
+    .subsearch button{ width:100%; height:48px; border-radius:6px; }
+
+    /* category tabs */
+    .cat-bar > .mx-auto{ padding-top:10px !important; padding-bottom:10px !important; }
+
+    /* main 2-col → 1 col on mobile */
+    .main-grid{ grid-template-columns: 1fr !important; gap:16px !important; }
+    aside.sidebar{ position:static; display:none; }
+    aside.sidebar.open{ display:block; }
+
+    /* filter-toggle mobile button */
+    .m-filter-bar{ display:flex !important; }
+    .m-filter-bar button{ flex:1 1 auto; }
+
+    /* results header */
+    .results-head{ flex-wrap:wrap; gap:8px; }
+    .results-head .small-caps{ flex:0 0 100%; }
+
+    .results-grid{ grid-template-columns: 1fr !important; gap:14px !important; }
+
+    article.card .p-5{ padding:16px !important; }
+    article.card h3.event-h3{ font-size:17px !important; }
+    article.card .price{ font-size:19px !important; }
+    article.card .btn-primary{ padding:0 14px !important; height:38px !important; font-size:12.5px !important; }
+    article.card .ph-img{ aspect-ratio: 16/10 !important; }
+
+    /* pagination */
+    .pagination a{ height:36px !important; min-width:36px !important; font-size:13px !important; padding:0 10px; }
+
+    /* footer */
+    footer .col-span-6{ width:50%; }
+    footer .mt-12.pt-6{ flex-direction:column; align-items:flex-start; gap:10px; font-size:11.5px; }
+    footer img[alt^="COIS"]{ height:38px; }
+
+    /* CTA band */
+    section.bg-ink.text-white:last-of-type h2{ font-size:34px !important; line-height:1.06 !important; }
+    section.bg-ink.text-white:last-of-type > div{ padding-top:2.5rem !important; padding-bottom:2.5rem !important; }
+    section.bg-ink.text-white:last-of-type form input{ height:44px; font-size:14px; }
+    section.bg-ink.text-white:last-of-type form button{ height:44px !important; padding:0 14px !important; font-size:13px; }
+    section.bg-ink.text-white:last-of-type form > div:first-child{ display:none; }
+  }
+
+  .m-filter-bar{ display:none; }
+</style>
+</head>
+<body data-page="events">
+
+<div id="site-header"></div>
+
+<!-- ============ SEARCH BAR ============ -->
+<section class="bg-bone rule-b">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-6">
+    <form class="subsearch grid grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1fr_auto] bg-white border border-line rounded-lg overflow-hidden" style="box-shadow:0 2px 0 #E6E4DC, 0 24px 56px -20px rgba(10,14,12,.12);">
+      <label class="field col-span-2 lg:col-span-1" style="padding:16px 22px;">
+        <span class="small-caps">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Industry
+        </span>
+        <select class="w-full mt-1.5 bg-transparent text-[15px] font-medium">
+          <option>All 40 industries</option><option>Automotive</option><option>Pharma</option><option>Food &amp; Bev</option>
+          <option>Electronics</option><option>Textiles</option><option>Logistics</option><option>Renewables</option>
+        </select>
+      </label>
+      <label class="field col-span-1" style="padding:16px 22px; border-left:1px solid #EFEDE4;">
+        <span class="small-caps">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          City
+        </span>
+        <select class="w-full mt-1.5 bg-transparent text-[15px] font-medium">
+          <option>Any city</option><option>New Delhi / NCR</option><option>Mumbai</option><option>Bengaluru</option>
+          <option>Hyderabad</option><option>Chennai</option><option>Ahmedabad</option><option>Pune</option>
+        </select>
+      </label>
+      <label class="field col-span-1" style="padding:16px 22px; border-left:1px solid #EFEDE4;">
+        <span class="small-caps">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+          Dates
+        </span>
+        <input type="text" placeholder="Apr – Dec '26" class="w-full mt-1.5 bg-transparent text-[15px] font-medium"/>
+      </label>
+      <label class="field col-span-2 lg:col-span-1" style="padding:16px 22px; border-left:1px solid #EFEDE4;">
+        <span class="small-caps">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          Stall size
+        </span>
+        <select class="w-full mt-1.5 bg-transparent text-[15px] font-medium">
+          <option>Any size</option><option>Up to 9 sqm</option><option>9–18 sqm</option><option>18–36 sqm</option><option>36 sqm+</option>
+        </select>
+      </label>
+      <div class="p-2 col-span-2 lg:col-span-1 flex">
+        <button class="btn-primary w-full rounded-lg px-6 h-full min-h-[50px] inline-flex items-center justify-center gap-2 text-[14px] font-semibold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Search
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============ CATEGORY TABS (sticky) ============ -->
+<section class="cat-bar bg-white rule-b sticky top-[72px] z-30">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-3">
+    <div class="cat-tabs">
+      <button class="cat-tab on"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v16"/></svg>All shows <span class="mono text-[11px] opacity-60">517</span></button>
+      <button class="cat-tab">🚗 Automotive <span class="mono text-[11px] opacity-60">49</span></button>
+      <button class="cat-tab">💊 Pharma <span class="mono text-[11px] opacity-60">94</span></button>
+      <button class="cat-tab">🍱 Food &amp; Bev <span class="mono text-[11px] opacity-60">71</span></button>
+      <button class="cat-tab">⚡ Electronics <span class="mono text-[11px] opacity-60">44</span></button>
+      <button class="cat-tab">🧵 Textiles <span class="mono text-[11px] opacity-60">32</span></button>
+      <button class="cat-tab">📦 Logistics <span class="mono text-[11px] opacity-60">33</span></button>
+      <button class="cat-tab">🌱 Renewables <span class="mono text-[11px] opacity-60">29</span></button>
+      <button class="cat-tab">🏗️ Construction <span class="mono text-[11px] opacity-60">39</span></button>
+      <button class="cat-tab">💎 Jewellery <span class="mono text-[11px] opacity-60">24</span></button>
+      <button class="cat-tab">✈️ Travel &amp; Hosp. <span class="mono text-[11px] opacity-60">19</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAIN GRID: FILTERS + RESULTS ============ -->
+<section id="results" class="bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-10 lg:py-14 grid main-grid grid-cols-[280px_1fr] gap-10">
+
+    <!-- FILTERS SIDEBAR -->
+    <aside class="sidebar">
+      <div class="flex items-center justify-between mb-5">
+        <div class="text-[16px] font-semibold">Filters</div>
+        <button class="text-[12.5px] text-muted hover:text-ink">Clear all</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">City</span>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox" checked/> New Delhi / NCR</span><span class="count">142</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Mumbai</span><span class="count">118</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Bengaluru</span><span class="count">96</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Hyderabad</span><span class="count">64</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Chennai</span><span class="count">48</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Ahmedabad</span><span class="count">32</span></label>
+        <button class="text-[12.5px] text-green mt-1 font-medium">+ 14 more cities</button>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">When</span>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="radio" name="when"/> This week</span><span class="count">9</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="radio" name="when" checked/> This month</span><span class="count">42</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="radio" name="when"/> Next 90 days</span><span class="count">128</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="radio" name="when"/> This year</span><span class="count">512</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="radio" name="when"/> Custom…</span><span class="count"></span></label>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Price per 9 sqm</span>
+        <div class="flex items-center justify-between text-[12px] text-muted mb-2 num">
+          <span>₹ 80k</span><span>₹ 5L</span>
+        </div>
+        <input type="range" min="80" max="500" value="220" class="price-slider"/>
+        <div class="mt-3 text-[13px] text-ink">Up to <span class="font-semibold num">₹ 2.2L</span></div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Stall size</span>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Shell · up to 9 sqm</span><span class="count">312</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox" checked/> 9 – 18 sqm</span><span class="count">258</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> 18 – 36 sqm</span><span class="count">174</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> 36 – 72 sqm</span><span class="count">96</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> 72 sqm + Pavilion</span><span class="count">42</span></label>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Badges</span>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox" checked/> Instant confirmation</span><span class="count">428</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Free cancellation</span><span class="count">312</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> Design studio available</span><span class="count">198</span></label>
+        <label class="check-row"><span class="flex items-center gap-2"><input type="checkbox"/> International exhibitors</span><span class="count">86</span></label>
+      </div>
+
+      <button class="mt-6 btn-primary rounded-full w-full h-11 text-[13.5px] font-semibold">Apply filters (4)</button>
+    </aside>
+
+    <!-- RESULTS COLUMN -->
+    <div>
+      <!-- Mobile filter bar -->
+      <div class="m-filter-bar items-center gap-2 mb-4">
+        <button class="chip" onclick="document.querySelector('aside.sidebar').classList.toggle('open')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filters · 4</button>
+        <select class="chip ml-auto">
+          <option>Sort: Relevance</option>
+          <option>Sort: Date · soonest</option>
+          <option>Sort: Price · low to high</option>
+          <option>Sort: Availability</option>
+        </select>
+      </div>
+
+      <!-- Results header -->
+      <div class="results-head flex items-center justify-between gap-4 mb-6">
+        <div>
+          <div class="small-caps">Results</div>
+          <div class="mt-1 text-[20px] md:text-[24px] font-semibold tracking-[-0.01em]"><span class="num">128</span> shows match your filters</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-[13px] text-muted hidden md:inline">Sort</span>
+          <select class="sort-dropdown">
+            <option>Relevance</option>
+            <option>Date · soonest first</option>
+            <option>Price · low to high</option>
+            <option>Price · high to low</option>
+            <option>Availability · most left</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Active filter chips -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <span class="chip active">New Delhi / NCR ✕</span>
+        <span class="chip active">This month ✕</span>
+        <span class="chip active">9 – 18 sqm ✕</span>
+        <span class="chip active">Instant confirmation ✕</span>
+        <button class="text-[12.5px] text-muted hover:text-ink ml-1">Clear all</button>
+      </div>
+
+      <!-- EVENT GRID (2 col on lg) -->
+      <div class="results-grid grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- CARD 1 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 7 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 8 -->
+        <article class="card group">
+          <div class="ph-img aspect-[4/3] flex items-center justify-center" style="background:#f1eede;">
+            <img src="Imageframe.png" alt="The Exhibition Network" class="h-20 w-auto"/>
+            <span class="dates-tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>02–05 May '26</span>
+            <button class="save" aria-label="Save"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-10C1.2 8 3 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 5.8 4 4.5 7-2.5 5.5-9.5 10-9.5 10z"/></svg></button>
+          </div>
+          <div class="p-5">
+            <div class="flex items-center justify-between">
+              <span class="tag-cat">Automotive</span>
+              <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+            </div>
+            <h3 class="event-h3 mt-2.5 text-[19px] font-semibold leading-snug"><a href="event-detail.html" class="hover:text-green card-link">Auto Expo — Components 2026</a></h3>
+            <p class="mt-1 text-[13.5px] text-muted flex items-center gap-1.5"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>India Expo Centre, Greater Noida</p>
+            <div class="mt-5 pt-4 border-t hairline flex items-center justify-between card-actions">
+              <a href="event-detail.html" class="text-[13px] font-medium text-muted hover:text-ink inline-flex items-center gap-1 group">View details <span class="arrow">→</span></a>
+              <button type="button" class="open-contact btn-primary rounded-full px-5 h-10 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Book now <span class="arrow">→</span></button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <nav class="pagination mt-12 flex items-center justify-between gap-4 flex-wrap">
+        <div class="text-[13px] text-muted">Showing <span class="text-ink font-medium num">1–8</span> of <span class="text-ink font-medium num">128</span></div>
+        <div class="flex items-center gap-2">
+          <a class="h-10 min-w-10 px-3 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">← Prev</a>
+          <a class="h-10 min-w-10 rounded-full bg-ink text-white flex items-center justify-center text-[13px] font-semibold" href="#">1</a>
+          <a class="h-10 min-w-10 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">2</a>
+          <a class="h-10 min-w-10 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">3</a>
+          <a class="h-10 min-w-10 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">…</a>
+          <a class="h-10 min-w-10 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">16</a>
+          <a class="h-10 min-w-10 px-3 rounded-full border hairline flex items-center justify-center text-[13px] hover:bg-bone" href="#">Next →</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-mobile">
+  <div class="text-[12px] text-muted leading-tight">
+    <div class="text-ink font-semibold text-[13px] num">128 shows match</div>
+    <div>Tap filters to refine</div>
+  </div>
+  <button onclick="document.querySelector('aside.sidebar').classList.toggle('open'); window.scrollTo({top:0,behavior:'smooth'})" class="btn-primary rounded-full h-11 px-5 inline-flex items-center gap-2 text-[13.5px] font-semibold">Filter →</button>
+</div>
+
+<div id="contact-modal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+  <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm contact-close cursor-pointer"></div>
+  <div class="relative bg-white w-full max-w-[480px] rounded-2xl shadow-2xl overflow-hidden">
+    <button type="button" class="contact-close absolute top-3.5 right-3.5 h-9 w-9 rounded-full hover:bg-bone flex items-center justify-center transition" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="p-7 lg:p-9">
+      <div class="small-caps">Get in touch</div>
+      <h3 id="contact-modal-title" class="mt-2 text-[24px] md:text-[28px] font-semibold leading-tight tracking-[-0.015em]">Reserve your stall</h3>
+      <p class="mt-2 text-[14px] text-slate leading-relaxed">Share your details and our team will call you back within 15 minutes (IST work hours).</p>
+      <form id="contact-form" class="mt-6 space-y-4" novalidate>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Full name</label>
+          <input name="name" type="text" required placeholder="Your name" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Email</label>
+          <input name="email" type="email" required placeholder="you@company.com" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Phone</label>
+          <input name="phone" type="tel" required placeholder="+91 ..." class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <button type="submit" class="btn-primary rounded-full w-full h-12 inline-flex items-center justify-center gap-2 text-[14px] font-semibold group mt-2">
+          Request callback <span class="arrow">→</span>
+        </button>
+        <p class="text-[11.5px] text-muted text-center leading-relaxed">By submitting you agree to our <a href="privacy.html" class="underline hover:text-ink">privacy notice</a>. No spam.</p>
+      </form>
+      <div id="contact-success" class="hidden text-center py-6">
+        <div class="h-14 w-14 rounded-full bg-mint mx-auto flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+        </div>
+        <h4 class="mt-4 text-[20px] font-semibold">Request received.</h4>
+        <p class="mt-2 text-[14px] text-slate">Our team will call you back within 15 minutes during IST work hours.</p>
+        <button type="button" class="contact-close mt-5 btn-outline rounded-full h-11 px-6 inline-flex items-center gap-2 text-[13.5px] font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal   = document.getElementById('contact-modal');
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  let lastFocus = null;
+
+  function open(){
+    lastFocus = document.activeElement;
+    form.classList.remove('hidden');
+    success.classList.add('hidden');
+    form.reset();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    setTimeout(()=>{ form.querySelector('input[name="name"]').focus(); }, 30);
+  }
+  function close(){
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', function(e){
+    const trigger = e.target.closest('.open-contact');
+    if(trigger){ e.preventDefault(); open(); return; }
+    if(e.target.closest('.contact-close')){ close(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+})();
+</script>
+
+<script src="components.js"></script>
+<script>
+document.querySelectorAll('article.card').forEach(function(card) {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', function(e) {
+    if (!e.target.closest('button, a')) {
+      window.location.href = 'event-detail.html';
+    }
+  });
+});
+</script>
+</body>
+</html>

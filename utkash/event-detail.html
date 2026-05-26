@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Auto Expo — Components 2026 · India Expo Centre, Greater Noida — COIS</title>
+<meta name="description" content="Auto Expo — Components 2026 · 02–05 May, Greater Noida. 1,400 exhibitors · 120,000+ visitors · 18 countries. Programme, organiser, venue, reviews and live stall booking."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
+<script>
+tailwind.config = { theme:{ extend:{ colors:{ ink:'#0A0E0C', char:'#1C211F', slate:'#343B37', muted:'#60655F', mutedL:'#8A8F87', line:'#E6E4DC', hair:'#EFEDE4', paper:'#FFFFFF', bone:'#F7F5EC', cream:'#F1EEDE', mint:'#E8F3ED', green:'#0B7A36', greenL:'#10973F', greenD:'#064D22', amber:'#C97B1F' }, fontFamily:{ sans:['Onest','system-ui'], serif:['Instrument Serif','serif'], mono:['JetBrains Mono','ui-monospace'] } } } }
+</script>
+<style>
+  /* floorplan */
+  .floor{ background:#F7F5EC; border:1px solid #E6E4DC; border-radius:18px; position:relative; overflow:hidden; }
+  .stall{ cursor:pointer; transition:fill .25s, stroke .25s; }
+  .stall.available{ fill:#fff; stroke:#E6E4DC; }
+  .stall.available:hover{ fill:#E8F3ED; stroke:#0B7A36; }
+  .stall.selected{ fill:#0B7A36; stroke:#064D22; }
+  .stall.booked{ fill:#EFEDE4; stroke:#D9D5C6; cursor:not-allowed; }
+  .stall.premium{ fill:#FDF3E4; stroke:#C97B1F; }
+  .stall.premium:hover{ fill:#FCE8C8; }
+  .stall-label{ font-family:'JetBrains Mono',monospace; font-size:6px; fill:#343B37; pointer-events:none; }
+
+  .legend-dot{ width:14px; height:14px; border-radius:4px; display:inline-block; border:1px solid rgba(0,0,0,.1); }
+
+  /* sticky sidebar on desktop */
+  .summary-card{ position:sticky; top:132px; }
+
+  /* tabs */
+  .ev-tab{ padding:14px 4px; border-bottom:2px solid transparent; font-size:14.5px; font-weight:500; color:#60655F; cursor:pointer; }
+  .ev-tab.on{ color:#0A0E0C; border-bottom-color:#0A0E0C; }
+
+  @media (max-width:767px){
+    .summary-card{ position:static; }
+    .floor-wrap{ min-height:auto !important; }
+    section.subhero > div{ padding-top:22px !important; padding-bottom:14px !important; }
+    section.subhero h1{ font-size:24px !important; line-height:1.15 !important; }
+    .ev-tab{ padding:12px 4px; font-size:13px; }
+  }
+
+  /* ============ NEW for content-rich event page ============ */
+  /* anchor offset so sticky tabs don't cover headings */
+  [id]{ scroll-margin-top: 132px; }
+
+  /* programme day-tabs (CSS-only via radios) */
+  .day-radio{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+  .day-tab{ display:inline-flex; align-items:center; padding:10px 16px; border-radius:999px; border:1px solid #E6E4DC; font-size:13.5px; font-weight:500; cursor:pointer; transition:all .2s; }
+  .day-tab:hover{ background:#F7F5EC; }
+  .day-panel{ display:none; }
+  #day1:checked ~ .day-panels #day1-panel,
+  #day2:checked ~ .day-panels #day2-panel,
+  #day3:checked ~ .day-panels #day3-panel,
+  #day4:checked ~ .day-panels #day4-panel{ display:block; }
+  #day1:checked ~ .day-tabs label[for="day1"],
+  #day2:checked ~ .day-tabs label[for="day2"],
+  #day3:checked ~ .day-tabs label[for="day3"],
+  #day4:checked ~ .day-tabs label[for="day4"]{ background:#0A0E0C; color:#fff; border-color:#0A0E0C; }
+
+  /* delta arrows */
+  .delta-up{ color:#0B7A36; font-weight:600; }
+  .delta-down{ color:#C97B1F; font-weight:600; }
+
+  /* helpdesk box */
+  .helpdesk-box{ background:#fff; border:1px solid #E6E4DC; border-radius:14px; padding:18px; }
+
+  /* trust strip stat tile dividers — clean orphans at every breakpoint */
+  .stat-tile{ padding:14px 18px; border-right:1px solid #E6E4DC; border-bottom:1px solid #E6E4DC; }
+  /* 6-col layout (lg+): 1 row, vertical only */
+  @media (min-width:1024px){
+    .stat-tile{ border-bottom:0; }
+    .stat-tile:nth-child(6n){ border-right:0; }
+  }
+  /* 3-col layout (md): 2 rows */
+  @media (min-width:768px) and (max-width:1023px){
+    .stat-tile:nth-child(3n){ border-right:0; }
+    .stat-tile:nth-last-child(-n+3){ border-bottom:0; }
+  }
+  /* 2-col layout (sm and below): 3 rows */
+  @media (max-width:767px){
+    .stat-tile:nth-child(2n){ border-right:0; }
+    .stat-tile:nth-last-child(-n+2){ border-bottom:0; }
+  }
+
+  /* bottom CTA band */
+  .cta-band{ background:#0A0E0C; color:#fff; }
+</style>
+</head>
+<body data-page="events">
+
+<div id="site-header"></div>
+
+<!-- SUBHERO -->
+<section class="subhero bg-bone rule-b">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 pt-8 lg:pt-12 pb-8 lg:pb-12">
+<div class="grid grid-cols-12 gap-6 lg:gap-10 items-center">
+
+      <!-- Logo card -->
+      <div class="col-span-12 lg:col-span-4">
+        <div class="card flex items-center justify-center bg-white p-8 w-full" style="aspect-ratio:1/1;">
+          <img src="Imageframe.png" alt="Auto Expo — Components 2026" class="w-full h-auto block"/>
+        </div>
+      </div>
+
+      <!-- Event details -->
+      <div class="col-span-12 lg:col-span-8 flex flex-col gap-3">
+        <div class="flex items-center gap-2.5 flex-wrap">
+          <span class="tag-cat">Automotive</span>
+          <span class="badge-verified"><svg width="13" height="13" viewBox="0 0 24 24" fill="#0B7A36"><path d="M12 2l2.2 2.3 3.2-.3.8 3.1 2.8 1.6-1 3 1 3-2.8 1.6-.8 3.1-3.2-.3L12 22l-2.2-2.3-3.2.3-.8-3.1L3 15.3l1-3-1-3 2.8-1.6.8-3.1 3.2.3z" fill-opacity=".15" stroke="#0B7A36" stroke-width="1.6"/><path d="M8.5 12.2l2.5 2.5 4.7-4.7" fill="none" stroke="#0B7A36" stroke-width="1.8"/></svg>Verified</span>
+          <span class="badge-live"><span class="pulse-dot"></span>Live booking</span>
+          <span class="badge-left">⚡ 34 stalls left</span>
+        </div>
+
+        <h1 class="text-[32px] md:text-[44px] lg:text-[52px] font-semibold leading-[1.06] tracking-[-0.022em]">Auto Expo — <span class="italic text-green font-normal">Components</span> 2026</h1>
+
+        <p class="text-[15px] text-slate leading-relaxed max-w-[56ch]">India's flagship auto components trade show. 1,400 exhibitors · 18 countries · 120,000 qualified visitors over four days.</p>
+
+        <div class="space-y-2 text-[14px] mt-1">
+          <div class="flex items-center gap-2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span class="font-semibold num">02 – 05 May 2026</span>
+          </div>
+          <div class="flex items-center gap-2 text-slate">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s-7-7-7-13a7 7 0 0114 0c0 6-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <span>India Expo Centre, Greater Noida</span>
+          </div>
+          <div class="flex items-center gap-2 text-muted">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <span>Hall opens · 10:00 IST · 4 days</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 flex-wrap mt-1">
+          <button type="button" class="open-contact btn-outline rounded-full h-10 px-5 inline-flex items-center justify-center text-[13.5px] font-medium">Visit the event</button>
+          <button type="button" class="open-contact btn-green rounded-full h-10 px-5 inline-flex items-center justify-center gap-2 text-[13.5px] font-semibold group">Book Now <span class="arrow">→</span></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TABS -->
+<section class="rule-b bg-white sticky top-[72px] z-30">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 flex items-center gap-6 overflow-x-auto" style="scrollbar-width:none">
+    <a href="#overview" class="ev-tab on">Overview</a>
+    <a href="#audience" class="ev-tab">Audience</a>
+    <a href="#exhibitors" class="ev-tab">Exhibitors</a>
+    <a href="#programme" class="ev-tab">Programme</a>
+    <a href="#venue" class="ev-tab">Venue</a>
+    <a href="#faq" class="ev-tab">FAQ</a>
+  </div>
+</section>
+
+<!-- ============ OVERVIEW ============ -->
+<section class="bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-12 lg:py-16">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-9 xl:col-span-8">
+        <div id="overview">
+        <div class="small-caps">Overview</div>
+        <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">What to expect.</h2>
+        <p class="mt-4 text-[16px] text-slate leading-relaxed">Four-day trade-only show bringing the full automotive component supply chain under one roof — engine & drive-train, electricals, electronics, interiors, materials & machinery. Now in its XVIII edition.</p>
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div><div class="text-[28px] md:text-[34px] font-semibold num">1,400</div><div class="small-caps mt-1">Exhibitors</div></div>
+          <div><div class="text-[28px] md:text-[34px] font-semibold num">120<span class="text-green">k</span></div><div class="small-caps mt-1">Visitors</div></div>
+          <div><div class="text-[28px] md:text-[34px] font-semibold num">18</div><div class="small-caps mt-1">Countries</div></div>
+          <div><div class="text-[28px] md:text-[34px] font-semibold num">75<span class="text-green">k</span> sqm</div><div class="small-caps mt-1">Floor area</div></div>
+        </div>
+        <div class="mt-8 rule-t pt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="flex items-start gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><path d="M2 12l3 3 5-6"/><path d="M14 12l3 3 5-6"/></svg><div><div class="font-semibold">Instant confirmation</div><div class="text-[13.5px] text-muted">Live floorplan sync</div></div></div>
+          <div class="flex items-start gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><path d="M12 2v20M2 12h20"/></svg><div><div class="font-semibold">10% refundable hold</div><div class="text-[13.5px] text-muted">Free cancel 30 days before</div></div></div>
+          <div class="flex items-start gap-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><div><div class="font-semibold">Stall design add-on</div><div class="text-[13.5px] text-muted">In-house studio available</div></div></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE ============ -->
+<section class="bg-bone rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div id="audience">
+      <div class="small-caps">Audience</div>
+      <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">Who walks the floor.</h2>
+      <div class="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card p-5"><div class="text-[14px] font-semibold">Visitor profile</div>
+          <ul class="mt-3 space-y-2 text-[13.5px] text-slate">
+            <li class="flex items-center justify-between"><span>OEM decision-makers</span><span class="num text-muted">42%</span></li>
+            <li class="flex items-center justify-between"><span>Tier-1 suppliers</span><span class="num text-muted">28%</span></li>
+            <li class="flex items-center justify-between"><span>Distributors &amp; dealers</span><span class="num text-muted">18%</span></li>
+            <li class="flex items-center justify-between"><span>Press &amp; analysts</span><span class="num text-muted">6%</span></li>
+            <li class="flex items-center justify-between"><span>Other</span><span class="num text-muted">6%</span></li>
+          </ul>
+        </div>
+        <div class="card p-5"><div class="text-[14px] font-semibold">Geographic split</div>
+          <ul class="mt-3 space-y-2 text-[13.5px] text-slate">
+            <li class="flex items-center justify-between"><span>India</span><span class="num text-muted">72%</span></li>
+            <li class="flex items-center justify-between"><span>South-East Asia</span><span class="num text-muted">11%</span></li>
+            <li class="flex items-center justify-between"><span>Europe</span><span class="num text-muted">8%</span></li>
+            <li class="flex items-center justify-between"><span>North America</span><span class="num text-muted">5%</span></li>
+            <li class="flex items-center justify-between"><span>Rest of world</span><span class="num text-muted">4%</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAST EXHIBITORS ============ -->
+<section class="bg-white rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div id="exhibitors">
+      <div class="small-caps">Past exhibitors</div>
+      <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">Brands who came in 2025.</h2>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Tata Motors</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Bosch</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Mahindra</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Ashok Leyland</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Denso</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Continental</span></a>
+        <a class="card h-20 flex items-center justify-center" href="exhibitors.html"><span class="font-semibold">Bajaj Auto</span></a>
+        <a class="card h-20 flex items-center justify-center bg-ink text-white" href="exhibitors.html"><span class="font-semibold">+ 1,392 more</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMME ============ -->
+<section class="bg-bone rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div id="programme">
+      <div class="small-caps">Programme</div>
+      <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">What's on, <span class="italic text-green font-normal">day by day.</span></h2>
+      <p class="mt-3 text-[15px] text-slate max-w-[60ch]">All times Asia/Kolkata. Programme firms up 14 days before the show.</p>
+
+      <div class="mt-8">
+        <input type="radio" name="day" id="day1" class="day-radio" checked/>
+        <input type="radio" name="day" id="day2" class="day-radio"/>
+        <input type="radio" name="day" id="day3" class="day-radio"/>
+        <input type="radio" name="day" id="day4" class="day-radio"/>
+
+        <div class="day-tabs flex flex-wrap gap-2 mb-6">
+          <label for="day1" class="day-tab">Day 1 <span class="ml-2 text-muted text-[12px] num">02 May</span></label>
+          <label for="day2" class="day-tab">Day 2 <span class="ml-2 text-muted text-[12px] num">03 May</span></label>
+          <label for="day3" class="day-tab">Day 3 <span class="ml-2 text-muted text-[12px] num">04 May</span></label>
+          <label for="day4" class="day-tab">Day 4 <span class="ml-2 text-muted text-[12px] num">05 May</span></label>
+        </div>
+
+        <div class="day-panels">
+          <div id="day1-panel" class="day-panel">
+            <div class="card p-6 max-w-[760px]">
+              <ol class="space-y-4">
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">09:30</span><div><div class="font-semibold">Doors open</div><div class="text-[13.5px] text-muted">All halls · trade visitors only</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">10:00</span><div><div class="font-semibold">Opening keynote · Industry outlook</div><div class="text-[13.5px] text-muted">Hall A main stage · ACMA chairman + Minister of Heavy Industries</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">12:30</span><div><div class="font-semibold">Networking lunch</div><div class="text-[13.5px] text-muted">Buyer's Lounge · invitation</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">14:00</span><div><div class="font-semibold">EV component showcase walk-through</div><div class="text-[13.5px] text-muted">Hall E · curated tour for OEM teams</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">19:00</span><div><div class="font-semibold">Day close</div><div class="text-[13.5px] text-muted">Halls clear · exhibitor-only after-hours</div></div></li>
+              </ol>
+            </div>
+          </div>
+
+          <div id="day2-panel" class="day-panel">
+            <div class="card p-6 max-w-[760px]">
+              <ol class="space-y-4">
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">09:30</span><div><div class="font-semibold">Doors open</div><div class="text-[13.5px] text-muted">All halls</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">11:00</span><div><div class="font-semibold">Buyer-seller speed meets</div><div class="text-[13.5px] text-muted">Pre-scheduled · Hall B mezzanine</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">14:30</span><div><div class="font-semibold">Sustainability & circularity panel</div><div class="text-[13.5px] text-muted">Hall A main stage</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">17:30</span><div><div class="font-semibold">ACMA Industry Awards Night</div><div class="text-[13.5px] text-muted">Marquee · invitation only</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">19:00</span><div><div class="font-semibold">Day close</div><div class="text-[13.5px] text-muted">Halls clear</div></div></li>
+              </ol>
+            </div>
+          </div>
+
+          <div id="day3-panel" class="day-panel">
+            <div class="card p-6 max-w-[760px]">
+              <ol class="space-y-4">
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">09:30</span><div><div class="font-semibold">Doors open</div><div class="text-[13.5px] text-muted">All halls</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">11:00</span><div><div class="font-semibold">Start-up Pavilion pitch hour</div><div class="text-[13.5px] text-muted">Hall D · 10 finalists</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">14:00</span><div><div class="font-semibold">Tier-1 supplier roundtables</div><div class="text-[13.5px] text-muted">Buyer's Lounge · closed door</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">16:30</span><div><div class="font-semibold">Fireside chat · The 2030 supplier base</div><div class="text-[13.5px] text-muted">Hall A main stage</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">19:00</span><div><div class="font-semibold">Day close</div><div class="text-[13.5px] text-muted">Halls clear</div></div></li>
+              </ol>
+            </div>
+          </div>
+
+          <div id="day4-panel" class="day-panel">
+            <div class="card p-6 max-w-[760px]">
+              <ol class="space-y-4">
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">09:30</span><div><div class="font-semibold">Doors open</div><div class="text-[13.5px] text-muted">Final day · open visitor day</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">11:00</span><div><div class="font-semibold">Press conference · 2026 highlights</div><div class="text-[13.5px] text-muted">Press centre</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">13:30</span><div><div class="font-semibold">Closing keynote · Year-on-year impact</div><div class="text-[13.5px] text-muted">Hall A main stage</div></div></li>
+                <li class="flex gap-5"><span class="font-mono text-[13px] text-muted w-16 flex-none">17:00</span><div><div class="font-semibold">Show close</div><div class="text-[13.5px] text-muted">Halls de-rig begins</div></div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VENUE & TRAVEL ============ -->
+<section class="bg-white rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div id="venue">
+      <div class="small-caps">Venue & travel</div>
+      <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">India Expo Centre, <span class="italic text-green font-normal">Greater Noida.</span></h2>
+
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+
+        <div class="lg:col-span-7">
+          <div class="card overflow-hidden">
+            <svg viewBox="0 0 600 360" role="img" class="w-full block bg-bone" aria-labelledby="venue-map-title">
+              <title id="venue-map-title">Map showing India Expo Centre in Greater Noida</title>
+              <line x1="0" y1="120" x2="600" y2="80" stroke="#D9D5C6" stroke-width="2" stroke-dasharray="6 6"/>
+              <line x1="0" y1="240" x2="600" y2="200" stroke="#D9D5C6" stroke-width="2" stroke-dasharray="6 6"/>
+              <line x1="200" y1="0" x2="240" y2="360" stroke="#D9D5C6" stroke-width="2" stroke-dasharray="6 6"/>
+              <line x1="400" y1="0" x2="440" y2="360" stroke="#D9D5C6" stroke-width="2" stroke-dasharray="6 6"/>
+              <rect x="60" y="60" width="120" height="80" rx="6" fill="#EFEDE4"/>
+              <rect x="260" y="180" width="160" height="100" rx="6" fill="#EFEDE4"/>
+              <rect x="460" y="60" width="100" height="80" rx="6" fill="#EFEDE4"/>
+              <g transform="translate(295,150)">
+                <circle cx="10" cy="10" r="22" fill="#0B7A36" fill-opacity="0.12"/>
+                <path d="M10 0 C 4 0 -1 5 -1 12 c0 9 11 22 11 22 s11-13 11-22 C 21 5 16 0 10 0 z" fill="#0B7A36"/>
+                <circle cx="10" cy="11" r="4" fill="#fff"/>
+              </g>
+              <g font-family="JetBrains Mono" font-size="11" fill="#0A0E0C">
+                <rect x="20" y="316" width="240" height="28" rx="4" fill="#fff" stroke="#E6E4DC"/>
+                <text x="32" y="334">INDIA EXPO CENTRE · GREATER NOIDA</text>
+              </g>
+            </svg>
+            <div class="p-5 rule-t">
+              <div class="font-semibold">India Expo Centre & Mart</div>
+              <div class="text-[13.5px] text-muted">Plot 23–25, Knowledge Park II, Greater Noida, Uttar Pradesh 201306</div>
+              <div class="mt-3 flex gap-3 text-[13px] flex-wrap">
+                <a href="#" class="chip">Open in Maps</a>
+                <a href="#" class="chip">Save coordinates</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-6">
+
+          <div>
+            <div class="small-caps">Opening hours</div>
+            <table class="mt-3 w-full text-[13.5px]">
+              <thead>
+                <tr class="text-left text-muted text-[12px] uppercase tracking-wider">
+                  <th class="py-2 font-medium">&nbsp;</th>
+                  <th class="py-2 font-medium">Trade</th>
+                  <th class="py-2 font-medium">Open day</th>
+                </tr>
+              </thead>
+              <tbody class="font-medium">
+                <tr class="rule-t"><td class="py-2.5">Day 1–3</td><td class="py-2.5 num">09:00–19:00</td><td class="py-2.5 text-muted">—</td></tr>
+                <tr class="rule-t"><td class="py-2.5">Day 4</td><td class="py-2.5 num">09:00–19:00</td><td class="py-2.5 num">10:00–18:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="rule-t pt-5">
+            <div class="small-caps">Admission</div>
+            <p class="mt-2 text-[14px]">Trade-only days 1–3 · free with verified badge.<br/>Day 4 open public · ₹ 250 at gate.</p>
+          </div>
+
+          <div class="rule-t pt-5">
+            <div class="small-caps">Getting there</div>
+            <ul class="mt-2 space-y-2 text-[13.5px]">
+              <li class="flex gap-2"><span class="text-green flex-none">▸</span><span><span class="font-semibold">Metro:</span> Pari Chowk (Aqua line) · 8 km · shuttle every 15 min</span></li>
+              <li class="flex gap-2"><span class="text-green flex-none">▸</span><span><span class="font-semibold">Airport:</span> IGI Delhi · 32 km · 45–60 min by car</span></li>
+              <li class="flex gap-2"><span class="text-green flex-none">▸</span><span><span class="font-semibold">Highway:</span> 5 km from Yamuna Expressway · 12 km from Noida-Greater Noida Expressway</span></li>
+              <li class="flex gap-2"><span class="text-green flex-none">▸</span><span><span class="font-semibold">Parking:</span> 3,000 cars on-site · ₹ 100/day</span></li>
+            </ul>
+          </div>
+
+          <div class="rule-t pt-5 flex gap-3 flex-wrap items-center">
+            <a href="https://indiaexpocentre.com" target="_blank" rel="noopener" class="chip">Visit the venue</a>
+            <button type="button" class="open-contact btn-green rounded-full h-10 px-5 inline-flex items-center justify-center gap-2 text-[13px] font-semibold group">Book Now <span class="arrow">→</span></button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORGANISER ============ -->
+<section class="bg-bone rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div id="organiser">
+      <div class="small-caps">Organiser</div>
+      <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">Organised by <span class="italic text-green font-normal">ACMA.</span></h2>
+
+      <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+
+        <div class="lg:col-span-8">
+          <div class="card p-6 bg-paper">
+            <div class="flex items-start gap-5 flex-wrap">
+              <div class="h-16 w-16 rounded-xl bg-bone flex items-center justify-center font-bold text-[22px] flex-none">A</div>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-[18px]">Automotive Component Manufacturers Association of India</div>
+                <div class="text-[13.5px] text-muted">Apex body for the Indian auto-component industry</div>
+
+                <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5 text-[13.5px]">
+                  <div>
+                    <div class="small-caps">Since</div>
+                    <div class="mt-1 num font-semibold">2002</div>
+                  </div>
+                  <div>
+                    <div class="small-caps">Frequency</div>
+                    <div class="mt-1 font-semibold">Biennial</div>
+                  </div>
+                  <div>
+                    <div class="small-caps">Industry body</div>
+                    <div class="mt-1 font-semibold">FICCI affiliate</div>
+                  </div>
+                </div>
+
+                <div class="mt-5 rule-t pt-4 text-[13.5px] text-slate">
+                  <span class="font-semibold">Address:</span> 6th Floor, The Capital Court, Olof Palme Marg, Munirka, New Delhi 110067
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4">
+          <div class="helpdesk-box">
+            <div class="small-caps">Exhibitor help desk</div>
+            <div class="mt-3 text-[14px] space-y-2">
+              <div class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92V21a1 1 0 01-1.1 1A19 19 0 012 4.1 1 1 0 013 3h4.09a1 1 0 011 .75l1 4a1 1 0 01-.27 1L7 10.5a16 16 0 006.5 6.5l1.75-1.75a1 1 0 011-.27l4 1a1 1 0 01.75 1z"/></svg><a href="tel:+911140000010" class="font-semibold num hover:text-green">+91 11 4000 0010</a></div>
+              <div class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><a href="mailto:exhibitors@cois.in" class="font-semibold hover:text-green">exhibitors@cois.in</a></div>
+              <div class="flex items-center gap-2 text-muted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon–Sat · 09:00–19:00 IST</div>
+            </div>
+            <a href="contact.html" class="mt-5 btn-outline rounded-full h-10 px-4 inline-flex items-center gap-2 text-[13px] font-medium">Write to the team <span class="arrow">→</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-white rule-t">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-14 lg:py-20">
+    <div class="grid grid-cols-12 gap-8">
+      <div class="col-span-12 lg:col-span-9 xl:col-span-8">
+        <div id="faq">
+          <div class="small-caps">FAQ</div>
+          <h2 class="mt-2 text-[28px] md:text-[34px] font-semibold leading-[1.15] tracking-[-0.02em]">Questions, answered.</h2>
+          <div class="mt-5 border hairline rounded-2xl overflow-hidden">
+            <details class="border-b hairline group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">What's included in the stall price?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Shell scheme (for 9 sqm): carpet, fascia with company name, 3 spotlights, 1 plug-point, 1 table, 2 chairs. Custom-build stalls priced separately.</p></details>
+            <details class="border-b hairline group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">Can I change my stall size after booking?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Yes, subject to availability. Upgrade within 14 days of booking at pro-rated price. Downgrade only up to 45 days before show.</p></details>
+            <details class="border-b hairline group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">How do I get my exhibitor badges?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Digital badges issued 14 days before. Collect physical badges at organiser help desk using booking ID.</p></details>
+            <details class="border-b hairline group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">Is the show open to general public?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Days 1–3 are trade-only. Day 4 is open to public with a ₹ 250 gate ticket. Trade visitors enter free with verified badge across all four days.</p></details>
+            <details class="border-b hairline group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">What's the dress code and official languages?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Business smart on the floor. Awards night is black-tie. Official languages: English and Hindi. Translation in Japanese, German and Korean available at the international pavilion desks.</p></details>
+            <details class="group"><summary class="flex items-center justify-between cursor-pointer p-5"><span class="font-semibold">How do I bring product samples through customs?</span><span class="text-2xl text-green group-open:rotate-45 transition-transform">+</span></summary><p class="px-5 pb-5 text-[14px] text-slate leading-relaxed">Use the official freight forwarder (BLR Logistics) for ATA Carnet handling and on-site clearance. Cut-off for sea-freight is 6 weeks before show; air-freight 10 days. Detailed customs guide is in the exhibitor manual sent post-booking.</p></details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<div class="sticky-mobile">
+  <div class="text-[12px] text-muted leading-tight"><div class="text-ink font-semibold text-[13px] num">Stall A-112 · 18 sqm</div><div>Total ₹ 4,01,796 · 10% hold</div></div>
+  <a href="#" class="btn-green rounded-full h-11 px-5 inline-flex items-center gap-2 text-[13.5px] font-semibold">Hold now →</a>
+</div>
+
+<script>
+(function(){
+  var tabs = Array.from(document.querySelectorAll('.ev-tab[href^="#"]'));
+  var sections = tabs.map(function(t){
+    return document.getElementById(t.getAttribute('href').slice(1));
+  }).filter(Boolean);
+
+  function activate(id){
+    tabs.forEach(function(t){
+      t.classList.toggle('on', t.getAttribute('href') === '#' + id);
+    });
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      activate(t.getAttribute('href').slice(1));
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) activate(e.target.id);
+      });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+})();
+</script>
+<div id="contact-modal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+  <div class="absolute inset-0 bg-ink/60 backdrop-blur-sm contact-close cursor-pointer"></div>
+  <div class="relative bg-white w-full max-w-[480px] rounded-2xl shadow-2xl overflow-hidden">
+    <button type="button" class="contact-close absolute top-3.5 right-3.5 h-9 w-9 rounded-full hover:bg-bone flex items-center justify-center transition" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0A0E0C" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="p-7 lg:p-9">
+      <div class="small-caps">Get in touch</div>
+      <h3 id="contact-modal-title" class="mt-2 text-[24px] md:text-[28px] font-semibold leading-tight tracking-[-0.015em]">Reserve your stall</h3>
+      <p class="mt-2 text-[14px] text-slate leading-relaxed">Share your details and our team will call you back within 15 minutes (IST work hours).</p>
+      <form id="contact-form" class="mt-6 space-y-4" novalidate>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Full name</label>
+          <input name="name" type="text" required placeholder="Your name" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Email</label>
+          <input name="email" type="email" required placeholder="you@company.com" class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <div>
+          <label class="block text-[12px] font-semibold text-slate mb-1.5">Phone</label>
+          <input name="phone" type="tel" required placeholder="+91 ..." class="w-full h-11 px-3.5 rounded-lg border hairline text-[14px] focus:border-ink transition" />
+        </div>
+        <button type="submit" class="btn-primary rounded-full w-full h-12 inline-flex items-center justify-center gap-2 text-[14px] font-semibold group mt-2">
+          Request callback <span class="arrow">→</span>
+        </button>
+        <p class="text-[11.5px] text-muted text-center leading-relaxed">By submitting you agree to our <a href="privacy.html" class="underline hover:text-ink">privacy notice</a>. No spam.</p>
+      </form>
+      <div id="contact-success" class="hidden text-center py-6">
+        <div class="h-14 w-14 rounded-full bg-mint mx-auto flex items-center justify-center">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="2"><path d="M5 12l5 5L20 7"/></svg>
+        </div>
+        <h4 class="mt-4 text-[20px] font-semibold">Request received.</h4>
+        <p class="mt-2 text-[14px] text-slate">Our team will call you back within 15 minutes during IST work hours.</p>
+        <button type="button" class="contact-close mt-5 btn-outline rounded-full h-11 px-6 inline-flex items-center gap-2 text-[13.5px] font-medium">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const modal   = document.getElementById('contact-modal');
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  let lastFocus = null;
+
+  function open(){
+    lastFocus = document.activeElement;
+    form.classList.remove('hidden');
+    success.classList.add('hidden');
+    form.reset();
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    setTimeout(()=>{ form.querySelector('input[name="name"]').focus(); }, 30);
+  }
+  function close(){
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+    if(lastFocus) lastFocus.focus();
+  }
+
+  document.addEventListener('click', function(e){
+    const trigger = e.target.closest('.open-contact');
+    if(trigger){ e.preventDefault(); open(); return; }
+    if(e.target.closest('.contact-close')){ close(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    form.classList.add('hidden');
+    success.classList.remove('hidden');
+  });
+})();
+</script>
+
+<script src="components.js"></script>
+</body>
+</html>

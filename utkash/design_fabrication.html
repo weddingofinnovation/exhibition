@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Exhibition Stall Design & Fabrication — COIS · The Exhibition Network</title>
+<meta name="description" content="Award-winning exhibition stall design & fabrication. Premium, modular, and free-design tiers. From concept to on-site installation — concept, 3D render, build, install, dismantle."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"/>
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: { ink:'#0A0E0C', char:'#1C211F', slate:'#343B37', muted:'#60655F', mutedL:'#8A8F87', line:'#E6E4DC', hair:'#EFEDE4', paper:'#FFFFFF', bone:'#F7F5EC', cream:'#F1EEDE', mint:'#E8F3ED', green:'#0B7A36', greenL:'#10973F', greenD:'#064D22', amber:'#C97B1F' },
+    fontFamily: { sans:['Onest','system-ui'], serif:['Instrument Serif','serif'], mono:['JetBrains Mono','ui-monospace'] }
+  }}
+}
+</script>
+<style>
+  /* portfolio card */
+  .portfolio-card{ border-radius:18px; overflow:hidden; background:#F7F5EC; border:1px solid #E6E4DC; position:relative; transition:border-color .25s, transform .35s; }
+  .portfolio-card:hover{ border-color:#0A0E0C; transform:translateY(-2px); }
+  .portfolio-card .meta{ position:absolute; inset:auto 0 0 0; padding:14px 18px; color:#fff; z-index:1; }
+  .portfolio-card .meta::before{ content:""; position:absolute; inset:-60% 0 0 0; background:linear-gradient(180deg,transparent,rgba(10,14,12,.82)); z-index:0; }
+  .portfolio-card .meta > *{ position:relative; z-index:1; }
+
+  /* tier card highlight */
+  .tier-featured{ border:2px solid #0A0E0C; }
+
+  /* journey step connector */
+  .journey-line{ position:absolute; top:24px; left:50%; right:-50%; height:1px; background:#E6E4DC; z-index:0; }
+
+  /* process step number */
+  .step-num{ width:40px; height:40px; border-radius:999px; background:#0A0E0C; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:600; font-size:15px; flex-shrink:0; }
+
+  /* stat tile */
+  .stat-tile{ padding:18px 22px; border-right:1px solid #E6E4DC; }
+  @media(min-width:1024px){ .stat-tile:last-child{ border-right:0; } }
+  @media(max-width:1023px) and (min-width:768px){ .stat-tile:nth-child(2n){ border-right:0; } }
+  @media(max-width:767px){ .stat-tile{ border-right:0; border-bottom:1px solid #E6E4DC; } .stat-tile:last-child{ border-bottom:0; } }
+
+  /* hero */
+  @media(max-width:767px){
+    section.hero-bg > div{ padding-top:2rem !important; padding-bottom:2rem !important; }
+    section.hero-bg h1{ font-size:32px !important; line-height:1.08 !important; }
+  }
+</style>
+</head>
+<body data-page="design">
+
+<div id="site-header"></div>
+
+<!-- HERO (compact) -->
+<section class="hero-bg rule-b">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 pt-10 lg:pt-12">
+
+    <!-- Copy + Image -->
+    <div class="grid grid-cols-12 gap-8 lg:gap-12 items-center">
+
+      <!-- Left: copy -->
+      <div class="col-span-12 lg:col-span-6">
+        <div class="inline-flex items-center gap-2 badge-live mb-4"><span class="pulse-dot"></span>In-house studio · Delhi, Mumbai, Bengaluru</div>
+        <h1 class="text-[36px] md:text-[46px] lg:text-[54px] font-semibold leading-[1.05] tracking-[-0.025em]">Your stall has <span class="italic text-green font-normal">3 seconds</span><br class="hidden sm:block"/> to stop the crowd.</h1>
+        <p class="mt-3 text-[15px] text-slate leading-relaxed max-w-[50ch]">Concept to on-site installation — one brief, one team, one contract.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <a href="#consult" class="btn-primary rounded-full h-11 px-6 inline-flex items-center gap-2 text-[13.5px] font-semibold group">Get free consultation <span class="arrow">→</span></a>
+          <a href="#portfolio" class="btn-outline rounded-full h-11 px-6 inline-flex items-center gap-2 text-[13.5px] font-medium">View our work</a>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <span class="tick"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>No broker fees</span>
+          <span class="tick"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>48-hr quote</span>
+          <span class="tick"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7.5" stroke="#0B7A36"/><path d="M4.5 8l2.3 2.3 4.7-4.7" stroke="#0B7A36" stroke-width="1.4" fill="none"/></svg>36-hr snag-fix SLA</span>
+        </div>
+      </div>
+
+      <!-- Right: image -->
+      <div class="col-span-12 lg:col-span-6">
+        <div class="rounded-[22px] overflow-hidden border hairline aspect-[4/3] bg-char">
+          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80" alt="Exhibition stall design showcase" class="w-full h-full object-cover block" loading="eager"/>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats strip — full width, flush bottom, ruled top -->
+    <div class="mt-10 border-t border-[#E6E4DC] grid grid-cols-2 md:grid-cols-4">
+      <div class="py-5 pr-6 border-r border-[#E6E4DC]">
+        <div class="text-[26px] font-semibold tracking-[-0.02em] num leading-none">10+</div>
+        <div class="mt-1.5 text-[12px] text-muted">Years of experience</div>
+      </div>
+      <div class="py-5 px-6 md:border-r border-[#E6E4DC]">
+        <div class="text-[26px] font-semibold tracking-[-0.02em] num leading-none">19k</div>
+        <div class="mt-1.5 text-[12px] text-muted">Trusted clients</div>
+      </div>
+      <div class="py-5 pr-6 md:pl-6 border-r border-[#E6E4DC] border-t md:border-t-0">
+        <div class="text-[26px] font-semibold tracking-[-0.02em] num leading-none">571+</div>
+        <div class="mt-1.5 text-[12px] text-muted">Events annually</div>
+      </div>
+      <div class="py-5 pl-6 border-t md:border-t-0 border-[#E6E4DC]">
+        <div class="text-[26px] font-semibold tracking-[-0.02em] num leading-none">56+</div>
+        <div class="mt-1.5 text-[12px] text-muted">Completed builds</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE TIERS -->
+<section class="rule-b bg-bone">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div>
+        <div class="small-caps">Design tiers</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">A tier for every <span class="italic text-green font-normal">budget</span>.</h2>
+      </div>
+      <p class="text-[14px] text-muted max-w-[40ch]">Whether you're exhibiting for the first time or running a flagship pavilion, we have a design solution for you.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch mt-3">
+
+      <!-- Tier 1: Premium -->
+      <div class="card p-7 tier-featured flex flex-col" style="overflow:visible;">
+        <span class="absolute -top-3 left-6 z-10 bg-ink text-white text-[11px] px-3 py-1 rounded-full font-semibold">Most popular</span>
+          <div class="small-caps">Premium design</div>
+          <h3 class="mt-3 text-[22px] font-semibold leading-snug">Full bespoke stall</h3>
+          <p class="mt-2 text-[14px] text-slate leading-relaxed">Custom luxury finishes, multi-level options, signature fabrication. Built to command the floor.</p>
+          <div class="mt-5 space-y-2.5 text-[14px] flex-grow">
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Custom 3D concept + renders</div>
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Bespoke carpentry &amp; lighting</div>
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Multi-level / hanging structures</div>
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>AV, touchscreens, interactive zones</div>
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Dedicated producer + project manager</div>
+            <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Install, dismantle + optional storage</div>
+          </div>
+          <a href="#consult" class="mt-6 btn-primary rounded-full h-11 w-full inline-flex items-center justify-center text-[14px] font-semibold group">Get a quote <span class="arrow ml-1">→</span></a>
+      </div>
+
+      <!-- Tier 2: Economic -->
+      <div class="card p-7 flex flex-col">
+        <div class="small-caps">Economic design</div>
+        <h3 class="mt-3 text-[22px] font-semibold leading-snug">Smart modular stall</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Optimised layouts, quality materials, reusable system. Ships across multiple shows.</p>
+        <div class="mt-5 space-y-2.5 text-[14px] flex-grow">
+          <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Modular walls + branded graphics</div>
+          <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Carpet, lighting + counter</div>
+          <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Re-use across 4+ shows</div>
+          <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>2D layout + concept visuals</div>
+          <div class="flex items-start gap-2 text-slate"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>On-site install + dismantle</div>
+        </div>
+        <a href="#consult" class="mt-6 btn-outline rounded-full h-11 w-full inline-flex items-center justify-center text-[14px] font-medium">Brief us</a>
+      </div>
+
+      <!-- Tier 3: Individual / Free -->
+      <div class="card p-7 bg-ink text-white flex flex-col" style="border-color:#0A0E0C;">
+        <div class="small-caps" style="color:#8A8F87;">Individual / free design</div>
+        <h3 class="mt-3 text-[22px] font-semibold leading-snug">First-time exhibitor</h3>
+        <p class="mt-2 text-[14px] leading-relaxed" style="color:rgba(255,255,255,.65);">For new participants. A free curated stand option so you can exhibit without booking a full stall.</p>
+        <div class="mt-5 space-y-2.5 text-[14px] flex-grow">
+          <div class="flex items-start gap-2" style="color:rgba(255,255,255,.8);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Shared curated zone access</div>
+          <div class="flex items-start gap-2" style="color:rgba(255,255,255,.8);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>New product showcase zone</div>
+          <div class="flex items-start gap-2" style="color:rgba(255,255,255,.8);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Brand placement + signage</div>
+          <div class="flex items-start gap-2" style="color:rgba(255,255,255,.8);"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10973F" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg>Government / partner sponsored</div>
+        </div>
+        <a href="#consult" class="mt-6 rounded-full h-11 w-full inline-flex items-center justify-center text-[14px] font-semibold" style="background:#10973F; color:#fff; transition:background .25s;" onmouseenter="this.style.background='#064D22'" onmouseleave="this.style.background='#10973F'">Check eligibility →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="rule-b bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div>
+        <div class="small-caps">Our process</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Brief to booth in <span class="italic text-green font-normal">four weeks</span>.</h2>
+      </div>
+      <div class="text-[13px] text-muted">Typical project timeline. Rush jobs? We've done 11 days.</div>
+    </div>
+    <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <li class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 01</div>
+          <div class="step-num">1</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold">Understand your brand</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">60-min discovery session. Audience, objectives, budget, KPIs. Signed brief + moodboard.</p>
+      </li>
+      <li class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 02</div>
+          <div class="step-num">2</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold">Design the stall</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Two concept directions → full 3D renders → client chooses one. Revisions included.</p>
+      </li>
+      <li class="card p-6">
+        <div class="flex items-center justify-between">
+          <div class="small-caps">Step 03</div>
+          <div class="step-num">3</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold">Finalize &amp; fabricate</h3>
+        <p class="mt-2 text-[14px] text-slate leading-relaxed">Engineering drawings + BOQ + in-house fabrication. Transparent pricing, quality checks at every milestone.</p>
+      </li>
+      <li class="card p-6 bg-ink text-white border-ink">
+        <div class="flex items-center justify-between">
+          <div class="small-caps" style="color:#8A8F87;">Step 04</div>
+          <div class="step-num" style="background:#10973F;">4</div>
+        </div>
+        <h3 class="mt-5 text-[18px] font-semibold">On-site installation</h3>
+        <p class="mt-2 text-[14px] leading-relaxed" style="color:rgba(255,255,255,.7);">Setup, snag-fix SLA 36 hrs, photo/video documentation, dismantle, optional storage between shows.</p>
+      </li>
+    </ol>
+    <p class="mt-6 text-center text-[13px] text-muted">You focus on visitors. We handle everything else.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="rule-b bg-bone">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div>
+        <div class="small-caps">Portfolio</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Recent <span class="italic text-green font-normal">builds</span>.</h2>
+      </div>
+      <a href="stall-design.html#portfolio" class="text-[14px] font-medium hover:text-green group">View all projects <span class="arrow">→</span></a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1559223607-a43c990c692c?auto=format&fit=crop&w=600&q=80" alt="Premium automotive pavilion stall" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Automotive · Auto Expo '25</div>
+          <div class="text-[19px] font-semibold mt-0.5">Godrej — 96 sqm pavilion</div>
+        </div>
+      </a>
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=600&q=80" alt="Pharma exhibition stall with displays" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Pharma · CPHI '25</div>
+          <div class="text-[19px] font-semibold mt-0.5">Dr. Reddy's — 144 sqm</div>
+        </div>
+      </a>
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1586528116493-a029325540fa?auto=format&fit=crop&w=600&q=80" alt="Logistics brand exhibition stall" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Logistics · India Warehousing</div>
+          <div class="text-[19px] font-semibold mt-0.5">Ashok Leyland — 72 sqm</div>
+        </div>
+      </a>
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80" alt="Electronics brand exhibition stand" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Electronics · SEMICON '25</div>
+          <div class="text-[19px] font-semibold mt-0.5">Wipro — 54 sqm</div>
+        </div>
+      </a>
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=600&q=80" alt="Renewable energy exhibition stand" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Renewables · Re-Invest '25</div>
+          <div class="text-[19px] font-semibold mt-0.5">Tata Power — 108 sqm</div>
+        </div>
+      </a>
+      <a class="portfolio-card" href="stall-design.html" style="aspect-ratio:4/5;">
+        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=600&q=80" alt="Award-winning flagship exhibition stall" class="w-full h-full object-cover block" loading="lazy"/>
+        <div class="meta">
+          <div class="text-[12px] opacity-80">Flagship work · 14 awards 2024–25</div>
+          <div class="text-[19px] font-semibold mt-0.5">View full reel →</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MORE THAN FABRICATORS -->
+<section class="rule-b bg-white">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="grid grid-cols-12 gap-10 items-center">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="small-caps">Why COIS</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">We are more than <span class="italic text-green font-normal">stall fabricators</span>.</h2>
+        <p class="mt-5 text-[15.5px] text-slate leading-relaxed">Our in-house team of designers, structural engineers, and execution specialists treats every square metre as a strategic opportunity — not a construction job.</p>
+        <div class="mt-7 space-y-4 text-[14.5px] text-slate">
+          <div class="flex items-start gap-3">
+            <div class="h-9 w-9 rounded-full bg-mint flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12h3m14 0h3M12 2v3m0 14v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M4.22 19.78l2.12-2.12m11.32-11.32l2.12-2.12"/></svg>
+            </div>
+            <div><div class="font-semibold text-ink">Visitor experience design</div><div class="text-[13.5px] text-muted mt-0.5">Every layout decision is driven by how visitors move, stop, engage, and remember.</div></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="h-9 w-9 rounded-full bg-mint flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+            </div>
+            <div><div class="font-semibold text-ink">14 design awards, 2024–25</div><div class="text-[13.5px] text-muted mt-0.5">Recognised by UFI, IEIA, and India's leading exhibition design panels.</div></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="h-9 w-9 rounded-full bg-mint flex items-center justify-center shrink-0 mt-0.5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <div><div class="font-semibold text-ink">One contract, zero surprises</div><div class="text-[13.5px] text-muted mt-0.5">Design, engineering, fabrication, install, dismantle — all on a single transparent invoice.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-7">
+        <!-- Visitor journey -->
+        <div class="bg-bone rounded-[22px] border hairline p-8">
+          <div class="small-caps mb-6">The visitor journey we design for</div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <div class="h-14 w-14 mx-auto rounded-2xl bg-white border hairline flex items-center justify-center mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <div class="text-[13px] font-semibold text-ink">Stop</div>
+              <div class="text-[12px] text-muted mt-0.5">3-second attention capture</div>
+            </div>
+            <div class="text-center">
+              <div class="h-14 w-14 mx-auto rounded-2xl bg-white border hairline flex items-center justify-center mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+              <div class="text-[13px] font-semibold text-ink">Photograph</div>
+              <div class="text-[12px] text-muted mt-0.5">Share-worthy design</div>
+            </div>
+            <div class="text-center">
+              <div class="h-14 w-14 mx-auto rounded-2xl bg-white border hairline flex items-center justify-center mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              </div>
+              <div class="text-[13px] font-semibold text-ink">Ask questions</div>
+              <div class="text-[12px] text-muted mt-0.5">Engaged, qualified leads</div>
+            </div>
+            <div class="text-center">
+              <div class="h-14 w-14 mx-auto rounded-2xl bg-white border hairline flex items-center justify-center mb-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.6"><path d="M12 22C6.48 22 2 17.52 2 12S6.48 2 12 2s10 4.48 10 10-4.48 10-10 10z"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+              </div>
+              <div class="text-[13px] font-semibold text-ink">Brand recall</div>
+              <div class="text-[12px] text-muted mt-0.5">Lasting post-event memory</div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <div class="card p-5">
+            <div class="text-[28px] font-semibold num tracking-tight">4.5<span class="text-[16px] text-muted font-normal">/5</span></div>
+            <div class="text-[13px] text-muted mt-1">Client satisfaction · 129,972 reviews</div>
+          </div>
+          <div class="card p-5">
+            <div class="text-[28px] font-semibold num tracking-tight">120+</div>
+            <div class="text-[13px] text-muted mt-1">Stalls shipped in 2025 alone</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE CONSULTATION FORM -->
+<section id="consult" class="rule-b bg-bone">
+  <div class="mx-auto max-w-[1320px] px-4 lg:px-8 py-16 lg:py-24">
+    <div class="grid grid-cols-12 gap-10">
+      <div class="col-span-12 lg:col-span-5">
+        <div class="small-caps">Free consultation</div>
+        <h2 class="mt-2 text-[32px] md:text-[44px] font-semibold leading-[1.1] tracking-[-0.02em]">Tell us about your <span class="italic text-green font-normal">show</span>.</h2>
+        <p class="mt-5 text-[15.5px] text-slate leading-relaxed max-w-[44ch]">Line-item quote within 48 hours. No broker fees. Your first 30-min strategy call is completely free.</p>
+        <div class="mt-7 space-y-3 text-[14px] text-slate">
+          <div class="flex items-start gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg><span>120+ stalls shipped in 2025</span></div>
+          <div class="flex items-start gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg><span>14 design awards 2024–25</span></div>
+          <div class="flex items-start gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg><span>36-hour snag-fix SLA on site</span></div>
+          <div class="flex items-start gap-3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7A36" stroke-width="1.8" class="shrink-0 mt-0.5"><path d="M5 12l4 4 10-10"/></svg><span>Workshops in Delhi, Mumbai, Bengaluru</span></div>
+        </div>
+      </div>
+      <form class="col-span-12 lg:col-span-7 card p-6 md:p-8 space-y-5 bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label><span class="small-caps">Company</span><input type="text" placeholder="Acme Industries Pvt. Ltd." class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]"/></label>
+          <label><span class="small-caps">Contact name</span><input type="text" placeholder="Jane Doe" class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]"/></label>
+          <label><span class="small-caps">Work email</span><input type="email" placeholder="jane@acme.com" class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]"/></label>
+          <label><span class="small-caps">Phone</span><input type="tel" placeholder="+91 …" class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]"/></label>
+          <label><span class="small-caps">Show / event name</span><input type="text" placeholder="Auto Expo 2026" class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]"/></label>
+          <label><span class="small-caps">Stall size</span>
+            <select class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]">
+              <option>9 sqm</option><option>18 sqm</option><option>36 sqm</option><option>72 sqm</option><option>108+ sqm / pavilion</option>
+            </select>
+          </label>
+          <label><span class="small-caps">Budget range</span>
+            <select class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]">
+              <option>Under ₹ 5L</option><option>₹ 5L – 15L</option><option>₹ 15L – 40L</option><option>₹ 40L+</option>
+            </select>
+          </label>
+          <label><span class="small-caps">Design tier</span>
+            <select class="w-full mt-1.5 h-11 px-4 border hairline rounded-full text-[14.5px]">
+              <option>Premium design</option><option>Economic design</option><option>Individual / free design</option><option>Not sure — advise me</option>
+            </select>
+          </label>
+        </div>
+        <label><span class="small-caps">Tell us more</span>
+          <textarea rows="4" placeholder="Objectives, audience, inspiration links, constraints…" class="w-full mt-1.5 px-4 py-3 border hairline rounded-2xl text-[14.5px]"></textarea>
+        </label>
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="consent" class="mt-1" style="accent-color:#0B7A36"/>
+          <label for="consent" class="text-[13px] text-muted leading-relaxed">I agree COIS may contact me about this brief. Read our <a href="privacy.html" class="text-ink underline">privacy policy</a>.</label>
+        </div>
+        <div class="flex items-center gap-3">
+          <button type="submit" class="btn-primary rounded-full h-12 px-7 inline-flex items-center gap-2 text-[14px] font-semibold group">Send brief <span class="arrow">→</span></button>
+          <div class="text-[12.5px] text-muted">48-hour response · no credit card</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-mobile">
+  <div class="text-[12px] text-muted leading-tight">
+    <div class="text-ink font-semibold text-[13px]">Free stall consultation</div>
+    <div>48-hour quote · no broker fees</div>
+  </div>
+  <a href="#consult" class="btn-green rounded-full h-11 px-5 inline-flex items-center gap-2 text-[13.5px] font-semibold">Get free quote →</a>
+</div>
+
+<script src="components.js"></script>
+</body>
+</html>

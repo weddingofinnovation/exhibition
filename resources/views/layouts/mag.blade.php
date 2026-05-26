@@ -9,7 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <script src="https://cdn.tailwindcss.com"></script>
+  
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
   <script>
@@ -26,7 +26,8 @@
       }
     }
   </script>
-
+ @livewireStyles
+	
   <style>
     html,body{ background:#FFFFFF; color:#0A0E0C; }
     body{ font-family:'Onest',sans-serif; -webkit-font-smoothing:antialiased; font-feature-settings:"ss01"; }
@@ -173,7 +174,9 @@
   });
 </script>
 
-<script src="components.js"></script>
+<script  src="{{asset('mag/components.js')}}"></script>
+@livewireScripts
+@stack('scripts')
 
 </body>
 </html>
